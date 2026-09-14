@@ -37,7 +37,7 @@ MUTED = RGBColor(0x5B, 0x64, 0x6E)
 SLATE = RGBColor(0x3D, 0x4A, 0x57)
 
 W, H = Inches(13.333), Inches(7.5)
-FOOTER = "DVM 612  |  Principles of Surgery  |  Preop · prep · postop  |  Lewyt College of Veterinary Medicine"
+FOOTER = "DVM 612  |  Dr. Yujin Kim, D.V.M., Ph.D., FFCP  |  Preop · prep · postop  |  Lewyt CVM"
 
 prs = Presentation()
 prs.slide_width = W
@@ -242,9 +242,10 @@ add_rect(s, Inches(0), Inches(0), Inches(0.22), H, GOLD)
 add_text(s, Inches(0.75), Inches(1.15), Inches(12), Inches(0.35), "LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE", size=13, bold=True, color=GOLD)
 add_text(s, Inches(0.75), Inches(1.7), Inches(12), Inches(0.4), "DVM 612  ·  PRINCIPLES OF SURGERY", size=16, bold=True, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(2.25), Inches(12), Inches(1.6), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(5.15), Inches(12), Inches(0.4), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP  ·  Lecture  |  60 minutes", size=16, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.6), Inches(12), Inches(0.7), "Preoperative evaluation · patient and surgeon preparation · postoperative care.\nTwo real hospital cases: Willie (Cavalier, ASA III-E) and MoMo (cat, ASA IV-E — surgery cancelled).", size=14, color=WHITE)
-add_text(s, Inches(0.75), Inches(6.55), Inches(12), Inches(0.35), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)  ·  Hendrickson & Baird (2013)", size=12, color=GOLD)
+add_text(s, Inches(0.75), Inches(5.05), Inches(12), Inches(0.45), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP", size=22, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(5.5), Inches(12), Inches(0.35), "Lecture  |  60 minutes", size=16, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(5.9), Inches(12), Inches(0.7), "Preoperative evaluation · patient and surgeon preparation · postoperative care.\nTwo real hospital cases: Willie (Cavalier, ASA III-E) and MoMo (cat, ASA IV-E — surgery cancelled).", size=14, color=WHITE)
+add_text(s, Inches(0.75), Inches(6.62), Inches(12), Inches(0.32), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)  ·  Hendrickson & Baird (2013)", size=12, color=GOLD)
 notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. Two real patients from the same hospital. Willie, a 6-year 11-month MN Cavalier, 13.7 kg, acute vestibular crisis plus left otitis — we sedated him. MoMo, a 6-year SF DSH, 4.25 kg, vomiting that looked like a foreign-body surgery — imaging cancelled the cut. Assign both ASA statuses. Owner identifiers stay off these slides.")
 
 # 2 Learning objectives
@@ -1071,6 +1072,7 @@ root_copy.write_bytes(out.read_bytes())
 # Instructor script from speaker notes so it cannot drift
 script_lines = [
     "DVM 612 — Week 4 instructor script",
+    "Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP",
     "",
     "Two real hospital cases: Willie (Cavalier, ASA III-E, sedated for ear clean) and MoMo (DSH, ASA IV-E, exploratory cancelled). Owner names, addresses, phones, and emails stay off slides and off this script.",
     "Skip the large-animal slide if the hour is tight.",
