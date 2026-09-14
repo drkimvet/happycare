@@ -51,10 +51,10 @@ SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
 SLIDE 16. WHO-ADAPTED TIMEOUT AND MULTIMODAL PLAN
     SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.
 
-SLIDE 17. TEACHING FORM. COMPLETE THE HEADER BEFORE THE FIRST DRUG.
+SLIDE 17. COMPLETE THE HEADER BEFORE THE FIRST DRUG.
     SPEAK: Walk the header: ASA III-E is written before alfaxalone. DexSP means skip NSAID. Grid every 5 minutes while sedated. Recovery boxes are part of the same page.
 
-SLIDE 18. PREOPERATIVE EVALUATION DOCUMENTED; EXPLORATORY CANCELLED
+SLIDE 18. EXPLORATORY CANCELLED. RECORD THE DECISION.
     SPEAK: The form is not only for patients who get clipped. Recording the cancellation is a surgical document. Say it once, respectfully, then continue.
 
 SLIDE 19. FREY ET AL. 2022 AAFP/AAHA: WHEN. WHITTEM 1999 AND GONZALEZ 2017: HOW.
@@ -66,7 +66,7 @@ SLIDE 20. PREP ROOM, THEN OPERATING ROOM
 SLIDE 21. #40 CLIPPER AFTER INDUCTION. FIELD 20 CM BEYOND THE PLANNED INCISION.
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.
 
-SLIDE 22. READ THE BOTTLE. CITE THE LABEL OR THE PAPER. DO NOT INVENT A FOSSUM PAGE.
+SLIDE 22. READ THE BOTTLE. CITE THE LABEL OR THE PAPER.
     SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
 
 SLIDE 23. CENTER TO PERIPHERY. DIRTY PREP, THEN STERILE PREP.
@@ -90,7 +90,7 @@ SLIDE 28. WHAT DO YOU DO NEXT?
 SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
 
-SLIDE 30. TEACHING FORM
+SLIDE 30. STAY WITH THE PATIENT
     SPEAK: Students should be able to fill this after a spay. Photograph it.
 
 SLIDE 31. SCORE PAIN. THEN TEACH THE E-COLLAR.
@@ -116,3 +116,19 @@ SLIDE 37. Key points
 
 SLIDE 38. DVM 612  ·  PRINCIPLES OF SURGERY
     SPEAK: Take questions. If none: Willie versus MoMo ASA, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.
+
+
+APPENDIX  ·  FULL REFERENCES  (hall slides use the short list)
+1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Ch. 4, 5, 6, 9. Doses and dilutions on the slides are not quoted from Fossum pages.
+2. Hendrickson DA, Baird AN. Turner and McIlwraith's Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. ISBN 978-1-118-27323-4.
+3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017 (copyright 2018). ISBN 978-0-323-32065-8.
+4. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207-1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak.
+5. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.
+6. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155.
+7. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed. Wash 2 to 4 min. Avoid eyes and mucous membranes.
+8. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1-5.
+9. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020.
+10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216.
+11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701.
+
+HALL TYPE: titles 36 pt, body 24 pt, smallest on-slide letter 20 pt (footer). 107-seat lecture hall.
