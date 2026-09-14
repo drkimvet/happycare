@@ -33,7 +33,7 @@ MUTED = RGBColor(0x5B, 0x64, 0x6E)
 SLATE = RGBColor(0x3D, 0x4A, 0x57)
 
 W, H = Inches(13.333), Inches(7.5)
-FOOTER = "DVM 612  |  Principles of Surgery  |  Week 4  |  Lewyt College of Veterinary Medicine"
+FOOTER = "DVM 612  |  Principles of Surgery  |  Preop · prep · postop  |  Lewyt College of Veterinary Medicine"
 
 prs = Presentation()
 prs.slide_width = W
@@ -229,15 +229,15 @@ add_rect(s, 0, 0, W, H, NAVY)
 add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, Inches(0), Inches(0), Inches(0.22), H, GOLD)
 add_text(s, Inches(0.75), Inches(1.15), Inches(12), Inches(0.35), "LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE", size=13, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(1.7), Inches(12), Inches(0.4), "DVM 612  ·  PRINCIPLES OF SURGERY  ·  WEEK 4", size=16, bold=True, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.7), Inches(12), Inches(0.4), "DVM 612  ·  PRINCIPLES OF SURGERY", size=16, bold=True, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(2.25), Inches(12), Inches(1.6), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(5.15), Inches(12), Inches(0.4), "Lecture  |  60 minutes  |  Semester 3", size=16, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.6), Inches(12), Inches(0.7), "Mapped to DVM 612 course learning objectives 4, 7, and 8:\nasepsis and surgical preparation · postoperative plan and discharge · monitoring and recovery.", size=14, color=WHITE)
+add_text(s, Inches(0.75), Inches(5.15), Inches(12), Inches(0.4), "Lecture  |  60 minutes", size=16, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(5.6), Inches(12), Inches(0.7), "Preoperative evaluation · patient and surgeon preparation · postoperative care.\nRunning case: Cocker Spaniel with severe otitis and vestibular disease.", size=14, color=WHITE)
 add_text(s, Inches(0.75), Inches(6.55), Inches(12), Inches(0.35), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)  ·  Hendrickson & Baird (2013)", size=12, color=GOLD)
-notes(s, "Welcome. This is Week 4 of DVM 612. Weeks 1–3 covered asepsis, sterilization, facilities, monitoring, communication, and surgery reports. Today we put the patient in the center: decide if they are a surgical candidate, prepare them and yourselves aseptically, and own the 24 hours after the last suture. One hour. Three acts. Keep Fossum nearby. Lab and OSCE will ask you to demonstrate the same prep and discharge skills.")
+notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: a Cocker Spaniel with severe otitis who is now circling, with nystagmus and knuckling. Decide if that dog is a surgical candidate today, how you would prep, and what the next 24 hours look like.")
 
 # 2 Learning objectives
-s = new_content("By the end of this hour you will be able to", "Learning objectives  ·  DVM 612 LOs 4, 7, 8")
+s = new_content("By the end of this hour you will be able to", "Learning objectives")
 items = [
     "Perform a preoperative evaluation, assign an ASA status, and decide whether to proceed, delay, or stabilize.",
     "Build a peri-operative plan: fasting, analgesia, antimicrobial prophylaxis, consent, and checklist.",
@@ -247,8 +247,8 @@ items = [
 ]
 add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(4.6), items, size=18, spacing=12)
 add_round(s, Inches(0.5), Inches(6.15), Inches(12.3), Inches(0.85), GOLD_LT)
-add_text(s, Inches(0.75), Inches(6.25), Inches(11.9), Inches(0.65), "This lecture does not teach how to cut, ligate, or close — that is Weeks 5–12. Today is judgment, asepsis, and aftercare. Poor prep cannot be rescued by elegant suture.", size=14, color=NAVY)
-notes(s, "Read the five objectives aloud. Tell students Exam 1 (Week 6) will sample this material. OSCE/lab sign-off will include patient prep and discharge writing (LO 4 and 7).")
+add_text(s, Inches(0.75), Inches(6.25), Inches(11.9), Inches(0.65), "Today is judgment, asepsis, and aftercare. Poor prep cannot be rescued by elegant suture. We will apply every section to the vestibular Cocker.", size=14, color=NAVY)
+notes(s, "Read the five objectives aloud. Tell them the Cocker is the patient we will keep coming back to.")
 
 # 3 Hour plan
 s = new_content("Sixty-minute plan", "How we will spend the hour")
@@ -257,7 +257,7 @@ plan = [
     ("3–22 min", "I. Preoperative evaluation & peri-op plan", TEAL),
     ("22–42 min", "II. Patient and surgeon preparation", GOLD),
     ("42–57 min", "III. Postoperative care, complications, discharge", GREEN),
-    ("57–60 min", "Case wrap, exam pearls, questions", RED),
+    ("57–60 min", "Cocker walk-through, key points, questions", RED),
 ]
 for i, (t, d, c) in enumerate(plan):
     y = Inches(1.25) + Inches(i * 1.05)
@@ -265,7 +265,7 @@ for i, (t, d, c) in enumerate(plan):
     add_rect(s, Inches(0.55), y, Inches(0.14), Inches(0.92), c)
     add_text(s, Inches(0.95), y + Inches(0.12), Inches(2.3), Inches(0.68), t, size=18, bold=True, color=c, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(3.4), y + Inches(0.12), Inches(9.0), Inches(0.68), d, size=18, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Keep a visible timer. If discussion runs, protect Part II (prep) — that is what lab and OSCE actually watch.")
+notes(s, "Keep a visible timer. If discussion runs, protect Part II (prep) and the Cocker case.")
 
 # 4 Why it matters
 s = new_content("Why this hour is not optional", "Surgical site infection, harm, and professional standard")
@@ -282,7 +282,7 @@ add_bullets(s, Inches(0.75), Inches(4.4), Inches(11.8), Inches(2.3), [
 notes(s, "DVM 612 will hold you to this: a beautiful closure that bleeds in recovery is a failed surgery. The first 24 hours are part of the operation.")
 
 # 5 Halsted
-s = new_content("Halsted’s principles — the through-line for today", "Week 1 recap that you will apply, not recite")
+s = new_content("Halsted’s principles — the through-line for today", "Every principle has a preop or postop action, not only an intraoperative one")
 principles = [
     ("Gentle tissue handling", "Prep trauma, clipper burn, and crushing towel clamps are tissue handling."),
     ("Meticulous hemostasis", "Preop coagulopathy; postop hemorrhage is a 24-hour emergency."),
@@ -290,7 +290,7 @@ principles = [
     ("Strict asepsis", "Patient prep, surgeon prep, draping — today’s center of gravity."),
     ("No tension", "Plan incision location and closure now, not after the fascia splits."),
     ("Accurate apposition", "Postop incision care protects the apposition you create."),
-    ("Obliterate dead space", "Drains and bandages (Week 15) start with today’s wound plan."),
+    ("Obliterate dead space", "Plan dead space now: sutures, bandage, or a drain with a written pull plan."),
 ]
 for i, (t, d) in enumerate(principles):
     col = i % 2
@@ -313,7 +313,7 @@ s = new_content("The perioperative continuum", "One patient, three rooms, one su
 stages = [
     ("PRE-OP", "History, PE, ASA\nLabs, stabilize\nConsent, plan\nAnalgesia, Abx", TEAL),
     ("PREP", "Clip after induction\nDirty then sterile prep\nPosition, drape\nGown, closed glove", GOLD),
-    ("INTRA-OP", "Asepsis held\nHalsted applied\nTime, temp, pain\n(Weeks 5–12)", NAVY),
+    ("INTRA-OP", "Asepsis held\nHalsted applied\nTime, temp, pain", NAVY),
     ("POST-OP", "Airway, pain, heat\nWatch 24 hours\nReport + discharge\nRecheck plan", GREEN),
 ]
 for i, (t, b, c) in enumerate(stages):
@@ -447,7 +447,7 @@ add_bullets(s, Inches(4.9), Inches(1.85), Inches(7.6), Inches(4.5), [
     "Consent: persistent head tilt, deafness, facial paralysis, Horner’s, need for TECA if medical therapy fails.",
     "Delay any unrelated elective procedure until the dog can walk a straight line and eat.",
 ], size=14, spacing=6)
-notes(s, "This is the ASA III teaching case for Exam 1. Punchline: vestibular + severe otitis is moderate/severe compensated disease. You may still anesthetize — for CT, flush, or TECA — but you do not treat the dog like a healthy spay. No Animax-style aminoglycoside in a suspect inner ear. No NSAID after DexSP.")
+notes(s, "Punchline: vestibular plus severe otitis is compensated moderate-to-severe disease — ASA III. You may still anesthetize for CT, flush, or TECA, but you do not treat this dog like a healthy spay. No aminoglycoside ointment in a suspect inner ear. No NSAID after DexSP.")
 
 # 13 Labs
 s = new_content("Preoperative diagnostics — indicated, not automatic", "Request the minimum tests this patient and this procedure actually need")
@@ -498,10 +498,10 @@ add_bullets(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.4), [
     "Always ask what was eaten this morning. Clients feed ‘just a biscuit.’",
     "Diabetics: coordinate insulin and a small meal with anesthesia — do not improvise.",
 ], size=14, spacing=8)
-notes(s, "I teach AAHA-style 4–6 h for healthy small animals as best practice, and I tell them older exam banks may still say overnight NPO. Ruminant contrast prevents a species-blind answer on Exam 1.")
+notes(s, "Teach AAHA-style 4–6 h for healthy small animals as best practice. Older sources still say overnight NPO — explain aspiration vs hypoglycemia. Ruminants are a different physiology, not a different lecture.")
 
 # 16 Consent
-s = new_content("Informed consent is a surgical skill", "DVM 612 / CC8  ·  Week 3 communication continues here")
+s = new_content("Informed consent is a surgical skill", "If you did not say it, you did not consent")
 add_bullets(s, Inches(0.5), Inches(1.2), Inches(7.5), Inches(5.5), [
     "Procedure name in plain language, and the reason.",
     "Benefits, alternatives (including no surgery), and what happens if we wait.",
@@ -543,14 +543,14 @@ add_bullets(s, Inches(7.05), Inches(1.9), Inches(5.55), Inches(4.5), [
 notes(s, "Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students.")
 
 # 18 Abx
-s = new_content("Surgical antimicrobial prophylaxis — stewardship, not ritual", "AAHA/AAFP 2022  ·  DVM 613 will thank you")
+s = new_content("Surgical antimicrobial prophylaxis — stewardship, not ritual", "AAHA/AAFP 2022")
 add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), GREEN_LT)
 add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.45), "Usually NO prophylaxis", size=18, bold=True, color=GREEN)
 add_text(s, Inches(0.75), Inches(1.9), Inches(5.6), Inches(4.4), "Clean procedures with excellent asepsis:\n• Elective OHE / castration\n• Most clean mass removals\n• Many short soft-tissue surgeries\n\nAntibiotics are not a substitute for sterile technique, Halsted, or a dry field.\n\nOngoing postoperative antibiotics are rarely required after an uncomplicated clean surgery.", size=15, color=INK)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
 add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.45), "YES — timed IV, then stop", size=18, bold=True, color=RED)
 add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "Give 30–60 min before incision; redose (e.g. cefazolin ~q90 min) if surgery is long or blood loss is large.\n\nConsider if:\n• Clean-contaminated / contaminated / dirty\n• Implant (orthopedic, mesh)\n• Hollow viscus entry\n• Prolonged surgery or known break in asepsis\n• Patient immunocompromised\n• Infection would be catastrophic (some neuro/implant cases — still think, don’t reflex)", size=15, color=INK)
-notes(s, "High-yield Exam 1 slide. Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.")
+notes(s, "Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.")
 
 # 19 Preop check
 s = new_content("Knowledge check — preoperative", "Answer before we walk to the prep room")
@@ -570,10 +570,10 @@ notes(s, "Take 2 minutes. Then move. Do not let this become a 10-minute debate."
 
 # SECTION II
 s = new_section("Part II  ·  22–42 minutes", "Patient and surgeon\npreparation", "Clip · antiseptic · position · four-quadrant drape · scrub · gown · closed glove · asepsis", "~20 minutes")
-notes(s, "This is the skill cluster lab will watch: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. Lost asepsis that nobody names is how patients get SSI.")
+notes(s, "This is the skill cluster for this hour: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. Lost asepsis that nobody names is how patients get SSI.")
 
 # 21 Prep scoring map
-s = new_content("What we actually score in patient and surgeon prep", "DVM 612 laboratory and OSCE — same skills you will use every surgery day")
+s = new_content("What we actually check in patient and surgeon prep", "The same six boxes every time you take a patient to surgery")
 add_text(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.4), "Patient preparation", size=16, bold=True, color=TEAL)
 p_items = [("Hair removal", "Clipper, not razor. Adequate field. No clipper burn / missed patches in the field."),
            ("Skin preparation", "Dirty prep then sterile prep. Contact time. Center → periphery. No pooling / wicking."),
@@ -584,11 +584,11 @@ for i, (t, d) in enumerate(p_items):
 add_text(s, Inches(0.5), Inches(3.85), Inches(12.3), Inches(0.35), "Surgeon preparation", size=16, bold=True, color=GOLD)
 s_items = [("Scrubbing & attire", "Cap, mask, clean scrubs. Timed or brushless surgical scrub. Hands above elbows."),
            ("Gowning / gloving", "Sterile gown. Closed gloving preferred. Know open gloving for reglove."),
-           ("Draping", "Four-quadrant draping is the DVM 612 standard. Hair must not show at the drape edge. Maintain the field.")]
+           ("Draping", "Four-quadrant draping is the standard. Hair must not show at the drape edge. Maintain the field.")]
 for i, (t, d) in enumerate(s_items):
     x = Inches(0.5) + Inches(i * 4.2)
     card(s, x, Inches(4.25), Inches(4.0), Inches(2.5), t, d, accent=GOLD)
-notes(s, "Read the six scored boxes. Students should be able to name them on Exam 1 without the OHE steps mixed in.")
+notes(s, "Read the six boxes. Students should be able to name them without mixing in the cutting steps.")
 
 # 22 Sequence
 s = new_content("Sequence — do not invert the rooms", "Prep room is dirty. OR is sterile. The dog moves once.")
@@ -632,7 +632,7 @@ notes(s, "Demonstrate with hands on your own abdomen if no model. Missed hair at
 s = new_content("Know the field before you pick up the clippers", "If you cannot describe the field, you are not ready to cut")
 fields = [
     ("Canine OHE / celiotomy", "Xiphoid → pubis, widely lateral past nipples. Dorsal recumbency."),
-    ("Canine castration (prescrotal)", "Scrotum ± prescrotal abdomen; some surgeons shave scrotum, some don’t — know lab SOP. Clip wide enough for drape."),
+    ("Canine castration (prescrotal)", "Scrotum ± prescrotal abdomen; some surgeons shave scrotum, some don’t — follow your hospital SOP. Clip wide enough for drape."),
     ("Feline castration", "Pluck or clip scrotum per SOP. Still aseptic skin prep."),
     ("Canine castration (scrotal ablation)", "Wider perineal/scrotal field; purse-string anus if needed."),
     ("Limb / orthopedic", "Joint above to joint below; hang limb; stirrup; circumferential prep (‘around the world’)."),
@@ -663,7 +663,7 @@ add_round(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(5.5), WHITE)
 add_rect(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(0.7), NAVY)
 add_text(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(0.7), "Alcohol & others", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_text(s, Inches(9.1), Inches(2.05), Inches(3.55), Inches(4.4), "Isopropyl/ethyl alcohol: rapid, no residual, flammable — no pooling near cautery.\nOften the ‘paint’ between CHG scrubs.\nDo not use alcohol on open wounds, mucous membranes, or laser/cautery pools.\nHydrogen peroxide is not a surgical prep.", size=14, color=INK)
-notes(s, "Faculty preference at LIU labs may be CHG–alcohol for trunk skin. Hammer ocular/ear contraindications — they have already seen ototoxic ear meds in other contexts.")
+notes(s, "CHG–alcohol is a common, evidence-supported choice for trunk skin when not contraindicated. Hammer ocular and middle-ear toxicity — this Cocker’s ear is exactly where CHG and aminoglycosides do harm.")
 
 # 26 Technique
 s = new_content("How to scrub the patient", "Contact time and direction matter more than the number of ‘passes’ you brag about")
@@ -697,18 +697,18 @@ for i, (t, d) in enumerate(cards):
 notes(s, "Canine OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.")
 
 # 28 Draping
-s = new_content("Four-quadrant draping", "Gown, glove, box the field, then the large drape — DVM 612 lab standard")
+s = new_content("Four-quadrant draping", "Gown, glove, box the field, then the large drape")
 add_bullets(s, Inches(0.5), Inches(1.15), Inches(7.7), Inches(5.6), [
     "Four sterile towels (or equivalent) placed to box the field: cranial, caudal, left, right. Place the near towel first so you do not reach across the dog.",
     "Towel edges cover all hair. If hair is visible, the drape is wrong — re-clip or re-drape, do not ‘tuck and hope.’",
-    "Secure (Backhaus clamps or atraumatic alternatives per lab). Do not tent the skin into the incision. Do not puncture the patient’s skin carelessly with clamps.",
+    "Secure (Backhaus clamps or atraumatic alternatives). Do not tent the skin into the incision. Do not puncture the patient’s skin carelessly with clamps.",
     "Large fenestrated or four-corner large drape over the towels. Cuff your hands. Never shake drapes over the field.",
     "Once down, the top surface is sterile; table edges and below table height are not. Hands stay on the field.",
     "If a drape is wet through (strikethrough), it is contaminated. Cover or replace.",
 ], size=15, spacing=8)
 add_round(s, Inches(8.4), Inches(1.2), Inches(4.4), Inches(5.5), GOLD_LT)
 add_text(s, Inches(8.65), Inches(1.4), Inches(4.0), Inches(0.5), "Order of operations", size=16, bold=True, color=NAVY)
-add_text(s, Inches(8.65), Inches(2.05), Inches(4.0), Inches(4.3), "1. You are gowned/gloved\n   (or a sterile assistant drapes)\n2. Towels — four quadrants\n3. Clamps\n4. Large drape\n5. Organize instruments on a sterile table\n6. Timeout\n7. Announce: ready to incise\n\nIn lab: tell your instructor before the incision.", size=15, color=INK)
+add_text(s, Inches(8.65), Inches(2.05), Inches(4.0), Inches(4.3), "1. You are gowned/gloved\n   (or a sterile assistant drapes)\n2. Towels — four quadrants\n3. Clamps\n4. Large drape\n5. Organize instruments on a sterile table\n6. Timeout\n7. Announce: ready to incise\n\nTell your assistant before the incision.", size=15, color=INK)
 notes(s, "Four-quadrant is not optional style. Demonstrate air-cuffing the drape. Hair at the edge means re-clip or re-drape.")
 
 # 29 Surgeon
@@ -723,13 +723,13 @@ items = [
 for i, (t, d) in enumerate(items):
     x = Inches(0.5) + Inches(i * 4.2)
     card(s, x, Inches(2.7), Inches(4.0), Inches(4.0), t, d, accent=GOLD)
-notes(s, "Practice gown packs in lab until it is muscle memory. Talking through a contaminated glove replacement is an Exam 1 question.")
+notes(s, "Closed gloving after gowning is preferred. Talking through a contaminated glove replacement: both gloves off if you are unsure, then start over.")
 
 # 30 Asepsis breaks
 s = new_content("Breaks in asepsis — recognize, announce, fix", "If you contaminate and stay silent, the patient pays")
 add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
 add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Before the incision (prep / drape)", size=16, bold=True, color=TEAL)
-add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.4), "If YOU contaminate yourself or the field: say it immediately and correct (re-glove, re-gown, re-drape).\n\nIn lab we will stop you once to teach the correction if you miss it.\n\nA second unrecognized break means you cannot maintain an aseptic field — that lab is over.\n\nThis is how we protect a client-owned animal, not a game of gotcha.", size=15, color=INK)
+add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.4), "If YOU contaminate yourself or the field: say it immediately and correct (re-glove, re-gown, re-drape).\n\nName it once, fix it completely.\n\nA second unrecognized break means you cannot maintain an aseptic field — stop.\n\nThis is how we protect a client-owned animal, not a game of gotcha.", size=15, color=INK)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
 add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "After the incision is made", size=16, bold=True, color=RED)
 add_text(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.4), "Once the incision is made, there is no free pass.\n\nYou must notice, announce, and completely correct.\n\nIf you do not, or if you correct incompletely, you have put the animal at risk.\n\nExamples: sleeve in the abdomen, instrument off the table used again, hole in glove ignored, dripping sweat onto the field.", size=15, color=INK)
@@ -747,7 +747,7 @@ ev = [
 add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(4.2), ev, size=18, spacing=12)
 add_round(s, Inches(0.5), Inches(5.6), Inches(12.3), Inches(1.35), GOLD_LT)
 add_text(s, Inches(0.75), Inches(5.75), Inches(11.8), Inches(1.05), "The operation is not over when the last skin suture is placed. Intra-abdominal hemorrhage from poor ligation, or herniation from a weak linea, can kill the patient after you have left the OR. That is why postoperative care is part of this lecture.", size=15, color=NAVY)
-notes(s, "Connect #1, #2, #3 to today’s lecture. Intra-op details (#4) are later weeks, but ureter injury is a positioning/exposure/identification problem that starts with a calm, well-prepped patient.")
+notes(s, "Connect hemorrhage, closure, and asepsis to this hour. Ureter injury is a calm, well-prepped, well-exposed patient problem.")
 
 # 32 Prep check
 s = new_content("Knowledge check — preparation", "Which of these is acceptable?")
@@ -808,7 +808,7 @@ add_bullets(s, Inches(7.05), Inches(1.95), Inches(5.55), Inches(4.5), [
     "Client: how to give meds, what sedation vs. pain looks like, when to call.",
     "Dysphoria ≠ pain, but treat pain first if unsure.",
 ], size=15, spacing=8)
-notes(s, "Course CC3. Mention they will practice scoring in skills labs. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, concurrent steroids.")
+notes(s, "Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — the Cocker already got DexSP.")
 
 # 36 Wound
 s = new_content("The incision after you leave it", "Protect the apposition you just created")
@@ -817,7 +817,7 @@ items = [
     ("Lick", "E-collar, suit, or inflatable — whatever actually stays on. Licking is the leading cause of dehiscence in student surgeries."),
     ("Motion", "Leash only. No running, jumping, wrestling, stairs unsupervised. Exercise restriction is a prescription, not a suggestion."),
     ("Clean", "Usually no topical ointment unless directed. Do not scrub with CHG daily. Clean dirt with saline if needed."),
-    ("Drain", "If placed (Week 15): output, site, when to pull. Never send a drain without a written plan."),
+    ("Drain", "If placed: record output, site, and when to pull. Never send a drain without a written plan."),
     ("Suture/staple", "Typically 10–14 days for skin in small animals if healing is routine. Absorbable intradermal: still recheck."),
 ]
 for i, (t, d) in enumerate(items):
@@ -850,7 +850,7 @@ for i, (t, d, c) in enumerate(rows):
 notes(s, "Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.")
 
 # 38 Report
-s = new_content("Surgical report — if it is not written, it was not done", "DVM 612 LO 7  ·  Week 3 reports, applied today")
+s = new_content("Surgical report — if it is not written, it was not done", "The next doctor at 2 a.m. is your audience")
 left = [
     "Date/time, patient ID, surgeon, assistant, anesthesia.",
     "Preop diagnosis and ASA.",
@@ -869,10 +869,10 @@ add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.9), Inches(4.5), left, size=15
 add_round(s, Inches(7.05), Inches(1.2), Inches(5.75), Inches(5.5), NAVY)
 add_text(s, Inches(7.3), Inches(1.45), Inches(5.3), Inches(0.4), "Why the next doctor cares", size=16, bold=True, color=GOLD)
 add_text(s, Inches(7.3), Inches(2.05), Inches(5.3), Inches(4.3), "At 2 a.m. someone will open this record because the abdomen is swelling.\n\nThey need: how the pedicles were ligated, whether a sponge count was complete, what suture is in the linea, and whether the client was already called.\n\nOperate as if that night-call is tonight.", size=16, color=WHITE)
-notes(s, "LO 7. Lab assignment later: write a report and discharge for the model/cadaver/live lab. Show them you grade completeness, not handwriting art.")
+notes(s, "Grade completeness. For the Cocker: neuro exam, ASA III, TM status, DexSP already given, no NSAID, imaging plan.")
 
 # 39 Discharge
-s = new_content("Discharge instructions — LO 7 in the client’s language", "Verbal + written. Teach-back. One caregiver demonstrates the e-collar.")
+s = new_content("Discharge instructions — in the client’s language", "Verbal + written. Teach-back. One caregiver demonstrates the e-collar.")
 must = [
     "What we did, in one sentence.",
     "When to start food and water, and how much.",
@@ -917,7 +917,7 @@ card(s, Inches(8.9), Inches(1.2), Inches(3.9), Inches(5.5), "Other systems", "Ur
 notes(s, "Cats and food. Diabetics and insulin. Short.")
 
 # 42 LA teaser
-s = new_content("Large animal footnote (Week 13 will go deep)", "Same principles; different dirt, restraint, and recovery")
+s = new_content("Large animal — same principles, different dirt", "Field surgery is still Halsted; it is not an excuse to skip clip, gloves, and a drape")
 add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(5.5), [
     "Field surgery can be aseptic, not ‘sterile theater.’ Clip, wash, sterile gloves/instruments, and a drape still prevent SSI in a castration or displaced abomasum.",
     "Standing sedation vs. general anesthesia changes aspiration, padding, and recovery risk (especially horses).",
@@ -926,28 +926,28 @@ add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(5.5), [
     "Antimicrobial use in food animals has residue and regulatory obligations — prophylaxis is not a default pour-on.",
     "Discharge is often a producer conversation: milk withhold, slaughter withhold, when the animal can rejoin the group.",
 ], size=17, spacing=10)
-notes(s, "Do not lecture LA for 10 minutes. Plant the flag that Halsted travels to the barn.")
+notes(s, "One minute. Halsted travels to the barn. Then get back to the Cocker.")
 
-# 43 Integrated case
-s = new_content("Integrated case — 8 minutes", "You are the surgeon. The anesthesia student has the dog ready for you.")
+# 43 Integrated case — the Cocker
+s = new_content("Walk the Cocker through the whole hour", "You are the surgeon. Client is in reception.")
 add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.55), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.3), Inches(11.8), Inches(1.25), "1-year-old female Labrador, 22 kg, BCS 5/9. Elective OHE. PE normal. PCV 45%, TS 6.8 g/dL. Last meal 5 hours ago. Client is in reception. Client-owned animal, going home after recovery.", size=16, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.3), Inches(11.8), Inches(1.25), "Adult Cocker Spaniel. Severe otitis externa. Canal patent. TM intact. DexSP already given. Circling left, nystagmus, knuckling right. Cardiovascularly stable, walking. This is ASA III. Client-owned. Going home after recovery — if you decide recovery is in the hospital tonight.", size=15, color=NAVY)
 steps = [
-    ("Pre-op", "ASA I. Consent + DNR. No routine Abx. Opioid + NSAID plan + line block. Checklist."),
-    ("Prep", "Clip xiphoid–pubis after plane is surgical. Dirty prep → OR → dorsal → sterile prep → four-quadrant drape. Closed glove."),
-    ("Intra", "Announce incision. Halsted. Show pedicles before you drop them. Secure linea. Skin closure you can defend."),
-    ("Post", "Rewarm, score pain, e-collar. Watch color/HR. Written discharge + ER list. Recheck 10–14 d. You are still responsible at hour 23."),
+    ("Pre-op", "ASA III. Neuro exam. No NSAID (DexSP on board). No aminoglycoside in the ear. Culture. CT/MRI before TECA. Antibiotics are treatment, not clean prophylaxis. Consent: head tilt, deafness, facial nerve."),
+    ("Prep", "Only after a surgical plane. Clip the intended field (ear/bulla vs TECA). Dirty then sterile prep. CHG off the canal/ear and off the eye. Position padded — this dog falls. Four-quadrant drape. Closed glove."),
+    ("Intra", "Timeout. Maintain asepsis. If you contaminate, say it and fix it. Do not treat this like a 20-minute spay."),
+    ("Post", "Airway, temp, pain score. No NSAID tonight. Watch for worsening vestibular signs, aspiration, incision. Written discharge + ER list. You still own hour 23."),
 ]
 for i, (t, d) in enumerate(steps):
     x = Inches(0.45) + Inches(i * 3.2)
     add_round(s, x, Inches(2.9), Inches(3.05), Inches(3.85), WHITE)
     add_rect(s, x, Inches(2.9), Inches(3.05), Inches(0.55), NAVY)
     add_text(s, x, Inches(2.9), Inches(3.05), Inches(0.55), t, size=14, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.15), Inches(3.55), Inches(2.75), Inches(3.0), d, size=13, color=INK)
-notes(s, "Walk it without taking questions until the end. This is the mental movie for lab.")
+    add_text(s, x + Inches(0.15), Inches(3.55), Inches(2.75), Inches(3.0), d, size=12, color=INK)
+notes(s, "Walk this without questions until the end. Contrast in one sentence: a healthy Lab OHE is ASA I and gets no routine antibiotics. This Cocker is the opposite.")
 
-# 44 Exam pearls
-s = new_content("Exam 1 pearls", "If you remember six things, remember these")
+# 44 Key points
+s = new_content("Key points from this hour", "If you remember six things, remember these")
 pearls = [
     "ASA is assigned after today’s PE and labs. Vestibular Cocker + severe otitis = ASA III, not a healthy ear flush.",
     "Elective clean OHE: no routine postoperative antibiotics.",
@@ -962,7 +962,7 @@ for i, t in enumerate(pearls):
     add_rect(s, Inches(0.5), y, Inches(0.7), Inches(0.8), GOLD)
     add_text(s, Inches(0.5), y, Inches(0.7), Inches(0.8), str(i + 1), size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.4), y, Inches(11.1), Inches(0.8), t, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "These six are fair game for MCQ and short answer. Stop here if time is gone.")
+notes(s, "Stop here if time is gone. The Cocker is the ASA III they should be able to defend.")
 
 # 45 Summary
 s = new_content("Take-home", "Prepare the patient. Prepare yourself. Own the next 24 hours.")
@@ -971,27 +971,26 @@ add_text(s, Inches(0.85), Inches(1.6), Inches(11.6), Inches(4.8), "Preoperative 
 notes(s, "Close the loop to slide 1.")
 
 # 46 References
-s = new_content("References & source map", "What to read tonight")
+s = new_content("References", "Sources used in this lecture")
 add_bullets(s, Inches(0.5), Inches(1.15), Inches(12.2), Inches(5.6), [
-    "Fossum T.W. Small Animal Surgery. 5th ed. Elsevier; 2018. — preoperative evaluation, patient prep, postop care chapters (required).",
-    "Hendrickson D.A., Baird A.N. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. (required)",
+    "Fossum T.W. Small Animal Surgery. 5th ed. Elsevier; 2018. Preoperative evaluation, patient preparation, postoperative care.",
+    "Hendrickson D.A., Baird A.N. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013.",
     "Johnston S.A., Tobias K.M. Veterinary Surgery: Small Animal. 2nd ed. Elsevier; 2017.",
     "AAHA/AAFP Antimicrobial Stewardship Guidelines, 2022 — surgical prophylaxis.",
     "AAHA Anesthesia and Monitoring Guidelines (current edition) — fasting, PE, monitoring, recovery.",
-    "LIU Lewyt CVM. DVM 612 Principles of Surgery course outline (Week 4 topic; LOs 4, 7, 8).",
 ], size=15, spacing=8)
-notes(s, "Point to Fossum as the night-before reading.")
+notes(s, "Fossum is the text behind this hour.")
 
 # 47 Questions
 s = prs.slides.add_slide(BLANK)
 add_rect(s, 0, 0, W, H, NAVY)
 add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, 0, 0, Inches(0.22), H, GOLD)
-add_text(s, Inches(0.75), Inches(2.3), Inches(12), Inches(0.5), "DVM 612  ·  WEEK 4", size=16, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(2.3), Inches(12), Inches(0.5), "DVM 612  ·  PRINCIPLES OF SURGERY", size=16, bold=True, color=GOLD)
 add_text(s, Inches(0.75), Inches(2.85), Inches(12), Inches(1.2), "Questions", size=54, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(4.3), Inches(12), Inches(1.0), "Next lab: practice the clip–prep–drape sequence on models until it is boring.\nBoring is the goal. Excitement belongs to the pathology, not the asepsis.", size=18, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(4.3), Inches(12), Inches(1.0), "If there are no questions: what would you do differently for the Cocker\nthan for a healthy Labrador spay?", size=18, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(6.3), Inches(12), Inches(0.4), "Lewyt College of Veterinary Medicine  ·  Long Island University", size=14, color=GOLD)
-notes(s, "Take questions. If none: ‘What will you do differently on your next observed prep?’ Dismiss on time.")
+notes(s, "Take questions. If none: what would you do differently for the Cocker than for a healthy Labrador spay? Dismiss on time.")
 
 # Stamp numbers
 stamp_footers()

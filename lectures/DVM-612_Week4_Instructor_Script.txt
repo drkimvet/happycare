@@ -1,14 +1,15 @@
-DVM 612 Week 4 instructor script (updated, no ECFVG)
+DVM 612 Principles of Surgery — Preop, prep, postop
+Instructor script
 
 
-SLIDE 1. DVM 612 · PRINCIPLES OF SURGERY · WEEK 4
-    SPEAK: Welcome. This is Week 4 of DVM 612. Weeks 1–3 covered asepsis, sterilization, facilities, monitoring, communication, and surgery reports. Today we put the patient in the center: decide if they are a surgical candidate, prepare them and yourselves aseptically, and own the 24 hours after the last suture. One hour. Three acts. Keep Fossum nearby. Lab and OSCE will ask you to demonstrate the same prep and discharge skills.
+SLIDE 1. DVM 612 · PRINCIPLES OF SURGERY
+    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: a Cocker Spaniel with severe otitis who is now circling, with nystagmus and knuckling. Decide if that dog is a surgical candidate today, how you would prep, and what the next 24 hours look like.
 
 SLIDE 2. By the end of this hour you will be able to
-    SPEAK: Read the five objectives aloud. Tell students Exam 1 (Week 6) will sample this material. OSCE/lab sign-off will include patient prep and discharge writing (LO 4 and 7).
+    SPEAK: Read the five objectives aloud. Tell them the Cocker is the patient we will keep coming back to.
 
 SLIDE 3. Sixty-minute plan
-    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) — that is what lab and OSCE actually watch.
+    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) and the Cocker case.
 
 SLIDE 4. Why this hour is not optional
     SPEAK: DVM 612 will hold you to this: a beautiful closure that bleeds in recovery is a failed surgery. The first 24 hours are part of the operation.
@@ -41,7 +42,7 @@ SLIDE 13. Real ASA III case — Cocker Spaniel with vestibular disease
     SPEAK: This is a real peri-operative patient, not a cartoon. Spend 90 seconds. Cockers plus dirty ears plus new circling is otitis media/interna until proven otherwise. Intact TM is good news for topical safety only if you are sure the middle ear is not involved — you are not sure. Knuckling vs drunk vestibular ataxia: have a student demonstrate paw placing. If placing is truly delayed, do not call this ‘just an ear’ and induce for a TECA tonight.
 
 SLIDE 14. Why this dog is ASA III — and what changes today
-    SPEAK: This is the ASA III teaching case for Exam 1. Punchline: vestibular + severe otitis is moderate/severe compensated disease. You may still anesthetize — for CT, flush, or TECA — but you do not treat the dog like a healthy spay. No Animax-style aminoglycoside in a suspect inner ear. No NSAID after DexSP.
+    SPEAK: Punchline: vestibular plus severe otitis is compensated moderate-to-severe disease — ASA III. You may still anesthetize for CT, flush, or TECA, but you do not treat this dog like a healthy spay. No aminoglycoside ointment in a suspect inner ear. No NSAID after DexSP.
 
 SLIDE 15. Preoperative diagnostics — indicated, not automatic
     SPEAK: Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. Know your hospital policy and be able to defend it.
@@ -50,7 +51,7 @@ SLIDE 16. Stabilize before you sterilize
     SPEAK: One sentence: resuscitation is not delayed for clipping. Elective OHE is delayed for pyoderma. GDV is not delayed for a dental cleaning that was also booked.
 
 SLIDE 17. Fasting — traditional teaching vs. current practice
-    SPEAK: I teach AAHA-style 4–6 h for healthy small animals as best practice, and I tell them older exam banks may still say overnight NPO. Ruminant contrast prevents a species-blind answer on Exam 1.
+    SPEAK: Teach AAHA-style 4–6 h for healthy small animals as best practice. Older sources still say overnight NPO — explain aspiration vs hypoglycemia. Ruminants are a different physiology, not a different lecture.
 
 SLIDE 18. Informed consent is a surgical skill
     SPEAK: Students under-consent electives. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR explicitly.
@@ -59,16 +60,16 @@ SLIDE 19. Checklist and the analgesia plan belong in preop
     SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students.
 
 SLIDE 20. Surgical antimicrobial prophylaxis — stewardship, not ritual
-    SPEAK: High-yield Exam 1 slide. Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.
+    SPEAK: Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.
 
 SLIDE 21. Knowledge check — preoperative
     SPEAK: Take 2 minutes. Then move. Do not let this become a 10-minute debate.
 
 SLIDE 22. Patient and surgeon preparation
-    SPEAK: This is the skill cluster lab will watch: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. Lost asepsis that nobody names is how patients get SSI.
+    SPEAK: This is the skill cluster for this hour: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. Lost asepsis that nobody names is how patients get SSI.
 
-SLIDE 23. What we actually score in patient and surgeon prep
-    SPEAK: Read the six scored boxes. Students should be able to name them on Exam 1 without the OHE steps mixed in.
+SLIDE 23. What we actually check in patient and surgeon prep
+    SPEAK: Read the six boxes. Students should be able to name them without mixing in the cutting steps.
 
 SLIDE 24. Sequence — do not invert the rooms
     SPEAK: Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before a surgical plane — patient wakes, contaminates, gets clipper lacerations.
@@ -80,7 +81,7 @@ SLIDE 26. Know the field before you pick up the clippers
     SPEAK: One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.
 
 SLIDE 27. Skin antiseptics — choose with anatomy, not loyalty
-    SPEAK: Faculty preference at LIU labs may be CHG–alcohol for trunk skin. Hammer ocular/ear contraindications — they have already seen ototoxic ear meds in other contexts.
+    SPEAK: CHG–alcohol is a common, evidence-supported choice for trunk skin when not contraindicated. Hammer ocular and middle-ear toxicity — this Cocker’s ear is exactly where CHG and aminoglycosides do harm.
 
 SLIDE 28. How to scrub the patient
     SPEAK: If time, mime the spiral on the lectern. Mention hanging-limb prep: start at incision, work distally toward the dirty foot, then the wrapped foot is handed off.
@@ -92,13 +93,13 @@ SLIDE 30. Four-quadrant draping
     SPEAK: Four-quadrant is not optional style. Demonstrate air-cuffing the drape. Hair at the edge means re-clip or re-drape.
 
 SLIDE 31. Surgeon preparation
-    SPEAK: Practice gown packs in lab until it is muscle memory. Talking through a contaminated glove replacement is an Exam 1 question.
+    SPEAK: Closed gloving after gowning is preferred. Talking through a contaminated glove replacement: both gloves off if you are unsure, then start over.
 
 SLIDE 32. Breaks in asepsis — recognize, announce, fix
     SPEAK: Culture in lab: we praise people who say I just contaminated my sleeve. We do not praise silent heroics.
 
 SLIDE 33. Never-events — these stop the surgery
-    SPEAK: Connect #1, #2, #3 to today’s lecture. Intra-op details (#4) are later weeks, but ureter injury is a positioning/exposure/identification problem that starts with a calm, well-prepped patient.
+    SPEAK: Connect hemorrhage, closure, and asepsis to this hour. Ureter injury is a calm, well-prepped, well-exposed patient problem.
 
 SLIDE 34. Knowledge check — preparation
     SPEAK: C is the safety slide. D is the nuanced yes.
@@ -110,7 +111,7 @@ SLIDE 36. Immediate recovery — the surgery is not over
     SPEAK: ABC plus temperature plus pain. Hemorrhage speech: do not send a pale recovering OHE to the kennel because ‘she’s just groggy.’
 
 SLIDE 37. Pain assessment is a vital sign
-    SPEAK: Course CC3. Mention they will practice scoring in skills labs. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, concurrent steroids.
+    SPEAK: Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — the Cocker already got DexSP.
 
 SLIDE 38. The incision after you leave it
     SPEAK: Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’
@@ -119,9 +120,9 @@ SLIDE 39. The first 24 hours — what fails a surgery after the OR
     SPEAK: Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.
 
 SLIDE 40. Surgical report — if it is not written, it was not done
-    SPEAK: LO 7. Lab assignment later: write a report and discharge for the model/cadaver/live lab. Show them you grade completeness, not handwriting art.
+    SPEAK: Grade completeness. For the Cocker: neuro exam, ASA III, TM status, DexSP already given, no NSAID, imaging plan.
 
-SLIDE 41. Discharge instructions — LO 7 in the client’s language
+SLIDE 41. Discharge instructions — in the client’s language
     SPEAK: Role-play one sentence: ‘If the incision opens and you see fat or intestine, cover with a clean wet towel and come now.’ Students write too much physiology and too few phone numbers.
 
 SLIDE 42. When to come back tonight — teach this verbatim
@@ -130,20 +131,20 @@ SLIDE 42. When to come back tonight — teach this verbatim
 SLIDE 43. Fluids, feeding, and the rest of the animal
     SPEAK: Cats and food. Diabetics and insulin. Short.
 
-SLIDE 44. Large animal footnote (Week 13 will go deep)
-    SPEAK: Do not lecture LA for 10 minutes. Plant the flag that Halsted travels to the barn.
+SLIDE 44. Large animal — same principles, different dirt
+    SPEAK: One minute. Halsted travels to the barn. Then get back to the Cocker.
 
-SLIDE 45. Integrated case — 8 minutes
-    SPEAK: Walk it without taking questions until the end. This is the mental movie for lab.
+SLIDE 45. Walk the Cocker through the whole hour
+    SPEAK: Walk this without questions until the end. Contrast in one sentence: a healthy Lab OHE is ASA I and gets no routine antibiotics. This Cocker is the opposite.
 
-SLIDE 46. Exam 1 pearls
-    SPEAK: These six are fair game for MCQ and short answer. Stop here if time is gone.
+SLIDE 46. Key points from this hour
+    SPEAK: Stop here if time is gone. The Cocker is the ASA III they should be able to defend.
 
 SLIDE 47. Take-home
     SPEAK: Close the loop to slide 1.
 
-SLIDE 48. References & source map
-    SPEAK: Point to Fossum as the night-before reading.
+SLIDE 48. References
+    SPEAK: Fossum is the text behind this hour.
 
 SLIDE 49. Questions
-    SPEAK: Take questions. If none: ‘What will you do differently on your next observed prep?’ Dismiss on time.
+    SPEAK: Take questions. If none: what would you do differently for the Cocker than for a healthy Labrador spay? Dismiss on time.
