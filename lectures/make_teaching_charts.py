@@ -396,9 +396,127 @@ def kit_sheet():
     print("wrote", path)
 
 
+def wrap_text(text, f, max_w):
+    words = str(text).replace("/", " / ").split()
+    lines, cur = [], ""
+    for w in words:
+        trial = (cur + " " + w).strip()
+        if f.getlength(trial) <= max_w:
+            cur = trial
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines or [""]
+
+
+def cell_wrap(d, x0, y0, x1, y1, text, *, fill=WHITE, fg=INK, size=12, bold=False):
+    d.rectangle([x0, y0, x1, y1], fill=fill, outline=LINE, width=1)
+    f = font(size, bold)
+    lines = wrap_text(text, f, x1 - x0 - 14)
+    line_h = size + 3
+    total = line_h * min(len(lines), 4)
+    ty = (y0 + y1) / 2 - total / 2 + line_h / 2
+    for line in lines[:4]:
+        d.text(((x0 + x1) / 2, ty), line, font=f, fill=fg, anchor="mm")
+        ty += line_h
+
+
+def asa_lab_table(filename, title, subtitle, headers, rows):
+    W, H = 2400, 1350
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    draw_header(d, W, title, subtitle)
+
+    cols = ["Finding", "Status 1", "Status 2", "Status 3", "Status 4", "Status 5"]
+    col_fills = [NAVY, GREEN, TEAL, GOLD, RED, NAVY]
+    x0 = 20
+    x1 = W - 20
+    widths = [280, 350, 350, 380, 430, 370]
+    # normalize to x1-x0
+    scale = (x1 - x0) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    y = 100
+    row_h = int((H - 160) / (len(rows) + 1))
+    xs = [x0]
+    for w in widths:
+        xs.append(xs[-1] + w)
+
+    for c, (lab, fill) in enumerate(zip(cols, col_fills)):
+        cell_wrap(d, xs[c], y, xs[c + 1], y + row_h, lab, fill=fill, fg=WHITE, size=16, bold=True)
+    y += row_h
+    stripe = [(255, 255, 255), (236, 242, 244)]
+    for r, row in enumerate(rows):
+        for c, val in enumerate(row):
+            if c == 0:
+                fill, fg, bold, size = NAVY, WHITE, True, 13
+            else:
+                fill, fg, bold, size = stripe[r % 2], INK, False, 12
+            cell_wrap(d, xs[c], y, xs[c + 1], y + row_h, val, fill=fill, fg=fg, size=size, bold=bold)
+        y += row_h
+
+    d.rectangle([20, H - 52, W - 20, H - 16], fill=GOLD)
+    d.text(
+        (W / 2, H - 34),
+        "Working teaching bands — they inform ASA; they do not replace today’s PE. Isolated numbers ≠ automatic Status. Venous EPOC pO2 is not arterial pO2.",
+        font=font(14, True),
+        fill=NAVY,
+        anchor="mm",
+    )
+    path = OUT / filename
+    im.save(path, "PNG")
+    print("wrote", path)
+
+
+def cbc_chem_asa():
+    asa_lab_table(
+        "asa_cbc_chem.png",
+        "CBC and chemistry → ASA Status",
+        "Working teaching table  ·  use with today’s PE  ·  DVM 612",
+        None,
+        [
+            ["CBC", "Normal", "Mild anemia / leukogram change", "Moderate anemia / inflammatory disease", "Severe anemia, marked thrombocytopenia, severe inflammatory / septic pattern", "Massive hemorrhage / severe marrow / sepsis with instability"],
+            ["PCV", "Normal", "30–34% dog / 25–29% cat", "20–29% dog / 15–24% cat", "<20% dog / <15% cat", "Profound + shock"],
+            ["Platelets", "Normal", "100–150 K", "50–99 K", "<50 K", "<30 K + active bleeding"],
+            ["WBC", "Normal", "Mild deviation", "Moderate deviation", "Severe deviation + systemic disease", "Severe sepsis / leukopenia + shock"],
+            ["Creatinine", "Normal", "Mild ↑", "Moderate ↑ / CKD", "Severe ↑ + uremia", "Severe renal failure + shock"],
+            ["BUN", "Normal", "Mild ↑", "Moderate ↑", "Severe ↑ + uremia", "Severe + multisystem failure"],
+            ["ALT / AST", "Normal", "<2×", "2–10×", ">10× + dysfunction", "Severe hepatic failure"],
+            ["ALP", "Normal", "Mild isolated ↑", "Moderate / marked + disease", "Marked + cholestasis", "Hepatic failure"],
+            ["Bilirubin", "Normal", "Mild ↑", "Moderate ↑", "Marked ↑ + dysfunction", "Severe hepatic / hemolytic crisis"],
+            ["Albumin", "Normal", "2.0–2.5 g/dL", "1.5–1.9 g/dL", "1.0–1.4 g/dL", "<1.0 + clinical compromise"],
+            ["Glucose", "Normal", "60–70 or 120–180", "50–59 or 180–300", "<50 or >300", "<40 + instability / DKA"],
+            ["Na", "Normal", "130–139 or 156–165", "125–129 or 166–175", "120–124 or >175", "<120 + instability"],
+            ["K", "Normal", "5.1–5.5 or 3.0–3.5", "5.6–6.0 or 2.5–2.9", ">6.0 or <2.5", "Severe + ECG / shock"],
+            ["Phosphorus", "Normal", "Mild ↑", "Moderate ↑", "Severe ↑ + renal / metabolic disease", "Severe + multisystem failure"],
+        ],
+    )
+
+
+def epoc_asa():
+    asa_lab_table(
+        "asa_epoc.png",
+        "EPOC / blood gas → ASA Status",
+        "Working teaching table  ·  pH, lactate, gases, bicarbonate, base excess  ·  DVM 612",
+        None,
+        [
+            ["pH", "7.35–7.45", "7.30–7.34", "7.20–7.29", "<7.20", "Profound acidosis + shock"],
+            ["Lactate", "<2–2.5", "2.5–4", "4–6", ">6", "Very high + hypoperfusion"],
+            ["pCO₂", "Normal", "46–55", "56–65", ">65–70", "Severe ventilatory failure"],
+            ["pO₂ (arterial)", "Normal", "60–79", "40–59", "<40", "Critical hypoxemia"],
+            ["HCO₃⁻", "Normal", "16–17 or 25–28", "12–15 or 29–32", "<12 or >32", "Severe metabolic failure"],
+            ["Base excess", "−4 to +4", "−5 to −7", "−8 to −10", "≤ −10 to −12", "Profound abnormality + instability"],
+        ],
+    )
+
+
 if __name__ == "__main__":
     anesthesia_record("blank")
     anesthesia_record("willie")
     anesthesia_record("momo")
     recovery_flowsheet()
     kit_sheet()
+    cbc_chem_asa()
+    epoc_asa()

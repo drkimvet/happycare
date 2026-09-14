@@ -497,7 +497,23 @@ add_bullets(s, Inches(0.75), Inches(4.75), Inches(11.8), Inches(1.95), [
     "For abdominal surgery: consider imaging so you are not ‘exploring’ a pyometra you could have diagnosed, or a mass that needed a different approach. MoMo: POCUS/AUS cancelled the cut.",
     "Large animal: stall-side PCV/TS, fibrinogen, and physical exam often outweigh a full chemistry in the field — still document the risk conversation.",
 ], size=15, spacing=7)
-notes(s, "Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. MoMo’s rising creatinine is the example of not ignoring a test you ordered. Know your hospital policy and be able to defend it.")
+notes(s, "Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. MoMo’s rising creatinine is the example of not ignoring a test you ordered. Next two slides: CBC/chem and EPOC numbers mapped onto ASA Status. They inform the number; they do not replace the PE.")
+
+# CBC/chem → ASA
+s = new_content("CBC and chemistry → ASA Status", "Working teaching table  ·  these bands inform Status; they do not assign it by themselves")
+add_pic(s, "asa_cbc_chem.png", Inches(0.22), Inches(1.05), Inches(12.9), Inches(6.12))
+notes(s, "Ninety seconds. Point at PCV, platelets, creatinine, potassium. Willie: CBC essentially Status 1, phosphorus mild up. His Status 3-E is the vestibular exam, not the chemistry. MoMo: WBC ~26 and creatinine 3.0 then 4.71 push the lab picture into Status 3–4.")
+
+# EPOC → ASA
+s = new_content("EPOC / blood gas → ASA Status", "pH, lactate, gases, bicarbonate, base excess")
+add_pic(s, "asa_epoc.png", Inches(0.22), Inches(1.05), Inches(12.9), Inches(6.12))
+notes(s, "MoMo’s EPOC: pH 7.255 is Status 3; base excess −7.4 is Status 2; lactate 2.05 is Status 1. Do not call a venous pO2 of 33 an arterial Status 4. Whole-patient Status was still 4-E from the kidneys. Willie did not need an EPOC for an ear clean.")
+
+# Apply tables to both cases
+s = new_content("Put both patients on the lab tables", "Labs inform ASA. The physical exam still owns the number.")
+card(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), "Willie — labs look quieter than the dog", "CBC WNL (Status 1 band).\nPhosphorus 6.0 — mild ↑ (Status 2).\nGlucose 130 — stress (Status 2 band).\nKidneys, liver, electrolytes normal.\nNo EPOC indicated for this ear clean.\n\nASA Status 3-E anyway: acute vestibular disease, severe AS otitis, murmur. Do not down-stage him because the chemistry is pretty.", accent=GOLD)
+card(s, Inches(6.75), Inches(1.15), Inches(6.15), Inches(5.55), "MoMo — labs and EPOC support Status 4-E", "WBC ~26K with neutrophilia — Status 3–4 inflammatory band.\nPlatelets 74 K — Status 3.\nCreatinine 3.0 → 4.71; BUN 49.7 → 100 — Status 4 (severe ↑ + uremia).\nPhosphorus 8.0 — Status 3–4.\nEPOC pH 7.255 (Status 3); BE −7.4 (Status 2); lactate 2.05 (Status 1).\nVenous pO2 33 is not arterial hypoxemia.\nWhole patient = Status 4-E. Do not cut.", accent=RED)
+notes(s, "This is the payoff slide. Students want to average the columns. Teach: the worst compensated vital-system problem that is a constant threat sets the floor. MoMo’s kidneys set Status 4. Willie’s neuro exam set Status 3 even with a normal CBC.")
 
 # 14 Stabilize
 s = new_content("Stabilize before you sterilize", "Elective surgery is cancelled more often by good judgment than by bad luck")
