@@ -45,8 +45,8 @@ SLIDE 13. LABS INFORM ASA STATUS. THE PHYSICAL EXAMINATION ASSIGNS IT.
 SLIDE 14. WHEN TO DELAY, WHEN TO PROCEED URGENTLY
     SPEAK: Resuscitate first, then clip. Delay elective OHE for pyoderma. Take GDV to surgery after resuscitation. MoMo: image and run labs, then cancel the exploratory.
 
-SLIDE 15. AAHA 4 TO 6 HOURS IN HEALTHY DOGS AND CATS; THEN THE RISK TALK
-    SPEAK: AAHA-style 4–6 h for healthy small animals. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
+SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
+    SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
 
 SLIDE 16. WHO-ADAPTED TIMEOUT AND MULTIMODAL PLAN
     SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.
@@ -57,20 +57,20 @@ SLIDE 17. TEACHING FORM. COMPLETE THE HEADER BEFORE THE FIRST DRUG.
 SLIDE 18. PREOPERATIVE EVALUATION DOCUMENTED; EXPLORATORY CANCELLED
     SPEAK: The form is not only for patients who get clipped. Recording the cancellation is a surgical document. Say it once, respectfully, then continue.
 
-SLIDE 19. AAHA/AAFP 2022
-    SPEAK: Elective canine OHE is a clean procedure. Skip the 14-day cephalexin prescription.
+SLIDE 19. FREY ET AL. 2022 AAFP/AAHA: WHEN. WHITTEM 1999 AND GONZALEZ 2017: HOW.
+    SPEAK: Do not attribute 22 mg/kg every 90 minutes to AAHA 2022. That guideline says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.
 
 SLIDE 20. PREP ROOM, THEN OPERATING ROOM
-    SPEAK: Airway and plane before clippers. Lather 7.5% PVP-I 5 minutes, rinse, paint 10%, dry, drape. Mucosa and eye: 1 to 20 to 1 to 50. Eye at 1:50 is 2-minute scrub plus 2-minute soak.
+    SPEAK: Airway and plane before clippers. Veterinary Betadine labels: 7.5% scrub, lather about 5 minutes, rinse, paint 5% Solution Veterinary, allow to dry. Eye: Roberts 1986, 1:50 of 10% PVP-I stock, 2-minute scrub plus 2-minute soak. Do not paint 10% from the veterinary bottle; that bottle is 5%.
 
 SLIDE 21. #40 CLIPPER AFTER INDUCTION. FIELD 20 CM BEYOND THE PLANNED INCISION.
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.
 
-SLIDE 22. CONCENTRATIONS, DILUTION, AND CONTACT TIMES
-    SPEAK: Write the numbers on the board. Intact skin, 7.5% PVP-I: lather 5 minutes, rinse, paint 10%, dry. Mucosa: 10% SOLUTION 1 to 20 to 1 to 50. Eye at 1:50: 2-minute scrub plus 2-minute soak (Roberts, AJVR 1986). 1:2 caused corneal edema. Willie: swollen tympanum. Canal and periocular mucosa: dilute PVP-I.
+SLIDE 22. READ THE BOTTLE. CITE THE LABEL OR THE PAPER. DO NOT INVENT A FOSSUM PAGE.
+    SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
 
 SLIDE 23. CENTER TO PERIPHERY. DIRTY PREP, THEN STERILE PREP.
-    SPEAK: Mime the spiral. Clock 5 minutes for povidone-iodine. Recite 1 to 20 to 1 to 50. Eye: 2 minutes plus 2 minutes.
+    SPEAK: Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
 
 SLIDE 24. DORSAL RECUMBENCY, AIRWAY, IV CATHETER, MONITORING, V-TROUGH
     SPEAK: Airway and monitoring are on before the clip. Keep hips in a neutral spread.
@@ -85,7 +85,7 @@ SLIDE 27. RECOGNIZE, ANNOUNCE, CORRECT. THEN PROTECT THE PATIENT.
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Ureter injury is a calm, well-exposed patient problem.
 
 SLIDE 28. WHAT DO YOU DO NEXT?
-    SPEAK: Two minutes. B and D are the iodine safety items. C is the stabilize-first cat.
+    SPEAK: Two minutes. B is Roberts 1986 bottle math. D is CHG off the cornea. C is the stabilize-first cat.
 
 SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
@@ -115,4 +115,4 @@ SLIDE 37. Key points
     SPEAK: Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.
 
 SLIDE 38. DVM 612  ·  PRINCIPLES OF SURGERY
-    SPEAK: Take questions. If none: Willie vs MoMo ASA, then iodine: 1 to 20 to 1 to 50, 5 minutes wet on intact skin, 2 minutes plus 2 minutes on the eye. Dismiss on time.
+    SPEAK: Take questions. If none: Willie versus MoMo ASA, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.

@@ -359,7 +359,7 @@ def kit_sheet():
             "#40 clippers, spare blade, vacuum",
             "Eye lube; ear/eye protection plan",
             "Dirty-prep kit + sterile-prep kit",
-            "10% PVP-I (mucosa/eye 1:20–1:50) and/or 2–4% CHG",
+            "7.5% PVP-I ~5 min, then 5% vet paint; eye 1:50 of 10% (Roberts 1986)",
             "Sterile gauze, bowls, gloves",
             "Four towels + large drape + clamps",
             "Gowns, closed-glove pairs (extra)",

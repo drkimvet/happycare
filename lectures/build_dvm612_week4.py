@@ -255,7 +255,7 @@ s = new_content("Learning objectives", "DVM 612 Week 4  ·  38 slides")
 items = [
     "Perform a preoperative evaluation, assign an ASA status, and decide whether to proceed, delay, or stabilize.",
     "Build a peri-operative plan: fasting, analgesia, antimicrobial prophylaxis, consent, and checklist.",
-    "Prepare the patient and surgeon for aseptic surgery: clip, correct antiseptic concentrations (including povidone-iodine 1 to 20 to 1 to 50), four-quadrant drape, gown, closed glove.",
+    "Prepare the patient and surgeon for aseptic surgery: clip, labeled antiseptic contact times, dilute 10% PVP-I 1:50 for the eye (Roberts 1986), four-quadrant drape, gown, closed glove.",
     "Recognize and correct a break in asepsis before and after the incision is made.",
     "Write a postoperative plan, surgical report elements, and client discharge instructions, including 24-hour emergency criteria.",
 ]
@@ -455,13 +455,13 @@ for i, (t, c, b) in enumerate(cols):
 notes(s, "Resuscitate first, then clip. Delay elective OHE for pyoderma. Take GDV to surgery after resuscitation. MoMo: image and run labs, then cancel the exploratory.")
 
 # 15 Fasting + consent
-s = new_content("Fasting and informed consent", "AAHA 4 to 6 hours in healthy dogs and cats; then the risk talk")
+s = new_content("Fasting and informed consent", "2020 AAHA Anesthesia and Monitoring Guidelines; then the risk talk")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Fasting", size=16, bold=True, color=NAVY)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Fasting (Grubb et al. 2020 AAHA)", size=16, bold=True, color=NAVY)
 add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Healthy adult dog/cat: food 4–6 h; water until premedication.",
     "Some hospitals still use 8–12 h NPO. Teach aspiration versus hypoglycemia.",
-    "Neonates: shorter fast; offer a small meal 1–2 h prior as directed.",
+    "Neonates / <2 kg: food fast no longer than 1–2 h.",
     "Brachycephalics: shorter fast, pre-oxygenate.",
     "Ask what was eaten this morning. Clients feed ‘just a biscuit.’",
     "Diabetics: write the insulin dose and a small meal with anesthesia before drop-off.",
@@ -476,7 +476,7 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Resuscitation code / DNR before induction.",
     "File the signed form. Then start induction.",
 ], size=14, spacing=6)
-notes(s, "AAHA-style 4–6 h for healthy small animals. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.")
+notes(s, "Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.")
 
 # 16 Checklist + analgesia
 s = new_content("Pre-incision checklist and analgesia", "WHO-adapted timeout and multimodal plan")
@@ -515,14 +515,14 @@ add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.7
 notes(s, "The form is not only for patients who get clipped. Recording the cancellation is a surgical document. Say it once, respectfully, then continue.")
 
 # 19 Abx
-s = new_content("Surgical antimicrobial prophylaxis", "AAHA/AAFP 2022")
+s = new_content("Surgical antimicrobial prophylaxis", "Frey et al. 2022 AAFP/AAHA: when. Whittem 1999 and Gonzalez 2017: how.")
 add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), GREEN_LT)
-add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.45), "Clean elective: skip prophylaxis", size=18, bold=True, color=GREEN)
-add_text(s, Inches(0.75), Inches(1.9), Inches(5.6), Inches(4.4), "Clean procedures with excellent asepsis:\n• Elective OHE / castration\n• Most clean mass removals\n• Many short soft-tissue surgeries\n\n1. Hold asepsis, Halsted, and a dry field.\n2. Skip peri-op antibiotics on these cases.\n3. After an uncomplicated clean surgery, stop at closure.", size=15, color=INK)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.45), "Clean elective: skip prophylaxis", size=17, bold=True, color=GREEN)
+add_text(s, Inches(0.75), Inches(1.9), Inches(5.6), Inches(4.4), "2022 AAFP/AAHA (Frey et al.):\n• Prophylaxis is a brief course started 30–60 min before the first incision.\n• Not usually needed for clean procedures.\n• Sterile technique should eliminate the need in OHE, orchiectomy, and most sterile procedures.\n• Ongoing postoperative antimicrobials are rarely required.\n\n1. Hold asepsis, Halsted, and a dry field.\n2. Skip peri-op antibiotics on these cases.\n3. After an uncomplicated clean surgery, stop at closure.", size=14, color=INK)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
-add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.45), "Indicated: timed IV, then stop", size=18, bold=True, color=RED)
-add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "1. Give IV cefazolin 22 mg/kg 30 minutes before incision.\n2. Redose every 90 minutes if the surgery is still open or blood loss is large.\n3. Write the first-dose time from the wound class:\n• Clean-contaminated / contaminated / dirty\n• Implant (orthopedic, mesh)\n• Hollow viscus entry\n• Surgery >90 minutes or a known break in asepsis\n• Patient immunocompromised\nWillie’s left ear is infected: treatment, not clean prophylaxis.", size=14, color=INK)
-notes(s, "Elective canine OHE is a clean procedure. Skip the 14-day cephalexin prescription.")
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.45), "When indicated: timed IV, then stop", size=16, bold=True, color=RED)
+add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "AAFP/AAHA 2022 does not publish a cefazolin mg/kg.\n\n1. Start 30–60 min before incision (Frey 2022).\n2. Extra-label teaching dose: cefazolin 22 mg/kg IV (Gonzalez et al. AJVR 2017 studied this dose).\n3. Whittem et al. JAVMA 1999 (orthopedic): first dose within 30 min of surgery; second dose if surgery lasted >90 min.\n4. Stop at closure unless you are treating an established infection.\nWillie’s left ear is infected: treatment, not clean prophylaxis.", size=13, color=INK)
+notes(s, "Do not attribute 22 mg/kg every 90 minutes to AAHA 2022. That guideline says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.")
 
 # 20 Sequence
 s = new_content("Sequence of patient preparation", "Prep room, then operating room")
@@ -531,7 +531,7 @@ steps = [
     ("2", "Express bladder if abdominal / caudal surgery"),
     ("3", "Clip with #40, vacuum hair, dirty antiseptic"),
     ("4", "Move to OR, position, pad, tie, final check"),
-    ("5", "Sterile prep (gloved). PVP-I 5 min wet. Mucosa/eye: 1 to 20 to 1 to 50"),
+    ("5", "Sterile prep. Skin: 7.5% PVP-I ~5 min, rinse, paint 5% vet solution, dry. Eye: Roberts 1:50 of 10% stock"),
     ("6", "Four-quadrant towels → large drape"),
     ("7", "Surgeon gowns/gloves (or already gowned)"),
     ("8", "Timeout / checklist → announce incision"),
@@ -545,7 +545,7 @@ for i, (n, t) in enumerate(steps):
     add_rect(s, x, y, Inches(3.05), Inches(0.7), NAVY if row == 0 else TEAL)
     add_text(s, x, y, Inches(3.05), Inches(0.7), n, size=24, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.15), y + Inches(0.85), Inches(2.75), Inches(1.35), t, size=15, color=INK, align=PP_ALIGN.CENTER)
-notes(s, "Airway and plane before clippers. Lather 7.5% PVP-I 5 minutes, rinse, paint 10%, dry, drape. Mucosa and eye: 1 to 20 to 1 to 50. Eye at 1:50 is 2-minute scrub plus 2-minute soak.")
+notes(s, "Airway and plane before clippers. Veterinary Betadine labels: 7.5% scrub, lather about 5 minutes, rinse, paint 5% Solution Veterinary, allow to dry. Eye: Roberts 1986, 1:50 of 10% PVP-I stock, 2-minute scrub plus 2-minute soak. Do not paint 10% from the veterinary bottle; that bottle is 5%.")
 
 # 21 Hair
 s = new_content("Hair removal", "#40 clipper after induction. Field 20 cm beyond the planned incision.")
@@ -560,23 +560,23 @@ add_text(s, Inches(0.6), Inches(5.32), Inches(12.2), Inches(1.6), "1. Airway in 
 notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.")
 
 # 22 Antiseptics
-s = new_content("Skin antiseptics", "Concentrations, dilution, and contact times")
+s = new_content("Skin antiseptics", "Read the bottle. Cite the label or the paper. Do not invent a Fossum page.")
 add_round(s, Inches(0.40), Inches(1.08), Inches(12.52), Inches(1.42), GOLD_LT)
-add_text(s, Inches(0.55), Inches(1.12), Inches(12.2), Inches(0.42), "10% povidone-iodine SOLUTION  ·  mucosa, conjunctiva, prepuce  ·  dilute  1 to 20  through  1 to 50  in sterile saline", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(1.52), Inches(12.2), Inches(0.88), "1 mL stock + 19 mL saline = 1:20 = 0.5% PVP-I        ·        1 mL stock + 49 mL saline = 1:50 = 0.2% PVP-I\nIntact skin: 5 minutes wet contact.  Eye at 1:50: 2-minute scrub + 2-minute soak.  Eye, mucosa, prepuce: 10% SOLUTION only.", size=14, color=INK, align=PP_ALIGN.CENTER)
+add_text(s, Inches(0.55), Inches(1.12), Inches(12.2), Inches(0.42), "Human Betadine Solution = 10% PVP-I (1% available iodine).  Veterinary Betadine Solution = 5% PVP-I (0.5% available iodine).", size=14, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(1.52), Inches(12.2), Inches(0.88), "Roberts 1986 used 10% stock.  1 mL + 49 mL saline = 1:50 = 0.2% PVP-I.  If the bottle is veterinary 5%, 1 mL + 24 mL (1:25) matches that 0.2%.\nA 1:50 of the 5% veterinary bottle is 0.1% PVP-I, not the Roberts concentration.", size=13, color=INK, align=PP_ALIGN.CENTER)
 add_round(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(4.42), WHITE)
 add_rect(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(0.50), TEAL)
-add_text(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(0.50), "Chlorhexidine (3 min)", size=15, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(3.22), Inches(3.80), Inches(3.65), "Intact skin: 2% or 4% CHG.\n1. Aqueous CHG: 3 minutes wet.\n2. CHG–alcohol (2%/70%): 30 s dry skin, 2 min moist.\n3. Leave residual 6 hours.\n4. Trunk and intact skin. Cornea or middle ear: switch to dilute PVP-I.\n5. Choose one agent for the field: CHG or iodine.\n6. Mix each dilution immediately before use.", size=12, color=INK)
+add_text(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(0.50), "CHG (Nolvasan label)", size=14, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(3.18), Inches(3.80), Inches(3.70), "2% chlorhexidine acetate surgical scrub.\n1. Rinse, apply 1–5 mL, wash 2 to 4 minutes, wipe foam.\n2. Avoid eyes and mucous membranes; flush if contact.\n3. Trunk and intact skin. Cornea or middle ear: dilute PVP-I.\n4. Choose one agent for the field: CHG or iodine.\n5. 70% alcohol: rinse between cycles on intact skin; allow to dry; keep off mucosa, eye, and cautery.", size=12, color=INK)
 add_round(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(4.42), WHITE)
 add_rect(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(0.50), GOLD)
-add_text(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(0.50), "Povidone-iodine (5 min)", size=15, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(3.22), Inches(3.80), Inches(3.65), "1. Dirty prep first (organic matter inactivates iodine).\n2. Intact skin: 7.5% scrub, lather 5 min, rinse, paint 10% solution, dry, drape.\n3. Mucosa / eye / prepuce: 10% SOLUTION, dilute 1 to 20 to 1 to 50.\n4. Eye at 1:50: 2-minute scrub + 2-minute soak.\nNot sporicidal at 5 minutes. Residual 90 minutes after dry. Hypersensitivity. Stains.", size=12, color=INK)
+add_text(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(0.50), "Skin (Betadine vet labels)", size=14, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.77), Inches(3.18), Inches(3.80), Inches(3.70), "1. Dirty prep first (organic matter inactivates iodine).\n2. 7.5% scrub (0.75% available iodine).\n3. After clip: wet, lather about 5 minutes, rinse with sterile water.\n4. Paint BETADINE Solution Veterinary 5% (not 10%), allow to dry, then drape.\n5. Solution is labeled full strength for skin and mucous membranes; avoid pooling.\n6. Use detergent-free SOLUTION, not 7.5% scrub, on mucosa.", size=12, color=INK)
 add_round(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(4.42), WHITE)
 add_rect(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(0.50), NAVY)
-add_text(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(0.50), "Alcohol (30 sec)", size=15, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.22), Inches(3.78), Inches(3.65), "1. 70% isopropyl or ethyl: 30 seconds, then dry.\n2. Keep fluid off the table and off cautery.\n3. Rinse or paint between CHG cycles on intact skin.\n4. Intact skin only. Wounds, mucosa, or eye: dilute PVP-I.\nSurgical antiseptic = CHG, PVP-I, or alcohol.", size=13, color=INK)
-notes(s, "Write the numbers on the board. Intact skin, 7.5% PVP-I: lather 5 minutes, rinse, paint 10%, dry. Mucosa: 10% SOLUTION 1 to 20 to 1 to 50. Eye at 1:50: 2-minute scrub plus 2-minute soak (Roberts, AJVR 1986). 1:2 caused corneal edema. Willie: swollen tympanum. Canal and periocular mucosa: dilute PVP-I.")
+add_text(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(0.50), "Eye (Roberts 1986)", size=14, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.99), Inches(3.18), Inches(3.78), Inches(3.70), "Canine ocular surface. Stock = 10% PVP-I (1% available iodine).\n1. 1:50 recommended: 2-minute scrub + 2-minute soak.\n2. 1:2, 1:10, and 1:50 all cleared culture.\n3. One instance of epithelial corneal edema at 1:2 (15 eyes).\n4. 1:100 less consistent (E. coli in 1 of 16).\nDo not put full-strength 5% or 10% on the cornea.", size=12, color=INK)
+notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
 
 # 23 Technique
 s = new_content("Patient skin preparation technique", "Center to periphery. Dirty prep, then sterile prep.")
@@ -586,11 +586,11 @@ add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", s
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "1. Dirty prep in the prep room; sterile prep in the OR.",
     "2. Start at the planned incision. Spiral out. Drop each sponge after the outer ring.",
-    "3. PVP-I: 5 minutes wet, rinse, paint 10%, dry. Aqueous CHG: 3 minutes. Drain pools, then drape.",
-    "4. Mucosa, conjunctiva, prepuce: 10% PVP-I solution, 1 to 20 to 1 to 50. Eye at 1:50: 2-minute scrub + 2-minute soak.",
-    "5. Willie: swollen tympanic membrane. Periocular and canal mucosa: dilute PVP-I.",
-], size=13, spacing=6)
-notes(s, "Mime the spiral. Clock 5 minutes for povidone-iodine. Recite 1 to 20 to 1 to 50. Eye: 2 minutes plus 2 minutes.")
+    "3. Skin: 7.5% PVP-I, lather ~5 min, rinse, paint 5% vet solution, dry (Betadine labels). Nolvasan CHG: wash 2 to 4 min. Drain pools, then drape.",
+    "4. Eye: 10% PVP-I stock 1:50 (1 mL + 49 mL). 2 min scrub + 2 min soak (Roberts 1986). 5% bottle: 1:25 to match 0.2%.",
+    "5. Willie: swollen tympanic membrane. Periocular and canal mucosa: detergent-free dilute PVP-I, not 7.5% scrub.",
+], size=12, spacing=5)
+notes(s, "Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
 # 24 Position
 s = new_content("Patient positioning", "Dorsal recumbency, airway, IV catheter, monitoring, V-trough")
@@ -636,7 +636,7 @@ notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glov
 s = new_content("Knowledge check", "What do you do next?")
 rows = [
     ("A", "When do you clip the OHE field?", "After induction, immediately before the scrub."),
-    ("B", "How do you prep conjunctiva or a prepuce with iodine?", "Draw 10% SOLUTION. Dilute 1 to 20 to 1 to 50. Eye at 1:50: 2 min scrub + 2 min soak."),
+    ("B", "How do you prep conjunctiva with iodine?", "Draw 10% PVP-I stock (1% available iodine). Dilute 1:50 (1 mL + 49 mL). 2 min scrub + 2 min soak (Roberts 1986). If the bottle is 5% vet solution, 1:25 matches 0.2%."),
     ("C", "A blocked cat with K+ 8.2 is booked for PU this morning. First move?", "1. Calcium, fluids, insulin/dextrose as indicated. 2. Decompress. 3. Recheck K+. 4. Then decide on anesthesia."),
     ("D", "CHG runs into the eye during a trunk scrub. Next three steps?", "1. Stop the prep. 2. Irrigate with sterile saline. 3. Reassess the cornea, then finish the field with dilute PVP-I."),
 ]
@@ -647,7 +647,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.7), Inches(1.28), let, size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.4), y + Inches(0.1), Inches(11.1), Inches(0.5), q, size=15, bold=True, color=INK)
     add_text(s, Inches(1.4), y + Inches(0.65), Inches(11.1), Inches(0.5), a, size=14, color=TEAL)
-notes(s, "Two minutes. B and D are the iodine safety items. C is the stabilize-first cat.")
+notes(s, "Two minutes. B is Roberts 1986 bottle math. D is CHG off the cornea. C is the stabilize-first cat.")
 
 # 29 Recovery
 s = new_content("Immediate recovery", "Remain with the patient until airway and circulation are stable")
@@ -760,7 +760,7 @@ add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.45), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.28), Inches(11.8), Inches(1.20), "Willie, 6 y 11 mo MN Cavalier, 13.7 kg. Acute vestibular crisis. Severe AS otitis, TM visible/swollen. Circling left, nystagmus fast-left, right knuckling. Grade II murmur. CBC WNL. This is ASA III-E. Client-owned.", size=15, color=NAVY)
 wsteps = [
     ("Pre-op", "ASA III-E. Neuro exam. Skip NSAID (DexSP already given). IVF, Cerenia, meclizine. Culture the ear. Radiographs ≠ MRI. Central until proven otherwise."),
-    ("Prep", "Airway protected, monitors on, then alfaxalone to a depth that is safe to clip and flush. Periocular and canal mucosa: 10% PVP-I 1 to 20 to 1 to 50; eye 2 min scrub + 2 min soak. Pad him. He falls."),
+    ("Prep", "Airway protected, monitors on, then alfaxalone to a depth that is safe to clip and flush. Periocular and canal mucosa: detergent-free dilute PVP-I (Roberts 1:50 of 10% stock for the eye). Pad him. He falls."),
     ("Intra", "Timeout. Deep clean + cytology. If you contaminate, say it and re-glove. Stay until the canal is clean."),
     ("Post", "Confine, no stairs. Watch neuro signs, vomiting, seizures. MRI next. TECA-LBO only after culture if medical therapy fails."),
 ]
@@ -785,7 +785,7 @@ pearls = [
     "Imaging and serial creatinine can cancel a surgery. That is a successful preoperative evaluation.",
     "Elective clean OHE: skip routine postoperative antibiotics. Fill the anesthesia record and the 2-hour recovery sheet.",
     "Clip after induction, #40; spiral prep center → out; re-clip or re-drape until the window is hair-free.",
-    "Intact skin: PVP-I 5 minutes wet (then paint and dry), or aqueous CHG 3 minutes. Mucosa/eye: 10% PVP-I 1 to 20 to 1 to 50; eye 2 min + 2 min. Cornea and middle ear: dilute PVP-I.",
+    "Skin: 7.5% PVP-I ~5 min, then 5% vet paint (Betadine labels), or Nolvasan CHG 2–4 min. Eye: 10% PVP-I 1:50, 2 min + 2 min (Roberts 1986). Cornea/middle ear: dilute PVP-I, not CHG.",
     "Pale + tachycardic after celiotomy: treat as hemorrhage, return to OR; the first 24 hours still count.",
 ]
 for i, t in enumerate(pearls):
@@ -796,17 +796,35 @@ for i, t in enumerate(pearls):
     add_text(s, Inches(1.4), y, Inches(11.1), Inches(0.8), t, size=15, color=INK, anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.")
 
-# 38 Questions
+# 38 Questions + references
 s = prs.slides.add_slide(BLANK)
 add_rect(s, 0, 0, W, H, NAVY)
 add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, 0, 0, Inches(0.22), H, GOLD)
-add_text(s, Inches(0.75), Inches(1.55), Inches(12), Inches(0.4), "DVM 612  ·  PRINCIPLES OF SURGERY", size=16, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(2.05), Inches(12), Inches(1.0), "Questions", size=54, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(3.25), Inches(12), Inches(1.1), "If there are no questions: why was Willie ASA III-E and MoMo ASA IV-E,\nand how do you dilute 10% povidone-iodine for conjunctiva or prepuce?", size=18, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(4.55), Inches(12), Inches(1.55), "Fossum 2018  ·  Hendrickson & Baird 2013  ·  Johnston & Tobias 2017\nRoberts, Severin & Lavach, Am J Vet Res 1986;47:1207–1210 (eye 1:50, 2 min + 2 min)\nBetadine veterinary label: 7.5% scrub, lather 5 minutes, rinse, paint 10%, dry\nAAHA/AAFP 2022: cefazolin 22 mg/kg IV 30 minutes before incision; redose every 90 minutes", size=13, color=WHITE)
-add_text(s, Inches(0.75), Inches(6.35), Inches(12), Inches(0.4), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP  ·  Lewyt College of Veterinary Medicine  ·  Long Island University", size=14, color=GOLD)
-notes(s, "Take questions. If none: Willie vs MoMo ASA, then iodine: 1 to 20 to 1 to 50, 5 minutes wet on intact skin, 2 minutes plus 2 minutes on the eye. Dismiss on time.")
+add_text(s, Inches(0.75), Inches(0.32), Inches(12), Inches(0.32), "DVM 612  ·  PRINCIPLES OF SURGERY", size=13, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(0.62), Inches(12), Inches(0.55), "Questions", size=32, bold=True, color=WHITE)
+add_text(s, Inches(0.75), Inches(1.18), Inches(12), Inches(0.70), "If there are no questions: why was Willie ASA III-E and MoMo ASA IV-E,\nand how do you dilute 10% povidone-iodine for the eye?", size=15, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.88), Inches(12), Inches(0.28), "Sources used in this hour. Numbers match the cited label or paper. No invented Fossum page quotes.", size=12, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(2.22), Inches(6.0), Inches(4.10),
+         "Course texts\n"
+         "1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Ch. 4, 5, 6, 9. Doses and dilutions on these slides are not quoted from Fossum pages.\n"
+         "2. Hendrickson DA, Baird AN. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. ISBN 978-1-118-27323-4.\n"
+         "3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017 (copyright 2018). ISBN 978-0-323-32065-8.\n"
+         "Skin and eye numbers\n"
+         "4. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207–1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak.\n"
+         "5. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.\n"
+         "6. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155.\n"
+         "7. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed. Wash 2 to 4 min. Avoid eyes and mucous membranes.",
+         size=11, color=WHITE)
+add_text(s, Inches(6.85), Inches(2.22), Inches(5.9), Inches(4.10),
+         "Fasting and antimicrobials\n"
+         "8. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1–5. Start 30–60 min before incision; skip clean OHE; postop rarely required. Does not publish cefazolin mg/kg.\n"
+         "9. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020. Healthy adult food fast 4–6 h; water until premedication.\n"
+         "10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212–216. First dose within 30 min of surgery; second dose if surgery lasted >90 min.\n"
+         "11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695–701. Extra-label cefazolin 22 mg/kg IV studied in dogs.",
+         size=11, color=WHITE)
+add_text(s, Inches(0.75), Inches(6.42), Inches(12), Inches(0.38), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP  ·  Lewyt College of Veterinary Medicine  ·  Long Island University", size=13, color=GOLD)
+notes(s, "Take questions. If none: Willie versus MoMo ASA, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.")
 
 # Stamp numbers
 stamp_footers()
