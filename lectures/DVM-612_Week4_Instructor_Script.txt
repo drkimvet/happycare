@@ -1,15 +1,14 @@
-DVM 612 Principles of Surgery — Preop, prep, postop
-Instructor script
+DVM 612 — Willie case instructor script
 
 
 SLIDE 1. DVM 612 · PRINCIPLES OF SURGERY
-    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: a Cocker Spaniel with severe otitis who is now circling, with nystagmus and knuckling. Decide if that dog is a surgical candidate today, how you would prep, and what the next 24 hours look like.
+    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: Willie, a 6-year 11-month MN Cavalier, 13.7 kg, who became ataxic over about an hour, with a severe left ear infection. Assign his ASA, decide what you anesthetize him for tonight, and own the next 24 hours.
 
 SLIDE 2. By the end of this hour you will be able to
-    SPEAK: Read the five objectives aloud. Tell them the Cocker is the patient we will keep coming back to.
+    SPEAK: Read the five objectives aloud. Willie is the patient we keep coming back to.
 
 SLIDE 3. Sixty-minute plan
-    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) and the Cocker case.
+    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) and Willie’s case.
 
 SLIDE 4. Why this hour is not optional
     SPEAK: DVM 612 will hold you to this: a beautiful closure that bleeds in recovery is a failed surgery. The first 24 hours are part of the operation.
@@ -33,16 +32,16 @@ SLIDE 10. Physical examination — do it yourself
     SPEAK: Never skip PE because the technician already did vitals. DVM 612 students share patients with anesthesia. The surgeon still owns the decision to proceed.
 
 SLIDE 11. ASA physical status — memorize this wording
-    SPEAK: Read ASA I and III slowly. The emergency E modifier is used clinically (ASA IV-E for GDV). An elective procedure on an ASA IV patient is a decision, not a schedule slot. Next slides: a real ASA III Cocker Spaniel.
+    SPEAK: Read ASA I and III slowly. The emergency E modifier is used clinically (ASA III-E for an acute vestibular crisis that still needs sedation tonight). Next slides: Willie.
 
 SLIDE 12. Assign the ASA — 60-second cases
     SPEAK: Cold-call four students. C is the real ASA III we will unpack. D is the trap: do not induce a hyperkalemic blocked cat because surgery is on the board.
 
-SLIDE 13. Real ASA III case — Cocker Spaniel with vestibular disease
-    SPEAK: This is a real peri-operative patient, not a cartoon. Spend 90 seconds. Cockers plus dirty ears plus new circling is otitis media/interna until proven otherwise. Intact TM is good news for topical safety only if you are sure the middle ear is not involved — you are not sure. Knuckling vs drunk vestibular ataxia: have a student demonstrate paw placing. If placing is truly delayed, do not call this ‘just an ear’ and induce for a TECA tonight.
+SLIDE 13. Real ASA III case — Willie
+    SPEAK: This is Willie. Do not skip the murmur. Right-sided knuckling with left circling is why you cannot call this just an ear flush. Mentation was quiet/dull.
 
-SLIDE 14. Why this dog is ASA III — and what changes today
-    SPEAK: Punchline: vestibular plus severe otitis is compensated moderate-to-severe disease — ASA III. You may still anesthetize for CT, flush, or TECA, but you do not treat this dog like a healthy spay. No aminoglycoside ointment in a suspect inner ear. No NSAID after DexSP.
+SLIDE 14. Why Willie is ASA III-E — and what we actually did
+    SPEAK: The drum was seen, then ointment was infused. Aminoglycosides are a risk if the middle or inner ear is involved even when the drum looks present and swollen. Cavaliers also bring mitral valve disease and Chiari-like malformation to the vestibular list. Mention both, then return to the ear as the leading infectious cause. No NSAID after DexSP.
 
 SLIDE 15. Preoperative diagnostics — indicated, not automatic
     SPEAK: Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. Know your hospital policy and be able to defend it.
@@ -60,7 +59,7 @@ SLIDE 19. Checklist and the analgesia plan belong in preop
     SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students.
 
 SLIDE 20. Surgical antimicrobial prophylaxis — stewardship, not ritual
-    SPEAK: Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.
+    SPEAK: Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. Willie’s left ear is infected, so antimicrobials are treatment, not clean prophylaxis.
 
 SLIDE 21. Knowledge check — preoperative
     SPEAK: Take 2 minutes. Then move. Do not let this become a 10-minute debate.
@@ -81,7 +80,7 @@ SLIDE 26. Know the field before you pick up the clippers
     SPEAK: One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.
 
 SLIDE 27. Skin antiseptics — choose with anatomy, not loyalty
-    SPEAK: CHG–alcohol is a common, evidence-supported choice for trunk skin when not contraindicated. Hammer ocular and middle-ear toxicity — this Cocker’s ear is exactly where CHG and aminoglycosides do harm.
+    SPEAK: CHG–alcohol is a common choice for trunk skin when not contraindicated. Willie’s left ear is exactly where CHG and aminoglycosides can harm a swollen drum and middle ear.
 
 SLIDE 28. How to scrub the patient
     SPEAK: If time, mime the spiral on the lectern. Mention hanging-limb prep: start at incision, work distally toward the dirty foot, then the wrapped foot is handed off.
@@ -111,7 +110,7 @@ SLIDE 36. Immediate recovery — the surgery is not over
     SPEAK: ABC plus temperature plus pain. Hemorrhage speech: do not send a pale recovering OHE to the kennel because ‘she’s just groggy.’
 
 SLIDE 37. Pain assessment is a vital sign
-    SPEAK: Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — the Cocker already got DexSP.
+    SPEAK: Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — Willie already received DexSP.
 
 SLIDE 38. The incision after you leave it
     SPEAK: Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’
@@ -120,7 +119,7 @@ SLIDE 39. The first 24 hours — what fails a surgery after the OR
     SPEAK: Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.
 
 SLIDE 40. Surgical report — if it is not written, it was not done
-    SPEAK: Grade completeness. For the Cocker: neuro exam, ASA III, TM status, DexSP already given, no NSAID, imaging plan.
+    SPEAK: For Willie: neuro exam, ASA III-E, TM visible but swollen, DexSP given, no NSAID, murmur, films, MRI plan.
 
 SLIDE 41. Discharge instructions — in the client’s language
     SPEAK: Role-play one sentence: ‘If the incision opens and you see fat or intestine, cover with a clean wet towel and come now.’ Students write too much physiology and too few phone numbers.
@@ -132,13 +131,13 @@ SLIDE 43. Fluids, feeding, and the rest of the animal
     SPEAK: Cats and food. Diabetics and insulin. Short.
 
 SLIDE 44. Large animal — same principles, different dirt
-    SPEAK: One minute. Halsted travels to the barn. Then get back to the Cocker.
+    SPEAK: One minute. Halsted travels to the barn. Then get back to Willie.
 
-SLIDE 45. Walk the Cocker through the whole hour
-    SPEAK: Walk this without questions until the end. Contrast in one sentence: a healthy Lab OHE is ASA I and gets no routine antibiotics. This Cocker is the opposite.
+SLIDE 45. Walk Willie through the whole hour
+    SPEAK: Walk Willie without questions until the end. One-sentence contrast: a healthy Lab OHE is ASA I and gets no routine antibiotics. Willie is the opposite.
 
 SLIDE 46. Key points from this hour
-    SPEAK: Stop here if time is gone. The Cocker is the ASA III they should be able to defend.
+    SPEAK: Stop here if time is gone. Willie is the ASA III-E they should be able to defend.
 
 SLIDE 47. Take-home
     SPEAK: Close the loop to slide 1.
@@ -147,4 +146,4 @@ SLIDE 48. References
     SPEAK: Fossum is the text behind this hour.
 
 SLIDE 49. Questions
-    SPEAK: Take questions. If none: what would you do differently for the Cocker than for a healthy Labrador spay? Dismiss on time.
+    SPEAK: Take questions. If none: what would you do differently for Willie than for a healthy Labrador spay? Dismiss on time.

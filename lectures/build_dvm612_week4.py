@@ -232,9 +232,9 @@ add_text(s, Inches(0.75), Inches(1.15), Inches(12), Inches(0.35), "LONG ISLAND U
 add_text(s, Inches(0.75), Inches(1.7), Inches(12), Inches(0.4), "DVM 612  ·  PRINCIPLES OF SURGERY", size=16, bold=True, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(2.25), Inches(12), Inches(1.6), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
 add_text(s, Inches(0.75), Inches(5.15), Inches(12), Inches(0.4), "Lecture  |  60 minutes", size=16, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.6), Inches(12), Inches(0.7), "Preoperative evaluation · patient and surgeon preparation · postoperative care.\nRunning case: Cocker Spaniel with severe otitis and vestibular disease.", size=14, color=WHITE)
+add_text(s, Inches(0.75), Inches(5.6), Inches(12), Inches(0.7), "Preoperative evaluation · patient and surgeon preparation · postoperative care.\nRunning case: Willie, a Cavalier King Charles Spaniel with acute vestibular disease and left otitis.", size=14, color=WHITE)
 add_text(s, Inches(0.75), Inches(6.55), Inches(12), Inches(0.35), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)  ·  Hendrickson & Baird (2013)", size=12, color=GOLD)
-notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: a Cocker Spaniel with severe otitis who is now circling, with nystagmus and knuckling. Decide if that dog is a surgical candidate today, how you would prep, and what the next 24 hours look like.")
+notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: Willie, a 6-year 11-month MN Cavalier, 13.7 kg, who became ataxic over about an hour, with a severe left ear infection. Assign his ASA, decide what you anesthetize him for tonight, and own the next 24 hours.")
 
 # 2 Learning objectives
 s = new_content("By the end of this hour you will be able to", "Learning objectives")
@@ -247,8 +247,8 @@ items = [
 ]
 add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(4.6), items, size=18, spacing=12)
 add_round(s, Inches(0.5), Inches(6.15), Inches(12.3), Inches(0.85), GOLD_LT)
-add_text(s, Inches(0.75), Inches(6.25), Inches(11.9), Inches(0.65), "Today is judgment, asepsis, and aftercare. Poor prep cannot be rescued by elegant suture. We will apply every section to the vestibular Cocker.", size=14, color=NAVY)
-notes(s, "Read the five objectives aloud. Tell them the Cocker is the patient we will keep coming back to.")
+add_text(s, Inches(0.75), Inches(6.25), Inches(11.9), Inches(0.65), "Today is judgment, asepsis, and aftercare. Poor prep cannot be rescued by elegant suture. We will apply every section to Willie.", size=14, color=NAVY)
+notes(s, "Read the five objectives aloud. Willie is the patient we keep coming back to.")
 
 # 3 Hour plan
 s = new_content("Sixty-minute plan", "How we will spend the hour")
@@ -257,7 +257,7 @@ plan = [
     ("3–22 min", "I. Preoperative evaluation & peri-op plan", TEAL),
     ("22–42 min", "II. Patient and surgeon preparation", GOLD),
     ("42–57 min", "III. Postoperative care, complications, discharge", GREEN),
-    ("57–60 min", "Cocker walk-through, key points, questions", RED),
+    ("57–60 min", "Willie walk-through, key points, questions", RED),
 ]
 for i, (t, d, c) in enumerate(plan):
     y = Inches(1.25) + Inches(i * 1.05)
@@ -265,7 +265,7 @@ for i, (t, d, c) in enumerate(plan):
     add_rect(s, Inches(0.55), y, Inches(0.14), Inches(0.92), c)
     add_text(s, Inches(0.95), y + Inches(0.12), Inches(2.3), Inches(0.68), t, size=18, bold=True, color=c, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(3.4), y + Inches(0.12), Inches(9.0), Inches(0.68), d, size=18, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Keep a visible timer. If discussion runs, protect Part II (prep) and the Cocker case.")
+notes(s, "Keep a visible timer. If discussion runs, protect Part II (prep) and Willie’s case.")
 
 # 4 Why it matters
 s = new_content("Why this hour is not optional", "Surgical site infection, harm, and professional standard")
@@ -389,7 +389,7 @@ s = new_content("ASA physical status — memorize this wording", "American Socie
 rows = [
     ("I", "Normal, healthy patient", "Elective OHE in a well 1-year-old", GREEN),
     ("II", "Mild systemic disease, well compensated", "Controlled diabetes; obese but stable; asymptomatic murmur", TEAL),
-    ("III", "Moderate to severe systemic disease, ongoing but compensated; functional limitation and higher anesthetic risk", "Stable CKD; compensated heart disease; vestibular Cocker with otitis media/interna", GOLD),
+    ("III", "Moderate to severe systemic disease, ongoing but compensated; functional limitation and higher anesthetic risk", "Stable CKD; compensated murmur; Willie — vestibular + otitis, walking", GOLD),
     ("IV", "Severe systemic disease that is a constant threat to life; uncompensated", "GDV, septic abdomen, decompensated CHF, uncontrolled hemorrhage", RED),
     ("V", "Moribund; not expected to live >24 h with or without surgery", "Gastric rupture, catastrophic trauma, end-stage disease", NAVY),
 ]
@@ -405,14 +405,14 @@ for i, (asa, defn, ex, c) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(1.2), Inches(0.88), asa, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.9), y + Inches(0.08), Inches(5.5), Inches(0.72), defn, size=13, color=INK, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(7.6), y + Inches(0.08), Inches(5.0), Inches(0.72), ex, size=13, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Read ASA I and III slowly. The emergency E modifier is used clinically (ASA IV-E for GDV). An elective procedure on an ASA IV patient is a decision, not a schedule slot. Next slides: a real ASA III Cocker Spaniel.")
+notes(s, "Read ASA I and III slowly. The emergency E modifier is used clinically (ASA III-E for an acute vestibular crisis that still needs sedation tonight). Next slides: Willie.")
 
 # 12 ASA practice
 s = new_content("Assign the ASA — 60-second cases", "Say the number, then whether you proceed today")
 cases = [
     ("A", "Healthy 8-month Labrador for elective OHE. Normal PE, PCV/TS normal.", "ASA I  ·  proceed", GREEN_LT, GREEN),
     ("B", "10-year MN Beagle, BCS 8/9, grade 2/6 murmur, no CHF, dental + mass removal.", "ASA II  ·  proceed with monitoring plan", TEAL_LT, TEAL),
-    ("C", "Cocker Spaniel, severe otitis, circling left, nystagmus, knuckling right, TM intact, DexSP given, CV stable.", "ASA III  ·  not ‘just dirty ears’ — next slides", GOLD_LT, GOLD),
+    ("C", "Willie: 6 y 11 mo MN Cavalier, 13.7 kg. Acute ataxia 1 h. AS otitis, TM visible/swollen. Circling left, nystagmus fast-left, right knuckling. Grade II murmur. CV stable.", "ASA III-E  ·  not ‘just dirty ears’ — next slides", GOLD_LT, GOLD),
     ("D", "Cat, urethral obstruction, K+ 8.2, bladder huge, arrhythmia.", "ASA IV-E  ·  stabilize first, then surgery", RED_LT, RED),
 ]
 for i, (let, stem, ans, fill, acc) in enumerate(cases):
@@ -424,30 +424,30 @@ for i, (let, stem, ans, fill, acc) in enumerate(cases):
     add_text(s, Inches(1.45), y + Inches(0.68), Inches(11.0), Inches(0.4), ans, size=14, bold=True, color=acc)
 notes(s, "Cold-call four students. C is the real ASA III we will unpack. D is the trap: do not induce a hyperkalemic blocked cat because surgery is on the board.")
 
-# Real-world ASA III — vestibular Cocker Spaniel
-s = new_content("Real ASA III case — Cocker Spaniel with vestibular disease", "Severe otitis externa plus inner-ear signs  ·  not an ASA I ‘ear clean’")
-add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.35), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.28), Inches(11.8), Inches(1.1), "Adult Cocker Spaniel. Severe external ear infection. Canal patent. Tympanic membrane intact on otoscopy. Dexamethasone SP already given to open the canal. Now circling to the left, fast nystagmus (reported toward the left), knuckling on the right.", size=15, color=NAVY)
-card(s, Inches(0.5), Inches(2.65), Inches(4.0), Inches(4.05), "Why Cockers get this", "Pendulous, hairy canals and allergic skin disease drive chronic otitis. Stenosis hides the drum. Infection commonly extends to the middle ear even when the tympanic membrane still looks intact.", accent=TEAL)
-card(s, Inches(4.7), Inches(2.65), Inches(4.0), Inches(4.05), "What the signs mean", "Circling left = left-sided vestibular. Intact drum does not rule out otitis media/interna. True knuckling is not typical of simple peripheral vestibular disease — recheck placing; if real, think central involvement and image.", accent=GOLD)
-card(s, Inches(8.9), Inches(2.65), Inches(3.9), Inches(4.05), "Already on board", "DexSP reduces canal swelling so you can see the drum. Do not add an NSAID on top of a glucocorticoid. Do not put aminoglycoside ointment (e.g. neomycin) in an ear if middle/inner ear disease is possible.", accent=RED)
-notes(s, "This is a real peri-operative patient, not a cartoon. Spend 90 seconds. Cockers plus dirty ears plus new circling is otitis media/interna until proven otherwise. Intact TM is good news for topical safety only if you are sure the middle ear is not involved — you are not sure. Knuckling vs drunk vestibular ataxia: have a student demonstrate paw placing. If placing is truly delayed, do not call this ‘just an ear’ and induce for a TECA tonight.")
+# Real-world ASA III — Willie
+s = new_content("Real ASA III case — Willie", "6 y 11 mo MN Cavalier King Charles Spaniel  ·  13.7 kg  ·  BCS 6/9")
+add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.45), GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.25), Inches(11.8), Inches(1.25), "Acute ataxia ~1 hour. Fell off the couch twice. Abnormal paw placement. Appetite/thirst normal. Cytopoint for allergies. No prior vestibular signs. Vitals: T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, quiet/dull.", size=14, color=NAVY)
+card(s, Inches(0.5), Inches(2.75), Inches(4.0), Inches(3.95), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
+card(s, Inches(4.7), Inches(2.75), Inches(4.0), Inches(3.95), "Neuro exam", "Circling left. Horizontal nystagmus — fast left, slow right. Right knuckling and delayed proprioception. Wheelbarrow absent on the right. That is not a simple peripheral ear.", accent=GOLD)
+card(s, Inches(8.9), Inches(2.75), Inches(3.9), Inches(3.95), "Also on PE", "Grade II/VI left systolic murmur (Cavaliers). Heavy tartar. Nasal crusts. Soft non-painful abdomen. Compensated tonight.", accent=RED)
+notes(s, "This is Willie. Do not skip the murmur. Right-sided knuckling with left circling is why you cannot call this just an ear flush. Mentation was quiet/dull.")
 
-s = new_content("Why this dog is ASA III — and what changes today", "Compensated neurologic + infectious disease  ·  higher anesthetic risk  ·  not a constant threat to life")
+s = new_content("Why Willie is ASA III-E — and what we actually did", "Compensated  ·  functional limitation  ·  acute  ·  not a constant threat to life")
 add_round(s, Inches(0.45), Inches(1.18), Inches(4.05), Inches(5.5), GREEN_LT)
-add_text(s, Inches(0.65), Inches(1.35), Inches(3.7), Inches(0.45), "ASA III, not II or IV", size=16, bold=True, color=GREEN)
-add_text(s, Inches(0.65), Inches(1.85), Inches(3.7), Inches(4.5), "II would be dirty ears without neurologic signs.\n\nIII: ongoing infection plus vestibular dysfunction, still cardiovascularly stable and walking.\n\nIV if recumbent, dull, septic, or in respiratory distress.\n\nAdd E only if this is a true emergency cut tonight — most of these dogs need imaging and medical control first.", size=14, color=INK)
+add_text(s, Inches(0.65), Inches(1.35), Inches(3.7), Inches(0.45), "ASA III-E", size=18, bold=True, color=GREEN)
+add_text(s, Inches(0.65), Inches(1.85), Inches(3.7), Inches(4.5), "II = murmur alone, or dirty ears without neuro signs.\n\nIII = acute vestibular disease plus severe AS otitis, still pink, walking, kidneys normal.\n\nE = started an hour ago; sedation tonight.\n\nIV = recumbent, seizing, septic, or in heart failure. He was not.", size=14, color=INK)
 add_round(s, Inches(4.7), Inches(1.18), Inches(8.1), Inches(5.5), WHITE)
-add_text(s, Inches(4.95), Inches(1.35), Inches(7.6), Inches(0.4), "Preoperative plan for this patient", size=16, bold=True, color=NAVY)
-add_bullets(s, Inches(4.9), Inches(1.85), Inches(7.6), Inches(4.5), [
-    "Full neuro exam: mentation, head tilt, nystagmus (fast phase), facial nerve, Horner’s, paw placing on all four limbs.",
-    "CBC/chemistry ± culture of the canal. CT of the bullae (or MRI if knuckling is real) before TECA or deep flush under anesthesia.",
-    "This is infected tissue — antimicrobials are treatment, not clean-surgery prophylaxis.",
-    "Protect the airway; vestibular dogs regurgitate. Fast as for any anesthetic. Pad well; they fall.",
-    "Consent: persistent head tilt, deafness, facial paralysis, Horner’s, need for TECA if medical therapy fails.",
-    "Delay any unrelated elective procedure until the dog can walk a straight line and eat.",
-], size=14, spacing=6)
-notes(s, "Punchline: vestibular plus severe otitis is compensated moderate-to-severe disease — ASA III. You may still anesthetize for CT, flush, or TECA, but you do not treat this dog like a healthy spay. No aminoglycoside ointment in a suspect inner ear. No NSAID after DexSP.")
+add_text(s, Inches(4.95), Inches(1.35), Inches(7.6), Inches(0.4), "Work-up and peri-op plan (this patient)", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(4.9), Inches(1.8), Inches(7.6), Inches(4.6), [
+    "CBC WNL. Phosphorus 6.0 (high), glucose 130 (stress). Kidneys, liver, electrolytes normal.",
+    "IV fluids, Cerenia IV, DexSP 0.68 mL SQ. No NSAID after the steroid.",
+    "Alfaxalone sedation: deep left-ear clean, cytology/culture, 3-view skull/spine films.",
+    "Films: bullae radiographically intact, skull intact, L7–S1 discospondylosis — that does not explain acute circling.",
+    "Left circling + left-fast nystagmus + right proprioceptive deficit → central until MRI says otherwise.",
+    "Home: meclizine 25 mg PO BID × 5 d, Cerenia 60 mg PO SID × 4 d, confine, no stairs. MRI recommended. TECA-LBO if culture-guided medical therapy fails.",
+], size=13, spacing=5)
+notes(s, "The drum was seen, then ointment was infused. Aminoglycosides are a risk if the middle or inner ear is involved even when the drum looks present and swollen. Cavaliers also bring mitral valve disease and Chiari-like malformation to the vestibular list. Mention both, then return to the ear as the leading infectious cause. No NSAID after DexSP.")
 
 # 13 Labs
 s = new_content("Preoperative diagnostics — indicated, not automatic", "Request the minimum tests this patient and this procedure actually need")
@@ -550,7 +550,7 @@ add_text(s, Inches(0.75), Inches(1.9), Inches(5.6), Inches(4.4), "Clean procedur
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
 add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.45), "YES — timed IV, then stop", size=18, bold=True, color=RED)
 add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "Give 30–60 min before incision; redose (e.g. cefazolin ~q90 min) if surgery is long or blood loss is large.\n\nConsider if:\n• Clean-contaminated / contaminated / dirty\n• Implant (orthopedic, mesh)\n• Hollow viscus entry\n• Prolonged surgery or known break in asepsis\n• Patient immunocompromised\n• Infection would be catastrophic (some neuro/implant cases — still think, don’t reflex)", size=15, color=INK)
-notes(s, "Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.")
+notes(s, "Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. Willie’s left ear is infected, so antimicrobials are treatment, not clean prophylaxis.")
 
 # 19 Preop check
 s = new_content("Knowledge check — preoperative", "Answer before we walk to the prep room")
@@ -663,7 +663,7 @@ add_round(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(5.5), WHITE)
 add_rect(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(0.7), NAVY)
 add_text(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(0.7), "Alcohol & others", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_text(s, Inches(9.1), Inches(2.05), Inches(3.55), Inches(4.4), "Isopropyl/ethyl alcohol: rapid, no residual, flammable — no pooling near cautery.\nOften the ‘paint’ between CHG scrubs.\nDo not use alcohol on open wounds, mucous membranes, or laser/cautery pools.\nHydrogen peroxide is not a surgical prep.", size=14, color=INK)
-notes(s, "CHG–alcohol is a common, evidence-supported choice for trunk skin when not contraindicated. Hammer ocular and middle-ear toxicity — this Cocker’s ear is exactly where CHG and aminoglycosides do harm.")
+notes(s, "CHG–alcohol is a common choice for trunk skin when not contraindicated. Willie’s left ear is exactly where CHG and aminoglycosides can harm a swollen drum and middle ear.")
 
 # 26 Technique
 s = new_content("How to scrub the patient", "Contact time and direction matter more than the number of ‘passes’ you brag about")
@@ -808,7 +808,7 @@ add_bullets(s, Inches(7.05), Inches(1.95), Inches(5.55), Inches(4.5), [
     "Client: how to give meds, what sedation vs. pain looks like, when to call.",
     "Dysphoria ≠ pain, but treat pain first if unsure.",
 ], size=15, spacing=8)
-notes(s, "Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — the Cocker already got DexSP.")
+notes(s, "Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — Willie already received DexSP.")
 
 # 36 Wound
 s = new_content("The incision after you leave it", "Protect the apposition you just created")
@@ -869,7 +869,7 @@ add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.9), Inches(4.5), left, size=15
 add_round(s, Inches(7.05), Inches(1.2), Inches(5.75), Inches(5.5), NAVY)
 add_text(s, Inches(7.3), Inches(1.45), Inches(5.3), Inches(0.4), "Why the next doctor cares", size=16, bold=True, color=GOLD)
 add_text(s, Inches(7.3), Inches(2.05), Inches(5.3), Inches(4.3), "At 2 a.m. someone will open this record because the abdomen is swelling.\n\nThey need: how the pedicles were ligated, whether a sponge count was complete, what suture is in the linea, and whether the client was already called.\n\nOperate as if that night-call is tonight.", size=16, color=WHITE)
-notes(s, "Grade completeness. For the Cocker: neuro exam, ASA III, TM status, DexSP already given, no NSAID, imaging plan.")
+notes(s, "For Willie: neuro exam, ASA III-E, TM visible but swollen, DexSP given, no NSAID, murmur, films, MRI plan.")
 
 # 39 Discharge
 s = new_content("Discharge instructions — in the client’s language", "Verbal + written. Teach-back. One caregiver demonstrates the e-collar.")
@@ -926,17 +926,17 @@ add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(5.5), [
     "Antimicrobial use in food animals has residue and regulatory obligations — prophylaxis is not a default pour-on.",
     "Discharge is often a producer conversation: milk withhold, slaughter withhold, when the animal can rejoin the group.",
 ], size=17, spacing=10)
-notes(s, "One minute. Halsted travels to the barn. Then get back to the Cocker.")
+notes(s, "One minute. Halsted travels to the barn. Then get back to Willie.")
 
-# 43 Integrated case — the Cocker
-s = new_content("Walk the Cocker through the whole hour", "You are the surgeon. Client is in reception.")
+# 43 Integrated case — Willie
+s = new_content("Walk Willie through the whole hour", "You are the surgeon. The owner is in reception.")
 add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.55), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.3), Inches(11.8), Inches(1.25), "Adult Cocker Spaniel. Severe otitis externa. Canal patent. TM intact. DexSP already given. Circling left, nystagmus, knuckling right. Cardiovascularly stable, walking. This is ASA III. Client-owned. Going home after recovery — if you decide recovery is in the hospital tonight.", size=15, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.3), Inches(11.8), Inches(1.25), "Willie, 6 y 11 mo MN Cavalier, 13.7 kg. Acute vestibular crisis. Severe AS otitis, TM visible/swollen. Circling left, nystagmus fast-left, right knuckling. Grade II murmur. CBC WNL. This is ASA III-E. Client-owned.", size=15, color=NAVY)
 steps = [
-    ("Pre-op", "ASA III. Neuro exam. No NSAID (DexSP on board). No aminoglycoside in the ear. Culture. CT/MRI before TECA. Antibiotics are treatment, not clean prophylaxis. Consent: head tilt, deafness, facial nerve."),
-    ("Prep", "Only after a surgical plane. Clip the intended field (ear/bulla vs TECA). Dirty then sterile prep. CHG off the canal/ear and off the eye. Position padded — this dog falls. Four-quadrant drape. Closed glove."),
-    ("Intra", "Timeout. Maintain asepsis. If you contaminate, say it and fix it. Do not treat this like a 20-minute spay."),
-    ("Post", "Airway, temp, pain score. No NSAID tonight. Watch for worsening vestibular signs, aspiration, incision. Written discharge + ER list. You still own hour 23."),
+    ("Pre-op", "ASA III-E. Neuro exam. No NSAID (DexSP). IVF, Cerenia, meclizine. Culture the ear. Radiographs ≠ MRI. Central until proven otherwise."),
+    ("Prep", "Alfaxalone only after a surgical plane. Clip/prep the ear if you flush. CHG off the eye and drum. Pad him — he falls. Maintain the airway."),
+    ("Intra", "Deep clean + cytology. Timeout. If you contaminate, say it. Do not treat this like a 20-minute spay."),
+    ("Post", "Confine, no stairs. Watch neuro signs, vomiting, seizures. MRI next. TECA-LBO only after culture if medical therapy fails. You own hour 23."),
 ]
 for i, (t, d) in enumerate(steps):
     x = Inches(0.45) + Inches(i * 3.2)
@@ -944,12 +944,12 @@ for i, (t, d) in enumerate(steps):
     add_rect(s, x, Inches(2.9), Inches(3.05), Inches(0.55), NAVY)
     add_text(s, x, Inches(2.9), Inches(3.05), Inches(0.55), t, size=14, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.15), Inches(3.55), Inches(2.75), Inches(3.0), d, size=12, color=INK)
-notes(s, "Walk this without questions until the end. Contrast in one sentence: a healthy Lab OHE is ASA I and gets no routine antibiotics. This Cocker is the opposite.")
+notes(s, "Walk Willie without questions until the end. One-sentence contrast: a healthy Lab OHE is ASA I and gets no routine antibiotics. Willie is the opposite.")
 
 # 44 Key points
 s = new_content("Key points from this hour", "If you remember six things, remember these")
 pearls = [
-    "ASA is assigned after today’s PE and labs. Vestibular Cocker + severe otitis = ASA III, not a healthy ear flush.",
+    "ASA is assigned after today’s PE and labs. Willie (vestibular Cavalier + AS otitis + murmur) is ASA III-E, not a healthy ear flush.",
     "Elective clean OHE: no routine postoperative antibiotics.",
     "Clip after induction, #40, not razor, not the night before; spiral prep center → out.",
     "CHG off the cornea and out of the middle ear.",
@@ -962,7 +962,7 @@ for i, t in enumerate(pearls):
     add_rect(s, Inches(0.5), y, Inches(0.7), Inches(0.8), GOLD)
     add_text(s, Inches(0.5), y, Inches(0.7), Inches(0.8), str(i + 1), size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.4), y, Inches(11.1), Inches(0.8), t, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Stop here if time is gone. The Cocker is the ASA III they should be able to defend.")
+notes(s, "Stop here if time is gone. Willie is the ASA III-E they should be able to defend.")
 
 # 45 Summary
 s = new_content("Take-home", "Prepare the patient. Prepare yourself. Own the next 24 hours.")
@@ -988,9 +988,9 @@ add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, 0, 0, Inches(0.22), H, GOLD)
 add_text(s, Inches(0.75), Inches(2.3), Inches(12), Inches(0.5), "DVM 612  ·  PRINCIPLES OF SURGERY", size=16, bold=True, color=GOLD)
 add_text(s, Inches(0.75), Inches(2.85), Inches(12), Inches(1.2), "Questions", size=54, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(4.3), Inches(12), Inches(1.0), "If there are no questions: what would you do differently for the Cocker\nthan for a healthy Labrador spay?", size=18, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(4.3), Inches(12), Inches(1.0), "If there are no questions: what would you do differently for Willie\nthan for a healthy Labrador spay?", size=18, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(6.3), Inches(12), Inches(0.4), "Lewyt College of Veterinary Medicine  ·  Long Island University", size=14, color=GOLD)
-notes(s, "Take questions. If none: what would you do differently for the Cocker than for a healthy Labrador spay? Dismiss on time.")
+notes(s, "Take questions. If none: what would you do differently for Willie than for a healthy Labrador spay? Dismiss on time.")
 
 # Stamp numbers
 stamp_footers()
