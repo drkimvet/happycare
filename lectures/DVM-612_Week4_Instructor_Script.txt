@@ -1,518 +1,149 @@
-DVM 612  |  Principles of Surgery  |  Week 4
-Lewyt College of Veterinary Medicine  |  60-minute lecture
-Preoperative evaluation, patient preparation, postoperative care
+DVM 612 Week 4 instructor script (updated, no ECFVG)
 
-FILE: lectures/DVM-612_Week4_Preop_PatientPrep_Postop.pptx
-Download: https://github.com/drkimvet/happycare/raw/cursor/dvm612-week4-lecture-0cc2/lectures/DVM-612_Week4_Preop_PatientPrep_Postop.pptx
-
-HOW TO TEACH: Presenter view. Timer visible. If behind, skip large-animal footnote (slide 42) and protect Part II (prep).
-
-========================================================================
 
 SLIDE 1. DVM 612 · PRINCIPLES OF SURGERY · WEEK 4
-    Preoperative Evaluation, Patient Preparation & Postoperative Care
-    Lecture | 60 minutes | Semester 3
-    Mapped to DVM 612 course learning objectives 4, 7, 8 and to the AVMA ECFVG Clinical Proficiency Examination (CPE) 2026 Manual of Administration — Surgery & Anesthesia.
-    Required reading: Fossum, Small Animal Surgery, 5th ed. (2018) · Hendrickson & Baird (2013)
-    1 / 47
-    SPEAK: Welcome. This is Week 4 of DVM 612. Weeks 1–3 covered asepsis, sterilization, facilities, monitoring, communication, and surgery reports. Today we put the patient in the center: decide if they are a surgical candidate, prepare them and yourselves aseptically, and own the 24 hours after the last suture. One hour. Three acts. Keep a Fossum nearby; I will flag ECFVG CPE skills because they are the same skills this course will later ask you to demonstrate in lab and OSCE.
+    SPEAK: Welcome. This is Week 4 of DVM 612. Weeks 1–3 covered asepsis, sterilization, facilities, monitoring, communication, and surgery reports. Today we put the patient in the center: decide if they are a surgical candidate, prepare them and yourselves aseptically, and own the 24 hours after the last suture. One hour. Three acts. Keep Fossum nearby. Lab and OSCE will ask you to demonstrate the same prep and discharge skills.
 
 SLIDE 2. By the end of this hour you will be able to
-    ▸ Perform a preoperative evaluation, assign an ASA status, and decide whether to proceed, delay, or stabilize. ▸ Build a peri-operative plan: fasting, analgesia, antimicrobial prophylaxis, consent, and checklist. ▸ Prepare the patient and surgeon for aseptic surgery using ECFVG/CPE-standard technique (clip, prep, four-quadrant drape, gown/glove). ▸ Recognize and correct a break in asepsis before and after the incision is made. ▸ Write a postoperative plan, surgical report elements, and client discharge instructions — including 24-hour emergency criteria.
-    This lecture does not teach how to cut, ligate, or close — that is Weeks 5–12. Today is judgment, asepsis, and aftercare. Poor prep cannot be rescued by elegant suture.
-    2 / 47
     SPEAK: Read the five objectives aloud. Tell students Exam 1 (Week 6) will sample this material. OSCE/lab sign-off will include patient prep and discharge writing (LO 4 and 7).
 
 SLIDE 3. Sixty-minute plan
-    0–3 min
-    Frame + Halsted as the through-line
-    3–22 min
-    I. Preoperative evaluation & peri-op plan
-    22–42 min
-    II. Patient and surgeon preparation
-    42–57 min
-    III. Postoperative care, complications, discharge
-    57–60 min
-    Case wrap, exam/ECFVG pearls, questions
-    3 / 47
-    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) — that is the ECFVG high-stakes skill set.
+    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) — that is what lab and OSCE actually watch.
 
 SLIDE 4. Why this hour is not optional
-    Most SSIs are preventable
-    Hair, skin flora, hypothermia, poor hemostasis, dead space, and broken asepsis — not ‘bad luck’ — drive surgical site infection.
-    The incision is a contract
-    The client trusts you with a healthy animal (often an elective OHE). Entry-level standard is the same as ECFVG CPE: client-owned animal going home.
-    Postop starts in preop
-    Analgesia, antibiotics, temperature, and client expectations are decided before the scalpel, not at discharge.
-    ECFVG CPE 2026 MOA — Surgery competencies (the same three verbs as this lecture)
-    ▸ Prepare the patient for a surgical procedure. ▸ Prepare yourself for a surgical procedure. ▸ Perform the surgical procedure — and the score is not final until 24 hours later (hemorrhage, herniation, dehiscence count).
-    4 / 47
-    SPEAK: Emphasize the CPE 24-hour rule. DVM 612 will hold you to the same standard: a beautiful closure that bleeds in recovery is a failed surgery.
+    SPEAK: DVM 612 will hold you to this: a beautiful closure that bleeds in recovery is a failed surgery. The first 24 hours are part of the operation.
 
 SLIDE 5. Halsted’s principles — the through-line for today
-    1. Gentle tissue handling
-    Prep trauma, clipper burn, and crushing towel clamps are tissue handling.
-    2. Meticulous hemostasis
-    Preop coagulopathy; postop hemorrhage is a 24-hour emergency.
-    3. Preserve blood supply
-    Do not strangulate skin with tight bandages or poorly placed clamps.
-    4. Strict asepsis
-    Patient prep, surgeon prep, draping — today’s center of gravity.
-    5. No tension
-    Plan incision location and closure now, not after the fascia splits.
-    6. Accurate apposition
-    Postop incision care protects the apposition you create.
-    7. Obliterate dead space
-    Drains and bandages (Week 15) start with today’s wound plan.
-    5 / 47
     SPEAK: Do not spend more than 2 minutes. Point: every Halsted principle has a preop or postop action, not just an intraoperative one.
 
 SLIDE 6. The perioperative continuum
-    PRE-OP
-    History, PE, ASA Labs, stabilize Consent, plan Analgesia, Abx
-    →
-    PREP
-    Clip after induction Dirty then sterile prep Position, drape Gown, closed glove
-    →
-    INTRA-OP
-    Asepsis held Halsted applied Time, temp, pain (Weeks 5–12)
-    →
-    POST-OP
-    Airway, pain, heat Watch 24 hours Report + discharge Recheck plan
-    6 / 47
-    SPEAK: The red thread: you do not ‘hand off’ responsibility at the OR door. ECFVG anesthesia candidate gets the dog ready for surgical prep; surgery candidate owns prep through last skin suture; both own recovery discussion.
+    SPEAK: The red thread: you do not hand off responsibility at the OR door. Anesthesia gets the dog ready for surgical prep; surgery owns prep through the last skin suture; both own recovery.
 
 SLIDE 7. Preoperative evaluation and the peri-operative plan
-    History · PE · ASA · labs · stabilize · fasting · consent · analgesia · antimicrobials
-    ~19 minutes
-    7 / 47
     SPEAK: Transition. Ask: who has watched an elective surgery get cancelled at induction? That is a successful preop exam.
 
 SLIDE 8. Goals of the preoperative evaluation
-    01
-    Identify surgical disease
-    Confirm the lesion, laterality, and that surgery is the right tool — not just ‘the next appointment.’
-    02
-    Quantify anesthetic risk
-    ASA status is required on the ECFVG anesthesia record. Assign it yourself; do not inherit it.
-    03
-    Find problems you can fix first
-    Dehydration, anemia, electrolyte disasters, uncontrolled diabetes, full bladder, pyoderma over the site.
-    04
-    Plan the day
-    Approach, positioning, implants, blood products, ICU bed, who calls the client.
-    8 / 47
     SPEAK: Four jobs. Students often skip #3 and #4. Elective surgery on an unstable patient is not bravery.
 
 SLIDE 9. History that actually changes the plan
-    Patient & medical
-    Risk, drugs, home
-    ▸ Signalment: species, breed, age, BCS, sex/neuter — brachycephalic, sighthound, Doberman (vWD), miniature schnauzer (hyperlipidemia). ▸ Presenting complaint vs. elective wellness: ‘just a spay’ still needs a real history. ▸ Prior anesthesia/surgery: difficult intubation, delayed recovery, bleeding, drug reactions. ▸ Medications: NSAIDs, steroids, Apoquel/Cytopoint (skin), insulin, anticonvulsants, heartworm, supplements.
-    ▸ When last ate or drank — and what (including garbage, treats, coprophagia). ▸ Cough, collapse, polyuria/polydipsia, vomiting, diarrhea, heat cycle, last whelping. ▸ Bleeding tendency: petechiae, cavity bleeds, prolonged oozing from venipuncture. ▸ Environment: indoor/outdoor, other animals, zoonoses, client ability to confine postop.
-    9 / 47
-    SPEAK: Spend 2 minutes. Highlight Doberman/vWD, brachycephalics, and ‘last meal’ as exam favorites. ECFVG anesthesia: do not premedicate before you have examined the patient — that is a dismissible event on the anesthesia section.
+    SPEAK: Spend 2 minutes. Highlight Doberman/vWD, brachycephalics, and last meal as exam favorites. Never premedicate before you have examined the patient.
 
 SLIDE 10. Physical examination — do it yourself
-    ▸ Hands-on, systematic: TPR, mm, CRT, hydration, BCS, pain, mentation. ▸ Cardiopulmonary: murmurs, arrhythmias, pulse quality, lung sounds, upper airway. ▸ Surgical site: pyoderma, fleas, otitis, mammary chain, heat, pregnancy, cryptorchid. ▸ Abdomen: pain, distension, organomegaly, fluid wave — and empty the bladder if possible. ▸ Neuro/ortho if relevant: knuckling, neck pain, lameness that changes positioning. ▸ Record it. If it is not written, the next person (and the exam) will assume you skipped it.
-    ECFVG Anesthesia order of operations
-    1. Examine the patient 2. Request indicated labs 3. Interpret results given 4. Assign ASA status 5. Adjust the drug plan 6. Then premedicate Premedicating before the exam is a dismissible event.
-    10 / 47
-    SPEAK: This is the CPE anesthesia live-animal sequence. Even though Week 4 is a surgery lecture, DVM 612 students share patients with anesthesia. Never skip PE because ‘the tech already did vitals.’
+    SPEAK: Never skip PE because the technician already did vitals. DVM 612 students share patients with anesthesia. The surgeon still owns the decision to proceed.
 
-SLIDE 11. ASA physical status — memorize the ECFVG wording
-    ASA
-    ECFVG definition
-    Typical example
-    I
-    Normal, healthy patient
-    Elective OHE in a well 1-year-old
-    II
-    Mild systemic disease, well compensated
-    Controlled diabetes; obese but stable; asymptomatic murmur
-    III
-    Moderate systemic disease, ongoing but compensated; some functional limitation
-    CKD with azotemia; symptomatic heart disease; anemia that is stable
-    IV
-    Severe systemic disease that is a constant threat to life; uncompensated
-    GDV, septic abdomen, decompensated CHF, uncontrolled hemorrhage
-    V
-    Moribund; not expected to live >24 h with or without surgery
-    Gastric rupture, catastrophic trauma, end-stage disease
-    11 / 47
-    SPEAK: Read ASA I and III slowly. Emergency ‘E’ modifier is used clinically (e.g., ASA IV-E for GDV) though ECFVG appendix lists 1–5. An ‘elective’ procedure on an ASA IV patient is a decision, not a schedule slot.
+SLIDE 11. ASA physical status — memorize this wording
+    SPEAK: Read ASA I and III slowly. The emergency E modifier is used clinically (ASA IV-E for GDV). An elective procedure on an ASA IV patient is a decision, not a schedule slot. Next slides: a real ASA III Cocker Spaniel.
 
 SLIDE 12. Assign the ASA — 60-second cases
-    A
-    Healthy 8-month Labrador for elective OHE. Normal PE, PCV/TS normal.
-    ASA I · proceed
-    B
-    10-year MN Beagle, BCS 8/9, grade 2/6 murmur, no CHF, dental + mass removal.
-    ASA II · proceed with monitoring plan
-    C
-    Cat, urethral obstruction, K+ 8.2, bladder huge, arrhythmia.
-    ASA IV-E · stabilize first, then surgery
-    D
-    Dog, well-controlled Addison’s, on DOCP/pred, coming for foreign body enterotomy, stable today.
-    ASA II–III · proceed; give steroid stress dose
-    12 / 47
-    SPEAK: Cold-call four students. C is the trap: do not rush a blocked cat to cystotomy until potassium and perfusion are addressed. D: surgery is indicated; endocrine disease is compensated — still plan steroids and electrolytes.
+    SPEAK: Cold-call four students. C is the real ASA III we will unpack. D is the trap: do not induce a hyperkalemic blocked cat because surgery is on the board.
 
-SLIDE 13. Preoperative diagnostics — indicated, not automatic
-    Young, healthy, elective (ASA I)
-    PCV/TS ± blood glucose and Azo stick is a defensible minimum. Many hospitals still run a preanesthetic chemistry/CBC — know your hospital policy and be able to defend either choice.
-    Age, disease, or invasive procedure
-    CBC, chemistry, UA. Add clotting (PT/PTT or BMBT) if bleeding risk. T4 in older cats. Blood pressure. ECG if arrhythmia. Imaging if it changes the approach.
-    Do not order tests you will ignore — and do not ignore tests you ordered
-    ▸ Anemia, hypoalbuminemia, azotemia, electrolyte storms, and thrombocytopenia change drugs, fluids, and whether you cut today. ▸ For abdominal surgery: consider imaging so you are not ‘exploring’ a pyometra you could have diagnosed, or a mass that needed a different approach. ▸ Large animal: stall-side PCV/TS, fibrinogen, and physical exam often outweigh a full chemistry in the field — still document the risk conversation.
-    13 / 47
-    SPEAK: Avoid dogma. The CPE will give you lab results after you request them. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy.
+SLIDE 13. Real ASA III case — Cocker Spaniel with vestibular disease
+    SPEAK: This is a real peri-operative patient, not a cartoon. Spend 90 seconds. Cockers plus dirty ears plus new circling is otitis media/interna until proven otherwise. Intact TM is good news for topical safety only if you are sure the middle ear is not involved — you are not sure. Knuckling vs drunk vestibular ataxia: have a student demonstrate paw placing. If placing is truly delayed, do not call this ‘just an ear’ and induce for a TECA tonight.
 
-SLIDE 14. Stabilize before you sterilize
-    Fix first
-    Hypovolemia / shock Electrolyte crises (K+, Na+) Severe anemia (transfuse) Respiratory distress Uncontrolled pain Hypoglycemia Hyperthermia / heat stroke
-    Often delay elective
-    Pyoderma over the site Anestrus vs. heat if policy Unstable endocrine disease Active URI in cats Recent live vaccines (clinic policy) Client cannot confine / medicate No fasting in a full-stomach elective
-    May proceed urgently
-    GDV Septic abdomen C-section with fetal distress Airway obstruction Hemorrhage you cannot pack Open fracture (after resuscitation) Uterine rupture / pyometra shock
-    14 / 47
+SLIDE 14. Why this dog is ASA III — and what changes today
+    SPEAK: This is the ASA III teaching case for Exam 1. Punchline: vestibular + severe otitis is moderate/severe compensated disease. You may still anesthetize — for CT, flush, or TECA — but you do not treat the dog like a healthy spay. No Animax-style aminoglycoside in a suspect inner ear. No NSAID after DexSP.
+
+SLIDE 15. Preoperative diagnostics — indicated, not automatic
+    SPEAK: Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. Know your hospital policy and be able to defend it.
+
+SLIDE 16. Stabilize before you sterilize
     SPEAK: One sentence: resuscitation is not delayed for clipping. Elective OHE is delayed for pyoderma. GDV is not delayed for a dental cleaning that was also booked.
 
-SLIDE 15. Fasting — traditional teaching vs. current practice
-    Working guidance (small animal)
-    ▸ Healthy adult dog/cat: food 4–6 h; water until premedication (AAHA-aligned). ▸ Traditional/Fossum-era: often 8–12 h NPO — still appears on some exams; be able to discuss aspiration vs. hypoglycemia. ▸ Neonates/pediatrics: much shorter fast; offer a small meal 1–2 h prior as directed. ▸ Brachycephalics: shorter fast, careful pre-oxygenation; regurgitation risk is high either way. ▸ Ruminants: longer food withhold (often 12–24 h+) to reduce rumen fill/pressure; water 6–12 h per species/protocol. ▸ Horses: typically 8–12 h grain/hay protocols vary — follow hospital/field SOP.
-    Why it matters
-    ▸ Goal: less gastric volume and acidity without starving a small patient into hypoglycemia. ▸ A full stomach + recumbency + opioids = regurgitation and aspiration. ▸ Prolonged fasting increases reflux in some dogs and stress in cats. ▸ Always ask what was eaten this morning. Clients feed ‘just a biscuit.’ ▸ Diabetics: coordinate insulin and a small meal with anesthesia — do not improvise.
-    15 / 47
+SLIDE 17. Fasting — traditional teaching vs. current practice
     SPEAK: I teach AAHA-style 4–6 h for healthy small animals as best practice, and I tell them older exam banks may still say overnight NPO. Ruminant contrast prevents a species-blind answer on Exam 1.
 
-SLIDE 16. Informed consent is a surgical skill
-    ▸ Procedure name in plain language, and the reason. ▸ Benefits, alternatives (including no surgery), and what happens if we wait. ▸ Material risks: anesthesia death (rare but real), hemorrhage, infection, dehiscence, incomplete excision, recurrence, incontinence (OHE myth vs. data — be honest). ▸ Estimate: professional fees vs. supplies; what is not included (histopathology, overnight, complications). ▸ Resuscitation code / DNR. Do this before induction, not in recovery. ▸ Who will call whom, and when. Write the client’s phone number on the board.
-    CPE mindset
-    The 2026 MOA tells you to assume the OHE is a client-owned animal that will go home after recovery in your hospital. Operate, document, and speak as if that client is waiting in reception — because in practice they are.
-    16 / 47
+SLIDE 18. Informed consent is a surgical skill
     SPEAK: Students under-consent electives. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR explicitly.
 
-SLIDE 17. Checklist and the analgesia plan belong in preop
-    Pre-incision checklist (WHO-adapted)
-    ▸ Identity, procedure, site/side confirmed. ▸ Consent, estimate, DNR documented. ▸ ASA, allergies, last meal. ▸ IV catheter patent; fluids running. ▸ Airway secured; monitoring on. ▸ Antibiotics given (if indicated) 30–60 min before incision. ▸ Local block planned (incisional, testicular, TAP, splash). ▸ Instruments, suture, extra gloves, cautery, suction. ▸ Image / implants in the room if needed.
-    Multimodal analgesia — plan it now
-    ▸ Opioid (pure µ for most laparotomies) as part of premed or induction. ▸ NSAID if perfusion and kidneys/GI allow — often at recovery, not in hypotensive shock. ▸ Local/regional: the cheapest, safest MAC-sparing tool you have. ▸ Adjuncts: ketamine CRI, dexmedetomidine CRI, gabapentin, acetaminophen (dog only). ▸ Cats: no acetaminophen; careful NSAID choice and dose. ▸ ECFVG anesthesia: you must be able to discuss recovery and postoperative pain management.
-    17 / 47
+SLIDE 19. Checklist and the analgesia plan belong in preop
     SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students.
 
-SLIDE 18. Surgical antimicrobial prophylaxis — stewardship, not ritual
-    Usually NO prophylaxis
-    Clean procedures with excellent asepsis: • Elective OHE / castration • Most clean mass removals • Many short soft-tissue surgeries Antibiotics are not a substitute for sterile technique, Halsted, or a dry field. Ongoing postoperative antibiotics are rarely required after an uncomplicated clean surgery.
-    YES — timed IV, then stop
-    Give 30–60 min before incision; redose (e.g. cefazolin ~q90 min) if surgery is long or blood loss is large. Consider if: • Clean-contaminated / contaminated / dirty • Implant (orthopedic, mesh) • Hollow viscus entry • Prolonged surgery or known break in asepsis • Patient immunocompromised • Infection would be catastrophic (some neuro/implant cases — still think, don’t reflex)
-    18 / 47
-    SPEAK: This is a high-yield exam slide. Elective canine OHE on the CPE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home.
+SLIDE 20. Surgical antimicrobial prophylaxis — stewardship, not ritual
+    SPEAK: High-yield Exam 1 slide. Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home. Contrast with the vestibular Cocker: that ear is infected, so antimicrobials are therapy.
 
-SLIDE 19. Knowledge check — preoperative
-    1
-    A blocked cat with K+ 8.2 is booked for perineal urethrostomy this morning. First move?
-    Stabilize (calcium, fluids, insulin/dextrose as indicated, decompress). Do not induce an ASA IV-E hyperkalemic cat ‘because surgery is on the board.’
-    2
-    Healthy 1-year-old OHE. Client asks for ‘antibiotics just in case.’
-    Decline routine prophylaxis. Explain asepsis + short clean procedure. Offer a written SSI-watch list instead.
-    3
-    You assigned ASA I yesterday. Today the dog has a productive cough and fever.
-    Reassign ASA, delay elective surgery, work up respiratory disease. ASA is a live assessment.
-    19 / 47
+SLIDE 21. Knowledge check — preoperative
     SPEAK: Take 2 minutes. Then move. Do not let this become a 10-minute debate.
 
-SLIDE 20. Patient and surgeon preparation
-    Clip · antiseptic · position · four-quadrant drape · scrub · gown · closed glove · asepsis
-    ~20 minutes
-    20 / 47
-    SPEAK: This is the ECFVG Surgery section skill cluster: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. High risk of dismissible events if asepsis is lost and not recognized.
+SLIDE 22. Patient and surgeon preparation
+    SPEAK: This is the skill cluster lab will watch: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. Lost asepsis that nobody names is how patients get SSI.
 
-SLIDE 21. ECFVG CPE Surgery — what is actually scored in prep
-    Patient preparation
-    Hair removal
-    Clipper, not razor. Adequate field. No clipper burn / missed patches in the field.
-    Skin preparation
-    Dirty prep then sterile prep. Contact time. Center → periphery. No pooling / wicking.
-    Patient positioning
-    Secure, padded, physiologically sensible. OHE: dorsal recumbency, straight.
-    Surgeon preparation
-    Scrubbing & attire
-    Cap, mask, clean scrubs. Timed or brushless surgical scrub. Hands above elbows.
-    Gowning / gloving
-    Sterile gown. Closed gloving preferred. Know open gloving for reglove.
-    Draping
-    Four-quadrant draping is an ECFVG surgical-experience requirement. Maintain field.
-    21 / 47
+SLIDE 23. What we actually score in patient and surgeon prep
     SPEAK: Read the six scored boxes. Students should be able to name them on Exam 1 without the OHE steps mixed in.
 
-SLIDE 22. Sequence — do not invert the rooms
-    1
-    Anesthetized, airway in, IV in, depth adequate
-    2
-    Express bladder if abdominal / caudal surgery
-    3
-    Clip with #40, vacuum hair, ‘dirty’ antiseptic
-    4
-    Move to OR, position, pad, tie, final check
-    5
-    Sterile prep (gloved), contact time honored
-    6
-    Four-quadrant towels → large drape
-    7
-    Surgeon gowns/gloves (or already gowned)
-    8
-    Timeout / checklist → announce incision
-    22 / 47
+SLIDE 24. Sequence — do not invert the rooms
     SPEAK: Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before a surgical plane — patient wakes, contaminates, gets clipper lacerations.
 
-SLIDE 23. Hair removal
-    ▸ Electric clippers, clean #40 blade, teeth intact. Razors create micro-nicks and raise SSI risk. ▸ Clip with the grain, then against, to the skin. Tense the skin in folds, mammary chain, inguinal region. ▸ Field large enough to extend the incision, place a drain, and keep drape edges off hair (~20 cm beyond planned incision is a Fossum-style working rule). ▸ Vacuum. Loose hair is a mobile contaminant. ▸ Do not clip the night before: bacterial load at the site rises as the skin is injured. ▸ Clipper burn is a wound. Overheated blades and too much pressure = postop pain and infection.
-    OHE clip field (CPE)
-    From xiphoid (or a few cm cranial) to pubis, and widely lateral to the nipples. Include enough caudal abdomen that you can extend if the uterus is unexpected. Pluck or carefully clip preputial hair if a male abdominal surgery (not OHE) — tuck/flush prepuce as indicated.
-    23 / 47
-    SPEAK: Demonstrate with hands on your own abdomen if no model. Missed hair at the drape edge is an ECFVG-style fail.
+SLIDE 25. Hair removal
+    SPEAK: Demonstrate with hands on your own abdomen if no model. Missed hair at the drape edge fails the prep.
 
-SLIDE 24. Know the field before you pick up the clippers
-    Canine OHE / celiotomy
-    Xiphoid → pubis, widely lateral past nipples. Dorsal recumbency.
-    Canine castration (prescrotal)
-    Scrotum ± prescrotal abdomen; some surgeons shave scrotum, some don’t — know lab SOP. Clip wide enough for drape.
-    Feline castration
-    Pluck or clip scrotum per SOP. Still aseptic skin prep.
-    Canine castration (scrotal ablation)
-    Wider perineal/scrotal field; purse-string anus if needed.
-    Limb / orthopedic
-    Joint above to joint below; hang limb; stirrup; circumferential prep (‘around the world’).
-    Field LA surgery
-    Clip still matters. Dirt and fecal contamination are the enemy; sterile-drape ideals are adapted, not abandoned.
-    24 / 47
+SLIDE 26. Know the field before you pick up the clippers
     SPEAK: One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.
 
-SLIDE 25. Skin antiseptics — choose with anatomy, not loyalty
-    Chlorhexidine
-    Broad Gram+ / Gram−, residual 24 h on skin. Best with alcohol (CHG–alcohol). Inactivated by organic debris if too dilute. TOXIC to cornea. Ototoxic in the middle ear. Not for peritoneum, bladder, joints, meninges. Do not store homemade dilute jugs.
-    Povidone-iodine
-    Broad spectrum including spores at right conc./time. Better near mucous membranes / some ocular protocols (dilute, veterinarian-directed). Inactivated by organic matter and alcohol in some sequences. Skin/thyroid/iodine sensitivity. Stains. Must dry / contact time to work.
-    Alcohol & others
-    Isopropyl/ethyl alcohol: rapid, no residual, flammable — no pooling near cautery. Often the ‘paint’ between CHG scrubs. Do not use alcohol on open wounds, mucous membranes, or laser/cautery pools. Hydrogen peroxide is not a surgical prep.
-    25 / 47
+SLIDE 27. Skin antiseptics — choose with anatomy, not loyalty
     SPEAK: Faculty preference at LIU labs may be CHG–alcohol for trunk skin. Hammer ocular/ear contraindications — they have already seen ototoxic ear meds in other contexts.
 
-SLIDE 26. How to scrub the patient
-    ▸ Dirty prep (prep room): remove grease and gross contamination. Wear clean exam gloves. Discard gauze when it leaves the center. ▸ Sterile prep (OR): sterile gloves, sterile gauze or applicator. New sponge every time you leave the incision line. ▸ Start at the planned incision and spiral / wipe outward. Never bring a dirty sponge back to the center. ▸ Honor manufacturer contact time. Typical working teaching: at least 3 cycles or a timed 3–5 minute contact, then a final paint. Follow the product in your lab. ▸ The site should be damp-to-dry, not a lake. Puddles wick bacteria under drapes and soak the patient (hypothermia).
-    High-risk mistakes
-    • Scrubbing back and forth like washing a car • Using the same gauze on anus and incision • CHG in the eye or ear canal • Alcohol pooling + electrocautery • ‘One quick wipe’ and draping wet • Contaminating the site while moving the dog
-    26 / 47
+SLIDE 28. How to scrub the patient
     SPEAK: If time, mime the spiral on the lectern. Mention hanging-limb prep: start at incision, work distally toward the dirty foot, then the wrapped foot is handed off.
 
-SLIDE 27. Positioning is physiology, not just ‘on its back’
-    Dorsal recumbency
-    OHE, most celiotomies. Straight spine, hind limbs caudal not forced into a split that strains the hips of a dysplastic dog. V-trough or sandbags. Head/neck neutral for the airway.
-    Lateral
-    Thoracotomy, some mass removals, GDV sometimes after decompression. Down lung, down vessels, down muscles — pad the elbow, greater trochanter, acromion.
-    Sternal / perineal
-    Anal sac, some urinary, dorsal spinal. Do not over-flex the neck of brachycephalics. Purse-string the anus when indicated — and remove it at the end.
-    Padding & safety
-    Hypothermia: warming devices that cannot burn. Eyes lubricated. Endotracheal tube not kinked. Electrosurgery pad contact. Ties not tourniquets.
-    27 / 47
-    SPEAK: CPE OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.
+SLIDE 29. Positioning is physiology, not just ‘on its back’
+    SPEAK: Canine OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.
 
-SLIDE 28. Four-quadrant draping
-    ▸ Four sterile towels (or equivalent) placed to box the field: cranial, caudal, left, right. Place the near towel first so you do not reach across the dog. ▸ Towel edges cover all hair. If hair is visible, the drape is wrong — re-clip or re-drape, do not ‘tuck and hope.’ ▸ Secure (Backhaus clamps or atraumatic alternatives per lab). Do not tent the skin into the incision. Do not puncture the patient’s skin carelessly with clamps. ▸ Large fenestrated or four-corner large drape over the towels. Cuff your hands. Never shake drapes over the field. ▸ Once down, the top surface is sterile; table edges and below table height are not. Hands stay on the field. ▸ If a drape is wet through (strikethrough), it is contaminated. Cover or replace.
-    Order of operations
-    1. You are gowned/gloved (or a sterile assistant drapes) 2. Towels — four quadrants 3. Clamps 4. Large drape 5. Organize instruments on a sterile table 6. Timeout 7. Announce: ready to incise CPE: notify examiner before the incision.
-    28 / 47
-    SPEAK: Four-quadrant is not optional style — it is an ECFVG requirement even for the pre-CPE surgical experience form. Demonstrate air-cuffing the drape.
+SLIDE 30. Four-quadrant draping
+    SPEAK: Four-quadrant is not optional style. Demonstrate air-cuffing the drape. Hair at the edge means re-clip or re-drape.
 
-SLIDE 29. Surgeon preparation
-    Clean scrubs, cap covering all hair, mask over nose and mouth, no jewelry, nails short, no polish/gels in most ORs. Shoes closed-toe. Eat/drink/bathroom before you scrub — leaving the field is a bigger sin than a slightly longer scrub.
-    Surgical scrub
-    Timed ~3–5 min or counted brushless CHG/alcohol per product. Fingers → hands → wrists → elbows. Rinse fingertips-up. Hands above elbows walking to the OR.
-    Gowning
-    Dry with sterile towel without contaminating. Gown without touching the outer surface. Assistant ties. Keep hands in cuffs for closed gloving.
-    Gloving
-    Closed gloving after gowning is preferred. Open gloving to replace a contaminated glove. If in doubt, both gloves come off and you start over.
-    29 / 47
-    SPEAK: CPE: gown pack use is demonstrated at orientation — still practice in our labs until it is muscle memory. Talking through a contaminated glove replacement is an Exam 1 question.
+SLIDE 31. Surgeon preparation
+    SPEAK: Practice gown packs in lab until it is muscle memory. Talking through a contaminated glove replacement is an Exam 1 question.
 
-SLIDE 30. Breaks in asepsis — recognize, announce, fix
-    Before the incision (prep / drape)
-    If YOU contaminate yourself or the field: say it immediately and correct (re-glove, re-gown, re-drape). If you do not notice and staff tell you once — warning, then correct. A second unrecognized break → Dismissible Event (unable to maintain an aseptic field). This is not ‘exam theater.’ It is how we protect a client-owned animal.
-    After the incision is made
-    No warning for an unrecognized break. You must notice, announce, and completely correct. If you do not, or if you correct incompletely — dismissible (animal’s life at risk). Examples: sleeve in the abdomen, instrument off the table used again, hole in glove ignored, dripping sweat onto the field.
-    30 / 47
-    SPEAK: This is the most important ECFVG slide in the hour. Culture in lab: we praise people who say ‘I just contaminated my sleeve.’ We do not praise silent heroics.
+SLIDE 32. Breaks in asepsis — recognize, announce, fix
+    SPEAK: Culture in lab: we praise people who say I just contaminated my sleeve. We do not praise silent heroics.
 
-SLIDE 31. CPE Surgery dismissible events (know these as ‘never events’)
-    ▸ 1. Fail to control significant hemorrhage. ▸ 2. Fail to create a secure abdominal wall closure. ▸ 3. Unable to achieve and maintain an aseptic field (patient and surgeon preparation included). ▸ 4. Significant damage to other organs (e.g., ureter in a clamp or ligature; removing cervix inappropriately). ▸ 5. Any other behavior that puts the animal’s life at risk (retained sponge/instrument is the classic example).
-    The CPE final surgery score is not determined until 24 hours after the procedure. Intra-abdominal hemorrhage from poor ligation, or herniation/dehiscence from a weak linea closure, can fail you after you have already left the OR. That is postoperative care as a scored competency.
-    31 / 47
+SLIDE 33. Never-events — these stop the surgery
     SPEAK: Connect #1, #2, #3 to today’s lecture. Intra-op details (#4) are later weeks, but ureter injury is a positioning/exposure/identification problem that starts with a calm, well-prepped patient.
 
-SLIDE 32. Knowledge check — preparation
-    A
-    Clip the OHE field the night before to save time at induction.
-    No. Increases bacterial load and clipper injury.
-    B
-    Razor the incision line for a ‘closer shave.’
-    No. Micro-nicks, higher SSI.
-    C
-    CHG scrub, then a drop of CHG runs into the eye — rinse and continue.
-    Emergency for the eye. CHG is corneal-toxic. Irrigate immediately; do not ‘continue.’
-    D
-    Hair visible at the drape edge; you add another towel to cover it.
-    Yes — if the added drape is sterile and the field is truly covered. Best is an adequate clip.
-    32 / 47
+SLIDE 34. Knowledge check — preparation
     SPEAK: C is the safety slide. D is the nuanced yes.
 
-SLIDE 33. Postoperative care
-    Recovery · pain · warmth · wound · 24-hour complications · report · discharge
-    ~15 minutes
-    33 / 47
+SLIDE 35. Postoperative care
     SPEAK: Shift energy. Students think postop is ‘the techs’ job.’ It is not.
 
-SLIDE 34. Immediate recovery — the surgery is not over
-    Airway
-    Extubate when swallow/gag returns (species-specific). Brachycephalics: later, oxygen-ready, watch stertor. Never leave a recovering patient.
-    Breathing
-    SpO2, mucus membranes, effort. Reverse residual drugs if appropriate. Aspiration risk if regurg occurred.
-    Circulation
-    HR, pulse, mm, CRT, BP if indicated. Pale + tachycardia after celiotomy is hemorrhage until proven otherwise.
-    Temperature
-    Most surgical patients are hypothermic. Rewarm actively but do not burn. Hypothermia → delayed recovery, coagulopathy, SSI.
-    Pain & nausea
-    Score pain. Give the analgesic you planned. Antiemetic if indicated. A ‘quiet’ animal may be cold, hypotensive, or painful — look.
-    Incision & pee
-    Spot-check for bleed-through. Know when they last urinated. E-collar before they are awake enough to lick.
-    34 / 47
+SLIDE 36. Immediate recovery — the surgery is not over
     SPEAK: ABC plus temperature plus pain. Hemorrhage speech: do not send a pale recovering OHE to the kennel because ‘she’s just groggy.’
 
-SLIDE 35. Pain assessment is a vital sign
-    Use a scale. Write the number.
-    ▸ Dogs: Glasgow Composite Measure Pain Scale (short form) is a common teaching standard. ▸ Cats: Feline Grimace Scale + behavior (hide, hunched, no groom). ▸ Colorado State University scales are also widely used in teaching hospitals. ▸ Re-score after intervention. A single ‘looks comfortable’ at 10 pm is not a plan. ▸ Large animals: species-specific (horse: pawing, flank watching, reduced appetite; cattle: isolation, bruxism).
-    Treat to the surgery you did
-    ▸ Soft tissue elective: opioid ± NSAID ± local is often enough. ▸ Celiotomy / orthopedic: expect more — CRIs, additional locals, overnight monitoring. ▸ Do not send home only tramadol and hope (dogs: weak evidence). ▸ Client: how to give meds, what sedation vs. pain looks like, when to call. ▸ Dysphoria ≠ pain, but treat pain first if unsure.
-    35 / 47
+SLIDE 37. Pain assessment is a vital sign
     SPEAK: Course CC3. Mention they will practice scoring in skills labs. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, concurrent steroids.
 
-SLIDE 36. The incision after you leave it
-    Look
-    Twice daily: swelling, discharge, gapping, smell, heat, bruise vs. hematoma. Photograph if the client is anxious.
-    Lick
-    E-collar, suit, or inflatable — whatever actually stays on. Licking is the leading cause of dehiscence in student surgeries.
-    Motion
-    Leash only. No running, jumping, wrestling, stairs unsupervised. Exercise restriction is a prescription, not a suggestion.
-    Clean
-    Usually no topical ointment unless directed. Do not scrub with CHG daily. Clean dirt with saline if needed.
-    Drain
-    If placed (Week 15): output, site, when to pull. Never send a drain without a written plan.
-    Suture/staple
-    Typically 10–14 days for skin in small animals if healing is routine. Absorbable intradermal: still recheck.
-    36 / 47
+SLIDE 38. The incision after you leave it
     SPEAK: Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’
 
-SLIDE 37. The first 24 hours — what fails a surgery after the OR
-    Hemorrhage
-    Pale mm, tachycardia, distending abdomen, drip from incision, collapsing. Return to OR. Do not ‘watch overnight’ if unstable.
-    Airway / aspiration
-    Stertor, crackles, regurg on the pillow. Especially brachycephalics and after opioids.
-    Hernia / evisceration
-    Linea failure. Emergency. Protect viscera with sterile moist towels, opioids, OR now.
-    Dehiscence (later)
-    Often day 3–5 as inflammation peaks and the patient licks. Skin vs. fascia — fascia is the emergency.
-    SSI
-    Redness, pain, discharge, fever, usually after day 3. Culture if indicated. Open, lavage, do not just add a random antibiotic.
-    Seroma / self-trauma
-    Dead space + motion. Usually not an emergency. Restrict, bandage sometimes. Do not drain casually.
-    37 / 47
+SLIDE 39. The first 24 hours — what fails a surgery after the OR
     SPEAK: Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.
 
-SLIDE 38. Surgical report — if it is not written, it was not done
-    Minimum elements
-    ▸ Date/time, patient ID, surgeon, assistant, anesthesia. ▸ Preop diagnosis and ASA. ▸ Procedure name (and side). ▸ Position, clip/prep, approach. ▸ Findings in order of encounter. ▸ What was done — ligatures, implants, samples. ▸ Suture: layer, material, size, pattern. ▸ Hemostasis, estimated blood loss, complications. ▸ Specimens to pathology / culture. ▸ Postop plan: fluids, pain, feeding, urinary, recheck.
-    Why the next doctor cares
-    At 2 a.m. someone will open this record because the abdomen is swelling. They need: how the pedicles were ligated, whether a sponge count was complete, what suture is in the linea, and whether the client was already called. CPE/practice: operate as if that night-call is tonight.
-    38 / 47
+SLIDE 40. Surgical report — if it is not written, it was not done
     SPEAK: LO 7. Lab assignment later: write a report and discharge for the model/cadaver/live lab. Show them you grade completeness, not handwriting art.
 
-SLIDE 39. Discharge instructions — LO 7 in the client’s language
-    What we did, in one sentence.
-    When to start food and water, and how much.
-    Every medication: name, dose, time, with food?, what if a dose is missed.
-    Incision care and activity restriction — specific, timed (e.g., 14 days leash-only).
-    E-collar on except when directly watching.
-    Next appointment (recheck / suture removal / histopath call).
-    ER criteria (next slide) with a phone number that answers.
-    Your name. The hospital number. After-hours number.
-    39 / 47
+SLIDE 41. Discharge instructions — LO 7 in the client’s language
     SPEAK: Role-play one sentence: ‘If the incision opens and you see fat or intestine, cover with a clean wet towel and come now.’ Students write too much physiology and too few phone numbers.
 
-SLIDE 40. When to come back tonight — teach this verbatim
-    Come now
-    Collapse, pale gums, distended/painful abdomen, unstoppable bleeding, vomiting that prevents meds, difficulty breathing, inability to urinate, evisceration, uncontrolled pain, or you are frightened.
-    Call today
-    Not eating by the next morning (species/procedure dependent), a few episodes of vomiting, mild incision redness, diarrhea, e-collar problems, constipation vs. straining.
-    Expected
-    Sleepiness tonight, a small bruise near the incision, a slightly tacky incision, a reduced appetite the evening of surgery.
-    40 / 47
+SLIDE 42. When to come back tonight — teach this verbatim
     SPEAK: Pale gums + distended abdomen after OHE is never ‘wait until morning.’
 
-SLIDE 41. Fluids, feeding, and the rest of the animal
-    Fluids
-    Continue until eating/drinking and not hypotensive. Match losses (vomiting, drains). Do not fluid-overload heart or kidney patients. Recheck PCV/TS if hemorrhage suspected.
-    Nutrition
-    Offer water, then a small bland or usual meal when fully awake (procedure-dependent). GI surgery: surgeon specifies. Cats: prevent hepatic lipidosis — do not ‘wait and see’ for days. Consider mirtazapine/capromorelin as directed.
-    Other systems
-    Urinate before discharge. Bowel movements after laparotomy may lag. Eyes: lubrication after anesthesia. Recheck glucose in diabetics. Walk the dog out — do not assume the crate is fine.
-    41 / 47
+SLIDE 43. Fluids, feeding, and the rest of the animal
     SPEAK: Cats and food. Diabetics and insulin. Short.
 
-SLIDE 42. Large animal footnote (Week 13 will go deep)
-    ▸ Field surgery can be aseptic, not ‘sterile theater.’ Clip, wash, sterile gloves/instruments, and a drape still prevent SSI in a castration or displaced abomasum. ▸ Standing sedation vs. general anesthesia changes aspiration, padding, and recovery risk (especially horses). ▸ Tetanus prophylaxis is part of equine/farm-animal postop planning, not an afterthought. ▸ Recovery in a stall: head/eye protection, assist, do not rush to trailering. ▸ Antimicrobial use in food animals has residue and regulatory obligations — prophylaxis is not a default pour-on. ▸ Discharge is often a producer conversation: milk withhold, slaughter withhold, when the animal can rejoin the group.
-    42 / 47
+SLIDE 44. Large animal footnote (Week 13 will go deep)
     SPEAK: Do not lecture LA for 10 minutes. Plant the flag that Halsted travels to the barn.
 
-SLIDE 43. Integrated case — 8 minutes
-    1-year-old female Labrador, 22 kg, BCS 5/9. Elective OHE. PE normal. PCV 45%, TS 6.8 g/dL. Last meal 5 hours ago. Client is in reception. CPE-style: client-owned, going home after recovery.
-    Pre-op
-    ASA I. Consent + DNR. No routine Abx. Opioid + NSAID plan + line block. Checklist.
-    Prep
-    Clip xiphoid–pubis after plane is surgical. Dirty prep → OR → dorsal → sterile prep → four-quadrant drape. Closed glove.
-    Intra
-    Announce incision. Halsted. Show pedicles (CPE). Secure linea. Skin closure without staples (CPE: staples/glue not available).
-    Post
-    Rewarm, score pain, e-collar. Watch color/HR. Written discharge + ER list. Recheck 10–14 d. You are still responsible at hour 23.
-    43 / 47
+SLIDE 45. Integrated case — 8 minutes
     SPEAK: Walk it without taking questions until the end. This is the mental movie for lab.
 
-SLIDE 44. Exam 1 and ECFVG pearls
-    1
-    ASA is assigned after today’s PE and labs — not copied from the appointment book.
-    2
-    Elective clean OHE: no routine postoperative antibiotics.
-    3
-    Clip after induction, #40, not razor, not the night before; spiral prep center → out.
-    4
-    CHG off the cornea and out of the middle ear.
-    5
-    Four-quadrant drape + closed glove; announce contamination; after incision there is no free warning.
-    6
-    Pale + tachycardic after celiotomy = hemorrhage until proven otherwise; fascia failure is an emergency; the first 24 hours still count.
-    44 / 47
+SLIDE 46. Exam 1 pearls
     SPEAK: These six are fair game for MCQ and short answer. Stop here if time is gone.
 
-SLIDE 45. Take-home
-    Preoperative evaluation is a decision to proceed, delay, stabilize, or refer. Patient and surgeon preparation is scored, teachable, and unforgiving — the ECFVG MOA is describing good practice, not a stunt. Postoperative care is part of the operation: pain, warmth, the incision, the record, and the client. Halsted does not stop when the last throw is buried.
-    45 / 47
+SLIDE 47. Take-home
     SPEAK: Close the loop to slide 1.
 
-SLIDE 46. References & source map
-    ▸ Fossum T.W. Small Animal Surgery. 5th ed. Elsevier; 2018. — preoperative evaluation, patient prep, postop care chapters (required). ▸ Hendrickson D.A., Baird A.N. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. (required) ▸ Johnston S.A., Tobias K.M. Veterinary Surgery: Small Animal. 2nd ed. Elsevier; 2017. — cited by ECFVG MOA as a CPE review text. ▸ AVMA ECFVG. Clinical Proficiency Examination Manual of Administration, 2026 edition. Surgery section (SU01), Anesthesia Appendix 2 (ASA), dismissible events, 24-hour scoring rule. ▸ AAHA/AAFP Antimicrobial Stewardship Guidelines, 2022 — surgical prophylaxis. ▸ AAHA Anesthesia and Monitoring Guidelines (current edition) — fasting, PE, monitoring, recovery. ▸ LIU Lewyt CVM. DVM 612 Principles of Surgery course outline (Week 4 topic; LOs 4, 7, 8).
-    46 / 47
-    SPEAK: Point to Fossum as the night-before reading. MOA is publicly available to ECFVG candidates; we use it because it is a clean description of entry-level US/Canada surgical standard.
+SLIDE 48. References & source map
+    SPEAK: Point to Fossum as the night-before reading.
 
-SLIDE 47. Questions
-    Next lab: practice the clip–prep–drape sequence on models until it is boring. Boring is the goal. Excitement belongs to the pathology, not the asepsis.
-    Lewyt College of Veterinary Medicine · Long Island University
-    47 / 47
+SLIDE 49. Questions
     SPEAK: Take questions. If none: ‘What will you do differently on your next observed prep?’ Dismiss on time.
