@@ -288,9 +288,9 @@ items = [
     "Name a break in asepsis and correct it, before or after the incision.",
     "Write the postop plan, the surgical report, and 24-hour emergency criteria.",
 ]
-add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(4.6), items, size=20, spacing=14)
-add_round(s, Inches(0.5), Inches(5.90), Inches(12.3), Inches(1.10), GOLD_LT)
-add_text(s, Inches(0.75), Inches(6.05), Inches(11.9), Inches(0.80), "Willie: examine, ASA 3-E, then sedate.   MoMo: examine, image, labs, then cancel.", size=18, color=NAVY)
+add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(3.9), items, size=20, spacing=12)
+add_round(s, Inches(0.5), Inches(5.35), Inches(12.3), Inches(0.85), GOLD_LT)
+add_text(s, Inches(0.75), Inches(5.45), Inches(11.9), Inches(0.65), "Willie: examine, ASA 3-E, then sedate.   MoMo: examine, image, labs, then cancel.", size=18, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "Read the five objectives aloud. Timer: protect Part II (prep pictures) and both cases.")
 
 # 3 SSI
@@ -615,18 +615,20 @@ notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Willie: T
 s = new_content("Skin antiseptics", "Read the bottle. Cite the label or the paper.")
 add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(1.20), GOLD_LT)
 add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nRoberts 1986: 1 mL of 10% + 49 mL saline = 1:50.   5% bottle: 1 mL + 24 mL (1:25).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(4.50), WHITE)
-add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.58), TEAL)
-add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.58), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(3.18), Inches(3.80), Inches(3.60), "2% chlorhexidine acetate\nWash 2 to 4 minutes\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=16, color=INK)
-add_round(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(4.50), WHITE)
-add_rect(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.58), GOLD)
-add_text(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.58), "Skin  ·  Betadine vet", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(3.18), Inches(3.80), Inches(3.60), "7.5% scrub\nLather about 5 minutes\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=16, color=INK)
-add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(4.50), WHITE)
-add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.58), NAVY)
-add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.58), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.18), Inches(3.78), Inches(3.60), "10% stock, dilute 1:50\n2 min scrub + 2 min soak\n1:2: corneal edema (1/15)\n5% bottle: use 1:25\nNot full strength on cornea", size=16, color=INK)
+add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
+add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), TEAL)
+add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(3.04), Inches(3.80), Inches(2.00), "2% chlorhexidine acetate\nWash 2 to 4 minutes\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=16, color=INK)
+add_round(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
+add_rect(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.48), GOLD)
+add_text(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.48), "Skin  ·  Betadine vet", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.77), Inches(3.04), Inches(3.80), Inches(2.00), "7.5% scrub\nLather about 5 minutes\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=16, color=INK)
+add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(2.70), WHITE)
+add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), NAVY)
+add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "10% stock, dilute 1:50\n2 min scrub + 2 min soak\n1:2: corneal edema (1/15)\n5% bottle: use 1:25\nNot full strength on cornea", size=16, color=INK)
+add_round(s, Inches(0.40), Inches(5.38), Inches(12.52), Inches(1.60), WHITE)
+add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: Roberts 1986, 1:50 of 10% stock, 2-min scrub + 2-min soak. If the bottle is 5% veterinary solution, 1:25 matches 0.2%.", size=14, color=SLATE)
 notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
 
 # 23 Technique
@@ -834,7 +836,7 @@ notes(s, "Last content slide if time is gone. Healthy Lab OHE is only the ASA I 
 # 37 Key points
 s = new_content("Key points", "")
 pearls = [
-    "Willie is ASA III-E: sedate with a plan. MoMo is IV-E: image first, then cancel.",
+    "Willie is ASA Status 3-E: sedate with a plan. MoMo is Status 4-E: image first, then cancel.",
     "Serial creatinine can cancel a surgery. That is a successful preoperative evaluation.",
     "Clean elective OHE: skip routine postoperative antibiotics.",
     "Clip after induction. Spiral prep. Re-clip until the window is hair-free.",
