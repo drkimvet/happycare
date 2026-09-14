@@ -359,7 +359,7 @@ def kit_sheet():
             "#40 clippers, spare blade, vacuum",
             "Eye lube; ear/eye protection plan",
             "Dirty-prep kit + sterile-prep kit",
-            "CHG and/or povidone-iodine + alcohol",
+            "10% PVP-I (mucosa/eye 1:20–1:50) and/or 2–4% CHG",
             "Sterile gauze, bowls, gloves",
             "Four towels + large drape + clamps",
             "Gowns, closed-glove pairs (extra)",
