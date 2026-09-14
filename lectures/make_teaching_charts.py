@@ -94,7 +94,7 @@ def anesthesia_record(filled="blank"):
             "4.25 kg  BCS 5/9",
             "13 Sep 2026",
             "IV-E",
-            "Exploratory considered — CANCELLED (renal, not GI)",
+            "Exploratory considered; cancelled (renal, not GI)",
         ],
     }[filled]
     for (x0, x1, _), val in zip(labels, values):
@@ -138,16 +138,16 @@ def anesthesia_record(filled="blank"):
             "Alfaxalone 2.74 mL IV (~2 mg/kg of 10 mg/mL)",
             "Injectable sedation for ear clean (not a celiotomy)",
             "IV crystalloid running",
-            "Animax infused AS after clean — aminoglycoside risk if OMI",
+            "Animax infused AS after clean. Aminoglycoside risk if OMI",
             "Protect airway; pad; he falls. Do not skip monitoring.",
         ],
         "momo": [
             "None before work-up",
-            "NONE for exploratory — do not induce",
+            "NONE for exploratory. Do not induce",
             "N/A",
             "IVF 1.5× maint (40 mL/kg/d)",
             "Cerenia 1 mg/kg IV q24; ondansetron 0.5 mg/kg IV q8; Unasyn 30 mg/kg IV q8; AlOH PO",
-            "N/A — not a surgical anesthetic event",
+            "N/A. Not a surgical anesthetic event",
         ],
     }[filled]
     col_w = (2372 - 28) / 6
@@ -236,7 +236,7 @@ def anesthesia_record(filled="blank"):
     d.text((1212, y + 16), "Never-blank boxes", font=font(15, True), fill=WHITE, anchor="lm")
 
     rec_items = {
-        "blank": ["Extubate when swallow returns (species-specific)", "SpO2 / mm / CRT / pulse", "Temp — rewarm, do not burn", "Pain score + the analgesic you planned", "Incision / procedure site check", "E-collar before they can lick", "Urinate? Client phone on the board"],
+        "blank": ["Extubate when swallow returns (species-specific)", "SpO2 / mm / CRT / pulse", "Temp: rewarm, do not burn", "Pain score + the analgesic you planned", "Incision / procedure site check", "E-collar before they can lick", "Urinate? Client phone on the board"],
         "willie": [
             "Recover padded, no stairs",
             "Watch nystagmus, circling, vomiting, seizures",
@@ -244,12 +244,12 @@ def anesthesia_record(filled="blank"):
             "Meclizine 25 mg PO BID × 5 d",
             "Cerenia 60 mg PO SID × 4 d",
             "MRI recommended; TECA-LBO only if medical fails",
-            "Confine; owner in reception — call with neuro status",
+            "Confine. Call the owner with neuro status",
         ],
         "momo": [
             "Not a recovery from surgery",
             "Hospitalized: QAR, IVF, antiemetics, Unasyn",
-            "Recheck renal values — worsened on fluids",
+            "Recheck renal values. Worsened on fluids",
             "AUS: R kidney fluid-filled, non-functional; L kidney abnormal",
             "IM referral for FNA of LEFT kidney discussed",
             "Prognosis guarded to poor",
@@ -278,7 +278,7 @@ def anesthesia_record(filled="blank"):
     if filled == "momo":
         never = [
             "Imaging BEFORE the exploratory",
-            "Serial creatinine — do not ignore a rising value",
+            "Serial creatinine. Do not ignore a rising value",
             "USG 1.042 ≠ ‘kidneys are fine’",
             "POCUS: kidneys, not a surgical GI obstruction",
             "Do not cut a non-surgical abdomen",
@@ -460,7 +460,7 @@ def asa_lab_table(filename, title, subtitle, headers, rows):
     d.rectangle([20, H - 52, W - 20, H - 16], fill=GOLD)
     d.text(
         (W / 2, H - 34),
-        "Working teaching bands — they inform ASA; they do not replace today’s PE. Isolated numbers ≠ automatic Status. Venous EPOC pO2 is not arterial pO2.",
+        "Working teaching bands. They inform ASA; they do not replace today’s PE. Isolated numbers are not automatic Status. Venous EPOC pO2 is not arterial pO2.",
         font=font(14, True),
         fill=NAVY,
         anchor="mm",
