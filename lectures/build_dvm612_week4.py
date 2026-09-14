@@ -1,0 +1,978 @@
+#!/usr/bin/env python3
+"""Build DVM 612 Week 4 lecture: Preoperative evaluation, patient preparation, postoperative care.
+
+Lewyt College of Veterinary Medicine (LIU)
+Aligned to DVM 612 course outline (Week 4) and AVMA ECFVG CPE 2026 Manual of Administration.
+Required texts: Fossum 2018; Hendrickson & Baird 2013.
+"""
+
+from pptx import Presentation
+from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
+from pptx.oxml.ns import nsmap, qn
+from pptx.util import Emu, Inches, Pt
+from lxml import etree
+from copy import deepcopy
+
+# --- Brand ---
+NAVY = RGBColor(0x0B, 0x2C, 0x4A)
+NAVY_DK = RGBColor(0x07, 0x1C, 0x32)
+GOLD = RGBColor(0xC5, 0xA3, 0x5A)
+GOLD_LT = RGBColor(0xF4, 0xEB, 0xD3)
+TEAL = RGBColor(0x1B, 0x6B, 0x7A)
+TEAL_LT = RGBColor(0xE4, 0xF1, 0xF3)
+RED = RGBColor(0x8B, 0x2E, 0x2E)
+RED_LT = RGBColor(0xF8, 0xE8, 0xE8)
+GREEN = RGBColor(0x2E, 0x6B, 0x4F)
+GREEN_LT = RGBColor(0xE6, 0xF3, 0xEC)
+WHITE = RGBColor(0xFF, 0xFF, 0xFF)
+OFFWHITE = RGBColor(0xF6, 0xF7, 0xF9)
+INK = RGBColor(0x1C, 0x1C, 0x1C)
+MUTED = RGBColor(0x5B, 0x64, 0x6E)
+SLATE = RGBColor(0x3D, 0x4A, 0x57)
+
+W, H = Inches(13.333), Inches(7.5)
+FOOTER = "DVM 612  |  Principles of Surgery  |  Week 4  |  Lewyt College of Veterinary Medicine"
+
+prs = Presentation()
+prs.slide_width = W
+prs.slide_height = H
+BLANK = prs.slide_layouts[6]
+
+
+def _solid(shape, color):
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = color
+    shape.line.fill.background()
+
+
+def _rgb_hex(c):
+    return f"{c[0]:02X}{c[1]:02X}{c[2]:02X}"
+
+
+def add_rect(slide, l, t, w, h, color):
+    sh = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, l, t, w, h)
+    _solid(sh, color)
+    return sh
+
+
+def add_round(slide, l, t, w, h, color):
+    sh = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, l, t, w, h)
+    _solid(sh, color)
+    # tighter corners
+    try:
+        sh.adjustments[0] = 0.08
+    except Exception:
+        pass
+    return sh
+
+
+def set_tf(tf, text, size=18, bold=False, color=INK, align=PP_ALIGN.LEFT, font="Calibri", anchor=MSO_ANCHOR.TOP):
+    tf.clear()
+    tf.word_wrap = True
+    tf.auto_size = None
+    try:
+        tf._txBody.bodyPr.set("anchor", {MSO_ANCHOR.TOP: "t", MSO_ANCHOR.MIDDLE: "ctr", MSO_ANCHOR.BOTTOM: "b"}.get(anchor, "t"))
+    except Exception:
+        pass
+    p = tf.paragraphs[0]
+    p.alignment = align
+    run = p.add_run()
+    run.text = text
+    run.font.size = Pt(size)
+    run.font.bold = bold
+    run.font.color.rgb = color
+    run.font.name = font
+    return p
+
+
+def add_text(slide, l, t, w, h, text, size=18, bold=False, color=INK, align=PP_ALIGN.LEFT, font="Calibri", anchor=MSO_ANCHOR.TOP):
+    box = slide.shapes.add_textbox(l, t, w, h)
+    set_tf(box.text_frame, text, size=size, bold=bold, color=color, align=align, font=font, anchor=anchor)
+    return box
+
+
+def add_runs(slide, l, t, w, h, paragraphs, anchor=MSO_ANCHOR.TOP):
+    """paragraphs: list of dicts {text, size, bold, color, align, space_after, space_before}"""
+    box = slide.shapes.add_textbox(l, t, w, h)
+    tf = box.text_frame
+    tf.clear()
+    tf.word_wrap = True
+    try:
+        tf._txBody.bodyPr.set("anchor", {MSO_ANCHOR.TOP: "t", MSO_ANCHOR.MIDDLE: "ctr"}.get(anchor, "t"))
+    except Exception:
+        pass
+    for i, para in enumerate(paragraphs):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.alignment = para.get("align", PP_ALIGN.LEFT)
+        p.space_after = Pt(para.get("space_after", 6))
+        p.space_before = Pt(para.get("space_before", 0))
+        p.level = para.get("level", 0)
+        run = p.add_run()
+        run.text = para["text"]
+        run.font.size = Pt(para.get("size", 18))
+        run.font.bold = para.get("bold", False)
+        run.font.color.rgb = para.get("color", INK)
+        run.font.name = para.get("font", "Calibri")
+        run.font.italic = para.get("italic", False)
+    return box
+
+
+def add_bullets(slide, l, t, w, h, items, size=18, color=INK, bullet_color=GOLD, spacing=8):
+    box = slide.shapes.add_textbox(l, t, w, h)
+    tf = box.text_frame
+    tf.clear()
+    tf.word_wrap = True
+    for i, item in enumerate(items):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.alignment = PP_ALIGN.LEFT
+        p.space_after = Pt(spacing)
+        p.level = 0
+        # manual bullet
+        run = p.add_run()
+        run.text = "▸  " + item
+        run.font.size = Pt(size)
+        run.font.color.rgb = color
+        run.font.name = "Calibri"
+        run.font.bold = False
+    return box
+
+
+def notes(slide, text):
+    slide.notes_slide.notes_text_frame.text = text
+
+
+def footer_bar(slide, num, total):
+    add_rect(slide, 0, Inches(7.22), W, Inches(0.28), NAVY)
+    add_text(slide, Inches(0.4), Inches(7.22), Inches(10.5), Inches(0.28), FOOTER, size=10, color=GOLD_LT, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(slide, Inches(11.4), Inches(7.22), Inches(1.5), Inches(0.28), f"{num}  /  {total}", size=10, color=WHITE, align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
+
+
+def header_bar(slide, kicker=""):
+    add_rect(slide, 0, 0, W, Inches(0.12), GOLD)
+    add_rect(slide, 0, Inches(0.12), W, Inches(0.08), NAVY)
+    if kicker:
+        add_text(slide, Inches(0.5), Inches(0.28), Inches(12.3), Inches(0.28), kicker.upper(), size=11, bold=True, color=TEAL)
+
+
+def content_chrome(slide, title, kicker, num, total):
+    add_rect(slide, 0, 0, W, H, OFFWHITE)
+    header_bar(slide, kicker)
+    add_rect(slide, 0, Inches(0.12), Inches(0.12), Inches(7.1), GOLD)
+    add_text(slide, Inches(0.5), Inches(0.52), Inches(12.3), Inches(0.55), title, size=26, bold=True, color=NAVY)
+    footer_bar(slide, num, total)
+
+
+def card(slide, l, t, w, h, title, body, fill=WHITE, title_color=NAVY, accent=GOLD):
+    add_round(slide, l, t, w, h, fill)
+    add_rect(slide, l, t, Inches(0.10), h, accent)
+    add_text(slide, l + Inches(0.28), t + Inches(0.12), w - Inches(0.4), Inches(0.38), title, size=15, bold=True, color=title_color)
+    add_text(slide, l + Inches(0.28), t + Inches(0.48), w - Inches(0.4), h - Inches(0.58), body, size=13, color=SLATE)
+
+
+def pill(slide, l, t, w, h, text, fill=GOLD, text_color=NAVY):
+    add_round(slide, l, t, w, h, fill)
+    add_text(slide, l, t, w, h, text, size=12, bold=True, color=text_color, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+
+# Slide registry: we first plan TOTAL then build
+# We will append slides then stamp numbers by rebuilding footers — easier to build sequentially
+# and set numbers at the end.
+
+SLIDES = []  # list of (slide, notes_text) after creation? We'll stamp at end.
+
+
+def new_content(title, kicker=""):
+    s = prs.slides.add_slide(BLANK)
+    add_rect(s, 0, 0, W, H, OFFWHITE)
+    header_bar(s, kicker)
+    add_rect(s, 0, Inches(0.12), Inches(0.12), Inches(7.1), GOLD)
+    add_text(s, Inches(0.5), Inches(0.50), Inches(12.3), Inches(0.52), title, size=26, bold=True, color=NAVY)
+    return s
+
+
+def new_section(part, title, subtitle, minutes):
+    s = prs.slides.add_slide(BLANK)
+    add_rect(s, 0, 0, W, H, NAVY)
+    add_rect(s, 0, 0, W, Inches(0.14), GOLD)
+    add_rect(s, 0, Inches(7.36), W, Inches(0.14), GOLD)
+    add_text(s, Inches(0.7), Inches(2.15), Inches(12), Inches(0.4), part.upper(), size=16, bold=True, color=GOLD)
+    add_text(s, Inches(0.7), Inches(2.55), Inches(12), Inches(1.1), title, size=40, bold=True, color=WHITE)
+    add_text(s, Inches(0.7), Inches(3.75), Inches(12), Inches(0.7), subtitle, size=20, color=GOLD_LT)
+    pill(s, Inches(0.7), Inches(4.7), Inches(2.4), Inches(0.42), minutes, fill=GOLD, text_color=NAVY)
+    return s
+
+
+def stamp_footers():
+    total = len(prs.slides)
+    for i, slide in enumerate(prs.slides, 1):
+        dark = False
+        try:
+            rgb = slide.shapes[0].fill.fore_color.rgb
+            dark = rgb == NAVY
+        except Exception:
+            dark = False
+        if dark:
+            add_text(slide, Inches(11.5), Inches(7.05), Inches(1.4), Inches(0.28), f"{i}  /  {total}", size=11, color=GOLD, align=PP_ALIGN.RIGHT)
+        else:
+            footer_bar(slide, i, total)
+
+
+# =============================================================================
+# SLIDES
+# =============================================================================
+
+# 1 Title
+s = prs.slides.add_slide(BLANK)
+add_rect(s, 0, 0, W, H, NAVY)
+add_rect(s, 0, 0, W, Inches(0.16), GOLD)
+add_rect(s, Inches(0), Inches(0), Inches(0.22), H, GOLD)
+add_text(s, Inches(0.75), Inches(1.15), Inches(12), Inches(0.35), "LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE", size=13, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(1.7), Inches(12), Inches(0.4), "DVM 612  ·  PRINCIPLES OF SURGERY  ·  WEEK 4", size=16, bold=True, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(2.25), Inches(12), Inches(1.6), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
+add_text(s, Inches(0.75), Inches(5.15), Inches(12), Inches(0.4), "Lecture  |  60 minutes  |  Semester 3", size=16, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(5.6), Inches(12), Inches(0.7), "Mapped to DVM 612 course learning objectives 4, 7, 8 and to the AVMA ECFVG\nClinical Proficiency Examination (CPE) 2026 Manual of Administration — Surgery & Anesthesia.", size=14, color=WHITE)
+add_text(s, Inches(0.75), Inches(6.55), Inches(12), Inches(0.35), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)  ·  Hendrickson & Baird (2013)", size=12, color=GOLD)
+notes(s, "Welcome. This is Week 4 of DVM 612. Weeks 1–3 covered asepsis, sterilization, facilities, monitoring, communication, and surgery reports. Today we put the patient in the center: decide if they are a surgical candidate, prepare them and yourselves aseptically, and own the 24 hours after the last suture. One hour. Three acts. Keep a Fossum nearby; I will flag ECFVG CPE skills because they are the same skills this course will later ask you to demonstrate in lab and OSCE.")
+
+# 2 Learning objectives
+s = new_content("By the end of this hour you will be able to", "Learning objectives  ·  DVM 612 LOs 4, 7, 8")
+items = [
+    "Perform a preoperative evaluation, assign an ASA status, and decide whether to proceed, delay, or stabilize.",
+    "Build a peri-operative plan: fasting, analgesia, antimicrobial prophylaxis, consent, and checklist.",
+    "Prepare the patient and surgeon for aseptic surgery using ECFVG/CPE-standard technique (clip, prep, four-quadrant drape, gown/glove).",
+    "Recognize and correct a break in asepsis before and after the incision is made.",
+    "Write a postoperative plan, surgical report elements, and client discharge instructions — including 24-hour emergency criteria.",
+]
+add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(4.6), items, size=18, spacing=12)
+add_round(s, Inches(0.5), Inches(6.15), Inches(12.3), Inches(0.85), GOLD_LT)
+add_text(s, Inches(0.75), Inches(6.25), Inches(11.9), Inches(0.65), "This lecture does not teach how to cut, ligate, or close — that is Weeks 5–12. Today is judgment, asepsis, and aftercare. Poor prep cannot be rescued by elegant suture.", size=14, color=NAVY)
+notes(s, "Read the five objectives aloud. Tell students Exam 1 (Week 6) will sample this material. OSCE/lab sign-off will include patient prep and discharge writing (LO 4 and 7).")
+
+# 3 Hour plan
+s = new_content("Sixty-minute plan", "How we will spend the hour")
+plan = [
+    ("0–3 min", "Frame + Halsted as the through-line", NAVY),
+    ("3–22 min", "I. Preoperative evaluation & peri-op plan", TEAL),
+    ("22–42 min", "II. Patient and surgeon preparation", GOLD),
+    ("42–57 min", "III. Postoperative care, complications, discharge", GREEN),
+    ("57–60 min", "Case wrap, exam/ECFVG pearls, questions", RED),
+]
+for i, (t, d, c) in enumerate(plan):
+    y = Inches(1.25) + Inches(i * 1.05)
+    add_round(s, Inches(0.55), y, Inches(12.2), Inches(0.92), WHITE)
+    add_rect(s, Inches(0.55), y, Inches(0.14), Inches(0.92), c)
+    add_text(s, Inches(0.95), y + Inches(0.12), Inches(2.3), Inches(0.68), t, size=18, bold=True, color=c, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(3.4), y + Inches(0.12), Inches(9.0), Inches(0.68), d, size=18, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Keep a visible timer. If discussion runs, protect Part II (prep) — that is the ECFVG high-stakes skill set.")
+
+# 4 Why it matters
+s = new_content("Why this hour is not optional", "Surgical site infection, harm, and professional standard")
+card(s, Inches(0.5), Inches(1.2), Inches(4.0), Inches(2.35), "Most SSIs are preventable", "Hair, skin flora, hypothermia, poor hemostasis, dead space, and broken asepsis — not ‘bad luck’ — drive surgical site infection.", fill=WHITE, accent=TEAL)
+card(s, Inches(4.7), Inches(1.2), Inches(4.0), Inches(2.35), "The incision is a contract", "The client trusts you with a healthy animal (often an elective OHE). Entry-level standard is the same as ECFVG CPE: client-owned animal going home.", fill=WHITE, accent=GOLD)
+card(s, Inches(8.9), Inches(1.2), Inches(3.9), Inches(2.35), "Postop starts in preop", "Analgesia, antibiotics, temperature, and client expectations are decided before the scalpel, not at discharge.", fill=WHITE, accent=GREEN)
+add_round(s, Inches(0.5), Inches(3.75), Inches(12.3), Inches(3.2), WHITE)
+add_text(s, Inches(0.75), Inches(3.9), Inches(11.8), Inches(0.4), "ECFVG CPE 2026 MOA — Surgery competencies (the same three verbs as this lecture)", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(0.75), Inches(4.4), Inches(11.8), Inches(2.3), [
+    "Prepare the patient for a surgical procedure.",
+    "Prepare yourself for a surgical procedure.",
+    "Perform the surgical procedure — and the score is not final until 24 hours later (hemorrhage, herniation, dehiscence count).",
+], size=17, spacing=8)
+notes(s, "Emphasize the CPE 24-hour rule. DVM 612 will hold you to the same standard: a beautiful closure that bleeds in recovery is a failed surgery.")
+
+# 5 Halsted
+s = new_content("Halsted’s principles — the through-line for today", "Week 1 recap that you will apply, not recite")
+principles = [
+    ("Gentle tissue handling", "Prep trauma, clipper burn, and crushing towel clamps are tissue handling."),
+    ("Meticulous hemostasis", "Preop coagulopathy; postop hemorrhage is a 24-hour emergency."),
+    ("Preserve blood supply", "Do not strangulate skin with tight bandages or poorly placed clamps."),
+    ("Strict asepsis", "Patient prep, surgeon prep, draping — today’s center of gravity."),
+    ("No tension", "Plan incision location and closure now, not after the fascia splits."),
+    ("Accurate apposition", "Postop incision care protects the apposition you create."),
+    ("Obliterate dead space", "Drains and bandages (Week 15) start with today’s wound plan."),
+]
+for i, (t, d) in enumerate(principles):
+    col = i % 2
+    row = i // 2
+    x = Inches(0.5) + Inches(col * 6.4)
+    y = Inches(1.2) + Inches(row * 1.35)
+    if i == 6:
+        x = Inches(0.5)
+        w = Inches(12.3)
+    else:
+        w = Inches(6.2)
+    add_round(s, x, y, w, Inches(1.22), WHITE)
+    add_rect(s, x, y, Inches(0.10), Inches(1.22), GOLD)
+    add_text(s, x + Inches(0.28), y + Inches(0.12), w - Inches(0.4), Inches(0.38), f"{i+1}.  {t}", size=15, bold=True, color=NAVY)
+    add_text(s, x + Inches(0.28), y + Inches(0.52), w - Inches(0.4), Inches(0.58), d, size=13, color=SLATE)
+notes(s, "Do not spend more than 2 minutes. Point: every Halsted principle has a preop or postop action, not just an intraoperative one.")
+
+# 6 Continuum
+s = new_content("The perioperative continuum", "One patient, three rooms, one surgeon’s responsibility")
+stages = [
+    ("PRE-OP", "History, PE, ASA\nLabs, stabilize\nConsent, plan\nAnalgesia, Abx", TEAL),
+    ("PREP", "Clip after induction\nDirty then sterile prep\nPosition, drape\nGown, closed glove", GOLD),
+    ("INTRA-OP", "Asepsis held\nHalsted applied\nTime, temp, pain\n(Weeks 5–12)", NAVY),
+    ("POST-OP", "Airway, pain, heat\nWatch 24 hours\nReport + discharge\nRecheck plan", GREEN),
+]
+for i, (t, b, c) in enumerate(stages):
+    x = Inches(0.45) + Inches(i * 3.2)
+    add_round(s, x, Inches(1.35), Inches(3.0), Inches(4.35), WHITE)
+    add_rect(s, x, Inches(1.35), Inches(3.0), Inches(0.7), c)
+    add_text(s, x, Inches(1.35), Inches(3.0), Inches(0.7), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.2), Inches(2.2), Inches(2.6), Inches(3.2), b, size=16, color=INK, align=PP_ALIGN.CENTER)
+    if i < 3:
+        add_text(s, x + Inches(2.7), Inches(3.2), Inches(0.55), Inches(0.4), "→", size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
+notes(s, "The red thread: you do not ‘hand off’ responsibility at the OR door. ECFVG anesthesia candidate gets the dog ready for surgical prep; surgery candidate owns prep through last skin suture; both own recovery discussion.")
+
+# SECTION I
+s = new_section("Part I  ·  3–22 minutes", "Preoperative evaluation\nand the peri-operative plan", "History · PE · ASA · labs · stabilize · fasting · consent · analgesia · antimicrobials", "~19 minutes")
+notes(s, "Transition. Ask: who has watched an elective surgery get cancelled at induction? That is a successful preop exam.")
+
+# 8 Goals
+s = new_content("Goals of the preoperative evaluation", "Decide: proceed  ·  delay  ·  stabilize  ·  refer")
+goals = [
+    ("Identify surgical disease", "Confirm the lesion, laterality, and that surgery is the right tool — not just ‘the next appointment.’"),
+    ("Quantify anesthetic risk", "ASA status is required on the ECFVG anesthesia record. Assign it yourself; do not inherit it."),
+    ("Find problems you can fix first", "Dehydration, anemia, electrolyte disasters, uncontrolled diabetes, full bladder, pyoderma over the site."),
+    ("Plan the day", "Approach, positioning, implants, blood products, ICU bed, who calls the client."),
+]
+for i, (t, d) in enumerate(goals):
+    y = Inches(1.2) + Inches(i * 1.35)
+    add_round(s, Inches(0.5), y, Inches(12.3), Inches(1.22), WHITE)
+    add_rect(s, Inches(0.5), y, Inches(0.9), Inches(1.22), NAVY)
+    add_text(s, Inches(0.5), y, Inches(0.9), Inches(1.22), f"{i+1:02d}", size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.65), y + Inches(0.18), Inches(10.8), Inches(0.4), t, size=18, bold=True, color=NAVY)
+    add_text(s, Inches(1.65), y + Inches(0.58), Inches(10.8), Inches(0.5), d, size=15, color=SLATE)
+notes(s, "Four jobs. Students often skip #3 and #4. Elective surgery on an unstable patient is not bravery.")
+
+# 9 History
+s = new_content("History that actually changes the plan", "If you do not ask, you will discover it under the drape")
+left = [
+    "Signalment: species, breed, age, BCS, sex/neuter — brachycephalic, sighthound, Doberman (vWD), miniature schnauzer (hyperlipidemia).",
+    "Presenting complaint vs. elective wellness: ‘just a spay’ still needs a real history.",
+    "Prior anesthesia/surgery: difficult intubation, delayed recovery, bleeding, drug reactions.",
+    "Medications: NSAIDs, steroids, Apoquel/Cytopoint (skin), insulin, anticonvulsants, heartworm, supplements.",
+]
+right = [
+    "When last ate or drank — and what (including garbage, treats, coprophagia).",
+    "Cough, collapse, polyuria/polydipsia, vomiting, diarrhea, heat cycle, last whelping.",
+    "Bleeding tendency: petechiae, cavity bleeds, prolonged oozing from venipuncture.",
+    "Environment: indoor/outdoor, other animals, zoonoses, client ability to confine postop.",
+]
+add_round(s, Inches(0.45), Inches(1.2), Inches(6.1), Inches(5.0), WHITE)
+add_round(s, Inches(6.75), Inches(1.2), Inches(6.1), Inches(5.0), WHITE)
+add_text(s, Inches(0.7), Inches(1.35), Inches(5.6), Inches(0.4), "Patient & medical", size=16, bold=True, color=TEAL)
+add_text(s, Inches(7.0), Inches(1.35), Inches(5.6), Inches(0.4), "Risk, drugs, home", size=16, bold=True, color=GOLD)
+add_bullets(s, Inches(0.7), Inches(1.85), Inches(5.6), Inches(4.1), left, size=14, spacing=10)
+add_bullets(s, Inches(7.0), Inches(1.85), Inches(5.6), Inches(4.1), right, size=14, spacing=10)
+notes(s, "Spend 2 minutes. Highlight Doberman/vWD, brachycephalics, and ‘last meal’ as exam favorites. ECFVG anesthesia: do not premedicate before you have examined the patient — that is a dismissible event on the anesthesia section.")
+
+# 10 PE
+s = new_content("Physical examination — do it yourself", "ECFVG Anesthesia MOA: preanesthetic PE, request labs, interpret, then ASA")
+add_bullets(s, Inches(0.5), Inches(1.2), Inches(7.4), Inches(5.5), [
+    "Hands-on, systematic: TPR, mm, CRT, hydration, BCS, pain, mentation.",
+    "Cardiopulmonary: murmurs, arrhythmias, pulse quality, lung sounds, upper airway.",
+    "Surgical site: pyoderma, fleas, otitis, mammary chain, heat, pregnancy, cryptorchid.",
+    "Abdomen: pain, distension, organomegaly, fluid wave — and empty the bladder if possible.",
+    "Neuro/ortho if relevant: knuckling, neck pain, lameness that changes positioning.",
+    "Record it. If it is not written, the next person (and the exam) will assume you skipped it.",
+], size=16, spacing=10)
+add_round(s, Inches(8.15), Inches(1.2), Inches(4.65), Inches(5.5), NAVY)
+add_text(s, Inches(8.4), Inches(1.45), Inches(4.2), Inches(0.7), "ECFVG Anesthesia\norder of operations", size=16, bold=True, color=GOLD)
+add_text(s, Inches(8.4), Inches(2.3), Inches(4.2), Inches(4.0), "1. Examine the patient\n2. Request indicated labs\n3. Interpret results given\n4. Assign ASA status\n5. Adjust the drug plan\n6. Then premedicate\n\nPremedicating before the exam is a dismissible event.", size=15, color=WHITE)
+notes(s, "This is the CPE anesthesia live-animal sequence. Even though Week 4 is a surgery lecture, DVM 612 students share patients with anesthesia. Never skip PE because ‘the tech already did vitals.’")
+
+# 11 ASA
+s = new_content("ASA physical status — memorize the ECFVG wording", "ECFVG 2026 MOA, Anesthesia Appendix 2")
+rows = [
+    ("I", "Normal, healthy patient", "Elective OHE in a well 1-year-old", GREEN),
+    ("II", "Mild systemic disease, well compensated", "Controlled diabetes; obese but stable; asymptomatic murmur", TEAL),
+    ("III", "Moderate systemic disease, ongoing but compensated; some functional limitation", "CKD with azotemia; symptomatic heart disease; anemia that is stable", GOLD),
+    ("IV", "Severe systemic disease that is a constant threat to life; uncompensated", "GDV, septic abdomen, decompensated CHF, uncontrolled hemorrhage", RED),
+    ("V", "Moribund; not expected to live >24 h with or without surgery", "Gastric rupture, catastrophic trauma, end-stage disease", NAVY),
+]
+# header
+add_rect(s, Inches(0.5), Inches(1.18), Inches(12.3), Inches(0.45), NAVY)
+add_text(s, Inches(0.65), Inches(1.18), Inches(1.2), Inches(0.45), "ASA", size=14, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(1.9), Inches(1.18), Inches(5.6), Inches(0.45), "ECFVG definition", size=14, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(7.6), Inches(1.18), Inches(5.0), Inches(0.45), "Typical example", size=14, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+for i, (asa, defn, ex, c) in enumerate(rows):
+    y = Inches(1.63) + Inches(i * 0.95)
+    add_round(s, Inches(0.5), y, Inches(12.3), Inches(0.88), WHITE)
+    add_rect(s, Inches(0.5), y, Inches(1.2), Inches(0.88), c)
+    add_text(s, Inches(0.5), y, Inches(1.2), Inches(0.88), asa, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.9), y + Inches(0.08), Inches(5.5), Inches(0.72), defn, size=13, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(7.6), y + Inches(0.08), Inches(5.0), Inches(0.72), ex, size=13, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Read ASA I and III slowly. Emergency ‘E’ modifier is used clinically (e.g., ASA IV-E for GDV) though ECFVG appendix lists 1–5. An ‘elective’ procedure on an ASA IV patient is a decision, not a schedule slot.")
+
+# 12 ASA practice
+s = new_content("Assign the ASA — 60-second cases", "Say the number, then whether you proceed today")
+cases = [
+    ("A", "Healthy 8-month Labrador for elective OHE. Normal PE, PCV/TS normal.", "ASA I  ·  proceed", GREEN_LT, GREEN),
+    ("B", "10-year MN Beagle, BCS 8/9, grade 2/6 murmur, no CHF, dental + mass removal.", "ASA II  ·  proceed with monitoring plan", TEAL_LT, TEAL),
+    ("C", "Cat, urethral obstruction, K+ 8.2, bladder huge, arrhythmia.", "ASA IV-E  ·  stabilize first, then surgery", RED_LT, RED),
+    ("D", "Dog, well-controlled Addison’s, on DOCP/pred, coming for foreign body enterotomy, stable today.", "ASA II–III  ·  proceed; give steroid stress dose", GOLD_LT, GOLD),
+]
+for i, (let, stem, ans, fill, acc) in enumerate(cases):
+    y = Inches(1.2) + Inches(i * 1.35)
+    add_round(s, Inches(0.5), y, Inches(12.3), Inches(1.22), WHITE)
+    add_rect(s, Inches(0.5), y, Inches(0.7), Inches(1.22), acc)
+    add_text(s, Inches(0.5), y, Inches(0.7), Inches(1.22), let, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.45), y + Inches(0.12), Inches(11.0), Inches(0.5), stem, size=15, color=INK)
+    add_text(s, Inches(1.45), y + Inches(0.68), Inches(11.0), Inches(0.4), ans, size=14, bold=True, color=acc)
+notes(s, "Cold-call four students. C is the trap: do not rush a blocked cat to cystotomy until potassium and perfusion are addressed. D: surgery is indicated; endocrine disease is compensated — still plan steroids and electrolytes.")
+
+# 13 Labs
+s = new_content("Preoperative diagnostics — indicated, not automatic", "ECFVG: request appropriate minimum tests for this patient and this procedure")
+card(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(2.7), "Young, healthy, elective (ASA I)", "PCV/TS ± blood glucose and Azo stick is a defensible minimum. Many hospitals still run a preanesthetic chemistry/CBC — know your hospital policy and be able to defend either choice.", accent=TEAL)
+card(s, Inches(6.8), Inches(1.2), Inches(6.0), Inches(2.7), "Age, disease, or invasive procedure", "CBC, chemistry, UA. Add clotting (PT/PTT or BMBT) if bleeding risk. T4 in older cats. Blood pressure. ECG if arrhythmia. Imaging if it changes the approach.", accent=GOLD)
+add_round(s, Inches(0.5), Inches(4.1), Inches(12.3), Inches(2.8), WHITE)
+add_text(s, Inches(0.75), Inches(4.25), Inches(11.8), Inches(0.4), "Do not order tests you will ignore — and do not ignore tests you ordered", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(0.75), Inches(4.75), Inches(11.8), Inches(1.95), [
+    "Anemia, hypoalbuminemia, azotemia, electrolyte storms, and thrombocytopenia change drugs, fluids, and whether you cut today.",
+    "For abdominal surgery: consider imaging so you are not ‘exploring’ a pyometra you could have diagnosed, or a mass that needed a different approach.",
+    "Large animal: stall-side PCV/TS, fibrinogen, and physical exam often outweigh a full chemistry in the field — still document the risk conversation.",
+], size=15, spacing=7)
+notes(s, "Avoid dogma. The CPE will give you lab results after you request them. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy.")
+
+# 14 Stabilize
+s = new_content("Stabilize before you sterilize", "Elective surgery is cancelled more often by good judgment than by bad luck")
+cols = [
+    ("Fix first", GREEN, "Hypovolemia / shock\nElectrolyte crises (K+, Na+)\nSevere anemia (transfuse)\nRespiratory distress\nUncontrolled pain\nHypoglycemia\nHyperthermia / heat stroke"),
+    ("Often delay elective", GOLD, "Pyoderma over the site\nAnestrus vs. heat if policy\nUnstable endocrine disease\nActive URI in cats\nRecent live vaccines (clinic policy)\nClient cannot confine / medicate\nNo fasting in a full-stomach elective"),
+    ("May proceed urgently", RED, "GDV\nSeptic abdomen\nC-section with fetal distress\nAirway obstruction\nHemorrhage you cannot pack\nOpen fracture (after resuscitation)\nUterine rupture / pyometra shock"),
+]
+for i, (t, c, b) in enumerate(cols):
+    x = Inches(0.45) + Inches(i * 4.25)
+    add_round(s, x, Inches(1.2), Inches(4.05), Inches(5.5), WHITE)
+    add_rect(s, x, Inches(1.2), Inches(4.05), Inches(0.6), c)
+    add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.6), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.25), Inches(2.0), Inches(3.55), Inches(4.4), b, size=15, color=INK)
+notes(s, "One sentence: resuscitation is not delayed for clipping. Elective OHE is delayed for pyoderma. GDV is not delayed for a dental cleaning that was also booked.")
+
+# 15 Fasting
+s = new_content("Fasting — traditional teaching vs. current practice", "Know both: Fossum/traditional language and AAHA-style shorter fasts")
+add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Working guidance (small animal)", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.7), Inches(4.5), [
+    "Healthy adult dog/cat: food 4–6 h; water until premedication (AAHA-aligned).",
+    "Traditional/Fossum-era: often 8–12 h NPO — still appears on some exams; be able to discuss aspiration vs. hypoglycemia.",
+    "Neonates/pediatrics: much shorter fast; offer a small meal 1–2 h prior as directed.",
+    "Brachycephalics: shorter fast, careful pre-oxygenation; regurgitation risk is high either way.",
+    "Ruminants: longer food withhold (often 12–24 h+) to reduce rumen fill/pressure; water 6–12 h per species/protocol.",
+    "Horses: typically 8–12 h grain/hay protocols vary — follow hospital/field SOP.",
+], size=14, spacing=7)
+add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "Why it matters", size=16, bold=True, color=RED)
+add_bullets(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.4), [
+    "Goal: less gastric volume and acidity without starving a small patient into hypoglycemia.",
+    "A full stomach + recumbency + opioids = regurgitation and aspiration.",
+    "Prolonged fasting increases reflux in some dogs and stress in cats.",
+    "Always ask what was eaten this morning. Clients feed ‘just a biscuit.’",
+    "Diabetics: coordinate insulin and a small meal with anesthesia — do not improvise.",
+], size=14, spacing=8)
+notes(s, "I teach AAHA-style 4–6 h for healthy small animals as best practice, and I tell them older exam banks may still say overnight NPO. Ruminant contrast prevents a species-blind answer on Exam 1.")
+
+# 16 Consent
+s = new_content("Informed consent is a surgical skill", "DVM 612 / CC8  ·  Week 3 communication continues here")
+add_bullets(s, Inches(0.5), Inches(1.2), Inches(7.5), Inches(5.5), [
+    "Procedure name in plain language, and the reason.",
+    "Benefits, alternatives (including no surgery), and what happens if we wait.",
+    "Material risks: anesthesia death (rare but real), hemorrhage, infection, dehiscence, incomplete excision, recurrence, incontinence (OHE myth vs. data — be honest).",
+    "Estimate: professional fees vs. supplies; what is not included (histopathology, overnight, complications).",
+    "Resuscitation code / DNR. Do this before induction, not in recovery.",
+    "Who will call whom, and when. Write the client’s phone number on the board.",
+], size=16, spacing=9)
+add_round(s, Inches(8.2), Inches(1.2), Inches(4.6), Inches(5.5), NAVY)
+add_text(s, Inches(8.45), Inches(1.45), Inches(4.15), Inches(0.5), "CPE mindset", size=16, bold=True, color=GOLD)
+add_text(s, Inches(8.45), Inches(2.1), Inches(4.15), Inches(4.2), "The 2026 MOA tells you to assume the OHE is a client-owned animal that will go home after recovery in your hospital.\n\nOperate, document, and speak as if that client is waiting in reception — because in practice they are.", size=15, color=WHITE)
+notes(s, "Students under-consent electives. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR explicitly.")
+
+# 17 Checklist + analgesia
+s = new_content("Checklist and the analgesia plan belong in preop", "Pain is not a postoperative surprise")
+add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Pre-incision checklist (WHO-adapted)", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.7), Inches(4.5), [
+    "Identity, procedure, site/side confirmed.",
+    "Consent, estimate, DNR documented.",
+    "ASA, allergies, last meal.",
+    "IV catheter patent; fluids running.",
+    "Airway secured; monitoring on.",
+    "Antibiotics given (if indicated) 30–60 min before incision.",
+    "Local block planned (incisional, testicular, TAP, splash).",
+    "Instruments, suture, extra gloves, cautery, suction.",
+    "Image / implants in the room if needed.",
+], size=14, spacing=6)
+add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), WHITE)
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "Multimodal analgesia — plan it now", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(7.05), Inches(1.9), Inches(5.55), Inches(4.5), [
+    "Opioid (pure µ for most laparotomies) as part of premed or induction.",
+    "NSAID if perfusion and kidneys/GI allow — often at recovery, not in hypotensive shock.",
+    "Local/regional: the cheapest, safest MAC-sparing tool you have.",
+    "Adjuncts: ketamine CRI, dexmedetomidine CRI, gabapentin, acetaminophen (dog only).",
+    "Cats: no acetaminophen; careful NSAID choice and dose.",
+    "ECFVG anesthesia: you must be able to discuss recovery and postoperative pain management.",
+], size=14, spacing=7)
+notes(s, "Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students.")
+
+# 18 Abx
+s = new_content("Surgical antimicrobial prophylaxis — stewardship, not ritual", "AAHA/AAFP 2022  ·  DVM 613 will thank you")
+add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), GREEN_LT)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.45), "Usually NO prophylaxis", size=18, bold=True, color=GREEN)
+add_text(s, Inches(0.75), Inches(1.9), Inches(5.6), Inches(4.4), "Clean procedures with excellent asepsis:\n• Elective OHE / castration\n• Most clean mass removals\n• Many short soft-tissue surgeries\n\nAntibiotics are not a substitute for sterile technique, Halsted, or a dry field.\n\nOngoing postoperative antibiotics are rarely required after an uncomplicated clean surgery.", size=15, color=INK)
+add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.45), "YES — timed IV, then stop", size=18, bold=True, color=RED)
+add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "Give 30–60 min before incision; redose (e.g. cefazolin ~q90 min) if surgery is long or blood loss is large.\n\nConsider if:\n• Clean-contaminated / contaminated / dirty\n• Implant (orthopedic, mesh)\n• Hollow viscus entry\n• Prolonged surgery or known break in asepsis\n• Patient immunocompromised\n• Infection would be catastrophic (some neuro/implant cases — still think, don’t reflex)", size=15, color=INK)
+notes(s, "This is a high-yield exam slide. Elective canine OHE on the CPE is a clean procedure — do not invent a 14-day cephalexin prescription. If you give cefazolin, it is IV around induction, not a souvenir bottle home.")
+
+# 19 Preop check
+s = new_content("Knowledge check — preoperative", "Answer before we walk to the prep room")
+qs = [
+    ("1", "A blocked cat with K+ 8.2 is booked for perineal urethrostomy this morning. First move?", "Stabilize (calcium, fluids, insulin/dextrose as indicated, decompress). Do not induce an ASA IV-E hyperkalemic cat ‘because surgery is on the board.’"),
+    ("2", "Healthy 1-year-old OHE. Client asks for ‘antibiotics just in case.’", "Decline routine prophylaxis. Explain asepsis + short clean procedure. Offer a written SSI-watch list instead."),
+    ("3", "You assigned ASA I yesterday. Today the dog has a productive cough and fever.", "Reassign ASA, delay elective surgery, work up respiratory disease. ASA is a live assessment."),
+]
+for i, (n, q, a) in enumerate(qs):
+    y = Inches(1.2) + Inches(i * 1.8)
+    add_round(s, Inches(0.5), y, Inches(12.3), Inches(1.65), WHITE)
+    add_rect(s, Inches(0.5), y, Inches(0.7), Inches(1.65), TEAL)
+    add_text(s, Inches(0.5), y, Inches(0.7), Inches(1.65), n, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.45), y + Inches(0.15), Inches(11.0), Inches(0.55), q, size=16, bold=True, color=NAVY)
+    add_text(s, Inches(1.45), y + Inches(0.75), Inches(11.0), Inches(0.7), a, size=14, color=SLATE)
+notes(s, "Take 2 minutes. Then move. Do not let this become a 10-minute debate.")
+
+# SECTION II
+s = new_section("Part II  ·  22–42 minutes", "Patient and surgeon\npreparation", "Clip · antiseptic · position · four-quadrant drape · scrub · gown · closed glove · asepsis", "~20 minutes")
+notes(s, "This is the ECFVG Surgery section skill cluster: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. High risk of dismissible events if asepsis is lost and not recognized.")
+
+# 21 ECFVG map
+s = new_content("ECFVG CPE Surgery — what is actually scored in prep", "2026 Manual of Administration  ·  SU01 assessment sheet")
+add_text(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.4), "Patient preparation", size=16, bold=True, color=TEAL)
+p_items = [("Hair removal", "Clipper, not razor. Adequate field. No clipper burn / missed patches in the field."),
+           ("Skin preparation", "Dirty prep then sterile prep. Contact time. Center → periphery. No pooling / wicking."),
+           ("Patient positioning", "Secure, padded, physiologically sensible. OHE: dorsal recumbency, straight.")]
+for i, (t, d) in enumerate(p_items):
+    x = Inches(0.5) + Inches(i * 4.2)
+    card(s, x, Inches(1.55), Inches(4.0), Inches(2.15), t, d, accent=TEAL)
+add_text(s, Inches(0.5), Inches(3.85), Inches(12.3), Inches(0.35), "Surgeon preparation", size=16, bold=True, color=GOLD)
+s_items = [("Scrubbing & attire", "Cap, mask, clean scrubs. Timed or brushless surgical scrub. Hands above elbows."),
+           ("Gowning / gloving", "Sterile gown. Closed gloving preferred. Know open gloving for reglove."),
+           ("Draping", "Four-quadrant draping is an ECFVG surgical-experience requirement. Maintain field.")]
+for i, (t, d) in enumerate(s_items):
+    x = Inches(0.5) + Inches(i * 4.2)
+    card(s, x, Inches(4.25), Inches(4.0), Inches(2.5), t, d, accent=GOLD)
+notes(s, "Read the six scored boxes. Students should be able to name them on Exam 1 without the OHE steps mixed in.")
+
+# 22 Sequence
+s = new_content("Sequence — do not invert the rooms", "Prep room is dirty. OR is sterile. The dog moves once.")
+steps = [
+    ("1", "Anesthetized, airway in, IV in, depth adequate"),
+    ("2", "Express bladder if abdominal / caudal surgery"),
+    ("3", "Clip with #40, vacuum hair, ‘dirty’ antiseptic"),
+    ("4", "Move to OR, position, pad, tie, final check"),
+    ("5", "Sterile prep (gloved), contact time honored"),
+    ("6", "Four-quadrant towels → large drape"),
+    ("7", "Surgeon gowns/gloves (or already gowned)"),
+    ("8", "Timeout / checklist → announce incision"),
+]
+for i, (n, t) in enumerate(steps):
+    col = i % 4
+    row = i // 4
+    x = Inches(0.45) + Inches(col * 3.2)
+    y = Inches(1.25) + Inches(row * 2.7)
+    add_round(s, x, y, Inches(3.05), Inches(2.4), WHITE)
+    add_rect(s, x, y, Inches(3.05), Inches(0.7), NAVY if row == 0 else TEAL)
+    add_text(s, x, y, Inches(3.05), Inches(0.7), n, size=24, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.15), y + Inches(0.85), Inches(2.75), Inches(1.35), t, size=15, color=INK, align=PP_ALIGN.CENTER)
+notes(s, "Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before a surgical plane — patient wakes, contaminates, gets clipper lacerations.")
+
+# 23 Hair
+s = new_content("Hair removal", "Clip after induction, immediately before surgery — not last night")
+add_bullets(s, Inches(0.5), Inches(1.2), Inches(7.6), Inches(5.5), [
+    "Electric clippers, clean #40 blade, teeth intact. Razors create micro-nicks and raise SSI risk.",
+    "Clip with the grain, then against, to the skin. Tense the skin in folds, mammary chain, inguinal region.",
+    "Field large enough to extend the incision, place a drain, and keep drape edges off hair (~20 cm beyond planned incision is a Fossum-style working rule).",
+    "Vacuum. Loose hair is a mobile contaminant.",
+    "Do not clip the night before: bacterial load at the site rises as the skin is injured.",
+    "Clipper burn is a wound. Overheated blades and too much pressure = postop pain and infection.",
+], size=16, spacing=9)
+add_round(s, Inches(8.3), Inches(1.2), Inches(4.5), Inches(5.5), GOLD_LT)
+add_text(s, Inches(8.55), Inches(1.4), Inches(4.05), Inches(0.4), "OHE clip field (CPE)", size=16, bold=True, color=NAVY)
+add_text(s, Inches(8.55), Inches(1.95), Inches(4.05), Inches(4.4), "From xiphoid (or a few cm cranial) to pubis, and widely lateral to the nipples.\n\nInclude enough caudal abdomen that you can extend if the uterus is unexpected.\n\nPluck or carefully clip preputial hair if a male abdominal surgery (not OHE) — tuck/flush prepuce as indicated.", size=15, color=INK)
+notes(s, "Demonstrate with hands on your own abdomen if no model. Missed hair at the drape edge is an ECFVG-style fail.")
+
+# 24 Common clip fields
+s = new_content("Know the field before you pick up the clippers", "If you cannot describe the field, you are not ready to cut")
+fields = [
+    ("Canine OHE / celiotomy", "Xiphoid → pubis, widely lateral past nipples. Dorsal recumbency."),
+    ("Canine castration (prescrotal)", "Scrotum ± prescrotal abdomen; some surgeons shave scrotum, some don’t — know lab SOP. Clip wide enough for drape."),
+    ("Feline castration", "Pluck or clip scrotum per SOP. Still aseptic skin prep."),
+    ("Canine castration (scrotal ablation)", "Wider perineal/scrotal field; purse-string anus if needed."),
+    ("Limb / orthopedic", "Joint above to joint below; hang limb; stirrup; circumferential prep (‘around the world’)."),
+    ("Field LA surgery", "Clip still matters. Dirt and fecal contamination are the enemy; sterile-drape ideals are adapted, not abandoned."),
+]
+for i, (t, d) in enumerate(fields):
+    col = i % 3
+    row = i // 3
+    x = Inches(0.45) + Inches(col * 4.25)
+    y = Inches(1.2) + Inches(row * 2.75)
+    card(s, x, y, Inches(4.05), Inches(2.55), t, d, accent=TEAL if row == 0 else GOLD)
+notes(s, "One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.")
+
+# 25 Antiseptics
+s = new_content("Skin antiseptics — choose with anatomy, not loyalty", "No single agent is perfect; technique and contact time beat brand")
+# table-like cards
+add_round(s, Inches(0.45), Inches(1.2), Inches(4.05), Inches(5.5), WHITE)
+add_rect(s, Inches(0.45), Inches(1.2), Inches(4.05), Inches(0.7), TEAL)
+add_text(s, Inches(0.45), Inches(1.2), Inches(4.05), Inches(0.7), "Chlorhexidine", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.7), Inches(2.05), Inches(3.6), Inches(4.4), "Broad Gram+ / Gram−, residual 24 h on skin.\nBest with alcohol (CHG–alcohol).\nInactivated by organic debris if too dilute.\nTOXIC to cornea. Ototoxic in the middle ear. Not for peritoneum, bladder, joints, meninges.\nDo not store homemade dilute jugs.", size=14, color=INK)
+
+add_round(s, Inches(4.65), Inches(1.2), Inches(4.05), Inches(5.5), WHITE)
+add_rect(s, Inches(4.65), Inches(1.2), Inches(4.05), Inches(0.7), GOLD)
+add_text(s, Inches(4.65), Inches(1.2), Inches(4.05), Inches(0.7), "Povidone-iodine", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.9), Inches(2.05), Inches(3.6), Inches(4.4), "Broad spectrum including spores at right conc./time.\nBetter near mucous membranes / some ocular protocols (dilute, veterinarian-directed).\nInactivated by organic matter and alcohol in some sequences.\nSkin/thyroid/iodine sensitivity. Stains.\nMust dry / contact time to work.", size=14, color=INK)
+
+add_round(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(5.5), WHITE)
+add_rect(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(0.7), NAVY)
+add_text(s, Inches(8.85), Inches(1.2), Inches(4.0), Inches(0.7), "Alcohol & others", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(9.1), Inches(2.05), Inches(3.55), Inches(4.4), "Isopropyl/ethyl alcohol: rapid, no residual, flammable — no pooling near cautery.\nOften the ‘paint’ between CHG scrubs.\nDo not use alcohol on open wounds, mucous membranes, or laser/cautery pools.\nHydrogen peroxide is not a surgical prep.", size=14, color=INK)
+notes(s, "Faculty preference at LIU labs may be CHG–alcohol for trunk skin. Hammer ocular/ear contraindications — they have already seen ototoxic ear meds in other contexts.")
+
+# 26 Technique
+s = new_content("How to scrub the patient", "Contact time and direction matter more than the number of ‘passes’ you brag about")
+left = [
+    "Dirty prep (prep room): remove grease and gross contamination. Wear clean exam gloves. Discard gauze when it leaves the center.",
+    "Sterile prep (OR): sterile gloves, sterile gauze or applicator. New sponge every time you leave the incision line.",
+    "Start at the planned incision and spiral / wipe outward. Never bring a dirty sponge back to the center.",
+    "Honor manufacturer contact time. Typical working teaching: at least 3 cycles or a timed 3–5 minute contact, then a final paint. Follow the product in your lab.",
+    "The site should be damp-to-dry, not a lake. Puddles wick bacteria under drapes and soak the patient (hypothermia).",
+]
+add_bullets(s, Inches(0.5), Inches(1.15), Inches(8.0), Inches(4.7), left, size=16, spacing=8)
+add_round(s, Inches(8.7), Inches(1.2), Inches(4.1), Inches(5.5), NAVY)
+add_text(s, Inches(8.95), Inches(1.45), Inches(3.7), Inches(0.5), "High-risk mistakes", size=16, bold=True, color=GOLD)
+add_text(s, Inches(8.95), Inches(2.1), Inches(3.7), Inches(4.3), "• Scrubbing back and forth like washing a car\n• Using the same gauze on anus and incision\n• CHG in the eye or ear canal\n• Alcohol pooling + electrocautery\n• ‘One quick wipe’ and draping wet\n• Contaminating the site while moving the dog", size=15, color=WHITE)
+notes(s, "If time, mime the spiral on the lectern. Mention hanging-limb prep: start at incision, work distally toward the dirty foot, then the wrapped foot is handed off.")
+
+# 27 Position
+s = new_content("Positioning is physiology, not just ‘on its back’", "Pressure, stretch, and aspiration live here")
+cards = [
+    ("Dorsal recumbency", "OHE, most celiotomies. Straight spine, hind limbs caudal not forced into a split that strains the hips of a dysplastic dog. V-trough or sandbags. Head/neck neutral for the airway."),
+    ("Lateral", "Thoracotomy, some mass removals, GDV sometimes after decompression. Down lung, down vessels, down muscles — pad the elbow, greater trochanter, acromion."),
+    ("Sternal / perineal", "Anal sac, some urinary, dorsal spinal. Do not over-flex the neck of brachycephalics. Purse-string the anus when indicated — and remove it at the end."),
+    ("Padding & safety", "Hypothermia: warming devices that cannot burn. Eyes lubricated. Endotracheal tube not kinked. Electrosurgery pad contact. Ties not tourniquets."),
+]
+for i, (t, d) in enumerate(cards):
+    col = i % 2
+    row = i // 2
+    x = Inches(0.45) + Inches(col * 6.45)
+    y = Inches(1.2) + Inches(row * 2.75)
+    card(s, x, y, Inches(6.25), Inches(2.55), t, d, accent=NAVY if row == 0 else TEAL)
+notes(s, "CPE OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.")
+
+# 28 Draping
+s = new_content("Four-quadrant draping", "ECFVG surgical-experience documentation: gowning, gloving, four-quadrant drape, sterile instruments")
+add_bullets(s, Inches(0.5), Inches(1.15), Inches(7.7), Inches(5.6), [
+    "Four sterile towels (or equivalent) placed to box the field: cranial, caudal, left, right. Place the near towel first so you do not reach across the dog.",
+    "Towel edges cover all hair. If hair is visible, the drape is wrong — re-clip or re-drape, do not ‘tuck and hope.’",
+    "Secure (Backhaus clamps or atraumatic alternatives per lab). Do not tent the skin into the incision. Do not puncture the patient’s skin carelessly with clamps.",
+    "Large fenestrated or four-corner large drape over the towels. Cuff your hands. Never shake drapes over the field.",
+    "Once down, the top surface is sterile; table edges and below table height are not. Hands stay on the field.",
+    "If a drape is wet through (strikethrough), it is contaminated. Cover or replace.",
+], size=15, spacing=8)
+add_round(s, Inches(8.4), Inches(1.2), Inches(4.4), Inches(5.5), GOLD_LT)
+add_text(s, Inches(8.65), Inches(1.4), Inches(4.0), Inches(0.5), "Order of operations", size=16, bold=True, color=NAVY)
+add_text(s, Inches(8.65), Inches(2.05), Inches(4.0), Inches(4.3), "1. You are gowned/gloved\n   (or a sterile assistant drapes)\n2. Towels — four quadrants\n3. Clamps\n4. Large drape\n5. Organize instruments on a sterile table\n6. Timeout\n7. Announce: ready to incise\n\nCPE: notify examiner before the incision.", size=15, color=INK)
+notes(s, "Four-quadrant is not optional style — it is an ECFVG requirement even for the pre-CPE surgical experience form. Demonstrate air-cuffing the drape.")
+
+# 29 Surgeon
+s = new_content("Surgeon preparation", "You are a fomite until you are not")
+add_round(s, Inches(0.5), Inches(1.2), Inches(12.3), Inches(1.3), WHITE)
+add_text(s, Inches(0.75), Inches(1.4), Inches(11.8), Inches(0.95), "Clean scrubs, cap covering all hair, mask over nose and mouth, no jewelry, nails short, no polish/gels in most ORs. Shoes closed-toe. Eat/drink/bathroom before you scrub — leaving the field is a bigger sin than a slightly longer scrub.", size=16, color=INK)
+items = [
+    ("Surgical scrub", "Timed ~3–5 min or counted brushless CHG/alcohol per product. Fingers → hands → wrists → elbows. Rinse fingertips-up. Hands above elbows walking to the OR."),
+    ("Gowning", "Dry with sterile towel without contaminating. Gown without touching the outer surface. Assistant ties. Keep hands in cuffs for closed gloving."),
+    ("Gloving", "Closed gloving after gowning is preferred. Open gloving to replace a contaminated glove. If in doubt, both gloves come off and you start over."),
+]
+for i, (t, d) in enumerate(items):
+    x = Inches(0.5) + Inches(i * 4.2)
+    card(s, x, Inches(2.7), Inches(4.0), Inches(4.0), t, d, accent=GOLD)
+notes(s, "CPE: gown pack use is demonstrated at orientation — still practice in our labs until it is muscle memory. Talking through a contaminated glove replacement is an Exam 1 question.")
+
+# 30 Asepsis breaks
+s = new_content("Breaks in asepsis — recognize, announce, fix", "ECFVG 2026 MOA: one unrecognized break in PREP = warning; a second = dismissible. After incision: zero unrecognized breaks.")
+add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Before the incision (prep / drape)", size=16, bold=True, color=TEAL)
+add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.4), "If YOU contaminate yourself or the field: say it immediately and correct (re-glove, re-gown, re-drape).\n\nIf you do not notice and staff tell you once — warning, then correct.\n\nA second unrecognized break → Dismissible Event (unable to maintain an aseptic field).\n\nThis is not ‘exam theater.’ It is how we protect a client-owned animal.", size=15, color=INK)
+add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "After the incision is made", size=16, bold=True, color=RED)
+add_text(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.4), "No warning for an unrecognized break.\n\nYou must notice, announce, and completely correct.\n\nIf you do not, or if you correct incompletely — dismissible (animal’s life at risk).\n\nExamples: sleeve in the abdomen, instrument off the table used again, hole in glove ignored, dripping sweat onto the field.", size=15, color=INK)
+notes(s, "This is the most important ECFVG slide in the hour. Culture in lab: we praise people who say ‘I just contaminated my sleeve.’ We do not praise silent heroics.")
+
+# 31 Dismissible
+s = new_content("CPE Surgery dismissible events (know these as ‘never events’)", "2026 MOA Surgery Appendix 1 — they are also DVM 612 professional standards")
+ev = [
+    "1. Fail to control significant hemorrhage.",
+    "2. Fail to create a secure abdominal wall closure.",
+    "3. Unable to achieve and maintain an aseptic field (patient and surgeon preparation included).",
+    "4. Significant damage to other organs (e.g., ureter in a clamp or ligature; removing cervix inappropriately).",
+    "5. Any other behavior that puts the animal’s life at risk (retained sponge/instrument is the classic example).",
+]
+add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(4.2), ev, size=18, spacing=12)
+add_round(s, Inches(0.5), Inches(5.6), Inches(12.3), Inches(1.35), GOLD_LT)
+add_text(s, Inches(0.75), Inches(5.75), Inches(11.8), Inches(1.05), "The CPE final surgery score is not determined until 24 hours after the procedure. Intra-abdominal hemorrhage from poor ligation, or herniation/dehiscence from a weak linea closure, can fail you after you have already left the OR. That is postoperative care as a scored competency.", size=15, color=NAVY)
+notes(s, "Connect #1, #2, #3 to today’s lecture. Intra-op details (#4) are later weeks, but ureter injury is a positioning/exposure/identification problem that starts with a calm, well-prepped patient.")
+
+# 32 Prep check
+s = new_content("Knowledge check — preparation", "Which of these is acceptable?")
+rows = [
+    ("A", "Clip the OHE field the night before to save time at induction.", "No. Increases bacterial load and clipper injury."),
+    ("B", "Razor the incision line for a ‘closer shave.’", "No. Micro-nicks, higher SSI."),
+    ("C", "CHG scrub, then a drop of CHG runs into the eye — rinse and continue.", "Emergency for the eye. CHG is corneal-toxic. Irrigate immediately; do not ‘continue.’"),
+    ("D", "Hair visible at the drape edge; you add another towel to cover it.", "Yes — if the added drape is sterile and the field is truly covered. Best is an adequate clip."),
+]
+for i, (let, q, a) in enumerate(rows):
+    y = Inches(1.15) + Inches(i * 1.4)
+    add_round(s, Inches(0.5), y, Inches(12.3), Inches(1.28), WHITE)
+    add_rect(s, Inches(0.5), y, Inches(0.7), Inches(1.28), NAVY)
+    add_text(s, Inches(0.5), y, Inches(0.7), Inches(1.28), let, size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.4), y + Inches(0.1), Inches(11.1), Inches(0.5), q, size=15, bold=True, color=INK)
+    add_text(s, Inches(1.4), y + Inches(0.65), Inches(11.1), Inches(0.5), a, size=14, color=TEAL)
+notes(s, "C is the safety slide. D is the nuanced yes.")
+
+# SECTION III
+s = new_section("Part III  ·  42–57 minutes", "Postoperative care", "Recovery · pain · warmth · wound · 24-hour complications · report · discharge", "~15 minutes")
+notes(s, "Shift energy. Students think postop is ‘the techs’ job.’ It is not.")
+
+# 34 Recovery
+s = new_content("Immediate recovery — the surgery is not over", "ECFVG Anesthesia: discuss recovery including postoperative pain management")
+pri = [
+    ("Airway", "Extubate when swallow/gag returns (species-specific). Brachycephalics: later, oxygen-ready, watch stertor. Never leave a recovering patient."),
+    ("Breathing", "SpO2, mucus membranes, effort. Reverse residual drugs if appropriate. Aspiration risk if regurg occurred."),
+    ("Circulation", "HR, pulse, mm, CRT, BP if indicated. Pale + tachycardia after celiotomy is hemorrhage until proven otherwise."),
+    ("Temperature", "Most surgical patients are hypothermic. Rewarm actively but do not burn. Hypothermia → delayed recovery, coagulopathy, SSI."),
+    ("Pain & nausea", "Score pain. Give the analgesic you planned. Antiemetic if indicated. A ‘quiet’ animal may be cold, hypotensive, or painful — look."),
+    ("Incision & pee", "Spot-check for bleed-through. Know when they last urinated. E-collar before they are awake enough to lick."),
+]
+for i, (t, d) in enumerate(pri):
+    col = i % 3
+    row = i // 3
+    x = Inches(0.45) + Inches(col * 4.25)
+    y = Inches(1.2) + Inches(row * 2.75)
+    card(s, x, y, Inches(4.05), Inches(2.55), t, d, accent=TEAL)
+notes(s, "ABC plus temperature plus pain. Hemorrhage speech: do not send a pale recovering OHE to the kennel because ‘she’s just groggy.’")
+
+# 35 Pain
+s = new_content("Pain assessment is a vital sign", "If you do not score it, you will not treat it")
+add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Use a scale. Write the number.", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(0.7), Inches(1.95), Inches(5.7), Inches(4.5), [
+    "Dogs: Glasgow Composite Measure Pain Scale (short form) is a common teaching standard.",
+    "Cats: Feline Grimace Scale + behavior (hide, hunched, no groom).",
+    "Colorado State University scales are also widely used in teaching hospitals.",
+    "Re-score after intervention. A single ‘looks comfortable’ at 10 pm is not a plan.",
+    "Large animals: species-specific (horse: pawing, flank watching, reduced appetite; cattle: isolation, bruxism).",
+], size=15, spacing=8)
+add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), WHITE)
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "Treat to the surgery you did", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(7.05), Inches(1.95), Inches(5.55), Inches(4.5), [
+    "Soft tissue elective: opioid ± NSAID ± local is often enough.",
+    "Celiotomy / orthopedic: expect more — CRIs, additional locals, overnight monitoring.",
+    "Do not send home only tramadol and hope (dogs: weak evidence).",
+    "Client: how to give meds, what sedation vs. pain looks like, when to call.",
+    "Dysphoria ≠ pain, but treat pain first if unsure.",
+], size=15, spacing=8)
+notes(s, "Course CC3. Mention they will practice scoring in skills labs. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, concurrent steroids.")
+
+# 36 Wound
+s = new_content("The incision after you leave it", "Protect the apposition you just created")
+items = [
+    ("Look", "Twice daily: swelling, discharge, gapping, smell, heat, bruise vs. hematoma. Photograph if the client is anxious."),
+    ("Lick", "E-collar, suit, or inflatable — whatever actually stays on. Licking is the leading cause of dehiscence in student surgeries."),
+    ("Motion", "Leash only. No running, jumping, wrestling, stairs unsupervised. Exercise restriction is a prescription, not a suggestion."),
+    ("Clean", "Usually no topical ointment unless directed. Do not scrub with CHG daily. Clean dirt with saline if needed."),
+    ("Drain", "If placed (Week 15): output, site, when to pull. Never send a drain without a written plan."),
+    ("Suture/staple", "Typically 10–14 days for skin in small animals if healing is routine. Absorbable intradermal: still recheck."),
+]
+for i, (t, d) in enumerate(items):
+    col = i % 3
+    row = i // 3
+    x = Inches(0.45) + Inches(col * 4.25)
+    y = Inches(1.2) + Inches(row * 2.75)
+    card(s, x, y, Inches(4.05), Inches(2.55), t, d, accent=GREEN)
+notes(s, "Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’")
+
+# 37 Complications
+s = new_content("The first 24 hours — what fails a surgery after the OR", "ECFVG: complications in the initial 24-hour postoperative period affect the surgery score")
+rows = [
+    ("Hemorrhage", "Pale mm, tachycardia, distending abdomen, drip from incision, collapsing. Return to OR. Do not ‘watch overnight’ if unstable.", RED),
+    ("Airway / aspiration", "Stertor, crackles, regurg on the pillow. Especially brachycephalics and after opioids.", TEAL),
+    ("Hernia / evisceration", "Linea failure. Emergency. Protect viscera with sterile moist towels, opioids, OR now.", NAVY),
+    ("Dehiscence (later)", "Often day 3–5 as inflammation peaks and the patient licks. Skin vs. fascia — fascia is the emergency.", GOLD),
+    ("SSI", "Redness, pain, discharge, fever, usually after day 3. Culture if indicated. Open, lavage, do not just add a random antibiotic.", GREEN),
+    ("Seroma / self-trauma", "Dead space + motion. Usually not an emergency. Restrict, bandage sometimes. Do not drain casually.", TEAL),
+]
+for i, (t, d, c) in enumerate(rows):
+    col = i % 2
+    row = i // 2
+    x = Inches(0.45) + Inches(col * 6.45)
+    y = Inches(1.18) + Inches(row * 1.85)
+    add_round(s, x, y, Inches(6.25), Inches(1.7), WHITE)
+    add_rect(s, x, y, Inches(0.12), Inches(1.7), c)
+    add_text(s, x + Inches(0.35), y + Inches(0.12), Inches(5.7), Inches(0.4), t, size=16, bold=True, color=c)
+    add_text(s, x + Inches(0.35), y + Inches(0.55), Inches(5.7), Inches(1.0), d, size=13, color=SLATE)
+notes(s, "Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.")
+
+# 38 Report
+s = new_content("Surgical report — if it is not written, it was not done", "DVM 612 LO 7  ·  Week 3 reports, applied today")
+left = [
+    "Date/time, patient ID, surgeon, assistant, anesthesia.",
+    "Preop diagnosis and ASA.",
+    "Procedure name (and side).",
+    "Position, clip/prep, approach.",
+    "Findings in order of encounter.",
+    "What was done — ligatures, implants, samples.",
+    "Suture: layer, material, size, pattern.",
+    "Hemostasis, estimated blood loss, complications.",
+    "Specimens to pathology / culture.",
+    "Postop plan: fluids, pain, feeding, urinary, recheck.",
+]
+add_round(s, Inches(0.5), Inches(1.2), Inches(6.3), Inches(5.5), WHITE)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.8), Inches(0.4), "Minimum elements", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.9), Inches(4.5), left, size=15, spacing=5)
+add_round(s, Inches(7.05), Inches(1.2), Inches(5.75), Inches(5.5), NAVY)
+add_text(s, Inches(7.3), Inches(1.45), Inches(5.3), Inches(0.4), "Why the next doctor cares", size=16, bold=True, color=GOLD)
+add_text(s, Inches(7.3), Inches(2.05), Inches(5.3), Inches(4.3), "At 2 a.m. someone will open this record because the abdomen is swelling.\n\nThey need: how the pedicles were ligated, whether a sponge count was complete, what suture is in the linea, and whether the client was already called.\n\nCPE/practice: operate as if that night-call is tonight.", size=16, color=WHITE)
+notes(s, "LO 7. Lab assignment later: write a report and discharge for the model/cadaver/live lab. Show them you grade completeness, not handwriting art.")
+
+# 39 Discharge
+s = new_content("Discharge instructions — LO 7 in the client’s language", "Verbal + written. Teach-back. One caregiver demonstrates the e-collar.")
+must = [
+    "What we did, in one sentence.",
+    "When to start food and water, and how much.",
+    "Every medication: name, dose, time, with food?, what if a dose is missed.",
+    "Incision care and activity restriction — specific, timed (e.g., 14 days leash-only).",
+    "E-collar on except when directly watching.",
+    "Next appointment (recheck / suture removal / histopath call).",
+    "ER criteria (next slide) with a phone number that answers.",
+    "Your name. The hospital number. After-hours number.",
+]
+for i, t in enumerate(must):
+    col = i % 2
+    row = i // 2
+    x = Inches(0.45) + Inches(col * 6.45)
+    y = Inches(1.2) + Inches(row * 1.35)
+    add_round(s, x, y, Inches(6.25), Inches(1.22), WHITE)
+    add_rect(s, x, y, Inches(0.12), Inches(1.22), GOLD)
+    add_text(s, x + Inches(0.4), y, Inches(5.7), Inches(1.22), t, size=15, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Role-play one sentence: ‘If the incision opens and you see fat or intestine, cover with a clean wet towel and come now.’ Students write too much physiology and too few phone numbers.")
+
+# 40 ER criteria
+s = new_content("When to come back tonight — teach this verbatim", "If the client cannot repeat these, you did not discharge")
+crit = [
+    ("Come now", "Collapse, pale gums, distended/painful abdomen, unstoppable bleeding, vomiting that prevents meds, difficulty breathing, inability to urinate, evisceration, uncontrolled pain, or you are frightened."),
+    ("Call today", "Not eating by the next morning (species/procedure dependent), a few episodes of vomiting, mild incision redness, diarrhea, e-collar problems, constipation vs. straining."),
+    ("Expected", "Sleepiness tonight, a small bruise near the incision, a slightly tacky incision, a reduced appetite the evening of surgery."),
+]
+cols_c = [RED, GOLD, GREEN]
+for i, ((t, d), c) in enumerate(zip(crit, cols_c)):
+    x = Inches(0.45) + Inches(i * 4.25)
+    add_round(s, x, Inches(1.2), Inches(4.05), Inches(5.5), WHITE)
+    add_rect(s, x, Inches(1.2), Inches(4.05), Inches(0.7), c)
+    add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.7), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.25), Inches(2.1), Inches(3.55), Inches(4.3), d, size=15, color=INK)
+notes(s, "Pale gums + distended abdomen after OHE is never ‘wait until morning.’")
+
+# 41 Nutrition fluids
+s = new_content("Fluids, feeding, and the rest of the animal", "Surgery is a whole-patient event")
+card(s, Inches(0.5), Inches(1.2), Inches(4.0), Inches(5.5), "Fluids", "Continue until eating/drinking and not hypotensive. Match losses (vomiting, drains). Do not fluid-overload heart or kidney patients. Recheck PCV/TS if hemorrhage suspected.", accent=TEAL)
+card(s, Inches(4.7), Inches(1.2), Inches(4.0), Inches(5.5), "Nutrition", "Offer water, then a small bland or usual meal when fully awake (procedure-dependent). GI surgery: surgeon specifies. Cats: prevent hepatic lipidosis — do not ‘wait and see’ for days. Consider mirtazapine/capromorelin as directed.", accent=GOLD)
+card(s, Inches(8.9), Inches(1.2), Inches(3.9), Inches(5.5), "Other systems", "Urinate before discharge. Bowel movements after laparotomy may lag. Eyes: lubrication after anesthesia. Recheck glucose in diabetics. Walk the dog out — do not assume the crate is fine.", accent=GREEN)
+notes(s, "Cats and food. Diabetics and insulin. Short.")
+
+# 42 LA teaser
+s = new_content("Large animal footnote (Week 13 will go deep)", "Same principles; different dirt, restraint, and recovery")
+add_bullets(s, Inches(0.55), Inches(1.2), Inches(12.2), Inches(5.5), [
+    "Field surgery can be aseptic, not ‘sterile theater.’ Clip, wash, sterile gloves/instruments, and a drape still prevent SSI in a castration or displaced abomasum.",
+    "Standing sedation vs. general anesthesia changes aspiration, padding, and recovery risk (especially horses).",
+    "Tetanus prophylaxis is part of equine/farm-animal postop planning, not an afterthought.",
+    "Recovery in a stall: head/eye protection, assist, do not rush to trailering.",
+    "Antimicrobial use in food animals has residue and regulatory obligations — prophylaxis is not a default pour-on.",
+    "Discharge is often a producer conversation: milk withhold, slaughter withhold, when the animal can rejoin the group.",
+], size=17, spacing=10)
+notes(s, "Do not lecture LA for 10 minutes. Plant the flag that Halsted travels to the barn.")
+
+# 43 Integrated case
+s = new_content("Integrated case — 8 minutes", "You are the surgeon. The anesthesia student has the dog ready for you.")
+add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.55), GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.3), Inches(11.8), Inches(1.25), "1-year-old female Labrador, 22 kg, BCS 5/9. Elective OHE. PE normal. PCV 45%, TS 6.8 g/dL. Last meal 5 hours ago. Client is in reception. CPE-style: client-owned, going home after recovery.", size=16, color=NAVY)
+steps = [
+    ("Pre-op", "ASA I. Consent + DNR. No routine Abx. Opioid + NSAID plan + line block. Checklist."),
+    ("Prep", "Clip xiphoid–pubis after plane is surgical. Dirty prep → OR → dorsal → sterile prep → four-quadrant drape. Closed glove."),
+    ("Intra", "Announce incision. Halsted. Show pedicles (CPE). Secure linea. Skin closure without staples (CPE: staples/glue not available)."),
+    ("Post", "Rewarm, score pain, e-collar. Watch color/HR. Written discharge + ER list. Recheck 10–14 d. You are still responsible at hour 23."),
+]
+for i, (t, d) in enumerate(steps):
+    x = Inches(0.45) + Inches(i * 3.2)
+    add_round(s, x, Inches(2.9), Inches(3.05), Inches(3.85), WHITE)
+    add_rect(s, x, Inches(2.9), Inches(3.05), Inches(0.55), NAVY)
+    add_text(s, x, Inches(2.9), Inches(3.05), Inches(0.55), t, size=14, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.15), Inches(3.55), Inches(2.75), Inches(3.0), d, size=13, color=INK)
+notes(s, "Walk it without taking questions until the end. This is the mental movie for lab.")
+
+# 44 Exam pearls
+s = new_content("Exam 1 and ECFVG pearls", "If you remember six things, remember these")
+pearls = [
+    "ASA is assigned after today’s PE and labs — not copied from the appointment book.",
+    "Elective clean OHE: no routine postoperative antibiotics.",
+    "Clip after induction, #40, not razor, not the night before; spiral prep center → out.",
+    "CHG off the cornea and out of the middle ear.",
+    "Four-quadrant drape + closed glove; announce contamination; after incision there is no free warning.",
+    "Pale + tachycardic after celiotomy = hemorrhage until proven otherwise; fascia failure is an emergency; the first 24 hours still count.",
+]
+for i, t in enumerate(pearls):
+    y = Inches(1.15) + Inches(i * 0.9)
+    add_round(s, Inches(0.5), y, Inches(12.3), Inches(0.8), WHITE)
+    add_rect(s, Inches(0.5), y, Inches(0.7), Inches(0.8), GOLD)
+    add_text(s, Inches(0.5), y, Inches(0.7), Inches(0.8), str(i + 1), size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.4), y, Inches(11.1), Inches(0.8), t, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "These six are fair game for MCQ and short answer. Stop here if time is gone.")
+
+# 45 Summary
+s = new_content("Take-home", "Prepare the patient. Prepare yourself. Own the next 24 hours.")
+add_round(s, Inches(0.5), Inches(1.25), Inches(12.3), Inches(5.4), WHITE)
+add_text(s, Inches(0.85), Inches(1.6), Inches(11.6), Inches(4.8), "Preoperative evaluation is a decision to proceed, delay, stabilize, or refer.\n\nPatient and surgeon preparation is scored, teachable, and unforgiving — the ECFVG MOA is describing good practice, not a stunt.\n\nPostoperative care is part of the operation: pain, warmth, the incision, the record, and the client.\n\nHalsted does not stop when the last throw is buried.", size=20, color=NAVY)
+notes(s, "Close the loop to slide 1.")
+
+# 46 References
+s = new_content("References & source map", "What to read tonight")
+add_bullets(s, Inches(0.5), Inches(1.15), Inches(12.2), Inches(5.6), [
+    "Fossum T.W. Small Animal Surgery. 5th ed. Elsevier; 2018. — preoperative evaluation, patient prep, postop care chapters (required).",
+    "Hendrickson D.A., Baird A.N. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. (required)",
+    "Johnston S.A., Tobias K.M. Veterinary Surgery: Small Animal. 2nd ed. Elsevier; 2017. — cited by ECFVG MOA as a CPE review text.",
+    "AVMA ECFVG. Clinical Proficiency Examination Manual of Administration, 2026 edition. Surgery section (SU01), Anesthesia Appendix 2 (ASA), dismissible events, 24-hour scoring rule.",
+    "AAHA/AAFP Antimicrobial Stewardship Guidelines, 2022 — surgical prophylaxis.",
+    "AAHA Anesthesia and Monitoring Guidelines (current edition) — fasting, PE, monitoring, recovery.",
+    "LIU Lewyt CVM. DVM 612 Principles of Surgery course outline (Week 4 topic; LOs 4, 7, 8).",
+], size=15, spacing=8)
+notes(s, "Point to Fossum as the night-before reading. MOA is publicly available to ECFVG candidates; we use it because it is a clean description of entry-level US/Canada surgical standard.")
+
+# 47 Questions
+s = prs.slides.add_slide(BLANK)
+add_rect(s, 0, 0, W, H, NAVY)
+add_rect(s, 0, 0, W, Inches(0.16), GOLD)
+add_rect(s, 0, 0, Inches(0.22), H, GOLD)
+add_text(s, Inches(0.75), Inches(2.3), Inches(12), Inches(0.5), "DVM 612  ·  WEEK 4", size=16, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(2.85), Inches(12), Inches(1.2), "Questions", size=54, bold=True, color=WHITE)
+add_text(s, Inches(0.75), Inches(4.3), Inches(12), Inches(1.0), "Next lab: practice the clip–prep–drape sequence on models until it is boring.\nBoring is the goal. Excitement belongs to the pathology, not the asepsis.", size=18, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(6.3), Inches(12), Inches(0.4), "Lewyt College of Veterinary Medicine  ·  Long Island University", size=14, color=GOLD)
+notes(s, "Take questions. If none: ‘What will you do differently on your next observed prep?’ Dismiss on time.")
+
+# Stamp numbers
+stamp_footers()
+
+out = "/workspace/lectures/DVM-612_Week4_Preop_PatientPrep_Postop.pptx"
+prs.save(out)
+print(f"Saved {out}")
+print(f"Slides: {len(prs.slides)}")
