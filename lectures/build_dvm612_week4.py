@@ -7,6 +7,8 @@ Required texts: Fossum 2018; Hendrickson & Baird 2013.
 """
 
 from pathlib import Path
+import subprocess
+import sys
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -18,6 +20,9 @@ from lxml import etree
 from copy import deepcopy
 
 ASSETS = Path(__file__).resolve().parent / "assets"
+
+# Keep the teaching records in sync with the lecture (preop + recovery, large type).
+subprocess.check_call([sys.executable, str(Path(__file__).resolve().parent / "make_teaching_charts.py")])
 
 # --- Brand ---
 NAVY = RGBColor(0x0B, 0x2C, 0x4A)
@@ -551,20 +556,14 @@ add_bullets(s, Inches(7.05), Inches(1.9), Inches(5.55), Inches(4.5), [
 notes(s, "Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.")
 
 # 17 Willie record
-s = new_content("Anesthesia record, Willie", "Complete the header before the first drug.")
-add_pic(s, "anesthesia_record_willie.png", Inches(0.35), Inches(1.12), Inches(8.3), Inches(5.85))
-add_round(s, Inches(8.80), Inches(1.12), Inches(4.15), Inches(5.85), NAVY)
-add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Read this", size=18, bold=True, color=GOLD)
-add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "ASA III-E\nbefore alfaxalone\n\nSkip NSAID\n(DexSP already given)\n\nGrid every 5 min\nwhile sedated\n\nRecovery is on\nthe same page", size=18, color=WHITE)
-notes(s, "Walk the header: ASA III-E is written before alfaxalone. DexSP means skip NSAID. Grid every 5 minutes while sedated. Recovery boxes are part of the same page.")
+s = new_content("Willie’s perioperative record", "Preop header and recovery. Complete before the first drug.")
+add_pic(s, "anesthesia_record_willie.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
+notes(s, "Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.")
 
 # 18 MoMo record
-s = new_content("Anesthesia record, MoMo", "Exploratory cancelled. Record the decision.")
-add_pic(s, "anesthesia_record_momo.png", Inches(0.35), Inches(1.12), Inches(8.3), Inches(5.85))
-add_round(s, Inches(8.80), Inches(1.12), Inches(4.15), Inches(5.85), RED)
-add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Read this", size=18, bold=True, color=GOLD)
-add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "ASA IV-E\n\nNo clippers\nNo incision\n\nCreatinine 3.0\nthen 4.71\n\nWrite:\nSURGERY\nCANCELLED", size=18, color=WHITE)
-notes(s, "The form is not only for patients who get clipped. Recording the cancellation is a surgical document. Say it once, respectfully, then continue.")
+s = new_content("MoMo’s perioperative record", "Exploratory cancelled. Record the decision.")
+add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
+notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.")
 
 # 19 Abx
 s = new_content("Surgical antimicrobial prophylaxis", "Frey et al. 2022 AAFP/AAHA: when. Whittem 1999 and Gonzalez 2017: how.")
@@ -717,12 +716,9 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
-s = new_content("Postoperative flowsheet, first 2 hours", "Stay with the patient")
-add_pic(s, "recovery_flowsheet.png", Inches(0.35), Inches(1.12), Inches(8.3), Inches(5.85))
-add_round(s, Inches(8.80), Inches(1.12), Inches(4.15), Inches(5.85), NAVY)
-add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Every 15 minutes", size=18, bold=True, color=GOLD)
-add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "Airway\nmm / CRT / pulse\nTemperature\nPain score\nIncision\nE-collar on\n\nPale + tachycardic\nafter celiotomy:\nreturn to OR", size=18, color=WHITE)
-notes(s, "Students should be able to fill this after a spay. Photograph it.")
+s = new_content("Postoperative flowsheet, first 2 hours", "Airway, perfusion, heat, pain, incision. Stay with the patient.")
+add_pic(s, "recovery_flowsheet.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
+notes(s, "Students should be able to fill this after a spay. Photograph it. Pale plus tachycardic after celiotomy: return to OR.")
 
 # 31 Pain + incision
 s = new_content("Pain and incision care", "Score pain. Then teach the e-collar.")

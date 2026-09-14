@@ -51,248 +51,180 @@ def draw_header(d, w, title, subtitle):
     d.text((w - 28, 40), "Teaching record  ·  not a hospital original", font=font(13), fill=GOLD, anchor="rm")
 
 
+def checkbox_list(d, x0, y0, x1, items, *, checked=False, box_color=GREEN, text_size=20, row_h=86):
+    f = font(text_size)
+    for i, t in enumerate(items):
+        yy = y0 + i * row_h
+        d.rectangle([x0, yy, x1, yy + row_h - 8], fill=WHITE, outline=LINE, width=1)
+        bx, by = x0 + 16, yy + (row_h - 8) / 2 - 12
+        d.rectangle([bx, by, bx + 24, by + 24], outline=box_color, width=3)
+        if checked:
+            d.line([bx + 4, by + 13, bx + 10, by + 19], fill=box_color, width=3)
+            d.line([bx + 10, by + 19, bx + 20, by + 5], fill=box_color, width=3)
+        lines = wrap_text(t, f, x1 - x0 - 70)
+        ty = yy + (row_h - 8) / 2 - (len(lines[:2]) - 1) * 12
+        for line in lines[:2]:
+            d.text((x0 + 54, ty), line, font=f, fill=INK, anchor="lm")
+            ty += 24
+
+
 def anesthesia_record(filled="blank"):
+    """Preop + recovery teaching record. Intra-op grid is not the point of this hour."""
     W, H = 2400, 1350
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
-    draw_header(
-        d,
-        W,
-        "Small-animal anesthesia / sedation record",
-        "DVM 612  ·  Preop · intra · recovery  ·  fill every box that applies",
-    )
 
-    # Identity row
-    y = 104
+    d.rectangle([0, 0, W, 88], fill=NAVY)
+    d.rectangle([0, 88, W, 96], fill=GOLD)
+    d.text((28, 22), "Perioperative record", font=font(36, True), fill=WHITE, anchor="lt")
+    d.text((28, 62), "DVM 612  ·  Preoperative evaluation and recovery  ·  teaching form, not a hospital original", font=font(18), fill=GOLD, anchor="lt")
+    d.text((W - 28, 44), "Complete this page before the first drug", font=font(18), fill=GOLD, anchor="rm")
+
+    y = 112
     labels = [
-        (28, 380, "Patient"),
-        (380, 780, "Species / breed"),
-        (780, 1040, "Sex / age"),
-        (1040, 1280, "Weight"),
-        (1280, 1560, "Date"),
-        (1560, 1780, "ASA"),
-        (1780, 2372, "Procedure"),
+        (28, 360, "Patient"),
+        (360, 860, "Species / breed"),
+        (860, 1180, "Sex / age"),
+        (1180, 1480, "Weight"),
+        (1480, 1760, "ASA"),
+        (1760, 2372, "What you planned today"),
     ]
     for x0, x1, lab in labels:
-        cell(d, x0, y, x1, y + 28, lab, fill=NAVY, fg=WHITE, size=12, bold=True, align="center")
-
+        cell(d, x0, y, x1, y + 32, lab, fill=NAVY, fg=WHITE, size=16, bold=True, align="center")
     values = {
-        "blank": ["", "", "", "", "", "", ""],
-        "willie": [
-            "Willie",
-            "Canine  ·  Cavalier King Charles",
-            "MN  ·  6 y 11 mo",
-            "13.7 kg  BCS 6/9",
-            "13 Sep 2026",
-            "III-E",
-            "Alfaxalone sedation: deep AS clean + cytology",
-        ],
-        "momo": [
-            "MoMo",
-            "Feline  ·  DSH",
-            "SF  ·  6 yr",
-            "4.25 kg  BCS 5/9",
-            "13 Sep 2026",
-            "IV-E",
-            "Exploratory considered; cancelled (renal, not GI)",
-        ],
+        "blank": ["", "", "", "", "", ""],
+        "willie": ["Willie", "Canine  ·  Cavalier", "MN  ·  6 y 11 mo", "13.7 kg  BCS 6/9", "3-E", "Sedated ear clean. Not a celiotomy."],
+        "momo": ["MoMo", "Feline  ·  DSH", "SF  ·  6 yr", "4.25 kg  BCS 5/9", "4-E", "Exploratory considered. Then cancelled."],
     }[filled]
-    for (x0, x1, _), val in zip(labels, values):
-        cell(d, x0, y + 28, x1, y + 70, val, size=15, bold=True)
-
-    # Preop vitals / PE
-    y = 186
-    d.rectangle([28, y, 2372, y + 36], fill=TEAL)
-    d.text((40, y + 18), "Preoperative evaluation  (complete BEFORE premedication)", font=font(16, True), fill=WHITE, anchor="lm")
+    for (x0, x1, lab), val in zip(labels, values):
+        asa = lab == "ASA"
+        fill = GOLD if (asa and val) else WHITE
+        fg = NAVY if (asa and val) else INK
+        cell(d, x0, y + 32, x1, y + 100, val, fill=fill, fg=fg, size=28 if asa else 20, bold=True, align="center")
 
     y = 228
+    d.rectangle([28, y, 2372, y + 44], fill=TEAL)
+    d.text((40, y + 22), "PREOPERATIVE EVALUATION   ·   complete before any drug", font=font(22, True), fill=WHITE, anchor="lm")
+
+    y = 280
     preop_h = [
         (28, 280, "T °F"),
-        (280, 500, "HR"),
-        (500, 720, "RR"),
-        (720, 980, "mm / CRT"),
-        (980, 1280, "Mentation"),
-        (1280, 1680, "Heart / lungs"),
-        (1680, 2372, "Problems that change the plan"),
+        (280, 520, "HR"),
+        (520, 760, "RR"),
+        (760, 1100, "mm / CRT"),
+        (1100, 1480, "Mentation"),
+        (1480, 2372, "Heart / lungs"),
     ]
     preop_v = {
-        "blank": ["", "", "", "", "", "", ""],
-        "willie": ["100.8", "132", "52", "pink / 2 s", "quiet, dull", "II/VI left systolic; lungs clear", "Vestibular + AS otitis; TM swollen; murmur; skip NSAID after DexSP"],
-        "momo": ["98.0", "200", "30", "pink, tacky / <2", "QAR", "NSR, no murmur; eupneic", "Vomiting; possible FB vs toxin; azotemia; bilateral renomegaly"],
+        "blank": ["", "", "", "", "", ""],
+        "willie": ["100.8", "132", "52", "pink / 2 s", "quiet, dull", "II/VI left systolic; lungs clear"],
+        "momo": ["98.0", "200", "30", "pink, tacky / <2 s", "QAR", "NSR; no murmur; eupneic"],
     }[filled]
     for (x0, x1, lab), val in zip(preop_h, preop_v):
-        cell(d, x0, y, x1, y + 26, lab, fill=(228, 236, 238), fg=TEAL, size=11, bold=True, align="center")
-        cell(d, x0, y + 26, x1, y + 70, val, size=13)
+        cell(d, x0, y, x1, y + 28, lab, fill=(228, 236, 238), fg=TEAL, size=16, bold=True, align="center")
+        cell(d, x0, y + 28, x1, y + 88, val, size=22, bold=True, align="center")
 
-    # Drugs
-    y = 310
-    d.rectangle([28, y, 2372, y + 32], fill=NAVY)
-    d.text((40, y + 16), "Drugs  ·  fluids  ·  airway   (dose, route, time)", font=font(15, True), fill=WHITE, anchor="lm")
+    y = 380
+    d.rectangle([28, y, 2372, y + 88], fill=WHITE, outline=LINE, width=1)
+    d.rectangle([28, y, 320, y + 88], fill=GOLD)
+    d.text((174, y + 44), "What changes\nthe plan", font=font(18, True), fill=NAVY, anchor="mm")
+    plan = {
+        "blank": "",
+        "willie": "Acute vestibular disease + severe AS otitis + murmur. Still pink, walking, kidneys normal. DexSP 0.68 mL SQ already given: skip NSAID. Alfaxalone only after this header is complete.",
+        "momo": "Vomiting that looked like a foreign body. PE did not prove GI obstruction. Creatinine 3.0, then 4.71 on fluids. Right kidney fluid-filled and non-functional. NSAIDs contraindicated. Do not clip.",
+    }[filled]
+    fplan = font(20)
+    lines = wrap_text(plan, fplan, 2000)
+    ty = y + 18
+    for line in lines[:3]:
+        d.text((340, ty), line, font=fplan, fill=INK, anchor="lt")
+        ty += 24
 
-    y = 348
-    drug_labs = ["Premed / adjuncts", "Induction / sedation", "Maintenance", "Fluids", "Local / other", "Airway"]
-    drug_v = {
-        "blank": [""] * 6,
+    mid = 1188
+    y = 484
+    d.rectangle([28, y, mid - 12, y + 44], fill=NAVY)
+    d.text((40, y + 22), "PRE-OP BOXES   ·   before the first drug", font=font(20, True), fill=GOLD, anchor="lm")
+    d.rectangle([mid + 12, y, 2372, y + 44], fill=GREEN)
+    d.text((mid + 24, y + 22), "RECOVERY / NEXT 24 HOURS   ·   the operation is not over", font=font(20, True), fill=WHITE, anchor="lm")
+
+    preop_boxes = {
+        "blank": [
+            "Identity, consent, DNR",
+            "Today’s PE and ASA written",
+            "Last meal recorded",
+            "IV catheter patent",
+            "Monitoring on before drugs",
+            "Pain plan, including skip-NSAID if steroids given",
+            "Who calls the client, and when",
+        ],
         "willie": [
-            "Cerenia IV; DexSP 0.68 mL SQ. Skip NSAID",
-            "Alfaxalone 2.74 mL IV (~2 mg/kg of 10 mg/mL)",
-            "Injectable sedation for ear clean (not a celiotomy)",
-            "IV crystalloid running",
-            "Animax infused AS after clean. Aminoglycoside risk if OMI",
-            "Protect airway; pad; he falls. Monitoring on.",
+            "ASA Status 3-E written before alfaxalone",
+            "Today’s PE: vestibular + AS otitis + murmur",
+            "Skip NSAID: DexSP already given",
+            "IV in. Monitoring on. Then sedate.",
+            "Ear/eye: dilute PVP-I, not 7.5% scrub",
+            "Aminoglycoside risk if the middle ear is involved",
+            "MRI later. New ASA on the day of TECA-LBO",
         ],
         "momo": [
-            "None before work-up",
-            "NONE for exploratory. Record the cancellation",
-            "N/A",
-            "IVF 1.5× maint (40 mL/kg/d)",
-            "Cerenia 1 mg/kg IV q24; ondansetron 0.5 mg/kg IV q8; Unasyn 30 mg/kg IV q8; AlOH PO",
-            "N/A. Not a surgical anesthetic event",
+            "ASA Status 4-E after labs and imaging",
+            "POCUS / AUS before any clippers",
+            "Serial creatinine 3.0 then 4.71. Act on it.",
+            "No clippers. No incision. No exploratory.",
+            "NSAIDs contraindicated (azotemic cat)",
+            "Consent includes medical care and euthanasia",
+            "Write SURGERY CANCELLED on this record",
         ],
     }[filled]
-    col_w = (2372 - 28) / 6
-    for i, (lab, val) in enumerate(zip(drug_labs, drug_v)):
-        x0 = 28 + i * col_w
-        x1 = 28 + (i + 1) * col_w
-        cell(d, x0, y, x1, y + 28, lab, fill=GOLD, fg=NAVY, size=12, bold=True, align="center")
-        # wrap value
-        d.rectangle([x0, y + 28, x1, y + 118], fill=WHITE, outline=LINE, width=1)
-        # simple wrap
-        words = val.split()
-        lines, cur = [], ""
-        f = font(13)
-        for w in words:
-            trial = (cur + " " + w).strip()
-            if f.getlength(trial) < (x1 - x0 - 16):
-                cur = trial
-            else:
-                lines.append(cur)
-                cur = w
-        if cur:
-            lines.append(cur)
-        ty = y + 40
-        for line in lines[:4]:
-            d.text((x0 + 8, ty), line, font=f, fill=INK, anchor="lt")
-            ty += 18
-
-    # Monitoring grid
-    y = 480
-    d.rectangle([28, y, 2372, y + 32], fill=TEAL)
-    d.text((40, y + 16), "Intra-procedure monitoring  (every 5 min while sedated/anesthetized)", font=font(15, True), fill=WHITE, anchor="lm")
-
-    y = 518
-    times = ["0", "5", "10", "15", "20", "25", "30", "35", "40"]
-    rows = ["Time (min)", "HR", "RR", "SpO2 %", "ETCO2", "BP", "Temp °F", "Plane / jaw", "Events"]
-    willie_grid = {
-        "Time (min)": times,
-        "HR": ["132", "118", "110", "108", "112", "", "", "", ""],
-        "RR": ["52", "28", "24", "22", "24", "", "", "", ""],
-        "SpO2 %": ["", "98", "99", "98", "98", "", "", "", ""],
-        "ETCO2": ["", "", "", "", "", "", "", "", ""],
-        "BP": ["", "", "", "", "", "", "", "", ""],
-        "Temp °F": ["100.8", "", "", "", "100.2", "", "", "", ""],
-        "Plane / jaw": ["awake", "sedated", "plane OK", "plane OK", "lightening", "", "", "", ""],
-        "Events": ["IVC/fluids", "alfaxalone", "ear clean AS", "cytology", "recover", "", "", "", ""],
-    }
-    momo_grid = {k: [""] * 9 for k in rows}
-    momo_grid["Time (min)"] = times
-    momo_grid["Events"] = ["STOP", "Image", "labs", "then", "decide", "", "", "", ""]
-
-    grid = {"blank": {k: ([k] if k == "Time (min)" else [""] * 9) for k in rows}, "willie": willie_grid, "momo": momo_grid}[filled]
-    if filled == "blank":
-        grid["Time (min)"] = times
-
-    label_w = 220
-    grid_x = 28 + label_w
-    col = (2372 - grid_x) / 9
-    row_h = 36
-    for r, name in enumerate(rows):
-        yy = y + r * row_h
-        fill = NAVY if r == 0 else (WHITE if r % 2 == 0 else (236, 242, 244))
-        fg = WHITE if r == 0 else INK
-        cell(d, 28, yy, 28 + label_w, yy + row_h, name, fill=fill, fg=fg, size=13, bold=True, align="center")
-        for c in range(9):
-            val = grid[name][c] if name in grid else ""
-            cfill = GOLD if (filled == "momo" and r == 0) else fill
-            cell(
-                d,
-                grid_x + c * col,
-                yy,
-                grid_x + (c + 1) * col,
-                yy + row_h,
-                val,
-                fill=cfill if r == 0 else fill,
-                fg=WHITE if r == 0 else INK,
-                size=13,
-                bold=(r == 0),
-                align="center",
-            )
-
-    # Recovery + checklist
-    y = 518 + 9 * 36 + 16
-    d.rectangle([28, y, 1180, y + 32], fill=GREEN)
-    d.text((40, y + 16), "Recovery  (the surgery is not over)", font=font(15, True), fill=WHITE, anchor="lm")
-    d.rectangle([1200, y, 2372, y + 32], fill=RED)
-    d.text((1212, y + 16), "Required boxes", font=font(15, True), fill=WHITE, anchor="lm")
-
     rec_items = {
-        "blank": ["Extubate when swallow returns (species-specific)", "SpO2 / mm / CRT / pulse", "Temp: rewarm; check skin every 15 min", "Pain score + the analgesic you planned", "Incision / procedure site check", "E-collar before they can lick", "Urinate? Client phone on the board"],
+        "blank": [
+            "Extubate when swallow returns",
+            "mm / CRT / pulse every 15 minutes",
+            "Rewarm. Check skin so you do not burn",
+            "Pain score and the analgesic you planned",
+            "Incision or procedure-site check",
+            "E-collar on before they can lick",
+            "Pale + tachycardic after celiotomy: return to OR",
+        ],
         "willie": [
-            "Recover padded, no stairs",
+            "Recover padded. No stairs tonight.",
             "Watch nystagmus, circling, vomiting, seizures",
-            "Skip NSAID (DexSP already given)",
+            "Skip NSAID in recovery (DexSP already given)",
             "Meclizine 25 mg PO BID × 5 d",
             "Cerenia 60 mg PO SID × 4 d",
-            "MRI recommended; TECA-LBO only if medical fails",
             "Confine. Call the owner with neuro status",
+            "MRI recommended. TECA-LBO only if medical fails",
         ],
         "momo": [
-            "Not a recovery from surgery",
-            "Hospitalized: QAR, IVF, antiemetics, Unasyn",
-            "Recheck renal values. Worsened on fluids",
-            "AUS: R kidney fluid-filled, non-functional; L kidney abnormal",
-            "IM referral for FNA of LEFT kidney discussed",
-            "Prognosis guarded to poor",
+            "This is not a recovery from surgery",
+            "IVF, antiemetics, Unasyn. Recheck kidneys.",
+            "Rising creatinine cancelled the cut",
+            "Right kidney non-functional on AUS",
+            "Offer supportive care, referral, or euthanasia",
+            "That conversation is still surgery",
             "Owner elected humane euthanasia",
         ],
     }[filled]
-    yy = y + 40
-    for i, t in enumerate(rec_items):
-        d.rectangle([28, yy + i * 28, 1180, yy + i * 28 + 26], fill=WHITE, outline=LINE)
-        d.rectangle([36, yy + i * 28 + 6, 54, yy + i * 28 + 22], outline=GREEN, width=2)
-        if filled != "blank":
-            d.line([40, yy + i * 28 + 14, 50, yy + i * 28 + 20], fill=GREEN, width=2)
-            d.line([50, yy + i * 28 + 20, 62, yy + i * 28 + 8], fill=GREEN, width=2)
-        d.text((70, yy + i * 28 + 13), t, font=font(14), fill=INK, anchor="lm")
+    checkbox_list(d, 28, 540, mid - 12, preop_boxes, checked=(filled != "blank"), box_color=TEAL, text_size=22, row_h=86)
+    checkbox_list(d, mid + 12, 540, 2372, rec_items, checked=(filled != "blank"), box_color=GREEN, text_size=22, row_h=86)
 
-    required = [
-        "Identity / consent / DNR",
-        "Today’s PE + ASA (not yesterday’s)",
-        "Last meal",
-        "IV catheter patent",
-        "Monitoring on before drugs",
-        "Abx 30–60 min pre-incision IF indicated",
-        "Pain plan written",
-        "Who calls the client, and when",
-    ]
+    y = 1156
     if filled == "momo":
-        required = [
-            "Imaging BEFORE the exploratory",
-            "Serial creatinine. Repeat on fluids. Act on a rising value",
-            "USG 1.042: concentrating. Act on creatinine",
-            "POCUS: kidneys. Medical abdomen",
-            "Keep the abdomen closed. This is medical renal disease",
-            "Consent includes medical care and euthanasia",
-            "NSAIDs contraindicated in this azotemic cat",
-            "Record the cancellation",
-        ]
-    for i, t in enumerate(required):
-        d.rectangle([1200, yy + i * 28, 2372, yy + i * 28 + 26], fill=WHITE, outline=LINE)
-        d.text((1216, yy + i * 28 + 13), "▸  " + t, font=font(14), fill=RED if filled == "momo" else INK, anchor="lm")
-
-    if filled == "momo":
-        d.rectangle([700, 640, 1700, 760], fill=(139, 46, 46))
-        d.text((1200, 700), "SURGERY CANCELLED  ·  RECORD THE DECISION", font=font(26, True), fill=WHITE, anchor="mm")
+        d.rectangle([28, y, 2372, 1328], fill=RED)
+        d.text((W / 2, 1218), "SURGERY CANCELLED   ·   RECORD THE DECISION", font=font(32, True), fill=WHITE, anchor="mm")
+        d.text((W / 2, 1272), "A cancelled exploratory is a successful preoperative evaluation.", font=font(20), fill=(244, 235, 211), anchor="mm")
+    else:
+        d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=3)
+        note = {
+            "blank": "If sedation or anesthesia is used, monitors are on first. The 5-minute grid belongs on this page, but this hour is the header, the prep, and recovery.",
+            "willie": "Sedation happened after this header. Monitors on, then alfaxalone. This hour is the preop header, the ear and eye prep, and recovery.",
+        }[filled]
+        d.text((44, 1196), "If you sedate or anesthetize", font=font(18, True), fill=NAVY, anchor="lt")
+        fn = font(20)
+        ty = 1230
+        for line in wrap_text(note, fn, 2280)[:3]:
+            d.text((44, ty), line, font=fn, fill=INK, anchor="lt")
+            ty += 28
 
     path = OUT / f"anesthesia_record_{filled}.png"
     im.save(path, "PNG")
@@ -301,36 +233,66 @@ def anesthesia_record(filled="blank"):
 
 
 def recovery_flowsheet():
+    """Postoperative flowsheet for this hour: airway, perfusion, heat, pain, incision."""
     W, H = 2400, 1350
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
-    draw_header(d, W, "Immediate postoperative flowsheet  (first 2 hours)", "DVM 612  ·  ABC + temperature + pain  ·  stay with the patient")
+    d.rectangle([0, 0, W, 88], fill=NAVY)
+    d.rectangle([0, 88, W, 96], fill=GOLD)
+    d.text((28, 22), "Postoperative flowsheet  ·  first 2 hours", font=font(36, True), fill=WHITE, anchor="lt")
+    d.text((28, 62), "DVM 612  ·  Stay with the patient  ·  teaching form, not a hospital original", font=font(18), fill=GOLD, anchor="lt")
 
-    y = 104
-    for x0, x1, lab in [(28, 500, "Patient"), (500, 1100, "Procedure"), (1100, 1500, "Extubate time"), (1500, 1900, "Pain scale used"), (1900, 2372, "Recovery lead")]:
-        cell(d, x0, y, x1, y + 26, lab, fill=NAVY, fg=WHITE, size=12, bold=True, align="center")
-        cell(d, x0, y + 26, x1, y + 70, "", size=14)
+    y = 112
+    headers = [(28, 520, "Patient"), (520, 1200, "Procedure"), (1200, 1680, "Extubate time"), (1680, 2372, "Recovery lead")]
+    for x0, x1, lab in headers:
+        cell(d, x0, y, x1, y + 32, lab, fill=NAVY, fg=WHITE, size=16, bold=True, align="center")
+        cell(d, x0, y + 32, x1, y + 92, "", size=22)
 
-    y = 186
+    y = 220
     times = ["0–5 min", "15 min", "30 min", "45 min", "60 min", "90 min", "120 min"]
-    rows = ["Time", "HR", "RR / effort", "mm / CRT", "SpO2", "Temp °F", "Pain score", "Incision", "Pee / vomit", "Rx given"]
-    label_w = 200
+    rows = ["Time", "Airway", "mm / CRT / pulse", "Temp °F", "Pain score", "Incision", "E-collar on"]
+    label_w = 280
     grid_x = 28 + label_w
     col = (2372 - grid_x) / 7
-    row_h = 70
+    row_h = 118
     for r, name in enumerate(rows):
         yy = y + r * row_h
         fill = TEAL if r == 0 else (WHITE if r % 2 == 0 else (236, 242, 244))
         fg = WHITE if r == 0 else INK
-        cell(d, 28, yy, 28 + label_w, yy + row_h, name, fill=fill, fg=fg, size=14, bold=True, align="center")
+        cell(d, 28, yy, 28 + label_w, yy + row_h, name, fill=fill, fg=fg, size=20, bold=True, align="center")
         for c in range(7):
             val = times[c] if r == 0 else ""
-            cell(d, grid_x + c * col, yy, grid_x + (c + 1) * col, yy + row_h, val, fill=fill if r == 0 else (WHITE if r % 2 == 0 else (236, 242, 244)), fg=WHITE if r == 0 else INK, size=14, bold=(r == 0), align="center")
+            cell(
+                d,
+                grid_x + c * col,
+                yy,
+                grid_x + (c + 1) * col,
+                yy + row_h,
+                val,
+                fill=fill if r == 0 else (WHITE if r % 2 == 0 else (236, 242, 244)),
+                fg=WHITE if r == 0 else INK,
+                size=20,
+                bold=(r == 0),
+                align="center",
+            )
 
-    y = y + 10 * row_h + 16
-    d.rectangle([28, y, 2372, y + 90], fill=WHITE, outline=GOLD, width=3)
-    d.text((44, y + 16), "Call the surgeon NOW if:", font=font(16, True), fill=RED, anchor="lt")
-    d.text((44, y + 48), "Pale mm + tachycardia after celiotomy  ·  incision opening / viscera  ·  unrelenting pain  ·  dyspnea  ·  seizure  ·  T < 97 °F and not waking  ·  no urine with a large bladder", font=font(15), fill=INK, anchor="lt")
+    y = y + 7 * row_h + 16
+    d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=4)
+    d.text((48, y + 28), "Call the surgeon NOW if:", font=font(24, True), fill=RED, anchor="lt")
+    d.text(
+        (48, y + 78),
+        "Pale mm + tachycardia after celiotomy   ·   incision opening / viscera   ·   unrelenting pain",
+        font=font(22),
+        fill=INK,
+        anchor="lt",
+    )
+    d.text(
+        (48, y + 116),
+        "Dyspnea   ·   seizure   ·   T < 97 °F and not waking   ·   no urine with a large bladder",
+        font=font(22),
+        fill=INK,
+        anchor="lt",
+    )
 
     path = OUT / "recovery_flowsheet.png"
     im.save(path, "PNG")
@@ -517,6 +479,3 @@ if __name__ == "__main__":
     anesthesia_record("willie")
     anesthesia_record("momo")
     recovery_flowsheet()
-    kit_sheet()
-    cbc_chem_asa()
-    epoc_asa()

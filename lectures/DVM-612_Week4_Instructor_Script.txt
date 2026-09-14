@@ -51,11 +51,11 @@ SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
 SLIDE 16. WHO-ADAPTED TIMEOUT AND MULTIMODAL PLAN
     SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.
 
-SLIDE 17. COMPLETE THE HEADER BEFORE THE FIRST DRUG.
-    SPEAK: Walk the header: ASA III-E is written before alfaxalone. DexSP means skip NSAID. Grid every 5 minutes while sedated. Recovery boxes are part of the same page.
+SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
+    SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.
 
 SLIDE 18. EXPLORATORY CANCELLED. RECORD THE DECISION.
-    SPEAK: The form is not only for patients who get clipped. Recording the cancellation is a surgical document. Say it once, respectfully, then continue.
+    SPEAK: The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.
 
 SLIDE 19. FREY ET AL. 2022 AAFP/AAHA: WHEN. WHITTEM 1999 AND GONZALEZ 2017: HOW.
     SPEAK: Do not attribute 22 mg/kg every 90 minutes to AAHA 2022. That guideline says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.
@@ -90,8 +90,8 @@ SLIDE 28. WHAT DO YOU DO NEXT?
 SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
 
-SLIDE 30. STAY WITH THE PATIENT
-    SPEAK: Students should be able to fill this after a spay. Photograph it.
+SLIDE 30. AIRWAY, PERFUSION, HEAT, PAIN, INCISION. STAY WITH THE PATIENT.
+    SPEAK: Students should be able to fill this after a spay. Photograph it. Pale plus tachycardic after celiotomy: return to OR.
 
 SLIDE 31. SCORE PAIN. THEN TEACH THE E-COLLAR.
     SPEAK: Licking and unsupervised running are the two discharge failures after otherwise adequate closure.
