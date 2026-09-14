@@ -98,7 +98,7 @@ SLIDE 31. THE SAME SIX BOXES EVERY TIME YOU TAKE A PATIENT TO SURGERY
     SPEAK: Read the six boxes. Students should be able to name them without mixing in the cutting steps.
 
 SLIDE 32. PREP ROOM IS DIRTY. OR IS STERILE. THE DOG MOVES ONCE.
-    SPEAK: Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before adequate anesthetic depth — the patient wakes, contaminates, and is lacerated. Step 5: they will mix 10% PVP-I 1 to 20 to 1 to 50 for mucosa and eye. That is not a client instruction; it is their job.
+    SPEAK: Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before adequate anesthetic depth — the patient wakes, contaminates, and is lacerated. Step 5: 10% PVP-I on intact skin is 5 minutes of wet contact — lather the 7.5% scrub for 5 minutes, rinse, paint 10% solution, dry before you drape. Mucosa and eye: 1 to 20 to 1 to 50. Eye at 1:50 is a 2-minute scrub plus a 2-minute soak.
 
 SLIDE 33. REAL CLINIC PHOTOGRAPHS  ·  #40 CLIPPER, NOT RAZOR  ·  FIELD WIDE ENOUGH TO EXTEND
     SPEAK: Left photo is a real clip in progress and still too narrow — that is the teaching point. Right photo is a real 24-hour OHE: the clip is the field you needed yesterday. Willie: TECA field is pinna and skull, not abdomen. MoMo never reached clippers.
@@ -107,10 +107,10 @@ SLIDE 34. IF YOU CANNOT DESCRIBE THE FIELD, YOU ARE NOT READY TO CUT
     SPEAK: One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.
 
 SLIDE 35. THIS IS DVM 612, NOT A CLIENT HANDOUT. YOU ARE THE VETERINARIAN AT THE TABLE.
-    SPEAK: Stop and have them write the arithmetic. You are not teaching a client handout. Stock is 10% povidone-iodine solution. For mucosa, conjunctiva, and prepuce they dilute that solution — never the 7.5% detergent scrub — one part in twenty to one part in fifty with sterile saline. 1 mL + 19 mL = 1:20 = 0.5%. 1 mL + 49 mL = 1:50 = 0.2%, the classic canine ocular dilution (Roberts, AJVR 1986). Intact skin is labeled 10% solution or 7.5% scrub; do not invent a skin dilution. Chlorhexidine 2–4% with alcohol is the default for intact trunk skin and destroys cornea and middle ear. Willie has a swollen tympanum — that is not a chlorhexidine ear, and aminoglycoside ointment is not a casual choice if the middle ear is involved. Do not mix CHG and iodine. Do not call PVP-I sporicidal at surgical contact times. Organic matter inactivates iodine; dirty prep first, then sterile prep with contact time.
+    SPEAK: Write the numbers on the board. Intact skin, 7.5% povidone-iodine scrub: lather 5 minutes, rinse, paint 10% solution, dry before draping — that is the veterinary Betadine label. Mucosa, conjunctiva, prepuce: 10% SOLUTION diluted 1 to 20 to 1 to 50. Eye at 1:50: 2-minute scrub plus 2-minute soak (Roberts, AJVR 1986). 1:2 (5%) caused corneal edema; do not use it on cornea. Aqueous chlorhexidine: 3 minutes wet contact; residual 6 hours. CHG–alcohol 2%/70%: 30 seconds dry skin, 2 minutes moist skin. Alcohol 70%: 30 seconds, then dry. PVP-I is not sporicidal at 5 minutes. Willie: swollen tympanum — not a chlorhexidine ear.
 
 SLIDE 36. TECHNIQUE DIAGRAM  ·  CENTER → PERIPHERY  ·  REAL PHOTOS ARE ON THE CLIP AND DRAPE SLIDES
-    SPEAK: Mime the spiral. Have one student recite the iodine arithmetic before you leave this slide. No open-license spiral-prep photograph was available; this stays a diagram. Real clip, drape, anesthesia, and recovery photos are adjacent.
+    SPEAK: Mime the spiral. Clock 5 minutes for povidone-iodine on intact skin. Recite the 1 to 20 to 1 to 50 arithmetic. Eye: 2 minutes plus 2 minutes. No open-license spiral-prep photograph was available; this stays a diagram.
 
 SLIDE 37. REAL OR PHOTOGRAPH  ·  DORSAL RECUMBENCY, AIRWAY, IV, MONITORING, V-TROUGH
     SPEAK: This is a real dog in dorsal recumbency. Point: airway and monitoring are on before the clip. Over-splitting femurs is a student habit. GDV positioning can worsen caval compression.
@@ -128,7 +128,7 @@ SLIDE 41. DVM 612 PROFESSIONAL STANDARD  ·  PATIENT SAFETY, NOT A TRIVIA LIST
     SPEAK: Connect hemorrhage, closure, and asepsis to this hour. Ureter injury is a calm, well-prepped, well-exposed patient problem.
 
 SLIDE 42. WHICH OF THESE IS ACCEPTABLE?
-    SPEAK: C is the safety slide. D is the arithmetic they must leave with. Hair at the drape edge is still a fail on the draping photographs — salvage with a sterile towel is not the standard; an adequate clip is.
+    SPEAK: C is the safety slide. D: 1 to 20 to 1 to 50, 5 minutes wet on intact skin, 2 minutes plus 2 minutes on the eye. Hair at the drape edge is still a fail — an adequate clip, not a salvage towel.
 
 SLIDE 43. PART III  ·  44–57 MINUTES
     SPEAK: Shift energy. Students think postop is ‘the techs’ job.’ It is not.
@@ -179,4 +179,4 @@ SLIDE 58. SOURCES USED IN THIS LECTURE
     SPEAK: Fossum is the text behind this hour.
 
 SLIDE 59. DVM 612  ·  PRINCIPLES OF SURGERY
-    SPEAK: Take questions. If none: Willie vs MoMo ASA, then the iodine arithmetic — 1 to 20 to 1 to 50. Dismiss on time.
+    SPEAK: Take questions. If none: Willie vs MoMo ASA, then iodine — 1 to 20 to 1 to 50, 5 minutes wet on intact skin, 2 minutes plus 2 minutes on the eye. Dismiss on time.

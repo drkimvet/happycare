@@ -581,7 +581,7 @@ add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.7), Inches(4.5), [
     "ASA, allergies, last meal.",
     "IV catheter patent; fluids running.",
     "Airway secured; monitoring on.",
-    "Antibiotics given (if indicated) 30–60 min before incision.",
+    "Antibiotics given (if indicated) 30 minutes before incision.",
     "Local block planned (incisional, testicular, TAP, splash).",
     "Instruments, suture, extra gloves, cautery, suction.",
     "Image / implants in the room if needed.",
@@ -620,7 +620,7 @@ add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.45), "Usually NO pr
 add_text(s, Inches(0.75), Inches(1.9), Inches(5.6), Inches(4.4), "Clean procedures with excellent asepsis:\n• Elective OHE / castration\n• Most clean mass removals\n• Many short soft-tissue surgeries\n\nAntibiotics are not a substitute for sterile technique, Halsted, or a dry field.\n\nOngoing postoperative antibiotics are rarely required after an uncomplicated clean surgery.", size=15, color=INK)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
 add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.45), "YES — timed IV, then stop", size=18, bold=True, color=RED)
-add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "Give 30–60 min before incision; redose (e.g. cefazolin ~q90 min) if surgery is long or blood loss is large.\n\nConsider if:\n• Clean-contaminated / contaminated / dirty\n• Implant (orthopedic, mesh)\n• Hollow viscus entry\n• Prolonged surgery or known break in asepsis\n• Patient immunocompromised\n• Infection would be catastrophic (some neuro/implant cases — still think, don’t reflex)", size=15, color=INK)
+add_text(s, Inches(7.1), Inches(1.9), Inches(5.5), Inches(4.4), "Give IV cefazolin 22 mg/kg 30 minutes before incision; redose every 90 minutes if the surgery is still open or blood loss is large.\n\nConsider if:\n• Clean-contaminated / contaminated / dirty\n• Implant (orthopedic, mesh)\n• Hollow viscus entry\n• Surgery >90 minutes or a known break in asepsis\n• Patient immunocompromised\n• Infection would be catastrophic (some neuro/implant cases — still think, don’t reflex)", size=15, color=INK)
 notes(s, "Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. Willie’s left ear is infected, so antimicrobials are treatment, not clean prophylaxis.")
 
 # 19 Preop check
@@ -647,7 +647,7 @@ notes(s, "This is the skill cluster for this hour: hair removal, skin prep, posi
 s = new_content("What we actually check in patient and surgeon prep", "The same six boxes every time you take a patient to surgery")
 add_text(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.4), "Patient preparation", size=16, bold=True, color=TEAL)
 p_items = [("Hair removal", "Clipper, not razor. Adequate field. No clipper burn / missed patches in the field."),
-           ("Skin preparation", "Dirty then sterile prep. Contact time. Intact skin: labeled CHG or 10% PVP-I. Mucosa/eye: 1 to 20 to 1 to 50."),
+           ("Skin preparation", "Dirty then sterile. PVP-I: 5 minutes wet contact. Mucosa/eye: 1 to 20 to 1 to 50."),
            ("Patient positioning", "Secure, padded, physiologically sensible. OHE: dorsal recumbency, straight.")]
 for i, (t, d) in enumerate(p_items):
     x = Inches(0.5) + Inches(i * 4.2)
@@ -668,7 +668,7 @@ steps = [
     ("2", "Express bladder if abdominal / caudal surgery"),
     ("3", "Clip with #40, vacuum hair, ‘dirty’ antiseptic"),
     ("4", "Move to OR, position, pad, tie, final check"),
-    ("5", "Sterile prep (gloved), contact time. Mucosa/eye: PVP-I 1 to 20 – 1 to 50"),
+    ("5", "Sterile prep (gloved). PVP-I 5 min wet contact. Mucosa/eye: 1 to 20 – 1 to 50"),
     ("6", "Four-quadrant towels → large drape"),
     ("7", "Surgeon gowns/gloves (or already gowned)"),
     ("8", "Timeout / checklist → announce incision"),
@@ -682,7 +682,7 @@ for i, (n, t) in enumerate(steps):
     add_rect(s, x, y, Inches(3.05), Inches(0.7), NAVY if row == 0 else TEAL)
     add_text(s, x, y, Inches(3.05), Inches(0.7), n, size=24, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.15), y + Inches(0.85), Inches(2.75), Inches(1.35), t, size=15, color=INK, align=PP_ALIGN.CENTER)
-notes(s, "Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before adequate anesthetic depth — the patient wakes, contaminates, and is lacerated. Step 5: they will mix 10% PVP-I 1 to 20 to 1 to 50 for mucosa and eye. That is not a client instruction; it is their job.")
+notes(s, "Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before adequate anesthetic depth — the patient wakes, contaminates, and is lacerated. Step 5: 10% PVP-I on intact skin is 5 minutes of wet contact — lather the 7.5% scrub for 5 minutes, rinse, paint 10% solution, dry before you drape. Mucosa and eye: 1 to 20 to 1 to 50. Eye at 1:50 is a 2-minute scrub plus a 2-minute soak.")
 
 # 23 Hair
 s = new_content("Hair removal — clip after induction, not last night", "Real clinic photographs  ·  #40 clipper, not razor  ·  field wide enough to extend")
@@ -693,7 +693,7 @@ add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.38), GREEN)
 add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.38), "24 h after OHE — this is the clip you needed", size=13, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "spay_incision.jpg", Inches(6.75), Inches(1.50), Inches(6.2), Inches(3.55))
 add_round(s, Inches(0.4), Inches(5.18), Inches(12.55), Inches(1.9), WHITE)
-add_text(s, Inches(0.6), Inches(5.32), Inches(12.2), Inches(1.6), "Xiphoid, or slightly cranial to it, to the pubis, and widely lateral past the nipples — a rectangle, not a narrow strip of hair. Clip with the grain, then against, to the skin. Vacuum. Approximately 20 cm beyond the planned incision. Do not clip the night before. Razors create micro-nicks and raise SSI risk. Airway in and a surgical plane before the clippers start.\nPhotos: Uwe Gille, CC0 (cat clip); Liannadavis, CC BY-SA 4.0 (OHE incision).", size=14, color=INK)
+add_text(s, Inches(0.6), Inches(5.32), Inches(12.2), Inches(1.6), "Xiphoid, or slightly cranial to it, to the pubis, and widely lateral past the nipples — a rectangle, not a narrow strip of hair. Clip with the grain, then against, to the skin. Vacuum. 20 cm beyond the planned incision. Do not clip the night before. Razors create micro-nicks and raise SSI risk. Airway in and a surgical plane before the clippers start.\nPhotos: Uwe Gille, CC0 (cat clip); Liannadavis, CC BY-SA 4.0 (OHE incision).", size=14, color=INK)
 notes(s, "Left photo is a real clip in progress and still too narrow — that is the teaching point. Right photo is a real 24-hour OHE: the clip is the field you needed yesterday. Willie: TECA field is pinna and skull, not abdomen. MoMo never reached clippers.")
 
 # 24 Common clip fields
@@ -718,23 +718,23 @@ notes(s, "One minute. Orthopedic hang-prep is the concept they need: the foot is
 s = new_content("Skin antiseptics — you mix the iodine. Memorize the ratio.", "This is DVM 612, not a client handout. You are the veterinarian at the table.")
 add_round(s, Inches(0.40), Inches(1.08), Inches(12.52), Inches(1.42), GOLD_LT)
 add_text(s, Inches(0.55), Inches(1.12), Inches(12.2), Inches(0.42), "10% povidone-iodine SOLUTION  ·  mucosa, conjunctiva, prepuce  ·  dilute  1 to 20  through  1 to 50  in sterile saline", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(1.52), Inches(12.2), Inches(0.88), "1 mL stock + 19 mL saline = 1:20 = 0.5% PVP-I        ·        1 mL stock + 49 mL saline = 1:50 = 0.2% PVP-I\n1:50 is the evidence-based canine ocular dilution. Do not use 1:2 (5%) on cornea. Never put the 7.5% detergent scrub in an eye.", size=14, color=INK, align=PP_ALIGN.CENTER)
+add_text(s, Inches(0.55), Inches(1.52), Inches(12.2), Inches(0.88), "1 mL stock + 19 mL saline = 1:20 = 0.5% PVP-I        ·        1 mL stock + 49 mL saline = 1:50 = 0.2% PVP-I\nIntact skin: 5 minutes wet contact.  Eye at 1:50: 2-minute scrub + 2-minute soak.  Never the 7.5% detergent scrub in an eye.", size=14, color=INK, align=PP_ALIGN.CENTER)
 
 add_round(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(4.42), WHITE)
 add_rect(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(0.50), TEAL)
-add_text(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(0.50), "Chlorhexidine", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(3.22), Inches(3.80), Inches(3.65), "Default for intact haired skin: 2–4% CHG, usually with 70% alcohol. Hours of residual activity.\nRinse gross debris first. Anionic soaps reduce activity.\nDestroys cornea. Ototoxic in the middle ear. Not for meninges, synovium, or open viscera.\nDo not mix with povidone-iodine on the same field.\nDo not store homemade dilute jugs (outbreak risk).", size=13, color=INK)
+add_text(s, Inches(0.40), Inches(2.62), Inches(4.10), Inches(0.50), "Chlorhexidine — 3 minutes", size=15, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(3.22), Inches(3.80), Inches(3.65), "Intact skin: 2% or 4% CHG.\nAqueous CHG: 3 minutes of wet contact.\nCHG–alcohol (2% / 70%): 30 seconds on dry skin, 2 minutes on moist skin.\nResidual activity 6 hours.\nDestroys cornea. Ototoxic in the middle ear. Not for meninges, synovium, or open viscera.\nDo not mix with povidone-iodine on the same field.\nDo not store homemade dilute jugs (outbreak risk).", size=12, color=INK)
 
 add_round(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(4.42), WHITE)
 add_rect(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(0.50), GOLD)
-add_text(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(0.50), "Povidone-iodine", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(3.22), Inches(3.80), Inches(3.65), "Intact skin: 10% solution or 7.5% scrub, used as labeled. Do not invent a skin dilution.\nMucosa / eye / prepuce: 10% SOLUTION only, 1 to 20 to 1 to 50, as above.\nOrganic matter inactivates it — that is why the dirty prep comes first.\nContact time 2–5 minutes; allow to dry.\nNot sporicidal at surgical contact times. Iodine hypersensitivity. Stains.", size=13, color=INK)
+add_text(s, Inches(4.62), Inches(2.62), Inches(4.10), Inches(0.50), "Povidone-iodine — 5 minutes", size=15, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.77), Inches(3.22), Inches(3.80), Inches(3.65), "Intact skin: 7.5% scrub, lather 5 minutes, rinse, paint 10% solution, dry before you drape. Do not invent a skin dilution.\nMucosa / eye / prepuce: 10% SOLUTION only, 1 to 20 to 1 to 50.\nEye at 1:50: 2-minute scrub + 2-minute soak.\nOrganic matter inactivates it — dirty prep first.\nNot sporicidal at 5 minutes. Residual 90 minutes after dry. Hypersensitivity. Stains.", size=12, color=INK)
 
 add_round(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(4.42), WHITE)
 add_rect(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(0.50), NAVY)
-add_text(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(0.50), "Alcohol & others", size=16, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.22), Inches(3.78), Inches(3.65), "70% isopropyl or ethyl: rapid kill, no residual. Flammable — no pooling near cautery.\nRinse or paint between CHG cycles on intact skin.\nNot for open wounds, mucous membranes, or the eye.\nHydrogen peroxide is not a surgical antiseptic.\nContact time is part of the prep. Follow the labeled product in your hospital.", size=13, color=INK)
-notes(s, "Stop and have them write the arithmetic. You are not teaching a client handout. Stock is 10% povidone-iodine solution. For mucosa, conjunctiva, and prepuce they dilute that solution — never the 7.5% detergent scrub — one part in twenty to one part in fifty with sterile saline. 1 mL + 19 mL = 1:20 = 0.5%. 1 mL + 49 mL = 1:50 = 0.2%, the classic canine ocular dilution (Roberts, AJVR 1986). Intact skin is labeled 10% solution or 7.5% scrub; do not invent a skin dilution. Chlorhexidine 2–4% with alcohol is the default for intact trunk skin and destroys cornea and middle ear. Willie has a swollen tympanum — that is not a chlorhexidine ear, and aminoglycoside ointment is not a casual choice if the middle ear is involved. Do not mix CHG and iodine. Do not call PVP-I sporicidal at surgical contact times. Organic matter inactivates iodine; dirty prep first, then sterile prep with contact time.")
+add_text(s, Inches(8.84), Inches(2.62), Inches(4.08), Inches(0.50), "Alcohol — 30 seconds", size=15, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.99), Inches(3.22), Inches(3.78), Inches(3.65), "70% isopropyl or ethyl: 30 seconds, then dry. No residual.\nFlammable — no pooling near cautery.\nRinse or paint between CHG cycles on intact skin.\nNot for open wounds, mucous membranes, or the eye.\nHydrogen peroxide is not a surgical antiseptic.", size=13, color=INK)
+notes(s, "Write the numbers on the board. Intact skin, 7.5% povidone-iodine scrub: lather 5 minutes, rinse, paint 10% solution, dry before draping — that is the veterinary Betadine label. Mucosa, conjunctiva, prepuce: 10% SOLUTION diluted 1 to 20 to 1 to 50. Eye at 1:50: 2-minute scrub plus 2-minute soak (Roberts, AJVR 1986). 1:2 (5%) caused corneal edema; do not use it on cornea. Aqueous chlorhexidine: 3 minutes wet contact; residual 6 hours. CHG–alcohol 2%/70%: 30 seconds dry skin, 2 minutes moist skin. Alcohol 70%: 30 seconds, then dry. PVP-I is not sporicidal at 5 minutes. Willie: swollen tympanum — not a chlorhexidine ear.")
 
 # 26 Technique
 s = new_content("How to scrub the patient", "Technique diagram  ·  center → periphery  ·  real photos are on the clip and drape slides")
@@ -744,11 +744,11 @@ add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", s
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Dirty prep in the prep room; sterile prep in the OR.",
     "Start at the planned incision. Spiral out. Never bring a dirty sponge back to the center.",
-    "Timed 3–5 min or labeled product cycles, then a final paint. Damp-to-dry, not a lake.",
-    "Intact skin: 2–4% CHG–alcohol or labeled 10% PVP-I.",
-    "Mucosa, conjunctiva, prepuce: 10% PVP-I solution, 1 to 20 to 1 to 50. Never CHG in the eye or middle ear — Willie’s swollen drum.",
+    "PVP-I: 5 minutes wet contact, rinse, paint 10% solution, dry. Aqueous CHG: 3 minutes. Damp-to-dry, not a lake.",
+    "Mucosa, conjunctiva, prepuce: 10% PVP-I solution, 1 to 20 to 1 to 50. Eye at 1:50: 2-minute scrub + 2-minute soak.",
+    "Never CHG in the eye or middle ear — Willie’s swollen drum.",
 ], size=13, spacing=6)
-notes(s, "Mime the spiral. Have one student recite the iodine arithmetic before you leave this slide. No open-license spiral-prep photograph was available; this stays a diagram. Real clip, drape, anesthesia, and recovery photos are adjacent.")
+notes(s, "Mime the spiral. Clock 5 minutes for povidone-iodine on intact skin. Recite the 1 to 20 to 1 to 50 arithmetic. Eye: 2 minutes plus 2 minutes. No open-license spiral-prep photograph was available; this stays a diagram.")
 
 # 27 Position
 s = new_content("Positioning is physiology, not just ‘on its back’", "Real OR photograph  ·  dorsal recumbency, airway, IV, monitoring, V-trough")
@@ -808,7 +808,7 @@ rows = [
     ("A", "Clip the OHE field the night before to save time at induction.", "No. Increases bacterial load and clipper injury."),
     ("B", "Razor the incision line for a ‘closer shave.’", "No. Micro-nicks, higher SSI."),
     ("C", "CHG scrub, then a drop of CHG runs into the eye — rinse and continue.", "Emergency for the eye. CHG is corneal-toxic. Irrigate with sterile saline immediately. Do not continue the prep over a burned cornea."),
-    ("D", "For conjunctiva or prepuce, dilute 10% povidone-iodine SOLUTION 1 to 20 to 1 to 50 in sterile saline.", "Yes. 1 mL + 19 mL = 1:20 (0.5%). 1 mL + 49 mL = 1:50 (0.2%). Never the 7.5% detergent scrub in an eye."),
+    ("D", "For conjunctiva or prepuce, dilute 10% povidone-iodine SOLUTION 1 to 20 to 1 to 50 in sterile saline.", "Yes. 1:20 = 0.5%; 1:50 = 0.2%. Intact skin: 5 min wet. Eye: 2 min scrub + 2 min soak. Never detergent scrub in an eye."),
 ]
 for i, (let, q, a) in enumerate(rows):
     y = Inches(1.15) + Inches(i * 1.4)
@@ -817,7 +817,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.7), Inches(1.28), let, size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.4), y + Inches(0.1), Inches(11.1), Inches(0.5), q, size=15, bold=True, color=INK)
     add_text(s, Inches(1.4), y + Inches(0.65), Inches(11.1), Inches(0.5), a, size=14, color=TEAL)
-notes(s, "C is the safety slide. D is the arithmetic they must leave with. Hair at the drape edge is still a fail on the draping photographs — salvage with a sterile towel is not the standard; an adequate clip is.")
+notes(s, "C is the safety slide. D: 1 to 20 to 1 to 50, 5 minutes wet on intact skin, 2 minutes plus 2 minutes on the eye. Hair at the drape edge is still a fail — an adequate clip, not a salvage towel.")
 
 # SECTION III
 s = new_section("Part III  ·  44–57 minutes", "Postoperative care", "Recovery · pain · warmth · wound · 24-hour complications · report · discharge", "~13 minutes")
@@ -986,7 +986,7 @@ add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(1.55), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.3), Inches(11.8), Inches(1.25), "Willie, 6 y 11 mo MN Cavalier, 13.7 kg. Acute vestibular crisis. Severe AS otitis, TM visible/swollen. Circling left, nystagmus fast-left, right knuckling. Grade II murmur. CBC WNL. This is ASA III-E. Client-owned.", size=15, color=NAVY)
 steps = [
     ("Pre-op", "ASA III-E. Neuro exam. No NSAID (DexSP). IVF, Cerenia, meclizine. Culture the ear. Radiographs ≠ MRI. Central until proven otherwise."),
-    ("Prep", "Airway protected, monitors on, then alfaxalone to a depth that is safe to clip and flush. CHG off the eye and drum. Mucosa/periocular: 10% PVP-I 1 to 20 to 1 to 50. Pad him — he falls."),
+    ("Prep", "Airway protected, monitors on, then alfaxalone to a depth that is safe to clip and flush. CHG off the eye and drum. Periocular/mucosa: 10% PVP-I 1 to 20 to 1 to 50; eye 2 min scrub + 2 min soak. Pad him — he falls."),
     ("Intra", "Deep clean + cytology. Timeout. If you contaminate, say it. Do not treat this like a 20-minute spay."),
     ("Post", "Confine, no stairs. Watch neuro signs, vomiting, seizures. MRI next. TECA-LBO only after culture if medical therapy fails. You own hour 23."),
 ]
@@ -1011,7 +1011,7 @@ pearls = [
     "Imaging and serial creatinine can cancel a surgery. That is a successful preoperative evaluation.",
     "Elective clean OHE: no routine postoperative antibiotics. Fill the anesthesia record and the 2-hour recovery sheet.",
     "Clip after induction, #40, not razor; spiral prep center → out; hair in the drape window fails the prep.",
-    "Intact skin: 2–4% CHG or labeled 10% PVP-I. Mucosa, conjunctiva, prepuce: 10% PVP-I solution 1 to 20 to 1 to 50. CHG never on cornea or in the middle ear.",
+    "Intact skin: PVP-I 5 minutes wet contact (then paint and dry), or aqueous CHG 3 minutes. Mucosa/eye: 10% PVP-I 1 to 20 to 1 to 50; eye 2 min + 2 min. CHG never on cornea or in the middle ear.",
     "Pale + tachycardic after celiotomy = hemorrhage until proven otherwise; the first 24 hours still count.",
 ]
 for i, t in enumerate(pearls):
@@ -1034,8 +1034,8 @@ add_bullets(s, Inches(0.5), Inches(1.15), Inches(12.2), Inches(5.6), [
     "Fossum T.W. Small Animal Surgery. 5th ed. Elsevier; 2018. Preoperative evaluation, patient preparation, postoperative care.",
     "Johnston S.A., Tobias K.M. Veterinary Surgery: Small Animal. 2nd ed. Elsevier; 2017.",
     "Hendrickson D.A., Baird A.N. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013.",
-    "Roberts S.M., Severin G.A., Lavach J.D. Antibacterial activity of dilute povidone-iodine solutions used for ocular surface disinfection in dogs. Am J Vet Res. 1986;47(6):1207–1210. — 10% PVP-I (1% available iodine) diluted 1:50 (0.2%) is the classic canine ocular recommendation; 1:2 (5%) caused corneal edema.",
-    "AAHA/AAFP Antimicrobial Stewardship Guidelines, 2022 — surgical prophylaxis.  ·  AAHA Anesthesia and Monitoring Guidelines — fasting, PE, monitoring, recovery.",
+    "Roberts S.M., Severin G.A., Lavach J.D. Am J Vet Res. 1986;47(6):1207–1210. Canine ocular 1:50 (0.2%): 2-minute scrub + 2-minute soak. 1:2 (5%) caused corneal edema.",
+    "Betadine Surgical Scrub (povidone-iodine 7.5%), veterinary label: lather 5 minutes, rinse, paint 10% solution, dry.  ·  AAHA/AAFP Antimicrobial Stewardship 2022: cefazolin 22 mg/kg IV 30 minutes before incision; redose every 90 minutes.",
     "Clinical photographs (open license or U.S. government work): Uwe Gille (CC0); Anja (CC BY-SA 4.0); Liannadavis (CC BY-SA 4.0); Cpl. Samuel A. Nasso, USMC (public domain); MSgt Carlotta Holley, USAF (public domain). Closed-gloving and spiral-prep figures are technique diagrams, not clinic photographs.",
 ], size=14, spacing=7)
 notes(s, "Fossum is the text behind this hour.")
@@ -1049,7 +1049,7 @@ add_text(s, Inches(0.75), Inches(2.3), Inches(12), Inches(0.5), "DVM 612  ·  PR
 add_text(s, Inches(0.75), Inches(2.85), Inches(12), Inches(1.2), "Questions", size=54, bold=True, color=WHITE)
 add_text(s, Inches(0.75), Inches(4.3), Inches(12), Inches(1.2), "If there are no questions: why was Willie ASA III-E and MoMo ASA IV-E —\nand how do you dilute 10% povidone-iodine for conjunctiva or prepuce?", size=18, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(6.3), Inches(12), Inches(0.4), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP  ·  Lewyt College of Veterinary Medicine  ·  Long Island University", size=14, color=GOLD)
-notes(s, "Take questions. If none: Willie vs MoMo ASA, then the iodine arithmetic — 1 to 20 to 1 to 50. Dismiss on time.")
+notes(s, "Take questions. If none: Willie vs MoMo ASA, then iodine — 1 to 20 to 1 to 50, 5 minutes wet on intact skin, 2 minutes plus 2 minutes on the eye. Dismiss on time.")
 
 # Stamp numbers
 stamp_footers()
