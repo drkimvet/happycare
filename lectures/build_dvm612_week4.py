@@ -39,14 +39,17 @@ SLATE = RGBColor(0x3D, 0x4A, 0x57)
 W, H = Inches(13.333), Inches(7.5)
 FOOTER = "DVM 612  |  Dr. Yujin Kim, D.V.M., Ph.D., FFCP  |  Lewyt CVM"
 
-# Hall type: 107-seat lecture hall, back row. Nothing on a slide below 20 pt.
-# 24 pt body, 36 pt titles, 20 pt kicker/footer.
-PT_FOOTER = 20
-PT_KICKER = 20
-PT_TITLE = 36
-PT_BODY = 24
-PT_CARD = 22
-MIN_PT = 20
+# Hall-readable without shouting: titles 30, body 18, cards 16, kicker 13, footer 12.
+# References on the last slide may be 13 pt. Floor is 12 pt (footer).
+PT_FOOTER = 12
+PT_KICKER = 13
+PT_TITLE = 30
+PT_BODY = 18
+PT_CARD = 16
+PT_CARD_TITLE = 18
+PT_SMALL = 14
+PT_REF = 13
+MIN_PT = 12
 
 prs = Presentation()
 prs.slide_width = W
@@ -166,9 +169,9 @@ def add_pic(slide, name, l, t, w, h):
 
 
 def footer_bar(slide, num, total):
-    add_rect(slide, 0, Inches(7.12), W, Inches(0.38), NAVY)
-    add_text(slide, Inches(0.35), Inches(7.12), Inches(10.8), Inches(0.38), FOOTER, size=PT_FOOTER, color=GOLD_LT, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(slide, Inches(11.2), Inches(7.12), Inches(1.8), Inches(0.38), f"{num}  /  {total}", size=PT_FOOTER, color=WHITE, align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
+    add_rect(slide, 0, Inches(7.18), W, Inches(0.32), NAVY)
+    add_text(slide, Inches(0.35), Inches(7.18), Inches(10.8), Inches(0.32), FOOTER, size=PT_FOOTER, color=GOLD_LT, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(slide, Inches(11.2), Inches(7.18), Inches(1.8), Inches(0.32), f"{num}  /  {total}", size=PT_FOOTER, color=WHITE, align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
 
 
 def header_bar(slide, kicker=""):
@@ -189,13 +192,13 @@ def content_chrome(slide, title, kicker, num, total):
 def card(slide, l, t, w, h, title, body, fill=WHITE, title_color=NAVY, accent=GOLD):
     add_round(slide, l, t, w, h, fill)
     add_rect(slide, l, t, Inches(0.10), h, accent)
-    add_text(slide, l + Inches(0.28), t + Inches(0.12), w - Inches(0.4), Inches(0.42), title, size=24, bold=True, color=title_color)
-    add_text(slide, l + Inches(0.28), t + Inches(0.56), w - Inches(0.4), h - Inches(0.68), body, size=PT_CARD, color=SLATE)
+    add_text(slide, l + Inches(0.28), t + Inches(0.12), w - Inches(0.4), Inches(0.36), title, size=PT_CARD_TITLE, bold=True, color=title_color)
+    add_text(slide, l + Inches(0.28), t + Inches(0.50), w - Inches(0.4), h - Inches(0.62), body, size=PT_CARD, color=SLATE)
 
 
 def pill(slide, l, t, w, h, text, fill=GOLD, text_color=NAVY):
     add_round(slide, l, t, w, h, fill)
-    add_text(slide, l, t, w, h, text, size=20, bold=True, color=text_color, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(slide, l, t, w, h, text, size=PT_SMALL, bold=True, color=text_color, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 
 
 # Slide registry: we first plan TOTAL then build
@@ -219,9 +222,9 @@ def new_section(part, title, subtitle, minutes):
     add_rect(s, 0, 0, W, H, NAVY)
     add_rect(s, 0, 0, W, Inches(0.14), GOLD)
     add_rect(s, 0, Inches(7.36), W, Inches(0.14), GOLD)
-    add_text(s, Inches(0.7), Inches(2.15), Inches(12), Inches(0.4), part.upper(), size=16, bold=True, color=GOLD)
-    add_text(s, Inches(0.7), Inches(2.55), Inches(12), Inches(1.1), title, size=40, bold=True, color=WHITE)
-    add_text(s, Inches(0.7), Inches(3.75), Inches(12), Inches(0.7), subtitle, size=20, color=GOLD_LT)
+    add_text(s, Inches(0.7), Inches(2.15), Inches(12), Inches(0.4), part.upper(), size=PT_SMALL, bold=True, color=GOLD)
+    add_text(s, Inches(0.7), Inches(2.55), Inches(12), Inches(1.1), title, size=32, bold=True, color=WHITE)
+    add_text(s, Inches(0.7), Inches(3.75), Inches(12), Inches(0.7), subtitle, size=PT_BODY, color=GOLD_LT)
     pill(s, Inches(0.7), Inches(4.7), Inches(2.4), Inches(0.42), minutes, fill=GOLD, text_color=NAVY)
     return s
 
@@ -236,7 +239,7 @@ def stamp_footers():
         except Exception:
             dark = False
         if dark:
-            add_text(slide, Inches(11.2), Inches(7.08), Inches(1.7), Inches(0.36), f"{i}  /  {total}", size=PT_FOOTER, color=GOLD, align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
+            add_text(slide, Inches(11.2), Inches(7.18), Inches(1.7), Inches(0.32), f"{i}  /  {total}", size=PT_FOOTER, color=GOLD, align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
         else:
             footer_bar(slide, i, total)
 
@@ -267,13 +270,13 @@ s = prs.slides.add_slide(BLANK)
 add_rect(s, 0, 0, W, H, NAVY)
 add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, Inches(0), Inches(0), Inches(0.22), H, GOLD)
-add_text(s, Inches(0.75), Inches(0.95), Inches(12), Inches(0.40), "LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE", size=22, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(1.45), Inches(12), Inches(0.40), "DVM 612  ·  PRINCIPLES OF SURGERY", size=26, bold=True, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.95), Inches(12), Inches(2.0), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=40, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(4.15), Inches(12), Inches(0.50), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP", size=32, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  38 slides  |  60 minutes  |  107-seat hall", size=24, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Willie (Cavalier, ASA III-E): sedate.\nMoMo (cat, ASA IV-E): cancel the exploratory.", size=26, color=WHITE)
-add_text(s, Inches(0.75), Inches(6.20), Inches(12), Inches(0.70), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)\nHendrickson & Baird (2013)", size=22, color=GOLD)
+add_text(s, Inches(0.75), Inches(0.95), Inches(12), Inches(0.40), "LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE", size=16, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(1.45), Inches(12), Inches(0.40), "DVM 612  ·  PRINCIPLES OF SURGERY", size=20, bold=True, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.95), Inches(12), Inches(2.0), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
+add_text(s, Inches(0.75), Inches(4.15), Inches(12), Inches(0.50), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP", size=24, bold=True, color=GOLD)
+add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  38 slides  |  60 minutes", size=18, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Willie (Cavalier, ASA Status 3-E): sedate.\nMoMo (cat, ASA Status 4-E): cancel the exploratory.", size=20, color=WHITE)
+add_text(s, Inches(0.75), Inches(6.20), Inches(12), Inches(0.70), "Required reading: Fossum, Small Animal Surgery, 5th ed. (2018)\nHendrickson & Baird (2013)", size=16, color=GOLD)
 notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. Two real patients from the same hospital. Willie, a 6-year 11-month MN Cavalier, 13.7 kg, acute vestibular crisis plus left otitis. We sedated him. MoMo, a 6-year SF DSH, 4.25 kg, vomiting that looked like a foreign-body surgery. Imaging cancelled the exploratory. Assign both ASA statuses. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, both cases, and recovery.")
 
 # 2 Learning objectives
@@ -285,9 +288,9 @@ items = [
     "Name a break in asepsis and correct it, before or after the incision.",
     "Write the postop plan, the surgical report, and 24-hour emergency criteria.",
 ]
-add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(4.6), items, size=26, spacing=14)
+add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(4.6), items, size=20, spacing=14)
 add_round(s, Inches(0.5), Inches(5.90), Inches(12.3), Inches(1.10), GOLD_LT)
-add_text(s, Inches(0.75), Inches(6.05), Inches(11.9), Inches(0.80), "Willie: examine, ASA 3-E, then sedate.   MoMo: examine, image, labs, then cancel.", size=24, color=NAVY)
+add_text(s, Inches(0.75), Inches(6.05), Inches(11.9), Inches(0.80), "Willie: examine, ASA 3-E, then sedate.   MoMo: examine, image, labs, then cancel.", size=18, color=NAVY)
 notes(s, "Read the five objectives aloud. Timer: protect Part II (prep pictures) and both cases.")
 
 # 3 SSI
@@ -296,12 +299,12 @@ card(s, Inches(0.5), Inches(1.2), Inches(4.0), Inches(2.35), "Causes of SSI", "H
 card(s, Inches(4.7), Inches(1.2), Inches(4.0), Inches(2.35), "Client-owned patients", "Elective OHE patients go home to the owner after recovery. Documentation and the discharge conversation are part of the operation.", fill=WHITE, accent=GOLD)
 card(s, Inches(8.9), Inches(1.2), Inches(3.9), Inches(2.35), "Decisions made before incision", "Analgesia, antibiotics, temperature management, and client expectations are set in the preoperative period.", fill=WHITE, accent=GREEN)
 add_round(s, Inches(0.5), Inches(3.75), Inches(12.3), Inches(3.2), WHITE)
-add_text(s, Inches(0.75), Inches(3.9), Inches(11.8), Inches(0.4), "Surgeon responsibilities", size=24, bold=True, color=NAVY)
+add_text(s, Inches(0.75), Inches(3.9), Inches(11.8), Inches(0.4), "Surgeon responsibilities", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.75), Inches(4.4), Inches(11.8), Inches(2.3), [
     "Prepare the patient for a surgical procedure.",
     "Prepare yourself for a surgical procedure.",
     "Perform the procedure. Then own the first 24 hours: hemorrhage or herniation in recovery is still the operation.",
-], size=24, spacing=8)
+], size=18, spacing=8)
 notes(s, "A closure that hemorrhages in recovery is a failed surgery. The first 24 hours are part of the operation.")
 
 # 4 Halsted
@@ -325,8 +328,8 @@ for i, (t, d) in enumerate(principles):
         x = Inches(0.5)
     add_round(s, x, y, w, Inches(1.32), WHITE)
     add_rect(s, x, y, Inches(0.10), Inches(1.32), GOLD)
-    add_text(s, x + Inches(0.28), y + Inches(0.10), w - Inches(0.4), Inches(0.42), f"{i+1}.  {t}", size=24, bold=True, color=NAVY)
-    add_text(s, x + Inches(0.28), y + Inches(0.54), w - Inches(0.4), Inches(0.68), d, size=22, color=SLATE)
+    add_text(s, x + Inches(0.28), y + Inches(0.10), w - Inches(0.4), Inches(0.42), f"{i+1}.  {t}", size=18, bold=True, color=NAVY)
+    add_text(s, x + Inches(0.28), y + Inches(0.54), w - Inches(0.4), Inches(0.68), d, size=16, color=SLATE)
 notes(s, "Two minutes, then move. Every Halsted principle has a preop or postop action, not just an intraoperative one.")
 
 # 5 Continuum
@@ -341,10 +344,10 @@ for i, (t, b, c) in enumerate(stages):
     x = Inches(0.45) + Inches(i * 3.2)
     add_round(s, x, Inches(1.35), Inches(3.0), Inches(4.35), WHITE)
     add_rect(s, x, Inches(1.35), Inches(3.0), Inches(0.7), c)
-    add_text(s, x, Inches(1.35), Inches(3.0), Inches(0.7), t, size=26, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.2), Inches(2.2), Inches(2.6), Inches(3.2), b, size=24, color=INK, align=PP_ALIGN.CENTER)
+    add_text(s, x, Inches(1.35), Inches(3.0), Inches(0.7), t, size=20, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.2), Inches(2.2), Inches(2.6), Inches(3.2), b, size=18, color=INK, align=PP_ALIGN.CENTER)
     if i < 3:
-        add_text(s, x + Inches(2.7), Inches(3.2), Inches(0.55), Inches(0.4), "→", size=28, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
+        add_text(s, x + Inches(2.7), Inches(3.2), Inches(0.55), Inches(0.4), "→", size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
 notes(s, "Anesthesia prepares the patient for surgical prep. Surgery owns prep through the last skin suture. Both own recovery.")
 
 # 6 Preop evaluation
@@ -362,44 +365,44 @@ for i, (n, t, d) in enumerate(goals):
     y = Inches(1.12) + Inches(row * 1.55)
     add_round(s, x, y, Inches(6.25), Inches(1.42), WHITE)
     add_rect(s, x, y, Inches(0.7), Inches(1.42), NAVY)
-    add_text(s, x, y, Inches(0.7), Inches(1.42), n, size=24, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.9), y + Inches(0.12), Inches(5.15), Inches(0.4), t, size=24, bold=True, color=NAVY)
-    add_text(s, x + Inches(0.9), y + Inches(0.55), Inches(5.15), Inches(0.75), d, size=22, color=SLATE)
+    add_text(s, x, y, Inches(0.7), Inches(1.42), n, size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.9), y + Inches(0.12), Inches(5.15), Inches(0.4), t, size=18, bold=True, color=NAVY)
+    add_text(s, x + Inches(0.9), y + Inches(0.55), Inches(5.15), Inches(0.75), d, size=16, color=SLATE)
 add_round(s, Inches(0.45), Inches(4.32), Inches(8.15), Inches(2.65), WHITE)
-add_text(s, Inches(0.7), Inches(4.42), Inches(7.7), Inches(0.32), "History and PE, then any drug", size=22, bold=True, color=TEAL)
+add_text(s, Inches(0.7), Inches(4.42), Inches(7.7), Inches(0.32), "History and PE, then any drug", size=16, bold=True, color=TEAL)
 add_bullets(s, Inches(0.65), Inches(4.78), Inches(7.75), Inches(2.05), [
     "Signalment, last meal, medications, prior anesthesia, bleeding tendency.",
     "TPR, mm, CRT, hydration, murmur, lungs, surgical site, abdomen, neuro if indicated.",
     "Record the examination. The next clinician reads what you wrote.",
-], size=22, spacing=5)
+], size=16, spacing=5)
 add_round(s, Inches(8.80), Inches(4.32), Inches(3.95), Inches(2.65), NAVY)
-add_text(s, Inches(9.0), Inches(4.45), Inches(3.6), Inches(0.4), "Order of operations", size=22, bold=True, color=GOLD)
-add_text(s, Inches(9.0), Inches(4.95), Inches(3.6), Inches(1.85), "1. Examine the patient\n2. Request indicated labs\n3. Interpret the results\n4. Assign ASA status\n5. Adjust the drug plan\n6. Premedicate", size=22, color=WHITE)
+add_text(s, Inches(9.0), Inches(4.45), Inches(3.6), Inches(0.4), "Order of operations", size=16, bold=True, color=GOLD)
+add_text(s, Inches(9.0), Inches(4.95), Inches(3.6), Inches(1.85), "1. Examine the patient\n2. Request indicated labs\n3. Interpret the results\n4. Assign ASA status\n5. Adjust the drug plan\n6. Premedicate", size=16, color=WHITE)
 notes(s, "Four jobs. Students often skip #3 and #4. Do your own PE, then use technician vitals as a second set of numbers. Order: examine, then premedicate.")
 
 # 7 ASA
-s = new_content("ASA physical status", "American Society of Anesthesiologists classification")
+s = new_content("ASA physical status", "Grubb et al. 2020 AAHA companion table")
 rows = [
-    ("1", "Normal, healthy patient", "Healthy OHE", GREEN),
-    ("2", "Mild systemic disease, compensated", "Obesity; murmur", TEAL),
-    ("3", "Moderate disease, compensated, some limits", "Willie: vestibular + otitis", GOLD),
-    ("4", "Severe disease, threat to life, uncompensated", "MoMo: rising azotemia", RED),
-    ("5", "Moribund; not expected to live 24 hours", "Gastric rupture", NAVY),
+    ("1", "Normal healthy patient", "Healthy patient for neutering", GREEN),
+    ("2", "Patient with mild systemic disease", "Well compensated mild mitral degeneration", TEAL),
+    ("3", "Patient with moderate systemic disease", "Cat with CKD, IRIS stage 3", GOLD),
+    ("4", "Severe systemic disease; constant threat to life", "Hemoabdomen, bleeding splenic mass", RED),
+    ("5", "Moribund; not expected to survive without the operation", "Hypotensive, hypothermic, obtunded septic cat", NAVY),
 ]
 add_rect(s, Inches(0.45), Inches(1.15), Inches(12.4), Inches(0.48), NAVY)
-add_text(s, Inches(0.55), Inches(1.15), Inches(2.4), Inches(0.48), "ASA status", size=22, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(3.0), Inches(1.15), Inches(6.4), Inches(0.48), "Definition", size=22, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(9.4), Inches(1.15), Inches(3.3), Inches(0.48), "Example", size=22, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(1.15), Inches(2.4), Inches(0.48), "ASA status", size=16, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(3.0), Inches(1.15), Inches(5.8), Inches(0.48), "Definition", size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.9), Inches(1.15), Inches(3.8), Inches(0.48), "Example", size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
 for i, (asa, defn, ex, c) in enumerate(rows):
     y = Inches(1.68) + Inches(i * 0.95)
     add_round(s, Inches(0.45), y, Inches(12.4), Inches(0.88), WHITE)
     add_rect(s, Inches(0.45), y, Inches(2.35), Inches(0.88), c)
-    add_text(s, Inches(0.45), y, Inches(2.35), Inches(0.88), f"Status {asa}", size=26, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(2.95), y + Inches(0.08), Inches(6.35), Inches(0.72), defn, size=22, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(9.4), y + Inches(0.08), Inches(3.25), Inches(0.72), ex, size=22, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(0.45), y, Inches(2.35), Inches(0.88), f"Status {asa}", size=20, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(2.95), y + Inches(0.08), Inches(5.75), Inches(0.72), defn, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(8.85), y + Inches(0.08), Inches(3.80), Inches(0.72), ex, size=16, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.45), Inches(6.48), Inches(12.4), Inches(0.55), GOLD_LT)
-add_text(s, Inches(0.65), Inches(6.48), Inches(12.05), Inches(0.55), "E = emergency. Willie = 3-E. MoMo = 4-E. Write the number after today’s PE.", size=22, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Read Status 1, then 3, then 4 slowly. E means emergency. Next: four 60-second cases, then Willie (3-E, we sedated) and MoMo (4-E, exploratory cancelled).")
+add_text(s, Inches(0.65), Inches(6.48), Inches(12.05), Inches(0.55), "E = emergency. Willie = Status 3-E. MoMo = Status 4-E. Today’s PE writes the number.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Read the 2020 AAHA table: Status 1 healthy neuter, Status 2 compensated mild mitral, Status 3 moderate disease such as IRIS 3 CKD, Status 4 threat to life such as bleeding splenic mass, Status 5 moribund septic cat. Then map Willie to 3-E and MoMo to 4-E. E means emergency.")
 
 # 8 ASA practice
 s = new_content("ASA practice cases", "Assign status, then say whether you proceed today")
@@ -413,31 +416,31 @@ for i, (let, stem, ans, fill, acc) in enumerate(cases):
     y = Inches(1.18) + Inches(i * 1.42)
     add_round(s, Inches(0.5), y, Inches(12.3), Inches(1.30), WHITE)
     add_rect(s, Inches(0.5), y, Inches(0.85), Inches(1.30), acc)
-    add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=32, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.52), stem, size=24, color=INK)
-    add_text(s, Inches(1.55), y + Inches(0.70), Inches(10.9), Inches(0.45), ans, size=24, bold=True, color=acc)
+    add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.52), stem, size=18, color=INK)
+    add_text(s, Inches(1.55), y + Inches(0.70), Inches(10.9), Inches(0.45), ans, size=18, bold=True, color=acc)
 notes(s, "Cold-call four students. C is Willie (sedation). D is MoMo (exploratory cancelled).")
 
 # 9 Willie
 s = new_content("Willie, ASA Status 3-E", "6 y 11 mo MN Cavalier King Charles Spaniel, 13.7 kg, BCS 6/9")
 add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute ataxia ~1 hour. Fell off the couch twice. Cytopoint for allergies. Vitals: T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, quiet/dull. ASA III-E: compensated vestibular disease plus severe AS otitis. Still pink, walking, kidneys normal.", size=22, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute ataxia ~1 hour. Fell off the couch twice. Cytopoint for allergies. Vitals: T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, quiet/dull. ASA Status 3-E: moderate systemic disease (acute vestibular plus severe AS otitis). Still pink, walking, kidneys normal.", size=16, color=NAVY)
 card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
 card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Circling left. Horizontal nystagmus, fast left, slow right. Right knuckling. Treat as central vestibular disease until MRI.", accent=GOLD)
 card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Heavy tartar. Soft non-painful abdomen. Compensated tonight.", accent=RED)
 add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Plan: CBC WNL. Skip NSAID after DexSP 0.68 mL SQ. Alfaxalone sedation, deep left-ear clean, cytology/culture, 3-view films. Home: meclizine 25 mg PO BID × 5 d, Cerenia 60 mg PO SID × 4 d, confine. MRI recommended. TECA-LBO if culture-guided medical therapy fails.", size=22, color=INK)
+add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Plan: CBC WNL. Skip NSAID after DexSP 0.68 mL SQ. Alfaxalone sedation, deep left-ear clean, cytology/culture, 3-view films. Home: meclizine 25 mg PO BID × 5 d, Cerenia 60 mg PO SID × 4 d, confine. MRI recommended. TECA-LBO if culture-guided medical therapy fails.", size=16, color=INK)
 notes(s, "Record the murmur. Right-sided knuckling with left circling: treat as central vestibular plus otitis, then sedate. Aminoglycosides are a risk if the middle ear is involved even when the drum looks present. Skip NSAID after DexSP.")
 
 # 10 MoMo
 s = new_content("MoMo, ASA Status 4-E", "6 yo SF DSH, 4.25 kg, BCS 5/9")
 add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), RED_LT)
-add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute vomiting and lethargy. Two vomits. Household construction. Possible FB. Vitals: T 98.0 °F, HR 200, RR 30, mm pink tacky, CRT <2 s, QAR. ASA IV-E: rising azotemia and a non-functional kidney. A cancelled exploratory is a successful preoperative evaluation.", size=22, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute vomiting and lethargy. Two vomits. Household construction. Possible FB. Vitals: T 98.0 °F, HR 200, RR 30, mm pink tacky, CRT <2 s, QAR. ASA Status 4-E: severe systemic disease that is a constant threat to life (rising azotemia; non-functional kidney). Cancelling the exploratory is a successful preoperative evaluation.", size=16, color=NAVY)
 card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Why this looked surgical", "FB obstruction was on the list. Mildly enlarged abdomen. That is how cats get booked for an exploratory.", accent=GOLD)
 card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "What the PE showed", "Heart/lungs normal. Ambulatory ×4. Dehydrated. The PE did not prove a foreign body.", accent=TEAL)
 card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Next: labs and imaging", "POCUS: abnormal kidneys, bladder intact. 3-view abdomen STAT. CBC/chem. Assign ASA after those results.", accent=RED)
 add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Work-up: IVF 1.5×, Cerenia, ondansetron, Unasyn. Creatinine 3.0 → 4.71 on fluids. AUS: right kidney fluid-filled and non-functional. Skip NSAIDs. Cancel the exploratory. Record the decision. Owner elected humane euthanasia.", size=22, color=INK)
+add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Work-up: IVF 1.5×, Cerenia, ondansetron, Unasyn. Creatinine 3.0 → 4.71 on fluids. AUS: right kidney fluid-filled and non-functional. Skip NSAIDs. Cancel the exploratory. Record the decision. Owner elected humane euthanasia.", size=16, color=INK)
 notes(s, "MoMo is the cat whose films looked like maybe GI and were kidneys. Cold-call: who would have clipped her on history alone? Be respectful; this cat died. The teaching point is judgment.")
 
 # 11 Diagnostics
@@ -445,42 +448,42 @@ s = new_content("Preoperative diagnostics", "Tests indicated for this patient an
 card(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(2.55), "Young, healthy, elective (ASA I)", "PCV/TS ± blood glucose and Azo stick is a defensible minimum. Many hospitals still run a preanesthetic chemistry/CBC. Know your hospital policy and be able to defend either choice.", accent=TEAL)
 card(s, Inches(6.8), Inches(1.2), Inches(6.0), Inches(2.55), "Age, disease, or invasive procedure", "CBC, chemistry, UA. Add clotting (PT/PTT or BMBT) if bleeding risk. T4 in older cats. Blood pressure. ECG if arrhythmia. Imaging if it changes the approach.", accent=GOLD)
 add_round(s, Inches(0.5), Inches(3.95), Inches(12.3), Inches(3.0), WHITE)
-add_text(s, Inches(0.75), Inches(4.10), Inches(11.8), Inches(0.35), "How to use the tests you order", size=24, bold=True, color=NAVY)
+add_text(s, Inches(0.75), Inches(4.10), Inches(11.8), Inches(0.35), "How to use the tests you order", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.75), Inches(4.55), Inches(11.8), Inches(2.2), [
     "Anemia, hypoalbuminemia, azotemia, electrolyte storms, and thrombocytopenia change drugs, fluids, and whether you cut today.",
     "Abdominal surgery: image first so you know whether you are cutting a pyometra, a mass that needs a different approach, or a medical abdomen. MoMo: POCUS/AUS cancelled the cut.",
     "Repeat a value that changes the plan. MoMo: creatinine 3.0 then 4.71. Act on the rising creatinine.",
-], size=24, spacing=7)
+], size=18, spacing=7)
 notes(s, "Request labs that change the plan. They inform the ASA number. Today’s PE writes it.")
 
 # 12 CBC/chem
-s = new_content("Labs that change ASA status", "These bands inform Status. Today’s PE writes it.")
-headers = ("Finding", "Status 1", "Status 4")
+s = new_content("Laboratory values inform risk", "Teaching bands, not an ASA table. Grubb et al. 2020: today’s PE writes ASA.")
+headers = ("Finding", "Typical healthy adult", "Repeat / stabilize first")
 labrows = [
-    ("PCV", "Normal", "<20% dog  /  <15% cat"),
-    ("Platelets", "Normal", "<50 K"),
-    ("Creatinine", "Normal", "Severe increase + uremia"),
-    ("Potassium", "Normal", ">6.0 or <2.5"),
-    ("WBC", "Normal", "Severe change + systemic disease"),
+    ("PCV", "Within reference", "Teaching: <20% dog / <15% cat"),
+    ("Platelets", "Within reference", "Teaching: <50 K"),
+    ("Creatinine", "Within reference", "Rising or severe + uremia (MoMo)"),
+    ("Potassium", "Within reference", ">6.0 mEq/L (Grubb 2020: correct first)"),
+    ("WBC", "Within reference", "Severe change + systemic disease"),
 ]
 add_rect(s, Inches(0.45), Inches(1.18), Inches(12.4), Inches(0.55), NAVY)
-add_text(s, Inches(0.55), Inches(1.18), Inches(3.5), Inches(0.55), headers[0], size=24, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.1), Inches(1.18), Inches(4.0), Inches(0.55), headers[1], size=24, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.2), Inches(1.18), Inches(4.4), Inches(0.55), headers[2], size=24, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(1.18), Inches(3.5), Inches(0.55), headers[0], size=16, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.1), Inches(1.18), Inches(4.0), Inches(0.55), headers[1], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.2), Inches(1.18), Inches(4.4), Inches(0.55), headers[2], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
 for i, (a, b, c) in enumerate(labrows):
     y = Inches(1.80) + Inches(i * 0.92)
     add_round(s, Inches(0.45), y, Inches(12.4), Inches(0.84), WHITE)
-    add_text(s, Inches(0.65), y, Inches(3.3), Inches(0.84), a, size=26, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(4.1), y, Inches(4.0), Inches(0.84), b, size=24, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(8.2), y, Inches(4.4), Inches(0.84), c, size=24, color=RED, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(6.50), Inches(12.2), Inches(0.50), "Willie: CBC is Status 1. His 3-E is the vestibular exam. MoMo: creatinine sets 4-E.", size=22, color=NAVY)
-notes(s, "Ninety seconds. Point at PCV, platelets, creatinine, potassium. Willie: CBC essentially Status 1. His Status 3-E is the vestibular exam. MoMo: WBC ~26 and creatinine 3.0 then 4.71.")
+    add_text(s, Inches(0.65), y, Inches(3.3), Inches(0.84), a, size=18, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(4.1), y, Inches(4.0), Inches(0.84), b, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(8.2), y, Inches(4.4), Inches(0.84), c, size=16, color=RED, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(6.50), Inches(12.2), Inches(0.50), "Willie: CBC does not assign Status 1. His 3-E is the vestibular exam. MoMo: PE + rising creatinine = 4-E.", size=16, color=NAVY)
+notes(s, "Do not call these ASA cutoffs. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. PCV and platelet numbers are teaching flags. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: WBC about 26 and creatinine 3.0 then 4.71.")
 
 # 13 Apply labs
-s = new_content("Applying the lab tables", "Labs inform ASA status. The physical examination assigns it.")
-card(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), "Willie, laboratory results", "CBC WNL (Status 1 band).\nPhosphorus 6.0, mild increase (Status 2).\nGlucose 130, stress (Status 2 band).\nKidneys, liver, electrolytes normal.\nSkip the EPOC for this ear clean.\n\nASA Status 3-E: acute vestibular disease, severe AS otitis, murmur. An unremarkable chemistry leaves the neurologic Status 3 in place.", accent=GOLD)
-card(s, Inches(6.75), Inches(1.15), Inches(6.15), Inches(5.55), "MoMo, laboratory results and EPOC", "WBC about 26K with neutrophilia (Status 3 to 4).\nPlatelets 74 K (Status 3).\nCreatinine 3.0 to 4.71; BUN 49.7 to 100 (Status 4).\nPhosphorus 8.0 (Status 3 to 4).\nEPOC pH 7.255 (Status 3); BE −7.4 (Status 2); lactate 2.05 (Status 1).\nVenous pO2 33 is venous.\nWhole-patient status is 4-E. Cancel the exploratory.", accent=RED)
-notes(s, "Students want to average the columns. The worst compensated vital-system problem that is a constant threat sets the floor. MoMo’s kidneys set Status 4. Willie’s neuro exam set Status 3 even with a normal CBC.")
+s = new_content("Applying the lab tables", "Labs inform risk. The physical examination assigns ASA (Grubb et al. 2020).")
+card(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), "Willie, laboratory results", "CBC WNL. That does not make him Status 1.\nPhosphorus 6.0, mild increase.\nGlucose 130, stress.\nKidneys, liver, electrolytes normal.\nSkip the EPOC for this ear clean.\n\nASA Status 3-E from today’s PE: acute vestibular disease, severe AS otitis, murmur. An unremarkable chemistry leaves that Status 3 in place.", accent=GOLD)
+card(s, Inches(6.75), Inches(1.15), Inches(6.15), Inches(5.55), "MoMo, laboratory results and EPOC", "WBC about 26K with neutrophilia.\nPlatelets 74 K.\nCreatinine 3.0 to 4.71; BUN 49.7 to 100.\nPhosphorus 8.0.\nEPOC pH 7.255; BE −7.4; lactate 2.05.\nVenous pO2 33 is a venous sample.\n\nASA Status 4-E: severe renal disease that is a constant threat to life. Cancel the exploratory.", accent=RED)
+notes(s, "Students want to average numbers into an ASA score. Do not. The PE assigns status. MoMo’s kidneys set Status 4. Willie’s neuro exam set Status 3 even with a normal CBC.")
 
 # 14 Stabilize
 s = new_content("Stabilization before elective surgery", "When to delay, when to proceed urgently")
@@ -493,24 +496,24 @@ for i, (t, c, b) in enumerate(cols):
     x = Inches(0.45) + Inches(i * 4.25)
     add_round(s, x, Inches(1.2), Inches(4.05), Inches(5.5), WHITE)
     add_rect(s, x, Inches(1.2), Inches(4.05), Inches(0.6), c)
-    add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.6), t, size=24, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.25), Inches(2.0), Inches(3.55), Inches(4.4), b, size=24, color=INK)
+    add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.6), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.25), Inches(2.0), Inches(3.55), Inches(4.4), b, size=18, color=INK)
 notes(s, "Resuscitate first, then clip. Delay elective OHE for pyoderma. Take GDV to surgery after resuscitation. MoMo: image and run labs, then cancel the exploratory.")
 
 # 15 Fasting + consent
 s = new_content("Fasting and informed consent", "2020 AAHA Anesthesia and Monitoring Guidelines; then the risk talk")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Fasting (Grubb et al. 2020 AAHA)", size=24, bold=True, color=NAVY)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Fasting (Grubb et al. 2020 AAHA)", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Healthy adult dog/cat: food 4–6 h; water until premedication.",
     "Some hospitals still use 8–12 h NPO. Teach aspiration versus hypoglycemia.",
     "Neonates / <2 kg: food fast no longer than 1–2 h.",
-    "Brachycephalics: shorter fast, pre-oxygenate.",
+    "Brachycephalics: pre-oxygenate. Fasting follows the healthy-adult or neonate row above.",
     "Ask what was eaten this morning. Clients feed ‘just a biscuit.’",
     "Diabetics: write the insulin dose and a small meal with anesthesia before drop-off.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(5.55), WHITE)
-add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Consent, then file it", size=24, bold=True, color=NAVY)
+add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Consent, then file it", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Procedure name in plain language, and the reason.",
     "Benefits, alternatives including medical management, and what happens if we wait.",
@@ -518,13 +521,13 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Estimate: what is included and what is not.",
     "Resuscitation code / DNR before induction.",
     "File the signed form. Then start induction.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 notes(s, "Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.")
 
 # 16 Checklist + analgesia
 s = new_content("Pre-incision checklist and analgesia", "WHO-adapted timeout and multimodal plan")
 add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
-add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Pre-incision checklist", size=24, bold=True, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Pre-incision checklist", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.7), Inches(4.5), [
     "Identity, procedure, site/side confirmed.",
     "Consent, estimate, DNR documented.",
@@ -534,9 +537,9 @@ add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.7), Inches(4.5), [
     "Antibiotics given (if indicated) 30 minutes before incision.",
     "Local block planned (incisional, testicular, TAP, splash).",
     "Instruments, suture, extra gloves, cautery, suction.",
-], size=22, spacing=5)
+], size=16, spacing=5)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), WHITE)
-add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "Multimodal analgesia", size=24, bold=True, color=NAVY)
+add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "Multimodal analgesia", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.05), Inches(1.9), Inches(5.55), Inches(4.5), [
     "Opioid as part of premed or induction.",
     "NSAID if perfusion, kidneys, and GI tract allow. Often at recovery.",
@@ -544,33 +547,33 @@ add_bullets(s, Inches(7.05), Inches(1.9), Inches(5.55), Inches(4.5), [
     "Adjuncts: ketamine CRI, dexmedetomidine CRI, gabapentin, acetaminophen (dog only).",
     "Cats: skip acetaminophen; careful NSAID choice and dose.",
     "Write the pain plan before the patient leaves the table.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 notes(s, "Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.")
 
 # 17 Willie record
 s = new_content("Anesthesia record, Willie", "Complete the header before the first drug.")
 add_pic(s, "anesthesia_record_willie.png", Inches(0.35), Inches(1.12), Inches(8.3), Inches(5.85))
 add_round(s, Inches(8.80), Inches(1.12), Inches(4.15), Inches(5.85), NAVY)
-add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Back row: read this", size=24, bold=True, color=GOLD)
-add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "ASA III-E\nbefore alfaxalone\n\nSkip NSAID\n(DexSP already given)\n\nGrid every 5 min\nwhile sedated\n\nRecovery is on\nthe same page", size=24, color=WHITE)
+add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Read this", size=18, bold=True, color=GOLD)
+add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "ASA III-E\nbefore alfaxalone\n\nSkip NSAID\n(DexSP already given)\n\nGrid every 5 min\nwhile sedated\n\nRecovery is on\nthe same page", size=18, color=WHITE)
 notes(s, "Walk the header: ASA III-E is written before alfaxalone. DexSP means skip NSAID. Grid every 5 minutes while sedated. Recovery boxes are part of the same page.")
 
 # 18 MoMo record
 s = new_content("Anesthesia record, MoMo", "Exploratory cancelled. Record the decision.")
 add_pic(s, "anesthesia_record_momo.png", Inches(0.35), Inches(1.12), Inches(8.3), Inches(5.85))
 add_round(s, Inches(8.80), Inches(1.12), Inches(4.15), Inches(5.85), RED)
-add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Back row: read this", size=24, bold=True, color=GOLD)
-add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "ASA IV-E\n\nNo clippers\nNo incision\n\nCreatinine 3.0\nthen 4.71\n\nWrite:\nSURGERY\nCANCELLED", size=24, color=WHITE)
+add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Read this", size=18, bold=True, color=GOLD)
+add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "ASA IV-E\n\nNo clippers\nNo incision\n\nCreatinine 3.0\nthen 4.71\n\nWrite:\nSURGERY\nCANCELLED", size=18, color=WHITE)
 notes(s, "The form is not only for patients who get clipped. Recording the cancellation is a surgical document. Say it once, respectfully, then continue.")
 
 # 19 Abx
 s = new_content("Surgical antimicrobial prophylaxis", "Frey et al. 2022 AAFP/AAHA: when. Whittem 1999 and Gonzalez 2017: how.")
 add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), GREEN_LT)
-add_text(s, Inches(0.75), Inches(1.35), Inches(5.6), Inches(0.50), "Clean elective: skip prophylaxis", size=24, bold=True, color=GREEN)
-add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.5), "2022 AAFP/AAHA (Frey et al.)\n\nStart 30–60 min before incision.\nNot usually needed for clean procedures.\nSkip OHE, orchiectomy, most sterile cases.\nPostop antimicrobials are rarely required.\n\nHold asepsis. Stop at closure.", size=22, color=INK)
+add_text(s, Inches(0.75), Inches(1.35), Inches(5.6), Inches(0.50), "Clean elective: skip prophylaxis", size=18, bold=True, color=GREEN)
+add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.5), "2022 AAFP/AAHA (Frey et al.)\n\nStart 30–60 min before incision.\nNot usually needed for clean procedures.\nSkip OHE, orchiectomy, most sterile cases.\nPostop antimicrobials are rarely required.\n\nHold asepsis. Stop at closure.", size=16, color=INK)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
-add_text(s, Inches(7.1), Inches(1.35), Inches(5.5), Inches(0.50), "When indicated: timed IV, then stop", size=24, bold=True, color=RED)
-add_text(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.5), "AAFP/AAHA 2022 has no cefazolin mg/kg.\n\n1. Start 30–60 min before incision.\n2. Extra-label: 22 mg/kg IV (Gonzalez 2017).\n3. Second dose if >90 min (Whittem 1999).\n4. Stop at closure unless treating infection.\n\nWillie’s infected ear: treatment, not prophylaxis.", size=22, color=INK)
+add_text(s, Inches(7.1), Inches(1.35), Inches(5.5), Inches(0.50), "When indicated: timed IV, then stop", size=18, bold=True, color=RED)
+add_text(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.5), "AAFP/AAHA 2022 has no cefazolin mg/kg.\n\n1. Start 30–60 min before incision.\n2. Extra-label: 22 mg/kg IV (Gonzalez 2017).\n3. Second dose if >90 min (Whittem 1999).\n4. Stop at closure unless treating infection.\n\nWillie’s infected ear: treatment, not prophylaxis.", size=16, color=INK)
 notes(s, "Do not attribute 22 mg/kg every 90 minutes to AAHA 2022. That guideline says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.")
 
 # 20 Sequence
@@ -592,72 +595,72 @@ for i, (n, t) in enumerate(steps):
     y = Inches(1.25) + Inches(row * 2.7)
     add_round(s, x, y, Inches(3.05), Inches(2.4), WHITE)
     add_rect(s, x, y, Inches(3.05), Inches(0.7), NAVY if row == 0 else TEAL)
-    add_text(s, x, y, Inches(3.05), Inches(0.7), n, size=28, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.15), y + Inches(0.85), Inches(2.75), Inches(1.35), t, size=24, color=INK, align=PP_ALIGN.CENTER)
+    add_text(s, x, y, Inches(3.05), Inches(0.7), n, size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.15), y + Inches(0.85), Inches(2.75), Inches(1.35), t, size=18, color=INK, align=PP_ALIGN.CENTER)
 notes(s, "Airway and plane before clippers. Veterinary Betadine labels: 7.5% scrub, lather about 5 minutes, rinse, paint 5% Solution Veterinary, allow to dry. Eye: Roberts 1986, 1:50 of 10% PVP-I stock, 2-minute scrub plus 2-minute soak. Do not paint 10% from the veterinary bottle; that bottle is 5%.")
 
 # 21 Hair
 s = new_content("Hair removal", "#40 clipper after induction. Field 20 cm beyond the planned incision.")
 add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), RED)
-add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "Too narrow. Hair at the margin.", size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "Too narrow. Hair at the margin.", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "clip_cat.jpg", Inches(0.4), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), GREEN)
-add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "24 hours after OHE. Clip was wide enough.", size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "24 hours after OHE. Clip was wide enough.", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "spay_incision.jpg", Inches(6.75), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(0.4), Inches(5.15), Inches(12.55), Inches(1.85), WHITE)
-add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "#40 after a surgical plane. Xiphoid to pubis, past the nipples, 20 cm beyond the incision.\nPhotos: Uwe Gille, CC0; Liannadavis, CC BY-SA 4.0.", size=22, color=INK)
+add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "#40 after a surgical plane. Xiphoid to pubis, past the nipples, 20 cm beyond the incision.\nPhotos: Uwe Gille, CC0; Liannadavis, CC BY-SA 4.0.", size=16, color=INK)
 notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.")
 
 # 22 Antiseptics
 s = new_content("Skin antiseptics", "Read the bottle. Cite the label or the paper.")
 add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(1.20), GOLD_LT)
-add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nRoberts 1986: 1 mL of 10% + 49 mL saline = 1:50.   5% bottle: 1 mL + 24 mL (1:25).", size=24, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nRoberts 1986: 1 mL of 10% + 49 mL saline = 1:50.   5% bottle: 1 mL + 24 mL (1:25).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(4.50), WHITE)
 add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.58), TEAL)
-add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.58), "CHG  ·  Nolvasan", size=24, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(3.18), Inches(3.80), Inches(3.60), "2% chlorhexidine acetate\nWash 2 to 4 minutes\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=22, color=INK)
+add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.58), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(3.18), Inches(3.80), Inches(3.60), "2% chlorhexidine acetate\nWash 2 to 4 minutes\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=16, color=INK)
 add_round(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(4.50), WHITE)
 add_rect(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.58), GOLD)
-add_text(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.58), "Skin  ·  Betadine vet", size=24, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(3.18), Inches(3.80), Inches(3.60), "7.5% scrub\nLather about 5 minutes\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=22, color=INK)
+add_text(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.58), "Skin  ·  Betadine vet", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.77), Inches(3.18), Inches(3.80), Inches(3.60), "7.5% scrub\nLather about 5 minutes\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=16, color=INK)
 add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(4.50), WHITE)
 add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.58), NAVY)
-add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.58), "Eye  ·  Roberts 1986", size=24, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.18), Inches(3.78), Inches(3.60), "10% stock, dilute 1:50\n2 min scrub + 2 min soak\n1:2: corneal edema (1/15)\n5% bottle: use 1:25\nNot full strength on cornea", size=22, color=INK)
+add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.58), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.99), Inches(3.18), Inches(3.78), Inches(3.60), "10% stock, dilute 1:50\n2 min scrub + 2 min soak\n1:2: corneal edema (1/15)\n5% bottle: use 1:25\nNot full strength on cornea", size=16, color=INK)
 notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
 
 # 23 Technique
 s = new_content("Patient skin preparation technique", "Center to periphery. Dirty prep, then sterile prep.")
 add_pic(s, "prep_spiral_antiseptic.png", Inches(0.4), Inches(1.15), Inches(7.4), Inches(5.9))
 add_round(s, Inches(7.95), Inches(1.15), Inches(4.9), Inches(5.9), WHITE)
-add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", size=24, bold=True, color=NAVY)
+add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Dirty prep, then sterile prep.",
     "Start at the incision. Spiral out. Drop the sponge.",
     "Skin: 7.5% ~5 min, then 5% paint.",
     "Eye: 10% stock 1:50. 2 min + 2 min.",
     "Willie canal: dilute PVP-I, not 7.5% scrub.",
-], size=22, spacing=10)
+], size=16, spacing=10)
 notes(s, "Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
 # 24 Position
 s = new_content("Patient positioning", "Dorsal recumbency, airway, IV catheter, monitoring, V-trough")
 add_pic(s, "dog_or.jpg", Inches(0.35), Inches(1.12), Inches(8.35), Inches(5.95))
 add_round(s, Inches(8.85), Inches(1.12), Inches(4.1), Inches(5.95), WHITE)
-add_text(s, Inches(9.05), Inches(1.28), Inches(3.75), Inches(0.45), "Visible in this photograph", size=24, bold=True, color=NAVY)
-add_text(s, Inches(9.05), Inches(1.8), Inches(3.75), Inches(5.0), "• ET tube + pulse ox\n• IV catheter + fluids\n• Anesthesia machine\n• V-trough / padding\n• Ties snug, then check the pulse distal to each tie\n• Clip after a surgical plane of anesthesia\n\nKeep the hips in a neutral spread.\nLubricate the eyes. Confirm the tube is patent.\n\nPhoto: Anja, CC BY-SA 4.0.", size=22, color=INK)
+add_text(s, Inches(9.05), Inches(1.28), Inches(3.75), Inches(0.45), "Visible in this photograph", size=18, bold=True, color=NAVY)
+add_text(s, Inches(9.05), Inches(1.8), Inches(3.75), Inches(5.0), "• ET tube + pulse ox\n• IV catheter + fluids\n• Anesthesia machine\n• V-trough / padding\n• Ties snug, then check the pulse distal to each tie\n• Clip after a surgical plane of anesthesia\n\nKeep the hips in a neutral spread.\nLubricate the eyes. Confirm the tube is patent.\n\nPhoto: Anja, CC BY-SA 4.0.", size=16, color=INK)
 notes(s, "Airway and monitoring are on before the clip. Keep hips in a neutral spread.")
 
 # 25 Draping
 s = new_content("Draping", "Four-quadrant towels, then the large drape")
 add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), RED)
-add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "OHE: hair visible at the drape edge", size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "OHE: hair visible at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "cherry_point_spay.jpg", Inches(0.4), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), GREEN)
-add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "Sterile field: gown, glove, drape", size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "Sterile field: gown, glove, drape", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "hektor_drape.jpg", Inches(6.75), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(0.4), Inches(5.15), Inches(12.55), Inches(1.85), WHITE)
-add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Near towel first. Four towels box the field. Re-clip until the window is hair-free.\nPhotos: Cpl. Samuel A. Nasso, USMC, public domain; MSgt Carlotta Holley, USAF, public domain.", size=22, color=INK)
+add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Near towel first. Four towels box the field. Re-clip until the window is hair-free.\nPhotos: Cpl. Samuel A. Nasso, USMC, public domain; MSgt Carlotta Holley, USAF, public domain.", size=16, color=INK)
 notes(s, "Left is a real spay with hair at the window. Re-clip or re-drape. Then timeout before you cut.")
 
 # 26 Gloving
@@ -665,19 +668,19 @@ s = new_content("Closed gloving and the anesthesia workstation", "Technique diag
 add_pic(s, "prep_closed_gloving.png", Inches(0.35), Inches(1.12), Inches(6.3), Inches(4.15))
 add_pic(s, "hektor_or.jpg", Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15))
 add_round(s, Inches(0.35), Inches(5.38), Inches(12.6), Inches(1.7), WHITE)
-add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: cap, mask, ECG/SpO2/ETCO2, circle system, IV fluids, airway. Monitoring is on before the first drug. Willie needed this for an ear clean. MoMo: the record stopped at preoperative evaluation.\nPhoto: MSgt Carlotta Holley, U.S. Air Force, public domain.", size=22, color=INK)
+add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: cap, mask, ECG/SpO2/ETCO2, circle system, IV fluids, airway. Monitoring is on before the first drug. Willie needed this for an ear clean. MoMo: the record stopped at preoperative evaluation.\nPhoto: MSgt Carlotta Holley, U.S. Air Force, public domain.", size=16, color=INK)
 notes(s, "Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, fluids off the workstation photo.")
 
 # 27 Asepsis + protect
 s = new_content("Breaks in asepsis", "Recognize, announce, correct. Then protect the patient.")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(3.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.35), "If you contaminate", size=24, bold=True, color=TEAL)
-add_text(s, Inches(0.7), Inches(1.70), Inches(5.7), Inches(2.8), "Say it immediately. Re-glove, re-gown, or re-drape. Name the break once. Fix it completely.\n\nAfter the incision is made, the same rule: notice, announce, correct. Sleeve in the abdomen, instrument off the table, hole in a glove: stop and fix it.", size=24, color=INK)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.35), "If you contaminate", size=18, bold=True, color=TEAL)
+add_text(s, Inches(0.7), Inches(1.70), Inches(5.7), Inches(2.8), "Say it immediately. Re-glove, re-gown, or re-drape. Name the break once. Fix it completely.\n\nAfter the incision is made, the same rule: notice, announce, correct. Sleeve in the abdomen, instrument off the table, hole in a glove: stop and fix it.", size=18, color=INK)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(3.55), WHITE)
-add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.35), "Protect the patient", size=24, bold=True, color=NAVY)
-add_text(s, Inches(7.05), Inches(1.70), Inches(5.6), Inches(2.8), "1. Control significant hemorrhage.\n2. Create a secure abdominal wall closure.\n3. Achieve and maintain an aseptic field.\n4. Identify and protect adjacent organs before you clamp.\n5. Complete a sponge and instrument count before closure.", size=24, color=INK)
+add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.35), "Protect the patient", size=18, bold=True, color=NAVY)
+add_text(s, Inches(7.05), Inches(1.70), Inches(5.6), Inches(2.8), "1. Control significant hemorrhage.\n2. Create a secure abdominal wall closure.\n3. Achieve and maintain an aseptic field.\n4. Identify and protect adjacent organs before you clamp.\n5. Complete a sponge and instrument count before closure.", size=18, color=INK)
 add_round(s, Inches(0.45), Inches(4.85), Inches(12.4), Inches(2.10), GOLD_LT)
-add_text(s, Inches(0.7), Inches(5.05), Inches(11.95), Inches(1.75), "The operation is not over when the last skin suture is placed. Intra-abdominal hemorrhage from poor ligation, or herniation from a weak linea, can kill the patient after you have left the OR. That is why postoperative care is part of this lecture.", size=24, color=NAVY)
+add_text(s, Inches(0.7), Inches(5.05), Inches(11.95), Inches(1.75), "The operation is not over when the last skin suture is placed. Intra-abdominal hemorrhage from poor ligation, or herniation from a weak linea, can kill the patient after you have left the OR. That is why postoperative care is part of this lecture.", size=18, color=NAVY)
 notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glove. Ureter injury is a calm, well-exposed patient problem.")
 
 # 28 Knowledge check
@@ -692,37 +695,37 @@ for i, (let, q, a) in enumerate(rows):
     y = Inches(1.15) + Inches(i * 1.42)
     add_round(s, Inches(0.5), y, Inches(12.3), Inches(1.30), WHITE)
     add_rect(s, Inches(0.5), y, Inches(0.85), Inches(1.30), NAVY)
-    add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=32, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=24, bold=True, color=INK)
-    add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=22, color=TEAL)
+    add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
+    add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
 notes(s, "Two minutes. B is Roberts 1986 bottle math. D is CHG off the cornea. C is the stabilize-first cat.")
 
 # 29 Recovery
 s = new_content("Immediate recovery", "Remain with the patient until airway and circulation are stable")
 add_pic(s, "remus_recovery.jpg", Inches(0.35), Inches(1.12), Inches(8.15), Inches(5.95))
 add_round(s, Inches(8.6), Inches(1.12), Inches(4.35), Inches(5.95), WHITE)
-add_text(s, Inches(8.8), Inches(1.28), Inches(4.0), Inches(0.4), "Recovery priorities", size=24, bold=True, color=NAVY)
+add_text(s, Inches(8.8), Inches(1.28), Inches(4.0), Inches(0.4), "Recovery priorities", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
     "Extubate when swallow returns.",
     "Pale + tachycardic after celiotomy: return to OR.",
     "Rewarm. Check skin every 15 minutes.",
     "E-collar on before they can lick.",
     "Willie: skip NSAID after DexSP.",
-], size=22, spacing=10)
+], size=16, spacing=10)
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
 s = new_content("Postoperative flowsheet, first 2 hours", "Stay with the patient")
 add_pic(s, "recovery_flowsheet.png", Inches(0.35), Inches(1.12), Inches(8.3), Inches(5.85))
 add_round(s, Inches(8.80), Inches(1.12), Inches(4.15), Inches(5.85), NAVY)
-add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Every 15 minutes", size=24, bold=True, color=GOLD)
-add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "Airway\nmm / CRT / pulse\nTemperature\nPain score\nIncision\nE-collar on\n\nPale + tachycardic\nafter celiotomy:\nreturn to OR", size=24, color=WHITE)
+add_text(s, Inches(9.00), Inches(1.30), Inches(3.80), Inches(0.50), "Every 15 minutes", size=18, bold=True, color=GOLD)
+add_text(s, Inches(9.00), Inches(1.90), Inches(3.80), Inches(4.80), "Airway\nmm / CRT / pulse\nTemperature\nPain score\nIncision\nE-collar on\n\nPale + tachycardic\nafter celiotomy:\nreturn to OR", size=18, color=WHITE)
 notes(s, "Students should be able to fill this after a spay. Photograph it.")
 
 # 31 Pain + incision
 s = new_content("Pain and incision care", "Score pain. Then teach the e-collar.")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Score pain and record the number", size=24, bold=True, color=NAVY)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Score pain and record the number", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Dogs: Glasgow CMPS-SF. Cats: Feline Grimace Scale plus behavior.",
     "Re-score after intervention.",
@@ -730,9 +733,9 @@ add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Celiotomy / orthopedic: CRIs, extra locals, overnight monitoring.",
     "Send home the opioid + NSAID (if kidneys and GI allow) + the local you already placed. Write the dosing times.",
     "Willie already received DexSP: skip NSAID.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(5.55), WHITE)
-add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Incision care", size=24, bold=True, color=NAVY)
+add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Incision care", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Look twice daily: swelling, discharge, gapping, smell, heat.",
     "E-collar that actually stays on.",
@@ -740,7 +743,7 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Saline if dirty. Skin sutures typically 10–14 days.",
     "Heart or kidney patients: measured fluid rate and a written stop time.",
     "Cats: start a meal the night of surgery.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 notes(s, "Licking and unsupervised running are the two discharge failures after otherwise adequate closure.")
 
 # 32 Complications
@@ -760,14 +763,14 @@ for i, (t, d, c) in enumerate(rows):
     y = Inches(1.18) + Inches(row * 1.85)
     add_round(s, x, y, Inches(6.25), Inches(1.7), WHITE)
     add_rect(s, x, y, Inches(0.12), Inches(1.7), c)
-    add_text(s, x + Inches(0.35), y + Inches(0.12), Inches(5.7), Inches(0.4), t, size=24, bold=True, color=c)
-    add_text(s, x + Inches(0.35), y + Inches(0.55), Inches(5.7), Inches(1.0), d, size=22, color=SLATE)
+    add_text(s, x + Inches(0.35), y + Inches(0.12), Inches(5.7), Inches(0.4), t, size=18, bold=True, color=c)
+    add_text(s, x + Inches(0.35), y + Inches(0.55), Inches(5.7), Inches(1.0), d, size=16, color=SLATE)
 notes(s, "Hemorrhage versus seroma. Skin versus fascial dehiscence. Evisceration protocol in one breath.")
 
 # 33 Report + discharge
 s = new_content("Surgical report and discharge", "What the overnight clinician and the owner both need")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Minimum report elements", size=24, bold=True, color=NAVY)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Minimum report elements", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Date/time, patient ID, surgeon, anesthesia, ASA.",
     "Procedure name and side. Position, clip/prep, approach.",
@@ -775,9 +778,9 @@ add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Suture: layer, material, size, pattern.",
     "Hemostasis, blood loss, sponge count, complications.",
     "Postop plan: fluids, pain, feeding, recheck.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(5.55), WHITE)
-add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Discharge, verbal and written", size=24, bold=True, color=NAVY)
+add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Discharge, verbal and written", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "What we did, in one sentence.",
     "When to start food and water, and how much.",
@@ -785,7 +788,7 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Incision care and 14-day leash walks.",
     "E-collar on except when directly watching.",
     "Next appointment. ER criteria. After-hours number.",
-], size=22, spacing=6)
+], size=16, spacing=6)
 notes(s, "At 2 a.m. someone opens this record because the abdomen is swelling. They need ligatures, sponge count, linea suture, and whether the client was called.")
 
 # 34 ER criteria
@@ -800,14 +803,14 @@ for i, ((t, d), c) in enumerate(zip(crit, cols_c)):
     x = Inches(0.45) + Inches(i * 4.25)
     add_round(s, x, Inches(1.2), Inches(4.05), Inches(5.5), WHITE)
     add_rect(s, x, Inches(1.2), Inches(4.05), Inches(0.7), c)
-    add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.7), t, size=26, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.25), Inches(2.1), Inches(3.55), Inches(4.3), d, size=24, color=INK)
+    add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.7), t, size=20, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.25), Inches(2.1), Inches(3.55), Inches(4.3), d, size=18, color=INK)
 notes(s, "Pale gums + distended abdomen after OHE: come now. Return to OR.")
 
 # 35 Willie plan
 s = new_content("Willie: complete perioperative plan", "ASA Status 3-E")
 add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  ASA III-E  ·  vestibular + AS otitis  ·  skip NSAID", size=24, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  ASA III-E  ·  vestibular + AS otitis  ·  skip NSAID", size=18, color=NAVY)
 wsteps = [
     ("Pre-op", "Neuro exam. Culture the ear. Radiographs are not MRI. Central until proven otherwise."),
     ("Prep", "Monitors on. Then alfaxalone. Canal and eye: dilute PVP-I, 1:50 of 10%. Pad him."),
@@ -818,8 +821,8 @@ for i, (t, d) in enumerate(wsteps):
     x = Inches(0.45) + Inches(i * 3.2)
     add_round(s, x, Inches(2.10), Inches(3.05), Inches(4.80), WHITE)
     add_rect(s, x, Inches(2.10), Inches(3.05), Inches(0.65), NAVY)
-    add_text(s, x, Inches(2.10), Inches(3.05), Inches(0.65), t, size=24, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.15), Inches(2.90), Inches(2.75), Inches(3.80), d, size=22, color=INK)
+    add_text(s, x, Inches(2.10), Inches(3.05), Inches(0.65), t, size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.15), Inches(2.90), Inches(2.75), Inches(3.80), d, size=16, color=INK)
 notes(s, "Walk Willie without questions until the end. Then one sentence on MoMo: the same hour of preoperative evaluation cancelled her exploratory.")
 
 # 36 Willie and MoMo
@@ -842,8 +845,8 @@ for i, t in enumerate(pearls):
     y = Inches(1.15) + Inches(i * 0.92)
     add_round(s, Inches(0.5), y, Inches(12.3), Inches(0.84), WHITE)
     add_rect(s, Inches(0.5), y, Inches(0.85), Inches(0.84), GOLD)
-    add_text(s, Inches(0.5), y, Inches(0.85), Inches(0.84), str(i + 1), size=28, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(1.55), y, Inches(10.9), Inches(0.84), t, size=24, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(0.5), y, Inches(0.85), Inches(0.84), str(i + 1), size=20, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(1.55), y, Inches(10.9), Inches(0.84), t, size=18, color=INK, anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.")
 
 # 38 Questions + references
@@ -851,21 +854,29 @@ s = prs.slides.add_slide(BLANK)
 add_rect(s, 0, 0, W, H, NAVY)
 add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, 0, 0, Inches(0.22), H, GOLD)
-add_text(s, Inches(0.75), Inches(0.28), Inches(12), Inches(0.36), "DVM 612  ·  PRINCIPLES OF SURGERY", size=22, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(0.70), Inches(12), Inches(0.70), "Questions", size=44, bold=True, color=WHITE)
-add_text(s, Inches(0.75), Inches(1.45), Inches(12), Inches(1.00), "Why was Willie ASA III-E and MoMo ASA IV-E?\nHow do you dilute 10% povidone-iodine for the eye?", size=26, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(2.55), Inches(12), Inches(0.40), "Sources  (full citations in the instructor script)", size=22, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(3.05), Inches(12), Inches(3.20),
-         "Fossum 2018  ·  Hendrickson & Baird 2013  ·  Johnston & Tobias 2017\n"
-         "Roberts 1986: eye 1:50 of 10% PVP-I, 2 min + 2 min\n"
-         "Betadine vet: 7.5% scrub ~5 min, then 5% paint (not 10%)\n"
-         "Nolvasan: 2% CHG, wash 2 to 4 min. Keep out of eyes.\n"
-         "Frey 2022 AAFP/AAHA: 30–60 min before incision; skip clean OHE\n"
-         "Grubb 2020 AAHA: healthy adult food 4–6 h; water until premed\n"
-         "Whittem 1999 / Gonzalez 2017: timing, and 22 mg/kg IV extra-label",
-         size=24, color=WHITE)
-add_text(s, Inches(0.75), Inches(6.40), Inches(12), Inches(0.50), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP  ·  Lewyt CVM  ·  Long Island University", size=22, color=GOLD)
-notes(s, "Take questions. If none: Willie versus MoMo ASA, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.")
+add_text(s, Inches(0.55), Inches(0.26), Inches(12.2), Inches(0.28), "DVM 612  ·  PRINCIPLES OF SURGERY", size=14, bold=True, color=GOLD)
+add_text(s, Inches(0.55), Inches(0.52), Inches(12.2), Inches(0.48), "Questions", size=28, bold=True, color=WHITE)
+add_text(s, Inches(0.55), Inches(1.02), Inches(12.2), Inches(0.70), "Why was Willie ASA Status 3-E and MoMo ASA Status 4-E?\nHow do you dilute 10% povidone-iodine for the eye?", size=16, color=GOLD_LT)
+add_text(s, Inches(0.55), Inches(1.78), Inches(12.2), Inches(0.32), "References  (course texts, guidelines, labels, and papers used in this hour)", size=14, bold=True, color=GOLD)
+left_refs = (
+    "1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Ch. 4, 5, 6, 9.\n\n"
+    "2. Hendrickson DA, Baird AN. Turner and McIlwraith’s Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. ISBN 978-1-118-27323-4.\n\n"
+    "3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017. ISBN 978-0-323-32065-8.\n\n"
+    "4. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59–82.\n\n"
+    "5. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1–5.\n\n"
+    "6. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207–1210."
+)
+right_refs = (
+    "7. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212–216.\n\n"
+    "8. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695–701.\n\n"
+    "9. BETADINE Surgical Scrub Veterinary. 7.5% povidone-iodine. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.\n\n"
+    "10. BETADINE Solution Veterinary. 5% povidone-iodine (not 10%). DailyMed NDC 67618-155.\n\n"
+    "11. Nolvasan Surgical Scrub. 2% chlorhexidine acetate. DailyMed NDC 54771-8701. Wash 2 to 4 min. Avoid eyes and mucous membranes."
+)
+add_text(s, Inches(0.55), Inches(2.12), Inches(6.05), Inches(4.55), left_refs, size=PT_REF, color=WHITE)
+add_text(s, Inches(6.75), Inches(2.12), Inches(6.05), Inches(4.55), right_refs, size=PT_REF, color=WHITE)
+add_text(s, Inches(0.55), Inches(6.72), Inches(12.2), Inches(0.32), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP  ·  Lewyt CVM  ·  Long Island University", size=14, color=GOLD)
+notes(s, "Take questions. If none: Willie versus MoMo ASA from the 2020 AAHA table, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.")
 
 # Stamp numbers
 stamp_footers()
@@ -907,20 +918,20 @@ for i, slide in enumerate(prs.slides, 1):
 script_path = Path("/workspace/lectures/DVM-612_Week4_Instructor_Script.txt")
 script_path.write_text("\n".join(script_lines) + """
 
-APPENDIX  ·  FULL REFERENCES  (hall slides use the short list)
+APPENDIX  ·  FULL REFERENCES
 1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Ch. 4, 5, 6, 9. Doses and dilutions on the slides are not quoted from Fossum pages.
 2. Hendrickson DA, Baird AN. Turner and McIlwraith's Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. ISBN 978-1-118-27323-4.
 3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017 (copyright 2018). ISBN 978-0-323-32065-8.
-4. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207-1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak.
-5. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.
-6. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155.
-7. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed. Wash 2 to 4 min. Avoid eyes and mucous membranes.
-8. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1-5.
-9. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020.
-10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216.
-11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701.
+4. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82. doi:10.5326/JAAHA-MS-7055. ASA companion table; healthy adult food 4-6 h; water until premedication; neonates/<2 kg food fast no longer than 1-2 h; correct K+ >6.0 mEq/L before anesthesia.
+5. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1-5. Start 30-60 min before incision; skip clean OHE/orchiectomy; postop rarely required. Does not publish cefazolin mg/kg.
+6. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207-1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak; 1:2 corneal edema in 1/15 eyes.
+7. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.
+8. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155. If this bottle is used for a Roberts 0.2% field, dilute 1:25 (1 mL + 24 mL).
+9. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed NDC 54771-8701; setid 4a2567ca-26b9-4078-b3e3-4695f50899b4. Wash 2 to 4 min. Avoid eyes and mucous membranes.
+10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216. First dose within 30 min of surgery; second dose if surgery lasted >90 min. Abstract does not print mg/kg.
+11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Does not say q90 min.
 
-HALL TYPE: titles 36 pt, body 24 pt, smallest on-slide letter 20 pt (footer). 107-seat lecture hall.
+TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
 """, encoding="utf-8")
 
 print(f"Saved {out}")

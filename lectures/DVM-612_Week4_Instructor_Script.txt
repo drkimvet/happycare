@@ -21,8 +21,8 @@ SLIDE 5. PREOPERATIVE, PREPARATION, INTRAOPERATIVE, POSTOPERATIVE
 SLIDE 6. EXAMINE, REQUEST INDICATED LABS, INTERPRET, THEN ASSIGN ASA
     SPEAK: Four jobs. Students often skip #3 and #4. Do your own PE, then use technician vitals as a second set of numbers. Order: examine, then premedicate.
 
-SLIDE 7. AMERICAN SOCIETY OF ANESTHESIOLOGISTS CLASSIFICATION
-    SPEAK: Read Status 1, then 3, then 4 slowly. E means emergency. Next: four 60-second cases, then Willie (3-E, we sedated) and MoMo (4-E, exploratory cancelled).
+SLIDE 7. GRUBB ET AL. 2020 AAHA COMPANION TABLE
+    SPEAK: Read the 2020 AAHA table: Status 1 healthy neuter, Status 2 compensated mild mitral, Status 3 moderate disease such as IRIS 3 CKD, Status 4 threat to life such as bleeding splenic mass, Status 5 moribund septic cat. Then map Willie to 3-E and MoMo to 4-E. E means emergency.
 
 SLIDE 8. ASSIGN STATUS, THEN SAY WHETHER YOU PROCEED TODAY
     SPEAK: Cold-call four students. C is Willie (sedation). D is MoMo (exploratory cancelled).
@@ -36,11 +36,11 @@ SLIDE 10. 6 YO SF DSH, 4.25 KG, BCS 5/9
 SLIDE 11. TESTS INDICATED FOR THIS PATIENT AND THIS PROCEDURE
     SPEAK: Request labs that change the plan. They inform the ASA number. Today’s PE writes it.
 
-SLIDE 12. THESE BANDS INFORM STATUS. TODAY’S PE WRITES IT.
-    SPEAK: Ninety seconds. Point at PCV, platelets, creatinine, potassium. Willie: CBC essentially Status 1. His Status 3-E is the vestibular exam. MoMo: WBC ~26 and creatinine 3.0 then 4.71.
+SLIDE 12. TEACHING BANDS, NOT AN ASA TABLE. GRUBB ET AL. 2020: TODAY’S PE WRITES ASA.
+    SPEAK: Do not call these ASA cutoffs. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. PCV and platelet numbers are teaching flags. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: WBC about 26 and creatinine 3.0 then 4.71.
 
-SLIDE 13. LABS INFORM ASA STATUS. THE PHYSICAL EXAMINATION ASSIGNS IT.
-    SPEAK: Students want to average the columns. The worst compensated vital-system problem that is a constant threat sets the floor. MoMo’s kidneys set Status 4. Willie’s neuro exam set Status 3 even with a normal CBC.
+SLIDE 13. LABS INFORM RISK. THE PHYSICAL EXAMINATION ASSIGNS ASA (GRUBB ET AL. 2020).
+    SPEAK: Students want to average numbers into an ASA score. Do not. The PE assigns status. MoMo’s kidneys set Status 4. Willie’s neuro exam set Status 3 even with a normal CBC.
 
 SLIDE 14. WHEN TO DELAY, WHEN TO PROCEED URGENTLY
     SPEAK: Resuscitate first, then clip. Delay elective OHE for pyoderma. Take GDV to surgery after resuscitation. MoMo: image and run labs, then cancel the exploratory.
@@ -115,20 +115,20 @@ SLIDE 37. Key points
     SPEAK: Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.
 
 SLIDE 38. DVM 612  ·  PRINCIPLES OF SURGERY
-    SPEAK: Take questions. If none: Willie versus MoMo ASA, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.
+    SPEAK: Take questions. If none: Willie versus MoMo ASA from the 2020 AAHA table, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.
 
 
-APPENDIX  ·  FULL REFERENCES  (hall slides use the short list)
+APPENDIX  ·  FULL REFERENCES
 1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Ch. 4, 5, 6, 9. Doses and dilutions on the slides are not quoted from Fossum pages.
 2. Hendrickson DA, Baird AN. Turner and McIlwraith's Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. ISBN 978-1-118-27323-4.
 3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017 (copyright 2018). ISBN 978-0-323-32065-8.
-4. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207-1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak.
-5. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.
-6. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155.
-7. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed. Wash 2 to 4 min. Avoid eyes and mucous membranes.
-8. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1-5.
-9. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020.
-10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216.
-11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701.
+4. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82. doi:10.5326/JAAHA-MS-7055. ASA companion table; healthy adult food 4-6 h; water until premedication; neonates/<2 kg food fast no longer than 1-2 h; correct K+ >6.0 mEq/L before anesthesia.
+5. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1-5. Start 30-60 min before incision; skip clean OHE/orchiectomy; postop rarely required. Does not publish cefazolin mg/kg.
+6. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207-1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak; 1:2 corneal edema in 1/15 eyes.
+7. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.
+8. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155. If this bottle is used for a Roberts 0.2% field, dilute 1:25 (1 mL + 24 mL).
+9. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed NDC 54771-8701; setid 4a2567ca-26b9-4078-b3e3-4695f50899b4. Wash 2 to 4 min. Avoid eyes and mucous membranes.
+10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216. First dose within 30 min of surgery; second dose if surgery lasted >90 min. Abstract does not print mg/kg.
+11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Does not say q90 min.
 
-HALL TYPE: titles 36 pt, body 24 pt, smallest on-slide letter 20 pt (footer). 107-seat lecture hall.
+TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
