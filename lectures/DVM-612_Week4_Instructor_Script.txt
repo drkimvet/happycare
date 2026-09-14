@@ -1,149 +1,172 @@
-DVM 612 — Willie case instructor script
+DVM 612 — Week 4 instructor script
 
+Two real hospital cases: Willie (Cavalier, ASA III-E, sedated for ear clean) and MoMo (DSH, ASA IV-E, exploratory cancelled). Owner names, addresses, phones, and emails stay off slides and off this script.
+Skip the large-animal slide if the hour is tight.
 
-SLIDE 1. DVM 612 · PRINCIPLES OF SURGERY
-    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. We will carry one real patient through all three: Willie, a 6-year 11-month MN Cavalier, 13.7 kg, who became ataxic over about an hour, with a severe left ear infection. Assign his ASA, decide what you anesthetize him for tonight, and own the next 24 hours.
+SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
+    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. Two real patients from the same hospital. Willie, a 6-year 11-month MN Cavalier, 13.7 kg, acute vestibular crisis plus left otitis — we sedated him. MoMo, a 6-year SF DSH, 4.25 kg, vomiting that looked like a foreign-body surgery — imaging cancelled the cut. Assign both ASA statuses. Owner identifiers stay off these slides.
 
-SLIDE 2. By the end of this hour you will be able to
-    SPEAK: Read the five objectives aloud. Willie is the patient we keep coming back to.
+SLIDE 2. LEARNING OBJECTIVES
+    SPEAK: Read the five objectives aloud. Willie is the running surgical/sedation case. MoMo is the ASA IV-E cat whose preoperative evaluation cancelled an exploratory.
 
-SLIDE 3. Sixty-minute plan
-    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep) and Willie’s case.
+SLIDE 3. HOW WE WILL SPEND THE HOUR
+    SPEAK: Keep a visible timer. If discussion runs, protect Part II (prep pictures) and both cases. Skip the large-animal slide if you are behind.
 
-SLIDE 4. Why this hour is not optional
+SLIDE 4. SURGICAL SITE INFECTION, HARM, AND PROFESSIONAL STANDARD
     SPEAK: DVM 612 will hold you to this: a beautiful closure that bleeds in recovery is a failed surgery. The first 24 hours are part of the operation.
 
-SLIDE 5. Halsted’s principles — the through-line for today
+SLIDE 5. EVERY PRINCIPLE HAS A PREOP OR POSTOP ACTION, NOT ONLY AN INTRAOPERATIVE ONE
     SPEAK: Do not spend more than 2 minutes. Point: every Halsted principle has a preop or postop action, not just an intraoperative one.
 
-SLIDE 6. The perioperative continuum
+SLIDE 6. ONE PATIENT, THREE ROOMS, ONE SURGEON’S RESPONSIBILITY
     SPEAK: The red thread: you do not hand off responsibility at the OR door. Anesthesia gets the dog ready for surgical prep; surgery owns prep through the last skin suture; both own recovery.
 
-SLIDE 7. Preoperative evaluation and the peri-operative plan
+SLIDE 7. PART I  ·  3–24 MINUTES
     SPEAK: Transition. Ask: who has watched an elective surgery get cancelled at induction? That is a successful preop exam.
 
-SLIDE 8. Goals of the preoperative evaluation
+SLIDE 8. DECIDE: PROCEED  ·  DELAY  ·  STABILIZE  ·  REFER
     SPEAK: Four jobs. Students often skip #3 and #4. Elective surgery on an unstable patient is not bravery.
 
-SLIDE 9. History that actually changes the plan
+SLIDE 9. IF YOU DO NOT ASK, YOU WILL DISCOVER IT UNDER THE DRAPE
     SPEAK: Spend 2 minutes. Highlight Doberman/vWD, brachycephalics, and last meal as exam favorites. Never premedicate before you have examined the patient.
 
-SLIDE 10. Physical examination — do it yourself
+SLIDE 10. PREANESTHETIC PE, INDICATED LABS, INTERPRET, THEN ASSIGN ASA
     SPEAK: Never skip PE because the technician already did vitals. DVM 612 students share patients with anesthesia. The surgeon still owns the decision to proceed.
 
-SLIDE 11. ASA physical status — memorize this wording
-    SPEAK: Read ASA I and III slowly. The emergency E modifier is used clinically (ASA III-E for an acute vestibular crisis that still needs sedation tonight). Next slides: Willie.
+SLIDE 11. AMERICAN SOCIETY OF ANESTHESIOLOGISTS (ASA) CLASSIFICATION SYSTEM
+    SPEAK: Read statuses 1 and 3 slowly, then 4. This is the wording to memorize. E means emergency. Next: four 60-second cases, then the two real records — Willie (3-E, we sedated) and MoMo (4-E, we did not cut).
 
-SLIDE 12. Assign the ASA — 60-second cases
-    SPEAK: Cold-call four students. C is the real ASA III we will unpack. D is the trap: do not induce a hyperkalemic blocked cat because surgery is on the board.
+SLIDE 12. SAY THE NUMBER, THEN WHETHER YOU PROCEED TODAY
+    SPEAK: Cold-call four students. C is Willie — we will unpack the sedation. D is MoMo — the preoperative evaluation cancelled the exploratory. The hyperkalemic blocked cat still appears in the knowledge check; do not lose that trap.
 
-SLIDE 13. Real ASA III case — Willie
+SLIDE 13. 6 Y 11 MO MN CAVALIER KING CHARLES SPANIEL  ·  13.7 KG  ·  BCS 6/9
     SPEAK: This is Willie. Do not skip the murmur. Right-sided knuckling with left circling is why you cannot call this just an ear flush. Mentation was quiet/dull.
 
-SLIDE 14. Why Willie is ASA III-E — and what we actually did
-    SPEAK: The drum was seen, then ointment was infused. Aminoglycosides are a risk if the middle or inner ear is involved even when the drum looks present and swollen. Cavaliers also bring mitral valve disease and Chiari-like malformation to the vestibular list. Mention both, then return to the ear as the leading infectious cause. No NSAID after DexSP.
+SLIDE 14. COMPENSATED  ·  FUNCTIONAL LIMITATION  ·  ACUTE  ·  NOT A CONSTANT THREAT TO LIFE
+    SPEAK: The drum was seen, then ointment was infused. Aminoglycosides are a risk if the middle or inner ear is involved even when the drum looks present and swollen. Cavaliers also bring mitral valve disease and Chiari-like malformation to the vestibular list. Mention both, then return to the ear as the leading infectious cause. No NSAID after DexSP. Next patient: MoMo, the cat we did not take to surgery.
 
-SLIDE 15. Preoperative diagnostics — indicated, not automatic
-    SPEAK: Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. Know your hospital policy and be able to defend it.
+SLIDE 15. 6 YO SF DSH  ·  4.25 KG  ·  BCS 5/9  ·  SAME HOSPITAL, SAME WEEK
+    SPEAK: Owner identifiers stay off the slide. MoMo is the cat whose films looked like ‘maybe GI’ and were kidneys. Cold-call: who would have clipped her for an exploratory on history alone? That is the mistake this hour exists to prevent.
 
-SLIDE 16. Stabilize before you sterilize
-    SPEAK: One sentence: resuscitation is not delayed for clipping. Elective OHE is delayed for pyoderma. GDV is not delayed for a dental cleaning that was also booked.
+SLIDE 16. UNCOMPENSATED  ·  CONSTANT THREAT  ·  ACUTE  ·  NOT A SURGICAL ABDOMEN
+    SPEAK: NSAIDs are contraindicated. Diuresis will not fix a destroyed kidney. If someone still wants to ‘just look inside,’ that is not surgery — that is harm. Be respectful; this cat died. The teaching point is judgment, not spectacle.
 
-SLIDE 17. Fasting — traditional teaching vs. current practice
+SLIDE 17. REQUEST THE MINIMUM TESTS THIS PATIENT AND THIS PROCEDURE ACTUALLY NEED
+    SPEAK: Avoid dogma. Requesting nothing in a geriatric patient is as wrong as a $800 panel on every puppy. MoMo’s rising creatinine is the example of not ignoring a test you ordered. Know your hospital policy and be able to defend it.
+
+SLIDE 18. ELECTIVE SURGERY IS CANCELLED MORE OFTEN BY GOOD JUDGMENT THAN BY BAD LUCK
+    SPEAK: One sentence: resuscitation is not delayed for clipping. Elective OHE is delayed for pyoderma. GDV is not delayed for a dental cleaning that was also booked. MoMo is the other direction: do not take a medical kidney cat to an exploratory because FB was on the list.
+
+SLIDE 19. KNOW BOTH: FOSSUM/TRADITIONAL LANGUAGE AND AAHA-STYLE SHORTER FASTS
     SPEAK: Teach AAHA-style 4–6 h for healthy small animals as best practice. Older sources still say overnight NPO — explain aspiration vs hypoglycemia. Ruminants are a different physiology, not a different lecture.
 
-SLIDE 18. Informed consent is a surgical skill
+SLIDE 20. IF YOU DID NOT SAY IT, YOU DID NOT CONSENT
     SPEAK: Students under-consent electives. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR explicitly.
 
-SLIDE 19. Checklist and the analgesia plan belong in preop
-    SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students.
+SLIDE 21. PAIN IS NOT A POSTOPERATIVE SURPRISE
+    SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Analgesia: locals are underused by students. Next slides: the kit, then the anesthesia record you actually fill.
 
-SLIDE 20. Surgical antimicrobial prophylaxis — stewardship, not ritual
+SLIDE 22. IF IT IS NOT HERE BEFORE INDUCTION, YOU ARE NOT READY
+    SPEAK: Ninety seconds. Point at Pre-op, then Prep, then Post-op. Ask: what is missing in your teaching lab today? MoMo never needed the clippers. Willie needed monitoring even for an ear clean.
+
+SLIDE 23. FILL IT BEFORE THE FIRST DRUG  ·  THIS IS A TEACHING FORM, NOT A HOSPITAL ORIGINAL
+    SPEAK: Walk the header: ASA III-E is written before alfaxalone. DexSP means no NSAID. Grid every 5 minutes while sedated. Recovery boxes are part of the same page. Blank template lives with this lecture if they want to photograph it.
+
+SLIDE 24. A COMPLETED PREOPERATIVE EVALUATION CAN END WITH DO NOT INDUCE
+    SPEAK: This is the point of the hour. The form is not only for patients who get clipped. Recording the decision not to operate is a surgical document. NSAIDs contraindicated. Rising creatinine. Owner elected euthanasia — say it once, respectfully, then move.
+
+SLIDE 25. AAHA/AAFP 2022
     SPEAK: Elective canine OHE is a clean procedure — do not invent a 14-day cephalexin prescription. Willie’s left ear is infected, so antimicrobials are treatment, not clean prophylaxis.
 
-SLIDE 21. Knowledge check — preoperative
+SLIDE 26. ANSWER BEFORE WE WALK TO THE PREP ROOM
     SPEAK: Take 2 minutes. Then move. Do not let this become a 10-minute debate.
 
-SLIDE 22. Patient and surgeon preparation
+SLIDE 27. PART II  ·  24–44 MINUTES
     SPEAK: This is the skill cluster for this hour: hair removal, skin prep, positioning, scrubbing/attire, gowning/gloving, draping. Lost asepsis that nobody names is how patients get SSI.
 
-SLIDE 23. What we actually check in patient and surgeon prep
+SLIDE 28. THE SAME SIX BOXES EVERY TIME YOU TAKE A PATIENT TO SURGERY
     SPEAK: Read the six boxes. Students should be able to name them without mixing in the cutting steps.
 
-SLIDE 24. Sequence — do not invert the rooms
+SLIDE 29. PREP ROOM IS DIRTY. OR IS STERILE. THE DOG MOVES ONCE.
     SPEAK: Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before a surgical plane — patient wakes, contaminates, gets clipper lacerations.
 
-SLIDE 25. Hair removal
-    SPEAK: Demonstrate with hands on your own abdomen if no model. Missed hair at the drape edge fails the prep.
+SLIDE 30. #40 BLADE  ·  CLIPPER, NOT RAZOR  ·  FIELD WIDE ENOUGH TO EXTEND THE INCISION
+    SPEAK: The yellow box is the field. If the drape later shows hair, the clip failed. Willie: if you only flush an ear you still clip what you will contaminate; a TECA field is the whole pinna and lateral skull, not this abdomen. MoMo never reached this slide.
 
-SLIDE 26. Know the field before you pick up the clippers
+SLIDE 31. IF YOU CANNOT DESCRIBE THE FIELD, YOU ARE NOT READY TO CUT
     SPEAK: One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.
 
-SLIDE 27. Skin antiseptics — choose with anatomy, not loyalty
+SLIDE 32. NO SINGLE AGENT IS PERFECT; TECHNIQUE AND CONTACT TIME BEAT BRAND
     SPEAK: CHG–alcohol is a common choice for trunk skin when not contraindicated. Willie’s left ear is exactly where CHG and aminoglycosides can harm a swollen drum and middle ear.
 
-SLIDE 28. How to scrub the patient
-    SPEAK: If time, mime the spiral on the lectern. Mention hanging-limb prep: start at incision, work distally toward the dirty foot, then the wrapped foot is handed off.
+SLIDE 33. CENTER → PERIPHERY  ·  NEW SPONGE EVERY TIME YOU LEAVE THE INCISION  ·  HONOR CONTACT TIME
+    SPEAK: Mime the spiral. The picture is abdomen; the rule is the same on an ear or a limb. CHG in Willie’s ear is a real harm.
 
-SLIDE 29. Positioning is physiology, not just ‘on its back’
+SLIDE 34. PRESSURE, STRETCH, AND ASPIRATION LIVE HERE
     SPEAK: Canine OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.
 
-SLIDE 30. Four-quadrant draping
-    SPEAK: Four-quadrant is not optional style. Demonstrate air-cuffing the drape. Hair at the edge means re-clip or re-drape.
+SLIDE 35. LEFT PICTURE IS WRONG  ·  RIGHT PICTURE IS THE FIELD YOU ACTUALLY WANT
+    SPEAK: Spend 90 seconds on the two pictures. Students remember the hairy window. Then: gown/glove before you drape, timeout before you cut.
 
-SLIDE 31. Surgeon preparation
-    SPEAK: Closed gloving after gowning is preferred. Talking through a contaminated glove replacement: both gloves off if you are unsure, then start over.
+SLIDE 36. YOU ARE A FOMITE UNTIL YOU ARE NOT  ·  MONITORING IS ON BEFORE THE FIRST DRUG
+    SPEAK: Call out the inset as the correct closed-glove mechanic. The workstation picture is the minimum monitoring set. Students should name SpO2, ETCO2, ECG, temp, fluids without looking.
 
-SLIDE 32. Breaks in asepsis — recognize, announce, fix
+SLIDE 37. IF YOU CONTAMINATE AND STAY SILENT, THE PATIENT PAYS
     SPEAK: Culture in lab: we praise people who say I just contaminated my sleeve. We do not praise silent heroics.
 
-SLIDE 33. Never-events — these stop the surgery
+SLIDE 38. DVM 612 PROFESSIONAL STANDARD  ·  PATIENT SAFETY, NOT A TRIVIA LIST
     SPEAK: Connect hemorrhage, closure, and asepsis to this hour. Ureter injury is a calm, well-prepped, well-exposed patient problem.
 
-SLIDE 34. Knowledge check — preparation
+SLIDE 39. WHICH OF THESE IS ACCEPTABLE?
     SPEAK: C is the safety slide. D is the nuanced yes.
 
-SLIDE 35. Postoperative care
+SLIDE 40. PART III  ·  44–57 MINUTES
     SPEAK: Shift energy. Students think postop is ‘the techs’ job.’ It is not.
 
-SLIDE 36. Immediate recovery — the surgery is not over
-    SPEAK: ABC plus temperature plus pain. Hemorrhage speech: do not send a pale recovering OHE to the kennel because ‘she’s just groggy.’
+SLIDE 41. AIRWAY, BREATHING, CIRCULATION, TEMPERATURE, PAIN — THEN THE KENNEL
+    SPEAK: The picture is a Cavalier in recovery — that is Willie. Pulse ox on the tongue is correct in recovery. Do not send a pale OHE to the kennel because she looks groggy.
 
-SLIDE 37. Pain assessment is a vital sign
+SLIDE 42. IF IT IS NOT WRITTEN, IT WAS NOT DONE  ·  TEACHING FORM
+    SPEAK: Students should be able to fill this after a spay. Call-the-surgeon line at the bottom is the discharge talk they will repeat to clients. Photograph it.
+
+SLIDE 43. IF YOU DO NOT SCORE IT, YOU WILL NOT TREAT IT
     SPEAK: Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — Willie already received DexSP.
 
-SLIDE 38. The incision after you leave it
+SLIDE 44. PROTECT THE APPOSITION YOU JUST CREATED
     SPEAK: Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’
 
-SLIDE 39. The first 24 hours — what fails a surgery after the OR
+SLIDE 45. HEMORRHAGE, HERNIA, AND DEHISCENCE SHOW UP AFTER YOU HAVE GONE HOME
     SPEAK: Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.
 
-SLIDE 40. Surgical report — if it is not written, it was not done
+SLIDE 46. THE NEXT DOCTOR AT 2 A.M. IS YOUR AUDIENCE
     SPEAK: For Willie: neuro exam, ASA III-E, TM visible but swollen, DexSP given, no NSAID, murmur, films, MRI plan.
 
-SLIDE 41. Discharge instructions — in the client’s language
+SLIDE 47. VERBAL + WRITTEN. TEACH-BACK. ONE CAREGIVER DEMONSTRATES THE E-COLLAR.
     SPEAK: Role-play one sentence: ‘If the incision opens and you see fat or intestine, cover with a clean wet towel and come now.’ Students write too much physiology and too few phone numbers.
 
-SLIDE 42. When to come back tonight — teach this verbatim
+SLIDE 48. IF THE CLIENT CANNOT REPEAT THESE, YOU DID NOT DISCHARGE
     SPEAK: Pale gums + distended abdomen after OHE is never ‘wait until morning.’
 
-SLIDE 43. Fluids, feeding, and the rest of the animal
+SLIDE 49. SURGERY IS A WHOLE-PATIENT EVENT
     SPEAK: Cats and food. Diabetics and insulin. Short.
 
-SLIDE 44. Large animal — same principles, different dirt
+SLIDE 50. FIELD SURGERY IS STILL HALSTED; IT IS NOT AN EXCUSE TO SKIP CLIP, GLOVES, AND A DRAPE
     SPEAK: One minute. Halsted travels to the barn. Then get back to Willie.
 
-SLIDE 45. Walk Willie through the whole hour
-    SPEAK: Walk Willie without questions until the end. One-sentence contrast: a healthy Lab OHE is ASA I and gets no routine antibiotics. Willie is the opposite.
+SLIDE 51. YOU ARE THE SURGEON. THE OWNER IS IN RECEPTION.
+    SPEAK: Walk Willie without questions until the end. Then one sentence on MoMo: the same hour of preoperative evaluation decided not to clip her. A healthy Lab OHE is ASA I and gets no routine antibiotics. Willie is III-E. MoMo is IV-E and not a surgical abdomen.
 
-SLIDE 46. Key points from this hour
-    SPEAK: Stop here if time is gone. Willie is the ASA III-E they should be able to defend.
+SLIDE 52. BOTH ARE PREOPERATIVE EVALUATION  ·  ONLY ONE REACHES THE CLIPPERS
+    SPEAK: This is the last content slide if time is gone. Healthy Lab OHE is only the ASA I contrast.
 
-SLIDE 47. Take-home
+SLIDE 53. IF YOU REMEMBER SIX THINGS, REMEMBER THESE
+    SPEAK: Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.
+
+SLIDE 54. PREPARE THE PATIENT. PREPARE YOURSELF. OWN THE NEXT 24 HOURS.
     SPEAK: Close the loop to slide 1.
 
-SLIDE 48. References
+SLIDE 55. SOURCES USED IN THIS LECTURE
     SPEAK: Fossum is the text behind this hour.
 
-SLIDE 49. Questions
-    SPEAK: Take questions. If none: what would you do differently for Willie than for a healthy Labrador spay? Dismiss on time.
+SLIDE 56. DVM 612  ·  PRINCIPLES OF SURGERY
+    SPEAK: Take questions. If none: Willie vs MoMo ASA and why only Willie was anesthetized. Dismiss on time.
