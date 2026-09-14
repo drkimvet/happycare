@@ -100,8 +100,8 @@ SLIDE 31. THE SAME SIX BOXES EVERY TIME YOU TAKE A PATIENT TO SURGERY
 SLIDE 32. PREP ROOM IS DIRTY. OR IS STERILE. THE DOG MOVES ONCE.
     SPEAK: Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before a surgical plane — patient wakes, contaminates, gets clipper lacerations.
 
-SLIDE 33. #40 BLADE  ·  CLIPPER, NOT RAZOR  ·  FIELD WIDE ENOUGH TO EXTEND THE INCISION
-    SPEAK: The yellow box is the field. If the drape later shows hair, the clip failed. Willie: if you only flush an ear you still clip what you will contaminate; a TECA field is the whole pinna and lateral skull, not this abdomen. MoMo never reached this slide.
+SLIDE 33. REAL CLINIC PHOTOGRAPHS  ·  #40 CLIPPER, NOT RAZOR  ·  FIELD WIDE ENOUGH TO EXTEND
+    SPEAK: Left photo is a real clip in progress and still too narrow — that is the teaching point. Right photo is a real 24-hour OHE: the clip is the field you needed yesterday. Willie: TECA field is pinna and skull, not abdomen. MoMo never reached clippers.
 
 SLIDE 34. IF YOU CANNOT DESCRIBE THE FIELD, YOU ARE NOT READY TO CUT
     SPEAK: One minute. Orthopedic hang-prep is the concept they need: the foot is dirty, wrapped, and you prep from incision toward the foot, never reverse.
@@ -109,17 +109,17 @@ SLIDE 34. IF YOU CANNOT DESCRIBE THE FIELD, YOU ARE NOT READY TO CUT
 SLIDE 35. NO SINGLE AGENT IS PERFECT; TECHNIQUE AND CONTACT TIME BEAT BRAND
     SPEAK: CHG–alcohol is a common choice for trunk skin when not contraindicated. Willie’s left ear is exactly where CHG and aminoglycosides can harm a swollen drum and middle ear.
 
-SLIDE 36. CENTER → PERIPHERY  ·  NEW SPONGE EVERY TIME YOU LEAVE THE INCISION  ·  HONOR CONTACT TIME
-    SPEAK: Mime the spiral. The picture is abdomen; the rule is the same on an ear or a limb. CHG in Willie’s ear is a real harm.
+SLIDE 36. TECHNIQUE DIAGRAM  ·  CENTER → PERIPHERY  ·  REAL PHOTOS ARE ON THE CLIP AND DRAPE SLIDES
+    SPEAK: Mime the spiral. No open-license spiral-prep photograph was available; this stays a diagram. Real clip, drape, anesthesia, and recovery photos are adjacent.
 
-SLIDE 37. PRESSURE, STRETCH, AND ASPIRATION LIVE HERE
-    SPEAK: Canine OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.
+SLIDE 37. REAL OR PHOTOGRAPH  ·  DORSAL RECUMBENCY, AIRWAY, IV, MONITORING, V-TROUGH
+    SPEAK: This is a real dog in dorsal recumbency. Point: airway and monitoring are on before the clip. Over-splitting femurs is a student habit. GDV positioning can worsen caval compression.
 
-SLIDE 38. LEFT PICTURE IS WRONG  ·  RIGHT PICTURE IS THE FIELD YOU ACTUALLY WANT
-    SPEAK: Spend 90 seconds on the two pictures. Students remember the hairy window. Then: gown/glove before you drape, timeout before you cut.
+SLIDE 38. REAL CLINIC PHOTOGRAPHS  ·  GOWN, GLOVE, BOX THE FIELD, THEN THE LARGE DRAPE
+    SPEAK: Left is a real spay: gown/mask/drape are present, but hair is still at the window — that is the fail. Right is a real sterile field. Then timeout before you cut.
 
-SLIDE 39. YOU ARE A FOMITE UNTIL YOU ARE NOT  ·  MONITORING IS ON BEFORE THE FIRST DRUG
-    SPEAK: Call out the inset as the correct closed-glove mechanic. The workstation picture is the minimum monitoring set. Students should name SpO2, ETCO2, ECG, temp, fluids without looking.
+SLIDE 39. DIAGRAM FOR THE GLOVE  ·  PHOTOGRAPH FOR THE MACHINE
+    SPEAK: Call out the inset as closed gloving. Students name SpO2, ETCO2, ECG, temp, fluids off the real workstation photo.
 
 SLIDE 40. IF YOU CONTAMINATE AND STAY SILENT, THE PATIENT PAYS
     SPEAK: Culture in lab: we praise people who say I just contaminated my sleeve. We do not praise silent heroics.
@@ -133,8 +133,8 @@ SLIDE 42. WHICH OF THESE IS ACCEPTABLE?
 SLIDE 43. PART III  ·  44–57 MINUTES
     SPEAK: Shift energy. Students think postop is ‘the techs’ job.’ It is not.
 
-SLIDE 44. AIRWAY, BREATHING, CIRCULATION, TEMPERATURE, PAIN — THEN THE KENNEL
-    SPEAK: The picture is a Cavalier in recovery — that is Willie. Pulse ox on the tongue is correct in recovery. Do not send a pale OHE to the kennel because she looks groggy.
+SLIDE 44. REAL CLINIC PHOTOGRAPH  ·  E-COLLAR, IV, CLIPPED ABDOMEN, NOT LEFT ALONE
+    SPEAK: Real recovery: e-collar, IV, clipped abdomen. Do not send a pale OHE to the kennel because she looks groggy.
 
 SLIDE 45. IF IT IS NOT WRITTEN, IT WAS NOT DONE  ·  TEACHING FORM
     SPEAK: Students should be able to fill this after a spay. Call-the-surgeon line at the bottom is the discharge talk they will repeat to clients. Photograph it.
@@ -142,8 +142,8 @@ SLIDE 45. IF IT IS NOT WRITTEN, IT WAS NOT DONE  ·  TEACHING FORM
 SLIDE 46. IF YOU DO NOT SCORE IT, YOU WILL NOT TREAT IT
     SPEAK: Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — Willie already received DexSP.
 
-SLIDE 47. PROTECT THE APPOSITION YOU JUST CREATED
-    SPEAK: Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’
+SLIDE 47. REAL 24-HOUR OHE PHOTOGRAPH  ·  PROTECT THE APPOSITION YOU JUST CREATED
+    SPEAK: Real 24-hour OHE. Licking and basketball-with-the-dog are the two discharge failures. Be concrete: no off-leash for 14 days.
 
 SLIDE 48. HEMORRHAGE, HERNIA, AND DEHISCENCE SHOW UP AFTER YOU HAVE GONE HOME
     SPEAK: Spend time on hemorrhage vs. seroma (students confuse them) and skin vs. fascial dehiscence. Evisceration protocol in one breath.

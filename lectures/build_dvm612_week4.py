@@ -150,7 +150,9 @@ def notes(slide, text):
 def add_pic(slide, name, l, t, w, h):
     path = ASSETS / name
     if not path.exists():
-        raise FileNotFoundError(path)
+        path = ASSETS / "real" / name
+    if not path.exists():
+        raise FileNotFoundError(name)
     return slide.shapes.add_picture(str(path), l, t, w, h)
 
 
@@ -683,19 +685,16 @@ for i, (n, t) in enumerate(steps):
 notes(s, "Classic fail: clipping in the OR, or sterile prep in the prep room then dragging a wet dog across a dirty corridor without a clean transfer. Another fail: starting the clip before a surgical plane — patient wakes, contaminates, gets clipper lacerations.")
 
 # 23 Hair
-s = new_content("Hair removal — clip after induction, not last night", "#40 blade  ·  clipper, not razor  ·  field wide enough to extend the incision")
-add_pic(s, "prep_ohe_clip_wide.png", Inches(0.4), Inches(1.15), Inches(7.3), Inches(5.9))
-add_round(s, Inches(7.85), Inches(1.15), Inches(5.0), Inches(5.9), WHITE)
-add_text(s, Inches(8.1), Inches(1.3), Inches(4.55), Inches(0.4), "OHE / celiotomy field", size=16, bold=True, color=NAVY)
-add_bullets(s, Inches(8.05), Inches(1.75), Inches(4.6), Inches(5.0), [
-    "Xiphoid (or slightly cranial) to pubis, widely lateral past the nipples — a rectangle, not a bikini strip.",
-    "Clip with the grain, then against, to the skin. Vacuum the hair.",
-    "~20 cm beyond the planned incision is a Fossum-style working rule.",
-    "Do not clip the night before: bacterial load rises.",
-    "Razor = micro-nicks = higher SSI. Clipper burn is a wound.",
-    "Airway in and depth adequate BEFORE the clippers start.",
-], size=13, spacing=6)
-notes(s, "The yellow box is the field. If the drape later shows hair, the clip failed. Willie: if you only flush an ear you still clip what you will contaminate; a TECA field is the whole pinna and lateral skull, not this abdomen. MoMo never reached this slide.")
+s = new_content("Hair removal — clip after induction, not last night", "Real clinic photographs  ·  #40 clipper, not razor  ·  field wide enough to extend")
+add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.38), RED)
+add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.38), "Too narrow — hair still at the margin", size=13, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "clip_cat.jpg", Inches(0.4), Inches(1.50), Inches(6.2), Inches(3.55))
+add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.38), GREEN)
+add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.38), "24 h after OHE — this is the clip you needed", size=13, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "spay_incision.jpg", Inches(6.75), Inches(1.50), Inches(6.2), Inches(3.55))
+add_round(s, Inches(0.4), Inches(5.18), Inches(12.55), Inches(1.9), WHITE)
+add_text(s, Inches(0.6), Inches(5.32), Inches(12.2), Inches(1.6), "Xiphoid (or slightly cranial) to pubis, widely lateral past the nipples — a rectangle, not a bikini strip. Clip with the grain, then against, to the skin. Vacuum. ~20 cm beyond the planned incision. Do not clip the night before. Razor = micro-nicks = higher SSI. Airway in and depth adequate BEFORE the clippers start.\nPhotos: Uwe Gille, CC0 (cat clip); Liannadavis, CC BY-SA 4.0 (OHE incision).", size=14, color=INK)
+notes(s, "Left photo is a real clip in progress and still too narrow — that is the teaching point. Right photo is a real 24-hour OHE: the clip is the field you needed yesterday. Willie: TECA field is pinna and skull, not abdomen. MoMo never reached clippers.")
 
 # 24 Common clip fields
 s = new_content("Know the field before you pick up the clippers", "If you cannot describe the field, you are not ready to cut")
@@ -735,55 +734,47 @@ add_text(s, Inches(9.1), Inches(2.05), Inches(3.55), Inches(4.4), "Isopropyl/eth
 notes(s, "CHG–alcohol is a common choice for trunk skin when not contraindicated. Willie’s left ear is exactly where CHG and aminoglycosides can harm a swollen drum and middle ear.")
 
 # 26 Technique
-s = new_content("How to scrub the patient", "Center → periphery  ·  new sponge every time you leave the incision  ·  honor contact time")
+s = new_content("How to scrub the patient", "Technique diagram  ·  center → periphery  ·  real photos are on the clip and drape slides")
 add_pic(s, "prep_spiral_antiseptic.png", Inches(0.4), Inches(1.15), Inches(7.4), Inches(5.9))
 add_round(s, Inches(7.95), Inches(1.15), Inches(4.9), Inches(5.9), WHITE)
 add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", size=16, bold=True, color=NAVY)
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Dirty prep in the prep room; sterile prep in the OR.",
     "Start at the planned incision. Spiral out. Never bring a dirty sponge back to the center.",
-    "Typical teaching: timed 3–5 min or product cycles, then a final paint. Follow the bottle in your lab.",
-    "Damp-to-dry, not a lake. Puddles wick bacteria and soak the patient cold.",
+    "Typical teaching: timed 3–5 min or product cycles, then a final paint.",
+    "Damp-to-dry, not a lake.",
     "CHG off the cornea and out of the middle ear — Willie’s swollen drum.",
-    "Hanging limb: prep from incision toward the dirty foot, never reverse.",
+    "This spiral is a diagram. The clip and drape slides are real clinic photographs.",
 ], size=13, spacing=6)
-notes(s, "Mime the spiral. The picture is abdomen; the rule is the same on an ear or a limb. CHG in Willie’s ear is a real harm.")
+notes(s, "Mime the spiral. No open-license spiral-prep photograph was available; this stays a diagram. Real clip, drape, anesthesia, and recovery photos are adjacent.")
 
 # 27 Position
-s = new_content("Positioning is physiology, not just ‘on its back’", "Pressure, stretch, and aspiration live here")
-cards = [
-    ("Dorsal recumbency", "OHE, most celiotomies. Straight spine, hind limbs caudal not forced into a split that strains the hips of a dysplastic dog. V-trough or sandbags. Head/neck neutral for the airway."),
-    ("Lateral", "Thoracotomy, some mass removals, GDV sometimes after decompression. Down lung, down vessels, down muscles — pad the elbow, greater trochanter, acromion."),
-    ("Sternal / perineal", "Anal sac, some urinary, dorsal spinal. Do not over-flex the neck of brachycephalics. Purse-string the anus when indicated — and remove it at the end."),
-    ("Padding & safety", "Hypothermia: warming devices that cannot burn. Eyes lubricated. Endotracheal tube not kinked. Electrosurgery pad contact. Ties not tourniquets."),
-]
-for i, (t, d) in enumerate(cards):
-    col = i % 2
-    row = i // 2
-    x = Inches(0.45) + Inches(col * 6.45)
-    y = Inches(1.2) + Inches(row * 2.75)
-    card(s, x, y, Inches(6.25), Inches(2.55), t, d, accent=NAVY if row == 0 else TEAL)
-notes(s, "Canine OHE is dorsal recumbency. Over-splitting femurs of a large dog is a student habit. Mention GDV: even positioning can worsen caval compression — communicate with anesthesia.")
+s = new_content("Positioning is physiology, not just ‘on its back’", "Real OR photograph  ·  dorsal recumbency, airway, IV, monitoring, V-trough")
+add_pic(s, "dog_or.jpg", Inches(0.35), Inches(1.12), Inches(8.35), Inches(5.95))
+add_round(s, Inches(8.85), Inches(1.12), Inches(4.1), Inches(5.95), WHITE)
+add_text(s, Inches(9.05), Inches(1.28), Inches(3.75), Inches(0.45), "Name what you see", size=16, bold=True, color=NAVY)
+add_text(s, Inches(9.05), Inches(1.8), Inches(3.75), Inches(5.0), "• ET tube + pulse ox\n• IV catheter + fluids\n• Anesthesia machine\n• V-trough / padding\n• Ties that are not tourniquets\n• Abdomen not yet clipped — that is next, after a surgical plane\n\nDo not over-split the hips.\nEyes lubricated. Tube not kinked.\n\nPhoto: Anja, CC BY-SA 4.0.", size=14, color=INK)
+notes(s, "This is a real dog in dorsal recumbency. Point: airway and monitoring are on before the clip. Over-splitting femurs is a student habit. GDV positioning can worsen caval compression.")
 
 # 28 Draping
-s = new_content("Four-quadrant draping — hair in the window fails the prep", "Left picture is wrong  ·  right picture is the field you actually want")
-add_round(s, Inches(0.4), Inches(1.12), Inches(6.2), Inches(0.42), RED)
-add_text(s, Inches(0.4), Inches(1.12), Inches(6.2), Inches(0.42), "WRONG — hair in the field", size=14, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "prep_four_quadrant_drape.png", Inches(0.4), Inches(1.58), Inches(6.2), Inches(3.55))
-add_round(s, Inches(6.75), Inches(1.12), Inches(6.2), Inches(0.42), GREEN)
-add_text(s, Inches(6.75), Inches(1.12), Inches(6.2), Inches(0.42), "CORRECT — clipped skin, hair covered", size=14, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "prep_four_quadrant_drape_correct.png", Inches(6.75), Inches(1.58), Inches(6.2), Inches(3.55))
-add_round(s, Inches(0.4), Inches(5.28), Inches(12.55), Inches(1.8), WHITE)
-add_text(s, Inches(0.6), Inches(5.42), Inches(12.2), Inches(1.5), "Four towels box the field (near towel first). Hair must not show at any edge — re-clip or re-drape. Clamp without tenting skin. Large drape over towels; cuff your hands; never shake a drape over the field. Wet-through (strikethrough) is contaminated. Hands stay on the field; below table height is not sterile.", size=15, color=INK)
-notes(s, "Spend 90 seconds on the two pictures. Students remember the hairy window. Then: gown/glove before you drape, timeout before you cut.")
+s = new_content("Draping — hair at the edge fails the prep", "Real clinic photographs  ·  gown, glove, box the field, then the large drape")
+add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.38), RED)
+add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.38), "Real OHE — hair still at the drape", size=13, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "cherry_point_spay.jpg", Inches(0.4), Inches(1.50), Inches(6.2), Inches(3.55))
+add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.38), GREEN)
+add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.38), "Real sterile field — gown, glove, drape", size=13, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "hektor_drape.jpg", Inches(6.75), Inches(1.50), Inches(6.2), Inches(3.55))
+add_round(s, Inches(0.4), Inches(5.18), Inches(12.55), Inches(1.9), WHITE)
+add_text(s, Inches(0.6), Inches(5.32), Inches(12.2), Inches(1.6), "Four towels box the field (near towel first). Hair must not show at any edge — re-clip or re-drape. Large drape over towels; cuff your hands. Wet-through is contaminated. Hands stay on the field.\nPhotos: Cpl. Samuel A. Nasso, U.S. Marine Corps, public domain (left); MSgt Carlotta Holley, U.S. Air Force, public domain (right).", size=14, color=INK)
+notes(s, "Left is a real spay: gown/mask/drape are present, but hair is still at the window — that is the fail. Right is a real sterile field. Then timeout before you cut.")
 
 # 29 Surgeon
-s = new_content("Closed gloving and the anesthesia workstation", "You are a fomite until you are not  ·  monitoring is on before the first drug")
+s = new_content("Closed gloving and a real anesthesia workstation", "Diagram for the glove  ·  photograph for the machine")
 add_pic(s, "prep_closed_gloving.png", Inches(0.35), Inches(1.12), Inches(6.3), Inches(4.15))
-add_pic(s, "prep_gown_glove_anesthesia.png", Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15))
+add_pic(s, "hektor_or.jpg", Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15))
 add_round(s, Inches(0.35), Inches(5.38), Inches(12.6), Inches(1.7), WHITE)
-add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Closed gloving: hands stay inside the gown cuffs while the glove is pulled on (use the inset, not a bare-hand pull). Open gloving is for replacing a contaminated glove. Cap, mask, short nails, no jewelry. Timed or brushless scrub, fingertips-up. Anesthesia: SpO2, capnograph, ECG, temperature, IV fluids, airway — on before induction. Willie needed this for an ear clean. MoMo never reached induction.", size=14, color=INK)
-notes(s, "Call out the inset as the correct closed-glove mechanic. The workstation picture is the minimum monitoring set. Students should name SpO2, ETCO2, ECG, temp, fluids without looking.")
+add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique diagram (hands stay inside the gown cuffs). Right: real K9 anesthesia — cap, mask, ECG/SpO2/ETCO2 monitors, circle system, IV fluids, airway. Monitoring is on before the first drug. Willie needed this for an ear clean. MoMo never reached induction.\nPhoto: MSgt Carlotta Holley, U.S. Air Force, public domain.", size=14, color=INK)
+notes(s, "Call out the inset as closed gloving. Students name SpO2, ETCO2, ECG, temp, fluids off the real workstation photo.")
 
 # 30 Asepsis breaks
 s = new_content("Breaks in asepsis — recognize, announce, fix", "If you contaminate and stay silent, the patient pays")
@@ -831,19 +822,19 @@ s = new_section("Part III  ·  44–57 minutes", "Postoperative care", "Recovery
 notes(s, "Shift energy. Students think postop is ‘the techs’ job.’ It is not.")
 
 # 34 Recovery
-s = new_content("Immediate recovery — stay with the patient", "Airway, breathing, circulation, temperature, pain — then the kennel")
-add_pic(s, "postop_recovery_monitoring.png", Inches(0.35), Inches(1.12), Inches(8.15), Inches(5.95))
+s = new_content("Immediate recovery — stay with the patient", "Real clinic photograph  ·  e-collar, IV, clipped abdomen, not left alone")
+add_pic(s, "remus_recovery.jpg", Inches(0.35), Inches(1.12), Inches(8.15), Inches(5.95))
 add_round(s, Inches(8.6), Inches(1.12), Inches(4.35), Inches(5.95), WHITE)
 add_text(s, Inches(8.8), Inches(1.28), Inches(4.0), Inches(0.4), "Do not leave", size=16, bold=True, color=NAVY)
-add_bullets(s, Inches(8.75), Inches(1.75), Inches(4.05), Inches(5.05), [
+add_bullets(s, Inches(8.75), Inches(1.75), Inches(4.05), Inches(4.4), [
     "Extubate when swallow/gag returns (later in brachycephalics).",
     "SpO2, mm, CRT, pulse. Pale + tachycardia after celiotomy = hemorrhage until proven otherwise.",
     "Rewarm; do not burn.",
-    "Score pain. Give the analgesic you planned. Willie: no NSAID after DexSP.",
     "E-collar on before they can lick.",
-    "A ‘quiet’ animal may be cold, hypotensive, or painful.",
+    "Willie: no NSAID after DexSP.",
 ], size=13, spacing=6)
-notes(s, "The picture is a Cavalier in recovery — that is Willie. Pulse ox on the tongue is correct in recovery. Do not send a pale OHE to the kennel because she looks groggy.")
+add_text(s, Inches(8.8), Inches(6.35), Inches(4.0), Inches(0.55), "Photo: Anja, CC BY-SA 4.0.", size=11, color=MUTED)
+notes(s, "Real recovery: e-collar, IV, clipped abdomen. Do not send a pale OHE to the kennel because she looks groggy.")
 
 # Recovery flowsheet
 s = new_content("Postoperative flowsheet — first 2 hours", "If it is not written, it was not done  ·  teaching form")
@@ -873,22 +864,19 @@ add_bullets(s, Inches(7.05), Inches(1.95), Inches(5.55), Inches(4.5), [
 notes(s, "Score pain. NSAIDs: not in hypovolemia, kidney injury, GI ulcer, or concurrent steroids — Willie already received DexSP.")
 
 # 36 Wound
-s = new_content("The incision after you leave it", "Protect the apposition you just created")
-items = [
-    ("Look", "Twice daily: swelling, discharge, gapping, smell, heat, bruise vs. hematoma. Photograph if the client is anxious."),
-    ("Lick", "E-collar, suit, or inflatable — whatever actually stays on. Licking is the leading cause of dehiscence in student surgeries."),
-    ("Motion", "Leash only. No running, jumping, wrestling, stairs unsupervised. Exercise restriction is a prescription, not a suggestion."),
-    ("Clean", "Usually no topical ointment unless directed. Do not scrub with CHG daily. Clean dirt with saline if needed."),
-    ("Drain", "If placed: record output, site, and when to pull. Never send a drain without a written plan."),
-    ("Suture/staple", "Typically 10–14 days for skin in small animals if healing is routine. Absorbable intradermal: still recheck."),
-]
-for i, (t, d) in enumerate(items):
-    col = i % 3
-    row = i // 3
-    x = Inches(0.45) + Inches(col * 4.25)
-    y = Inches(1.2) + Inches(row * 2.75)
-    card(s, x, y, Inches(4.05), Inches(2.55), t, d, accent=GREEN)
-notes(s, "Licking and basketball-with-the-dog are the two discharge failures. Be concrete: ‘no off-leash for 14 days.’")
+s = new_content("The incision after you leave it", "Real 24-hour OHE photograph  ·  protect the apposition you just created")
+add_pic(s, "spay_incision.jpg", Inches(0.4), Inches(1.12), Inches(6.4), Inches(5.95))
+add_round(s, Inches(6.95), Inches(1.12), Inches(5.95), Inches(5.95), WHITE)
+add_text(s, Inches(7.15), Inches(1.28), Inches(5.55), Inches(0.4), "Protect it", size=16, bold=True, color=NAVY)
+add_bullets(s, Inches(7.1), Inches(1.75), Inches(5.6), Inches(4.7), [
+    "Look twice daily: swelling, discharge, gapping, smell, heat.",
+    "E-collar that actually stays on. Licking is the leading student dehiscence.",
+    "Leash only. No running, jumping, wrestling, unsupervised stairs.",
+    "Usually no daily CHG scrub. Saline if dirty.",
+    "Skin sutures typically 10–14 days if healing is routine.",
+    "Photo: Liannadavis, CC BY-SA 4.0.",
+], size=14, spacing=7)
+notes(s, "Real 24-hour OHE. Licking and basketball-with-the-dog are the two discharge failures. Be concrete: no off-leash for 14 days.")
 
 # 37 Complications
 s = new_content("The first 24 hours — what fails a surgery after the OR", "Hemorrhage, hernia, and dehiscence show up after you have gone home")
@@ -1046,7 +1034,8 @@ add_bullets(s, Inches(0.5), Inches(1.15), Inches(12.2), Inches(5.6), [
     "Johnston S.A., Tobias K.M. Veterinary Surgery: Small Animal. 2nd ed. Elsevier; 2017.",
     "AAHA/AAFP Antimicrobial Stewardship Guidelines, 2022 — surgical prophylaxis.",
     "AAHA Anesthesia and Monitoring Guidelines (current edition) — fasting, PE, monitoring, recovery.",
-], size=15, spacing=8)
+    "Clinical photographs (open license or U.S. government work): Uwe Gille (CC0); Anja (CC BY-SA 4.0); Liannadavis (CC BY-SA 4.0); Cpl. Samuel A. Nasso, USMC (public domain); MSgt Carlotta Holley, USAF (public domain). Closed-gloving and spiral-prep figures are technique diagrams, not clinic photographs.",
+], size=14, spacing=7)
 notes(s, "Fossum is the text behind this hour.")
 
 # 47 Questions
