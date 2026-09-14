@@ -396,37 +396,36 @@ add_text(s, Inches(8.4), Inches(2.3), Inches(4.2), Inches(4.0), "1. Examine the 
 notes(s, "Never skip PE because the technician already did vitals. DVM 612 students share patients with anesthesia. The surgeon still owns the decision to proceed.")
 
 # 11 ASA
-s = new_content("ASA physical status — memorize this wording", "American Society of Anesthesiologists (ASA) classification system")
+s = new_content("ASA physical status — memorize this wording", "American Society of Anesthesiologists (ASA) Classification System")
 rows = [
-    ("1", "Normal, healthy patient", "Elective OHE in a well 1-year-old", GREEN),
-    ("2", "Mild systemic disease, well compensated", "Controlled diabetes; obese but stable; asymptomatic murmur", TEAL),
-    ("3", "Moderate systemic disease that is ongoing but compensated; some functional limitations exist that increase the risk of anesthesia", "Stable CKD; compensated murmur; Willie — vestibular + otitis, walking", GOLD),
-    ("4", "Severe systemic disease that is a constant threat to life; uncompensated disease; high anesthetic risk because vital body systems are involved", "MoMo — rising azotemia, one kidney non-functional; GDV; septic abdomen", RED),
-    ("5", "Moribund patient not expected to live more than 24 hours with or without surgery", "Gastric rupture, catastrophic trauma, end-stage disease", NAVY),
+    ("1", "Normal, healthy patient", "Healthy 1-year-old OHE", GREEN),
+    ("2", "Mild systemic disease, well compensated", "Obesity; asymptomatic murmur; controlled diabetes", TEAL),
+    ("3", "Moderate systemic disease that is ongoing but compensated; some functional limitations exist that increase the risk of anesthesia", "Willie — vestibular + otitis, walking, compensated murmur", GOLD),
+    ("4", "Severe systemic disease that is a constant threat to life, uncompensated disease, high anesthetic risk because vital body systems involved", "MoMo — rising azotemia, non-functional kidney; GDV; septic abdomen", RED),
+    ("5", "Moribund patient not expected to live more than 24 hours with or without surgery", "Gastric rupture; catastrophic trauma; end-stage disease", NAVY),
 ]
-# header
-add_rect(s, Inches(0.5), Inches(1.18), Inches(12.3), Inches(0.45), NAVY)
-add_text(s, Inches(0.65), Inches(1.18), Inches(1.2), Inches(0.45), "ASA", size=14, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(1.9), Inches(1.18), Inches(5.6), Inches(0.45), "Definition", size=14, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(7.6), Inches(1.18), Inches(5.0), Inches(0.45), "Typical example", size=14, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_rect(s, Inches(0.45), Inches(1.12), Inches(12.4), Inches(0.40), NAVY)
+add_text(s, Inches(0.55), Inches(1.12), Inches(2.4), Inches(0.40), "ASA status", size=13, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(3.0), Inches(1.12), Inches(6.4), Inches(0.40), "Definition — this is the wording to memorize", size=13, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(9.4), Inches(1.12), Inches(3.3), Inches(0.40), "Example", size=13, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
 for i, (asa, defn, ex, c) in enumerate(rows):
-    y = Inches(1.63) + Inches(i * 0.88)
-    add_round(s, Inches(0.5), y, Inches(12.3), Inches(0.82), WHITE)
-    add_rect(s, Inches(0.5), y, Inches(1.2), Inches(0.82), c)
-    add_text(s, Inches(0.5), y, Inches(1.2), Inches(0.82), asa, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(1.9), y + Inches(0.06), Inches(5.5), Inches(0.70), defn, size=12, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(7.6), y + Inches(0.06), Inches(5.0), Inches(0.70), ex, size=12, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
-add_round(s, Inches(0.5), Inches(6.15), Inches(12.3), Inches(0.9), GOLD_LT)
-add_text(s, Inches(0.7), Inches(6.28), Inches(11.9), Inches(0.65), "E = emergency. Written as 3-E or 4-E. Willie is 3-E (acute, still compensated). MoMo is 4-E (acute, uncompensated vital-system disease). Assign the number after today’s PE and labs, not from the appointment book.", size=13, color=NAVY)
-notes(s, "Read statuses 1 and 3 slowly, then 4. This is the wording to memorize. E means emergency. Next: four 60-second cases, then the two real records — Willie (3-E, we sedated) and MoMo (4-E, we did not cut).")
+    y = Inches(1.56) + Inches(i * 0.90)
+    add_round(s, Inches(0.45), y, Inches(12.4), Inches(0.84), WHITE)
+    add_rect(s, Inches(0.45), y, Inches(2.35), Inches(0.84), c)
+    add_text(s, Inches(0.45), y, Inches(2.35), Inches(0.84), f"Status {asa}", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(2.95), y + Inches(0.06), Inches(6.35), Inches(0.72), defn, size=13, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(9.4), y + Inches(0.06), Inches(3.25), Inches(0.72), ex, size=12, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
+add_round(s, Inches(0.45), Inches(6.12), Inches(12.4), Inches(0.95), GOLD_LT)
+add_text(s, Inches(0.65), Inches(6.22), Inches(12.05), Inches(0.75), "E = emergency (written Status 3-E or 4-E). Willie is Status 3-E: acute, still compensated. MoMo is Status 4-E: acute, uncompensated, vital systems involved. Assign the number after today’s PE and labs, not from the appointment book.", size=14, color=NAVY)
+notes(s, "Read Status 1, then 3, then 4 slowly. This is the wording to memorize. E means emergency. Next: four 60-second cases, then Willie (3-E, we sedated) and MoMo (4-E, we did not cut).")
 
 # 12 ASA practice
 s = new_content("Assign the ASA — 60-second cases", "Say the number, then whether you proceed today")
 cases = [
-    ("A", "Healthy 8-month Labrador for elective OHE. Normal PE, PCV/TS normal.", "ASA I  ·  proceed", GREEN_LT, GREEN),
-    ("B", "10-year MN Beagle, BCS 8/9, grade 2/6 murmur, no CHF, dental + mass removal.", "ASA II  ·  proceed with monitoring plan", TEAL_LT, TEAL),
-    ("C", "Willie: 6 y 11 mo MN Cavalier, 13.7 kg. Acute ataxia 1 h. AS otitis, TM visible/swollen. Circling left, nystagmus fast-left, right knuckling. Grade II murmur. CV stable.", "ASA III-E  ·  not ‘just dirty ears’ — next slides", GOLD_LT, GOLD),
-    ("D", "MoMo: 6 yo SF DSH, 4.25 kg. Acute vomiting ×2, lethargy, construction at home — possible FB. T 98.0 °F, HR 200, mm pink tacky. Mildly enlarged abdomen.", "Do not cut yet. Imaging + labs first  ·  this became ASA IV-E, not a surgical abdomen", RED_LT, RED),
+    ("A", "Healthy 8-month Labrador for elective OHE. Normal PE, PCV/TS normal.", "ASA Status 1  ·  proceed", GREEN_LT, GREEN),
+    ("B", "10-year MN Beagle, BCS 8/9, grade 2/6 murmur, no CHF, dental + mass removal.", "ASA Status 2  ·  proceed with monitoring plan", TEAL_LT, TEAL),
+    ("C", "Willie: 6 y 11 mo MN Cavalier, 13.7 kg. Acute ataxia 1 h. AS otitis, TM visible/swollen. Circling left, nystagmus fast-left, right knuckling. Grade II murmur. CV stable.", "ASA Status 3-E  ·  not ‘just dirty ears’ — next slides", GOLD_LT, GOLD),
+    ("D", "MoMo: 6 yo SF DSH, 4.25 kg. Acute vomiting ×2, lethargy, construction at home — possible FB. T 98.0 °F, HR 200, mm pink tacky. Mildly enlarged abdomen.", "Do not cut yet. Imaging + labs first  ·  this became ASA Status 4-E, not a surgical abdomen", RED_LT, RED),
 ]
 for i, (let, stem, ans, fill, acc) in enumerate(cases):
     y = Inches(1.2) + Inches(i * 1.35)
