@@ -117,7 +117,7 @@ def anesthesia_record(filled="blank"):
     ]
     preop_v = {
         "blank": ["", "", "", "", "", "", ""],
-        "willie": ["100.8", "132", "52", "pink / 2 s", "quiet, dull", "II/VI left systolic; lungs clear", "Vestibular + AS otitis; TM swollen; murmur; no NSAID after DexSP"],
+        "willie": ["100.8", "132", "52", "pink / 2 s", "quiet, dull", "II/VI left systolic; lungs clear", "Vestibular + AS otitis; TM swollen; murmur; skip NSAID after DexSP"],
         "momo": ["98.0", "200", "30", "pink, tacky / <2", "QAR", "NSR, no murmur; eupneic", "Vomiting; possible FB vs toxin; azotemia; bilateral renomegaly"],
     }[filled]
     for (x0, x1, lab), val in zip(preop_h, preop_v):
@@ -134,16 +134,16 @@ def anesthesia_record(filled="blank"):
     drug_v = {
         "blank": [""] * 6,
         "willie": [
-            "Cerenia IV; DexSP 0.68 mL SQ  ·  no NSAID",
+            "Cerenia IV; DexSP 0.68 mL SQ. Skip NSAID",
             "Alfaxalone 2.74 mL IV (~2 mg/kg of 10 mg/mL)",
             "Injectable sedation for ear clean (not a celiotomy)",
             "IV crystalloid running",
             "Animax infused AS after clean. Aminoglycoside risk if OMI",
-            "Protect airway; pad; he falls. Do not skip monitoring.",
+            "Protect airway; pad; he falls. Monitoring on.",
         ],
         "momo": [
             "None before work-up",
-            "NONE for exploratory. Do not induce",
+            "NONE for exploratory. Record the cancellation",
             "N/A",
             "IVF 1.5× maint (40 mL/kg/d)",
             "Cerenia 1 mg/kg IV q24; ondansetron 0.5 mg/kg IV q8; Unasyn 30 mg/kg IV q8; AlOH PO",
@@ -196,7 +196,7 @@ def anesthesia_record(filled="blank"):
     }
     momo_grid = {k: [""] * 9 for k in rows}
     momo_grid["Time (min)"] = times
-    momo_grid["Events"] = ["STOP", "Do not", "induce", "for FB", "explore", "", "", "", ""]
+    momo_grid["Events"] = ["STOP", "Image", "labs", "then", "decide", "", "", "", ""]
 
     grid = {"blank": {k: ([k] if k == "Time (min)" else [""] * 9) for k in rows}, "willie": willie_grid, "momo": momo_grid}[filled]
     if filled == "blank":
@@ -233,14 +233,14 @@ def anesthesia_record(filled="blank"):
     d.rectangle([28, y, 1180, y + 32], fill=GREEN)
     d.text((40, y + 16), "Recovery  (the surgery is not over)", font=font(15, True), fill=WHITE, anchor="lm")
     d.rectangle([1200, y, 2372, y + 32], fill=RED)
-    d.text((1212, y + 16), "Never-blank boxes", font=font(15, True), fill=WHITE, anchor="lm")
+    d.text((1212, y + 16), "Required boxes", font=font(15, True), fill=WHITE, anchor="lm")
 
     rec_items = {
-        "blank": ["Extubate when swallow returns (species-specific)", "SpO2 / mm / CRT / pulse", "Temp: rewarm, do not burn", "Pain score + the analgesic you planned", "Incision / procedure site check", "E-collar before they can lick", "Urinate? Client phone on the board"],
+        "blank": ["Extubate when swallow returns (species-specific)", "SpO2 / mm / CRT / pulse", "Temp: rewarm; check skin every 15 min", "Pain score + the analgesic you planned", "Incision / procedure site check", "E-collar before they can lick", "Urinate? Client phone on the board"],
         "willie": [
             "Recover padded, no stairs",
             "Watch nystagmus, circling, vomiting, seizures",
-            "No NSAID (DexSP already given)",
+            "Skip NSAID (DexSP already given)",
             "Meclizine 25 mg PO BID × 5 d",
             "Cerenia 60 mg PO SID × 4 d",
             "MRI recommended; TECA-LBO only if medical fails",
@@ -265,7 +265,7 @@ def anesthesia_record(filled="blank"):
             d.line([50, yy + i * 28 + 20, 62, yy + i * 28 + 8], fill=GREEN, width=2)
         d.text((70, yy + i * 28 + 13), t, font=font(14), fill=INK, anchor="lm")
 
-    never = [
+    required = [
         "Identity / consent / DNR",
         "Today’s PE + ASA (not yesterday’s)",
         "Last meal",
@@ -276,23 +276,23 @@ def anesthesia_record(filled="blank"):
         "Who calls the client, and when",
     ]
     if filled == "momo":
-        never = [
+        required = [
             "Imaging BEFORE the exploratory",
-            "Serial creatinine. Do not ignore a rising value",
-            "USG 1.042 ≠ ‘kidneys are fine’",
-            "POCUS: kidneys, not a surgical GI obstruction",
-            "Do not cut a non-surgical abdomen",
-            "Consent includes no-surgery and euthanasia",
+            "Serial creatinine. Repeat on fluids. Act on a rising value",
+            "USG 1.042: concentrating. Act on creatinine",
+            "POCUS: kidneys. Medical abdomen",
+            "Keep the abdomen closed. This is medical renal disease",
+            "Consent includes medical care and euthanasia",
             "NSAIDs contraindicated in this azotemic cat",
-            "Record the decision not to operate",
+            "Record the cancellation",
         ]
-    for i, t in enumerate(never):
+    for i, t in enumerate(required):
         d.rectangle([1200, yy + i * 28, 2372, yy + i * 28 + 26], fill=WHITE, outline=LINE)
         d.text((1216, yy + i * 28 + 13), "▸  " + t, font=font(14), fill=RED if filled == "momo" else INK, anchor="lm")
 
     if filled == "momo":
         d.rectangle([700, 640, 1700, 760], fill=(139, 46, 46))
-        d.text((1200, 700), "DO NOT INDUCE  ·  SURGERY CANCELLED", font=font(28, True), fill=WHITE, anchor="mm")
+        d.text((1200, 700), "SURGERY CANCELLED  ·  RECORD THE DECISION", font=font(26, True), fill=WHITE, anchor="mm")
 
     path = OUT / f"anesthesia_record_{filled}.png"
     im.save(path, "PNG")
@@ -460,7 +460,7 @@ def asa_lab_table(filename, title, subtitle, headers, rows):
     d.rectangle([20, H - 52, W - 20, H - 16], fill=GOLD)
     d.text(
         (W / 2, H - 34),
-        "Working teaching bands. They inform ASA; they do not replace today’s PE. Isolated numbers are not automatic Status. Venous EPOC pO2 is not arterial pO2.",
+        "Working teaching bands. They inform ASA. Today’s PE writes the number. Isolated numbers are not automatic Status. Read venous EPOC pO2 as venous, not arterial.",
         font=font(14, True),
         fill=NAVY,
         anchor="mm",
