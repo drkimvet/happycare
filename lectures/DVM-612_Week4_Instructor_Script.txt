@@ -58,7 +58,7 @@ SLIDE 18. MoMo’s perioperative record
     SPEAK: The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. BUN 48.7 to 100 and creatinine 3.0 to 4.71 are written as recorded. Fluids 1.5 times maintenance, 40 milliliters per kilogram per day, are on the record. Do not invent overload as the cause. Say it once, respectfully, then continue. Client identifiers stay off the board.
 
 SLIDE 19. Surgical wound classification
-    SPEAK: Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.
+    SPEAK: Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis. That skip is Frey 2022 AAFP/AAHA Antimicrobial Stewardship. Timing the first dose 30 to 60 minutes before incision is also Frey 2022. Do not tell them AAHA published 22 milligrams per kilogram. That dose is Gonzalez 2017, extra-label in dogs. Whittem 1999 is a second dose if surgery lasted more than 90 minutes, not a q90 Gonzalez or AAHA schedule. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis.
 
 SLIDE 20. Clip, dirty scrub, then the OR
     SPEAK: Walk the room. Do not clip until ready for prep: tube in, cuff to 20 centimeters of water, IV running, surgical plane. Clip and dirty-scrub in the prep area. Shoe covers, hair cap, and mask before the OR door. Gown is after the surgical hand scrub in the room, not in the hallway. Full sterile scrub after positioning. Then drape, then open and count instruments. Timeout. Announce the incision and mark it on the anesthesia chart. Clock to the last skin suture. CPE MOA 2026 Surgery scores hair, skin, position, drape, gown and glove. Veterinary Betadine: 7.5 percent scrub about 5 minutes, rinse, paint 5 percent Solution Veterinary. Eye: Roberts 1986, 1 to 50 of 10 percent stock, 2 plus 2 minutes.
@@ -67,7 +67,7 @@ SLIDE 21. Hair removal
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Do not teach a fixed 20 centimeter margin. Teach landmarks that scale with the patient. Protect heat.
 
 SLIDE 22. Skin antiseptics
-    SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. One case of corneal edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
+    SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. That is 0.2 percent. Do not put undiluted 10 percent human Betadine or undiluted 5 percent veterinary paint on the cornea. One case of corneal epithelial edema at 1 to 2, which is 5 percent. Do not upgrade that to a claim that Roberts proved massive toxicity from neat 10 percent; they recommended 1 to 50 after seeing edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
 
 SLIDE 23. Patient skin preparation technique
     SPEAK: Mime the spiral. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
@@ -85,7 +85,7 @@ SLIDE 27. Breaks in asepsis
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture: monitor, recognize hemorrhage and hernia, write the discharge plan.
 
 SLIDE 28. Knowledge check
-    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.
+    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986: 0.2 percent, 2 plus 2 minutes, not undiluted 10 percent or 5 percent paint; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.
 
 SLIDE 29. Immediate recovery
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.

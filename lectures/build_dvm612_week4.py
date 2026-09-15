@@ -599,8 +599,8 @@ for i, (c, t, b) in enumerate(classes):
     add_text(s, x, y, Inches(6.25), Inches(0.48), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.22), y + Inches(0.58), Inches(5.85), Inches(1.50), b, size=16, color=INK)
 add_round(s, Inches(0.45), Inches(5.90), Inches(12.40), Inches(1.18), GOLD_LT)
-add_text(s, Inches(0.65), Inches(5.98), Inches(12.05), Inches(1.02), "Write the class before you draw cefazolin. Clean elective: skip. When prophylaxis is indicated: cefazolin 22 mg/kg IV 30–60 min before incision (Gonzalez 2017; Frey 2022). Second dose if surgery lasts >90 min (Whittem 1999). Stop at closure unless you are treating infection.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.")
+add_text(s, Inches(0.65), Inches(5.98), Inches(12.05), Inches(1.02), "Write the class first. Clean elective: skip (Frey 2022 AAFP/AAHA stewardship). When prophylaxis is indicated: 30–60 min before incision; cefazolin 22 mg/kg IV (Gonzalez 2017, extra-label). Redose if surgery lasts >90 min (Whittem 1999). Stop at closure unless you are treating infection.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis. That skip is Frey 2022 AAFP/AAHA Antimicrobial Stewardship. Timing the first dose 30 to 60 minutes before incision is also Frey 2022. Do not tell them AAHA published 22 milligrams per kilogram. That dose is Gonzalez 2017, extra-label in dogs. Whittem 1999 is a second dose if surgery lasted more than 90 minutes, not a q90 Gonzalez or AAHA schedule. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis.")
 
 # 20 Sequence
 s = new_content("Clip, dirty scrub, then the OR")
@@ -622,7 +622,7 @@ notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Do not te
 # 22 Antiseptics
 s = new_content("Skin antiseptics")
 add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(1.20), GOLD_LT)
-add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nEye: intact cornea only. 10% stock 1:50, or 5% bottle 1:25. Both = 0.2% (Roberts 1986).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nEye: 0.2% only. 2 min scrub + 2 min soak. Do not put 10% or 5% undiluted on the cornea (Roberts 1986).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
 add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), TEAL)
 add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
@@ -634,10 +634,10 @@ add_text(s, Inches(4.77), Inches(3.04), Inches(3.80), Inches(2.00), "7.5% scrub\
 add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(2.70), WHITE)
 add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), NAVY)
 add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "Goal: 0.2% on intact cornea\n10% stock → dilute 1:50\n5% bottle → dilute 1:25\nMIN: 2 min + 2 min\nPerforation: saline only", size=16, color=INK)
+add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "0.2%: 2 min scrub + 2 min soak\n10% stock → dilute 1:50\n5% bottle → dilute 1:25\nNot 10% or 5% undiluted\nPerforation: saline only", size=16, color=INK)
 add_round(s, Inches(0.40), Inches(5.38), Inches(12.52), Inches(1.60), WHITE)
-add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: Roberts 1986 studied healthy corneas. 1:50 of 10% = 0.2%. 1:2 caused edema in 1/15 eyes. Deep ulcer, descemetocele, or perforation: do not run this prep; saline and ophthalmology.", size=14, color=SLATE)
-notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. One case of corneal edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
+add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: Roberts 1986, healthy cornea. 1:50 of 10% = 0.2%, 2-min scrub + 2-min soak. Do not use undiluted 10% or undiluted 5% paint. 1:2 caused edema in 1/15 eyes. Perforation: saline.", size=14, color=SLATE)
+notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. That is 0.2 percent. Do not put undiluted 10 percent human Betadine or undiluted 5 percent veterinary paint on the cornea. One case of corneal epithelial edema at 1 to 2, which is 5 percent. Do not upgrade that to a claim that Roberts proved massive toxicity from neat 10 percent; they recommended 1 to 50 after seeing edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
 
 # 23 Technique
 s = new_content("Patient skin preparation technique")
@@ -650,7 +650,7 @@ add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Full (sterile) scrub in the room. Start at the incision. Spiral out. Drop the sponge.",
     "Clock the minimum contact time.",
     "Skin: 7.5% ~5 min, then 5% paint.",
-    "Eye: 10% 1:50 or 5% 1:25. Intact cornea. Perforation: saline only.",
+    "Eye: 0.2% (10% 1:50 or 5% 1:25). 2 min + 2 min. Not 10% or 5% undiluted. Perforation: saline only.",
 ], size=16, spacing=10)
 notes(s, "Mime the spiral. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
@@ -706,7 +706,7 @@ notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glov
 s = new_content("Knowledge check")
 rows = [
     ("A", "When do you clip the OHE field?", "After ready for prep. Clip and dirty-scrub in the prep area. Full sterile scrub in the OR after positioning."),
-    ("B", "How do you prep conjunctiva with iodine?", "Intact cornea: 10% stock 1:50, 2 min + 2 min. 5% bottle: 1:25. Perforation: saline only."),
+    ("B", "How do you prep conjunctiva with iodine?", "Intact cornea: 0.2% (10% 1:50 or 5% 1:25), 2 min scrub + 2 min soak. Not 10% or 5% undiluted. Perforation: saline only."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
     ("D", "25 kg dog. Tube, bag, and IV fluid rate if you intubate?", "10 mm, 2 L circle, LRS 125 mL/hr (5 mL/kg/hr)."),
 ]
@@ -717,7 +717,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
-notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.")
+notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986: 0.2 percent, 2 plus 2 minutes, not undiluted 10 percent or 5 percent paint; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.")
 
 # 29 Recovery
 s = new_content("Immediate recovery")
