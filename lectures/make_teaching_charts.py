@@ -701,10 +701,9 @@ def anesthesia_chart_recovery():
     W, H = 3200, 1240
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
-    d.rectangle([0, 0, W, 64], fill=NAVY)
-    d.rectangle([0, 64, W, 72], fill=GOLD)
-    d.text((28, 10), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lt")
-    d.text((28, 40), "Blank chart. Fill it on a real patient. Do not pre-fill targets.", font=font(18), fill=GOLD, anchor="lt")
+    d.rectangle([0, 0, W, 56], fill=NAVY)
+    d.rectangle([0, 56, W, 64], fill=GOLD)
+    d.text((28, 28), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lm")
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [

@@ -740,7 +740,7 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
-s = new_content("Anesthesia chart and end of case", "Blank chart. Fill it on a real patient. Do not pre-fill targets.")
+s = new_content("Anesthesia chart and end of case")
 add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
 notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The grid is blank on purpose. Students write heart rate, respiratory rate, blood pressure, inhalant, oxygen, ETCO2, SpO2, temperature, and fluids as they go. Do not print target bands on this slide. Complications, fluids at the end, and recovery analgesics are written at the bottom. Sign the record.")
 
