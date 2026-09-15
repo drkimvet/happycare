@@ -704,58 +704,43 @@ def anesthesia_chart_recovery():
     d.rectangle([0, 0, W, 64], fill=NAVY)
     d.rectangle([0, 64, W, 72], fill=GOLD)
     d.text((28, 10), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lt")
-    d.text((28, 40), "Dog HR 60–120: Ko 2012 Table 2. Cat 100–180: AAFP 2018. Other floors: Grubb 2020. Fluids: Pardo 2024.", font=font(18), fill=GOLD, anchor="lt")
+    d.text((28, 40), "Blank chart. Fill it on a real patient. Do not pre-fill targets.", font=font(18), fill=GOLD, anchor="lt")
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [
-        ("Heart rate", "dog 60–120  ·  cat 100–180"),
-        ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
-        ("BP  SAP / MAP / DAP", "SAP ≥90 (<160–180)  ·  MAP ≥70 (<120–140)  ·  DAP ≥40"),
-        ("Isoflurane or sevoflurane %", "to effect"),
-        ("Oxygen flow  L/min", "RC 2–3 L then 20–40 mL/kg/min (min 0.5 L)"),
-        ("End-tidal CO2", "40–50 (up to 55) mm Hg  ·  PPV if >60"),
-        ("SpO2", "≥95%"),
-        ("Temperature", "≥98 °F  (36.7 °C)"),
-        ("Fluid rate  mL/hr", "dog 5 mL/kg/hr  ·  cat 3–5"),
-        ("Total fluid  mL", "rate × hours"),
+        "Heart rate",
+        "Respiratory rate",
+        "BP  SAP / MAP / DAP",
+        "Isoflurane or sevoflurane %",
+        "Oxygen flow  L/min",
+        "End-tidal CO2",
+        "SpO2",
+        "Temperature",
+        "Fluid rate  mL/hr",
+        "Total fluid  mL",
     ]
     x0 = 20
-    label_w = 560
-    target_w = 980
+    label_w = 720
     grid_x = x0 + label_w
-    target_x = grid_x + target_w
-    col_w = (W - 40 - label_w - target_w) / len(times)
+    col_w = (W - 40 - label_w) / len(times)
     y = 84
     rh = 80
     cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
-    cell(d, grid_x, y, target_x, y + rh, "Operating range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
     for c, t in enumerate(times):
-        cell(d, target_x + c * col_w, y, target_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
+        cell(d, grid_x + c * col_w, y, grid_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
     y += rh
-    for r, (name, target) in enumerate(params):
+    for r, name in enumerate(params):
         yy = y + r * rh
         fluid = name.startswith("Fluid") or name.startswith("Total")
         fill = TEAL if fluid else (WHITE if r % 2 == 0 else (236, 242, 244))
         fg = WHITE if fluid else INK
         cell_wrapped(d, x0, yy, grid_x, yy + rh, name, fill=fill, fg=fg, size=28, bold=True)
-        cell_wrapped(
-            d,
-            grid_x,
-            yy,
-            target_x,
-            yy + rh,
-            target,
-            fill=(227, 241, 236),
-            fg=NAVY,
-            size=28,
-            bold=True,
-        )
         for c in range(len(times)):
             cell(
                 d,
-                target_x + c * col_w,
+                grid_x + c * col_w,
                 yy,
-                target_x + (c + 1) * col_w,
+                grid_x + (c + 1) * col_w,
                 yy + rh,
                 "",
                 fill=WHITE if r % 2 == 0 else (236, 242, 244),
@@ -764,7 +749,7 @@ def anesthesia_chart_recovery():
     y = y + 10 * rh + 10
     thirds = [
         (NAVY, "Complications", "Write the event, the time, and the correction. If none: write none."),
-        (TEAL, "Fluids at the end", "Type · rate · total mL. Dog 5 mL/kg/hr; cat 3–5. Total = rate × hours."),
+        (TEAL, "Fluids at the end", "Type · rate · total mL. Write what you gave."),
         (GREEN, "Recovery analgesics", "On-label NSAID unless steroid or azotemia. Write what you gave. Sign the record."),
     ]
     bw = (W - 56) / 3
