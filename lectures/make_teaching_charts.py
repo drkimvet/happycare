@@ -704,18 +704,18 @@ def anesthesia_chart_recovery():
     d.rectangle([0, 0, W, 64], fill=NAVY)
     d.rectangle([0, 64, W, 72], fill=GOLD)
     d.text((28, 10), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lt")
-    d.text((28, 40), "Target column = acceptable band (Grubb 2020; Pardo 2024 fluids). Time cells empty until a real patient.", font=font(18), fill=GOLD, anchor="lt")
+    d.text((28, 40), "Operating range = Grubb 2020 floors and alerts; fluids Pardo 2024. Time cells empty until a real patient.", font=font(18), fill=GOLD, anchor="lt")
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [
-        ("Heart rate", "dog <150–190 (size); cat <180"),
+        ("Heart rate", "keep below tachycardia: dog 150–190 (size); cat 180"),
         ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
-        ("BP  SAP / DAP / MAP", "SAP ≥90  ·  MAP ≥70  ·  DAP ≥40 mm Hg"),
+        ("BP  SAP / MAP / DAP", "SAP ≥90 (<160–180)  ·  MAP ≥70 (<120–140)  ·  DAP ≥40"),
         ("Isoflurane or sevoflurane %", "to effect"),
         ("Oxygen flow  L/min", "RC 2–3 L then 20–40 mL/kg/min (min 0.5 L)"),
-        ("End-tidal CO2", "40–50 mm Hg  (PPV if >60)"),
+        ("End-tidal CO2", "40–50 (up to 55) mm Hg  ·  PPV if >60"),
         ("SpO2", "≥95%"),
-        ("Temperature", "≥98 °F"),
+        ("Temperature", "≥98 °F  (36.7 °C)"),
         ("Fluid rate  mL/hr", "dog 5 mL/kg/hr  ·  cat 3–5"),
         ("Total fluid  mL", "rate × hours"),
     ]
@@ -728,7 +728,7 @@ def anesthesia_chart_recovery():
     y = 84
     rh = 80
     cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
-    cell(d, grid_x, y, target_x, y + rh, "Target range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
+    cell(d, grid_x, y, target_x, y + rh, "Operating range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
     for c, t in enumerate(times):
         cell(d, target_x + c * col_w, y, target_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
     y += rh
