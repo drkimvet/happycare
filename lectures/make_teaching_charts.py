@@ -704,11 +704,11 @@ def anesthesia_chart_recovery():
     d.rectangle([0, 0, W, 64], fill=NAVY)
     d.rectangle([0, 64, W, 72], fill=GOLD)
     d.text((28, 10), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lt")
-    d.text((28, 40), "Operating range = Grubb 2020 floors and alerts; fluids Pardo 2024. Time cells empty until a real patient.", font=font(18), fill=GOLD, anchor="lt")
+    d.text((28, 40), "Dog HR 60–120: Ko 2012 Table 2. Cat 100–180: AAFP 2018. Other floors: Grubb 2020. Fluids: Pardo 2024.", font=font(18), fill=GOLD, anchor="lt")
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [
-        ("Heart rate", "anesthetized cat 100–180; dog: plot with BP"),
+        ("Heart rate", "dog 60–120  ·  cat 100–180"),
         ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
         ("BP  SAP / MAP / DAP", "SAP ≥90 (<160–180)  ·  MAP ≥70 (<120–140)  ·  DAP ≥40"),
         ("Isoflurane or sevoflurane %", "to effect"),
