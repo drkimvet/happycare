@@ -769,8 +769,8 @@ def anesthesia_chart_recovery():
     times = ["Anesth. start", "5 min", "Incision", "15 min", "Last suture"]
     params = [
         ("Heart rate", "dog 60–140  ·  cat 100–180"),
-        ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
-        ("BP  SAP / MAP / DAP", "SAP 90–140  ·  MAP 70–110  ·  DAP 50–90"),
+        ("Respiratory rate", "dog 8–20  ·  cat 10–25"),
+        ("BP  SAP / MAP / DAP", "SAP ≥90  ·  MAP ≥70  ·  DAP ≥40"),
         ("Isoflurane or sevoflurane %", "to effect"),
         ("Oxygen flow  L/min", "2–3 L, then 20–40 mL/kg/min  ·  min 0.5 L"),
         ("End-tidal CO2", "40–50 mm Hg  ·  PPV if >60"),
