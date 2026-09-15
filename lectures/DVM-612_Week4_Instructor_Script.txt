@@ -6,112 +6,112 @@ Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP
 SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
     SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Two hospital patients are only ASA examples: Willie, compensated, Status 3-E, sedated for an ear clean; MoMo, uncompensated, Status 4-E, exploratory cancelled. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.
 
-SLIDE 2. DVM 612 WEEK 4  ·  38 SLIDES
+SLIDE 2. Learning objectives
     SPEAK: Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. The two hospital patients are ASA practice, not the point of the hour.
 
-SLIDE 3. THEN 24 HOURS OF MONITORING AND COMPLICATION MANAGEMENT. CPE MOA 2026 SURGERY.
+SLIDE 3. Prepare the patient and yourself
     SPEAK: Surgical competence includes the first 24 hours of physiologic monitoring and complication management. That is not a claim of infinite legal liability for every recovery-ward or owner event. Hemorrhage from a weak ligature is still your technical problem.
 
-SLIDE 4. EACH PRINCIPLE HAS A PREOPERATIVE OR POSTOPERATIVE ACTION
+SLIDE 4. Halsted’s principles
     SPEAK: Two minutes, then move. Every Halsted principle has a preop or postop action, not just an intraoperative one.
 
-SLIDE 5. TWO TEAM CLOCKS. CPE MOA 2026 ANESTHESIA AND SURGERY.
+SLIDE 5. The perioperative continuum
     SPEAK: Do not teach this as a CPE station. Teach the clocks. Anesthesia owns exam through a patient who is ready for clippers: tube in, cuff up, machine on, IV running, surgical plane. Surgery owns clip through the last skin suture. Then both teams monitor the first 24 hours. Cite ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery sections.
 
-SLIDE 6. CPE MOA 2026 APPENDIX 3: TPR, MM/CRT, THEN PCV, TP, BUN. THEN ASA. THEN PREMED.
+SLIDE 6. Preoperative physical examination
     SPEAK: This is the preoperative exam the record actually holds. CPE MOA 2026 Appendix 3: heart rate, respiratory rate, mucous membranes and CRT, temperature, then PCV, TP, and BUN. Request those three. Interpret them. Then write ASA. Then premed IM or SQ. Do not premedicate before the examination. Add other labs if the PE says so. A normal CBC does not make a vestibular dog Status 1. Azotemia can cancel the cut.
 
-SLIDE 7. GRUBB ET AL. 2020 AAHA TABLE. CPE MOA 2026 ANESTHESIA APPENDIX 2 USES THE SAME 1–5 SCALE.
+SLIDE 7. ASA physical status
     SPEAK: Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Then use the two hospital patients only as practice: compensated vestibular crisis is 3-E; uncompensated azotemia that threatens life is 4-E.
 
-SLIDE 8. ASSIGN STATUS, THEN SAY WHETHER YOU PROCEED TODAY
+SLIDE 8. ASA practice cases
     SPEAK: Cold-call four students. C is a compensated emergency (sedation). D is uncompensated; labs cancelled the exploratory. The names on later slides are only these examples.
 
-SLIDE 9. ASA EXAMPLE FOR TONIGHT’S EAR CLEAN AND FOR A LATER TECA-LBO. DEXSP: SKIP NSAID.
+SLIDE 9. Willie, ASA Status 3-E
     SPEAK: Willie is an ASA example, not the thesis of the hour. Tonight is a sedated ear clean. Skip NSAID because DexSP is already on board: AAHA/AAFP 2015, concurrent corticosteroid plus NSAID is a leading risk for GI perforation. Washout periods are largely undefined; about 7 days for a short-acting steroid if you later start an NSAID. Do not invent DexSP milligrams or albumin. Murmur: skip acepromazine and dexmedetomidine. Alfaxalone to effect. Plot blood pressure. Treat hypotension at SAP less than 80 to 90 or MAP less than 60 to 70, Grubb 2020. That is the safety plan. Do not invent a Willie blood-pressure tracing.
 
-SLIDE 10. 6 YO SF DSH, 4.25 KG, BCS 5/9. THIS IS HER, BEFORE THE EXPLORATORY WAS CANCELLED.
+SLIDE 10. MoMo, ASA Status 4-E
     SPEAK: This slide is an ASA example, not the point of the hour. Pause on the photograph. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? Rising creatinine on fluids is a recorded fact. Do not invent a fluid rate or an iatrogenic mechanism. Status 4-E because the disease threatened life. The workup cancelled the cut. The owner then elected euthanasia.
 
-SLIDE 11. CPE MOA 2026 APPENDIX 3 PAGE 1: TODAY’S PE, THEN PCV, TP, BUN. INTERPRET. THEN CIRCLE ASA.
+SLIDE 11. Pre-anesthetic assessment
     SPEAK: This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. The blanks are weight, HR, RR, mucous membranes and CRT, temperature, other PE findings, PCV, TP, BUN, other labs, then ASA 1 through 5. Perform and record the preoperative examination. Request, record, and interpret the minimum labs. Assign ASA. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut. High PCV plus high TP is dehydration. Low PCV plus low TP is blood loss. High BUN: skip NSAIDs.
 
-SLIDE 12. TEACHING BANDS, NOT AN ASA TABLE. GRUBB ET AL. 2020: TODAY’S PE WRITES ASA.
+SLIDE 12. Laboratory values inform risk
     SPEAK: Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Do not invent PCV cutoffs as ASA numbers.
 
-SLIDE 13. HEALTHY SEQUENCE, THEN ONE WORKED EXAMPLE. WRITE DRUG, CONCENTRATION, DOSE, VOLUME, ROUTE.
+SLIDE 13. Anesthetic drug protocol
     SPEAK: This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. The three steps at the top are the general sequence. The filled table is one worked example: ear disease, DexSP already given, murmur. Healthy default is not that table. Skip NSAID because of AAHA/AAFP 2015 GI risk, not because albumin was measured. DexSP dose and time are not on this teaching record: do not invent them. Blood-pressure floors are Grubb 2020, not a Willie tracing. Students write drug, concentration, dose, volume, and route.
 
-SLIDE 14. GRUBB ET AL. 2020: STABILIZE FIRST. PARDO ET AL. 2024: ALBUMIN <2.0 G/DL.
+SLIDE 14. Correct deficits before you cut
     SPEAK: Read the Grubb 2020 list: correct potassium greater than 6, pH less than 7.2, glucose less than 60, hypothermia, dehydration, before you induce. Then albumin: Pardo 2024 AAHA fluids, less than 2.0 grams per deciliter is edema and poor healing. Delay elective. Treat the cause. Plasma is a poor albumin replacement, 20 to 25 milliliters per kilogram for half a gram. Do not crystalloid-flood a low-oncotic patient. Emergency: resuscitate and operate. Uncompensated azotemia that is getting worse: do not cut. That is the preoperative evaluation working. It is not a diagnosis of why the creatinine rose.
 
-SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
+SLIDE 15. Fasting and informed consent
     SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. Pre-oxygenation: 3 minutes of 100 percent oxygen gives almost 6 minutes of saturation. Brachycephalics: delay extubation until they can protect the airway. Mention DNR.
 
-SLIDE 16. CPE MOA 2026 APPENDIX 3: ASA, ETT SIZE, BAG, CIRCUIT, IV FLUID NAME/RATE, FRESH-GAS FLOW.
+SLIDE 16. ASA, tube, bag, and fluid rate
     SPEAK: Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. A 13.7 kg dog: start 7.0 millimeter, 6.5 and 7.5 in the hand. Bag: kilograms times 60, round up. 822 milliliters is a 1 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour; write 69 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape. Do not teach tube math as if a sedated ear-clean patient was intubated.
 
-SLIDE 17. PAGE 1 OF THE TEACHING RECORD: PE, PCV/TP/BUN, ASA. COMPLETE BEFORE THE FIRST DRUG.
+SLIDE 17. Willie’s perioperative record
     SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. PCV, TP, BUN WNL. Skip NSAID after DexSP, AAHA 2015. Plot BP; treat Grubb hypotension floors. Recovery is on the same page. Drug protocol is slide 13. The intra-op chart is slide 30. Tube and bag numbers are only if you intubate.
 
-SLIDE 18. EXPLORATORY CANCELLED. RECORD THE DECISION.
+SLIDE 18. MoMo’s perioperative record
     SPEAK: The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Rising creatinine on fluids is written as recorded. Do not invent a fluid rate or blame overload. Say it once, respectfully, then continue.
 
 SLIDE 19. Surgical wound classification
     SPEAK: Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. Willie’s ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.
 
-SLIDE 20. CPE MOA 2026 SURGERY: HAIR, SKIN, POSITION, DRAPE. THEN ANNOUNCE INCISION.
+SLIDE 20. Sequence of patient preparation
     SPEAK: Do not clip until the patient is ready for prep: tube in, cuff holds to 20 centimeters of water, correct bag, IV running, surgical plane. CPE MOA 2026 Surgery scores hair, skin, position, and drape, then wants you to announce the incision. Veterinary Betadine labels: 7.5% scrub about 5 minutes, rinse, paint 5% Solution Veterinary, dry. Eye: Roberts 1986, 1:50 of 10% stock, 2 plus 2 minutes.
 
-SLIDE 21. #40 CLIPPER AFTER INDUCTION. CLIP TO ANATOMIC LANDMARKS, NOT A FIXED 20 CM.
+SLIDE 21. Hair removal
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Do not teach a fixed 20 centimeter margin. Teach landmarks that scale with the patient. Protect heat.
 
-SLIDE 22. MINIMUM CONTACT TIME. CLOCK IT. THEN DRAPE.
+SLIDE 22. Skin antiseptics
     SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. One case of corneal edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
 
-SLIDE 23. CENTER TO PERIPHERY. DIRTY PREP, THEN STERILE PREP.
+SLIDE 23. Patient skin preparation technique
     SPEAK: Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
 
-SLIDE 24. DORSAL RECUMBENCY, AIRWAY, IV CATHETER, MONITORING, V-TROUGH
+SLIDE 24. Patient positioning
     SPEAK: Name the bag size and the tube size on this photograph. Confirm placement with ETCO2. Keep hips in a neutral spread.
 
-SLIDE 25. FOUR-QUADRANT TOWELS, THEN THE LARGE DRAPE
+SLIDE 25. OHE: hair visible at the drape edge
     SPEAK: Left is a real spay with hair at the window. Re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
 
-SLIDE 26. TECHNIQUE DIAGRAM AND OPERATING-ROOM PHOTOGRAPH
+SLIDE 26. Closed gloving and the anesthesia workstation
     SPEAK: Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, and fluids off the workstation photo. Do not mix MAC and case names onto this slide.
 
-SLIDE 27. SAY IT. CORRECT IT. AFTER THE INCISION, EVERY BREAK MUST BE FULLY CORRECTED.
+SLIDE 27. Breaks in asepsis
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture: monitor, recognize hemorrhage and hernia, write the discharge plan.
 
-SLIDE 28. WHAT DO YOU DO NEXT?
+SLIDE 28. Knowledge check
     SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 13.7 kg dog if you intubate: 7.0 millimeter, 1 liter circle, 69 milliliters per hour, alfaxalone if there is a murmur, and plot blood pressure. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, then sterile prep and drape.
 
-SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
+SLIDE 29. Immediate recovery
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
 
 SLIDE 30. Anesthesia chart and end of case
     SPEAK: This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The grid is blank on purpose. Students write heart rate, respiratory rate, blood pressure, inhalant, oxygen, ETCO2, SpO2, temperature, and fluids as they go. Do not print target bands on this slide. Complications, fluids at the end, and recovery analgesics are written at the bottom. Sign the record.
 
-SLIDE 31. ON-LABEL NSAIDS. DOG: CARPROFEN. CAT: ONSIOR. THEN TEACH THE E-COLLAR.
+SLIDE 31. Postop analgesia and incision care
     SPEAK: This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.
 
 SLIDE 32. Complications in the first 24 hours
     SPEAK: Hemorrhage versus seroma. Skin versus fascial dehiscence. Evisceration protocol in one breath.
 
-SLIDE 33. WHAT THE OVERNIGHT CLINICIAN AND THE OWNER BOTH NEED
+SLIDE 33. Surgical report and discharge
     SPEAK: At 2 a.m. someone opens this record because the abdomen is swelling. They need ligatures, sponge count, linea suture, and whether the client was called.
 
-SLIDE 34. THE CLIENT MUST BE ABLE TO REPEAT THESE
+SLIDE 34. Emergency criteria for discharge
     SPEAK: Pale gums + distended abdomen after OHE: come now. Return to OR.
 
-SLIDE 35. ASA EXAMPLE: EAR DISEASE + DEXSP. RE-ASSIGN ASA ON THE DAY OF ANY LATER TECA-LBO.
+SLIDE 35. Willie: complete perioperative plan
     SPEAK: Walk this as an ASA example, not as the lecture thesis. One sentence on the other example: the same preoperative evaluation cancelled an exploratory when the disease was uncompensated.
 
-SLIDE 36. ASA EXAMPLES. BOTH RECEIVED A PREOPERATIVE EVALUATION. ONLY WILLIE WAS SEDATED.
+SLIDE 36. Willie and MoMo
     SPEAK: Last content slide if time is gone. These two patients are ASA examples only. Healthy Lab OHE is the ASA Status 1 contrast.
 
-SLIDE 37. CPE MOA 2026 APPENDIX 3 AND SURGERY COMPETENCIES
+SLIDE 37. Key points
     SPEAK: These six lines are the Appendix 3 record and the Surgery competencies: assessment and ASA, drug protocol and equipment, ready for prep, hair-skin-position-drape, the chart and signature, then the first 24 hours. Do not recap the hospital patients here.
 
 SLIDE 38. DVM 612  ·  PRINCIPLES OF SURGERY
