@@ -549,7 +549,7 @@ notes(s, "Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: hea
 # 16 ASA, tube, bag, fluid rate (MOA Appendix 3 fields)
 s = new_content("ASA, tube, bag, and fluid rate", "CPE MOA 2026 Appendix 3: ASA, ETT size, bag, circuit, IV fluid name/rate, fresh-gas flow.")
 formulas = [
-    (GOLD, NAVY, "Endotracheal tube", "ID mm  =  (kg / 4)  +  3.5", "Dog start. ±0.5 mm ready. Largest through arytenoids (Grubb 2020). Cat 3.0–4.5 mm; do not use the dog formula."),
+    (GOLD, NAVY, "Endotracheal tube", "ID mm  =  (kg / 4)  +  3.5", "Dog start. ±0.5 mm ready. Largest through arytenoids (Grubb 2020). Cat: 3.0–4.5 mm (not the dog formula)."),
     (NAVY, GOLD, "Reservoir bag", "mL  =  kg  ×  60,  round UP", "Round up to 0.5, 1, 2, or 3 L. NRC if <3–5 kg. Circle if larger. Leak-test, then OPEN the pop-off."),
     (TEAL, WHITE, "IV fluid rate", "Dog  kg × 5   ·   cat  kg × 3–5", "mL/hr. Balanced crystalloid (Pardo 2024). Not 10 mL/kg/hr. Willie: 13.7 × 5 = 69 mL/hr."),
 ]

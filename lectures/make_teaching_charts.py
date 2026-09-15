@@ -484,7 +484,7 @@ def anesthesia_setup_table():
     rows = [
         ["Willie\nif intubated", "13.7", "3-E", "7.0 mm\n6.5 / 7.5 ready", "1 L  circle\n822 mL → 1 L", "LRS  69 mL/hr\n13.7 × 5", "2–3 L/min, then\n≥ 0.5 L/min"],
         ["Healthy Lab\nelective OHE", "25", "1", "10 mm\n9.5 / 10.5 ready", "2 L  circle\n1.5 L → 2 L", "LRS  125 mL/hr\n25 × 5", "2–3 L/min, then\n0.5–1 L/min"],
-        ["MoMo\nmath only", "4.25", "4-E", "3.5–4.0 mm\ncat; not dog formula", "0.5 L  NRC\n255 mL → 0.5 L", "LRS  13 mL/hr\n4.25 × 3", "0.85–1.7 L/min\nNRC 200–400"],
+        ["MoMo\nmath only", "4.25", "4-E", "3.5–4.0 mm\ncat; not dog formula", "0.5 L  NRC\n255 mL → 0.5 L", "LRS  13 mL/hr\n4.25 × 3", "0.85–1.7 L/min\n200–400 mL/kg/min"],
     ]
     widths = [560, 200, 220, 480, 500, 520, 680]
     scale = (W - 40) / sum(widths)
