@@ -117,7 +117,7 @@ def anesthesia_record(filled="blank"):
         cell(d, x0, y, x1, y + 32, lab, fill=NAVY, fg=WHITE, size=16, bold=True, align="center")
     values = {
         "blank": ["", "", "", "", "", ""],
-        "willie": ["Willie", "Canine  ·  Cavalier", "MN  ·  6 y 11 mo", "13.7 kg  BCS 6/9", "3-E", "ASA from today’s PE. Compensated."],
+        "willie": ["Willie", "Canine  ·  Cavalier", "MN  ·  6 y 11 mo", "13.7 kg", "3-E", "ASA from today’s PE. Compensated."],
         "momo": ["MoMo", "Feline  ·  DSH", "SF  ·  6 yr", "4.25 kg  BCS 5/9", "4-E", "Exploratory considered. Then cancelled."],
     }[filled]
     for (x0, x1, lab), val in zip(labels, values):
@@ -158,7 +158,7 @@ def anesthesia_record(filled="blank"):
     ]
     lab_v = {
         "blank": ["", "", "", ""],
-        "willie": ["WNL", "WNL", "WNL", "CBC WNL. Kidneys normal."],
+        "willie": ["47.5%", "6.4", "11.9", "Cr 0.7. Phos 6.0. Glucose 130. CBC in range."],
         "momo": ["request", "request", "↑ azotemia", "Cr 3.0 → 4.71 on fluids. Mechanism not assigned."],
     }[filled]
     for (x0, x1, lab), val in zip(lab_h, lab_v):
@@ -172,7 +172,7 @@ def anesthesia_record(filled="blank"):
     d.text((174, y + 40), why_lab, font=font(18, True), fill=NAVY, anchor="mm")
     plan = {
         "blank": "",
-        "willie": "Acute vestibular disease + AS otitis + murmur. Compensated: still pink, walking, kidneys normal. Status 3-E from today’s PE.",
+        "willie": "Acute ataxia + AS otitis + murmur. HCT 47.5%, TP 6.4, BUN 11.9, Cr 0.7 in range. Phos 6.0 and glucose 130 high. Compensated. Status 3-E from today’s PE.",
         "momo": "Vomiting that looked like FB. PE did not prove obstruction. Right kidney fluid-filled, non-functional. Cr 3.0 → 4.71 on fluids: post-renal vs intrinsic vs hypovolemia not assigned. Do not clip.",
     }[filled]
     fplan = font(20)
@@ -202,9 +202,9 @@ def anesthesia_record(filled="blank"):
             "Who calls the client, and when",
         ],
         "willie": [
-            "ASA Status 3-E. PCV / TP / BUN WNL. Exam wrote the status.",
-            "Today’s PE: vestibular + AS otitis + murmur",
-            "Compensated: pink, walking, kidneys normal",
+            "ASA Status 3-E. HCT 47.5%. TP 6.4. BUN 11.9. Cr 0.7. Exam wrote the status.",
+            "Today’s PE: ataxia + AS otitis + murmur",
+            "Compensated: pink, CRT 2 s. BUN and creatinine in range",
             "Moderate systemic disease, still compensated",
             "Emergency because the presentation is acute",
             "Identity, weight, PE, labs, then Status 3-E",
@@ -234,7 +234,7 @@ def anesthesia_record(filled="blank"):
             "Status 3-E is moderate systemic disease",
             "Still compensated on today’s PE",
             "Not Status 1: the PE is not normal",
-            "A normal CBC does not write Status 1",
+            "A HCT in range does not write Status 1",
             "Not Status 4: not a constant threat to life today",
             "Re-assign ASA if the disease changes",
             "The other example is uncompensated Status 4-E",
@@ -580,10 +580,10 @@ def preanesthetic_assessment_table():
         ["Weight", "13.7 kg", "25 kg", "4.25 kg"],
         ["T  ·  HR  ·  RR", "100.8 °F  ·  132  ·  52", "normal TPR", "98.0 °F  ·  200  ·  30"],
         ["mm / CRT", "pink / 2 s", "normal", "pink, tacky / <2 s"],
-        ["Other PE", "Vestibular + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Dehydrated. No FB proven.\nR kidney fluid-filled, non-functional"],
-        ["PCV", "WNL", "within reference", "request; not the cancelling value"],
-        ["TP", "WNL", "within reference", "request; not the cancelling value"],
-        ["BUN", "WNL  (kidneys normal)", "within reference", "↑ azotemia\nCr 3.0 → 4.71"],
+        ["Other PE", "Ataxia + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Dehydrated. No FB proven.\nR kidney fluid-filled, non-functional"],
+        ["PCV / HCT", "HCT 47.5%\n(36.9–60.0)", "within reference", "request; not the cancelling value"],
+        ["TP", "6.4 g/dL\n(5.5–7.6)", "within reference", "request; not the cancelling value"],
+        ["BUN", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130", "within reference", "↑ azotemia\nCr 3.0 → 4.71"],
         ["ASA", "write it", "1", "write it"],
     ]
     widths = [480, 880, 880, 920]

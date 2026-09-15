@@ -25,10 +25,10 @@ SLIDE 7. ASA physical status
     SPEAK: Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview Willie. Next: one dog’s PE, then labs, then they write the status.
 
 SLIDE 8. Willie: today’s PE
-    SPEAK: Read the PE. Do not say 3-E yet. No DexSP, alfaxalone, ear clean, or TECA. Next slide is labs, then they write the status.
+    SPEAK: Read the PE from today’s record. Do not say 3-E yet. Do not put the client name on the board. No DexSP, alfaxalone, ear clean, or TECA. Next slide is the actual lab numbers, then they write the status.
 
 SLIDE 9. Willie: labs. Write the ASA
-    SPEAK: Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the vestibular crisis plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, walking, kidneys normal, not a constant threat to life today. Do not teach a Willie treatment plan. Slide 35 is the written key if you want the cards on the board.
+    SPEAK: Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the ataxia plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 35 is the written key.
 
 SLIDE 10. MoMo: PE, labs, write the ASA
     SPEAK: Second ASA quiz. Pause on the photograph. Be respectful; this cat died. After they commit: Status 4-E, uncompensated, a constant threat to life. Rising creatinine on fluids is a recorded fact. Do not invent a fluid rate. The workup cancelled the cut. Owner elected euthanasia. Record the decision. Never put DexSP on this cat.
