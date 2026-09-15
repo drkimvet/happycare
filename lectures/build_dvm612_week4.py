@@ -734,7 +734,7 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
     "Extubate when swallow returns.",
     "Most anesthetic deaths are in recovery, often in the first 3 hours (Grubb 2020).",
     "Pale + tachycardic after celiotomy: return to OR.",
-    "NSAID: carprofen in the dog, Onsior in the cat. Willie: skip after DexSP.",
+    "NSAID: carprofen in the dog, Onsior in the cat. Do not stack with a steroid.",
     "E-collar on before they can lick.",
 ], size=16, spacing=10)
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
