@@ -618,15 +618,14 @@ def anesthesia_protocol_record():
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, W, 70], fill=NAVY)
     d.rectangle([0, 70, W, 78], fill=GOLD)
-    d.text((28, 12), "Anesthetic drug protocol", font=font(32, True), fill=WHITE, anchor="lt")
-    d.text((28, 44), "Worked example, not the default protocol   ·   teaching record, not a copyrighted form", font=font(18), fill=GOLD, anchor="lt")
-    d.text((W - 28, 35), "EXAMPLE  ·  13.7 kg  ·  ASA 3-E  ·  ear + DexSP + murmur", font=font(22, True), fill=GOLD, anchor="rm")
+    d.text((28, 20), "Anesthetic drug protocol", font=font(32, True), fill=WHITE, anchor="lt")
+    d.text((W - 28, 35), "25 kg  ·  ASA 1  ·  elective OHE", font=font(22, True), fill=GOLD, anchor="rm")
 
     headers = ["", "Drug", "Concentration", "Dose", "Volume", "Route"]
     rows = [
-        ["Premed", "None until exam is written", "—", "—", "—", "IM or SQ after ASA"],
-        ["Induction", "Alfaxalone", "read the bottle", "IV to effect", "give to effect", "IV"],
-        ["Analgesic", "Opioid; skip NSAID", "DexSP already given", "do not stack", "not on this record", "as planned"],
+        ["Premed", "After ASA is written", "read the bottle", "as labeled", "calculate", "IM or SQ"],
+        ["Induction", "Alfaxalone or propofol", "read the bottle", "IV to effect", "give to effect", "IV"],
+        ["Analgesic", "Carprofen (dog)", "as labeled", "4.4 mg/kg SQ", "calculate", "SQ ~2 h before cut"],
     ]
     widths = [300, 700, 540, 460, 500, 660]
     scale = (W - 40) / sum(widths)
@@ -651,15 +650,15 @@ def anesthesia_protocol_record():
     d.rectangle([20, y, 280, y + row_h2], fill=TEAL)
     d.text((150, y + 65), "IV fluids", font=font(28, True), fill=WHITE, anchor="mm")
     d.text((300, y + 28), "Name:  LRS", font=font(36, True), fill=INK, anchor="lt")
-    d.text((300, y + 78), "Rate:  69 mL/hr   (13.7 × 5)", font=font(32, True), fill=NAVY, anchor="lt")
+    d.text((300, y + 78), "Rate:  125 mL/hr   (25 × 5)", font=font(32, True), fill=NAVY, anchor="lt")
     d.rectangle([1600, y, W - 20, y + row_h2], fill=(244, 235, 211), outline=LINE, width=2)
-    d.text((1620, y + 12), "Why these drugs  ·  EXAMPLE, not the default", font=font(18, True), fill=NAVY, anchor="lt")
+    d.text((1620, y + 12), "Why these drugs", font=font(18, True), fill=NAVY, anchor="lt")
     why_fn = font(20)
     why_lines = [
-        "Murmur: skip ace and dexmed. Alfaxalone IV to effect.",
-        "Treat hypotension: SAP <80–90 or MAP <60–70 (Grubb 2020).",
-        "Steroid plus NSAID: GI perforation risk (AAHA 2015).",
-        "DexSP dose, time, and albumin are not on this record.",
+        "ASA 1 elective OHE. This table is not Willie and is not MoMo.",
+        "Dog: carprofen 4.4 mg/kg SQ ~2 h before incision (Rimadyl).",
+        "Cat OHE: Onsior 2 mg/kg SQ. Do not swap species.",
+        "Do not stack an NSAID with a corticosteroid.",
     ]
     ty = y + 40
     for line in why_lines:
@@ -681,7 +680,7 @@ def anesthesia_protocol_record():
     y += 112
     machine = [
         (20, 1040, "Circle circuit", "Rebreathing      Non-rebreathing"),
-        (1080, 1040, "ETT  ·  bag  (if intubated)", "7.0 mm      1 L circle"),
+        (1080, 1040, "ETT  ·  bag  (if intubated)", "10 mm      2 L circle"),
         (2140, 1040, "Fresh-gas flow", "2–3 L/min, then ≥ 0.5 L/min"),
     ]
     for x0, wbox, title, body in machine:
@@ -707,39 +706,54 @@ def anesthesia_chart_recovery():
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [
-        "Heart rate",
-        "Respiratory rate",
-        "BP  SAP / MAP / DAP",
-        "Isoflurane or sevoflurane %",
-        "Oxygen flow  L/min",
-        "End-tidal CO2",
-        "SpO2",
-        "Temperature",
-        "Fluid rate  mL/hr",
-        "Total fluid  mL",
+        ("Heart rate", "dog 60–120  ·  cat 100–180"),
+        ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
+        ("BP  SAP / MAP / DAP", "SAP ≥90  ·  MAP ≥70  ·  DAP ≥40"),
+        ("Isoflurane or sevoflurane %", "to effect"),
+        ("Oxygen flow  L/min", "circle 2–3 L, then ≥0.5 L"),
+        ("End-tidal CO2", "40–50 mm Hg  ·  PPV if >60"),
+        ("SpO2", "≥95%"),
+        ("Temperature", "≥98 °F  (36.7 °C)"),
+        ("Fluid rate  mL/hr", "dog 5 mL/kg/hr  ·  cat 3–5"),
+        ("Total fluid  mL", "rate × hours"),
     ]
     x0 = 20
-    label_w = 720
+    label_w = 560
+    target_w = 980
     grid_x = x0 + label_w
-    col_w = (W - 40 - label_w) / len(times)
+    target_x = grid_x + target_w
+    col_w = (W - 40 - label_w - target_w) / len(times)
     y = 84
     rh = 80
     cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
+    cell(d, grid_x, y, target_x, y + rh, "Reference range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
     for c, t in enumerate(times):
-        cell(d, grid_x + c * col_w, y, grid_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
+        cell(d, target_x + c * col_w, y, target_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
     y += rh
-    for r, name in enumerate(params):
+    for r, (name, target) in enumerate(params):
         yy = y + r * rh
         fluid = name.startswith("Fluid") or name.startswith("Total")
         fill = TEAL if fluid else (WHITE if r % 2 == 0 else (236, 242, 244))
         fg = WHITE if fluid else INK
         cell_wrapped(d, x0, yy, grid_x, yy + rh, name, fill=fill, fg=fg, size=28, bold=True)
+        cell_wrapped(
+            d,
+            grid_x,
+            yy,
+            target_x,
+            yy + rh,
+            target,
+            fill=(227, 241, 236),
+            fg=NAVY,
+            size=28,
+            bold=True,
+        )
         for c in range(len(times)):
             cell(
                 d,
-                grid_x + c * col_w,
+                target_x + c * col_w,
                 yy,
-                grid_x + (c + 1) * col_w,
+                target_x + (c + 1) * col_w,
                 yy + rh,
                 "",
                 fill=WHITE if r % 2 == 0 else (236, 242, 244),
@@ -748,7 +762,7 @@ def anesthesia_chart_recovery():
     y = y + 10 * rh + 10
     thirds = [
         (NAVY, "Complications", "Write the event, the time, and the correction. If none: write none."),
-        (TEAL, "Fluids at the end", "Type · rate · total mL. Write what you gave."),
+        (TEAL, "Fluids at the end", "Type · rate · total mL. Dog 5 mL/kg/hr; cat 3–5."),
         (GREEN, "Recovery analgesics", "On-label NSAID unless steroid or azotemia. Write what you gave. Sign the record."),
     ]
     bw = (W - 56) / 3

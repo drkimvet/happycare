@@ -364,7 +364,7 @@ notes(s, "Do not teach this as a CPE station. Teach the clocks. Anesthesia owns 
 # 6 Preop evaluation
 s = new_content("Preoperative physical examination")
 pe_boxes = [
-    ("T  ·  HR  ·  RR", "Temperature, heart rate, respiratory rate. Write the numbers. Do not copy yesterday’s chart."),
+    ("T  ·  HR  ·  RR", "Write the numbers. Conscious dog: HR 70–140, RR 20–40. Cat: HR 145–200, RR 20–40 (Fossum)."),
     ("mm / CRT", "Mucous membrane color and capillary refill. Pink vs pale vs injected. CRT in seconds."),
     ("Heart and lungs", "Auscultate both sides. Record any murmur, arrhythmia, or crackles before you choose drugs."),
     ("Hydration + site", "Skin tent, tacky mm. Look at the surgical site: pyoderma, heat, pain. Abdomen if you might open it."),
@@ -498,7 +498,7 @@ notes(s, "Do not call these ASA cutoffs. The anesthesia record’s minimum labs 
 # 13 Premed, induction, MAC
 s = new_content("Anesthetic drug protocol")
 pills = [
-    (TEAL, "1. Premed after ASA", "IM or SQ. Not before the exam. Healthy: DKT or BAA. The table below is not the default."),
+    (TEAL, "1. Premed after ASA", "IM or SQ. Not before the exam. Healthy: DKT or BAA."),
     (GOLD, "2. Induce IV to effect", "Alfaxalone, propofol, or ketamine + benzo. Then intubate."),
     (NAVY, "3. Iso or sevo to MAC", "Premed lowers MAC. Circle the inhalant you used."),
 ]
@@ -509,7 +509,7 @@ for i, (c, t, dtl) in enumerate(pills):
     add_text(s, x, Inches(1.08), Inches(4.12), Inches(0.38), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.12), Inches(1.50), Inches(3.88), Inches(0.68), dtl, size=14, color=INK)
 add_pic(s, "anesthesia_protocol_record.png", Inches(0.28), Inches(2.32), Inches(12.78), Inches(4.80))
-notes(s, "This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. The three steps at the top are the general sequence. The filled table is one worked example: ear disease, DexSP already given, murmur. Healthy default is not that table. Skip NSAID because of AAHA/AAFP 2015 GI risk, not because albumin was measured. DexSP dose and time are not on this teaching record: do not invent them. Blood-pressure floors are Grubb 2020, not a Willie tracing. Students write drug, concentration, dose, volume, and route.")
+notes(s, "This is Appendix 3 pages 2 and 3 as an original record, not the copyrighted form. The filled table is a 25 kilogram ASA 1 elective OHE: carprofen 4.4 milligrams per kilogram SQ, LRS 125 milliliters per hour. It is not Willie and it is not MoMo. DexSP is only on Willie’s slides. MoMo never received DexSP; skip NSAID in that cat because she is azotemic. Students write drug, concentration, dose, volume, and route.")
 
 # 14 Stabilize
 s = new_content("Correct deficits before you cut")
@@ -742,7 +742,7 @@ notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the ca
 # 30 Flowsheet
 s = new_content("Anesthesia chart and end of case")
 add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
-notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The grid is blank on purpose. Students write heart rate, respiratory rate, blood pressure, inhalant, oxygen, ETCO2, SpO2, temperature, and fluids as they go. Do not print target bands on this slide. Complications, fluids at the end, and recovery analgesics are written at the bottom. Sign the record.")
+notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The reference-range column is under anesthesia. Heart rate: dog 60 to 120, Ko and Krimins 2012 Table 2; cat 100 to 180, AAFP 2018. Blood pressure floors: SAP 90, MAP 70, DAP 40, Grubb 2020. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen 2 to 3 liters then at least 500 milliliters per minute. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Inhalant to effect. Time cells empty until a real patient. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide, not this intra-op column.")
 
 # 31 Pain + incision
 s = new_content("Postop analgesia and incision care")
@@ -765,7 +765,7 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "E-collar that stays on. Leash walks 14 days.",
     "Skin sutures typically 10–14 days.",
 ], size=16, spacing=6)
-notes(s, "This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
+notes(s, "This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not stack an NSAID with a corticosteroid. Skip NSAID if the patient is azotemic. That is MoMo’s reason, not DexSP. DexSP is only on Willie’s slides. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
 
 # 32 Complications
 s = new_content("Complications in the first 24 hours")
@@ -859,7 +859,7 @@ pearls = [
     "Write drug, concentration, dose, volume, and route. Then IV fluid name and rate, ETT size, circuit, and fresh-gas flow.",
     "Ready for surgical prep: airway secured, machine on, patent IV running, surgical plane, monitoring started.",
     "Patient: hair, skin, position, drape. Surgeon: attire, gown, closed glove. Announce incision.",
-    "Fill the chart: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
+    "Fill the chart against the reference range: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
     "First 24 hours: monitor and manage complications. A weak ligature or a weak linea is still your technical problem.",
 ]
 for i, t in enumerate(pearls):
