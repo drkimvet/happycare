@@ -1,13 +1,13 @@
 DVM 612 Week 4 instructor script
 Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP
 
-38 slides. Teach ASA first. Willie is PE, then labs, then students write the status (key: 3-E). MoMo is the same: PE, then labs, then students write the status (key: 4-E). Owner names, addresses, phones, and emails stay off slides and off this script.
+38 slides. Teach the ASA chart first. MoMo is PE, then labs, then students write the status (key: 4-E). Then Willie: PE, then labs, then students write the status (key: 3-E). Owner names, addresses, phones, and emails stay off slides and off this script.
 
 SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
-    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach ASA first. Then Willie: PE, then labs, then the students write the status. Do not give them 3-E before they commit. Then MoMo the same way: PE, then labs, then they write the status. Do not give them 4-E before they commit. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.
+    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach the ASA chart first. Then MoMo: PE, then labs, then the students write the status. Do not give them 4-E before they commit. Then Willie the same way: PE, then labs, then they write the status. Do not give them 3-E before they commit. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.
 
 SLIDE 2. Learning objectives
-    SPEAK: Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. Willie is an ASA quiz after the table, not a treatment case.
+    SPEAK: Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. After the ASA chart: MoMo is the first quiz, then Willie. Neither is a treatment case.
 
 SLIDE 3. Prepare the patient and yourself
     SPEAK: Surgical competence includes the first 24 hours of physiologic monitoring and complication management. That is not a claim of infinite legal liability for every recovery-ward or owner event. Hemorrhage from a weak ligature is still your technical problem.
@@ -22,22 +22,22 @@ SLIDE 6. Preoperative physical examination
     SPEAK: This is the preoperative exam the record actually holds. CPE MOA 2026 Appendix 3: heart rate, respiratory rate, mucous membranes and CRT, temperature, then PCV, TP, and BUN. Request those three. Interpret them. Then write ASA. Then premed IM or SQ. Do not premedicate before the examination. Add other labs if the PE says so. A normal CBC does not make a vestibular dog Status 1. Azotemia can cancel the cut.
 
 SLIDE 7. ASA physical status
-    SPEAK: Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview Willie. Next: one dog’s PE, then labs, then they write the status.
+    SPEAK: Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview MoMo or Willie. Next: one cat’s PE, then labs, then they write the status. Then the dog.
 
-SLIDE 8. Willie: today’s PE
-    SPEAK: Read the PE from today’s record. Do not say 3-E yet. Do not put the client name on the board. No DexSP, alfaxalone, ear clean, or TECA. Next slide is the actual lab numbers, then they write the status.
+SLIDE 8. MoMo: today’s PE
+    SPEAK: First ASA quiz, after the chart. Read the PE from today’s record. Do not say 4-E yet. Pause on the photograph. Be respectful; this cat died. Do not put the client name on the board. Vitals list QAR and tacky mucous membranes; the oral and neuro lines list pink moist CRT less than 2 seconds and BAR. Both wordings are on the record; do not reconcile them into a story. Fear-based aggression is on the history; do not put the owner incident on the board. Next slide is the actual lab numbers, then they write the status. No DexSP. No Unasyn. No Cerenia.
 
-SLIDE 9. Willie: labs. Write the ASA
-    SPEAK: Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the ataxia plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 35 is the written key.
+SLIDE 9. MoMo: labs. Write the ASA
+    SPEAK: Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP is not on this printout; do not invent it. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 35 is the written key.
 
-SLIDE 10. MoMo: today’s PE
-    SPEAK: Read the PE from today’s record. Do not say 4-E yet. Pause on the photograph. Be respectful; this cat died. Do not put the client name on the board. Vitals list QAR and tacky mucous membranes; the oral and neuro lines list pink moist CRT less than 2 seconds and BAR. Both wordings are on the record; do not reconcile them into a story. Fear-based aggression is on the history; do not put the owner incident on the board. Next slide is the actual lab numbers, then they write the status. No DexSP. No Unasyn. No Cerenia.
+SLIDE 10. Willie: today’s PE
+    SPEAK: Second ASA quiz. Read the PE from today’s record. Do not say 3-E yet. Do not put the client name on the board. No DexSP, alfaxalone, ear clean, or TECA. Next slide is the actual lab numbers, then they write the status.
 
-SLIDE 11. MoMo: labs. Write the ASA
-    SPEAK: Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP is not on this printout; do not invent it. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 36 is the written key.
+SLIDE 11. Willie: labs. Write the ASA
+    SPEAK: Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the ataxia plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 36 is the written key.
 
 SLIDE 12. Pre-anesthetic assessment
-    SPEAK: This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. Willie and MoMo ASA cells stay blank on purpose: they already wrote those on the quiz. Healthy Lab OHE is Status 1. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut.
+    SPEAK: This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. They already wrote MoMo, then Willie, on the quizzes. ASA cells stay blank on purpose. Healthy Lab OHE is Status 1. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut.
 
 SLIDE 13. Laboratory values inform risk
     SPEAK: Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Do not invent PCV cutoffs as ASA numbers.
@@ -105,11 +105,11 @@ SLIDE 33. Surgical report and discharge
 SLIDE 34. Emergency criteria for discharge
     SPEAK: Pale gums + distended abdomen after OHE: come now. Return to OR.
 
-SLIDE 35. Answer: Willie is Status 3-E
-    SPEAK: Written key after the quiz. Status 3-E. Why not 1, why not 4. No drugs. No ear clean. No TECA.
+SLIDE 35. Answer: MoMo is Status 4-E
+    SPEAK: Written key after the first quiz. Status 4-E. Why not 1, why not 3. No DexSP. No Unasyn. No Cerenia. Do not invent fluid overload. Client identifiers stay off the board.
 
-SLIDE 36. Answer: MoMo is Status 4-E
-    SPEAK: Written key after the quiz. Status 4-E. Why not 1, why not 3. No DexSP. No Unasyn. No Cerenia. Do not invent fluid overload. Client identifiers stay off the board.
+SLIDE 36. Answer: Willie is Status 3-E
+    SPEAK: Written key after the second quiz. Status 3-E. Why not 1, why not 4. No drugs. No ear clean. No TECA.
 
 SLIDE 37. Key points
     SPEAK: These six lines are the Appendix 3 record and the Surgery competencies: assessment and ASA, drug protocol and equipment, ready for prep, hair-skin-position-drape, the chart and signature, then the first 24 hours. Do not recap the hospital patients here.

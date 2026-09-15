@@ -575,15 +575,15 @@ def preanesthetic_assessment_table():
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
 
-    headers = ["Field", "Willie (quiz)", "Healthy Lab OHE", "MoMo (quiz)"]
+    headers = ["Field", "MoMo (quiz)", "Healthy Lab OHE", "Willie (quiz)"]
     rows = [
-        ["Weight", "13.7 kg", "25 kg", "4.25 kg"],
-        ["T  ·  HR  ·  RR", "100.8 °F  ·  132  ·  52", "normal TPR", "98.0 °F  ·  200  ·  30"],
-        ["mm / CRT", "pink / 2 s", "normal", "pink, tacky / <2 s"],
-        ["Other PE", "Ataxia + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven"],
-        ["PCV / HCT", "HCT 47.5%\n(36.9–60.0)", "within reference", "HCT 44%\n(28–50)"],
-        ["TP", "6.4 g/dL\n(5.5–7.6)", "within reference", "not on this printout"],
-        ["BUN", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130", "within reference", "48.7 → 100\nCr 3.0 → 4.71"],
+        ["Weight", "4.25 kg", "25 kg", "13.7 kg"],
+        ["T  ·  HR  ·  RR", "98.0 °F  ·  200  ·  30", "normal TPR", "100.8 °F  ·  132  ·  52"],
+        ["mm / CRT", "pink, tacky / <2 s", "normal", "pink / 2 s"],
+        ["Other PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven", "Elective OHE\nnormal PE", "Ataxia + AS otitis\nII/VI murmur"],
+        ["PCV / HCT", "HCT 44%\n(28–50)", "within reference", "HCT 47.5%\n(36.9–60.0)"],
+        ["TP", "not on this printout", "within reference", "6.4 g/dL\n(5.5–7.6)"],
+        ["BUN", "48.7 → 100\nCr 3.0 → 4.71", "within reference", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130"],
         ["ASA", "write it", "1", "write it"],
     ]
     widths = [480, 880, 880, 920]

@@ -282,7 +282,7 @@ add_text(s, Inches(0.75), Inches(4.15), Inches(12), Inches(0.50), "Dr. Yujin Kim
 add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  38 slides  |  60 minutes", size=18, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Exam, labs, then you write the ASA. Then prep. Then 24 hours of monitoring and complication management.", size=20, color=WHITE)
 add_text(s, Inches(0.75), Inches(6.20), Inches(12), Inches(0.70), "Required: Fossum 2018; Hendrickson & Baird 2013.\nAlso used: ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery.", size=16, color=GOLD)
-notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach ASA first. Then Willie: PE, then labs, then the students write the status. Do not give them 3-E before they commit. Then MoMo the same way: PE, then labs, then they write the status. Do not give them 4-E before they commit. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
+notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach the ASA chart first. Then MoMo: PE, then labs, then the students write the status. Do not give them 4-E before they commit. Then Willie the same way: PE, then labs, then they write the status. Do not give them 3-E before they commit. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
 
 # 2 Learning objectives
 s = new_content("Learning objectives")
@@ -296,7 +296,7 @@ items = [
 add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(3.9), items, size=20, spacing=12)
 add_round(s, Inches(0.5), Inches(5.35), Inches(12.3), Inches(0.85), GOLD_LT)
 add_text(s, Inches(0.75), Inches(5.45), Inches(11.9), Inches(0.65), "Exam → labs → ASA → ready for prep → clip, dirty scrub, OR, full scrub, drape, instruments → first 24 hours.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. Willie is an ASA quiz after the table, not a treatment case.")
+notes(s, "Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. After the ASA chart: MoMo is the first quiz, then Willie. Neither is a treatment case.")
 
 # 3 SSI
 s = new_content("Prepare the patient and yourself")
@@ -415,33 +415,9 @@ for i, (asa, defn, ex, c) in enumerate(rows):
     add_text(s, Inches(8.85), y + Inches(0.08), Inches(3.80), Inches(0.72), ex, size=16, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.45), Inches(6.48), Inches(12.4), Inches(0.55), GOLD_LT)
 add_text(s, Inches(0.65), Inches(6.48), Inches(12.05), Inches(0.55), "E = emergency. Status 3 is moderate and compensated. Status 4 is uncompensated and a threat to life. Today’s PE and labs write the number. A normal CBC does not write Status 1.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview Willie. Next: one dog’s PE, then labs, then they write the status.")
+notes(s, "Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview MoMo or Willie. Next: one cat’s PE, then labs, then they write the status. Then the dog.")
 
-# 8 Willie PE (no ASA yet)
-s = new_content("Willie: today’s PE")
-add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "MN Cavalier, 6 y 11 mo, 13.7 kg. Acute ataxia and disorientation ~1 hour. Found on the floor; fell off the couch twice. Abnormal paw placement. Cytopoint. T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, dull/quiet. Do not write the ASA yet.", size=16, color=NAVY)
-card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
-card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Ataxia. Disorientation. Could not stand without falling. Abnormal paw placement / sliding on a forelimb. Dull, quiet.", accent=GOLD)
-card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Lungs clear, eupneic. Heavy tartar. Yellow crusts on the nasal philtrum. Eyes: PLR present.", accent=RED)
-add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "This slide is the examination. Next: today’s chemistry and CBC, including HCT and TP. Then you write the ASA. Add E if this is an emergency. Owner identifiers stay off these slides. Do not use a drug list on this dog.", size=16, color=INK)
-notes(s, "Read the PE from today’s record. Do not say 3-E yet. Do not put the client name on the board. No DexSP, alfaxalone, ear clean, or TECA. Next slide is the actual lab numbers, then they write the status.")
-
-# 9 Willie labs + ASA quiz
-s = new_content("Willie: labs. Write the ASA")
-card(s, Inches(0.45), Inches(1.15), Inches(3.05), Inches(2.15), "HCT", "47.5%  (36.9–60.0)", accent=TEAL)
-card(s, Inches(3.65), Inches(1.15), Inches(3.05), Inches(2.15), "TP", "6.4 g/dL  (5.5–7.6)", accent=TEAL)
-card(s, Inches(6.85), Inches(1.15), Inches(3.05), Inches(2.15), "BUN / creatinine", "BUN 11.9 (9.0–29.0). Cr 0.7 (0.4–1.4).", accent=GOLD)
-card(s, Inches(10.05), Inches(1.15), Inches(2.85), Inches(2.15), "Out of range", "Phos 6.0 (1.9–5.0). Glucose 130 (75–125). CBC in range.", accent=NAVY)
-add_round(s, Inches(0.45), Inches(3.45), Inches(12.40), Inches(1.35), GOLD_LT)
-add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assign ASA. Add E if emergency. Write it before you hear the key. HCT in range does not write Status 1.", size=18, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
-card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 1?", "What on today’s PE is not a normal healthy patient?", accent=TEAL)
-card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Why not Status 4?", "Is this a constant threat to life today?", accent=RED)
-notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the ataxia plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 35 is the written key.")
-
-# 10 MoMo PE (no ASA yet)
+# 8 MoMo PE (no ASA yet)
 s = new_content("MoMo: today’s PE")
 add_pic(s, "momo.jpg", Inches(0.40), Inches(1.12), Inches(4.42), Inches(5.90))
 add_round(s, Inches(4.98), Inches(1.12), Inches(7.85), Inches(1.28), GOLD_LT)
@@ -449,9 +425,9 @@ add_text(s, Inches(5.18), Inches(1.20), Inches(7.50), Inches(1.12), "SF DSH, 6 y
 card(s, Inches(4.98), Inches(2.52), Inches(7.85), Inches(1.28), "Why this looked surgical", "Possible FB or toxin was on the list. Mildly enlarged abdomen. That is how cats get booked for an exploratory.", accent=GOLD)
 card(s, Inches(4.98), Inches(3.90), Inches(7.85), Inches(1.28), "Abdomen and the rest of PE", "Mildly enlarged abdomen on palpation. Rectal not examined. The PE did not prove a foreign body.", accent=TEAL)
 card(s, Inches(4.98), Inches(5.28), Inches(7.85), Inches(1.74), "Also on PE", "Eyes, ears, nose normal. Oral pink, CRT <2. Lungs clear, eupneic. No murmur, regular rhythm. Ambulatory ×4. LN and skin WNL. Neuro: normal gait, CNs intact. MCS 3/3. Generalized small stature.", accent=RED)
-notes(s, "Read the PE from today’s record. Do not say 4-E yet. Pause on the photograph. Be respectful; this cat died. Do not put the client name on the board. Vitals list QAR and tacky mucous membranes; the oral and neuro lines list pink moist CRT less than 2 seconds and BAR. Both wordings are on the record; do not reconcile them into a story. Fear-based aggression is on the history; do not put the owner incident on the board. Next slide is the actual lab numbers, then they write the status. No DexSP. No Unasyn. No Cerenia.")
+notes(s, "First ASA quiz, after the chart. Read the PE from today’s record. Do not say 4-E yet. Pause on the photograph. Be respectful; this cat died. Do not put the client name on the board. Vitals list QAR and tacky mucous membranes; the oral and neuro lines list pink moist CRT less than 2 seconds and BAR. Both wordings are on the record; do not reconcile them into a story. Fear-based aggression is on the history; do not put the owner incident on the board. Next slide is the actual lab numbers, then they write the status. No DexSP. No Unasyn. No Cerenia.")
 
-# 11 MoMo labs + ASA quiz
+# 9 MoMo labs + ASA quiz
 s = new_content("MoMo: labs. Write the ASA")
 card(s, Inches(0.45), Inches(1.15), Inches(3.05), Inches(2.15), "HCT", "44%  (28–50)", accent=TEAL)
 card(s, Inches(3.65), Inches(1.15), Inches(3.05), Inches(2.15), "TP", "Not on this printout", accent=TEAL)
@@ -462,7 +438,31 @@ add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assi
 card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
 card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 3?", "Is this still compensated CKD, or a constant threat to life?", accent=TEAL)
 card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Cut today?", "Exploratory on vomiting and an enlarged abdomen?", accent=RED)
-notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP is not on this printout; do not invent it. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 36 is the written key.")
+notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP is not on this printout; do not invent it. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 35 is the written key.")
+
+# 10 Willie PE (no ASA yet)
+s = new_content("Willie: today’s PE")
+add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "MN Cavalier, 6 y 11 mo, 13.7 kg. Acute ataxia and disorientation ~1 hour. Found on the floor; fell off the couch twice. Abnormal paw placement. Cytopoint. T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, dull/quiet. Do not write the ASA yet.", size=16, color=NAVY)
+card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
+card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Ataxia. Disorientation. Could not stand without falling. Abnormal paw placement / sliding on a forelimb. Dull, quiet.", accent=GOLD)
+card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Lungs clear, eupneic. Heavy tartar. Yellow crusts on the nasal philtrum. Eyes: PLR present.", accent=RED)
+add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
+add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "This slide is the examination. Next: today’s chemistry and CBC, including HCT and TP. Then you write the ASA. Add E if this is an emergency. Owner identifiers stay off these slides. Do not use a drug list on this dog.", size=16, color=INK)
+notes(s, "Second ASA quiz. Read the PE from today’s record. Do not say 3-E yet. Do not put the client name on the board. No DexSP, alfaxalone, ear clean, or TECA. Next slide is the actual lab numbers, then they write the status.")
+
+# 11 Willie labs + ASA quiz
+s = new_content("Willie: labs. Write the ASA")
+card(s, Inches(0.45), Inches(1.15), Inches(3.05), Inches(2.15), "HCT", "47.5%  (36.9–60.0)", accent=TEAL)
+card(s, Inches(3.65), Inches(1.15), Inches(3.05), Inches(2.15), "TP", "6.4 g/dL  (5.5–7.6)", accent=TEAL)
+card(s, Inches(6.85), Inches(1.15), Inches(3.05), Inches(2.15), "BUN / creatinine", "BUN 11.9 (9.0–29.0). Cr 0.7 (0.4–1.4).", accent=GOLD)
+card(s, Inches(10.05), Inches(1.15), Inches(2.85), Inches(2.15), "Out of range", "Phos 6.0 (1.9–5.0). Glucose 130 (75–125). CBC in range.", accent=NAVY)
+add_round(s, Inches(0.45), Inches(3.45), Inches(12.40), Inches(1.35), GOLD_LT)
+add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assign ASA. Add E if emergency. Write it before you hear the key. HCT in range does not write Status 1.", size=18, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
+card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 1?", "What on today’s PE is not a normal healthy patient?", accent=TEAL)
+card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Why not Status 4?", "Is this a constant threat to life today?", accent=RED)
+notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the ataxia plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 36 is the written key.")
 
 # 12 Diagnostics
 s = new_content("Pre-anesthetic assessment")
@@ -479,7 +479,7 @@ add_text(
     anchor=MSO_ANCHOR.MIDDLE,
 )
 add_pic(s, "preanesthetic_assessment_table.png", Inches(0.28), Inches(1.86), Inches(12.78), Inches(5.24))
-notes(s, "This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. Willie and MoMo ASA cells stay blank on purpose: they already wrote those on the quiz. Healthy Lab OHE is Status 1. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut.")
+notes(s, "This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. They already wrote MoMo, then Willie, on the quizzes. ASA cells stay blank on purpose. Healthy Lab OHE is Status 1. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut.")
 
 # 13 CBC/chem
 s = new_content("Laboratory values inform risk")
@@ -822,25 +822,7 @@ for i, ((t, d), c) in enumerate(zip(crit, cols_c)):
     add_text(s, x + Inches(0.25), Inches(2.1), Inches(3.55), Inches(4.3), d, size=18, color=INK)
 notes(s, "Pale gums + distended abdomen after OHE: come now. Return to OR.")
 
-# 35 Willie ASA
-s = new_content("Answer: Willie is Status 3-E")
-add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  today’s PE and today’s labs write the status", size=18, color=NAVY)
-wsteps = [
-    ("Disease", "Acute ataxia and disorientation. AS otitis. Grade II/VI murmur. That is moderate systemic disease, not a normal PE."),
-    ("Compensated", "Pink, CRT 2 s. BUN 11.9 and creatinine 0.7 in range. Not a constant threat to life today."),
-    ("Not Status 1", "HCT 47.5% in range does not write Status 1. Otitis plus ataxia plus a murmur is not Status 1."),
-    ("Not Status 4", "Phos 6.0 and glucose 130 are high. They do not write Status 4. Status 4 is a constant threat to life."),
-]
-for i, (t, d) in enumerate(wsteps):
-    x = Inches(0.45) + Inches(i * 3.2)
-    add_round(s, x, Inches(2.10), Inches(3.05), Inches(4.80), WHITE)
-    add_rect(s, x, Inches(2.10), Inches(3.05), Inches(0.65), NAVY)
-    add_text(s, x, Inches(2.10), Inches(3.05), Inches(0.65), t, size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.15), Inches(2.90), Inches(2.75), Inches(3.80), d, size=16, color=INK)
-notes(s, "Written key after the quiz. Status 3-E. Why not 1, why not 4. No drugs. No ear clean. No TECA.")
-
-# 36 MoMo ASA
+# 35 MoMo ASA
 s = new_content("Answer: MoMo is Status 4-E")
 add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), RED_LT)
 add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "MoMo  ·  SF DSH  ·  4.25 kg  ·  today’s PE and today’s labs write the status. Do not cut.", size=18, color=NAVY)
@@ -856,7 +838,25 @@ for i, (t, d) in enumerate(msteps):
     add_rect(s, x, Inches(2.10), Inches(3.05), Inches(0.65), RED)
     add_text(s, x, Inches(2.10), Inches(3.05), Inches(0.65), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.15), Inches(2.90), Inches(2.75), Inches(3.80), d, size=16, color=INK)
-notes(s, "Written key after the quiz. Status 4-E. Why not 1, why not 3. No DexSP. No Unasyn. No Cerenia. Do not invent fluid overload. Client identifiers stay off the board.")
+notes(s, "Written key after the first quiz. Status 4-E. Why not 1, why not 3. No DexSP. No Unasyn. No Cerenia. Do not invent fluid overload. Client identifiers stay off the board.")
+
+# 36 Willie ASA
+s = new_content("Answer: Willie is Status 3-E")
+add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
+add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  today’s PE and today’s labs write the status", size=18, color=NAVY)
+wsteps = [
+    ("Disease", "Acute ataxia and disorientation. AS otitis. Grade II/VI murmur. That is moderate systemic disease, not a normal PE."),
+    ("Compensated", "Pink, CRT 2 s. BUN 11.9 and creatinine 0.7 in range. Not a constant threat to life today."),
+    ("Not Status 1", "HCT 47.5% in range does not write Status 1. Otitis plus ataxia plus a murmur is not Status 1."),
+    ("Not Status 4", "Phos 6.0 and glucose 130 are high. They do not write Status 4. Status 4 is a constant threat to life."),
+]
+for i, (t, d) in enumerate(wsteps):
+    x = Inches(0.45) + Inches(i * 3.2)
+    add_round(s, x, Inches(2.10), Inches(3.05), Inches(4.80), WHITE)
+    add_rect(s, x, Inches(2.10), Inches(3.05), Inches(0.65), NAVY)
+    add_text(s, x, Inches(2.10), Inches(3.05), Inches(0.65), t, size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.15), Inches(2.90), Inches(2.75), Inches(3.80), d, size=16, color=INK)
+notes(s, "Written key after the second quiz. Status 3-E. Why not 1, why not 4. No drugs. No ear clean. No TECA.")
 
 # 37 Key points
 s = new_content("Key points")
@@ -926,7 +926,7 @@ script_lines = [
     "DVM 612 Week 4 instructor script",
     "Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP",
     "",
-    "38 slides. Teach ASA first. Willie is PE, then labs, then students write the status (key: 3-E). MoMo is the same: PE, then labs, then students write the status (key: 4-E). Owner names, addresses, phones, and emails stay off slides and off this script.",
+    "38 slides. Teach the ASA chart first. MoMo is PE, then labs, then students write the status (key: 4-E). Then Willie: PE, then labs, then students write the status (key: 3-E). Owner names, addresses, phones, and emails stay off slides and off this script.",
     "",
 ]
 for i, slide in enumerate(prs.slides, 1):
