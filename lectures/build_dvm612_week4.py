@@ -811,7 +811,7 @@ add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  ASA III-E  ·  vestibular + AS otitis  ·  skip NSAID", size=18, color=NAVY)
 wsteps = [
     ("Pre-op", "Neuro exam. Culture the ear. Radiographs are not MRI. Central until proven otherwise. Exam before any drug."),
-    ("Prep", "If intubated: start 7.0 mm ETT, 1 L bag, circle. Canal and eye: dilute PVP-I, 1:50 of 10%. Then alfaxalone."),
+    ("Prep", "Alfaxalone. If intubated: 7.0 mm ETT, 1 L bag, circle. Canal and eye: dilute PVP-I, 1:50 of 10%."),
     ("Intra", "Timeout. Deep clean + cytology. If you contaminate, say it and re-glove."),
     ("Post", "No stairs. Watch neuro signs. MRI next. TECA-LBO only if medical therapy fails."),
 ]
