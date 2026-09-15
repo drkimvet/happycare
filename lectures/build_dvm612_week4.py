@@ -289,13 +289,13 @@ s = new_content("Learning objectives")
 items = [
     "Assign ASA after today’s PE and labs. Correct deficits. Write premed, induction, MAC, tube, bag, and fluid rate.",
     "If albumin is low: find the cause, delay elective if you can, and do not flood with crystalloid.",
-    "Prep for aseptic surgery: clip, labeled antiseptics, minimum contact time, four-quadrant drape, closed glove.",
+    "Prep for aseptic surgery: clip, dirty scrub, OR attire, full scrub, drape, instrument table, closed glove.",
     "Name a break in asepsis and correct it, before or after the incision. Classify the wound: clean, clean-contaminated, contaminated, or dirty.",
     "Write the postop plan, the surgical report, and 24-hour emergency criteria.",
 ]
 add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(3.9), items, size=20, spacing=12)
 add_round(s, Inches(0.5), Inches(5.35), Inches(12.3), Inches(0.85), GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.45), Inches(11.9), Inches(0.65), "Exam → labs → ASA → correct deficits → premed → induce → ready for prep → clip, prep, drape → first 24 hours.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.75), Inches(5.45), Inches(11.9), Inches(0.65), "Exam → labs → ASA → ready for prep → clip, dirty scrub, OR, full scrub, drape, instruments → first 24 hours.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. The two hospital patients are ASA practice, not the point of the hour.")
 
 # 3 SSI
@@ -341,8 +341,8 @@ notes(s, "Two minutes, then move. Every Halsted principle has a preop or postop 
 s = new_content("The perioperative continuum")
 stages = [
     ("PRE-OP", "PE, labs, ASA\nCorrect deficits\nPremed, induce, MAC\nETT, bag, fluids", TEAL),
-    ("PREP", "Ready for clip:\nairway, IV, plane\nHair, skin, position\nDrape, gown, glove", GOLD),
-    ("INTRA-OP", "Announce incision\nHold asepsis\nHalsted, temp, pain\nRecord every 5–10 min", NAVY),
+    ("PREP", "Clip, dirty scrub\nShoe covers, cap, mask\nOR: full scrub, gown\nDrape, instruments", GOLD),
+    ("INTRA-OP", "Mark incision\nHold asepsis\nHalsted, temp, pain\nChart every 5–10 min", NAVY),
     ("POST-OP", "Airway, pain, heat\nWatch 24 hours\nReport + discharge\nRecheck plan", GREEN),
 ]
 for i, (t, b, c) in enumerate(stages):
@@ -599,27 +599,9 @@ add_text(s, Inches(0.65), Inches(5.98), Inches(12.05), Inches(1.02), "Write the 
 notes(s, "Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.")
 
 # 20 Sequence
-s = new_content("Sequence of patient preparation")
-steps = [
-    ("1", "Ready for prep: ETT in, cuff to 20 cm H2O, bag on, IV running, surgical plane"),
-    ("2", "Express bladder if abdominal / caudal surgery"),
-    ("3", "Clip with #40, vacuum hair, dirty antiseptic"),
-    ("4", "Move to OR, position, pad, tie, final check"),
-    ("5", "Sterile prep. Clock minimum contact time. Skin: 7.5% ~5 min, then 5% paint. Eye: 2 min + 2 min"),
-    ("6", "Four-quadrant towels → large drape"),
-    ("7", "Surgeon: cap, mask, gown, closed glove"),
-    ("8", "Timeout. Announce incision. Clock runs to the last skin suture."),
-]
-for i, (n, t) in enumerate(steps):
-    col = i % 4
-    row = i // 4
-    x = Inches(0.45) + Inches(col * 3.2)
-    y = Inches(1.25) + Inches(row * 2.7)
-    add_round(s, x, y, Inches(3.05), Inches(2.4), WHITE)
-    add_rect(s, x, y, Inches(3.05), Inches(0.7), NAVY if row == 0 else TEAL)
-    add_text(s, x, y, Inches(3.05), Inches(0.7), n, size=20, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.15), y + Inches(0.85), Inches(2.75), Inches(1.35), t, size=18, color=INK, align=PP_ALIGN.CENTER)
-notes(s, "Do not clip until the patient is ready for prep: tube in, cuff holds to 20 centimeters of water, correct bag, IV running, surgical plane. CPE MOA 2026 Surgery scores hair, skin, position, and drape, then wants you to announce the incision. Veterinary Betadine labels: 7.5% scrub about 5 minutes, rinse, paint 5% Solution Veterinary, dry. Eye: Roberts 1986, 1:50 of 10% stock, 2 plus 2 minutes.")
+s = new_content("Clip, dirty scrub, then the OR")
+add_pic(s, "prep_or_sequence.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
+notes(s, "Walk the room. Do not clip until ready for prep: tube in, cuff to 20 centimeters of water, IV running, surgical plane. Clip and dirty-scrub in the prep area. Shoe covers, hair cap, and mask before the OR door. Gown is after the surgical hand scrub in the room, not in the hallway. Full sterile scrub after positioning. Then drape, then open and count instruments. Timeout. Announce the incision and mark it on the anesthesia chart. Clock to the last skin suture. CPE MOA 2026 Surgery scores hair, skin, position, drape, gown and glove. Veterinary Betadine: 7.5 percent scrub about 5 minutes, rinse, paint 5 percent Solution Veterinary. Eye: Roberts 1986, 1 to 50 of 10 percent stock, 2 plus 2 minutes.")
 
 # 21 Hair
 s = new_content("Hair removal")
@@ -659,14 +641,14 @@ add_pic(s, "prep_spiral_antiseptic.png", Inches(0.4), Inches(1.15), Inches(7.4),
 add_round(s, Inches(7.95), Inches(1.15), Inches(4.9), Inches(5.9), WHITE)
 add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
-    "Dirty prep, then sterile prep.",
-    "Start at the incision. Spiral out. Drop the sponge.",
+    "Dirty (preliminary) scrub in the prep area, after the clip.",
+    "Move to the OR. Position, pad, tie.",
+    "Full (sterile) scrub in the room. Start at the incision. Spiral out. Drop the sponge.",
     "Clock the minimum contact time.",
     "Skin: 7.5% ~5 min, then 5% paint.",
     "Eye: 10% 1:50 or 5% 1:25. Intact cornea. Perforation: saline only.",
-    "Ear canal / mucosa: dilute PVP-I, not 7.5% scrub.",
 ], size=16, spacing=10)
-notes(s, "Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
+notes(s, "Mime the spiral. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
 # 24 Position
 s = new_content("Patient positioning")
@@ -689,12 +671,20 @@ add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Near towel f
 notes(s, "Left is a real spay with hair at the window. Re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
 
 # 26 Gloving
-s = new_content("Closed gloving and the anesthesia workstation")
+s = new_content("OR attire, gown, glove, instruments")
 add_pic(s, "prep_closed_gloving.png", Inches(0.35), Inches(1.12), Inches(6.3), Inches(4.15))
-add_pic(s, "hektor_or.jpg", Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15))
+add_round(s, Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15), WHITE)
+add_text(s, Inches(6.95), Inches(1.24), Inches(5.85), Inches(0.40), "Before you cut", size=18, bold=True, color=NAVY)
+add_bullets(s, Inches(6.90), Inches(1.70), Inches(5.90), Inches(3.40), [
+    "Door: shoe covers, hair cap, mask. Then enter.",
+    "Surgical hand scrub. Gown. Closed glove (hands stay in the cuffs).",
+    "Drape. Then open the instrument pack. Check the indicator.",
+    "Arrange. Count sponges and instruments. Mayo stand.",
+    "Name the monitors: ECG, SpO2, ETCO2, temp, fluids.",
+], size=16, spacing=8)
 add_round(s, Inches(0.35), Inches(5.38), Inches(12.6), Inches(1.7), WHITE)
-add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: cap, mask, ECG, SpO2, ETCO2, circle system, IV fluids, airway. Name every monitor on the workstation before the first incision.\nPhoto: MSgt Carlotta Holley, U.S. Air Force, public domain.", size=16, color=INK)
-notes(s, "Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, and fluids off the workstation photo. Do not mix MAC and case names onto this slide.")
+add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: door attire, then gown, drape, open the pack, count, Mayo stand. Timeout. Announce the incision and mark it on the chart.", size=16, color=INK)
+notes(s, "Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.")
 
 # 27 Asepsis + protect
 s = new_content("Breaks in asepsis")
@@ -711,7 +701,7 @@ notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glov
 # 28 Knowledge check
 s = new_content("Knowledge check")
 rows = [
-    ("A", "When do you clip the OHE field?", "After ready for prep: tube in, IV running, surgical plane. Then sterile prep and drape."),
+    ("A", "When do you clip the OHE field?", "After ready for prep. Clip and dirty-scrub in the prep area. Full sterile scrub in the OR after positioning."),
     ("B", "How do you prep conjunctiva with iodine?", "Intact cornea: 10% stock 1:50, 2 min + 2 min. 5% bottle: 1:25. Perforation: saline only."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
     ("D", "25 kg dog. Tube, bag, and IV fluid rate if you intubate?", "10 mm, 2 L circle, LRS 125 mL/hr (5 mL/kg/hr)."),
@@ -723,7 +713,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
-notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, then sterile prep and drape.")
+notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.")
 
 # 29 Recovery
 s = new_content("Immediate recovery")
@@ -740,9 +730,9 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
-s = new_content("Anesthesia chart and end of case")
+s = new_content("Anesthesia chart: start, incision, criteria")
 add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
-notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The normal-operating-range column is under anesthesia. Heart rate: dog 60 to 140 is the intra-op teaching band on this chart. Large dogs often sit in the 60s; small dogs often 100 to 140. Do not cite Grubb for 60 to 140. Ko and Krimins 2012 Table 2 is 60 to 120. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide. Tachycardia alert 150 to 190 by size, Grubb 2020. Cat 100 to 180, AAFP 2018. Blood pressure teaching bands: SAP 90 to 140, MAP 70 to 110, DAP 50 to 90. Grubb 2020 floors remain SAP 90, MAP 70, DAP 40; treat MAP under 60 as hypotension. Grubb hypertension alerts are MAP over 120 to 140 and SAP over 160 to 180; the upper ends on this chart are teaching, not a Grubb table. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen: 2 to 3 liters, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute, Grubb 2020. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Inhalant to effect. Time cells empty until a real patient.")
+notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. Gold columns are times you mark: anesthesia start, first incision, last skin suture. Plot the rest every 5 to 10 minutes in real time against the normal operating range (CPE MOA 2026 Anesthesia). Write the number you see. Heart rate: dog 60 to 140 is the intra-op teaching band on this chart. Large dogs often sit in the 60s; small dogs often 100 to 140. Do not cite Grubb for 60 to 140. Ko and Krimins 2012 Table 2 is 60 to 120. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide. Tachycardia alert 150 to 190 by size, Grubb 2020. Cat 100 to 180, AAFP 2018. Blood pressure teaching bands: SAP 90 to 140, MAP 70 to 110, DAP 50 to 90. Grubb 2020 floors remain SAP 90, MAP 70, DAP 40; treat MAP under 60 as hypotension. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen: 2 to 3 liters, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute, Grubb 2020. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Out of range: event, time, correction. Then fluids total, recovery analgesic, and sign. Time cells stay empty until a real patient.")
 
 # 31 Pain + incision
 s = new_content("Postop analgesia and incision care")
@@ -858,8 +848,8 @@ pearls = [
     "Pre-anesthetic assessment: TPR, mm/CRT, then PCV, TP, BUN. Interpret. Circle ASA. Then IM or SQ premed.",
     "Write drug, concentration, dose, volume, and route. Then IV fluid name and rate, ETT size, circuit, and fresh-gas flow.",
     "Ready for surgical prep: airway secured, machine on, patent IV running, surgical plane, monitoring started.",
-    "Patient: hair, skin, position, drape. Surgeon: attire, gown, closed glove. Announce incision.",
-    "Fill the chart against the normal operating range: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
+    "Patient: clip, dirty scrub, move, full scrub, drape. Surgeon: shoe covers, cap, mask, then gown and closed glove. Instrument table, then announce incision.",
+    "Mark anesthesia start and first incision. Fill the chart every 5–10 min against the operating range. Then complications, recovery analgesics, and sign.",
     "First 24 hours: monitor and manage complications. A weak ligature or a weak linea is still your technical problem.",
 ]
 for i, t in enumerate(pearls):
@@ -966,7 +956,7 @@ APPENDIX  ·  FULL REFERENCES
 20. Ko J, Krimins R. Anesthetic monitoring: devices to use and what the results mean. Today's Veterinary Practice. March/April 2012:24-33. Table 2: cardiorespiratory parameters in the anesthetized dog and cat. Heart rate: dogs 60-120 beats/min; cats 120-160. The intra-op teaching band on the chart is dog 60-140; do not attribute that band to Grubb 2020 or to Ko Table 2. Cat 100-180 is AAFP 2018, which Grubb 2020 cites. Fossum 2018 Table 31-1 (70-140 dog) is the conscious patient, not the anesthetized chart.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
-ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.
+ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), ready for prep, then clip and dirty-scrub in the prep area, shoe covers/cap/mask, move to OR, full sterile scrub, gown/glove, drape, instrument setup, mark incision.
 TUBE, BAG, AND FLUIDS (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Anesthesia IVF (Pardo 2024): dog 5 mL/kg/hr, cat 3-5 mL/kg/hr. Circle FGF (Grubb 2020): 2-3 L/min at induction, then 20-40 mL/kg/min, minimum 500 mL/min. NRC: 200-400 mL/kg/min. Example 20 kg dog: 8.5 mm, 2 L circle, LRS 100 mL/hr, FGF 2-3 L/min then ≥0.5 L/min. Teaching table on slide 16 uses CPE MOA 2026 Appendix 3 fields (ASA, ETT, bag, circuit, IV name/rate, FGF); do not dump the copyrighted form. Willie is ASA-only: do not attach this math to Willie.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.

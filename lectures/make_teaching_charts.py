@@ -709,6 +709,53 @@ def anesthesia_protocol_record():
     return path
 
 
+def prep_or_sequence():
+    """Patient and surgeon prep walk: clip, dirty scrub, OR attire, full scrub, drape, instruments."""
+    W, H = 3200, 1180
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 70], fill=NAVY)
+    d.rectangle([0, 70, W, 78], fill=GOLD)
+    d.text((28, 18), "Patient and surgeon preparation", font=font(32, True), fill=WHITE, anchor="lt")
+    d.text((28, 50), "Clip and dirty-scrub in the prep area. Shoe covers, cap, and mask before the door. Full scrub, drape, and instruments in the OR.", font=font(20), fill=GOLD, anchor="lt")
+
+    steps = [
+        ("1", "Ready for prep", "ETT in. Cuff holds. IV running. Surgical plane. Then you may clip."),
+        ("2", "Clip", "#40 blade. Vacuum the hair. Express the bladder if you will open the abdomen."),
+        ("3", "Dirty scrub", "Preliminary antiseptic in the prep area. This is not the sterile prep."),
+        ("4", "Attire at the door", "Shoe covers, hair cap, mask. Then enter the OR. Gown is not hallway wear."),
+        ("5", "Move and position", "Into the OR. Pad. Ties. Pulse distal to each tie. Final check."),
+        ("6", "Full sterile scrub", "In the room, after positioning. Clock contact time. Spiral out. Drop the sponge."),
+        ("7", "Gown, closed glove", "Surgical hand scrub first. Hands stay in the cuffs. Then glove."),
+        ("8", "Drape", "Four-quadrant towels, then the large drape. Only the incision is in the window."),
+        ("9", "Instrument setup", "Open the pack. Check the indicator. Arrange. Count sponges and instruments."),
+        ("10", "Timeout. Mark incision", "Announce the incision. Mark first cut on the chart. Clock runs to the last skin suture."),
+    ]
+    cols, rows = 5, 2
+    x0, y0 = 20, 94
+    gap = 12
+    cw = (W - 40 - gap * (cols - 1)) / cols
+    ch = (H - y0 - 20 - gap) / rows
+    for i, (n, title, body) in enumerate(steps):
+        c, r = i % cols, i // cols
+        xx = x0 + c * (cw + gap)
+        yy = y0 + r * (ch + gap)
+        d.rectangle([xx, yy, xx + cw, yy + ch], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([xx, yy, xx + 70, yy + ch], fill=NAVY)
+        d.text((xx + 35, yy + ch / 2), n, font=font(36, True), fill=GOLD, anchor="mm")
+        d.text((xx + 90, yy + 28), title, font=font(28, True), fill=NAVY, anchor="lt")
+        fn = font(22)
+        ty = yy + 70
+        for line in wrap_text(body, fn, cw - 110):
+            d.text((xx + 90, ty), line, font=fn, fill=INK, anchor="lt")
+            ty += 28
+
+    path = OUT / "prep_or_sequence.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
 def anesthesia_chart_recovery():
     """Teaching intra-op chart + end-of-case page. Same clinical fields as MOA Appendix 3 pp. 4–5. Not the copyrighted form."""
     W, H = 3200, 1240
@@ -716,9 +763,10 @@ def anesthesia_chart_recovery():
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, W, 56], fill=NAVY)
     d.rectangle([0, 56, W, 64], fill=GOLD)
-    d.text((28, 28), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lm")
+    d.text((28, 16), "Anesthesia chart", font=font(28, True), fill=WHITE, anchor="lm")
+    d.text((28, 42), "Mark anesthesia start and first incision. Record every 5–10 min against the range.", font=font(18), fill=GOLD, anchor="lm")
 
-    times = ["0 min", "5", "15", "30", "45"]
+    times = ["Anesth. start", "5 min", "Incision", "15 min", "Last suture"]
     params = [
         ("Heart rate", "dog 60–140  ·  cat 100–180"),
         ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
@@ -733,16 +781,28 @@ def anesthesia_chart_recovery():
     ]
     x0 = 20
     label_w = 560
-    target_w = 980
+    target_w = 900
     grid_x = x0 + label_w
     target_x = grid_x + target_w
     col_w = (W - 40 - label_w - target_w) / len(times)
     y = 84
     rh = 80
     cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
-    cell(d, grid_x, y, target_x, y + rh, "Normal operating range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
+    cell(d, grid_x, y, target_x, y + rh, "Normal operating range", fill=TEAL, fg=WHITE, size=28, bold=True, align="center")
     for c, t in enumerate(times):
-        cell(d, target_x + c * col_w, y, target_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
+        mark = t in ("Anesth. start", "Incision", "Last suture")
+        cell_wrapped(
+            d,
+            target_x + c * col_w,
+            y,
+            target_x + (c + 1) * col_w,
+            y + rh,
+            t,
+            fill=GOLD if mark else NAVY,
+            fg=NAVY if mark else WHITE,
+            size=24,
+            bold=True,
+        )
     y += rh
     for r, (name, target) in enumerate(params):
         yy = y + r * rh
@@ -775,9 +835,9 @@ def anesthesia_chart_recovery():
 
     y = y + 10 * rh + 10
     thirds = [
-        (NAVY, "Complications", "Write the event, the time, and the correction. If none: write none."),
-        (TEAL, "Fluids at the end", "Type · rate · total mL. Dog 5 mL/kg/hr; cat 3–5."),
-        (GREEN, "Recovery analgesics", "On-label NSAID unless steroid or azotemia. Write what you gave. Sign the record."),
+        (GOLD, "Times you mark", "Anesthesia start. First incision. Last skin suture. Extubation. Write the clock time in the gold columns."),
+        (TEAL, "Recording criteria", "Every 5–10 min, in real time. Plot HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids against the range. Write the number you see."),
+        (GREEN, "If out of range, then sign", "Event, time, and correction. Fluids: type, rate, total mL. Recovery analgesic. Sign the record."),
     ]
     bw = (W - 56) / 3
     box_h = H - 16 - y
@@ -806,4 +866,5 @@ if __name__ == "__main__":
     anesthesia_setup_table()
     preanesthetic_assessment_table()
     anesthesia_protocol_record()
+    prep_or_sequence()
     anesthesia_chart_recovery()

@@ -60,8 +60,8 @@ SLIDE 18. MoMo’s perioperative record
 SLIDE 19. Surgical wound classification
     SPEAK: Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.
 
-SLIDE 20. Sequence of patient preparation
-    SPEAK: Do not clip until the patient is ready for prep: tube in, cuff holds to 20 centimeters of water, correct bag, IV running, surgical plane. CPE MOA 2026 Surgery scores hair, skin, position, and drape, then wants you to announce the incision. Veterinary Betadine labels: 7.5% scrub about 5 minutes, rinse, paint 5% Solution Veterinary, dry. Eye: Roberts 1986, 1:50 of 10% stock, 2 plus 2 minutes.
+SLIDE 20. Clip, dirty scrub, then the OR
+    SPEAK: Walk the room. Do not clip until ready for prep: tube in, cuff to 20 centimeters of water, IV running, surgical plane. Clip and dirty-scrub in the prep area. Shoe covers, hair cap, and mask before the OR door. Gown is after the surgical hand scrub in the room, not in the hallway. Full sterile scrub after positioning. Then drape, then open and count instruments. Timeout. Announce the incision and mark it on the anesthesia chart. Clock to the last skin suture. CPE MOA 2026 Surgery scores hair, skin, position, drape, gown and glove. Veterinary Betadine: 7.5 percent scrub about 5 minutes, rinse, paint 5 percent Solution Veterinary. Eye: Roberts 1986, 1 to 50 of 10 percent stock, 2 plus 2 minutes.
 
 SLIDE 21. Hair removal
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Do not teach a fixed 20 centimeter margin. Teach landmarks that scale with the patient. Protect heat.
@@ -70,7 +70,7 @@ SLIDE 22. Skin antiseptics
     SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. One case of corneal edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
 
 SLIDE 23. Patient skin preparation technique
-    SPEAK: Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
+    SPEAK: Mime the spiral. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
 
 SLIDE 24. Patient positioning
     SPEAK: Name the bag size and the tube size on this photograph. Confirm placement with ETCO2. Keep hips in a neutral spread.
@@ -78,20 +78,20 @@ SLIDE 24. Patient positioning
 SLIDE 25. OHE: hair visible at the drape edge
     SPEAK: Left is a real spay with hair at the window. Re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
 
-SLIDE 26. Closed gloving and the anesthesia workstation
-    SPEAK: Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, and fluids off the workstation photo. Do not mix MAC and case names onto this slide.
+SLIDE 26. OR attire, gown, glove, instruments
+    SPEAK: Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.
 
 SLIDE 27. Breaks in asepsis
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture: monitor, recognize hemorrhage and hernia, write the discharge plan.
 
 SLIDE 28. Knowledge check
-    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, then sterile prep and drape.
+    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.
 
 SLIDE 29. Immediate recovery
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
 
-SLIDE 30. Anesthesia chart and end of case
-    SPEAK: This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The normal-operating-range column is under anesthesia. Heart rate: dog 60 to 140 is the intra-op teaching band on this chart. Large dogs often sit in the 60s; small dogs often 100 to 140. Do not cite Grubb for 60 to 140. Ko and Krimins 2012 Table 2 is 60 to 120. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide. Tachycardia alert 150 to 190 by size, Grubb 2020. Cat 100 to 180, AAFP 2018. Blood pressure teaching bands: SAP 90 to 140, MAP 70 to 110, DAP 50 to 90. Grubb 2020 floors remain SAP 90, MAP 70, DAP 40; treat MAP under 60 as hypotension. Grubb hypertension alerts are MAP over 120 to 140 and SAP over 160 to 180; the upper ends on this chart are teaching, not a Grubb table. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen: 2 to 3 liters, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute, Grubb 2020. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Inhalant to effect. Time cells empty until a real patient.
+SLIDE 30. Anesthesia chart: start, incision, criteria
+    SPEAK: This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. Gold columns are times you mark: anesthesia start, first incision, last skin suture. Plot the rest every 5 to 10 minutes in real time against the normal operating range (CPE MOA 2026 Anesthesia). Write the number you see. Heart rate: dog 60 to 140 is the intra-op teaching band on this chart. Large dogs often sit in the 60s; small dogs often 100 to 140. Do not cite Grubb for 60 to 140. Ko and Krimins 2012 Table 2 is 60 to 120. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide. Tachycardia alert 150 to 190 by size, Grubb 2020. Cat 100 to 180, AAFP 2018. Blood pressure teaching bands: SAP 90 to 140, MAP 70 to 110, DAP 50 to 90. Grubb 2020 floors remain SAP 90, MAP 70, DAP 40; treat MAP under 60 as hypotension. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen: 2 to 3 liters, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute, Grubb 2020. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Out of range: event, time, correction. Then fluids total, recovery analgesic, and sign. Time cells stay empty until a real patient.
 
 SLIDE 31. Postop analgesia and incision care
     SPEAK: This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not stack an NSAID with a corticosteroid. Skip NSAID if the patient is azotemic. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.
@@ -141,7 +141,7 @@ APPENDIX  ·  FULL REFERENCES
 20. Ko J, Krimins R. Anesthetic monitoring: devices to use and what the results mean. Today's Veterinary Practice. March/April 2012:24-33. Table 2: cardiorespiratory parameters in the anesthetized dog and cat. Heart rate: dogs 60-120 beats/min; cats 120-160. The intra-op teaching band on the chart is dog 60-140; do not attribute that band to Grubb 2020 or to Ko Table 2. Cat 100-180 is AAFP 2018, which Grubb 2020 cites. Fossum 2018 Table 31-1 (70-140 dog) is the conscious patient, not the anesthetized chart.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
-ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.
+ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), ready for prep, then clip and dirty-scrub in the prep area, shoe covers/cap/mask, move to OR, full sterile scrub, gown/glove, drape, instrument setup, mark incision.
 TUBE, BAG, AND FLUIDS (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Anesthesia IVF (Pardo 2024): dog 5 mL/kg/hr, cat 3-5 mL/kg/hr. Circle FGF (Grubb 2020): 2-3 L/min at induction, then 20-40 mL/kg/min, minimum 500 mL/min. NRC: 200-400 mL/kg/min. Example 20 kg dog: 8.5 mm, 2 L circle, LRS 100 mL/hr, FGF 2-3 L/min then ≥0.5 L/min. Teaching table on slide 16 uses CPE MOA 2026 Appendix 3 fields (ASA, ETT, bag, circuit, IV name/rate, FGF); do not dump the copyrighted form. Willie is ASA-only: do not attach this math to Willie.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
