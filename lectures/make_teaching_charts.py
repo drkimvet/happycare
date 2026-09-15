@@ -159,7 +159,7 @@ def anesthesia_record(filled="blank"):
     lab_v = {
         "blank": ["", "", "", ""],
         "willie": ["47.5%", "6.4", "11.9", "Cr 0.7. Phos 6.0. Glucose 130. CBC in range."],
-        "momo": ["44%", "not on this printout", "48.7 → 100", "Cr 3.0 → 4.71. WBC 26. NEU 24. HCT 44%. BE −7.4. Na 142."],
+        "momo": ["44%", "5.1", "48.7 → 100", "Cr 3.0 → 4.71. WBC 26. NEU 24. HCT 44%. TP 5.1. BE −7.4. Na 142."],
     }[filled]
     for (x0, x1, lab), val in zip(lab_h, lab_v):
         cell(d, x0, y, x1, y + 26, lab, fill=GOLD, fg=NAVY, size=16, bold=True, align="center")
@@ -173,7 +173,7 @@ def anesthesia_record(filled="blank"):
     plan = {
         "blank": "",
         "willie": "AS otitis. Head tilt L, circling L, nystagmus rapid L. R knuckling. HCT 47.5%, TP 6.4, BUN 11.9, Cr 0.7 in range. Compensated. Status 3-E from today’s PE.",
-        "momo": "Two vomits. Mildly enlarged abdomen. PE did not prove FB. AUS: right kidney fluid-filled, non-functional; left kidney reduced CM architecture. BUN 48.7 → 100. Cr 3.0 → 4.71. Do not clip.",
+        "momo": "Two vomits. Mildly enlarged abdomen. PE did not prove FB. AUS: right kidney fluid-filled, non-functional; left kidney reduced CM architecture. HCT 44%. TP 5.1. BUN 48.7 → 100. Cr 3.0 → 4.71. Do not clip.",
     }[filled]
     fplan = font(20)
     lines = wrap_text(plan, fplan, 2000)
@@ -213,7 +213,7 @@ def anesthesia_record(filled="blank"):
         "momo": [
             "ASA Status 4-E after labs and imaging",
             "POCUS / AUS before any clippers",
-            "Right kidney fluid-filled, non-functional. Left kidney reduced CM architecture. BUN 48.7 → 100. Cr 3.0 → 4.71",
+            "Right kidney fluid-filled, non-functional. Left kidney reduced CM architecture. HCT 44%. TP 5.1. BUN 48.7 → 100. Cr 3.0 → 4.71",
             "No clippers. No incision. No exploratory.",
             "NSAIDs contraindicated (azotemic cat)",
             "Consent includes medical care and euthanasia",
@@ -582,7 +582,7 @@ def preanesthetic_assessment_table():
         ["mm / CRT", "pink, tacky / <2 s", "normal", "pink / 2 s"],
         ["Other PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven", "Elective OHE\nnormal PE", "AS otitis. Head tilt L\nCircling L. R knuckling"],
         ["PCV / HCT", "HCT 44%\n(28–50)", "within reference", "HCT 47.5%\n(36.9–60.0)"],
-        ["TP", "not on this printout", "within reference", "6.4 g/dL\n(5.5–7.6)"],
+        ["TP", "5.1 g/dL\n(total protein)", "within reference", "6.4 g/dL\n(5.5–7.6)"],
         ["BUN", "48.7 → 100\nCr 3.0 → 4.71", "within reference", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130"],
         ["ASA", "write it", "1", "write it"],
     ]

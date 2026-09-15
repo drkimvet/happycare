@@ -430,7 +430,7 @@ notes(s, "First ASA quiz, after the chart. Read the PE from today’s record. Do
 # 9 MoMo labs + ASA quiz
 s = new_content("MoMo: labs. Write the ASA")
 card(s, Inches(0.45), Inches(1.15), Inches(3.05), Inches(2.15), "HCT", "44%  (28–50)", accent=TEAL)
-card(s, Inches(3.65), Inches(1.15), Inches(3.05), Inches(2.15), "TP", "Not on this printout", accent=TEAL)
+card(s, Inches(3.65), Inches(1.15), Inches(3.05), Inches(2.15), "TP (total protein)", "5.1 g/dL", accent=TEAL)
 card(s, Inches(6.85), Inches(1.15), Inches(3.05), Inches(2.15), "BUN / creatinine", "BUN 48.7 → 100 (15–32). Cr 3.0 → 4.71.", accent=GOLD)
 card(s, Inches(10.05), Inches(1.15), Inches(2.85), Inches(2.15), "Out of range", "WBC 26 (3–16). Neutrophils 24 (4–11). Na 142. BE −7.4. Glucose 136. Phos high; no number printed.", accent=NAVY)
 add_round(s, Inches(0.45), Inches(3.45), Inches(12.40), Inches(1.35), GOLD_LT)
@@ -438,7 +438,7 @@ add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assi
 card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
 card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 3?", "Is this still compensated CKD, or a constant threat to life?", accent=TEAL)
 card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Cut today?", "Exploratory on vomiting and an enlarged abdomen?", accent=RED)
-notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP is not on this printout; do not invent it. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 35 is the written key.")
+notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP, total protein, is 5.1 grams per deciliter. Do not treat TP as albumin. Pardo 2.0 is albumin, not this number. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 35 is the written key.")
 
 # 10 Willie PE (no ASA yet)
 s = new_content("Willie: today’s PE")
@@ -579,7 +579,7 @@ notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendi
 # 17 MoMo record
 s = new_content("MoMo’s perioperative record")
 add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. BUN 48.7 to 100 and creatinine 3.0 to 4.71 are written as recorded. Fluids 1.5 times maintenance, 40 milliliters per kilogram per day, are on the record. Do not invent overload as the cause. Say it once, respectfully, then continue. Client identifiers stay off the board.")
+notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. HCT 44 percent, TP 5.1 grams per deciliter, BUN 48.7 to 100, and creatinine 3.0 to 4.71 are written as recorded. Fluids 1.5 times maintenance, 40 milliliters per kilogram per day, are on the record. Do not invent overload as the cause. Do not treat TP 5.1 as the Pardo albumin cutoff. Say it once, respectfully, then continue. Client identifiers stay off the board.")
 
 # 19 Abx
 s = new_content("Surgical wound classification")
