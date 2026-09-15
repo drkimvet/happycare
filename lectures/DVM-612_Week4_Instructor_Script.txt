@@ -37,19 +37,19 @@ SLIDE 11. TESTS INDICATED FOR THIS PATIENT AND THIS PROCEDURE
     SPEAK: Request labs that change the plan. They inform the ASA number. Today’s PE writes it.
 
 SLIDE 12. TEACHING BANDS, NOT AN ASA TABLE. GRUBB ET AL. 2020: TODAY’S PE WRITES ASA.
-    SPEAK: Do not call these ASA cutoffs. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. PCV and platelet numbers are teaching flags. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: WBC about 26 and creatinine 3.0 then 4.71.
+    SPEAK: Do not call these ASA cutoffs. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. PCV and platelet numbers are teaching flags. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator, edema and poor wound healing. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: WBC about 26 and creatinine 3.0 then 4.71.
 
-SLIDE 13. LABS INFORM RISK. THE PHYSICAL EXAMINATION ASSIGNS ASA (GRUBB ET AL. 2020).
-    SPEAK: Students want to average numbers into an ASA score. Do not. The PE assigns status. MoMo’s kidneys set Status 4. Willie’s neuro exam set Status 3 even with a normal CBC.
+SLIDE 13. ASA FIRST. THEN THE DRUG PLAN. GRUBB ET AL. 2020; CPE MOA 2026 ANESTHESIA.
+    SPEAK: This is the anesthesia vocabulary for this hour. ASA, then premed IM or SQ, then induction IV to effect, then inhalant to MAC. DKT and BAA are healthy-patient combinations. Willie got alfaxalone because of the murmur. MAC is how we talk about the vaporizer. Premed lowers it. Grubb 2020: mask induction is not recommended. Surgical plane: no palpebral, mild jaw tone.
 
-SLIDE 14. WHEN TO DELAY, WHEN TO PROCEED URGENTLY
-    SPEAK: Resuscitate first, then clip. Delay elective OHE for pyoderma. Take GDV to surgery after resuscitation. MoMo: image and run labs, then cancel the exploratory.
+SLIDE 14. GRUBB ET AL. 2020: STABILIZE FIRST. PARDO ET AL. 2024: ALBUMIN <2.0 G/DL.
+    SPEAK: Read the Grubb 2020 list: correct potassium greater than 6, pH less than 7.2, glucose less than 60, hypothermia, dehydration, before you induce. Then albumin: Pardo 2024 AAHA fluids, less than 2.0 grams per deciliter is edema and poor healing. Delay elective. Treat the cause. Plasma is a poor albumin replacement, 20 to 25 milliliters per kilogram for half a gram. Do not crystalloid-flood a low-oncotic patient. Emergency: resuscitate and operate. MoMo was not an albumin case; her deficit was the kidney, and cancelling was the correct preoperative move.
 
 SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
     SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
 
 SLIDE 16. Endotracheal tube and reservoir bag
-    SPEAK: Board both formulas. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: 3.425 plus 3.5 is 6.9, so start 7.0 millimeter, with 6.5 and 7.5 in the hand. Confirm on the larynx: largest that passes without trauma. Bag: kilograms times 60 milliliters, round up. Willie 822 milliliters is a 1 liter bag, circle. Healthy 25 kilogram Lab: 9.75 goes to 10 millimeter, 1500 milliliters rounds up to 2 liters. MoMo is cancelled, but if a 4.25 kilogram cat were anesthetized: cat tube 3.5 to 4.0, not the dog formula, 0.5 liter bag, non-rebreathing, oxygen 200 to 400 milliliters per kilogram per minute. Leak-test, then open the pop-off. Premed is the gold bar: DKT or BAA if healthy, alfaxalone for Willie.
+    SPEAK: Board both formulas. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: start 7.0 millimeter, with 6.5 and 7.5 in the hand. Bag: kilograms times 60 milliliters, round up. Willie 822 milliliters is a 1 liter bag, circle. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape.
 
 SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
     SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.
@@ -76,7 +76,7 @@ SLIDE 24. DORSAL RECUMBENCY, AIRWAY, IV CATHETER, MONITORING, V-TROUGH
     SPEAK: Name the bag size and the tube size on this photograph. Confirm placement with ETCO2. Keep hips in a neutral spread.
 
 SLIDE 25. FOUR-QUADRANT TOWELS, THEN THE LARGE DRAPE
-    SPEAK: Left is a real spay with hair at the window. Re-clip or re-drape. Then timeout before you cut.
+    SPEAK: Left is a real spay with hair at the window. Re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
 
 SLIDE 26. TECHNIQUE DIAGRAM AND OPERATING-ROOM PHOTOGRAPH
     SPEAK: Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, fluids off the workstation photo.
@@ -85,7 +85,7 @@ SLIDE 27. CPE MOA 2026 SURGERY: ONE UNRECOGNIZED BREAK BEFORE INCISION. NONE AFT
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Before incision, one unrecognized break is a warning. After incision, there is no warning. Ureter injury is a calm, well-exposed patient problem. The 24-hour window is why recovery is in this lecture.
 
 SLIDE 28. WHAT DO YOU DO NEXT?
-    SPEAK: Two minutes. C is the board math: Willie 7.0 millimeter tube, 1 liter bag. B is Roberts 1986 bottle math. D is CHG off the cornea. If a student asks about the blocked cat: stabilize potassium first.
+    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is Willie: 7.0 millimeter, 1 liter, alfaxalone because of the murmur. B is Roberts 1986. A is airway before clippers, then sterile prep and drape.
 
 SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
@@ -115,7 +115,7 @@ SLIDE 37. Key points
     SPEAK: Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.
 
 SLIDE 38. DVM 612  ·  PRINCIPLES OF SURGERY
-    SPEAK: Take questions. If none: Willie versus MoMo ASA from the 2020 AAHA table, then Willie 13.7 kg: start 7.0 mm ETT, 1 L bag. Iodine if asked: Roberts 1 to 50 of 10 percent stock. Dismiss on time.
+    SPEAK: Take questions. If none: Willie versus MoMo ASA, then albumin 1.6 elective mass: delay, treat the cause, do not crystalloid-flood. Dismiss on time.
 
 
 APPENDIX  ·  FULL REFERENCES
@@ -132,8 +132,10 @@ APPENDIX  ·  FULL REFERENCES
 11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Interstitial fluid >4 ug/mL for about 4 h after IV. Does not say q90 min.
 12. ONSIOR (robenacoxib) injection. DailyMed. 2 mg/kg SQ once daily up to 3 days. Dogs: soft tissue surgery, first dose about 45 min before surgery. Cats: orthopedic surgery, OHE, castration, first dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid.
 13. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
+14. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
-TUBE AND BAG (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L (5–6 × tidal volume 10–15 mL/kg). Willie 13.7 kg: 7.0 mm, 1 L, circle. NRC O2 200–400 mL/kg/min for cats and dogs <3–5 kg (Grubb 2020). The (kg/4)+3.5 estimate is a starting number; it is not printed in the CPE MOA.
+ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.
+TUBE AND BAG (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Willie 13.7 kg: 7.0 mm, 1 L, circle.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
