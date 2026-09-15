@@ -1,13 +1,13 @@
 DVM 612 Week 4 instructor script
 Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP
 
-38 slides. Two hospital patients are ASA examples only: Willie (Cavalier, ASA Status 3-E) and MoMo (DSH, ASA Status 4-E, exploratory cancelled). Owner names, addresses, phones, and emails stay off slides and off this script.
+38 slides. Teach ASA first. Willie is PE, then labs, then students write the status (key: 3-E). MoMo is the second ASA quiz (key: 4-E). Owner names, addresses, phones, and emails stay off slides and off this script.
 
 SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
-    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Two hospital patients are only ASA examples: Willie, compensated, Status 3-E; MoMo, uncompensated, Status 4-E, exploratory cancelled. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.
+    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach ASA first. Then one dog, Willie: PE, then labs, then the students write the status. Do not give them 3-E before they commit. MoMo is the second ASA quiz. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.
 
 SLIDE 2. Learning objectives
-    SPEAK: Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. The two hospital patients are ASA practice, not the point of the hour.
+    SPEAK: Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. Willie is an ASA quiz after the table, not a treatment case.
 
 SLIDE 3. Prepare the patient and yourself
     SPEAK: Surgical competence includes the first 24 hours of physiologic monitoring and complication management. That is not a claim of infinite legal liability for every recovery-ward or owner event. Hemorrhage from a weak ligature is still your technical problem.
@@ -22,19 +22,19 @@ SLIDE 6. Preoperative physical examination
     SPEAK: This is the preoperative exam the record actually holds. CPE MOA 2026 Appendix 3: heart rate, respiratory rate, mucous membranes and CRT, temperature, then PCV, TP, and BUN. Request those three. Interpret them. Then write ASA. Then premed IM or SQ. Do not premedicate before the examination. Add other labs if the PE says so. A normal CBC does not make a vestibular dog Status 1. Azotemia can cancel the cut.
 
 SLIDE 7. ASA physical status
-    SPEAK: Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Then use the two hospital patients only as practice: compensated vestibular crisis is 3-E; uncompensated azotemia that threatens life is 4-E.
+    SPEAK: Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview Willie. Next: one dog’s PE, then labs, then they write the status.
 
-SLIDE 8. ASA practice cases
-    SPEAK: Cold-call four students. C is compensated Status 3-E. D is uncompensated Status 4-E; labs cancelled the exploratory. The names on later slides are only these ASA examples.
+SLIDE 8. Willie: today’s PE
+    SPEAK: Read the PE. Do not say 3-E yet. No DexSP, alfaxalone, ear clean, or TECA. Next slide is labs, then they write the status.
 
-SLIDE 9. Willie, ASA Status 3-E
-    SPEAK: Willie is an ASA example only. Read the PE. Status 3-E: compensated. Do not teach DexSP, alfaxalone, ear clean, or TECA on this slide.
+SLIDE 9. Willie: labs. Write the ASA
+    SPEAK: Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the vestibular crisis plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, walking, kidneys normal, not a constant threat to life today. Do not teach a Willie treatment plan. Slide 35 is the written key if you want the cards on the board.
 
-SLIDE 10. MoMo, ASA Status 4-E
-    SPEAK: This slide is an ASA example, not the point of the hour. Pause on the photograph. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? Rising creatinine on fluids is a recorded fact. Do not invent a fluid rate or an iatrogenic mechanism. Status 4-E because the disease threatened life. The workup cancelled the cut. The owner then elected euthanasia.
+SLIDE 10. MoMo: PE, labs, write the ASA
+    SPEAK: Second ASA quiz. Pause on the photograph. Be respectful; this cat died. After they commit: Status 4-E, uncompensated, a constant threat to life. Rising creatinine on fluids is a recorded fact. Do not invent a fluid rate. The workup cancelled the cut. Owner elected euthanasia. Record the decision. Never put DexSP on this cat.
 
 SLIDE 11. Pre-anesthetic assessment
-    SPEAK: This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. The blanks are weight, HR, RR, mucous membranes and CRT, temperature, other PE findings, PCV, TP, BUN, other labs, then ASA 1 through 5. Perform and record the preoperative examination. Request, record, and interpret the minimum labs. Assign ASA. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut. High PCV plus high TP is dehydration. Low PCV plus low TP is blood loss. High BUN: skip NSAIDs.
+    SPEAK: This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. Willie and MoMo ASA cells stay blank on purpose: they already wrote those on the quiz. Healthy Lab OHE is Status 1. PCV and TP method: EDTA, spin, read PCV, snap the capillary tube, refractometer TP. Do not invent percentages. A normal CBC does not write Status 1. Azotemia can cancel the cut.
 
 SLIDE 12. Laboratory values inform risk
     SPEAK: Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Do not invent PCV cutoffs as ASA numbers.
@@ -51,8 +51,8 @@ SLIDE 15. Fasting and informed consent
 SLIDE 16. ASA, tube, bag, and fluid rate
     SPEAK: Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. A 20 kg example: start 8.5 millimeter, 8.0 and 9.0 in the hand. Bag: kilograms times 60, round up. 1.2 liters is a 2 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour; write 100 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape. Willie is an ASA example only: do not attach tube, bag, or fluid math to that dog.
 
-SLIDE 17. Willie: identity, PE, and ASA
-    SPEAK: This page is the ASA header: identity, today’s PE, PCV, TP, BUN, Status 3-E. Compensated. Do not teach a Willie drug list, ear clean, or TECA on this slide.
+SLIDE 17. Write ASA after PE and labs
+    SPEAK: This is the header they fill: identity, today’s PE, PCV, TP, BUN, then ASA. It is not a Willie treatment plan. They already wrote Willie’s status on the quiz. Do not re-teach a drug list here.
 
 SLIDE 18. MoMo’s perioperative record
     SPEAK: The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Rising creatinine on fluids is written as recorded. Do not invent a fluid rate or blame overload. Say it once, respectfully, then continue.
@@ -105,11 +105,11 @@ SLIDE 33. Surgical report and discharge
 SLIDE 34. Emergency criteria for discharge
     SPEAK: Pale gums + distended abdomen after OHE: come now. Return to OR.
 
-SLIDE 35. Willie: why ASA Status 3-E
-    SPEAK: ASA example only. Why 3-E, why not 1, why not 4. No drugs. No ear clean. No TECA.
+SLIDE 35. Answer: Willie is Status 3-E
+    SPEAK: Written key after the quiz. Status 3-E. Why not 1, why not 4. No drugs. No ear clean. No TECA.
 
-SLIDE 36. Willie and MoMo
-    SPEAK: Last content slide if time is gone. These two patients are ASA examples only. Healthy Lab OHE is the ASA Status 1 contrast.
+SLIDE 36. Answer: Willie 3-E, MoMo 4-E
+    SPEAK: Last content slide if time is gone. These two patients were the ASA quizzes. Healthy Lab OHE is Status 1.
 
 SLIDE 37. Key points
     SPEAK: These six lines are the Appendix 3 record and the Surgery competencies: assessment and ASA, drug protocol and equipment, ready for prep, hair-skin-position-drape, the chart and signature, then the first 24 hours. Do not recap the hospital patients here.

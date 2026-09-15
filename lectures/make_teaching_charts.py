@@ -575,7 +575,7 @@ def preanesthetic_assessment_table():
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
 
-    headers = ["Field", "Willie", "Healthy Lab OHE", "MoMo"]
+    headers = ["Field", "Willie (quiz)", "Healthy Lab OHE", "MoMo (quiz)"]
     rows = [
         ["Weight", "13.7 kg", "25 kg", "4.25 kg"],
         ["T  ·  HR  ·  RR", "100.8 °F  ·  132  ·  52", "normal TPR", "98.0 °F  ·  200  ·  30"],
@@ -584,7 +584,7 @@ def preanesthetic_assessment_table():
         ["PCV", "WNL", "within reference", "request; not the cancelling value"],
         ["TP", "WNL", "within reference", "request; not the cancelling value"],
         ["BUN", "WNL  (kidneys normal)", "within reference", "↑ azotemia\nCr 3.0 → 4.71"],
-        ["ASA", "3-E", "1", "4-E"],
+        ["ASA", "write it", "1", "write it"],
     ]
     widths = [480, 880, 880, 920]
     scale = (W - 40) / sum(widths)
