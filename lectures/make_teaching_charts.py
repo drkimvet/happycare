@@ -84,31 +84,40 @@ def checkbox_list(d, x0, y0, x1, items, *, checked=False, box_color=GREEN, text_
 
 
 def anesthesia_record(filled="blank"):
-    """Preop + recovery teaching record. Intra-op grid is not the point of this hour."""
+    """Preop + recovery teaching record. Willie is ASA-only: identity, PE, labs, status."""
     W, H = 2400, 1350
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
+    asa_only = filled == "willie"
 
     d.rectangle([0, 0, W, 88], fill=NAVY)
     d.rectangle([0, 88, W, 96], fill=GOLD)
-    d.text((28, 22), "Perioperative record", font=font(36, True), fill=WHITE, anchor="lt")
-    d.text((28, 62), "DVM 612  ·  Preoperative evaluation and recovery  ·  teaching form, not a hospital original", font=font(18), fill=GOLD, anchor="lt")
-    d.text((W - 28, 44), "Complete this page before the first drug", font=font(18), fill=GOLD, anchor="rm")
+    title = "ASA example  ·  identity, PE, labs, status" if asa_only else "Perioperative record"
+    subtitle = (
+        "DVM 612  ·  Write the status from today’s PE  ·  not a treatment plan"
+        if asa_only
+        else "DVM 612  ·  Preoperative evaluation and recovery  ·  teaching form, not a hospital original"
+    )
+    d.text((28, 22), title, font=font(36, True), fill=WHITE, anchor="lt")
+    d.text((28, 62), subtitle, font=font(18), fill=GOLD, anchor="lt")
+    if not asa_only:
+        d.text((W - 28, 44), "Complete this page before the first drug", font=font(18), fill=GOLD, anchor="rm")
 
     y = 112
+    last_col = "ASA from today’s PE" if asa_only else "What you planned today"
     labels = [
         (28, 360, "Patient"),
         (360, 860, "Species / breed"),
         (860, 1180, "Sex / age"),
         (1180, 1480, "Weight"),
         (1480, 1760, "ASA"),
-        (1760, 2372, "What you planned today"),
+        (1760, 2372, last_col),
     ]
     for x0, x1, lab in labels:
         cell(d, x0, y, x1, y + 32, lab, fill=NAVY, fg=WHITE, size=16, bold=True, align="center")
     values = {
         "blank": ["", "", "", "", "", ""],
-        "willie": ["Willie", "Canine  ·  Cavalier", "MN  ·  6 y 11 mo", "13.7 kg  BCS 6/9", "3-E", "Sedated ear clean. Not a celiotomy."],
+        "willie": ["Willie", "Canine  ·  Cavalier", "MN  ·  6 y 11 mo", "13.7 kg  BCS 6/9", "3-E", "ASA from today’s PE. Compensated."],
         "momo": ["MoMo", "Feline  ·  DSH", "SF  ·  6 yr", "4.25 kg  BCS 5/9", "4-E", "Exploratory considered. Then cancelled."],
     }[filled]
     for (x0, x1, lab), val in zip(labels, values):
@@ -119,7 +128,8 @@ def anesthesia_record(filled="blank"):
 
     y = 228
     d.rectangle([28, y, 2372, y + 44], fill=TEAL)
-    d.text((40, y + 22), "PREOPERATIVE EVALUATION   ·   complete before any drug", font=font(22, True), fill=WHITE, anchor="lm")
+    preop_banner = "TODAY’S PE AND LABS   ·   then write ASA Status 3-E" if asa_only else "PREOPERATIVE EVALUATION   ·   complete before any drug"
+    d.text((40, y + 22), preop_banner, font=font(22, True), fill=WHITE, anchor="lm")
 
     y = 280
     preop_h = [
@@ -158,10 +168,11 @@ def anesthesia_record(filled="blank"):
     y = 468
     d.rectangle([28, y, 2372, y + 80], fill=WHITE, outline=LINE, width=1)
     d.rectangle([28, y, 320, y + 80], fill=GOLD)
-    d.text((174, y + 40), "What changes\nthe plan", font=font(18, True), fill=NAVY, anchor="mm")
+    why_lab = "Why Status\n3-E" if asa_only else "What changes\nthe plan"
+    d.text((174, y + 40), why_lab, font=font(18, True), fill=NAVY, anchor="mm")
     plan = {
         "blank": "",
-        "willie": "Acute vestibular disease + AS otitis + murmur. Compensated: still pink, walking, kidneys normal. DexSP already given: skip NSAID. Alfaxalone only after this header is complete.",
+        "willie": "Acute vestibular disease + AS otitis + murmur. Compensated: still pink, walking, kidneys normal. Status 3-E from today’s PE.",
         "momo": "Vomiting that looked like FB. PE did not prove obstruction. Right kidney fluid-filled, non-functional. Cr 3.0 → 4.71 on fluids: post-renal vs intrinsic vs hypovolemia not assigned. Do not clip.",
     }[filled]
     fplan = font(20)
@@ -174,9 +185,11 @@ def anesthesia_record(filled="blank"):
     mid = 1188
     y = 558
     d.rectangle([28, y, mid - 12, y + 40], fill=NAVY)
-    d.text((40, y + 20), "PRE-OP BOXES   ·   before the first drug", font=font(20, True), fill=GOLD, anchor="lm")
-    d.rectangle([mid + 12, y, 2372, y + 40], fill=GREEN)
-    d.text((mid + 24, y + 20), "RECOVERY / NEXT 24 HOURS   ·   monitor and manage complications", font=font(20, True), fill=WHITE, anchor="lm")
+    left_head = "WHY THIS IS STATUS 3-E" if asa_only else "PRE-OP BOXES   ·   before the first drug"
+    d.text((40, y + 20), left_head, font=font(20, True), fill=GOLD, anchor="lm")
+    d.rectangle([mid + 12, y, 2372, y + 40], fill=GREEN if not asa_only else TEAL)
+    right_head = "WHY NOT STATUS 1 OR 4" if asa_only else "RECOVERY / NEXT 24 HOURS   ·   monitor and manage complications"
+    d.text((mid + 24, y + 20), right_head, font=font(20, True), fill=WHITE, anchor="lm")
 
     preop_boxes = {
         "blank": [
@@ -191,11 +204,11 @@ def anesthesia_record(filled="blank"):
         "willie": [
             "ASA Status 3-E. PCV / TP / BUN WNL. Exam wrote the status.",
             "Today’s PE: vestibular + AS otitis + murmur",
-            "Skip NSAID: DexSP already given",
-            "IV in. Then sedate. Plot BP if you anesthetize.",
-            "Ear canal: dilute PVP-I, not 7.5% scrub",
-            "Aminoglycoside risk if the middle ear is involved",
-            "MRI later. New ASA on the day of any later surgery",
+            "Compensated: pink, walking, kidneys normal",
+            "Moderate systemic disease, still compensated",
+            "Emergency because the presentation is acute",
+            "Identity, weight, PE, labs, then Status 3-E",
+            "This page is the status. No treatment plan here.",
         ],
         "momo": [
             "ASA Status 4-E after labs and imaging",
@@ -218,13 +231,13 @@ def anesthesia_record(filled="blank"):
             "Pale + tachycardic after celiotomy: return to OR",
         ],
         "willie": [
-            "Recover padded. No stairs tonight.",
-            "Watch nystagmus, circling, vomiting, seizures",
-            "Skip NSAID in recovery (DexSP already given)",
-            "Home antiemetic if needed. No NSAID after the steroid.",
-            "Confine. Call the owner with neuro status",
-            "MRI if signs persist",
-            "New ASA on the morning of any later TECA-LBO",
+            "Status 3-E is moderate systemic disease",
+            "Still compensated on today’s PE",
+            "Not Status 1: the PE is not normal",
+            "A normal CBC does not write Status 1",
+            "Not Status 4: not a constant threat to life today",
+            "Re-assign ASA if the disease changes",
+            "The other example is uncompensated Status 4-E",
         ],
         "momo": [
             "This is not a recovery from surgery",
@@ -237,7 +250,7 @@ def anesthesia_record(filled="blank"):
         ],
     }[filled]
     checkbox_list(d, 28, 608, mid - 12, preop_boxes, checked=(filled != "blank"), box_color=TEAL, text_size=20, row_h=76)
-    checkbox_list(d, mid + 12, 608, 2372, rec_items, checked=(filled != "blank"), box_color=GREEN, text_size=20, row_h=76)
+    checkbox_list(d, mid + 12, 608, 2372, rec_items, checked=(filled != "blank"), box_color=TEAL if asa_only else GREEN, text_size=20, row_h=76)
 
     y = 1156
     if filled == "momo":
@@ -248,9 +261,10 @@ def anesthesia_record(filled="blank"):
         d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=3)
         note = {
             "blank": "If sedation or anesthesia is used, monitors are on first. The 5-minute grid belongs on this page, but this hour is the header, the prep, and recovery.",
-            "willie": "Sedation happened after this header. Then alfaxalone. This hour is the preop header, the ear-canal prep, and recovery. Tube and bag math is only if you intubate.",
+            "willie": "ASA Status 3-E is written from today’s PE. Compensated. This page is the status.",
         }[filled]
-        d.text((44, 1196), "If you sedate or anesthetize", font=font(18, True), fill=NAVY, anchor="lt")
+        head = "ASA from today’s PE" if filled == "willie" else "If you sedate or anesthetize"
+        d.text((44, 1196), head, font=font(18, True), fill=NAVY, anchor="lt")
         fn = font(20)
         ty = 1230
         for line in wrap_text(note, fn, 2280)[:3]:
@@ -513,7 +527,7 @@ def anesthesia_setup_table():
 
     headers = ["Patient", "kg", "ASA", "ETT", "Bag / circuit", "IV fluids", "Fresh-gas flow"]
     rows = [
-        ["Willie\nif intubated", "13.7", "3-E", "7.0 mm\n6.5 / 7.5 ready", "1 L  circle\n822 mL → 1 L", "LRS  69 mL/hr\n13.7 × 5", "2–3 L/min, then\n≥ 0.5 L/min"],
+        ["Example\n20 kg dog", "20", "1", "8.5 mm\n8.0 / 9.0 ready", "2 L  circle\n1.2 L → 2 L", "LRS  100 mL/hr\n20 × 5", "2–3 L/min, then\n≥ 0.5 L/min"],
         ["Healthy Lab\nelective OHE", "25", "1", "10 mm\n9.5 / 10.5 ready", "2 L  circle\n1.5 L → 2 L", "LRS  125 mL/hr\n25 × 5", "2–3 L/min, then\n0.5–1 L/min"],
         ["MoMo\nmath only", "4.25", "4-E", "3.5–4.0 mm\ncat; not dog formula", "0.5 L  NRC\n255 mL → 0.5 L", "LRS  13 mL/hr\n4.25 × 3", "0.85–1.7 L/min\n200–400 mL/kg/min"],
     ]
@@ -655,7 +669,7 @@ def anesthesia_protocol_record():
     d.text((1620, y + 12), "Why these drugs", font=font(18, True), fill=NAVY, anchor="lt")
     why_fn = font(20)
     why_lines = [
-        "ASA 1 elective OHE. This table is not Willie and is not MoMo.",
+        "ASA 1 elective OHE. Not a hospital ASA example.",
         "Dog: carprofen 4.4 mg/kg SQ ~2 h before incision (Rimadyl).",
         "Cat OHE: Onsior 2 mg/kg SQ. Do not swap species.",
         "Do not stack an NSAID with a corticosteroid.",

@@ -282,7 +282,7 @@ add_text(s, Inches(0.75), Inches(4.15), Inches(12), Inches(0.50), "Dr. Yujin Kim
 add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  38 slides  |  60 minutes", size=18, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Exam, labs, ASA, then prep. Then 24 hours of monitoring and complication management.\nTwo hospital cases are ASA examples only.", size=20, color=WHITE)
 add_text(s, Inches(0.75), Inches(6.20), Inches(12), Inches(0.70), "Required: Fossum 2018; Hendrickson & Baird 2013.\nAlso used: ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery.", size=16, color=GOLD)
-notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Two hospital patients are only ASA examples: Willie, compensated, Status 3-E, sedated for an ear clean; MoMo, uncompensated, Status 4-E, exploratory cancelled. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
+notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Two hospital patients are only ASA examples: Willie, compensated, Status 3-E; MoMo, uncompensated, Status 4-E, exploratory cancelled. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
 
 # 2 Learning objectives
 s = new_content("Learning objectives")
@@ -422,7 +422,7 @@ s = new_content("ASA practice cases")
 cases = [
     ("A", "Healthy 8-month Labrador. Elective OHE. Normal PE.", "ASA Status 1  ·  proceed", GREEN_LT, GREEN),
     ("B", "10-year Beagle, BCS 8/9, grade 2/6 murmur, no CHF. Dental.", "ASA Status 2  ·  proceed with a monitoring plan", TEAL_LT, TEAL),
-    ("C", "Cavalier, acute ataxia, AS otitis, murmur. CV stable.", "ASA Status 3-E. Compensated emergency. Sedation plan.", GOLD_LT, GOLD),
+    ("C", "Cavalier, acute ataxia, AS otitis, murmur. CV stable.", "ASA Status 3-E. Compensated emergency.", GOLD_LT, GOLD),
     ("D", "Vomiting cat. Looks like FB. T 98.0 °F, HR 200, tacky mm.", "ASA Status 4-E. Uncompensated emergency. Image and labs first. Do not cut today.", RED_LT, RED),
 ]
 for i, (let, stem, ans, fill, acc) in enumerate(cases):
@@ -432,18 +432,18 @@ for i, (let, stem, ans, fill, acc) in enumerate(cases):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.52), stem, size=18, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.70), Inches(10.9), Inches(0.45), ans, size=18, bold=True, color=acc)
-notes(s, "Cold-call four students. C is a compensated emergency (sedation). D is uncompensated; labs cancelled the exploratory. The names on later slides are only these examples.")
+notes(s, "Cold-call four students. C is compensated Status 3-E. D is uncompensated Status 4-E; labs cancelled the exploratory. The names on later slides are only these ASA examples.")
 
 # 9 Willie
 s = new_content("Willie, ASA Status 3-E")
 add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute ataxia ~1 hour. Fell off the couch twice. Cytopoint for allergies. Vitals: T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, quiet/dull. ASA Status 3-E: moderate systemic disease that is still compensated (acute vestibular disease plus AS otitis plus murmur). Pink, walking, kidneys normal.", size=16, color=NAVY)
 card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
-card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Circling left. Horizontal nystagmus, fast left, slow right. Right knuckling. Treat as central vestibular disease until MRI.", accent=GOLD)
-card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Skip acepromazine and dexmedetomidine. Alfaxalone IV to effect. Plot BP; treat SAP <80–90 or MAP <60–70 (Grubb 2020).", accent=RED)
+card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Circling left. Horizontal nystagmus, fast left, slow right. Right knuckling. Acute vestibular disease on today’s PE.", accent=GOLD)
+card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Lungs clear. Pink, walking, kidneys normal: still compensated.", accent=RED)
 add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Tonight: CBC WNL. DexSP already given: skip NSAID (AAHA/AAFP 2015: concurrent steroid + NSAID is a leading GI-perforation risk; washout if NSAID later is undefined, ~7 d for a short-acting steroid). Ear clean, cytology/culture, 3-view films. Do not invent DexSP milligrams. Later TECA-LBO: new ASA that morning.", size=15, color=INK)
-notes(s, "Willie is an ASA example, not the thesis of the hour. Tonight is a sedated ear clean. Skip NSAID because DexSP is already on board: AAHA/AAFP 2015, concurrent corticosteroid plus NSAID is a leading risk for GI perforation. Washout periods are largely undefined; about 7 days for a short-acting steroid if you later start an NSAID. Do not invent DexSP milligrams or albumin. Murmur: skip acepromazine and dexmedetomidine. Alfaxalone to effect. Plot blood pressure. Treat hypotension at SAP less than 80 to 90 or MAP less than 60 to 70, Grubb 2020. That is the safety plan. Do not invent a Willie blood-pressure tracing.")
+add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "This slide is the ASA. Status 3-E because there is moderate systemic disease that is still compensated. Not Status 1: the PE is not normal. Not Status 4: the disease is not a constant threat to life today. Write the status from today’s PE.", size=15, color=INK)
+notes(s, "Willie is an ASA example only. Read the PE. Status 3-E: compensated. Do not teach DexSP, alfaxalone, ear clean, or TECA on this slide.")
 
 # 10 MoMo
 s = new_content("MoMo, ASA Status 4-E")
@@ -509,7 +509,7 @@ for i, (c, t, dtl) in enumerate(pills):
     add_text(s, x, Inches(1.08), Inches(4.12), Inches(0.38), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.12), Inches(1.50), Inches(3.88), Inches(0.68), dtl, size=14, color=INK)
 add_pic(s, "anesthesia_protocol_record.png", Inches(0.28), Inches(2.32), Inches(12.78), Inches(4.80))
-notes(s, "This is Appendix 3 pages 2 and 3 as an original record, not the copyrighted form. The filled table is a 25 kilogram ASA 1 elective OHE: carprofen 4.4 milligrams per kilogram SQ, LRS 125 milliliters per hour. It is not Willie and it is not MoMo. DexSP is only on Willie’s slides. MoMo never received DexSP; skip NSAID in that cat because she is azotemic. Students write drug, concentration, dose, volume, and route.")
+notes(s, "This is Appendix 3 pages 2 and 3 as an original record, not the copyrighted form. The filled table is a 25 kilogram ASA 1 elective OHE: carprofen 4.4 milligrams per kilogram SQ, LRS 125 milliliters per hour. It is not a hospital-patient protocol. Students write drug, concentration, dose, volume, and route.")
 
 # 14 Stabilize
 s = new_content("Correct deficits before you cut")
@@ -555,7 +555,7 @@ s = new_content("ASA, tube, bag, and fluid rate")
 formulas = [
     (GOLD, NAVY, "Endotracheal tube", "ID mm  =  (kg / 4)  +  3.5", "Dog start. ±0.5 mm ready. Largest through arytenoids (Grubb 2020). Cat: 3.0–4.5 mm (not the dog formula)."),
     (NAVY, GOLD, "Reservoir bag", "mL  =  kg  ×  60,  round UP", "Round up to 0.5, 1, 2, or 3 L. NRC if <3–5 kg. Circle if larger. Leak-test, then OPEN the pop-off."),
-    (TEAL, WHITE, "IV fluid rate", "Dog  kg × 5   ·   cat  kg × 3–5", "mL/hr. Balanced crystalloid (Pardo 2024). Not 10 mL/kg/hr. Willie: 13.7 × 5 = 69 mL/hr."),
+    (TEAL, WHITE, "IV fluid rate", "Dog  kg × 5   ·   cat  kg × 3–5", "mL/hr. Balanced crystalloid (Pardo 2024). Not 10 mL/kg/hr. Example: 20 × 5 = 100 mL/hr."),
 ]
 for i, (hdr, hfg, title, formula, detail) in enumerate(formulas):
     x = Inches(0.40) + Inches(i * 4.28)
@@ -565,12 +565,12 @@ for i, (hdr, hfg, title, formula, detail) in enumerate(formulas):
     add_text(s, x + Inches(0.08), Inches(1.44), Inches(3.96), Inches(0.40), formula, size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.12), Inches(1.84), Inches(3.88), Inches(0.66), detail, size=14, color=INK)
 add_pic(s, "anesthesia_setup_table.png", Inches(0.28), Inches(2.62), Inches(12.78), Inches(4.50))
-notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. A 13.7 kg dog: start 7.0 millimeter, 6.5 and 7.5 in the hand. Bag: kilograms times 60, round up. 822 milliliters is a 1 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour; write 69 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape. Do not teach tube math as if a sedated ear-clean patient was intubated.")
+notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. A 20 kg example: start 8.5 millimeter, 8.0 and 9.0 in the hand. Bag: kilograms times 60, round up. 1.2 liters is a 2 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour; write 100 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape. Willie is an ASA example only: do not attach tube, bag, or fluid math to that dog.")
 
 # 17 Willie record
-s = new_content("Willie’s perioperative record")
+s = new_content("Willie: identity, PE, and ASA")
 add_pic(s, "anesthesia_record_willie.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "Walk the large boxes: ASA Status 3-E before alfaxalone. PCV, TP, BUN WNL. Skip NSAID after DexSP, AAHA 2015. Plot BP; treat Grubb hypotension floors. Recovery is on the same page. Drug protocol is slide 13. The intra-op chart is slide 30. Tube and bag numbers are only if you intubate.")
+notes(s, "This page is the ASA header: identity, today’s PE, PCV, TP, BUN, Status 3-E. Compensated. Do not teach a Willie drug list, ear clean, or TECA on this slide.")
 
 # 18 MoMo record
 s = new_content("MoMo’s perioperative record")
@@ -583,7 +583,7 @@ classes = [
     (GREEN, "1. Clean", "No infection. Hollow viscus not entered.\n\nElective OHE, orchiectomy, simple skin mass.\n\nSkip routine prophylaxis (Frey 2022)."),
     (TEAL, "2. Clean-contaminated", "GI, respiratory, or urinary tract entered under control. Minor break in asepsis.\n\nCystotomy. Enterotomy without spillage."),
     (GOLD, "3. Contaminated", "Fresh open trauma. Major viscus spillage. Major break in sterile technique.\n\nTime IV prophylaxis. Fix the break."),
-    (RED, "4. Dirty / infected", "Pus, abscess, old trauma, perforated viscus with peritonitis.\n\nWillie’s ear. Pyometra with pus.\n\nThis is treatment, not prophylaxis."),
+    (RED, "4. Dirty / infected", "Pus, abscess, old trauma, perforated viscus with peritonitis.\n\nInfected ear canal. Pyometra with pus.\n\nThis is treatment, not prophylaxis."),
 ]
 for i, (c, t, b) in enumerate(classes):
     col = i % 2
@@ -596,7 +596,7 @@ for i, (c, t, b) in enumerate(classes):
     add_text(s, x + Inches(0.22), y + Inches(0.58), Inches(5.85), Inches(1.50), b, size=16, color=INK)
 add_round(s, Inches(0.45), Inches(5.90), Inches(12.40), Inches(1.18), GOLD_LT)
 add_text(s, Inches(0.65), Inches(5.98), Inches(12.05), Inches(1.02), "Write the class before you draw cefazolin. Clean elective: skip. When prophylaxis is indicated: cefazolin 22 mg/kg IV 30–60 min before incision (Gonzalez 2017; Frey 2022). Second dose if surgery lasts >90 min (Whittem 1999). Stop at closure unless you are treating infection.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. Willie’s ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.")
+notes(s, "Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. An infected ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.")
 
 # 20 Sequence
 s = new_content("Sequence of patient preparation")
@@ -714,7 +714,7 @@ rows = [
     ("A", "When do you clip the OHE field?", "After ready for prep: tube in, IV running, surgical plane. Then sterile prep and drape."),
     ("B", "How do you prep conjunctiva with iodine?", "Intact cornea: 10% stock 1:50, 2 min + 2 min. 5% bottle: 1:25. Perforation: saline only."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
-    ("D", "13.7 kg dog. Tube, bag, and IV fluid rate if you intubate?", "7.0 mm, 1 L circle, LRS 69 mL/hr (5 mL/kg/hr). Murmur: opioid + alfaxalone."),
+    ("D", "25 kg dog. Tube, bag, and IV fluid rate if you intubate?", "10 mm, 2 L circle, LRS 125 mL/hr (5 mL/kg/hr)."),
 ]
 for i, (let, q, a) in enumerate(rows):
     y = Inches(1.15) + Inches(i * 1.42)
@@ -723,7 +723,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
-notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 13.7 kg dog if you intubate: 7.0 millimeter, 1 liter circle, 69 milliliters per hour, alfaxalone if there is a murmur, and plot blood pressure. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, then sterile prep and drape.")
+notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, then sterile prep and drape.")
 
 # 29 Recovery
 s = new_content("Immediate recovery")
@@ -765,7 +765,7 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "E-collar that stays on. Leash walks 14 days.",
     "Skin sutures typically 10–14 days.",
 ], size=16, spacing=6)
-notes(s, "This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not stack an NSAID with a corticosteroid. Skip NSAID if the patient is azotemic. That is MoMo’s reason, not DexSP. DexSP is only on Willie’s slides. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
+notes(s, "This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not stack an NSAID with a corticosteroid. Skip NSAID if the patient is azotemic. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
 
 # 32 Complications
 s = new_content("Complications in the first 24 hours")
@@ -828,15 +828,15 @@ for i, ((t, d), c) in enumerate(zip(crit, cols_c)):
     add_text(s, x + Inches(0.25), Inches(2.1), Inches(3.55), Inches(4.3), d, size=18, color=INK)
 notes(s, "Pale gums + distended abdomen after OHE: come now. Return to OR.")
 
-# 35 Willie plan
-s = new_content("Willie: complete perioperative plan")
+# 35 Willie ASA
+s = new_content("Willie: why ASA Status 3-E")
 add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  ASA Status 3-E  ·  vestibular + AS otitis  ·  skip NSAID", size=18, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  today’s PE writes the status", size=18, color=NAVY)
 wsteps = [
-    ("Pre-op", "Neuro exam. ASA 3-E. Exam before any drug. Skip NSAID after DexSP. Premed path: opioid + alfaxalone."),
-    ("Sedation", "Alfaxalone for an ear clean. Tube, bag, and 69 mL/hr only if you intubate a 13.7 kg dog. Canal: dilute PVP-I, not 7.5% scrub."),
-    ("Intra", "Timeout. Deep clean + cytology. If you contaminate, say it and re-glove."),
-    ("Post", "No stairs. Watch neuro signs. MRI if signs persist. If TECA-LBO later: new ASA that morning."),
+    ("Disease", "Acute vestibular disease. AS otitis. Grade II/VI murmur. That is moderate systemic disease, not a normal PE."),
+    ("Compensated", "Pink, walking, CRT 2 s, kidneys normal. The disease is not a constant threat to life today."),
+    ("Not Status 1", "A normal CBC does not write Status 1. Otitis plus vestibular disease plus a murmur is not Status 1."),
+    ("Not Status 4", "Uncompensated disease that threatens life is Status 4. That is the other example, not this dog."),
 ]
 for i, (t, d) in enumerate(wsteps):
     x = Inches(0.45) + Inches(i * 3.2)
@@ -844,11 +844,11 @@ for i, (t, d) in enumerate(wsteps):
     add_rect(s, x, Inches(2.10), Inches(3.05), Inches(0.65), NAVY)
     add_text(s, x, Inches(2.10), Inches(3.05), Inches(0.65), t, size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.15), Inches(2.90), Inches(2.75), Inches(3.80), d, size=16, color=INK)
-notes(s, "Walk this as an ASA example, not as the lecture thesis. One sentence on the other example: the same preoperative evaluation cancelled an exploratory when the disease was uncompensated.")
+notes(s, "ASA example only. Why 3-E, why not 1, why not 4. No drugs. No ear clean. No TECA.")
 
 # 36 Willie and MoMo
 s = new_content("Willie and MoMo")
-card(s, Inches(0.45), Inches(1.2), Inches(6.15), Inches(5.5), "Willie, ASA Status 3-E", "Proceed with sedation. Cavalier, 13.7 kg. Acute vestibular + AS otitis + murmur. Compensated. Fill the anesthesia record. Alfaxalone, ear clean, skip NSAID after DexSP. If TECA-LBO is needed later, assign a new ASA that morning.", accent=GOLD)
+card(s, Inches(0.45), Inches(1.2), Inches(6.15), Inches(5.5), "Willie, ASA Status 3-E", "Cavalier, 13.7 kg. Acute vestibular disease + AS otitis + murmur. Compensated: pink, walking, kidneys normal. Status 3-E from today’s PE.", accent=GOLD)
 card(s, Inches(6.75), Inches(1.2), Inches(6.15), Inches(5.5), "MoMo, ASA Status 4-E", "Do not cut today. DSH, 4.25 kg. Vomiting that looked like FB. Right kidney fluid-filled and non-functional on AUS. Creatinine 3.0 → 4.71 on fluids; mechanism not assigned from this record. NSAIDs contraindicated. Record the decision. Offer supportive care, referral, or euthanasia.", accent=RED)
 notes(s, "Last content slide if time is gone. These two patients are ASA examples only. Healthy Lab OHE is the ASA Status 1 contrast.")
 
@@ -920,7 +920,7 @@ script_lines = [
     "DVM 612 Week 4 instructor script",
     "Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP",
     "",
-    "38 slides. Two hospital patients are ASA examples only: Willie (Cavalier, ASA Status 3-E, sedated for ear clean) and MoMo (DSH, ASA Status 4-E, exploratory cancelled). Owner names, addresses, phones, and emails stay off slides and off this script.",
+    "38 slides. Two hospital patients are ASA examples only: Willie (Cavalier, ASA Status 3-E) and MoMo (DSH, ASA Status 4-E, exploratory cancelled). Owner names, addresses, phones, and emails stay off slides and off this script.",
     "",
 ]
 for i, slide in enumerate(prs.slides, 1):
@@ -967,7 +967,7 @@ APPENDIX  ·  FULL REFERENCES
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.
-TUBE, BAG, AND FLUIDS (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Anesthesia IVF (Pardo 2024): dog 5 mL/kg/hr, cat 3-5 mL/kg/hr. Circle FGF (Grubb 2020): 2-3 L/min at induction, then 20-40 mL/kg/min, minimum 500 mL/min. NRC: 200-400 mL/kg/min. A 13.7 kg dog if intubated: 7.0 mm, 1 L circle, LRS 69 mL/hr, FGF 2-3 L/min then ≥0.5 L/min. Teaching table on slide 16 uses CPE MOA 2026 Appendix 3 fields (ASA, ETT, bag, circuit, IV name/rate, FGF); do not dump the copyrighted form.
+TUBE, BAG, AND FLUIDS (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Anesthesia IVF (Pardo 2024): dog 5 mL/kg/hr, cat 3-5 mL/kg/hr. Circle FGF (Grubb 2020): 2-3 L/min at induction, then 20-40 mL/kg/min, minimum 500 mL/min. NRC: 200-400 mL/kg/min. Example 20 kg dog: 8.5 mm, 2 L circle, LRS 100 mL/hr, FGF 2-3 L/min then ≥0.5 L/min. Teaching table on slide 16 uses CPE MOA 2026 Appendix 3 fields (ASA, ETT, bag, circuit, IV name/rate, FGF); do not dump the copyrighted form. Willie is ASA-only: do not attach this math to Willie.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
 """, encoding="utf-8")
