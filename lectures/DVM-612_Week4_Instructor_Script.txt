@@ -72,8 +72,8 @@ SLIDE 22. Patient skin preparation technique
 SLIDE 23. Patient positioning
     SPEAK: Name the bag size and the tube size on this photograph. Confirm placement with ETCO2. Keep hips in a neutral spread.
 
-SLIDE 24. Hair at the drape edge
-    SPEAK: This photograph is the overhead window: fenestrated drape, clipped skin in the hole, Backhaus towel clamps at the corners. Hair stays under the drape. The small photograph is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
+SLIDE 24. Draping
+    SPEAK: This photograph is the overhead window: fenestrated drape, clipped skin in the hole, Backhaus towel clamps at the corners. Hair stays under the drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
 
 SLIDE 25. OR attire, gown, glove, instruments
     SPEAK: This is a real photograph of two people in gowns putting on sterile gloves. Not a drawing. Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove for this course: hands stay in the cuffs. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.
@@ -82,7 +82,7 @@ SLIDE 26. Breaks in asepsis
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture: monitor, recognize hemorrhage and hernia, write the discharge plan.
 
 SLIDE 27. Knowledge check
-    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986: 0.2 percent, 2 plus 2 minutes, not undiluted 10 percent or 5 percent paint; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.
+    SPEAK: Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986: 0.2 percent, 2 plus 2 minutes, not undiluted 10 percent or 5 percent paint; perforation is saline only. A is after the patient is anesthetized and intubated. Do not clip a conscious patient. Then clip and dirty-scrub in the prep area, full scrub in the OR.
 
 SLIDE 28. Immediate recovery
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.

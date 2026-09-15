@@ -648,26 +648,22 @@ notes(s, "Name the bag size and the tube size on this photograph. Confirm placem
 
 # 25 Draping
 s = new_content("Draping")
-# Native photo 300x145 (~2.07:1). Do not stretch into a taller box.
-_drape_w = 8.55
+# Native photo 300x145 (~2.07:1). Do not stretch. No second photo: the hair-at-margin shot was confusing.
+_drape_w = 10.80
 _drape_h = _drape_w * 145 / 300
-add_pic(s, "fenestrated_drape_window.jpg", Inches(0.32), Inches(1.08), Inches(_drape_w), Inches(_drape_h))
+_drape_l = (13.333 - _drape_w) / 2
+add_pic(s, "fenestrated_drape_window.jpg", Inches(_drape_l), Inches(1.12), Inches(_drape_w), Inches(_drape_h))
 add_text(
     s,
-    Inches(0.32),
-    Inches(1.08 + _drape_h + 0.10),
-    Inches(_drape_w),
-    Inches(1.55),
-    "Fenestrated drape. The hole is the incision: only clipped skin. Backhaus towel clamps at the corners. Hair stays under the drape.",
+    Inches(0.50),
+    Inches(1.12 + _drape_h + 0.12),
+    Inches(12.30),
+    Inches(0.58),
+    "Fenestrated drape. The hole is the incision: only clipped skin. Backhaus towel clamps at the corners. Hair stays under the drape. Four towels, then the large drape. Timeout. Then cut.",
     size=16,
     color=INK,
 )
-add_round(s, Inches(9.02), Inches(1.08), Inches(3.95), Inches(0.38), RED)
-add_text(s, Inches(9.02), Inches(1.08), Inches(3.95), Inches(0.38), "Hair at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "cherry_point_spay.jpg", Inches(9.02), Inches(1.50), Inches(3.95), Inches(2.55))
-add_round(s, Inches(9.02), Inches(4.18), Inches(3.95), Inches(2.85), WHITE)
-add_text(s, Inches(9.16), Inches(4.30), Inches(3.67), Inches(2.58), "Left: fenestrated drape. Clipped skin in the window. Towel clamps at the corners. Hair is under the drape.\n\nRight: hair at the margin. Re-clip or re-drape. Four towels, then the large drape. Timeout. Then cut.", size=16, color=INK)
-notes(s, "This photograph is the overhead window: fenestrated drape, clipped skin in the hole, Backhaus towel clamps at the corners. Hair stays under the drape. The small photograph is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
+notes(s, "This photograph is the overhead window: fenestrated drape, clipped skin in the hole, Backhaus towel clamps at the corners. Hair stays under the drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
 
 # 26 Gloving
 s = new_content("OR attire, gown, glove, instruments")
@@ -700,7 +696,7 @@ notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glov
 # 28 Knowledge check
 s = new_content("Knowledge check")
 rows = [
-    ("A", "When do you clip the OHE field?", "After ready for prep. Clip and dirty-scrub in the prep area. Full sterile scrub in the OR after positioning."),
+    ("A", "When do you clip the OHE field?", "After the patient is anesthetized and intubated. Clip and dirty-scrub in the prep area. Full sterile scrub in the OR after positioning."),
     ("B", "How do you prep conjunctiva with povidone-iodine?", "Intact cornea: 0.2% (10% 1:50 or 5% 1:25), 2 min scrub + 2 min soak. Not 10% or 5% undiluted. Perforation: saline only."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
     ("D", "25 kg dog. Tube, bag, and IV fluid rate if you intubate?", "10 mm, 2 L circle, LRS 125 mL/hr (5 mL/kg/hr)."),
@@ -712,7 +708,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
-notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986: 0.2 percent, 2 plus 2 minutes, not undiluted 10 percent or 5 percent paint; perforation is saline only. A is airway before clippers, dirty scrub in the prep area, full scrub in the OR.")
+notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 25 kilogram dog: 10 millimeter, 2 liter circle, 125 milliliters per hour. B is Roberts 1986: 0.2 percent, 2 plus 2 minutes, not undiluted 10 percent or 5 percent paint; perforation is saline only. A is after the patient is anesthetized and intubated. Do not clip a conscious patient. Then clip and dirty-scrub in the prep area, full scrub in the OR.")
 
 # 29 Recovery
 s = new_content("Immediate recovery")
@@ -930,7 +926,11 @@ for i, slide in enumerate(prs.slides, 1):
         if not sh.has_text_frame:
             continue
         t = sh.text_frame.text.strip().split("\n")[0].strip()
-        if 8 <= len(t) <= 90 and not t.startswith("DVM 612  |"):
+        if not t or t.startswith("DVM 612  |"):
+            continue
+        if "/" in t and t.replace(" ", "").replace("/", "").isdigit():
+            continue
+        if 4 <= len(t) <= 90:
             title = t
             break
     try:
