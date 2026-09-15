@@ -740,9 +740,9 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
-s = new_content("Anesthesia chart and end of case", "Operating range is Grubb 2020 floors and alerts. Time cells stay empty until a real patient.")
+s = new_content("Anesthesia chart and end of case", "Operating range is under anesthesia, not the awake exam. Time cells stay empty until a real patient.")
 add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
-notes(s, "This is Appendix 3 pages 4 and 5 as an original chart. The filled column is the intraoperative operating range from Grubb 2020, fluids from Pardo 2024. Heart rate: keep below tachycardia, large dog 150, small dog 190, cat 180. Do not invent a 60 to 140 dog band. Blood pressure: stay at or above SAP 90, MAP 70, DAP 40; hypertension is MAP over 120 to 140 or SAP over 160 to 180. Do not invent SAP 90 to 140 or MAP 70 to 110. ETCO2 40 to 50, up to 55, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen 2 to 3 liters then 20 to 40 milliliters per kilogram per minute, minimum 500. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour. Inhalant to effect. Time cells empty until a real patient.")
+notes(s, "This is Appendix 3 pages 4 and 5 as an original chart. The filled column is the intraoperative operating range, not the awake exam. Heart rate: anesthetized cat 100 to 180, AAFP 2018, which Grubb cites. Grubb does not publish a dog floor, so do not write 60 to 140 as if it were Grubb. Dog tachycardia alert remains 150 to 190 by size. Blood pressure: stay at or above SAP 90, MAP 70, DAP 40; hypertension is MAP over 120 to 140 or SAP over 160 to 180. ETCO2 40 to 50, up to 55, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen 2 to 3 liters then 20 to 40 milliliters per kilogram per minute, minimum 500. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour. Inhalant to effect. Time cells empty until a real patient.")
 
 # 31 Pain + incision
 s = new_content("Postop analgesia and incision care", "On-label NSAIDs. Dog: carprofen. Cat: Onsior. Then teach the e-collar.")
@@ -962,6 +962,7 @@ APPENDIX  ·  FULL REFERENCES
 16. Epstein ME, Rodan I, Griffenhagen G, Kadlisko J, Landa MS, Petty M, Robertson SA. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2015;51:67-84. Concurrent NSAID + corticosteroid is a leading risk factor for GI perforation. Clinically relevant washout periods remain controversial and largely undefined; cautious gap ~7 days after a short-acting corticosteroid before starting an NSAID.
 17. Thieman Mankin K. A Step-by-Step Guide to Exploratory Celiotomy. Clinician's Brief. October 2019. Clip ~4 cm cranial to the xiphoid, ~4 cm caudal to the pubis, and ~3-4 cm lateral to the nipples. Not a fixed 20 cm margin.
 18. Lacerenza M, et al. Vet Ophthalmol. 2021. In cases of corneal perforation, only sterile saline was used for ocular surface wash.
+19. Robertson SA, Gogolski SM, Pascoe P, Shafford HL, Sager J, Griffenhagen GM. AAFP Feline Anesthesia Guidelines. J Feline Med Surg. 2018;20(7):602-634. Anesthetized cat: bradycardia HR <100 bpm; tachycardia HR >180 bpm. Grubb 2020 cites this for feline tachycardia.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.

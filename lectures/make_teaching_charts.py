@@ -708,7 +708,7 @@ def anesthesia_chart_recovery():
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [
-        ("Heart rate", "keep below tachycardia: dog 150–190 (size); cat 180"),
+        ("Heart rate", "anesthetized, not awake: cat 100–180; dog: no Grubb floor"),
         ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
         ("BP  SAP / MAP / DAP", "SAP ≥90 (<160–180)  ·  MAP ≥70 (<120–140)  ·  DAP ≥40"),
         ("Isoflurane or sevoflurane %", "to effect"),
