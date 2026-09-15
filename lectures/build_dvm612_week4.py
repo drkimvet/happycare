@@ -648,13 +648,26 @@ notes(s, "Name the bag size and the tube size on this photograph. Confirm placem
 
 # 25 Draping
 s = new_content("Draping")
-add_pic(s, "drape_overhead_window.png", Inches(0.32), Inches(1.08), Inches(8.55), Inches(5.95))
+# Native photo 300x145 (~2.07:1). Do not stretch into a taller box.
+_drape_w = 8.55
+_drape_h = _drape_w * 145 / 300
+add_pic(s, "fenestrated_drape_window.jpg", Inches(0.32), Inches(1.08), Inches(_drape_w), Inches(_drape_h))
+add_text(
+    s,
+    Inches(0.32),
+    Inches(1.08 + _drape_h + 0.10),
+    Inches(_drape_w),
+    Inches(1.55),
+    "Fenestrated drape. The hole is the incision: only clipped skin. Backhaus towel clamps at the corners. Hair stays under the drape.",
+    size=16,
+    color=INK,
+)
 add_round(s, Inches(9.02), Inches(1.08), Inches(3.95), Inches(0.38), RED)
 add_text(s, Inches(9.02), Inches(1.08), Inches(3.95), Inches(0.38), "Hair at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "cherry_point_spay.jpg", Inches(9.02), Inches(1.50), Inches(3.95), Inches(2.55))
 add_round(s, Inches(9.02), Inches(4.18), Inches(3.95), Inches(2.85), WHITE)
-add_text(s, Inches(9.16), Inches(4.30), Inches(3.67), Inches(2.58), "Left is the view from above the table: the hole is the incision. Only clipped, painted skin. Hair is under the drape.\n\nRight: hair at the margin. Re-clip or re-drape. Four towels, then the large drape. Timeout. Then cut.", size=16, color=INK)
-notes(s, "The large figure is looking straight down on a dog in dorsal recumbency. The window is the incision. Hair stays under the drape. The small photograph is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
+add_text(s, Inches(9.16), Inches(4.30), Inches(3.67), Inches(2.58), "Left: fenestrated drape. Clipped skin in the window. Towel clamps at the corners. Hair is under the drape.\n\nRight: hair at the margin. Re-clip or re-drape. Four towels, then the large drape. Timeout. Then cut.", size=16, color=INK)
+notes(s, "This photograph is the overhead window: fenestrated drape, clipped skin in the hole, Backhaus towel clamps at the corners. Hair stays under the drape. The small photograph is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
 
 # 26 Gloving
 s = new_content("OR attire, gown, glove, instruments")

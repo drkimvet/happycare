@@ -32,9 +32,14 @@ yap_surgical_window.jpg
   Cropped to the fenestrated window for DVM 612 Week 4.
   https://www.dvidshub.net/image/8634096/pacific-partnership-2024-2-yap
 
+fenestrated_drape_window.jpg
+  Instructor teaching file for DVM 612 Week 4.
+  Fenestrated drape with Backhaus towel clamps at the corners of the window.
+  Source not identified. Used to show the overhead surgical window: only clipped skin in the hole.
+
 drape_overhead_window.png
   Original overhead teaching figure of a fenestrated drape over a dog in dorsal recumbency, drawn for DVM 612 Week 4.
-  Not a hospital-patient photograph. Used to show the zenith view: only clipped, painted skin in the hole.
+  Not a hospital-patient photograph. Replaced on the draping slide by fenestrated_drape_window.jpg.
 
 closed_gloving_real.jpg
   Crop of DVIDS photo ID 6168271, VIRIN 200409-N-PH222-1594.
