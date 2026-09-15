@@ -159,7 +159,7 @@ def anesthesia_record(filled="blank"):
     lab_v = {
         "blank": ["", "", "", ""],
         "willie": ["47.5%", "6.4", "11.9", "Cr 0.7. Phos 6.0. Glucose 130. CBC in range."],
-        "momo": ["request", "request", "↑ azotemia", "Cr 3.0 → 4.71 on fluids. Mechanism not assigned."],
+        "momo": ["44%", "not on this printout", "48.7 → 100", "Cr 3.0 → 4.71. WBC 26. NEU 24. HCT 44%. BE −7.4. Na 142."],
     }[filled]
     for (x0, x1, lab), val in zip(lab_h, lab_v):
         cell(d, x0, y, x1, y + 26, lab, fill=GOLD, fg=NAVY, size=16, bold=True, align="center")
@@ -173,7 +173,7 @@ def anesthesia_record(filled="blank"):
     plan = {
         "blank": "",
         "willie": "Acute ataxia + AS otitis + murmur. HCT 47.5%, TP 6.4, BUN 11.9, Cr 0.7 in range. Phos 6.0 and glucose 130 high. Compensated. Status 3-E from today’s PE.",
-        "momo": "Vomiting that looked like FB. PE did not prove obstruction. Right kidney fluid-filled, non-functional. Cr 3.0 → 4.71 on fluids: post-renal vs intrinsic vs hypovolemia not assigned. Do not clip.",
+        "momo": "Two vomits. Mildly enlarged abdomen. PE did not prove FB. AUS: right kidney fluid-filled, non-functional; left kidney reduced CM architecture. BUN 48.7 → 100. Cr 3.0 → 4.71. Do not clip.",
     }[filled]
     fplan = font(20)
     lines = wrap_text(plan, fplan, 2000)
@@ -213,7 +213,7 @@ def anesthesia_record(filled="blank"):
         "momo": [
             "ASA Status 4-E after labs and imaging",
             "POCUS / AUS before any clippers",
-            "Right kidney fluid-filled, non-functional. Cr 3.0 → 4.71 on fluids",
+            "Right kidney fluid-filled, non-functional. Left kidney reduced CM architecture. BUN 48.7 → 100. Cr 3.0 → 4.71",
             "No clippers. No incision. No exploratory.",
             "NSAIDs contraindicated (azotemic cat)",
             "Consent includes medical care and euthanasia",
@@ -580,10 +580,10 @@ def preanesthetic_assessment_table():
         ["Weight", "13.7 kg", "25 kg", "4.25 kg"],
         ["T  ·  HR  ·  RR", "100.8 °F  ·  132  ·  52", "normal TPR", "98.0 °F  ·  200  ·  30"],
         ["mm / CRT", "pink / 2 s", "normal", "pink, tacky / <2 s"],
-        ["Other PE", "Ataxia + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Dehydrated. No FB proven.\nR kidney fluid-filled, non-functional"],
-        ["PCV / HCT", "HCT 47.5%\n(36.9–60.0)", "within reference", "request; not the cancelling value"],
-        ["TP", "6.4 g/dL\n(5.5–7.6)", "within reference", "request; not the cancelling value"],
-        ["BUN", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130", "within reference", "↑ azotemia\nCr 3.0 → 4.71"],
+        ["Other PE", "Ataxia + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven"],
+        ["PCV / HCT", "HCT 47.5%\n(36.9–60.0)", "within reference", "HCT 44%\n(28–50)"],
+        ["TP", "6.4 g/dL\n(5.5–7.6)", "within reference", "not on this printout"],
+        ["BUN", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130", "within reference", "48.7 → 100\nCr 3.0 → 4.71"],
         ["ASA", "write it", "1", "write it"],
     ]
     widths = [480, 880, 880, 920]
