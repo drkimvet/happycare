@@ -287,7 +287,7 @@ notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon pre
 # 2 Learning objectives
 s = new_content("Learning objectives")
 items = [
-    "Assign ASA after today’s PE and labs. Correct deficits. Write premed, induction, MAC, tube, bag, and fluid rate.",
+    "Assign American Society of Anesthesiologists (ASA) status after today’s PE and labs. Correct deficits. Write premed, induction, MAC, tube, bag, and fluid rate.",
     "If albumin is low: find the cause, delay elective if you can, and do not flood with crystalloid.",
     "Prep for aseptic surgery: clip, dirty scrub, OR attire, full scrub, drape, instrument table, closed glove.",
     "Name a break in asepsis and correct it, before or after the incision. Classify the wound: clean, clean-contaminated, contaminated, or dirty.",
@@ -394,7 +394,7 @@ for i, (t, d) in enumerate(lab_trio):
 notes(s, "This is the preoperative exam the record actually holds. CPE MOA 2026 Appendix 3: heart rate, respiratory rate, mucous membranes and CRT, temperature, then PCV, TP, and BUN. Request those three. Interpret them. Then write ASA. Then premed IM or SQ. Do not premedicate before the examination. Add other labs if the PE says so. A normal CBC does not make a vestibular dog Status 1. Azotemia can cancel the cut.")
 
 # 7 ASA
-s = new_content("ASA physical status")
+s = new_content("American Society of Anesthesiologists (ASA)")
 rows = [
     ("1", "Normal healthy patient", "Healthy patient for neutering", GREEN),
     ("2", "Patient with mild systemic disease", "Well compensated mild mitral degeneration", TEAL),
@@ -415,7 +415,7 @@ for i, (asa, defn, ex, c) in enumerate(rows):
     add_text(s, Inches(8.85), y + Inches(0.08), Inches(3.80), Inches(0.72), ex, size=16, color=SLATE, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.45), Inches(6.48), Inches(12.4), Inches(0.55), GOLD_LT)
 add_text(s, Inches(0.65), Inches(6.48), Inches(12.05), Inches(0.55), "E = emergency. Status 3 is moderate and compensated. Status 4 is uncompensated and a threat to life. Today’s PE and labs write the number. A normal CBC does not write Status 1.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview MoMo or Willie. Next: one cat’s PE, then labs, then they write the status. Then the dog.")
+notes(s, "Say the name once: American Society of Anesthesiologists, ASA. Then read the 2020 AAHA table with MOA Appendix 2: Status 1 healthy, Status 2 mild and compensated, Status 3 moderate and compensated, Status 4 a constant threat to life, Status 5 moribund. E means emergency. Do not preview MoMo or Willie. Next: one cat’s PE, then labs, then they write the status. Then the dog.")
 
 # 8 MoMo PE (no ASA yet)
 s = new_content("MoMo: today’s PE")
