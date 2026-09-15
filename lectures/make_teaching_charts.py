@@ -147,7 +147,7 @@ def anesthesia_record(filled="blank"):
     plan = {
         "blank": "",
         "willie": "Acute vestibular disease + AS otitis + murmur. Compensated: still pink, walking, kidneys normal. DexSP already given: skip NSAID. Alfaxalone only after this header is complete.",
-        "momo": "Vomiting that looked like a foreign body. PE did not prove GI obstruction. Creatinine 3.0, then 4.71 on fluids. Right kidney fluid-filled and non-functional. NSAIDs contraindicated. Do not clip.",
+        "momo": "Vomiting that looked like a foreign body. PE did not prove GI obstruction. Right kidney fluid-filled and non-functional. Progressive azotemia on fluids (creatinine 3.0 → 4.71). NSAIDs contraindicated. Do not clip.",
     }[filled]
     fplan = font(20)
     lines = wrap_text(plan, fplan, 2000)
@@ -185,7 +185,7 @@ def anesthesia_record(filled="blank"):
         "momo": [
             "ASA Status 4-E after labs and imaging",
             "POCUS / AUS before any clippers",
-            "Serial creatinine 3.0 then 4.71. Act on it.",
+            "Right kidney fluid-filled and non-functional. Cr 3.0 → 4.71 on fluids",
             "No clippers. No incision. No exploratory.",
             "NSAIDs contraindicated (azotemic cat)",
             "Consent includes medical care and euthanasia",
@@ -209,13 +209,13 @@ def anesthesia_record(filled="blank"):
             "Home antiemetic if needed. No NSAID after the steroid.",
             "Confine. Call the owner with neuro status",
             "MRI if signs persist",
-            "New ASA before any later surgery",
+            "New ASA on the morning of any later TECA-LBO",
         ],
         "momo": [
             "This is not a recovery from surgery",
             "Supportive care. Recheck kidneys.",
-            "Rising creatinine cancelled the cut",
-            "Right kidney non-functional on AUS",
+            "Right kidney fluid-filled and non-functional",
+            "Progressive azotemia: creatinine 3.0 → 4.71 on fluids",
             "Offer medical care, referral, or euthanasia",
             "Write the decision on this record",
             "Owner elected humane euthanasia",
@@ -551,7 +551,7 @@ def preanesthetic_assessment_table():
         ["Weight", "13.7 kg", "25 kg", "4.25 kg"],
         ["T  ·  HR  ·  RR", "100.8 °F  ·  132  ·  52", "normal TPR", "98.0 °F  ·  200  ·  30"],
         ["mm / CRT", "pink / 2 s", "normal", "pink, tacky / <2 s"],
-        ["Other PE", "Vestibular + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Dehydrated. No FB proven.\nAbnormal kidneys on POCUS"],
+        ["Other PE", "Vestibular + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Dehydrated. No FB proven.\nR kidney fluid-filled, non-functional"],
         ["PCV", "WNL", "within reference", "request; not the cancelling value"],
         ["TP", "WNL", "within reference", "request; not the cancelling value"],
         ["BUN", "WNL  (kidneys normal)", "within reference", "↑ azotemia\nCr 3.0 → 4.71"],
@@ -604,8 +604,8 @@ def anesthesia_protocol_record():
     d.rectangle([0, 0, W, 70], fill=NAVY)
     d.rectangle([0, 70, W, 78], fill=GOLD)
     d.text((28, 12), "Anesthetic drug protocol", font=font(32, True), fill=WHITE, anchor="lt")
-    d.text((28, 44), "Write drug · concentration · dose · volume · route   ·   teaching record, not a copyrighted form", font=font(18), fill=GOLD, anchor="lt")
-    d.text((W - 28, 35), "Willie  ·  13.7 kg  ·  ASA 3-E", font=font(24, True), fill=GOLD, anchor="rm")
+    d.text((28, 44), "Worked example, not the default protocol   ·   teaching record, not a copyrighted form", font=font(18), fill=GOLD, anchor="lt")
+    d.text((W - 28, 35), "EXAMPLE  ·  13.7 kg  ·  ASA 3-E  ·  ear + DexSP + murmur", font=font(22, True), fill=GOLD, anchor="rm")
 
     headers = ["", "Drug", "Concentration", "Dose", "Volume", "Route"]
     rows = [
@@ -637,8 +637,8 @@ def anesthesia_protocol_record():
     d.text((300, y + 22), "Name:  LRS", font=font(36, True), fill=INK, anchor="lt")
     d.text((300, y + 54), "Rate:  69 mL/hr   (13.7 × 5)", font=font(36, True), fill=NAVY, anchor="lt")
     d.rectangle([1600, y, W - 20, y + 80], fill=(244, 235, 211), outline=LINE, width=2)
-    d.text((1620, y + 22), "Why these drugs", font=font(22, True), fill=NAVY, anchor="lt")
-    d.text((1620, y + 52), "Murmur: skip ace/dexmed. Alfaxalone IV to effect. Skip NSAID after DexSP.", font=font(22), fill=INK, anchor="lt")
+    d.text((1620, y + 22), "Why these drugs  ·  EXAMPLE, not the default", font=font(20, True), fill=NAVY, anchor="lt")
+    d.text((1620, y + 52), "Murmur → skip ace/dexmed. DexSP already given → skip NSAID. Alfaxalone IV to effect.", font=font(20), fill=INK, anchor="lt")
 
     y += 96
     boxes = [

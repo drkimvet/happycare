@@ -27,8 +27,8 @@ SLIDE 7. GRUBB ET AL. 2020 AAHA TABLE. CPE MOA 2026 ANESTHESIA APPENDIX 2 USES T
 SLIDE 8. ASSIGN STATUS, THEN SAY WHETHER YOU PROCEED TODAY
     SPEAK: Cold-call four students. C is a compensated emergency (sedation). D is uncompensated; labs cancelled the exploratory. The names on later slides are only these examples.
 
-SLIDE 9. 6 Y 11 MO MN CAVALIER KING CHARLES SPANIEL, 13.7 KG, BCS 6/9
-    SPEAK: This slide is an ASA example, not the point of the hour. Record the murmur. Right-sided knuckling with left circling: treat as central vestibular plus otitis, then sedate. Aminoglycosides are a risk if the middle ear is involved even when the drum looks present. Skip NSAID after DexSP. Do not put extra-label home milligrams on the board.
+SLIDE 9. ASA EXAMPLE FOR TONIGHT’S EAR CLEAN AND FOR A LATER TECA-LBO. DEXSP: SKIP NSAID.
+    SPEAK: Willie is an ASA example, not the thesis of the hour. Tonight is a sedated ear clean. The same findings, DexSP, and murmur are what you re-score if TECA-LBO is planned later. Record the murmur. Right-sided knuckling with left circling: treat as central vestibular plus otitis. Skip NSAID after DexSP.
 
 SLIDE 10. 6 YO SF DSH, 4.25 KG, BCS 5/9. THIS IS HER, BEFORE THE EXPLORATORY WAS CANCELLED.
     SPEAK: This slide is an ASA example, not the point of the hour. Pause on the photograph. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? The photograph is a quiet, recumbent cat. It does not prove a foreign body. Status 3 would be compensated kidney disease. Rising creatinine, hypothermia, and a non-functional kidney made this Status 4-E.
@@ -39,14 +39,14 @@ SLIDE 11. CPE MOA 2026 APPENDIX 3 PAGE 1: TODAY’S PE, THEN PCV, TP, BUN. INTER
 SLIDE 12. TEACHING BANDS, NOT AN ASA TABLE. GRUBB ET AL. 2020: TODAY’S PE WRITES ASA.
     SPEAK: Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Do not invent PCV cutoffs as ASA numbers.
 
-SLIDE 13. Anesthetic drug protocol
-    SPEAK: This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. Students write drug, concentration, dose, volume, and route for premed, induction, and analgesics. Then IV fluid name and rate. Then why those drugs. Then sedation and induction quality 1 to 5, isoflurane or sevoflurane, rebreathing or non-rebreathing, tube size, and fresh-gas flow. Heart murmur: alfaxalone IV to effect. Do not invent milligrams. Skip NSAID after DexSP. If you intubate a 13.7 kg dog: 7.0 millimeter, 1 liter circle, LRS 69 milliliters per hour.
+SLIDE 13. HEALTHY SEQUENCE, THEN ONE WORKED EXAMPLE. WRITE DRUG, CONCENTRATION, DOSE, VOLUME, ROUTE.
+    SPEAK: This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. The three steps at the top are the general sequence. The filled table is one worked example: ear disease, DexSP already given, murmur. Healthy default is not that table. Students write drug, concentration, dose, volume, and route. Then IV fluid name and rate. Then why. Do not invent milligrams.
 
 SLIDE 14. GRUBB ET AL. 2020: STABILIZE FIRST. PARDO ET AL. 2024: ALBUMIN <2.0 G/DL.
     SPEAK: Read the Grubb 2020 list: correct potassium greater than 6, pH less than 7.2, glucose less than 60, hypothermia, dehydration, before you induce. Then albumin: Pardo 2024 AAHA fluids, less than 2.0 grams per deciliter is edema and poor healing. Delay elective. Treat the cause. Plasma is a poor albumin replacement, 20 to 25 milliliters per kilogram for half a gram. Do not crystalloid-flood a low-oncotic patient. Emergency: resuscitate and operate. A cancelled cut after you find uncompensated azotemia is a successful preoperative evaluation.
 
 SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
-    SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
+    SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. Pre-oxygenation: 3 minutes of 100 percent oxygen gives almost 6 minutes of saturation. Brachycephalics: delay extubation until they can protect the airway. Mention DNR.
 
 SLIDE 16. CPE MOA 2026 APPENDIX 3: ASA, ETT SIZE, BAG, CIRCUIT, IV FLUID NAME/RATE, FRESH-GAS FLOW.
     SPEAK: Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. A 13.7 kg dog: start 7.0 millimeter, 6.5 and 7.5 in the hand. Bag: kilograms times 60, round up. 822 milliliters is a 1 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour; write 69 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape. Do not teach tube math as if a sedated ear-clean patient was intubated.
@@ -94,7 +94,7 @@ SLIDE 30. Anesthesia chart and end of case
     SPEAK: This is Appendix 3 pages 4 and 5, taught as an original chart, not the copyrighted grid. Students name every row: heart rate, respiratory rate, SAP DAP MAP, isoflurane or sevoflurane percent, oxygen flow, end-tidal CO2, SpO2, temperature, fluid rate, total milliliters. Then the end of the case: complications or none, fluid type rate and total volume, recovery analgesics, and a signature. Willie start rate is 69 milliliters per hour. Skip NSAID after DexSP.
 
 SLIDE 31. ON-LABEL NSAIDS. DOG: CARPROFEN. CAT: ONSIOR. THEN TEACH THE E-COLLAR.
-    SPEAK: This course uses on-label NSAIDs. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before surgery, for postoperative pain. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, first dose about 30 minutes before surgery. Do not teach Onsior in the dog. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.
+    SPEAK: This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.
 
 SLIDE 32. THE OPERATION IS NOT OVER AT THE LAST SKIN SUTURE. HEMORRHAGE, HERNIA, DEHISCENCE.
     SPEAK: Hemorrhage versus seroma. Skin versus fascial dehiscence. Evisceration protocol in one breath.
@@ -105,7 +105,7 @@ SLIDE 33. WHAT THE OVERNIGHT CLINICIAN AND THE OWNER BOTH NEED
 SLIDE 34. THE CLIENT MUST BE ABLE TO REPEAT THESE
     SPEAK: Pale gums + distended abdomen after OHE: come now. Return to OR.
 
-SLIDE 35. ASA STATUS 3-E. EXAMPLE ONLY: A COMPENSATED EMERGENCY.
+SLIDE 35. ASA EXAMPLE: EAR DISEASE + DEXSP. RE-ASSIGN ASA ON THE DAY OF ANY LATER TECA-LBO.
     SPEAK: Walk this as an ASA example, not as the lecture thesis. One sentence on the other example: the same preoperative evaluation cancelled an exploratory when the disease was uncompensated.
 
 SLIDE 36. ASA EXAMPLES. BOTH RECEIVED A PREOPERATIVE EVALUATION. ONLY WILLIE WAS SEDATED.
