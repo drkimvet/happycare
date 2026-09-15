@@ -443,13 +443,13 @@ notes(s, "Do not put the client name on the board. These are today’s printed n
 # 10 Willie PE (no ASA yet)
 s = new_content("Willie: today’s PE")
 add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), GOLD_LT)
-add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "MN Cavalier, 6 y 11 mo, 13.7 kg. Acute ataxia and disorientation ~1 hour. Found on the floor; fell off the couch twice. Abnormal paw placement. Cytopoint. T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, dull/quiet. Do not write the ASA yet.", size=16, color=NAVY)
+add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "MN Cavalier, 6 y 11 mo, 13.7 kg. Acute ataxia and disorientation ~1 hour. Found on the floor; fell off the couch twice. Cytopoint. T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, dull/quiet. Do not write the ASA yet.", size=16, color=NAVY)
 card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
-card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Ataxia. Disorientation. Could not stand without falling. Abnormal paw placement / sliding on a forelimb. Dull, quiet.", accent=GOLD)
-card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Lungs clear, eupneic. Heavy tartar. Yellow crusts on the nasal philtrum. Eyes: PLR present.", accent=RED)
+card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Vestibular", "Head tilt / leaning toward the left (infected ear, AS). Stumbling. Circling or tight turns to the left. Nystagmus: rapid left, slow right.", accent=GOLD)
+card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Wheelbarrow / CP", "Wheelbarrow: left intact, right absent. Prolonged proprioception, right limbs. Knuckling on the right limbs when walking. Limbs slip.", accent=RED)
 add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "This slide is the examination. Next: today’s chemistry and CBC, including HCT and TP. Then you write the ASA. Add E if this is an emergency. Owner identifiers stay off these slides. Do not use a drug list on this dog.", size=16, color=INK)
-notes(s, "Second ASA quiz. Read the PE from today’s record. Do not say 3-E yet. Do not put the client name on the board. No DexSP, alfaxalone, ear clean, or TECA. Next slide is the actual lab numbers, then they write the status.")
+add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Also on PE: Grade II/VI left systolic murmur. Lungs clear, eupneic. Heavy tartar. Yellow crusts on the nasal philtrum. Eyes: PLR present. Next: today’s chemistry and CBC. Then you write the ASA. Owner identifiers stay off these slides. Do not use a drug list on this dog.", size=16, color=INK)
+notes(s, "Second ASA quiz. Read the neuro exam from today’s record. Do not say 3-E yet. Do not put the client name on the board. Infected side is the left ear, AS. Head tilt and circling are to the left. Nystagmus: rapid phase left, slow phase right. Wheelbarrow left intact, right absent. Prolonged proprioception and knuckling on the right limbs when walking. Limbs slip. Do not turn this into a TECA or ear-clean plan. Do not assign central versus peripheral as the ASA. Next slide is the actual lab numbers, then they write the status. No DexSP, alfaxalone, ear clean, or TECA.")
 
 # 11 Willie labs + ASA quiz
 s = new_content("Willie: labs. Write the ASA")
@@ -462,7 +462,7 @@ add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assi
 card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
 card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 1?", "What on today’s PE is not a normal healthy patient?", accent=TEAL)
 card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Why not Status 4?", "Is this a constant threat to life today?", accent=RED)
-notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the ataxia plus AS otitis is acute. Not 1: the PE is not normal. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 36 is the written key.")
+notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the left otitis plus the vestibular and proprioceptive signs are acute. Not 1: head tilt, circling, nystagmus, and right-sided knuckling are not a normal PE. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 36 is the written key.")
 
 # 12 Diagnostics
 s = new_content("Pre-anesthetic assessment")
@@ -845,9 +845,9 @@ s = new_content("Answer: Willie is Status 3-E")
 add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  today’s PE and today’s labs write the status", size=18, color=NAVY)
 wsteps = [
-    ("Disease", "Acute ataxia and disorientation. AS otitis. Grade II/VI murmur. That is moderate systemic disease, not a normal PE."),
+    ("Disease", "AS otitis. Head tilt left. Circling left. Nystagmus rapid left, slow right. Wheelbarrow right absent. Knuckling, right limbs. Grade II/VI murmur."),
     ("Compensated", "Pink, CRT 2 s. BUN 11.9 and creatinine 0.7 in range. Not a constant threat to life today."),
-    ("Not Status 1", "HCT 47.5% in range does not write Status 1. Otitis plus ataxia plus a murmur is not Status 1."),
+    ("Not Status 1", "HCT 47.5% in range does not write Status 1. This neuro PE is not a normal healthy patient."),
     ("Not Status 4", "Phos 6.0 and glucose 130 are high. They do not write Status 4. Status 4 is a constant threat to life."),
 ]
 for i, (t, d) in enumerate(wsteps):

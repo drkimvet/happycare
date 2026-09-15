@@ -172,7 +172,7 @@ def anesthesia_record(filled="blank"):
     d.text((174, y + 40), why_lab, font=font(18, True), fill=NAVY, anchor="mm")
     plan = {
         "blank": "",
-        "willie": "Acute ataxia + AS otitis + murmur. HCT 47.5%, TP 6.4, BUN 11.9, Cr 0.7 in range. Phos 6.0 and glucose 130 high. Compensated. Status 3-E from today’s PE.",
+        "willie": "AS otitis. Head tilt L, circling L, nystagmus rapid L. R knuckling. HCT 47.5%, TP 6.4, BUN 11.9, Cr 0.7 in range. Compensated. Status 3-E from today’s PE.",
         "momo": "Two vomits. Mildly enlarged abdomen. PE did not prove FB. AUS: right kidney fluid-filled, non-functional; left kidney reduced CM architecture. BUN 48.7 → 100. Cr 3.0 → 4.71. Do not clip.",
     }[filled]
     fplan = font(20)
@@ -203,7 +203,7 @@ def anesthesia_record(filled="blank"):
         ],
         "willie": [
             "ASA Status 3-E. HCT 47.5%. TP 6.4. BUN 11.9. Cr 0.7. Exam wrote the status.",
-            "Today’s PE: ataxia + AS otitis + murmur",
+            "Today’s PE: AS otitis, head tilt L, circling L, R knuckling",
             "Compensated: pink, CRT 2 s. BUN and creatinine in range",
             "Moderate systemic disease, still compensated",
             "Emergency because the presentation is acute",
@@ -580,7 +580,7 @@ def preanesthetic_assessment_table():
         ["Weight", "4.25 kg", "25 kg", "13.7 kg"],
         ["T  ·  HR  ·  RR", "98.0 °F  ·  200  ·  30", "normal TPR", "100.8 °F  ·  132  ·  52"],
         ["mm / CRT", "pink, tacky / <2 s", "normal", "pink / 2 s"],
-        ["Other PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven", "Elective OHE\nnormal PE", "Ataxia + AS otitis\nII/VI murmur"],
+        ["Other PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven", "Elective OHE\nnormal PE", "AS otitis. Head tilt L\nCircling L. R knuckling"],
         ["PCV / HCT", "HCT 44%\n(28–50)", "within reference", "HCT 47.5%\n(36.9–60.0)"],
         ["TP", "not on this printout", "within reference", "6.4 g/dL\n(5.5–7.6)"],
         ["BUN", "48.7 → 100\nCr 3.0 → 4.71", "within reference", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130"],
