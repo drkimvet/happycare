@@ -853,14 +853,14 @@ card(s, Inches(6.75), Inches(1.2), Inches(6.15), Inches(5.5), "MoMo, ASA Status 
 notes(s, "Last content slide if time is gone. These two patients are ASA examples only. Healthy Lab OHE is the ASA Status 1 contrast.")
 
 # 37 Key points
-s = new_content("Key points", "CPE MOA 2026 Anesthesia and Surgery competencies. Cases are ASA examples only.")
+s = new_content("Key points", "CPE MOA 2026 Appendix 3 and Surgery competencies")
 pearls = [
-    "Exam, then PCV, TP, BUN. Interpret. Write ASA. Then IM or SQ premed. Not before the exam.",
+    "Pre-anesthetic assessment: TPR, mm/CRT, then PCV, TP, BUN. Interpret. Circle ASA. Then IM or SQ premed.",
+    "Write drug, concentration, dose, volume, and route. Then IV fluid name and rate, ETT size, circuit, and fresh-gas flow.",
     "Ready for surgical prep: airway secured, machine on, patent IV running, surgical plane, monitoring started.",
-    "Before induction write ASA, ETT, bag, circuit, FGF, and IV rate (dog 5 mL/kg/hr; cat 3–5).",
-    "Patient prep: hair, skin, position, drape. Surgeon: gown and closed glove. Announce incision.",
-    "Name a break in asepsis and correct it. After the incision, every break must be fully corrected.",
-    "First 24 hours still count: hemorrhage from a weak ligature, or hernia from a weak linea. Return to OR.",
+    "Patient: hair, skin, position, drape. Surgeon: attire, gown, closed glove. Announce incision.",
+    "Fill the chart: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
+    "First 24 hours still count: hemorrhage from a weak ligature, or hernia from a weak linea.",
 ]
 for i, t in enumerate(pearls):
     y = Inches(1.15) + Inches(i * 0.92)
@@ -868,7 +868,7 @@ for i, t in enumerate(pearls):
     add_rect(s, Inches(0.5), y, Inches(0.85), Inches(0.84), GOLD)
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(0.84), str(i + 1), size=20, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y, Inches(10.9), Inches(0.84), t, size=18, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Stop here if time is gone. These six lines are the hour: exam and ASA, ready for prep, equipment math, hair-skin-position-drape, correct asepsis, own 24 hours. Do not make the hospital patients the takeaway.")
+notes(s, "These six lines are the Appendix 3 record and the Surgery competencies: assessment and ASA, drug protocol and equipment, ready for prep, hair-skin-position-drape, the chart and signature, then the first 24 hours. Do not recap the hospital patients here.")
 
 # 38 Questions + references
 s = prs.slides.add_slide(BLANK)
