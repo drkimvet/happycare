@@ -753,14 +753,14 @@ add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
     "Dog: carprofen (Rimadyl) 4.4 mg/kg SQ. Dogs only. Give ~2 hours before incision so levels are on board (pre-emptive; Rimadyl label).",
     "Cat: Onsior (robenacoxib) 2 mg/kg SQ. Cats only. First dose ~30 min before incision so levels are on board. OHE, castration, orthopedic. Up to 3 days.",
     "Dog: carprofen. Cat: Onsior. Do not swap species in this course.",
-    "Do not stack an NSAID with a steroid. Willie: DexSP, skip NSAID. MoMo: azotemic, skip NSAID.",
+    "Do not stack an NSAID with a steroid. Skip NSAID if the patient is azotemic.",
 ], size=16, spacing=6)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(5.55), WHITE)
 add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.40), "Antibiotic injection and incision", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "A postoperative antibiotic injection is treatment. Write the drug, dose, and why.",
     "Clean elective OHE: skip (Frey 2022). Do not send home 14 days of cephalexin.",
-    "Dirty or infected: continue as therapy. Willie’s ear is treatment, not prophylaxis.",
+    "Dirty or infected: continue as therapy, not prophylaxis.",
     "Look twice daily: swelling, discharge, gapping, smell, heat.",
     "E-collar that stays on. Leash walks 14 days.",
     "Skin sutures typically 10–14 days.",
