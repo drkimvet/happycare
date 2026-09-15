@@ -529,31 +529,23 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
 ], size=16, spacing=6)
 notes(s, "Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.")
 
-# 16 Checklist + analgesia
-s = new_content("Pre-incision checklist and analgesia", "WHO-adapted timeout and multimodal plan")
-add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), WHITE)
-add_text(s, Inches(0.75), Inches(1.4), Inches(5.6), Inches(0.4), "Pre-incision checklist", size=18, bold=True, color=NAVY)
-add_bullets(s, Inches(0.7), Inches(1.9), Inches(5.7), Inches(4.5), [
-    "Identity, procedure, site/side confirmed.",
-    "Consent, estimate, DNR documented.",
-    "ASA, allergies, last meal.",
-    "IV catheter patent; fluids running.",
-    "Airway secured; monitoring on.",
-    "Antibiotics given (if indicated) 30 minutes before incision.",
-    "Local block planned (incisional, testicular, TAP, splash).",
-    "Instruments, suture, extra gloves, cautery, suction.",
-], size=16, spacing=5)
-add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), WHITE)
-add_text(s, Inches(7.1), Inches(1.4), Inches(5.5), Inches(0.4), "Multimodal analgesia", size=18, bold=True, color=NAVY)
-add_bullets(s, Inches(7.05), Inches(1.9), Inches(5.55), Inches(4.5), [
-    "Opioid as part of premed or induction.",
-    "NSAID if perfusion, kidneys, and GI tract allow. Often at recovery.",
-    "Local/regional: the cheapest MAC-sparing tool you have.",
-    "Adjuncts: ketamine CRI, dexmedetomidine CRI, gabapentin, acetaminophen (dog only).",
-    "Cats: skip acetaminophen; careful NSAID choice and dose.",
-    "Write the pain plan before the patient leaves the table.",
-], size=16, spacing=6)
-notes(s, "Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.")
+# 16 Premed, MAC, timeout
+s = new_content("Premedication, MAC, and the timeout", "Brief anesthesia vocabulary for this hour. Not an anesthesia course.")
+premed_cols = [
+    ("Why we premedicate", TEAL,
+     "Calm the patient. Give preemptive analgesia.\nLower the induction dose.\nLower MAC of the vaporizer.\nSmoother intubation and recovery.\nSafer handling before the clip."),
+    ("Injectables you will hear", GOLD,
+     "DKT: dexmedetomidine + ketamine + butorphanol (torb). One IM syringe: sedation, analgesia, muscle relaxation. Ketamine supports HR. Dexmed is reversible. Healthy ASA 1–2 short procedures.\n\nBAA: butorphanol (torb) + acepromazine + atropine. Classic MAC-sparing premed in healthy patients.\n\nHeart-compromised / murmur: skip acepromazine and dexmedetomidine as the default. Opioid + alfaxalone is a common plan. That is why Willie received alfaxalone."),
+    ("Gas and MAC", NAVY,
+     "MAC = minimum alveolar concentration: the alveolar % of inhalant that stops movement in 50% of patients to a surgical stimulus.\n\nIsoflurane or sevoflurane maintain anesthesia after injectable induction.\n\nPremeds, local blocks, and hypothermia lower MAC. Turn the vaporizer down.\n\nTimeout before incision: identity, site, ASA, last meal, monitors on, cefazolin 22 mg/kg IV if indicated."),
+]
+for i, (t, c, b) in enumerate(premed_cols):
+    x = Inches(0.40) + Inches(i * 4.28)
+    add_round(s, x, Inches(1.15), Inches(4.12), Inches(5.55), WHITE)
+    add_rect(s, x, Inches(1.15), Inches(4.12), Inches(0.55), c)
+    add_text(s, x, Inches(1.15), Inches(4.12), Inches(0.55), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.18), Inches(1.82), Inches(3.76), Inches(4.70), b, size=15, color=INK)
+notes(s, "Two minutes. Purpose of premed: calm, analgesia, lower induction dose, lower MAC. DKT is dexmedetomidine, ketamine, butorphanol. BAA is butorphanol, acepromazine, atropine. Ace and dexmed are not the default in heart-compromised patients; Willie got alfaxalone. MAC is how we talk about inhalant dose. Timeout includes cefazolin 22 mg/kg IV when prophylaxis is indicated.")
 
 # 17 Willie record
 s = new_content("Willie’s perioperative record", "Preop header and recovery. Complete before the first drug.")
@@ -566,14 +558,15 @@ add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.7
 notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.")
 
 # 19 Abx
-s = new_content("Surgical antimicrobial prophylaxis", "Frey et al. 2022 AAFP/AAHA: when. Whittem 1999 and Gonzalez 2017: how.")
+s = new_content("Perioperative cefazolin", "Frey et al. 2022: when. Gonzalez 2017: 22 mg/kg IV. Whittem 1999: redose if >90 min.")
 add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), GREEN_LT)
 add_text(s, Inches(0.75), Inches(1.35), Inches(5.6), Inches(0.50), "Clean elective: skip prophylaxis", size=18, bold=True, color=GREEN)
-add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.5), "2022 AAFP/AAHA (Frey et al.)\n\nStart 30–60 min before incision.\nNot usually needed for clean procedures.\nSkip OHE, orchiectomy, most sterile cases.\nPostop antimicrobials are rarely required.\n\nHold asepsis. Stop at closure.", size=16, color=INK)
+add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.5), "2022 AAFP/AAHA (Frey et al.)\n\nStart 30–60 min before incision.\nNot usually needed for clean procedures.\nSkip OHE, orchiectomy, most sterile cases.\nPostop antimicrobials are rarely required.\n\nHold asepsis. Stop at closure.\nA postoperative antibiotic injection is treatment, not a gift after every spay.", size=16, color=INK)
 add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
-add_text(s, Inches(7.1), Inches(1.35), Inches(5.5), Inches(0.50), "When indicated: timed IV, then stop", size=18, bold=True, color=RED)
-add_text(s, Inches(7.1), Inches(1.95), Inches(5.5), Inches(4.5), "AAFP/AAHA 2022 has no cefazolin mg/kg.\n\n1. Start 30–60 min before incision.\n2. Extra-label: 22 mg/kg IV (Gonzalez 2017).\n3. Second dose if >90 min (Whittem 1999).\n4. Stop at closure unless treating infection.\n\nWillie’s infected ear: treatment, not prophylaxis.", size=16, color=INK)
-notes(s, "Do not attribute 22 mg/kg every 90 minutes to AAHA 2022. That guideline says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.")
+add_text(s, Inches(7.1), Inches(1.35), Inches(5.5), Inches(0.45), "When indicated", size=18, bold=True, color=RED)
+add_text(s, Inches(7.1), Inches(1.85), Inches(5.5), Inches(0.85), "Cefazolin 22 mg/kg IV", size=28, bold=True, color=RED)
+add_text(s, Inches(7.1), Inches(2.70), Inches(5.5), Inches(3.70), "Gonzalez 2017: extra-label 22 mg/kg IV in dogs.\n\n1. Give 30–60 min before incision (Frey 2022).\n2. Second dose if surgery lasts >90 min (Whittem 1999).\n3. Stop at closure unless you are treating infection.\n\nAAFP/AAHA 2022 has no cefazolin mg/kg.\nWillie’s infected ear: treatment, not prophylaxis.", size=16, color=INK)
+notes(s, "Say 22 milligrams per kilogram IV out loud. Do not attribute that dose to AAHA 2022. Frey 2022 says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.")
 
 # 20 Sequence
 s = new_content("Sequence of patient preparation", "Prep room, then operating room")
@@ -582,7 +575,7 @@ steps = [
     ("2", "Express bladder if abdominal / caudal surgery"),
     ("3", "Clip with #40, vacuum hair, dirty antiseptic"),
     ("4", "Move to OR, position, pad, tie, final check"),
-    ("5", "Sterile prep. Skin: 7.5% ~5 min, then 5% paint. Eye: 1:50 of 10%"),
+    ("5", "Sterile prep. Clock minimum contact time. Skin: 7.5% ~5 min, then 5% paint. Eye: 2 min + 2 min"),
     ("6", "Four-quadrant towels → large drape"),
     ("7", "Surgeon gowns/gloves (or already gowned)"),
     ("8", "Timeout / checklist → announce incision"),
@@ -611,21 +604,21 @@ add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "#40 after a 
 notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.")
 
 # 22 Antiseptics
-s = new_content("Skin antiseptics", "Read the bottle. Cite the label or the paper.")
+s = new_content("Skin antiseptics", "Minimum contact time. Clock it. Then drape.")
 add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(1.20), GOLD_LT)
 add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nRoberts 1986: 1 mL of 10% + 49 mL saline = 1:50.   5% bottle: 1 mL + 24 mL (1:25).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
 add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), TEAL)
 add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(3.04), Inches(3.80), Inches(2.00), "2% chlorhexidine acetate\nWash 2 to 4 minutes\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=16, color=INK)
+add_text(s, Inches(0.55), Inches(3.04), Inches(3.80), Inches(2.00), "2% chlorhexidine acetate\nMIN contact: 2 to 4 min\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=16, color=INK)
 add_round(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
 add_rect(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.48), GOLD)
 add_text(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.48), "Skin  ·  Betadine vet", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(3.04), Inches(3.80), Inches(2.00), "7.5% scrub\nLather about 5 minutes\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=16, color=INK)
+add_text(s, Inches(4.77), Inches(3.04), Inches(3.80), Inches(2.00), "7.5% scrub\nMIN contact: about 5 min\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=16, color=INK)
 add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(2.70), WHITE)
 add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), NAVY)
 add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "10% stock, dilute 1:50\n2 min scrub + 2 min soak\n1:2: corneal edema (1/15)\n5% bottle: use 1:25\nNot full strength on cornea", size=16, color=INK)
+add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "10% stock, dilute 1:50\nMIN contact: 2 min + 2 min\n1:2: corneal edema (1/15)\n5% bottle: use 1:25\nNot full strength on cornea", size=16, color=INK)
 add_round(s, Inches(0.40), Inches(5.38), Inches(12.52), Inches(1.60), WHITE)
 add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: Roberts 1986, 1:50 of 10% stock, 2-min scrub + 2-min soak. If the bottle is 5% veterinary solution, 1:25 matches 0.2%.", size=14, color=SLATE)
 notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
@@ -638,6 +631,7 @@ add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", s
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Dirty prep, then sterile prep.",
     "Start at the incision. Spiral out. Drop the sponge.",
+    "Clock the minimum contact time.",
     "Skin: 7.5% ~5 min, then 5% paint.",
     "Eye: 10% stock 1:50. 2 min + 2 min.",
     "Willie canal: dilute PVP-I, not 7.5% scrub.",
@@ -669,7 +663,7 @@ s = new_content("Closed gloving and the anesthesia workstation", "Technique diag
 add_pic(s, "prep_closed_gloving.png", Inches(0.35), Inches(1.12), Inches(6.3), Inches(4.15))
 add_pic(s, "hektor_or.jpg", Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15))
 add_round(s, Inches(0.35), Inches(5.38), Inches(12.6), Inches(1.7), WHITE)
-add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: cap, mask, ECG/SpO2/ETCO2, circle system, IV fluids, airway. Monitoring is on before the first drug. Willie needed this for an ear clean. MoMo: the record stopped at preoperative evaluation.\nPhoto: MSgt Carlotta Holley, U.S. Air Force, public domain.", size=16, color=INK)
+add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: cap, mask, ECG/SpO2/ETCO2, circle system, IV fluids, airway. The vaporizer delivers inhalant; MAC is how we talk about that dose. Monitoring is on before the first drug. Willie: alfaxalone sedation. MoMo: the record stopped at preoperative evaluation.\nPhoto: MSgt Carlotta Holley, U.S. Air Force, public domain.", size=16, color=INK)
 notes(s, "Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, fluids off the workstation photo.")
 
 # 27 Asepsis + protect
@@ -688,7 +682,7 @@ notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glov
 s = new_content("Knowledge check", "What do you do next?")
 rows = [
     ("A", "When do you clip the OHE field?", "After induction, immediately before the scrub."),
-    ("B", "How do you prep conjunctiva with iodine?", "10% stock 1:50 (1 + 49 mL). 2 min + 2 min. 5% bottle: 1:25."),
+    ("B", "How do you prep conjunctiva with iodine?", "10% stock 1:50. MIN contact 2 min + 2 min. 5% bottle: 1:25."),
     ("C", "Blocked cat, K+ 8.2, booked for PU. First move?", "Stabilize K+. Decompress. Recheck. Then decide on anesthesia."),
     ("D", "CHG runs into the eye. Next three steps?", "Stop. Irrigate with saline. Finish the field with dilute PVP-I."),
 ]
@@ -709,9 +703,9 @@ add_text(s, Inches(8.8), Inches(1.28), Inches(4.0), Inches(0.4), "Recovery prior
 add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
     "Extubate when swallow returns.",
     "Pale + tachycardic after celiotomy: return to OR.",
-    "Rewarm. Check skin every 15 minutes.",
+    "NSAID injection if kidneys and GI allow. Willie: skip after DexSP.",
     "E-collar on before they can lick.",
-    "Willie: skip NSAID after DexSP.",
+    "Antibiotic injection only if you are treating.",
 ], size=16, spacing=10)
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
@@ -721,28 +715,28 @@ add_pic(s, "recovery_flowsheet.png", Inches(0.28), Inches(1.08), Inches(12.78), 
 notes(s, "Students should be able to fill this after a spay. Photograph it. Pale plus tachycardic after celiotomy: return to OR.")
 
 # 31 Pain + incision
-s = new_content("Pain and incision care", "Score pain. Then teach the e-collar.")
+s = new_content("Postop analgesia and incision care", "Injections at recovery. Then teach the e-collar.")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.4), "Score pain and record the number", size=18, bold=True, color=NAVY)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.40), "Analgesia injection at recovery", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
-    "Dogs: Glasgow CMPS-SF. Cats: Feline Grimace Scale plus behavior.",
-    "Re-score after intervention.",
-    "Soft tissue elective: opioid ± NSAID ± local.",
-    "Celiotomy / orthopedic: CRIs, extra locals, overnight monitoring.",
-    "Send home the opioid + NSAID (if kidneys and GI allow) + the local you already placed. Write the dosing times.",
-    "Willie already received DexSP: skip NSAID.",
-], size=16, spacing=6)
+    "Score pain. Dogs: Glasgow CMPS-SF. Cats: Feline Grimace Scale.",
+    "Opioid injection as planned. Re-score after you give it.",
+    "NSAID if perfusion, kidneys, and GI allow. Do not stack with a steroid.",
+    "Carprofen: dog. Onsior (robenacoxib) 2 mg/kg SQ: dog or cat, labeled up to 3 days.",
+    "Onsior first dose: about 45 min before incision in dogs, 30 min in cats (label). Later doses at recovery or SQ/PO.",
+    "Willie already received DexSP: skip NSAID. MoMo: azotemic, skip NSAID.",
+], size=15, spacing=5)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(5.55), WHITE)
-add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.4), "Incision care", size=18, bold=True, color=NAVY)
+add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.40), "Antibiotic injection and incision", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
+    "A postoperative antibiotic injection is treatment. Write the drug, dose, and why.",
+    "Clean elective OHE: skip (Frey 2022). Do not send home 14 days of cephalexin.",
+    "Dirty or infected: continue as therapy. Willie’s ear is treatment, not prophylaxis.",
     "Look twice daily: swelling, discharge, gapping, smell, heat.",
-    "E-collar that actually stays on.",
-    "Leash walks only for 14 days. Keep the patient confined indoors otherwise.",
-    "Saline if dirty. Skin sutures typically 10–14 days.",
-    "Heart or kidney patients: measured fluid rate and a written stop time.",
-    "Cats: start a meal the night of surgery.",
-], size=16, spacing=6)
-notes(s, "Licking and unsupervised running are the two discharge failures after otherwise adequate closure.")
+    "E-collar that stays on. Leash walks 14 days.",
+    "Skin sutures typically 10–14 days. Cats: start a meal the night of surgery.",
+], size=15, spacing=5)
+notes(s, "Name carprofen for dogs and Onsior 2 mg/kg SQ for cats or dogs per label. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
 
 # 32 Complications
 s = new_content("Complications in the first 24 hours", "Hemorrhage, airway, hernia, dehiscence, SSI, seroma")
@@ -834,9 +828,9 @@ s = new_content("Key points", "")
 pearls = [
     "Willie is ASA Status 3-E: sedate with a plan. MoMo is Status 4-E: image first, then cancel.",
     "Serial creatinine can cancel a surgery. That is a successful preoperative evaluation.",
-    "Clean elective OHE: skip routine postoperative antibiotics.",
-    "Clip after induction. Spiral prep. Re-clip until the window is hair-free.",
-    "Skin: 7.5% PVP-I ~5 min, then 5% paint. Eye: 10% 1:50, 2 min + 2 min.",
+    "When prophylaxis is indicated: cefazolin 22 mg/kg IV 30–60 min before incision. Clean OHE: skip.",
+    "Clock minimum contact time. Skin: 7.5% ~5 min, then 5% paint. Eye: 10% 1:50, 2 min + 2 min.",
+    "Premed lowers MAC. Heart-compromised: opioid + alfaxalone. DKT and BAA are healthy-patient combinations.",
     "Pale + tachycardic after celiotomy: hemorrhage until proven otherwise. Return to OR.",
 ]
 for i, t in enumerate(pearls):
@@ -927,7 +921,10 @@ APPENDIX  ·  FULL REFERENCES
 8. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155. If this bottle is used for a Roberts 0.2% field, dilute 1:25 (1 mL + 24 mL).
 9. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed NDC 54771-8701; setid 4a2567ca-26b9-4078-b3e3-4695f50899b4. Wash 2 to 4 min. Avoid eyes and mucous membranes.
 10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216. First dose within 30 min of surgery; second dose if surgery lasted >90 min. Abstract does not print mg/kg.
-11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Does not say q90 min.
+11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Interstitial fluid >4 ug/mL for about 4 h after IV. Does not say q90 min.
+12. ONSIOR (robenacoxib) injection. DailyMed. 2 mg/kg SQ once daily up to 3 days. Dogs: soft tissue surgery, first dose about 45 min before surgery. Cats: orthopedic surgery, OHE, castration, first dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid.
+
+TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
 """, encoding="utf-8")

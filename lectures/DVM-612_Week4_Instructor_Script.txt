@@ -48,8 +48,8 @@ SLIDE 14. WHEN TO DELAY, WHEN TO PROCEED URGENTLY
 SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
     SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
 
-SLIDE 16. WHO-ADAPTED TIMEOUT AND MULTIMODAL PLAN
-    SPEAK: Checklist takes 90 seconds and prevents wrong-site and forgotten cefazolin. Locals are underused.
+SLIDE 16. BRIEF ANESTHESIA VOCABULARY FOR THIS HOUR. NOT AN ANESTHESIA COURSE.
+    SPEAK: Two minutes. Purpose of premed: calm, analgesia, lower induction dose, lower MAC. DKT is dexmedetomidine, ketamine, butorphanol. BAA is butorphanol, acepromazine, atropine. Ace and dexmed are not the default in heart-compromised patients; Willie got alfaxalone. MAC is how we talk about inhalant dose. Timeout includes cefazolin 22 mg/kg IV when prophylaxis is indicated.
 
 SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
     SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.
@@ -57,8 +57,8 @@ SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
 SLIDE 18. EXPLORATORY CANCELLED. RECORD THE DECISION.
     SPEAK: The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.
 
-SLIDE 19. FREY ET AL. 2022 AAFP/AAHA: WHEN. WHITTEM 1999 AND GONZALEZ 2017: HOW.
-    SPEAK: Do not attribute 22 mg/kg every 90 minutes to AAHA 2022. That guideline says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.
+SLIDE 19. FREY ET AL. 2022: WHEN. GONZALEZ 2017: 22 MG/KG IV. WHITTEM 1999: REDOSE IF >90 MIN.
+    SPEAK: Say 22 milligrams per kilogram IV out loud. Do not attribute that dose to AAHA 2022. Frey 2022 says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.
 
 SLIDE 20. PREP ROOM, THEN OPERATING ROOM
     SPEAK: Airway and plane before clippers. Veterinary Betadine labels: 7.5% scrub, lather about 5 minutes, rinse, paint 5% Solution Veterinary, allow to dry. Eye: Roberts 1986, 1:50 of 10% PVP-I stock, 2-minute scrub plus 2-minute soak. Do not paint 10% from the veterinary bottle; that bottle is 5%.
@@ -66,7 +66,7 @@ SLIDE 20. PREP ROOM, THEN OPERATING ROOM
 SLIDE 21. #40 CLIPPER AFTER INDUCTION. FIELD 20 CM BEYOND THE PLANNED INCISION.
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.
 
-SLIDE 22. READ THE BOTTLE. CITE THE LABEL OR THE PAPER.
+SLIDE 22. MINIMUM CONTACT TIME. CLOCK IT. THEN DRAPE.
     SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
 
 SLIDE 23. CENTER TO PERIPHERY. DIRTY PREP, THEN STERILE PREP.
@@ -93,8 +93,8 @@ SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
 SLIDE 30. AIRWAY, PERFUSION, HEAT, PAIN, INCISION. STAY WITH THE PATIENT.
     SPEAK: Students should be able to fill this after a spay. Photograph it. Pale plus tachycardic after celiotomy: return to OR.
 
-SLIDE 31. SCORE PAIN. THEN TEACH THE E-COLLAR.
-    SPEAK: Licking and unsupervised running are the two discharge failures after otherwise adequate closure.
+SLIDE 31. INJECTIONS AT RECOVERY. THEN TEACH THE E-COLLAR.
+    SPEAK: Name carprofen for dogs and Onsior 2 mg/kg SQ for cats or dogs per label. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.
 
 SLIDE 32. HEMORRHAGE, AIRWAY, HERNIA, DEHISCENCE, SSI, SEROMA
     SPEAK: Hemorrhage versus seroma. Skin versus fascial dehiscence. Evisceration protocol in one breath.
