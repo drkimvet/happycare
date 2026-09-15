@@ -742,7 +742,7 @@ notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the ca
 # 30 Flowsheet
 s = new_content("Anesthesia chart and end of case")
 add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
-notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The reference-range column is under anesthesia. Heart rate: dog 60 to 120, Ko and Krimins 2012 Table 2; cat 100 to 180, AAFP 2018. Blood pressure floors: SAP 90, MAP 70, DAP 40, Grubb 2020. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen 2 to 3 liters then at least 500 milliliters per minute. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Inhalant to effect. Time cells empty until a real patient. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide, not this intra-op column.")
+notes(s, "This is Appendix 3 pages 4 and 5 as an original chart, not the copyrighted form. The normal-operating-range column is under anesthesia. Heart rate: dog 60 to 140 is the intra-op teaching band on this chart. Large dogs often sit in the 60s; small dogs often 100 to 140. Do not cite Grubb for 60 to 140. Ko and Krimins 2012 Table 2 is 60 to 120. Fossum Table 31-1 70 to 140 is the conscious dog, on the PE slide. Tachycardia alert 150 to 190 by size, Grubb 2020. Cat 100 to 180, AAFP 2018. Blood pressure teaching bands: SAP 90 to 140, MAP 70 to 110, DAP 50 to 90. Grubb 2020 floors remain SAP 90, MAP 70, DAP 40; treat MAP under 60 as hypotension. Grubb hypertension alerts are MAP over 120 to 140 and SAP over 160 to 180; the upper ends on this chart are teaching, not a Grubb table. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen: 2 to 3 liters, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute, Grubb 2020. Fluids: dog 5, cat 3 to 5 milliliters per kilogram per hour, Pardo 2024. Inhalant to effect. Time cells empty until a real patient.")
 
 # 31 Pain + incision
 s = new_content("Postop analgesia and incision care")
@@ -859,7 +859,7 @@ pearls = [
     "Write drug, concentration, dose, volume, and route. Then IV fluid name and rate, ETT size, circuit, and fresh-gas flow.",
     "Ready for surgical prep: airway secured, machine on, patent IV running, surgical plane, monitoring started.",
     "Patient: hair, skin, position, drape. Surgeon: attire, gown, closed glove. Announce incision.",
-    "Fill the chart against the reference range: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
+    "Fill the chart against the normal operating range: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
     "First 24 hours: monitor and manage complications. A weak ligature or a weak linea is still your technical problem.",
 ]
 for i, t in enumerate(pearls):
@@ -963,7 +963,7 @@ APPENDIX  ·  FULL REFERENCES
 17. Thieman Mankin K. A Step-by-Step Guide to Exploratory Celiotomy. Clinician's Brief. October 2019. Clip ~4 cm cranial to the xiphoid, ~4 cm caudal to the pubis, and ~3-4 cm lateral to the nipples. Not a fixed 20 cm margin.
 18. Lacerenza M, et al. Vet Ophthalmol. 2021. In cases of corneal perforation, only sterile saline was used for ocular surface wash.
 19. Robertson SA, Gogolski SM, Pascoe P, Shafford HL, Sager J, Griffenhagen GM. AAFP Feline Anesthesia Guidelines. J Feline Med Surg. 2018;20(7):602-634. Anesthetized cat: bradycardia HR <100 bpm; tachycardia HR >180 bpm. Grubb 2020 cites this for feline tachycardia.
-20. Ko J, Krimins R. Anesthetic monitoring: devices to use and what the results mean. Today's Veterinary Practice. March/April 2012:24-33. Table 2: cardiorespiratory parameters in the anesthetized dog and cat. Heart rate: dogs 60-120 beats/min; cats 120-160. This lecture uses Table 2 for the dog intra-op band and AAFP 2018 for the cat (100-180), which Grubb 2020 cites. Fossum 2018 Table 31-1 (70-140 dog) is the conscious patient, not the anesthetized chart.
+20. Ko J, Krimins R. Anesthetic monitoring: devices to use and what the results mean. Today's Veterinary Practice. March/April 2012:24-33. Table 2: cardiorespiratory parameters in the anesthetized dog and cat. Heart rate: dogs 60-120 beats/min; cats 120-160. The intra-op teaching band on the chart is dog 60-140; do not attribute that band to Grubb 2020 or to Ko Table 2. Cat 100-180 is AAFP 2018, which Grubb 2020 cites. Fossum 2018 Table 31-1 (70-140 dog) is the conscious patient, not the anesthetized chart.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.

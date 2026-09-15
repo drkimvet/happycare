@@ -720,11 +720,11 @@ def anesthesia_chart_recovery():
 
     times = ["0 min", "5", "15", "30", "45"]
     params = [
-        ("Heart rate", "dog 60–120  ·  cat 100–180"),
+        ("Heart rate", "dog 60–140  ·  cat 100–180"),
         ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
-        ("BP  SAP / MAP / DAP", "SAP ≥90  ·  MAP ≥70  ·  DAP ≥40"),
+        ("BP  SAP / MAP / DAP", "SAP 90–140  ·  MAP 70–110  ·  DAP 50–90"),
         ("Isoflurane or sevoflurane %", "to effect"),
-        ("Oxygen flow  L/min", "circle 2–3 L, then ≥0.5 L"),
+        ("Oxygen flow  L/min", "2–3 L, then 20–40 mL/kg/min  ·  min 0.5 L"),
         ("End-tidal CO2", "40–50 mm Hg  ·  PPV if >60"),
         ("SpO2", "≥95%"),
         ("Temperature", "≥98 °F  (36.7 °C)"),
@@ -740,7 +740,7 @@ def anesthesia_chart_recovery():
     y = 84
     rh = 80
     cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
-    cell(d, grid_x, y, target_x, y + rh, "Reference range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
+    cell(d, grid_x, y, target_x, y + rh, "Normal operating range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
     for c, t in enumerate(times):
         cell(d, target_x + c * col_w, y, target_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
     y += rh
