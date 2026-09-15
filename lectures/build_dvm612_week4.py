@@ -535,23 +535,39 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
 ], size=16, spacing=6)
 notes(s, "Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.")
 
-# 16 Premed, ETT, reservoir bag
-s = new_content("Premedication, tube, and bag", "CPE MOA 2026: select ETT, breathing system, and reservoir bag. Then leak-test.")
-premed_cols = [
-    ("Premed, then MAC", TEAL,
-     "Exam first. Then IM or SQ premed.\nCalm, analgesia, lower induction dose, lower MAC, safer clip.\n\nDKT: dexmedetomidine + ketamine + butorphanol. One IM syringe. Healthy ASA 1–2.\n\nBAA: butorphanol + acepromazine + atropine. Healthy patients.\n\nHeart / murmur: skip ace and dexmed as the default. Opioid + alfaxalone. That is Willie.\n\nMAC = alveolar % that stops movement in 50% of patients. Premed lowers it. Turn the dial down."),
-    ("Endotracheal tube", GOLD,
-     "CPE MOA: choose a tube that fits. Cuff holds to 20 cm H2O. Grossly too large or too small is unsafe.\n\nGrubb 2020: largest ID that passes the arytenoids without trauma. Tip midway from larynx to thoracic inlet. Proximal end at or just past the incisors.\n\nDog starting estimate: ID mm = (kg / 4) + 3.5. Have 0.5 mm larger and smaller.\n\nWillie 13.7 kg: (13.7 / 4) + 3.5 = 6.9. Start 7.0 mm. Have 6.5 and 7.5.\nCat: typically 3.0–4.5 mm. Confirm on the larynx."),
-    ("Reservoir bag and circuit", NAVY,
-     "CPE MOA: select the circuit and the bag. Calculate fresh-gas flow.\n\nTidal volume about 10–15 mL/kg (Grubb 2020: dead space ≤2–3 mL/kg is ≤20% of TV).\nBag = 5–6 × TV. Shortcut: kg × 60 mL. Round UP to 0.5, 1, 2, or 3 L.\n\nWillie 13.7 kg: 822 mL → 1 L bag. Circle.\nMoMo 4.25 kg, if ever anesthetized: 255 mL → 0.5 L. NRC (Grubb: cats and dogs <3–5 kg).\nNRC O2: 200–400 mL/kg/min.\nLeak-test to 20–30 cm H2O. Then OPEN the pop-off."),
+# 16 Tube and bag calculation
+s = new_content("Endotracheal tube and reservoir bag", "Write both numbers before induction. CPE MOA 2026: select the tube, the circuit, and the bag.")
+add_round(s, Inches(0.45), Inches(1.12), Inches(6.15), Inches(3.05), WHITE)
+add_rect(s, Inches(0.45), Inches(1.12), Inches(6.15), Inches(0.48), GOLD)
+add_text(s, Inches(0.45), Inches(1.12), Inches(6.15), Inches(0.48), "Endotracheal tube  ·  dog starting estimate", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.65), Inches(1.68), Inches(5.75), Inches(0.55), "ID mm  =  (kg / 4)  +  3.5", size=24, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
+add_text(s, Inches(0.65), Inches(2.28), Inches(5.75), Inches(1.72), "Have 0.5 mm larger and 0.5 mm smaller ready.\nConfirm: largest ID that passes the arytenoids without trauma (Grubb 2020). Tip midway from larynx to thoracic inlet. Cuff holds to 20 cm H2O (CPE MOA).\nCat: typically 3.0–4.5 mm. Do not use the dog formula.", size=15, color=INK)
+add_round(s, Inches(6.75), Inches(1.12), Inches(6.10), Inches(3.05), WHITE)
+add_rect(s, Inches(6.75), Inches(1.12), Inches(6.10), Inches(0.48), NAVY)
+add_text(s, Inches(6.75), Inches(1.12), Inches(6.10), Inches(0.48), "Reservoir bag  ·  shortcut", size=16, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(6.95), Inches(1.68), Inches(5.70), Inches(0.55), "mL  =  kg  ×  60     then round UP", size=22, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
+add_text(s, Inches(6.95), Inches(2.28), Inches(5.70), Inches(1.72), "Tidal volume about 10–15 mL/kg. Bag = 5–6 × TV, so 60 mL/kg is the low end. Round up to 0.5, 1, 2, or 3 L.\nNRC: cats and dogs <3–5 kg. O2 200–400 mL/kg/min (Grubb 2020). Circle for larger patients. Leak-test, then OPEN the pop-off.", size=15, color=INK)
+headers = ("Patient", "kg", "ETT start", "Bag", "Circuit")
+calcrows = [
+    ("Willie (if intubated)", "13.7", "7.0 mm  (6.5 / 7.5)", "822 mL → 1 L", "Circle"),
+    ("Healthy Lab, elective OHE", "25", "9.75 → 10 mm", "1.5 L → 2 L", "Circle"),
+    ("MoMo, teaching only", "4.25", "3.5–4.0 mm (cat)", "255 mL → 0.5 L", "NRC"),
 ]
-for i, (t, c, b) in enumerate(premed_cols):
-    x = Inches(0.40) + Inches(i * 4.28)
-    add_round(s, x, Inches(1.15), Inches(4.12), Inches(5.55), WHITE)
-    add_rect(s, x, Inches(1.15), Inches(4.12), Inches(0.55), c)
-    add_text(s, x, Inches(1.15), Inches(4.12), Inches(0.55), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.16), Inches(1.78), Inches(3.80), Inches(4.78), b, size=14, color=INK)
-notes(s, "Board the two formulas. Dog ETT starting estimate: kilograms divided by 4, plus 3.5. Confirm with Grubb 2020: largest tube that passes the arytenoids without trauma; tip midway from larynx to thoracic inlet. Cuff holds a leak to 20 centimeters of water; that number is in the CPE MOA. Bag: kilograms times 60 milliliters, round up. Willie: 7.0 millimeter tube, 1 liter bag, circle. A 4 kilogram cat: 0.5 liter bag, non-rebreathing, 200 to 400 milliliters per kilogram per minute of oxygen per Grubb 2020. Leak-test, then open the pop-off. Premed still belongs here: exam first, IM or SQ, DKT and BAA for healthy patients, alfaxalone for Willie.")
+add_rect(s, Inches(0.45), Inches(4.30), Inches(12.40), Inches(0.42), NAVY)
+xs = (0.50, 3.55, 4.85, 8.15, 11.05)
+ws = (3.00, 1.20, 3.20, 2.80, 1.70)
+for x, w, htxt in zip(xs, ws, headers):
+    add_text(s, Inches(x), Inches(4.30), Inches(w), Inches(0.42), htxt, size=15, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
+for i, row in enumerate(calcrows):
+    y = Inches(4.76) + Inches(i * 0.52)
+    add_round(s, Inches(0.45), y, Inches(12.40), Inches(0.48), WHITE)
+    colors = (NAVY, INK, TEAL, TEAL, INK)
+    bolds = (True, False, True, True, False)
+    for x, w, cell, col, b in zip(xs, ws, row, colors, bolds):
+        add_text(s, Inches(x), y, Inches(w), Inches(0.48), cell, size=15, bold=b, color=col, anchor=MSO_ANCHOR.MIDDLE)
+add_round(s, Inches(0.45), Inches(6.38), Inches(12.40), Inches(0.68), GOLD_LT)
+add_text(s, Inches(0.65), Inches(6.38), Inches(12.05), Inches(0.68), "Premed stays in this hour: exam first, then IM/SQ. DKT or BAA if healthy ASA 1–2. Heart / murmur: opioid + alfaxalone (Willie). Premed lowers MAC.", size=15, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Board both formulas. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: 3.425 plus 3.5 is 6.9, so start 7.0 millimeter, with 6.5 and 7.5 in the hand. Confirm on the larynx: largest that passes without trauma. Bag: kilograms times 60 milliliters, round up. Willie 822 milliliters is a 1 liter bag, circle. Healthy 25 kilogram Lab: 9.75 goes to 10 millimeter, 1500 milliliters rounds up to 2 liters. MoMo is cancelled, but if a 4.25 kilogram cat were anesthetized: cat tube 3.5 to 4.0, not the dog formula, 0.5 liter bag, non-rebreathing, oxygen 200 to 400 milliliters per kilogram per minute. Leak-test, then open the pop-off. Premed is the gold bar: DKT or BAA if healthy, alfaxalone for Willie.")
 
 # 17 Willie record
 s = new_content("Willie’s perioperative record", "Preop header and recovery. Complete before the first drug.")

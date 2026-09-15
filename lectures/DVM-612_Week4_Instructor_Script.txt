@@ -48,8 +48,8 @@ SLIDE 14. WHEN TO DELAY, WHEN TO PROCEED URGENTLY
 SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
     SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
 
-SLIDE 16. CPE MOA 2026: SELECT ETT, BREATHING SYSTEM, AND RESERVOIR BAG. THEN LEAK-TEST.
-    SPEAK: Board the two formulas. Dog ETT starting estimate: kilograms divided by 4, plus 3.5. Confirm with Grubb 2020: largest tube that passes the arytenoids without trauma; tip midway from larynx to thoracic inlet. Cuff holds a leak to 20 centimeters of water; that number is in the CPE MOA. Bag: kilograms times 60 milliliters, round up. Willie: 7.0 millimeter tube, 1 liter bag, circle. A 4 kilogram cat: 0.5 liter bag, non-rebreathing, 200 to 400 milliliters per kilogram per minute of oxygen per Grubb 2020. Leak-test, then open the pop-off. Premed still belongs here: exam first, IM or SQ, DKT and BAA for healthy patients, alfaxalone for Willie.
+SLIDE 16. Endotracheal tube and reservoir bag
+    SPEAK: Board both formulas. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: 3.425 plus 3.5 is 6.9, so start 7.0 millimeter, with 6.5 and 7.5 in the hand. Confirm on the larynx: largest that passes without trauma. Bag: kilograms times 60 milliliters, round up. Willie 822 milliliters is a 1 liter bag, circle. Healthy 25 kilogram Lab: 9.75 goes to 10 millimeter, 1500 milliliters rounds up to 2 liters. MoMo is cancelled, but if a 4.25 kilogram cat were anesthetized: cat tube 3.5 to 4.0, not the dog formula, 0.5 liter bag, non-rebreathing, oxygen 200 to 400 milliliters per kilogram per minute. Leak-test, then open the pop-off. Premed is the gold bar: DKT or BAA if healthy, alfaxalone for Willie.
 
 SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
     SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.
