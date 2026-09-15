@@ -124,10 +124,26 @@ def anesthesia_record(filled="blank"):
         cell(d, x0, y, x1, y + 28, lab, fill=(228, 236, 238), fg=TEAL, size=16, bold=True, align="center")
         cell(d, x0, y + 28, x1, y + 88, val, size=22, bold=True, align="center")
 
-    y = 380
-    d.rectangle([28, y, 2372, y + 88], fill=WHITE, outline=LINE, width=1)
-    d.rectangle([28, y, 320, y + 88], fill=GOLD)
-    d.text((174, y + 44), "What changes\nthe plan", font=font(18, True), fill=NAVY, anchor="mm")
+    y = 376
+    lab_h = [
+        (28, 520, "PCV"),
+        (520, 1010, "TP"),
+        (1010, 1500, "BUN"),
+        (1500, 2372, "Other labs"),
+    ]
+    lab_v = {
+        "blank": ["", "", "", ""],
+        "willie": ["WNL", "WNL", "WNL", "CBC WNL. Kidneys normal."],
+        "momo": ["request", "request", "↑ azotemia", "Creatinine 3.0 → 4.71. That cancelled the cut."],
+    }[filled]
+    for (x0, x1, lab), val in zip(lab_h, lab_v):
+        cell(d, x0, y, x1, y + 26, lab, fill=GOLD, fg=NAVY, size=16, bold=True, align="center")
+        cell(d, x0, y + 26, x1, y + 82, val, size=20, bold=True, align="center")
+
+    y = 468
+    d.rectangle([28, y, 2372, y + 80], fill=WHITE, outline=LINE, width=1)
+    d.rectangle([28, y, 320, y + 80], fill=GOLD)
+    d.text((174, y + 40), "What changes\nthe plan", font=font(18, True), fill=NAVY, anchor="mm")
     plan = {
         "blank": "",
         "willie": "Acute vestibular disease + severe AS otitis + murmur. Still pink, walking, kidneys normal. DexSP 0.68 mL SQ already given: skip NSAID. Alfaxalone only after this header is complete.",
@@ -135,22 +151,22 @@ def anesthesia_record(filled="blank"):
     }[filled]
     fplan = font(20)
     lines = wrap_text(plan, fplan, 2000)
-    ty = y + 18
+    ty = y + 14
     for line in lines[:3]:
         d.text((340, ty), line, font=fplan, fill=INK, anchor="lt")
         ty += 24
 
     mid = 1188
-    y = 484
-    d.rectangle([28, y, mid - 12, y + 44], fill=NAVY)
-    d.text((40, y + 22), "PRE-OP BOXES   ·   before the first drug", font=font(20, True), fill=GOLD, anchor="lm")
-    d.rectangle([mid + 12, y, 2372, y + 44], fill=GREEN)
-    d.text((mid + 24, y + 22), "RECOVERY / NEXT 24 HOURS   ·   the operation is not over", font=font(20, True), fill=WHITE, anchor="lm")
+    y = 558
+    d.rectangle([28, y, mid - 12, y + 40], fill=NAVY)
+    d.text((40, y + 20), "PRE-OP BOXES   ·   before the first drug", font=font(20, True), fill=GOLD, anchor="lm")
+    d.rectangle([mid + 12, y, 2372, y + 40], fill=GREEN)
+    d.text((mid + 24, y + 20), "RECOVERY / NEXT 24 HOURS   ·   the operation is not over", font=font(20, True), fill=WHITE, anchor="lm")
 
     preop_boxes = {
         "blank": [
             "Identity, consent, DNR",
-            "Today’s PE and ASA written",
+            "Today’s PE, PCV / TP / BUN, and ASA written",
             "Last meal recorded",
             "IV catheter patent",
             "Monitoring on before drugs",
@@ -158,7 +174,7 @@ def anesthesia_record(filled="blank"):
             "Who calls the client, and when",
         ],
         "willie": [
-            "ASA Status 3-E written before alfaxalone",
+            "ASA Status 3-E. PCV / TP / BUN WNL. Exam wrote the status.",
             "Today’s PE: vestibular + AS otitis + murmur",
             "Skip NSAID: DexSP already given",
             "IV in. Monitoring on. Then sedate.",
@@ -205,8 +221,8 @@ def anesthesia_record(filled="blank"):
             "Owner elected humane euthanasia",
         ],
     }[filled]
-    checkbox_list(d, 28, 540, mid - 12, preop_boxes, checked=(filled != "blank"), box_color=TEAL, text_size=22, row_h=86)
-    checkbox_list(d, mid + 12, 540, 2372, rec_items, checked=(filled != "blank"), box_color=GREEN, text_size=22, row_h=86)
+    checkbox_list(d, 28, 608, mid - 12, preop_boxes, checked=(filled != "blank"), box_color=TEAL, text_size=20, row_h=76)
+    checkbox_list(d, mid + 12, 608, 2372, rec_items, checked=(filled != "blank"), box_color=GREEN, text_size=20, row_h=76)
 
     y = 1156
     if filled == "momo":
@@ -524,9 +540,66 @@ def anesthesia_setup_table():
     return path
 
 
+def preanesthetic_assessment_table():
+    """Hall-readable teaching table of CPE MOA Appendix 3 page 1: PE, PCV, TP, BUN, ASA."""
+    W, H = 3200, 1000
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+
+    headers = ["Field", "Willie", "Healthy Lab OHE", "MoMo"]
+    rows = [
+        ["Weight", "13.7 kg", "25 kg", "4.25 kg"],
+        ["T  ·  HR  ·  RR", "100.8 °F  ·  132  ·  52", "normal TPR", "98.0 °F  ·  200  ·  30"],
+        ["mm / CRT", "pink / 2 s", "normal", "pink, tacky / <2 s"],
+        ["Other PE", "Vestibular + AS otitis\nII/VI murmur", "Elective OHE\nnormal PE", "Dehydrated. No FB proven.\nAbnormal kidneys on POCUS"],
+        ["PCV", "WNL", "within reference", "request; not the cancelling value"],
+        ["TP", "WNL", "within reference", "request; not the cancelling value"],
+        ["BUN", "WNL  (kidneys normal)", "within reference", "↑ azotemia\nCr 3.0 → 4.71"],
+        ["ASA", "3-E", "1", "4-E"],
+    ]
+    widths = [480, 880, 880, 920]
+    scale = (W - 40) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [20]
+    for w in widths:
+        xs.append(xs[-1] + w)
+
+    y = 8
+    header_h = 72
+    row_h = int((H - y - header_h - 8) / len(rows))
+    for c, lab in enumerate(headers):
+        cell(d, xs[c], y, xs[c + 1], y + header_h, lab, fill=NAVY, fg=GOLD, size=40, bold=True, align="center")
+
+    stripe = [(255, 255, 255), (236, 242, 244)]
+    for r, row in enumerate(rows):
+        yy = y + header_h + r * row_h
+        for c, val in enumerate(row):
+            if r == 7 and c > 0:
+                fill, fg, size, bold = GOLD, NAVY, 48, True
+            elif c == 0:
+                fill, fg, size, bold = NAVY, WHITE, 32, True
+            else:
+                fill, fg, size, bold = stripe[r % 2], INK, 32, True
+            lines = val.split("\n")
+            d.rectangle([xs[c], yy, xs[c + 1], yy + row_h], fill=fill, outline=LINE, width=2)
+            f = font(size, bold)
+            gap = 8 if len(lines) > 1 else 0
+            total = len(lines) * size + gap
+            ty = yy + row_h / 2 - total / 2 + size / 2
+            for i, line in enumerate(lines):
+                d.text(((xs[c] + xs[c + 1]) / 2, ty), line, font=f, fill=fg, anchor="mm")
+                ty += size + (gap if i == 0 else 0)
+
+    path = OUT / "preanesthetic_assessment_table.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
 if __name__ == "__main__":
     anesthesia_record("blank")
     anesthesia_record("willie")
     anesthesia_record("momo")
     recovery_flowsheet()
     anesthesia_setup_table()
+    preanesthetic_assessment_table()

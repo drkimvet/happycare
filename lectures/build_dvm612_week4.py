@@ -456,17 +456,21 @@ card(s, Inches(4.98), Inches(5.28), Inches(7.85), Inches(1.74), "Image, labs, th
 notes(s, "Pause on the photograph. This is MoMo. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? The photograph is a quiet, recumbent cat. It does not prove a foreign body. Then labs and imaging cancelled the cut.")
 
 # 11 Diagnostics
-s = new_content("Preoperative diagnostics", "CPE MOA 2026 Appendix 3 minimum: PCV, TP, BUN. Add more if today’s PE says so.")
-card(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(2.55), "Minimum (MOA record)", "Write PCV, TP, and BUN. Request them. Interpret them. Then assign ASA. Azo stick is a BUN screen. PCV/TS is PCV plus TP. Young healthy elective still gets these three numbers on the record.", accent=TEAL)
-card(s, Inches(6.8), Inches(1.2), Inches(6.0), Inches(2.55), "Add if the PE says so", "CBC, chemistry, UA. Clotting (PT/PTT or BMBT) if bleeding risk. T4 in older cats. Blood pressure. ECG if arrhythmia. Imaging if it changes the approach. MoMo: POCUS/AUS cancelled the cut.", accent=GOLD)
-add_round(s, Inches(0.5), Inches(3.95), Inches(12.3), Inches(3.0), WHITE)
-add_text(s, Inches(0.75), Inches(4.10), Inches(11.8), Inches(0.35), "How to use PCV, TP, and BUN together", size=18, bold=True, color=NAVY)
-add_bullets(s, Inches(0.75), Inches(4.55), Inches(11.8), Inches(2.2), [
-    "High PCV + high TP: dehydration. Correct it before elective anesthesia.",
-    "Low PCV + low TP: blood loss or third-space loss. Do not call that a healthy Status 1.",
-    "High BUN: kidney, dehydration, or GI bleed. Skip NSAIDs. Repeat if it changes whether you cut. MoMo: rising creatinine (and azotemia) cancelled the exploratory.",
-], size=18, spacing=7)
-notes(s, "The anesthesia record in CPE MOA 2026 Appendix 3 has three lab blanks: PCV, TP, BUN. That is the minimum you request and interpret. Hospital policy may add a full CBC and chemistry. Do not invent Willie or MoMo numbers you do not have. Willie: CBC did not write Status 1. MoMo: azotemia cancelled the cut.")
+s = new_content("Pre-anesthetic assessment", "CPE MOA 2026 Appendix 3 page 1: today’s PE, then PCV, TP, BUN. Interpret. Then circle ASA.")
+add_round(s, Inches(0.40), Inches(1.08), Inches(12.55), Inches(0.70), GOLD_LT)
+add_text(
+    s,
+    Inches(0.55),
+    Inches(1.12),
+    Inches(12.25),
+    Inches(0.62),
+    "PCV / TP: EDTA tube → spin hematocrit → read PCV → break the tube → refractometer TP.  BUN: chemistry or Azo stick.  Request, record, interpret. Then ASA. Then premed IM/SQ. Not before the exam.",
+    size=16,
+    color=NAVY,
+    anchor=MSO_ANCHOR.MIDDLE,
+)
+add_pic(s, "preanesthetic_assessment_table.png", Inches(0.28), Inches(1.86), Inches(12.78), Inches(5.24))
+notes(s, "This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taught as a table, not as the copyrighted form. The blanks the candidate fills are weight, HR, RR, mucous membranes and CRT, temperature, other PE findings, PCV, TP, BUN, other labs, then ASA 1 through 5. AN01 scores: perform and record the preoperative examination; request, record, and interpret the minimum labs; assign ASA. PCV and TP method is also a Clinical Techniques skill: EDTA, spin, read PCV, refractometer TP. Do not invent Willie or MoMo percentages. Willie CBC was WNL; the exam wrote 3-E. MoMo: BUN/creatinine azotemia cancelled the cut. High PCV plus high TP is dehydration. Low PCV plus low TP is blood loss. High BUN: skip NSAIDs.")
 
 # 12 CBC/chem
 s = new_content("Laboratory values inform risk", "Teaching bands, not an ASA table. Grubb et al. 2020: today’s PE writes ASA.")
