@@ -740,9 +740,9 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
-s = new_content("Anesthesia chart and end of case", "Plot HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluid rate and total. Then complications, fluids, recovery analgesics.")
+s = new_content("Anesthesia chart and end of case", "Target column is the acceptable band. Time cells stay empty until a real patient. Then complications, fluids, analgesics, sign.")
 add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
-notes(s, "This is Appendix 3 pages 4 and 5, taught as an original chart, not the copyrighted grid. Students name every row: heart rate, respiratory rate, SAP DAP MAP, isoflurane or sevoflurane percent, oxygen flow, end-tidal CO2, SpO2, temperature, fluid rate, total milliliters. Then the end of the case: complications or none, fluid type rate and total volume, recovery analgesics, and a signature. Willie start rate is 69 milliliters per hour. Skip NSAID after DexSP.")
+notes(s, "This is Appendix 3 pages 4 and 5, taught as an original chart, not the copyrighted grid. The filled column is the acceptable anesthesia band: Grubb 2020 for monitors, Pardo 2024 for fluids. Heart rate: stay below 150 to 190 in the dog by size, below 180 in the cat. Blood pressure: SAP at least 90, MAP at least 70, DAP at least 40. ETCO2 40 to 50, start PPV if over 60. SpO2 at least 95 percent. Temperature at least 98 Fahrenheit. Circle oxygen 2 to 3 liters then 20 to 40 milliliters per kilogram per minute, minimum 500. Fluids: dog 5 milliliters per kilogram per hour, cat 3 to 5. Inhalant to effect; do not invent a MAC number. Time cells stay empty until you plot a real patient. End of case: complications or none, fluid type rate and total, recovery analgesics, signature. Do not put a hospital case into this chart.")
 
 # 31 Pain + incision
 s = new_content("Postop analgesia and incision care", "On-label NSAIDs. Dog: carprofen. Cat: Onsior. Then teach the e-collar.")

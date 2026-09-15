@@ -43,6 +43,21 @@ def cell(d, x0, y0, x1, y1, text="", *, fill=WHITE, fg=INK, size=13, bold=False,
         d.text((x0 + pad, (y0 + y1) / 2), text, font=f, fill=fg, anchor="lm")
 
 
+def cell_wrapped(d, x0, y0, x1, y1, text, *, fill=WHITE, fg=INK, size=22, bold=False):
+    d.rectangle([x0, y0, x1, y1], fill=fill, outline=LINE, width=1)
+    if not text:
+        return
+    f = font(size, bold)
+    pad = 10
+    lines = wrap_text(text, f, (x1 - x0) - 2 * pad)
+    line_h = size + 6
+    total = len(lines) * line_h
+    ty = (y0 + y1) / 2 - total / 2 + line_h / 2
+    for line in lines:
+        d.text(((x0 + x1) / 2, ty), line, font=f, fill=fg, anchor="mm")
+        ty += line_h
+
+
 def draw_header(d, w, title, subtitle):
     d.rectangle([0, 0, w, 78], fill=NAVY)
     d.rectangle([0, 78, w, 86], fill=GOLD)
@@ -672,65 +687,74 @@ def anesthesia_protocol_record():
 
 def anesthesia_chart_recovery():
     """Teaching intra-op chart + end-of-case page. Same clinical fields as MOA Appendix 3 pp. 4–5. Not the copyrighted form."""
-    W, H = 3200, 1100
+    W, H = 3200, 1240
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, W, 64], fill=NAVY)
     d.rectangle([0, 64, W, 72], fill=GOLD)
     d.text((28, 10), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lt")
-    d.text((28, 40), "Induction time  ·  procedure start  ·  bodyweight   ·   teaching record, not a copyrighted grid", font=font(18), fill=GOLD, anchor="lt")
+    d.text((28, 40), "Target column = acceptable band (Grubb 2020; Pardo 2024 fluids). Time cells empty until a real patient.", font=font(18), fill=GOLD, anchor="lt")
 
-    times = ["0 min", "5", "15", "30", "45", "60"]
+    times = ["0 min", "5", "15", "30", "45"]
     params = [
-        "Heart rate",
-        "Respiratory rate",
-        "BP  SAP / DAP / MAP",
-        "Isoflurane or sevoflurane %",
-        "Oxygen flow  L/min",
-        "End-tidal CO2",
-        "SpO2",
-        "Temperature",
-        "Fluid rate  mL/hr",
-        "Total fluid  mL",
+        ("Heart rate", "dog <150–190 (size); cat <180"),
+        ("Respiratory rate", "spontaneous; if apneic PPV 1–4/min"),
+        ("BP  SAP / DAP / MAP", "SAP ≥90  ·  MAP ≥70  ·  DAP ≥40 mm Hg"),
+        ("Isoflurane or sevoflurane %", "to effect"),
+        ("Oxygen flow  L/min", "RC 2–3 L then 20–40 mL/kg/min (min 0.5 L)"),
+        ("End-tidal CO2", "40–50 mm Hg  (PPV if >60)"),
+        ("SpO2", "≥95%"),
+        ("Temperature", "≥98 °F"),
+        ("Fluid rate  mL/hr", "dog 5 mL/kg/hr  ·  cat 3–5"),
+        ("Total fluid  mL", "rate × hours"),
     ]
     x0 = 20
-    label_w = 720
+    label_w = 560
+    target_w = 980
     grid_x = x0 + label_w
-    col_w = (W - 40 - label_w) / 6
+    target_x = grid_x + target_w
+    col_w = (W - 40 - label_w - target_w) / len(times)
     y = 84
-    rh = 68
-    cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=36, bold=True, align="center")
+    rh = 80
+    cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
+    cell(d, grid_x, y, target_x, y + rh, "Target range", fill=TEAL, fg=WHITE, size=32, bold=True, align="center")
     for c, t in enumerate(times):
-        cell(d, grid_x + c * col_w, y, grid_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=36, bold=True, align="center")
+        cell(d, target_x + c * col_w, y, target_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=32, bold=True, align="center")
     y += rh
-    for r, name in enumerate(params):
+    for r, (name, target) in enumerate(params):
         yy = y + r * rh
         fluid = name.startswith("Fluid") or name.startswith("Total")
         fill = TEAL if fluid else (WHITE if r % 2 == 0 else (236, 242, 244))
         fg = WHITE if fluid else INK
-        prefill = "69" if name.startswith("Fluid rate") else ""
-        cell(d, x0, yy, grid_x, yy + rh, name, fill=fill, fg=fg, size=32, bold=True, align="center")
-        for c in range(6):
-            val = prefill if (name.startswith("Fluid rate") and c == 0) else ""
+        cell_wrapped(d, x0, yy, grid_x, yy + rh, name, fill=fill, fg=fg, size=28, bold=True)
+        cell_wrapped(
+            d,
+            grid_x,
+            yy,
+            target_x,
+            yy + rh,
+            target,
+            fill=(227, 241, 236),
+            fg=NAVY,
+            size=28,
+            bold=True,
+        )
+        for c in range(len(times)):
             cell(
                 d,
-                grid_x + c * col_w,
+                target_x + c * col_w,
                 yy,
-                grid_x + (c + 1) * col_w,
+                target_x + (c + 1) * col_w,
                 yy + rh,
-                val,
-                fill=(227, 241, 236) if val else (WHITE if r % 2 == 0 else (236, 242, 244)),
-                fg=NAVY,
-                size=30,
-                bold=True,
-                align="center",
+                "",
+                fill=WHITE if r % 2 == 0 else (236, 242, 244),
             )
 
     y = y + 10 * rh + 10
     thirds = [
-        (NAVY, "Complications", "Write the event and the correction. If none: write none."),
-        (TEAL, "Fluids at the end", "Type · rate · total mL. Willie: LRS 69 mL/hr. Total = rate × hours."),
-        (GREEN, "Recovery analgesics", "Willie: skip NSAID after DexSP. Write what you gave. Sign the record."),
+        (NAVY, "Complications", "Write the event, the time, and the correction. If none: write none."),
+        (TEAL, "Fluids at the end", "Type · rate · total mL. Dog 5 mL/kg/hr; cat 3–5. Total = rate × hours."),
+        (GREEN, "Recovery analgesics", "On-label NSAID unless steroid or azotemia. Write what you gave. Sign the record."),
     ]
     bw = (W - 56) / 3
     box_h = H - 16 - y
