@@ -496,22 +496,20 @@ add_text(s, Inches(0.55), Inches(6.50), Inches(12.2), Inches(0.50), "MOA minimum
 notes(s, "Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: creatinine 3.0 then 4.71.")
 
 # 13 Premed, induction, MAC
-s = new_content("Premedication, induction, and MAC", "ASA first. Then the drug plan. Grubb et al. 2020; CPE MOA 2026 Anesthesia.")
-premed_cols = [
-    ("1. Premedication", TEAL,
-     "After the PE, labs, and ASA. IM or SQ (CPE MOA). Not before the exam.\n\nCalm the patient. Give analgesia. Lower the induction dose. Lower MAC. Safer clip (Grubb 2020).\n\nDKT: dexmedetomidine + ketamine + butorphanol. One IM syringe. Healthy ASA 1–2.\n\nBAA: butorphanol + acepromazine + atropine. Healthy patients.\n\nHeart / murmur: skip ace and dexmed as the default. Opioid + alfaxalone. That is Willie."),
-    ("2. Induction", GOLD,
-     "IV catheter first. Then induce IV to effect (Grubb 2020).\n\nPropofol, alfaxalone, ketamine + benzo, or etomidate. Premed and sick patients need less.\n\nMask or chamber induction is not recommended.\n\nThen intubate, confirm, cuff to 20 cm H2O, connect the machine (CPE MOA: start that clock when induction starts).\n\nWillie: alfaxalone sedation for the ear clean."),
-    ("3. Gas and MAC", NAVY,
-     "MAC = minimum alveolar concentration: the alveolar % of inhalant that stops movement in 50% of patients to a surgical stimulus.\n\nIsoflurane or sevoflurane in oxygen, dosed to effect (Grubb 2020).\n\nPremeds, local blocks, and hypothermia lower MAC. Turn the vaporizer down.\n\nSurgical plane: no palpebral reflex, mild jaw tone, no purposeful movement.\n\nHypotension: often too much inhalant. Add opioid or a block. Do not just turn the dial up."),
+s = new_content("Anesthetic drug protocol", "Write drug, concentration, dose, volume, route. IVF name and rate. Then why. CPE MOA 2026 Appendix 3.")
+pills = [
+    (TEAL, "1. Premed after ASA", "IM or SQ. Not before the exam. DKT or BAA if healthy. Willie: skip ace/dexmed."),
+    (GOLD, "2. Induce IV to effect", "Alfaxalone, propofol, or ketamine + benzo. Then intubate."),
+    (NAVY, "3. Iso or sevo to MAC", "Premed lowers MAC. Circle the inhalant you used."),
 ]
-for i, (t, c, b) in enumerate(premed_cols):
+for i, (c, t, dtl) in enumerate(pills):
     x = Inches(0.40) + Inches(i * 4.28)
-    add_round(s, x, Inches(1.15), Inches(4.12), Inches(5.55), WHITE)
-    add_rect(s, x, Inches(1.15), Inches(4.12), Inches(0.55), c)
-    add_text(s, x, Inches(1.15), Inches(4.12), Inches(0.55), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.16), Inches(1.80), Inches(3.80), Inches(4.72), b, size=15, color=INK)
-notes(s, "This is the anesthesia vocabulary for this hour. ASA, then premed IM or SQ, then induction IV to effect, then inhalant to MAC. DKT and BAA are healthy-patient combinations. Willie got alfaxalone because of the murmur. MAC is how we talk about the vaporizer. Premed lowers it. Grubb 2020: mask induction is not recommended. Surgical plane: no palpebral, mild jaw tone.")
+    add_round(s, x, Inches(1.08), Inches(4.12), Inches(1.18), WHITE)
+    add_rect(s, x, Inches(1.08), Inches(4.12), Inches(0.38), c)
+    add_text(s, x, Inches(1.08), Inches(4.12), Inches(0.38), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.12), Inches(1.50), Inches(3.88), Inches(0.68), dtl, size=14, color=INK)
+add_pic(s, "anesthesia_protocol_record.png", Inches(0.28), Inches(2.32), Inches(12.78), Inches(4.80))
+notes(s, "This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. Students write drug, concentration, dose, volume, and route for premed, induction, and analgesics. Then IV fluid name and rate. Then why those drugs. Then sedation and induction quality 1 to 5, isoflurane or sevoflurane, rebreathing or non-rebreathing, tube size, and fresh-gas flow. Willie: alfaxalone IV to effect because of the murmur. Do not invent milligrams. Skip NSAID after DexSP. LRS 69 milliliters per hour. If intubated: 7.0 millimeter, 1 liter circle.")
 
 # 14 Stabilize
 s = new_content("Correct deficits before you cut", "Grubb et al. 2020: stabilize first. Pardo et al. 2024: albumin <2.0 g/dL.")
@@ -570,9 +568,9 @@ add_pic(s, "anesthesia_setup_table.png", Inches(0.28), Inches(2.62), Inches(12.7
 notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: start 7.0 millimeter, 6.5 and 7.5 in the hand. Bag: kilograms times 60, round up. Willie 822 milliliters is a 1 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour. Willie 68.5, write 69 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. MoMo is teaching math only; the exploratory was cancelled. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape.")
 
 # 17 Willie record
-s = new_content("Willie’s perioperative record", "Preop header and recovery. Complete before the first drug.")
+s = new_content("Willie’s perioperative record", "Page 1 of the teaching record: PE, PCV/TP/BUN, ASA. Complete before the first drug.")
 add_pic(s, "anesthesia_record_willie.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.")
+notes(s, "Walk the large boxes: ASA Status 3-E before alfaxalone. PCV, TP, BUN WNL. Skip NSAID after DexSP. Recovery is on the same page. Drug protocol is the next slide back. The intra-op chart is later.")
 
 # 18 MoMo record
 s = new_content("MoMo’s perioperative record", "Exploratory cancelled. Record the decision.")
@@ -732,9 +730,9 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
 
 # 30 Flowsheet
-s = new_content("Postoperative flowsheet, first 2 hours", "Airway, perfusion, heat, pain, incision. Stay with the patient.")
-add_pic(s, "recovery_flowsheet.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "Students should be able to fill this after a spay. Photograph it. Pale plus tachycardic after celiotomy: return to OR.")
+s = new_content("Anesthesia chart and end of case", "Plot HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluid rate and total. Then complications, fluids, recovery analgesics.")
+add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(12.90), Inches(6.05))
+notes(s, "This is Appendix 3 pages 4 and 5, taught as an original chart, not the copyrighted grid. Students name every row: heart rate, respiratory rate, SAP DAP MAP, isoflurane or sevoflurane percent, oxygen flow, end-tidal CO2, SpO2, temperature, fluid rate, total milliliters. Then the end of the case: complications or none, fluid type rate and total volume, recovery analgesics, and a signature. Willie start rate is 69 milliliters per hour. Skip NSAID after DexSP.")
 
 # 31 Pain + incision
 s = new_content("Postop analgesia and incision care", "Injections at recovery. Then teach the e-collar.")

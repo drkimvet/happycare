@@ -39,8 +39,8 @@ SLIDE 11. CPE MOA 2026 APPENDIX 3 PAGE 1: TODAY’S PE, THEN PCV, TP, BUN. INTER
 SLIDE 12. TEACHING BANDS, NOT AN ASA TABLE. GRUBB ET AL. 2020: TODAY’S PE WRITES ASA.
     SPEAK: Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: creatinine 3.0 then 4.71.
 
-SLIDE 13. ASA FIRST. THEN THE DRUG PLAN. GRUBB ET AL. 2020; CPE MOA 2026 ANESTHESIA.
-    SPEAK: This is the anesthesia vocabulary for this hour. ASA, then premed IM or SQ, then induction IV to effect, then inhalant to MAC. DKT and BAA are healthy-patient combinations. Willie got alfaxalone because of the murmur. MAC is how we talk about the vaporizer. Premed lowers it. Grubb 2020: mask induction is not recommended. Surgical plane: no palpebral, mild jaw tone.
+SLIDE 13. Anesthetic drug protocol
+    SPEAK: This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. Students write drug, concentration, dose, volume, and route for premed, induction, and analgesics. Then IV fluid name and rate. Then why those drugs. Then sedation and induction quality 1 to 5, isoflurane or sevoflurane, rebreathing or non-rebreathing, tube size, and fresh-gas flow. Willie: alfaxalone IV to effect because of the murmur. Do not invent milligrams. Skip NSAID after DexSP. LRS 69 milliliters per hour. If intubated: 7.0 millimeter, 1 liter circle.
 
 SLIDE 14. GRUBB ET AL. 2020: STABILIZE FIRST. PARDO ET AL. 2024: ALBUMIN <2.0 G/DL.
     SPEAK: Read the Grubb 2020 list: correct potassium greater than 6, pH less than 7.2, glucose less than 60, hypothermia, dehydration, before you induce. Then albumin: Pardo 2024 AAHA fluids, less than 2.0 grams per deciliter is edema and poor healing. Delay elective. Treat the cause. Plasma is a poor albumin replacement, 20 to 25 milliliters per kilogram for half a gram. Do not crystalloid-flood a low-oncotic patient. Emergency: resuscitate and operate. MoMo was not an albumin case; her deficit was the kidney, and cancelling was the correct preoperative move.
@@ -51,8 +51,8 @@ SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
 SLIDE 16. CPE MOA 2026 APPENDIX 3: ASA, ETT SIZE, BAG, CIRCUIT, IV FLUID NAME/RATE, FRESH-GAS FLOW.
     SPEAK: Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: start 7.0 millimeter, 6.5 and 7.5 in the hand. Bag: kilograms times 60, round up. Willie 822 milliliters is a 1 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour. Willie 68.5, write 69 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. MoMo is teaching math only; the exploratory was cancelled. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape.
 
-SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
-    SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.
+SLIDE 17. PAGE 1 OF THE TEACHING RECORD: PE, PCV/TP/BUN, ASA. COMPLETE BEFORE THE FIRST DRUG.
+    SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. PCV, TP, BUN WNL. Skip NSAID after DexSP. Recovery is on the same page. Drug protocol is the next slide back. The intra-op chart is later.
 
 SLIDE 18. EXPLORATORY CANCELLED. RECORD THE DECISION.
     SPEAK: The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.
@@ -90,8 +90,8 @@ SLIDE 28. WHAT DO YOU DO NEXT?
 SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
 
-SLIDE 30. AIRWAY, PERFUSION, HEAT, PAIN, INCISION. STAY WITH THE PATIENT.
-    SPEAK: Students should be able to fill this after a spay. Photograph it. Pale plus tachycardic after celiotomy: return to OR.
+SLIDE 30. Anesthesia chart and end of case
+    SPEAK: This is Appendix 3 pages 4 and 5, taught as an original chart, not the copyrighted grid. Students name every row: heart rate, respiratory rate, SAP DAP MAP, isoflurane or sevoflurane percent, oxygen flow, end-tidal CO2, SpO2, temperature, fluid rate, total milliliters. Then the end of the case: complications or none, fluid type rate and total volume, recovery analgesics, and a signature. Willie start rate is 69 milliliters per hour. Skip NSAID after DexSP.
 
 SLIDE 31. INJECTIONS AT RECOVERY. THEN TEACH THE E-COLLAR.
     SPEAK: Name carprofen for dogs and Onsior 2 mg/kg SQ for cats or dogs per label. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.

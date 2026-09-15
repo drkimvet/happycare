@@ -596,6 +596,161 @@ def preanesthetic_assessment_table():
     return path
 
 
+def anesthesia_protocol_record():
+    """Teaching drug-protocol page. Same clinical fields as MOA Appendix 3 pp. 2–3. Not the copyrighted form."""
+    W, H = 3200, 1000
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 70], fill=NAVY)
+    d.rectangle([0, 70, W, 78], fill=GOLD)
+    d.text((28, 12), "Anesthetic drug protocol", font=font(32, True), fill=WHITE, anchor="lt")
+    d.text((28, 44), "Write drug · concentration · dose · volume · route   ·   teaching record, not a copyrighted form", font=font(18), fill=GOLD, anchor="lt")
+    d.text((W - 28, 35), "Willie  ·  13.7 kg  ·  ASA 3-E", font=font(24, True), fill=GOLD, anchor="rm")
+
+    headers = ["", "Drug", "Concentration", "Dose", "Volume", "Route"]
+    rows = [
+        ["Premed", "None until exam is written", "—", "—", "—", "IM or SQ after ASA"],
+        ["Induction", "Alfaxalone", "read the bottle", "IV to effect", "give to effect", "IV"],
+        ["Analgesic", "Skip NSAID", "DexSP already given", "—", "—", "—"],
+    ]
+    widths = [300, 700, 540, 460, 500, 660]
+    scale = (W - 40) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [20]
+    for w in widths:
+        xs.append(xs[-1] + w)
+    y = 90
+    hh, rh = 56, 92
+    for c, lab in enumerate(headers):
+        cell(d, xs[c], y, xs[c + 1], y + hh, lab, fill=NAVY, fg=GOLD, size=40, bold=True, align="center")
+    for r, row in enumerate(rows):
+        yy = y + hh + r * rh
+        for c, val in enumerate(row):
+            fill = NAVY if c == 0 else (WHITE if r % 2 == 0 else (236, 242, 244))
+            fg = GOLD if c == 0 else INK
+            cell(d, xs[c], yy, xs[c + 1], yy + rh, val, fill=fill, fg=fg, size=36, bold=True, align="center")
+
+    y = y + hh + 3 * rh + 12
+    d.rectangle([20, y, 1580, y + 80], fill=WHITE, outline=LINE, width=2)
+    d.rectangle([20, y, 280, y + 80], fill=TEAL)
+    d.text((150, y + 40), "IV fluids", font=font(28, True), fill=WHITE, anchor="mm")
+    d.text((300, y + 22), "Name:  LRS", font=font(36, True), fill=INK, anchor="lt")
+    d.text((300, y + 54), "Rate:  69 mL/hr   (13.7 × 5)", font=font(36, True), fill=NAVY, anchor="lt")
+    d.rectangle([1600, y, W - 20, y + 80], fill=(244, 235, 211), outline=LINE, width=2)
+    d.text((1620, y + 22), "Why these drugs", font=font(22, True), fill=NAVY, anchor="lt")
+    d.text((1620, y + 52), "Murmur: skip ace/dexmed. Alfaxalone IV to effect. Skip NSAID after DexSP.", font=font(22), fill=INK, anchor="lt")
+
+    y += 96
+    boxes = [
+        (20, 1040, "Sedation quality 1–5", "1     2     3     4     5"),
+        (1080, 1040, "Induction quality 1–5", "1     2     3     4     5"),
+        (2140, 1040, "Circle inhalant", "Isoflurane      Sevoflurane"),
+    ]
+    for x0, wbox, title, body in boxes:
+        d.rectangle([x0, y, x0 + wbox, y + 100], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([x0, y, x0 + wbox, y + 36], fill=NAVY)
+        d.text((x0 + wbox / 2, y + 18), title, font=font(22, True), fill=GOLD, anchor="mm")
+        d.text((x0 + wbox / 2, y + 68), body, font=font(28, True), fill=INK, anchor="mm")
+
+    y += 112
+    machine = [
+        (20, 1040, "Circle circuit", "Rebreathing      Non-rebreathing"),
+        (1080, 1040, "ETT  ·  bag  (if intubated)", "7.0 mm      1 L circle"),
+        (2140, 1040, "Fresh-gas flow", "2–3 L/min, then ≥ 0.5 L/min"),
+    ]
+    for x0, wbox, title, body in machine:
+        d.rectangle([x0, y, x0 + wbox, y + 100], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([x0, y, x0 + wbox, y + 36], fill=TEAL)
+        d.text((x0 + wbox / 2, y + 18), title, font=font(22, True), fill=WHITE, anchor="mm")
+        d.text((x0 + wbox / 2, y + 68), body, font=font(28, True), fill=INK, anchor="mm")
+
+    path = OUT / "anesthesia_protocol_record.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def anesthesia_chart_recovery():
+    """Teaching intra-op chart + end-of-case page. Same clinical fields as MOA Appendix 3 pp. 4–5. Not the copyrighted form."""
+    W, H = 3200, 1100
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 64], fill=NAVY)
+    d.rectangle([0, 64, W, 72], fill=GOLD)
+    d.text((28, 10), "Anesthesia chart and end of case", font=font(30, True), fill=WHITE, anchor="lt")
+    d.text((28, 40), "Induction time  ·  procedure start  ·  bodyweight   ·   teaching record, not a copyrighted grid", font=font(18), fill=GOLD, anchor="lt")
+
+    times = ["0 min", "5", "15", "30", "45", "60"]
+    params = [
+        "Heart rate",
+        "Respiratory rate",
+        "BP  SAP / DAP / MAP",
+        "Isoflurane or sevoflurane %",
+        "Oxygen flow  L/min",
+        "End-tidal CO2",
+        "SpO2",
+        "Temperature",
+        "Fluid rate  mL/hr",
+        "Total fluid  mL",
+    ]
+    x0 = 20
+    label_w = 720
+    grid_x = x0 + label_w
+    col_w = (W - 40 - label_w) / 6
+    y = 84
+    rh = 68
+    cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=36, bold=True, align="center")
+    for c, t in enumerate(times):
+        cell(d, grid_x + c * col_w, y, grid_x + (c + 1) * col_w, y + rh, t, fill=NAVY, fg=WHITE, size=36, bold=True, align="center")
+    y += rh
+    for r, name in enumerate(params):
+        yy = y + r * rh
+        fluid = name.startswith("Fluid") or name.startswith("Total")
+        fill = TEAL if fluid else (WHITE if r % 2 == 0 else (236, 242, 244))
+        fg = WHITE if fluid else INK
+        prefill = "69" if name.startswith("Fluid rate") else ""
+        cell(d, x0, yy, grid_x, yy + rh, name, fill=fill, fg=fg, size=32, bold=True, align="center")
+        for c in range(6):
+            val = prefill if (name.startswith("Fluid rate") and c == 0) else ""
+            cell(
+                d,
+                grid_x + c * col_w,
+                yy,
+                grid_x + (c + 1) * col_w,
+                yy + rh,
+                val,
+                fill=(227, 241, 236) if val else (WHITE if r % 2 == 0 else (236, 242, 244)),
+                fg=NAVY,
+                size=30,
+                bold=True,
+                align="center",
+            )
+
+    y = y + 10 * rh + 10
+    thirds = [
+        (NAVY, "Complications", "Write the event and the correction. If none: write none."),
+        (TEAL, "Fluids at the end", "Type · rate · total mL. Willie: LRS 69 mL/hr. Total = rate × hours."),
+        (GREEN, "Recovery analgesics", "Willie: skip NSAID after DexSP. Meclizine. Cerenia. Sign the record."),
+    ]
+    bw = (W - 56) / 3
+    box_h = H - 16 - y
+    for i, (col, title, body) in enumerate(thirds):
+        xx = 20 + i * (bw + 8)
+        d.rectangle([xx, y, xx + bw, y + box_h], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([xx, y, xx + bw, y + 40], fill=col)
+        d.text((xx + bw / 2, y + 20), title, font=font(28, True), fill=WHITE, anchor="mm")
+        fn = font(28)
+        ty = y + 52
+        for line in wrap_text(body, fn, bw - 36):
+            d.text((xx + 18, ty), line, font=fn, fill=INK, anchor="lt")
+            ty += 26
+
+    path = OUT / "anesthesia_chart_recovery.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
 if __name__ == "__main__":
     anesthesia_record("blank")
     anesthesia_record("willie")
@@ -603,3 +758,5 @@ if __name__ == "__main__":
     recovery_flowsheet()
     anesthesia_setup_table()
     preanesthetic_assessment_table()
+    anesthesia_protocol_record()
+    anesthesia_chart_recovery()
