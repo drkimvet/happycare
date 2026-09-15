@@ -642,12 +642,12 @@ add_text(s, Inches(8.15), Inches(1.3), Inches(4.55), Inches(0.4), "Technique", s
 add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Dirty (preliminary) scrub in the prep area, after the clip.",
     "Move to the OR. Position, pad, tie.",
-    "Full (sterile) scrub in the room. Start at the incision. Spiral out. Drop the sponge.",
+    "Full (sterile) scrub in the room. Start at the incision. One continuous spiral out. Never back toward the cut. Drop the sponge.",
     "Clock the minimum contact time.",
     "Skin: 7.5% ~5 min, then 5% paint.",
     "Eye: 0.2% (10% 1:50 or 5% 1:25). 2 min + 2 min. Not 10% or 5% undiluted. Perforation: saline only.",
 ], size=16, spacing=10)
-notes(s, "Mime the spiral. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
+notes(s, "Mime one continuous spiral out from the incision, not a stack of closed circles. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
 # 24 Position
 s = new_content("Patient positioning")
@@ -659,15 +659,15 @@ notes(s, "Name the bag size and the tube size on this photograph. Confirm placem
 
 # 25 Draping
 s = new_content("Draping")
-add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), RED)
-add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "OHE: hair visible at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "cherry_point_spay.jpg", Inches(0.4), Inches(1.62), Inches(6.2), Inches(3.40))
-add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), GREEN)
-add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "The window: clipped skin only", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "yap_surgical_window.jpg", Inches(6.75), Inches(1.62), Inches(6.2), Inches(3.40))
-add_round(s, Inches(0.4), Inches(5.15), Inches(12.55), Inches(1.85), WHITE)
-add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Near towel first. Four towels box the field. Towel clamps on skin, not through the drape to viscera. Large drape last. Only the incision is in the window. Hair stays under the drape. Re-clip until the window is hair-free.\nPhotos: Cpl. Samuel A. Nasso, USMC, public domain; MC1 Ryan D. McLearnon, USN, public domain.", size=16, color=INK)
-notes(s, "Right is looking down on a fenestrated drape: the hole is clipped, painted skin. Hair is under the drape, not in the window. Left is a real spay with hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
+add_round(s, Inches(0.35), Inches(1.08), Inches(4.55), Inches(0.42), RED)
+add_text(s, Inches(0.35), Inches(1.08), Inches(4.55), Inches(0.42), "Hair at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "cherry_point_spay.jpg", Inches(0.35), Inches(1.52), Inches(4.55), Inches(3.55))
+add_round(s, Inches(5.05), Inches(1.08), Inches(7.90), Inches(0.42), GREEN)
+add_text(s, Inches(5.05), Inches(1.08), Inches(7.90), Inches(0.42), "Overhead: the window is the incision", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "overhead_dog_window.jpg", Inches(5.05), Inches(1.52), Inches(7.90), Inches(3.55))
+add_round(s, Inches(0.35), Inches(5.18), Inches(12.60), Inches(1.82), WHITE)
+add_text(s, Inches(0.55), Inches(5.30), Inches(12.20), Inches(1.58), "Look straight down on the field. Four towels box the site. Large drape last. Only clipped, painted skin is in the window. Hair stays under the drape. Re-clip until the hole is hair-free.\nLeft: Cpl. Samuel A. Nasso, USMC, public domain. Right: overhead teaching view of the surgical window.", size=16, color=INK)
+notes(s, "Right is the view you want: camera above the table, looking down into the fenestration. The hole is the incision. Hair is under the drape. Left is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
 
 # 26 Gloving
 s = new_content("OR attire, gown, glove, instruments")

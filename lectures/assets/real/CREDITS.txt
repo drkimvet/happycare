@@ -32,6 +32,11 @@ yap_surgical_window.jpg
   Cropped to the fenestrated window for DVM 612 Week 4.
   https://www.dvidshub.net/image/8634096/pacific-partnership-2024-2-yap
 
+overhead_dog_window.jpg
+  Original overhead teaching image of a fenestrated drape and surgical window, generated for DVM 612 Week 4.
+  Not a hospital-patient photograph. Used to show the zenith view: only clipped, painted skin in the hole.
+
+
 hektor_or.jpg
   File:Camp Lemonnier Service members Perform Surgery on Hektor, a Djiboutian K-9 Working Dog DVIDS217501.jpg
   Author: Master Sgt. Carlotta Holley, U.S. Air Force

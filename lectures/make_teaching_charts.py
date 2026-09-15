@@ -3,6 +3,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
+import math
 
 OUT = Path("/workspace/lectures/assets")
 OUT.mkdir(parents=True, exist_ok=True)
@@ -858,6 +859,80 @@ def anesthesia_chart_recovery():
     return path
 
 
+def _arrow_head(d, x, y, angle, size=22, fill=TEAL):
+    ax = x + size * math.cos(angle)
+    ay = y + size * math.sin(angle)
+    left = angle + 2.6
+    right = angle - 2.6
+    p1 = (ax, ay)
+    p2 = (ax + size * 0.85 * math.cos(left), ay + size * 0.85 * math.sin(left))
+    p3 = (ax + size * 0.85 * math.cos(right), ay + size * 0.85 * math.sin(right))
+    d.polygon([p1, p2, p3], fill=fill)
+
+
+def prep_spiral_antiseptic():
+    """One continuous outward spiral from the incision. Not concentric closed rings."""
+    W, H = 1800, 1440
+    im = Image.new("RGB", (W, H), NAVY)
+    d = ImageDraw.Draw(im)
+
+    d.text((W / 2, 32), "Start at the incision. One continuous spiral out.", font=font(36, True), fill=WHITE, anchor="mt")
+    d.text((W / 2, 80), "Never wipe back toward the cut. Drop the sponge at the hair.", font=font(24), fill=GOLD, anchor="mt")
+
+    cx, cy = W / 2, H / 2 + 36
+    rx, ry = 620, 410
+    d.ellipse([cx - rx - 78, cy - ry - 58, cx + rx + 78, cy + ry + 58], fill=(176, 142, 104))
+    d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=(214, 186, 158))
+    d.ellipse([cx - 240, cy - 170, cx + 240, cy + 170], fill=(176, 198, 186))
+    d.ellipse([cx - 100, cy - 72, cx + 100, cy + 72], fill=(132, 172, 154))
+    d.line([cx, cy - 300, cx, cy + 300], fill=(120, 72, 72), width=4)
+
+    pts = []
+    t0, t1 = 0.15, 6.15 * math.pi
+    n = 520
+    r0, rmax = 48.0, rx * 0.90
+    for i in range(n + 1):
+        t = t0 + (t1 - t0) * i / n
+        r = r0 + (rmax - r0) * (t - t0) / (t1 - t0)
+        x = cx + r * math.cos(t)
+        y = cy + r * math.sin(t) * (ry / rx)
+        pts.append((x, y))
+    d.line(pts, fill=TEAL, width=16)
+    d.line(pts, fill=(190, 226, 220), width=6)
+
+    for frac in (0.14, 0.32, 0.50, 0.68, 0.84, 0.96):
+        i = int(frac * n)
+        x0, y0 = pts[max(0, i - 10)]
+        x1, y1 = pts[i]
+        ang = math.atan2(y1 - y0, x1 - x0)
+        _arrow_head(d, x1, y1, ang, size=28, fill=TEAL)
+
+    for frac, lab in ((0.0, "1"), (0.34, "2"), (0.68, "3")):
+        i = min(n, int(frac * n) + (8 if frac == 0 else 0))
+        x, y = pts[i]
+        d.ellipse([x - 30, y - 30, x + 30, y + 30], fill=WHITE, outline=NAVY, width=3)
+        d.text((x, y), lab, font=font(28, True), fill=NAVY, anchor="mm")
+
+    x1, y1 = pts[12]
+    d.rounded_rectangle([x1 - 240, y1 - 78, x1 - 20, y1 - 18], radius=8, fill=NAVY)
+    d.text((x1 - 130, y1 - 48), "START  at the cut", font=font(22, True), fill=GOLD, anchor="mm")
+
+    xe, ye = pts[-1]
+    d.rounded_rectangle([xe - 20, ye + 28, xe + 300, ye + 108], radius=10, fill=WHITE)
+    d.text((xe + 140, ye + 50), "Hair. Drop the sponge.", font=font(22, True), fill=RED, anchor="mm")
+    d.text((xe + 140, ye + 84), "New sponge starts at 1.", font=font(20, True), fill=NAVY, anchor="mm")
+
+    gx, gy = pts[int(0.90 * n)]
+    d.rounded_rectangle([gx - 54, gy - 40, gx + 22, gy + 16], radius=8, fill=WHITE, outline=LINE, width=2)
+
+    d.text((W / 2, H - 26), "One path. Out only. Do not close a ring and start another.", font=font(22, True), fill=GOLD, anchor="mb")
+
+    path = OUT / "prep_spiral_antiseptic.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
 if __name__ == "__main__":
     anesthesia_record("blank")
     anesthesia_record("willie")
@@ -868,3 +943,4 @@ if __name__ == "__main__":
     anesthesia_protocol_record()
     prep_or_sequence()
     anesthesia_chart_recovery()
+    prep_spiral_antiseptic()
