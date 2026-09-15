@@ -267,7 +267,7 @@ def assert_min_font(prs, min_pt=MIN_PT):
 
 
 # =============================================================================
-# SLIDES  (38 pages)
+# SLIDES  (37 pages)
 # =============================================================================
 
 # 1 Title
@@ -279,10 +279,10 @@ add_text(s, Inches(0.75), Inches(0.95), Inches(12), Inches(0.40), "LONG ISLAND U
 add_text(s, Inches(0.75), Inches(1.45), Inches(12), Inches(0.40), "DVM 612  ·  PRINCIPLES OF SURGERY", size=20, bold=True, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.95), Inches(12), Inches(2.0), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
 add_text(s, Inches(0.75), Inches(4.15), Inches(12), Inches(0.50), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP", size=24, bold=True, color=GOLD)
-add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  38 slides  |  60 minutes", size=18, color=GOLD_LT)
+add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  37 slides  |  60 minutes", size=18, color=GOLD_LT)
 add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Exam, labs, then you write the ASA. Then prep. Then 24 hours of monitoring and complication management.", size=20, color=WHITE)
 add_text(s, Inches(0.75), Inches(6.20), Inches(12), Inches(0.70), "Required: Fossum 2018; Hendrickson & Baird 2013.\nAlso used: ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery.", size=16, color=GOLD)
-notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach the ASA chart first. Then MoMo: PE, then labs, then the students write the status. Do not give them 4-E before they commit. Then Willie the same way: PE, then labs, then they write the status. Do not give them 3-E before they commit. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
+notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Teach the ASA chart first. Then MoMo: PE, then labs, then the students write the status. Do not give them 4-E before they commit. Then Willie the same way: PE, then labs, then they write the status. Do not give them 3-E before they commit. Owner identifiers stay off these slides. Thirty-seven slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
 
 # 2 Learning objectives
 s = new_content("Learning objectives")
@@ -438,7 +438,7 @@ add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assi
 card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
 card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 3?", "Is this still compensated CKD, or a constant threat to life?", accent=TEAL)
 card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Cut today?", "Exploratory on vomiting and an enlarged abdomen?", accent=RED)
-notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP, total protein, is 5.1 grams per deciliter. Do not treat TP as albumin. Pardo 2.0 is albumin, not this number. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 35 is the written key.")
+notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. First chemistry: BUN 48.7 (15 to 32), creatinine 3.0 (0.8 to 1.8). Later panel: BUN 100, creatinine 4.71 (0.50 to 1.90), HCT 44 percent in range, BE minus 7.4, sodium 142, glucose 136. WBC 26, neutrophils 24. TP, total protein, is 5.1 grams per deciliter. Do not treat TP as albumin. Pardo 2.0 is albumin, not this number. Hyperphosphatemia is on the problem list without a milligrams-per-deciliter number on these pages. Fluids were recorded as 1.5 times maintenance, 40 milliliters per kilogram per day. Do not invent fluid overload as the mechanism. USG from the previous day was within normal limits. Differentials on the record are not assigned as the diagnosis. Do not advance until they say a number. Then the key: Status 4-E. Uncompensated, a constant threat to life. Not 1: the PE is not normal, and azotemia is not a healthy cat. Not 3: Status 3 is compensated. Rising creatinine, a non-functional right kidney, and a left kidney with reduced corticomedullary architecture are not compensated IRIS-stage CKD. Emergency because vomiting and lethargy are acute. The workup cancelled the cut. Owner elected euthanasia. Never put DexSP on this cat. Do not teach Unasyn or Cerenia as an ASA protocol. Slide 34 is the written key.")
 
 # 10 Willie PE (no ASA yet)
 s = new_content("Willie: today’s PE")
@@ -462,7 +462,7 @@ add_text(s, Inches(0.70), Inches(3.55), Inches(11.95), Inches(1.15), "Quiz. Assi
 card(s, Inches(0.45), Inches(4.95), Inches(4.05), Inches(2.10), "1. Status?", "Number, and E or not.", accent=GOLD)
 card(s, Inches(4.65), Inches(4.95), Inches(4.05), Inches(2.10), "2. Why not Status 1?", "What on today’s PE is not a normal healthy patient?", accent=TEAL)
 card(s, Inches(8.85), Inches(4.95), Inches(4.00), Inches(2.10), "3. Why not Status 4?", "Is this a constant threat to life today?", accent=RED)
-notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the left otitis plus the vestibular and proprioceptive signs are acute. Not 1: head tilt, circling, nystagmus, and right-sided knuckling are not a normal PE. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 36 is the written key.")
+notes(s, "Do not put the client name on the board. These are today’s printed numbers, not invented WNL. HCT 47.5 percent is on the CBC; this hour still teaches spun PCV on other patients. BUN 11.9 and creatinine 0.7 are in range. Phosphorus 6.0 and glucose 130 are above this lab’s range. Do not invent a renal diagnosis from phosphorus alone, and do not invent diabetes from one glucose. CBC values on this printout are in range. Do not advance until they say a number. Then the key: Status 3-E. Moderate systemic disease that is still compensated. Emergency because the left otitis plus the vestibular and proprioceptive signs are acute. Not 1: head tilt, circling, nystagmus, and right-sided knuckling are not a normal PE. Not 4: pink, CRT 2 seconds, BUN and creatinine in range, not a constant threat to life today. Mild high phosphorus and glucose do not write Status 4. No Willie treatment plan. Slide 35 is the written key.")
 
 # 12 Diagnostics
 s = new_content("Pre-anesthetic assessment")
@@ -576,12 +576,7 @@ for i, (hdr, hfg, title, formula, detail) in enumerate(formulas):
 add_pic(s, "anesthesia_setup_table.png", Inches(0.28), Inches(2.62), Inches(12.78), Inches(4.50))
 notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. A 20 kg example: start 8.5 millimeter, 8.0 and 9.0 in the hand. Bag: kilograms times 60, round up. 1.2 liters is a 2 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour; write 100 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape. Willie is an ASA example only: do not attach tube, bag, or fluid math to that dog.")
 
-# 17 MoMo record
-s = new_content("MoMo’s perioperative record")
-add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. HCT 44 percent, TP 5.1 grams per deciliter, BUN 48.7 to 100, and creatinine 3.0 to 4.71 are written as recorded. Fluids 1.5 times maintenance, 40 milliliters per kilogram per day, are on the record. Do not invent overload as the cause. Do not treat TP 5.1 as the Pardo albumin cutoff. Say it once, respectfully, then continue. Client identifiers stay off the board.")
-
-# 19 Abx
+# 18 Abx
 s = new_content("Surgical wound classification")
 classes = [
     (GREEN, "1. Clean", "No infection. Hollow viscus not entered.\n\nElective OHE, orchiectomy, simple skin mass.\n\nSkip routine prophylaxis (Frey 2022)."),
@@ -914,8 +909,8 @@ stamp_footers()
 
 assert_min_font(prs)
 
-if len(prs.slides) != 38:
-    raise SystemExit(f"Expected 38 slides, built {len(prs.slides)}")
+if len(prs.slides) != 37:
+    raise SystemExit(f"Expected 37 slides, built {len(prs.slides)}")
 
 out = Path("/workspace/lectures/DVM-612_Week4_Preop_PatientPrep_Postop.pptx")
 prs.save(str(out))
@@ -926,7 +921,7 @@ script_lines = [
     "DVM 612 Week 4 instructor script",
     "Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP",
     "",
-    "38 slides. Teach the ASA chart first. MoMo is PE, then labs, then students write the status (key: 4-E). Then Willie: PE, then labs, then students write the status (key: 3-E). Owner names, addresses, phones, and emails stay off slides and off this script.",
+    "37 slides. Teach the ASA chart first. MoMo is PE, then labs, then students write the status (key: 4-E). Then Willie: PE, then labs, then students write the status (key: 3-E). Owner names, addresses, phones, and emails stay off slides and off this script.",
     "",
 ]
 for i, slide in enumerate(prs.slides, 1):
