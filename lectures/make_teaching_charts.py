@@ -146,7 +146,7 @@ def anesthesia_record(filled="blank"):
     d.text((174, y + 40), "What changes\nthe plan", font=font(18, True), fill=NAVY, anchor="mm")
     plan = {
         "blank": "",
-        "willie": "Acute vestibular disease + severe AS otitis + murmur. Still pink, walking, kidneys normal. DexSP 0.68 mL SQ already given: skip NSAID. Alfaxalone only after this header is complete.",
+        "willie": "Acute vestibular disease + AS otitis + murmur. Compensated: still pink, walking, kidneys normal. DexSP already given: skip NSAID. Alfaxalone only after this header is complete.",
         "momo": "Vomiting that looked like a foreign body. PE did not prove GI obstruction. Creatinine 3.0, then 4.71 on fluids. Right kidney fluid-filled and non-functional. NSAIDs contraindicated. Do not clip.",
     }[filled]
     fplan = font(20)
@@ -169,7 +169,7 @@ def anesthesia_record(filled="blank"):
             "Today’s PE, PCV / TP / BUN, and ASA written",
             "Last meal recorded",
             "IV catheter patent",
-            "Monitoring on before drugs",
+            "Exam and ASA written before IM/SQ premed",
             "Pain plan, including skip-NSAID if steroids given",
             "Who calls the client, and when",
         ],
@@ -177,10 +177,10 @@ def anesthesia_record(filled="blank"):
             "ASA Status 3-E. PCV / TP / BUN WNL. Exam wrote the status.",
             "Today’s PE: vestibular + AS otitis + murmur",
             "Skip NSAID: DexSP already given",
-            "IV in. Monitoring on. Then sedate.",
-            "Ear/eye: dilute PVP-I, not 7.5% scrub",
+            "IV in. Then sedate. Monitors if you anesthetize.",
+            "Ear canal: dilute PVP-I, not 7.5% scrub",
             "Aminoglycoside risk if the middle ear is involved",
-            "MRI later. New ASA on the day of TECA-LBO",
+            "MRI later. New ASA on the day of any later surgery",
         ],
         "momo": [
             "ASA Status 4-E after labs and imaging",
@@ -206,18 +206,18 @@ def anesthesia_record(filled="blank"):
             "Recover padded. No stairs tonight.",
             "Watch nystagmus, circling, vomiting, seizures",
             "Skip NSAID in recovery (DexSP already given)",
-            "Meclizine 25 mg PO BID × 5 d",
-            "Cerenia 60 mg PO SID × 4 d",
+            "Home antiemetic if needed. No NSAID after the steroid.",
             "Confine. Call the owner with neuro status",
-            "MRI recommended. TECA-LBO only if medical fails",
+            "MRI if signs persist",
+            "New ASA before any later surgery",
         ],
         "momo": [
             "This is not a recovery from surgery",
-            "IVF, antiemetics, Unasyn. Recheck kidneys.",
+            "Supportive care. Recheck kidneys.",
             "Rising creatinine cancelled the cut",
             "Right kidney non-functional on AUS",
-            "Offer supportive care, referral, or euthanasia",
-            "That conversation is still surgery",
+            "Offer medical care, referral, or euthanasia",
+            "Write the decision on this record",
             "Owner elected humane euthanasia",
         ],
     }[filled]
@@ -233,7 +233,7 @@ def anesthesia_record(filled="blank"):
         d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=3)
         note = {
             "blank": "If sedation or anesthesia is used, monitors are on first. The 5-minute grid belongs on this page, but this hour is the header, the prep, and recovery.",
-            "willie": "Sedation happened after this header. Monitors on, then alfaxalone. This hour is the preop header, the ear and eye prep, and recovery.",
+            "willie": "Sedation happened after this header. Then alfaxalone. This hour is the preop header, the ear-canal prep, and recovery. Tube and bag math is only if you intubate.",
         }[filled]
         d.text((44, 1196), "If you sedate or anesthetize", font=font(18, True), fill=NAVY, anchor="lt")
         fn = font(20)
@@ -730,7 +730,7 @@ def anesthesia_chart_recovery():
     thirds = [
         (NAVY, "Complications", "Write the event and the correction. If none: write none."),
         (TEAL, "Fluids at the end", "Type · rate · total mL. Willie: LRS 69 mL/hr. Total = rate × hours."),
-        (GREEN, "Recovery analgesics", "Willie: skip NSAID after DexSP. Meclizine. Cerenia. Sign the record."),
+        (GREEN, "Recovery analgesics", "Willie: skip NSAID after DexSP. Write what you gave. Sign the record."),
     ]
     bw = (W - 56) / 3
     box_h = H - 16 - y
