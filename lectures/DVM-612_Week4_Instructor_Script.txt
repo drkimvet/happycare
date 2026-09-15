@@ -18,8 +18,8 @@ SLIDE 4. EACH PRINCIPLE HAS A PREOPERATIVE OR POSTOPERATIVE ACTION
 SLIDE 5. TWO TEAM CLOCKS. CPE MOA 2026 ANESTHESIA AND SURGERY.
     SPEAK: Do not teach this as a CPE station. Teach the clocks. Anesthesia owns exam through a patient who is ready for clippers: tube in, cuff up, machine on, IV running, surgical plane. Surgery owns clip through the last skin suture, then both own the first 24 hours. Cite ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery sections.
 
-SLIDE 6. CPE MOA 2026 ANESTHESIA: EXAMINE, REQUEST LABS, ASSIGN ASA, THEN PREMEDICATE.
-    SPEAK: Four jobs. Students often skip number 3 and 4. Do your own PE, then use technician vitals as a second set of numbers. CPE MOA 2026 Anesthesia: premedicating before the examination is a dismissible event. Premed is IM or SQ. If today’s ASA is not Status 1, change the drug plan before you inject.
+SLIDE 6. CPE MOA 2026 APPENDIX 3: TPR, MM/CRT, THEN PCV, TP, BUN. THEN ASA. THEN PREMED.
+    SPEAK: This is the preoperative exam the record actually holds. CPE MOA 2026 Appendix 3: heart rate, respiratory rate, mucous membranes and CRT, temperature, then PCV, TP, and BUN. Request those three. Interpret them. Then write ASA. Then premed IM or SQ. Premedicating before the examination is a dismissible event. Add other labs if the PE says so. Willie: the exam wrote 3-E; CBC did not write Status 1. MoMo: BUN/creatinine cancelled the cut.
 
 SLIDE 7. GRUBB ET AL. 2020 AAHA TABLE. CPE MOA 2026 ANESTHESIA APPENDIX 2 USES THE SAME 1–5 SCALE.
     SPEAK: Read the 2020 AAHA table: Status 1 healthy neuter, Status 2 compensated mild mitral, Status 3 moderate disease such as IRIS 3 CKD, Status 4 threat to life such as bleeding splenic mass, Status 5 moribund septic cat. CPE MOA 2026 Appendix 2 uses the same five statuses. Then map Willie to 3-E and MoMo to 4-E. E means emergency.
@@ -33,11 +33,11 @@ SLIDE 9. 6 Y 11 MO MN CAVALIER KING CHARLES SPANIEL, 13.7 KG, BCS 6/9
 SLIDE 10. 6 YO SF DSH, 4.25 KG, BCS 5/9. THIS IS HER, BEFORE THE EXPLORATORY WAS CANCELLED.
     SPEAK: Pause on the photograph. This is MoMo. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? The photograph is a quiet, recumbent cat. It does not prove a foreign body. Then labs and imaging cancelled the cut.
 
-SLIDE 11. TESTS INDICATED FOR THIS PATIENT AND THIS PROCEDURE
-    SPEAK: Request labs that change the plan. They inform the ASA number. Today’s PE writes it.
+SLIDE 11. CPE MOA 2026 APPENDIX 3 MINIMUM: PCV, TP, BUN. ADD MORE IF TODAY’S PE SAYS SO.
+    SPEAK: The anesthesia record in CPE MOA 2026 Appendix 3 has three lab blanks: PCV, TP, BUN. That is the minimum you request and interpret. Hospital policy may add a full CBC and chemistry. Do not invent Willie or MoMo numbers you do not have. Willie: CBC did not write Status 1. MoMo: azotemia cancelled the cut.
 
 SLIDE 12. TEACHING BANDS, NOT AN ASA TABLE. GRUBB ET AL. 2020: TODAY’S PE WRITES ASA.
-    SPEAK: Do not call these ASA cutoffs. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. PCV and platelet numbers are teaching flags. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator, edema and poor wound healing. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: WBC about 26 and creatinine 3.0 then 4.71.
+    SPEAK: Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: creatinine 3.0 then 4.71.
 
 SLIDE 13. ASA FIRST. THEN THE DRUG PLAN. GRUBB ET AL. 2020; CPE MOA 2026 ANESTHESIA.
     SPEAK: This is the anesthesia vocabulary for this hour. ASA, then premed IM or SQ, then induction IV to effect, then inhalant to MAC. DKT and BAA are healthy-patient combinations. Willie got alfaxalone because of the murmur. MAC is how we talk about the vaporizer. Premed lowers it. Grubb 2020: mask induction is not recommended. Surgical plane: no palpebral, mild jaw tone.

@@ -362,34 +362,36 @@ add_text(s, Inches(7.00), Inches(5.82), Inches(5.70), Inches(1.00), "From the st
 notes(s, "Do not teach this as a CPE station. Teach the clocks. Anesthesia owns exam through a patient who is ready for clippers: tube in, cuff up, machine on, IV running, surgical plane. Surgery owns clip through the last skin suture, then both own the first 24 hours. Cite ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery sections.")
 
 # 6 Preop evaluation
-s = new_content("Preoperative evaluation", "CPE MOA 2026 Anesthesia: examine, request labs, assign ASA, then premedicate.")
-goals = [
-    ("01", "Identify surgical disease", "Confirm the lesion, laterality, and that surgery is indicated."),
-    ("02", "Quantify anesthetic risk", "Assign ASA after today’s examination and labs. Write that number on the record."),
-    ("03", "Fix what you can first", "Dehydration, K+, anemia, hypothermia, hypoglycemia, hypoalbuminemia, pyoderma over the site."),
-    ("04", "Plan the day", "Approach, positioning, implants, blood products, ICU bed, who calls the client."),
+s = new_content("Preoperative physical examination", "CPE MOA 2026 Appendix 3: TPR, mm/CRT, then PCV, TP, BUN. Then ASA. Then premed.")
+pe_boxes = [
+    ("T  ·  HR  ·  RR", "Temperature, heart rate, respiratory rate. Write the numbers. Do not copy yesterday’s chart."),
+    ("mm / CRT", "Mucous membrane color and capillary refill. Pink vs pale vs injected. CRT in seconds."),
+    ("Heart and lungs", "Auscultate both sides. Murmur, arrhythmia, crackles. A rebreathing bag can unmask a murmur."),
+    ("Hydration + site", "Skin tent, tacky mm. Look at the surgical site: pyoderma, heat, pain. Abdomen if you might open it."),
 ]
-for i, (n, t, d) in enumerate(goals):
+for i, (t, d) in enumerate(pe_boxes):
     col = i % 2
     row = i // 2
     x = Inches(0.45) + Inches(col * 6.45)
-    y = Inches(1.12) + Inches(row * 1.55)
-    add_round(s, x, y, Inches(6.25), Inches(1.42), WHITE)
-    add_rect(s, x, y, Inches(0.7), Inches(1.42), NAVY)
-    add_text(s, x, y, Inches(0.7), Inches(1.42), n, size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, x + Inches(0.9), y + Inches(0.12), Inches(5.15), Inches(0.4), t, size=18, bold=True, color=NAVY)
-    add_text(s, x + Inches(0.9), y + Inches(0.55), Inches(5.15), Inches(0.75), d, size=16, color=SLATE)
-add_round(s, Inches(0.45), Inches(4.32), Inches(8.15), Inches(2.65), WHITE)
-add_text(s, Inches(0.7), Inches(4.42), Inches(7.7), Inches(0.32), "History and PE, then any drug", size=16, bold=True, color=TEAL)
-add_bullets(s, Inches(0.65), Inches(4.78), Inches(7.75), Inches(2.05), [
-    "Signalment, last meal, medications, prior anesthesia, bleeding tendency.",
-    "TPR, mm, CRT, hydration, murmur, lungs, surgical site, abdomen, neuro if indicated.",
-    "Record the examination. The next clinician reads what you wrote.",
-], size=16, spacing=5)
-add_round(s, Inches(8.80), Inches(4.32), Inches(3.95), Inches(2.65), NAVY)
-add_text(s, Inches(9.0), Inches(4.45), Inches(3.6), Inches(0.4), "Order of operations", size=16, bold=True, color=GOLD)
-add_text(s, Inches(9.0), Inches(4.95), Inches(3.6), Inches(1.85), "1. Examine the patient\n2. Request indicated labs\n3. Interpret the results\n4. Assign ASA status\n5. Adjust the drug plan\n6. Premedicate IM or SQ", size=16, color=WHITE)
-notes(s, "Four jobs. Students often skip number 3 and 4. Do your own PE, then use technician vitals as a second set of numbers. CPE MOA 2026 Anesthesia: premedicating before the examination is a dismissible event. Premed is IM or SQ. If today’s ASA is not Status 1, change the drug plan before you inject.")
+    y = Inches(1.10) + Inches(row * 1.42)
+    add_round(s, x, y, Inches(6.25), Inches(1.32), WHITE)
+    add_rect(s, x, y, Inches(0.10), Inches(1.32), TEAL)
+    add_text(s, x + Inches(0.28), y + Inches(0.10), Inches(5.80), Inches(0.36), t, size=18, bold=True, color=NAVY)
+    add_text(s, x + Inches(0.28), y + Inches(0.50), Inches(5.80), Inches(0.72), d, size=16, color=SLATE)
+add_rect(s, Inches(0.45), Inches(4.02), Inches(12.40), Inches(0.42), NAVY)
+add_text(s, Inches(0.55), Inches(4.02), Inches(12.20), Inches(0.42), "Minimum labs on the anesthesia record  ·  PCV, TP, BUN  (CPE MOA 2026 Appendix 3)", size=16, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+lab_trio = [
+    ("PCV", "Oxygen-carrying capacity. Anemia vs hemoconcentration. With TP: dehydration vs blood loss."),
+    ("TP", "Protein / oncotic pressure. High with PCV: dehydration. Low: loss, liver, or dilution. Changes fluids and healing."),
+    ("BUN", "Kidney, hydration, GI bleed. Azotemia: skip NSAIDs, rethink fluids, maybe do not cut today."),
+]
+for i, (t, d) in enumerate(lab_trio):
+    x = Inches(0.45) + Inches(i * 4.15)
+    add_round(s, x, Inches(4.52), Inches(4.00), Inches(2.55), WHITE)
+    add_rect(s, x, Inches(4.52), Inches(4.00), Inches(0.48), GOLD)
+    add_text(s, x, Inches(4.52), Inches(4.00), Inches(0.48), t, size=20, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.15), Inches(5.10), Inches(3.70), Inches(1.82), d, size=16, color=INK)
+notes(s, "This is the preoperative exam the record actually holds. CPE MOA 2026 Appendix 3: heart rate, respiratory rate, mucous membranes and CRT, temperature, then PCV, TP, and BUN. Request those three. Interpret them. Then write ASA. Then premed IM or SQ. Premedicating before the examination is a dismissible event. Add other labs if the PE says so. Willie: the exam wrote 3-E; CBC did not write Status 1. MoMo: BUN/creatinine cancelled the cut.")
 
 # 7 ASA
 s = new_content("ASA physical status", "Grubb et al. 2020 AAHA table. CPE MOA 2026 Anesthesia Appendix 2 uses the same 1–5 scale.")
@@ -454,25 +456,25 @@ card(s, Inches(4.98), Inches(5.28), Inches(7.85), Inches(1.74), "Image, labs, th
 notes(s, "Pause on the photograph. This is MoMo. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? The photograph is a quiet, recumbent cat. It does not prove a foreign body. Then labs and imaging cancelled the cut.")
 
 # 11 Diagnostics
-s = new_content("Preoperative diagnostics", "Tests indicated for this patient and this procedure")
-card(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(2.55), "Young, healthy, elective (ASA I)", "PCV/TS ± blood glucose and Azo stick is a defensible minimum. Many hospitals still run a preanesthetic chemistry/CBC. Know your hospital policy and be able to defend either choice.", accent=TEAL)
-card(s, Inches(6.8), Inches(1.2), Inches(6.0), Inches(2.55), "Age, disease, or invasive procedure", "CBC, chemistry, UA. Add clotting (PT/PTT or BMBT) if bleeding risk. T4 in older cats. Blood pressure. ECG if arrhythmia. Imaging if it changes the approach.", accent=GOLD)
+s = new_content("Preoperative diagnostics", "CPE MOA 2026 Appendix 3 minimum: PCV, TP, BUN. Add more if today’s PE says so.")
+card(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(2.55), "Minimum (MOA record)", "Write PCV, TP, and BUN. Request them. Interpret them. Then assign ASA. Azo stick is a BUN screen. PCV/TS is PCV plus TP. Young healthy elective still gets these three numbers on the record.", accent=TEAL)
+card(s, Inches(6.8), Inches(1.2), Inches(6.0), Inches(2.55), "Add if the PE says so", "CBC, chemistry, UA. Clotting (PT/PTT or BMBT) if bleeding risk. T4 in older cats. Blood pressure. ECG if arrhythmia. Imaging if it changes the approach. MoMo: POCUS/AUS cancelled the cut.", accent=GOLD)
 add_round(s, Inches(0.5), Inches(3.95), Inches(12.3), Inches(3.0), WHITE)
-add_text(s, Inches(0.75), Inches(4.10), Inches(11.8), Inches(0.35), "How to use the tests you order", size=18, bold=True, color=NAVY)
+add_text(s, Inches(0.75), Inches(4.10), Inches(11.8), Inches(0.35), "How to use PCV, TP, and BUN together", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.75), Inches(4.55), Inches(11.8), Inches(2.2), [
-    "Anemia, hypoalbuminemia, azotemia, electrolyte storms, and thrombocytopenia change drugs, fluids, and whether you cut today.",
-    "Abdominal surgery: image first so you know whether you are cutting a pyometra, a mass that needs a different approach, or a medical abdomen. MoMo: POCUS/AUS cancelled the cut.",
-    "Repeat a value that changes the plan. MoMo: creatinine 3.0 then 4.71. Act on the rising creatinine.",
+    "High PCV + high TP: dehydration. Correct it before elective anesthesia.",
+    "Low PCV + low TP: blood loss or third-space loss. Do not call that a healthy Status 1.",
+    "High BUN: kidney, dehydration, or GI bleed. Skip NSAIDs. Repeat if it changes whether you cut. MoMo: rising creatinine (and azotemia) cancelled the exploratory.",
 ], size=18, spacing=7)
-notes(s, "Request labs that change the plan. They inform the ASA number. Today’s PE writes it.")
+notes(s, "The anesthesia record in CPE MOA 2026 Appendix 3 has three lab blanks: PCV, TP, BUN. That is the minimum you request and interpret. Hospital policy may add a full CBC and chemistry. Do not invent Willie or MoMo numbers you do not have. Willie: CBC did not write Status 1. MoMo: azotemia cancelled the cut.")
 
 # 12 CBC/chem
 s = new_content("Laboratory values inform risk", "Teaching bands, not an ASA table. Grubb et al. 2020: today’s PE writes ASA.")
 headers = ("Finding", "Typical healthy adult", "Repeat / stabilize first")
 labrows = [
     ("PCV", "Within reference", "Teaching: <20% dog / <15% cat"),
-    ("Platelets", "Within reference", "Teaching: <50 K"),
-    ("Creatinine", "Within reference", "Rising or severe + uremia (MoMo)"),
+    ("TP", "Within reference", "High with PCV: dehydration. Low: loss / dilution"),
+    ("BUN", "Within reference", "Azotemia: skip NSAID, rethink fluids and the cut"),
     ("Potassium", "Within reference", ">6.0 mEq/L (Grubb 2020: correct first)"),
     ("Albumin", "Within reference", "<2.0 g/dL: edema, poor healing (Pardo 2024)"),
 ]
@@ -486,8 +488,8 @@ for i, (a, b, c) in enumerate(labrows):
     add_text(s, Inches(0.65), y, Inches(3.3), Inches(0.84), a, size=18, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(4.1), y, Inches(4.0), Inches(0.84), b, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(8.2), y, Inches(4.4), Inches(0.84), c, size=16, color=RED, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(6.50), Inches(12.2), Inches(0.50), "Willie: CBC does not assign Status 1. His 3-E is the exam. MoMo: rising creatinine = 4-E. Low albumin is a deficit, not an ASA number.", size=16, color=NAVY)
-notes(s, "Do not call these ASA cutoffs. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. PCV and platelet numbers are teaching flags. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator, edema and poor wound healing. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: WBC about 26 and creatinine 3.0 then 4.71.")
+add_text(s, Inches(0.55), Inches(6.50), Inches(12.2), Inches(0.50), "MOA minimum is PCV, TP, BUN. Willie: CBC does not assign Status 1. MoMo: azotemia cancelled the cut. Low albumin is a deficit, not an ASA number.", size=16, color=NAVY)
+notes(s, "Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Willie: CBC is unremarkable; Status 3-E is the exam. MoMo: creatinine 3.0 then 4.71.")
 
 # 13 Premed, induction, MAC
 s = new_content("Premedication, induction, and MAC", "ASA first. Then the drug plan. Grubb et al. 2020; CPE MOA 2026 Anesthesia.")
