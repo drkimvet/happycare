@@ -680,8 +680,8 @@ add_bullets(s, Inches(7.80), Inches(1.70), Inches(5.00), Inches(3.40), [
     "Name the monitors: ECG, SpO2, ETCO2, temp, fluids.",
 ], size=16, spacing=8)
 add_round(s, Inches(0.35), Inches(5.38), Inches(12.6), Inches(1.7), WHITE)
-add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Photograph: closed glove. Hands stay inside the gown cuffs; the cuff is used to pull the glove on. U.S. Air Force photo, public domain. Then drape, open the pack, count, Mayo stand. Timeout. Announce the incision and mark it on the chart.", size=16, color=INK)
-notes(s, "This is a real photograph, not a drawing. Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove: hands stay in the cuffs. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.")
+add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Photograph: real people, real gown sleeves, sterile gloves going on. U.S. Navy photo, public domain (USNS Mercy, 2020). In this course: closed glove, hands stay inside the gown cuffs. Then drape, open the pack, count, Mayo stand. Timeout. Announce the incision and mark it on the chart.", size=16, color=INK)
+notes(s, "This is a real photograph of two people in gowns putting on sterile gloves. Not a drawing. Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove for this course: hands stay in the cuffs. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.")
 
 # 27 Asepsis + protect
 s = new_content("Breaks in asepsis")
