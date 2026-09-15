@@ -734,7 +734,7 @@ add_bullets(s, Inches(8.75), Inches(1.85), Inches(4.05), Inches(4.90), [
     "Extubate when swallow returns.",
     "Most anesthetic deaths are in recovery, often in the first 3 hours (Grubb 2020).",
     "Pale + tachycardic after celiotomy: return to OR.",
-    "NSAID injection if kidneys and GI allow. Willie: skip after DexSP.",
+    "NSAID: carprofen in the dog, Onsior in the cat. Willie: skip after DexSP.",
     "E-collar on before they can lick.",
 ], size=16, spacing=10)
 notes(s, "Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.")
@@ -745,17 +745,16 @@ add_pic(s, "anesthesia_chart_recovery.png", Inches(0.22), Inches(1.05), Inches(1
 notes(s, "This is Appendix 3 pages 4 and 5, taught as an original chart, not the copyrighted grid. Students name every row: heart rate, respiratory rate, SAP DAP MAP, isoflurane or sevoflurane percent, oxygen flow, end-tidal CO2, SpO2, temperature, fluid rate, total milliliters. Then the end of the case: complications or none, fluid type rate and total volume, recovery analgesics, and a signature. Willie start rate is 69 milliliters per hour. Skip NSAID after DexSP.")
 
 # 31 Pain + incision
-s = new_content("Postop analgesia and incision care", "Injections at recovery. Then teach the e-collar.")
+s = new_content("Postop analgesia and incision care", "On-label NSAIDs. Dog: carprofen. Cat: Onsior. Then teach the e-collar.")
 add_round(s, Inches(0.45), Inches(1.15), Inches(6.15), Inches(5.55), WHITE)
-add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.40), "Analgesia injection at recovery", size=18, bold=True, color=NAVY)
+add_text(s, Inches(0.7), Inches(1.28), Inches(5.7), Inches(0.40), "On-label NSAID", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.65), Inches(1.78), Inches(5.75), Inches(4.7), [
-    "Score pain. Dogs: Glasgow CMPS-SF. Cats: Feline Grimace Scale.",
-    "Opioid injection as planned. Re-score after you give it.",
-    "NSAID if perfusion, kidneys, and GI allow. Do not stack with a steroid.",
-    "Carprofen: dog. Onsior (robenacoxib) 2 mg/kg SQ: dog or cat, labeled up to 3 days.",
-    "Onsior first dose: about 45 min before incision in dogs, 30 min in cats (label). Later doses at recovery or SQ/PO.",
-    "Willie already received DexSP: skip NSAID. MoMo: azotemic, skip NSAID.",
-], size=15, spacing=5)
+    "Score pain. Dogs: Glasgow CMPS-SF. Cats: Feline Grimace Scale. Opioid as planned.",
+    "Dog: carprofen (Rimadyl) 4.4 mg/kg SQ. Label: dogs only. Do not use in cats. Postoperative: about 2 hours before the procedure.",
+    "Cat: Onsior (robenacoxib) 2 mg/kg SQ. Label: cats. First dose about 30 min before surgery. OHE, castration, orthopedic. Up to 3 days.",
+    "Do not give Onsior to the dog in this course. Do not give carprofen to the cat.",
+    "Do not stack an NSAID with a steroid. Willie: DexSP, skip NSAID. MoMo: azotemic, skip NSAID.",
+], size=16, spacing=6)
 add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(5.55), WHITE)
 add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.40), "Antibiotic injection and incision", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
@@ -765,8 +764,8 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
     "Look twice daily: swelling, discharge, gapping, smell, heat.",
     "E-collar that stays on. Leash walks 14 days.",
     "Skin sutures typically 10–14 days. Cats: start a meal the night of surgery.",
-], size=15, spacing=5)
-notes(s, "Name carprofen for dogs and Onsior 2 mg/kg SQ for cats or dogs per label. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
+], size=16, spacing=6)
+notes(s, "This course uses on-label NSAIDs. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before the procedure. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, first dose about 30 minutes before surgery. Do not teach Onsior in the dog. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
 
 # 32 Complications
 s = new_content("Complications in the first 24 hours", "CPE MOA 2026 Surgery still scores this window. Hemorrhage, hernia, dehiscence.")
@@ -954,9 +953,10 @@ APPENDIX  ·  FULL REFERENCES
 9. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed NDC 54771-8701; setid 4a2567ca-26b9-4078-b3e3-4695f50899b4. Wash 2 to 4 min. Avoid eyes and mucous membranes.
 10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216. First dose within 30 min of surgery; second dose if surgery lasted >90 min. Abstract does not print mg/kg.
 11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Interstitial fluid >4 ug/mL for about 4 h after IV. Does not say q90 min.
-12. ONSIOR (robenacoxib) injection. DailyMed. 2 mg/kg SQ once daily up to 3 days. Dogs: soft tissue surgery, first dose about 45 min before surgery. Cats: orthopedic surgery, OHE, castration, first dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid.
-13. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
-14. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Anesthesia crystalloid: dogs 5 mL/kg/hr, cats 3-5 mL/kg/hr; the old 10 mL/kg/hr rate lacked evidence. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
+12. ONSIOR (robenacoxib) injection. DailyMed. Cats: 2 mg/kg SQ once daily up to 3 days for orthopedic surgery, OHE, and castration. First dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid. This lecture does not teach Onsior in the dog.
+13. RIMADYL (carprofen) sterile injectable. DailyMed NDC 54771-8507. Dogs only. Do not use in cats. 4.4 mg/kg SQ daily; postoperative dose about 2 hours before the procedure.
+14. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
+15. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Anesthesia crystalloid: dogs 5 mL/kg/hr, cats 3-5 mL/kg/hr; the old 10 mL/kg/hr rate lacked evidence. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.
