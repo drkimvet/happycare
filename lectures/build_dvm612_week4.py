@@ -507,9 +507,9 @@ notes(s, "Do not call these ASA cutoffs. The anesthesia record’s minimum labs 
 # 13 Premed, induction, MAC
 s = new_content("Anesthetic drug protocol")
 pills = [
-    (TEAL, "1. Premed after ASA", "IM or SQ. Not before the exam. Healthy: DKT or BAA."),
-    (GOLD, "2. Induce IV to effect", "Alfaxalone, propofol, or ketamine + benzo. Then intubate."),
-    (NAVY, "3. Iso or sevo to MAC", "Premed lowers MAC. Circle the inhalant you used."),
+    (TEAL, "1. Premed after ASA", "IM or SQ. Not before the exam. Hospital: DKT or BAA. Same columns, hospital doses."),
+    (GOLD, "2. Induce IV to effect", "Alfaxalone 10 mg/mL. Draw 5.5 mL. Give until you can intubate."),
+    (NAVY, "3. Iso or sevo to MAC", "Premed, if you add it, lowers MAC and lowers alfaxalone."),
 ]
 for i, (c, t, dtl) in enumerate(pills):
     x = Inches(0.40) + Inches(i * 4.28)
@@ -518,7 +518,7 @@ for i, (c, t, dtl) in enumerate(pills):
     add_text(s, x, Inches(1.08), Inches(4.12), Inches(0.38), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.12), Inches(1.50), Inches(3.88), Inches(0.68), dtl, size=14, color=INK)
 add_pic(s, "anesthesia_protocol_record.png", Inches(0.28), Inches(2.32), Inches(12.78), Inches(4.80))
-notes(s, "This is Appendix 3 pages 2 and 3 as an original record, not the copyrighted form. The filled table is a 25 kilogram ASA 1 elective OHE: carprofen 4.4 milligrams per kilogram SQ, LRS 125 milliliters per hour. It is not a hospital-patient protocol. Students write drug, concentration, dose, volume, and route.")
+notes(s, "This is Appendix 3 pages 2 and 3 as an original record, not the copyrighted form. Walk the math on the 25 kilogram ASA 1 elective OHE. Carprofen: 25 times 4.4 equals 110 milligrams; 110 divided by 50 milligrams per milliliter equals 2.2 milliliters SQ, Rimadyl label, about 2 hours before incision. Alfaxalone: 10 milligrams per milliliter. Unpremedicated field-study mean 2.2 milligrams per kilogram, so draw 55 milligrams which is 5.5 milliliters, then give IV to effect until you can intubate. You may not use the whole syringe. That 2.2 is a mean, not a fixed bolus. This example skips premed so every milliliter is from a US label. Hospital DKT or BAA still happens after ASA; do not invent those milligrams per kilogram on the board. LRS 125 milliliters per hour. Cat OHE: Onsior, not carprofen. Do not stack an NSAID with a steroid. It is not a hospital-patient protocol.")
 
 # 14 Stabilize
 s = new_content("Correct deficits before you cut")
@@ -668,11 +668,11 @@ add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), RED)
 add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "OHE: hair visible at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "cherry_point_spay.jpg", Inches(0.4), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), GREEN)
-add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "Sterile field: gown, glove, drape", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "hektor_drape.jpg", Inches(6.75), Inches(1.62), Inches(6.2), Inches(3.40))
+add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "The window: clipped skin only", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "yap_surgical_window.jpg", Inches(6.75), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(0.4), Inches(5.15), Inches(12.55), Inches(1.85), WHITE)
-add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Near towel first. Four towels box the field. Towel clamps on skin, not through the drape to viscera. Large drape last. Only the incision is in the window. Re-clip until the window is hair-free.\nPhotos: Cpl. Samuel A. Nasso, USMC, public domain; MSgt Carlotta Holley, USAF, public domain.", size=16, color=INK)
-notes(s, "Left is a real spay with hair at the window. Re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
+add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Near towel first. Four towels box the field. Towel clamps on skin, not through the drape to viscera. Large drape last. Only the incision is in the window. Hair stays under the drape. Re-clip until the window is hair-free.\nPhotos: Cpl. Samuel A. Nasso, USMC, public domain; MC1 Ryan D. McLearnon, USN, public domain.", size=16, color=INK)
+notes(s, "Right is looking down on a fenestrated drape: the hole is clipped, painted skin. Hair is under the drape, not in the window. Left is a real spay with hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
 
 # 26 Gloving
 s = new_content("OR attire, gown, glove, instruments")
@@ -962,7 +962,8 @@ APPENDIX  ·  FULL REFERENCES
 10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216. First dose within 30 min of surgery; second dose if surgery lasted >90 min. Abstract does not print mg/kg.
 11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Interstitial fluid >4 ug/mL for about 4 h after IV. Does not say q90 min.
 12. ONSIOR (robenacoxib) injection. DailyMed. Cats: 2 mg/kg SQ once daily up to 3 days for orthopedic surgery, OHE, and castration. First dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid. This lecture does not teach Onsior in the dog.
-13. RIMADYL (carprofen) sterile injectable. DailyMed NDC 54771-8507. Dogs only. Do not use in cats. 4.4 mg/kg SQ daily; postoperative dose about 2 hours before the procedure.
+13. RIMADYL (carprofen) sterile injectable. DailyMed NDC 54771-8507. Dogs only. Do not use in cats. 4.4 mg/kg SQ daily; postoperative dose about 2 hours before the procedure. 50 mg/mL. 25 kg example: 110 mg = 2.2 mL SQ.
+21. ALFAXAN MULTIDOSE (alfaxalone) 10 mg/mL. DailyMed. Dogs: titrate IV to effect. Unpremedicated field-study mean 2.2 mg/kg (range 1.5-4.5); opioid plus acepromazine mean 1.6 mg/kg (range 0.6-3.5). Draw the expected volume; do not dump a fixed bolus. 25 kg unpremedicated example: 55 mg = 5.5 mL drawn.
 14. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
 15. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Anesthesia crystalloid: dogs 5 mL/kg/hr, cats 3-5 mL/kg/hr; the old 10 mL/kg/hr rate lacked evidence. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
 16. Epstein ME, Rodan I, Griffenhagen G, Kadlisko J, Landa MS, Petty M, Robertson SA. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2015;51:67-84. Concurrent NSAID + corticosteroid is a leading risk factor for GI perforation. Clinically relevant washout periods remain controversial and largely undefined; cautious gap ~7 days after a short-acting corticosteroid before starting an NSAID.

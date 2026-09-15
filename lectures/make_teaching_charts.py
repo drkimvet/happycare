@@ -637,9 +637,9 @@ def anesthesia_protocol_record():
 
     headers = ["", "Drug", "Concentration", "Dose", "Volume", "Route"]
     rows = [
-        ["Premed", "After ASA is written", "read the bottle", "as labeled", "calculate", "IM or SQ"],
-        ["Induction", "Alfaxalone or propofol", "read the bottle", "IV to effect", "give to effect", "IV"],
-        ["Analgesic", "Carprofen (dog)", "as labeled", "4.4 mg/kg SQ", "calculate", "SQ ~2 h before cut"],
+        ["Analgesic", "Carprofen (Rimadyl)", "50 mg/mL", "4.4 mg/kg", "2.2 mL (110 mg)", "SQ ~2 h before"],
+        ["Induction", "Alfaxalone (Alfaxan)", "10 mg/mL", "IV to effect", "draw 5.5 mL", "IV"],
+        ["Inhalant", "Isoflurane", "to MAC", "to effect", "vaporizer", "inhalant"],
     ]
     widths = [300, 700, 540, 460, 500, 660]
     scale = (W - 40) / sum(widths)
@@ -648,7 +648,7 @@ def anesthesia_protocol_record():
     for w in widths:
         xs.append(xs[-1] + w)
     y = 90
-    hh, rh = 56, 92
+    hh, rh = 56, 100
     for c, lab in enumerate(headers):
         cell(d, xs[c], y, xs[c + 1], y + hh, lab, fill=NAVY, fg=GOLD, size=40, bold=True, align="center")
     for r, row in enumerate(rows):
@@ -656,7 +656,7 @@ def anesthesia_protocol_record():
         for c, val in enumerate(row):
             fill = NAVY if c == 0 else (WHITE if r % 2 == 0 else (236, 242, 244))
             fg = GOLD if c == 0 else INK
-            cell(d, xs[c], yy, xs[c + 1], yy + rh, val, fill=fill, fg=fg, size=36, bold=True, align="center")
+            cell_wrap(d, xs[c], yy, xs[c + 1], yy + rh, val, fill=fill, fg=fg, size=32, bold=True)
 
     y = y + hh + 3 * rh + 12
     row_h2 = 130
@@ -669,10 +669,10 @@ def anesthesia_protocol_record():
     d.text((1620, y + 12), "Why these drugs", font=font(18, True), fill=NAVY, anchor="lt")
     why_fn = font(20)
     why_lines = [
-        "ASA 1 elective OHE. Not a hospital ASA example.",
-        "Dog: carprofen 4.4 mg/kg SQ ~2 h before incision (Rimadyl).",
-        "Cat OHE: Onsior 2 mg/kg SQ. Do not swap species.",
-        "Do not stack an NSAID with a corticosteroid.",
+        "Carprofen: 25 × 4.4 = 110 mg. 110 / 50 = 2.2 mL SQ (Rimadyl).",
+        "Alfaxalone: draw 25 × 2.2 = 55 mg = 5.5 mL. Give IV to effect (Alfaxan).",
+        "2.2 mg/kg is the unpremedicated field-study mean, not a fixed bolus.",
+        "Cat OHE: Onsior 2 mg/kg SQ. Do not stack an NSAID with a steroid.",
     ]
     ty = y + 40
     for line in why_lines:
