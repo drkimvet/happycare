@@ -483,26 +483,29 @@ notes(s, "This is Appendix 3 page 1 of the CPE MOA 2026 anesthesia record, taugh
 
 # 13 CBC/chem
 s = new_content("Laboratory values inform risk")
-headers = ("Finding", "Typical healthy adult", "Repeat / stabilize first")
+headers = ("Finding", "Dog  ·  this lab", "Cat  ·  this lab", "Repeat / stabilize first")
 labrows = [
-    ("PCV", "Within reference", "Anemia: use severity and chronicity (Grubb 2020)"),
-    ("TP", "Within reference", "High with PCV: dehydration. Low: loss / dilution"),
-    ("BUN", "Within reference", "Azotemia: skip NSAID, rethink fluids and the cut"),
-    ("Potassium", "Within reference", ">6.0 mEq/L (Grubb 2020: correct first)"),
-    ("Albumin", "Within reference", "<2.0 g/dL: edema, poor healing (Pardo 2024)"),
+    ("PCV / HCT", "36.9–60.0%", "28–50%", "Anemia: severity and chronicity (Grubb 2020)"),
+    ("TP", "5.5–7.6 g/dL", "Read today’s printout", "High with PCV: dehydration. Low: loss / dilution"),
+    ("BUN", "9.0–29.0 mg/dL", "15–32 mg/dL", "Azotemia: skip NSAID, rethink fluids and the cut"),
+    ("Creatinine", "0.4–1.4 mg/dL", "0.8–1.8 mg/dL", "Rising Cr is not compensated. Do not invent why."),
+    ("Potassium", "Today’s printout", "Today’s printout", ">6.0 mEq/L: correct first (Grubb 2020)"),
+    ("Albumin", "Today’s printout", "Today’s printout", "<2.0 g/dL: edema, poor healing (Pardo 2024)"),
 ]
-add_rect(s, Inches(0.45), Inches(1.18), Inches(12.4), Inches(0.55), NAVY)
-add_text(s, Inches(0.55), Inches(1.18), Inches(3.5), Inches(0.55), headers[0], size=16, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.1), Inches(1.18), Inches(4.0), Inches(0.55), headers[1], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.2), Inches(1.18), Inches(4.4), Inches(0.55), headers[2], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
-for i, (a, b, c) in enumerate(labrows):
-    y = Inches(1.80) + Inches(i * 0.92)
-    add_round(s, Inches(0.45), y, Inches(12.4), Inches(0.84), WHITE)
-    add_text(s, Inches(0.65), y, Inches(3.3), Inches(0.84), a, size=18, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(4.1), y, Inches(4.0), Inches(0.84), b, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, Inches(8.2), y, Inches(4.4), Inches(0.84), c, size=16, color=RED, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(6.50), Inches(12.2), Inches(0.50), "MOA minimum is PCV, TP, BUN. A normal CBC does not assign Status 1. Azotemia can cancel the cut. Low albumin is a deficit, not an ASA number.", size=16, color=NAVY)
-notes(s, "Do not call these ASA cutoffs. The anesthesia record’s minimum labs are PCV, TP, and BUN. AAHA 2020 lists K greater than 6.0 as a condition to correct before anesthesia. Pardo 2024: albumin less than 2.0 grams per deciliter is a negative prognostic indicator. Do not invent PCV cutoffs as ASA numbers.")
+add_rect(s, Inches(0.32), Inches(1.12), Inches(12.70), Inches(0.46), NAVY)
+add_text(s, Inches(0.40), Inches(1.12), Inches(2.15), Inches(0.46), headers[0], size=16, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(2.60), Inches(1.12), Inches(2.55), Inches(0.46), headers[1], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(5.20), Inches(1.12), Inches(2.55), Inches(0.46), headers[2], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(7.80), Inches(1.12), Inches(5.10), Inches(0.46), headers[3], size=16, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
+for i, (a, dog, cat, c) in enumerate(labrows):
+    y = Inches(1.64) + Inches(i * 0.78)
+    add_round(s, Inches(0.32), y, Inches(12.70), Inches(0.72), WHITE)
+    add_text(s, Inches(0.40), y, Inches(2.15), Inches(0.72), a, size=16, bold=True, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(2.60), y, Inches(2.55), Inches(0.72), dog, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(5.20), y, Inches(2.55), Inches(0.72), cat, size=16, color=INK, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, Inches(7.80), y, Inches(5.10), Inches(0.72), c, size=16, color=RED, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.40), Inches(6.38), Inches(12.50), Inches(0.68), "Write these ranges. They are this laboratory’s printed intervals from today’s dog and cat records, not ASA cutoffs. HCT is what these printouts report; spun PCV is the MOA method. Cat TP: no interval was printed with 5.1 g/dL. MOA minimum is PCV, TP, BUN.", size=16, color=NAVY)
+notes(s, "Have them write the numbers. Dog: HCT 36.9 to 60.0, TP 5.5 to 7.6, BUN 9.0 to 29.0, creatinine 0.4 to 1.4, from today’s canine printout. Cat: HCT 28 to 50, BUN 15 to 32, creatinine 0.8 to 1.8, from today’s feline printout. Later feline creatinine range on the second panel was 0.50 to 1.90; do not invent a third band. Cat total protein 5.1 had no printed interval. Potassium: do not invent 3.5 to 5.5. Correct if greater than 6.0, Grubb 2020. Albumin: do not invent a full interval. Pardo 2024, less than 2.0 grams per deciliter is a negative prognostic indicator. These are not ASA cutoffs. A normal CBC does not assign Status 1. Azotemia can cancel the cut.")
 
 # 13 Premed, induction, MAC
 s = new_content("Anesthetic drug protocol")
