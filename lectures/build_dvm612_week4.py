@@ -290,7 +290,7 @@ items = [
     "Assign ASA after today’s PE and labs. Correct deficits. Write premed, induction, MAC, tube, bag, and fluid rate.",
     "If albumin is low: find the cause, delay elective if you can, and do not flood with crystalloid.",
     "Prep for aseptic surgery: clip, labeled antiseptics, minimum contact time, four-quadrant drape, closed glove.",
-    "Name a break in asepsis and correct it, before or after the incision.",
+    "Name a break in asepsis and correct it, before or after the incision. Classify the wound: clean, clean-contaminated, contaminated, or dirty.",
     "Write the postop plan, the surgical report, and 24-hour emergency criteria.",
 ]
 add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(3.9), items, size=20, spacing=12)
@@ -578,15 +578,25 @@ add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.7
 notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.")
 
 # 19 Abx
-s = new_content("Perioperative cefazolin", "Frey et al. 2022: when. Gonzalez 2017: 22 mg/kg IV. Whittem 1999: redose if >90 min.")
-add_round(s, Inches(0.5), Inches(1.2), Inches(6.1), Inches(5.5), GREEN_LT)
-add_text(s, Inches(0.75), Inches(1.35), Inches(5.6), Inches(0.50), "Clean elective: skip prophylaxis", size=18, bold=True, color=GREEN)
-add_text(s, Inches(0.75), Inches(1.95), Inches(5.6), Inches(4.5), "2022 AAFP/AAHA (Frey et al.)\n\nStart 30–60 min before incision.\nNot usually needed for clean procedures.\nSkip OHE, orchiectomy, most sterile cases.\nPostop antimicrobials are rarely required.\n\nHold asepsis. Stop at closure.\nA postoperative antibiotic injection is treatment, not a gift after every spay.", size=16, color=INK)
-add_round(s, Inches(6.85), Inches(1.2), Inches(5.95), Inches(5.5), RED_LT)
-add_text(s, Inches(7.1), Inches(1.35), Inches(5.5), Inches(0.45), "When indicated", size=18, bold=True, color=RED)
-add_text(s, Inches(7.1), Inches(1.85), Inches(5.5), Inches(0.85), "Cefazolin 22 mg/kg IV", size=28, bold=True, color=RED)
-add_text(s, Inches(7.1), Inches(2.70), Inches(5.5), Inches(3.70), "Gonzalez 2017: extra-label 22 mg/kg IV in dogs.\n\n1. Give 30–60 min before incision (Frey 2022).\n2. Second dose if surgery lasts >90 min (Whittem 1999).\n3. Stop at closure unless you are treating infection.\n\nAAFP/AAHA 2022 has no cefazolin mg/kg.\nWillie’s infected ear: treatment, not prophylaxis.", size=16, color=INK)
-notes(s, "Say 22 milligrams per kilogram IV out loud. Do not attribute that dose to AAHA 2022. Frey 2022 says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.")
+s = new_content("Surgical wound classification", "Clean, clean-contaminated, contaminated, dirty. Then decide antibiotics. Fossum 2018; Frey et al. 2022.")
+classes = [
+    (GREEN, "1. Clean", "No infection. Hollow viscus not entered.\n\nElective OHE, orchiectomy, simple skin mass.\n\nSkip routine prophylaxis (Frey 2022)."),
+    (TEAL, "2. Clean-contaminated", "GI, respiratory, or urinary tract entered under control. Minor break in asepsis.\n\nCystotomy. Enterotomy without spillage."),
+    (GOLD, "3. Contaminated", "Fresh open trauma. Major viscus spillage. Major break in sterile technique.\n\nTime IV prophylaxis. Fix the break."),
+    (RED, "4. Dirty / infected", "Pus, abscess, old trauma, perforated viscus with peritonitis.\n\nWillie’s ear. Pyometra with pus.\n\nThis is treatment, not prophylaxis."),
+]
+for i, (c, t, b) in enumerate(classes):
+    col = i % 2
+    row = i // 2
+    x = Inches(0.45) + Inches(col * 6.45)
+    y = Inches(1.12) + Inches(row * 2.35)
+    add_round(s, x, y, Inches(6.25), Inches(2.20), WHITE)
+    add_rect(s, x, y, Inches(6.25), Inches(0.48), c)
+    add_text(s, x, y, Inches(6.25), Inches(0.48), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.22), y + Inches(0.58), Inches(5.85), Inches(1.50), b, size=16, color=INK)
+add_round(s, Inches(0.45), Inches(5.90), Inches(12.40), Inches(1.18), GOLD_LT)
+add_text(s, Inches(0.65), Inches(5.98), Inches(12.05), Inches(1.02), "Write the class before you draw cefazolin. Clean elective: skip. When prophylaxis is indicated: cefazolin 22 mg/kg IV 30–60 min before incision (Gonzalez 2017; Frey 2022). Second dose if surgery lasts >90 min (Whittem 1999). Stop at closure unless you are treating infection.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Board the four National Research Council wound classes that were on the original lecture: clean, clean-contaminated, contaminated, dirty. Elective OHE is clean: skip prophylaxis, Frey 2022. Clean-contaminated: controlled entry into gut, airway, or bladder. Contaminated: fresh trauma or major spillage. Dirty: pus. Willie’s ear is dirty: treatment, not clean prophylaxis. Then say 22 milligrams per kilogram IV. Do not attribute that dose to AAHA 2022.")
 
 # 20 Sequence
 s = new_content("Sequence of patient preparation", "CPE MOA 2026 Surgery: hair, skin, position, drape. Then announce incision.")
@@ -849,7 +859,7 @@ pearls = [
     "Willie is ASA Status 3-E: sedate with a plan. MoMo is Status 4-E: image first, then cancel.",
     "Before induction write ASA, ETT, bag, circuit, FGF, and IV rate (dog 5 mL/kg/hr; cat 3–5).",
     "Correct deficits before elective. Albumin <2.0 g/dL: delay, treat the cause, do not crystalloid-flood.",
-    "When prophylaxis is indicated: cefazolin 22 mg/kg IV 30–60 min before incision. Clean OHE: skip.",
+    "Classify the wound: clean, clean-contaminated, contaminated, dirty. Clean OHE: skip cefazolin. When indicated: 22 mg/kg IV 30–60 min before incision.",
     "Clock minimum contact time. Then four-quadrant towels and the large drape. Hair out of the window.",
     "Pale + tachycardic after celiotomy: hemorrhage until proven otherwise. Return to OR.",
 ]
