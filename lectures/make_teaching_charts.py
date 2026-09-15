@@ -1,0 +1,1128 @@
+#!/usr/bin/env python3
+"""Original DVM 612 teaching charts (anesthesia record, recovery sheet). Not a hospital form."""
+
+from PIL import Image, ImageDraw, ImageFont
+from pathlib import Path
+import math
+
+OUT = Path("/workspace/lectures/assets")
+OUT.mkdir(parents=True, exist_ok=True)
+
+NAVY = (11, 44, 74)
+GOLD = (197, 163, 90)
+TEAL = (27, 107, 122)
+RED = (139, 46, 46)
+INK = (28, 28, 28)
+MUTED = (91, 100, 110)
+WHITE = (255, 255, 255)
+OFF = (246, 247, 249)
+LINE = (210, 214, 220)
+GREEN = (46, 107, 79)
+
+
+def font(size, bold=False):
+    path = "/usr/share/fonts/truetype/macos/Inter-Bold.ttf" if bold else "/usr/share/fonts/truetype/macos/Inter-Regular.ttf"
+    try:
+        return ImageFont.truetype(path, size)
+    except OSError:
+        return ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", size)
+
+
+def box(d, xy, fill, outline=None, width=1):
+    d.rounded_rectangle(xy, radius=8, fill=fill, outline=outline, width=width)
+
+
+def cell(d, x0, y0, x1, y1, text="", *, fill=WHITE, fg=INK, size=13, bold=False, align="left"):
+    d.rectangle([x0, y0, x1, y1], fill=fill, outline=LINE, width=1)
+    if not text:
+        return
+    f = font(size, bold)
+    pad = 6
+    if align == "center":
+        d.text(((x0 + x1) / 2, (y0 + y1) / 2), text, font=f, fill=fg, anchor="mm")
+    else:
+        d.text((x0 + pad, (y0 + y1) / 2), text, font=f, fill=fg, anchor="lm")
+
+
+def cell_wrapped(d, x0, y0, x1, y1, text, *, fill=WHITE, fg=INK, size=22, bold=False):
+    d.rectangle([x0, y0, x1, y1], fill=fill, outline=LINE, width=1)
+    if not text:
+        return
+    f = font(size, bold)
+    pad = 10
+    lines = wrap_text(text, f, (x1 - x0) - 2 * pad)
+    line_h = size + 6
+    total = len(lines) * line_h
+    ty = (y0 + y1) / 2 - total / 2 + line_h / 2
+    for line in lines:
+        d.text(((x0 + x1) / 2, ty), line, font=f, fill=fg, anchor="mm")
+        ty += line_h
+
+
+def draw_header(d, w, title, subtitle):
+    d.rectangle([0, 0, w, 78], fill=NAVY)
+    d.rectangle([0, 78, w, 86], fill=GOLD)
+    d.text((28, 24), title, font=font(28, True), fill=WHITE, anchor="lt")
+    d.text((28, 56), subtitle, font=font(14), fill=GOLD, anchor="lt")
+    d.text((w - 28, 40), "Teaching record  ·  not a hospital original", font=font(13), fill=GOLD, anchor="rm")
+
+
+def checkbox_list(d, x0, y0, x1, items, *, checked=False, box_color=GREEN, text_size=20, row_h=86):
+    f = font(text_size)
+    for i, t in enumerate(items):
+        yy = y0 + i * row_h
+        d.rectangle([x0, yy, x1, yy + row_h - 8], fill=WHITE, outline=LINE, width=1)
+        bx, by = x0 + 16, yy + (row_h - 8) / 2 - 12
+        d.rectangle([bx, by, bx + 24, by + 24], outline=box_color, width=3)
+        if checked:
+            d.line([bx + 4, by + 13, bx + 10, by + 19], fill=box_color, width=3)
+            d.line([bx + 10, by + 19, bx + 20, by + 5], fill=box_color, width=3)
+        lines = wrap_text(t, f, x1 - x0 - 70)
+        ty = yy + (row_h - 8) / 2 - (len(lines[:2]) - 1) * 12
+        for line in lines[:2]:
+            d.text((x0 + 54, ty), line, font=f, fill=INK, anchor="lm")
+            ty += 24
+
+
+def anesthesia_record(filled="blank"):
+    """Preop + recovery teaching record. Willie is ASA-only: identity, PE, labs, status."""
+    W, H = 2400, 1350
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    asa_only = filled == "willie"
+
+    d.rectangle([0, 0, W, 88], fill=NAVY)
+    d.rectangle([0, 88, W, 96], fill=GOLD)
+    title = "ASA example  ·  identity, PE, labs, status" if asa_only else "Perioperative record"
+    subtitle = (
+        "DVM 612  ·  Write the status from today’s PE  ·  not a treatment plan"
+        if asa_only
+        else "DVM 612  ·  Preoperative evaluation and recovery  ·  teaching form, not a hospital original"
+    )
+    d.text((28, 22), title, font=font(36, True), fill=WHITE, anchor="lt")
+    d.text((28, 62), subtitle, font=font(18), fill=GOLD, anchor="lt")
+    if not asa_only:
+        d.text((W - 28, 44), "Complete this page before the first drug", font=font(18), fill=GOLD, anchor="rm")
+
+    y = 112
+    last_col = "ASA from today’s PE" if asa_only else "What you planned today"
+    labels = [
+        (28, 360, "Patient"),
+        (360, 860, "Species / breed"),
+        (860, 1180, "Sex / age"),
+        (1180, 1480, "Weight"),
+        (1480, 1760, "ASA"),
+        (1760, 2372, last_col),
+    ]
+    for x0, x1, lab in labels:
+        cell(d, x0, y, x1, y + 32, lab, fill=NAVY, fg=WHITE, size=16, bold=True, align="center")
+    values = {
+        "blank": ["", "", "", "", "", ""],
+        "willie": ["Willie", "Canine  ·  Cavalier", "MN  ·  6 y 11 mo", "13.7 kg", "3-E", "ASA from today’s PE. Compensated."],
+        "momo": ["MoMo", "Feline  ·  DSH", "SF  ·  6 yr", "4.25 kg  BCS 5/9", "4-E", "Exploratory considered. Then cancelled."],
+    }[filled]
+    for (x0, x1, lab), val in zip(labels, values):
+        asa = lab == "ASA"
+        fill = GOLD if (asa and val) else WHITE
+        fg = NAVY if (asa and val) else INK
+        cell(d, x0, y + 32, x1, y + 100, val, fill=fill, fg=fg, size=28 if asa else 20, bold=True, align="center")
+
+    y = 228
+    d.rectangle([28, y, 2372, y + 44], fill=TEAL)
+    preop_banner = "TODAY’S PE AND LABS   ·   then write ASA Status 3-E" if asa_only else "PREOPERATIVE EVALUATION   ·   complete before any drug"
+    d.text((40, y + 22), preop_banner, font=font(22, True), fill=WHITE, anchor="lm")
+
+    y = 280
+    preop_h = [
+        (28, 280, "T °F"),
+        (280, 520, "HR"),
+        (520, 760, "RR"),
+        (760, 1100, "mm / CRT"),
+        (1100, 1480, "Mentation"),
+        (1480, 2372, "Heart / lungs"),
+    ]
+    preop_v = {
+        "blank": ["", "", "", "", "", ""],
+        "willie": ["100.8", "132", "52", "pink / 2 s", "quiet, dull", "II/VI left systolic; lungs clear"],
+        "momo": ["98.0", "200", "30", "pink, tacky / <2 s", "QAR", "NSR; no murmur; eupneic"],
+    }[filled]
+    for (x0, x1, lab), val in zip(preop_h, preop_v):
+        cell(d, x0, y, x1, y + 28, lab, fill=(228, 236, 238), fg=TEAL, size=16, bold=True, align="center")
+        cell(d, x0, y + 28, x1, y + 88, val, size=22, bold=True, align="center")
+
+    y = 376
+    lab_h = [
+        (28, 520, "PCV"),
+        (520, 1010, "TP"),
+        (1010, 1500, "BUN"),
+        (1500, 2372, "Other labs"),
+    ]
+    lab_v = {
+        "blank": ["", "", "", ""],
+        "willie": ["47.5%", "6.4", "11.9", "Cr 0.7. Phos 6.0. Glucose 130. CBC in range."],
+        "momo": ["44%", "5.1", "48.7 → 100", "Cr 3.0 → 4.71. WBC 26. NEU 24. HCT 44%. TP 5.1. BE −7.4. Na 142."],
+    }[filled]
+    for (x0, x1, lab), val in zip(lab_h, lab_v):
+        cell(d, x0, y, x1, y + 26, lab, fill=GOLD, fg=NAVY, size=16, bold=True, align="center")
+        cell(d, x0, y + 26, x1, y + 82, val, size=20, bold=True, align="center")
+
+    y = 468
+    d.rectangle([28, y, 2372, y + 80], fill=WHITE, outline=LINE, width=1)
+    d.rectangle([28, y, 320, y + 80], fill=GOLD)
+    why_lab = "Why Status\n3-E" if asa_only else "What changes\nthe plan"
+    d.text((174, y + 40), why_lab, font=font(18, True), fill=NAVY, anchor="mm")
+    plan = {
+        "blank": "",
+        "willie": "AS otitis. Head tilt L, circling L, nystagmus rapid L. R knuckling. HCT 47.5%, TP 6.4, BUN 11.9, Cr 0.7 in range. Compensated. Status 3-E from today’s PE.",
+        "momo": "Two vomits. Mildly enlarged abdomen. PE did not prove FB. AUS: right kidney fluid-filled, non-functional; left kidney reduced CM architecture. HCT 44%. TP 5.1. BUN 48.7 → 100. Cr 3.0 → 4.71. Do not clip.",
+    }[filled]
+    fplan = font(20)
+    lines = wrap_text(plan, fplan, 2000)
+    ty = y + 14
+    for line in lines[:3]:
+        d.text((340, ty), line, font=fplan, fill=INK, anchor="lt")
+        ty += 24
+
+    mid = 1188
+    y = 558
+    d.rectangle([28, y, mid - 12, y + 40], fill=NAVY)
+    left_head = "WHY THIS IS STATUS 3-E" if asa_only else "PRE-OP BOXES   ·   before the first drug"
+    d.text((40, y + 20), left_head, font=font(20, True), fill=GOLD, anchor="lm")
+    d.rectangle([mid + 12, y, 2372, y + 40], fill=GREEN if not asa_only else TEAL)
+    right_head = "WHY NOT STATUS 1 OR 4" if asa_only else "RECOVERY / NEXT 24 HOURS   ·   monitor and manage complications"
+    d.text((mid + 24, y + 20), right_head, font=font(20, True), fill=WHITE, anchor="lm")
+
+    preop_boxes = {
+        "blank": [
+            "Identity, consent, DNR",
+            "Today’s PE, PCV / TP / BUN, and ASA written",
+            "Last meal recorded",
+            "IV catheter patent",
+            "Exam and ASA written before IM/SQ premed",
+            "Pain plan, including skip-NSAID if steroids given",
+            "Who calls the client, and when",
+        ],
+        "willie": [
+            "ASA Status 3-E. HCT 47.5%. TP 6.4. BUN 11.9. Cr 0.7. Exam wrote the status.",
+            "Today’s PE: AS otitis, head tilt L, circling L, R knuckling",
+            "Compensated: pink, CRT 2 s. BUN and creatinine in range",
+            "Moderate systemic disease, still compensated",
+            "Emergency because the presentation is acute",
+            "Identity, weight, PE, labs, then Status 3-E",
+            "This page is the status. No treatment plan here.",
+        ],
+        "momo": [
+            "ASA Status 4-E after labs and imaging",
+            "POCUS / AUS before any clippers",
+            "Right kidney fluid-filled, non-functional. Left kidney reduced CM architecture. HCT 44%. TP 5.1. BUN 48.7 → 100. Cr 3.0 → 4.71",
+            "No clippers. No incision. No exploratory.",
+            "NSAIDs contraindicated (azotemic cat)",
+            "Consent includes medical care and euthanasia",
+            "Write SURGERY CANCELLED on this record",
+        ],
+    }[filled]
+    rec_items = {
+        "blank": [
+            "Extubate when swallow returns",
+            "mm / CRT / pulse every 15 minutes",
+            "Rewarm. Check skin so you do not burn",
+            "Pain score and the analgesic you planned",
+            "Incision or procedure-site check",
+            "E-collar on before they can lick",
+            "Pale + tachycardic after celiotomy: return to OR",
+        ],
+        "willie": [
+            "Status 3-E is moderate systemic disease",
+            "Still compensated on today’s PE",
+            "Not Status 1: the PE is not normal",
+            "A HCT in range does not write Status 1",
+            "Not Status 4: not a constant threat to life today",
+            "Re-assign ASA if the disease changes",
+            "The other example is uncompensated Status 4-E",
+        ],
+        "momo": [
+            "This is not a recovery from surgery",
+            "Supportive care. Recheck kidneys.",
+            "Right kidney fluid-filled and non-functional",
+            "Progressive azotemia: creatinine 3.0 → 4.71 on fluids",
+            "Offer medical care, referral, or euthanasia",
+            "Write the decision on this record",
+            "Owner elected humane euthanasia",
+        ],
+    }[filled]
+    checkbox_list(d, 28, 608, mid - 12, preop_boxes, checked=(filled != "blank"), box_color=TEAL, text_size=20, row_h=76)
+    checkbox_list(d, mid + 12, 608, 2372, rec_items, checked=(filled != "blank"), box_color=TEAL if asa_only else GREEN, text_size=20, row_h=76)
+
+    y = 1156
+    if filled == "momo":
+        d.rectangle([28, y, 2372, 1328], fill=RED)
+        d.text((W / 2, 1218), "SURGERY CANCELLED   ·   RECORD THE DECISION", font=font(32, True), fill=WHITE, anchor="mm")
+        d.text((W / 2, 1272), "Do not cut until you know why the creatinine rose. Owner elected euthanasia.", font=font(20), fill=(244, 235, 211), anchor="mm")
+    else:
+        d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=3)
+        note = {
+            "blank": "If sedation or anesthesia is used, monitors are on first. The 5-minute grid belongs on this page, but this hour is the header, the prep, and recovery.",
+            "willie": "ASA Status 3-E is written from today’s PE. Compensated. This page is the status.",
+        }[filled]
+        head = "ASA from today’s PE" if filled == "willie" else "If you sedate or anesthetize"
+        d.text((44, 1196), head, font=font(18, True), fill=NAVY, anchor="lt")
+        fn = font(20)
+        ty = 1230
+        for line in wrap_text(note, fn, 2280)[:3]:
+            d.text((44, ty), line, font=fn, fill=INK, anchor="lt")
+            ty += 28
+
+    path = OUT / f"anesthesia_record_{filled}.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def recovery_flowsheet():
+    """Postoperative flowsheet for this hour: airway, perfusion, heat, pain, incision."""
+    W, H = 2400, 1350
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 88], fill=NAVY)
+    d.rectangle([0, 88, W, 96], fill=GOLD)
+    d.text((28, 22), "Postoperative flowsheet  ·  first 2 hours", font=font(36, True), fill=WHITE, anchor="lt")
+    d.text((28, 62), "DVM 612  ·  Stay with the patient  ·  teaching form, not a hospital original", font=font(18), fill=GOLD, anchor="lt")
+
+    y = 112
+    headers = [(28, 520, "Patient"), (520, 1200, "Procedure"), (1200, 1680, "Extubate time"), (1680, 2372, "Recovery lead")]
+    for x0, x1, lab in headers:
+        cell(d, x0, y, x1, y + 32, lab, fill=NAVY, fg=WHITE, size=16, bold=True, align="center")
+        cell(d, x0, y + 32, x1, y + 92, "", size=22)
+
+    y = 220
+    times = ["0–5 min", "15 min", "30 min", "45 min", "60 min", "90 min", "120 min"]
+    rows = ["Time", "Airway", "mm / CRT / pulse", "Temp °F", "Pain score", "Incision", "E-collar on"]
+    label_w = 280
+    grid_x = 28 + label_w
+    col = (2372 - grid_x) / 7
+    row_h = 118
+    for r, name in enumerate(rows):
+        yy = y + r * row_h
+        fill = TEAL if r == 0 else (WHITE if r % 2 == 0 else (236, 242, 244))
+        fg = WHITE if r == 0 else INK
+        cell(d, 28, yy, 28 + label_w, yy + row_h, name, fill=fill, fg=fg, size=20, bold=True, align="center")
+        for c in range(7):
+            val = times[c] if r == 0 else ""
+            cell(
+                d,
+                grid_x + c * col,
+                yy,
+                grid_x + (c + 1) * col,
+                yy + row_h,
+                val,
+                fill=fill if r == 0 else (WHITE if r % 2 == 0 else (236, 242, 244)),
+                fg=WHITE if r == 0 else INK,
+                size=20,
+                bold=(r == 0),
+                align="center",
+            )
+
+    y = y + 7 * row_h + 16
+    d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=4)
+    d.text((48, y + 28), "Call the surgeon NOW if:", font=font(24, True), fill=RED, anchor="lt")
+    d.text(
+        (48, y + 78),
+        "Pale mm + tachycardia after celiotomy   ·   incision opening / viscera   ·   unrelenting pain",
+        font=font(22),
+        fill=INK,
+        anchor="lt",
+    )
+    d.text(
+        (48, y + 116),
+        "Dyspnea   ·   seizure   ·   T < 97 °F and not waking   ·   no urine with a large bladder",
+        font=font(22),
+        fill=INK,
+        anchor="lt",
+    )
+
+    path = OUT / "recovery_flowsheet.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+
+
+def kit_sheet():
+    W, H = 2400, 1350
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    draw_header(d, W, "What must be in the room", "If it is not here before induction, you are not ready")
+
+    cols = [
+        (NAVY, "PRE-OP", [
+            "Consent, estimate, DNR / code",
+            "Today’s PE + ASA written",
+            "Last meal recorded",
+            "Labs you will actually use",
+            "IV catheter + fluids",
+            "Premed / induction drawn, labeled",
+            "Analgesia plan (opioid ± NSAID ± local)",
+            "Abx decision: yes (timed) or no",
+            "Client phone on the board",
+        ]),
+        (TEAL, "PATIENT & SURGEON PREP", [
+            "#40 clippers, spare blade, vacuum",
+            "Eye lube; ear/eye protection plan",
+            "Dirty-prep kit + sterile-prep kit",
+            "7.5% povidone-iodine ~5 min, then 5% veterinary paint; eye 1:50 of 10% (Roberts 1986)",
+            "Sterile gauze, bowls, gloves",
+            "Four towels + large drape + clamps",
+            "Gowns, closed-glove pairs (extra)",
+            "Warming, padding, ties, ET tube",
+            "Timeout / checklist card",
+        ]),
+        (GREEN, "POST-OP", [
+            "Pulse ox, thermometer, stethoscope",
+            "Oxygen / airway kit in recovery",
+            "Heat (that cannot burn)",
+            "Pain scale + the drugs you planned",
+            "E-collar / suit that actually fits",
+            "Recovery flowsheet (this lecture)",
+            "Emergency criteria on discharge sheet",
+            "Written meds + recheck date",
+            "Who stays with the patient until sternal",
+        ]),
+    ]
+    for i, (color, title, items) in enumerate(cols):
+        x0 = 28 + i * 790
+        x1 = x0 + 770
+        d.rounded_rectangle([x0, 110, x1, 1288], radius=16, fill=WHITE, outline=LINE, width=2)
+        d.rectangle([x0, 110, x1, 178], fill=color)
+        d.text(((x0 + x1) / 2, 144), title, font=font(22, True), fill=WHITE, anchor="mm")
+        for j, t in enumerate(items):
+            yy = 210 + j * 116
+            d.rounded_rectangle([x0 + 24, yy, x1 - 24, yy + 96], radius=10, fill=OFF)
+            d.ellipse([x0 + 44, yy + 30, x0 + 80, yy + 66], outline=color, width=3)
+            d.text((x0 + 62, yy + 48), str(j + 1), font=font(16, True), fill=color, anchor="mm")
+            d.text((x0 + 104, yy + 48), t, font=font(18), fill=INK, anchor="lm")
+
+    path = OUT / "what_you_need.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+
+
+def wrap_text(text, f, max_w):
+    words = str(text).replace("/", " / ").split()
+    lines, cur = [], ""
+    for w in words:
+        trial = (cur + " " + w).strip()
+        if f.getlength(trial) <= max_w:
+            cur = trial
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines or [""]
+
+
+def cell_wrap(d, x0, y0, x1, y1, text, *, fill=WHITE, fg=INK, size=12, bold=False):
+    d.rectangle([x0, y0, x1, y1], fill=fill, outline=LINE, width=1)
+    f = font(size, bold)
+    lines = wrap_text(text, f, x1 - x0 - 14)
+    line_h = size + 3
+    total = line_h * min(len(lines), 4)
+    ty = (y0 + y1) / 2 - total / 2 + line_h / 2
+    for line in lines[:4]:
+        d.text(((x0 + x1) / 2, ty), line, font=f, fill=fg, anchor="mm")
+        ty += line_h
+
+
+def asa_lab_table(filename, title, subtitle, headers, rows):
+    W, H = 2400, 1350
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    draw_header(d, W, title, subtitle)
+
+    cols = ["Finding", "Status 1", "Status 2", "Status 3", "Status 4", "Status 5"]
+    col_fills = [NAVY, GREEN, TEAL, GOLD, RED, NAVY]
+    x0 = 20
+    x1 = W - 20
+    widths = [280, 350, 350, 380, 430, 370]
+    # normalize to x1-x0
+    scale = (x1 - x0) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    y = 100
+    row_h = int((H - 160) / (len(rows) + 1))
+    xs = [x0]
+    for w in widths:
+        xs.append(xs[-1] + w)
+
+    for c, (lab, fill) in enumerate(zip(cols, col_fills)):
+        cell_wrap(d, xs[c], y, xs[c + 1], y + row_h, lab, fill=fill, fg=WHITE, size=16, bold=True)
+    y += row_h
+    stripe = [(255, 255, 255), (236, 242, 244)]
+    for r, row in enumerate(rows):
+        for c, val in enumerate(row):
+            if c == 0:
+                fill, fg, bold, size = NAVY, WHITE, True, 13
+            else:
+                fill, fg, bold, size = stripe[r % 2], INK, False, 12
+            cell_wrap(d, xs[c], y, xs[c + 1], y + row_h, val, fill=fill, fg=fg, size=size, bold=bold)
+        y += row_h
+
+    d.rectangle([20, H - 52, W - 20, H - 16], fill=GOLD)
+    d.text(
+        (W / 2, H - 34),
+        "Working teaching bands. They inform ASA. Today’s PE writes the number. Isolated numbers are not automatic Status. Read venous EPOC pO2 as venous, not arterial.",
+        font=font(14, True),
+        fill=NAVY,
+        anchor="mm",
+    )
+    path = OUT / filename
+    im.save(path, "PNG")
+    print("wrote", path)
+
+
+def cbc_chem_asa():
+    asa_lab_table(
+        "asa_cbc_chem.png",
+        "CBC and chemistry → ASA Status",
+        "Working teaching table  ·  use with today’s PE  ·  DVM 612",
+        None,
+        [
+            ["CBC", "Normal", "Mild anemia / leukogram change", "Moderate anemia / inflammatory disease", "Severe anemia, marked thrombocytopenia, severe inflammatory / septic pattern", "Massive hemorrhage / severe marrow / sepsis with instability"],
+            ["PCV", "Normal", "30–34% dog / 25–29% cat", "20–29% dog / 15–24% cat", "<20% dog / <15% cat", "Profound + shock"],
+            ["Platelets", "Normal", "100–150 K", "50–99 K", "<50 K", "<30 K + active bleeding"],
+            ["WBC", "Normal", "Mild deviation", "Moderate deviation", "Severe deviation + systemic disease", "Severe sepsis / leukopenia + shock"],
+            ["Creatinine", "Normal", "Mild ↑", "Moderate ↑ / CKD", "Severe ↑ + uremia", "Severe renal failure + shock"],
+            ["BUN", "Normal", "Mild ↑", "Moderate ↑", "Severe ↑ + uremia", "Severe + multisystem failure"],
+            ["ALT / AST", "Normal", "<2×", "2–10×", ">10× + dysfunction", "Severe hepatic failure"],
+            ["ALP", "Normal", "Mild isolated ↑", "Moderate / marked + disease", "Marked + cholestasis", "Hepatic failure"],
+            ["Bilirubin", "Normal", "Mild ↑", "Moderate ↑", "Marked ↑ + dysfunction", "Severe hepatic / hemolytic crisis"],
+            ["Albumin", "Normal", "2.0–2.5 g/dL", "1.5–1.9 g/dL", "1.0–1.4 g/dL", "<1.0 + clinical compromise"],
+            ["Glucose", "Normal", "60–70 or 120–180", "50–59 or 180–300", "<50 or >300", "<40 + instability / DKA"],
+            ["Na", "Normal", "130–139 or 156–165", "125–129 or 166–175", "120–124 or >175", "<120 + instability"],
+            ["K", "Normal", "5.1–5.5 or 3.0–3.5", "5.6–6.0 or 2.5–2.9", ">6.0 or <2.5", "Severe + ECG / shock"],
+            ["Phosphorus", "Normal", "Mild ↑", "Moderate ↑", "Severe ↑ + renal / metabolic disease", "Severe + multisystem failure"],
+        ],
+    )
+
+
+def epoc_asa():
+    asa_lab_table(
+        "asa_epoc.png",
+        "EPOC / blood gas → ASA Status",
+        "Working teaching table  ·  pH, lactate, gases, bicarbonate, base excess  ·  DVM 612",
+        None,
+        [
+            ["pH", "7.35–7.45", "7.30–7.34", "7.20–7.29", "<7.20", "Profound acidosis + shock"],
+            ["Lactate", "<2–2.5", "2.5–4", "4–6", ">6", "Very high + hypoperfusion"],
+            ["pCO₂", "Normal", "46–55", "56–65", ">65–70", "Severe ventilatory failure"],
+            ["pO₂ (arterial)", "Normal", "60–79", "40–59", "<40", "Critical hypoxemia"],
+            ["HCO₃⁻", "Normal", "16–17 or 25–28", "12–15 or 29–32", "<12 or >32", "Severe metabolic failure"],
+            ["Base excess", "−4 to +4", "−5 to −7", "−8 to −10", "≤ −10 to −12", "Profound abnormality + instability"],
+        ],
+    )
+
+
+def anesthesia_setup_table():
+    """Hall-readable teaching table of CPE MOA Appendix 3 setup fields. Not the copyrighted form."""
+    W, H = 3200, 1000
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+
+    headers = ["Patient", "kg", "ASA", "ETT", "Bag / circuit", "IV fluids", "Fresh-gas flow"]
+    rows = [
+        ["Example\n20 kg dog", "20", "1", "8.5 mm\n8.0 / 9.0 ready", "2 L  circle\n1.2 L → 2 L", "LRS  100 mL/hr\n20 × 5", "2–3 L/min, then\n≥ 0.5 L/min"],
+        ["Healthy Lab\nelective OHE", "25", "1", "10 mm\n9.5 / 10.5 ready", "2 L  circle\n1.5 L → 2 L", "LRS  125 mL/hr\n25 × 5", "2–3 L/min, then\n0.5–1 L/min"],
+        ["MoMo\nmath only", "4.25", "4-E", "3.5–4.0 mm\ncat; not dog formula", "0.5 L  NRC\n255 mL → 0.5 L", "LRS  13 mL/hr\n4.25 × 3", "0.85–1.7 L/min\n200–400 mL/kg/min"],
+    ]
+    widths = [560, 200, 220, 480, 500, 520, 680]
+    scale = (W - 40) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [20]
+    for w in widths:
+        xs.append(xs[-1] + w)
+
+    y = 8
+    header_h = 96
+    row_h = int((H - y - header_h - 8) / 3)
+    for c, lab in enumerate(headers):
+        cell(d, xs[c], y, xs[c + 1], y + header_h, lab, fill=NAVY, fg=GOLD, size=46, bold=True, align="center")
+
+    stripe = [(255, 255, 255), (236, 242, 244)]
+    for r, row in enumerate(rows):
+        yy = y + header_h + r * row_h
+        for c, val in enumerate(row):
+            if c == 2:
+                fill, fg, size, bold = GOLD, NAVY, 72, True
+            elif c == 0:
+                fill, fg, size, bold = NAVY, WHITE, 48, True
+            else:
+                fill, fg, size, bold = stripe[r % 2], INK, 48, True
+            lines = val.split("\n")
+            d.rectangle([xs[c], yy, xs[c + 1], yy + row_h], fill=fill, outline=LINE, width=2)
+            f = font(size, bold)
+            gap = 14 if len(lines) > 1 else 0
+            total = len(lines) * size + gap
+            ty = yy + row_h / 2 - total / 2 + size / 2
+            for i, line in enumerate(lines):
+                d.text(((xs[c] + xs[c + 1]) / 2, ty), line, font=f, fill=fg, anchor="mm")
+                ty += size + (gap if i == 0 else 0)
+    path = OUT / "anesthesia_setup_table.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def preanesthetic_assessment_table():
+    """Hall-readable teaching table of CPE MOA Appendix 3 page 1: PE, PCV, TP, BUN, ASA."""
+    W, H = 3200, 1000
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+
+    headers = ["Field", "MoMo (quiz)", "Healthy Lab OHE", "Willie (quiz)"]
+    rows = [
+        ["Weight", "4.25 kg", "25 kg", "13.7 kg"],
+        ["T  ·  HR  ·  RR", "98.0 °F  ·  200  ·  30", "normal TPR", "100.8 °F  ·  132  ·  52"],
+        ["mm / CRT", "pink, tacky / <2 s", "normal", "pink / 2 s"],
+        ["Other PE", "Mild abdominal enlargement\nAmbulatory ×4. No FB proven", "Elective OHE\nnormal PE", "AS otitis. Head tilt L\nCircling L. R knuckling"],
+        ["PCV / HCT", "HCT 44%\n(28–50)", "within reference", "HCT 47.5%\n(36.9–60.0)"],
+        ["TP", "5.1 g/dL\n(total protein)", "within reference", "6.4 g/dL\n(5.5–7.6)"],
+        ["BUN", "48.7 → 100\nCr 3.0 → 4.71", "within reference", "11.9  ·  Cr 0.7\nPhos 6.0  ·  Glu 130"],
+        ["ASA", "write it", "1", "write it"],
+    ]
+    widths = [480, 880, 880, 920]
+    scale = (W - 40) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [20]
+    for w in widths:
+        xs.append(xs[-1] + w)
+
+    y = 8
+    header_h = 72
+    row_h = int((H - y - header_h - 8) / len(rows))
+    for c, lab in enumerate(headers):
+        cell(d, xs[c], y, xs[c + 1], y + header_h, lab, fill=NAVY, fg=GOLD, size=40, bold=True, align="center")
+
+    stripe = [(255, 255, 255), (236, 242, 244)]
+    for r, row in enumerate(rows):
+        yy = y + header_h + r * row_h
+        for c, val in enumerate(row):
+            if r == 7 and c > 0:
+                fill, fg, size, bold = GOLD, NAVY, 48, True
+            elif c == 0:
+                fill, fg, size, bold = NAVY, WHITE, 32, True
+            else:
+                fill, fg, size, bold = stripe[r % 2], INK, 32, True
+            lines = val.split("\n")
+            d.rectangle([xs[c], yy, xs[c + 1], yy + row_h], fill=fill, outline=LINE, width=2)
+            f = font(size, bold)
+            gap = 8 if len(lines) > 1 else 0
+            total = len(lines) * size + gap
+            ty = yy + row_h / 2 - total / 2 + size / 2
+            for i, line in enumerate(lines):
+                d.text(((xs[c] + xs[c + 1]) / 2, ty), line, font=f, fill=fg, anchor="mm")
+                ty += size + (gap if i == 0 else 0)
+
+    path = OUT / "preanesthetic_assessment_table.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def anesthesia_protocol_record():
+    """Teaching drug-protocol page. Same clinical fields as MOA Appendix 3 pp. 2–3. Not the copyrighted form."""
+    W, H = 3200, 1100
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 70], fill=NAVY)
+    d.rectangle([0, 70, W, 78], fill=GOLD)
+    d.text((28, 20), "Anesthetic drug protocol", font=font(32, True), fill=WHITE, anchor="lt")
+    d.text((W - 28, 35), "25 kg  ·  ASA 1  ·  elective OHE", font=font(22, True), fill=GOLD, anchor="rm")
+
+    headers = ["", "Drug", "Concentration", "Dose", "Volume", "Route"]
+    rows = [
+        ["Analgesic", "Carprofen (Rimadyl)", "50 mg/mL", "4.4 mg/kg", "2.2 mL (110 mg)", "SQ ~2 h before"],
+        ["Induction", "Alfaxalone (Alfaxan)", "10 mg/mL", "IV to effect", "draw 5.5 mL", "IV"],
+        ["Inhalant", "Isoflurane", "to MAC", "to effect", "vaporizer", "inhalant"],
+    ]
+    widths = [300, 700, 540, 460, 500, 660]
+    scale = (W - 40) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [20]
+    for w in widths:
+        xs.append(xs[-1] + w)
+    y = 90
+    hh, rh = 56, 100
+    for c, lab in enumerate(headers):
+        cell(d, xs[c], y, xs[c + 1], y + hh, lab, fill=NAVY, fg=GOLD, size=40, bold=True, align="center")
+    for r, row in enumerate(rows):
+        yy = y + hh + r * rh
+        for c, val in enumerate(row):
+            fill = NAVY if c == 0 else (WHITE if r % 2 == 0 else (236, 242, 244))
+            fg = GOLD if c == 0 else INK
+            cell_wrap(d, xs[c], yy, xs[c + 1], yy + rh, val, fill=fill, fg=fg, size=32, bold=True)
+
+    y = y + hh + 3 * rh + 12
+    row_h2 = 130
+    d.rectangle([20, y, 1580, y + row_h2], fill=WHITE, outline=LINE, width=2)
+    d.rectangle([20, y, 280, y + row_h2], fill=TEAL)
+    d.text((150, y + 65), "IV fluids", font=font(28, True), fill=WHITE, anchor="mm")
+    d.text((300, y + 28), "Name:  LRS", font=font(36, True), fill=INK, anchor="lt")
+    d.text((300, y + 78), "Rate:  125 mL/hr   (25 × 5)", font=font(32, True), fill=NAVY, anchor="lt")
+    d.rectangle([1600, y, W - 20, y + row_h2], fill=(244, 235, 211), outline=LINE, width=2)
+    d.text((1620, y + 12), "Why these drugs", font=font(18, True), fill=NAVY, anchor="lt")
+    why_fn = font(20)
+    why_lines = [
+        "Carprofen: 25 × 4.4 = 110 mg. 110 / 50 = 2.2 mL SQ (Rimadyl).",
+        "Alfaxalone: draw 25 × 2.2 = 55 mg = 5.5 mL. Give IV to effect (Alfaxan).",
+        "2.2 mg/kg is the unpremedicated field-study mean, not a fixed bolus.",
+        "Cat OHE: Onsior 2 mg/kg SQ. Do not stack an NSAID with a steroid.",
+    ]
+    ty = y + 40
+    for line in why_lines:
+        d.text((1620, ty), line, font=why_fn, fill=INK, anchor="lt")
+        ty += 22
+
+    y += row_h2 + 16
+    boxes = [
+        (20, 1040, "Sedation quality 1–5", "1     2     3     4     5"),
+        (1080, 1040, "Induction quality 1–5", "1     2     3     4     5"),
+        (2140, 1040, "Circle inhalant", "Isoflurane      Sevoflurane"),
+    ]
+    for x0, wbox, title, body in boxes:
+        d.rectangle([x0, y, x0 + wbox, y + 100], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([x0, y, x0 + wbox, y + 36], fill=NAVY)
+        d.text((x0 + wbox / 2, y + 18), title, font=font(22, True), fill=GOLD, anchor="mm")
+        d.text((x0 + wbox / 2, y + 68), body, font=font(28, True), fill=INK, anchor="mm")
+
+    y += 112
+    machine = [
+        (20, 1040, "Circle circuit", "Rebreathing      Non-rebreathing"),
+        (1080, 1040, "ETT  ·  bag  (if intubated)", "10 mm      2 L circle"),
+        (2140, 1040, "Fresh-gas flow", "2–3 L/min, then ≥ 0.5 L/min"),
+    ]
+    for x0, wbox, title, body in machine:
+        d.rectangle([x0, y, x0 + wbox, y + 100], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([x0, y, x0 + wbox, y + 36], fill=TEAL)
+        d.text((x0 + wbox / 2, y + 18), title, font=font(22, True), fill=WHITE, anchor="mm")
+        d.text((x0 + wbox / 2, y + 68), body, font=font(28, True), fill=INK, anchor="mm")
+
+    path = OUT / "anesthesia_protocol_record.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def prep_or_sequence():
+    """Patient and surgeon prep walk: clip, dirty scrub, OR attire, full scrub, drape, instruments."""
+    W, H = 3200, 1180
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 70], fill=NAVY)
+    d.rectangle([0, 70, W, 78], fill=GOLD)
+    d.text((28, 18), "Patient and surgeon preparation", font=font(32, True), fill=WHITE, anchor="lt")
+    d.text((28, 50), "Clip and dirty-scrub in the prep area. Shoe covers, cap, and mask before the door. Full scrub, drape, and instruments in the OR.", font=font(20), fill=GOLD, anchor="lt")
+
+    steps = [
+        ("1", "Ready for prep", "ETT in. Cuff holds. IV running. Surgical plane. Then you may clip."),
+        ("2", "Clip", "#40 blade. Vacuum the hair. Express the bladder if you will open the abdomen."),
+        ("3", "Dirty scrub", "Preliminary antiseptic in the prep area. This is not the sterile prep."),
+        ("4", "Attire at the door", "Shoe covers, hair cap, mask. Then enter the OR. Gown is not hallway wear."),
+        ("5", "Move and position", "Into the OR. Pad. Ties. Pulse distal to each tie. Final check."),
+        ("6", "Full sterile scrub", "In the room, after positioning. Clock contact time. Spiral out. Drop the sponge."),
+        ("7", "Gown, closed glove", "Surgical hand scrub first. Hands stay in the cuffs. Then glove."),
+        ("8", "Drape", "Four-quadrant towels, then the large drape. Only the incision is in the window."),
+        ("9", "Instrument setup", "Open the pack. Check the indicator. Arrange. Count sponges and instruments."),
+        ("10", "Timeout. Mark incision", "Announce the incision. Mark first cut on the chart. Clock runs to the last skin suture."),
+    ]
+    cols, rows = 5, 2
+    x0, y0 = 20, 94
+    gap = 12
+    cw = (W - 40 - gap * (cols - 1)) / cols
+    ch = (H - y0 - 20 - gap) / rows
+    for i, (n, title, body) in enumerate(steps):
+        c, r = i % cols, i // cols
+        xx = x0 + c * (cw + gap)
+        yy = y0 + r * (ch + gap)
+        d.rectangle([xx, yy, xx + cw, yy + ch], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([xx, yy, xx + 70, yy + ch], fill=NAVY)
+        d.text((xx + 35, yy + ch / 2), n, font=font(36, True), fill=GOLD, anchor="mm")
+        d.text((xx + 90, yy + 28), title, font=font(28, True), fill=NAVY, anchor="lt")
+        fn = font(22)
+        ty = yy + 70
+        for line in wrap_text(body, fn, cw - 110):
+            d.text((xx + 90, ty), line, font=fn, fill=INK, anchor="lt")
+            ty += 28
+
+    path = OUT / "prep_or_sequence.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def anesthesia_chart_recovery():
+    """Teaching intra-op chart + end-of-case page. Same clinical fields as MOA Appendix 3 pp. 4–5. Not the copyrighted form."""
+    W, H = 3200, 1240
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 56], fill=NAVY)
+    d.rectangle([0, 56, W, 64], fill=GOLD)
+    d.text((28, 16), "Anesthesia chart", font=font(28, True), fill=WHITE, anchor="lm")
+    d.text((28, 42), "Mark anesthesia start and first incision. Record every 5–10 min against the range.", font=font(18), fill=GOLD, anchor="lm")
+
+    times = ["Anesth. start", "5 min", "Incision", "15 min", "Last suture"]
+    params = [
+        ("Heart rate", "dog 60–140  ·  cat 100–180"),
+        ("Respiratory rate", "dog 8–20  ·  cat 10–25"),
+        ("BP  SAP / MAP / DAP", "SAP ≥90  ·  MAP ≥70  ·  DAP ≥40"),
+        ("Isoflurane or sevoflurane %", "to effect"),
+        ("Oxygen flow  L/min", "2–3 L, then 20–40 mL/kg/min  ·  min 0.5 L"),
+        ("End-tidal CO2", "40–50 mm Hg  ·  PPV if >60"),
+        ("SpO2", "≥95%"),
+        ("Temperature", "≥98 °F  (36.7 °C)"),
+        ("Fluid rate  mL/hr", "dog 5 mL/kg/hr  ·  cat 3–5"),
+        ("Total fluid  mL", "rate × hours"),
+    ]
+    x0 = 20
+    label_w = 560
+    target_w = 900
+    grid_x = x0 + label_w
+    target_x = grid_x + target_w
+    col_w = (W - 40 - label_w - target_w) / len(times)
+    y = 84
+    rh = 80
+    cell(d, x0, y, grid_x, y + rh, "What you plot", fill=NAVY, fg=GOLD, size=32, bold=True, align="center")
+    cell(d, grid_x, y, target_x, y + rh, "Normal operating range", fill=TEAL, fg=WHITE, size=28, bold=True, align="center")
+    for c, t in enumerate(times):
+        mark = t in ("Anesth. start", "Incision", "Last suture")
+        cell_wrapped(
+            d,
+            target_x + c * col_w,
+            y,
+            target_x + (c + 1) * col_w,
+            y + rh,
+            t,
+            fill=GOLD if mark else NAVY,
+            fg=NAVY if mark else WHITE,
+            size=24,
+            bold=True,
+        )
+    y += rh
+    for r, (name, target) in enumerate(params):
+        yy = y + r * rh
+        fluid = name.startswith("Fluid") or name.startswith("Total")
+        fill = TEAL if fluid else (WHITE if r % 2 == 0 else (236, 242, 244))
+        fg = WHITE if fluid else INK
+        cell_wrapped(d, x0, yy, grid_x, yy + rh, name, fill=fill, fg=fg, size=28, bold=True)
+        cell_wrapped(
+            d,
+            grid_x,
+            yy,
+            target_x,
+            yy + rh,
+            target,
+            fill=(227, 241, 236),
+            fg=NAVY,
+            size=28,
+            bold=True,
+        )
+        for c in range(len(times)):
+            cell(
+                d,
+                target_x + c * col_w,
+                yy,
+                target_x + (c + 1) * col_w,
+                yy + rh,
+                "",
+                fill=WHITE if r % 2 == 0 else (236, 242, 244),
+            )
+
+    y = y + 10 * rh + 10
+    thirds = [
+        (GOLD, "Times you mark", "Anesthesia start. First incision. Last skin suture. Extubation. Write the clock time in the gold columns."),
+        (TEAL, "Recording criteria", "Every 5–10 min, in real time. Plot HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids against the range. Write the number you see."),
+        (GREEN, "If out of range, then sign", "Event, time, and correction. Fluids: type, rate, total mL. Recovery analgesic. Sign the record."),
+    ]
+    bw = (W - 56) / 3
+    box_h = H - 16 - y
+    for i, (col, title, body) in enumerate(thirds):
+        xx = 20 + i * (bw + 8)
+        d.rectangle([xx, y, xx + bw, y + box_h], fill=WHITE, outline=LINE, width=2)
+        d.rectangle([xx, y, xx + bw, y + 40], fill=col)
+        d.text((xx + bw / 2, y + 20), title, font=font(28, True), fill=WHITE, anchor="mm")
+        fn = font(28)
+        ty = y + 52
+        for line in wrap_text(body, fn, bw - 36):
+            d.text((xx + 18, ty), line, font=fn, fill=INK, anchor="lt")
+            ty += 26
+
+    path = OUT / "anesthesia_chart_recovery.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def _arrow_head(d, x, y, angle, size=22, fill=TEAL):
+    ax = x + size * math.cos(angle)
+    ay = y + size * math.sin(angle)
+    left = angle + 2.6
+    right = angle - 2.6
+    p1 = (ax, ay)
+    p2 = (ax + size * 0.85 * math.cos(left), ay + size * 0.85 * math.sin(left))
+    p3 = (ax + size * 0.85 * math.cos(right), ay + size * 0.85 * math.sin(right))
+    d.polygon([p1, p2, p3], fill=fill)
+
+
+def prep_spiral_antiseptic():
+    """One open Archimedean spiral from the incision to the hair. Not closed rings."""
+    W, H = 1800, 1440
+    im = Image.new("RGB", (W, H), NAVY)
+    d = ImageDraw.Draw(im)
+
+    d.text((W / 2, 28), "One sponge. One path. Keep going out.", font=font(36, True), fill=WHITE, anchor="mt")
+    d.text((W / 2, 76), "Do not close a circle. Do not start a new ring. Drop the sponge at the hair.", font=font(24), fill=GOLD, anchor="mt")
+
+    cx, cy = 980, 760
+    rx, ry = 520, 355
+    d.ellipse([cx - rx - 70, cy - ry - 52, cx + rx + 70, cy + ry + 52], fill=(168, 132, 96))
+    d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=(220, 196, 168))
+    d.ellipse([cx - 210, cy - 150, cx + 210, cy + 150], fill=(186, 206, 196))
+    d.line([cx, cy - 268, cx, cy + 268], fill=(132, 78, 78), width=5)
+    d.ellipse([cx - 18, cy - 18, cx + 18, cy + 18], fill=(120, 64, 64), outline=NAVY, width=2)
+    d.text((cx, cy), "cut", font=font(14, True), fill=WHITE, anchor="mm")
+
+    # Wide-pitch open spiral (~1.65 turns) so the path cannot be read as nested rings.
+    pts = []
+    t0 = 0.35
+    turns = 1.65
+    t1 = t0 + turns * 2 * math.pi
+    n = 640
+    r0, rmax = 36.0, rx * 0.93
+    for i in range(n + 1):
+        t = t0 + (t1 - t0) * i / n
+        r = r0 + (rmax - r0) * (t - t0) / (t1 - t0)
+        x = cx + r * math.cos(t)
+        y = cy + r * math.sin(t) * (ry / rx)
+        pts.append((x, y))
+    d.line(pts, fill=TEAL, width=22)
+    d.line(pts, fill=(196, 230, 224), width=10)
+
+    for frac in (0.12, 0.28, 0.44, 0.60, 0.76, 0.90):
+        i = int(frac * n)
+        x0, y0 = pts[max(0, i - 14)]
+        x1, y1 = pts[i]
+        ang = math.atan2(y1 - y0, x1 - x0)
+        _arrow_head(d, x1, y1, ang, size=32, fill=TEAL)
+
+    sx, sy = pts[8]
+    d.rounded_rectangle([sx - 210, sy - 92, sx + 8, sy - 28], radius=8, fill=NAVY)
+    d.text((sx - 101, sy - 60), "START  ·  stay on this line", font=font(20, True), fill=GOLD, anchor="mm")
+
+    gx, gy = pts[int(0.88 * n)]
+    d.rounded_rectangle([gx - 38, gy - 28, gx + 38, gy + 28], radius=6, fill=WHITE, outline=TEAL, width=3)
+    d.rectangle([gx - 26, gy - 16, gx + 26, gy + 16], outline=TEAL, width=2)
+    d.text((gx, gy), "gauze", font=font(14, True), fill=NAVY, anchor="mm")
+
+    xe, ye = pts[-1]
+    d.rounded_rectangle([xe - 10, ye + 18, xe + 310, ye + 100], radius=10, fill=WHITE)
+    d.text((xe + 150, ye + 42), "Hair. Drop this sponge.", font=font(22, True), fill=RED, anchor="mm")
+    d.text((xe + 150, ye + 74), "New sponge starts at the cut.", font=font(18, True), fill=NAVY, anchor="mm")
+
+    # Wrong: closed concentric rings (what this is not).
+    bx0, by0, bx1, by1 = 36, 1080, 430, 1390
+    d.rounded_rectangle([bx0, by0, bx1, by1], radius=12, fill=WHITE)
+    d.rounded_rectangle([bx0, by0, bx1, by0 + 44], radius=12, fill=RED)
+    d.rectangle([bx0, by0 + 28, bx1, by0 + 44], fill=RED)
+    d.text(((bx0 + bx1) / 2, by0 + 22), "Not this", font=font(22, True), fill=WHITE, anchor="mm")
+    ix, iy = (bx0 + bx1) / 2, by0 + 175
+    for a, b in ((92, 62), (64, 42), (36, 24)):
+        d.ellipse([ix - a, iy - b, ix + a, iy + b], outline=TEAL, width=6)
+    d.line([ix - 70, iy - 70, ix + 70, iy + 70], fill=RED, width=8)
+    d.line([ix + 70, iy - 70, ix - 70, iy + 70], fill=RED, width=8)
+    d.text((ix, by1 - 28), "Closed rings. Stop.", font=font(18, True), fill=RED, anchor="mm")
+
+    d.text((W / 2, H - 22), "The line never closes. If you complete a circle, you have gone the wrong way.", font=font(22, True), fill=GOLD, anchor="mb")
+
+    path = OUT / "prep_spiral_antiseptic.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def drape_overhead_window():
+    """Surgeon’s zenith view: fenestrated drape over a dog in dorsal recumbency."""
+    W, H = 2400, 1680
+    im = Image.new("RGB", (W, H), (232, 236, 240))
+    d = ImageDraw.Draw(im)
+
+    d.rectangle([0, 0, W, 88], fill=NAVY)
+    d.rectangle([0, 88, W, 96], fill=GOLD)
+    d.text((W / 2, 32), "Look straight down. This hole is the incision.", font=font(40, True), fill=WHITE, anchor="mt")
+    d.text((W / 2, 70), "Dog in dorsal recumbency  ·  only clipped, painted skin in the window", font=font(22), fill=GOLD, anchor="mt")
+
+    # Table
+    d.rounded_rectangle([80, 130, W - 80, 1540], radius=24, fill=(188, 196, 204), outline=(150, 158, 166), width=3)
+    d.rounded_rectangle([140, 190, W - 140, 1480], radius=18, fill=(210, 216, 222))
+
+    cx, cy = W / 2, 860
+    fur = (186, 156, 122)
+    fur2 = (168, 138, 108)
+    # Dog in dorsal recumbency, zenith view. Head cranial (top). Draw the animal
+    # first so muzzle, ET tube, and tied paws stay visible outside the drape.
+    d.ellipse([cx - 175, 175, cx + 175, 455], fill=fur)
+    d.ellipse([cx - 78, 155, cx + 78, 250], fill=fur2)
+    d.ellipse([cx - 22, 162, cx + 22, 198], fill=(72, 52, 44))  # nose
+    d.ellipse([cx - 58, 210, cx - 28, 236], fill=(40, 32, 28))  # eyes
+    d.ellipse([cx + 28, 210, cx + 58, 236], fill=(40, 32, 28))
+    d.ellipse([cx - 248, 250, cx - 155, 380], fill=fur2)
+    d.ellipse([cx + 155, 250, cx + 248, 380], fill=fur2)
+    d.rectangle([cx - 11, 88, cx + 11, 175], fill=(70, 90, 110))
+    d.polygon([(cx - 20, 175), (cx + 20, 175), (cx, 128)], fill=(90, 110, 130))
+    d.ellipse([cx - 16, 118, cx + 16, 148], fill=(210, 214, 218), outline=(70, 90, 110), width=2)
+    # thoracic limbs + ties
+    d.rounded_rectangle([95, 600, 360, 755], radius=46, fill=fur)
+    d.rounded_rectangle([W - 360, 600, W - 95, 755], radius=46, fill=fur)
+    d.ellipse([70, 615, 150, 740], fill=fur2)
+    d.ellipse([W - 150, 615, W - 70, 740], fill=fur2)
+    # pelvic limbs + ties
+    d.rounded_rectangle([210, 1245, 500, 1455], radius=46, fill=fur)
+    d.rounded_rectangle([W - 500, 1245, W - 210, 1455], radius=46, fill=fur)
+    d.ellipse([175, 1360, 280, 1470], fill=fur2)
+    d.ellipse([W - 280, 1360, W - 175, 1470], fill=fur2)
+    d.ellipse([cx - 46, 1435, cx + 46, 1510], fill=fur2)
+    for x0, x1, y in ((70, 360, 680), (W - 360, W - 70, 680), (175, 500, 1410), (W - 500, W - 175, 1410)):
+        d.line([(x0, y), (x1, y)], fill=(40, 90, 170), width=10)
+
+    # Large fenestrated drape: covers the trunk, leaves head and paws in view
+    drape = (70, 132, 186)
+    d.rounded_rectangle([200, 390, W - 200, 1360], radius=28, fill=drape)
+    d.polygon([(200, 520), (310, 390), (430, 390), (250, 640)], fill=(58, 118, 170))
+    d.polygon([(W - 200, 1200), (W - 340, 1360), (W - 200, 1360)], fill=(58, 118, 170))
+
+    # Four-quadrant towels boxing the site
+    wx0, wy0, wx1, wy1 = cx - 340, 620, cx + 340, 1180
+    towel = (236, 240, 244)
+    d.rectangle([wx0 - 70, wy0 - 70, wx1 + 70, wy1 + 70], fill=towel)
+    d.rectangle([wx0 - 8, wy0 - 8, wx1 + 8, wy1 + 8], fill=drape)
+
+    # Window: ventral abdomen, clipped and iodine-painted
+    d.rectangle([wx0, wy0, wx1, wy1], fill=(214, 186, 150))
+    d.rectangle([wx0 + 18, wy0 + 18, wx1 - 18, wy1 - 18], fill=(198, 168, 118))
+    # linea alba
+    d.line([(cx, wy0 + 36), (cx, wy1 - 36)], fill=(120, 72, 72), width=6)
+    # umbilicus (cranial in the window)
+    d.ellipse([cx - 16, wy0 + 70, cx + 16, wy0 + 102], fill=(150, 96, 90), outline=(110, 70, 70), width=2)
+    # dog nipples: two parasagittal rows
+    for dy in (160, 250, 340, 430):
+        for side in (-110, 110):
+            nx, ny = cx + side, wy0 + dy
+            d.ellipse([nx - 14, ny - 10, nx + 14, ny + 10], fill=(150, 88, 88), outline=(120, 64, 64), width=2)
+
+    d.rectangle([wx0, wy0, wx1, wy1], outline=NAVY, width=6)
+
+    d.rounded_rectangle([wx0, wy0 - 64, wx0 + 430, wy0 - 16], radius=8, fill=NAVY)
+    d.text((wx0 + 215, wy0 - 40), "SURGICAL WINDOW", font=font(24, True), fill=GOLD, anchor="mm")
+
+    d.rounded_rectangle([cx + 200, 210, cx + 470, 262], radius=8, fill=WHITE)
+    d.text((cx + 335, 236), "HEAD  ·  ET tube", font=font(20, True), fill=NAVY, anchor="mm")
+
+    d.rounded_rectangle([230, 1188, 620, 1278], radius=10, fill=WHITE)
+    d.text((425, 1216), "Hair stays under the drape.", font=font(22, True), fill=RED, anchor="mm")
+    d.text((425, 1250), "If hair is in the hole, re-clip.", font=font(20, True), fill=NAVY, anchor="mm")
+
+    d.rounded_rectangle([W - 680, 1188, W - 230, 1278], radius=10, fill=WHITE)
+    d.text((W - 455, 1216), "Four towels box the site.", font=font(22, True), fill=NAVY, anchor="mm")
+    d.text((W - 455, 1250), "Large drape last. Then timeout.", font=font(20, True), fill=TEAL, anchor="mm")
+
+    d.text((W / 2, H - 28), "Teaching view from above the table. Not a hospital-patient photograph.", font=font(22), fill=NAVY, anchor="mb")
+
+    path = OUT / "drape_overhead_window.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def antiseptic_scrub_compare():
+    """Chlorhexidine vs povidone-iodine vs alcohol as scrubs. Full names. Cited contact times."""
+    W, H = 3200, 1280
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 78], fill=NAVY)
+    d.rectangle([0, 78, W, 86], fill=GOLD)
+    d.text((40, 22), "Three scrubs", font=font(40, True), fill=WHITE, anchor="lt")
+    d.text((W - 40, 40), "Spell the names. Veterinary paint is 5% povidone-iodine, not 10%.", font=font(28, True), fill=GOLD, anchor="rm")
+
+    cols = ["", "Chlorhexidine", "Povidone-iodine", "Alcohol"]
+    col_fill = [NAVY, TEAL, GOLD, NAVY]
+    col_fg = [GOLD, WHITE, NAVY, GOLD]
+    rows = [
+        (
+            "As a scrub",
+            "2% chlorhexidine acetate (Nolvasan Surgical Scrub)",
+            "7.5% scrub, rinse, then 5% veterinary paint",
+            "Rinse after the detergent scrub, then dry",
+        ),
+        (
+            "Contact time",
+            "2 to 4 min",
+            "About 5 min for the 7.5% scrub",
+            "Until dry. Do not pool.",
+        ),
+        (
+            "Use on",
+            "Intact skin (trunk)",
+            "Intact skin. Healthy cornea: 0.2% povidone-iodine, 2 min + 2 min",
+            "Intact skin only",
+        ),
+        (
+            "Do not",
+            "Eyes. Mucous membranes.",
+            "7.5% scrub on cornea or in the ear. Undiluted 10% or 5% on the cornea. Perforation: saline only.",
+            "Cornea. Mucosa. Open wounds.",
+        ),
+    ]
+    widths = [420, 900, 980, 860]
+    scale = (W - 48) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [24]
+    for w in widths:
+        xs.append(xs[-1] + w)
+    y = 104
+    hh, rh = 78, 268
+    for c, lab in enumerate(cols):
+        d.rectangle([xs[c], y, xs[c + 1], y + hh], fill=col_fill[c], outline=LINE, width=2)
+        if lab:
+            d.text(((xs[c] + xs[c + 1]) / 2, y + hh / 2), lab, font=font(40, True), fill=col_fg[c], anchor="mm")
+    for r, row in enumerate(rows):
+        yy = y + hh + r * rh
+        stripe = WHITE if r % 2 == 0 else (236, 242, 244)
+        for c, val in enumerate(row):
+            if c == 0:
+                fill, fg, size, bold = NAVY, GOLD, 32, True
+            else:
+                fill, fg, size, bold = stripe, INK, 34, False
+            d.rectangle([xs[c], yy, xs[c + 1], yy + rh], fill=fill, outline=LINE, width=2)
+            f = font(size, bold)
+            lines = wrap_text(val, f, xs[c + 1] - xs[c] - 40)
+            total = len(lines) * (size + 10)
+            ty = yy + rh / 2 - total / 2 + size / 2
+            for line in lines:
+                d.text(((xs[c] + xs[c + 1]) / 2, ty), line, font=f, fill=fg, anchor="mm")
+                ty += size + 10
+
+    path = OUT / "antiseptic_scrub_compare.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+if __name__ == "__main__":
+    anesthesia_record("blank")
+    anesthesia_record("willie")
+    anesthesia_record("momo")
+    recovery_flowsheet()
+    anesthesia_setup_table()
+    preanesthetic_assessment_table()
+    anesthesia_protocol_record()
+    prep_or_sequence()
+    anesthesia_chart_recovery()
+    prep_spiral_antiseptic()
+    drape_overhead_window()
+    antiseptic_scrub_compare()

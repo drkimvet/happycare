@@ -1,0 +1,72 @@
+Open-license / U.S. government clinical photographs used in DVM 612 Week 4.
+
+clip_cat.jpg
+  File:Preoperative clipping in a cat.jpg
+  Author: Uwe Gille
+  License: CC0
+  https://commons.wikimedia.org/wiki/File:Preoperative_clipping_in_a_cat.jpg
+
+dog_or.jpg
+  File:Dog in operating room.jpg
+  Author: Anja
+  License: CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Dog_in_operating_room.jpg
+
+cherry_point_spay.jpg
+  File:Doggie doctor, Cherry Point veterinary clinic provides animal care services DVIDS334180.jpg
+  Author: Cpl. Samuel A. Nasso, U.S. Marine Corps
+  License: Public domain (U.S. government work)
+  https://commons.wikimedia.org/wiki/File:Doggie_doctor,_Cherry_Point_veterinary_clinic_provides_animal_care_services_DVIDS334180.jpg
+
+hektor_drape.jpg
+  File:Camp Lemonnier Service members Perform Surgery on Hektor, a Djiboutian K-9 Working Dog DVIDS217516.jpg
+  Author: Master Sgt. Carlotta Holley, U.S. Air Force
+  License: Public domain (U.S. government work)
+  https://commons.wikimedia.org/wiki/File:Camp_Lemonnier_Service_members_Perform_Surgery_on_Hektor,_a_Djiboutian_K-9_Working_Dog_DVIDS217516.jpg
+
+yap_surgical_window.jpg
+  Pacific Partnership 2024-2 in Yap, DVIDS photo ID 8634096, VIRIN 240906-N-GC639-1074.
+  Caption: New Zealand Defense Force Veterinarian Capt. Catherine Hayward places a surgical drape over a dog before surgery during a spay and neuter clinic in Yap, 6 September 2024.
+  Author: Mass Communication Specialist 1st Class Ryan D. McLearnon, U.S. Navy
+  License: Public domain (U.S. government work)
+  Cropped to the fenestrated window for DVM 612 Week 4.
+  https://www.dvidshub.net/image/8634096/pacific-partnership-2024-2-yap
+
+fenestrated_drape_window.jpg
+  Instructor teaching file for DVM 612 Week 4.
+  Fenestrated drape with Backhaus towel clamps at the corners of the window.
+  Source not identified. Used to show the overhead surgical window: only clipped skin in the hole.
+
+drape_overhead_window.png
+  Original overhead teaching figure of a fenestrated drape over a dog in dorsal recumbency, drawn for DVM 612 Week 4.
+  Not a hospital-patient photograph. Replaced on the draping slide by fenestrated_drape_window.jpg.
+
+closed_gloving_real.jpg
+  Crop of DVIDS photo ID 6168271, VIRIN 200409-N-PH222-1594.
+  Caption: Lt. Cmdr. Byron Holloway dons surgical gloves prior to surgery aboard the hospital ship USNS Mercy (T-AH 19), 9 April 2020.
+  Author: Mass Communication Specialist 2nd Class Ryan M. Breeden, U.S. Navy
+  License: Public domain (U.S. government work)
+  https://www.dvidshub.net/image/6168271/usns-mercy-sailor-dons-surgical-gloves
+
+
+hektor_or.jpg
+  File:Camp Lemonnier Service members Perform Surgery on Hektor, a Djiboutian K-9 Working Dog DVIDS217501.jpg
+  Author: Master Sgt. Carlotta Holley, U.S. Air Force
+  License: Public domain (U.S. government work)
+  https://commons.wikimedia.org/wiki/File:Camp_Lemonnier_Service_members_Perform_Surgery_on_Hektor,_a_Djiboutian_K-9_Working_Dog_DVIDS217501.jpg
+
+remus_recovery.jpg
+  File:Remus after anesthesia.jpg
+  Author: Anja
+  License: CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Remus_after_anesthesia.jpg
+
+spay_incision.jpg
+  File:Female dog spay incision.jpg
+  Author: Liannadavis
+  License: CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Female_dog_spay_incision.jpg
+
+momo.jpg
+  Preoperative photograph of MoMo, the DVM 612 Week 4 teaching case.
+  Instructor teaching file. No owner name, address, phone, or medical-record number on the slide.
