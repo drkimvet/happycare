@@ -287,7 +287,7 @@ notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon pre
 # 2 Learning objectives
 s = new_content("Learning objectives", "DVM 612 Week 4  ·  38 slides")
 items = [
-    "Assign ASA after today’s PE and labs. Correct deficits. Then write premed, induction, and MAC.",
+    "Assign ASA after today’s PE and labs. Correct deficits. Write premed, induction, MAC, tube, bag, and fluid rate.",
     "If albumin is low: find the cause, delay elective if you can, and do not flood with crystalloid.",
     "Prep for aseptic surgery: clip, labeled antiseptics, minimum contact time, four-quadrant drape, closed glove.",
     "Name a break in asepsis and correct it, before or after the incision.",
@@ -340,7 +340,7 @@ notes(s, "Two minutes, then move. Every Halsted principle has a preop or postop 
 # 5 Continuum
 s = new_content("The perioperative continuum", "Two team clocks. CPE MOA 2026 Anesthesia and Surgery.")
 stages = [
-    ("PRE-OP", "PE, labs, ASA\nCorrect deficits\nPremed, induce, MAC\nETT, bag, leak-test", TEAL),
+    ("PRE-OP", "PE, labs, ASA\nCorrect deficits\nPremed, induce, MAC\nETT, bag, fluids", TEAL),
     ("PREP", "Ready for clip:\nairway, IV, plane\nHair, skin, position\nDrape, gown, glove", GOLD),
     ("INTRA-OP", "Announce incision\nHold asepsis\nHalsted, temp, pain\nRecord every 5–10 min", NAVY),
     ("POST-OP", "Airway, pain, heat\nWatch 24 hours\nReport + discharge\nRecheck plan", GREEN),
@@ -546,39 +546,22 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
 ], size=16, spacing=6)
 notes(s, "Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.")
 
-# 16 Tube and bag calculation
-s = new_content("Endotracheal tube and reservoir bag", "Write both numbers before induction. CPE MOA 2026: select the tube, the circuit, and the bag.")
-add_round(s, Inches(0.45), Inches(1.12), Inches(6.15), Inches(3.05), WHITE)
-add_rect(s, Inches(0.45), Inches(1.12), Inches(6.15), Inches(0.48), GOLD)
-add_text(s, Inches(0.45), Inches(1.12), Inches(6.15), Inches(0.48), "Endotracheal tube  ·  dog starting estimate", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.65), Inches(1.68), Inches(5.75), Inches(0.55), "ID mm  =  (kg / 4)  +  3.5", size=24, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
-add_text(s, Inches(0.65), Inches(2.28), Inches(5.75), Inches(1.72), "Have 0.5 mm larger and 0.5 mm smaller ready.\nConfirm: largest ID that passes the arytenoids without trauma (Grubb 2020). Tip midway from larynx to thoracic inlet. Cuff holds to 20 cm H2O (CPE MOA).\nCat: typically 3.0–4.5 mm. Do not use the dog formula.", size=15, color=INK)
-add_round(s, Inches(6.75), Inches(1.12), Inches(6.10), Inches(3.05), WHITE)
-add_rect(s, Inches(6.75), Inches(1.12), Inches(6.10), Inches(0.48), NAVY)
-add_text(s, Inches(6.75), Inches(1.12), Inches(6.10), Inches(0.48), "Reservoir bag  ·  shortcut", size=16, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(6.95), Inches(1.68), Inches(5.70), Inches(0.55), "mL  =  kg  ×  60     then round UP", size=22, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
-add_text(s, Inches(6.95), Inches(2.28), Inches(5.70), Inches(1.72), "Tidal volume about 10–15 mL/kg. Bag = 5–6 × TV, so 60 mL/kg is the low end. Round up to 0.5, 1, 2, or 3 L.\nNRC: cats and dogs <3–5 kg. O2 200–400 mL/kg/min (Grubb 2020). Circle for larger patients. Leak-test, then OPEN the pop-off.", size=15, color=INK)
-headers = ("Patient", "kg", "ETT start", "Bag", "Circuit")
-calcrows = [
-    ("Willie (if intubated)", "13.7", "7.0 mm  (6.5 / 7.5)", "822 mL → 1 L", "Circle"),
-    ("Healthy Lab, elective OHE", "25", "9.75 → 10 mm", "1.5 L → 2 L", "Circle"),
-    ("MoMo, teaching only", "4.25", "3.5–4.0 mm (cat)", "255 mL → 0.5 L", "NRC"),
+# 16 ASA, tube, bag, fluid rate (MOA Appendix 3 fields)
+s = new_content("ASA, tube, bag, and fluid rate", "CPE MOA 2026 Appendix 3: ASA, ETT size, bag, circuit, IV fluid name/rate, fresh-gas flow.")
+formulas = [
+    (GOLD, NAVY, "Endotracheal tube", "ID mm  =  (kg / 4)  +  3.5", "Dog start. ±0.5 mm ready. Largest through arytenoids (Grubb 2020). Cat 3.0–4.5 mm; do not use the dog formula."),
+    (NAVY, GOLD, "Reservoir bag", "mL  =  kg  ×  60,  round UP", "Round up to 0.5, 1, 2, or 3 L. NRC if <3–5 kg. Circle if larger. Leak-test, then OPEN the pop-off."),
+    (TEAL, WHITE, "IV fluid rate", "Dog  kg × 5   ·   cat  kg × 3–5", "mL/hr. Balanced crystalloid (Pardo 2024). Not 10 mL/kg/hr. Willie: 13.7 × 5 = 69 mL/hr."),
 ]
-add_rect(s, Inches(0.45), Inches(4.30), Inches(12.40), Inches(0.42), NAVY)
-xs = (0.50, 3.55, 4.85, 8.15, 11.05)
-ws = (3.00, 1.20, 3.20, 2.80, 1.70)
-for x, w, htxt in zip(xs, ws, headers):
-    add_text(s, Inches(x), Inches(4.30), Inches(w), Inches(0.42), htxt, size=15, bold=True, color=GOLD, anchor=MSO_ANCHOR.MIDDLE)
-for i, row in enumerate(calcrows):
-    y = Inches(4.76) + Inches(i * 0.52)
-    add_round(s, Inches(0.45), y, Inches(12.40), Inches(0.48), WHITE)
-    colors = (NAVY, INK, TEAL, TEAL, INK)
-    bolds = (True, False, True, True, False)
-    for x, w, cell, col, b in zip(xs, ws, row, colors, bolds):
-        add_text(s, Inches(x), y, Inches(w), Inches(0.48), cell, size=15, bold=b, color=col, anchor=MSO_ANCHOR.MIDDLE)
-add_round(s, Inches(0.45), Inches(6.38), Inches(12.40), Inches(0.68), GOLD_LT)
-add_text(s, Inches(0.65), Inches(6.38), Inches(12.05), Inches(0.68), "After the tube is in: inhalant to effect. Premed already lowered MAC. Then the patient is ready for clip, sterile prep, and drape.", size=15, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Board both formulas. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: start 7.0 millimeter, with 6.5 and 7.5 in the hand. Bag: kilograms times 60 milliliters, round up. Willie 822 milliliters is a 1 liter bag, circle. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape.")
+for i, (hdr, hfg, title, formula, detail) in enumerate(formulas):
+    x = Inches(0.40) + Inches(i * 4.28)
+    add_round(s, x, Inches(1.08), Inches(4.12), Inches(1.48), WHITE)
+    add_rect(s, x, Inches(1.08), Inches(4.12), Inches(0.34), hdr)
+    add_text(s, x, Inches(1.08), Inches(4.12), Inches(0.34), title, size=16, bold=True, color=hfg, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.08), Inches(1.44), Inches(3.96), Inches(0.40), formula, size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, x + Inches(0.12), Inches(1.84), Inches(3.88), Inches(0.66), detail, size=14, color=INK)
+add_pic(s, "anesthesia_setup_table.png", Inches(0.28), Inches(2.62), Inches(12.78), Inches(4.50))
+notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendix 3 is filled: circle ASA, write ETT size, bag, rebreathing versus non-rebreathing, IV fluid name and rate, fresh-gas flow. Do not project the copyrighted form. Dog tube: kilograms divided by 4, plus 3.5. Willie 13.7: start 7.0 millimeter, 6.5 and 7.5 in the hand. Bag: kilograms times 60, round up. Willie 822 milliliters is a 1 liter bag, circle. Fluids: Pardo 2024, dog 5 milliliters per kilogram per hour. Willie 68.5, write 69 milliliters per hour. Circle FGF: 2 to 3 liters per minute at induction, then 20 to 40 milliliters per kilogram per minute, minimum 500 milliliters per minute (Grubb 2020). NRC 200 to 400 milliliters per kilogram per minute. MoMo is teaching math only; the exploratory was cancelled. After the tube is in: inhalant to effect. Premed already lowered MAC. Then clip, sterile prep, and drape.")
 
 # 17 Willie record
 s = new_content("Willie’s perioperative record", "Preop header and recovery. Complete before the first drug.")
@@ -717,7 +700,7 @@ rows = [
     ("A", "When do you clip the OHE field?", "After ready for prep: tube in, IV running, surgical plane. Then sterile prep and drape."),
     ("B", "How do you prep conjunctiva with iodine?", "10% stock 1:50. MIN contact 2 min + 2 min. 5% bottle: 1:25."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
-    ("D", "Willie is 13.7 kg. Tube, bag, and why alfaxalone?", "7.0 mm, 1 L circle. Murmur: skip ace/dexmed. Opioid + alfaxalone."),
+    ("D", "Willie is 13.7 kg. Tube, bag, and IV fluid rate?", "7.0 mm, 1 L circle, LRS 69 mL/hr (5 mL/kg/hr). Murmur: opioid + alfaxalone."),
 ]
 for i, (let, q, a) in enumerate(rows):
     y = Inches(1.15) + Inches(i * 1.42)
@@ -726,7 +709,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
-notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is Willie: 7.0 millimeter, 1 liter, alfaxalone because of the murmur. B is Roberts 1986. A is airway before clippers, then sterile prep and drape.")
+notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is Willie: 7.0 millimeter, 1 liter circle, 69 milliliters per hour, alfaxalone because of the murmur. B is Roberts 1986. A is airway before clippers, then sterile prep and drape.")
 
 # 29 Recovery
 s = new_content("Immediate recovery", "Remain with the patient until airway and circulation are stable")
@@ -838,7 +821,7 @@ add_round(s, Inches(0.5), Inches(1.15), Inches(12.3), Inches(0.80), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.22), Inches(11.8), Inches(0.70), "Willie  ·  Cavalier  ·  13.7 kg  ·  ASA III-E  ·  vestibular + AS otitis  ·  skip NSAID", size=18, color=NAVY)
 wsteps = [
     ("Pre-op", "Neuro exam. ASA 3-E. Exam before any drug. Skip NSAID after DexSP. Premed path: opioid + alfaxalone."),
-    ("Prep", "Alfaxalone. If intubated: 7.0 mm ETT, 1 L bag, circle. Canal and eye: dilute PVP-I, 1:50 of 10%."),
+    ("Prep", "Alfaxalone. If intubated: 7.0 mm ETT, 1 L bag, circle, LRS 69 mL/hr. Canal and eye: dilute PVP-I, 1:50 of 10%."),
     ("Intra", "Timeout. Deep clean + cytology. If you contaminate, say it and re-glove."),
     ("Post", "No stairs. Watch neuro signs. MRI next. TECA-LBO only if medical therapy fails."),
 ]
@@ -860,7 +843,7 @@ notes(s, "Last content slide if time is gone. Healthy Lab OHE is only the ASA I 
 s = new_content("Key points", "")
 pearls = [
     "Willie is ASA Status 3-E: sedate with a plan. MoMo is Status 4-E: image first, then cancel.",
-    "ASA, then premed IM/SQ, induction IV to effect, inhalant to MAC. Premed lowers MAC.",
+    "Before induction write ASA, ETT, bag, circuit, FGF, and IV rate (dog 5 mL/kg/hr; cat 3–5).",
     "Correct deficits before elective. Albumin <2.0 g/dL: delay, treat the cause, do not crystalloid-flood.",
     "When prophylaxis is indicated: cefazolin 22 mg/kg IV 30–60 min before incision. Clean OHE: skip.",
     "Clock minimum contact time. Then four-quadrant towels and the large drape. Hair out of the window.",
@@ -949,7 +932,7 @@ APPENDIX  ·  FULL REFERENCES
 1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Ch. 4, 5, 6, 9. Doses and dilutions on the slides are not quoted from Fossum pages.
 2. Hendrickson DA, Baird AN. Turner and McIlwraith's Techniques in Large Animal Surgery. 4th ed. Wiley-Blackwell; 2013. ISBN 978-1-118-27323-4.
 3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017 (copyright 2018). ISBN 978-0-323-32065-8.
-4. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82. doi:10.5326/JAAHA-MS-7055. ASA companion table; healthy adult food 4-6 h; water until premedication; neonates/<2 kg food fast no longer than 1-2 h; correct K+ >6.0 mEq/L before anesthesia.
+4. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82. doi:10.5326/JAAHA-MS-7055. ASA companion table; healthy adult food 4-6 h; water until premedication; neonates/<2 kg food fast no longer than 1-2 h; correct K+ >6.0 mEq/L before anesthesia. NRC O2 ~200-400 mL/kg/min, inspired CO2 <5 mm Hg. Circle: 2-3 L/min when rapid depth change is needed, then typically 20-40 mL/kg/min with a minimum 500 mL/min.
 5. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1-5. Start 30-60 min before incision; skip clean OHE/orchiectomy; postop rarely required. Does not publish cefazolin mg/kg.
 6. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207-1210. 10% PVP-I stock (1% available iodine); 1:50 recommended; 2-min scrub + 2-min soak; 1:2 corneal edema in 1/15 eyes.
 7. BETADINE Surgical Scrub Veterinary, 7.5% PVP-I. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.
@@ -959,11 +942,11 @@ APPENDIX  ·  FULL REFERENCES
 11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Interstitial fluid >4 ug/mL for about 4 h after IV. Does not say q90 min.
 12. ONSIOR (robenacoxib) injection. DailyMed. 2 mg/kg SQ once daily up to 3 days. Dogs: soft tissue surgery, first dose about 45 min before surgery. Cats: orthopedic surgery, OHE, castration, first dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid.
 13. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
-14. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
+14. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Anesthesia crystalloid: dogs 5 mL/kg/hr, cats 3-5 mL/kg/hr; the old 10 mL/kg/hr rate lacked evidence. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.
-TUBE AND BAG (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Willie 13.7 kg: 7.0 mm, 1 L, circle.
+TUBE, BAG, AND FLUIDS (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L. Anesthesia IVF (Pardo 2024): dog 5 mL/kg/hr, cat 3-5 mL/kg/hr. Circle FGF (Grubb 2020): 2-3 L/min at induction, then 20-40 mL/kg/min, minimum 500 mL/min. NRC: 200-400 mL/kg/min. Willie 13.7 kg: 7.0 mm, 1 L circle, LRS 69 mL/hr, FGF 2-3 L/min then ≥0.5 L/min. Teaching table on slide 16 uses CPE MOA 2026 Appendix 3 fields (ASA, ETT, bag, circuit, IV name/rate, FGF); do not dump the copyrighted form.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
 """, encoding="utf-8")

@@ -474,8 +474,59 @@ def epoc_asa():
     )
 
 
+def anesthesia_setup_table():
+    """Hall-readable teaching table of CPE MOA Appendix 3 setup fields. Not the copyrighted form."""
+    W, H = 3200, 1000
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+
+    headers = ["Patient", "kg", "ASA", "ETT", "Bag / circuit", "IV fluids", "Fresh-gas flow"]
+    rows = [
+        ["Willie\nif intubated", "13.7", "3-E", "7.0 mm\n6.5 / 7.5 ready", "1 L  circle\n822 mL → 1 L", "LRS  69 mL/hr\n13.7 × 5", "2–3 L/min, then\n≥ 0.5 L/min"],
+        ["Healthy Lab\nelective OHE", "25", "1", "10 mm\n9.5 / 10.5 ready", "2 L  circle\n1.5 L → 2 L", "LRS  125 mL/hr\n25 × 5", "2–3 L/min, then\n0.5–1 L/min"],
+        ["MoMo\nmath only", "4.25", "4-E", "3.5–4.0 mm\ncat; not dog formula", "0.5 L  NRC\n255 mL → 0.5 L", "LRS  13 mL/hr\n4.25 × 3", "0.85–1.7 L/min\nNRC 200–400"],
+    ]
+    widths = [560, 200, 220, 480, 500, 520, 680]
+    scale = (W - 40) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [20]
+    for w in widths:
+        xs.append(xs[-1] + w)
+
+    y = 8
+    header_h = 96
+    row_h = int((H - y - header_h - 8) / 3)
+    for c, lab in enumerate(headers):
+        cell(d, xs[c], y, xs[c + 1], y + header_h, lab, fill=NAVY, fg=GOLD, size=46, bold=True, align="center")
+
+    stripe = [(255, 255, 255), (236, 242, 244)]
+    for r, row in enumerate(rows):
+        yy = y + header_h + r * row_h
+        for c, val in enumerate(row):
+            if c == 2:
+                fill, fg, size, bold = GOLD, NAVY, 72, True
+            elif c == 0:
+                fill, fg, size, bold = NAVY, WHITE, 48, True
+            else:
+                fill, fg, size, bold = stripe[r % 2], INK, 48, True
+            lines = val.split("\n")
+            d.rectangle([xs[c], yy, xs[c + 1], yy + row_h], fill=fill, outline=LINE, width=2)
+            f = font(size, bold)
+            gap = 14 if len(lines) > 1 else 0
+            total = len(lines) * size + gap
+            ty = yy + row_h / 2 - total / 2 + size / 2
+            for i, line in enumerate(lines):
+                d.text(((xs[c] + xs[c + 1]) / 2, ty), line, font=f, fill=fg, anchor="mm")
+                ty += size + (gap if i == 0 else 0)
+    path = OUT / "anesthesia_setup_table.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
 if __name__ == "__main__":
     anesthesia_record("blank")
     anesthesia_record("willie")
     anesthesia_record("momo")
     recovery_flowsheet()
+    anesthesia_setup_table()
