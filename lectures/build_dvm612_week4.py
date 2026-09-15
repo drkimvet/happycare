@@ -616,23 +616,9 @@ notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Do not te
 
 # 22 Antiseptics
 s = new_content("Skin antiseptics")
-add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(0.72), GOLD_LT)
-add_text(s, Inches(0.55), Inches(1.16), Inches(12.22), Inches(0.64), "Three scrubs: contact time and which tissue. Veterinary paint is 5% povidone-iodine, not 10%.", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_round(s, Inches(0.40), Inches(2.00), Inches(4.10), Inches(3.22), WHITE)
-add_rect(s, Inches(0.40), Inches(2.00), Inches(4.10), Inches(0.48), TEAL)
-add_text(s, Inches(0.40), Inches(2.00), Inches(4.10), Inches(0.48), "Chlorhexidine", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(2.56), Inches(3.80), Inches(2.54), "Scrub: 2% chlorhexidine acetate\n(Nolvasan Surgical Scrub)\n\nContact: 2 to 4 min\n\nUse on: intact skin (trunk)\n\nDo not: eyes, mucous membranes", size=16, color=INK)
-add_round(s, Inches(4.62), Inches(2.00), Inches(4.10), Inches(3.22), WHITE)
-add_rect(s, Inches(4.62), Inches(2.00), Inches(4.10), Inches(0.48), GOLD)
-add_text(s, Inches(4.62), Inches(2.00), Inches(4.10), Inches(0.48), "Povidone-iodine", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(2.56), Inches(3.80), Inches(2.54), "Scrub: 7.5%, about 5 min, rinse\nPaint: 5% veterinary, then dry\n\nUse on: intact skin\nEye: 0.2% on healthy cornea,\n2 min + 2 min (Roberts 1986)\n\nDo not: 7.5% scrub on cornea or in the ear; undiluted 10% or 5% on the cornea", size=16, color=INK)
-add_round(s, Inches(8.84), Inches(2.00), Inches(4.08), Inches(3.22), WHITE)
-add_rect(s, Inches(8.84), Inches(2.00), Inches(4.08), Inches(0.48), NAVY)
-add_text(s, Inches(8.84), Inches(2.00), Inches(4.08), Inches(0.48), "Alcohol", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(2.56), Inches(3.78), Inches(2.54), "Scrub/rinse: after the detergent\nscrub on intact skin, then dry\n\nContact: until dry. Do not pool.\n\nUse on: intact skin only\n\nDo not: cornea, mucosa,\nopen wounds", size=16, color=INK)
-add_round(s, Inches(0.40), Inches(5.38), Inches(12.52), Inches(1.60), WHITE)
-add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes and mucous membranes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5% povidone-iodine, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% povidone-iodine paint, not 10%).\nEye: Roberts 1986, healthy cornea. 1:50 of 10% = 0.2% povidone-iodine, 2-min scrub + 2-min soak. Perforation: saline only.", size=13, color=SLATE)
-notes(s, "Spell chlorhexidine, povidone-iodine, and alcohol. Do not say C-H-G or P-V-P-I on this slide. Chlorhexidine: Nolvasan 2 percent, 2 to 4 minutes, intact skin, not eyes or mucosa. Povidone-iodine: 7.5 percent scrub about 5 minutes on intact skin, then 5 percent veterinary paint. Eye is 0.2 percent on a healthy cornea, 2 plus 2 minutes, Roberts 1986. Do not put 7.5 percent detergent scrub on the cornea or in the ear. Alcohol: rinse on intact skin after the detergent scrub and let it dry. Not on cornea, mucosa, or an open wound. Alcohol does not replace the timed chlorhexidine or povidone-iodine contact.")
+add_pic(s, "antiseptic_scrub_compare.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.40))
+add_text(s, Inches(0.40), Inches(6.50), Inches(12.50), Inches(0.58), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, 2 to 4 min, keep out of eyes. BETADINE Surgical Scrub Veterinary 7.5% povidone-iodine NDC 67618-154, about 5 min. BETADINE Solution Veterinary 5% povidone-iodine NDC 67618-155, not 10%. Eye: Roberts 1986, 0.2% povidone-iodine, 2 min + 2 min. Perforation: saline only.", size=13, color=SLATE)
+notes(s, "Spell chlorhexidine, povidone-iodine, and alcohol. Do not say C-H-G or P-V-P-I. Walk the table: as a scrub, contact time, use on, do not. Chlorhexidine: Nolvasan 2 percent, 2 to 4 minutes, intact skin, not eyes or mucosa. Povidone-iodine: 7.5 percent scrub about 5 minutes on intact skin, then 5 percent veterinary paint. Eye is 0.2 percent on a healthy cornea, 2 plus 2 minutes, Roberts 1986. Do not put 7.5 percent detergent scrub on the cornea or in the ear. Alcohol: rinse on intact skin after the detergent scrub and let it dry. Not on cornea, mucosa, or an open wound. Alcohol does not replace the timed chlorhexidine or povidone-iodine contact.")
 
 # 23 Technique
 s = new_content("Patient skin preparation technique")

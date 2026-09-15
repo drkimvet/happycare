@@ -367,7 +367,7 @@ def kit_sheet():
             "#40 clippers, spare blade, vacuum",
             "Eye lube; ear/eye protection plan",
             "Dirty-prep kit + sterile-prep kit",
-            "7.5% PVP-I ~5 min, then 5% vet paint; eye 1:50 of 10% (Roberts 1986)",
+            "7.5% povidone-iodine ~5 min, then 5% veterinary paint; eye 1:50 of 10% (Roberts 1986)",
             "Sterile gauze, bowls, gloves",
             "Four towels + large drape + clamps",
             "Gowns, closed-glove pairs (extra)",
@@ -1039,6 +1039,80 @@ def drape_overhead_window():
     return path
 
 
+def antiseptic_scrub_compare():
+    """Chlorhexidine vs povidone-iodine vs alcohol as scrubs. Full names. Cited contact times."""
+    W, H = 3200, 1280
+    im = Image.new("RGB", (W, H), OFF)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 78], fill=NAVY)
+    d.rectangle([0, 78, W, 86], fill=GOLD)
+    d.text((40, 22), "Three scrubs", font=font(40, True), fill=WHITE, anchor="lt")
+    d.text((W - 40, 40), "Spell the names. Veterinary paint is 5% povidone-iodine, not 10%.", font=font(28, True), fill=GOLD, anchor="rm")
+
+    cols = ["", "Chlorhexidine", "Povidone-iodine", "Alcohol"]
+    col_fill = [NAVY, TEAL, GOLD, NAVY]
+    col_fg = [GOLD, WHITE, NAVY, GOLD]
+    rows = [
+        (
+            "As a scrub",
+            "2% chlorhexidine acetate (Nolvasan Surgical Scrub)",
+            "7.5% scrub, rinse, then 5% veterinary paint",
+            "Rinse after the detergent scrub, then dry",
+        ),
+        (
+            "Contact time",
+            "2 to 4 min",
+            "About 5 min for the 7.5% scrub",
+            "Until dry. Do not pool.",
+        ),
+        (
+            "Use on",
+            "Intact skin (trunk)",
+            "Intact skin. Healthy cornea: 0.2% povidone-iodine, 2 min + 2 min",
+            "Intact skin only",
+        ),
+        (
+            "Do not",
+            "Eyes. Mucous membranes.",
+            "7.5% scrub on cornea or in the ear. Undiluted 10% or 5% on the cornea. Perforation: saline only.",
+            "Cornea. Mucosa. Open wounds.",
+        ),
+    ]
+    widths = [420, 900, 980, 860]
+    scale = (W - 48) / sum(widths)
+    widths = [int(w * scale) for w in widths]
+    xs = [24]
+    for w in widths:
+        xs.append(xs[-1] + w)
+    y = 104
+    hh, rh = 78, 268
+    for c, lab in enumerate(cols):
+        d.rectangle([xs[c], y, xs[c + 1], y + hh], fill=col_fill[c], outline=LINE, width=2)
+        if lab:
+            d.text(((xs[c] + xs[c + 1]) / 2, y + hh / 2), lab, font=font(40, True), fill=col_fg[c], anchor="mm")
+    for r, row in enumerate(rows):
+        yy = y + hh + r * rh
+        stripe = WHITE if r % 2 == 0 else (236, 242, 244)
+        for c, val in enumerate(row):
+            if c == 0:
+                fill, fg, size, bold = NAVY, GOLD, 32, True
+            else:
+                fill, fg, size, bold = stripe, INK, 34, False
+            d.rectangle([xs[c], yy, xs[c + 1], yy + rh], fill=fill, outline=LINE, width=2)
+            f = font(size, bold)
+            lines = wrap_text(val, f, xs[c + 1] - xs[c] - 40)
+            total = len(lines) * (size + 10)
+            ty = yy + rh / 2 - total / 2 + size / 2
+            for line in lines:
+                d.text(((xs[c] + xs[c + 1]) / 2, ty), line, font=f, fill=fg, anchor="mm")
+                ty += size + 10
+
+    path = OUT / "antiseptic_scrub_compare.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
 if __name__ == "__main__":
     anesthesia_record("blank")
     anesthesia_record("willie")
@@ -1051,3 +1125,4 @@ if __name__ == "__main__":
     anesthesia_chart_recovery()
     prep_spiral_antiseptic()
     drape_overhead_window()
+    antiseptic_scrub_compare()
