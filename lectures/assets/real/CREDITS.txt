@@ -32,9 +32,16 @@ yap_surgical_window.jpg
   Cropped to the fenestrated window for DVM 612 Week 4.
   https://www.dvidshub.net/image/8634096/pacific-partnership-2024-2-yap
 
-overhead_dog_window.jpg
-  Original overhead teaching image of a fenestrated drape and surgical window, generated for DVM 612 Week 4.
+drape_overhead_window.png
+  Original overhead teaching figure of a fenestrated drape over a dog in dorsal recumbency, drawn for DVM 612 Week 4.
   Not a hospital-patient photograph. Used to show the zenith view: only clipped, painted skin in the hole.
+
+closed_gloving_real.jpg
+  Crop of DVIDS photo ID 1155605, VIRIN 140117-F-XL333-814.
+  Caption: Tactical critical care expeditionary team member U.S. Air Force Master Sgt. Jose Arias-Patino, operating room surgical technician, 86th Medical Group, dons sterile gloves in preparation for surgery while in-flight aboard a C-17 Globemaster III at Joint Readiness Training Center (JRTC), Fort Polk, La., Jan. 17, 2014.
+  Author: Master Sgt. John R. Nimmo, Sr., U.S. Air Force
+  License: Public domain (U.S. government work)
+  https://www.dvidshub.net/image/1155605/joint-readiness-training-center
 
 
 hektor_or.jpg

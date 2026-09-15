@@ -871,63 +871,169 @@ def _arrow_head(d, x, y, angle, size=22, fill=TEAL):
 
 
 def prep_spiral_antiseptic():
-    """One continuous outward spiral from the incision. Not concentric closed rings."""
+    """One open Archimedean spiral from the incision to the hair. Not closed rings."""
     W, H = 1800, 1440
     im = Image.new("RGB", (W, H), NAVY)
     d = ImageDraw.Draw(im)
 
-    d.text((W / 2, 32), "Start at the incision. One continuous spiral out.", font=font(36, True), fill=WHITE, anchor="mt")
-    d.text((W / 2, 80), "Never wipe back toward the cut. Drop the sponge at the hair.", font=font(24), fill=GOLD, anchor="mt")
+    d.text((W / 2, 28), "One sponge. One path. Keep going out.", font=font(36, True), fill=WHITE, anchor="mt")
+    d.text((W / 2, 76), "Do not close a circle. Do not start a new ring. Drop the sponge at the hair.", font=font(24), fill=GOLD, anchor="mt")
 
-    cx, cy = W / 2, H / 2 + 36
-    rx, ry = 620, 410
-    d.ellipse([cx - rx - 78, cy - ry - 58, cx + rx + 78, cy + ry + 58], fill=(176, 142, 104))
-    d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=(214, 186, 158))
-    d.ellipse([cx - 240, cy - 170, cx + 240, cy + 170], fill=(176, 198, 186))
-    d.ellipse([cx - 100, cy - 72, cx + 100, cy + 72], fill=(132, 172, 154))
-    d.line([cx, cy - 300, cx, cy + 300], fill=(120, 72, 72), width=4)
+    cx, cy = 980, 760
+    rx, ry = 520, 355
+    d.ellipse([cx - rx - 70, cy - ry - 52, cx + rx + 70, cy + ry + 52], fill=(168, 132, 96))
+    d.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=(220, 196, 168))
+    d.ellipse([cx - 210, cy - 150, cx + 210, cy + 150], fill=(186, 206, 196))
+    d.line([cx, cy - 268, cx, cy + 268], fill=(132, 78, 78), width=5)
+    d.ellipse([cx - 18, cy - 18, cx + 18, cy + 18], fill=(120, 64, 64), outline=NAVY, width=2)
+    d.text((cx, cy), "cut", font=font(14, True), fill=WHITE, anchor="mm")
 
+    # Wide-pitch open spiral (~1.65 turns) so the path cannot be read as nested rings.
     pts = []
-    t0, t1 = 0.15, 6.15 * math.pi
-    n = 520
-    r0, rmax = 48.0, rx * 0.90
+    t0 = 0.35
+    turns = 1.65
+    t1 = t0 + turns * 2 * math.pi
+    n = 640
+    r0, rmax = 36.0, rx * 0.93
     for i in range(n + 1):
         t = t0 + (t1 - t0) * i / n
         r = r0 + (rmax - r0) * (t - t0) / (t1 - t0)
         x = cx + r * math.cos(t)
         y = cy + r * math.sin(t) * (ry / rx)
         pts.append((x, y))
-    d.line(pts, fill=TEAL, width=16)
-    d.line(pts, fill=(190, 226, 220), width=6)
+    d.line(pts, fill=TEAL, width=22)
+    d.line(pts, fill=(196, 230, 224), width=10)
 
-    for frac in (0.14, 0.32, 0.50, 0.68, 0.84, 0.96):
+    for frac in (0.12, 0.28, 0.44, 0.60, 0.76, 0.90):
         i = int(frac * n)
-        x0, y0 = pts[max(0, i - 10)]
+        x0, y0 = pts[max(0, i - 14)]
         x1, y1 = pts[i]
         ang = math.atan2(y1 - y0, x1 - x0)
-        _arrow_head(d, x1, y1, ang, size=28, fill=TEAL)
+        _arrow_head(d, x1, y1, ang, size=32, fill=TEAL)
 
-    for frac, lab in ((0.0, "1"), (0.34, "2"), (0.68, "3")):
-        i = min(n, int(frac * n) + (8 if frac == 0 else 0))
-        x, y = pts[i]
-        d.ellipse([x - 30, y - 30, x + 30, y + 30], fill=WHITE, outline=NAVY, width=3)
-        d.text((x, y), lab, font=font(28, True), fill=NAVY, anchor="mm")
+    sx, sy = pts[8]
+    d.rounded_rectangle([sx - 210, sy - 92, sx + 8, sy - 28], radius=8, fill=NAVY)
+    d.text((sx - 101, sy - 60), "START  ·  stay on this line", font=font(20, True), fill=GOLD, anchor="mm")
 
-    x1, y1 = pts[12]
-    d.rounded_rectangle([x1 - 240, y1 - 78, x1 - 20, y1 - 18], radius=8, fill=NAVY)
-    d.text((x1 - 130, y1 - 48), "START  at the cut", font=font(22, True), fill=GOLD, anchor="mm")
+    gx, gy = pts[int(0.88 * n)]
+    d.rounded_rectangle([gx - 38, gy - 28, gx + 38, gy + 28], radius=6, fill=WHITE, outline=TEAL, width=3)
+    d.rectangle([gx - 26, gy - 16, gx + 26, gy + 16], outline=TEAL, width=2)
+    d.text((gx, gy), "gauze", font=font(14, True), fill=NAVY, anchor="mm")
 
     xe, ye = pts[-1]
-    d.rounded_rectangle([xe - 20, ye + 28, xe + 300, ye + 108], radius=10, fill=WHITE)
-    d.text((xe + 140, ye + 50), "Hair. Drop the sponge.", font=font(22, True), fill=RED, anchor="mm")
-    d.text((xe + 140, ye + 84), "New sponge starts at 1.", font=font(20, True), fill=NAVY, anchor="mm")
+    d.rounded_rectangle([xe - 10, ye + 18, xe + 310, ye + 100], radius=10, fill=WHITE)
+    d.text((xe + 150, ye + 42), "Hair. Drop this sponge.", font=font(22, True), fill=RED, anchor="mm")
+    d.text((xe + 150, ye + 74), "New sponge starts at the cut.", font=font(18, True), fill=NAVY, anchor="mm")
 
-    gx, gy = pts[int(0.90 * n)]
-    d.rounded_rectangle([gx - 54, gy - 40, gx + 22, gy + 16], radius=8, fill=WHITE, outline=LINE, width=2)
+    # Wrong: closed concentric rings (what this is not).
+    bx0, by0, bx1, by1 = 36, 1080, 430, 1390
+    d.rounded_rectangle([bx0, by0, bx1, by1], radius=12, fill=WHITE)
+    d.rounded_rectangle([bx0, by0, bx1, by0 + 44], radius=12, fill=RED)
+    d.rectangle([bx0, by0 + 28, bx1, by0 + 44], fill=RED)
+    d.text(((bx0 + bx1) / 2, by0 + 22), "Not this", font=font(22, True), fill=WHITE, anchor="mm")
+    ix, iy = (bx0 + bx1) / 2, by0 + 175
+    for a, b in ((92, 62), (64, 42), (36, 24)):
+        d.ellipse([ix - a, iy - b, ix + a, iy + b], outline=TEAL, width=6)
+    d.line([ix - 70, iy - 70, ix + 70, iy + 70], fill=RED, width=8)
+    d.line([ix + 70, iy - 70, ix - 70, iy + 70], fill=RED, width=8)
+    d.text((ix, by1 - 28), "Closed rings. Stop.", font=font(18, True), fill=RED, anchor="mm")
 
-    d.text((W / 2, H - 26), "One path. Out only. Do not close a ring and start another.", font=font(22, True), fill=GOLD, anchor="mb")
+    d.text((W / 2, H - 22), "The line never closes. If you complete a circle, you have gone the wrong way.", font=font(22, True), fill=GOLD, anchor="mb")
 
     path = OUT / "prep_spiral_antiseptic.png"
+    im.save(path, "PNG")
+    print("wrote", path)
+    return path
+
+
+def drape_overhead_window():
+    """Surgeon’s zenith view: fenestrated drape over a dog in dorsal recumbency."""
+    W, H = 2400, 1680
+    im = Image.new("RGB", (W, H), (232, 236, 240))
+    d = ImageDraw.Draw(im)
+
+    d.rectangle([0, 0, W, 88], fill=NAVY)
+    d.rectangle([0, 88, W, 96], fill=GOLD)
+    d.text((W / 2, 32), "Look straight down. This hole is the incision.", font=font(40, True), fill=WHITE, anchor="mt")
+    d.text((W / 2, 70), "Dog in dorsal recumbency  ·  only clipped, painted skin in the window", font=font(22), fill=GOLD, anchor="mt")
+
+    # Table
+    d.rounded_rectangle([80, 130, W - 80, 1540], radius=24, fill=(188, 196, 204), outline=(150, 158, 166), width=3)
+    d.rounded_rectangle([140, 190, W - 140, 1480], radius=18, fill=(210, 216, 222))
+
+    cx, cy = W / 2, 860
+    fur = (186, 156, 122)
+    fur2 = (168, 138, 108)
+    # Dog in dorsal recumbency, zenith view. Head cranial (top). Draw the animal
+    # first so muzzle, ET tube, and tied paws stay visible outside the drape.
+    d.ellipse([cx - 175, 175, cx + 175, 455], fill=fur)
+    d.ellipse([cx - 78, 155, cx + 78, 250], fill=fur2)
+    d.ellipse([cx - 22, 162, cx + 22, 198], fill=(72, 52, 44))  # nose
+    d.ellipse([cx - 58, 210, cx - 28, 236], fill=(40, 32, 28))  # eyes
+    d.ellipse([cx + 28, 210, cx + 58, 236], fill=(40, 32, 28))
+    d.ellipse([cx - 248, 250, cx - 155, 380], fill=fur2)
+    d.ellipse([cx + 155, 250, cx + 248, 380], fill=fur2)
+    d.rectangle([cx - 11, 88, cx + 11, 175], fill=(70, 90, 110))
+    d.polygon([(cx - 20, 175), (cx + 20, 175), (cx, 128)], fill=(90, 110, 130))
+    d.ellipse([cx - 16, 118, cx + 16, 148], fill=(210, 214, 218), outline=(70, 90, 110), width=2)
+    # thoracic limbs + ties
+    d.rounded_rectangle([95, 600, 360, 755], radius=46, fill=fur)
+    d.rounded_rectangle([W - 360, 600, W - 95, 755], radius=46, fill=fur)
+    d.ellipse([70, 615, 150, 740], fill=fur2)
+    d.ellipse([W - 150, 615, W - 70, 740], fill=fur2)
+    # pelvic limbs + ties
+    d.rounded_rectangle([210, 1245, 500, 1455], radius=46, fill=fur)
+    d.rounded_rectangle([W - 500, 1245, W - 210, 1455], radius=46, fill=fur)
+    d.ellipse([175, 1360, 280, 1470], fill=fur2)
+    d.ellipse([W - 280, 1360, W - 175, 1470], fill=fur2)
+    d.ellipse([cx - 46, 1435, cx + 46, 1510], fill=fur2)
+    for x0, x1, y in ((70, 360, 680), (W - 360, W - 70, 680), (175, 500, 1410), (W - 500, W - 175, 1410)):
+        d.line([(x0, y), (x1, y)], fill=(40, 90, 170), width=10)
+
+    # Large fenestrated drape: covers the trunk, leaves head and paws in view
+    drape = (70, 132, 186)
+    d.rounded_rectangle([200, 390, W - 200, 1360], radius=28, fill=drape)
+    d.polygon([(200, 520), (310, 390), (430, 390), (250, 640)], fill=(58, 118, 170))
+    d.polygon([(W - 200, 1200), (W - 340, 1360), (W - 200, 1360)], fill=(58, 118, 170))
+
+    # Four-quadrant towels boxing the site
+    wx0, wy0, wx1, wy1 = cx - 340, 620, cx + 340, 1180
+    towel = (236, 240, 244)
+    d.rectangle([wx0 - 70, wy0 - 70, wx1 + 70, wy1 + 70], fill=towel)
+    d.rectangle([wx0 - 8, wy0 - 8, wx1 + 8, wy1 + 8], fill=drape)
+
+    # Window: ventral abdomen, clipped and iodine-painted
+    d.rectangle([wx0, wy0, wx1, wy1], fill=(214, 186, 150))
+    d.rectangle([wx0 + 18, wy0 + 18, wx1 - 18, wy1 - 18], fill=(198, 168, 118))
+    # linea alba
+    d.line([(cx, wy0 + 36), (cx, wy1 - 36)], fill=(120, 72, 72), width=6)
+    # umbilicus (cranial in the window)
+    d.ellipse([cx - 16, wy0 + 70, cx + 16, wy0 + 102], fill=(150, 96, 90), outline=(110, 70, 70), width=2)
+    # dog nipples: two parasagittal rows
+    for dy in (160, 250, 340, 430):
+        for side in (-110, 110):
+            nx, ny = cx + side, wy0 + dy
+            d.ellipse([nx - 14, ny - 10, nx + 14, ny + 10], fill=(150, 88, 88), outline=(120, 64, 64), width=2)
+
+    d.rectangle([wx0, wy0, wx1, wy1], outline=NAVY, width=6)
+
+    d.rounded_rectangle([wx0, wy0 - 64, wx0 + 430, wy0 - 16], radius=8, fill=NAVY)
+    d.text((wx0 + 215, wy0 - 40), "SURGICAL WINDOW", font=font(24, True), fill=GOLD, anchor="mm")
+
+    d.rounded_rectangle([cx + 200, 210, cx + 470, 262], radius=8, fill=WHITE)
+    d.text((cx + 335, 236), "HEAD  ·  ET tube", font=font(20, True), fill=NAVY, anchor="mm")
+
+    d.rounded_rectangle([230, 1188, 620, 1278], radius=10, fill=WHITE)
+    d.text((425, 1216), "Hair stays under the drape.", font=font(22, True), fill=RED, anchor="mm")
+    d.text((425, 1250), "If hair is in the hole, re-clip.", font=font(20, True), fill=NAVY, anchor="mm")
+
+    d.rounded_rectangle([W - 680, 1188, W - 230, 1278], radius=10, fill=WHITE)
+    d.text((W - 455, 1216), "Four towels box the site.", font=font(22, True), fill=NAVY, anchor="mm")
+    d.text((W - 455, 1250), "Large drape last. Then timeout.", font=font(20, True), fill=TEAL, anchor="mm")
+
+    d.text((W / 2, H - 28), "Teaching view from above the table. Not a hospital-patient photograph.", font=font(22), fill=NAVY, anchor="mb")
+
+    path = OUT / "drape_overhead_window.png"
     im.save(path, "PNG")
     print("wrote", path)
     return path
@@ -944,3 +1050,4 @@ if __name__ == "__main__":
     prep_or_sequence()
     anesthesia_chart_recovery()
     prep_spiral_antiseptic()
+    drape_overhead_window()

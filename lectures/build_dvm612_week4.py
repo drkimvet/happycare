@@ -616,23 +616,23 @@ notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Do not te
 
 # 22 Antiseptics
 s = new_content("Skin antiseptics")
-add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(1.20), GOLD_LT)
-add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nEye: 0.2% only. 2 min scrub + 2 min soak. Do not put 10% or 5% undiluted on the cornea (Roberts 1986).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
-add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), TEAL)
-add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(0.55), Inches(3.04), Inches(3.80), Inches(2.00), "2% chlorhexidine acetate\nMIN contact: 2 to 4 min\nKeep out of eyes\nTrunk / intact skin\nAlcohol: rinse, then dry", size=16, color=INK)
-add_round(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
-add_rect(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.48), GOLD)
-add_text(s, Inches(4.62), Inches(2.48), Inches(4.10), Inches(0.48), "Skin  ·  Betadine vet", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(4.77), Inches(3.04), Inches(3.80), Inches(2.00), "7.5% scrub\nMIN contact: about 5 min\nRinse with sterile water\nPaint 5% solution\nDry, then drape", size=16, color=INK)
-add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(2.70), WHITE)
-add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), NAVY)
-add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "0.2%: 2 min scrub + 2 min soak\n10% stock → dilute 1:50\n5% bottle → dilute 1:25\nNot 10% or 5% undiluted\nPerforation: saline only", size=16, color=INK)
+add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(0.72), GOLD_LT)
+add_text(s, Inches(0.55), Inches(1.16), Inches(12.22), Inches(0.64), "Three scrubs: contact time and which tissue. Veterinary paint is 5% povidone-iodine, not 10%.", size=16, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_round(s, Inches(0.40), Inches(2.00), Inches(4.10), Inches(3.22), WHITE)
+add_rect(s, Inches(0.40), Inches(2.00), Inches(4.10), Inches(0.48), TEAL)
+add_text(s, Inches(0.40), Inches(2.00), Inches(4.10), Inches(0.48), "Chlorhexidine", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(2.56), Inches(3.80), Inches(2.54), "Scrub: 2% chlorhexidine acetate\n(Nolvasan Surgical Scrub)\n\nContact: 2 to 4 min\n\nUse on: intact skin (trunk)\n\nDo not: eyes, mucous membranes", size=16, color=INK)
+add_round(s, Inches(4.62), Inches(2.00), Inches(4.10), Inches(3.22), WHITE)
+add_rect(s, Inches(4.62), Inches(2.00), Inches(4.10), Inches(0.48), GOLD)
+add_text(s, Inches(4.62), Inches(2.00), Inches(4.10), Inches(0.48), "Povidone-iodine", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(4.77), Inches(2.56), Inches(3.80), Inches(2.54), "Scrub: 7.5%, about 5 min, rinse\nPaint: 5% veterinary, then dry\n\nUse on: intact skin\nEye: 0.2% on healthy cornea,\n2 min + 2 min (Roberts 1986)\n\nDo not: 7.5% scrub on cornea or in the ear; undiluted 10% or 5% on the cornea", size=16, color=INK)
+add_round(s, Inches(8.84), Inches(2.00), Inches(4.08), Inches(3.22), WHITE)
+add_rect(s, Inches(8.84), Inches(2.00), Inches(4.08), Inches(0.48), NAVY)
+add_text(s, Inches(8.84), Inches(2.00), Inches(4.08), Inches(0.48), "Alcohol", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(8.99), Inches(2.56), Inches(3.78), Inches(2.54), "Scrub/rinse: after the detergent\nscrub on intact skin, then dry\n\nContact: until dry. Do not pool.\n\nUse on: intact skin only\n\nDo not: cornea, mucosa,\nopen wounds", size=16, color=INK)
 add_round(s, Inches(0.40), Inches(5.38), Inches(12.52), Inches(1.60), WHITE)
-add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: Roberts 1986, healthy cornea. 1:50 of 10% = 0.2%, 2-min scrub + 2-min soak. Do not use undiluted 10% or undiluted 5% paint. 1:2 caused edema in 1/15 eyes. Perforation: saline.", size=14, color=SLATE)
-notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. That is 0.2 percent. Do not put undiluted 10 percent human Betadine or undiluted 5 percent veterinary paint on the cornea. One case of corneal epithelial edema at 1 to 2, which is 5 percent. Do not upgrade that to a claim that Roberts proved massive toxicity from neat 10 percent; they recommended 1 to 50 after seeing edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
+add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes and mucous membranes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5% povidone-iodine, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% povidone-iodine paint, not 10%).\nEye: Roberts 1986, healthy cornea. 1:50 of 10% = 0.2% povidone-iodine, 2-min scrub + 2-min soak. Perforation: saline only.", size=13, color=SLATE)
+notes(s, "Spell chlorhexidine, povidone-iodine, and alcohol. Do not say C-H-G or P-V-P-I on this slide. Chlorhexidine: Nolvasan 2 percent, 2 to 4 minutes, intact skin, not eyes or mucosa. Povidone-iodine: 7.5 percent scrub about 5 minutes on intact skin, then 5 percent veterinary paint. Eye is 0.2 percent on a healthy cornea, 2 plus 2 minutes, Roberts 1986. Do not put 7.5 percent detergent scrub on the cornea or in the ear. Alcohol: rinse on intact skin after the detergent scrub and let it dry. Not on cornea, mucosa, or an open wound. Alcohol does not replace the timed chlorhexidine or povidone-iodine contact.")
 
 # 23 Technique
 s = new_content("Patient skin preparation technique")
@@ -644,8 +644,8 @@ add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Move to the OR. Position, pad, tie.",
     "Full (sterile) scrub in the room. Start at the incision. One continuous spiral out. Never back toward the cut. Drop the sponge.",
     "Clock the minimum contact time.",
-    "Skin: 7.5% ~5 min, then 5% paint.",
-    "Eye: 0.2% (10% 1:50 or 5% 1:25). 2 min + 2 min. Not 10% or 5% undiluted. Perforation: saline only.",
+    "Skin: 7.5% povidone-iodine ~5 min, then 5% paint.",
+    "Eye: 0.2% povidone-iodine (10% 1:50 or 5% 1:25). 2 min + 2 min. Not 10% or 5% undiluted. Perforation: saline only.",
 ], size=16, spacing=10)
 notes(s, "Mime one continuous spiral out from the incision, not a stack of closed circles. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
@@ -659,22 +659,20 @@ notes(s, "Name the bag size and the tube size on this photograph. Confirm placem
 
 # 25 Draping
 s = new_content("Draping")
-add_round(s, Inches(0.35), Inches(1.08), Inches(4.55), Inches(0.42), RED)
-add_text(s, Inches(0.35), Inches(1.08), Inches(4.55), Inches(0.42), "Hair at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "cherry_point_spay.jpg", Inches(0.35), Inches(1.52), Inches(4.55), Inches(3.55))
-add_round(s, Inches(5.05), Inches(1.08), Inches(7.90), Inches(0.42), GREEN)
-add_text(s, Inches(5.05), Inches(1.08), Inches(7.90), Inches(0.42), "Overhead: the window is the incision", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_pic(s, "overhead_dog_window.jpg", Inches(5.05), Inches(1.52), Inches(7.90), Inches(3.55))
-add_round(s, Inches(0.35), Inches(5.18), Inches(12.60), Inches(1.82), WHITE)
-add_text(s, Inches(0.55), Inches(5.30), Inches(12.20), Inches(1.58), "Look straight down on the field. Four towels box the site. Large drape last. Only clipped, painted skin is in the window. Hair stays under the drape. Re-clip until the hole is hair-free.\nLeft: Cpl. Samuel A. Nasso, USMC, public domain. Right: overhead teaching view of the surgical window.", size=16, color=INK)
-notes(s, "Right is the view you want: camera above the table, looking down into the fenestration. The hole is the incision. Hair is under the drape. Left is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
+add_pic(s, "drape_overhead_window.png", Inches(0.32), Inches(1.08), Inches(8.55), Inches(5.95))
+add_round(s, Inches(9.02), Inches(1.08), Inches(3.95), Inches(0.38), RED)
+add_text(s, Inches(9.02), Inches(1.08), Inches(3.95), Inches(0.38), "Hair at the drape edge", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_pic(s, "cherry_point_spay.jpg", Inches(9.02), Inches(1.50), Inches(3.95), Inches(2.55))
+add_round(s, Inches(9.02), Inches(4.18), Inches(3.95), Inches(2.85), WHITE)
+add_text(s, Inches(9.16), Inches(4.30), Inches(3.67), Inches(2.58), "Left is the view from above the table: the hole is the incision. Only clipped, painted skin. Hair is under the drape.\n\nRight: hair at the margin. Re-clip or re-drape. Four towels, then the large drape. Timeout. Then cut.", size=16, color=INK)
+notes(s, "The large figure is looking straight down on a dog in dorsal recumbency. The window is the incision. Hair stays under the drape. The small photograph is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.")
 
 # 26 Gloving
 s = new_content("OR attire, gown, glove, instruments")
-add_pic(s, "prep_closed_gloving.png", Inches(0.35), Inches(1.12), Inches(6.3), Inches(4.15))
-add_round(s, Inches(6.75), Inches(1.12), Inches(6.2), Inches(4.15), WHITE)
-add_text(s, Inches(6.95), Inches(1.24), Inches(5.85), Inches(0.40), "Before you cut", size=18, bold=True, color=NAVY)
-add_bullets(s, Inches(6.90), Inches(1.70), Inches(5.90), Inches(3.40), [
+add_pic(s, "closed_gloving_real.jpg", Inches(0.35), Inches(1.12), Inches(7.15), Inches(4.15))
+add_round(s, Inches(7.65), Inches(1.12), Inches(5.30), Inches(4.15), WHITE)
+add_text(s, Inches(7.85), Inches(1.24), Inches(4.95), Inches(0.40), "Before you cut", size=18, bold=True, color=NAVY)
+add_bullets(s, Inches(7.80), Inches(1.70), Inches(5.00), Inches(3.40), [
     "Door: shoe covers, hair cap, mask. Then enter.",
     "Surgical hand scrub. Gown. Closed glove (hands stay in the cuffs).",
     "Drape. Then open the instrument pack. Check the indicator.",
@@ -682,8 +680,8 @@ add_bullets(s, Inches(6.90), Inches(1.70), Inches(5.90), Inches(3.40), [
     "Name the monitors: ECG, SpO2, ETCO2, temp, fluids.",
 ], size=16, spacing=8)
 add_round(s, Inches(0.35), Inches(5.38), Inches(12.6), Inches(1.7), WHITE)
-add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Left: closed-gloving technique (hands stay inside the gown cuffs). Right: door attire, then gown, drape, open the pack, count, Mayo stand. Timeout. Announce the incision and mark it on the chart.", size=16, color=INK)
-notes(s, "Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.")
+add_text(s, Inches(0.55), Inches(5.5), Inches(12.2), Inches(1.45), "Photograph: closed glove. Hands stay inside the gown cuffs; the cuff is used to pull the glove on. U.S. Air Force photo, public domain. Then drape, open the pack, count, Mayo stand. Timeout. Announce the incision and mark it on the chart.", size=16, color=INK)
+notes(s, "This is a real photograph, not a drawing. Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove: hands stay in the cuffs. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.")
 
 # 27 Asepsis + protect
 s = new_content("Breaks in asepsis")
@@ -701,7 +699,7 @@ notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glov
 s = new_content("Knowledge check")
 rows = [
     ("A", "When do you clip the OHE field?", "After ready for prep. Clip and dirty-scrub in the prep area. Full sterile scrub in the OR after positioning."),
-    ("B", "How do you prep conjunctiva with iodine?", "Intact cornea: 0.2% (10% 1:50 or 5% 1:25), 2 min scrub + 2 min soak. Not 10% or 5% undiluted. Perforation: saline only."),
+    ("B", "How do you prep conjunctiva with povidone-iodine?", "Intact cornea: 0.2% (10% 1:50 or 5% 1:25), 2 min scrub + 2 min soak. Not 10% or 5% undiluted. Perforation: saline only."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
     ("D", "25 kg dog. Tube, bag, and IV fluid rate if you intubate?", "10 mm, 2 L circle, LRS 125 mL/hr (5 mL/kg/hr)."),
 ]

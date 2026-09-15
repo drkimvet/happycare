@@ -64,7 +64,7 @@ SLIDE 20. Hair removal
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Do not teach a fixed 20 centimeter margin. Teach landmarks that scale with the patient. Protect heat.
 
 SLIDE 21. Skin antiseptics
-    SPEAK: Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. That is 0.2 percent. Do not put undiluted 10 percent human Betadine or undiluted 5 percent veterinary paint on the cornea. One case of corneal epithelial edema at 1 to 2, which is 5 percent. Do not upgrade that to a claim that Roberts proved massive toxicity from neat 10 percent; they recommended 1 to 50 after seeing edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.
+    SPEAK: Spell chlorhexidine, povidone-iodine, and alcohol. Do not say C-H-G or P-V-P-I on this slide. Chlorhexidine: Nolvasan 2 percent, 2 to 4 minutes, intact skin, not eyes or mucosa. Povidone-iodine: 7.5 percent scrub about 5 minutes on intact skin, then 5 percent veterinary paint. Eye is 0.2 percent on a healthy cornea, 2 plus 2 minutes, Roberts 1986. Do not put 7.5 percent detergent scrub on the cornea or in the ear. Alcohol: rinse on intact skin after the detergent scrub and let it dry. Not on cornea, mucosa, or an open wound. Alcohol does not replace the timed chlorhexidine or povidone-iodine contact.
 
 SLIDE 22. Patient skin preparation technique
     SPEAK: Mime one continuous spiral out from the incision, not a stack of closed circles. Dirty scrub is not sterile prep. Full scrub is in the OR after positioning. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
@@ -73,10 +73,10 @@ SLIDE 23. Patient positioning
     SPEAK: Name the bag size and the tube size on this photograph. Confirm placement with ETCO2. Keep hips in a neutral spread.
 
 SLIDE 24. Hair at the drape edge
-    SPEAK: Right is the view you want: camera above the table, looking down into the fenestration. The hole is the incision. Hair is under the drape. Left is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
+    SPEAK: The large figure is looking straight down on a dog in dorsal recumbency. The window is the incision. Hair stays under the drape. The small photograph is hair at the margin: re-clip or re-drape. Four-quadrant towels, then the large drape. Then timeout before you cut.
 
 SLIDE 25. OR attire, gown, glove, instruments
-    SPEAK: Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.
+    SPEAK: This is a real photograph, not a drawing. Call out the door: shoe covers, cap, mask. Gown after the hand scrub, not in the hallway. Closed glove: hands stay in the cuffs. Then drape, then open and count the pack. Students name SpO2, ETCO2, ECG, temp, and fluids before the first incision. Do not mix hospital-patient names onto this slide.
 
 SLIDE 26. Breaks in asepsis
     SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture: monitor, recognize hemorrhage and hernia, write the discharge plan.
