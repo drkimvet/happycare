@@ -280,7 +280,7 @@ add_text(s, Inches(0.75), Inches(1.45), Inches(12), Inches(0.40), "DVM 612  ·  
 add_text(s, Inches(0.75), Inches(1.95), Inches(12), Inches(2.0), "Preoperative Evaluation,\nPatient Preparation &\nPostoperative Care", size=36, bold=True, color=WHITE)
 add_text(s, Inches(0.75), Inches(4.15), Inches(12), Inches(0.50), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP", size=24, bold=True, color=GOLD)
 add_text(s, Inches(0.75), Inches(4.70), Inches(12), Inches(0.40), "Lecture  |  38 slides  |  60 minutes", size=18, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Exam, labs, ASA, then prep. Own the first 24 hours.\nTwo hospital cases are ASA examples only.", size=20, color=WHITE)
+add_text(s, Inches(0.75), Inches(5.20), Inches(12), Inches(0.90), "Exam, labs, ASA, then prep. Then 24 hours of monitoring and complication management.\nTwo hospital cases are ASA examples only.", size=20, color=WHITE)
 add_text(s, Inches(0.75), Inches(6.20), Inches(12), Inches(0.70), "Required: Fossum 2018; Hendrickson & Baird 2013.\nAlso used: ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery.", size=16, color=GOLD)
 notes(s, "Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. The competency list is the 2026 CPE Manual of Administration, Anesthesia and Surgery chapters, taught as DVM 612, not as an exam-prep course. Two hospital patients are only ASA examples: Willie, compensated, Status 3-E, sedated for an ear clean; MoMo, uncompensated, Status 4-E, exploratory cancelled. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, ready-for-prep, and recovery.")
 
@@ -299,18 +299,18 @@ add_text(s, Inches(0.75), Inches(5.45), Inches(11.9), Inches(0.65), "Exam → la
 notes(s, "Read the five objectives aloud. Timer: protect antiseptics, draping, and recovery. The two hospital patients are ASA practice, not the point of the hour.")
 
 # 3 SSI
-s = new_content("Prepare the patient and yourself", "Then own the first 24 hours. CPE MOA 2026 Surgery competencies.")
+s = new_content("Prepare the patient and yourself", "Then 24 hours of monitoring and complication management. CPE MOA 2026 Surgery.")
 card(s, Inches(0.5), Inches(1.2), Inches(4.0), Inches(2.35), "Causes of SSI", "Hair, skin flora, hypothermia, poor hemostasis, dead space, and breaks in asepsis.", fill=WHITE, accent=TEAL)
-card(s, Inches(4.7), Inches(1.2), Inches(4.0), Inches(2.35), "Client-owned patients", "Elective OHE patients go home to the owner after recovery. Documentation and the discharge conversation are part of the operation.", fill=WHITE, accent=GOLD)
+card(s, Inches(4.7), Inches(1.2), Inches(4.0), Inches(2.35), "Client-owned patients", "Elective OHE patients go home to the owner after recovery. Documentation and the discharge conversation are part of surgical care.", fill=WHITE, accent=GOLD)
 card(s, Inches(8.9), Inches(1.2), Inches(3.9), Inches(2.35), "Set before you cut", "Analgesia, antibiotics, temperature management, and client expectations are set in the preoperative period.", fill=WHITE, accent=GREEN)
 add_round(s, Inches(0.5), Inches(3.75), Inches(12.3), Inches(3.2), WHITE)
 add_text(s, Inches(0.75), Inches(3.9), Inches(11.8), Inches(0.4), "Surgeon responsibilities", size=18, bold=True, color=NAVY)
 add_bullets(s, Inches(0.75), Inches(4.4), Inches(11.8), Inches(2.3), [
     "Prepare the patient for a surgical procedure.",
     "Prepare yourself for a surgical procedure.",
-    "Perform the procedure. Then own the first 24 hours: hemorrhage from a weak ligature, or herniation from a weak linea, is still the operation (CPE MOA 2026 Surgery).",
+    "Perform the procedure. Then monitor the first 24 hours: a weak ligature or a weak linea is a technical failure you must recognize (CPE MOA 2026 Surgery).",
 ], size=18, spacing=8)
-notes(s, "A closure that hemorrhages in recovery is a failed surgery. The first 24 hours are part of the operation.")
+notes(s, "Surgical competence includes the first 24 hours of physiologic monitoring and complication management. That is not a claim of infinite legal liability for every recovery-ward or owner event. Hemorrhage from a weak ligature is still your technical problem.")
 
 # 4 Halsted
 s = new_content("Halsted’s principles", "Each principle has a preoperative or postoperative action")
@@ -358,8 +358,8 @@ add_text(s, Inches(0.65), Inches(5.40), Inches(5.80), Inches(0.40), "Anesthesia 
 add_text(s, Inches(0.65), Inches(5.82), Inches(5.80), Inches(1.00), "From the preoperative exam: airway in and secured, machine on, patent IV running, surgical plane, monitoring started. Then call for prep (CPE MOA 2026 Anesthesia).", size=15, color=INK)
 add_round(s, Inches(6.80), Inches(5.28), Inches(6.05), Inches(1.70), GOLD_LT)
 add_text(s, Inches(7.00), Inches(5.40), Inches(5.70), Inches(0.40), "Surgery clock  ·  last skin suture", size=16, bold=True, color=NAVY)
-add_text(s, Inches(7.00), Inches(5.82), Inches(5.70), Inches(1.00), "From the start of patient preparation to the last skin suture, including re-gowning. Then own the first 24 hours (CPE MOA 2026 Surgery).", size=15, color=INK)
-notes(s, "Do not teach this as a CPE station. Teach the clocks. Anesthesia owns exam through a patient who is ready for clippers: tube in, cuff up, machine on, IV running, surgical plane. Surgery owns clip through the last skin suture, then both own the first 24 hours. Cite ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery sections.")
+add_text(s, Inches(7.00), Inches(5.82), Inches(5.70), Inches(1.00), "From the start of patient preparation to the last skin suture, including re-gowning. Then 24 hours of monitoring and complication management (CPE MOA 2026 Surgery).", size=15, color=INK)
+notes(s, "Do not teach this as a CPE station. Teach the clocks. Anesthesia owns exam through a patient who is ready for clippers: tube in, cuff up, machine on, IV running, surgical plane. Surgery owns clip through the last skin suture. Then both teams monitor the first 24 hours. Cite ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery sections.")
 
 # 6 Preop evaluation
 s = new_content("Preoperative physical examination", "CPE MOA 2026 Appendix 3: TPR, mm/CRT, then PCV, TP, BUN. Then ASA. Then premed.")
@@ -440,10 +440,10 @@ add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), GOLD_LT)
 add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute ataxia ~1 hour. Fell off the couch twice. Cytopoint for allergies. Vitals: T 100.8 °F, HR 132, RR 52, mm pink, CRT 2 s, quiet/dull. ASA Status 3-E: moderate systemic disease that is still compensated (acute vestibular disease plus AS otitis plus murmur). Pink, walking, kidneys normal.", size=16, color=NAVY)
 card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Left ear (AS)", "Brown and bloody discharge. Pedal reflex at the pinna base. Canal patent. Cartilage hardened. Tympanic membrane visible but swollen.", accent=TEAL)
 card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "Neuro exam", "Circling left. Horizontal nystagmus, fast left, slow right. Right knuckling. Treat as central vestibular disease until MRI.", accent=GOLD)
-card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Heavy tartar. Soft non-painful abdomen. Compensated tonight.", accent=RED)
+card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Also on PE", "Grade II/VI left systolic murmur. Skip acepromazine and dexmedetomidine. Alfaxalone IV to effect. Plot BP; treat SAP <80–90 or MAP <60–70 (Grubb 2020).", accent=RED)
 add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Tonight: CBC WNL. DexSP already given: skip NSAID. Alfaxalone sedation, deep left-ear clean, cytology/culture, 3-view films. Confine. MRI if neurologic signs persist. If TECA-LBO is needed later, assign a new ASA that morning and re-check the murmur, steroid history, and ear class.", size=16, color=INK)
-notes(s, "Willie is an ASA example, not the thesis of the hour. Tonight is a sedated ear clean. The same findings, DexSP, and murmur are what you re-score if TECA-LBO is planned later. Record the murmur. Right-sided knuckling with left circling: treat as central vestibular plus otitis. Skip NSAID after DexSP.")
+add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Tonight: CBC WNL. DexSP already given: skip NSAID (AAHA/AAFP 2015: concurrent steroid + NSAID is a leading GI-perforation risk; washout if NSAID later is undefined, ~7 d for a short-acting steroid). Ear clean, cytology/culture, 3-view films. Do not invent DexSP milligrams. Later TECA-LBO: new ASA that morning.", size=15, color=INK)
+notes(s, "Willie is an ASA example, not the thesis of the hour. Tonight is a sedated ear clean. Skip NSAID because DexSP is already on board: AAHA/AAFP 2015, concurrent corticosteroid plus NSAID is a leading risk for GI perforation. Washout periods are largely undefined; about 7 days for a short-acting steroid if you later start an NSAID. Do not invent DexSP milligrams or albumin. Murmur: skip acepromazine and dexmedetomidine. Alfaxalone to effect. Plot blood pressure. Treat hypotension at SAP less than 80 to 90 or MAP less than 60 to 70, Grubb 2020. That is the safety plan. Do not invent a Willie blood-pressure tracing.")
 
 # 10 MoMo
 s = new_content("MoMo, ASA Status 4-E", "6 yo SF DSH, 4.25 kg, BCS 5/9. This is her, before the exploratory was cancelled.")
@@ -452,8 +452,8 @@ add_round(s, Inches(4.98), Inches(1.12), Inches(7.85), Inches(1.28), RED_LT)
 add_text(s, Inches(5.18), Inches(1.20), Inches(7.50), Inches(1.12), "Acute vomiting and lethargy. Two vomits. Household construction. Possible FB. T 98.0 °F, HR 200, RR 30, mm pink tacky, CRT <2 s, QAR. ASA Status 4-E: uncompensated disease that is a constant threat to life.", size=15, color=NAVY)
 card(s, Inches(4.98), Inches(2.52), Inches(7.85), Inches(1.28), "Why this looked surgical", "FB obstruction was on the list. Mildly enlarged abdomen. That is how cats get booked for an exploratory.", accent=GOLD)
 card(s, Inches(4.98), Inches(3.90), Inches(7.85), Inches(1.28), "What the PE showed", "Heart/lungs normal. Ambulatory ×4. Dehydrated. Quiet and recumbent in this photograph. The PE did not prove a foreign body.", accent=TEAL)
-card(s, Inches(4.98), Inches(5.28), Inches(7.85), Inches(1.74), "Image, labs, then cancel", "Right kidney fluid-filled and non-functional on AUS. Progressive azotemia on fluids (creatinine 3.0 → 4.71). Skip NSAIDs. Cancel the exploratory. Owner elected humane euthanasia. Record the decision.", accent=RED)
-notes(s, "This slide is an ASA example, not the point of the hour. Pause on the photograph. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? The photograph is a quiet, recumbent cat. It does not prove a foreign body. Status 3 would be compensated kidney disease. Rising creatinine, hypothermia, and a non-functional kidney made this Status 4-E.")
+card(s, Inches(4.98), Inches(5.28), Inches(7.85), Inches(1.74), "Image, labs, then stop", "Right kidney fluid-filled and non-functional on AUS. Creatinine 3.0 → 4.71 on fluids. This record does not assign post-renal versus intrinsic versus hypovolemia. Do not open the abdomen for a suspected FB until that is sorted. Owner elected euthanasia. Record the decision.", accent=RED)
+notes(s, "This slide is an ASA example, not the point of the hour. Pause on the photograph. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? Rising creatinine on fluids is a recorded fact. Do not invent a fluid rate or an iatrogenic mechanism. Status 4-E because the disease threatened life. The workup cancelled the cut. The owner then elected euthanasia.")
 
 # 11 Diagnostics
 s = new_content("Pre-anesthetic assessment", "CPE MOA 2026 Appendix 3 page 1: today’s PE, then PCV, TP, BUN. Interpret. Then circle ASA.")
@@ -509,7 +509,7 @@ for i, (c, t, dtl) in enumerate(pills):
     add_text(s, x, Inches(1.08), Inches(4.12), Inches(0.38), t, size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.12), Inches(1.50), Inches(3.88), Inches(0.68), dtl, size=14, color=INK)
 add_pic(s, "anesthesia_protocol_record.png", Inches(0.28), Inches(2.32), Inches(12.78), Inches(4.80))
-notes(s, "This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. The three steps at the top are the general sequence. The filled table is one worked example: ear disease, DexSP already given, murmur. Healthy default is not that table. Students write drug, concentration, dose, volume, and route. Then IV fluid name and rate. Then why. Do not invent milligrams.")
+notes(s, "This is Appendix 3 pages 2 and 3, taught as an original record, not the copyrighted form. The three steps at the top are the general sequence. The filled table is one worked example: ear disease, DexSP already given, murmur. Healthy default is not that table. Skip NSAID because of AAHA/AAFP 2015 GI risk, not because albumin was measured. DexSP dose and time are not on this teaching record: do not invent them. Blood-pressure floors are Grubb 2020, not a Willie tracing. Students write drug, concentration, dose, volume, and route.")
 
 # 14 Stabilize
 s = new_content("Correct deficits before you cut", "Grubb et al. 2020: stabilize first. Pardo et al. 2024: albumin <2.0 g/dL.")
@@ -524,7 +524,7 @@ for i, (t, c, b) in enumerate(cols):
     add_rect(s, x, Inches(1.2), Inches(4.05), Inches(0.6), c)
     add_text(s, x, Inches(1.2), Inches(4.05), Inches(0.6), t, size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, x + Inches(0.18), Inches(1.92), Inches(3.70), Inches(4.55), b, size=14, color=INK)
-notes(s, "Read the Grubb 2020 list: correct potassium greater than 6, pH less than 7.2, glucose less than 60, hypothermia, dehydration, before you induce. Then albumin: Pardo 2024 AAHA fluids, less than 2.0 grams per deciliter is edema and poor healing. Delay elective. Treat the cause. Plasma is a poor albumin replacement, 20 to 25 milliliters per kilogram for half a gram. Do not crystalloid-flood a low-oncotic patient. Emergency: resuscitate and operate. A cancelled cut after you find uncompensated azotemia is a successful preoperative evaluation.")
+notes(s, "Read the Grubb 2020 list: correct potassium greater than 6, pH less than 7.2, glucose less than 60, hypothermia, dehydration, before you induce. Then albumin: Pardo 2024 AAHA fluids, less than 2.0 grams per deciliter is edema and poor healing. Delay elective. Treat the cause. Plasma is a poor albumin replacement, 20 to 25 milliliters per kilogram for half a gram. Do not crystalloid-flood a low-oncotic patient. Emergency: resuscitate and operate. Uncompensated azotemia that is getting worse: do not cut. That is the preoperative evaluation working. It is not a diagnosis of why the creatinine rose.")
 
 # 15 Fasting + consent
 s = new_content("Fasting and informed consent", "2020 AAHA Anesthesia and Monitoring Guidelines; then the risk talk")
@@ -570,12 +570,12 @@ notes(s, "Board three formulas, then fill the table the way CPE MOA 2026 Appendi
 # 17 Willie record
 s = new_content("Willie’s perioperative record", "Page 1 of the teaching record: PE, PCV/TP/BUN, ASA. Complete before the first drug.")
 add_pic(s, "anesthesia_record_willie.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "Walk the large boxes: ASA Status 3-E before alfaxalone. PCV, TP, BUN WNL. Skip NSAID after DexSP. Recovery is on the same page. Drug protocol is slide 13. The intra-op chart is slide 30. Tube and bag numbers are only if you intubate.")
+notes(s, "Walk the large boxes: ASA Status 3-E before alfaxalone. PCV, TP, BUN WNL. Skip NSAID after DexSP, AAHA 2015. Plot BP; treat Grubb hypotension floors. Recovery is on the same page. Drug protocol is slide 13. The intra-op chart is slide 30. Tube and bag numbers are only if you intubate.")
 
 # 18 MoMo record
 s = new_content("MoMo’s perioperative record", "Exploratory cancelled. Record the decision.")
 add_pic(s, "anesthesia_record_momo.png", Inches(0.28), Inches(1.08), Inches(12.78), Inches(5.95))
-notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Say it once, respectfully, then continue.")
+notes(s, "The form is not only for patients who get clipped. Preop boxes and SURGERY CANCELLED are the document. Rising creatinine on fluids is written as recorded. Do not invent a fluid rate or blame overload. Say it once, respectfully, then continue.")
 
 # 19 Abx
 s = new_content("Surgical wound classification", "Clean, clean-contaminated, contaminated, dirty. Then decide antibiotics. Fossum 2018; Frey et al. 2022.")
@@ -622,7 +622,7 @@ for i, (n, t) in enumerate(steps):
 notes(s, "Do not clip until the patient is ready for prep: tube in, cuff holds to 20 centimeters of water, correct bag, IV running, surgical plane. CPE MOA 2026 Surgery scores hair, skin, position, and drape, then wants you to announce the incision. Veterinary Betadine labels: 7.5% scrub about 5 minutes, rinse, paint 5% Solution Veterinary, dry. Eye: Roberts 1986, 1:50 of 10% stock, 2 plus 2 minutes.")
 
 # 21 Hair
-s = new_content("Hair removal", "#40 clipper after induction. Field 20 cm beyond the planned incision.")
+s = new_content("Hair removal", "#40 clipper after induction. Clip to anatomic landmarks, not a fixed 20 cm.")
 add_round(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), RED)
 add_text(s, Inches(0.4), Inches(1.10), Inches(6.2), Inches(0.50), "Too narrow. Hair at the margin.", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "clip_cat.jpg", Inches(0.4), Inches(1.62), Inches(6.2), Inches(3.40))
@@ -630,13 +630,13 @@ add_round(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), GREEN)
 add_text(s, Inches(6.75), Inches(1.10), Inches(6.2), Inches(0.50), "24 hours after OHE. Clip was wide enough.", size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_pic(s, "spay_incision.jpg", Inches(6.75), Inches(1.62), Inches(6.2), Inches(3.40))
 add_round(s, Inches(0.4), Inches(5.15), Inches(12.55), Inches(1.85), WHITE)
-add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "#40 after a surgical plane. Xiphoid to pubis, past the nipples, 20 cm beyond the incision.\nPhotos: Uwe Gille, CC0; Liannadavis, CC BY-SA 4.0.", size=16, color=INK)
-notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Do not teach a TECA clip on a patient whose procedure that day was an ear clean.")
+add_text(s, Inches(0.6), Inches(5.28), Inches(12.2), Inches(1.55), "Celiotomy: ~4 cm cranial to the xiphoid, ~4 cm caudal to the pubis, 3–4 cm past the nipples (Thieman Mankin 2019). A 4 kg cat does not have 20 cm of extra body wall. Wide enough to extend or place a drain. Warm the patient (Grubb: hypothermia <98 °F).\nPhotos: Uwe Gille, CC0; Liannadavis, CC BY-SA 4.0.", size=16, color=INK)
+notes(s, "Left photo is still too narrow. Right is a real 24-hour OHE. Do not teach a fixed 20 centimeter margin. Teach landmarks that scale with the patient. Protect heat.")
 
 # 22 Antiseptics
 s = new_content("Skin antiseptics", "Minimum contact time. Clock it. Then drape.")
 add_round(s, Inches(0.40), Inches(1.12), Inches(12.52), Inches(1.20), GOLD_LT)
-add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nEye: 10% stock 1:50, or 5% bottle 1:25. Both = 0.2% on the cornea (Roberts 1986).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.55), Inches(1.18), Inches(12.2), Inches(1.08), "Human Betadine Solution = 10% PVP-I.   Veterinary paint = 5%, not 10%.\nEye: intact cornea only. 10% stock 1:50, or 5% bottle 1:25. Both = 0.2% (Roberts 1986).", size=18, bold=True, color=NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 add_round(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(2.70), WHITE)
 add_rect(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), TEAL)
 add_text(s, Inches(0.40), Inches(2.48), Inches(4.10), Inches(0.48), "CHG  ·  Nolvasan", size=18, bold=True, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
@@ -648,10 +648,10 @@ add_text(s, Inches(4.77), Inches(3.04), Inches(3.80), Inches(2.00), "7.5% scrub\
 add_round(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(2.70), WHITE)
 add_rect(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), NAVY)
 add_text(s, Inches(8.84), Inches(2.48), Inches(4.08), Inches(0.48), "Eye  ·  Roberts 1986", size=18, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "Goal: 0.2% on cornea\n10% stock → dilute 1:50\n5% bottle → dilute 1:25\nMIN: 2 min + 2 min\nNot full strength", size=16, color=INK)
+add_text(s, Inches(8.99), Inches(3.04), Inches(3.78), Inches(2.00), "Goal: 0.2% on intact cornea\n10% stock → dilute 1:50\n5% bottle → dilute 1:25\nMIN: 2 min + 2 min\nPerforation: saline only", size=16, color=INK)
 add_round(s, Inches(0.40), Inches(5.38), Inches(12.52), Inches(1.60), WHITE)
-add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: both 1:50 of 10% and 1:25 of 5% give 0.2% on the cornea (Roberts 1986). 1:2 of 10% caused corneal edema in 1/15 eyes.", size=14, color=SLATE)
-notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak. One case of corneal edema at 1 to 2. Nolvasan: 2 percent CHG acetate, wash 2 to 4 minutes, keep out of eyes. Willie: swollen tympanum. Canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
+add_text(s, Inches(0.60), Inches(5.50), Inches(12.12), Inches(1.36), "Nolvasan Surgical Scrub: 2% chlorhexidine acetate, DailyMed NDC 54771-8701, wash 2 to 4 min, keep out of eyes.\nBETADINE Surgical Scrub Veterinary NDC 67618-154 (7.5%, lather about 5 min). BETADINE Solution Veterinary NDC 67618-155 (5% paint, not 10%).\nEye: Roberts 1986 studied healthy corneas. 1:50 of 10% = 0.2%. 1:2 caused edema in 1/15 eyes. Deep ulcer, descemetocele, or perforation: do not run this prep; saline and ophthalmology.", size=14, color=SLATE)
+notes(s, "Write the bottle math on the board. Veterinary Betadine Solution is 5 percent, not 10 percent. Roberts 1986: 1 to 50 of 10 percent stock, 2-minute scrub plus 2-minute soak, on healthy corneas. One case of corneal edema at 1 to 2. Deep ulcer, descemetocele, or open globe: saline only, call ophthalmology. Nolvasan: keep out of eyes. Ear canal and periocular mucosa: detergent-free dilute PVP-I, not 7.5 percent scrub.")
 
 # 23 Technique
 s = new_content("Patient skin preparation technique", "Center to periphery. Dirty prep, then sterile prep.")
@@ -663,8 +663,8 @@ add_bullets(s, Inches(8.1), Inches(1.75), Inches(4.55), Inches(5.0), [
     "Start at the incision. Spiral out. Drop the sponge.",
     "Clock the minimum contact time.",
     "Skin: 7.5% ~5 min, then 5% paint.",
-    "Eye: 10% 1:50 or 5% 1:25. Both = 0.2% on the cornea.",
-    "Willie canal: dilute PVP-I, not 7.5% scrub.",
+    "Eye: 10% 1:50 or 5% 1:25. Intact cornea. Perforation: saline only.",
+    "Ear canal / mucosa: dilute PVP-I, not 7.5% scrub.",
 ], size=16, spacing=10)
 notes(s, "Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.")
 
@@ -705,14 +705,14 @@ add_round(s, Inches(6.80), Inches(1.15), Inches(6.05), Inches(3.55), WHITE)
 add_text(s, Inches(7.05), Inches(1.28), Inches(5.6), Inches(0.35), "Protect the patient", size=18, bold=True, color=NAVY)
 add_text(s, Inches(7.05), Inches(1.70), Inches(5.6), Inches(2.8), "1. Control significant hemorrhage.\n2. Create a secure abdominal wall closure.\n3. Achieve and maintain an aseptic field.\n4. Identify and protect adjacent organs before you clamp.\n5. Complete a sponge and instrument count before closure.", size=16, color=INK)
 add_round(s, Inches(0.45), Inches(4.85), Inches(12.4), Inches(2.10), GOLD_LT)
-add_text(s, Inches(0.7), Inches(5.05), Inches(11.95), Inches(1.75), "The operation is not over at the last skin suture. The first 24 hours still count: intra-abdominal hemorrhage from a weak ligature, or herniation from a weak linea, is still the operation (CPE MOA 2026 Surgery).", size=16, color=NAVY)
-notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture.")
+add_text(s, Inches(0.7), Inches(5.05), Inches(11.95), Inches(1.75), "Surgical competence includes the first 24 hours of physiologic monitoring and complication management (CPE MOA 2026 Surgery). A weak ligature or a weak linea is a technical failure you must recognize. That is not infinite legal liability for every recovery-ward or owner event.", size=16, color=NAVY)
+notes(s, "Praise the person who says I just contaminated my sleeve. Then re-glove. Teach the clinical rule, not exam scoring. The 24-hour window is why recovery is in this lecture: monitor, recognize hemorrhage and hernia, write the discharge plan.")
 
 # 28 Knowledge check
 s = new_content("Knowledge check", "What do you do next?")
 rows = [
     ("A", "When do you clip the OHE field?", "After ready for prep: tube in, IV running, surgical plane. Then sterile prep and drape."),
-    ("B", "How do you prep conjunctiva with iodine?", "10% stock 1:50. MIN contact 2 min + 2 min. 5% bottle: 1:25."),
+    ("B", "How do you prep conjunctiva with iodine?", "Intact cornea: 10% stock 1:50, 2 min + 2 min. 5% bottle: 1:25. Perforation: saline only."),
     ("C", "Albumin 1.6 g/dL, elective mass. First move?", "Delay. Find the cause. Feed. Do not crystalloid-flood. Do not cut today."),
     ("D", "13.7 kg dog. Tube, bag, and IV fluid rate if you intubate?", "7.0 mm, 1 L circle, LRS 69 mL/hr (5 mL/kg/hr). Murmur: opioid + alfaxalone."),
 ]
@@ -723,7 +723,7 @@ for i, (let, q, a) in enumerate(rows):
     add_text(s, Inches(0.5), y, Inches(0.85), Inches(1.30), let, size=22, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, Inches(1.55), y + Inches(0.12), Inches(10.9), Inches(0.50), q, size=18, bold=True, color=INK)
     add_text(s, Inches(1.55), y + Inches(0.68), Inches(10.9), Inches(0.48), a, size=16, color=TEAL)
-notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 13.7 kg dog if you intubate: 7.0 millimeter, 1 liter circle, 69 milliliters per hour, alfaxalone if there is a murmur. B is Roberts 1986. A is airway before clippers, then sterile prep and drape.")
+notes(s, "Two minutes. C is albumin: delay elective, treat the cause. D is board math for a 13.7 kg dog if you intubate: 7.0 millimeter, 1 liter circle, 69 milliliters per hour, alfaxalone if there is a murmur, and plot blood pressure. B is Roberts 1986 on an intact cornea; perforation is saline only. A is airway before clippers, then sterile prep and drape.")
 
 # 29 Recovery
 s = new_content("Immediate recovery", "Remain with the patient until airway and circulation are stable")
@@ -768,7 +768,7 @@ add_bullets(s, Inches(7.00), Inches(1.78), Inches(5.65), Inches(4.7), [
 notes(s, "This course uses on-label NSAIDs as pre-emptive analgesia: give before incision so levels are on board. Dog: carprofen 4.4 milligrams per kilogram SQ, about 2 hours before incision. Do not use carprofen in cats. Cat: Onsior 2 milligrams per kilogram SQ, about 30 minutes before incision. Do not teach Onsior in the dog. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.")
 
 # 32 Complications
-s = new_content("Complications in the first 24 hours", "The operation is not over at the last skin suture. Hemorrhage, hernia, dehiscence.")
+s = new_content("Complications in the first 24 hours", "Monitor and manage. Hemorrhage, hernia, and dehiscence are technical failures you must recognize.")
 rows = [
     ("Hemorrhage", "Pale mm, tachycardia, distending abdomen, drip from incision, collapsing. Stabilize and return to OR.", RED),
     ("Airway / aspiration", "Stertor, crackles, regurg on the pillow. Especially brachycephalics and after opioids.", TEAL),
@@ -849,7 +849,7 @@ notes(s, "Walk this as an ASA example, not as the lecture thesis. One sentence o
 # 36 Willie and MoMo
 s = new_content("Willie and MoMo", "ASA examples. Both received a preoperative evaluation. Only Willie was sedated.")
 card(s, Inches(0.45), Inches(1.2), Inches(6.15), Inches(5.5), "Willie, ASA Status 3-E", "Proceed with sedation. Cavalier, 13.7 kg. Acute vestibular + AS otitis + murmur. Compensated. Fill the anesthesia record. Alfaxalone, ear clean, skip NSAID after DexSP. If TECA-LBO is needed later, assign a new ASA that morning.", accent=GOLD)
-card(s, Inches(6.75), Inches(1.2), Inches(6.15), Inches(5.5), "MoMo, ASA Status 4-E", "Cancel the exploratory. DSH, 4.25 kg. Vomiting that looked like FB. Right kidney fluid-filled and non-functional on AUS. Progressive azotemia on fluids (creatinine 3.0 → 4.71). NSAIDs contraindicated. Record the decision. Offer supportive care, referral, or euthanasia.", accent=RED)
+card(s, Inches(6.75), Inches(1.2), Inches(6.15), Inches(5.5), "MoMo, ASA Status 4-E", "Do not cut today. DSH, 4.25 kg. Vomiting that looked like FB. Right kidney fluid-filled and non-functional on AUS. Creatinine 3.0 → 4.71 on fluids; mechanism not assigned from this record. NSAIDs contraindicated. Record the decision. Offer supportive care, referral, or euthanasia.", accent=RED)
 notes(s, "Last content slide if time is gone. These two patients are ASA examples only. Healthy Lab OHE is the ASA Status 1 contrast.")
 
 # 37 Key points
@@ -860,7 +860,7 @@ pearls = [
     "Ready for surgical prep: airway secured, machine on, patent IV running, surgical plane, monitoring started.",
     "Patient: hair, skin, position, drape. Surgeon: attire, gown, closed glove. Announce incision.",
     "Fill the chart: HR, RR, BP, inhalant, O2, ETCO2, SpO2, temp, fluids. Then complications, recovery analgesics, and sign.",
-    "First 24 hours still count: hemorrhage from a weak ligature, or hernia from a weak linea.",
+    "First 24 hours: monitor and manage complications. A weak ligature or a weak linea is still your technical problem.",
 ]
 for i, t in enumerate(pearls):
     y = Inches(1.15) + Inches(i * 0.92)
@@ -885,16 +885,18 @@ left_refs = (
     "3. Johnston SA, Tobias KM. Veterinary Surgery: Small Animal. 2nd ed. Elsevier Saunders; 2017. ISBN 978-0-323-32065-8.\n\n"
     "4. Grubb T, Sager J, Gaynor JS, Montgomery E, Parker JA, Shafford H, Tearney C. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59–82.\n\n"
     "5. Frey E, Costin M, Granick J, Kornya M, Weese JS. 2022 AAFP/AAHA Antimicrobial Stewardship Guidelines. J Am Anim Hosp Assoc. 2022;58(4):1–5.\n\n"
-    "6. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207–1210."
+    "6. Roberts SM, Severin GA, Lavach JD. Am J Vet Res. 1986;47(6):1207–1210. Intact cornea.\n\n"
+    "14. Epstein ME, et al. 2015 AAHA/AAFP Pain. JAAHA 2015;51:67–84."
 )
 right_refs = (
     "7. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212–216.\n\n"
     "8. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695–701.\n\n"
-    "9. BETADINE Surgical Scrub Veterinary. 7.5% povidone-iodine. DailyMed NDC 67618-154. Lather about 5 min, rinse, paint Solution Veterinary, dry.\n\n"
+    "9. BETADINE Surgical Scrub Veterinary. 7.5% povidone-iodine. DailyMed NDC 67618-154.\n\n"
     "10. BETADINE Solution Veterinary. 5% povidone-iodine (not 10%). DailyMed NDC 67618-155.\n\n"
     "11. Nolvasan Surgical Scrub. 2% chlorhexidine acetate. DailyMed NDC 54771-8701.\n\n"
     "12. ECFVG. CPE Manual of Administration. 2026 ed. Anesthesia; Surgery.\n\n"
-    "13. Pardo et al. 2024 AAHA Fluid Therapy. JAAHA. 2024;60:131–163."
+    "13. Pardo et al. 2024 AAHA Fluid Therapy. JAAHA. 2024;60:131–163.\n\n"
+    "15. Thieman Mankin K. Exploratory celiotomy. Clinician’s Brief. 2019. Clip to landmarks, not 20 cm."
 )
 add_text(s, Inches(0.55), Inches(2.12), Inches(6.05), Inches(4.55), left_refs, size=PT_REF, color=WHITE)
 add_text(s, Inches(6.75), Inches(2.12), Inches(6.05), Inches(4.55), right_refs, size=PT_REF, color=WHITE)
@@ -957,6 +959,9 @@ APPENDIX  ·  FULL REFERENCES
 13. RIMADYL (carprofen) sterile injectable. DailyMed NDC 54771-8507. Dogs only. Do not use in cats. 4.4 mg/kg SQ daily; postoperative dose about 2 hours before the procedure.
 14. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
 15. Pardo M, Spencer E, Odunayo A, Ramirez ML, Rudloff E, Shafford H, Weil A, Wolff E. 2024 AAHA Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2024;60:131-163. doi:10.5326/JAAHA-MS-7444. Anesthesia crystalloid: dogs 5 mL/kg/hr, cats 3-5 mL/kg/hr; the old 10 mL/kg/hr rate lacked evidence. Albumin <2.0 g/dL: negative prognostic indicator, edema, poor wound healing. Plasma ~20-25 mL/kg to raise albumin 0.5 g/dL. Species-specific albumin preferred if severe. Human albumin: allergic reactions.
+16. Epstein ME, Rodan I, Griffenhagen G, Kadlisko J, Landa MS, Petty M, Robertson SA. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2015;51:67-84. Concurrent NSAID + corticosteroid is a leading risk factor for GI perforation. Clinically relevant washout periods remain controversial and largely undefined; cautious gap ~7 days after a short-acting corticosteroid before starting an NSAID.
+17. Thieman Mankin K. A Step-by-Step Guide to Exploratory Celiotomy. Clinician's Brief. October 2019. Clip ~4 cm cranial to the xiphoid, ~4 cm caudal to the pubis, and ~3-4 cm lateral to the nipples. Not a fixed 20 cm margin.
+18. Lacerenza M, et al. Vet Ophthalmol. 2021. In cases of corneal perforation, only sterile saline was used for ocular surface wash.
 
 TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
 ANESTHESIA SEQUENCE FOR THIS HOUR: examine, labs, ASA, correct deficits, IM/SQ premed, IV induction to effect, intubate, inhalant to MAC (premed lowers MAC), then clip / sterile prep / drape.

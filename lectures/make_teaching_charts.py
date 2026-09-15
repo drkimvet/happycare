@@ -149,7 +149,7 @@ def anesthesia_record(filled="blank"):
     lab_v = {
         "blank": ["", "", "", ""],
         "willie": ["WNL", "WNL", "WNL", "CBC WNL. Kidneys normal."],
-        "momo": ["request", "request", "↑ azotemia", "Creatinine 3.0 → 4.71. That cancelled the cut."],
+        "momo": ["request", "request", "↑ azotemia", "Cr 3.0 → 4.71 on fluids. Mechanism not assigned."],
     }[filled]
     for (x0, x1, lab), val in zip(lab_h, lab_v):
         cell(d, x0, y, x1, y + 26, lab, fill=GOLD, fg=NAVY, size=16, bold=True, align="center")
@@ -162,7 +162,7 @@ def anesthesia_record(filled="blank"):
     plan = {
         "blank": "",
         "willie": "Acute vestibular disease + AS otitis + murmur. Compensated: still pink, walking, kidneys normal. DexSP already given: skip NSAID. Alfaxalone only after this header is complete.",
-        "momo": "Vomiting that looked like a foreign body. PE did not prove GI obstruction. Right kidney fluid-filled and non-functional. Progressive azotemia on fluids (creatinine 3.0 → 4.71). NSAIDs contraindicated. Do not clip.",
+        "momo": "Vomiting that looked like FB. PE did not prove obstruction. Right kidney fluid-filled, non-functional. Cr 3.0 → 4.71 on fluids: post-renal vs intrinsic vs hypovolemia not assigned. Do not clip.",
     }[filled]
     fplan = font(20)
     lines = wrap_text(plan, fplan, 2000)
@@ -176,7 +176,7 @@ def anesthesia_record(filled="blank"):
     d.rectangle([28, y, mid - 12, y + 40], fill=NAVY)
     d.text((40, y + 20), "PRE-OP BOXES   ·   before the first drug", font=font(20, True), fill=GOLD, anchor="lm")
     d.rectangle([mid + 12, y, 2372, y + 40], fill=GREEN)
-    d.text((mid + 24, y + 20), "RECOVERY / NEXT 24 HOURS   ·   the operation is not over", font=font(20, True), fill=WHITE, anchor="lm")
+    d.text((mid + 24, y + 20), "RECOVERY / NEXT 24 HOURS   ·   monitor and manage complications", font=font(20, True), fill=WHITE, anchor="lm")
 
     preop_boxes = {
         "blank": [
@@ -192,7 +192,7 @@ def anesthesia_record(filled="blank"):
             "ASA Status 3-E. PCV / TP / BUN WNL. Exam wrote the status.",
             "Today’s PE: vestibular + AS otitis + murmur",
             "Skip NSAID: DexSP already given",
-            "IV in. Then sedate. Monitors if you anesthetize.",
+            "IV in. Then sedate. Plot BP if you anesthetize.",
             "Ear canal: dilute PVP-I, not 7.5% scrub",
             "Aminoglycoside risk if the middle ear is involved",
             "MRI later. New ASA on the day of any later surgery",
@@ -200,7 +200,7 @@ def anesthesia_record(filled="blank"):
         "momo": [
             "ASA Status 4-E after labs and imaging",
             "POCUS / AUS before any clippers",
-            "Right kidney fluid-filled and non-functional. Cr 3.0 → 4.71 on fluids",
+            "Right kidney fluid-filled, non-functional. Cr 3.0 → 4.71 on fluids",
             "No clippers. No incision. No exploratory.",
             "NSAIDs contraindicated (azotemic cat)",
             "Consent includes medical care and euthanasia",
@@ -243,7 +243,7 @@ def anesthesia_record(filled="blank"):
     if filled == "momo":
         d.rectangle([28, y, 2372, 1328], fill=RED)
         d.text((W / 2, 1218), "SURGERY CANCELLED   ·   RECORD THE DECISION", font=font(32, True), fill=WHITE, anchor="mm")
-        d.text((W / 2, 1272), "A cancelled exploratory is a successful preoperative evaluation.", font=font(20), fill=(244, 235, 211), anchor="mm")
+        d.text((W / 2, 1272), "Do not cut until you know why the creatinine rose. Owner elected euthanasia.", font=font(20), fill=(244, 235, 211), anchor="mm")
     else:
         d.rectangle([28, y, 2372, 1328], fill=WHITE, outline=GOLD, width=3)
         note = {
@@ -613,7 +613,7 @@ def preanesthetic_assessment_table():
 
 def anesthesia_protocol_record():
     """Teaching drug-protocol page. Same clinical fields as MOA Appendix 3 pp. 2–3. Not the copyrighted form."""
-    W, H = 3200, 1000
+    W, H = 3200, 1100
     im = Image.new("RGB", (W, H), OFF)
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, W, 70], fill=NAVY)
@@ -626,7 +626,7 @@ def anesthesia_protocol_record():
     rows = [
         ["Premed", "None until exam is written", "—", "—", "—", "IM or SQ after ASA"],
         ["Induction", "Alfaxalone", "read the bottle", "IV to effect", "give to effect", "IV"],
-        ["Analgesic", "Skip NSAID", "DexSP already given", "—", "—", "—"],
+        ["Analgesic", "Opioid; skip NSAID", "DexSP already given", "do not stack", "not on this record", "as planned"],
     ]
     widths = [300, 700, 540, 460, 500, 660]
     scale = (W - 40) / sum(widths)
@@ -646,16 +646,27 @@ def anesthesia_protocol_record():
             cell(d, xs[c], yy, xs[c + 1], yy + rh, val, fill=fill, fg=fg, size=36, bold=True, align="center")
 
     y = y + hh + 3 * rh + 12
-    d.rectangle([20, y, 1580, y + 80], fill=WHITE, outline=LINE, width=2)
-    d.rectangle([20, y, 280, y + 80], fill=TEAL)
-    d.text((150, y + 40), "IV fluids", font=font(28, True), fill=WHITE, anchor="mm")
-    d.text((300, y + 22), "Name:  LRS", font=font(36, True), fill=INK, anchor="lt")
-    d.text((300, y + 54), "Rate:  69 mL/hr   (13.7 × 5)", font=font(36, True), fill=NAVY, anchor="lt")
-    d.rectangle([1600, y, W - 20, y + 80], fill=(244, 235, 211), outline=LINE, width=2)
-    d.text((1620, y + 22), "Why these drugs  ·  EXAMPLE, not the default", font=font(20, True), fill=NAVY, anchor="lt")
-    d.text((1620, y + 52), "Murmur → skip ace/dexmed. DexSP already given → skip NSAID. Alfaxalone IV to effect.", font=font(20), fill=INK, anchor="lt")
+    row_h2 = 130
+    d.rectangle([20, y, 1580, y + row_h2], fill=WHITE, outline=LINE, width=2)
+    d.rectangle([20, y, 280, y + row_h2], fill=TEAL)
+    d.text((150, y + 65), "IV fluids", font=font(28, True), fill=WHITE, anchor="mm")
+    d.text((300, y + 28), "Name:  LRS", font=font(36, True), fill=INK, anchor="lt")
+    d.text((300, y + 78), "Rate:  69 mL/hr   (13.7 × 5)", font=font(32, True), fill=NAVY, anchor="lt")
+    d.rectangle([1600, y, W - 20, y + row_h2], fill=(244, 235, 211), outline=LINE, width=2)
+    d.text((1620, y + 12), "Why these drugs  ·  EXAMPLE, not the default", font=font(18, True), fill=NAVY, anchor="lt")
+    why_fn = font(20)
+    why_lines = [
+        "Murmur: skip ace and dexmed. Alfaxalone IV to effect.",
+        "Treat hypotension: SAP <80–90 or MAP <60–70 (Grubb 2020).",
+        "Steroid plus NSAID: GI perforation risk (AAHA 2015).",
+        "DexSP dose, time, and albumin are not on this record.",
+    ]
+    ty = y + 40
+    for line in why_lines:
+        d.text((1620, ty), line, font=why_fn, fill=INK, anchor="lt")
+        ty += 22
 
-    y += 96
+    y += row_h2 + 16
     boxes = [
         (20, 1040, "Sedation quality 1–5", "1     2     3     4     5"),
         (1080, 1040, "Induction quality 1–5", "1     2     3     4     5"),
