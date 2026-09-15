@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice INV-2026-0915 — Dr. Yujin Kim, DVM, PhD to URvet Care</title>
+  <style>
+    :root {
+      --ink: #17211f;
+      --muted: #5b6b67;
+      --line: #d5e0dc;
+      --paper: #fbfaf6;
+      --teal: #1a5f58;
+      --teal-deep: #0e3d38;
+      --gold: #b8924a;
+      --sage: #e8f1ee;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #e8eeec;
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    body { padding: 28px 16px 40px; }
+
+    .sheet {
+      width: 8.5in;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 50px rgba(14, 61, 56, 0.16);
+      overflow: hidden;
+    }
+
+    .accent-bar {
+      height: 8px;
+      background: linear-gradient(90deg, var(--teal-deep) 0%, var(--teal) 58%, var(--gold) 100%);
+    }
+
+    .inner { padding: 18px 34px 14px; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand { display: flex; gap: 12px; align-items: center; }
+
+    .mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--teal);
+      color: #f7f1e4;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 16px;
+      box-shadow: inset 0 0 0 2px rgba(184, 146, 74, 0.45);
+      font-family: Georgia, "Iowan Old Style", serif;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 22px;
+      color: var(--teal-deep);
+      font-family: Georgia, "Iowan Old Style", serif;
+      font-weight: 700;
+    }
+
+    .brand p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .invoice-meta { text-align: right; }
+
+    .invoice-meta .label {
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .invoice-meta h2 {
+      margin: 2px 0 6px;
+      font-size: 28px;
+      color: var(--teal-deep);
+      font-family: Georgia, "Iowan Old Style", serif;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 12px;
+      row-gap: 2px;
+      font-size: 12px;
+    }
+
+    .meta-grid dt { color: var(--muted); text-align: right; }
+    .meta-grid dd { margin: 0; font-weight: 650; }
+
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 12px 0 10px;
+    }
+
+    .party {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px 11px;
+    }
+
+    .party .kicker {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .party h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      color: var(--teal-deep);
+      font-family: Georgia, "Iowan Old Style", serif;
+    }
+
+    .party p {
+      margin: 0;
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .party a { color: var(--teal); text-decoration: none; }
+
+    .notice {
+      margin: 0 0 8px;
+      padding: 8px 12px;
+      background: #f4ead6;
+      border: 1px solid #e2d0a8;
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: var(--teal-deep);
+      font-weight: 650;
+    }
+
+    .intro {
+      margin: 0 0 10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    thead th {
+      text-align: left;
+      background: var(--teal);
+      color: #f7f1e4;
+      padding: 7px 10px;
+      font-weight: 600;
+    }
+
+    thead th:first-child { border-radius: 8px 0 0 0; }
+    thead th:last-child { border-radius: 0 8px 0 0; }
+    thead th.num, tbody td.num, tfoot td.num { text-align: right; }
+    thead th.ctr, tbody td.ctr { text-align: center; }
+
+    tbody td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) td { background: var(--sage); }
+
+    .svc { font-weight: 650; color: var(--teal-deep); }
+    .svc span {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    tfoot td { padding: 6px 10px; }
+    tfoot .sub td { padding-top: 10px; color: var(--muted); }
+    tfoot .due td {
+      background: var(--teal-deep);
+      color: #f7f1e4;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    tfoot .due td:first-child { border-radius: 0 0 0 8px; }
+    tfoot .due td:last-child { border-radius: 0 0 8px 0; }
+
+    .notes {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 11px 13px;
+      background: #fff;
+    }
+
+    .box h4 {
+      margin: 0 0 5px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .box p, .box li {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .box ul { margin: 0; padding-left: 16px; }
+
+    footer {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .sheet { box-shadow: none; width: auto; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @page { size: letter; margin: 0.38in; }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <div class="accent-bar"></div>
+    <div class="inner">
+      <header>
+        <div class="brand">
+          <div class="mark">YK</div>
+          <div>
+            <h1>Dr. Yujin Kim</h1>
+            <p>DVM, PhD · Independent Veterinarian</p>
+          </div>
+        </div>
+        <div class="invoice-meta">
+          <div class="label">Professional invoice</div>
+          <h2>Invoice</h2>
+          <dl class="meta-grid">
+            <dt>Invoice no.</dt><dd>INV-2026-0915</dd>
+            <dt>Invoice date</dt><dd>September 15, 2026</dd>
+            <dt>Service period</dt><dd>September 8–15, 2026</dd>
+            <dt>Payment terms</dt><dd>Due before next shift</dd>
+          </dl>
+        </div>
+      </header>
+
+      <section class="parties">
+        <div class="party">
+          <div class="kicker">From / Payee</div>
+          <h3>Dr. Yujin Kim, DVM, PhD</h3>
+          <p>
+            Long Island University<br />
+            720 Northern Boulevard<br />
+            Brookville, NY 11548<br />
+            Phone: <a href="tel:16468018225">(646) 801-8225</a><br />
+            Email: <a href="mailto:kim.yujin@outlook.com">kim.yujin@outlook.com</a>
+          </p>
+        </div>
+        <div class="party">
+          <div class="kicker">Bill to</div>
+          <h3>URvet Care</h3>
+          <p>
+            Roslyn Medical Center<br />
+            363 Willis Avenue, Roslyn Heights, NY 11577<br />
+            Phone: <a href="tel:15168072222">(516) 807-2222</a><br />
+            Email: <a href="mailto:Roslyn@urvetcare.com">Roslyn@urvetcare.com</a><br />
+            Flagship: 252 E 57th Street, New York, NY 10022<br />
+            Phone: <a href="tel:16462211200">(646) 221-1200</a>
+          </p>
+        </div>
+      </section>
+
+      <p class="notice">
+        Please find attached invoice and please complete the payment before scheduling
+        to secure your next shift.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th class="ctr">Hours</th>
+            <th class="num">Rate</th>
+            <th class="num">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sep 8, 2026</td>
+            <td><div class="svc">Emergency / relief coverage<span>8:00 PM – 12:00 AM</span></div></td>
+            <td class="ctr">4.00</td>
+            <td class="num">$250.00</td>
+            <td class="num">$1,000.00</td>
+          </tr>
+          <tr>
+            <td>Sep 10, 2026</td>
+            <td><div class="svc">Emergency / relief coverage<span>8:00 AM – 8:00 PM</span></div></td>
+            <td class="ctr">12.00</td>
+            <td class="num">$250.00</td>
+            <td class="num">$3,000.00</td>
+          </tr>
+          <tr>
+            <td>Sep 14, 2026</td>
+            <td><div class="svc">Emergency / relief coverage<span>8:00 PM – 12:00 AM</span></div></td>
+            <td class="ctr">4.00</td>
+            <td class="num">$250.00</td>
+            <td class="num">$1,000.00</td>
+          </tr>
+          <tr>
+            <td>Sep 15, 2026</td>
+            <td><div class="svc">On-call coverage<span>12:00 AM – 8:00 AM</span></div></td>
+            <td class="ctr">8.00</td>
+            <td class="num">$300.00</td>
+            <td class="num">$2,400.00</td>
+          </tr>
+          <tr>
+            <td>Sep 15, 2026</td>
+            <td><div class="svc">Emergency / relief coverage<span>12:00 AM – 6:00 AM</span></div></td>
+            <td class="ctr">6.00</td>
+            <td class="num">$250.00</td>
+            <td class="num">$1,500.00</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="sub">
+            <td colspan="4" class="num">Base total</td>
+            <td class="num">$8,900.00</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="num">Production (23% of $10,326.32 gross)</td>
+            <td class="num">$2,375.05</td>
+          </tr>
+          <tr class="due">
+            <td colspan="4">Amount due</td>
+            <td class="num">$11,275.05</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <section class="notes">
+        <div class="box">
+          <h4>Payment</h4>
+          <p>
+            Please find attached invoice and please complete the payment before scheduling
+            to secure your next shift. Payable to <strong>Dr. Yujin Kim</strong>.
+            Remit to <a href="mailto:kim.yujin@outlook.com">kim.yujin@outlook.com</a>
+            or call <a href="tel:16468018225">(646) 801-8225</a>.
+          </p>
+        </div>
+        <div class="box">
+          <h4>URvet Care phones</h4>
+          <ul>
+            <li>Roslyn: (516) 807-2222</li>
+            <li>Midtown: (646) 221-1200</li>
+            <li>Astoria: (646) 242-5200</li>
+            <li>UES: (646) 535-9220</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <div>Thank you for the opportunity to cover URvet Care.</div>
+        <div>Dr. Yujin Kim, DVM, PhD · (646) 801-8225 · 720 Northern Blvd, Brookville, NY</div>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

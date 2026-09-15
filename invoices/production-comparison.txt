@@ -1,0 +1,31 @@
+Production comparison — Dr. Yujin Kim / URvet Care Roslyn / Sep 8–15, 2026
+
+Rule used on the sent invoice (A): 23% of Gross, positive invoices only. Credits and negatives excluded.
+
+A. Current invoice / handwritten shift log (Gross, positives only)
+   Production base     $10,326.32
+   23% production       $2,375.05
+   Hourly base          $8,900.00
+   Amount due          $11,275.05
+
+B. What clients actually paid (Total on Paid invoices; Due $0; negatives excluded)
+   Production base      $9,783.44
+   23% production       $2,250.19
+   Amount due          $11,150.19
+   vs invoice A          −$124.86
+
+C. Paid totals minus credits/not-rendered (reference only; includes negatives)
+   Production base      $8,160.81
+   23% production       $1,876.99
+   Amount due          $10,776.99
+   vs invoice A          −$498.06
+
+Bridge A → B (only Willie / Samantha Ali):
+   Gross                 $1,981.95
+   Order discount          $542.88
+   Customer paid Total   $1,439.07
+   $542.88 × 23% = $124.86
+
+Other 13 positive Kim invoices: Gross = Total = $8,344.37
+
+Handwritten sheet 23% $2,375.05 matches invoice A exactly.
