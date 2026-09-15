@@ -41,3 +41,7 @@ spay_incision.jpg
   Author: Liannadavis
   License: CC BY-SA 4.0
   https://commons.wikimedia.org/wiki/File:Female_dog_spay_incision.jpg
+
+momo.jpg
+  Preoperative photograph of MoMo, the DVM 612 Week 4 teaching case.
+  Instructor teaching file. No owner name, address, phone, or medical-record number on the slide.

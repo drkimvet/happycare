@@ -444,15 +444,14 @@ add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Plan: CBC W
 notes(s, "Record the murmur. Right-sided knuckling with left circling: treat as central vestibular plus otitis, then sedate. Aminoglycosides are a risk if the middle ear is involved even when the drum looks present. Skip NSAID after DexSP.")
 
 # 10 MoMo
-s = new_content("MoMo, ASA Status 4-E", "6 yo SF DSH, 4.25 kg, BCS 5/9")
-add_round(s, Inches(0.5), Inches(1.12), Inches(12.3), Inches(1.15), RED_LT)
-add_text(s, Inches(0.75), Inches(1.20), Inches(11.8), Inches(1.00), "Acute vomiting and lethargy. Two vomits. Household construction. Possible FB. Vitals: T 98.0 °F, HR 200, RR 30, mm pink tacky, CRT <2 s, QAR. ASA Status 4-E: severe systemic disease that is a constant threat to life (rising azotemia; non-functional kidney). Cancelling the exploratory is a successful preoperative evaluation.", size=16, color=NAVY)
-card(s, Inches(0.5), Inches(2.40), Inches(4.0), Inches(2.85), "Why this looked surgical", "FB obstruction was on the list. Mildly enlarged abdomen. That is how cats get booked for an exploratory.", accent=GOLD)
-card(s, Inches(4.7), Inches(2.40), Inches(4.0), Inches(2.85), "What the PE showed", "Heart/lungs normal. Ambulatory ×4. Dehydrated. The PE did not prove a foreign body.", accent=TEAL)
-card(s, Inches(8.9), Inches(2.40), Inches(3.9), Inches(2.85), "Next: labs and imaging", "POCUS: abnormal kidneys, bladder intact. 3-view abdomen STAT. CBC/chem. Assign ASA after those results.", accent=RED)
-add_round(s, Inches(0.5), Inches(5.40), Inches(12.3), Inches(1.55), WHITE)
-add_text(s, Inches(0.75), Inches(5.50), Inches(11.8), Inches(1.35), "Work-up: IVF 1.5×, Cerenia, ondansetron, Unasyn. Creatinine 3.0 → 4.71 on fluids. AUS: right kidney fluid-filled and non-functional. Skip NSAIDs. Cancel the exploratory. Record the decision. Owner elected humane euthanasia.", size=16, color=INK)
-notes(s, "MoMo is the cat whose films looked like maybe GI and were kidneys. Cold-call: who would have clipped her on history alone? Be respectful; this cat died. The teaching point is judgment.")
+s = new_content("MoMo, ASA Status 4-E", "6 yo SF DSH, 4.25 kg, BCS 5/9. This is her, before the exploratory was cancelled.")
+add_pic(s, "momo.jpg", Inches(0.40), Inches(1.12), Inches(4.42), Inches(5.90))
+add_round(s, Inches(4.98), Inches(1.12), Inches(7.85), Inches(1.28), RED_LT)
+add_text(s, Inches(5.18), Inches(1.20), Inches(7.50), Inches(1.12), "Acute vomiting and lethargy. Two vomits. Household construction. Possible FB. T 98.0 °F, HR 200, RR 30, mm pink tacky, CRT <2 s, QAR. ASA Status 4-E: severe systemic disease that is a constant threat to life.", size=15, color=NAVY)
+card(s, Inches(4.98), Inches(2.52), Inches(7.85), Inches(1.28), "Why this looked surgical", "FB obstruction was on the list. Mildly enlarged abdomen. That is how cats get booked for an exploratory.", accent=GOLD)
+card(s, Inches(4.98), Inches(3.90), Inches(7.85), Inches(1.28), "What the PE showed", "Heart/lungs normal. Ambulatory ×4. Dehydrated. Quiet and recumbent in this photograph. The PE did not prove a foreign body.", accent=TEAL)
+card(s, Inches(4.98), Inches(5.28), Inches(7.85), Inches(1.74), "Image, labs, then cancel", "POCUS: abnormal kidneys. Creatinine 3.0 → 4.71 on fluids. AUS: right kidney fluid-filled and non-functional. Skip NSAIDs. Cancel the exploratory. Owner elected humane euthanasia. Record the decision.", accent=RED)
+notes(s, "Pause on the photograph. This is MoMo. Be respectful; this cat died. Cold-call: who would have clipped her on history alone? The photograph is a quiet, recumbent cat. It does not prove a foreign body. Then labs and imaging cancelled the cut.")
 
 # 11 Diagnostics
 s = new_content("Preoperative diagnostics", "Tests indicated for this patient and this procedure")
