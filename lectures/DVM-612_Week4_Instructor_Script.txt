@@ -4,25 +4,25 @@ Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP
 38 slides. Two real hospital cases: Willie (Cavalier, ASA III-E, sedated for ear clean) and MoMo (DSH, ASA IV-E, exploratory cancelled). Owner names, addresses, phones, and emails stay off slides and off this script.
 
 SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
-    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. Two real patients from the same hospital. Willie, a 6-year 11-month MN Cavalier, 13.7 kg, acute vestibular crisis plus left otitis. We sedated him. MoMo, a 6-year SF DSH, 4.25 kg, vomiting that looked like a foreign-body surgery. Imaging cancelled the exploratory. Assign both ASA statuses. Owner identifiers stay off these slides. Thirty-eight slides. If discussion runs, protect antiseptics, both cases, and recovery.
+    SPEAK: Welcome. This hour is preoperative evaluation, patient and surgeon preparation, and postoperative care. Two real patients from the same hospital. Willie, a 6-year 11-month MN Cavalier, 13.7 kg, acute vestibular crisis plus left otitis. We sedated him. MoMo, a 6-year SF DSH, 4.25 kg, vomiting that looked like a foreign-body surgery. Imaging cancelled the exploratory. Assign both ASA statuses. Owner identifiers stay off these slides. We use the 2026 CPE Manual of Administration anesthesia and surgery chapters as the competency list for this hour, not as an exam-prep course. Thirty-eight slides. If discussion runs, protect antiseptics, both cases, and recovery.
 
 SLIDE 2. DVM 612 WEEK 4  ·  38 SLIDES
     SPEAK: Read the five objectives aloud. Timer: protect Part II (prep pictures) and both cases.
 
-SLIDE 3. WHY THIS HOUR EXISTS
+SLIDE 3. Surgical site infection
     SPEAK: A closure that hemorrhages in recovery is a failed surgery. The first 24 hours are part of the operation.
 
 SLIDE 4. EACH PRINCIPLE HAS A PREOPERATIVE OR POSTOPERATIVE ACTION
     SPEAK: Two minutes, then move. Every Halsted principle has a preop or postop action, not just an intraoperative one.
 
-SLIDE 5. PREOPERATIVE, PREPARATION, INTRAOPERATIVE, POSTOPERATIVE
-    SPEAK: Anesthesia prepares the patient for surgical prep. Surgery owns prep through the last skin suture. Both own recovery.
+SLIDE 5. TWO TEAM CLOCKS. CPE MOA 2026 ANESTHESIA AND SURGERY.
+    SPEAK: Do not teach this as a CPE station. Teach the clocks. Anesthesia owns exam through a patient who is ready for clippers: tube in, cuff up, machine on, IV running, surgical plane. Surgery owns clip through the last skin suture, then both own the first 24 hours. Cite ECFVG CPE Manual of Administration 2026, Anesthesia and Surgery sections.
 
-SLIDE 6. EXAMINE, REQUEST INDICATED LABS, INTERPRET, THEN ASSIGN ASA
-    SPEAK: Four jobs. Students often skip #3 and #4. Do your own PE, then use technician vitals as a second set of numbers. Order: examine, then premedicate.
+SLIDE 6. CPE MOA 2026 ANESTHESIA: EXAMINE, REQUEST LABS, ASSIGN ASA, THEN PREMEDICATE.
+    SPEAK: Four jobs. Students often skip number 3 and 4. Do your own PE, then use technician vitals as a second set of numbers. CPE MOA 2026 Anesthesia: premedicating before the examination is a dismissible event. Premed is IM or SQ. If today’s ASA is not Status 1, change the drug plan before you inject.
 
-SLIDE 7. GRUBB ET AL. 2020 AAHA COMPANION TABLE
-    SPEAK: Read the 2020 AAHA table: Status 1 healthy neuter, Status 2 compensated mild mitral, Status 3 moderate disease such as IRIS 3 CKD, Status 4 threat to life such as bleeding splenic mass, Status 5 moribund septic cat. Then map Willie to 3-E and MoMo to 4-E. E means emergency.
+SLIDE 7. GRUBB ET AL. 2020 AAHA TABLE. CPE MOA 2026 ANESTHESIA APPENDIX 2 USES THE SAME 1–5 SCALE.
+    SPEAK: Read the 2020 AAHA table: Status 1 healthy neuter, Status 2 compensated mild mitral, Status 3 moderate disease such as IRIS 3 CKD, Status 4 threat to life such as bleeding splenic mass, Status 5 moribund septic cat. CPE MOA 2026 Appendix 2 uses the same five statuses. Then map Willie to 3-E and MoMo to 4-E. E means emergency.
 
 SLIDE 8. ASSIGN STATUS, THEN SAY WHETHER YOU PROCEED TODAY
     SPEAK: Cold-call four students. C is Willie (sedation). D is MoMo (exploratory cancelled).
@@ -48,8 +48,8 @@ SLIDE 14. WHEN TO DELAY, WHEN TO PROCEED URGENTLY
 SLIDE 15. 2020 AAHA ANESTHESIA AND MONITORING GUIDELINES; THEN THE RISK TALK
     SPEAK: Cite Grubb et al., 2020 AAHA Anesthesia and Monitoring Guidelines: healthy adults, food 4 to 6 hours, water until premedication. Neonates and patients under 2 kg: food fast no longer than 1 to 2 hours. A 2-minute risk talk prevents a 2-hour complaint. Mention DNR.
 
-SLIDE 16. BRIEF ANESTHESIA VOCABULARY FOR THIS HOUR. NOT AN ANESTHESIA COURSE.
-    SPEAK: Two minutes. Purpose of premed: calm, analgesia, lower induction dose, lower MAC. DKT is dexmedetomidine, ketamine, butorphanol. BAA is butorphanol, acepromazine, atropine. Ace and dexmed are not the default in heart-compromised patients; Willie got alfaxalone. MAC is how we talk about inhalant dose. Timeout includes cefazolin 22 mg/kg IV when prophylaxis is indicated.
+SLIDE 16. CPE MOA 2026: SELECT ETT, BREATHING SYSTEM, AND RESERVOIR BAG. THEN LEAK-TEST.
+    SPEAK: Board the two formulas. Dog ETT starting estimate: kilograms divided by 4, plus 3.5. Confirm with Grubb 2020: largest tube that passes the arytenoids without trauma; tip midway from larynx to thoracic inlet. Cuff holds a leak to 20 centimeters of water; that number is in the CPE MOA. Bag: kilograms times 60 milliliters, round up. Willie: 7.0 millimeter tube, 1 liter bag, circle. A 4 kilogram cat: 0.5 liter bag, non-rebreathing, 200 to 400 milliliters per kilogram per minute of oxygen per Grubb 2020. Leak-test, then open the pop-off. Premed still belongs here: exam first, IM or SQ, DKT and BAA for healthy patients, alfaxalone for Willie.
 
 SLIDE 17. PREOP HEADER AND RECOVERY. COMPLETE BEFORE THE FIRST DRUG.
     SPEAK: Walk the large boxes: ASA Status 3-E before alfaxalone. Skip NSAID after DexSP. Recovery is on the same page. This hour is preop, patient prep, and recovery, not the intra-op grid.
@@ -60,8 +60,8 @@ SLIDE 18. EXPLORATORY CANCELLED. RECORD THE DECISION.
 SLIDE 19. FREY ET AL. 2022: WHEN. GONZALEZ 2017: 22 MG/KG IV. WHITTEM 1999: REDOSE IF >90 MIN.
     SPEAK: Say 22 milligrams per kilogram IV out loud. Do not attribute that dose to AAHA 2022. Frey 2022 says when: 30 to 60 minutes before incision, skip clean OHE, stop postop. Whittem 1999 timed a second dose if surgery lasted more than 90 minutes. Gonzalez 2017 used 22 mg/kg IV. Elective canine OHE: skip the 14-day cephalexin prescription.
 
-SLIDE 20. PREP ROOM, THEN OPERATING ROOM
-    SPEAK: Airway and plane before clippers. Veterinary Betadine labels: 7.5% scrub, lather about 5 minutes, rinse, paint 5% Solution Veterinary, allow to dry. Eye: Roberts 1986, 1:50 of 10% PVP-I stock, 2-minute scrub plus 2-minute soak. Do not paint 10% from the veterinary bottle; that bottle is 5%.
+SLIDE 20. CPE MOA 2026 SURGERY: HAIR, SKIN, POSITION, DRAPE. THEN ANNOUNCE INCISION.
+    SPEAK: Do not clip until the patient is ready for prep: tube in, cuff holds to 20 centimeters of water, correct bag, IV running, surgical plane. CPE MOA 2026 Surgery scores hair, skin, position, and drape, then wants you to announce the incision. Veterinary Betadine labels: 7.5% scrub about 5 minutes, rinse, paint 5% Solution Veterinary, dry. Eye: Roberts 1986, 1:50 of 10% stock, 2 plus 2 minutes.
 
 SLIDE 21. #40 CLIPPER AFTER INDUCTION. FIELD 20 CM BEYOND THE PLANNED INCISION.
     SPEAK: Left photo is still too narrow. Right is a real 24-hour OHE. Willie: TECA field is pinna and skull. MoMo: skip the clippers.
@@ -73,7 +73,7 @@ SLIDE 23. CENTER TO PERIPHERY. DIRTY PREP, THEN STERILE PREP.
     SPEAK: Mime the spiral. Clock about 5 minutes for veterinary Betadine scrub on intact skin. Recite Roberts 1 to 50 of 10 percent stock for the eye: 2 minutes plus 2 minutes. If the bottle is 5 percent veterinary solution, 1 to 25 matches 0.2 percent.
 
 SLIDE 24. DORSAL RECUMBENCY, AIRWAY, IV CATHETER, MONITORING, V-TROUGH
-    SPEAK: Airway and monitoring are on before the clip. Keep hips in a neutral spread.
+    SPEAK: Name the bag size and the tube size on this photograph. Confirm placement with ETCO2. Keep hips in a neutral spread.
 
 SLIDE 25. FOUR-QUADRANT TOWELS, THEN THE LARGE DRAPE
     SPEAK: Left is a real spay with hair at the window. Re-clip or re-drape. Then timeout before you cut.
@@ -81,11 +81,11 @@ SLIDE 25. FOUR-QUADRANT TOWELS, THEN THE LARGE DRAPE
 SLIDE 26. TECHNIQUE DIAGRAM AND OPERATING-ROOM PHOTOGRAPH
     SPEAK: Call out closed gloving. Students name SpO2, ETCO2, ECG, temp, fluids off the workstation photo.
 
-SLIDE 27. RECOGNIZE, ANNOUNCE, CORRECT. THEN PROTECT THE PATIENT.
-    SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Ureter injury is a calm, well-exposed patient problem.
+SLIDE 27. CPE MOA 2026 SURGERY: ONE UNRECOGNIZED BREAK BEFORE INCISION. NONE AFTER.
+    SPEAK: Praise the person who says I just contaminated my sleeve. Then re-glove. Before incision, one unrecognized break is a warning. After incision, there is no warning. Ureter injury is a calm, well-exposed patient problem. The 24-hour window is why recovery is in this lecture.
 
 SLIDE 28. WHAT DO YOU DO NEXT?
-    SPEAK: Two minutes. B is Roberts 1986 bottle math. D is CHG off the cornea. C is the stabilize-first cat.
+    SPEAK: Two minutes. C is the board math: Willie 7.0 millimeter tube, 1 liter bag. B is Roberts 1986 bottle math. D is CHG off the cornea. If a student asks about the blocked cat: stabilize potassium first.
 
 SLIDE 29. REMAIN WITH THE PATIENT UNTIL AIRWAY AND CIRCULATION ARE STABLE
     SPEAK: Real recovery: e-collar, IV, clipped abdomen. Pale OHE: stay at the cage, return to OR if unstable.
@@ -96,7 +96,7 @@ SLIDE 30. AIRWAY, PERFUSION, HEAT, PAIN, INCISION. STAY WITH THE PATIENT.
 SLIDE 31. INJECTIONS AT RECOVERY. THEN TEACH THE E-COLLAR.
     SPEAK: Name carprofen for dogs and Onsior 2 mg/kg SQ for cats or dogs per label. Do not combine NSAID with DexSP. A postop antibiotic shot is not automatic. Clean spay: skip. Infected ear: treat.
 
-SLIDE 32. HEMORRHAGE, AIRWAY, HERNIA, DEHISCENCE, SSI, SEROMA
+SLIDE 32. CPE MOA 2026 SURGERY STILL SCORES THIS WINDOW. HEMORRHAGE, HERNIA, DEHISCENCE.
     SPEAK: Hemorrhage versus seroma. Skin versus fascial dehiscence. Evisceration protocol in one breath.
 
 SLIDE 33. WHAT THE OVERNIGHT CLINICIAN AND THE OWNER BOTH NEED
@@ -115,7 +115,7 @@ SLIDE 37. Key points
     SPEAK: Stop here if time is gone. They should defend Willie III-E and MoMo IV-E without looking.
 
 SLIDE 38. DVM 612  ·  PRINCIPLES OF SURGERY
-    SPEAK: Take questions. If none: Willie versus MoMo ASA from the 2020 AAHA table, then iodine: Roberts 1 to 50 of 10 percent stock, 2 minutes plus 2 minutes on the eye; intact skin is the 7.5 percent scrub for about 5 minutes then 5 percent veterinary paint. Dismiss on time.
+    SPEAK: Take questions. If none: Willie versus MoMo ASA from the 2020 AAHA table, then Willie 13.7 kg: start 7.0 mm ETT, 1 L bag. Iodine if asked: Roberts 1 to 50 of 10 percent stock. Dismiss on time.
 
 
 APPENDIX  ·  FULL REFERENCES
@@ -129,6 +129,11 @@ APPENDIX  ·  FULL REFERENCES
 8. BETADINE Solution Veterinary, 5% PVP-I (not 10%). DailyMed NDC 67618-155. If this bottle is used for a Roberts 0.2% field, dilute 1:25 (1 mL + 24 mL).
 9. Nolvasan Surgical Scrub, 2% chlorhexidine acetate. DailyMed NDC 54771-8701; setid 4a2567ca-26b9-4078-b3e3-4695f50899b4. Wash 2 to 4 min. Avoid eyes and mucous membranes.
 10. Whittem TL, Johnson AL, Smith CW, et al. J Am Vet Med Assoc. 1999;215(2):212-216. First dose within 30 min of surgery; second dose if surgery lasted >90 min. Abstract does not print mg/kg.
-11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Does not say q90 min.
+11. Gonzalez OJ, Renberg WC, Roush JK, KuKanich B, Warner M. Am J Vet Res. 2017;78(6):695-701. Extra-label 22 mg/kg IV studied in dogs. Interstitial fluid >4 ug/mL for about 4 h after IV. Does not say q90 min.
+12. ONSIOR (robenacoxib) injection. DailyMed. 2 mg/kg SQ once daily up to 3 days. Dogs: soft tissue surgery, first dose about 45 min before surgery. Cats: orthopedic surgery, OHE, castration, first dose about 30 min before surgery. Do not combine with another NSAID or a corticosteroid.
+13. ECFVG. Clinical Proficiency Examination Manual of Administration. 2026 ed. American Veterinary Medical Association. https://www.avma.org/sites/default/files/2025-11/ECFVG-2026_MOA.pdf. Anesthesia section: preoperative examination before IM/SQ premedication; request labs; assign ASA (Appendix 2); select ETT, breathing system, and reservoir bag; calculate fresh-gas flow; leak-test; cuff holds to 20 cm H2O; ready for surgical prep means airway secured, machine on, patent IV running, surgical plane, monitoring started. Surgery section: hair, skin, position, drape, gown/glove; announce incision; one unrecognized asepsis break before incision, none after; last skin suture ends the clock; first 24 hours still count (hemorrhage, hernia). Used as the competency list for this DVM 612 hour, not as CPE exam-prep.
+
+TEACHING NAMES (no mg/kg invented on the slides): DKT = dexmedetomidine + ketamine + butorphanol. BAA = butorphanol + acepromazine + atropine. MAC = minimum alveolar concentration.
+TUBE AND BAG (board math): dog ETT starting estimate ID mm = (kg / 4) + 3.5, then confirm largest that passes the arytenoids without trauma (Grubb 2020). Bag: kg × 60 mL, round UP to 0.5/1/2/3 L (5–6 × tidal volume 10–15 mL/kg). Willie 13.7 kg: 7.0 mm, 1 L, circle. NRC O2 200–400 mL/kg/min for cats and dogs <3–5 kg (Grubb 2020). The (kg/4)+3.5 estimate is a starting number; it is not printed in the CPE MOA.
 
 TYPE: titles 30 pt, body 18 pt, cards 16 pt, kicker 13 pt, footer 12 pt, references 13 pt.
