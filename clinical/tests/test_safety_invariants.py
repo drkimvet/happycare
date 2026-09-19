@@ -139,6 +139,8 @@ class PublicCardInvariants(unittest.TestCase):
             "hops",
             "macadamia",
             "rda",
+            "nephrosplenic",
+            "phenylephrine",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

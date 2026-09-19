@@ -57,6 +57,10 @@ ICE_RE = re.compile(r"\b(ice bath|ice-water|ice water)\b", re.I)
 STASIS_RE = re.compile(r"\b(gi stasis|gut stasis|ileus)\b", re.I)
 PROKINETIC_RE = re.compile(r"\b(metoclopramide|cisapride|prokinetic|syringe-?feed)\b", re.I)
 IONOPHORE_RE = re.compile(r"\b(ionophore|monensin|lasalocid|salinomycin)\b", re.I)
+NEPHROSPLENIC_RE = re.compile(r"\b(nephrosplenic|renosplenic|left dorsal displacement)\b", re.I)
+LCV_RE = re.compile(r"\b(large colon volvulus|colonic volvulus|colon torsion)\b", re.I)
+PHENYLEPHRINE_RE = re.compile(r"\bphenylephrine\b", re.I)
+BUTAZONE_RE = re.compile(r"\b(phenylbutazone|bute|right dorsal colitis)\b", re.I)
 LDA_RE = re.compile(r"\b(lda|left displaced abomasum|displaced abomasum|rda|right displaced abomasum|abomasal volvulus|\bping\b)\b", re.I)
 ACE_RE = re.compile(r"\bacepromazine\b", re.I)
 STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
@@ -327,6 +331,23 @@ def analyze(
         hard_stops.append("Horse + ionophore: cardiotoxic emergency. No specific antidote.")
         do_not.append("Do not treat ionophore as a simple gas-colic drip.")
         sources.append("Merck equine ionophore / feed contamination teaching")
+
+    if spec == "horse" and (NEPHROSPLENIC_RE.search(text) or (PHENYLEPHRINE_RE.search(text) and "colic" in text.lower())):
+        do_not.append("Do not give phenylephrine to a horse >15 years (Merck: fatal hemorrhage).")
+        do_next.append("Confirm left kidney–spleen window on rectal/US. Jog/roll only if this is LDD/NSE, not LCV.")
+        sources.append("Merck: left dorsal displacement / nephrosplenic entrapment")
+        if re.search(r"\b(1[6-9]|[2-9]\d)\s*(y|yo|year)", text, re.I):
+            hard_stops.append("Age >15: phenylephrine is off the table for nephrosplenic entrapment.")
+
+    if spec == "horse" and LCV_RE.search(text):
+        hard_stops.append("Large colon volvulus: surgery now. Not phenylephrine, not 'jog it out.'")
+        do_not.append("Do not use peritoneal fluid as the viability veto; Merck: tap correlates poorly with colon involvement.")
+        sources.append("Merck: volvulus of the large colon in horses")
+
+    if spec == "horse" and BUTAZONE_RE.search(text):
+        do_not.append("Do not continue phenylbutazone into right-dorsal-colitis territory.")
+        do_next.append("Stop the NSAID. Look for hypoproteinemia / ventral edema. △ Plumb for any replacement analgesic.")
+        sources.append("Merck: right dorsal colitis associated with NSAIDs")
 
     if spec == "cattle" and LDA_RE.search(text):
         hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")

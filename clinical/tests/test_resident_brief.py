@@ -144,6 +144,14 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("surgical", joined)
         self.assertIn("dka", joined)
 
+    def test_old_horse_no_phenylephrine(self):
+        b = analyze("horse", "18 yo gelding, nephrosplenic entrapment, give phenylephrine")
+        self.assertTrue(any("phenylephrine" in x.lower() for x in b["hard_stops"] + b["do_not"]))
+
+    def test_large_colon_volvulus_is_surgery(self):
+        b = analyze("horse", "broodmare, large colon volvulus")
+        self.assertTrue(any("surgery" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

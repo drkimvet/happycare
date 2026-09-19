@@ -39,6 +39,6 @@ Lily/sago **narrative** pages cited in the Plunkett index (about 613–620) are 
 
 Printed lily/sago **chapters** (index ~613–620) and later plant chapters (~677–739). Appendix cards are not a substitute for the full protocol pages. If those splits arrive, verify again and still do not dump them.
 
-## 109. Bovine abomasum (Merck May 2026, Mann)
+## 110. Equine LDD/NSE vs large colon volvulus (Merck colic-by-location)
 
-Not a Plunkett chapter. Public Merck: LDA left ping ribs ~9–13; RDA/AV right. RDA is surgical because AV cannot be excluded. Hypochloremic hypokalemic metabolic alkalosis from sequestered HCl. Late AV adds lactate acidosis. L-lactate ≤2 mmol/L vs ≥6 mmol/L is an outcome flag, not a license to skip surgery.
+Nephrosplenic entrapment is often moderate pain; phenylephrine is off if >15 years (hemorrhage). Large colon volvulus is peri-partum broodmare, severe pain, surgery. Do not jog an LCV. Peritoneal fluid can lie. Right dorsal colitis: stop phenylbutazone.

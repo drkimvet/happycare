@@ -77,7 +77,7 @@ Unknown block: treat as unknown, not as "warfarin."
 
 - Milk fever vs grass tetany: Ca vs Mg. Wrong bottle first can look like a treatment failure.
 - Cattle ketosis: Merck/McArt — **no acidemia** is the expected blood-gas story (unlike DKA).
-- Equine "gas colic" vs colitis vs surgical: reflux, peritoneal lactate **trend**, systemic lactate, and pain that outlives analgesia. Peritoneal lactate alone is not a surgery ticket (Arroyo 2018 DPJ/SISO teaching).
+- Equine colic split: **nephrosplenic / left dorsal displacement** is often moderate pain, rectal/US diagnosis, phenylephrine + jog or roll. Merck: **no phenylephrine if >15 years** (fatal hemorrhage). **Large colon volvulus** is sudden severe pain, often peri-partum broodmare, marked distention, **surgery now** — not a phenylephrine case. Peritoneal fluid can lie about colon viability. Right dorsal colitis: stop the NSAID (phenylbutazone classic), hypoproteinemia. △ any phenylephrine number in Plumb.
 - Mesenteric volvulus: derotate bowel, then resect. Isolated spleen/lung torsion: do not "derotate then wait" the way you handle stomach.
 - Ionophore / poultry or cattle feed in a horse: cardiotoxic emergency, not a gas-colic drip.
 - Bovine ping: LDA left ribs ~9–13. RDA/AV right ribs ~9–13. Rumen gas is more dorsal/caudal. Cecum is more caudal into the paralumbar fossa. Merck (Mann 2026): **RDA gets prompt surgery** because AV cannot be excluded. LDA can be medical early but recurs. Hypochloremic hypokalemic metabolic **alkalosis** from sequestered HCl (not DKA). Late AV adds lactate acidosis. Blood L-lactate ≤2 mmol/L favors surgical outcome; ≥6 mmol/L is a poor-outcome flag (Merck). Do not invent the mg/kg of a toggle or roll.
