@@ -124,6 +124,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("ice the feet", VERIF.lower())
         self.assertIn("not finished cover-to-cover", VERIF.lower())
         self.assertIn("641–739 is a gap", VERIF.lower())
+        self.assertIn("addisonian crisis", VERIF.lower())
+        self.assertIn("mg/dl", VERIF.lower())
+        self.assertIn("dexsp", VERIF.lower())
         self.assertNotIn("booksvets", VERIF.lower())
         # Must not harvest the typeset trap as a usable dose.
         self.assertNotRegex(VERIF.lower(), r"heartworm preventative is 6 mg/kg")
@@ -152,6 +155,8 @@ class PublicCardInvariants(unittest.TestCase):
             "salmonella",
             "ice the feet",
             "oxytetracycline",
+            "addisonian",
+            "myelinolysis",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

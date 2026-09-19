@@ -66,3 +66,18 @@ Public Merck salmonellosis: isolate or barrier first; treatment of the severe fo
 Public Merck PHF (*Neorickettsia risticii*): river/creek pasture, late spring–fall; clinically can look like Salmonella; oxytetracycline is the named antimicrobial if that story is on the table; **ice the feet immediately** — laminitis in 20–30% and often severe. △ the oxytetracycline number in Plumb. Do not print it here.
 
 Polymyxin B is an endotoxin-bind conversation, not if the horse is already azotemic. NSAID for endotoxin: minimum effective dose; hold if kidneys are down. This is medical colitis, not large-colon volvulus. Do not copy the SA RECOVER cart.
+
+## 114. Canine Addisonian crisis (Plunkett 3e vs Merck Jul 2024)
+
+Legal split chapter “Hypoadrenocorticism (Addisonian crisis)” (p301–440 file) vs Merck Addison disease (Van Vertloo, Jul 2024). No chapter dump. No harvested mg/kg.
+
+Agree: young/middle-aged dog, waxing-waning GI, collapse, relative bradycardia, hyperK, hypoNa, prerenal azotemia, ACTH stim confirms, fluids first, prognosis good if treated.
+
+Book traps:
+
+- Cortisol cutoff printed as **mg/dL**. Merck/labs use **µg/dL (mcg/dL)**. Same ivermectin-class unit trap. Do not copy the number.
+- Book default 0.9% NaCl at a printed hourly rate. Current public teaching: balanced crystalloid, reassess; do not rapidly correct chronic severe hyponatremia (myelinolysis).
+- Book: finish ACTH before any glucocorticoid. Merck: DexSP does **not** interfere with the assay and can go if the dog cannot wait. Prednisolone/hydrocortisone **do** cross-react.
+- Book harvestable DOCP/Dex/insulin tables stay in the book. △ Plumb. Insulin for hyperK only after glucose is known.
+
+Atypical Addison (glucocorticoid only, normal electrolytes) is in Merck and easy to miss if you require hyperK.

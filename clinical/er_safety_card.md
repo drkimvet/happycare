@@ -89,6 +89,16 @@ Unknown block: treat as unknown, not as "warfarin."
 - New night vocalizing, house soiling, or "just old" is a medical rule-out first (pain, hypertension, hyperT, CNS, UTI), then cognitive.
 - Punishment for urine marking is not the plan.
 
+## Addisonian crisis (dog; Merck Jul 2024)
+
+- Great imitator. Waxing-waning GI, collapse, **relative bradycardia in shock**, hyperK, hypoNa, prerenal azotemia that looks like AKI or a blocked dog.
+- Na:K <27 is a hint, not a diagnosis. Atypical Addison can have **normal electrolytes**.
+- Fluids first. Current conversation is a **balanced crystalloid**, reassess perfusion. Do not copy the 2013 0.9% NaCl hourly recipe. If Na is very low, do not jack it (myelinolysis).
+- Treat the ECG, not the K number. Calcium gluconate is cardioprotection. Insulin+dextrose only after glucose is known.
+- Confirm with ACTH stim. Baseline cortisol >2 µg/dL rules it out; a low baseline does not rule it in. The 2013 book printing **mg/dL** for that cutoff is a unit trap.
+- Prednisolone/hydrocortisone **cross-react** on the cortisol assay. Merck: DexSP can go before the draw if the dog cannot wait. △ every steroid/DOCP number in Plumb.
+- Do not send home as gastroenteritis. Cats are rare.
+
 ## UTI (ISCAID 2019, not a 2011 leftover)
 
 - Subclinical bacteriuria is not a UTI and is rarely treated.
@@ -129,6 +139,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - Gonzalez 2017 periop cefazolin extra-label (already used on DVM 612; do not invent a CRI from it)
 - Merck: grape/raisin/tamarind; ethylene glycol; chocolate; GI obstruction; pyometra; arterial thromboembolism; rabbit digestive disorders
 - Merck: equine salmonellosis (isolate; fluids first; adult antimicrobials do not shorten colitis or shedding); Potomac horse fever / *Neorickettsia risticii* (oxytetracycline conversation; ice feet now; laminitis 20–30%)
+- Merck Jul 2024: Addison disease / hypoadrenocorticism (Van Vertloo). AAHA 2023 selected endocrinopathies named as further reading only.
 - Official Wiley Five-Minute title list: `clinical/five_minute_syllabus.md` (no third-party book mirrors)
 
 ASPCA Animal Poison Control: 888-426-4435 (owner/clinic call; not a login).

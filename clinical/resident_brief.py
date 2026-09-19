@@ -66,6 +66,11 @@ UTI_RE = re.compile(r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|enro
 FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover|epinephrine|atropine)\b", re.I)
 HIGH_DOSE_EPI_RE = re.compile(r"\b(high-?dose (epi|epinephrine)|0\.1\s*mg/kg\s*(epi|epinephrine))\b", re.I)
+ADDISON_RE = re.compile(r"\b(addison|hypoadren|acth stim|cosyntropin|docp|fludrocortisone)", re.I)
+HYPERK_RE = re.compile(r"\b(hyperkalem|high potassium|k\s*[>=]\s*[6-9])", re.I)
+HYPONA_RE = re.compile(r"\b(hyponatrem|low sodium)", re.I)
+BRADY_SHOCK_RE = re.compile(r"\b(brady|slow heart|relative brady)", re.I)
+PRED_ASSAY_RE = re.compile(r"\b(predniso|hydrocortisone)", re.I)
 LDA_RE = re.compile(r"\b(lda|left displaced abomasum|displaced abomasum|rda|right displaced abomasum|abomasal volvulus|\bping\b)\b", re.I)
 COLITIS_RE = re.compile(
     r"\b(colitis|salmonell|potomac|phf|neorickettsia|endotox|acute diarrhea|profuse diarrhea)\b",
@@ -413,6 +418,28 @@ def analyze(
         hard_stops.append("SA RECOVER 2024 is not the large-animal CPA protocol.")
         do_not.append("Do not copy dog/cat crash-cart epinephrine/atropine onto a horse or cow without the species protocol.")
         sources.append("Pardo 2024 is dogs and cats; large-animal CPA is a different algorithm")
+
+    addison_picture = spec == "dog" and (
+        ADDISON_RE.search(text)
+        or (HYPERK_RE.search(text) and (HYPONA_RE.search(text) or BRADY_SHOCK_RE.search(text) or "collapse" in text.lower()))
+    )
+    if addison_picture:
+        hard_stops.append(
+            "Dog + Addison-crisis picture: fluids first. Do not call azotemia 'AKI' or send home as gastroenteritis."
+        )
+        do_not.append("Do not treat the potassium number alone. Fluids often drop K; calcium gluconate is an ECG/cardiac conversation.")
+        do_not.append("Do not copy the 2013 NaCl drip recipe or jack a chronic Na <120. Myelinolysis risk. △ the fluid plan.")
+        do_not.append("Do not copy a 2013 cortisol cutoff printed as mg/dL. Units are µg/dL. △ the lab.")
+        do_next.append("ECG, glucose now. Pull ACTH stim (or baseline cortisol to rule out if stable). Mineralocorticoid after confirm/stable. △ Plumb.")
+        localization = localization or (
+            "Hypovolemic shock with relative bradycardia / hyperK / hypoNa localizes to mineralocorticoid crisis "
+            "until UO and ACTH say otherwise. Atypical Addison can have normal electrolytes."
+        )
+        sources.append("Merck Jul 2024 Addison disease (Van Vertloo); Plunkett 3e chapter verified for traps only")
+        if PRED_ASSAY_RE.search(text) and (ADDISON_RE.search(text) or "acth" in text.lower()):
+            hard_stops.append("Prednisolone/hydrocortisone before the ACTH stim contaminates the cortisol assay. DexSP does not (Merck).")
+        if re.search(r"\binsulin\b", text, re.I) and "glucose" not in text.lower():
+            hard_stops.append("Do not give insulin for hyperK until glucose is known. Addison dogs are already hypoglycemia-risk.")
 
     if spec == "cattle" and LDA_RE.search(text):
         hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")

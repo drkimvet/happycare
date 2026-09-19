@@ -193,6 +193,22 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("horse", "colitis, azotemic, start polymyxin B")
         self.assertTrue(any("polymyxin" in x.lower() for x in b["hard_stops"]))
 
+    def test_dog_addison_crisis_not_aki_or_gi(self):
+        b = analyze("dog", "Addisonian crisis, collapse, hyperkalemia, hyponatremia, bradycardia")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("fluids first", joined)
+        self.assertIn("gastroenteritis", joined)
+        self.assertIn("mg/dl", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pred_before_acth_contaminates_assay(self):
+        b = analyze("dog", "suspect Addison, give prednisolone then ACTH stim")
+        self.assertTrue(any("contaminat" in x.lower() or "assay" in x.lower() for x in b["hard_stops"]))
+
+    def test_addison_insulin_needs_glucose_first(self):
+        b = analyze("dog", "Addisonian crisis, hyperkalemia, give insulin")
+        self.assertTrue(any("glucose" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
