@@ -13,6 +13,7 @@ LAND = (ROOT / "clinical" / "vet_ai_landscape.md").read_text(encoding="utf-8")
 BRIEF = (ROOT / "clinical" / "resident_brief.py").read_text(encoding="utf-8")
 SYLL = (ROOT / "clinical" / "five_minute_syllabus.md").read_text(encoding="utf-8")
 VERIF = (ROOT / "clinical" / "source_verification.md").read_text(encoding="utf-8")
+MACRO = (ROOT / "clinical" / "vetspire_macros.md").read_text(encoding="utf-8")
 
 
 class PublicCardInvariants(unittest.TestCase):
@@ -80,7 +81,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("decompression", CARD.lower())
 
     def test_no_owner_phi_patterns(self):
-        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL, VERIF))
+        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL, VERIF, MACRO))
         self.assertNotRegex(blob, r"\bVIN\s+\d{4,}\b")
         self.assertNotRegex(blob, r"Wlsdb840")
         self.assertNotRegex(blob, r"ykim", re.I)
@@ -124,6 +125,16 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a work item", VERIF.lower())
         self.assertIn("addisonian crisis", VERIF.lower())
         self.assertIn("dka", VERIF.lower())
+
+    def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
+        self.assertIn("do not login to vetspire", MACRO.lower())
+        self.assertIn("{{patient.name}}", MACRO)
+        self.assertIn("`ddx-master`", MACRO)
+        self.assertIn("`dc-master`", MACRO)
+        self.assertIn("`ddx-addison`", MACRO)
+        self.assertIn("`dc-uo`", MACRO)
+        self.assertIn("replaces a veterinary license", MACRO.lower())
+        self.assertNotIn("Wlsdb840", MACRO)
         self.assertIn("mg/dl", VERIF.lower())
         self.assertIn("dexsp", VERIF.lower())
         self.assertNotIn("booksvets", VERIF.lower())
