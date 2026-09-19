@@ -97,6 +97,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("vin", SKILL.lower())
         self.assertIn("do not impersonate", SKILL.lower())
 
+    def test_skill_does_not_steer_attending_to_instinct(self):
+        self.assertIn("does not open instinct", SKILL.lower())
+        self.assertIn("do not recommend opening it", SKILL.lower())
+        self.assertIn("둘 중 하나가 면허를 대신하지는 않습니다", SKILL)
+
     def test_landscape_admits_plumb_moat(self):
         self.assertIn("will not out-plumb plumb", LAND.lower())
         self.assertIn("instinct attending", LAND.lower())

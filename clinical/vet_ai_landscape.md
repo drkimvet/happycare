@@ -1,6 +1,6 @@
 # Veterinary AI landscape (19 Sep 2026)
 
-Public marketing and product pages only. No product logins. Neither this resident nor any product below replaces a veterinary license.
+Public marketing and product pages only. No product logins. Neither this resident nor any product below replaces a veterinary license. 둘 중 하나가 면허를 대신하지는 않습니다. Dr. Kim does not open Instinct; the resident researches, the attending decides.
 
 ## Who actually competes with a night-shift resident
 
