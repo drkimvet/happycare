@@ -35,9 +35,25 @@ Lily/sago **narrative** pages cited in the Plunkett index (about 613–620) are 
 - **Ivermectin heartworm line in the 3e typeset** lists monthly preventative as **mg/kg**. Standard preventative units are **µg/kg**. Treat that line as a unit trap. `△ Plumb`. Do not generate either number here.
 - Exotic appendix ivermectin tables mix µg and mg in places. Do not harvest those tables.
 
+## Coverage of the legal Plunkett 3e splits (not finished cover-to-cover)
+
+The 46 MB whole-book file never arrived. These owned splits are on disk (`textbooks/`, gitignored). Night rules come from the verified gates, not from harvesting 2013 tables.
+
+| Split | What was studied | Status |
+| --- | --- | --- |
+| p01–100 | Fluids, shock types, BLS/ALS headings | Read for traps. **Do not use the 2013 crash cart.** Night CPA is Pardo/RECOVER 2024. Night fluids are AAHA 2024. |
+| p101–200 | Heart/ATE, airway, trauma, heatstroke | Heatstroke / FATE already gated. Book still cites high-dose epinephrine in the 2013 CPR reading list. |
+| p201–300 | Skin, anemia, DIC, acute abdomen start | Skimmed headings. No new night gate. |
+| p301–440 | GDV, obstruction, DKA, ARF, pyometra, electrolytes | GDV/pyometra/ARF already gated vs Merck. |
+| p441–540 | Seizure/eye, then APAP through arsenic/aspirin | APAP family already gated. |
+| p541–640 | Baclofen → mushrooms, including grapes, EG, chocolate, ivermectin, macadamia | Grapes outdated; ivermectin µg trap. **No dedicated lily, sago, xylitol, permethrin, or Zn3P2 chapter in this file.** |
+| p641-plus / chunk-78751 | Starts ~p740: hamster → turtle exotic cards | Same as the exotic appendix-adjacent chunk. **Printed ~641–739 is a gap.** |
+| Appendices | Plant cards (Easter lily, calla, Convallaria, sago/false sago, etc.) | Cards only. Index points lily/sago **prose** to ~618–620; those pages are not in the splits. |
+| chunk-2786 | 15-page duplicate fragment | Duplicate; not a missing chapter. |
+
 ## Still missing from the legal splits
 
-Printed lily/sago **chapters** (index ~613–620) and later plant chapters (~677–739). Appendix cards are not a substitute for the full protocol pages. If those splits arrive, verify again and still do not dump them.
+Printed lily/sago **chapters** (index ~613–620), xylitol / permethrin / zinc-phosphide **chapters**, and the ~641–739 gap. Appendix cards are not a substitute for those protocol pages. Do not hand-split the rest on a phone. Use `prep_legal_pdfs.py` or attach those page ranges. If they arrive, verify again and still do not dump them.
 
 ## 112. RECOVER / Pardo 2024 CPA (JVECC)
 
