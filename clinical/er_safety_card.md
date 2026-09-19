@@ -1,0 +1,80 @@
+# Midtown ER safety card
+
+Public sources only. Not a formulary. **△ confirm every mg/kg in Plumb or the hospital protocol.** Neither this card nor Instinct Attending nor Plumb's replaces a veterinary license.
+
+## Species gates (do these before you type a plan)
+
+| Signal | Species rule | Do not |
+| --- | --- | --- |
+| True lily (`Lilium`, `Hemerocallis`), pollen, or vase water | Cat: treat as AKI emergency. Cornell / ASPCA public toxin lists. | Wait for "just GI." Do not call it a dog problem. |
+| Xylitol | Dog: check glucose now. Merck: charcoal does **not** bind xylitol. Cats are not the published hypoglycemia/liver species. | Give charcoal "because toxin." Mix xylitol NAC into the APAP schedule. |
+| Acetaminophen | Cat (and ferret): contraindicated at any intended analgesic dose (Cornell pharmacy public page). NAC belongs to the **APAP family**, not a generic liver drip. | Give APAP to a cat. Invent a hybrid NAC. |
+| Sago / cycad | Dog (also other species): hepatic. Entire plant toxic; seeds worst. ASPCA APCC public alert. No specific antidote. | Treat as a mild GI plant. |
+| Zinc phosphide | Gas is **phosphine (PH3)**, not phosgene. Book error if a 2013 text says phosgene. | Induce emesis in a way that aerosols the gas into staff faces. |
+| Oral beta-lactam / oral macrolide "because infection" | Hamster, guinea pig, rabbit: fatal hindgut dysbiosis is the textbook risk (Merck exotic GI). | Write amoxicillin PO for a hamster. |
+| Azotemic cat | IRIS AKI / CKD frame. No NSAID. No DexSP. | "Just one dose of Dex" for the sick cat. |
+| Male cat + straining | Urethral obstruction until proven otherwise. | Discharge on "constipated." |
+
+No species on the one-liner → no dose, no CRI, no "typical" fluid rate.
+
+## NAC: three families, do not mix
+
+Published schedules are **indication-specific**. Instinct will retrieve Plumb. You will not invent a blend.
+
+1. **Acetaminophen** — public ASPCA / VECCS historical protocol family: load-then-maintenance NAC (classic published load 140 mg/kg, severe published load 280 mg/kg, then 70 mg/kg). Charcoal can adsorb oral NAC; separate them. △ confirm current Plumb/hospital numbers and route.
+2. **Xylitol** — Merck: dextrose is the treatment that is actually evidenced; NAC is "consider," efficacy for the liver injury is unknown. If the hospital uses a xylitol NAC schedule, it is **not** the APAP schedule. △ Plumb.
+3. **Established hepatic failure / cycad** — a third published family (often 140 then 70 in older liver protocols). Do not borrow the xylitol interval or the APAP 280 load unless that is what Plumb lists for **this** indication.
+
+If you cannot name which family you are in, you are not writing NAC.
+
+## Fluids, AKI, abdomen
+
+- AAHA fluid therapy 2024: shock bolus ≠ "maintenance drip all night." Reassess perfusion, electrolytes, and UOP. Do not run a number because it is round.
+- IRIS AKI: grade from creatinine **and** UOP. UOP is mL/kg/hr from a closed collection or weighed litter, not "the pad looked wet."
+- UOP around 1 mL/kg/hr is not oliguria. Do not treat that cat as anuric.
+- Unilateral renomegaly + soft, non-tense abdomen: localize to that kidney/ureter (hydro/pyo/obstruction). Do **not** drain a free abdomen without paired fluid and serum creatinine and potassium.
+- Mild metabolic acidosis (example pH ~7.25, HCO3 ~20) is not an automatic bicarbonate indication. Fix perfusion and the underlying kidney/ureter problem.
+- Peritoneal lavage, when indicated, is sterile saline. Povidone-iodine peritoneal lavage is not standard. 5% povidone-iodine on the card is **skin prep**, not belly rinse.
+
+## Drugs that are not the plan
+
+- NSAID: hold on azotemia, hypovolemia, or unknown kidney function. On-label NSAIDs only when you are actually reaching for one; △ Plumb.
+- DexSP: not a treatment for feline AKI. Not a substitute for localization.
+- Cefazolin CRI: not a default because the cat is sick. Perioperative cefazolin extra-label use is a Gonzalez 2017 conversation, not a night CRI.
+- Azodyl / "gut-renal" nutraceuticals: do not add them to an anorexic AKI cat as if they decompress a kidney.
+- Aluminum hydroxide: hold if the patient is not eating.
+- Opioid: pain is part of obstructive/AKI care. Name the drug, then △ Plumb for the dose. Do not leave a painful hydro/pyonephrosis cat on "no analgesic" because creatinine is high.
+
+## Rodenticide (four families, not one vitamin K)
+
+1. Anticoagulant → vitamin K1 pathway, after you have the right product.
+2. Bromethalin → neuro; not vitamin K.
+3. Cholecalciferol → hypercalcemia/AKI; not vitamin K.
+4. Zinc phosphide → PH3; not vitamin K.
+
+Unknown block: treat as unknown, not as "warfarin."
+
+## Large-animal traps (do not skip just because Midtown is SA)
+
+- Milk fever vs grass tetany: Ca vs Mg. Wrong bottle first can look like a treatment failure.
+- Cattle ketosis: Merck/McArt — **no acidemia** is the expected blood-gas story (unlike DKA).
+- Equine "gas colic" vs colitis vs surgical: reflux, peritoneal lactate **trend**, systemic lactate, and pain that outlives analgesia. Peritoneal lactate alone is not a surgery ticket (Arroyo 2018 DPJ/SISO teaching).
+- Mesenteric volvulus: derotate bowel, then resect. Isolated spleen/lung torsion: do not "derotate then wait" the way you handle stomach.
+
+## Consent sentence when the disease is decompressedable
+
+If imaging or palpation says one kidney is fluid-filled / non-functional and the other is compromised, the owner conversation is **referral, decompression, or euthanasia**, not "we will watch the belly overnight." Write that in the plan.
+
+## Source list (public)
+
+- IRIS AKI / CKD staging (iris-kidney.com)
+- AAHA fluid therapy guidelines 2024
+- ISCAID antimicrobial guidelines 2019 (and updates when public)
+- ACVIM consensus: feline pancreatitis (Forman et al.)
+- RECOVER / Pardo CPA guidelines
+- Merck Veterinary Manual public toxicology and exotic GI pages
+- ASPCA APCC public alerts; Cornell CVM public toxin list
+- ASPCA/VECCS acetaminophen NAC historical protocol (c-veccs_july00.pdf)
+- Gonzalez 2017 periop cefazolin extra-label (already used on DVM 612; do not invent a CRI from it)
+
+ASPCA Animal Poison Control: 888-426-4435 (owner/clinic call; not a login).
