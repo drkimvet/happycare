@@ -67,6 +67,17 @@ FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ci
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover|epinephrine|atropine)\b", re.I)
 HIGH_DOSE_EPI_RE = re.compile(r"\b(high-?dose (epi|epinephrine)|0\.1\s*mg/kg\s*(epi|epinephrine))\b", re.I)
 LDA_RE = re.compile(r"\b(lda|left displaced abomasum|displaced abomasum|rda|right displaced abomasum|abomasal volvulus|\bping\b)\b", re.I)
+COLITIS_RE = re.compile(
+    r"\b(colitis|salmonell|potomac|phf|neorickettsia|endotox|acute diarrhea|profuse diarrhea)\b",
+    re.I,
+)
+POLYMYXIN_RE = re.compile(r"\bpolymyxin\b", re.I)
+FLUNIXIN_RE = re.compile(r"\b(flunixin|banamine|anti-?endotoxin)\b", re.I)
+SHOTGUN_ABX_RE = re.compile(
+    r"\b(shotgun|start (iv )?(antibiotics?|abx)|penicillin.{0,40}gentamicin|gentamicin.{0,40}metronidazole|ceftiofur.{0,20}metro)\b",
+    re.I,
+)
+PHF_STORY_RE = re.compile(r"\b(phf|potomac|neorickettsia|oxytetracycline|oxytet)\b", re.I)
 ACE_RE = re.compile(r"\bacepromazine\b", re.I)
 STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
 ATROPINE_RE = re.compile(r"\batropine\b", re.I)
@@ -353,6 +364,29 @@ def analyze(
         do_not.append("Do not continue phenylbutazone into right-dorsal-colitis territory.")
         do_next.append("Stop the NSAID. Look for hypoproteinemia / ventral edema. △ Plumb for any replacement analgesic.")
         sources.append("Merck: right dorsal colitis associated with NSAIDs")
+
+    if spec == "horse" and COLITIS_RE.search(text):
+        hard_stops.append("Horse + acute colitis/diarrhea: isolate first (Salmonella) before the treatment plan.")
+        do_not.append("Do not treat medical colitis as surgical large-colon volvulus.")
+        do_not.append("Do not invent a flunixin anti-endotoxin dose or a L/day fluid recipe. △ Plumb.")
+        do_next.append("Fluids and electrolytes first. Ice the feet now (PHF laminitis 20–30%; other colitis still laminitis-risk).")
+        localization = localization or (
+            "Acute enterocolitis / endotoxemia. Isolate. Not LCV unless the colic picture is sudden severe "
+            "distention in a surgical candidate."
+        )
+        sources.append("Merck: salmonellosis in horses; Potomac horse fever / Neorickettsia risticii")
+        if SHOTGUN_ABX_RE.search(text) and not PHF_STORY_RE.search(text):
+            hard_stops.append(
+                "Adult colitis: do not start a shotgun antibiotic. Merck: antimicrobials do not shorten "
+                "colitis or decrease Salmonella shedding."
+            )
+            do_next.append("Antimicrobials are a neutropenia/bacteremia conversation, or PHF oxytetracycline if that story.")
+        if PHF_STORY_RE.search(text):
+            do_next.append("PHF/river-pasture story: oxytetracycline is the named conversation; △ the number in Plumb.")
+        if POLYMYXIN_RE.search(text) and re.search(r"\b(azotem|creatinine|aki|kidney)", text, re.I):
+            hard_stops.append("Polymyxin B is off if the horse is already azotemic.")
+        if FLUNIXIN_RE.search(text) and re.search(r"\b(azotem|creatinine|aki|kidney)", text, re.I):
+            hard_stops.append("Azotemic colitis: hold the NSAID / flunixin.")
 
     if spec in {"dog", "cat"} and BACTERIURIA_RE.search(text) and not re.search(r"\b(stranguria|pollakiuria|dysuria|hematuria|fever|pyelo)\b", text, re.I):
         hard_stops.append("Subclinical bacteriuria: do not treat just because the culture grew (ISCAID 2019).")

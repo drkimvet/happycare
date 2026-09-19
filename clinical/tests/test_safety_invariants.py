@@ -120,6 +120,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("tartaric", VERIF.lower())
         self.assertIn("µg/kg", VERIF)
         self.assertIn("no chapter dump", VERIF.lower())
+        self.assertIn("potomac", VERIF.lower())
+        self.assertIn("ice the feet", VERIF.lower())
         self.assertNotIn("booksvets", VERIF.lower())
         # Must not harvest the typeset trap as a usable dose.
         self.assertNotRegex(VERIF.lower(), r"heartworm preventative is 6 mg/kg")
@@ -145,6 +147,9 @@ class PublicCardInvariants(unittest.TestCase):
             "3–5 days",
             "high-dose epinephrine",
             "atropine",
+            "salmonella",
+            "ice the feet",
+            "oxytetracycline",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

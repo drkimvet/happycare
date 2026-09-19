@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Split legal PDFs on the attending's computer so the phone does not have to.
 
-Cloud agents cannot see the laptop disk. Phone uploads also fail around ~46 MB
-(the whole Plunkett file). This script chunks a folder of owned PDFs into
-`textbooks/` (gitignored). It does not buy books, fetch mirrors, or git-add PDFs.
+Cloud agents cannot see the laptop disk unless `cursor worker start` is running
+on that machine. Cursor Desktop file access is a different session. Phone
+uploads also fail around ~46 MB (the whole Plunkett file). This script chunks
+a folder of owned PDFs into `textbooks/` (gitignored). It does not buy books,
+fetch mirrors, or git-add PDFs.
 
   python3 clinical/prep_legal_pdfs.py --in ~/Books --out textbooks
 """

@@ -42,3 +42,11 @@ Printed lily/sago **chapters** (index ~613–620) and later plant chapters (~677
 ## 112. RECOVER / Pardo 2024 CPA (JVECC)
 
 High-dose epinephrine withdrawn. Atropine once, early, if vagal. 100–120 compressions/min, 2-min cycles, bag-mask > mouth-to-snout. Dogs and cats only. Confirm numbers on the hospital crash-cart chart; do not generate them here.
+
+## 113. Equine acute colitis / Salmonella / Potomac horse fever / laminitis (Merck)
+
+Public Merck salmonellosis: isolate or barrier first; treatment of the severe form is IV fluids and electrolytes; adult antimicrobials are controversial and do **not** appear to shorten colitis or decrease shedding (they may be a bacteremia/neutropenia conversation). Do not invent a L/day fluid recipe or a shotgun penicillin–gentamicin–metronidazole cocktail from memory.
+
+Public Merck PHF (*Neorickettsia risticii*): river/creek pasture, late spring–fall; clinically can look like Salmonella; oxytetracycline is the named antimicrobial if that story is on the table; **ice the feet immediately** — laminitis in 20–30% and often severe. △ the oxytetracycline number in Plumb. Do not print it here.
+
+Polymyxin B is an endotoxin-bind conversation, not if the horse is already azotemic. NSAID for endotoxin: minimum effective dose; hold if kidneys are down. This is medical colitis, not large-colon volvulus. Do not copy the SA RECOVER cart.

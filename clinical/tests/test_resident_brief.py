@@ -170,6 +170,29 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("horse", "arrest, start RECOVER epinephrine")
         self.assertTrue(any("large-animal" in x.lower() or "not the large-animal" in x.lower() for x in b["hard_stops"]))
 
+    def test_horse_colitis_isolate_and_ice(self):
+        b = analyze("horse", "acute colitis, fever, diarrhea")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertTrue(any("isolate" in x.lower() for x in b["hard_stops"]))
+        self.assertIn("ice", joined)
+        self.assertIn("volvulus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_colitis_shotgun_abx_without_phf(self):
+        b = analyze("horse", "acute diarrhea, start antibiotics penicillin gentamicin metronidazole")
+        self.assertTrue(any("shotgun" in x.lower() for x in b["hard_stops"]))
+
+    def test_horse_phf_oxytet_not_shotgun_stop(self):
+        b = analyze("horse", "Potomac horse fever, river pasture, start oxytetracycline")
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertNotIn("shotgun", joined)
+        self.assertTrue(any("oxytetracycline" in x.lower() for x in b["do_next"]))
+        self.assertTrue(any("ice" in x.lower() for x in b["do_next"]))
+
+    def test_horse_colitis_polymyxin_off_if_azotemic(self):
+        b = analyze("horse", "colitis, azotemic, start polymyxin B")
+        self.assertTrue(any("polymyxin" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

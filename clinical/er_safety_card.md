@@ -78,6 +78,7 @@ Unknown block: treat as unknown, not as "warfarin."
 - Milk fever vs grass tetany: Ca vs Mg. Wrong bottle first can look like a treatment failure.
 - Cattle ketosis: Merck/McArt — **no acidemia** is the expected blood-gas story (unlike DKA).
 - Equine colic split: **nephrosplenic / left dorsal displacement** is often moderate pain, rectal/US diagnosis, phenylephrine + jog or roll. Merck: **no phenylephrine if >15 years** (fatal hemorrhage). **Large colon volvulus** is sudden severe pain, often peri-partum broodmare, marked distention, **surgery now** — not a phenylephrine case. Peritoneal fluid can lie about colon viability. Right dorsal colitis: stop the NSAID (phenylbutazone classic), hypoproteinemia. △ any phenylephrine number in Plumb.
+- Equine acute colitis: isolate first (Salmonella). Fluids and electrolytes beat a shotgun antibiotic. PHF season + river pasture: oxytetracycline is the named antimicrobial conversation (Merck). **Ice the feet now** — PHF laminitis 20–30%. NSAID for endotoxin: minimum effective dose; hold if azotemic. Low-dose polymyxin B is an endotoxin-bind conversation, not if the kidneys are already down. △ every unit in Plumb. This is not large-colon volvulus. Do not copy the SA RECOVER cart.
 - Mesenteric volvulus: derotate bowel, then resect. Isolated spleen/lung torsion: do not "derotate then wait" the way you handle stomach.
 - Ionophore / poultry or cattle feed in a horse: cardiotoxic emergency, not a gas-colic drip.
 - Bovine ping: LDA left ribs ~9–13. RDA/AV right ribs ~9–13. Rumen gas is more dorsal/caudal. Cecum is more caudal into the paralumbar fossa. Merck (Mann 2026): **RDA gets prompt surgery** because AV cannot be excluded. LDA can be medical early but recurs. Hypochloremic hypokalemic metabolic **alkalosis** from sequestered HCl (not DKA). Late AV adds lactate acidosis. Blood L-lactate ≤2 mmol/L favors surgical outcome; ≥6 mmol/L is a poor-outcome flag (Merck). Do not invent the mg/kg of a toggle or roll.
@@ -127,6 +128,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - ASPCA/VECCS acetaminophen NAC historical protocol (c-veccs_july00.pdf)
 - Gonzalez 2017 periop cefazolin extra-label (already used on DVM 612; do not invent a CRI from it)
 - Merck: grape/raisin/tamarind; ethylene glycol; chocolate; GI obstruction; pyometra; arterial thromboembolism; rabbit digestive disorders
+- Merck: equine salmonellosis (isolate; fluids first; adult antimicrobials do not shorten colitis or shedding); Potomac horse fever / *Neorickettsia risticii* (oxytetracycline conversation; ice feet now; laminitis 20–30%)
 - Official Wiley Five-Minute title list: `clinical/five_minute_syllabus.md` (no third-party book mirrors)
 
 ASPCA Animal Poison Control: 888-426-4435 (owner/clinic call; not a login).
