@@ -116,6 +116,28 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "thunderstorm phobia, send home acepromazine")
         self.assertTrue(any("not an anxiolytic" in x.lower() for x in b["hard_stops"]))
 
+    def test_peace_lily_is_not_feline_aki(self):
+        b = analyze("cat", "ate peace lily")
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertIn("oxalate", joined)
+        self.assertNotIn("aki emergency", joined)
+
+    def test_lily_of_the_valley_is_cardiac(self):
+        b = analyze("dog", "lily of the valley")
+        self.assertTrue(any("cardiac glycoside" in x.lower() for x in b["hard_stops"]))
+
+    def test_cream_of_tartar_is_grape_family(self):
+        b = analyze("dog", "ate cream of tartar")
+        self.assertTrue(any("tartaric" in x.lower() for x in b["hard_stops"]))
+
+    def test_hops_no_nsaid_for_fever(self):
+        b = analyze("dog", "got into hops, hyperthermia, give NSAID")
+        self.assertTrue(any("nsaid" in x.lower() for x in b["do_not"]))
+
+    def test_turtle_no_ivermectin(self):
+        b = analyze("tortoise", "start ivermectin for mites")
+        self.assertTrue(any("ivermectin" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

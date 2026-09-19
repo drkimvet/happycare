@@ -14,6 +14,15 @@ LICENSE_LINE = (
 DOSE_POLICY = "△ confirm every mg/kg in Plumb or the hospital protocol. Do not invent a number."
 
 LILY_RE = re.compile(r"\b(lilium|hemerocallis|easter lily|tiger lily|daylily|day lily|true lily|lily)\b", re.I)
+PEACE_LILY_RE = re.compile(r"\b(peace lily|calla lily|spathiphyllum|zantedeschia)\b", re.I)
+VALLEY_LILY_RE = re.compile(r"\b(lily-of-the-valley|lily of the valley|convallaria)\b", re.I)
+HOPS_RE = re.compile(r"\b(hops|humulus)\b", re.I)
+ALLIUM_RE = re.compile(r"\b(onion|garlic|chive|leek|allium)\b", re.I)
+MACADAMIA_RE = re.compile(r"\bmacadamia\b", re.I)
+TARTAR_RE = re.compile(r"\b(cream of tartar|tartaric)\b", re.I)
+IVERMECTIN_RE = re.compile(r"\b(ivermectin|milbemycin|moxidectin|avermectin)\b", re.I)
+CHELONIAN_RE = re.compile(r"\b(turtle|tortoise|chelonian|box turtle)\b", re.I)
+MDR1_RE = re.compile(r"\b(mdr1|abcb1|collie|australian shepherd|sheltie|shetland|old english sheepdog)\b", re.I)
 XYLITOL_RE = re.compile(r"\bxylitol\b", re.I)
 APAP_RE = re.compile(r"\b(acetaminophen|paracetamol|tylenol|apap)\b", re.I)
 SAGO_RE = re.compile(r"\b(sago|cycad|cycas)\b", re.I)
@@ -75,6 +84,9 @@ def _norm_species(species: str | None) -> str:
         "horse": "horse",
         "equine": "horse",
         "bovine": "cattle",
+        "turtle": "turtle",
+        "tortoise": "tortoise",
+        "chelonian": "turtle",
     }
     return aliases.get(s, s)
 
@@ -105,12 +117,22 @@ def analyze(
         do_next.append("Ask species, weight, and the one problem that brought them in.")
         return _pack(spec, hard_stops, do_not, do_next, localization, sources, nac_family)
 
-    if spec == "cat" and LILY_RE.search(text):
+    if PEACE_LILY_RE.search(text):
+        hard_stops.append("Peace/calla lily is insoluble oxalate (oral pain), not feline AKI.")
+        do_not.append("Do not run the Easter-lily AKI protocol for peace or calla lily.")
+        localization = "Oxalate irritant plant, not Lilium nephrotoxin."
+        sources.append("Plunkett 3e appendix card (legal split) verified against Merck houseplants")
+    elif VALLEY_LILY_RE.search(text):
+        hard_stops.append("Lily-of-the-valley is a cardiac glycoside plant, not a feline AKI lily.")
+        do_not.append("Do not treat Convallaria as Lilium/Hemerocallis AKI.")
+        localization = "Cardiac glycoside (Convallaria), not true-lily nephropathy."
+        sources.append("Plunkett 3e appendix card verified against public cardiac-glycoside plant lists")
+    elif spec == "cat" and LILY_RE.search(text):
         hard_stops.append("Cat + true lily / pollen / vase water: treat as AKI emergency.")
         do_not.append("Do not wait for 'just GI' or treat it as a dog plant.")
         do_next.append("Decontamination if recent and safe; start IVF; baseline and serial creatinine/UOP.")
         localization = "Lily toxicosis localizes to feline AKI, not a primary GI plant."
-        sources.append("Cornell CVM public toxin list; ASPCA APCC lily guidance")
+        sources.append("Cornell CVM public toxin list; ASPCA APCC lily guidance; Merck houseplants")
         nac_family = None
 
     if XYLITOL_RE.search(text):
@@ -205,12 +227,39 @@ def analyze(
         do_next.append("Identify the family: anticoagulant vs bromethalin vs cholecalciferol vs phosphide.")
         sources.append("Four rodenticide families; vitamin K1 is not universal")
 
-    if spec == "dog" and GRAPE_RE.search(text):
-        hard_stops.append("Dog + grape/raisin/tamarind: treat as AKI risk (Merck).")
+    if spec == "dog" and (GRAPE_RE.search(text) or TARTAR_RE.search(text)):
+        hard_stops.append("Dog + grape/raisin/tamarind/cream of tartar: treat as AKI risk (Merck 2024 tartaric acid).")
         do_not.append("Do not wait for 'just GI' or invent a grape toxic dose.")
+        do_not.append("Do not keep the 2013 line that the grape principle is unknown as current fact.")
         do_next.append("Decontaminate if recent and safe; IVF; serial creatinine. Ribes currants are not Vitis.")
-        localization = localization or "Vitis/tamarind toxicosis localizes to canine AKI."
-        sources.append("Merck: grape, raisin, and tamarind toxicosis in dogs")
+        localization = localization or "Vitis/tamarind/tartaric-acid toxicosis localizes to canine AKI."
+        sources.append("Merck Sept 2024 grape/raisin/tamarind; Wegenast 2022. Plunkett 2013 mechanism outdated.")
+
+    if spec == "dog" and HOPS_RE.search(text):
+        hard_stops.append("Dog + hops: malignant-hyperthermia picture. Cool and support.")
+        do_not.append("Do not use NSAIDs or dipyrone to treat hops hyperthermia (Merck).")
+        do_next.append("Dantrolene is the antidote conversation; △ Plumb.")
+        sources.append("Merck: hops toxicosis in animals")
+
+    if ALLIUM_RE.search(text) and spec in {"dog", "cat"}:
+        hard_stops.append("Allium (onion/garlic): Heinz-body hemolysis can be delayed by days.")
+        do_not.append("Do not clear as fine tonight because the PCV is still normal.")
+        do_next.append("Baseline and delayed PCV/smear. Cats are more sensitive; garlic worse than onion.")
+        sources.append("Merck: garlic and onion toxicosis")
+
+    if spec == "dog" and MACADAMIA_RE.search(text):
+        do_not.append("Do not treat macadamia as bromethalin.")
+        do_next.append("Usually self-limiting weakness/hyperthermia. Check for chocolate or xylitol coating.")
+        sources.append("Merck: macadamia nut toxicosis in dogs; Plunkett coating caveat (legal split)")
+
+    if IVERMECTIN_RE.search(text):
+        do_not.append("Do not copy a 2013 heartworm preventative written as mg/kg. Units are µg. △ Plumb.")
+        sources.append("Merck ABCB1; Plunkett 3e ivermectin chapter has a mg-vs-µg typeset trap")
+        if spec in {"turtle", "tortoise"} or CHELONIAN_RE.search(text):
+            hard_stops.append("Do not give ivermectin to turtles or tortoises.")
+            sources.append("Plunkett exotic appendix (legal split); standard chelonian teaching")
+        if spec == "dog":
+            do_next.append("Ask breed / MDR1 before a high-dose extra-label macrolide.")
 
     if EG_RE.search(text):
         hard_stops.append("Ethylene glycol: start fomepizole or ethanol early. Do not wait for crystals.")

@@ -12,6 +12,7 @@ SKILL = (ROOT / ".cursor" / "skills" / "midtown-attending" / "SKILL.md").read_te
 LAND = (ROOT / "clinical" / "vet_ai_landscape.md").read_text(encoding="utf-8")
 BRIEF = (ROOT / "clinical" / "resident_brief.py").read_text(encoding="utf-8")
 SYLL = (ROOT / "clinical" / "five_minute_syllabus.md").read_text(encoding="utf-8")
+VERIF = (ROOT / "clinical" / "source_verification.md").read_text(encoding="utf-8")
 
 
 class PublicCardInvariants(unittest.TestCase):
@@ -79,7 +80,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("decompression", CARD.lower())
 
     def test_no_owner_phi_patterns(self):
-        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL))
+        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL, VERIF))
         self.assertNotRegex(blob, r"\bVIN\s+\d{4,}\b")
         self.assertNotRegex(blob, r"Wlsdb840")
         self.assertNotRegex(blob, r"ykim", re.I)
@@ -115,6 +116,14 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not fetch pdfs from third-party book mirrors", SYLL.lower())
         self.assertIn("978-1-119-51317-9", SYLL)
 
+    def test_verification_log_flags_outdated_and_unit_traps(self):
+        self.assertIn("tartaric", VERIF.lower())
+        self.assertIn("µg/kg", VERIF)
+        self.assertIn("no chapter dump", VERIF.lower())
+        self.assertNotIn("booksvets", VERIF.lower())
+        # Must not harvest the typeset trap as a usable dose.
+        self.assertNotRegex(VERIF.lower(), r"heartworm preventative is 6 mg/kg")
+
     def test_card_covers_syllabus_night_gates(self):
         for needle in (
             "grape",
@@ -126,6 +135,9 @@ class PublicCardInvariants(unittest.TestCase):
             "thromboembolism",
             "ionophore",
             "acepromazine",
+            "peace lily",
+            "hops",
+            "macadamia",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

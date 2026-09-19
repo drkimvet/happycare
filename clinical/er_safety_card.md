@@ -6,7 +6,10 @@ Public sources only. Not a formulary. **△ confirm every mg/kg in Plumb or the 
 
 | Signal | Species rule | Do not |
 | --- | --- | --- |
-| True lily (`Lilium`, `Hemerocallis`), pollen, or vase water | Cat: treat as AKI emergency. Cornell / ASPCA public toxin lists. | Wait for "just GI." Do not call it a dog problem. |
+| True lily (`Lilium`, `Hemerocallis`), pollen, or vase water | Cat: treat as AKI emergency. Cornell / ASPCA / Merck. | Wait for "just GI." Do not call it a dog problem. |
+| Peace lily / calla (`Spathiphyllum`, `Zantedeschia`) | Insoluble oxalate: oral pain, not feline AKI. Plunkett appendix agrees with Merck. | Run the Easter-lily AKI protocol. |
+| Lily-of-the-valley (`Convallaria`) | Cardiac glycoside. Arrhythmia plant. | Treat as *Lilium* AKI. |
+| Cream of tartar / tamarind | Same tartaric-acid AKI family as grapes (Merck 2024). | Follow the 2013 line that the grape principle is "unknown." |
 | Xylitol | Dog: check glucose now. Merck: charcoal does **not** bind xylitol. Cats are not the published hypoglycemia/liver species. | Give charcoal "because toxin." Mix xylitol NAC into the APAP schedule. |
 | Acetaminophen | Cat (and ferret): contraindicated at any intended analgesic dose (Cornell pharmacy public page). NAC belongs to the **APAP family**, not a generic liver drip. | Give APAP to a cat. Invent a hybrid NAC. |
 | Sago / cycad | Dog (also other species): hepatic. Entire plant toxic; seeds worst. ASPCA APCC public alert. No specific antidote. | Treat as a mild GI plant. |
@@ -26,6 +29,10 @@ Public sources only. Not a formulary. **△ confirm every mg/kg in Plumb or the 
 | Rabbit not eating / no feces | Stasis vs obstruction first (Merck / Illinois). Pain and fluids. | Prokinetic or syringe-feed before obstruction is off the table. |
 | Guinea pig anorexic | Dietary vitamin C obligate (public exotic nutrition). | Treat like a dog with "just ileus." |
 | Horse + ionophore (monensin etc.) | Cardiotoxic. No specific antidote (Merck equine feed). | Treat as a simple colic drench. |
+| Hops (`Humulus`) | Dog: malignant-hyperthermia picture (Merck). Dantrolene conversation. | NSAID/dipyrone to "bring the fever down." |
+| Onion / garlic / chives | Heinz-body hemolysis, often delayed days. Cats more sensitive. Garlic worse than onion (Merck). | Clear as fine at midnight. |
+| Macadamia | Dogs: usually self-limiting weakness/hyperthermia (Merck). | Treat as bromethalin. Miss chocolate/xylitol coating. |
+| Ivermectin / milbemycin | MDR1/ABCB1 herding breeds. Not for turtles/tortoises. | Copy a 2013 table that prints heartworm preventative in **mg/kg**. That unit is a trap. △ Plumb (µg). |
 
 No species on the one-liner → no dose, no CRI, no "typical" fluid rate.
 
