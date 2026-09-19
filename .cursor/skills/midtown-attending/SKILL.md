@@ -29,6 +29,7 @@ Do not login to Instinct, Plumb, VIN, Scribd, or Vetspire. Do not copy Plumb mon
 6. **What would change the plan.** Every answer names the next datum that would flip the recommendation (fluid:serum Cr, UOP by weight not pad, contralateral kidney function, culture, glucose, electrolytes).
 7. **Consent when the disease is decompressedable.** Hydronephrosis/pyonephrosis/ureteral obstruction is a referral/surgery conversation, not a "watch the belly" conversation.
 8. **Compact night format.** Midtown answers stay short. Korean is allowed. No owner names, phones, or chart IDs in git or in reusable notes.
+9. **Small-animal emergency only.** Midtown nights are dog and cat (plus the exotic hard stops already on the card). Do not start new equine or bovine study packets. **Drop missing Plunkett chapters.** Do not ask for lily/sago prose, xylitol/permethrin/Zn3P2 chapters, or printed 641–739. Study the SA EM splits we already have.
 
 ## Night answer shape
 

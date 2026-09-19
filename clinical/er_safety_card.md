@@ -73,15 +73,9 @@ If you cannot name which family you are in, you are not writing NAC.
 
 Unknown block: treat as unknown, not as "warfarin."
 
-## Large-animal traps (do not skip just because Midtown is SA)
+## Midtown is small-animal emergency
 
-- Milk fever vs grass tetany: Ca vs Mg. Wrong bottle first can look like a treatment failure.
-- Cattle ketosis: Merck/McArt — **no acidemia** is the expected blood-gas story (unlike DKA).
-- Equine colic split: **nephrosplenic / left dorsal displacement** is often moderate pain, rectal/US diagnosis, phenylephrine + jog or roll. Merck: **no phenylephrine if >15 years** (fatal hemorrhage). **Large colon volvulus** is sudden severe pain, often peri-partum broodmare, marked distention, **surgery now** — not a phenylephrine case. Peritoneal fluid can lie about colon viability. Right dorsal colitis: stop the NSAID (phenylbutazone classic), hypoproteinemia. △ any phenylephrine number in Plumb.
-- Equine acute colitis: isolate first (Salmonella). Fluids and electrolytes beat a shotgun antibiotic. PHF season + river pasture: oxytetracycline is the named antimicrobial conversation (Merck). **Ice the feet now** — PHF laminitis 20–30%. NSAID for endotoxin: minimum effective dose; hold if azotemic. Low-dose polymyxin B is an endotoxin-bind conversation, not if the kidneys are already down. △ every unit in Plumb. This is not large-colon volvulus. Do not copy the SA RECOVER cart.
-- Mesenteric volvulus: derotate bowel, then resect. Isolated spleen/lung torsion: do not "derotate then wait" the way you handle stomach.
-- Ionophore / poultry or cattle feed in a horse: cardiotoxic emergency, not a gas-colic drip.
-- Bovine ping: LDA left ribs ~9–13. RDA/AV right ribs ~9–13. Rumen gas is more dorsal/caudal. Cecum is more caudal into the paralumbar fossa. Merck (Mann 2026): **RDA gets prompt surgery** because AV cannot be excluded. LDA can be medical early but recurs. Hypochloremic hypokalemic metabolic **alkalosis** from sequestered HCl (not DKA). Late AV adds lactate acidosis. Blood L-lactate ≤2 mmol/L favors surgical outcome; ≥6 mmol/L is a poor-outcome flag (Merck). Do not invent the mg/kg of a toggle or roll.
+UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packets. If a horse or cow one-liner arrives, run `resident_brief.py` and do not copy the SA RECOVER cart. Cattle ketosis is **not** DKA (no acidemia).
 
 ## Behavior and senior (public positions, not a Horwitz dump)
 
@@ -98,6 +92,16 @@ Unknown block: treat as unknown, not as "warfarin."
 - Confirm with ACTH stim. Baseline cortisol >2 µg/dL rules it out; a low baseline does not rule it in. The 2013 book printing **mg/dL** for that cutoff is a unit trap.
 - Prednisolone/hydrocortisone **cross-react** on the cortisol assay. Merck: DexSP can go before the draw if the dog cannot wait. △ every steroid/DOCP number in Plumb.
 - Do not send home as gastroenteritis. Cats are rare.
+
+## DKA / HHS (dog and cat; Merck + AAHA 2026 feline DKA)
+
+- Fluids first. Insulin after perfusion is moving and potassium is not already low. Do not copy the 2013 40–60 mL/kg/h recipe.
+- Find the trigger: UTI, pancreatitis, steroids, SGLT2 if a cat is on one.
+- Urine dipstick misses β-hydroxybutyrate. A negative strip does not rule out DKA.
+- Do not give bicarbonate as the default for the gap acidosis. Fluids + insulin close most of it.
+- Do not drop glucose so fast you risk cerebral edema. Goal is to stop ketosis, not euglycemia tonight.
+- HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
+- △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
 ## UTI (ISCAID 2019, not a 2011 leftover)
 

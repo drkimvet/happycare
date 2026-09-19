@@ -11,7 +11,7 @@ Neither a 2013 emergency book nor Instinct replaces a veterinary license.
 3. Keep the night gate if both agree, or if the public source is newer and safer.
 4. Flag the book when it is silent, outdated, or internally inconsistent.
 
-Lily/sago **narrative** pages cited in the Plunkett index (about 613–620) are not in the splits we have. Plant **appendix cards** and the grapes / ivermectin / macadamia chapters in the 541–640 split were available. Dedicated lily/sago prose is still missing if the attending can send those pages.
+Lily/sago **narrative** pages are not in the splits. Appendix cards plus public Merck/ASPCA are enough for the night lily gates. Missing chapters are **dropped**, not a work item.
 
 ## Verified keep
 
@@ -35,9 +35,9 @@ Lily/sago **narrative** pages cited in the Plunkett index (about 613–620) are 
 - **Ivermectin heartworm line in the 3e typeset** lists monthly preventative as **mg/kg**. Standard preventative units are **µg/kg**. Treat that line as a unit trap. `△ Plumb`. Do not generate either number here.
 - Exotic appendix ivermectin tables mix µg and mg in places. Do not harvest those tables.
 
-## Coverage of the legal Plunkett 3e splits (not finished cover-to-cover)
+## Coverage of the legal Plunkett 3e splits (SA emergency only)
 
-The 46 MB whole-book file never arrived. These owned splits are on disk (`textbooks/`, gitignored). Night rules come from the verified gates, not from harvesting 2013 tables.
+The 46 MB whole-book file never arrived. Study the SA EM splits we have. Night rules come from the verified gates, not from harvesting 2013 tables. Missing chapters are dropped.
 
 | Split | What was studied | Status |
 | --- | --- | --- |
@@ -51,9 +51,9 @@ The 46 MB whole-book file never arrived. These owned splits are on disk (`textbo
 | Appendices | Plant cards (Easter lily, calla, Convallaria, sago/false sago, etc.) | Cards only. Index points lily/sago **prose** to ~618–620; those pages are not in the splits. |
 | chunk-2786 | 15-page duplicate fragment | Duplicate; not a missing chapter. |
 
-## Still missing from the legal splits
+## Dropped (not a work item)
 
-Printed lily/sago **chapters** (index ~613–620), xylitol / permethrin / zinc-phosphide **chapters**, and the ~641–739 gap. Appendix cards are not a substitute for those protocol pages. Do not hand-split the rest on a phone. Use `prep_legal_pdfs.py` or attach those page ranges. If they arrive, verify again and still do not dump them.
+Lily/sago prose, xylitol / permethrin / Zn3P2 **chapters**, and printed ~641–739. Do not ask the attending to send them. Do not hand-split on a phone. SA EM study continues from the splits already on disk (shock/fluids, heart/ATE, GDV, DKA/HHS, Addison, seizures, the toxin chapters we have).
 
 ## 112. RECOVER / Pardo 2024 CPA (JVECC)
 
@@ -81,3 +81,16 @@ Book traps:
 - Book harvestable DOCP/Dex/insulin tables stay in the book. △ Plumb. Insulin for hyperK only after glucose is known.
 
 Atypical Addison (glucocorticoid only, normal electrolytes) is in Merck and easy to miss if you require hyperK.
+
+## 115. DKA / HHS (Plunkett 3e vs Merck + AAHA 2026 feline DKA)
+
+Legal split chapters in the p301–440 file. No chapter dump. No harvested insulin CRI.
+
+Agree: fluids before insulin if the patient is a volume wreck; look for UTI/pancreatitis/steroids; urine strips miss BHB; watch K and phosphorus once insulin starts; HHS is the other decompensated diabetic (very high glucose/osmolality, little ketone).
+
+Book traps:
+
+- Printed 40–60 mL/kg/h until rehydrated. Night fluids are AAHA-style: reassess, not a round number. AAHA 2026 feline DKA: correct dehydration over hours, balanced crystalloid.
+- Insulin tables stay in the book. △ Plumb / hospital protocol. Do not start insulin if potassium is already low.
+- Bicarbonate is not the default for the gap. Fluids + insulin close most acidosis.
+- 2013 “Cerenia not labeled in cats” is a label-era line, not a 2026 night fact. Do not resurrect it.

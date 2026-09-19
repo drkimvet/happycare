@@ -209,6 +209,21 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "Addisonian crisis, hyperkalemia, give insulin")
         self.assertTrue(any("glucose" in x.lower() for x in b["hard_stops"]))
 
+    def test_dka_fluids_before_insulin(self):
+        b = analyze("dog", "DKA, start insulin now, give bicarbonate")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("fluids first", joined)
+        self.assertIn("bicarbonate", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dka_hypokalemia_hold_insulin(self):
+        b = analyze("cat", "DKA, hypokalemia, start insulin")
+        self.assertTrue(any("potassium" in x.lower() or "hypokal" in x.lower() for x in b["hard_stops"]))
+
+    def test_hhs_is_not_dka(self):
+        b = analyze("cat", "hyperosmolar HHS, no ketones")
+        self.assertTrue(any("not dka" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

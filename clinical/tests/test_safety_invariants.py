@@ -120,11 +120,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("tartaric", VERIF.lower())
         self.assertIn("µg/kg", VERIF)
         self.assertIn("no chapter dump", VERIF.lower())
-        self.assertIn("potomac", VERIF.lower())
-        self.assertIn("ice the feet", VERIF.lower())
-        self.assertIn("not finished cover-to-cover", VERIF.lower())
-        self.assertIn("641–739 is a gap", VERIF.lower())
+        self.assertIn("dropped", VERIF.lower())
+        self.assertIn("not a work item", VERIF.lower())
         self.assertIn("addisonian crisis", VERIF.lower())
+        self.assertIn("dka", VERIF.lower())
         self.assertIn("mg/dl", VERIF.lower())
         self.assertIn("dexsp", VERIF.lower())
         self.assertNotIn("booksvets", VERIF.lower())
@@ -140,23 +139,19 @@ class PublicCardInvariants(unittest.TestCase):
             "gdv",
             "pyometra",
             "thromboembolism",
-            "ionophore",
             "acepromazine",
             "peace lily",
             "hops",
             "macadamia",
-            "rda",
-            "nephrosplenic",
-            "phenylephrine",
             "subclinical bacteriuria",
             "3–5 days",
             "high-dose epinephrine",
             "atropine",
-            "salmonella",
-            "ice the feet",
-            "oxytetracycline",
             "addisonian",
             "myelinolysis",
+            "dka",
+            "bicarbonate",
+            "small-animal emergency",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

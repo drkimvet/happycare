@@ -66,6 +66,10 @@ UTI_RE = re.compile(r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|enro
 FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover|epinephrine|atropine)\b", re.I)
 HIGH_DOSE_EPI_RE = re.compile(r"\b(high-?dose (epi|epinephrine)|0\.1\s*mg/kg\s*(epi|epinephrine))\b", re.I)
+DKA_RE = re.compile(r"\b(dka|ketoacid|diabetic keto)", re.I)
+HHS_RE = re.compile(r"\b(hhs|honk|hyperosmolar|nonketotic)\b", re.I)
+BICARB_RE = re.compile(r"\b(bicarbonate|nahco3|sodium bicarb)\b", re.I)
+HYPOK_RE = re.compile(r"\b(hypokal|low potassium|k\s*[<=]\s*[123])", re.I)
 ADDISON_RE = re.compile(r"\b(addison|hypoadren|acth stim|cosyntropin|docp|fludrocortisone)", re.I)
 HYPERK_RE = re.compile(r"\b(hyperkalem|high potassium|k\s*[>=]\s*[6-9])", re.I)
 HYPONA_RE = re.compile(r"\b(hyponatrem|low sodium)", re.I)
@@ -440,6 +444,24 @@ def analyze(
             hard_stops.append("Prednisolone/hydrocortisone before the ACTH stim contaminates the cortisol assay. DexSP does not (Merck).")
         if re.search(r"\binsulin\b", text, re.I) and "glucose" not in text.lower():
             hard_stops.append("Do not give insulin for hyperK until glucose is known. Addison dogs are already hypoglycemia-risk.")
+
+    if spec in {"dog", "cat"} and DKA_RE.search(text):
+        hard_stops.append("DKA: fluids first. Do not start insulin while the patient is still a volume wreck or already hypokalemic.")
+        do_not.append("Do not give bicarbonate as the default for DKA acidosis.")
+        do_not.append("Do not copy the 2013 40–60 mL/kg/h fluid recipe or an insulin CRI from memory. △ Plumb.")
+        do_next.append("Look for the trigger (UTI, pancreatitis, steroids). Confirm ketones knowing the strip misses BHB. Recheck K and phosphorus after insulin starts.")
+        localization = localization or "Decompensated diabetes with ketosis. Goal tonight is perfusion and stopping ketogenesis, not euglycemia."
+        sources.append("Merck diabetes mellitus in dogs and cats; AAHA 2026 feline DKA. Plunkett 3e chapter verified for traps only")
+        if BICARB_RE.search(text):
+            hard_stops.append("Bicarbonate is not the default DKA plan.")
+        if HYPOK_RE.search(text) and re.search(r"\binsulin\b", text, re.I):
+            hard_stops.append("Hypokalemic DKA: replace potassium before insulin. △ Plumb.")
+
+    if spec in {"dog", "cat"} and HHS_RE.search(text):
+        hard_stops.append("HHS is not DKA. Very high glucose/osmolality, little or no ketone.")
+        do_not.append("Do not dump hypotonic fluid into a chronic hypernatremia / hyperosmolar diabetic.")
+        do_next.append("Correct osmolality slowly. Fluids first. △ insulin in Plumb if used.")
+        sources.append("Merck diabetes; Plunkett HHS chapter (legal split) for the ketone-negative trap only")
 
     if spec == "cattle" and LDA_RE.search(text):
         hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")
