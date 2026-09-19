@@ -1,0 +1,3 @@
+# Keep PDFs/EPUBs local. Never commit copyrighted books or owner PHI.
+*
+!.gitignore
