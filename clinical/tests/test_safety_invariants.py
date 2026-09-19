@@ -143,6 +143,8 @@ class PublicCardInvariants(unittest.TestCase):
             "phenylephrine",
             "subclinical bacteriuria",
             "3–5 days",
+            "high-dose epinephrine",
+            "atropine",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

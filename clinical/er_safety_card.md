@@ -98,6 +98,15 @@ Unknown block: treat as unknown, not as "warfarin."
 - Pyelonephritis is a tissue infection (different plan/duration). A positive culture after clinical cure may just be bacteriuria again.
 - △ every mg/kg in Plumb. NSAID for dysuria: hold if azotemic.
 
+## CPA (Pardo / RECOVER 2024)
+
+- C-A-B. 100–120 compressions/min. 2-minute cycles. Ventilate the intubated patient without stopping compressions.
+- High-dose epinephrine is out. Standard-dose only, from the crash-cart chart.
+- Atropine, if used: once and early, when high vagal tone is the story. Do not stack it.
+- Bag-mask before mouth-to-snout.
+- Dogs and cats only. Do not copy this cart onto a horse or a cow.
+- △ the cart sticker / Plumb. Do not generate a mg/kg here.
+
 ## Five-Minute Drug Consult reminder
 
 The 2026 Wiley Drug Consult is a licensed desk book. This card still does not print a formulary. `△ Plumb` or the hospital protocol.
@@ -112,7 +121,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - AAHA fluid therapy guidelines 2024
 - ISCAID 2019 UTI guidelines (Weese et al.; public PDF)
 - ACVIM consensus: feline pancreatitis (Forman et al.)
-- RECOVER / Pardo CPA guidelines
+- RECOVER / Pardo 2024 CPA (JVECC; dogs and cats)
 - Merck Veterinary Manual public toxicology and exotic GI pages
 - ASPCA APCC public alerts; Cornell CVM public toxin list
 - ASPCA/VECCS acetaminophen NAC historical protocol (c-veccs_july00.pdf)

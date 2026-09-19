@@ -162,6 +162,14 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("14-day", joined)
         self.assertIn("fluoroquinolone", joined)
 
+    def test_high_dose_epi_withdrawn(self):
+        b = analyze("cat", "CPA, high-dose epinephrine")
+        self.assertTrue(any("high-dose" in x.lower() for x in b["hard_stops"] + b["do_not"]))
+
+    def test_horse_cpr_not_sa_recover(self):
+        b = analyze("horse", "arrest, start RECOVER epinephrine")
+        self.assertTrue(any("large-animal" in x.lower() or "not the large-animal" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

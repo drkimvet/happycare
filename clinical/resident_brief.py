@@ -64,6 +64,8 @@ BUTAZONE_RE = re.compile(r"\b(phenylbutazone|bute|right dorsal colitis)\b", re.I
 BACTERIURIA_RE = re.compile(r"\b(subclinical bacteriuria|asymptomatic bacteriuria|bacteria on culture|culture positive)\b", re.I)
 UTI_RE = re.compile(r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|enrofloxacin|baytril|14.?day)\b", re.I)
 FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
+CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover|epinephrine|atropine)\b", re.I)
+HIGH_DOSE_EPI_RE = re.compile(r"\b(high-?dose (epi|epinephrine)|0\.1\s*mg/kg\s*(epi|epinephrine))\b", re.I)
 LDA_RE = re.compile(r"\b(lda|left displaced abomasum|displaced abomasum|rda|right displaced abomasum|abomasal volvulus|\bping\b)\b", re.I)
 ACE_RE = re.compile(r"\bacepromazine\b", re.I)
 STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
@@ -364,6 +366,19 @@ def analyze(
         sources.append("ISCAID 2019: sporadic cystitis 3–5 d; reserve FQ/3rd-gen")
         if spec == "cat" and FQ_RE.search(text) and re.search(r"\b(young|2 yo|3 yo|flutd)\b", text, re.I):
             hard_stops.append("Young cat FLUTD: empiric fluoroquinolone is not the ISCAID plan.")
+
+    if spec in {"dog", "cat"} and CPR_RE.search(text):
+        do_not.append("Do not use high-dose epinephrine. Pardo/RECOVER 2024 withdrew it.")
+        do_not.append("Do not repeat atropine during CPR. Once, early, only if high vagal tone is the story.")
+        do_next.append("2-minute cycles. 100–120 compressions/min. Bag-mask if not intubated. Read the crash-cart chart; △ Plumb.")
+        sources.append("Pardo et al. 2024 RECOVER updated CPR recommendations (JVECC)")
+        if HIGH_DOSE_EPI_RE.search(text):
+            hard_stops.append("High-dose epinephrine is not in the 2024 RECOVER algorithm.")
+
+    if spec in {"horse", "cattle"} and CPR_RE.search(text):
+        hard_stops.append("SA RECOVER 2024 is not the large-animal CPA protocol.")
+        do_not.append("Do not copy dog/cat crash-cart epinephrine/atropine onto a horse or cow without the species protocol.")
+        sources.append("Pardo 2024 is dogs and cats; large-animal CPA is a different algorithm")
 
     if spec == "cattle" and LDA_RE.search(text):
         hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")

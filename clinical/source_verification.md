@@ -39,6 +39,6 @@ Lily/sago **narrative** pages cited in the Plunkett index (about 613–620) are 
 
 Printed lily/sago **chapters** (index ~613–620) and later plant chapters (~677–739). Appendix cards are not a substitute for the full protocol pages. If those splits arrive, verify again and still do not dump them.
 
-## 111. ISCAID 2019 UTI (Weese et al.; public guideline PDF)
+## 112. RECOVER / Pardo 2024 CPA (JVECC)
 
-Subclinical bacteriuria ≠ UTI; rarely treat. Sporadic cystitis 3–5 days (2011 was 7–10). First-tier amoxicillin or TMS; reserve FQ/3rd-gen. Young-cat FLUTD: empiric abx rarely indicated. Pyelo is tissue, 10–14 day conversation, not a 4–6 week 2011 leftover. Do not copy the guideline dose table; △ Plumb.
+High-dose epinephrine withdrawn. Atropine once, early, if vagal. 100–120 compressions/min, 2-min cycles, bag-mask > mouth-to-snout. Dogs and cats only. Confirm numbers on the hospital crash-cart chart; do not generate them here.
