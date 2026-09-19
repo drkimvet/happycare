@@ -138,6 +138,12 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("tortoise", "start ivermectin for mites")
         self.assertTrue(any("ivermectin" in x.lower() for x in b["hard_stops"]))
 
+    def test_cattle_rda_not_overnight_medical(self):
+        b = analyze("cattle", "fresh cow, right ping, possible RDA")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("surgical", joined)
+        self.assertIn("dka", joined)
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

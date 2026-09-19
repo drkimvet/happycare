@@ -138,6 +138,7 @@ class PublicCardInvariants(unittest.TestCase):
             "peace lily",
             "hops",
             "macadamia",
+            "rda",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

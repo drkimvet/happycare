@@ -80,6 +80,7 @@ Unknown block: treat as unknown, not as "warfarin."
 - Equine "gas colic" vs colitis vs surgical: reflux, peritoneal lactate **trend**, systemic lactate, and pain that outlives analgesia. Peritoneal lactate alone is not a surgery ticket (Arroyo 2018 DPJ/SISO teaching).
 - Mesenteric volvulus: derotate bowel, then resect. Isolated spleen/lung torsion: do not "derotate then wait" the way you handle stomach.
 - Ionophore / poultry or cattle feed in a horse: cardiotoxic emergency, not a gas-colic drip.
+- Bovine ping: LDA left ribs ~9–13. RDA/AV right ribs ~9–13. Rumen gas is more dorsal/caudal. Cecum is more caudal into the paralumbar fossa. Merck (Mann 2026): **RDA gets prompt surgery** because AV cannot be excluded. LDA can be medical early but recurs. Hypochloremic hypokalemic metabolic **alkalosis** from sequestered HCl (not DKA). Late AV adds lactate acidosis. Blood L-lactate ≤2 mmol/L favors surgical outcome; ≥6 mmol/L is a poor-outcome flag (Merck). Do not invent the mg/kg of a toggle or roll.
 
 ## Behavior and senior (public positions, not a Horwitz dump)
 

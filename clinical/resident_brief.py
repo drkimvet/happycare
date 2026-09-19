@@ -57,6 +57,7 @@ ICE_RE = re.compile(r"\b(ice bath|ice-water|ice water)\b", re.I)
 STASIS_RE = re.compile(r"\b(gi stasis|gut stasis|ileus)\b", re.I)
 PROKINETIC_RE = re.compile(r"\b(metoclopramide|cisapride|prokinetic|syringe-?feed)\b", re.I)
 IONOPHORE_RE = re.compile(r"\b(ionophore|monensin|lasalocid|salinomycin)\b", re.I)
+LDA_RE = re.compile(r"\b(lda|left displaced abomasum|displaced abomasum|rda|right displaced abomasum|abomasal volvulus|\bping\b)\b", re.I)
 ACE_RE = re.compile(r"\bacepromazine\b", re.I)
 STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
 ATROPINE_RE = re.compile(r"\batropine\b", re.I)
@@ -84,6 +85,8 @@ def _norm_species(species: str | None) -> str:
         "horse": "horse",
         "equine": "horse",
         "bovine": "cattle",
+        "cow": "cattle",
+        "calf": "cattle",
         "turtle": "turtle",
         "tortoise": "tortoise",
         "chelonian": "turtle",
@@ -324,6 +327,12 @@ def analyze(
         hard_stops.append("Horse + ionophore: cardiotoxic emergency. No specific antidote.")
         do_not.append("Do not treat ionophore as a simple gas-colic drip.")
         sources.append("Merck equine ionophore / feed contamination teaching")
+
+    if spec == "cattle" and LDA_RE.search(text):
+        hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")
+        do_not.append("Do not call sequestered-HCl alkalosis DKA. Cattle ketosis has no acidemia; late AV can add lactate acidosis.")
+        do_next.append("Name the ping side and rib band. Lactate if right-sided. Merck: L-lactate ≤2 favors outcome; ≥6 is a poor-outcome flag.")
+        sources.append("Merck May 2026: abomasal displacement and volvulus in cattle (Mann)")
 
     if ACE_RE.search(text) and STORM_RE.search(text):
         hard_stops.append("Acepromazine is not an anxiolytic for storm or separation distress.")
