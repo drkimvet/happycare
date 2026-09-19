@@ -128,6 +128,7 @@ class PublicCardInvariants(unittest.TestCase):
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
+        self.assertIn("do not auto-apply throughout", MACRO.lower())
         self.assertIn("{{patient.name}}", MACRO)
         self.assertIn("`ddx-master`", MACRO)
         self.assertIn("`dc-master`", MACRO)

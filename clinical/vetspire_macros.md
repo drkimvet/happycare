@@ -8,6 +8,19 @@ Owner-facing discharge has no chart IDs and no “typical” mg/kg. Clinician DD
 
 ---
 
+## Scope (they do not auto-apply throughout)
+
+These are **shortcuts**, not a hospital-wide template that fills every box.
+
+- **One box at a time.** Type `\` in Assessment for `ddx-*`. Type `\` again in Discharge Instructions for `dc-*`. Nothing else on the encounter fills itself.
+- **Almost any text box**, including notes and emails. Not pop-out windows. Not the product-label discharge field in Inventory.
+- **This patient only, when you insert.** `{{patient.name}}` and friends fill at insert time. They do not rewrite old charts.
+- **Not every case type.** These are Midtown SA ER phrases. Wellness, dentistry, equine — different macros.
+- **Location.** Saving under More → Macros lets people with access use them. **Make Universal** (admin permission) is what shares them to every UR VetCare location. Without that, they may stay Midtown-only.
+- Encounter **templates** are separate. A template can sit under the macros; the macros still have to be inserted (or spoken to AI Scribe: “insert ddx-uo into Assessment”).
+
+---
+
 ## How to load
 
 1. Vetspire → **More → Macros** → New.
