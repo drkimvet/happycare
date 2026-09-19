@@ -11,6 +11,7 @@ CARD = (ROOT / "clinical" / "er_safety_card.md").read_text(encoding="utf-8")
 SKILL = (ROOT / ".cursor" / "skills" / "midtown-attending" / "SKILL.md").read_text(encoding="utf-8")
 LAND = (ROOT / "clinical" / "vet_ai_landscape.md").read_text(encoding="utf-8")
 BRIEF = (ROOT / "clinical" / "resident_brief.py").read_text(encoding="utf-8")
+SYLL = (ROOT / "clinical" / "five_minute_syllabus.md").read_text(encoding="utf-8")
 
 
 class PublicCardInvariants(unittest.TestCase):
@@ -78,7 +79,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("decompression", CARD.lower())
 
     def test_no_owner_phi_patterns(self):
-        blob = "\n".join((CARD, SKILL, LAND, BRIEF))
+        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL))
         self.assertNotRegex(blob, r"\bVIN\s+\d{4,}\b")
         self.assertNotRegex(blob, r"Wlsdb840")
         self.assertNotRegex(blob, r"ykim", re.I)
@@ -107,6 +108,26 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("instinct attending", LAND.lower())
         self.assertIn("openvet", LAND.lower())
         self.assertIn("scribblevet", LAND.lower())
+
+    def test_official_syllabus_not_a_book_mirror(self):
+        self.assertIn("wiley.com", SYLL.lower())
+        self.assertNotIn("booksvets", SYLL.lower())
+        self.assertIn("do not fetch pdfs from third-party book mirrors", SYLL.lower())
+        self.assertIn("978-1-119-51317-9", SYLL)
+
+    def test_card_covers_syllabus_night_gates(self):
+        for needle in (
+            "grape",
+            "ethylene glycol",
+            "permethrin",
+            "linear",
+            "gdv",
+            "pyometra",
+            "thromboembolism",
+            "ionophore",
+            "acepromazine",
+        ):
+            self.assertIn(needle, CARD.lower(), msg=needle)
 
 
 if __name__ == "__main__":

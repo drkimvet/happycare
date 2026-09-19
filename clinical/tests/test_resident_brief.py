@@ -82,6 +82,40 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "ate rodenticide, unknown block")
         self.assertTrue(any("vitamin k" in x.lower() for x in b["do_not"]))
 
+    def test_dog_grape_is_aki(self):
+        b = analyze("dog", "ate raisins")
+        self.assertTrue(any("aki" in x.lower() for x in b["hard_stops"]))
+
+    def test_ethylene_glycol_do_not_wait(self):
+        b = analyze("cat", "licked antifreeze")
+        self.assertTrue(any("fomepizole" in x.lower() for x in b["hard_stops"]))
+
+    def test_cat_permethrin_not_atropine(self):
+        b = analyze("cat", "dog permethrin spot-on, give atropine")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("permethrin", joined)
+        self.assertIn("atropine", joined)
+
+    def test_do_not_yank_linear_string(self):
+        b = analyze("cat", "string under the tongue, yank the string")
+        self.assertTrue(any("do not yank" in x.lower() for x in b["hard_stops"]))
+
+    def test_gdv_no_emesis(self):
+        b = analyze("dog", "GDV, induce emesis")
+        self.assertTrue(any("emesis" in x.lower() for x in b["do_not"]))
+
+    def test_rabbit_hold_prokinetic_until_obstruction_off(self):
+        b = analyze("rabbit", "GI stasis, start metoclopramide and syringe-feed")
+        self.assertTrue(any("obstruction" in x.lower() for x in b["hard_stops"]))
+
+    def test_horse_ionophore(self):
+        b = analyze("horse", "ate cattle feed with monensin")
+        self.assertTrue(any("ionophore" in x.lower() or "cardiotoxic" in x.lower() for x in b["hard_stops"]))
+
+    def test_acepromazine_not_for_storm(self):
+        b = analyze("dog", "thunderstorm phobia, send home acepromazine")
+        self.assertTrue(any("not an anxiolytic" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

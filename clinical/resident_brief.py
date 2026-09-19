@@ -34,6 +34,24 @@ SOFT_ABD_RE = re.compile(r"\b(soft abdomen|no tension|non-tense|abdomen soft)\b"
 UOP_RE = re.compile(r"\buop\b|urine output|oligur|anur", re.I)
 BLOCKED_RE = re.compile(r"\b(straining|blocked|urethral obstruct|flc|unable to urinate)\b", re.I)
 RODENTICIDE_RE = re.compile(r"\b(rodenticide|bromethalin|cholecalciferol|brodifacoum|bromadiolone|warfarin)\b", re.I)
+GRAPE_RE = re.compile(r"\b(grapes?|raisins?|tamarinds?|zante currants?)\b", re.I)
+EG_RE = re.compile(r"\b(ethylene glycol|antifreeze)\b", re.I)
+PERMETHRIN_RE = re.compile(r"\bpermethrin\b", re.I)
+CHOCOLATE_RE = re.compile(r"\b(chocolate|theobromine|methylxanthine)\b", re.I)
+LINEAR_RE = re.compile(r"\b(linear (foreign )?body|string under (the )?tongue|dental floss|\byarn\b)\b", re.I)
+YANK_STRING_RE = re.compile(r"\b(yank|pull|tug)\b.{0,20}\b(string|floss|yarn)\b", re.I)
+GDV_RE = re.compile(r"\b(gdv|gastric dilatation|gastric dilation|gastric volvulus)\b", re.I)
+PYO_RE = re.compile(r"\bpyometra\b", re.I)
+FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
+HEAT_RE = re.compile(r"\b(heatstroke|heat stroke)\b", re.I)
+ICE_RE = re.compile(r"\b(ice bath|ice-water|ice water)\b", re.I)
+STASIS_RE = re.compile(r"\b(gi stasis|gut stasis|ileus)\b", re.I)
+PROKINETIC_RE = re.compile(r"\b(metoclopramide|cisapride|prokinetic|syringe-?feed)\b", re.I)
+IONOPHORE_RE = re.compile(r"\b(ionophore|monensin|lasalocid|salinomycin)\b", re.I)
+ACE_RE = re.compile(r"\bacepromazine\b", re.I)
+STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
+ATROPINE_RE = re.compile(r"\batropine\b", re.I)
+VIT_C_RE = re.compile(r"\b(anorex|not eating|inappeten)\b", re.I)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -51,6 +69,10 @@ def _norm_species(species: str | None) -> str:
         "gp": "guinea pig",
         "cavy": "guinea pig",
         "lagomorph": "rabbit",
+        "ferret": "ferret",
+        "bird": "bird",
+        "avian": "bird",
+        "horse": "horse",
         "equine": "horse",
         "bovine": "cattle",
     }
@@ -183,6 +205,82 @@ def analyze(
         do_next.append("Identify the family: anticoagulant vs bromethalin vs cholecalciferol vs phosphide.")
         sources.append("Four rodenticide families; vitamin K1 is not universal")
 
+    if spec == "dog" and GRAPE_RE.search(text):
+        hard_stops.append("Dog + grape/raisin/tamarind: treat as AKI risk (Merck).")
+        do_not.append("Do not wait for 'just GI' or invent a grape toxic dose.")
+        do_next.append("Decontaminate if recent and safe; IVF; serial creatinine. Ribes currants are not Vitis.")
+        localization = localization or "Vitis/tamarind toxicosis localizes to canine AKI."
+        sources.append("Merck: grape, raisin, and tamarind toxicosis in dogs")
+
+    if EG_RE.search(text):
+        hard_stops.append("Ethylene glycol: start fomepizole or ethanol early. Do not wait for crystals.")
+        do_not.append("Do not defer known antifreeze exposure to a morning creatinine recheck.")
+        sources.append("Merck: ethylene glycol toxicosis in animals")
+
+    if spec == "cat" and PERMETHRIN_RE.search(text):
+        hard_stops.append("Cat + permethrin (often a dog spot-on): tremors/seizures. Bath the product off.")
+        do_not.append("Do not treat permethrin as organophosphate. Atropine is not the plan.")
+        do_next.append("Methocarbamol is the tremor conversation; △ Plumb for the number.")
+        sources.append("Published feline permethrin series; dvm360 cat-hazard review")
+        if ATROPINE_RE.search(text):
+            hard_stops.append("Atropine is not indicated for pyrethroid/permethrin tremors.")
+
+    if CHOCOLATE_RE.search(text):
+        do_not.append("Do not quote a memorized theobromine mg/kg as if it were Plumb.")
+        do_next.append("Identify the product and calculate methylxanthine; then △ Plumb/ASPCA.")
+        sources.append("Merck: chocolate toxicosis in animals")
+
+    if spec in {"cat", "dog"} and (LINEAR_RE.search(text) or YANK_STRING_RE.search(text)):
+        hard_stops.append("Linear foreign body: do not yank the visible string.")
+        do_not.append("Do not pull string anchored under the tongue; Merck: sawing perforation risk.")
+        do_next.append("Examine the tongue base. Imaging. Surgery conversation if anchored.")
+        sources.append("Merck: gastrointestinal obstruction in small animals")
+
+    if spec == "dog" and GDV_RE.search(text):
+        hard_stops.append("GDV: stabilize, decompress, surgery. Not an observe-overnight disease.")
+        do_not.append("Do not induce emesis for GDV.")
+        sources.append("Merck/MSD: gastric dilation and volvulus in small animals")
+
+    if PYO_RE.search(text):
+        hard_stops.append("Pyometra: stabilize, then ovariohysterectomy unless a documented medical-breed plan.")
+        do_not.append("Do not send a diestrus sick intact female home as a simple UTI.")
+        sources.append("Merck: CEH–pyometra complex in small animals")
+
+    if spec == "cat" and FATE_RE.search(text):
+        hard_stops.append("Feline ATE: analgesia first. Cold, pulseless, painful hind limbs.")
+        do_not.append("Do not promise thrombolysis as the night plan.")
+        do_next.append("Confirm pulses/Doppler, echo when stable, clopidogrel conversation △ Plumb (FAT CAT).")
+        sources.append("Merck: arterial thromboembolism in dogs and cats")
+
+    if HEAT_RE.search(text):
+        do_not.append("Do not use ice-water immersion as the default heatstroke cool.")
+        do_next.append("Tepid water + airflow. Stop cooling when temperature is falling. Hospital stop-number.")
+        sources.append("Public heatstroke cooling teaching; hospital protocol for the stop temperature")
+        if ICE_RE.search(text):
+            hard_stops.append("Ice-water immersion is not the default heatstroke cool.")
+
+    if spec == "rabbit" and (STASIS_RE.search(text) or VIT_C_RE.search(text) or "feces" in text.lower()):
+        hard_stops.append("Rabbit GI: distinguish stasis from obstruction before prokinetic or syringe-feeding.")
+        do_not.append("Do not start metoclopramide/cisapride until obstruction is off the table.")
+        do_next.append("Pain control and fluids first. Imaging if obstruction is in play (Merck / Illinois).")
+        sources.append("Merck rabbit digestive disorders; Illinois rabbit GI stasis")
+        if PROKINETIC_RE.search(text):
+            hard_stops.append("Prokinetic/syringe-feed named before obstruction excluded: hold it.")
+
+    if spec == "guinea pig" and VIT_C_RE.search(text):
+        hard_stops.append("Anorexic guinea pig: vitamin C is obligate. This is not a dog ileus.")
+        sources.append("Public exotic nutrition: Cavia requires dietary ascorbate")
+
+    if spec == "horse" and IONOPHORE_RE.search(text):
+        hard_stops.append("Horse + ionophore: cardiotoxic emergency. No specific antidote.")
+        do_not.append("Do not treat ionophore as a simple gas-colic drip.")
+        sources.append("Merck equine ionophore / feed contamination teaching")
+
+    if ACE_RE.search(text) and STORM_RE.search(text):
+        hard_stops.append("Acepromazine is not an anxiolytic for storm or separation distress.")
+        do_not.append("Do not send acepromazine as the behavior plan.")
+        sources.append("Public behavior positions: acepromazine is sedative, not anxiolytic")
+
     if NAC_RE.search(text) and nac_family is None:
         hard_stops.append("NAC named without an indication family: do not write it.")
         do_next.append("Pick APAP, xylitol-consider, or hepatic-failure. Then △ Plumb.")
@@ -190,7 +288,7 @@ def analyze(
     if not localization:
         localization = "Localize the problem list before choosing a drug from Plumb."
 
-    if spec in SA:
+    if spec in SA or spec in HINDGUT or spec in {"horse", "cattle", "bird", "ferret"}:
         do_next.append("If a number is required, open Plumb or the hospital protocol. Do not generate mg/kg here.")
 
     # Deduplicate while preserving order

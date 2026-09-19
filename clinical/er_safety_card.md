@@ -14,6 +14,18 @@ Public sources only. Not a formulary. **△ confirm every mg/kg in Plumb or the 
 | Oral beta-lactam / oral macrolide "because infection" | Hamster, guinea pig, rabbit: fatal hindgut dysbiosis is the textbook risk (Merck exotic GI). | Write amoxicillin PO for a hamster. |
 | Azotemic cat | IRIS AKI / CKD frame. No NSAID. No DexSP. | "Just one dose of Dex" for the sick cat. |
 | Male cat + straining | Urethral obstruction until proven otherwise. | Discharge on "constipated." |
+| Grape / raisin / tamarind / Zante currant | Dog: treat as AKI risk (Merck; tartaric acid story). `Ribes` currants are not the same. | Wait for "just GI." Invent a toxic dose from memory. |
+| Ethylene glycol / antifreeze | All species. Early fomepizole or ethanol. Do not wait for crystals. | "We'll recheck creatinine in the morning" after a known lick. |
+| Dog permethrin spot-on on a cat | Cat: tremors/seizures. Bath the product off. Methocarbamol is the tremor conversation. Atropine is not the plan (dvm360 / published case series). | Treat as organophosphate and reach for atropine. |
+| Chocolate / methylxanthine | Dogs most often. Calculate theobromine from the actual product. | Quote a memorized mg/kg as if it were Plumb. |
+| Linear string / floss / yarn | Cat (also dog): one end often anchored under the tongue. Merck: sawing perforation risk. | Yank the visible string. |
+| GDV / gastric dilatation-volvulus | Large/giant-breed dog emergency. Stabilize, decompress, surgery (Merck/MSD). | Induce emesis. "Watch overnight." |
+| Diestrus bitch / queen + PU/PD / sick | Pyometra until imaging says no. OHE after stabilize (Merck). | Send home as UTI. |
+| Cat, sudden painful cold pulseless hind limbs | Arterial thromboembolism / FATE (Merck 5 Ps). Analgesia first. | Promise thrombolysis. Skip pain control. |
+| Heatstroke | Tepid water + airflow. Stop cooling when temperature is falling. Hospital protocol for the stop number. | Ice-water immersion as the default. |
+| Rabbit not eating / no feces | Stasis vs obstruction first (Merck / Illinois). Pain and fluids. | Prokinetic or syringe-feed before obstruction is off the table. |
+| Guinea pig anorexic | Dietary vitamin C obligate (public exotic nutrition). | Treat like a dog with "just ileus." |
+| Horse + ionophore (monensin etc.) | Cardiotoxic. No specific antidote (Merck equine feed). | Treat as a simple colic drench. |
 
 No species on the one-liner → no dose, no CRI, no "typical" fluid rate.
 
@@ -60,6 +72,17 @@ Unknown block: treat as unknown, not as "warfarin."
 - Cattle ketosis: Merck/McArt — **no acidemia** is the expected blood-gas story (unlike DKA).
 - Equine "gas colic" vs colitis vs surgical: reflux, peritoneal lactate **trend**, systemic lactate, and pain that outlives analgesia. Peritoneal lactate alone is not a surgery ticket (Arroyo 2018 DPJ/SISO teaching).
 - Mesenteric volvulus: derotate bowel, then resect. Isolated spleen/lung torsion: do not "derotate then wait" the way you handle stomach.
+- Ionophore / poultry or cattle feed in a horse: cardiotoxic emergency, not a gas-colic drip.
+
+## Behavior and senior (public positions, not a Horwitz dump)
+
+- Acepromazine is not an anxiolytic for storm or separation distress. Do not send it as the behavior plan.
+- New night vocalizing, house soiling, or "just old" is a medical rule-out first (pain, hypertension, hyperT, CNS, UTI), then cognitive.
+- Punishment for urine marking is not the plan.
+
+## Five-Minute Drug Consult reminder
+
+The 2026 Wiley Drug Consult is a licensed desk book. This card still does not print a formulary. `△ Plumb` or the hospital protocol.
 
 ## Consent sentence when the disease is decompressedable
 
@@ -76,5 +99,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - ASPCA APCC public alerts; Cornell CVM public toxin list
 - ASPCA/VECCS acetaminophen NAC historical protocol (c-veccs_july00.pdf)
 - Gonzalez 2017 periop cefazolin extra-label (already used on DVM 612; do not invent a CRI from it)
+- Merck: grape/raisin/tamarind; ethylene glycol; chocolate; GI obstruction; pyometra; arterial thromboembolism; rabbit digestive disorders
+- Official Wiley Five-Minute title list: `clinical/five_minute_syllabus.md` (no third-party book mirrors)
 
 ASPCA Animal Poison Control: 888-426-4435 (owner/clinic call; not a login).
