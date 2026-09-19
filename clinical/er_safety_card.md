@@ -88,6 +88,16 @@ Unknown block: treat as unknown, not as "warfarin."
 - New night vocalizing, house soiling, or "just old" is a medical rule-out first (pain, hypertension, hyperT, CNS, UTI), then cognitive.
 - Punishment for urine marking is not the plan.
 
+## UTI (ISCAID 2019, not a 2011 leftover)
+
+- Subclinical bacteriuria is not a UTI and is rarely treated.
+- Sporadic bacterial cystitis is 3–5 days, not a 14-day habit.
+- First-tier conversation: amoxicillin (± clavulanate if that is what is on the shelf) or TMS. Reserve FQ and 3rd-gen cephalosporins.
+- Young cats with FLUTD signs: empiric antibiotic is rarely indicated. Analgesia first.
+- Do not treat a urinary catheter because it is there.
+- Pyelonephritis is a tissue infection (different plan/duration). A positive culture after clinical cure may just be bacteriuria again.
+- △ every mg/kg in Plumb. NSAID for dysuria: hold if azotemic.
+
 ## Five-Minute Drug Consult reminder
 
 The 2026 Wiley Drug Consult is a licensed desk book. This card still does not print a formulary. `△ Plumb` or the hospital protocol.
@@ -100,7 +110,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 
 - IRIS AKI / CKD staging (iris-kidney.com)
 - AAHA fluid therapy guidelines 2024
-- ISCAID antimicrobial guidelines 2019 (and updates when public)
+- ISCAID 2019 UTI guidelines (Weese et al.; public PDF)
 - ACVIM consensus: feline pancreatitis (Forman et al.)
 - RECOVER / Pardo CPA guidelines
 - Merck Veterinary Manual public toxicology and exotic GI pages

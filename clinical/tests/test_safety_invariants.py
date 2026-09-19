@@ -141,6 +141,8 @@ class PublicCardInvariants(unittest.TestCase):
             "rda",
             "nephrosplenic",
             "phenylephrine",
+            "subclinical bacteriuria",
+            "3–5 days",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

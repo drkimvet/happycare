@@ -152,6 +152,16 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("horse", "broodmare, large colon volvulus")
         self.assertTrue(any("surgery" in x.lower() for x in b["hard_stops"]))
 
+    def test_subclinical_bacteriuria_not_treated(self):
+        b = analyze("dog", "subclinical bacteriuria, culture positive, start convenia")
+        self.assertTrue(any("subclinical" in x.lower() for x in b["hard_stops"]))
+
+    def test_sporadic_cystitis_not_14_days(self):
+        b = analyze("dog", "sporadic cystitis, 14-day enrofloxacin")
+        joined = " ".join(b["do_not"]).lower()
+        self.assertIn("14-day", joined)
+        self.assertIn("fluoroquinolone", joined)
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

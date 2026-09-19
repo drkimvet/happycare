@@ -61,6 +61,9 @@ NEPHROSPLENIC_RE = re.compile(r"\b(nephrosplenic|renosplenic|left dorsal displac
 LCV_RE = re.compile(r"\b(large colon volvulus|colonic volvulus|colon torsion)\b", re.I)
 PHENYLEPHRINE_RE = re.compile(r"\bphenylephrine\b", re.I)
 BUTAZONE_RE = re.compile(r"\b(phenylbutazone|bute|right dorsal colitis)\b", re.I)
+BACTERIURIA_RE = re.compile(r"\b(subclinical bacteriuria|asymptomatic bacteriuria|bacteria on culture|culture positive)\b", re.I)
+UTI_RE = re.compile(r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|enrofloxacin|baytril|14.?day)\b", re.I)
+FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
 LDA_RE = re.compile(r"\b(lda|left displaced abomasum|displaced abomasum|rda|right displaced abomasum|abomasal volvulus|\bping\b)\b", re.I)
 ACE_RE = re.compile(r"\bacepromazine\b", re.I)
 STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
@@ -348,6 +351,19 @@ def analyze(
         do_not.append("Do not continue phenylbutazone into right-dorsal-colitis territory.")
         do_next.append("Stop the NSAID. Look for hypoproteinemia / ventral edema. △ Plumb for any replacement analgesic.")
         sources.append("Merck: right dorsal colitis associated with NSAIDs")
+
+    if spec in {"dog", "cat"} and BACTERIURIA_RE.search(text) and not re.search(r"\b(stranguria|pollakiuria|dysuria|hematuria|fever|pyelo)\b", text, re.I):
+        hard_stops.append("Subclinical bacteriuria: do not treat just because the culture grew (ISCAID 2019).")
+        do_not.append("Do not call a silent positive culture a UTI.")
+        sources.append("ISCAID 2019 UTI guidelines")
+
+    if spec in {"dog", "cat"} and UTI_RE.search(text):
+        do_not.append("Do not write a 14-day course for sporadic cystitis. ISCAID 2019: 3–5 days.")
+        do_not.append("Do not reach for a fluoroquinolone or 3rd-gen cephalosporin as first-tier sporadic cystitis.")
+        do_next.append("Culture when you can. Analgesia. Young cat: FIC until culture says otherwise.")
+        sources.append("ISCAID 2019: sporadic cystitis 3–5 d; reserve FQ/3rd-gen")
+        if spec == "cat" and FQ_RE.search(text) and re.search(r"\b(young|2 yo|3 yo|flutd)\b", text, re.I):
+            hard_stops.append("Young cat FLUTD: empiric fluoroquinolone is not the ISCAID plan.")
 
     if spec == "cattle" and LDA_RE.search(text):
         hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")
