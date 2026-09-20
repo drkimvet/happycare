@@ -123,6 +123,10 @@ PNEUMO_RE = re.compile(
     r"\b(pneumothorax|tension pneumo|glide sign|barrel[- ]chested|barrel[- ]shaped thorax)\b",
     re.I,
 )
+PLEURAL_RE = re.compile(
+    r"\b(pyothorax|pleural effusion|chylothorax|hemothorax|haemothorax|septic pleur)\b",
+    re.I,
+)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -371,6 +375,26 @@ def analyze(
         sources.append("Merck: initial triage — catastrophic pleural space / glide sign")
         if FUROSEMIDE_RE.search(text):
             hard_stops.append("Do not give furosemide for pneumothorax.")
+
+    if spec in {"dog", "cat"} and PLEURAL_RE.search(text):
+        localization = localization or (
+            "Pleural-space fluid. Quiet chest is not automatically CHF. "
+            "Name transudate vs exudate vs chyle vs blood after you tap."
+        )
+        hard_stops.append(
+            "Pleural effusion: radiographs are not therapy. Tap a distressed patient first. Save EDTA + sterile red-top."
+        )
+        do_not.append(
+            "Do not send a pyothorax home after one tap. Do not harvest 2013 sedation or chest-tube French-size tables."
+        )
+        do_not.append("Do not skip anaerobic culture on a septic pleural exudate.")
+        do_next.append(
+            "Oxygen. Cytology. Cat: echo still on the table (CHF vs pyothorax vs FIP vs lymphoma). "
+            "Chyle: fluid vs serum triglycerides. Blood: PCV/TS pair. Pyothorax: chest-tube conversation."
+        )
+        sources.append("Merck diagnostic techniques for pleural fluid; Plunkett pleural-effusion headings (legal split, no dump)")
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            do_not.append("Do not Lasix pleural fluid until CHF is actually the localization.")
 
     if RODENTICIDE_RE.search(text):
         do_not.append("Do not give vitamin K1 for an unknown block or for bromethalin/cholecalciferol/PH3.")

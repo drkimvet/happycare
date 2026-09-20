@@ -359,6 +359,17 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("2013", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pyothorax_not_one_tap_home_or_lasix(self):
+        b = analyze("cat", "pyothorax pleural effusion, one tap and send home, give furosemide")
+        loc = b["localization"].lower()
+        self.assertIn("pleural", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("radiographs are not therapy", joined)
+        self.assertIn("one tap", joined)
+        self.assertIn("anaerobic", joined)
+        self.assertIn("lasix", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
         b = analyze(
             "cat",

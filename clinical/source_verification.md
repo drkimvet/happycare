@@ -188,3 +188,17 @@ Book traps:
 - Small occult air in a comfortable patient may be watched. Distress or tension is not a watch.
 
 Night rule: quiet chest + crash → needle the pleural space by protocol before radiology.
+
+## 122. Pleural effusion / pyothorax (Plunkett p101–200 vs Merck)
+
+Legal split lists transudate / nonseptic exudate / pyothorax / chyle / hemothorax and then prints sedation mg/kg and tube sizes. No chapter dump. **Do not harvest those numbers.**
+
+Agree: quiet chest + distress → pleural space until you tap. Radiographs are not therapy. Save fluid (EDTA + sterile red-top). Cytology plus aerobic and anaerobic culture. Cat DDX: CHF, pyothorax, FIP, lymphoma, chyle. Pyothorax is septic pleural disease — one tap and home is not the plan.
+
+Book traps:
+
+- Printed butorphanol/fentanyl and French-size tables stay in the book. △ Plumb / hospital tube protocol.
+- “Open-chest CPR for any pleural space disease” is a 2013 line. Night CPA is Pardo/RECOVER unless the hospital says otherwise.
+- “Tap 2–3 times before a tube, unless pyothorax” is a heading, not a license to skip drainage of pus.
+
+Night rule: muffled lungs in a cat → oxygen, tap, look at the fluid, then decide CHF vs pus vs chyle vs blood.
