@@ -374,7 +374,8 @@ def analyze(
             "Do not copy a 3-5 day low-fat prescription from canine pancreatitis or from the allium hemolysis clock."
         )
         do_next.append(
-            "Offer food now if obstruction is off the table. Highly digestible / what the cat will eat. No allium snacks."
+            "Offer food now if obstruction is off the table. Highly digestible / what the cat will eat. No allium snacks. "
+            "If the story is hard dry jerky, name digestibility — do not fight a soft diet as if it were a canine fat prescription."
         )
         sources.append("Forman ACVIM 2021 feline pancreatitis nutrition")
 
@@ -437,6 +438,10 @@ def analyze(
         do_next.append(
             "Read THIS package: onion/garlic (allium clock), xylitol if sugar-free. "
             "One-time beef jerky is not the chronic chicken-jerky Fanconi story."
+        )
+        do_next.append(
+            "Hard/dry jerky: the home-food lever is moisture and digestibility, not fat percent. "
+            "Soft, highly digestible small meals if obstruction is off the table."
         )
         if not ALLIUM_RE.search(text):
             do_not.append("Do not assume the jerky is allium-free. Seasoning blends are often onion/garlic.")

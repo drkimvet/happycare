@@ -110,6 +110,7 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("prokinetic", joined)
         self.assertIn("wrapper", joined)
         self.assertIn("allium", joined)
+        self.assertIn("digestibility", joined)
         self.assertNotIn("fanconi", " ".join(b["hard_stops"]).lower())
         self.assertIsNone(b["mg_per_kg"])
         both = analyze(

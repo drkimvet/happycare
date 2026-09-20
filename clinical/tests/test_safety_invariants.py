@@ -183,6 +183,7 @@ class PublicCardInvariants(unittest.TestCase):
             "few-hour nephrotoxin",
             "low-fat",
             "allium hemolysis",
+            "digestibility",
             "cardiogenic",
             "never bolus a bag that contains kcl",
         ):
