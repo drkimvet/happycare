@@ -25,6 +25,7 @@ Lily/sago **narrative** pages are not in the splits. Appendix cards plus public 
 | Macadamia | Chapter: dogs, weakness, hyperthermia, unknown principle; check chocolate/xylitol coating | Merck: dogs only, usually self-limiting | Do not treat as bromethalin. Still look for a second toxin in the cookie. |
 | Hops | Appendix: dogs, hyperthermia, seizures, death; principle unknown | Merck supplements: malignant hyperthermia picture; dantrolene conversation; **do not use NSAIDs/dipyrone to drop that fever** | Cool + support. Not a simple antipyretic case. |
 | Allium | Appendix cards for onion/garlic | Merck: Heinz-body hemolysis, **delayed days**, cats more sensitive, garlic 3–5× onion | Do not clear as “fine tonight.” Recheck PCV. |
+| Feline pancreatitis | Acute-abdomen headings only; no Forman-level fPL chapter in the owned splits | Forman ACVIM 2021: cluster diagnosis (signs + AUS + fPLI); SNAP normal makes pancreatitis less likely; do not withhold food (hepatic lipidosis); antibiotics not routine | Do not invent the fPL cutoff. Do not starve. Sucralfate is coating, not pancreatitis therapy. |
 | Ivermectin / MDR1 | Chapter: GABA, collie-type idiosyncratic CNS | Merck: ABCB1 / P-gp; herding breeds | Ask breed. Do not use chelonian ivermectin (book exotic appendix + standard exotic teaching). |
 | Hamster oral beta-lactam | Exotic appendix: dysbiosis risk | Merck exotic GI | Hard stop. Already gated. |
 

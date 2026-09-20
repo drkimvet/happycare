@@ -55,6 +55,15 @@ If you cannot name which family you are in, you are not writing NAC.
 - Mild metabolic acidosis (example pH ~7.25, HCO3 ~20) is not an automatic bicarbonate indication. Fix perfusion and the underlying kidney/ureter problem.
 - Peritoneal lavage, when indicated, is sterile saline. Povidone-iodine peritoneal lavage is not standard. 5% povidone-iodine on the card is **skin prep**, not belly rinse.
 
+## Feline pancreatitis / tense cranial abdomen (Forman ACVIM 2021)
+
+- Localize first. Tense or painful **upper / cranial** abdomen is pancreas, stomach, biliary tree, or cranial SI (linear FB still on the list). Days of tension are not tonight's meal until the timeline is written down.
+- Diagnosis is the **cluster**: signs + imaging + fPLI. SNAP fPL normal makes pancreatitis less likely; abnormal includes the equivocal range. Spec fPL supports; it does **not** rule pancreatitis in or out by itself. Do not invent the lab cutoff; the report names its own reference.
+- Do not withhold food "to rest the pancreas." Forman: any further fasting is not recommended; hepatic lipidosis is the cat-specific cost. Offer PO early or a feeding-tube conversation.
+- Support is fluids (AAHA: reassess perfusion, not a round rate), antiemetic, and **opioid** analgesia. Antibiotics are not routine for uncomplicated sterile pancreatitis. DexSP / NSAID is not the pancreatitis plan.
+- Sucralfate is a GI coating (ulcer / esophagitis conversation), not pancreatitis therapy. Separate it from other orals. △ Plumb for sucralfate, fluids, and the opioid.
+- A fatty or seasoned snack can sit on top of days of cranial pain. If allium (onion/garlic powder) is also on the list, the Heinz-body clock is still open. Do not clear on tonight's PCV.
+
 ## Drugs that are not the plan
 
 - NSAID: hold on azotemia, hypovolemia, or unknown kidney function. On-label NSAIDs only when you are actually reaching for one; △ Plumb.

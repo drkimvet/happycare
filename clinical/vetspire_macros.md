@@ -359,9 +359,10 @@ Soft non-tense + unilateral renomegaly is the kidney/ureter until those pairs sa
 ### `ddx-panc`
 
 Pancreatitis — {{patient.name}}
-{{patient.species}}. Spec / AUS / clinical [ ].
-Cat: Forman ACVIM — triaditis / hepatic lipidosis still on the table.
-Do not invent a fluid rate or Cerenia number. △ Plumb. No NSAID if azotemic / hypovolemic.
+{{patient.species}}. Spec / SNAP fPL [ ]  AUS cranial [ ]  eating [ ].
+Cluster diagnosis (Forman ACVIM): signs + imaging + fPLI. fPL is supportive, not pathognomonic. Do not invent the cutoff.
+Do not withhold food. Hepatic lipidosis risk. Antibiotics not routine if uncomplicated. No DexSP / NSAID as the pancreatitis plan.
+Sucralfate is coating, not pancreatitis therapy. △ Plumb for fluids / antiemetic / opioid.
 
 ### `ddx-uti`
 

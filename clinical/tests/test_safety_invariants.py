@@ -127,6 +127,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("dka", VERIF.lower())
         self.assertIn("30 minutes", VERIF.lower())
         self.assertIn("oral diazepam", VERIF.lower())
+        self.assertIn("forman", VERIF.lower())
+        self.assertIn("hepatic lipidosis", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -168,6 +170,9 @@ class PublicCardInvariants(unittest.TestCase):
             "small-animal emergency",
             "status epilepticus",
             "oral diazepam",
+            "forman",
+            "fpl",
+            "hepatic lipidosis",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

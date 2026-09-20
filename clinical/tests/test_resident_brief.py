@@ -235,6 +235,31 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("cat", "cluster seizures, send home diazepam PO")
         self.assertTrue(any("oral diazepam" in x.lower() or "hepatic" in x.lower() for x in b["hard_stops"]))
 
+    def test_cat_allium_delayed_heinz(self):
+        b = analyze("cat", "ate onion and garlic powder, tired only")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("heinz", joined)
+        self.assertIn("do not clear", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
+        b = analyze(
+            "cat",
+            "sucralfate IVF fPL test",
+            abdomen="tense upper abdomen few days",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cranial", loc)
+        self.assertIn("timeline", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pathognomonic", joined)
+        self.assertIn("withhold", joined)
+        self.assertIn("hepatic lipidosis", joined)
+        self.assertIn("sucralfate", joined)
+        self.assertIn("dietary indiscretion", joined)
+        self.assertTrue(any("forman" in x.lower() for x in b["sources"]))
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

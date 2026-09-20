@@ -40,6 +40,13 @@ DRAIN_RE = re.compile(r"\b(drain (the )?abdomen|abdominocentesis|peritoneal drai
 AZOTEMIA_RE = re.compile(r"\b(aki|azotem|creatinine|iris|hydroneph|pyoneph|ureter)\b", re.I)
 RENOMEGALY_RE = re.compile(r"\b(renomegal|enlarged kidney|big kidney|fluid-filled kidney)\b", re.I)
 SOFT_ABD_RE = re.compile(r"\b(soft abdomen|no tension|non-tense|abdomen soft)\b", re.I)
+TENSE_ABD_RE = re.compile(
+    r"\b(tense|tight|painful|guarded)\b.{0,28}\babdomen\b|\b(cranial|upper)\b.{0,20}\babdomen\b",
+    re.I,
+)
+PANC_RE = re.compile(r"\b(pancreati|fpl|spec fpl|snap fpl|fpli|triaditis)\b", re.I)
+SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
+DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
 UOP_RE = re.compile(r"\buop\b|urine output|oligur|anur", re.I)
 BLOCKED_RE = re.compile(r"\b(straining|blocked|urethral obstruct|flc|unable to urinate)\b", re.I)
 RODENTICIDE_RE = re.compile(r"\b(rodenticide|bromethalin|cholecalciferol|brodifacoum|bromadiolone|warfarin)\b", re.I)
@@ -282,6 +289,29 @@ def analyze(
         do_not.append("Do not clear as fine tonight because the PCV is still normal.")
         do_next.append("Baseline and delayed PCV/smear. Cats are more sensitive; garlic worse than onion.")
         sources.append("Merck: garlic and onion toxicosis")
+
+    if spec in {"dog", "cat"} and (PANC_RE.search(text) or TENSE_ABD_RE.search(text)):
+        localization = (
+            "Cranial / upper abdomen: pancreas, stomach, biliary, cranial SI "
+            "(linear FB still on the list). If tension predates tonight's meal, do not collapse the timeline."
+        )
+        hard_stops.append(
+            "fPL / SNAP fPL is supportive, not pathognomonic. Do not invent the lab cutoff."
+        )
+        do_not.append("Do not starve the pancreas. Forman: withholding food is not recommended (hepatic lipidosis).")
+        do_not.append(
+            "Do not start antibiotics for uncomplicated pancreatitis. Do not use DexSP or an NSAID as the pancreatitis plan."
+        )
+        do_not.append("Do not invent a sucralfate or IVF mg/kg or a round fluid rate.")
+        do_next.append(
+            "Weight. AUS of the cranial abdomen. Glucose. Offer food or a feeding-tube conversation. Analgesia △ Plumb."
+        )
+        sources.append("Forman ACVIM 2021 feline pancreatitis; AAHA fluids 2024")
+        if DAYS_ABD_RE.search(text) and TENSE_ABD_RE.search(text):
+            do_not.append("Do not treat days of a tense upper abdomen as tonight's dietary indiscretion alone.")
+
+    if SUCRALFATE_RE.search(text):
+        do_not.append("Sucralfate is a GI coating, not pancreatitis therapy. Separate it from other orals. △ Plumb.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
