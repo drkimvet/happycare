@@ -94,3 +94,16 @@ Book traps:
 - Insulin tables stay in the book. △ Plumb / hospital protocol. Do not start insulin if potassium is already low.
 - Bicarbonate is not the default for the gap. Fluids + insulin close most acidosis.
 - 2013 “Cerenia not labeled in cats” is a label-era line, not a 2026 night fact. Do not resurrect it.
+
+## 116. Canine/feline seizure emergency (Plunkett 3e vs ACVIM 2024 + Merck)
+
+Legal split “Canine seizures” in the p441–540 file. No chapter dump. No harvested benzo/PB tables.
+
+Agree: oxygen if cyanotic, cool if hot, glucose on the minimum database, stop the seizure, then a maintenance drug.
+
+Book traps:
+
+- Status defined as **30 minutes**. Current Merck/ACVIM: **>5 minutes** or two or more without recovery. Treat now.
+- Second-line pentobarbital table and printed diazepam/PB mg/kg stay in the book. Night first line is a benzodiazepine; ACVIM prefers midazolam IV/IN. △ crash-cart / Plumb.
+- Oral diazepam as discharge/maintenance is a 2013 leftover. Merck: not dog maintenance. Cats: oral diazepam → idiosyncratic hepatic necrosis.
+- Phenobarbital range printed as “g/mL” (missing µ). Unit trap. △ the lab.

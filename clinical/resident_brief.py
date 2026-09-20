@@ -67,6 +67,10 @@ FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ci
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover|epinephrine|atropine)\b", re.I)
 HIGH_DOSE_EPI_RE = re.compile(r"\b(high-?dose (epi|epinephrine)|0\.1\s*mg/kg\s*(epi|epinephrine))\b", re.I)
 DKA_RE = re.compile(r"\b(dka|ketoacid|diabetic keto)", re.I)
+SEIZURE_RE = re.compile(r"\b(seizure|status epileptic|cluster seizure|ictal|postictal)", re.I)
+DIAZEPAM_PO_RE = re.compile(r"\b(oral diazepam|diazepam po|diazepam p\.o\.|send home diazepam|diazepam home)", re.I)
+PENTOBARB_RE = re.compile(r"\bpentobarbital\b", re.I)
+THIRTY_MIN_SE_RE = re.compile(r"\b(30|thirty)[ -]?min", re.I)
 HHS_RE = re.compile(r"\b(hhs|honk|hyperosmolar|nonketotic)\b", re.I)
 BICARB_RE = re.compile(r"\b(bicarbonate|nahco3|sodium bicarb)\b", re.I)
 HYPOK_RE = re.compile(r"\b(hypokal|low potassium|k\s*[<=]\s*[123])", re.I)
@@ -462,6 +466,26 @@ def analyze(
         do_not.append("Do not dump hypotonic fluid into a chronic hypernatremia / hyperosmolar diabetic.")
         do_next.append("Correct osmolality slowly. Fluids first. △ insulin in Plumb if used.")
         sources.append("Merck diabetes; Plunkett HHS chapter (legal split) for the ketone-negative trap only")
+
+    if spec in {"dog", "cat"} and SEIZURE_RE.search(text):
+        hard_stops.append(
+            "Seizure emergency: status is >5 min or two or more without recovery, not the 2013 30-minute line."
+        )
+        do_not.append("Do not invent a diazepam/midazolam/phenobarbital/keppra number. △ crash-cart / Plumb.")
+        do_next.append("Glucose and temperature now. Benzodiazepine first (ACVIM: midazolam IV or IN if no vein). Then a maintenance load.")
+        localization = localization or (
+            "Stop the seizure, then split reactive (glucose/toxin/heat) from epileptic. Do not call syncope a seizure."
+        )
+        sources.append("ACVIM 2024 SE/CS consensus (Charalambous); Merck emergency anticonvulsants. Plunkett 3e for traps only")
+        if THIRTY_MIN_SE_RE.search(text):
+            hard_stops.append("Do not wait 30 minutes to call status. Treat at 5 minutes / no recovery.")
+        if DIAZEPAM_PO_RE.search(text):
+            if spec == "cat":
+                hard_stops.append("Do not send a cat home on oral diazepam (idiosyncratic hepatic necrosis).")
+            else:
+                hard_stops.append("Oral diazepam is not dog maintenance (Merck). Not a discharge ASM.")
+        if PENTOBARB_RE.search(text):
+            do_not.append("Do not copy the 2013 pentobarbital-second-line table. Refractory SE is an airway / propofol conversation. △ Plumb.")
 
     if spec == "cattle" and LDA_RE.search(text):
         hard_stops.append("Right-sided abomasal ping: treat as surgical (RDA vs AV). Do not medically 'watch overnight.'")

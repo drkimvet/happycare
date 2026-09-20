@@ -103,6 +103,16 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Seizure emergency (dog and cat; ACVIM 2024 SE/CS + Merck)
+
+- Status epilepticus is **>5 minutes** or two or more seizures without recovery — not the 2013 “30-minute” line. Cluster is ≥2 in 24 hours.
+- Glucose, temperature, and a toxin story first (reactive vs epileptic). Do not call syncope a seizure.
+- First line is a benzodiazepine. ACVIM: midazolam IV or **intranasal** is the current conversation if there is no vein. △ the crash-cart / Plumb number.
+- Then load a maintenance drug (phenobarbital and/or levetiracetam). Do not harvest the 2013 pentobarbital-second-line table.
+- Do not send a **cat** home on **oral diazepam** (idiosyncratic hepatic necrosis). Oral diazepam is not dog maintenance either (Merck).
+- Book phenobarbital “20–40 g/mL” is a unit trap (µg/mL). △ the lab.
+- Propofol / anesthesia for refractory SE only with an airway plan. Do not invent a CRI.
+
 ## UTI (ISCAID 2019, not a 2011 leftover)
 
 - Subclinical bacteriuria is not a UTI and is rarely treated.
@@ -144,6 +154,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - Merck: grape/raisin/tamarind; ethylene glycol; chocolate; GI obstruction; pyometra; arterial thromboembolism; rabbit digestive disorders
 - Merck: equine salmonellosis (isolate; fluids first; adult antimicrobials do not shorten colitis or shedding); Potomac horse fever / *Neorickettsia risticii* (oxytetracycline conversation; ice feet now; laminitis 20–30%)
 - Merck Jul 2024: Addison disease / hypoadrenocorticism (Van Vertloo). AAHA 2023 selected endocrinopathies named as further reading only.
+- ACVIM 2024 consensus: status epilepticus and cluster seizures in dogs and cats (Charalambous et al., JVIM). Merck emergency anticonvulsant pages.
 - Official Wiley Five-Minute title list: `clinical/five_minute_syllabus.md` (no third-party book mirrors)
 
 ASPCA Animal Poison Control: 888-426-4435 (owner/clinic call; not a login).

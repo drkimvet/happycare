@@ -125,6 +125,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a work item", VERIF.lower())
         self.assertIn("addisonian crisis", VERIF.lower())
         self.assertIn("dka", VERIF.lower())
+        self.assertIn("30 minutes", VERIF.lower())
+        self.assertIn("oral diazepam", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -164,6 +166,8 @@ class PublicCardInvariants(unittest.TestCase):
             "dka",
             "bicarbonate",
             "small-animal emergency",
+            "status epilepticus",
+            "oral diazepam",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

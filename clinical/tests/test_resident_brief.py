@@ -224,6 +224,17 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("cat", "hyperosmolar HHS, no ketones")
         self.assertTrue(any("not dka" in x.lower() for x in b["hard_stops"]))
 
+    def test_status_is_five_minutes_not_thirty(self):
+        b = analyze("dog", "status epilepticus for 30 min, still seizing")
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertIn("5 min", joined)
+        self.assertIn("30", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_no_oral_diazepam_home(self):
+        b = analyze("cat", "cluster seizures, send home diazepam PO")
+        self.assertTrue(any("oral diazepam" in x.lower() or "hepatic" in x.lower() for x in b["hard_stops"]))
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
