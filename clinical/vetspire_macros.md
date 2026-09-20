@@ -56,7 +56,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sz` | Assessment | Seizure |
 | `ddx-abd` | Assessment | Acute abdomen |
 | `ddx-gi` | Assessment | Vomit/diarrhea |
-| `ddx-resp` | Assessment | Dyspnea |
+| `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
 | `ddx-hemo` | Assessment | Hemoabdomen |
@@ -76,6 +76,7 @@ Suggested names are short so they show up after three letters.
 | `dc-toxin` | Discharge | Generic toxin |
 | `dc-lily` | Discharge | Cat lily |
 | `dc-gdv` | Discharge | GDV surgery / decline |
+| `dc-resp` | Discharge | Cat respiratory distress |
 | `dc-sepsis` | Discharge | Sepsis / source-control / decline |
 | `dc-pyo` | Discharge | Pyometra |
 | `dc-fate` | Discharge | FATE |
@@ -355,10 +356,13 @@ Do not send a diestrus sick female as “GI.” Do not send a straining male cat
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
-Upper vs lower vs pleural vs look-alike (pain, shock, anemia).
+Oxygen / hands off first. Name the space before the syringe.
 
-DDX: CHF, asthma/bronchitis, pleural effusion, pneumothorax, aspiration, PTE, obstruction, anemia.
-Do not drown a cat in “just oxygen and a DexSP” if azotemic or if the localization is pleural.
+Pattern: inspiratory (upper) vs expiratory push/wheeze (bronchial / asthma) vs quiet restrictive (pleural) vs B-lines + big LA (CHF) vs pale (anemia) vs cold legs (FATE) vs vaccine/sting (anaphylaxis).
+
+DDX: CHF, asthma/bronchitis, pleural effusion, pneumothorax, aspiration, PTE, obstruction, anemia, ATE, anaphylaxis. Older-cat new cough: pneumonia still on the list.
+
+Do not: stack Lasix + albuterol + DexSP. Do not wrestle for rads. Do not Lasix a quiet chest. Do not DexSP an azotemic cat. Do not harvest puff / terbutaline / DexSP tables. Do not send open-mouth home as anxiety. △ Plumb.
 
 ### `ddx-chf`
 
@@ -526,6 +530,16 @@ ASPCA Animal Poison Control (you may call): 888-426-4435 (fee may apply).
 {{patient.name}} was exposed to a true lily (or pollen / vase water). In cats this is a kidney emergency, even if {{patient.pronoun}} looks brighter tonight.
 
 Watch urine output. Recheck kidney values as scheduled — do not skip because {{patient.pronoun}} is eating. Return immediately if {{patient.pronoun}} stops urinating, vomits repeatedly, or becomes lethargic. {{location.phonenumber}}
+
+### `dc-resp`
+
+{{patient.name}} was treated for trouble breathing. This can be the airway, the lung, fluid or air around the lung, or the heart — they are not the same disease and they do not get the same home medicines.
+
+Give only the medicines we sent, as labeled. Do not add human inhalers, leftover Lasix, or leftover steroids.
+
+Keep {{patient.objectPronoun}} quiet and away from smoke, perfume, powder litter dust, and aerosols.
+
+Return now for open-mouth breathing, blue or pale gums, crouching and not moving, collapse, or if you cannot hear {{patient.pronoun}} breathe comfortably. {{location.phonenumber}}
 
 ### `dc-gdv`
 

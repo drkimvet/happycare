@@ -310,3 +310,20 @@ Book/public traps:
 - DexSP is not the first syringe. Azotemic cat: still no DexSP.
 
 Night rule: suspected infection + organ dysfunction / shock → name distributive shock, find the pocket, first antimicrobial tonight, source-control conversation. Not a SIRS math problem.
+
+## 130. Cat respiratory distress / asthma vs CHF vs pleural (Plunkett p101–200 vs Merck)
+
+Legal split airway / heart headings. No chapter dump. **Do not harvest printed oxygen-cage recipes, albuterol puff counts, terbutaline mg/kg, DexSP bands, or the Merck triage epinephrine-for-asthma line.**
+
+Agree with Merck emergency evaluation: open-mouth breathing and cyanosis mean severe hypoxemia; oxygen first; radiographs after the cat is stable enough to hold still. Merck respiratory signs: inspiratory stertor/stridor localizes **cranial to the thoracic inlet**; labored expiration localizes **caudal** (bronchitis / asthma / pulmonary edema). Merck owner asthma: cough, wheeze, episodic distress; corticosteroids are the disease-modifying conversation; avoid smoke/aerosols; **new chronic cough in an older cat is often pneumonia, not new-onset asthma.**
+
+Book/public traps:
+
+- Merck inhalation and triage pages print puff counts, DexSP mg/kg, and even epinephrine for “life-threatening asthma.” Those numbers stay on the page. Night: △ crash-cart / Plumb. Do not copy them. Do not use RECOVER high-dose epi as an asthma protocol.
+- Lasix is a CHF-edema conversation, not a dyspnea protocol. Quiet chest is pleural until tapped (already gated). Tamponade is not Lasix (already gated).
+- DexSP is not the first syringe until the space is bronchial **and** the cat is not azotemic.
+- Albuterol / terbutaline is rescue for bronchoconstriction, not chronic monotherapy, and not for pleural fluid or left-sided failure.
+- Do not wrestle a compensating cat for a VD film.
+- Do not send open-mouth breathing home as “anxiety” or “just a hairball.”
+
+Night rule: cat open-mouth → oxygen, hands off, name the space (upper / bronchial / pleural / CHF / anemia / ATE / anaphylaxis), then one syringe that matches that space.

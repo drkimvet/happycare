@@ -167,6 +167,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("sepsis / sirs", VERIF.lower())
         self.assertIn("organ dysfunction", VERIF.lower())
         self.assertIn("high-dose corticosteroids", VERIF.lower())
+        self.assertIn("name the space before the syringe", VERIF.lower())
+        self.assertIn("open-mouth", VERIF.lower())
+        self.assertIn("new-onset asthma", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -185,6 +188,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-tbi`", MACRO)
         self.assertIn("`ddx-sepsis`", MACRO)
         self.assertIn("`dc-sepsis`", MACRO)
+        self.assertIn("`dc-resp`", MACRO)
+        self.assertIn("name the space before the syringe", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
@@ -265,6 +270,9 @@ class PublicCardInvariants(unittest.TestCase):
             "infection plus organ dysfunction",
             "not a sirs checkbox",
             "high-dose steroids are not recommended",
+            "name the space before the syringe",
+            "lasix + albuterol + dexsp",
+            "new cough in an older cat is often pneumonia",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -180,6 +180,13 @@ PLEURAL_RE = re.compile(
     r"\b(pyothorax|pleural effusion|chylothorax|hemothorax|haemothorax|septic pleur)\b",
     re.I,
 )
+DYSPNEA_RE = re.compile(
+    r"\b(dyspnea|dyspnoea|open[- ]mouth|orthopnea|respiratory distress|"
+    r"labored breath|can'?t breathe|wheez|\basthma\b|bronchoconstrict|"
+    r"lower airway|feline asthma)\b",
+    re.I,
+)
+ALBUTEROL_RE = re.compile(r"\b(albuterol|salbutamol|terbutaline|aerokat)\b", re.I)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -521,6 +528,38 @@ def analyze(
         sources.append("Merck diagnostic techniques for pleural fluid; Plunkett pleural-effusion headings (legal split, no dump)")
         if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
             do_not.append("Do not Lasix pleural fluid until CHF is actually the localization.")
+
+    if spec == "cat" and DYSPNEA_RE.search(text):
+        dyspnea_loc = (
+            "Name the space before the syringe: upper airway vs bronchial (asthma) "
+            "vs pleural vs CHF vs anemia/ATE vs anaphylaxis."
+        )
+        localization = f"{localization} Also {dyspnea_loc}" if localization else dyspnea_loc
+        hard_stops.append(
+            "Cat respiratory distress: oxygen and hands off first. Name the space before Lasix, DexSP, or albuterol."
+        )
+        do_not.append(
+            "Do not stack Lasix + albuterol + DexSP. Do not wrestle for radiographs. "
+            "Do not harvest puff / terbutaline / DexSP mg/kg tables."
+        )
+        do_not.append(
+            "Do not send open-mouth breathing home as anxiety. "
+            "New cough in an older cat is often pneumonia, not new asthma."
+        )
+        do_next.append(
+            "Pattern: inspiratory stertor/stridor = upper; expiratory push/wheeze = bronchial; "
+            "quiet restrictive = pleural (tap first). TFAST: glide, B-lines, LA, fluid, tamponade. △ Plumb."
+        )
+        sources.append(
+            "Merck emergency evaluation (oxygen first); Merck respiratory signs "
+            "(inspiratory upper vs expiratory lower); Merck feline bronchial asthma"
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not give furosemide until CHF pulmonary edema is the localization.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic cat: still no DexSP, including for suspected asthma.")
+        if ALBUTEROL_RE.search(text) and (PLEURAL_RE.search(text) or PNEUMO_RE.search(text)):
+            hard_stops.append("Bronchodilator is not therapy for pleural air or fluid.")
 
     if spec in {"dog", "cat"} and ANAPHYLAXIS_RE.search(text):
         anax_loc = (

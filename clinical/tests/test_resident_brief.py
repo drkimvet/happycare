@@ -556,6 +556,27 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("source", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_dyspnea_name_the_space_before_cocktail(self):
+        b = analyze(
+            "cat",
+            "open-mouth breathing, wheeze, give Lasix and albuterol and DexSP, then rads",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("name the space", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("lasix + albuterol + dexsp", joined)
+        self.assertIn("furosemide", joined)
+        self.assertIn("wrestle", joined)
+        self.assertIn("anxiety", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_azotemic_asthma_cat_still_no_dexsp(self):
+        b = analyze("cat", "asthma, AKI, creatinine high, start DexSP")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("no dexsp", joined)
+        self.assertIn("name the space", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
