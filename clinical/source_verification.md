@@ -326,4 +326,4 @@ Book/public traps:
 - Do not wrestle a compensating cat for a VD film.
 - Do not send open-mouth breathing home as “anxiety” or “just a hairball.”
 
-Night rule: cat open-mouth → oxygen, hands off, name the space (upper / bronchial / pleural / CHF / anemia / ATE / anaphylaxis), then one syringe that matches that space.
+Night rule: cat open-mouth → oxygen, hands off, **name the space before the syringe** (upper / bronchial / pleural / CHF / anemia / ATE / anaphylaxis), then one syringe that matches that space.
