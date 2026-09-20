@@ -373,8 +373,8 @@ Soft non-tense + unilateral renomegaly is the kidney/ureter until those pairs sa
 ### `ddx-panc`
 
 Pancreatitis — {{patient.name}}
-{{patient.species}}. Spec / SNAP fPL [ ]  AUS cranial [ ]  eating [ ].
-Cluster diagnosis (Forman ACVIM): signs + imaging + fPLI. fPL is supportive, not pathognomonic. Do not invent the cutoff.
+{{patient.species}}. Spec / SNAP fPL [negative / weak-equivocal / positive]  AUS cranial [ ]  eating [ ].
+Cluster diagnosis (Forman ACVIM): signs + imaging + fPLI. fPL is supportive, not pathognomonic. SNAP weak/equivocal = abnormal SNAP, not a diagnosis and not a negative. Do not invent the cutoff. Do not copy this SNAP onto a housemate.
 Do not withhold food. Hepatic lipidosis risk. Cat: Forman does not require a canine-style low-fat 3–5 day diet.
 Antibiotics not routine if uncomplicated. No DexSP / NSAID as the pancreatitis plan.
 Sucralfate is coating, not pancreatitis therapy. △ Plumb for fluids / antiemetic / opioid.

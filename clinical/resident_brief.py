@@ -45,6 +45,11 @@ TENSE_ABD_RE = re.compile(
     re.I,
 )
 PANC_RE = re.compile(r"\b(pancreati|fpl|spec fpl|snap fpl|fpli|triaditis)\b", re.I)
+FPL_SNAP_WEAK_RE = re.compile(
+    r"\b(?:snap\s*fpl|fpl\s*snap|spec\s*fpl|fpli)\b.{0,48}\b(?:weak|equivocal|faint|light)\b|"
+    r"\b(?:weak|equivocal|faint|light).{0,48}\b(?:snap\s*fpl|fpl\s*snap|spec\s*fpl|fpli|\bfpl\b)\b",
+    re.I,
+)
 SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
 DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
 LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
@@ -553,6 +558,17 @@ def analyze(
         sources.append("Forman ACVIM 2021 feline pancreatitis; AAHA fluids 2024")
         if DAYS_ABD_RE.search(text) and TENSE_ABD_RE.search(text):
             do_not.append("Do not treat days of a tense upper abdomen as tonight's dietary indiscretion alone.")
+        if FPL_SNAP_WEAK_RE.search(text):
+            hard_stops.append(
+                "SNAP fPL weak/equivocal is an abnormal SNAP, not a diagnosis and not a negative. "
+                "Forman: abnormal includes the equivocal range. Do not invent the Spec cutoff."
+            )
+            do_not.append(
+                "Do not copy this SNAP onto the housemate. Do not start antibiotics because the dot was weak."
+            )
+            do_next.append(
+                "Cluster: signs plus cranial imaging (AUS). Spec fPL only if the owner wants a number. Offer food."
+            )
 
     if SUCRALFATE_RE.search(text):
         do_not.append("Sucralfate is a GI coating, not pancreatitis therapy. Separate it from other orals. △ Plumb.")

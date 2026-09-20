@@ -448,6 +448,16 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertTrue(any("forman" in x.lower() for x in b["sources"]))
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_snap_fpl_weak_positive_is_abnormal_not_diagnosis(self):
+        b = analyze("cat", "fpl snap weak positive, tense cranial abdomen")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("abnormal snap", joined)
+        self.assertIn("not a diagnosis and not a negative", joined)
+        self.assertIn("equivocal", joined)
+        self.assertIn("housemate", joined)
+        self.assertNotRegex(" ".join(b["hard_stops"] + b["do_not"]), r"\b5\.[34]\b")
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

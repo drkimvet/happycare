@@ -162,6 +162,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("household siblings are two patients", MACRO.lower())
         self.assertIn("`ddx-anax`", MACRO)
         self.assertIn("`dc-anax`", MACRO)
+        self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
         self.assertIn("mg/dl", VERIF.lower())
@@ -223,6 +224,8 @@ class PublicCardInvariants(unittest.TestCase):
             "epinephrine is the crash drug",
             "hives may be absent",
             "gallbladder halo",
+            "weak positive snap is abnormal",
+            "not a diagnosis and not a negative",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
