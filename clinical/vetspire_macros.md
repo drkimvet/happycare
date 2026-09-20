@@ -18,6 +18,7 @@ These are **shortcuts**, not a hospital-wide template that fills every box.
 - **Not every case type.** These are Midtown SA ER phrases. Wellness, dentistry, equine — different macros.
 - **Location.** Saving under More → Macros lets people with access use them. **Make Universal** (admin permission) is what shares them to every UR VetCare location. Without that, they may stay Midtown-only.
 - Encounter **templates** are separate. A template can sit under the macros; the macros still have to be inserted (or spoken to AI Scribe: “insert ddx-uo into Assessment”).
+- **Household siblings are two patients.** Same snack ≠ same discharge. Insert `dc-gi` only if THIS cat has a GI / cranial-abdomen localization. Insert `dc-toxin` only if THIS cat has a toxin clock. Do not paste leftover dentistry or heart paragraphs. Do not write “below the toxic threshold.” Do not NPO a cat 12 hours.
 
 ---
 
@@ -412,7 +413,7 @@ Return to {{location.name}} ({{location.phonenumber}}) or the nearest emergency 
 
 Offer small frequent meals of food {{patient.name}} will actually eat. Water always available. No table scraps, bones, grapes, raisins, xylitol gum/peanut butter, onions, or garlic.
 
-Cat: easy-to-digest = moist, highly digestible, small meals. Low fat is fine as that lever (not greasy leftovers). Do not use a high-fiber hairball/weight diet. Forman does not make fat the pancreatitis therapy. Do not withhold food for 12 hours if vomiting — call us. Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
+Cat: easy-to-digest = moist, highly digestible, small meals. Low fat is fine as that lever (not greasy leftovers). Do not use a high-fiber hairball/weight diet. Forman does not make fat the pancreatitis therapy. Do not withhold food for 12 hours if vomiting — call us. This sheet is for THIS patient's GI localization only. A housemate who only shared the snack gets `dc-toxin`, not this bland-diet / sucralfate block. Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
 
 Call {{location.phonenumber}} if vomiting continues, there is black or bloody stool, {{patient.pronoun}} will not drink, becomes lethargic, or the belly becomes tight.
 
@@ -460,7 +461,9 @@ If discharged after stabilization: give insulin and food exactly as written. Do 
 {{patient.name}} was evaluated for possible toxin exposure: [product].
 
 At home: prevent re-exposure. Bring the package if you find it. Give only medicines we sent.
-Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
+This is the toxin clock for THIS patient. A housemate with abdominal pain gets a separate GI discharge — do not paste bland-diet, sucralfate, or 12-hour NPO lines here, and do not paste leftover dentistry or heart text.
+Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product and THIS weight.
+Do not withhold food for 12 hours. If vomiting continues, call.
 If allium (onion/garlic): watch for pale gums, weakness, red-brown urine, or yellow gums over several days. Recheck PCV/smear as scheduled — tonight’s normal PCV does not close the clock.
 
 Return now for seizures, tremors, trouble breathing, collapse, repeated vomiting, or no urine. {{location.phonenumber}}
@@ -533,4 +536,5 @@ Please have {{patient.possPronoun}} regular veterinarian ({{rdvms}}) review this
 - I will not log into Vetspire. If a hospital admin must approve macros, send them this file.
 - Do not put owner phones, chart IDs, or case nicknames into a shared macro.
 - If a number is required, it goes on the product label / order, not inside these phrases.
+- Two cats, one bag: two macros. `dc-gi` is not a household stamp.
 - Exotic oral beta-lactam and horse/cow one-liners stay out of the night card; use `resident_brief.py` if they appear.

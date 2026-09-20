@@ -328,9 +328,37 @@ class ResidentBriefTests(unittest.TestCase):
 
     def test_cat_hypovolemic_shock_not_tachycardia(self):
         b = analyze("cat", "hypovolemic shock, hemoabdomen")
-        joined = " ".join(b["do_not"] + b["do_next"]).lower()
+        joined = " ".join(b["do_not"] + b["do_next"] + b["hard_stops"]).lower()
         self.assertIn("bradycardia", joined)
         self.assertIn("pcv/ts", joined)
+        self.assertIn("type-specific", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemoabdomen_not_vitamin_k_or_invented_pcv_cutoff(self):
+        b = analyze("dog", "hemoabdomen, give vitamin K, transfuse at PCV 20")
+        loc = b["localization"].lower()
+        self.assertIn("pcv/ts", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("anticoagulant", joined)
+        self.assertIn("cutoff", joined)
+        self.assertIn("round belly", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sibling_cats_not_same_discharge_or_toxic_threshold_or_12h_npo(self):
+        b = analyze(
+            "cat",
+            "two cats same household sibling garlic beef jerky, copy discharge, "
+            "below the typical toxic threshold, withhold food 12 hours if vomiting",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("same household is not the same localization", joined)
+        self.assertIn("two patients = two discharges", joined)
+        self.assertIn("toxic threshold", joined)
+        self.assertIn("12 hours", joined)
+        self.assertIn("hepatic lipidosis", joined)
+        self.assertIn("dentistry", joined)
+        self.assertIn("dc-gi", joined)
+        self.assertTrue(any("heinz" in x.lower() or "allium" in x.lower() for x in b["hard_stops"] + [b["localization"]]))
         self.assertIsNone(b["mg_per_kg"])
 
     def test_never_bolus_kcl_bag(self):

@@ -64,6 +64,20 @@ VINYL_RE = re.compile(
     re.I,
 )
 JERKY_RE = re.compile(r"\b(jerky|beef stick|meat stick)\b", re.I)
+SIBLING_RE = re.compile(
+    r"\b(sibling|littermate|housemate|same household|both cats|two cats|the other cat|"
+    r"copy (the )?(discharge|template)|same (discharge|template))\b",
+    re.I,
+)
+THRESHOLD_RE = re.compile(
+    r"\b(toxic threshold|below.{0,24}threshold|typical toxic)\b",
+    re.I,
+)
+NPO12_RE = re.compile(
+    r"\b(npo|withhold food|fast(?:ing)?).{0,28}(12|twelve)\s*h"
+    r"|\b(12|twelve)\s*hours?.{0,28}(npo|withhold|no food|fast)",
+    re.I,
+)
 GDV_RE = re.compile(r"\b(gdv|gastric dilatation|gastric dilation|gastric volvulus)\b", re.I)
 PYO_RE = re.compile(r"\bpyometra\b", re.I)
 FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
@@ -111,7 +125,11 @@ STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anx
 ATROPINE_RE = re.compile(r"\batropine\b", re.I)
 VIT_C_RE = re.compile(r"\b(anorex|not eating|inappeten)\b", re.I)
 CHF_RE = re.compile(r"\b(chf|cardiogenic|congestive heart|pulmonary edema|left-sided heart)\b", re.I)
-HYPOVOLEM_RE = re.compile(r"\b(hypovolem|hemoabdomen|haemoabdomen|hemorrhagic shock)\b", re.I)
+HYPOVOLEM_RE = re.compile(r"\bhypovolem|\bhemorrhagic shock\b", re.I)
+HEMOABD_RE = re.compile(
+    r"\b(hemoabdomen|haemoabdomen|hemoperitoneum|haemoperitoneum)\b",
+    re.I,
+)
 SHOCK_BOLUS_RE = re.compile(r"\b(shock bolus|shock dose|fluid bolus)\b", re.I)
 KCL_BOLUS_RE = re.compile(r"\b(kcl|potassium chloride).{0,24}\bbolus\b|\bbolus\b.{0,24}\b(kcl|potassium chloride)\b", re.I)
 TAMPONADE_RE = re.compile(
@@ -334,8 +352,26 @@ def analyze(
             do_not.append(
                 "Do not wait for a dog-style tachycardia. Cat hypovolemic shock is often bradycardia, hypothermia, and hypotension."
             )
-        do_next.append("If hemoabdomen: pair PCV/TS abdomen vs peripheral. Blood-product conversation. Vitamin K only if the rodenticide family is anticoagulant.")
         sources.append("AAHA fluid therapy 2024 hypovolemia; Merck small-volume vs large-volume framing")
+
+    if spec in {"dog", "cat"} and HEMOABD_RE.search(text):
+        localization = localization or (
+            "Hemorrhagic peritoneal fluid. Pair PCV/TS with peripheral blood. "
+            "Not uroabdomen until Cr/K pairs say so."
+        )
+        hard_stops.append(
+            "Hemoabdomen: pair abdominal vs peripheral PCV/TS. Clotting blood is a vessel or organ stick, not a diagnosis."
+        )
+        do_not.append("Do not give vitamin K unless the rodenticide family is anticoagulant.")
+        do_not.append(
+            "Do not invent a transfusion PCV cutoff. Do not harvest 2013 wrap, DPL, or mL/kg blood-product tables. "
+            "A round belly is not required (you can bleed a lot before the waist looks big)."
+        )
+        do_next.append(
+            "FAST serially. Blood-product conversation. Cats: type-specific blood — no universal donor. "
+            "If still crashing, surgery is the conversation. Negative tap does not rule out retroperitoneal bleed."
+        )
+        sources.append("Merck blood transfusions; Plunkett hemoperitoneum headings (legal split, no dump)")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")
@@ -428,6 +464,39 @@ def analyze(
         do_next.append("Baseline and delayed PCV/smear. Cats are more sensitive; garlic worse than onion.")
         do_next.append("If creatinine is already up in a few hours, localize elsewhere.")
         sources.append("Merck: garlic and onion toxicosis")
+
+    if THRESHOLD_RE.search(text):
+        hard_stops.append(
+            "Do not write 'below the toxic threshold' unless APCC/Plumb named a number for THIS product and THIS weight."
+        )
+        do_not.append(
+            "A seasoning-powder jerky label is not a published milligram of allium. Do not clear the Heinz clock with that sentence."
+        )
+        sources.append("Merck: garlic and onion toxicosis — delayed hemolysis, not a printed safe dose")
+
+    if spec == "cat" and NPO12_RE.search(text):
+        hard_stops.append(
+            "Do not NPO a vomiting cat for 12 hours. Forman: hepatic lipidosis. Call instead."
+        )
+        do_not.append("Do not paste a canine bland-diet NPO line onto a cat discharge.")
+        sources.append("Forman ACVIM 2021 feline pancreatitis: do not withhold food")
+
+    if spec in {"dog", "cat"} and SIBLING_RE.search(text):
+        hard_stops.append(
+            "Same household is not the same localization. Two patients = two discharges."
+        )
+        do_not.append(
+            "Do not paste the cranial-abdomen / low-fat / sucralfate GI sheet onto the exposure-only sibling, "
+            "or the allium-watch sheet onto the tense-abdomen cat."
+        )
+        do_not.append(
+            "Do not paste leftover dentistry or heart paragraphs onto a toxin or GI discharge."
+        )
+        do_next.append(
+            "Write THIS patient's problem list. Sibling gets their own encounter, their own macro "
+            "(`dc-gi` vs `dc-toxin`), their own recheck."
+        )
+        sources.append("Forman ACVIM 2021 vs Merck allium: two clocks, two notes")
 
     if spec in {"dog", "cat"} and (PANC_RE.search(text) or TENSE_ABD_RE.search(text)):
         localization = (

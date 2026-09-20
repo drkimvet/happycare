@@ -202,3 +202,34 @@ Book traps:
 - “Tap 2–3 times before a tube, unless pyothorax” is a heading, not a license to skip drainage of pus.
 
 Night rule: muffled lungs in a cat → oxygen, tap, look at the fluid, then decide CHF vs pus vs chyle vs blood.
+
+## 123. Hemoabdomen / transfusion (Plunkett hemoperitoneum vs Merck transfusions)
+
+Legal split prints wrap, DPL, peritoneal saline counterpressure, and mL/kg of FFP/pRBC/whole blood, plus PCV <20% as a trigger. No chapter dump. **Do not harvest those numbers.**
+
+Agree: trauma, ruptured mass (spleen/liver), GDV tear, anticoagulant rodenticide, slipped ligature. Hypovolemic shock. FAST. Pair PCV/TS. Non-clotting hemorrhagic fluid. Clotting sample = wrong stick. Negative tap does not rule out retroperitoneal bleed. Distension is a late sign.
+
+Book/public traps:
+
+- Printed product volumes and PCV cutoffs stay in the book. Transfuse for clinical oxygen-carrying failure and a falling trend, not a memorized PCV. △ hospital blood bank / Plumb is not the blood bank — Merck transfusion pages. **Cats must be typed. No universal donor.**
+- Abdominal wrap and intraperitoneal saline are 2013 maneuvers, not a substitute for surgery if they are still crashing.
+- Vitamin K is not the hemoabdomen drug unless the block is anticoagulant.
+
+Night rule: pale + free abdominal blood → pair the PCVs, name the family of bleed, talk blood products, do not wait for a round belly.
+
+## 124. Same-household siblings / two discharges (Forman vs Merck allium)
+
+No chapter dump. No PHI. Two cats can share a bag of seasoned jerky and still be two localizations.
+
+Agree with named public sources:
+
+- Merck garlic/onion: delayed Heinz / metHb; hemolysis typically days. Not lily. Not a few-hour nephrotoxin. No license here to print a “typical toxic threshold” for a powder-seasoned stick.
+- Forman ACVIM 2021: do not withhold food in the cat (hepatic lipidosis). Fat is not the feline pancreatitis lever. fPL is supportive.
+
+Night rules:
+
+- Same household is not the same localization. Two patients = two encounters = two discharges (`dc-gi` vs `dc-toxin`).
+- Do not paste the cranial-abdomen / low-fat / sucralfate / 12-hour NPO sheet onto the exposure-only sibling.
+- Do not paste leftover dentistry or heart paragraphs onto a toxin sheet.
+- Do not write “below the typical toxic threshold” unless APCC/Plumb named a number for THIS product and THIS weight.
+- Sucralfate mL stays △ Plumb. Coating is not the allium antidote.

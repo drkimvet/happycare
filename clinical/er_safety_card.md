@@ -54,7 +54,7 @@ If you cannot name which family you are in, you are not writing NAC.
 - Cardiogenic / CHF: fluids are often avoided (preload). AAHA: hypotension in CHF is an **inotrope** conversation, not a reflexive shock bolus. Furosemide is the edema conversation; △ Plumb. Do not harvest 2013 furosemide or hypertonic-saline tables.
 - Hypovolemic: bolus ≠ overnight drip. Cats often show **bradycardia, hypothermia, hypotension** — do not wait for a dog-style fast heart rate.
 - Never bolus a bag that contains KCl (AAHA).
-- Hemoabdomen: pair PCV/TS (abdomen vs peripheral). Vitamin K only if the rodenticide family is anticoagulant.
+- Hemoabdomen: pair PCV/TS (abdomen vs peripheral). Non-clotting. Clotting = you hit a vessel/organ. Negative tap ≠ no bleed (retroperitoneum). Vitamin K only if the rodenticide family is anticoagulant. Do not invent a PCV transfusion cutoff. Cats: type-specific blood, no universal donor. A round belly is not required. Do not harvest 2013 wrap / DPL / mL/kg product tables. If still crashing → surgery conversation.
 - Cardiac tamponade is **obstructive** shock. Muffled heart, jugular distension, looks like right-sided CHF. Merck: diuretics are contraindicated in acute tamponade (they drop preload further). Treatment is pericardiocentesis, not a Lasix protocol and not a default hypovolemic bolus. Do not harvest the 2013 tap step list; use the hospital protocol. FAST/echo. Dog: hemangiosarcoma/idiopathic. Cat: more often CHF, lymphoma, or FIP — still drain if tamponade.
 - Tension pneumothorax: barrel chest, absent lung sounds, crash. Decompress now. Do not wait for radiographs. TFAST: absent glide sign is a hint, not 100%. Thoracocentesis by hospital protocol; if air returns in minutes, a chest tube. Do not Lasix this as CHF. Do not harvest the 2013 open-needle / 9th–11th-rib recipe.
 - Pleural effusion: quiet chest is not automatically CHF. Distressed → tap first (films are not therapy). Save EDTA + sterile red-top: cytology, aerobic **and** anaerobic culture. Pyothorax is not a one-tap-and-home disease (chest tube). Chyle: fluid vs serum triglycerides. Hemothorax: PCV/TS pair. Cat: echo still on the table. Do not harvest 2013 tube sizes.
@@ -76,6 +76,14 @@ If you cannot name which family you are in, you are not writing NAC.
 - Support is fluids (AAHA: reassess perfusion, not a round rate), antiemetic, and **opioid** analgesia. Antibiotics are not routine for uncomplicated sterile pancreatitis. DexSP / NSAID is not the pancreatitis plan.
 - Sucralfate is a GI coating (ulcer / esophagitis conversation), not pancreatitis therapy. Separate it from other orals. △ Plumb for sucralfate, fluids, and the opioid.
 - A fatty or seasoned snack can sit on top of days of cranial pain. If allium (onion/garlic powder) is also on the list, the Heinz-body clock is still open. Do not clear on tonight's PCV.
+
+## Same household, two patients
+
+- Same snack is not the same disease. Cranial-abdomen / pain cat: Forman cluster, opioid conversation, `dc-gi` if that is THIS cat's localization. Exposure-only sibling: allium Heinz clock, `dc-toxin`. Do not copy the discharge.
+- Do not write **"below the typical toxic threshold."** A powder-seasoned jerky label is not a published milligram of allium for this weight. APCC/Plumb name a number or you do not write that sentence.
+- Do not NPO a vomiting cat for **12 hours**. Forman: hepatic lipidosis. If vomiting continues, call — do not paste a canine bland-diet fast.
+- Do not paste leftover dentistry or heart paragraphs onto a toxin sheet.
+- Sucralfate mL is △ Plumb. Coating is not pancreatitis therapy and is not required on the quiet sibling just because the other cat got it.
 
 ## Drugs that are not the plan
 

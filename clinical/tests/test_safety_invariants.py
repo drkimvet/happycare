@@ -142,6 +142,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("glide sign", VERIF.lower())
         self.assertIn("pyothorax", VERIF.lower())
         self.assertIn("anaerobic", VERIF.lower())
+        self.assertIn("hemoabdomen", VERIF.lower())
+        self.assertIn("universal donor", VERIF.lower())
+        self.assertIn("same household is not the same localization", VERIF.lower())
+        self.assertIn("below the typical toxic threshold", VERIF.lower())
+        self.assertIn("12-hour npo", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -151,6 +156,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-master`", MACRO)
         self.assertIn("`ddx-addison`", MACRO)
         self.assertIn("`dc-uo`", MACRO)
+        self.assertIn("household siblings are two patients", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
         self.assertIn("mg/dl", VERIF.lower())
@@ -203,6 +209,12 @@ class PublicCardInvariants(unittest.TestCase):
             "anaerobic",
             "cardiogenic",
             "never bolus a bag that contains kcl",
+            "type-specific",
+            "round belly is not required",
+            "same snack is not the same disease",
+            "below the typical toxic threshold",
+            "12 hours",
+            "two patients",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
