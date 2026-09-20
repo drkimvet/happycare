@@ -291,3 +291,22 @@ Book traps:
 - Post-op ventricular arrhythmias are delayed. △ lidocaine in Plumb. Do not harvest the 2013 antiarrhythmic table.
 
 Night rule: nonproductive retch + tympanic cranial abdomen → right lateral, fluids, decompress, surgery tonight. Not apomorphine. Not “trocar and see you Monday.”
+
+## 129. Sepsis / SIRS / septic shock (Plunkett p01–100 vs Sharp JVECC 2023 + 2025 consensus + Merck)
+
+Legal split shock / SIRS headings. No chapter dump. **Do not harvest printed SIRS 2/4–3/4 tables, HR/RR/temp/WBC bands, 90 mL/kg shock doses, hetastarch, or vasopressor µg lines.**
+
+Agree with Sharp et al. JVECC 2023 (*Defining sepsis in small animals*) and the 2025 veterinary consensus (PubMed: *Sepsis in Dogs and Cats—Consensus Definition and Clinical Criteria*): sepsis is a **life-threatening dysregulated host response to infection that produces organ dysfunction**. Infection plus SIRS is the older construct; SIRS criteria are nonspecific. Identification of organ dysfunction is required to call it sepsis. Septic shock is the subset with profound circulatory / cellular / metabolic failure — do not invent the human Sepsis-3 MAP/lactate pair as a night number.
+
+Merck (bacterial infections / septic shock, owner-facing): sepsis is an emergency; start antimicrobials immediately; waiting decreases survival; surgery is sometimes the source-control step. Merck initial triage: **high-dose corticosteroids are not recommended** in septic, hypovolemic, or cardiogenic shock (no mortality benefit; more morbidity). CIRCI / Addison is a different, deficiency conversation.
+
+Book/public traps:
+
+- Printed 2013 SIRS checkbox and shock-dose / colloid recipes stay in the book. Night fluids are AAHA-style. Never bolus a KCl bag.
+- Do not invent a lactate or MAP as diagnosis or euthanasia. Serial perfusion after resuscitation is the conversation.
+- Fever is not required. Cats may be hypothermic and bradycardic.
+- Antibiotics do not replace OHE, a septic-abdomen explore, or a chest tube (pyometra / GI leak / pyothorax already gated).
+- Do not send feverish or hypothermic collapse home as “just GI.”
+- DexSP is not the first syringe. Azotemic cat: still no DexSP.
+
+Night rule: suspected infection + organ dysfunction / shock → name distributive shock, find the pocket, first antimicrobial tonight, source-control conversation. Not a SIRS math problem.

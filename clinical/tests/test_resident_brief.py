@@ -531,6 +531,31 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("glucose", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_sepsis_is_not_a_sirs_checkbox(self):
+        b = analyze(
+            "dog",
+            "sepsis, SIRS 2 of 4, lactate 6 so euthanize, DexSP and 90 mL/kg then send home as GI",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("organ dysfunction", loc)
+        self.assertIn("distributive", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not a sirs checkbox", joined)
+        self.assertIn("lactate/map", joined)
+        self.assertIn("source", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIn("just gi", joined)
+        self.assertIn("2013", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_sepsis_hypothermia_not_waiting_for_fever(self):
+        b = analyze("cat", "septic shock, hypothermic, start high-dose DexSP")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("hypothermic", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIn("source", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

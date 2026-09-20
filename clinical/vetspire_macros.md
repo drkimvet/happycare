@@ -40,6 +40,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dka` | Assessment | DKA |
 | `ddx-hhs` | Assessment | Hyperosmolar diabetic |
 | `ddx-gdv` | Assessment | GDV |
+| `ddx-sepsis` | Assessment | Sepsis / SIRS / septic shock |
 | `ddx-pyo` | Assessment | Pyometra |
 | `ddx-fate` | Assessment | Feline ATE |
 | `ddx-lily` | Assessment | True lily |
@@ -75,6 +76,7 @@ Suggested names are short so they show up after three letters.
 | `dc-toxin` | Discharge | Generic toxin |
 | `dc-lily` | Discharge | Cat lily |
 | `dc-gdv` | Discharge | GDV surgery / decline |
+| `dc-sepsis` | Discharge | Sepsis / source-control / decline |
 | `dc-pyo` | Discharge | Pyometra |
 | `dc-fate` | Discharge | FATE |
 | `dc-heat` | Discharge | Heatstroke |
@@ -207,6 +209,21 @@ DDX:
 
 Do not: induce emesis. Do not “watch overnight.” Do not harvest 2013 OG-tube/trocar recipes. Do not invent a lactate cutoff. Do not trocar-and-home without a gastropexy conversation.
 Right lateral [reverse C / double bubble]. Avoid VD. Shock type: obstructive + hypovolemic. Post-op VPCs delayed. △ fluids / lidocaine in Plumb.
+
+### `ddx-sepsis`
+
+Sepsis / SIRS — {{patient.name}}
+Suspected infection + organ dysfunction / shock. Fever is not required.
+
+DDX:
+1. Sepsis / septic shock (name the pocket)
+2. Anaphylaxis / distributive look-alike
+3. Hypovolemic or cardiogenic shock without infection
+4. Addison (dog) / SIRS without a source
+5. Pyometra / septic abdomen / pyothorax / uroabdomen / pneumonia / bite / catheter
+
+Do not: invent SIRS 2/4–3/4 or HR/WBC cutoffs. Do not invent a lactate/MAP veto. Do not harvest 2013 shock-dose / hetastarch. Do not lead with high-dose DexSP. Azotemic cat: still no DexSP. Antibiotics do not replace source control.
+Shock type: distributive (± hypovolemic ± cardiogenic). Culture if it does not delay the first antimicrobial. △ fluids / antimicrobial in Plumb.
 
 ### `ddx-pyo`
 
@@ -517,6 +534,16 @@ Watch urine output. Recheck kidney values as scheduled — do not skip because {
 [If surgery done:] Incision care as discussed. No running / jumping until the recheck. The gastropexy lowers the chance the stomach twists again; it does not make bloating impossible. Return for retching, bloated belly, pale gums, collapse, or fainting. Arrhythmias can show up the next day.
 
 [If declined:] Without surgery this condition is usually fatal. You have declined surgery after that discussion. You may return at any time. {{location.phonenumber}}
+
+### `dc-sepsis`
+
+{{patient.name}} was treated for a suspected serious infection with whole-body effects (sepsis). This is hospital-level disease.
+
+[If remaining in hospital / referred:] We are looking for the source of infection and starting antimicrobials. Surgery may be needed to remove that source.
+
+[If declined:] Antibiotics at home are not a substitute for finding and treating the source. {{patient.Pronoun}} can worsen suddenly (collapse, organ failure). You may return at any time.
+
+Return now for collapse, trouble breathing, pale gums, no urine, repeated vomiting, or a swollen belly. {{location.phonenumber}}
 
 ### `dc-pyo`
 

@@ -164,6 +164,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("gdv deepening", VERIF.lower())
         self.assertIn("double-bubble", VERIF.lower())
         self.assertIn("orogastric", VERIF.lower())
+        self.assertIn("sepsis / sirs", VERIF.lower())
+        self.assertIn("organ dysfunction", VERIF.lower())
+        self.assertIn("high-dose corticosteroids", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -180,6 +183,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-imha`", MACRO)
         self.assertIn("`ddx-tbi`", MACRO)
         self.assertIn("`dc-tbi`", MACRO)
+        self.assertIn("`ddx-sepsis`", MACRO)
+        self.assertIn("`dc-sepsis`", MACRO)
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
@@ -257,6 +262,9 @@ class PublicCardInvariants(unittest.TestCase):
             "right lateral",
             "do not invent a lactate cutoff",
             "gastropexy prevents volvulus",
+            "infection plus organ dysfunction",
+            "not a sirs checkbox",
+            "high-dose steroids are not recommended",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

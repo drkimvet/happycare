@@ -90,6 +90,11 @@ NPO12_RE = re.compile(
     re.I,
 )
 GDV_RE = re.compile(r"\b(gdv|gastric dilatation|gastric dilation|gastric volvulus)\b", re.I)
+SEPSIS_RE = re.compile(
+    r"\b(sepsis|septic shock|septicemia|septicaemia|\bsirs\b|"
+    r"septic peritonitis|septic abdomen|endotoxem)\b",
+    re.I,
+)
 PYO_RE = re.compile(r"\bpyometra\b", re.I)
 FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
 HEAT_RE = re.compile(r"\b(heatstroke|heat stroke)\b", re.I)
@@ -795,6 +800,34 @@ def analyze(
             "Post-op VPCs are common and delayed; △ lidocaine in Plumb."
         )
         sources.append("Merck: gastric dilation and volvulus in small animals")
+
+    if spec in {"dog", "cat"} and SEPSIS_RE.search(text):
+        localization = localization or (
+            "Sepsis: infection plus organ dysfunction. Distributive shock "
+            "(± hypovolemic ± cardiogenic) until the pocket is named."
+        )
+        hard_stops.append(
+            "Sepsis is infection plus organ dysfunction, not a SIRS checkbox. Find the source."
+        )
+        do_not.append(
+            "Do not invent SIRS 2/4–3/4 or HR/RR/temp/WBC cutoffs. Do not invent a lactate/MAP veto."
+        )
+        do_not.append(
+            "Do not harvest 2013 shock-dose or hetastarch tables. Do not lead with high-dose DexSP."
+        )
+        do_not.append(
+            "Do not send feverish or hypothermic collapse home as just GI. "
+            "Antibiotics do not replace source control (OHE, explore, chest tube)."
+        )
+        do_next.append(
+            "Name the pocket: abdomen, uterus, urine, chest, bite, catheter, GI leak. "
+            "Culture if it does not delay the first antimicrobial. Fluids AAHA-style; never bolus a KCl bag. "
+            "Cats can be hypothermic and bradycardic. Addison is a different syringe. △ Plumb."
+        )
+        sources.append(
+            "Sharp JVECC 2023 defining sepsis; 2025 consensus (infection + organ dysfunction); "
+            "Merck bacterial infections / septic shock; Merck triage: high-dose steroids not recommended"
+        )
 
     if PYO_RE.search(text):
         hard_stops.append("Pyometra: stabilize, then ovariohysterectomy unless a documented medical-breed plan.")
