@@ -122,3 +122,22 @@ Night rules:
 - Do not yank a strip. Do not push with a prokinetic.
 - Beef jerky is a **label** problem: onion/garlic → delayed Heinz; sugar-free → xylitol/glucose in the dog. One-time beef jerky is not the historical chronic chicken-jerky Fanconi story.
 - Days of a tense cranial abdomen plus tonight's jerky/wrapper are two localizations until imaging says one.
+
+## 118. Shock type: cardiogenic vs hypovolemic (Plunkett p01–100 / p101–200 vs AAHA 2024)
+
+Legal splits name shock types and print furosemide / hypertonic-saline / “shock bolus” tables. No chapter dump. **Do not harvest those numbers.** Night fluids are AAHA 2024.
+
+Agree: shock is inadequate oxygen delivery. Types: hypovolemic, cardiogenic, distributive, obstructive. Cats often skip the hyperdynamic phase.
+
+Book traps:
+
+- Printed shock-dose and furosemide mg/kg tables stay in the book. △ Plumb / the AAHA table / hospital protocol.
+- Hypertonic saline “over 10 minutes in shock” is a 2013 recipe, not a CHF plan.
+- Cat shock is often **bradycardia + hypothermia + hypotension**. Waiting for tachycardia is a dog template.
+
+Night rules:
+
+- Name the type before you bolus.
+- CHF / cardiogenic: do not default a hypovolemic shock bolus. AAHA: fluids often avoided; hypotension in CHF is an inotrope conversation. Furosemide is the edema drug; △ Plumb.
+- Hypovolemic: bolus ≠ overnight drip. Reassess. Never bolus a KCl bag.
+- Hemoabdomen: PCV/TS pair abdomen vs peripheral. Four rodenticide families. Blood product, not vitamin K by default.

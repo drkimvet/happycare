@@ -291,6 +291,26 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("obstruction is off the table", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_chf_no_default_shock_bolus(self):
+        b = analyze("dog", "CHF pulmonary edema, give a shock bolus")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("cardiogenic", joined)
+        self.assertIn("shock bolus", joined)
+        self.assertIn("2013", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_hypovolemic_shock_not_tachycardia(self):
+        b = analyze("cat", "hypovolemic shock, hemoabdomen")
+        joined = " ".join(b["do_not"] + b["do_next"]).lower()
+        self.assertIn("bradycardia", joined)
+        self.assertIn("pcv/ts", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_never_bolus_kcl_bag(self):
+        b = analyze("dog", "shock, bolus the KCl bag")
+        self.assertTrue(any("kcl" in x.lower() for x in b["hard_stops"]))
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
         b = analyze(
             "cat",

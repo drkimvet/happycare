@@ -132,6 +132,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("radiolucent", VERIF.lower())
         self.assertIn("vinyl", VERIF.lower())
         self.assertIn("not lily", VERIF.lower())
+        self.assertIn("shock type", VERIF.lower())
+        self.assertIn("cardiogenic", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -181,6 +183,8 @@ class PublicCardInvariants(unittest.TestCase):
             "few-hour nephrotoxin",
             "low-fat",
             "allium hemolysis",
+            "cardiogenic",
+            "never bolus a bag that contains kcl",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

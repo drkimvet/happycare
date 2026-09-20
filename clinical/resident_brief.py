@@ -108,6 +108,10 @@ ACE_RE = re.compile(r"\bacepromazine\b", re.I)
 STORM_RE = re.compile(r"\b(thunderstorm|storm phobia|noise phobia|separation anxiety)\b", re.I)
 ATROPINE_RE = re.compile(r"\batropine\b", re.I)
 VIT_C_RE = re.compile(r"\b(anorex|not eating|inappeten)\b", re.I)
+CHF_RE = re.compile(r"\b(chf|cardiogenic|congestive heart|pulmonary edema|left-sided heart)\b", re.I)
+HYPOVOLEM_RE = re.compile(r"\b(hypovolem|hemoabdomen|haemoabdomen|hemorrhagic shock)\b", re.I)
+SHOCK_BOLUS_RE = re.compile(r"\b(shock bolus|shock dose|fluid bolus)\b", re.I)
+KCL_BOLUS_RE = re.compile(r"\b(kcl|potassium chloride).{0,24}\bbolus\b|\bbolus\b.{0,24}\b(kcl|potassium chloride)\b", re.I)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -275,6 +279,35 @@ def analyze(
 
     if UOP_RE.search(text) and uop_ml_per_kg_hr is None:
         do_next.append("Quantify UOP in mL/kg/hr. Pad wet ≠ urine output.")
+
+    if spec in {"dog", "cat"} and CHF_RE.search(text):
+        localization = localization or (
+            "Cardiogenic shock / CHF localizes to the pump, not empty vessels."
+        )
+        hard_stops.append("CHF / cardiogenic: do not default a hypovolemic shock bolus.")
+        do_not.append(
+            "Do not harvest 2013 furosemide or hypertonic-saline shock tables. △ Plumb / AAHA."
+        )
+        do_next.append(
+            "Oxygen. Name the shock type. AAHA: hypotension in CHF is an inotrope conversation, not a reflexive bolus."
+        )
+        sources.append("AAHA fluid therapy 2024 cardiac patients; Merck CHF diuretic conversation")
+        if SHOCK_BOLUS_RE.search(text):
+            do_not.append("Do not give a shock bolus because the patient is hypotensive and in CHF.")
+
+    if spec in {"dog", "cat"} and HYPOVOLEM_RE.search(text):
+        do_not.append("Hypovolemic shock: bolus ≠ overnight drip. Reassess perfusion. Do not invent the mL/kg.")
+        if spec == "cat":
+            do_not.append(
+                "Do not wait for a dog-style tachycardia. Cat hypovolemic shock is often bradycardia, hypothermia, and hypotension."
+            )
+        do_next.append("If hemoabdomen: pair PCV/TS abdomen vs peripheral. Blood-product conversation. Vitamin K only if the rodenticide family is anticoagulant.")
+        sources.append("AAHA fluid therapy 2024 hypovolemia; Merck small-volume vs large-volume framing")
+
+    if KCL_BOLUS_RE.search(text):
+        hard_stops.append("Never bolus a bag that contains KCl (AAHA).")
+        do_not.append("Do not run a potassium-supplemented bag as a shock bolus.")
+        sources.append("AAHA fluid therapy 2024: never bolus fluids supplemented with KCl")
 
     if RODENTICIDE_RE.search(text):
         do_not.append("Do not give vitamin K1 for an unknown block or for bromethalin/cholecalciferol/PH3.")

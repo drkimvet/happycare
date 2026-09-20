@@ -50,6 +50,11 @@ If you cannot name which family you are in, you are not writing NAC.
 ## Fluids, AKI, abdomen
 
 - AAHA fluid therapy 2024: shock bolus ≠ "maintenance drip all night." Reassess perfusion, electrolytes, and UOP. Do not run a number because it is round.
+- Name the shock type before you bolus: hypovolemic vs cardiogenic vs distributive vs obstructive.
+- Cardiogenic / CHF: fluids are often avoided (preload). AAHA: hypotension in CHF is an **inotrope** conversation, not a reflexive shock bolus. Furosemide is the edema conversation; △ Plumb. Do not harvest 2013 furosemide or hypertonic-saline tables.
+- Hypovolemic: bolus ≠ overnight drip. Cats often show **bradycardia, hypothermia, hypotension** — do not wait for a dog-style fast heart rate.
+- Never bolus a bag that contains KCl (AAHA).
+- Hemoabdomen: pair PCV/TS (abdomen vs peripheral). Vitamin K only if the rodenticide family is anticoagulant.
 - IRIS AKI: grade from creatinine **and** UOP. UOP is mL/kg/hr from a closed collection or weighed litter, not "the pad looked wet."
 - UOP around 1 mL/kg/hr is not oliguria. Do not treat that cat as anuric.
 - Unilateral renomegaly + soft, non-tense abdomen: localize to that kidney/ureter (hydro/pyo/obstruction). Do **not** drain a free abdomen without paired fluid and serum creatinine and potassium.
