@@ -153,6 +153,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("imha", VERIF.lower())
         self.assertIn("4 drops", VERIF.lower())
         self.assertIn("central pallor", VERIF.lower())
+        self.assertIn("head trauma", VERIF.lower())
+        self.assertIn("corticosteroids are contraindicated", VERIF.lower())
+        self.assertIn("cushing", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -167,6 +170,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-anax`", MACRO)
         self.assertIn("`ddx-imha`", MACRO)
         self.assertIn("`dc-imha`", MACRO)
+        self.assertIn("`ddx-tbi`", MACRO)
+        self.assertIn("`dc-tbi`", MACRO)
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
@@ -238,6 +243,9 @@ class PublicCardInvariants(unittest.TestCase):
             "anemia is not imha",
             "4 drops saline",
             "spherocytes are not a criterion",
+            "steroids are contraindicated",
+            "cushing reflex",
+            "mannitol only if euvolemic",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

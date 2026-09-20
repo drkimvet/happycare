@@ -507,6 +507,22 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("pcv transfusion cutoff", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_tbi_no_dexsp_or_lasix_or_mannitol_while_dry(self):
+        b = analyze(
+            "dog",
+            "head trauma, Cushing reflex, hypovolemic, give DexSP and furosemide and mannitol",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cushing", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("steroids are contraindicated", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIn("furosemide", joined)
+        self.assertIn("mannitol", joined)
+        self.assertIn("hypovolemic", joined)
+        self.assertIn("glucose", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

@@ -154,6 +154,12 @@ IMHA_RE = re.compile(
     r"direct antiglobulin|\bdat\b|hemolytic anemia)\b",
     re.I,
 )
+TBI_RE = re.compile(
+    r"\b(tbi|head trauma|traumatic brain|intracranial pressure|\bicp\b|"
+    r"brain herniat|cushing reflex|decerebrate)\b",
+    re.I,
+)
+MANNITOL_RE = re.compile(r"\bmannitol\b", re.I)
 SHOCK_BOLUS_RE = re.compile(r"\b(shock bolus|shock dose|fluid bolus)\b", re.I)
 KCL_BOLUS_RE = re.compile(r"\b(kcl|potassium chloride).{0,24}\bbolus\b|\bbolus\b.{0,24}\b(kcl|potassium chloride)\b", re.I)
 TAMPONADE_RE = re.compile(
@@ -424,6 +430,33 @@ def analyze(
             do_not.append("Do not diagnose feline IMHA on spherocytes.")
         if ALLIUM_RE.search(text):
             hard_stops.append("Allium Heinz hemolysis is oxidative, not primary IMHA. Do not immunosuppress it.")
+
+    if spec in {"dog", "cat"} and TBI_RE.search(text):
+        localization = (
+            "Secondary brain injury. Cerebral perfusion is MAP minus ICP. "
+            "Cushing reflex (hypertension + bradycardia) is late herniation, not a CHF Lasix cue."
+        )
+        hard_stops.append(
+            "TBI: steroids are contraindicated. DexSP is not the head-trauma plan."
+        )
+        do_not.append(
+            "Do not give hypotonic fluid. Do not harvest 2013 mannitol/hypertonic/30-percent-board tables. "
+            "Do not Lasix intracranial pressure. Do not wait for a skull film as therapy."
+        )
+        do_not.append(
+            "Do not mannitol a hypovolemic patient. Hypertonic saline is the dry-patient conversation; △ hospital / Plumb."
+        )
+        do_next.append(
+            "ABC and perfusion first. Glucose now. Oxygen. Elevate the head, no jugular compression. "
+            "Serial neuro. Seizures: existing status gates. △ any osmotic drug."
+        )
+        sources.append("Plunkett head-trauma headings (legal split): steroids contraindicated; Merck trauma minimum database")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not give DexSP for TBI.")
+        if FUROSEMIDE_RE.search(text):
+            hard_stops.append("Do not give furosemide for intracranial pressure.")
+        if MANNITOL_RE.search(text) and HYPOVOLEM_RE.search(text):
+            hard_stops.append("Do not give mannitol until the patient is volume-resuscitated.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

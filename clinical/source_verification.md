@@ -263,3 +263,17 @@ Book/public traps:
 - 2013 immunosuppressant tables stay in the book. Azotemic cat: still no DexSP.
 
 Night rule: pale + icterus → smear + saline 4:1 + infectious screen before you reach for a steroid.
+
+## 127. TBI / head trauma (Plunkett p301–440 vs public trauma teaching)
+
+Legal split “Head trauma.” No chapter dump. **Do not harvest printed mannitol g/kg, hypertonic 4 mL/kg, 30% board elevation, or ketamine tables.**
+
+Agree: ABC and perfusion first. Cerebral perfusion is MAP minus ICP. Book: **corticosteroids are contraindicated** in head trauma (matches Brain Trauma Foundation / CRASH: steroids increase death). Cushing reflex (hypertension + bradycardia) is late, dangerous ICP. Glucose on the minimum database (Merck trauma). Elevate the head, do not compress the jugulars. Avoid hypotonic fluid. Osmotic therapy is mannitol or hypertonic saline — HTS is the dry-patient conversation because mannitol diureses.
+
+Book traps:
+
+- Printed mannitol/HTS/furosemide-for-ICH lines stay in the book. Night: △ hospital / Plumb. Do not Lasix ICP. Do not mannitol a hypovolemic wreck.
+- Nasal oxygen can make them sneeze (ICP). Book flag, not a recipe.
+- Fixed-pupil prognosis table is a 2013 heading, not a night cutoff.
+
+Night rule: hit-by-car + dull + high BP + slow heart → not Lasix, not DexSP. Oxygen, volume, glucose, head up, then an osmotic drug from the hospital protocol.

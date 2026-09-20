@@ -60,6 +60,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
 | `ddx-hemo` | Assessment | Hemoabdomen |
 | `ddx-imha` | Assessment | IMHA |
+| `ddx-tbi` | Assessment | Head trauma / TBI |
 | `ddx-uroabd` | Assessment | Uroabdomen |
 | `ddx-panc` | Assessment | Pancreatitis |
 | `ddx-uti` | Assessment | Sporadic cystitis |
@@ -79,6 +80,7 @@ Suggested names are short so they show up after three letters.
 | `dc-heat` | Discharge | Heatstroke |
 | `dc-anax` | Discharge | Anaphylaxis / hives going home |
 | `dc-imha` | Discharge | IMHA / hemolysis |
+| `dc-tbi` | Discharge | Head trauma |
 | `dc-sz` | Discharge | Seizure |
 | `dc-ama` | Discharge | Against medical advice |
 | `dc-euth` | Discharge | Euthanasia / aftercare (no PHI) |
@@ -373,6 +375,14 @@ ACVIM 2019: immune destruction + hemolysis. Cats: do not use spherocytes as a cr
 DDX: primary IMHA vs infectious vs zinc vs allium/Heinz vs blood loss vs microangiopathic.
 Do not: pred garlic. Invent a PCV transfusion cutoff. DexSP if azotemic. Harvest 2013 immunosuppressant tables. Skip dog thromboprophylaxis conversation. Universal-donor cat blood. △ Plumb.
 
+### `ddx-tbi`
+
+Head trauma / TBI — {{patient.name}}
+LOC [ ]. Pupils [ ]. Cushing (high BP + bradycardia) [Y/N]. Glucose [ ]. Volume status [ ].
+Secondary injury. CPP = MAP − ICP. Steroids contraindicated.
+Do not: DexSP. Hypotonic fluid. Mannitol while dry. Lasix for ICP. Harvest 2013 osmotic tables. Wait for a skull film.
+Do next: oxygen, perfusion, glucose, head up / no neck pressure, serial neuro. Osmotic drug △ hospital / Plumb.
+
 ### `ddx-uroabd`
 
 Uroabdomen — {{patient.name}}
@@ -538,6 +548,12 @@ Prevent re-exposure: [vaccine brand / insect / drug]. Recheck: [when / where].
 This is hospital-level disease. Give only the medicines we sent, as labeled. Do not add human steroids or leftover antibiotics.
 
 Return now for pale or yellow gums, collapse, trouble breathing, red-brown urine, or if {{patient.pronoun}} will not eat. Recheck blood counts as scheduled — do not skip because {{patient.pronoun}} looks brighter. {{location.phonenumber}}
+
+### `dc-tbi`
+
+{{patient.name}} was treated for head trauma. Keep {{patient.objectPronoun}} quiet, indoors, with the collar loose (no tight pressure on the neck).
+
+Return now for worsening dullness, a seizure, unequal pupils, vomiting that you cannot stop, trouble breathing, or collapse. Do not give human steroids or leftover pain medicine. Recheck as scheduled. {{location.phonenumber}}
 
 ### `dc-heat`
 
