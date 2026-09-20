@@ -296,8 +296,16 @@ def analyze(
 
     if ALLIUM_RE.search(text) and spec in {"dog", "cat"}:
         hard_stops.append("Allium (onion/garlic): Heinz-body hemolysis can be delayed by days.")
+        localization = localization or (
+            "Allium localizes to RBC oxidative injury (Heinz/metHb), not primary feline AKI within hours."
+        )
         do_not.append("Do not clear as fine tonight because the PCV is still normal.")
+        do_not.append("Do not run the lily AKI protocol for garlic. It is not a few-hour nephrotoxin.")
+        do_not.append(
+            "Hemoglobinuric nephrosis, if it happens, is after hemolysis (typically days), not within hours of ingestion."
+        )
         do_next.append("Baseline and delayed PCV/smear. Cats are more sensitive; garlic worse than onion.")
+        do_next.append("If creatinine is already up in a few hours, localize elsewhere.")
         sources.append("Merck: garlic and onion toxicosis")
 
     if spec in {"dog", "cat"} and (PANC_RE.search(text) or TENSE_ABD_RE.search(text)):

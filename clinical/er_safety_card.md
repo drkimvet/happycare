@@ -31,7 +31,7 @@ Public sources only. Not a formulary. **△ confirm every mg/kg in Plumb or the 
 | Guinea pig anorexic | Dietary vitamin C obligate (public exotic nutrition). | Treat like a dog with "just ileus." |
 | Horse + ionophore (monensin etc.) | Cardiotoxic. No specific antidote (Merck equine feed). | Treat as a simple colic drench. |
 | Hops (`Humulus`) | Dog: malignant-hyperthermia picture (Merck). Dantrolene conversation. | NSAID/dipyrone to "bring the fever down." |
-| Onion / garlic / chives | Heinz-body hemolysis, often delayed days. Cats more sensitive. Garlic worse than onion (Merck). | Clear as fine at midnight. |
+| Onion / garlic / chives | Heinz-body hemolysis. Merck: Heinz/metHb may start within 24 h; hemolysis typically 3–5 days. Secondary pigment nephropathy only **after** hemolysis. Not lily. Not a few-hour nephrotoxin. | Treat garlic as AKI-within-hours. Clear at midnight. |
 | Macadamia | Dogs: usually self-limiting weakness/hyperthermia (Merck). | Treat as bromethalin. Miss chocolate/xylitol coating. |
 | Ivermectin / milbemycin | MDR1/ABCB1 herding breeds. Not for turtles/tortoises. | Copy a 2013 table that prints heartworm preventative in **mg/kg**. That unit is a trap. △ Plumb (µg). |
 

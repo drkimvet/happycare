@@ -271,6 +271,18 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("do not clear", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_garlic_not_few_hour_nephrotoxin(self):
+        b = analyze("cat", "garlic toxicity, does it affect kidney within few hrs")
+        loc = b["localization"].lower()
+        self.assertIn("rbc", loc)
+        self.assertIn("not primary feline aki", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("lily", joined)
+        self.assertIn("few-hour nephrotoxin", joined)
+        self.assertIn("after hemolysis", joined)
+        self.assertIn("localize elsewhere", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
         b = analyze(
             "cat",

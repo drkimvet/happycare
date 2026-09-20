@@ -21,7 +21,7 @@ Do not login to Instinct, Plumb, VIN, Scribd, or Vetspire. Do not copy Plumb mon
 
 ## What you must win (this is the job)
 
-1. **Species gate first.** Cat lily is AKI. Dog xylitol is glucose then liver. Hamster/GP/rabbit oral beta-lactam is a hard stop. No species, no dose.
+1. **Species gate first.** Cat lily is AKI. Garlic/onion is delayed Heinz-body hemolysis, **not** AKI within a few hours. Dog xylitol is glucose then liver. Hamster/GP/rabbit oral beta-lactam is a hard stop. No species, no dose.
 2. **Localize before you treat the abdomen.** Unilateral renomegaly + soft belly + UOP around 1 mL/kg/hr is that kidney/ureter until proven otherwise. Do not drain a free abdomen without fluid:serum creatinine and potassium. Tense **upper / cranial** abdomen for days is pancreas / stomach / biliary / cranial SI until imaging says otherwise; do not collapse it to tonight's meal. fPL is supportive, not a diagnosis (Forman ACVIM). Vinyl / plastic wrapper is a **GI foreign body**, not a vinyl-chloride toxidrome; plastic is often radiolucent.
 3. **Refuse invented doses.** If the number is not on a named public guideline or the attending's stated hospital protocol, write `△ confirm in Plumb` and stop. Never blend three NAC families into one schedule.
 4. **Flag outdated vs current.** Plunkett 2013 is a study book, not 2026 standard of care. Prefer IRIS AKI 2023/24, AAHA fluids 2024, ISCAID 2019, Forman ACVIM pancreatitis, RECOVER/Pardo, Merck public pages. If a book conflicts with chemistry (Zn3P2 → **PH3 phosphine**, not phosgene), say so.
