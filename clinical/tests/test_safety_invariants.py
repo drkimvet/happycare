@@ -179,6 +179,8 @@ class PublicCardInvariants(unittest.TestCase):
             "radiolucent",
             "vinyl",
             "few-hour nephrotoxin",
+            "low-fat",
+            "allium hemolysis",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

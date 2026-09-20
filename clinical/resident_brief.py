@@ -47,6 +47,7 @@ TENSE_ABD_RE = re.compile(
 PANC_RE = re.compile(r"\b(pancreati|fpl|spec fpl|snap fpl|fpli|triaditis)\b", re.I)
 SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
 DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
+LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
 UOP_RE = re.compile(r"\buop\b|urine output|oligur|anur", re.I)
 BLOCKED_RE = re.compile(r"\b(straining|blocked|urethral obstruct|flc|unable to urinate)\b", re.I)
 RODENTICIDE_RE = re.compile(r"\b(rodenticide|bromethalin|cholecalciferol|brodifacoum|bromadiolone|warfarin)\b", re.I)
@@ -330,6 +331,19 @@ def analyze(
 
     if SUCRALFATE_RE.search(text):
         do_not.append("Sucralfate is a GI coating, not pancreatitis therapy. Separate it from other orals. △ Plumb.")
+
+    if spec == "cat" and LOWFAT_RE.search(text):
+        hard_stops.append(
+            "Cat: Forman does not require a canine-style low-fat diet. "
+            "Evidence that dietary fat is deleterious in cats with pancreatitis is not available."
+        )
+        do_not.append(
+            "Do not copy a 3-5 day low-fat prescription from canine pancreatitis or from the allium hemolysis clock."
+        )
+        do_next.append(
+            "Offer food now if obstruction is off the table. Highly digestible / what the cat will eat. No allium snacks."
+        )
+        sources.append("Forman ACVIM 2021 feline pancreatitis nutrition")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

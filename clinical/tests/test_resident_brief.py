@@ -283,6 +283,14 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("localize elsewhere", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_low_fat_not_forman_default(self):
+        b = analyze("cat", "low fat diet for 3-5 days, pancreatitis")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("canine-style", joined)
+        self.assertIn("allium hemolysis clock", joined)
+        self.assertIn("obstruction is off the table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
         b = analyze(
             "cat",
