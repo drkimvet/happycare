@@ -226,6 +226,8 @@ class PublicCardInvariants(unittest.TestCase):
             "gallbladder halo",
             "weak positive snap is abnormal",
             "not a diagnosis and not a negative",
+            "buprenorphine is adequate for most cats",
+            "sphincter-of-oddi",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

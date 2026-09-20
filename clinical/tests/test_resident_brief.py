@@ -458,6 +458,16 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotRegex(" ".join(b["hard_stops"] + b["do_not"]), r"\b5\.[34]\b")
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_one_time_opioid_not_oddi_reason_to_skip_analgesia(self):
+        b = analyze("cat", "mild pancreatitis, SNAP fPL weak positive, one-time buprenorphine")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("analgesia, not a pancreatitis disease-modifier", joined)
+        self.assertIn("buprenorphine is adequate for most cats", joined)
+        self.assertIn("sphincter-of-oddi", joined)
+        self.assertIn("nsaid", joined)
+        self.assertIn("ileus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

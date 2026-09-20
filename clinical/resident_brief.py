@@ -50,6 +50,10 @@ FPL_SNAP_WEAK_RE = re.compile(
     r"\b(?:weak|equivocal|faint|light).{0,48}\b(?:snap\s*fpl|fpl\s*snap|spec\s*fpl|fpli|\bfpl\b)\b",
     re.I,
 )
+OPIOID_RE = re.compile(
+    r"\b(opioid|opiate|buprenorphine|methadone|fentanyl|hydromorphone|morphine|butorphanol)\b",
+    re.I,
+)
 SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
 DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
 LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
@@ -568,6 +572,18 @@ def analyze(
             )
             do_next.append(
                 "Cluster: signs plus cranial imaging (AUS). Spec fPL only if the owner wants a number. Offer food."
+            )
+        if OPIOID_RE.search(text):
+            hard_stops.append(
+                "One-time opioid is analgesia, not a pancreatitis disease-modifier. "
+                "Forman: opioids are the primary analgesics; buprenorphine is adequate for most cats."
+            )
+            do_not.append(
+                "Do not withhold a single opioid for theoretical sphincter-of-Oddi spasm. "
+                "Do not switch to an NSAID because the SNAP was weak."
+            )
+            do_not.append(
+                "Opioid ileus is a watch if linear FB is still on the list, not a reason to leave a painful cat untreated."
             )
 
     if SUCRALFATE_RE.search(text):
