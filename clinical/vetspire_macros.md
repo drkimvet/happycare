@@ -410,7 +410,9 @@ Return to {{location.name}} ({{location.phonenumber}}) or the nearest emergency 
 
 {{patient.name}} is going home after evaluation for vomiting / diarrhea.
 
-Offer a bland diet in small amounts as discussed. Water in small frequent amounts. No table scraps, bones, grapes, raisins, xylitol gum/peanut butter, onions, or garlic.
+Offer small frequent meals of food {{patient.name}} will actually eat. Water always available. No table scraps, bones, grapes, raisins, xylitol gum/peanut butter, onions, or garlic.
+
+Cat: Forman does not require a canine-style low-fat diet. Do not withhold food for 12 hours if vomiting — call us. Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
 
 Call {{location.phonenumber}} if vomiting continues, there is black or bloody stool, {{patient.pronoun}} will not drink, becomes lethargic, or the belly becomes tight.
 
@@ -458,6 +460,8 @@ If discharged after stabilization: give insulin and food exactly as written. Do 
 {{patient.name}} was evaluated for possible toxin exposure: [product].
 
 At home: prevent re-exposure. Bring the package if you find it. Give only medicines we sent.
+Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
+If allium (onion/garlic): watch for pale gums, weakness, red-brown urine, or yellow gums over several days. Recheck PCV/smear as scheduled — tonight’s normal PCV does not close the clock.
 
 Return now for seizures, tremors, trouble breathing, collapse, repeated vomiting, or no urine. {{location.phonenumber}}
 ASPCA Animal Poison Control (you may call): 888-426-4435 (fee may apply).
