@@ -149,8 +149,16 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIsNone(b["mg_per_kg"])
 
     def test_gdv_no_emesis(self):
-        b = analyze("dog", "GDV, induce emesis")
+        b = analyze("dog", "GDV, induce emesis, trocar and send home, lactate 9 so euthanize")
         self.assertTrue(any("emesis" in x.lower() for x in b["do_not"]))
+        loc = b["localization"].lower()
+        self.assertIn("obstructive", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("right lateral", joined)
+        self.assertIn("lactate cutoff", joined)
+        self.assertIn("gastropexy", joined)
+        self.assertIn("2013", joined)
+        self.assertIsNone(b["mg_per_kg"])
 
     def test_rabbit_hold_prokinetic_until_obstruction_off(self):
         b = analyze("rabbit", "GI stasis, start metoclopramide and syringe-feed")

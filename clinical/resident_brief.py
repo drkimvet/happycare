@@ -777,9 +777,24 @@ def analyze(
         sources.append("Merck: garlic and onion toxicosis; xylitol if the label says sugar-free")
 
     if spec == "dog" and GDV_RE.search(text):
+        localization = (
+            "Gastric volvulus: obstructive plus hypovolemic shock. "
+            "Caudal vena cava and portal vein are compressed until the stomach is decompressed and derotated."
+        )
         hard_stops.append("GDV: stabilize, decompress, surgery. Not an observe-overnight disease.")
         do_not.append("Do not induce emesis for GDV.")
-        sources.append("Merck/MSD: gastric dilation and volvulus in small animals")
+        do_not.append(
+            "Do not harvest 2013 orogastric-tube or trocar recipes. Do not send home after a trocar without a gastropexy conversation."
+        )
+        do_not.append(
+            "Do not invent a lactate cutoff or euthanize on one number. Serial lactate after resuscitation is the conversation."
+        )
+        do_next.append(
+            "Right lateral radiograph (reverse C / double bubble). Avoid ventrodorsal (aspiration). "
+            "Fluids AAHA-style; never bolus a KCl bag. Gastropexy prevents volvulus recurrence, not all bloat. "
+            "Post-op VPCs are common and delayed; △ lidocaine in Plumb."
+        )
+        sources.append("Merck: gastric dilation and volvulus in small animals")
 
     if PYO_RE.search(text):
         hard_stops.append("Pyometra: stabilize, then ovariohysterectomy unless a documented medical-breed plan.")

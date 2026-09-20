@@ -156,6 +156,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("head trauma", VERIF.lower())
         self.assertIn("corticosteroids are contraindicated", VERIF.lower())
         self.assertIn("cushing", VERIF.lower())
+        self.assertIn("gdv deepening", VERIF.lower())
+        self.assertIn("double-bubble", VERIF.lower())
+        self.assertIn("orogastric", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -246,6 +249,9 @@ class PublicCardInvariants(unittest.TestCase):
             "steroids are contraindicated",
             "cushing reflex",
             "mannitol only if euvolemic",
+            "right lateral",
+            "do not invent a lactate cutoff",
+            "gastropexy prevents volvulus",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

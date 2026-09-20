@@ -205,7 +205,8 @@ DDX:
 4. Splenic torsion
 5. Severe pancreatitis / peritonitis
 
-Do not: induce emesis. Do not “watch overnight.” Stabilize, decompress, surgery. △ fluids/analgesia in Plumb.
+Do not: induce emesis. Do not “watch overnight.” Do not harvest 2013 OG-tube/trocar recipes. Do not invent a lactate cutoff. Do not trocar-and-home without a gastropexy conversation.
+Right lateral [reverse C / double bubble]. Avoid VD. Shock type: obstructive + hypovolemic. Post-op VPCs delayed. △ fluids / lidocaine in Plumb.
 
 ### `ddx-pyo`
 
@@ -513,7 +514,7 @@ Watch urine output. Recheck kidney values as scheduled — do not skip because {
 
 {{patient.name}} has (or we could not rule out) gastric dilatation-volvulus — a twisted stomach. This is a surgical emergency.
 
-[If surgery done:] Incision care as discussed. No running / jumping until the recheck. Return for retching, bloated belly, pale gums, or collapse.
+[If surgery done:] Incision care as discussed. No running / jumping until the recheck. The gastropexy lowers the chance the stomach twists again; it does not make bloating impossible. Return for retching, bloated belly, pale gums, collapse, or fainting. Arrhythmias can show up the next day.
 
 [If declined:] Without surgery this condition is usually fatal. You have declined surgery after that discussion. You may return at any time. {{location.phonenumber}}
 

@@ -277,3 +277,17 @@ Book traps:
 - Fixed-pupil prognosis table is a 2013 heading, not a night cutoff.
 
 Night rule: hit-by-car + dull + high BP + slow heart → not Lasix, not DexSP. Oxygen, volume, glucose, head up, then an osmotic drug from the hospital protocol.
+
+## 128. GDV deepening (Plunkett p201–300 vs Merck)
+
+Legal split “Gastric dilatation and volvulus.” No chapter dump. **Do not harvest OG-tube diameters, trocar rib spaces, lidocaine tables, or lactate cutoffs as euthanasia numbers.**
+
+Agree with Merck: right lateral (+ DV, not VD — aspiration). Classic reverse C / Popeye / double-bubble (pylorus dorsal-cranial, soft-tissue shelf). Stabilize, decompress, surgery, **gastropexy**. Pexy prevents volvulus recurrence, not all dilation. Hyperlactatemia is common from hypotension; Merck associates >6 mmol/L with necrosis risk — still not a veto; serial decline after resuscitation is the better conversation.
+
+Book traps:
+
+- Printed orogastric “largest-diameter tube” and trocar step lists stay in the book. Night: hospital protocol. Do not linger on a tube while they die.
+- Food bloat vs GDV is a **film**, not a guess. Any breed can GDV; deep-chested dogs are over-represented; cats are rare.
+- Post-op ventricular arrhythmias are delayed. △ lidocaine in Plumb. Do not harvest the 2013 antiarrhythmic table.
+
+Night rule: nonproductive retch + tympanic cranial abdomen → right lateral, fluids, decompress, surgery tonight. Not apomorphine. Not “trocar and see you Monday.”
