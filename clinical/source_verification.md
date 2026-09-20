@@ -233,3 +233,19 @@ Night rules:
 - Do not paste leftover dentistry or heart paragraphs onto a toxin sheet.
 - Do not write “below the typical toxic threshold” unless APCC/Plumb named a number for THIS product and THIS weight.
 - Sucralfate mL stays △ Plumb. Coating is not the allium antidote.
+
+## 125. Anaphylaxis / vaccine-sting collapse (Plunkett p01–100 vs Merck Jan 2024)
+
+Legal split “Anaphylactic shock and acute allergic reactions.” No chapter dump. **Do not harvest the printed epinephrine µg, 90 mL/kg, hetastarch, DexSP, or diphenhydramine tables.**
+
+Agree with Merck hypersensitivity (Tizard, Jan 2024 / May 2025): type I, seconds to minutes, epinephrine first, fluids for shock, corticosteroids if needed. **Dog shock organ is the liver** (hepatic-vein constriction, portal hypertension, GI signs). Most other species (including the cat) lead with the **lung**. Hives / facial edema are milder type I and can be absent in crashing dogs.
+
+Book/public traps:
+
+- Printed shock-dose / hetastarch / epi 1:10 000 mL and µg lines stay in the book. Night fluids are AAHA-style. △ crash-cart / Plumb for epinephrine. RECOVER high-dose epi is a CPA algorithm, not anaphylaxis.
+- Diphenhydramine and DexSP are not the first syringe for shock. Azotemic cat: still no DexSP.
+- Do not wait for hives. Book already says a shocked patient may have **no facial swelling or urticaria**.
+- Gallbladder halo / wall edema + ALT can support canine anaphylaxis (Quantz 2009 JVECC). **Not pathognomonic** — pericardial effusion and right-sided heart failure also thicken the gallbladder wall. FAST the heart.
+- Do not copy a DexSP-first “anaphylaxis hemoabdomen” recipe from a lecture PDF. If there is abdominal fluid, pair PCV/TS.
+
+Night rule: collapsing dog after a vaccine or sting, with or without hives → name distributive shock, reach for epinephrine, look at the gallbladder **and** the heart.

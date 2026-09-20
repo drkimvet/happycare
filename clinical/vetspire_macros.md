@@ -57,6 +57,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gi` | Assessment | Vomit/diarrhea |
 | `ddx-resp` | Assessment | Dyspnea |
 | `ddx-chf` | Assessment | CHF vs other shock |
+| `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
 | `ddx-hemo` | Assessment | Hemoabdomen |
 | `ddx-uroabd` | Assessment | Uroabdomen |
 | `ddx-panc` | Assessment | Pancreatitis |
@@ -75,6 +76,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pyo` | Discharge | Pyometra |
 | `dc-fate` | Discharge | FATE |
 | `dc-heat` | Discharge | Heatstroke |
+| `dc-anax` | Discharge | Anaphylaxis / hives going home |
 | `dc-sz` | Discharge | Seizure |
 | `dc-ama` | Discharge | Against medical advice |
 | `dc-euth` | Discharge | Euthanasia / aftercare (no PHI) |
@@ -342,6 +344,16 @@ Shock type — {{patient.name}}
 Hypovolemic vs cardiogenic vs distributive vs obstructive.
 
 If cardiogenic: no shock-bolus-as-default. If hypovolemic: AAHA 2024 — bolus ≠ overnight drip. Reassess perfusion, electrolytes, UOP.
+If distributive (anaphylaxis): epinephrine is the crash drug, not diphenhydramine / DexSP. Dog: liver/portal, hives may be absent. Cat: respiratory. Gallbladder halo is not pathognomonic — look at the heart.
+
+### `ddx-anax`
+
+Anaphylaxis — {{patient.name}}
+{{patient.species}}. Trigger: [vaccine / sting / drug / food / unknown]. Hives [Y/N]. Collapse [Y/N].
+Dog shock organ = liver / portal (GI). Cat = respiratory. Do not wait for skin signs.
+Gallbladder halo [Y/N] — not pathognomonic (tamponade / right heart also). Heart FAST [ ].
+Abdominal fluid: pair PCV/TS.
+Do not: lead with diphenhydramine or DexSP. Do not harvest 2013 epi/fluid tables. No RECOVER high-dose epi. Azotemic cat: still no DexSP. △ crash-cart / Plumb.
 
 ### `ddx-hemo`
 
@@ -496,6 +508,16 @@ Watch urine output. Recheck kidney values as scheduled — do not skip because {
 Home: pain medicine as labeled only. Watch for breathing trouble (heart failure) and for the legs becoming cold or more painful again. We do not promise that clot-dissolving drugs will restore the legs.
 
 Return now for open-mouth breathing, collapse, or unbearable pain. {{location.phonenumber}}
+
+### `dc-anax`
+
+{{patient.name}} was treated for an allergic / anaphylactic reaction (vaccine, insect sting, drug, or unknown trigger).
+
+Give only the medicines we sent, as labeled. Do not add human allergy pills or leftover steroids.
+
+Return to {{location.name}} ({{location.phonenumber}}) or the nearest emergency clinic **now** if {{patient.name}} has trouble breathing, pale or blue gums, collapse, repeated vomiting or diarrhea, a swollen face that is worsening, or you cannot wake {{patient.objectPronoun}}. A second wave of signs can show up after {{patient.pronoun}} looks better.
+
+Prevent re-exposure: [vaccine brand / insect / drug]. Recheck: [when / where].
 
 ### `dc-heat`
 

@@ -344,6 +344,38 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("round belly", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_anaphylaxis_epi_not_benadryl_or_hives_required(self):
+        b = analyze(
+            "dog",
+            "anaphylaxis after vaccine, collapse, no hives, gallbladder halo, give diphenhydramine and DexSP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("liver", loc)
+        self.assertIn("hives may be absent", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("epinephrine is the crash drug", joined)
+        self.assertIn("diphenhydramine does not reverse", joined)
+        self.assertIn("not pathognomonic", joined)
+        self.assertIn("2013", joined)
+        self.assertNotIn("90 ml/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_anaphylaxis_respiratory_not_high_dose_epi(self):
+        b = analyze("cat", "anaphylaxis, vaccine reaction, dyspnea, high-dose epinephrine")
+        loc = b["localization"].lower()
+        self.assertIn("respiratory", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("epinephrine is the crash drug", joined)
+        self.assertIn("high-dose epinephrine is not the anaphylaxis plan", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_anaphylaxis_epinephrine_is_not_cpr(self):
+        b = analyze("dog", "anaphylaxis, give epinephrine")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertNotIn("2-minute cycles", joined)
+        self.assertIn("epinephrine is the crash drug", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_sibling_cats_not_same_discharge_or_toxic_threshold_or_12h_npo(self):
         b = analyze(
             "cat",

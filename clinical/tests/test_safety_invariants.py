@@ -147,6 +147,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("same household is not the same localization", VERIF.lower())
         self.assertIn("below the typical toxic threshold", VERIF.lower())
         self.assertIn("12-hour npo", VERIF.lower())
+        self.assertIn("anaphylaxis", VERIF.lower())
+        self.assertIn("shock organ", VERIF.lower())
+        self.assertIn("not pathognomonic", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -157,6 +160,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-addison`", MACRO)
         self.assertIn("`dc-uo`", MACRO)
         self.assertIn("household siblings are two patients", MACRO.lower())
+        self.assertIn("`ddx-anax`", MACRO)
+        self.assertIn("`dc-anax`", MACRO)
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
         self.assertIn("mg/dl", VERIF.lower())
@@ -215,6 +220,9 @@ class PublicCardInvariants(unittest.TestCase):
             "below the typical toxic threshold",
             "12 hours",
             "two patients",
+            "epinephrine is the crash drug",
+            "hives may be absent",
+            "gallbladder halo",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

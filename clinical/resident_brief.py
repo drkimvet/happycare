@@ -93,7 +93,15 @@ BUTAZONE_RE = re.compile(r"\b(phenylbutazone|bute|right dorsal colitis)\b", re.I
 BACTERIURIA_RE = re.compile(r"\b(subclinical bacteriuria|asymptomatic bacteriuria|bacteria on culture|culture positive)\b", re.I)
 UTI_RE = re.compile(r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|enrofloxacin|baytril|14.?day)\b", re.I)
 FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
-CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover|epinephrine|atropine)\b", re.I)
+CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
+ANAPHYLAXIS_RE = re.compile(
+    r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
+    r"\bbee sting|\bwasp sting|\bhornet sting|\byellow jacket\b|\bangioedema\b|"
+    r"\burticaria\b|\bhives\b|\bfacial swelling\b|"
+    r"\bgallbladder (halo|wall edema)\b|\bgbwe\b",
+    re.I,
+)
+DIPHEN_RE = re.compile(r"\b(diphenhydramine|benadryl)\b", re.I)
 HIGH_DOSE_EPI_RE = re.compile(r"\b(high-?dose (epi|epinephrine)|0\.1\s*mg/kg\s*(epi|epinephrine))\b", re.I)
 DKA_RE = re.compile(r"\b(dka|ketoacid|diabetic keto)", re.I)
 SEIZURE_RE = re.compile(r"\b(seizure|status epileptic|cluster seizure|ictal|postictal)", re.I)
@@ -431,6 +439,34 @@ def analyze(
         sources.append("Merck diagnostic techniques for pleural fluid; Plunkett pleural-effusion headings (legal split, no dump)")
         if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
             do_not.append("Do not Lasix pleural fluid until CHF is actually the localization.")
+
+    if spec in {"dog", "cat"} and ANAPHYLAXIS_RE.search(text):
+        anax_loc = (
+            "Distributive shock (type I). Dog: liver / hepatic-vein / portal pooling — GI signs, "
+            "hives may be absent. Cat: respiratory tract."
+        )
+        localization = f"{localization} Also {anax_loc}" if localization else anax_loc
+        hard_stops.append(
+            "Anaphylactic shock: epinephrine is the crash drug, not diphenhydramine and not DexSP."
+        )
+        do_not.append("Do not wait for hives. Do not send a collapsing vaccine or sting patient home as 'just GI.'")
+        do_not.append(
+            "Do not harvest 2013 epinephrine, fluid, or hetastarch tables. Do not use RECOVER high-dose epi. △ crash-cart / Plumb."
+        )
+        do_not.append(
+            "Gallbladder halo / wall edema is associated in dogs, not pathognomonic. Tamponade and right-sided heart fail also."
+        )
+        do_next.append(
+            "Oxygen. Name distributive shock. Fluids AAHA-style (reassess; never bolus a KCl bag). "
+            "FAST the gallbladder AND the heart. Pair PCV/TS if there is abdominal fluid."
+        )
+        sources.append("Merck hypersensitivity / systemic anaphylaxis (Tizard, Jan 2024); Quantz 2009 JVECC ALT/GB wall")
+        if DIPHEN_RE.search(text):
+            hard_stops.append("Diphenhydramine does not reverse anaphylactic shock.")
+        if DEX_RE.search(text):
+            do_not.append("A steroid is adjunct at most, not the first syringe. Azotemic cat: still no DexSP.")
+        if HIGH_DOSE_EPI_RE.search(text):
+            hard_stops.append("High-dose epinephrine is not the anaphylaxis plan either.")
 
     if RODENTICIDE_RE.search(text):
         do_not.append("Do not give vitamin K1 for an unknown block or for bromethalin/cholecalciferol/PH3.")
