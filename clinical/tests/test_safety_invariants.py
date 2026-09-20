@@ -184,6 +184,7 @@ class PublicCardInvariants(unittest.TestCase):
             "low-fat",
             "allium hemolysis",
             "digestibility",
+            "high fiber is not easy-to-digest",
             "cardiogenic",
             "never bolus a bag that contains kcl",
         ):

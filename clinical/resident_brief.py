@@ -48,6 +48,7 @@ PANC_RE = re.compile(r"\b(pancreati|fpl|spec fpl|snap fpl|fpli|triaditis)\b", re
 SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
 DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
 LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
+FIBER_RE = re.compile(r"\b(high[ -]?fib(?:er|re)|fibre|fiber)\b", re.I)
 UOP_RE = re.compile(r"\buop\b|urine output|oligur|anur", re.I)
 BLOCKED_RE = re.compile(r"\b(straining|blocked|urethral obstruct|flc|unable to urinate)\b", re.I)
 RODENTICIDE_RE = re.compile(r"\b(rodenticide|bromethalin|cholecalciferol|brodifacoum|bromadiolone|warfarin)\b", re.I)
@@ -367,8 +368,8 @@ def analyze(
 
     if spec == "cat" and LOWFAT_RE.search(text):
         hard_stops.append(
-            "Cat: Forman does not require a canine-style low-fat diet. "
-            "Evidence that dietary fat is deleterious in cats with pancreatitis is not available."
+            "Low fat is fine as an easy-to-digest lever (not greasy leftovers). "
+            "It is not feline pancreatitis therapy and not the allium 3-5 day clock."
         )
         do_not.append(
             "Do not copy a 3-5 day low-fat prescription from canine pancreatitis or from the allium hemolysis clock."
@@ -378,6 +379,19 @@ def analyze(
             "If the story is hard dry jerky, name digestibility — do not fight a soft diet as if it were a canine fat prescription."
         )
         sources.append("Forman ACVIM 2021 feline pancreatitis nutrition")
+
+    if spec == "cat" and FIBER_RE.search(text):
+        hard_stops.append(
+            "High fiber is not the easy-to-digest diet. It adds residue and bulk."
+        )
+        do_not.append(
+            "Do not send a hairball/weight/constipation high-fiber food as the post-jerky or pancreatitis plan."
+        )
+        do_next.append(
+            "Easy-to-digest means highly digestible, moist, small meals. Low fat is acceptable as that lever "
+            "(not greasy leftovers). High fiber works against it."
+        )
+        sources.append("Forman ACVIM 2021: highly digestible; fat is not the feline lever")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

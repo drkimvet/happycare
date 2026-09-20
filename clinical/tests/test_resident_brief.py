@@ -287,9 +287,17 @@ class ResidentBriefTests(unittest.TestCase):
     def test_cat_low_fat_not_forman_default(self):
         b = analyze("cat", "low fat diet for 3-5 days, pancreatitis")
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
-        self.assertIn("canine-style", joined)
+        self.assertIn("easy-to-digest lever", joined)
         self.assertIn("allium hemolysis clock", joined)
         self.assertIn("obstruction is off the table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_high_fiber_not_easy_digest(self):
+        b = analyze("cat", "high fiber diet after beef jerky, easy to digest")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("high fiber is not the easy-to-digest", joined)
+        self.assertIn("residue", joined)
+        self.assertIn("low fat is acceptable", joined)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_chf_no_default_shock_bolus(self):

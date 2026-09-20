@@ -412,7 +412,7 @@ Return to {{location.name}} ({{location.phonenumber}}) or the nearest emergency 
 
 Offer small frequent meals of food {{patient.name}} will actually eat. Water always available. No table scraps, bones, grapes, raisins, xylitol gum/peanut butter, onions, or garlic.
 
-Cat: Forman does not require a canine-style low-fat diet as pancreatitis therapy. After hard/dry jerky the lever is soft, highly digestible food (moisture), not fat percent. Do not withhold food for 12 hours if vomiting — call us. Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
+Cat: easy-to-digest = moist, highly digestible, small meals. Low fat is fine as that lever (not greasy leftovers). Do not use a high-fiber hairball/weight diet. Forman does not make fat the pancreatitis therapy. Do not withhold food for 12 hours if vomiting — call us. Do not write “below the toxic threshold” unless APCC/Plumb named a number for THIS product.
 
 Call {{location.phonenumber}} if vomiting continues, there is black or bloody stool, {{patient.pronoun}} will not drink, becomes lethargic, or the belly becomes tight.
 
