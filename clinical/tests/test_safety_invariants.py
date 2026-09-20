@@ -150,6 +150,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("anaphylaxis", VERIF.lower())
         self.assertIn("shock organ", VERIF.lower())
         self.assertIn("not pathognomonic", VERIF.lower())
+        self.assertIn("imha", VERIF.lower())
+        self.assertIn("4 drops", VERIF.lower())
+        self.assertIn("central pallor", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -162,6 +165,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("household siblings are two patients", MACRO.lower())
         self.assertIn("`ddx-anax`", MACRO)
         self.assertIn("`dc-anax`", MACRO)
+        self.assertIn("`ddx-imha`", MACRO)
+        self.assertIn("`dc-imha`", MACRO)
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
@@ -230,6 +235,9 @@ class PublicCardInvariants(unittest.TestCase):
             "sphincter-of-oddi",
             "a cc/ml draw is not a dose",
             "gabapentin does not replace the opioid",
+            "anemia is not imha",
+            "4 drops saline",
+            "spherocytes are not a criterion",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

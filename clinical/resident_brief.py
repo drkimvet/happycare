@@ -149,6 +149,11 @@ HEMOABD_RE = re.compile(
     r"\b(hemoabdomen|haemoabdomen|hemoperitoneum|haemoperitoneum)\b",
     re.I,
 )
+IMHA_RE = re.compile(
+    r"\b(imha|immune-mediated hemolytic|autoagglutination|spherocyte|coombs|"
+    r"direct antiglobulin|\bdat\b|hemolytic anemia)\b",
+    re.I,
+)
 SHOCK_BOLUS_RE = re.compile(r"\b(shock bolus|shock dose|fluid bolus)\b", re.I)
 KCL_BOLUS_RE = re.compile(r"\b(kcl|potassium chloride).{0,24}\bbolus\b|\bbolus\b.{0,24}\b(kcl|potassium chloride)\b", re.I)
 TAMPONADE_RE = re.compile(
@@ -391,6 +396,34 @@ def analyze(
             "If still crashing, surgery is the conversation. Negative tap does not rule out retroperitoneal bleed."
         )
         sources.append("Merck blood transfusions; Plunkett hemoperitoneum headings (legal split, no dump)")
+
+    if spec in {"dog", "cat"} and IMHA_RE.search(text):
+        imha_loc = (
+            "Intravascular or extravascular hemolysis, not empty-vessel blood loss. "
+            "TS usually holds in hemolysis; it falls with hemorrhage."
+        )
+        localization = f"{localization} Also {imha_loc}" if localization else imha_loc
+        hard_stops.append(
+            "Anemia is not IMHA until ACVIM 2019: immune destruction plus hemolysis. "
+            "Saline agglutination is 1 drop blood + 4 drops saline — rouleaux disperses."
+        )
+        do_not.append(
+            "Do not call slide clumping IMHA without saline. Do not use spherocytes as a feline criterion "
+            "(cats lack consistent central pallor). Do not invent a PCV transfusion cutoff."
+        )
+        do_not.append(
+            "Do not start prednisolone for onion/garlic Heinz or zinc pyknocytes. "
+            "Do not harvest 2013 immunosuppressant tables. Azotemic cat: still no DexSP."
+        )
+        do_next.append(
+            "Spun PCV if agglutinating. Smear in the monolayer. DAT before steroids if you can. "
+            "Infectious screen. Cats: type-specific blood. Dog: thromboprophylaxis is the conversation △ Plumb."
+        )
+        sources.append("ACVIM IMHA diagnosis 2019 (Garden); ACVIM IMHA treatment 2019 (Swann); Merck regenerative anemias")
+        if spec == "cat":
+            do_not.append("Do not diagnose feline IMHA on spherocytes.")
+        if ALLIUM_RE.search(text):
+            hard_stops.append("Allium Heinz hemolysis is oxidative, not primary IMHA. Do not immunosuppress it.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

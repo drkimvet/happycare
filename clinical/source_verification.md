@@ -249,3 +249,17 @@ Book/public traps:
 - Do not copy a DexSP-first “anaphylaxis hemoabdomen” recipe from a lecture PDF. If there is abdominal fluid, pair PCV/TS.
 
 Night rule: collapsing dog after a vaccine or sting, with or without hives → name distributive shock, reach for epinephrine, look at the gallbladder **and** the heart.
+
+## 126. IMHA (Plunkett p201–300 vs ACVIM 2019 diagnosis + treatment)
+
+Legal split canine/feline anemia headings. No chapter dump. **Do not harvest printed PCV bands, platelet/hpf math, pred/azathioprine/cyclophosphamide, or transfusion mL/kg.**
+
+Agree with ACVIM 2019 Garden (diagnosis) and Swann (canine treatment) and Merck regenerative anemias: anemia is not IMHA until markers of immune destruction **and** hemolysis. SAT: 1 drop blood + 4 drops saline; persistent clumps, not rouleaux. DAT before immunosuppression if possible. Spherocytes are a **dog** criterion; feline RBCs lack consistent central pallor. ~30% of dogs are non-regenerative at presentation. Hemolysis holds TS; hemorrhage drops it. Spun PCV if agglutination. Transfuse for oxygen-carrying failure, not a memorized PCV. Cats: type-specific blood. Dogs: thrombosis (especially PTE) is a leading killer — thromboprophylaxis is the conversation, △ Plumb.
+
+Book/public traps:
+
+- Printed PCV <18% “severe” and reticulocyte recipes stay in the book. ACVIM treatment panel had **no agreed numerical PCV trigger** (2/8 members used <12%; the rest did not).
+- Oxidative spherocyte-lookalikes: zinc, acetaminophen, allium Heinz/eccentrocytes. Do not start prednisolone for garlic.
+- 2013 immunosuppressant tables stay in the book. Azotemic cat: still no DexSP.
+
+Night rule: pale + icterus → smear + saline 4:1 + infectious screen before you reach for a steroid.

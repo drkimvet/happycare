@@ -59,6 +59,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
 | `ddx-hemo` | Assessment | Hemoabdomen |
+| `ddx-imha` | Assessment | IMHA |
 | `ddx-uroabd` | Assessment | Uroabdomen |
 | `ddx-panc` | Assessment | Pancreatitis |
 | `ddx-uti` | Assessment | Sporadic cystitis |
@@ -77,6 +78,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fate` | Discharge | FATE |
 | `dc-heat` | Discharge | Heatstroke |
 | `dc-anax` | Discharge | Anaphylaxis / hives going home |
+| `dc-imha` | Discharge | IMHA / hemolysis |
 | `dc-sz` | Discharge | Seizure |
 | `dc-ama` | Discharge | Against medical advice |
 | `dc-euth` | Discharge | Euthanasia / aftercare (no PHI) |
@@ -363,6 +365,14 @@ PCV/TS pair [abdomen vs peripheral]. Fast [ ].
 DDX: ruptured mass (spleen/liver), trauma, coagulopathy (anticoagulant rodenticide), GDV-associated tear, ATE not this.
 Vitamin K only if the rodenticide family is anticoagulant. Four families exist.
 
+### `ddx-imha`
+
+IMHA — {{patient.name}}
+{{patient.species}}. Anemia [spun PCV]. SAT 4:1 [persists / disperses]. Smear monolayer [spherocytes dog only]. DAT [ ]. Bilirubin/Hb [ ]. TS [holds vs falls].
+ACVIM 2019: immune destruction + hemolysis. Cats: do not use spherocytes as a criterion.
+DDX: primary IMHA vs infectious vs zinc vs allium/Heinz vs blood loss vs microangiopathic.
+Do not: pred garlic. Invent a PCV transfusion cutoff. DexSP if azotemic. Harvest 2013 immunosuppressant tables. Skip dog thromboprophylaxis conversation. Universal-donor cat blood. △ Plumb.
+
 ### `ddx-uroabd`
 
 Uroabdomen — {{patient.name}}
@@ -520,6 +530,14 @@ Give only the medicines we sent, as labeled. Do not add human allergy pills or l
 Return to {{location.name}} ({{location.phonenumber}}) or the nearest emergency clinic **now** if {{patient.name}} has trouble breathing, pale or blue gums, collapse, repeated vomiting or diarrhea, a swollen face that is worsening, or you cannot wake {{patient.objectPronoun}}. A second wave of signs can show up after {{patient.pronoun}} looks better.
 
 Prevent re-exposure: [vaccine brand / insect / drug]. Recheck: [when / where].
+
+### `dc-imha`
+
+{{patient.name}} was treated for immune-mediated / hemolytic anemia — the body was destroying red blood cells.
+
+This is hospital-level disease. Give only the medicines we sent, as labeled. Do not add human steroids or leftover antibiotics.
+
+Return now for pale or yellow gums, collapse, trouble breathing, red-brown urine, or if {{patient.pronoun}} will not eat. Recheck blood counts as scheduled — do not skip because {{patient.pronoun}} looks brighter. {{location.phonenumber}}
 
 ### `dc-heat`
 

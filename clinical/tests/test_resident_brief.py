@@ -487,6 +487,26 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("housemate", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_imha_needs_saline_agglutination_not_garlic_pred(self):
+        b = analyze("dog", "IMHA, autoagglutination, give prednisolone for garlic hemolytic anemia")
+        loc = b["localization"].lower()
+        self.assertIn("hemolysis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("4 drops", joined)
+        self.assertIn("not imha until", joined)
+        self.assertIn("heinz", joined)
+        self.assertIn("immunosuppress", joined)
+        self.assertIn("thromboprophylaxis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_imha_spherocytes_not_a_criterion(self):
+        b = analyze("cat", "IMHA, spherocytes, DexSP, transfuse at PCV 12")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("do not diagnose feline imha on spherocytes", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIn("pcv transfusion cutoff", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
