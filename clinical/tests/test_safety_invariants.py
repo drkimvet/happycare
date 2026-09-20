@@ -104,7 +104,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("does not open instinct", SKILL.lower())
         self.assertIn("do not recommend opening it", SKILL.lower())
         self.assertIn("associate professor", SKILL.lower())
-        self.assertIn("small animal medicine and surgery", SKILL.lower())
+        self.assertIn("veterinary clinical sciences", SKILL.lower())
+        self.assertIn("small animal medicine & surgery", SKILL.lower())
+        self.assertIn("long island university college of veterinary medicine", SKILL.lower())
+        self.assertIn("dvm, phd, ffcp", SKILL.lower())
         self.assertIn("둘 중 하나가 면허를 대신하지는 않습니다", SKILL)
 
     def test_landscape_admits_plumb_moat(self):
