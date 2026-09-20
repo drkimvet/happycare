@@ -228,6 +228,7 @@ class PublicCardInvariants(unittest.TestCase):
             "not a diagnosis and not a negative",
             "buprenorphine is adequate for most cats",
             "sphincter-of-oddi",
+            "a cc/ml draw is not a dose",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

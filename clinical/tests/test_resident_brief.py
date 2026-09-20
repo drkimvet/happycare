@@ -468,6 +468,15 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("ileus", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_opioid_cc_volume_is_not_a_dose_without_vial(self):
+        b = analyze("cat", "mild pancreatitis, buprenorphine 0.16 cc IV")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("volume is not a dose", joined)
+        self.assertIn("mg/ml", joined)
+        self.assertIn("simbadol", joined)
+        self.assertNotIn("0.16", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

@@ -44,7 +44,7 @@ TENSE_ABD_RE = re.compile(
     r"\b(tense|tight|painful|guarded)\b.{0,28}\babdomen\b|\b(cranial|upper)\b.{0,20}\babdomen\b",
     re.I,
 )
-PANC_RE = re.compile(r"\b(pancreati|fpl|spec fpl|snap fpl|fpli|triaditis)\b", re.I)
+PANC_RE = re.compile(r"\bpancreat|\bfpl\b|\bspec fpl\b|\bsnap fpl\b|\bfpli\b|\btriaditis\b", re.I)
 FPL_SNAP_WEAK_RE = re.compile(
     r"\b(?:snap\s*fpl|fpl\s*snap|spec\s*fpl|fpli)\b.{0,48}\b(?:weak|equivocal|faint|light)\b|"
     r"\b(?:weak|equivocal|faint|light).{0,48}\b(?:snap\s*fpl|fpl\s*snap|spec\s*fpl|fpli|\bfpl\b)\b",
@@ -54,6 +54,7 @@ OPIOID_RE = re.compile(
     r"\b(opioid|opiate|buprenorphine|methadone|fentanyl|hydromorphone|morphine|butorphanol)\b",
     re.I,
 )
+VOLUME_CC_RE = re.compile(r"\b\d+(?:\.\d+)?\s*(?:cc|mL)\b", re.I)
 SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
 DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
 LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
@@ -585,6 +586,16 @@ def analyze(
             do_not.append(
                 "Opioid ileus is a watch if linear FB is still on the list, not a reason to leave a painful cat untreated."
             )
+            if VOLUME_CC_RE.search(text):
+                hard_stops.append(
+                    "A cc/mL volume is not a dose until THIS vial's mg/mL and the body weight are on the note."
+                )
+                do_not.append(
+                    "Do not copy the cc onto the housemate. Do not assume 0.3 mg/mL — Simbadol and hydromorphone are different bottles."
+                )
+                do_next.append(
+                    "Write mg = mL × labeled concentration, then △ Plumb. Chart the drug name and the vial."
+                )
 
     if SUCRALFATE_RE.search(text):
         do_not.append("Sucralfate is a GI coating, not pancreatitis therapy. Separate it from other orals. △ Plumb.")
