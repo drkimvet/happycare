@@ -55,6 +55,7 @@ If you cannot name which family you are in, you are not writing NAC.
 - Hypovolemic: bolus ≠ overnight drip. Cats often show **bradycardia, hypothermia, hypotension** — do not wait for a dog-style fast heart rate.
 - Never bolus a bag that contains KCl (AAHA).
 - Hemoabdomen: pair PCV/TS (abdomen vs peripheral). Vitamin K only if the rodenticide family is anticoagulant.
+- Cardiac tamponade is **obstructive** shock. Muffled heart, jugular distension, looks like right-sided CHF. Merck: diuretics are contraindicated in acute tamponade (they drop preload further). Treatment is pericardiocentesis, not a Lasix protocol and not a default hypovolemic bolus. Do not harvest the 2013 tap step list; use the hospital protocol. FAST/echo. Dog: hemangiosarcoma/idiopathic. Cat: more often CHF, lymphoma, or FIP — still drain if tamponade.
 - IRIS AKI: grade from creatinine **and** UOP. UOP is mL/kg/hr from a closed collection or weighed litter, not "the pad looked wet."
 - UOP around 1 mL/kg/hr is not oliguria. Do not treat that cat as anuric.
 - Unilateral renomegaly + soft, non-tense abdomen: localize to that kidney/ureter (hydro/pyo/obstruction). Do **not** drain a free abdomen without paired fluid and serum creatinine and potassium.

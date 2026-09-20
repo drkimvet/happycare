@@ -136,6 +136,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("cardiogenic", VERIF.lower())
         self.assertIn("urethral obstruction", VERIF.lower())
         self.assertIn("uroabdomen", VERIF.lower())
+        self.assertIn("tamponade", VERIF.lower())
+        self.assertIn("diuretics are contraindicated", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -189,6 +191,8 @@ class PublicCardInvariants(unittest.TestCase):
             "high fiber is not easy-to-digest",
             "post-obstructive",
             "pair fluid and serum creatinine",
+            "tamponade",
+            "diuretics are contraindicated",
             "cardiogenic",
             "never bolus a bag that contains kcl",
         ):

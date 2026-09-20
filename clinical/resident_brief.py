@@ -114,6 +114,11 @@ CHF_RE = re.compile(r"\b(chf|cardiogenic|congestive heart|pulmonary edema|left-s
 HYPOVOLEM_RE = re.compile(r"\b(hypovolem|hemoabdomen|haemoabdomen|hemorrhagic shock)\b", re.I)
 SHOCK_BOLUS_RE = re.compile(r"\b(shock bolus|shock dose|fluid bolus)\b", re.I)
 KCL_BOLUS_RE = re.compile(r"\b(kcl|potassium chloride).{0,24}\bbolus\b|\bbolus\b.{0,24}\b(kcl|potassium chloride)\b", re.I)
+TAMPONADE_RE = re.compile(
+    r"\b(pericard|tamponade|electrical alternans|globoid heart|muffled heart)\b",
+    re.I,
+)
+FUROSEMIDE_RE = re.compile(r"\b(furosemide|lasix|torsemide)\b", re.I)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -328,6 +333,24 @@ def analyze(
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")
         do_not.append("Do not run a potassium-supplemented bag as a shock bolus.")
         sources.append("AAHA fluid therapy 2024: never bolus fluids supplemented with KCl")
+
+    if spec in {"dog", "cat"} and TAMPONADE_RE.search(text):
+        localization = (
+            "Obstructive shock: pericardial filling. Looks like right-sided CHF. "
+            "The pump cannot fill until the sac is drained."
+        )
+        hard_stops.append(
+            "Cardiac tamponade: pericardiocentesis is the treatment. "
+            "Diuretics are contraindicated in acute tamponade (Merck)."
+        )
+        do_not.append("Do not run a CHF furosemide protocol. Do not harvest the 2013 pericardiocentesis step list.")
+        do_not.append("Do not treat tamponade as empty-vessel shock with a default bolus.")
+        do_next.append(
+            "Oxygen. FAST/echo. ECG during any tap. Use the hospital pericardiocentesis protocol. △ Plumb if lidocaine is used."
+        )
+        sources.append("Merck: pericardial disease in dogs and cats")
+        if FUROSEMIDE_RE.search(text):
+            hard_stops.append("Do not give furosemide for acute tamponade.")
 
     if RODENTICIDE_RE.search(text):
         do_not.append("Do not give vitamin K1 for an unknown block or for bromethalin/cholecalciferol/PH3.")

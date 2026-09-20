@@ -338,6 +338,16 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertTrue(any("kcl" in x.lower() for x in b["hard_stops"]))
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_tamponade_not_lasix_or_shock_bolus(self):
+        b = analyze("dog", "pericardial tamponade, muffled heart, give furosemide and a shock bolus")
+        loc = b["localization"].lower()
+        self.assertIn("obstructive", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("diuretic", joined)
+        self.assertIn("furosemide", joined)
+        self.assertIn("2013", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
         b = analyze(
             "cat",

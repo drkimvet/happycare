@@ -160,3 +160,17 @@ Night rules:
 - DexSP is not the unblock. Hold NSAID if azotemic / unknown kidney.
 - After patency: post-obstructive diuresis — UOP in mL/kg/hr, not a wet pad.
 - Uroabdomen: stabilize, divert, then find the leak. Soft non-tense + unilateral renomegaly is still the kidney/ureter, not a drainable belly.
+
+## 120. Pericardial effusion / tamponade (Plunkett p101–200 vs Merck)
+
+Legal split prints a pericardiocentesis recipe (ICS, catheter French size, clot-in-red-top). No chapter dump. **Do not harvest that step list.**
+
+Agree: tamponade is inadequate filling because the sac is full. It looks like right-sided CHF (ascites, jugulars, muffled heart). Electrical alternans / globoid heart are hints. Echo/FAST confirms. Dogs: right-atrial hemangiosarcoma or idiopathic. Cats: lymphoma, FIP, or CHF effusion.
+
+Book/public traps:
+
+- 2013 “IV fluids if in shock” is not a license to run a hypovolemic shock bolus. This is obstructive shock.
+- Merck: **diuretics are contraindicated in acute tamponade**. Do not Lasix this as CHF.
+- Medical therapy does not empty the sac. Pericardiocentesis is the decompression. Hospital protocol for the tap. ECG on. Closed system so you do not make a pneumothorax.
+
+Night rule: muffled + weak + big belly veins → name tamponade before furosemide.
