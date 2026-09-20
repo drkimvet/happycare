@@ -100,6 +100,35 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("cat", "string under the tongue, yank the string")
         self.assertTrue(any("do not yank" in x.lower() for x in b["hard_stops"]))
 
+    def test_vinyl_wrapper_is_fb_not_charcoal(self):
+        b = analyze("cat", "2 whole beef jerky ingestion with potential vynyl")
+        loc = b["localization"].lower()
+        self.assertIn("foreign body", loc)
+        self.assertIn("radiolucent", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("charcoal", joined)
+        self.assertIn("prokinetic", joined)
+        self.assertIn("wrapper", joined)
+        self.assertIn("allium", joined)
+        self.assertNotIn("fanconi", " ".join(b["hard_stops"]).lower())
+        self.assertIsNone(b["mg_per_kg"])
+        both = analyze(
+            "cat",
+            "vynyl wrapper, fPL",
+            abdomen="tense upper abdomen few days",
+        )
+        bloc = both["localization"].lower()
+        self.assertIn("cranial", bloc)
+        self.assertIn("foreign body", bloc)
+
+    def test_no_species_still_flags_vinyl(self):
+        b = analyze("", "ate vinyl wrapper")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("no species", joined)
+        self.assertIn("foreign-body", joined)
+        self.assertIn("charcoal", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_gdv_no_emesis(self):
         b = analyze("dog", "GDV, induce emesis")
         self.assertTrue(any("emesis" in x.lower() for x in b["do_not"]))

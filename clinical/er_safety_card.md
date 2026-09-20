@@ -22,6 +22,7 @@ Public sources only. Not a formulary. **△ confirm every mg/kg in Plumb or the 
 | Dog permethrin spot-on on a cat | Cat: tremors/seizures. Bath the product off. Methocarbamol is the tremor conversation. Atropine is not the plan (dvm360 / published case series). | Treat as organophosphate and reach for atropine. |
 | Chocolate / methylxanthine | Dogs most often. Calculate theobromine from the actual product. | Quote a memorized mg/kg as if it were Plumb. |
 | Linear string / floss / yarn | Cat (also dog): one end often anchored under the tongue. Merck: sawing perforation risk. | Yank the visible string. |
+| Vinyl / plastic wrapper / packaging | GI FB. Merck: plastic is non-digestible. Often **radiolucent**. A strip can act linear. | Charcoal the plastic. Clear on normal rads. Prokinetic to "pass it." Yank a strip. |
 | GDV / gastric dilatation-volvulus | Large/giant-breed dog emergency. Stabilize, decompress, surgery (Merck/MSD). | Induce emesis. "Watch overnight." |
 | Diestrus bitch / queen + PU/PD / sick | Pyometra until imaging says no. OHE after stabilize (Merck). | Send home as UTI. |
 | Cat, sudden painful cold pulseless hind limbs | Arterial thromboembolism / FATE (Merck 5 Ps). Analgesia first. | Promise thrombolysis. Skip pain control. |

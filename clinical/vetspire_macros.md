@@ -290,10 +290,11 @@ Calculate from the actual product. Do not quote a memorized mg/kg as Plumb. △ 
 
 ### `ddx-linear`
 
-Linear FB — {{patient.name}}
-String / floss / yarn. Check under the tongue.
+Linear / plastic FB — {{patient.name}}
+String / floss / yarn / vinyl wrapper. Sheet vs strip [ ]. Wrapper actually missing from the pack [ ].
+Check under the tongue.
 
-Do not yank. Merck: sawing perforation. Imaging. Surgery conversation if anchored.
+Do not yank. Do not charcoal plastic. Do not clear on a normal radiograph (often radiolucent). Merck: sawing if linear. Imaging. Endoscopy if gastric; surgery if anchored / obstructed.
 
 ### `ddx-heat`
 

@@ -108,3 +108,17 @@ Book traps:
 - Second-line pentobarbital table and printed diazepam/PB mg/kg stay in the book. Night first line is a benzodiazepine; ACVIM prefers midazolam IV/IN. △ crash-cart / Plumb.
 - Oral diazepam as discharge/maintenance is a 2013 leftover. Merck: not dog maintenance. Cats: oral diazepam → idiosyncratic hepatic necrosis.
 - Phenobarbital range printed as “g/mL” (missing µ). Unit trap. △ the lab.
+
+## 117. GI obstruction / vinyl-plastic wrapper (Plunkett obstruction headings vs Merck)
+
+Legal split p301–440 has obstruction/GDV headings. No chapter dump. No harvested surgical timing tables.
+
+Agree with public Merck GI obstruction: plastic is a non-digestible foreign body; obstruction may be partial or complete; linear material (string/yarn/floss; a plastic **strip** can act the same) anchors at the tongue or stomach and can saw the mesenteric border. Cats more often linear; dogs more often discrete objects.
+
+Night rules:
+
+- Vinyl / “vynyl” / wrapper / packaging = **GI FB**, not a vinyl-chloride toxidrome from a jerky bag.
+- Do not charcoal plastic. Do not clear on a normal radiograph (plastic is often radiolucent). Tongue base. Rads + AUS. Endoscopy if still gastric.
+- Do not yank a strip. Do not push with a prokinetic.
+- Beef jerky is a **label** problem: onion/garlic → delayed Heinz; sugar-free → xylitol/glucose in the dog. One-time beef jerky is not the historical chronic chicken-jerky Fanconi story.
+- Days of a tense cranial abdomen plus tonight's jerky/wrapper are two localizations until imaging says one.

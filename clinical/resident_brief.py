@@ -55,7 +55,12 @@ EG_RE = re.compile(r"\b(ethylene glycol|antifreeze)\b", re.I)
 PERMETHRIN_RE = re.compile(r"\bpermethrin\b", re.I)
 CHOCOLATE_RE = re.compile(r"\b(chocolate|theobromine|methylxanthine)\b", re.I)
 LINEAR_RE = re.compile(r"\b(linear (foreign )?body|string under (the )?tongue|dental floss|\byarn\b)\b", re.I)
-YANK_STRING_RE = re.compile(r"\b(yank|pull|tug)\b.{0,20}\b(string|floss|yarn)\b", re.I)
+YANK_STRING_RE = re.compile(r"\b(yank|pull|tug)\b.{0,20}\b(string|floss|yarn|vinyl|vynyl|plastic)\b", re.I)
+VINYL_RE = re.compile(
+    r"\b(viny+l|vynyl|plastic wrap|plastic wrapper|cling wrap|saran|packaging)\b",
+    re.I,
+)
+JERKY_RE = re.compile(r"\b(jerky|beef stick|meat stick)\b", re.I)
 GDV_RE = re.compile(r"\b(gdv|gastric dilatation|gastric dilation|gastric volvulus)\b", re.I)
 PYO_RE = re.compile(r"\bpyometra\b", re.I)
 FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
@@ -158,6 +163,11 @@ def analyze(
     if not spec:
         hard_stops.append("No species on the one-liner: no dose, no CRI, no typical fluid rate.")
         do_next.append("Ask species, weight, and the one problem that brought them in.")
+        if VINYL_RE.search(text):
+            hard_stops.append(
+                "Vinyl/plastic wrapper is a GI foreign-body question, not a toxin antidote."
+            )
+            do_not.append("Do not charcoal plastic. Do not clear on a normal radiograph.")
         return _pack(spec, hard_stops, do_not, do_next, localization, sources, nac_family)
 
     if PEACE_LILY_RE.search(text):
@@ -350,6 +360,32 @@ def analyze(
         do_not.append("Do not pull string anchored under the tongue; Merck: sawing perforation risk.")
         do_next.append("Examine the tongue base. Imaging. Surgery conversation if anchored.")
         sources.append("Merck: gastrointestinal obstruction in small animals")
+
+    if spec in {"cat", "dog"} and VINYL_RE.search(text):
+        vinyl_loc = (
+            "GI foreign body (sheet or strip plastic). Often radiolucent. "
+            "Not a vinyl-chloride toxidrome from a jerky bag."
+        )
+        localization = f"{localization} Also {vinyl_loc}" if localization else vinyl_loc
+        hard_stops.append(
+            "Possible vinyl/plastic wrapper: treat as GI FB, not as a toxin you charcoal."
+        )
+        do_not.append("Do not clear on a normal radiograph. Plastic is often radiolucent.")
+        do_not.append("Do not yank a strip. Do not push plastic with a prokinetic.")
+        do_next.append(
+            "Confirm the wrapper is actually missing. Tongue base. Rads + AUS. "
+            "Endoscopy if gastric and retrieval is still the conversation."
+        )
+        sources.append("Merck: gastrointestinal obstruction in small animals (plastic is non-digestible)")
+
+    if spec in {"cat", "dog"} and JERKY_RE.search(text):
+        do_next.append(
+            "Read THIS package: onion/garlic (allium clock), xylitol if sugar-free. "
+            "One-time beef jerky is not the chronic chicken-jerky Fanconi story."
+        )
+        if not ALLIUM_RE.search(text):
+            do_not.append("Do not assume the jerky is allium-free. Seasoning blends are often onion/garlic.")
+        sources.append("Merck: garlic and onion toxicosis; xylitol if the label says sugar-free")
 
     if spec == "dog" and GDV_RE.search(text):
         hard_stops.append("GDV: stabilize, decompress, surgery. Not an observe-overnight disease.")
