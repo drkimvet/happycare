@@ -50,7 +50,8 @@ DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?
 LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
 FIBER_RE = re.compile(r"\b(high[ -]?fib(?:er|re)|fibre|fiber)\b", re.I)
 UOP_RE = re.compile(r"\buop\b|urine output|oligur|anur", re.I)
-BLOCKED_RE = re.compile(r"\b(straining|blocked|urethral obstruct|flc|unable to urinate)\b", re.I)
+BLOCKED_RE = re.compile(r"\b(straining|blocked|urethral obstruct|flc|unable to urinate|not peeing)\b", re.I)
+UROABD_RE = re.compile(r"\b(uroabdomen|urine in (the )?abdomen|ruptured bladder|bladder rupture)\b", re.I)
 RODENTICIDE_RE = re.compile(r"\b(rodenticide|bromethalin|cholecalciferol|brodifacoum|bromadiolone|warfarin)\b", re.I)
 GRAPE_RE = re.compile(r"\b(grapes?|raisins?|tamarinds?|zante currants?)\b", re.I)
 EG_RE = re.compile(r"\b(ethylene glycol|antifreeze)\b", re.I)
@@ -238,9 +239,27 @@ def analyze(
         do_not.append("Do not write oral amoxicillin/ampicillin/cephalexin for hamster, guinea pig, or rabbit.")
         sources.append("Merck Veterinary Manual exotic/hindgut antimicrobial warnings")
 
-    if spec == "cat" and BLOCKED_RE.search(text) and "male" in text.lower():
-        hard_stops.append("Male cat + straining: urethral obstruction until proven otherwise.")
+    if spec == "cat" and BLOCKED_RE.search(text):
+        hard_stops.append("Cat + straining / blocked: urethral obstruction until the bladder is empty and the urethra is patent.")
         do_not.append("Do not discharge as constipation.")
+        do_not.append("Do not harvest a 2013 unblock recipe or force a catheter before potassium/ECG are known.")
+        do_next.append("Palpate the bladder. ECG and potassium before sedation to unblock. Pain △ Plumb. Fluids AAHA-style; never bolus a KCl bag.")
+        sources.append("Merck: urethral obstruction / obstructive uropathy in small animals")
+        if NSAID_RE.search(text):
+            hard_stops.append("Blocked / azotemia-risk cat: hold the NSAID.")
+        if DEX_RE.search(text):
+            hard_stops.append("DexSP is not how you unblock a cat.")
+
+    if spec in {"dog", "cat"} and UROABD_RE.search(text):
+        localization = localization or (
+            "Uroabdomen localizes to a leak in the urinary tract, not to free fluid alone."
+        )
+        hard_stops.append(
+            "Uroabdomen: pair fluid and serum creatinine and potassium before a therapeutic tap story."
+        )
+        do_not.append("Do not diagnose uroabdomen by free fluid alone. Do not invent the ratio; the hospital/book names it.")
+        do_next.append("Stabilize hyperK and perfusion first. Diversion. Surgery after the leak is localized.")
+        sources.append("Merck obstructive uropathy; Plunkett uroabdomen pair (legal split, no dump)")
 
     azotemic = spec == "cat" and AZOTEMIA_RE.search(text)
     if azotemic and NSAID_RE.search(text):

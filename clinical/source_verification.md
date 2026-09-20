@@ -141,3 +141,22 @@ Night rules:
 - CHF / cardiogenic: do not default a hypovolemic shock bolus. AAHA: fluids often avoided; hypotension in CHF is an inotrope conversation. Furosemide is the edema drug; △ Plumb.
 - Hypovolemic: bolus ≠ overnight drip. Reassess. Never bolus a KCl bag.
 - Hemoabdomen: PCV/TS pair abdomen vs peripheral. Four rodenticide families. Blood product, not vitamin K by default.
+
+## 119. Feline urethral obstruction / uroabdomen (Plunkett FLUTD–UO vs Merck)
+
+Legal split p301–440: FLUTD (not obstructed) vs obstructed male cat vs uroabdomen. No chapter dump. No harvested catheter or calcium-gluconate tables.
+
+Agree: straining male cat is UO until the bladder is empty; hyperK can kill before the catheter; free abdominal fluid is not a diagnosis.
+
+Book traps:
+
+- Printed unblock / massage / fluid-rate recipes stay in the book. Night: ECG and potassium first. △ Plumb / hospital for the catheter sedation and the hyperK drugs. Calcium gluconate is cardioprotection — it does not lower K.
+- Uroabdomen: the split already says pair fluid and serum creatinine and potassium. Do not invent the ratio here. Do not therapeutic-tap as the treatment without that pair.
+- 2013 FLUTD “7–14 days” and diet-magnesium lines are not ISCAID. Young cats with irritative signs: empiric antibiotic is rarely indicated.
+
+Night rules:
+
+- Do not send home as constipation.
+- DexSP is not the unblock. Hold NSAID if azotemic / unknown kidney.
+- After patency: post-obstructive diuresis — UOP in mL/kg/hr, not a wet pad.
+- Uroabdomen: stabilize, divert, then find the leak. Soft non-tense + unilateral renomegaly is still the kidney/ureter, not a drainable belly.

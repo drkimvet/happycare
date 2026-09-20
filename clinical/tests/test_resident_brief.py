@@ -61,6 +61,24 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("cat", "tap the belly / drain abdomen tonight")
         self.assertTrue(any("do not drain" in x.lower() for x in b["hard_stops"]))
 
+    def test_blocked_cat_not_constipation(self):
+        b = analyze("cat", "straining in the box, blocked, give DexSP")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("urethral obstruction", joined)
+        self.assertIn("constipation", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIn("potassium", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_uroabdomen_not_free_fluid_alone(self):
+        b = analyze("cat", "uroabdomen, ruptured bladder, tap the belly")
+        loc = b["localization"].lower()
+        self.assertIn("leak", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("pair", joined)
+        self.assertIn("free fluid alone", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_right_kidney_soft_abdomen_localizes(self):
         b = analyze(
             "cat",

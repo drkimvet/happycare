@@ -134,6 +134,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not lily", VERIF.lower())
         self.assertIn("shock type", VERIF.lower())
         self.assertIn("cardiogenic", VERIF.lower())
+        self.assertIn("urethral obstruction", VERIF.lower())
+        self.assertIn("uroabdomen", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -185,6 +187,8 @@ class PublicCardInvariants(unittest.TestCase):
             "allium hemolysis",
             "digestibility",
             "high fiber is not easy-to-digest",
+            "post-obstructive",
+            "pair fluid and serum creatinine",
             "cardiogenic",
             "never bolus a bag that contains kcl",
         ):

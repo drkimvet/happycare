@@ -58,6 +58,8 @@ If you cannot name which family you are in, you are not writing NAC.
 - IRIS AKI: grade from creatinine **and** UOP. UOP is mL/kg/hr from a closed collection or weighed litter, not "the pad looked wet."
 - UOP around 1 mL/kg/hr is not oliguria. Do not treat that cat as anuric.
 - Unilateral renomegaly + soft, non-tense abdomen: localize to that kidney/ureter (hydro/pyo/obstruction). Do **not** drain a free abdomen without paired fluid and serum creatinine and potassium.
+- Male cat + straining is urethral obstruction until the bladder is empty. Palpate. ECG and potassium before sedation to unblock. Do not discharge as constipation. DexSP is not the unblock. Hold NSAID. Do not harvest 2013 catheter recipes. Post-obstructive diuresis: quantify UOP.
+- Uroabdomen is not “free fluid.” Pair fluid and serum creatinine and potassium. Stabilize hyperK/perfusion first; diversion; surgery after the leak is localized. Do not invent the ratio.
 - Mild metabolic acidosis (example pH ~7.25, HCO3 ~20) is not an automatic bicarbonate indication. Fix perfusion and the underlying kidney/ureter problem.
 - Peritoneal lavage, when indicated, is sterile saline. Povidone-iodine peritoneal lavage is not standard. 5% povidone-iodine on the card is **skin prep**, not belly rinse.
 
