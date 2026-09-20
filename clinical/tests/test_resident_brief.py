@@ -348,6 +348,17 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("2013", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_tension_pneumo_not_rads_first_or_lasix(self):
+        b = analyze("dog", "tension pneumothorax, barrel-chested, no glide sign, give furosemide, wait for rads")
+        loc = b["localization"].lower()
+        self.assertIn("pleural", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("decompress now", joined)
+        self.assertIn("radiograph", joined)
+        self.assertIn("furosemide", joined)
+        self.assertIn("2013", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_cat_fpl_tense_upper_abdomen_is_forman_not_tonight_meal(self):
         b = analyze(
             "cat",

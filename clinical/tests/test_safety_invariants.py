@@ -138,6 +138,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("uroabdomen", VERIF.lower())
         self.assertIn("tamponade", VERIF.lower())
         self.assertIn("diuretics are contraindicated", VERIF.lower())
+        self.assertIn("pneumothorax", VERIF.lower())
+        self.assertIn("glide sign", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -193,6 +195,8 @@ class PublicCardInvariants(unittest.TestCase):
             "pair fluid and serum creatinine",
             "tamponade",
             "diuretics are contraindicated",
+            "glide sign",
+            "decompress now",
             "cardiogenic",
             "never bolus a bag that contains kcl",
         ):

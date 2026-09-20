@@ -119,6 +119,10 @@ TAMPONADE_RE = re.compile(
     re.I,
 )
 FUROSEMIDE_RE = re.compile(r"\b(furosemide|lasix|torsemide)\b", re.I)
+PNEUMO_RE = re.compile(
+    r"\b(pneumothorax|tension pneumo|glide sign|barrel[- ]chested|barrel[- ]shaped thorax)\b",
+    re.I,
+)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -351,6 +355,22 @@ def analyze(
         sources.append("Merck: pericardial disease in dogs and cats")
         if FUROSEMIDE_RE.search(text):
             hard_stops.append("Do not give furosemide for acute tamponade.")
+
+    if spec in {"dog", "cat"} and PNEUMO_RE.search(text):
+        localization = localization or (
+            "Pleural-space air. Tension pneumothorax is obstructive shock: barrel chest, no air sounds, crashing."
+        )
+        hard_stops.append(
+            "Tension pneumothorax: decompress now. Do not wait for a radiograph."
+        )
+        do_not.append("Do not treat as CHF. Do not harvest the 2013 chest-tube or open-needle recipe.")
+        do_next.append(
+            "Oxygen. TFAST: absent glide sign is a hint, not 100%. Thoracocentesis by hospital protocol. "
+            "If air reaccumulates in minutes, a thoracostomy tube is the conversation."
+        )
+        sources.append("Merck: initial triage — catastrophic pleural space / glide sign")
+        if FUROSEMIDE_RE.search(text):
+            hard_stops.append("Do not give furosemide for pneumothorax.")
 
     if RODENTICIDE_RE.search(text):
         do_not.append("Do not give vitamin K1 for an unknown block or for bromethalin/cholecalciferol/PH3.")

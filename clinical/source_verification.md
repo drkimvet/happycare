@@ -174,3 +174,17 @@ Book/public traps:
 - Medical therapy does not empty the sac. Pericardiocentesis is the decompression. Hospital protocol for the tap. ECG on. Closed system so you do not make a pneumothorax.
 
 Night rule: muffled + weak + big belly veins → name tamponade before furosemide.
+
+## 121. Pneumothorax / tension pneumothorax (Plunkett p101–200 vs Merck triage)
+
+Legal split prints open-needle conversion, rib-space taps, and chest-tube French sizes. No chapter dump. **Do not harvest those recipes.**
+
+Agree: air in the pleural space collapses the lung. Tension physiology is obstructive shock (barrel chest, no sounds, crash). Merck triage: catastrophic pleural space — routine tap may be inadequate; drain air/fluid without waiting for a film if they are dying. TFAST: absent **glide sign** suggests pneumothorax (practice required; absence is not 100%).
+
+Book traps:
+
+- 2013 “18-gauge needle to convert to open pneumothorax” and “9th–11th rib” tables stay in the book. Night: oxygen, hospital thoracocentesis protocol, tube if it refills.
+- Do not Lasix a quiet-chest dyspneic patient as CHF.
+- Small occult air in a comfortable patient may be watched. Distress or tension is not a watch.
+
+Night rule: quiet chest + crash → needle the pleural space by protocol before radiology.
