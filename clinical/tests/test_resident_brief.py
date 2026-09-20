@@ -477,6 +477,16 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("0.16", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_gabapentin_does_not_replace_opioid_in_acute_pancreatitis(self):
+        b = analyze("cat", "pancreatitis, colleague said give gabapentin instead of buprenorphine")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("does not replace opioid", joined)
+        self.assertIn("primary analgesic", joined)
+        self.assertIn("chronic", joined)
+        self.assertIn("xylitol", joined)
+        self.assertIn("housemate", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

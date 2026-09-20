@@ -55,6 +55,7 @@ OPIOID_RE = re.compile(
     re.I,
 )
 VOLUME_CC_RE = re.compile(r"\b\d+(?:\.\d+)?\s*(?:cc|mL)\b", re.I)
+GABAPENTIN_RE = re.compile(r"\b(gabapentin|neurontin)\b", re.I)
 SUCRALFATE_RE = re.compile(r"\bsucralfate\b", re.I)
 DAYS_ABD_RE = re.compile(r"\b(few days|for days|days of|several days|\d+\s*days?)\b", re.I)
 LOWFAT_RE = re.compile(r"\b(low[ -]?fat|fat[ -]?restrict|low fat diet)\b", re.I)
@@ -596,6 +597,20 @@ def analyze(
                 do_next.append(
                     "Write mg = mL × labeled concentration, then △ Plumb. Chart the drug name and the vial."
                 )
+        if GABAPENTIN_RE.search(text):
+            hard_stops.append(
+                "Gabapentin is a PO/chronic adjunct (Forman). It does not replace opioid primary analgesia for acute pancreatitis."
+            )
+            do_not.append(
+                "Do not send gabapentin instead of buprenorphine for tonight's cranial pain. "
+                "Overt bout: opioid. Long-term chronic: gabapentin/tramadol is the Forman conversation."
+            )
+            do_not.append(
+                "Do not invent a gabapentin mg/kg. Read THIS bottle — some human gabapentin liquids contain xylitol."
+            )
+            do_next.append(
+                "Tonight: opioid △ Plumb. Gabapentin only as a named outpatient adjunct, not onto the housemate."
+            )
 
     if SUCRALFATE_RE.search(text):
         do_not.append("Sucralfate is a GI coating, not pancreatitis therapy. Separate it from other orals. △ Plumb.")

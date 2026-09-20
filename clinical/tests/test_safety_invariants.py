@@ -229,6 +229,7 @@ class PublicCardInvariants(unittest.TestCase):
             "buprenorphine is adequate for most cats",
             "sphincter-of-oddi",
             "a cc/ml draw is not a dose",
+            "gabapentin does not replace the opioid",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

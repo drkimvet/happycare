@@ -377,6 +377,7 @@ Pancreatitis — {{patient.name}}
 Cluster diagnosis (Forman ACVIM): signs + imaging + fPLI. fPL is supportive, not pathognomonic. SNAP weak/equivocal = abnormal SNAP, not a diagnosis and not a negative. Do not invent the cutoff. Do not copy this SNAP onto a housemate.
 Do not withhold food. Hepatic lipidosis risk. Cat: Forman does not require a canine-style low-fat 3–5 day diet.
 Opioids are the primary analgesics (Forman). Buprenorphine is adequate for most cats. A one-time dose is analgesia, not a disease-modifier. Do not withhold for theoretical sphincter-of-Oddi spasm. Do not switch to an NSAID because SNAP was weak. Ileus is a watch if linear FB is still on the list.
+Gabapentin does not replace the opioid for an acute/overt bout. Forman: PO option / long-term chronic adjunct (tramadol too). △ Plumb. Read the bottle for xylitol. Not for the housemate.
 Antibiotics not routine if uncomplicated. No DexSP / NSAID as the pancreatitis plan.
 Sucralfate is coating, not pancreatitis therapy. △ Plumb for fluids / antiemetic / opioid.
 
