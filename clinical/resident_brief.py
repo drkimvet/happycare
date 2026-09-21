@@ -274,6 +274,19 @@ RESTART_UNIT_RE = re.compile(
     re.I,
 )
 UNIVERSAL_DONOR_RE = re.compile(r"\buniversal donor\b", re.I)
+VESTIBULAR_RE = re.compile(
+    r"\b(vestibular|head tilt|nystagmus|otitis interna|"
+    r"geriatric vestibular|rolling (dog|around))\b",
+    re.I,
+)
+METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
+VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
+HORNER_FACE_RE = re.compile(
+    r"\bhorner\b.{0,40}\b(facial|face|vii)\b|"
+    r"\b(facial|face|vii).{0,40}\bhorner\b|"
+    r"\bhorner\b",
+    re.I,
+)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -615,6 +628,47 @@ def analyze(
             hard_stops.append("Do not give furosemide for intracranial pressure.")
         if MANNITOL_RE.search(text) and HYPOVOLEM_RE.search(text):
             hard_stops.append("Do not give mannitol until the patient is volume-resuscitated.")
+
+    if spec in {"dog", "cat"} and VESTIBULAR_RE.search(text):
+        vest_loc = (
+            "Peripheral vs central before home. "
+            "Head tilt is the inner ear or the brainstem, not a stroke cocktail."
+        )
+        localization = f"{localization} Also {vest_loc}" if localization else vest_loc
+        hard_stops.append(
+            "Vestibular: name peripheral vs central before home. "
+            "Do not DexSP an old rolling dog as a stroke."
+        )
+        do_not.append(
+            "Do not harvest 2013 meclizine, dimenhydrinate, diazepam, or maropitant tables. "
+            "Antiemetic △ Plumb. Do not force-walk a rolling dog."
+        )
+        do_not.append(
+            "Do not put chlorhexidine or aminoglycoside drops in an ear whose tympanic membrane you have not seen."
+        )
+        do_next.append(
+            "Otoscopic exam. Mentation, vertical nystagmus, CP deficits. "
+            "Horner + facial = middle/inner ear, not default idiopathic. △ Plumb."
+        )
+        sources.append(
+            "Merck otitis media/interna (Hoff); Merck nitroimidazoles (metro neurotoxicity). "
+            "Plunkett vestibular headings traps only."
+        )
+        if DEX_RE.search(text) or MANNITOL_RE.search(text):
+            hard_stops.append(
+                "Steroids are contraindicated in geriatric idiopathic vestibular. "
+                "Mannitol is not the old-dog-tilt plan."
+            )
+        if METRONIDAZOLE_RE.search(text):
+            hard_stops.append("Stop metronidazole. Do not harvest a mg/kg cutoff.")
+        if VERTICAL_NYSTAG_RE.search(text):
+            hard_stops.append("Vertical nystagmus is central until proven otherwise. Do not send home as just old.")
+        if HORNER_FACE_RE.search(text):
+            do_not.append(
+                "Horner + vestibular is the bulla/inner ear until imaging says otherwise, not default idiopathic."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for vestibular signs.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

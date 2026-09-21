@@ -62,6 +62,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-larpar` | Assessment | Dog stridor / laryngeal paralysis |
 | `ddx-hypogly` | Assessment | Toy puppy / neonatal hypoglycemia |
 | `ddx-txrxn` | Assessment | Transfusion reaction |
+| `ddx-vest` | Assessment | Vestibular / head tilt |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -82,6 +83,7 @@ Suggested names are short so they show up after three letters.
 | `dc-larpar` | Discharge | Lar par / tie-back / decline |
 | `dc-hypogly` | Discharge | Toy puppy hypoglycemia |
 | `dc-txrxn` | Discharge | After a transfusion reaction |
+| `dc-vest` | Discharge | Vestibular / head tilt |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -454,6 +456,21 @@ DDX:
 Do not: Lasix + albuterol cocktail. Kennel cough. Ice-water. Wrestle for rads (rads are not diagnostic of the larynx). Harvest 2013 ace/butorphanol/DexSP/propofol/doxapram tables. Throat-exam a crashing dog without a tube ready. Flood with fluids. DexSP if azotemic.
 Do next: oxygen, tepid cool, △ sedation. Crash: intubate or tracheostomy. Aspiration on the list once stable. Tie-back is the surgery conversation. GOLPP hindlimb later — tonight is the airway. Cats are uncommon; still name the space.
 
+### `ddx-vest`
+
+Vestibular — {{patient.name}}
+Head tilt [L/R]. Nystagmus [horizontal / rotary / vertical]. Mentation [alert / dull]. Horner [Y/N]. Facial [Y/N]. Metro on board [Y/N].
+
+DDX:
+1. Peripheral idiopathic (geriatric) — exclusion, usually no Horner
+2. Otitis interna / media (Horner + facial = the ear)
+3. Metronidazole neurotoxicity — stop the drug
+4. Central (MUO, infarct, tumor, FIP, thiamine) if vertical nystagmus / CP / dull
+5. Hypothyroid neuropathy / polyp (cat) / ototoxin
+
+Do not: DexSP/mannitol “stroke.” Harvest 2013 meclizine/diazepam tables. Chlorhex/aminoglycoside drops if TM not seen. Send dull + vertical nystagmus home as just old. Force-walk a rolling dog.
+Do next: otoscopic exam, both ears. Peripheral vs central before home. Antiemetic △ Plumb. Stop metronidazole if listed.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -633,6 +650,14 @@ Return now for wobbliness, tremors, another seizure, collapse, or if {{patient.p
 Give only the medicines we sent, as labeled. Do not add leftover allergy pills or leftover steroids.
 
 Return now for pale or yellow gums, red-brown urine, trouble breathing, collapse, or fever. Recheck as scheduled. {{location.phonenumber}}
+
+### `dc-vest`
+
+{{patient.name}} was treated for a balance / inner-ear problem (vestibular disease). This can look like a stroke. Many older dogs improve over days to weeks, but we still look for an ear infection or a medicine side effect.
+
+Keep {{patient.objectPronoun}} padded and assisted so {{patient.pronoun}} does not fall. Give only the anti-nausea medicine we sent, as labeled. Do not add leftover steroids.
+
+Return now for becoming dull, a worsening head tilt with a fever, not eating, or seizures. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

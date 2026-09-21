@@ -188,6 +188,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("transfusion reaction", VERIF.lower())
         self.assertIn("stop the bag first", VERIF.lower())
         self.assertIn("no universal donor", VERIF.lower())
+        self.assertIn("vestibular", VERIF.lower())
+        self.assertIn("peripheral vs central before home", VERIF.lower())
+        self.assertIn("stop metronidazole", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -220,6 +223,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hypogly`", MACRO)
         self.assertIn("`ddx-txrxn`", MACRO)
         self.assertIn("`dc-txrxn`", MACRO)
+        self.assertIn("`ddx-vest`", MACRO)
+        self.assertIn("`dc-vest`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -323,6 +328,9 @@ class PublicCardInvariants(unittest.TestCase):
             "stop the bag first",
             "no universal donor",
             "do not restart the same unit",
+            "peripheral vs central before home",
+            "stop metronidazole",
+            "steroids are contraindicated in geriatric idiopathic",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

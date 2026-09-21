@@ -447,3 +447,26 @@ Book/public traps:
 - Azotemic cat: still no DexSP.
 
 Night rule: fever or pigment or new dyspnea on a bag → **stop the bag first**, then name hemolysis vs overload vs allergy vs dirty unit. Cats have no universal donor.
+
+## 137. Vestibular / otitis interna (Plunkett p441–540 vs Merck)
+
+Legal split “Vestibular disorders” (printed ~431–432). No chapter dump. **Do not harvest printed meclizine mg, dimenhydrinate mg/kg, diphenhydramine, maropitant 8 mg/kg, or diazepam-by-weight-band tables.**
+
+Agree with Merck otitis media/interna (Hoff, Dec 2025 / Apr 2026): otitis **media** → Horner, facial palsy, KCS, pain opening the mouth — it does **not** by itself cause a neurological head tilt. Otitis **interna** → ipsilateral head tilt, horizontal/rotary nystagmus (fast phase away), nausea; mentation stays normal unless it has extended into the brain. Look at both ears. Do not put ototoxic drops in a middle ear you cannot see.
+
+Agree with the 2013 localization table in spirit: peripheral vs central. Vertical nystagmus, changing positional nystagmus, CP deficits, other cranial nerves besides VII, or dull mentation push central (MUO, infarct, metro, FIP, tumor). Book: corticosteroids are **contraindicated** in geriatric idiopathic vestibular; antibiotics do not treat idiopathic. Geriatric dogs often improve over 2–3 weeks.
+
+Merck nitroimidazoles: high-dose metronidazole can cause canine neurotoxicity (tremor, ataxia, convulsions). Night: **stop metronidazole**. Do not harvest a mg/kg cutoff from the 2013 list or from later papers. △ Plumb if a benzodiazepine is the hospital metro-tox conversation.
+
+Book/public traps:
+
+- Printed antihistamine / Cerenia / diazepam numbers stay in the book. Night antiemetic △ Plumb. Do not copy maropitant 8 mg/kg from this chapter as if it were a vestibular law.
+- Do not DexSP or mannitol a rolling old dog as “stroke.” That is not the idiopathic plan and not the TBI plan either.
+- Do not send dull + vertical nystagmus home as “just old.”
+- Do not put chlorhexidine or aminoglycoside in an ear whose TM you have not seen (book: saline until TM confirmed; avoid oily meds).
+- Horner + facial + tilt is the bulla/inner ear until imaging says otherwise, not default idiopathic (literature: idiopathic usually lacks Horner).
+- Do not flush a middle ear in a crashing, unintubated rolling dog in the lobby (aspiration via the auditory tube — Merck).
+- Hypothyroid neuropathy can look peripheral (Merck). Congenital vestibular is a puppy/breed story, not tonight’s 12-year-old.
+- Cats get idiopathic vestibular too. Polyps sit on the feline list.
+
+Night rule: head tilt → name peripheral vs central before home. Not a steroid stroke. Stop metronidazole if it is on the list.

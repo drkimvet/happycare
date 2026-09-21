@@ -696,6 +696,31 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("shock bolus", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_vestibular_not_dexsp_stroke(self):
+        b = analyze(
+            "dog",
+            "old dog head tilt and nystagmus, give DexSP for stroke",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("peripheral vs central before home", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("dexsp", joined)
+        self.assertIn("stroke", joined)
+        self.assertIn("meclizine", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_vestibular_stop_metronidazole_and_horner_is_ear(self):
+        b = analyze(
+            "dog",
+            "head tilt, nystagmus, Horner and facial paralysis, on metronidazole, vertical nystagmus",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stop metronidazole", joined)
+        self.assertIn("inner ear", joined)
+        self.assertIn("vertical nystagmus", joined)
+        self.assertIn("just old", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
