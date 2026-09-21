@@ -176,6 +176,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("eclampsia", VERIF.lower())
         self.assertIn("oral calcium during pregnancy", VERIF.lower())
         self.assertIn("not for subcutaneous", VERIF.lower())
+        self.assertIn("dystocia", VERIF.lower())
+        self.assertIn("placental separation", VERIF.lower())
+        self.assertIn("obstructive dystocia", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -200,6 +203,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-parvo`", MACRO)
         self.assertIn("`ddx-eclampsia`", MACRO)
         self.assertIn("`dc-eclampsia`", MACRO)
+        self.assertIn("`ddx-dystocia`", MACRO)
+        self.assertIn("`dc-dystocia`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -290,6 +295,9 @@ class PublicCardInvariants(unittest.TestCase):
             "oral calcium during pregnancy predisposes",
             "calcium chloride is not for sq",
             "slow iv **calcium gluconate**",
+            "obstruction vs inertia before oxytocin",
+            "placental separation",
+            "oxytocin is not for a stuck fetus",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

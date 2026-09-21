@@ -613,6 +613,20 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("glucose", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dystocia_oxytocin_not_for_obstruction(self):
+        b = analyze(
+            "dog",
+            "bulldog dystocia, green discharge before first puppy, give oxytocin at home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("placental separation", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stuck fetus", joined)
+        self.assertIn("c-section", joined)
+        self.assertIn("breeder", joined)
+        self.assertIn("hour", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

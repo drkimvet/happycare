@@ -58,6 +58,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gi` | Assessment | Vomit/diarrhea |
 | `ddx-ahds` | Assessment | AHDS / HGE / parvo |
 | `ddx-eclampsia` | Assessment | Eclampsia / puerperal tetany |
+| `ddx-dystocia` | Assessment | Dystocia / stuck labor |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -74,6 +75,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
+| `dc-dystocia` | Discharge | Dystocia / C-section / decline |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -386,6 +388,19 @@ DDX:
 
 Do not: wait for the printer on classic tetany. Do not harvest calcium mL/kg. Do not give calcium chloride SQ. Do not load oral calcium during pregnancy (predisposes). Do not ice-water tetany fever as primary heatstroke. Glucose now. Interrupt nursing tonight. △ Plumb.
 
+### `ddx-dystocia`
+
+Dystocia — {{patient.name}}
+{{patient.sexTerm}}. Whelping / queening. Green discharge before first baby [Y/N]. Pups out [ ]. Strain without delivery [ ].
+
+DDX:
+1. Uterine inertia (primary / secondary) — glucose and calcium on the list
+2. Obstructive dystocia (malposition, oversized, narrow pelvis, brachycephalic)
+3. Maternal illness / uterine rupture / torsion
+4. Eclampsia overlapping labor
+
+Do not: oxytocin into an obstruction. Do not send oxytocin home with the breeder. Do not harvest IU or hour-between-pups tables. Do not yank a stuck fetus. Green/black before baby one is placental separation — come now. C-section if stuck, distressed, or medical fails. △ Plumb.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -533,6 +548,16 @@ Give only the medicines we sent. Offer food as instructed. Return now for collap
 Do not let the puppies or kittens nurse tonight until we say. Use the milk replacer as instructed. Give only the calcium or other medicines we sent, as labeled. Do not add human antacids or leftover steroids. Do not start calcium pills in a future pregnancy to “prevent this” unless a veterinarian has planned that after birth.
 
 Return now for stiffness, tremors, panting, or another seizure. {{location.phonenumber}}
+
+### `dc-dystocia`
+
+{{patient.name}} was treated for a difficult birth (dystocia). Some puppies or kittens cannot be born with medicine alone.
+
+[If C-section:] Incision care as discussed. The mother and the babies need warmth, food, and a quiet room. Return for straining without producing a baby, green or foul discharge, collapse, or if the mother will not nurse and the babies are fading.
+
+[If declined:] Surgery was recommended. Going home without delivering the remaining babies is life-threatening for the mother and the unborn. You may return at any time. Do not give oxytocin at home.
+
+{{location.phonenumber}}
 
 ### `dc-uo`
 

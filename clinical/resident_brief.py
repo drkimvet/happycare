@@ -119,6 +119,18 @@ PRENATAL_CA_RE = re.compile(
     r"\bcalcium\b.{0,40}\b(pregnan|gestation|prenatal)\b",
     re.I,
 )
+DYSTOCIA_RE = re.compile(
+    r"\b(dystocia|uterine inertia|stuck (labor|labour|whelping|queening)|"
+    r"can't (deliver|whelp|queen)|cannot (deliver|whelp)|"
+    r"green (discharge|lochia)|blackish-green|"
+    r"oxytocin)\b",
+    re.I,
+)
+OBSTRUCT_LABOR_RE = re.compile(
+    r"\b(obstruct|stuck fetus|malposition|narrow pelvis|pelvic fracture|"
+    r"brachycephal|bulldog|boston terrier|\bpug\b)\b",
+    re.I,
+)
 PYO_RE = re.compile(r"\bpyometra\b", re.I)
 FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
 HEAT_RE = re.compile(r"\b(heatstroke|heat stroke)\b", re.I)
@@ -944,6 +956,35 @@ def analyze(
             hard_stops.append("Calcium chloride is not for subcutaneous use.")
         if PRENATAL_CA_RE.search(text):
             hard_stops.append("Oral calcium during pregnancy is not prevention.")
+
+    if spec in {"dog", "cat"} and DYSTOCIA_RE.search(text):
+        localization = localization or (
+            "Dystocia: obstruction versus inertia before any oxytocin. "
+            "Green/black discharge before the first fetus is placental separation."
+        )
+        hard_stops.append(
+            "Dystocia: name obstruction vs inertia before oxytocin. Oxytocin is not for a stuck fetus."
+        )
+        do_not.append(
+            "Do not harvest oxytocin IU, three-dose, or hour-between-pups tables. "
+            "Do not send oxytocin home with the breeder. Do not yank a stuck fetus."
+        )
+        do_not.append(
+            "Do not invent a single hour cutoff (sources disagree). "
+            "Green discharge before baby one is enough to come in."
+        )
+        do_next.append(
+            "Glucose and calcium if inertia is the story (eclampsia overlap). "
+            "C-section if obstructed, distressed, brachycephalic risk, or medical fails. △ Plumb / hospital."
+        )
+        sources.append(
+            "Merck dystocia in small animals; Merck labor/delivery page "
+            "(SQ calcium gluconate conflicts with the dystocia not-SC/IM line)"
+        )
+        if OBSTRUCT_LABOR_RE.search(text):
+            hard_stops.append(
+                "Obstructive or brachycephalic dystocia: C-section conversation. Not an oxytocin trial."
+            )
 
     if PYO_RE.search(text):
         hard_stops.append("Pyometra: stabilize, then ovariohysterectomy unless a documented medical-breed plan.")

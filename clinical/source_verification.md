@@ -363,3 +363,18 @@ Book/public traps:
 - Interrupt nursing tonight. Milk replacer. Do not harvest a wean-hour table as a night law.
 
 Night rule: nursing small-breed + tetany → calcium gluconate slow IV, ECG, glucose, pull the pups. Not keppra-and-home. Not prenatal Tums next time.
+
+## 133. Dystocia (Plunkett repro headings vs Merck)
+
+Legal split whelping / dystocia headings if present. No chapter dump. **Do not harvest oxytocin IU, “three doses,” calcium mL/kg, fetal-HR cutoffs, or hour-between-pups tables.**
+
+Agree with Merck: uterine inertia is the most common canine cause (primary or secondary). Oxytocin increases contraction **frequency** and **must not** be used in obstructive dystocia (can separate the placenta). Dark green or malodorous discharge **before** whelping/queening can mean placental separation. Calcium increases contraction **strength**; ECG if IV. Brachycephalic breeds (bulldog, pug, Boston, Chihuahua; Persian/Siamese cats) are over-represented.
+
+Book/public traps:
+
+- Printed oxytocin units and calcium mL/kg stay on the page. Night: △ Plumb / hospital. Cornell and Merck labor pages do **not** agree on a single hour-between-pups law. Do not invent one. Green before the first fetus is enough to come in.
+- Two Merck pages disagree on SQ calcium gluconate (labor page allows SC; dystocia page: not SC/IM, necrosis). Night crisis: slow IV, ECG. Not calcium chloride SQ.
+- Do not send a bottle of oxytocin home with the breeder.
+- Do not yank a stuck fetus. C-section is not a failure; it is the obstruction / distress / failed-medical conversation.
+
+Night rule: stuck labor → obstruction vs inertia before any oxytocin. Green before baby one is placental separation, not a color to watch at home.
