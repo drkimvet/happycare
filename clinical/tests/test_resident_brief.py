@@ -774,6 +774,31 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("long pt", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_proptosis_lubricate_not_dry_home(self):
+        b = analyze(
+            "dog",
+            "pug proptosis, send home dry, no lubricant",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("lubricate now", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a dry globe home", joined)
+        self.assertIn("replacement or enucleation tonight", joined)
+        self.assertIn("3-hour", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_proptosis_not_lobby_push_or_flunixin(self):
+        b = analyze(
+            "cat",
+            "proptosis, push the globe back without sedation, flunixin and DexSP",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("vision is grave", joined)
+        self.assertIn("without anesthesia", joined)
+        self.assertIn("flunixin", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

@@ -200,6 +200,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("ammonia is not the diagnosis", VERIF.lower())
         self.assertIn("do not give benzodiazepines for hepatic encephalopathy", VERIF.lower())
         self.assertIn("book nac 50", VERIF.lower())
+        self.assertIn("proptosis", VERIF.lower())
+        self.assertIn("lubricate now", VERIF.lower())
+        self.assertIn("do not send a dry globe home", VERIF.lower())
+        self.assertIn("3-hour", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -238,6 +242,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-snake`", MACRO)
         self.assertIn("`ddx-he`", MACRO)
         self.assertIn("`dc-he`", MACRO)
+        self.assertIn("`ddx-propto`", MACRO)
+        self.assertIn("`dc-propto`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -349,6 +355,9 @@ class PublicCardInvariants(unittest.TestCase):
             "ammonia is not the diagnosis",
             "do not give benzodiazepines for hepatic encephalopathy",
             "do not pour lactulose into a somnolent",
+            "lubricate now",
+            "do not send a dry globe home",
+            "replacement or enucleation tonight",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -33,7 +33,11 @@ BETA_LACTAM_RE = re.compile(
     r"\b(amoxicillin|ampicillin|amoxi|clavamox|cefalexin|cephalexin|penicillin|beta-?lactam)\b",
     re.I,
 )
-NSAID_RE = re.compile(r"\b(nsaid|meloxicam|carprofen|robenacoxib|onsior|rimadyl|metacam|deracoxib)\b", re.I)
+NSAID_RE = re.compile(
+    r"\b(nsaid|meloxicam|carprofen|robenacoxib|onsior|rimadyl|metacam|deracoxib|"
+    r"flunixin|banamine)\b",
+    re.I,
+)
 DEX_RE = re.compile(r"\b(dexsp|dexamethasone|dexamethasone sp|azium)\b", re.I)
 CEFAZOLIN_CRI_RE = re.compile(r"\bcefazolin\b.*\bcri\b|\bcri\b.*\bcefazolin\b", re.I)
 DRAIN_RE = re.compile(r"\b(drain (the )?abdomen|abdominocentesis|peritoneal drain|tap the belly)\b", re.I)
@@ -315,6 +319,23 @@ LACTULOSE_RE = re.compile(r"\blactulose\b", re.I)
 SOMNOLENT_RE = re.compile(r"\b(somnolent|obtund|coma|comatose|unresponsive)\b", re.I)
 FFP_RE = re.compile(r"\b(ffp|fresh frozen plasma|plasma transfusion)\b", re.I)
 PROLONGED_PT_RE = re.compile(r"\b(prolonged (pt|ptt)|long pt|high inr)\b", re.I)
+PROPTOSIS_RE = re.compile(
+    r"\bproptos|"
+    r"\b(globe prolapse|prolapsed globe|eye out of (the )?socket|"
+    r"eye popped out|popped (out )?(the )?eye)\b",
+    re.I,
+)
+PUSH_GLOBE_RE = re.compile(
+    r"\b(push|pop|reduce|reduction).{0,24}\b(globe|eye)\b|"
+    r"\bmanual reduction\b|"
+    r"\bwithout sedation\b",
+    re.I,
+)
+GLOBE_RUPTURE_RE = re.compile(
+    r"\b(globe rupture|ruptured globe|corneal perforat|three extraocular|"
+    r"3 extraocular|optic nerve avuls)\b",
+    re.I,
+)
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
@@ -796,6 +817,48 @@ def analyze(
             hard_stops.append("Do not NSAID a failing liver.")
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for HE.")
+
+    if spec in {"dog", "cat"} and PROPTOSIS_RE.search(text):
+        prop_loc = (
+            "Globe anterior, lids trapped behind the equator. "
+            "Lubricate now. Replacement or enucleation tonight."
+        )
+        localization = f"{localization} Also {prop_loc}" if localization else prop_loc
+        hard_stops.append(
+            "Proptosis: lubricate now. Replacement or enucleation tonight. "
+            "Do not send a dry globe home."
+        )
+        do_not.append(
+            "Do not harvest the 2013 3-hour cutoff, flunixin table, or suture/stent argument. "
+            "Do not put chlorhexidine in the eye. Do not promise vision."
+        )
+        do_next.append(
+            "ABC / other trauma first. Fluorescein after it is moist. "
+            "Enucleate if ruptured, three extraocular muscles gone, or the optic nerve is avulsed. "
+            "E-collar. △ topical / systemic in Plumb."
+        )
+        sources.append(
+            "Merck proptosis (Thomasy). Plunkett proptosed-globe headings traps only."
+        )
+        if spec == "cat":
+            hard_stops.append("Cat proptosis: vision is grave even if the globe is salvaged.")
+        if PUSH_GLOBE_RE.search(text):
+            hard_stops.append(
+                "Do not push a proptosed globe back in the lobby without anesthesia "
+                "and a canthotomy / tarsorrhaphy plan."
+            )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a dry globe home.")
+        if GLOBE_RUPTURE_RE.search(text):
+            hard_stops.append(
+                "Rupture, three extraocular muscles, or optic-nerve avulsion is an enucleation conversation tonight."
+            )
+        if NSAID_RE.search(text):
+            hard_stops.append("Do not NSAID a traumatic proptosis. Hold flunixin.")
+        if DEX_RE.search(text):
+            hard_stops.append("DexSP is not the first syringe for a proptosed globe.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for proptosis.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

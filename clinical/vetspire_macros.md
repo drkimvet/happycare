@@ -65,6 +65,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-vest` | Assessment | Vestibular / head tilt |
 | `ddx-snake` | Assessment | Snakebite / pit viper / coral |
 | `ddx-he` | Assessment | HE / ALF / head press |
+| `ddx-propto` | Assessment | Traumatic proptosis |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -88,6 +89,7 @@ Suggested names are short so they show up after three letters.
 | `dc-vest` | Discharge | Vestibular / head tilt |
 | `dc-snake` | Discharge | Snakebite going home |
 | `dc-he` | Discharge | Hepatic encephalopathy / liver |
+| `dc-propto` | Discharge | After proptosis replace / enucleate |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -503,6 +505,20 @@ DDX:
 Do not: benzodiazepines for HE. Pour lactulose into a somnolent mouth. Harvest 2013 20 mL/kg enemas or book NAC 50. Routine FFP for a long PT. DexSP / glucocorticoid. Default starve / l/d. Ammonia-tolerance test tonight. Mix NAC families.
 Do next: glucose now. Lactulose if they can swallow △ Plumb. Name the toxin. HE seizure: levetiracetam. Plasma if bleeding.
 
+### `ddx-propto`
+
+Proptosis — {{patient.name}}
+{{patient.species}} [brachy Y/N]. Lubricated [Y/N]. Pupil / PLR [ ]. Other eye [ ]. Extraocular muscles [count]. Globe intact [Y/N]. Other trauma [ ].
+
+DDX / plan:
+1. Traumatic proptosis — lids behind the equator
+2. Replace + temporary tarsorrhaphy if globe intact
+3. Enucleate if rupture / ≥3 extraocular muscles / optic-nerve avulsion
+4. Concurrent HBC / bite / skull — ABC first
+
+Do not: send a dry globe home. Lobby push without anesthesia. Harvest 2013 3-hour or flunixin tables. DexSP-first. Promise vision. Chlorhex in the eye. Steroid drop on an ulcer.
+Do next: lubricate now. Replacement or enucleation tonight. E-collar. Cat: vision grave. △ Plumb.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -708,6 +724,14 @@ Give only the medicines we sent (often a stool-softening sugar called lactulose)
 {{patient.Pronoun}} must eat as instructed. Do not skip meals unless we said to wait.
 
 Return now for circling, head pressing, another seizure, collapse, yellow gums, or black stool. {{location.phonenumber}}
+
+### `dc-propto`
+
+{{patient.name}} was treated for an eye that came out of the socket (proptosis). We lubricated it and either put it back and stitched the lids, or removed the eye.
+
+Vision in that eye is not promised. Cats rarely keep vision. Keep the E-collar on. Give only the eye and pain medicines we sent, as labeled. Do not add leftover steroids or leftover pain pills. Do not put human eye drops or disinfectant in the eye.
+
+Return now for the eye becoming more swollen or dry, yellow/green discharge, the stitches opening, or if {{patient.pronoun}} is in pain or not eating. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

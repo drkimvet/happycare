@@ -511,3 +511,26 @@ Book/public traps:
 - Azotemic: still no DexSP.
 
 Night rule: head press + jaundice → glucose now. Ammonia is not the diagnosis. No benzos. No DexSP. Do not pour lactulose into a somnolent.
+
+## 140. Traumatic proptosis (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Proptosed globe” (printed ~451–453). No chapter dump. **Do not harvest printed 3-hour cutoff, flunixin 0.5–1 mg/kg, 2-0/3-0 suture, or “avoid stents” as night law.**
+
+Agree with Merck proptosis (Thomasy, Jul 2024): sudden anterior displacement with eyelids trapped behind the equator. Lubricate the exposed cornea now. Replacement is a lateral canthotomy plus temporary tarsorrhaphy under general anesthesia, or globe removal if the eye is destroyed. Prognosis depends on pupil, duration of exposure, other globe/orbit damage, breed, and systemic trauma. **About 25% of dogs recover vision; the prognosis for vision in cats is grave.** Complications: optic-nerve blindness, ulcer, enophthalmos, KCS, lateral strabismus (medial rectus). Premature suture removal → lagophthalmos and progressive ulcer.
+
+Agree with public salvage teaching (Gilger-era / Clinician’s Brief / Today’s Veterinary Practice summaries of Gilger 1995 JAVMA): prefer replace-and-tarsorrhaphy if the globe is intact; primary enucleation if rupture, three or more extraocular muscles avulsed, optic-nerve avulsion, or the owner cannot do aftercare. Cosmetic salvage ≠ vision. A second surgery may still be needed.
+
+Book/public traps:
+
+- Printed “better if <3 hours” stays in the book. Duration matters; it is not a send-home or veto number. Do not harvest a 3-hour law.
+- Printed flunixin once, dogs only, not with steroids — NSAID on a trauma patient. Night: not the eye plan. △ Plumb. Hold if azotemic.
+- Book: try manual reduction of a partial proptosis **without sedation**. Night: do not wrestle a painful globe in the lobby. Lubricate. Anesthesia for replace.
+- Book “avoid stents” vs Merck stents / 5-0 silk. Do not harvest the suture argument. Hospital / ophtho.
+- Book “unless dangling, do not remove.” Night: rupture / three-plus muscles / avulsed nerve is an enucleation conversation tonight, not a dangling-only rule.
+- Merck “systemic corticosteroids after replacement.” Night: △ Plumb. Not DexSP-first for the HBC. Azotemic: still no DexSP. No steroid drop on an ulcer.
+- Do not send a dry globe home. Do not put chlorhexidine in the eye.
+- Do not promise vision. Cat vision is grave even if the globe stays.
+- Hamster “ocular proptosis” in the exotic appendix is dropped with 641–739. Midtown is dog and cat.
+- Aspirin is contraindicated in the book hyphema section next door — do not NSAID the eye.
+
+Night rule: eye out → lubricate now. Replacement or enucleation tonight. Do not send a dry globe home.
