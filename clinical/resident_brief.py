@@ -298,6 +298,23 @@ CORAL_RE = re.compile(r"\b(coral snake|elapid)\b", re.I)
 FASCIOTOMY_RE = re.compile(r"\bfasciotom", re.I)
 SNAKE_VAX_RE = re.compile(r"\b(rattlesnake vaccine|snake vaccine)\b", re.I)
 SEND_HOME_RE = re.compile(r"\b(send home|go home|discharge|home as)\b", re.I)
+HE_RE = re.compile(
+    r"\bhepatic encephalo|"
+    r"\bhepatoencephalo|"
+    r"\bhead[- ]press|"
+    r"\bammonium biurate|"
+    r"\bportosystemic|\bpss\b|\bliver shunt|"
+    r"\bfulminant hepatic|"
+    r"\bacute hepatic failure|"
+    r"\bacute liver failure|"
+    r"\bliver failure\b",
+    re.I,
+)
+BENZO_HE_RE = re.compile(r"\b(diazepam|midazolam|alprazolam|alfaxalone|benzo)\b", re.I)
+LACTULOSE_RE = re.compile(r"\blactulose\b", re.I)
+SOMNOLENT_RE = re.compile(r"\b(somnolent|obtund|coma|comatose|unresponsive)\b", re.I)
+FFP_RE = re.compile(r"\b(ffp|fresh frozen plasma|plasma transfusion)\b", re.I)
+PROLONGED_PT_RE = re.compile(r"\b(prolonged (pt|ptt)|long pt|high inr)\b", re.I)
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
@@ -732,6 +749,53 @@ def analyze(
             hard_stops.append("Fasciotomy is not the default for a tight snakebitten limb.")
         if SNAKE_VAX_RE.search(text):
             hard_stops.append("A rattlesnake vaccine does not replace antivenom.")
+
+    if spec in {"dog", "cat"} and HE_RE.search(text):
+        he_loc = (
+            "Hepatic encephalopathy or fulminant failure. "
+            "Ammonia is not the diagnosis. Glucose now. "
+            "Shunt HE is not the same as acute liver failure."
+        )
+        localization = f"{localization} Also {he_loc}" if localization else he_loc
+        hard_stops.append(
+            "HE/ALF: ammonia is not the diagnosis. Glucose now. "
+            "Do not give benzodiazepines for hepatic encephalopathy."
+        )
+        do_not.append(
+            "Do not pour lactulose into a somnolent mouth. "
+            "Do not harvest 2013 20 mL/kg enemas, neomycin, or book NAC 50. "
+            "Do not give routine FFP for a long PT. Do not default a low-protein l/d if there is no overt HE."
+        )
+        do_next.append(
+            "Name the toxin (sago / xylitol / APAP / mushroom). "
+            "Lactulose if they can swallow, titrate to soft stool △ Plumb. "
+            "HE seizure: levetiracetam, not a benzo. △ Plumb."
+        )
+        sources.append(
+            "Merck hepatic encephalopathy and fulminant hepatic failure (Center). "
+            "Plunkett AHF/HE headings traps only."
+        )
+        if nac_family and nac_family not in {"hepatic-failure", "acetaminophen", "xylitol-consider"}:
+            hard_stops.append("NAC family conflict: do not blend hepatic-failure NAC with another family.")
+        elif not nac_family:
+            nac_family = "hepatic-failure"
+        if BENZO_HE_RE.search(text):
+            hard_stops.append(
+                "Do not give benzodiazepines for hepatic encephalopathy. "
+                "Alfaxalone is also off. Levetiracetam △ Plumb."
+            )
+        if LACTULOSE_RE.search(text) and SOMNOLENT_RE.search(text):
+            hard_stops.append("Do not pour lactulose into a somnolent mouth.")
+        if FFP_RE.search(text) and PROLONGED_PT_RE.search(text):
+            hard_stops.append(
+                "Do not give routine FFP for a long PT. Balanced hemostasis; plasma if bleeding."
+            )
+        if DEX_RE.search(text):
+            hard_stops.append("Glucocorticoids precipitate HE. DexSP is not the liver plan.")
+        if NSAID_RE.search(text):
+            hard_stops.append("Do not NSAID a failing liver.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for HE.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

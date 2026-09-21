@@ -196,6 +196,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("1–5 vials", VERIF)
         self.assertIn("do not ice, cut, suck, or tourniquet", VERIF.lower())
         self.assertIn("antivenom is the specific", VERIF.lower())
+        self.assertIn("hepatic encephalopathy", VERIF.lower())
+        self.assertIn("ammonia is not the diagnosis", VERIF.lower())
+        self.assertIn("do not give benzodiazepines for hepatic encephalopathy", VERIF.lower())
+        self.assertIn("book nac 50", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -232,6 +236,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-vest`", MACRO)
         self.assertIn("`ddx-snake`", MACRO)
         self.assertIn("`dc-snake`", MACRO)
+        self.assertIn("`ddx-he`", MACRO)
+        self.assertIn("`dc-he`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -340,6 +346,9 @@ class PublicCardInvariants(unittest.TestCase):
             "steroids are contraindicated in geriatric idiopathic",
             "do not ice, cut, suck, or tourniquet",
             "antivenom is the specific",
+            "ammonia is not the diagnosis",
+            "do not give benzodiazepines for hepatic encephalopathy",
+            "do not pour lactulose into a somnolent",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

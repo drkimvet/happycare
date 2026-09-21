@@ -64,6 +64,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-txrxn` | Assessment | Transfusion reaction |
 | `ddx-vest` | Assessment | Vestibular / head tilt |
 | `ddx-snake` | Assessment | Snakebite / pit viper / coral |
+| `ddx-he` | Assessment | HE / ALF / head press |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -86,6 +87,7 @@ Suggested names are short so they show up after three letters.
 | `dc-txrxn` | Discharge | After a transfusion reaction |
 | `dc-vest` | Discharge | Vestibular / head tilt |
 | `dc-snake` | Discharge | Snakebite going home |
+| `dc-he` | Discharge | Hepatic encephalopathy / liver |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -487,6 +489,20 @@ DDX:
 Do not: ice, cut, suck, tourniquet, electric shock. Chase the snake. Harvest appendix 1–5 vials or Merck epi mL. NSAID. DexSP-first. Fasciotomy as default. Vaccine as antivenom. Azotemic: still no DexSP.
 Do next: quiet, limit activity. Antivenom is the specific △ hospital stock. Mark swelling. Coral: ventilate. Anaphylaxis: epinephrine first.
 
+### `ddx-he`
+
+HE / ALF — {{patient.name}}
+{{patient.species}}. Glucose [ ]. Mentation [ ]. Jaundice [ ]. Ammonia [if drawn — not required]. Biurate crystals [Y/N]. Toxin [sago / xylitol / APAP / mushroom / none]. Swallowing [Y/N].
+
+DDX:
+1. Type A — fulminant hepatic failure (toxin, lepto, copper + NSAID, sepsis)
+2. Type B — congenital / acquired portosystemic shunt (not the same as FHF)
+3. Type C — cirrhosis + acquired shunts
+4. Neuroglycopenia / thiamine / electrolyte lookalikes
+
+Do not: benzodiazepines for HE. Pour lactulose into a somnolent mouth. Harvest 2013 20 mL/kg enemas or book NAC 50. Routine FFP for a long PT. DexSP / glucocorticoid. Default starve / l/d. Ammonia-tolerance test tonight. Mix NAC families.
+Do next: glucose now. Lactulose if they can swallow △ Plumb. Name the toxin. HE seizure: levetiracetam. Plasma if bleeding.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -682,6 +698,16 @@ Return now for becoming dull, a worsening head tilt with a fever, not eating, or
 We discussed antivenom. Give only the medicines we sent, as labeled. Do not add leftover pain pills or leftover steroids.
 
 Return now for spreading swelling, new bleeding, trouble breathing, collapse, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-he`
+
+{{patient.name}} was treated for a liver-related brain problem (hepatic encephalopathy) or acute liver injury. This can look like a seizure or just being dull.
+
+Give only the medicines we sent (often a stool-softening sugar called lactulose), as labeled. Aim for soft stools, not watery diarrhea. Do not add leftover steroids, leftover pain pills, or human sleep medicines.
+
+{{patient.Pronoun}} must eat as instructed. Do not skip meals unless we said to wait.
+
+Return now for circling, head pressing, another seizure, collapse, yellow gums, or black stool. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

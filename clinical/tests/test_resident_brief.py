@@ -750,6 +750,30 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not manufactured", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_he_not_benzo_dexsp(self):
+        b = analyze(
+            "dog",
+            "head pressing, hepatic encephalopathy, give diazepam and DexSP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("ammonia is not the diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not give benzodiazepines for hepatic encephalopathy", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIn("glucose now", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_he_somnolent_no_oral_lactulose_no_routine_ffp(self):
+        b = analyze(
+            "cat",
+            "acute liver failure, somnolent, pour lactulose, FFP for prolonged PT",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not pour lactulose into a somnolent mouth", joined)
+        self.assertIn("routine ffp", joined)
+        self.assertIn("long pt", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

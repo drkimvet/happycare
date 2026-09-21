@@ -490,3 +490,24 @@ Book/public traps:
 - Vaccine ≠ antivenom.
 
 Night rule: snakebite → quiet, come now. Do not ice, cut, suck, or tourniquet. Antivenom is the specific △ hospital. Not DexSP. Not an NSAID.
+
+## 139. Hepatic encephalopathy / fulminant hepatic failure (Plunkett p301–440 vs Merck Center)
+
+Legal split “Acute hepatic failure” / “Hepatic encephalopathy” (printed ~293–301). No chapter dump. **Do not harvest printed lactulose 0.5 mL/kg or 20 mL/kg 3:7 enemas, neomycin 15 mg/kg, metro 7.5–15, book NAC 50 mg/kg, 25% dextrose boluses, protein g/kg, or SAMe/silymarin/UDCA/colchicine tables.**
+
+Agree with Merck HE (Center, full review Aug 2023 / update Sept 2024) and FHF (update Jul 2026): HE is a neurobehavioral syndrome from liver failure or portosystemic shunting. **Ammonia is not the diagnosis** — blood and brain ammonia are often discordant; a normal ammonia does not rule HE out. Type A = acute / FHF (edema, herniation risk). Type B = shunt; congenital PSS is **not** liver failure. Type C = cirrhosis. Glucose now: neuroglycopenia looks like HE. Lactulose is first-line if they can swallow; titrate to soft pudding stools. **Do not give benzodiazepines for hepatic encephalopathy** (GABA); Merck names levetiracetam. Alfaxalone also off. Oral lactulose / metro in a somnolent patient is an aspiration trap. Crystalloids, not colloids. Avoid LRS if lactate is not clearing. Protein restriction only if overt HE or ammonium biurate crystals; otherwise do not restrict and do not starve. Routine plasma for a long PT is not supported (balanced hemostasis). Glucocorticoids precipitate HE. Merck: hypothermia, barbiturate coma, HTS, and flumazenil infusions are not recommended. Neomycin is not recommended (oto/renal).
+
+Book/public traps:
+
+- Printed book NAC **50 mg/kg q6h** is not the APAP 140/70 family and not a reason to invent a fourth blend. Night hepatic-failure NAC is family 3 — △ Plumb.
+- Printed 20 mL/kg 3:7 lactulose, 50–200 mL, neomycin 15 mg/kg, and povidone-iodine enemas stay on the page. Night enema △ hospital. Do not copy peritoneal-iodine thinking into the rectum as a recipe.
+- Book metro 10–15 mg/kg exceeds the Merck HE restrict-or-neurotoxicity line. Night: do not harvest. High-dose metro still gets stopped (already gated).
+- Ammonia-tolerance testing can induce HE. Not a night test.
+- Default Hill’s l/d / “low protein tonight” is the 2013 leftover. Merck: restrict only if overt HE or biurate crystals.
+- Do not pour lactulose into a somnolent mouth.
+- Do not midazolam an HE seizure because the status card said benzo-first.
+- Injectable thiamine: Merck HE flags vasovagal collapse. Glucose now if they are hypoglycemic; do not wait for a thiamine vial. △ Plumb.
+- Stored blood generates ammonia. Fresh if you must transfuse.
+- Azotemic: still no DexSP.
+
+Night rule: head press + jaundice → glucose now. Ammonia is not the diagnosis. No benzos. No DexSP. Do not pour lactulose into a somnolent.
