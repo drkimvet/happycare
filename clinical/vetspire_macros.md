@@ -66,6 +66,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-snake` | Assessment | Snakebite / pit viper / coral |
 | `ddx-he` | Assessment | HE / ALF / head press |
 | `ddx-propto` | Assessment | Traumatic proptosis |
+| `ddx-neonate` | Assessment | Fading / newborn resuscitation |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -90,6 +91,7 @@ Suggested names are short so they show up after three letters.
 | `dc-snake` | Discharge | Snakebite going home |
 | `dc-he` | Discharge | Hepatic encephalopathy / liver |
 | `dc-propto` | Discharge | After proptosis replace / enucleate |
+| `dc-neonate` | Discharge | Fading neonate going home |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -519,6 +521,20 @@ DDX / plan:
 Do not: send a dry globe home. Lobby push without anesthesia. Harvest 2013 3-hour or flunixin tables. DexSP-first. Promise vision. Chlorhex in the eye. Steroid drop on an ulcer.
 Do next: lubricate now. Replacement or enucleation tonight. E-collar. Cat: vision grave. △ Plumb.
 
+### `ddx-neonate`
+
+Fading / newborn — {{patient.name}}
+Age [hours/days]. Temp [ ]. Glucose [ ]. Nursing [Y/N]. Umbilicus [ ]. Dam: type B [Y/N] mastitis/metritis [ ]. Congenital [cleft / atresia].
+
+DDX:
+1. Hypothermia / hypoglycemia / hypoxia (ABC, warm before feed)
+2. Sepsis / omphalitis
+3. Neonatal isoerythrolysis (type B queen)
+4. Congenital defect / fading is not a diagnosis
+
+Do not: swing. Routine doxapram. Atropine for neonatal bradycardia. Tube-feed a cold gut. Adult CPR cart. Harvest 80–100 mL/kg or Merck 0.0002 mg/g. Send home as small of the litter.
+Do next: warm, rub, PPV if not vigorous. Glucose now. Look at dam and umbilicus. △ newborn crash-cart / Plumb.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -732,6 +748,12 @@ Return now for circling, head pressing, another seizure, collapse, yellow gums, 
 Vision in that eye is not promised. Cats rarely keep vision. Keep the E-collar on. Give only the eye and pain medicines we sent, as labeled. Do not add leftover steroids or leftover pain pills. Do not put human eye drops or disinfectant in the eye.
 
 Return now for the eye becoming more swollen or dry, yellow/green discharge, the stitches opening, or if {{patient.pronoun}} is in pain or not eating. {{location.phonenumber}}
+
+### `dc-neonate`
+
+{{patient.name}} is a newborn / very young puppy or kitten. Keep {{patient.objectPronoun}} warm. Feed only after {{patient.pronoun}} is warm and can swallow. Do not swing {{patient.objectPronoun}}. Do not pour formula into the mouth if {{patient.pronoun}} cannot swallow.
+
+Give only the medicines we sent, as labeled. Weigh daily. Return now for nonstop crying, not nursing, cold body, trouble breathing, a red belly button, or black/cold toes. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

@@ -204,6 +204,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("lubricate now", VERIF.lower())
         self.assertIn("do not send a dry globe home", VERIF.lower())
         self.assertIn("3-hour", VERIF.lower())
+        self.assertIn("fading neonate", VERIF.lower())
+        self.assertIn("do not swing", VERIF.lower())
+        self.assertIn("warm before you feed", VERIF.lower())
+        self.assertIn("atropine is not for neonatal bradycardia", VERIF.lower())
+        self.assertIn("0.0002 mg/g", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -244,6 +249,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-he`", MACRO)
         self.assertIn("`ddx-propto`", MACRO)
         self.assertIn("`dc-propto`", MACRO)
+        self.assertIn("`ddx-neonate`", MACRO)
+        self.assertIn("`dc-neonate`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -358,6 +365,9 @@ class PublicCardInvariants(unittest.TestCase):
             "lubricate now",
             "do not send a dry globe home",
             "replacement or enucleation tonight",
+            "do not swing the neonate",
+            "warm before you feed",
+            "atropine is not for neonatal bradycardia",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

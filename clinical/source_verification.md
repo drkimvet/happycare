@@ -534,3 +534,27 @@ Book/public traps:
 - Aspirin is contraindicated in the book hyphema section next door — do not NSAID the eye.
 
 Night rule: eye out → lubricate now. Replacement or enucleation tonight. Do not send a dry globe home.
+
+## 141. Fading neonate / newborn resuscitation (Plunkett p301–440 vs Merck + RECOVER newborn)
+
+Legal split “Fading neonatal syndromes” plus C-section newborn bullets (printed ~404–407). No chapter dump. **Do not harvest printed 80–100 mL/kg/day, 40–45 / 25–30 mL/kg boluses, 1–2 drops doxapram or naloxone, 12.5% dextrose, 100–140 mg/dL, or 0.0002 mg/g epinephrine.**
+
+Agree with Merck neonate management (Davidson, Dec 2022 / Aug 2025): first 21 days; mortality highest week 1. ABC in a warm room. **Do not swing** to clear the airway. Rub and dry. Doxapram is **not recommended** for hypoventilation hypoxia. Atropine is **not advised** — neonatal bradycardia is myocardial hypoxemia, not vagal. Warm before tube-feeding (ileus / aspiration). Heating pads burn. Glucose stores are tiny (already gated). Sepsis: failure to suckle, crying, abdominal pain, extremity necrosis; look at umbilicus and dam. Type B queen / NI already gated.
+
+Agree with RECOVER newborn resuscitation (JVECC; consensus guidelines, DOI 10.1111/vec.70013): recommend against swinging; recommend against routine doxapram; suggest against atropine; PPV for the nonvigorous bradycardic newborn; chest compressions if very severe bradycardia persists after PPV. **Newborn CPR is not the adult RECOVER cart.** Do not use a specific Apgar cutoff to start resuscitation.
+
+Book/public traps:
+
+- Printed 1–2 drops doxapram under the tongue is a 2013 leftover. Night: not routine. PPV first.
+- Printed 80–100 mL/kg/day and shock boluses stay in the book. Night: △ hospital / Plumb. Weigh them.
+- Book prefers LRS because “neonates use lactate as fuel.” Adult FHF page says avoid LRS if lactate is stuck. Night: do not harvest a fluid brand as law.
+- Merck 0.0002 mg/g epinephrine is a **unit trap** next to RECOVER’s printed IV/IO range. Do not copy either number. △ newborn crash-cart.
+- Merck “100% oxygen for all” vs RECOVER “room air first” — name the conflict. △ hospital algorithm.
+- Do not copy adult 30:2 / atropine-once onto a newborn.
+- Do not tube-feed a cold neonate. Do not pour formula into a collapsed mouth.
+- Persistent crying is illness, not “just a noisy litter.” Do not send a cold, not-nursing neonate home as small of the litter.
+- Book necropsy-as-most-useful-test is for the litter later, not a reason to skip glucose and heat tonight.
+- Avoid enrofloxacin / aminoglycoside in the neonate (book). Do not harvest the ceftiofur reconstitution recipe.
+- Azotemic dam: still no DexSP.
+
+Night rule: fading / just-born → warm before you feed. Do not swing. Atropine is not for neonatal bradycardia. Fading is not a diagnosis.

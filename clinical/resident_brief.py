@@ -336,6 +336,23 @@ GLOBE_RUPTURE_RE = re.compile(
     r"3 extraocular|optic nerve avuls)\b",
     re.I,
 )
+NEONATE_RE = re.compile(
+    r"\bneonat|"
+    r"\bnewborn|"
+    r"\bfading (puppy|kitten|neonat)|"
+    r"\b(day[- ]old|hours?[- ]old|just born)|"
+    r"\b(whelping box|c-section puppy|c-section kitten)\b",
+    re.I,
+)
+SWING_RE = re.compile(r"\bswing", re.I)
+DOXAPRAM_RE = re.compile(r"\b(doxapram|dopram)\b", re.I)
+TUBE_FEED_RE = re.compile(r"\b(tube[- ]feed|stomach tube|formula|bottle feed)\b", re.I)
+COLD_NEONATE_RE = re.compile(
+    r"\bhypotherm|"
+    r"\b(chilled|cold (puppy|kitten|neonat))\b",
+    re.I,
+)
+SMALL_LITTER_RE = re.compile(r"\b(small of the litter|\brunt\b)\b", re.I)
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
@@ -859,6 +876,43 @@ def analyze(
             hard_stops.append("DexSP is not the first syringe for a proptosed globe.")
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for proptosis.")
+
+    if spec in {"dog", "cat"} and NEONATE_RE.search(text):
+        neo_loc = (
+            "Fading neonate or newborn resuscitation. "
+            "Warm before you feed. Fading is not a diagnosis."
+        )
+        localization = f"{localization} Also {neo_loc}" if localization else neo_loc
+        hard_stops.append(
+            "Neonate: do not swing the neonate. Warm before you feed. "
+            "Atropine is not for neonatal bradycardia."
+        )
+        do_not.append(
+            "Do not give routine doxapram. Do not copy the adult RECOVER cart. "
+            "Do not harvest 80–100 mL/kg, 1–2 drops doxapram, or Merck 0.0002 mg/g epinephrine."
+        )
+        do_next.append(
+            "Airway, rub, dry, oxygen / PPV. Glucose now. Look at the umbilicus and the dam. "
+            "Type B queen: NI already gated. △ newborn crash-cart / Plumb."
+        )
+        sources.append(
+            "Merck neonate management (Davidson); RECOVER newborn resuscitation. "
+            "Plunkett fading-neonate headings traps only."
+        )
+        if SWING_RE.search(text):
+            hard_stops.append("Do not swing the neonate. Concussion and hemorrhage.")
+        if DOXAPRAM_RE.search(text):
+            hard_stops.append("Doxapram is not routine. PPV first.")
+        if ATROPINE_RE.search(text):
+            hard_stops.append(
+                "Atropine is not for neonatal bradycardia. Ventilate the hypoxia."
+            )
+        if TUBE_FEED_RE.search(text) and COLD_NEONATE_RE.search(text):
+            hard_stops.append("Do not tube-feed a cold neonate. Warm before you feed.")
+        if SEND_HOME_RE.search(text) or SMALL_LITTER_RE.search(text):
+            hard_stops.append(
+                "Do not send a cold, not-nursing neonate home as small of the litter."
+            )
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")
