@@ -61,6 +61,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dystocia` | Assessment | Dystocia / stuck labor |
 | `ddx-larpar` | Assessment | Dog stridor / laryngeal paralysis |
 | `ddx-hypogly` | Assessment | Toy puppy / neonatal hypoglycemia |
+| `ddx-txrxn` | Assessment | Transfusion reaction |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -80,6 +81,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dystocia` | Discharge | Dystocia / C-section / decline |
 | `dc-larpar` | Discharge | Lar par / tie-back / decline |
 | `dc-hypogly` | Discharge | Toy puppy hypoglycemia |
+| `dc-txrxn` | Discharge | After a transfusion reaction |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -421,6 +423,21 @@ DDX:
 Do not: keppra-first epilepsy. Pour syrup into a collapsed mouth. Harvest 2013 25%/50% dextrose tables. NPO. Send home still not eating. Call this insulinoma in a neonate.
 Do next: glucose now, warm, feed if they can swallow, IV/IO dextrose △ Plumb if not. Frequent puppy meals. They hold glucose before discharge.
 
+### `ddx-txrxn`
+
+Transfusion reaction — {{patient.name}}
+{{patient.species}}. Product [pRBC / whole blood / FFP]. Typed [DEA 1 / AB]. Crossmatch [ ]. Minutes into bag [ ].
+
+DDX:
+1. Acute hemolytic (AHTR) — pigment, PCV that did not rise
+2. Febrile non-hemolytic (exclusion after you look)
+3. TACO (overload) vs TRALI (uncommon)
+4. Allergic / anaphylaxis (cat: often respiratory)
+5. Bacterial contamination of the unit
+
+Do not: restart the same unit. Diphenhydramine-first for hemolysis or shock. Harvest 2013 rates or diphen numbers. Universal-donor cat blood. Type A into a type B cat. Dog-to-cat xenotransfusion as default. Invent a PCV trigger. Mix calcium fluids in the line. DexSP if azotemic.
+Do next: **stop the bag first.** Save the unit. Recheck PCV/TS, pigment, temp. Type and XM as indicated. TACO: no more volume. Anaphylaxis: epinephrine. △ hospital blood bank.
+
 ### `ddx-larpar`
 
 Laryngeal paralysis / GOLPP — {{patient.name}}
@@ -608,6 +625,14 @@ Return now for louder breathing, blue or purple tongue, collapse, or if {{patien
 {{patient.Pronoun}} must eat frequent small meals of puppy (or kitten) food as instructed. Do not skip meals. Keep {{patient.objectPronoun}} warm. Do not pour syrup into the mouth if {{patient.pronoun}} cannot swallow — call us instead.
 
 Return now for wobbliness, tremors, another seizure, collapse, or if {{patient.pronoun}} will not eat. Recheck as scheduled. {{location.phonenumber}}
+
+### `dc-txrxn`
+
+{{patient.name}} had a reaction during a blood transfusion. We stopped the bag. This can look like fever, vomiting, itching, trouble breathing, or red-brown urine.
+
+Give only the medicines we sent, as labeled. Do not add leftover allergy pills or leftover steroids.
+
+Return now for pale or yellow gums, red-brown urine, trouble breathing, collapse, or fever. Recheck as scheduled. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

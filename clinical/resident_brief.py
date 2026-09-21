@@ -250,6 +250,30 @@ POUR_SUGAR_RE = re.compile(
     re.I,
 )
 INSULINOMA_RE = re.compile(r"\binsulinoma\b", re.I)
+TRANSFUSION_RE = re.compile(
+    r"\btransfus|"
+    r"\b(prbc|packed red|whole blood|fresh frozen plasma|\bffp\b|"
+    r"blood type|dea\s*1|xenotransfus|neonatal isoeryth|"
+    r"\btaco\b|trali|febrile non[- ]?hemolytic|hemolytic reaction|"
+    r"blood product|crossmatch)\b",
+    re.I,
+)
+XENOTRANS_RE = re.compile(
+    r"\bxenotransfus|dog blood.{0,20}(for|to).{0,12}cat|canine blood.{0,20}(for|to).{0,12}cat|"
+    r"give.{0,12}cat.{0,12}dog blood",
+    re.I,
+)
+TYPE_B_CAT_RE = re.compile(
+    r"\btype[- ]?b\b.{0,28}\b(cat|queen|kitten)\b|"
+    r"\b(cat|queen|kitten).{0,28}\btype[- ]?b\b",
+    re.I,
+)
+TACO_RE = re.compile(r"\btaco\b|circulatory overload|volume overload", re.I)
+RESTART_UNIT_RE = re.compile(
+    r"\b(restart|resume|continue).{0,28}\b(same )?(unit|bag|transfusion)\b",
+    re.I,
+)
+UNIVERSAL_DONOR_RE = re.compile(r"\buniversal donor\b", re.I)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -477,6 +501,65 @@ def analyze(
             "If still crashing, surgery is the conversation. Negative tap does not rule out retroperitoneal bleed."
         )
         sources.append("Merck blood transfusions; Plunkett hemoperitoneum headings (legal split, no dump)")
+
+    if spec in {"dog", "cat"} and TRANSFUSION_RE.search(text):
+        rxn = bool(
+            re.search(
+                r"\b(reaction|fever|hemolysis|hemoglobinemia|hemoglobinuria|"
+                r"urticaria|hives|dyspnea|dyspnoea)\b",
+                text,
+                re.I,
+            )
+        )
+        tx_loc = (
+            "Blood product. Type first. "
+            "Fever, pigment, or new dyspnea on a bag is a reaction until you stop and look."
+        )
+        localization = f"{localization} Also {tx_loc}" if localization else tx_loc
+        if rxn:
+            hard_stops.append(
+                "Transfusion reaction: stop the bag first. Do not restart the same unit."
+            )
+        do_not.append(
+            "Do not harvest 2013 mL/kg/h, PCV formulas, or the book's two diphenhydramine numbers. "
+            "Do not invent a PCV transfusion cutoff."
+        )
+        do_not.append(
+            "Do not mix calcium-containing fluids in the blood line. Filter. Finish a unit in 4 hours."
+        )
+        do_next.append(
+            "Type DEA 1 (dog) or AB (cat). Look for hemolysis vs TACO vs allergy vs a dirty unit. "
+            "Major crossmatch if a dog is >4 days from a prior unit. △ hospital blood bank."
+        )
+        sources.append(
+            "Merck blood transfusions (Blois); AVHTM TRACS 2021 named as further reading. "
+            "Plunkett transfusion headings traps only."
+        )
+        if spec == "cat":
+            hard_stops.append(
+                "Cats: AB type-specific blood. No universal donor. Type B plus type A can kill on the first unit."
+            )
+            do_next.append(
+                "Cat allergic signs are often respiratory. First-unit crossmatch is the Mik/FEA conversation."
+            )
+            if UNIVERSAL_DONOR_RE.search(text):
+                hard_stops.append("Do not use a universal-donor story for a cat.")
+            if TYPE_B_CAT_RE.search(text) and re.search(r"\btype[- ]?a\b", text, re.I):
+                hard_stops.append("Do not give type A blood to a type B cat.")
+            if XENOTRANS_RE.search(text):
+                hard_stops.append(
+                    "Dog-to-cat xenotransfusion is last-ditch, not the night default. AHTR risk."
+                )
+        if RESTART_UNIT_RE.search(text):
+            hard_stops.append("Do not restart the same unit.")
+        if TACO_RE.search(text) and SHOCK_BOLUS_RE.search(text):
+            hard_stops.append("TACO: stop. Do not add a shock bolus.")
+        if DIPHEN_RE.search(text) and rxn:
+            hard_stops.append(
+                "Diphenhydramine is not first for hemolysis or anaphylactic shock."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic cat: still no DexSP, including for a transfusion reaction.")
 
     if spec in {"dog", "cat"} and IMHA_RE.search(text):
         imha_loc = (

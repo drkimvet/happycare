@@ -426,3 +426,24 @@ Book/public traps:
 - Xylitol still glucose first, charcoal does not bind (already gated). Do not mix NAC families.
 
 Night rule: tiny puppy + dull/tremor/seizure → stick a glucose, warm, feed or parenteral dextrose. Not keppra-and-home. Not an insulinoma puppy.
+
+## 136. Transfusion reaction (Plunkett p01–100 / p201–300 vs Merck Blois)
+
+Legal split transfusion / IMHA headings. No chapter dump. **Do not harvest printed 5–10 or 20–80 mL/kg/h rates, PCV formulas, 0.25 mL/kg test-dose, or the book’s two diphenhydramine numbers (0.5 vs 2 mg/kg).**
+
+Agree with Merck transfusions (Blois, full review Nov 2024 / update Mar 2026): type DEA 1 in dogs and AB in cats before RBC products. Dedicated line, blood filter, no calcium fluids in the same line, finish a unit in 4 hours. Fever is common; FNHTR is a diagnosis of exclusion after you look for hemolysis. AHTR: stop, support; PCV that did not rise, new pigment, ghosts/spherocytes. TACO is the usual respiratory reaction — stop, do not add volume; diuretic conversation. Cat allergic signs are often respiratory. Anaphylaxis: epinephrine, not antihistamine-first. Dogs: major crossmatch >4 days after any prior transfusion. Cats: after >2 days, and naturally occurring non-AB antibodies (Mik/FEA) make a first-unit crossmatch the conversation. Type B queens + type A/AB kittens: neonatal isoerythrolysis; do not nurse those kittens the first 24 hours. Xenotransfusion (dog blood to a cat) is last-ditch with AHTR risk, not a night default.
+
+Agree with AVHTM TRACS 2021 (named, not dumped): stop and assess; type-matched blood. Do not copy their monitoring-minute tables as night law.
+
+Book/public traps:
+
+- Printed epi 0.01–0.02 and diphenhydramine 0.5 vs 2 mg/kg stay in the 2013 book — the book disagrees with itself. Night: anaphylaxis is still epinephrine first (already gated). △ crash-cart / Plumb. Do not harvest either diphen number.
+- Printed 22 mL/kg whole blood, 11 mL/kg pRBC, 5–10 mL/kg/h, 20–80 mL/kg/h, and Oxyglobin recipes stay in the book. Oxyglobin is not on the shelf. Night: hospital blood bank. Do not invent a PCV trigger.
+- Do not call fever “just FNHTR” without checking pigment and the bag.
+- Do not restart the same unit.
+- Do not give type A blood to a type B cat “because we are out of B.” First-unit hemolysis can be fatal.
+- Do not mix LRS / calcium fluids in the blood line.
+- Do not treat TACO with another bolus. Do not Lasix AHTR as if it were CHF.
+- Azotemic cat: still no DexSP.
+
+Night rule: fever or pigment or new dyspnea on a bag → **stop the bag first**, then name hemolysis vs overload vs allergy vs dirty unit. Cats have no universal donor.

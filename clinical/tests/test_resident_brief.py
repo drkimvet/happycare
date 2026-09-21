@@ -671,6 +671,31 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("insulinoma", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_type_b_not_type_a_stop_bag_not_diphen_first(self):
+        b = analyze(
+            "cat",
+            "type B cat, transfusion reaction, give type A blood, diphenhydramine first",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("stop and look", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stop the bag first", joined)
+        self.assertIn("type a blood to a type b cat", joined)
+        self.assertIn("diphenhydramine is not first", joined)
+        self.assertIn("no universal donor", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_taco_no_shock_bolus_no_restart_unit(self):
+        b = analyze(
+            "dog",
+            "transfusion reaction TACO, restart the same unit, shock bolus",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("stop the bag first", joined)
+        self.assertIn("restart the same unit", joined)
+        self.assertIn("shock bolus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
