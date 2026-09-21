@@ -8,9 +8,14 @@ Not a clinical chart. Not DVM 612 slides. No owner names. No student scores. No 
 
 | File | Use |
 | --- | --- |
-| `jvme_teaching_tip_gate_scaffold.md` | Manuscript (English) |
+| `jvme_teaching_tip_gate_scaffold.md` | Teaching Tip manuscript (English) |
 | `cover_letter.md` | Designate article type: Teaching Tip |
 | `author_checklist.md` | What still needs the author before submit |
+| `coauthor_invitation.md` | One-page ask for an LIU education methods co-author |
+| `irb_protocol_skeleton.md` | Fill-in for IRBManager (not submitted) |
+| `consent_information_sheet.md` | Adult student information sheet draft |
+
+Paste the invitation, do not let an agent email colleagues. Submit IRB only through [IRBManager](https://liu.my.irbmanager.com/). The PI does not decide exempt status.
 
 ## Target
 
