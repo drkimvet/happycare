@@ -651,6 +651,26 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("rads are not diagnostic", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_toy_puppy_hypoglycemia_glucose_not_keppra(self):
+        b = analyze(
+            "dog",
+            "Yorkie puppy seizure, give keppra, send home, pour Karo into mouth",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("glucose now is the syringe", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("keppra", joined)
+        self.assertIn("pour syrup", joined)
+        self.assertIn("insulinoma puppy", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_toy_puppy_hypoglycemia_no_npo(self):
+        b = analyze("dog", "8-week Maltese, dull, hypoglycemia, NPO, insulinoma")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("npo", joined)
+        self.assertIn("insulinoma", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

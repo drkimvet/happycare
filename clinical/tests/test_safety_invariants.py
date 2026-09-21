@@ -182,6 +182,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("laryngeal paralysis", VERIF.lower())
         self.assertIn("radiographs are not diagnostic", VERIF.lower())
         self.assertIn("tracheotomy", VERIF.lower())
+        self.assertIn("puppy hypoglycemia", VERIF.lower())
+        self.assertIn("do not harvest printed 25%", VERIF.lower())
+        self.assertIn("not an insulinoma puppy", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -210,6 +213,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-dystocia`", MACRO)
         self.assertIn("`ddx-larpar`", MACRO)
         self.assertIn("`dc-larpar`", MACRO)
+        self.assertIn("`ddx-hypogly`", MACRO)
+        self.assertIn("`dc-hypogly`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -307,6 +312,9 @@ class PublicCardInvariants(unittest.TestCase):
             "not ice-water as default",
             "not kennel cough",
             "tie-back is the surgery conversation",
+            "glucose now is the syringe",
+            "do not pour syrup into a collapsed mouth",
+            "not an insulinoma puppy",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

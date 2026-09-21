@@ -404,3 +404,25 @@ Book/public traps:
 - GOLPP is not “just getting old.” Tonight is the airway. Hindlimbs and megaesophagus are the later conversation, not a reason to skip oxygen.
 
 Night rule: old Labrador + inspiratory stridor → oxygen, cool, △ sedation. Not Lasix. Not kennel cough. Tube ready. Tie-back is surgery, not a discharge inhaler.
+
+## 135. Toy / neonatal hypoglycemia (Plunkett p301–440 vs Merck)
+
+Legal split “Hypoglycemia” (printed ~334–335). No chapter dump. **Do not harvest printed 25%/50% dextrose mL/kg, 60 or 90 mg/dL cutoffs, AIGR, pentobarbital CRI, or neonate mL/100 g tables.**
+
+Agree with Merck puppy hypoglycemia (Parsley / Carney, congenital cerebral page, Mar 2026): idiopathic syndrome in **toy breeds in the first 6 months**; relative hepatic immaturity / glycogenolysis; frequent commercial puppy meals; usually resolves with maturity. Merck neonate management: neonates lack glucose reserves; even brief fasting can drop glucose; hypoglycemia also from endotoxemia, sepsis, PSS, glycogen-storage disease. Merck liver page: juvenile hypoglycemia DDX includes malnutrition, parasites, transient toy-breed fasting, and portosystemic shunts.
+
+Agree with public emergency teaching: glucose now. If they can swallow, feed. Collapsed: do **not** force large volumes of syrup into the mouth (aspiration) — a small gum rub or parenteral dextrose. Warm. They go home when they eat and hold a glucose, not when the first number looks prettier.
+
+Book/public traps:
+
+- Printed “pour ½–2 teaspoons of honey/Karo on buccal mucosa” stays in the 2013 book. For a collapsed/seizing puppy that is an aspiration trap. Night: gum rub if they can protect the airway, else IV/IO △ Plumb.
+- Printed 2–20 mL of 25% (1 mL/kg), dilute to 10% if <16 weeks, 5% drip 10–20 mL/kg q6–8h, maintain ≥90 mg/dL, and AIGR >30 insulinoma math stay in the book. Night: △ crash-cart / Plumb. Do not invent a cutoff. Sample sitting on cells drops glucose (~7 mg/dL/h in the book) — spin it; do not chase an artifact.
+- 50% dextrose undiluted in a tiny peripheral vein is a phlebitis/slough conversation. Dilute. Catheter.
+- Insulinoma rebound is the **older** dog. An 8-week Yorkie is missed meals / sepsis / PSS / parvo / xylitol until proven otherwise, not a β-cell tumor.
+- Do not treat as idiopathic epilepsy. Keppra does not raise glucose.
+- Do not NPO a toy puppy “to rest the gut.” Frequent meals are the disease-modifying plan once they can swallow (Merck).
+- Do not send home still not eating. Recurrence until they hit a real body weight is expected.
+- Book pentobarbital CRI for refractory hypoglycemic seizures is a 2013 leftover. Night: airway and the existing status gates. △ Plumb.
+- Xylitol still glucose first, charcoal does not bind (already gated). Do not mix NAC families.
+
+Night rule: tiny puppy + dull/tremor/seizure → stick a glucose, warm, feed or parenteral dextrose. Not keppra-and-home. Not an insulinoma puppy.

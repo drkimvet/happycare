@@ -231,6 +231,25 @@ LARPAR_RE = re.compile(
     r"\bstridor\b",
     re.I,
 )
+HYPOGLY_RE = re.compile(
+    r"\b(hypoglyc|low blood sugar|low glucose)\b|"
+    r"\b(yorkie|yorkshire|maltese|chihuahua|toy poodle|toy breed|"
+    r"neonat|juvenile).{0,48}\b(seizure|tremor|dull|collapse|weak|ataxia|listless)\b|"
+    r"\b(puppy|kitten).{0,32}\b(seizure|tremor|dull|collapse|hypoglyc)\b|"
+    r"\b(seizure|tremor|dull|collapse).{0,32}\b(yorkie|maltese|chihuahua|puppy|kitten|toy)\b",
+    re.I,
+)
+TOY_PUPPY_RE = re.compile(
+    r"\b(yorkie|yorkshire|maltese|chihuahua|toy poodle|toy breed|"
+    r"puppy|kitten|neonat|juvenile|8[- ]week|12[- ]week|16[- ]week)\b",
+    re.I,
+)
+POUR_SUGAR_RE = re.compile(
+    r"\b(pour|force|syringe).{0,28}\b(honey|karo|syrup|dextrose)\b|"
+    r"\b(honey|karo|corn syrup).{0,28}\b(mouth|throat|pour|force)\b",
+    re.I,
+)
+INSULINOMA_RE = re.compile(r"\binsulinoma\b", re.I)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -1183,6 +1202,49 @@ def analyze(
         do_not.append("Do not dump hypotonic fluid into a chronic hypernatremia / hyperosmolar diabetic.")
         do_next.append("Correct osmolality slowly. Fluids first. △ insulin in Plumb if used.")
         sources.append("Merck diabetes; Plunkett HHS chapter (legal split) for the ketone-negative trap only")
+
+    if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
+        toy = bool(TOY_PUPPY_RE.search(text))
+        hypogly_loc = (
+            "Brain without glucose. Glucose now is the syringe, not the diagnosis. "
+            "Toy/neonate: missed meals / sepsis / PSS / parvo until proven otherwise."
+            if toy
+            else "Hypoglycemia is a sign. Split xylitol, insulin, sepsis, liver, and insulinoma (older dog)."
+        )
+        localization = f"{localization} Also {hypogly_loc}" if localization else hypogly_loc
+        hard_stops.append(
+            "Hypoglycemia: glucose now. Do not treat as idiopathic epilepsy first."
+        )
+        do_not.append(
+            "Do not harvest 2013 25%/50% dextrose, 60 mg/dL, or neonate mL/100 g tables. △ Plumb."
+        )
+        do_not.append(
+            "Do not pour syrup into a collapsed mouth (aspiration). "
+            "Undiluted 50% dextrose in a tiny peripheral vein is a phlebitis/slough conversation."
+        )
+        do_next.append(
+            "Warm. If they can swallow, feed. If not, IV/IO dextrose △ Plumb. "
+            "They go home when they eat and hold glucose, not after one prettier number."
+        )
+        sources.append(
+            "Merck puppy hypoglycemia (toy breeds, first 6 months, frequent meals); "
+            "Merck neonate management. Plunkett p334–335 traps only."
+        )
+        if toy:
+            do_not.append(
+                "An 8-week Yorkie is not an insulinoma puppy. Do not NPO a toy puppy."
+            )
+            do_next.append(
+                "DDX still sepsis, PSS, parvo, parasites, xylitol. Frequent commercial puppy meals once swallowing."
+            )
+        if POUR_SUGAR_RE.search(text):
+            hard_stops.append("Do not pour syrup into a collapsed mouth.")
+        if INSULINOMA_RE.search(text) and toy:
+            hard_stops.append("A toy puppy is not an insulinoma until the rare workup says so.")
+        if toy and re.search(r"\bnpo\b|withhold food|no food", text, re.I):
+            hard_stops.append("Do not NPO a toy puppy.")
+        if toy and re.search(r"\b(keppra|levetiracetam)\b", text, re.I):
+            hard_stops.append("Keppra does not raise glucose. Glucose first.")
 
     if spec in {"dog", "cat"} and SEIZURE_RE.search(text):
         hard_stops.append(

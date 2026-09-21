@@ -60,6 +60,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-eclampsia` | Assessment | Eclampsia / puerperal tetany |
 | `ddx-dystocia` | Assessment | Dystocia / stuck labor |
 | `ddx-larpar` | Assessment | Dog stridor / laryngeal paralysis |
+| `ddx-hypogly` | Assessment | Toy puppy / neonatal hypoglycemia |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -78,6 +79,7 @@ Suggested names are short so they show up after three letters.
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
 | `dc-dystocia` | Discharge | Dystocia / C-section / decline |
 | `dc-larpar` | Discharge | Lar par / tie-back / decline |
+| `dc-hypogly` | Discharge | Toy puppy hypoglycemia |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -344,6 +346,7 @@ Seizure — {{patient.name}}
 Cluster / status / isolated. Glucose [ ]  Temp [ ]  Toxin [ ]
 
 DDX: idiopathic epilepsy vs toxin vs hepatic vs electrolyte vs intracranial vs heat vs hypoglycemia. Nursing / postpartum: eclampsia until calcium says otherwise.
+Toy puppy / neonate seizure: glucose first. Use `ddx-hypogly`. Do not keppra-and-home.
 Do not invent a midazolam/phenobarbital number. △ crash-cart / Plumb.
 
 ### `ddx-abd`
@@ -402,6 +405,21 @@ DDX:
 4. Eclampsia overlapping labor
 
 Do not: oxytocin into an obstruction. Do not send oxytocin home with the breeder. Do not harvest IU or hour-between-pups tables. Do not yank a stuck fetus. Green/black before baby one is placental separation — come now. C-section if stuck, distressed, or medical fails. △ Plumb.
+
+### `ddx-hypogly`
+
+Toy / neonatal hypoglycemia — {{patient.name}}
+{{patient.species}}. Age [weeks]. Toy breed [Y/N]. Glucose [now / not yet]. Eating [Y/N]. Temp [ ].
+
+DDX:
+1. Transient toy-breed / neonatal hypoglycemia (missed meals, hepatic immaturity)
+2. Sepsis / parvo / endotoxemia
+3. Portosystemic shunt / hepatic
+4. Parasites / malnutrition / xylitol
+5. Insulinoma — older dog, not an 8-week Yorkie
+
+Do not: keppra-first epilepsy. Pour syrup into a collapsed mouth. Harvest 2013 25%/50% dextrose tables. NPO. Send home still not eating. Call this insulinoma in a neonate.
+Do next: glucose now, warm, feed if they can swallow, IV/IO dextrose △ Plumb if not. Frequent puppy meals. They hold glucose before discharge.
 
 ### `ddx-larpar`
 
@@ -582,6 +600,14 @@ Give only the medicines we sent, as labeled. Do not add leftover Lasix, human in
 [If declined:] Without opening the airway, another breathing crisis can happen, especially in heat or stress. You may return at any time.
 
 Return now for louder breathing, blue or purple tongue, collapse, or if {{patient.pronoun}} will not settle. Watch later for cough, fever, or not eating (aspiration). {{location.phonenumber}}
+
+### `dc-hypogly`
+
+{{patient.name}} was treated for low blood sugar. Tiny puppies (and kittens) can drop glucose after a missed meal, stress, or illness. This is not “just tired from the trip.”
+
+{{patient.Pronoun}} must eat frequent small meals of puppy (or kitten) food as instructed. Do not skip meals. Keep {{patient.objectPronoun}} warm. Do not pour syrup into the mouth if {{patient.pronoun}} cannot swallow — call us instead.
+
+Return now for wobbliness, tremors, another seizure, collapse, or if {{patient.pronoun}} will not eat. Recheck as scheduled. {{location.phonenumber}}
 
 ### `dc-dystocia`
 
