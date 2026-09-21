@@ -173,6 +173,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("bloody diarrhea is a **syndrome**", VERIF.lower())
         self.assertIn("not recommended in mild to moderate", VERIF.lower())
         self.assertIn("non-hemorrhagic diarrhea", VERIF.lower())
+        self.assertIn("eclampsia", VERIF.lower())
+        self.assertIn("oral calcium during pregnancy", VERIF.lower())
+        self.assertIn("not for subcutaneous", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -195,6 +198,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("name the space before the syringe", MACRO.lower())
         self.assertIn("`ddx-ahds`", MACRO)
         self.assertIn("`dc-parvo`", MACRO)
+        self.assertIn("`ddx-eclampsia`", MACRO)
+        self.assertIn("`dc-eclampsia`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -282,6 +287,9 @@ class PublicCardInvariants(unittest.TestCase):
             "bloody diarrhea is **not a diagnosis**",
             "antibiotics are **not routine**",
             "~25% of parvo",
+            "oral calcium during pregnancy predisposes",
+            "calcium chloride is not for sq",
+            "slow iv **calcium gluconate**",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

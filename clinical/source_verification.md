@@ -345,3 +345,21 @@ Book/public traps:
 - Same household is not the same localization. Do not copy `dc-gi` onto a parvo isolation sheet.
 
 Night rule: dog + bloody diarrhea → fluids, parvo test if young/unvax or neutropenic, isolate if positive, antibiotics only if the sepsis picture is real. Not “colitis to go.”
+
+## 132. Eclampsia / puerperal tetany (Plunkett electrolyte / repro headings vs Merck)
+
+Legal split electrolyte or reproduction headings if present. No chapter dump. **Do not harvest printed calcium gluconate mL/kg, total-calcium mg/dL cutoffs, or oral elemental-calcium tables.**
+
+Agree with Merck eclampsia: progressive tremor, ataxia, then seizures; most often small-breed bitches at peak lactation 2–3 weeks after whelping, large litters; can happen any breed, any time in lactation, rarely late gestation; uncommon in queens; may precipitate dystocia. Diagnosis is signalment plus signs; a calcium number confirms. Treatment is slow IV calcium gluconate. **Oral calcium during pregnancy may predispose**, it does not prevent. Feed a balanced pregnancy/lactation diet. Recurrence with later litters is expected; warn the owner.
+
+Book/public traps:
+
+- Printed calcium gluconate mL/kg and total-Ca mg/dL cutoffs stay on the Merck page. Night: △ crash-cart / Plumb. Do not invent the cutoff. Do not wait for the printer on classic tetany.
+- Calcium chloride is not for subcutaneous use (Merck).
+- Fast IV calcium: bradycardia / arrhythmia. ECG. Stop or slow.
+- Glucose now. Hypoglycemia can sit on the same bitch.
+- Do not treat as idiopathic epilepsy or skip the nursing history.
+- Tetany fever is muscle work, not a default ice-water heatstroke protocol.
+- Interrupt nursing tonight. Milk replacer. Do not harvest a wean-hour table as a night law.
+
+Night rule: nursing small-breed + tetany → calcium gluconate slow IV, ECG, glucose, pull the pups. Not keppra-and-home. Not prenatal Tums next time.

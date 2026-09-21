@@ -57,6 +57,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-abd` | Assessment | Acute abdomen |
 | `ddx-gi` | Assessment | Vomit/diarrhea |
 | `ddx-ahds` | Assessment | AHDS / HGE / parvo |
+| `ddx-eclampsia` | Assessment | Eclampsia / puerperal tetany |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -72,6 +73,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gi` | Discharge | GI home care |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
+| `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -337,7 +339,7 @@ Do not use ice-water immersion as the default. Watch GI, kidney, neuro, coagulat
 Seizure — {{patient.name}}
 Cluster / status / isolated. Glucose [ ]  Temp [ ]  Toxin [ ]
 
-DDX: idiopathic epilepsy vs toxin vs hepatic vs electrolyte vs intracranial vs heat vs hypoglycemia.
+DDX: idiopathic epilepsy vs toxin vs hepatic vs electrolyte vs intracranial vs heat vs hypoglycemia. Nursing / postpartum: eclampsia until calcium says otherwise.
 Do not invent a midazolam/phenobarbital number. △ crash-cart / Plumb.
 
 ### `ddx-abd`
@@ -370,6 +372,19 @@ DDX:
 5. FB / intussusception / pancreatitis / sepsis
 
 Do not: send shock home as colitis. Do not skip the parvo test because the stool is brown. Do not shotgun antibiotics onto every AHDS. Do not invent a PCV/WBC cutoff. Do not harvest ampicillin tables. Isolate if parvo. Offer food when vomiting allows. △ Plumb.
+
+### `ddx-eclampsia`
+
+Eclampsia — {{patient.name}}
+{{patient.sexTerm}}. Nursing / days post-whelping [ ]  Litter size [ ]  Tremor / tetany / seizure [ ].
+
+DDX:
+1. Eclampsia / puerperal tetany (hypocalcemia)
+2. Hypoglycemia
+3. Toxin / heat / primary epilepsy
+4. Hypoparathyroidism (not the default nursing picture)
+
+Do not: wait for the printer on classic tetany. Do not harvest calcium mL/kg. Do not give calcium chloride SQ. Do not load oral calcium during pregnancy (predisposes). Do not ice-water tetany fever as primary heatstroke. Glucose now. Interrupt nursing tonight. △ Plumb.
 
 ### `ddx-resp`
 
@@ -510,6 +525,14 @@ This is hospital-level disease for most puppies.
 [If declined:] Going home tonight against advice carries a high risk of dehydration and sepsis. You may return at any time.
 
 Give only the medicines we sent. Offer food as instructed. Return now for collapse, unstoppable vomiting, or no urine. {{location.phonenumber}}
+
+### `dc-eclampsia`
+
+{{patient.name}} was treated for low blood calcium while nursing (eclampsia). This can look like a seizure. It is not “just epilepsy.”
+
+Do not let the puppies or kittens nurse tonight until we say. Use the milk replacer as instructed. Give only the calcium or other medicines we sent, as labeled. Do not add human antacids or leftover steroids. Do not start calcium pills in a future pregnancy to “prevent this” unless a veterinarian has planned that after birth.
+
+Return now for stiffness, tremors, panting, or another seizure. {{location.phonenumber}}
 
 ### `dc-uo`
 

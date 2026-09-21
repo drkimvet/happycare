@@ -598,6 +598,21 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("isolate", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_eclampsia_no_cacl_sq_no_prenatal_calcium(self):
+        b = analyze(
+            "dog",
+            "nursing 3 weeks postpartum, tremors and seizure, give calcium chloride SQ, "
+            "start oral calcium during next pregnancy",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("hypocalcemia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("calcium gluconate", joined)
+        self.assertIn("subcutaneous", joined)
+        self.assertIn("pregnancy", joined)
+        self.assertIn("glucose", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

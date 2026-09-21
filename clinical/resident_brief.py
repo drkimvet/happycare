@@ -101,6 +101,24 @@ AHDS_RE = re.compile(
     r"hematochezia|parvo|parvovirus)\b",
     re.I,
 )
+ECLAMPSIA_RE = re.compile(
+    r"\b(eclampsia|puerperal tetany|periparturient hypocalc)\b|"
+    r"\b(nursing|lactat|postpartum|post-partum|whelping|queening|litter).{0,48}"
+    r"\b(tremor|twitch|tetany|seizure|stiff|panting)\b|"
+    r"\b(tremor|twitch|tetany|seizure).{0,48}"
+    r"\b(nursing|lactat|postpartum|litter|whelping)\b",
+    re.I,
+)
+CA_CL_SQ_RE = re.compile(
+    r"\bcalcium chloride\b.{0,24}\b(sq|sc|subcut)|"
+    r"\b(sq|sc|subcut).{0,24}\bcalcium chloride\b",
+    re.I,
+)
+PRENATAL_CA_RE = re.compile(
+    r"\b(pregnan|gestation|prenatal).{0,40}\bcalcium\b|"
+    r"\bcalcium\b.{0,40}\b(pregnan|gestation|prenatal)\b",
+    re.I,
+)
 PYO_RE = re.compile(r"\bpyometra\b", re.I)
 FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
 HEAT_RE = re.compile(r"\b(heatstroke|heat stroke)\b", re.I)
@@ -899,6 +917,33 @@ def analyze(
             "Merck AHDS (fluids first; antibiotics not routine if mild–moderate); "
             "Merck canine parvovirus (antigen test; isolate; nutrition)"
         )
+
+    if spec in {"dog", "cat"} and ECLAMPSIA_RE.search(text):
+        localization = localization or (
+            "Periparturient hypocalcemia (eclampsia / puerperal tetany). "
+            "Not idiopathic epilepsy until calcium and glucose are on the table."
+        )
+        hard_stops.append(
+            "Eclampsia: slow IV calcium gluconate with ECG. Do not wait for the printer on classic tetany."
+        )
+        do_not.append(
+            "Do not harvest calcium mL/kg or total-Ca cutoffs. Do not give calcium chloride subcutaneously."
+        )
+        do_not.append(
+            "Do not load oral calcium during pregnancy to prevent this — Merck: it predisposes. "
+            "Do not treat as idiopathic epilepsy. Do not ice-water the tetany fever as primary heatstroke."
+        )
+        do_next.append(
+            "Glucose now. Interrupt nursing tonight; milk-replacer conversation. "
+            "Recurrence with later litters is expected. △ Plumb."
+        )
+        sources.append(
+            "Merck eclampsia in small animals (slow IV calcium gluconate; oral calcium in pregnancy predisposes)"
+        )
+        if CA_CL_SQ_RE.search(text):
+            hard_stops.append("Calcium chloride is not for subcutaneous use.")
+        if PRENATAL_CA_RE.search(text):
+            hard_stops.append("Oral calcium during pregnancy is not prevention.")
 
     if PYO_RE.search(text):
         hard_stops.append("Pyometra: stabilize, then ovariohysterectomy unless a documented medical-breed plan.")
