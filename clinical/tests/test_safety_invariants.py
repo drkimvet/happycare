@@ -170,6 +170,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("name the space before the syringe", VERIF.lower())
         self.assertIn("open-mouth", VERIF.lower())
         self.assertIn("new-onset asthma", VERIF.lower())
+        self.assertIn("bloody diarrhea is a **syndrome**", VERIF.lower())
+        self.assertIn("not recommended in mild to moderate", VERIF.lower())
+        self.assertIn("non-hemorrhagic diarrhea", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -190,6 +193,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-sepsis`", MACRO)
         self.assertIn("`dc-resp`", MACRO)
         self.assertIn("name the space before the syringe", MACRO.lower())
+        self.assertIn("`ddx-ahds`", MACRO)
+        self.assertIn("`dc-parvo`", MACRO)
+        self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
         self.assertNotIn("Wlsdb840", MACRO)
@@ -273,6 +279,9 @@ class PublicCardInvariants(unittest.TestCase):
             "name the space before the syringe",
             "lasix + albuterol + dexsp",
             "new cough in an older cat is often pneumonia",
+            "bloody diarrhea is **not a diagnosis**",
+            "antibiotics are **not routine**",
+            "~25% of parvo",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

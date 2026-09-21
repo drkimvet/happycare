@@ -95,6 +95,12 @@ SEPSIS_RE = re.compile(
     r"septic peritonitis|septic abdomen|endotoxem)\b",
     re.I,
 )
+AHDS_RE = re.compile(
+    r"\b(ahds|\bhge\b|hemorrhagic (diarrhea|gastro|enter)|"
+    r"haemorrhagic (diarrhea|gastro)|bloody diarrhea|"
+    r"hematochezia|parvo|parvovirus)\b",
+    re.I,
+)
 PYO_RE = re.compile(r"\bpyometra\b", re.I)
 FATE_RE = re.compile(r"\b(fate|saddle thrombus|aortic thrombo|arterial thromboembolism)\b", re.I)
 HEAT_RE = re.compile(r"\b(heatstroke|heat stroke)\b", re.I)
@@ -866,6 +872,32 @@ def analyze(
         sources.append(
             "Sharp JVECC 2023 defining sepsis; 2025 consensus (infection + organ dysfunction); "
             "Merck bacterial infections / septic shock; Merck triage: high-dose steroids not recommended"
+        )
+
+    if spec == "dog" and AHDS_RE.search(text):
+        localization = localization or (
+            "Hemorrhagic diarrhea is a syndrome, not a diagnosis. "
+            "AHDS vs parvo vs Addison vs rodenticide vs FB until the test and the smear say."
+        )
+        hard_stops.append(
+            "Bloody diarrhea is not a diagnosis. Fluids first. Parvo test if young, unvaccinated, or neutropenic."
+        )
+        do_not.append(
+            "Do not send shocky bloody diarrhea home as colitis. "
+            "Do not skip the parvo SNAP because the stool is not red (~25% of parvo is non-bloody)."
+        )
+        do_not.append(
+            "Do not shotgun antibiotics onto every AHDS/HGE. "
+            "Antibiotics are a sepsis or neutropenia conversation, not the mild case. "
+            "Do not invent a PCV or neutrophil cutoff. Do not harvest ampicillin tables."
+        )
+        do_next.append(
+            "PCV/TS now (hemoconcentration supports AHDS). Glucose. Isolate if parvo. "
+            "Addison and anticoagulant rodenticide stay on the list. Offer food when vomiting allows. △ Plumb."
+        )
+        sources.append(
+            "Merck AHDS (fluids first; antibiotics not routine if mild–moderate); "
+            "Merck canine parvovirus (antigen test; isolate; nutrition)"
         )
 
     if PYO_RE.search(text):

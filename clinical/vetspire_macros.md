@@ -56,6 +56,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sz` | Assessment | Seizure |
 | `ddx-abd` | Assessment | Acute abdomen |
 | `ddx-gi` | Assessment | Vomit/diarrhea |
+| `ddx-ahds` | Assessment | AHDS / HGE / parvo |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -69,6 +70,8 @@ Suggested names are short so they show up after three letters.
 | `dc-master` | Discharge | Generic ER home |
 | `dc-return` | Discharge | Come-back triggers only |
 | `dc-gi` | Discharge | GI home care |
+| `dc-ahds` | Discharge | AHDS / bloody diarrhea |
+| `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -352,6 +355,21 @@ Acute vs chronic. Blood [Y/N]. Toxin / FB / diet [ ].
 
 DDX: dietary / infectious / pancreatitis / FB / Addison / toxin / metabolic / obstruction.
 Do not send a diestrus sick female as “GI.” Do not send a straining male cat as “GI.”
+Dog + blood in the stool: bloody diarrhea is not a diagnosis. Use `ddx-ahds`. Parvo test if young or unvaccinated even if the stool is not red.
+
+### `ddx-ahds`
+
+AHDS / parvo — {{patient.name}}
+Bloody diarrhea is a syndrome, not a diagnosis. PCV/TS [ ]  Parvo SNAP [ ]  Vax [ ]  Age [ ]
+
+DDX:
+1. AHDS (old HGE) — hemoconcentration, fluids first
+2. Parvovirus (young / unvax / neutropenic; ~25% not bloody)
+3. Addison
+4. Anticoagulant rodenticide / ulcer
+5. FB / intussusception / pancreatitis / sepsis
+
+Do not: send shock home as colitis. Do not skip the parvo test because the stool is brown. Do not shotgun antibiotics onto every AHDS. Do not invent a PCV/WBC cutoff. Do not harvest ampicillin tables. Isolate if parvo. Offer food when vomiting allows. △ Plumb.
 
 ### `ddx-resp`
 
@@ -474,6 +492,24 @@ Cat: easy-to-digest = moist, highly digestible, small meals. Low fat is fine as 
 Call {{location.phonenumber}} if vomiting continues, there is black or bloody stool, {{patient.pronoun}} will not drink, becomes lethargic, or the belly becomes tight.
 
 Medications: as labeled only.
+
+### `dc-ahds`
+
+{{patient.name}} was treated for sudden bloody diarrhea (acute hemorrhagic diarrhea). This is not the same disease as parvovirus, Addison, or a bleeding ulcer — we tested or discussed those.
+
+Fluids were the main treatment. Antibiotics are not automatic for every bloody-diarrhea dog. Give only the medicines we sent, as labeled. Offer small meals when vomiting has stopped. Water always available.
+
+Return now for collapse, repeated vomiting, no urine, a swollen belly, or if {{patient.pronoun}} will not drink. Recheck as scheduled. {{location.phonenumber}}
+
+### `dc-parvo`
+
+{{patient.name}} has (or we could not rule out) parvovirus. This is contagious to other dogs. Isolate from unvaccinated dogs. Do not take {{patient.objectPronoun}} to a dog park, daycare, or boarding until we say the isolation clock is over.
+
+This is hospital-level disease for most puppies.
+
+[If declined:] Going home tonight against advice carries a high risk of dehydration and sepsis. You may return at any time.
+
+Give only the medicines we sent. Offer food as instructed. Return now for collapse, unstoppable vomiting, or no urine. {{location.phonenumber}}
 
 ### `dc-uo`
 

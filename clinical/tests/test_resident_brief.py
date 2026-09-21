@@ -577,6 +577,27 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("name the space", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ahds_is_not_a_diagnosis_and_not_routine_antibiotics(self):
+        b = analyze(
+            "dog",
+            "AHDS HGE bloody diarrhea, send home as colitis, shotgun antibiotics, skip parvo SNAP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("not a diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("parvo", joined)
+        self.assertIn("colitis", joined)
+        self.assertIn("shotgun", joined)
+        self.assertIn("pcv", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_parvo_still_tested_if_stool_not_red(self):
+        b = analyze("dog", "puppy parvovirus, diarrhea not bloody, unvaccinated")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not bloody", joined)
+        self.assertIn("isolate", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

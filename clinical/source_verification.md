@@ -327,3 +327,21 @@ Book/public traps:
 - Do not send open-mouth breathing home as “anxiety” or “just a hairball.”
 
 Night rule: cat open-mouth → oxygen, hands off, **name the space before the syringe** (upper / bronchial / pleural / CHF / anemia / ATE / anaphylaxis), then one syringe that matches that space.
+
+## 131. AHDS / “HGE” / canine parvovirus (Plunkett p201–300 vs Merck)
+
+Legal split acute-abdomen / infectious GI headings. No chapter dump. **Do not harvest printed PCV bands, neutrophil cutoffs, ampicillin mg/kg, or 2013 fluid recipes.**
+
+Agree with Merck AHDS: acute vomiting plus hemorrhagic diarrhea; diagnosis is clinical plus hemoconcentration; **IV fluids are the mainstay**; parenteral antimicrobials are **not recommended in mild to moderate cases** and are a sepsis / neutropenia / failing-despite-fluids conversation. Neutropenia should raise parvovirus or sepsis, not “just HGE.”
+
+Agree with Merck parvo: young or unvaccinated dogs; fecal antigen (or PCR); **about 25% have non-hemorrhagic diarrhea** — do not skip the test because the stool is brown. Treatment is supportive (fluids, antiemetic, antimicrobials when the gut barrier and marrow are down, nutrition). Isolate. Survival is a hospital-intensity conversation, not a “send home on metronidazole” conversation.
+
+Book/public traps:
+
+- Printed PCV “hemoconcentration” numbers and ampicillin tables stay on the page. Night: △ Plumb. Do not invent a PCV or WBC cutoff.
+- Bloody diarrhea is a **syndrome**. Addison, anticoagulant rodenticide, ulcer, FB/intussusception, and pancreatitis stay on the list.
+- Do not shotgun antibiotics onto every “HGE.” That is not the mild AHDS plan.
+- Do not NPO a puppy for 12 hours. Parvo needs nutrition once vomiting is addressed.
+- Same household is not the same localization. Do not copy `dc-gi` onto a parvo isolation sheet.
+
+Night rule: dog + bloody diarrhea → fluids, parvo test if young/unvax or neutropenic, isolate if positive, antibiotics only if the sepsis picture is real. Not “colitis to go.”
