@@ -223,6 +223,14 @@ DYSPNEA_RE = re.compile(
     re.I,
 )
 ALBUTEROL_RE = re.compile(r"\b(albuterol|salbutamol|terbutaline|aerokat)\b", re.I)
+LARPAR_RE = re.compile(
+    r"\blaryngeal paralys|"
+    r"\b(lar ?par|\bgolpp\b|tie[- ]?back|"
+    r"arytenoid lateral|inspiratory stridor|change of voice|"
+    r"voice change|hoarse (bark|voice)|raspy (bark|voice))\b|"
+    r"\bstridor\b",
+    re.I,
+)
 
 HINDGUT = {"hamster", "guinea pig", "rabbit", "chinchilla"}
 SA = {"dog", "cat", "canine", "feline", "puppy", "kitten"}
@@ -596,6 +604,55 @@ def analyze(
             hard_stops.append("Azotemic cat: still no DexSP, including for suspected asthma.")
         if ALBUTEROL_RE.search(text) and (PLEURAL_RE.search(text) or PNEUMO_RE.search(text)):
             hard_stops.append("Bronchodilator is not therapy for pleural air or fluid.")
+
+    if spec == "dog" and LARPAR_RE.search(text):
+        larpar_loc = (
+            "Upper airway: the larynx is not abducting. "
+            "Old large-breed inspiratory stridor / voice change is laryngeal paralysis "
+            "(GOLPP) until light-anesthesia laryngoscopy. Toy-breed honk may be collapse."
+        )
+        localization = f"{localization} Also {larpar_loc}" if localization else larpar_loc
+        hard_stops.append(
+            "Dog inspiratory stridor / laryngeal paralysis: oxygen, hands off, cool. "
+            "Not a Lasix or albuterol cocktail. Not kennel cough."
+        )
+        do_not.append(
+            "Do not harvest 2013 acepromazine, butorphanol, propofol, DexSP, or doxapram tables. "
+            "Sedation is △ crash-cart / Plumb."
+        )
+        do_not.append(
+            "Do not ice-water the obstruction fever as default heatstroke. "
+            "Do not wrestle for radiographs (rads are not diagnostic of the larynx). "
+            "Do not throat-exam a crashing dog without an ET tube and a tracheostomy plan ready."
+        )
+        do_not.append(
+            "Do not flood with fluids: obstruction can make pulmonary edema. "
+            "Do not Lasix this as CHF. Azotemic: still no DexSP."
+        )
+        do_next.append(
+            "Oxygen. Tepid cool + airflow. △ sedation. If still crashing: intubate or tracheostomy. "
+            "Aspiration pneumonia on the DDX once stable. Tie-back is the surgery conversation. "
+            "GOLPP hindlimb/megaesophagus later — tonight is the airway."
+        )
+        sources.append(
+            "Merck laryngeal paralysis dogs/cats (Kemp; rads not diagnostic; tracheotomy if severe); "
+            "ACVS lar par (oxygen, cooling, sedation, possibly intubate); "
+            "Cornell GOLPP (aspiration, hindlimb later). Plunkett p124–125 traps only."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not give furosemide for laryngeal obstruction.")
+        if ALBUTEROL_RE.search(text):
+            hard_stops.append("Bronchodilator is not therapy for a paralyzed larynx.")
+        if ICE_RE.search(text):
+            hard_stops.append("Ice-water immersion is not the default cool for laryngeal obstruction heat.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic patient: still no DexSP, including for laryngeal edema.")
+
+    if spec == "cat" and LARPAR_RE.search(text):
+        do_not.append(
+            "Feline laryngeal paralysis is uncommon (Merck). Still name the space before the syringe."
+        )
+        sources.append("Merck: laryngeal paralysis is common in dogs and rare in cats")
 
     if spec in {"dog", "cat"} and ANAPHYLAXIS_RE.search(text):
         anax_loc = (

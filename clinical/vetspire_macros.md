@@ -59,6 +59,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ahds` | Assessment | AHDS / HGE / parvo |
 | `ddx-eclampsia` | Assessment | Eclampsia / puerperal tetany |
 | `ddx-dystocia` | Assessment | Dystocia / stuck labor |
+| `ddx-larpar` | Assessment | Dog stridor / laryngeal paralysis |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -76,6 +77,7 @@ Suggested names are short so they show up after three letters.
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
 | `dc-dystocia` | Discharge | Dystocia / C-section / decline |
+| `dc-larpar` | Discharge | Lar par / tie-back / decline |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -401,12 +403,30 @@ DDX:
 
 Do not: oxytocin into an obstruction. Do not send oxytocin home with the breeder. Do not harvest IU or hour-between-pups tables. Do not yank a stuck fetus. Green/black before baby one is placental separation — come now. C-section if stuck, distressed, or medical fails. △ Plumb.
 
+### `ddx-larpar`
+
+Laryngeal paralysis / GOLPP — {{patient.name}}
+{{patient.species}}. Inspiratory stridor / voice change / noisy pant. Breed/age [old large-breed vs toy honk].
+
+DDX:
+1. Laryngeal paralysis (idiopathic / GOLPP)
+2. Laryngeal mass / foreign body / trauma
+3. Tracheal collapse (toy-breed honk — different dog)
+4. Aspiration pneumonia sitting on top of the airway
+5. Heatstroke / obstruction edema
+6. CHF (do NOT default Lasix because they are noisy)
+
+Do not: Lasix + albuterol cocktail. Kennel cough. Ice-water. Wrestle for rads (rads are not diagnostic of the larynx). Harvest 2013 ace/butorphanol/DexSP/propofol/doxapram tables. Throat-exam a crashing dog without a tube ready. Flood with fluids. DexSP if azotemic.
+Do next: oxygen, tepid cool, △ sedation. Crash: intubate or tracheostomy. Aspiration on the list once stable. Tie-back is the surgery conversation. GOLPP hindlimb later — tonight is the airway. Cats are uncommon; still name the space.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
 Oxygen / hands off first. Name the space before the syringe.
 
 Pattern: inspiratory (upper) vs expiratory push/wheeze (bronchial / asthma) vs quiet restrictive (pleural) vs B-lines + big LA (CHF) vs pale (anemia) vs cold legs (FATE) vs vaccine/sting (anaphylaxis).
+
+Dog + inspiratory stridor / voice change: use `ddx-larpar`. Not kennel cough. Not a Lasix cocktail.
 
 DDX: CHF, asthma/bronchitis, pleural effusion, pneumothorax, aspiration, PTE, obstruction, anemia, ATE, anaphylaxis. Older-cat new cough: pneumonia still on the list.
 
@@ -548,6 +568,20 @@ Give only the medicines we sent. Offer food as instructed. Return now for collap
 Do not let the puppies or kittens nurse tonight until we say. Use the milk replacer as instructed. Give only the calcium or other medicines we sent, as labeled. Do not add human antacids or leftover steroids. Do not start calcium pills in a future pregnancy to “prevent this” unless a veterinarian has planned that after birth.
 
 Return now for stiffness, tremors, panting, or another seizure. {{location.phonenumber}}
+
+### `dc-larpar`
+
+{{patient.name}} was treated for a noisy / obstructed upper airway (laryngeal paralysis). The voice box is not opening fully. This is not kennel cough and it is not a home inhaler disease.
+
+Keep {{patient.objectPronoun}} cool, quiet, and on a harness rather than a neck collar. No hot cars, no midday walks, no extra excitement tonight.
+
+Give only the medicines we sent, as labeled. Do not add leftover Lasix, human inhalers, or leftover steroids.
+
+[If surgery / tie-back discussed:] Surgery can open one side of the airway. It does not cure the nerve disease. Coughing after eating and pneumonia are the risks we discussed.
+
+[If declined:] Without opening the airway, another breathing crisis can happen, especially in heat or stress. You may return at any time.
+
+Return now for louder breathing, blue or purple tongue, collapse, or if {{patient.pronoun}} will not settle. Watch later for cough, fever, or not eating (aspiration). {{location.phonenumber}}
 
 ### `dc-dystocia`
 

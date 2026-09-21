@@ -378,3 +378,29 @@ Book/public traps:
 - Do not yank a stuck fetus. C-section is not a failure; it is the obstruction / distress / failed-medical conversation.
 
 Night rule: stuck labor → obstruction vs inertia before any oxytocin. Green before baby one is placental separation, not a color to watch at home.
+
+## 134. Laryngeal paralysis / GOLPP (Plunkett p101–200 vs Merck + ACVS + Cornell)
+
+Legal split “Laryngeal paralysis” (printed ~124–125). No chapter dump. **Do not harvest printed acepromazine, butorphanol, propofol, DexSP, doxapram, or SpO2 tables.**
+
+Agree with Merck (Kemp, review Feb 2022 / update Apr 2025): common in older large-breed dogs (Labrador, Irish Setter, Great Dane); rare in cats; voice change, stridor, collapse; diagnosis needs laryngoscopy under light anesthesia; **radiographs are not diagnostic**; tranquilization and corticosteroids are temporary in mild cases; **severe obstruction may require tracheotomy**; definitive therapy is surgical (arytenoid lateralization / tie-back among options).
+
+Agree with ACVS: crisis care is oxygen, external cooling, sedation, possibly intubation. Tie-back is the usual surgery conversation. Aspiration of regurgitated contents is a major postoperative (and medical) risk.
+
+Agree with Cornell GOLPP: lar par is often the first sign of a generalized neuropathy; esophagus is often affected early → aspiration pneumonia; hindlimb weakness comes later. Heat, stress, and exercise can turn a chronic noisy pant into tonight’s crash.
+
+Book/public traps:
+
+- Printed ace / butorphanol / propofol / DexSP / doxapram 1 mg/kg and “SpO2 greater than 95%” lines stay in the 2013 book. Night: △ crash-cart / Plumb. Do not copy them. Do not use RECOVER high-dose epi as an airway protocol.
+- Diuretics are usually not beneficial and may be detrimental (book). Do not Lasix a paralyzed larynx as CHF.
+- Albuterol is not therapy for a larynx that will not abduct.
+- Do not send old-dog inspiratory stridor home as kennel cough.
+- Hyperthermia is obstruction work plus failed panting — tepid cool + airflow, not ice-water as the default (same heatstroke gate).
+- Do not wrestle for a film. Thoracic radiographs wait until they can hold still, then look for aspiration / noncardiogenic edema — they do not diagnose the larynx.
+- Do not stick a tongue depressor in a crashing noisy dog without an ET tube and a tracheostomy plan ready. Light-anesthesia laryngoscopy is a diagnosis, not a hallway look.
+- Fluids with caution: upper-airway obstruction can make pulmonary edema. Never bolus a KCl bag.
+- Azotemic: still no DexSP, even if someone wants a steroid for laryngeal edema.
+- Cats are uncommon. Still name the space before the syringe.
+- GOLPP is not “just getting old.” Tonight is the airway. Hindlimbs and megaesophagus are the later conversation, not a reason to skip oxygen.
+
+Night rule: old Labrador + inspiratory stridor → oxygen, cool, △ sedation. Not Lasix. Not kennel cough. Tube ready. Tie-back is surgery, not a discharge inhaler.

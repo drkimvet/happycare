@@ -179,6 +179,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("dystocia", VERIF.lower())
         self.assertIn("placental separation", VERIF.lower())
         self.assertIn("obstructive dystocia", VERIF.lower())
+        self.assertIn("laryngeal paralysis", VERIF.lower())
+        self.assertIn("radiographs are not diagnostic", VERIF.lower())
+        self.assertIn("tracheotomy", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -205,6 +208,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-eclampsia`", MACRO)
         self.assertIn("`ddx-dystocia`", MACRO)
         self.assertIn("`dc-dystocia`", MACRO)
+        self.assertIn("`ddx-larpar`", MACRO)
+        self.assertIn("`dc-larpar`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -298,6 +303,10 @@ class PublicCardInvariants(unittest.TestCase):
             "obstruction vs inertia before oxytocin",
             "placental separation",
             "oxytocin is not for a stuck fetus",
+            "inspiratory stridor is the larynx",
+            "not ice-water as default",
+            "not kennel cough",
+            "tie-back is the surgery conversation",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

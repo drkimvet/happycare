@@ -627,6 +627,30 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("hour", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_larpar_not_lasix_albuterol_not_ice_water(self):
+        b = analyze(
+            "dog",
+            "Labrador inspiratory stridor, voice change, give Lasix and albuterol, ice-water bath",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("larynx", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("kennel cough", joined)
+        self.assertIn("furosemide", joined)
+        self.assertIn("bronchodilator", joined)
+        self.assertIn("ice-water", joined)
+        self.assertIn("aspiration", joined)
+        self.assertIn("tie-back", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_larpar_no_throat_exam_without_tube(self):
+        b = analyze("dog", "laryngeal paralysis, crashing")
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("tube", joined)
+        self.assertIn("tracheostomy", joined)
+        self.assertIn("rads are not diagnostic", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
