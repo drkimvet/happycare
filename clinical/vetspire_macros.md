@@ -63,6 +63,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hypogly` | Assessment | Toy puppy / neonatal hypoglycemia |
 | `ddx-txrxn` | Assessment | Transfusion reaction |
 | `ddx-vest` | Assessment | Vestibular / head tilt |
+| `ddx-snake` | Assessment | Snakebite / pit viper / coral |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -84,6 +85,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hypogly` | Discharge | Toy puppy hypoglycemia |
 | `dc-txrxn` | Discharge | After a transfusion reaction |
 | `dc-vest` | Discharge | Vestibular / head tilt |
+| `dc-snake` | Discharge | Snakebite going home |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -471,6 +473,20 @@ DDX:
 Do not: DexSP/mannitol “stroke.” Harvest 2013 meclizine/diazepam tables. Chlorhex/aminoglycoside drops if TM not seen. Send dull + vertical nystagmus home as just old. Force-walk a rolling dog.
 Do next: otoscopic exam, both ears. Peripheral vs central before home. Antiemetic △ Plumb. Stop metronidazole if listed.
 
+### `ddx-snake`
+
+Snakebite — {{patient.name}}
+{{patient.species}}. Pit viper vs coral [ ]. Swelling mark time [ ]. Coags / echinocytes [ ]. Neuro [ ]. Spreading [Y/N].
+
+DDX:
+1. Crotalid (pit viper) envenomation — local swelling, necrosis, coagulopathy
+2. Elapid (coral) — little local, neurologic, ventilate
+3. Dry bite — do not send a spreading limb home on that word
+4. Trauma / cellulitis / abscess / antivenom anaphylaxis
+
+Do not: ice, cut, suck, tourniquet, electric shock. Chase the snake. Harvest appendix 1–5 vials or Merck epi mL. NSAID. DexSP-first. Fasciotomy as default. Vaccine as antivenom. Azotemic: still no DexSP.
+Do next: quiet, limit activity. Antivenom is the specific △ hospital stock. Mark swelling. Coral: ventilate. Anaphylaxis: epinephrine first.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -658,6 +674,14 @@ Return now for pale or yellow gums, red-brown urine, trouble breathing, collapse
 Keep {{patient.objectPronoun}} padded and assisted so {{patient.pronoun}} does not fall. Give only the anti-nausea medicine we sent, as labeled. Do not add leftover steroids.
 
 Return now for becoming dull, a worsening head tilt with a fever, not eating, or seizures. {{location.phonenumber}}
+
+### `dc-snake`
+
+{{patient.name}} was treated for a snake bite. Keep {{patient.objectPronoun}} quiet. Do not put ice on the wound, do not cut it, do not suck venom, and do not put a tourniquet on.
+
+We discussed antivenom. Give only the medicines we sent, as labeled. Do not add leftover pain pills or leftover steroids.
+
+Return now for spreading swelling, new bleeding, trouble breathing, collapse, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

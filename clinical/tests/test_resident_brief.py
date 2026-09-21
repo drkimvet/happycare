@@ -721,6 +721,35 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("just old", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_snakebite_not_ice_tourniquet_dexsp_nsaid(self):
+        b = analyze(
+            "dog",
+            "rattlesnake bite, ice the limb, tourniquet, give DexSP and carprofen",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("antivenom is the specific", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not ice, cut, suck, or tourniquet", joined)
+        self.assertIn("tourniquet", joined)
+        self.assertIn("dexsp is not the antivenom", joined)
+        self.assertIn("nsaid", joined)
+        self.assertIn("1–5 vials", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coral_not_dry_bite_home(self):
+        b = analyze(
+            "dog",
+            "coral snake, dry bite, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("ventilate", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a spreading limb home as a dry bite", joined)
+        self.assertIn("coral snake", joined)
+        self.assertIn("ventilate", joined)
+        self.assertIn("not manufactured", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

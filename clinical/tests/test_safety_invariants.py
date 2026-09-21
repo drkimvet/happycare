@@ -191,6 +191,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("vestibular", VERIF.lower())
         self.assertIn("peripheral vs central before home", VERIF.lower())
         self.assertIn("stop metronidazole", VERIF.lower())
+        self.assertIn("snakebite", VERIF.lower())
+        self.assertIn("637–647", VERIF)
+        self.assertIn("1–5 vials", VERIF)
+        self.assertIn("do not ice, cut, suck, or tourniquet", VERIF.lower())
+        self.assertIn("antivenom is the specific", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -225,6 +230,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-txrxn`", MACRO)
         self.assertIn("`ddx-vest`", MACRO)
         self.assertIn("`dc-vest`", MACRO)
+        self.assertIn("`ddx-snake`", MACRO)
+        self.assertIn("`dc-snake`", MACRO)
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -331,6 +338,8 @@ class PublicCardInvariants(unittest.TestCase):
             "peripheral vs central before home",
             "stop metronidazole",
             "steroids are contraindicated in geriatric idiopathic",
+            "do not ice, cut, suck, or tourniquet",
+            "antivenom is the specific",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

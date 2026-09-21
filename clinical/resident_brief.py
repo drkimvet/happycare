@@ -279,6 +279,25 @@ VESTIBULAR_RE = re.compile(
     r"geriatric vestibular|rolling (dog|around))\b",
     re.I,
 )
+SNAKE_RE = re.compile(
+    r"\bsnakebite|\bsnake bite|\bsnake-bite|"
+    r"\benvenom|"
+    r"\bcrotal|"
+    r"\bantivenom|\bantivenin|"
+    r"\b(pit viper|rattlesnake|copperhead|cottonmouth|water moccasin|"
+    r"coral snake|elapid)\b",
+    re.I,
+)
+SNAKE_MYTH_RE = re.compile(
+    r"\b(ice|icing|ice pack|cut (and )?suck|suck (the )?venom|"
+    r"tourniquet|electric shock)\b",
+    re.I,
+)
+DRY_BITE_RE = re.compile(r"\bdry bite\b", re.I)
+CORAL_RE = re.compile(r"\b(coral snake|elapid)\b", re.I)
+FASCIOTOMY_RE = re.compile(r"\bfasciotom", re.I)
+SNAKE_VAX_RE = re.compile(r"\b(rattlesnake vaccine|snake vaccine)\b", re.I)
+SEND_HOME_RE = re.compile(r"\b(send home|go home|discharge|home as)\b", re.I)
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
@@ -669,6 +688,50 @@ def analyze(
             )
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for vestibular signs.")
+
+    if spec in {"dog", "cat"} and SNAKE_RE.search(text):
+        snake_loc = (
+            "Pit viper: local necrosis and coagulopathy. "
+            "Coral: little local, neuro, ventilate. "
+            "Antivenom is the specific, not a steroid or an NSAID."
+        )
+        localization = f"{localization} Also {snake_loc}" if localization else snake_loc
+        hard_stops.append(
+            "Snakebite: do not ice, cut, suck, or tourniquet. "
+            "Antivenom is the specific △ hospital stock."
+        )
+        do_not.append(
+            "Do not harvest appendix 1–5 vials or a Merck epinephrine mL line. "
+            "Do not chase the snake. Antibiotics are not routine without necrosis. "
+            "Fasciotomy is not the default. A rattlesnake vaccine does not replace antivenom."
+        )
+        do_next.append(
+            "Quiet, limit activity, come now. Mark the swelling edge. Coags / echinocytes. "
+            "Coral: ventilate. Antivenom anaphylaxis: epinephrine first. △ hospital / Plumb."
+        )
+        sources.append(
+            "Merck snakebites in animals (Gwaltney-Brant). "
+            "Plunkett snakebite ~637–647 dropped; appendix vials stay on the page."
+        )
+        if SNAKE_MYTH_RE.search(text):
+            hard_stops.append("Do not ice, cut, suck, tourniquet, or electrically shock a snakebite.")
+        if NSAID_RE.search(text):
+            hard_stops.append("NSAIDs are not recommended for snakebite. Do not NSAID a swollen limb for pain.")
+        if DEX_RE.search(text):
+            hard_stops.append("DexSP is not the antivenom.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for snakebite.")
+        if DRY_BITE_RE.search(text) and SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a spreading limb home as a dry bite.")
+        if CORAL_RE.search(text):
+            hard_stops.append(
+                "Coral snake: little local swelling, neurologic, ventilate. "
+                "US coral antivenom is not manufactured."
+            )
+        if FASCIOTOMY_RE.search(text):
+            hard_stops.append("Fasciotomy is not the default for a tight snakebitten limb.")
+        if SNAKE_VAX_RE.search(text):
+            hard_stops.append("A rattlesnake vaccine does not replace antivenom.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

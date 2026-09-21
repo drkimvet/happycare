@@ -54,7 +54,7 @@ The 46 MB whole-book file never arrived. Study the SA EM splits we have. Night r
 
 ## Dropped (not a work item)
 
-Lily/sago prose, xylitol / permethrin / Zn3P2 **chapters**, and printed ~641–739. Do not ask the attending to send them. Do not hand-split on a phone. SA EM study continues from the splits already on disk (shock/fluids, heart/ATE, GDV, DKA/HHS, Addison, seizures, the toxin chapters we have).
+Lily/sago prose, xylitol / permethrin / Zn3P2 **chapters**, and printed ~641–739 (includes snakebite ~637–647). Do not ask the attending to send them. Do not hand-split on a phone. Study snakebite from Merck Gwaltney-Brant only. Appendix antivenin 1–5 vials stay on the page. SA EM study continues from the splits already on disk (shock/fluids, heart/ATE, GDV, DKA/HHS, Addison, seizures, the toxin chapters we have).
 
 ## 112. RECOVER / Pardo 2024 CPA (JVECC)
 
@@ -470,3 +470,23 @@ Book/public traps:
 - Cats get idiopathic vestibular too. Polyps sit on the feline list.
 
 Night rule: head tilt → name peripheral vs central before home. Not a steroid stroke. Stop metronidazole if it is on the list.
+
+## 138. Snakebite / pit viper / coral (Merck only; Plunkett dropped)
+
+Plunkett snakebite printed ~637–647 sits in the dropped 641–739 gap. **Do not ask for it. Do not harvest appendix Antivenin crotalidae 1–5 vials.** Night study is public Merck snakebites in animals (Gwaltney-Brant, Jan 2022 / Sept 2024) only.
+
+Agree with Merck: first-aid myths harm — **do not ice, cut, suck, or tourniquet**, and do not use electric shock. Keep the animal quiet, limit activity, come now. Do not chase or capture the snake. Pit vipers (crotalids: rattlesnake, copperhead, cottonmouth): local swelling and necrosis, coagulopathy, echinocytes; **mark the swelling edge**. Coral / elapid: little local swelling, neurologic, **ventilate**; US coral antivenom is not manufactured. **Antivenom is the specific** — △ hospital stock. Dry bites exist; do not send a spreading limb home on that word. NSAIDs are not recommended. Steroids are not the antivenom. Antibiotics are not routine without necrosis. Fasciotomy is not the default. A rattlesnake vaccine does not replace antivenom. Antivenom anaphylaxis is still epinephrine first. Midtown geography: copperhead / timber rattlesnake are regional; coral is not the NYC default.
+
+Book/public traps:
+
+- Appendix 1–5 vials stay on the page. Do not copy them as tonight’s dose.
+- Merck printed epinephrine mL, heparin U/kg, diphenhydramine mg, and hetastarch leaky-vessel lines stay on the page. Night: △ crash-cart / Plumb / hospital stock. Do not harvest.
+- Do not ice, cut, suck, or tourniquet. Do not chase the snake.
+- Do not NSAID a swollen limb “for pain.”
+- DexSP is not the antivenom. Azotemic: still no DexSP.
+- Do not send a spreading limb home as a dry bite.
+- Do not treat coral as a local-swelling pit-viper story. Ventilate.
+- Do not open a compartment because a limb is tight. Fasciotomy is not the default.
+- Vaccine ≠ antivenom.
+
+Night rule: snakebite → quiet, come now. Do not ice, cut, suck, or tourniquet. Antivenom is the specific △ hospital. Not DexSP. Not an NSAID.
