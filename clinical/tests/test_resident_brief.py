@@ -594,7 +594,7 @@ class ResidentBriefTests(unittest.TestCase):
     def test_parvo_still_tested_if_stool_not_red(self):
         b = analyze("dog", "puppy parvovirus, diarrhea not bloody, unvaccinated")
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
-        self.assertIn("not bloody", joined)
+        self.assertIn("non-bloody", joined)
         self.assertIn("isolate", joined)
         self.assertIsNone(b["mg_per_kg"])
 
