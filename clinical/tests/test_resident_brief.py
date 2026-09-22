@@ -1075,6 +1075,26 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("diamond burr or grid", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_sequestrum_not_pick_or_grid_or_home(self):
+        b = analyze(
+            "cat",
+            "corneal sequestrum, black corneal plaque, pick the plaque, grid keratotomy, send home it will slough",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("keratectomy conversation", loc)
+        self.assertIn("depth may be hidden", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not pick or peel", joined)
+        self.assertIn("do not grid a cat", joined)
+        self.assertIn("it will slough", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_sequestrum_is_not_this_disease(self):
+        b = analyze("dog", "corneal sequestrum, brown corneal plaque")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("cat disease", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

@@ -781,3 +781,20 @@ Book/public traps:
 - Do not invent an antiviral table for the cat.
 
 Night rule: loose epithelial lip → indolent candidate. Not a melt. Dogs: CTA then burr/grid △ hospital. Do not grid a cat.
+
+## 153. Feline corneal sequestrum (Merck Hamor; no dedicated Plunkett chapter)
+
+No sequestrum heading in the owned SA EM splits (only platelet “sequestration”). Public Merck cornea (Hamor, Feb 2023 / Jul 2026). No chapter dump. **Do not harvest a keratectomy recipe or an antiviral table.**
+
+Agree with Merck: sequestration appears unique to the cat. All breeds; more often Siamese and Persian. Starts as a small dark anterior-stromal spot under intact epithelium (rose bengal; fluorescein may be faint). Becomes a larger brown-to-black plaque of necrotic stroma, often not epithelialized. Pain is variable. Superficial plaques may extrude spontaneously — uncommon. Treatment is superficial keratectomy of the entire sequestrum. Depth can be hard to judge when the plaque is dense; a corneal and/or conjunctival graft may be needed.
+
+Book/public traps:
+
+- No Plunkett sequestrum chapter — do not ask for one.
+- **Do not pick or peel it** in the lobby.
+- **Do not grid a cat** to “help it slough.”
+- Do not send a painful or deep plaque home as “it will slough.”
+- Do not invent an antiviral or keratectomy table.
+- A dog with a brown cornea is not this disease until you name something else (pigment, foreign body, melanoma).
+
+Night rule: cat + brown/black corneal plaque → sequestrum. Do not pick or grid. Keratectomy conversation. Depth may be hidden.

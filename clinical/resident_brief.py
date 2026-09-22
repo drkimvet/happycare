@@ -441,6 +441,20 @@ INDOLENT_RE = re.compile(
     r"\bnon[- ]healing (superficial )?(corneal )?ulcer",
     re.I,
 )
+# sequestrum as a word; do not use \bsequestr alone (platelet sequestration).
+SEQ_RE = re.compile(
+    r"\bsequestrum|"
+    r"\bcorneal sequestr|"
+    r"\bnigrum|"
+    r"\b(brown|black|dark) (corneal|cornea) (plaque|spot|lesion)|"
+    r"\bcorneal plaque",
+    re.I,
+)
+PEEL_PLAQUE_RE = re.compile(
+    r"\b(pick|peel|pluck|flick|lift).{0,20}\b(plaque|sequestrum|nigrum)|"
+    r"\b(plaque|sequestrum|nigrum).{0,20}\b(pick|peel|pluck|flick|lift)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1501,6 +1515,44 @@ def analyze(
             or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
         ):
             hard_stops.append("Do not put a steroid on a stain-positive indolent ulcer.")
+
+    if spec == "cat" and SEQ_RE.search(text):
+        seq_loc = (
+            "Feline corneal sequestrum: brown-to-black necrotic plaque. "
+            "Keratectomy conversation. Depth may be hidden."
+        )
+        localization = f"{localization} Also {seq_loc}" if localization else seq_loc
+        hard_stops.append(
+            "Do not pick or peel a sequestrum. Do not grid a cat. "
+            "Do not send a painful plaque home as it will slough."
+        )
+        do_not.append(
+            "Do not harvest a keratectomy or antiviral table. "
+            "Do not skip the herpes / brachy / prior-grid story."
+        )
+        do_next.append(
+            "E-collar. Offer keratectomy of the whole plaque. "
+            "Graft if deep. Dense plaques hide depth. Pain △ Plumb."
+        )
+        sources.append(
+            "Merck cornea (Hamor): sequestration unique to the cat. "
+            "No dedicated Plunkett sequestrum chapter."
+        )
+        if PEEL_PLAQUE_RE.search(text) or GRID_BURR_RE.search(text):
+            hard_stops.append("Do not pick, peel, or grid a feline corneal sequestrum.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a painful or deep sequestrum home as it will slough.")
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ):
+            hard_stops.append("Do not put a steroid on an ulcerated sequestrum.")
+
+    if spec == "dog" and SEQ_RE.search(text):
+        hard_stops.append(
+            "Corneal sequestrum is a cat disease. Name pigment, a foreign body, or a mass in the dog."
+        )
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (

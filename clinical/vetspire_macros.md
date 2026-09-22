@@ -79,6 +79,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-melt` | Assessment | Melting ulcer / descemetocele |
 | `ddx-anes` | Assessment | SA anesthesia / sedation |
 | `ddx-indolent` | Assessment | Indolent / Boxer / SCCED |
+| `ddx-seq` | Assessment | Feline corneal sequestrum |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -117,6 +118,7 @@ Suggested names are short so they show up after three letters.
 | `dc-melt` | Discharge | Melting ulcer / descemetocele / referral |
 | `dc-anes` | Discharge | After anesthesia / recovery |
 | `dc-indolent` | Discharge | After indolent / SCCED debridement |
+| `dc-seq` | Discharge | Corneal sequestrum / referral |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -724,6 +726,19 @@ DDX:
 Do not: grid a cat. Treat a melt as a Boxer ulcer. Steroid on a stain-positive cornea. Antibiotic drops alone.
 Do next: dogs — dry CTA then diamond burr or grid △ hospital. E-collar. Soft CL △ hospital.
 
+### `ddx-seq`
+
+Corneal sequestrum — {{patient.name}}
+Color [brown / black]. Depth [hidden / superficial / deep]. Pain [ ]. Prior grid [Y/N]. Brachy / herpes [ ].
+
+DDX:
+1. Feline corneal sequestrum (necrotic stroma; unique to the cat)
+2. Pigment / FB / melanoma (if not a plaque)
+3. Melting ulcer underneath (other list)
+
+Do not: pick or peel it. Grid a cat. Send home as “it will slough.” Harvest a keratectomy table.
+Do next: E-collar. Keratectomy of the whole plaque. Graft if deep. Depth may be hidden. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1047,6 +1062,14 @@ Return now for trouble breathing, pale or blue gums, collapse, repeated vomiting
 Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on.
 
 Return now if the eye gets much more painful or cloudy, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-seq`
+
+{{patient.name}} has a dark plaque on the clear part of the eye. In cats this is dead cornea. It is not something to pick at home, and it often needs surgery to remove.
+
+Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on.
+
+Referral for surgery was recommended if we discussed it. Return now if the eye is more painful, if the dark spot grows, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
