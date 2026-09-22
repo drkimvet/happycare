@@ -73,6 +73,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lenslux` | Assessment | Anterior lens luxation |
 | `ddx-hyphema` | Assessment | Hyphema / AC blood |
 | `ddx-corneal` | Assessment | Corneal laceration / cat claw |
+| `ddx-sards` | Assessment | Sudden blind / SARDS / RD |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -105,6 +106,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lenslux` | Discharge | Anterior lens luxation / referral |
 | `dc-hyphema` | Discharge | Hyphema going home / work-up |
 | `dc-corneal` | Discharge | Corneal laceration / leak |
+| `dc-sards` | Discharge | Sudden vision loss / referral |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -633,6 +635,21 @@ DDX:
 Do not: yank a deep FB in the lobby. Send a leaking globe home. Steroid on a stain-positive cornea. Harvest 7–0 / 9–0 or 2 mm lens-capsule tables.
 Do next: stain + Seidel. Look at the lens. E-collar. Offer referral. Lens-capsule rupture can be medical; still offer surgery. Cats: traumatic lens sarcoma conversation.
 
+### `ddx-sards`
+
+Sudden blindness — {{patient.name}}
+Menace [ ]  dazzle [ ]  PLR [ ]  fundus [quiet / detached / not seen]  BP [ ]. History: enrofloxacin [ ] ivermectin [ ] PU/PD/PP [ ].
+
+DDX:
+1. Opaque media (already gated)
+2. Retinal detachment (hypertension, mycosis, lens surgery, Shih Tzu / CEA)
+3. SARDS (dog; ERG flat; fundus quiet at first)
+4. Optic pathway (ERG normal → neuro)
+5. Ivermectin / cat enrofloxacin
+
+Do not: call it SARDS without an ERG. Pred / DexSP a hypertensive cat. Harvest book pred 1.0 for SARD. Skip the drug history.
+Do next: name the space. BP now. Fundus or B-scan. Offer ERG / referral. Merck: no effective SARDS treatment reported.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -908,6 +925,14 @@ Return now if the eye fills more with blood, becomes more painful, or if {{patie
 Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on. Do not let {{patient.objectPronoun}} rub the eye.
 
 Return now if the eye suddenly looks smaller or wetter, if yellow goo appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-sards`
+
+{{patient.name}} lost vision suddenly. We checked the eyes and the blood pressure. This is not something to wait on at home without the follow-up we discussed.
+
+Give only the medicines we sent, as labeled. Do not add leftover steroids. Keep {{patient.objectPronoun}} in a familiar room so {{patient.pronoun}} does not fall.
+
+Referral for a retina test (ERG) or a neurologist was recommended if we discussed it. Return now for bumping harder, a red painful eye, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

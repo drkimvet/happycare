@@ -668,3 +668,24 @@ Book/public traps:
 - Azotemic: still no DexSP, still no NSAID.
 
 Night rule: hyphema is a sign, not a diagnosis. Cat-claw cornea → look at the lens; Seidel the leak. Do not send a leaking globe home.
+
+## 147. Sudden vision loss / SARDS / retinal detachment (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Sudden blindness” (printed ~456–457). No chapter dump. **Do not harvest printed prednisolone 1.0 mg/kg q12h for optic neuritis / SARD.**
+
+Agree with Merck acute vision loss (Thomasy, Jul 2024): three spaces — opaque media, retinal dysfunction, optic pathway. History: **ivermectin** (retinal or central, dogs and cats); **enrofloxacin** (acute retinal degeneration in cats). Menace, dazzle, palpebral, PLR. Fundus to look for diffuse RD. If the retina looks normal and they are blind → ERG. Flat ERG = SARDS. Normal ERG = optic pathway → neuro.
+
+Agree with Merck SARDS (Thomasy, Aug 2024): middle-aged/older dogs; dachshund, mini schnauzer, pug, Brittany; SF overrepresented; PU/PD/PP, weight gain. Dilated poorly responsive pupils, fundus relatively normal at first. Color pupillometry: red PLR absent, blue remains. **No effective treatment has been reported.**
+
+Agree with Merck retinal detachment (Thomasy, Jul 2024): uni- or bilateral. Hypertension (cats), mycosis, lens surgery, Shih Tzu / CEA, trauma. BP, ophthalmoscopy, B-scan, ERG. Exudative detachments can improve when the cause is treated. Do not harvest laser / silicone-oil recipes.
+
+Book/public traps:
+
+- Book pred 1.0 for “SARD and optic neuritis” is a 2013 leftover. Night: Merck says no effective SARDS treatment. Do not DexSP a hypertensive or azotemic patient as the blindness plan.
+- Do not call it SARDS at the desk without an ERG.
+- Do not skip BP. Hypertensive RD is not SARDS.
+- Do not skip the enrofloxacin (cat) or ivermectin history.
+- Book DDX (pituitary, lead, crypto, distemper, GME) stays as a list, not a night shotgun.
+- Printed 456–457 is short. Gates come from Merck.
+
+Night rule: sudden blind → name the space. BP now. Do not call it SARDS without an ERG. Do not pred a hypertensive cat.

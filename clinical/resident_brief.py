@@ -420,6 +420,17 @@ YANK_FB_RE = re.compile(
     r"\b(foreign body|thorn|fb).{0,20}\b(yank|pull|tug|pluck)\b",
     re.I,
 )
+SARDS_RE = re.compile(r"\bsards?\b|\bsudden acquired retinal", re.I)
+RD_RE = re.compile(r"\bretinal detach|\bdetached retina|\bbullous retina", re.I)
+SUDDEN_BLIND_RE = re.compile(
+    r"\bsudden (blind|vision)|"
+    r"\bacute (blind|vision loss)|"
+    r"\bwent blind|"
+    r"\blost (its |their |his |her )?vision|"
+    r"\bbumping into (walls|things|furniture)",
+    re.I,
+)
+ENRO_RE = re.compile(r"\b(enrofloxacin|baytril)\b", re.I)
 HIGH_IOP_RE = re.compile(r"\b(high iop|elevated iop|iop (high|elevated)|secondary glaucoma)\b", re.I)
 IVT_GENT_RE = re.compile(
     r"\b(intravitreal|ivt).{0,24}\bgent|"
@@ -1201,6 +1212,46 @@ def analyze(
             hard_stops.append("Do not put a steroid on a stain-positive cornea.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a corneal laceration.")
+
+    if spec in {"dog", "cat"} and (
+        SUDDEN_BLIND_RE.search(text) or SARDS_RE.search(text) or RD_RE.search(text)
+    ):
+        b_loc = (
+            "Sudden blind: name the space — media vs retina vs optic vs brain. "
+            "BP now. Do not call it SARDS without an ERG."
+        )
+        localization = f"{localization} Also {b_loc}" if localization else b_loc
+        hard_stops.append(
+            "Do not call sudden blindness SARDS without an ERG. "
+            "Do not pred a hypertensive patient as the blindness plan."
+        )
+        do_not.append(
+            "Do not harvest book pred 1.0 for SARD / optic neuritis. "
+            "Merck: no effective SARDS treatment reported. "
+            "Do not skip the enrofloxacin or ivermectin history."
+        )
+        do_next.append(
+            "Menace, dazzle, palpebral, PLR. Fundus or B-scan. BP. "
+            "Flat ERG = SARDS. Normal ERG = optic pathway → neuro. Offer referral."
+        )
+        sources.append(
+            "Merck acute vision loss / SARDS / retinal detachment (Thomasy). "
+            "Plunkett sudden-blindness headings traps only."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            hard_stops.append(
+                "Cat + enrofloxacin: acute retinal degeneration until the fundus and history say otherwise."
+            )
+        if IVERMECTIN_RE.search(text):
+            hard_stops.append(
+                "Ivermectin can cause retinal toxicity or central blindness. Do not harvest the µg table."
+            )
+        if DEX_RE.search(text) or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I):
+            hard_stops.append(
+                "Do not DexSP or copy book pred for SARDS. Measure BP first. Azotemic: still no DexSP."
+            )
+        if spec == "cat" and RD_RE.search(text):
+            hard_stops.append("Cat retinal detachment: measure BP tonight. Hypertension is on the list.")
 
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (

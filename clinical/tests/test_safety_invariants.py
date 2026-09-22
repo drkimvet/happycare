@@ -228,6 +228,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("unit trap", VERIF.lower())
         self.assertIn("do not yank a deep", VERIF.lower())
         self.assertIn("do not send a leaking globe home", VERIF.lower())
+        self.assertIn("do not call it sards without an erg", VERIF.lower())
+        self.assertIn("no effective treatment has been reported", VERIF.lower())
+        self.assertIn("pred 1.0", VERIF.lower())
+        self.assertIn("enrofloxacin", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -288,6 +292,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-corneal`", MACRO)
         self.assertIn("`dc-corneal`", MACRO)
         self.assertIn("hyphema is a sign, not a diagnosis", MACRO.lower())
+        self.assertIn("`ddx-sards`", MACRO)
+        self.assertIn("`dc-sards`", MACRO)
+        self.assertIn("do not: call it sards without an erg", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -423,6 +430,10 @@ class PublicCardInvariants(unittest.TestCase):
             "cat claw → look at the lens",
             "seidel the leak",
             "do not send a leaking globe home",
+            "do not call it sards without an erg",
+            "no effective treatment reported",
+            "enrofloxacin in a cat",
+            "harvest book pred 1.0",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

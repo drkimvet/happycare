@@ -946,6 +946,30 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("traumatic lens sarcoma", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_sudden_blind_not_sards_without_erg_or_book_pred(self):
+        b = analyze(
+            "dog",
+            "sudden blindness, SARDS, give prednisolone, DexSP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("name the space", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not call sudden blindness sards without an erg", joined)
+        self.assertIn("do not harvest book pred 1.0", joined)
+        self.assertIn("do not dexsp or copy book pred", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_enrofloxacin_and_hypertensive_rd(self):
+        b = analyze(
+            "cat",
+            "went blind after enrofloxacin, retinal detachment, ivermectin",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("enrofloxacin", joined)
+        self.assertIn("measure bp tonight", joined)
+        self.assertIn("ivermectin", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
