@@ -435,6 +435,32 @@ BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
 )
+# anesth prefix sits outside a trailing \b so anesthesia / anesthetic match.
+ANESTH_RE = re.compile(
+    r"\banesth|"
+    r"\binduct|"
+    r"\bintubat|"
+    r"\bextubat|"
+    r"\bpremed|"
+    r"\basa\s*[1-5e]|"
+    r"\bunder gas\b|"
+    r"\bisoflurane|"
+    r"\bsevoflurane|"
+    r"\bnon[- ]rebreath|"
+    r"\bpop[- ]off",
+    re.I,
+)
+O2_FLUSH_NRC_RE = re.compile(
+    r"\b(oxygen flush|o2 flush|flush valve).{0,40}\b(nrc|non[- ]rebreath)|"
+    r"\b(nrc|non[- ]rebreath).{0,40}\b(oxygen flush|o2 flush|flush valve)",
+    re.I,
+)
+POPOFF_RE = re.compile(r"\b(closed pop[- ]off|pop[- ]off closed|popoff closed)", re.I)
+ACEI_RE = re.compile(r"\b(ace inhibitor|enalapril|benazepril|lisinopril)\b", re.I)
+FULL_INSULIN_FAST_RE = re.compile(
+    r"\b(full (dose )?insulin|insulin.{0,24}fast|fast.{0,24}insulin)\b",
+    re.I,
+)
 ASPIRIN_RE = re.compile(r"\b(aspirin|asa)\b", re.I)
 YANK_FB_RE = re.compile(
     r"\b(yank|pull|tug|pluck).{0,20}\b(foreign body|thorn|fb)\b|"
@@ -1428,6 +1454,43 @@ def analyze(
             )
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a melting ulcer.")
+
+    if spec in {"dog", "cat"} and ANESTH_RE.search(text):
+        an_loc = (
+            "Anesthesia continuum: recovery is still anesthesia. "
+            "Dedicated anesthetist. Confirm the tube with ETCO2."
+        )
+        localization = f"{localization} Also {an_loc}" if localization else an_loc
+        hard_stops.append(
+            "Recovery is still anesthesia. Dedicated anesthetist. "
+            "Confirm the tube with ETCO2. Name the hypotension before a bolus."
+        )
+        do_not.append(
+            "Do not oxygen-flush a non-rebreathing circuit. "
+            "Do not leave a closed pop-off. "
+            "Do not harvest AAHA mg/kg figures, MAP/ETCO2 bands, or ASA as a homemade cutoff."
+        )
+        do_next.append(
+            "Checklist. Hands-on plus SpO2 / ETCO2 / BP / temp. "
+            "Disconnect before you turn. Lean weight. IV catheter. "
+            "Hold ACE-I this morning. Do not give full insulin to a fasted patient."
+        )
+        sources.append(
+            "AAHA 2020 anesthesia and monitoring (Grubb / Sager); aaha.org/anesthesia. "
+            "Fluids citation in that paper is 2013; night fluids are AAHA 2024."
+        )
+        if O2_FLUSH_NRC_RE.search(text):
+            hard_stops.append(
+                "Do not oxygen-flush a non-rebreathing circuit. That is barotrauma."
+            )
+        if POPOFF_RE.search(text):
+            hard_stops.append("Closed pop-off is barotrauma. Open it.")
+        if ACEI_RE.search(text):
+            hard_stops.append("Hold ACE inhibitors the morning of anesthesia.")
+        if FULL_INSULIN_FAST_RE.search(text):
+            hard_stops.append("Do not give the full insulin dose to a fasted patient.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including peri-anesthesia.")
 
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (

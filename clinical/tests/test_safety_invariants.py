@@ -244,6 +244,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not send a melting eye home", VERIF.lower())
         self.assertIn("do not grid a melt", VERIF.lower())
         self.assertIn("cytology and culture", VERIF.lower())
+        self.assertIn("recovery is still anesthesia", VERIF.lower())
+        self.assertIn("dedicated anesthetist", VERIF.lower())
+        self.assertIn("do not oxygen-flush a non-rebreathing", VERIF.lower())
+        self.assertIn("2013", VERIF.lower())
+        self.assertIn("aaha 2024", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -316,6 +321,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-melt`", MACRO)
         self.assertIn("`dc-melt`", MACRO)
         self.assertIn("do not: send a melting eye home", MACRO.lower())
+        self.assertIn("`ddx-anes`", MACRO)
+        self.assertIn("`dc-anes`", MACRO)
+        self.assertIn("recovery is still anesthesia", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -464,6 +472,9 @@ class PublicCardInvariants(unittest.TestCase):
             "do not send a melting eye home",
             "do not grid a melt",
             "cytology and culture",
+            "recovery is still anesthesia",
+            "dedicated anesthetist",
+            "do not oxygen-flush a non-rebreathing",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -1049,6 +1049,33 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("sporadic cystitis", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_anesthesia_recovery_is_still_anesthesia(self):
+        b = analyze(
+            "dog",
+            "brachycephalic under anesthesia, closed pop-off, oxygen flush non-rebreathing, send home still recovering",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("recovery is still anesthesia", loc)
+        self.assertIn("dedicated anesthetist", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not oxygen-flush a non-rebreathing", joined)
+        self.assertIn("closed pop-off is barotrauma", joined)
+        self.assertIn("confirm the tube with etco2", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_anesthesia_acei_and_full_insulin_fasted(self):
+        b = analyze(
+            "cat",
+            "ASA 3 induction, enalapril this morning, full insulin while fasted, no ETCO2",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("recovery is still anesthesia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("hold ace inhibitors", joined)
+        self.assertIn("full insulin", joined)
+        self.assertIn("confirm the tube with etco2", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

@@ -745,3 +745,21 @@ Book/public traps:
 - Do not send a melting eye home.
 
 Night rule: melting ulcer / descemetocele → refer tonight. Cytology and culture. Do not steroid. Do not grid a melt. Do not send a melting eye home.
+
+## 151. SA anesthesia / monitoring (AAHA 2020 Grubb / Sager; attending-supplied official PDF)
+
+Attending uploaded the official 2020 AAHA Anesthesia and Monitoring Guidelines (JAAHA; DOI 10.5326/JAAHA-MS-7055). Public twin: aaha.org/anesthesia. No chapter dump. Do not commit the PDF. **Do not harvest printed mg/kg figures (alfaxalone, locals, gabapentin), flow mL/kg/min, MAP/ETCO2/cm H2O bands, circuit kg cutoffs, BG / K / pH / °F boxes, or death-rate percents.**
+
+Agree: there are no safe agents, only safe anesthetists. Anesthesia is a continuum from home to home. **Recovery is still anesthesia** — most deaths cluster early after the procedure. Dedicated anesthetist. Checklist. Document the PE. Age is not a disease. Confirm intubation with an ETCO2 tracing. Disconnect before turning (tracheal tear). Hands-on plus machine. Name hypotension before a bolus. Hold ACE-I the morning of. Do not give the full insulin to a fasted patient. Abbreviated fast (GER); diabetic / neonate especially. Brachycephalic airway risk is highest around recovery. Toy / cat: hypothermia, precise volume. Greyhound: prolonged recovery / hyperK. ABCB1: reduce acepromazine △ Plumb. Lean weight. IV catheter almost always. Heavy sedation is not automatically safer than a short controlled GA in the old or sick.
+
+Book/public traps:
+
+- The paper cites **2013** AAHA/AAFP fluids. Night fluids are **AAHA 2024**.
+- Grain-free-diet → echo for DCM is a 2020 leftover. Not a night gospel.
+- Printed ASA 1–5 and “ASA ≥3 raises death odds” are a framework, not a homemade cutoff to invent. The lecture patient stays ASA-only.
+- Printed BG / K / pH / temperature boxes stay on the page.
+- Printed local-block and premed figures stay on the page — △ Plumb.
+- Do not oxygen-flush a non-rebreathing circuit. Closed pop-off is barotrauma.
+- Do not leave recovery unmonitored. Capnograph until extubation; SpO2 in recovery.
+
+Night rule: recovery is still anesthesia. Dedicated anesthetist. Confirm the tube with ETCO2. Name the hypotension. Do not oxygen-flush a non-rebreathing.

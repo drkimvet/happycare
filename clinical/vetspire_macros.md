@@ -77,6 +77,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-eyelid` | Assessment | Eyelid / lid-margin laceration |
 | `ddx-chemeye` | Assessment | Chemical / alkali ocular burn |
 | `ddx-melt` | Assessment | Melting ulcer / descemetocele |
+| `ddx-anes` | Assessment | SA anesthesia / sedation |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -113,6 +114,7 @@ Suggested names are short so they show up after three letters.
 | `dc-eyelid` | Discharge | After lid-margin repair |
 | `dc-chemeye` | Discharge | After chemical / alkali eye flush |
 | `dc-melt` | Discharge | Melting ulcer / descemetocele / referral |
+| `dc-anes` | Discharge | After anesthesia / recovery |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -698,6 +700,14 @@ DDX:
 Do not: send a melting eye home. Steroid a melt. Grid a melt. Harvest serum q-hours / acetylcysteine. BNP in a cat. Systemic enro in a cat.
 Do next: cytology and culture. Serum △ hospital. E-collar. Refer tonight if melting, deep, or Descemet is showing. △ Plumb.
 
+### `ddx-anes`
+
+Anesthesia — {{patient.name}}
+ASA [framework only]. Dedicated anesthetist [Y]. ETCO2 confirms tube [ ]. Pop-off [open]. Circuit [RC / NRC]. ACE-I held [ ]. Insulin [not full if fasted]. Recovery plan [ ].
+
+Do not: treat recovery as “done.” Oxygen-flush a non-rebreathing. Closed pop-off. Harvest AAHA mg/kg figures or MAP/ETCO2 bands. Grain-free echo as gospel. NSAID if azotemic.
+Do next: recovery is still anesthesia. Hands-on + ETCO2 / SpO2 / BP / temp. Name the hypotension before a bolus. Disconnect before you turn. △ Plumb / hospital.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1005,6 +1015,14 @@ Return now if the eye is more painful, cloudier, or smaller, if {{patient.pronou
 Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on. Do not let {{patient.objectPronoun}} rub the eye.
 
 Referral to an eye surgeon was recommended if we discussed it. Return now if the eye looks smaller or wetter, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-anes`
+
+{{patient.name}} had anesthesia or heavy sedation. The riskiest time is often after {{patient.pronoun}} wakes up, not only while {{patient.pronoun}} is asleep.
+
+Give only the pain and anti-anxiety medicines we sent, as labeled. Keep {{patient.objectPronoun}} warm and quiet. Do not add leftover pain pills.
+
+Return now for trouble breathing, pale or blue gums, collapse, repeated vomiting, or if {{patient.pronoun}} will not wake or eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
