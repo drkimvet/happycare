@@ -431,6 +431,16 @@ MELT_RE = re.compile(
     re.I,
 )
 GRID_BURR_RE = re.compile(r"\b(grid|diamond burr|keratotom)", re.I)
+INDOLENT_RE = re.compile(
+    r"\bindolent|"
+    r"\bscced\b|"
+    r"\bboxer ulcer|"
+    r"\brecurrent corneal (eros|ulcer)|"
+    r"\bloose epithelial|"
+    r"\bepithelial lip|"
+    r"\bnon[- ]healing (superficial )?(corneal )?ulcer",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1454,6 +1464,43 @@ def analyze(
             )
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a melting ulcer.")
+
+    if spec in {"dog", "cat"} and INDOLENT_RE.search(text):
+        ind_loc = (
+            "Indolent / Boxer / SCCED: superficial with a loose epithelial lip. "
+            "Not a melt until stroma is gone."
+        )
+        localization = f"{localization} Also {ind_loc}" if localization else ind_loc
+        hard_stops.append(
+            "Find STT / lids / FB before you name it SCCED. "
+            "Do not steroid a stain-positive cornea. Do not grid a cat."
+        )
+        do_not.append(
+            "Antibiotic drops alone will not close an indolent ulcer. "
+            "Do not call a melting or deep ulcer a Boxer ulcer."
+        )
+        do_next.append(
+            "Dogs: dry cotton-tip debridement, then diamond burr or grid △ hospital. "
+            "E-collar. Soft contact lens △ hospital. Cats: herpes / sequestrum; no keratotomy."
+        )
+        sources.append(
+            "Merck cornea (Hamor): indolent / recurrent erosion; keratotomy not recommended in cats. "
+            "No dedicated Plunkett SCCED chapter in the owned splits."
+        )
+        if spec == "cat" and GRID_BURR_RE.search(text):
+            hard_stops.append(
+                "Do not grid a cat. Keratotomy predisposes to corneal sequestrum."
+            )
+        if MELT_RE.search(text):
+            hard_stops.append(
+                "If it is melting or deep, this is not an indolent ulcer. Do not grid a melt."
+            )
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ):
+            hard_stops.append("Do not put a steroid on a stain-positive indolent ulcer.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (

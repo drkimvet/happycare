@@ -249,6 +249,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not oxygen-flush a non-rebreathing", VERIF.lower())
         self.assertIn("2013", VERIF.lower())
         self.assertIn("aaha 2024", VERIF.lower())
+        self.assertIn("indolent", VERIF.lower())
+        self.assertIn("do not grid a cat", VERIF.lower())
+        self.assertIn("loose epithelial lip", VERIF.lower())
+        self.assertIn("keratotomies are not recommended in cats", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -324,6 +328,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-anes`", MACRO)
         self.assertIn("`dc-anes`", MACRO)
         self.assertIn("recovery is still anesthesia", MACRO.lower())
+        self.assertIn("`ddx-indolent`", MACRO)
+        self.assertIn("`dc-indolent`", MACRO)
+        self.assertIn("do not: grid a cat", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -475,6 +482,8 @@ class PublicCardInvariants(unittest.TestCase):
             "recovery is still anesthesia",
             "dedicated anesthetist",
             "do not oxygen-flush a non-rebreathing",
+            "do not grid a cat",
+            "loose epithelial lip",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -78,6 +78,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-chemeye` | Assessment | Chemical / alkali ocular burn |
 | `ddx-melt` | Assessment | Melting ulcer / descemetocele |
 | `ddx-anes` | Assessment | SA anesthesia / sedation |
+| `ddx-indolent` | Assessment | Indolent / Boxer / SCCED |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -115,6 +116,7 @@ Suggested names are short so they show up after three letters.
 | `dc-chemeye` | Discharge | After chemical / alkali eye flush |
 | `dc-melt` | Discharge | Melting ulcer / descemetocele / referral |
 | `dc-anes` | Discharge | After anesthesia / recovery |
+| `dc-indolent` | Discharge | After indolent / SCCED debridement |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -708,6 +710,20 @@ ASA [framework only]. Dedicated anesthetist [Y]. ETCO2 confirms tube [ ]. Pop-of
 Do not: treat recovery as “done.” Oxygen-flush a non-rebreathing. Closed pop-off. Harvest AAHA mg/kg figures or MAP/ETCO2 bands. Grain-free echo as gospel. NSAID if azotemic.
 Do next: recovery is still anesthesia. Hands-on + ETCO2 / SpO2 / BP / temp. Name the hypotension before a bolus. Disconnect before you turn. △ Plumb / hospital.
 
+### `ddx-indolent`
+
+Indolent / Boxer / SCCED — {{patient.name}}
+Depth [superficial / stromal / melt]. Epithelial lip [Y/N]. STT [ ]. Lids / FB / cilia [ ]. Species [dog / cat].
+
+DDX:
+1. Indolent / SCCED (loose lip; Boxer over-represented)
+2. Melting / deep stromal (other list — do not grid)
+3. KCS / lid / ectopic cilia as the reason it will not heal
+4. Cat: herpes / sequestrum — do not grid a cat
+
+Do not: grid a cat. Treat a melt as a Boxer ulcer. Steroid on a stain-positive cornea. Antibiotic drops alone.
+Do next: dogs — dry CTA then diamond burr or grid △ hospital. E-collar. Soft CL △ hospital.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1023,6 +1039,14 @@ Referral to an eye surgeon was recommended if we discussed it. Return now if the
 Give only the pain and anti-anxiety medicines we sent, as labeled. Keep {{patient.objectPronoun}} warm and quiet. Do not add leftover pain pills.
 
 Return now for trouble breathing, pale or blue gums, collapse, repeated vomiting, or if {{patient.pronoun}} will not wake or eat. {{location.phonenumber}}
+
+### `dc-indolent`
+
+{{patient.name}} has a superficial ulcer that does not stick down. This is not the same as a melting, deep ulcer. It often needs the loose skin scraped and, in dogs, a special polish or grid. That is not done in cats.
+
+Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on.
+
+Return now if the eye gets much more painful or cloudy, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

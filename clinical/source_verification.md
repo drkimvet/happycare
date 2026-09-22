@@ -763,3 +763,21 @@ Book/public traps:
 - Do not leave recovery unmonitored. Capnograph until extubation; SpO2 in recovery.
 
 Night rule: recovery is still anesthesia. Dedicated anesthetist. Confirm the tube with ETCO2. Name the hypotension. Do not oxygen-flush a non-rebreathing.
+
+## 152. Indolent / Boxer ulcer / SCCED (Merck Hamor; no dedicated Plunkett chapter)
+
+No indolent / SCCED heading in the owned SA EM splits. Public Merck cornea (Hamor, Feb 2023 / Jul 2026). No chapter dump. **Do not harvest a diamond-burr success percent, antiviral mg, or a contact-lens brand recipe.**
+
+Agree with Merck: in dogs, superficial nonhealing ulcers are indolent corneal ulcers / recurrent erosions. Basement-membrane / poor epithelial attachment. Superficial only unless secondarily infected. Often a **loose epithelial lip**. Middle-aged to older dogs; Boxer over-represented. Slow to vascularize. Will not close on topical antimicrobial alone. Initial treatment: dry cotton-tipped debridement, then diamond burr or grid keratotomy. Soft contact lens aids comfort. Multiple keratotomies may be needed. **Keratotomies are not recommended in cats as they may predispose to corneal sequestration.** Cats/horses with slow recurrent superficial ulcers: herpesvirus is on the list.
+
+Book/public traps:
+
+- No Plunkett SCCED chapter — do not ask for one.
+- Do not call a melting or deep stromal ulcer a Boxer ulcer. That is packet 150.
+- **Do not grid a cat.** Sequestrum risk.
+- Do not skip STT / lids / FB / ectopic cilia and name it SCCED.
+- Do not put a steroid on a stain-positive cornea.
+- Antibiotic drops alone are not the plan.
+- Do not invent an antiviral table for the cat.
+
+Night rule: loose epithelial lip → indolent candidate. Not a melt. Dogs: CTA then burr/grid △ hospital. Do not grid a cat.

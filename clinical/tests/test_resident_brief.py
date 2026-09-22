@@ -1049,6 +1049,32 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("sporadic cystitis", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_indolent_ulcer_not_a_melt_and_no_grid_in_cat(self):
+        b = analyze(
+            "cat",
+            "indolent ulcer, SCCED, loose epithelial lip, grid keratotomy",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("loose epithelial lip", loc)
+        self.assertIn("not a melt", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not grid a cat", joined)
+        self.assertIn("sequestrum", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boxer_ulcer_not_antibiotic_alone(self):
+        b = analyze(
+            "dog",
+            "Boxer ulcer, recurrent corneal erosion, steroid drop",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("loose epithelial lip", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("antibiotic drops alone", joined)
+        self.assertIn("do not put a steroid", joined)
+        self.assertIn("diamond burr or grid", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",
