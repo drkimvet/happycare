@@ -213,6 +213,12 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("name the gland or the uterus", VERIF.lower())
         self.assertIn("gangrene is surgery tonight", VERIF.lower())
         self.assertIn("sore milk", VERIF.lower())
+        self.assertIn("measure iop now", VERIF.lower())
+        self.assertIn("do not send home as conjunctivitis", VERIF.lower())
+        self.assertIn("check the lens before latanoprost", VERIF.lower())
+        self.assertIn("uti does not close calcium", VERIF.lower())
+        self.assertIn("do not dexsp for maybe-lymphoma", VERIF.lower())
+        self.assertIn("frozen or cold sst can raise ica", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -257,6 +263,12 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-neonate`", MACRO)
         self.assertIn("`ddx-mastitis`", MACRO)
         self.assertIn("`dc-mastitis`", MACRO)
+        self.assertIn("`ddx-glaucoma`", MACRO)
+        self.assertIn("`dc-glaucoma`", MACRO)
+        self.assertIn("`ddx-hyperca`", MACRO)
+        self.assertIn("`dc-hyperca`", MACRO)
+        self.assertIn("`dc-uti`", MACRO)
+        self.assertIn("uti does not close hypercalcemia", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -377,6 +389,12 @@ class PublicCardInvariants(unittest.TestCase):
             "name the gland or the uterus",
             "gangrene is surgery tonight",
             "do not send a septic dam home as sore milk",
+            "measure iop now",
+            "do not send home as conjunctivitis",
+            "check the lens before latanoprost",
+            "uti does not close calcium",
+            "confirmed uti is infection, not fic",
+            "frozen or cold sst can raise ica",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

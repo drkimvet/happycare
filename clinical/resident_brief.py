@@ -366,6 +366,46 @@ GANGRENE_GLAND_RE = re.compile(
     re.I,
 )
 SORE_MILK_RE = re.compile(r"\b(sore milk|just mastitis|engorged|cabbage only)\b", re.I)
+GLAUCOMA_RE = re.compile(
+    r"\bglaucoma|"
+    r"\bhigh iop\b|"
+    r"\belevated iop\b|"
+    r"\biop (high|elevated)\b|"
+    r"\bbuphthalm|"
+    r"\btonomet",
+    re.I,
+)
+LATANOPROST_RE = re.compile(
+    r"\b(latanoprost|xalatan|prostaglandin analog|pg analog)\b",
+    re.I,
+)
+LENS_LUX_RE = re.compile(
+    r"\b(lens lux|luxated lens|anterior lux|lens not seen|before (the )?lens)\b",
+    re.I,
+)
+IVT_GENT_RE = re.compile(
+    r"\b(intravitreal|ivt).{0,24}\bgent|"
+    r"\bgentamicin.{0,24}\b(intravitreal|ivt|ciliary)\b",
+    re.I,
+)
+CONJUNCTIVITIS_HOME_RE = re.compile(r"\bconjunctiv", re.I)
+HYPERCA_RE = re.compile(
+    r"\bhypercalc|"
+    r"\bhyper-?calce|"
+    r"\bhica\b|"
+    r"\bionized (ca|calcium)\b|"
+    r"\b(high|elevated)\s+(ica|tca|calcium)\b|"
+    r"\b(ica|tca)\s+(high|elevated)\b|"
+    r"\btotal calcium\b|"
+    r"\bpthrp\b",
+    re.I,
+)
+CONFIRMED_UTI_RE = re.compile(
+    r"\b(uti confirmed|confirmed uti|confirmed (bacterial )?(cystitis|uti)|"
+    r"culture[- ](confirmed|positive)|"
+    r"bacteria (on|in) (the )?(sediment|urine))\b",
+    re.I,
+)
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
@@ -959,6 +999,76 @@ def analyze(
             hard_stops.append("Hold NSAID on a septic or azotemic dam.")
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for mastitis.")
+
+    if spec in {"dog", "cat"} and GLAUCOMA_RE.search(text):
+        g_loc = (
+            "Acute red painful eye: measure IOP now if the globe is intact. "
+            "Do not send home as conjunctivitis. Check the lens before latanoprost."
+        )
+        localization = f"{localization} Also {g_loc}" if localization else g_loc
+        hard_stops.append("Measure IOP now. Do not send home as conjunctivitis.")
+        do_not.append(
+            "Do not atropine a hard mydriatic eye. "
+            "Do not harvest 2013 mmHg, oral-CAI, mannitol, or glycerin tables. "
+            "Do not put a steroid drop on an unstained cornea."
+        )
+        do_next.append(
+            "Fluorescein first. Check the other eye. Lower pressure tonight △ Plumb / hospital. "
+            "Buphthalmos is chronic — comfort / enucleation conversation."
+        )
+        sources.append(
+            "Merck acute glaucoma (Thomasy). Plunkett acute-glaucoma headings traps only."
+        )
+        if ATROPINE_RE.search(text):
+            hard_stops.append("Do not atropine a glaucomatous eye.")
+        if LATANOPROST_RE.search(text) and LENS_LUX_RE.search(text):
+            hard_stops.append(
+                "Check the lens before latanoprost. Miosis traps an anterior luxation."
+            )
+        if spec == "cat" and LATANOPROST_RE.search(text):
+            hard_stops.append(
+                "Cat: prostaglandin analogs are uncommon (often uveitic). Not the dog default."
+            )
+        if spec == "cat" and IVT_GENT_RE.search(text):
+            hard_stops.append("Intravitreal gentamicin is contraindicated in cats.")
+        if MANNITOL_RE.search(text) and re.search(
+            r"\b(azotem|dry|dehydrat|creatinine)", text, re.I
+        ):
+            hard_stops.append("Do not give mannitol if dry or azotemic.")
+        if SEND_HOME_RE.search(text) and CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append("Do not send home as conjunctivitis.")
+        if DEX_RE.search(text):
+            hard_stops.append(
+                "Fluorescein before any steroid drop. Azotemic: still no DexSP."
+            )
+
+    if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
+        ca_loc = (
+            "Ionized hypercalcemia is its own problem list. "
+            "High iCa plus high tCa is not an albumin artifact."
+        )
+        localization = f"{localization} Also {ca_loc}" if localization else ca_loc
+        hard_stops.append(
+            "Do not DexSP for maybe-lymphoma before PTH/tissue. "
+            "PTHrP negative does not rule out malignancy."
+        )
+        do_not.append(
+            "Do not close calcium because a UTI is confirmed. "
+            "Do not harvest a fluid or bisphosphonate table. "
+            "Cats: idiopathic is most common; lymphoma is possible, not the default."
+        )
+        do_next.append(
+            "Repeat iCa anaerobic (air lowers iCa; frozen/cold SST can raise it). "
+            "PTH ± PTHrP. Image for CaOx and for a mass. Two problem lists if UTI is also present."
+        )
+        sources.append(
+            "Merck hypercalcemia in dogs and cats (idiopathic most common in cats; "
+            "tumor pair lymphoma + SCC). Lab preanalytical iCa comment."
+        )
+        if DEX_RE.search(text):
+            hard_stops.append("Do not give DexSP before PTH/tissue on a hypercalcemic patient.")
+        if UTI_RE.search(text):
+            hard_stops.append("UTI does not close the calcium problem list.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")
@@ -1572,10 +1682,27 @@ def analyze(
     if spec in {"dog", "cat"} and UTI_RE.search(text):
         do_not.append("Do not write a 14-day course for sporadic cystitis. ISCAID 2019: 3–5 days.")
         do_not.append("Do not reach for a fluoroquinolone or 3rd-gen cephalosporin as first-tier sporadic cystitis.")
-        do_next.append("Culture when you can. Analgesia. Young cat: FIC until culture says otherwise.")
+        if CONFIRMED_UTI_RE.search(text):
+            hard_stops.append(
+                "Confirmed UTI is infection, not FIC. It does not close a calcium problem list."
+            )
+            do_next.append(
+                "ISCAID 3–5 d if sporadic lower tract. Fever, lumbar pain, or azotemia flips to pyelo. "
+                "Culture if not already. Analgesia △ Plumb. Hold NSAID if azotemic."
+            )
+        else:
+            do_next.append(
+                "Culture when you can. Analgesia. Young cat: FIC until culture says otherwise."
+            )
         sources.append("ISCAID 2019: sporadic cystitis 3–5 d; reserve FQ/3rd-gen")
         if spec == "cat" and FQ_RE.search(text) and re.search(r"\b(young|2 yo|3 yo|flutd)\b", text, re.I):
             hard_stops.append("Young cat FLUTD: empiric fluoroquinolone is not the ISCAID plan.")
+        if HYPERCA_RE.search(text):
+            hard_stops.append("UTI does not close the calcium problem list. Write two lists.")
+            do_next.append(
+                "Image for CaOx. Repeat iCa anaerobic, not a frozen or cold SST. "
+                "Do not DexSP for maybe-lymphoma before PTH/tissue."
+            )
 
     if spec in {"dog", "cat"} and CPR_RE.search(text):
         do_not.append("Do not use high-dose epinephrine. Pardo/RECOVER 2024 withdrew it.")

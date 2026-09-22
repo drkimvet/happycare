@@ -582,3 +582,46 @@ Book/public traps:
 - Look at the neonates. Fading is not a diagnosis (already gated).
 
 Night rule: postpartum fever → name the gland or the uterus. Gangrene is surgery tonight. Do not send a septic dam home as sore milk.
+
+## 143. Acute glaucoma (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Acute glaucoma” (printed ~453–455). No chapter dump. **Do not harvest printed 15–25 / >30 / 25–40 / >40 / 45–70 mmHg bands, oral CAI 5–10 or 2–10 mg/kg, mannitol 1–2 g/kg, glycerin mL/kg, prednisone 0.5, or “acute <2 days / chronic >5 days.”**
+
+Agree with Merck acute glaucoma (Thomasy, Jul 2024): emergency. Pain, episcleral injection, diffuse corneal edema, mydriasis, vision loss. Measure IOP (applanation or rebound) if the globe is intact. Primary (angle collapse — cocker, basset, chow, shar-pei, samoyed, husky) vs secondary (uveitis, lens luxation, intraocular tumor). Cats: often anterior uveitis; primary is uncommon. Dogs: latanoprost + mannitol + CAI is the printed short-term cluster — **check the lens before latanoprost**. Blind tonight: return of vision is guarded. Intravitreal gentamicin is contraindicated in cats. The other eye needs a look (and later prophylaxis if primary is confirmed — do not start that steroid drop tonight on an unstained cornea).
+
+Book/public traps:
+
+- Printed mmHg ladders stay in the book. Night: hospital tonometer. Do not invent a cutoff.
+- Printed oral methazolamide / dichlorphenamide “avoid in cats” and the mg/kg lines stay in 2013. Topical CAI △ Plumb. Cats can become hypokalemic.
+- Printed prednisone 0.5 with the acute cocktail is not tonight’s default. Fluorescein first. Azotemic: still no DexSP.
+- Do not atropine.
+- Do not send home as conjunctivitis.
+- Do not latanoprost a lens luxation or a uveitic cat as the dog default.
+- Do not harvest mannitol / glycerin. Mannitol while dry or azotemic is already gated.
+- Do not inject gentamicin into a cat eye to “kill the ciliary body.”
+- Buphthalmos is not an acute salvage. Comfort / enucleation conversation.
+- Timolol in an asthmatic cat is a book stop. △ Plumb.
+
+Night rule: red painful cloudy eye → measure IOP now. Do not send home as conjunctivitis. Check the lens before latanoprost.
+
+## 144. Feline hypercalcemia + confirmed UTI (Merck + ISCAID 2019)
+
+No Plunkett hyperCa chapter in the owned SA EM splits. Public Merck hypercalcemia in dogs and cats plus ISCAID 2019. No chapter dump. **Do not harvest printed iCa mmol/L bands, bisphosphonate recipes, or a fluid-rate table.**
+
+Agree with Merck: hypercalcemia in cats is most often idiopathic (diagnosis of exclusion). Tumor pair in cats is lymphoma + squamous cell carcinoma. PTHrP can be the humoral driver, but **a negative PTHrP does not rule out malignancy**. High ionized plus high total calcium is not an albumin artifact. Work-up is iCa, PTH panel, urinalysis, thorax/abdomen imaging for neoplasia and urolithiasis (CaOx sits on the list). Glucocorticoids before that work-up can hide lymphoma.
+
+Agree with ISCAID 2019: confirmed bacterial cystitis is infection, not FIC. Sporadic lower-tract disease is 3–5 days, not a 14-day habit. Reserve FQ and 3rd-gen cephalosporins. Fever, lumbar pain, or azotemia is a pyelo conversation, not the 3–5 day script.
+
+Lab / preanalytical (this hospital’s iCa comment, not a Merck harvest): anaerobic transfer; air exposure lowers iCa; **frozen or cold SST can raise iCa**. Repeat on a proper sample before you chase a number.
+
+Book/public traps:
+
+- Do not close calcium because a UTI was confirmed. Two problem lists.
+- Do not DexSP for maybe-lymphoma before PTH/tissue.
+- Do not treat a frozen-SST iCa as gospel.
+- Do not write 14-day / FQ-first for sporadic cystitis.
+- Do not invent a Merck mmol/L cutoff. The report names its own reference.
+- Do not harvest a bisphosphonate or saline-diuresis table. △ Plumb / hospital.
+- Azotemic: still no DexSP, still no NSAID.
+
+Night rule: confirmed UTI is infection, not FIC. UTI does not close calcium. Image for CaOx. Do not DexSP before PTH/tissue.

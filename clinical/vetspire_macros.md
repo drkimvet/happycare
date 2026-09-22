@@ -68,6 +68,8 @@ Suggested names are short so they show up after three letters.
 | `ddx-propto` | Assessment | Traumatic proptosis |
 | `ddx-neonate` | Assessment | Fading / newborn resuscitation |
 | `ddx-mastitis` | Assessment | Mastitis / metritis / septic dam |
+| `ddx-glaucoma` | Assessment | Acute glaucoma / hard eye |
+| `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -94,6 +96,9 @@ Suggested names are short so they show up after three letters.
 | `dc-propto` | Discharge | After proptosis replace / enucleate |
 | `dc-neonate` | Discharge | Fading neonate going home |
 | `dc-mastitis` | Discharge | Mastitis / metritis dam |
+| `dc-glaucoma` | Discharge | After acute glaucoma |
+| `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
+| `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -551,6 +556,33 @@ DDX:
 Do not: send a septic dam home as sore milk. Harvest cephalexin / PGF / oxytocin IU or 1% iodine flush. DexSP. NSAID if septic/azotemic. Wean the whole litter from one sore gland. Cabbage-only shock.
 Do next: name the gland or the uterus. Gangrene is surgery tonight. Look at the neonates. Nursling-safe antibiotic △ Plumb.
 
+### `ddx-glaucoma`
+
+Acute glaucoma — {{patient.name}}
+IOP OD [ ]  OS [ ]  fluorescein [ ]  lens [in situ / anterior / not seen]  other eye [ ].
+
+DDX:
+1. Primary glaucoma
+2. Secondary (uveitis / lens luxation / intraocular tumor)
+3. Not conjunctivitis until IOP is measured
+
+Do not: send home as conjunctivitis. Atropine. Latanoprost before the lens is seen. Intravitreal gentamicin in a cat. Steroid drop on an ulcer. Harvest 2013 mmHg / mannitol / oral-CAI tables. DexSP if azotemic.
+Do next: measure IOP now if globe intact. Fluorescein first. Check the lens before latanoprost. Lower pressure tonight △ Plumb / hospital. Check the other eye.
+
+### `ddx-hyperca`
+
+Hypercalcemia — {{patient.name}}
+iCa [ ]  tCa [ ]  sample [anaerobic / air / frozen SST]. UTI [confirmed / no / pending]. PTH [ ]  PTHrP [ ]. Imaging [stones / mass / not yet].
+
+DDX:
+1. Idiopathic (most common in cats; exclusion)
+2. Neoplasia (lymphoma + SCC in cats) — PTHrP negative does not rule out
+3. CKD / hyperparathyroid / vitamin D / granuloma
+4. Confirmed UTI is a second list, not the calcium explanation
+
+Do not: close calcium because UTI grew. DexSP before PTH/tissue. Harvest a bisphosphonate or fluid table. Treat frozen-SST iCa as gospel. 14-day / FQ-first for sporadic cystitis.
+Do next: two problem lists. Repeat iCa anaerobic. Image for CaOx. ISCAID 3–5 d if sporadic lower UTI. △ Plumb.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -627,7 +659,9 @@ Sucralfate is coating, not pancreatitis therapy. △ Plumb for fluids / antiemet
 
 Lower urinary — {{patient.name}}
 ISCAID 2019: sporadic cystitis 3–5 days, not 14. Subclinical bacteriuria is not a UTI.
-Young cat: FIC until culture says otherwise. Reserve FQ / 3rd-gen. △ Plumb. Hold NSAID if azotemic.
+Confirmed UTI is infection, not FIC. Still 3–5 d if sporadic lower tract. Fever / lumbar / azotemia = pyelo conversation.
+UTI does not close hypercalcemia. Two problem lists. Image for CaOx. Do not DexSP before PTH/tissue.
+Young cat without confirmation: FIC until culture says otherwise. Reserve FQ / 3rd-gen. △ Plumb. Hold NSAID if azotemic.
 
 ### `ddx-rabbit`
 
@@ -770,6 +804,30 @@ Return now for the eye becoming more swollen or dry, yellow/green discharge, the
 {{patient.name}} is a newborn / very young puppy or kitten. Keep {{patient.objectPronoun}} warm. Feed only after {{patient.pronoun}} is warm and can swallow. Do not swing {{patient.objectPronoun}}. Do not pour formula into the mouth if {{patient.pronoun}} cannot swallow.
 
 Give only the medicines we sent, as labeled. Weigh daily. Return now for nonstop crying, not nursing, cold body, trouble breathing, a red belly button, or black/cold toes. {{location.phonenumber}}
+
+### `dc-glaucoma`
+
+{{patient.name}} was treated for high pressure in the eye (glaucoma). This is painful and can take vision quickly. It is not simple conjunctivitis.
+
+Give only the eye and pain medicines we sent, as labeled. Do not add leftover steroid drops or leftover pain pills. Keep the E-collar on if one was sent.
+
+Return now if the eye becomes more cloudy or painful, if {{patient.pronoun}} stops seeing, or if {{patient.pronoun}} will not eat. The other eye still needs a check. {{location.phonenumber}}
+
+### `dc-hyperca`
+
+{{patient.name}} has a high blood calcium. That is a separate problem from a bladder infection if both are present. The infection does not explain the calcium.
+
+Give only the medicines we sent, as labeled. Finish the antibiotic if one was started. We still need the calcium work-up (recheck blood, imaging for stones or a mass) as discussed.
+
+Return now for straining without urine, vomiting, not eating, more drinking, or collapse. {{location.phonenumber}}
+
+### `dc-uti`
+
+{{patient.name}} has a confirmed bladder infection. This is not “just stress peeing” until a veterinarian says the infection is gone.
+
+Give only the antibiotic and pain medicine we sent, as labeled. This is usually a short course, not leftover antibiotics from the cabinet. No extra pain pills.
+
+If calcium was also high, that is a second problem — imaging and a recheck as discussed. Return now for straining without urine, fever, vomiting, or not eating. {{location.phonenumber}}
 
 ### `dc-mastitis`
 

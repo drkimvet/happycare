@@ -846,6 +846,54 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("1% iodine", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_glaucoma_not_conjunctivitis_home_or_atropine(self):
+        b = analyze(
+            "dog",
+            "acute glaucoma, red painful eye, send home as conjunctivitis, atropine",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("measure iop now", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send home as conjunctivitis", joined)
+        self.assertIn("atropine", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_latanoprost_before_lens_or_anterior_luxation(self):
+        b = analyze(
+            "dog",
+            "glaucoma, latanoprost, anterior lens luxation, lens not seen",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("check the lens before latanoprost", joined)
+        self.assertIn("anterior luxation", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_glaucoma_no_latanoprost_default_or_ivt_gentamicin(self):
+        b = analyze(
+            "cat",
+            "glaucoma, latanoprost, intravitreal gentamicin, DexSP",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("prostaglandin analogs are uncommon", joined)
+        self.assertIn("intravitreal gentamicin is contraindicated in cats", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_confirmed_uti_does_not_close_hyperca(self):
+        b = analyze(
+            "cat",
+            "UTI confirmed, hypercalcemia, iCa high, tCa high, maybe lymphoma, DexSP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("not an albumin artifact", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("confirmed uti is infection, not fic", joined)
+        self.assertIn("uti does not close the calcium problem list", joined)
+        self.assertIn("do not dexsp", joined)
+        self.assertIn("image for caox", joined)
+        self.assertNotIn("fic until culture", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)
