@@ -431,6 +431,17 @@ SUDDEN_BLIND_RE = re.compile(
     re.I,
 )
 ENRO_RE = re.compile(r"\b(enrofloxacin|baytril)\b", re.I)
+EYELID_LAC_RE = re.compile(
+    r"\beyelid lacer|"
+    r"\blid lacer|"
+    r"\blid[- ]margin|"
+    r"\bcut (the )?eyelid|"
+    r"\btorn eyelid|"
+    r"\bfigure[- ]of[- ]eight|"
+    r"\bcanalicul",
+    re.I,
+)
+GLUE_LID_RE = re.compile(r"\b(glue|skin glue|dermabond|staple).{0,20}\b(lid|eyelid|margin)\b", re.I)
 HIGH_IOP_RE = re.compile(r"\b(high iop|elevated iop|iop (high|elevated)|secondary glaucoma)\b", re.I)
 IVT_GENT_RE = re.compile(
     r"\b(intravitreal|ivt).{0,24}\bgent|"
@@ -1252,6 +1263,33 @@ def analyze(
             )
         if spec == "cat" and RD_RE.search(text):
             hard_stops.append("Cat retinal detachment: measure BP tonight. Hypertension is on the list.")
+
+    if spec in {"dog", "cat"} and EYELID_LAC_RE.search(text):
+        lid_loc = (
+            "Lid-margin laceration: repair tonight. Figure-of-eight at the margin. "
+            "Two-layer. Stain the cornea."
+        )
+        localization = f"{localization} Also {lid_loc}" if localization else lid_loc
+        hard_stops.append(
+            "Do not glue-and-home a lid-margin cut. Repair tonight. Stain the globe."
+        )
+        do_not.append(
+            "Do not leave a knot on the conjunctiva rubbing the cornea. "
+            "Do not put chlorhexidine in the eye. Do not harvest 3–0 to 6–0."
+        )
+        do_next.append(
+            "Two-layer closure. Figure-of-eight at the margin. E-collar. "
+            "Temporary tarsorrhaphy if they cannot blink. Look at the medial canthus and the rest of the head."
+        )
+        sources.append(
+            "Merck eyelid lacerations (Thomasy). No dedicated Plunkett lid-laceration chapter in the owned splits."
+        )
+        if GLUE_LID_RE.search(text) or SEND_HOME_RE.search(text):
+            hard_stops.append("Do not glue-and-home a lid-margin cut.")
+        if re.search(r"\bchlorhex", text, re.I):
+            hard_stops.append("Do not put chlorhexidine in the eye.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for an eyelid laceration.")
 
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (

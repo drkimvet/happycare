@@ -970,6 +970,20 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("ivermectin", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_eyelid_margin_not_glue_and_home(self):
+        b = analyze(
+            "dog",
+            "eyelid laceration, lid margin, glue the lid and send home, chlorhexidine in the eye",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("repair tonight", loc)
+        self.assertIn("figure-of-eight", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not glue-and-home", joined)
+        self.assertIn("chlorhexidine", joined)
+        self.assertIn("stain the", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

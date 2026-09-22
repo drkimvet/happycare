@@ -74,6 +74,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hyphema` | Assessment | Hyphema / AC blood |
 | `ddx-corneal` | Assessment | Corneal laceration / cat claw |
 | `ddx-sards` | Assessment | Sudden blind / SARDS / RD |
+| `ddx-eyelid` | Assessment | Eyelid / lid-margin laceration |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -107,6 +108,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hyphema` | Discharge | Hyphema going home / work-up |
 | `dc-corneal` | Discharge | Corneal laceration / leak |
 | `dc-sards` | Discharge | Sudden vision loss / referral |
+| `dc-eyelid` | Discharge | After lid-margin repair |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -650,6 +652,20 @@ DDX:
 Do not: call it SARDS without an ERG. Pred / DexSP a hypertensive cat. Harvest book pred 1.0 for SARD. Skip the drug history.
 Do next: name the space. BP now. Fundus or B-scan. Offer ERG / referral. Merck: no effective SARDS treatment reported.
 
+### `ddx-eyelid`
+
+Eyelid laceration — {{patient.name}}
+Margin involved [Y/N]. Medial canthus / punctum [ ]. Fluorescein [ ]. Blink [ ]. Other trauma [ ].
+
+DDX:
+1. Lid-margin laceration (notch if not aligned)
+2. Skin-only lid cut
+3. Concurrent corneal / globe injury
+4. Medial canthus / canaliculus involvement
+
+Do not: glue-and-home a margin cut. Knot on the cornea. Chlorhex in the eye. Harvest 3–0 to 6–0. Skip the globe.
+Do next: repair tonight. Two-layer. Figure-of-eight at the margin. E-collar. Tarsorrhaphy if they cannot blink. △ hospital suture cart.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -933,6 +949,14 @@ Return now if the eye suddenly looks smaller or wetter, if yellow goo appears, o
 Give only the medicines we sent, as labeled. Do not add leftover steroids. Keep {{patient.objectPronoun}} in a familiar room so {{patient.pronoun}} does not fall.
 
 Referral for a retina test (ERG) or a neurologist was recommended if we discussed it. Return now for bumping harder, a red painful eye, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-eyelid`
+
+{{patient.name}} had a cut eyelid repaired. The lid edge has to line up or the eye cannot blink well.
+
+Give only the medicines we sent, as labeled. Keep the E-collar on. Do not let {{patient.objectPronoun}} rub the stitches. Do not put disinfectant in the eye.
+
+Return now if the lid edge opens, the eye becomes more red or cloudy, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -689,3 +689,21 @@ Book/public traps:
 - Printed 456–457 is short. Gates come from Merck.
 
 Night rule: sudden blind → name the space. BP now. Do not call it SARDS without an ERG. Do not pred a hypertensive cat.
+
+## 148. Eyelid laceration (Merck Thomasy; no dedicated Plunkett chapter)
+
+No lid-laceration heading in the owned SA EM splits (proptosis lid-margin sutures sit next door). Public Merck eyelid lacerations. No chapter dump. **Do not harvest printed 3–0 to 6–0 absorbable, 3–0 to 6–0 silk, or 5–0 polyglactin.**
+
+Agree with Merck (Thomasy, Jul 2024): repair as soon as possible. Margin cuts need precise apposition or the lid notches and cannot blink. Two-layer in all species: deep tarsus/orbicularis (horizontal mattress), **figure-of-eight at the eyelid margin**, then interrupted skin. Skin sutures out 7–10 days. E-collar. Temporary tarsorrhaphy if swelling kills the blink. Topical plus systemic antimicrobial; NSAID △ Plumb / kidneys.
+
+Book/public traps:
+
+- Printed suture sizes stay on the Merck page. Night: hospital suture cart.
+- Do not glue-and-home a margin cut.
+- Do not leave a knot on the conjunctiva rubbing the cornea.
+- Do not put chlorhexidine in the eye (already gated with proptosis).
+- Do not skip fluorescein — fight/HBC often hits the globe too.
+- Azotemic: still no NSAID, still no DexSP.
+- Look at the medial canthus / punctum and the rest of the head. Do not invent a canaliculus-stent recipe.
+
+Night rule: lid-margin cut → repair tonight. Figure-of-eight at the margin. Stain the cornea. Do not glue-and-home.
