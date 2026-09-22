@@ -71,6 +71,8 @@ Suggested names are short so they show up after three letters.
 | `ddx-glaucoma` | Assessment | Acute glaucoma / hard eye |
 | `ddx-uveitis` | Assessment | Anterior uveitis / flare |
 | `ddx-lenslux` | Assessment | Anterior lens luxation |
+| `ddx-hyphema` | Assessment | Hyphema / AC blood |
+| `ddx-corneal` | Assessment | Corneal laceration / cat claw |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -101,6 +103,8 @@ Suggested names are short so they show up after three letters.
 | `dc-glaucoma` | Discharge | After acute glaucoma |
 | `dc-uveitis` | Discharge | Anterior uveitis going home |
 | `dc-lenslux` | Discharge | Anterior lens luxation / referral |
+| `dc-hyphema` | Discharge | Hyphema going home / work-up |
+| `dc-corneal` | Discharge | Corneal laceration / leak |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -600,6 +604,35 @@ DDX:
 Do not: latanoprost / miotics. Measure IOP on top of the lens. Harvest Merck mannitol g/kg. Treat posterior lux as tonight's ICLE. Send home if IOP is high.
 Do next: refer tonight. Visual → lens-out conversation. Blind → globe-out. Check the other eye. △ Plumb / hospital.
 
+### `ddx-hyphema`
+
+Hyphema — {{patient.name}}
+Hyphema is a sign, not a diagnosis. Stain [ ]  IOP [ ]  BP [ ]  platelets [ ]  petechiae [ ]  trauma [ ].
+
+DDX:
+1. Trauma
+2. Uveitis / neoplasia / retinal tear
+3. Hypertension
+4. Coagulopathy / rodenticide / platelets
+5. Not “just a red eye”
+
+Do not: send home as red eye. Aspirin / NSAID for the bleed. Harvest pilocarpine / epinephrine / tPA-as-grams. Steroid on an ulcer. DexSP if azotemic.
+Do next: fluorescein, IOP, BP, platelets. Quiet + E-collar. Treat the cause. TPA is not the night default. △ Plumb.
+
+### `ddx-corneal`
+
+Corneal laceration / cat claw — {{patient.name}}
+Seidel [ ]  iris prolapse [ ]  lens [intact / capsule torn / not seen]  FB [surface / deep / intraocular]. Visual [dazzle / consensual].
+
+DDX:
+1. Partial-thickness laceration
+2. Full-thickness / leak / iris prolapse
+3. Lens capsule rupture (cat claw in a young dog)
+4. Melting ulcer / descemetocele
+
+Do not: yank a deep FB in the lobby. Send a leaking globe home. Steroid on a stain-positive cornea. Harvest 7–0 / 9–0 or 2 mm lens-capsule tables.
+Do next: stain + Seidel. Look at the lens. E-collar. Offer referral. Lens-capsule rupture can be medical; still offer surgery. Cats: traumatic lens sarcoma conversation.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -859,6 +892,22 @@ Return now if the eye becomes more painful or cloudy, if {{patient.pronoun}} sto
 Give only the medicines we sent, as labeled. Do not add leftover glaucoma drops (especially latanoprost) unless we wrote that on the label. Keep the E-collar on if one was sent.
 
 Return now if the eye becomes more cloudy or painful, if {{patient.pronoun}} stops seeing, or if {{patient.pronoun}} will not eat. The other eye still needs a check. {{location.phonenumber}}
+
+### `dc-hyphema`
+
+{{patient.name}} has blood in the front of the eye (hyphema). That is a sign, not a diagnosis. We still need the work-up we discussed (blood pressure, clotting, the rest of the eye).
+
+Give only the medicines we sent, as labeled. Do not give aspirin, leftover pain pills, or leftover steroid drops. Keep the E-collar on. Keep {{patient.objectPronoun}} quiet.
+
+Return now if the eye fills more with blood, becomes more painful, or if {{patient.pronoun}} will not eat, has nosebleeds, or bruises. {{location.phonenumber}}
+
+### `dc-corneal`
+
+{{patient.name}} has a cut or puncture of the cornea. If the eye is leaking, or tissue is sticking out, this is an emergency. Referral was recommended if we discussed it.
+
+Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on. Do not let {{patient.objectPronoun}} rub the eye.
+
+Return now if the eye suddenly looks smaller or wetter, if yellow goo appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

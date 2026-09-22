@@ -646,3 +646,25 @@ Book/public traps:
 - Do not treat posterior luxation as tonight’s lens extraction.
 
 Night rule: red miotic eye → measure IOP. Uveitis is usually low. Anterior lens → no latanoprost; refer tonight.
+
+## 146. Hyphema / corneal laceration (Plunkett p441–540 vs Merck Hamor + Thomasy)
+
+Legal split “Hyphema” (printed ~450–451) plus “Corneal foreign bodies” (~447). No chapter dump. **Do not harvest printed pilocarpine 1%, epinephrine 1–2%, atropine 1%, tPA 25 g, dexamethasone q4–8h, 2 liters of lavage, or Merck 7–0 to 9–0 / historical 2 mm lens-capsule cutoffs.**
+
+Agree with Merck anterior uvea (Hamor, Feb 2023 / Aug 2026): hyphema is hemorrhage in the AC — a **sign**. Causes include uveitis, trauma, neoplasia, retinal tear, hypertension, coagulopathy, platelets, hyperviscosity, congenital anomalies, glaucoma. Acute traumatic hyphema often clots; recurrent/chronic is guarded (secondary glaucoma / phthisis). **No drugs have been proved to resolve hyphema.** Intracameral TPA can dissolve fibrin <10–14 days but **potentiates bleeding if the cause is still open**.
+
+Agree with Merck penetrating injuries / corneal lacerations (Thomasy, Jul 2024): cat claw is a common full-thickness laceration. **Look at the lens.** Fluorescein + Seidel. Iris/lens/sclera involvement worsens prognosis. Quiet + E-collar. Historical lens-capsule >2 mm “must extract tonight” is outdated — medical management can work; **still offer referral**. Cats: traumatic lens-induced sarcoma conversation. Blind + retinal detachment → enucleation conversation.
+
+Book/public traps:
+
+- Book **aspirin is contraindicated**. Night: aspirin off; NSAID can worsen the bleed.
+- Book tPA **25 g** is a unit trap (µg conversation). Not the night default.
+- Book pilocarpine “to drain the angle” vs epinephrine then atropine — do not harvest. Measure IOP first.
+- Do not send hyphema home as a red eye. Stain, IOP, BP, platelets.
+- Do not yank a deep or intraocular FB in the lobby.
+- Do not send a leaking globe home.
+- Do not steroid a stain-positive cornea.
+- Do not harvest 7–0 / 9–0 as a Midtown recipe.
+- Azotemic: still no DexSP, still no NSAID.
+
+Night rule: hyphema is a sign, not a diagnosis. Cat-claw cornea → look at the lens; Seidel the leak. Do not send a leaking globe home.

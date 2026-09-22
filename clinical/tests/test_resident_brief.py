@@ -920,6 +920,32 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("miosis traps", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hyphema_is_a_sign_not_aspirin_or_red_eye_home(self):
+        b = analyze(
+            "dog",
+            "hyphema, blood in the anterior chamber, send home as red eye, aspirin",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("sign, not a diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("hyphema is a sign, not a diagnosis", joined)
+        self.assertIn("aspirin is contraindicated", joined)
+        self.assertIn("do not send hyphema home as a red eye", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_claw_corneal_laceration_look_at_lens_no_lobby_yank(self):
+        b = analyze(
+            "dog",
+            "cat claw in the eye, corneal laceration, seidel positive, yank the thorn, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("look at the lens", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a leaking globe home", joined)
+        self.assertIn("do not yank a deep", joined)
+        self.assertIn("traumatic lens sarcoma", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

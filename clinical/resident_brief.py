@@ -397,6 +397,29 @@ UVEITIS_RE = re.compile(
     r"\bmiotic (painful )?(eye|pupil)\b",
     re.I,
 )
+HYPHEMA_RE = re.compile(
+    r"\bhyphema|"
+    r"\bblood in (the )?anterior|"
+    r"\beight[- ]ball",
+    re.I,
+)
+CORNEAL_LAC_RE = re.compile(
+    r"\bcorneal (lacer|perforat|wound|foreign)|"
+    r"\bpenetrating (corneal|ocular|intraocular)|"
+    r"\biris prolapse|"
+    r"\bdescemet|"
+    r"\bseidel|"
+    r"\bkeratomalac|"
+    r"\bmelting (corneal )?ulcer|"
+    r"\bcat claw.{0,24}\b(eye|cornea|globe)",
+    re.I,
+)
+ASPIRIN_RE = re.compile(r"\b(aspirin|asa)\b", re.I)
+YANK_FB_RE = re.compile(
+    r"\b(yank|pull|tug|pluck).{0,20}\b(foreign body|thorn|fb)\b|"
+    r"\b(foreign body|thorn|fb).{0,20}\b(yank|pull|tug|pluck)\b",
+    re.I,
+)
 HIGH_IOP_RE = re.compile(r"\b(high iop|elevated iop|iop (high|elevated)|secondary glaucoma)\b", re.I)
 IVT_GENT_RE = re.compile(
     r"\b(intravitreal|ivt).{0,24}\bgent|"
@@ -1119,6 +1142,65 @@ def analyze(
             r"\b(azotem|dry|dehydrat|creatinine)", text, re.I
         ):
             hard_stops.append("Do not give mannitol if dry or azotemic.")
+
+    if spec in {"dog", "cat"} and HYPHEMA_RE.search(text):
+        h_loc = (
+            "Blood in the anterior chamber is a sign, not a diagnosis. "
+            "Stain. IOP. BP. Platelets. Quiet plus E-collar."
+        )
+        localization = f"{localization} Also {h_loc}" if localization else h_loc
+        hard_stops.append(
+            "Hyphema is a sign, not a diagnosis. Do not send it home as a red eye."
+        )
+        do_not.append(
+            "Do not give aspirin for the bleed. Do not harvest pilocarpine, epinephrine, "
+            "or tPA printed as 25 g (unit trap). Do not put a steroid on an unstained cornea."
+        )
+        do_next.append(
+            "Fluorescein. IOP. BP. Platelets / coag / rodenticide story. "
+            "Treat the cause. TPA is not the night default. △ Plumb."
+        )
+        sources.append(
+            "Merck anterior uvea / hyphema (Hamor). Plunkett hyphema headings traps only."
+        )
+        if ASPIRIN_RE.search(text) or NSAID_RE.search(text):
+            hard_stops.append("Aspirin is contraindicated in hyphema. Hold NSAID for the bleed.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send hyphema home as a red eye.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hyphema.")
+
+    if spec in {"dog", "cat"} and CORNEAL_LAC_RE.search(text):
+        c_loc = (
+            "Cat-claw or corneal laceration: look at the lens. Seidel the leak. "
+            "Iris out or leaking is surgery / refer tonight."
+        )
+        localization = f"{localization} Also {c_loc}" if localization else c_loc
+        hard_stops.append(
+            "Do not send a leaking globe home. Look at the lens. E-collar."
+        )
+        do_not.append(
+            "Do not yank a deep or intraocular foreign body in the lobby. "
+            "Do not put a steroid on a stain-positive cornea. "
+            "Do not harvest 7–0 / 9–0 or a 2 mm lens-capsule cutoff."
+        )
+        do_next.append(
+            "Fluorescein and Seidel. Quiet. Offer referral. "
+            "Lens-capsule rupture can be medical; still offer surgery. "
+            "Cats: traumatic lens sarcoma conversation."
+        )
+        sources.append(
+            "Merck penetrating injuries and corneal lacerations (Thomasy). "
+            "Plunkett corneal-FB headings traps only."
+        )
+        if YANK_FB_RE.search(text):
+            hard_stops.append("Do not yank a deep or intraocular foreign body in the lobby.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a leaking globe home.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not put a steroid on a stain-positive cornea.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a corneal laceration.")
 
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (
