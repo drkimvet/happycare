@@ -235,6 +235,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("eyelid laceration", VERIF.lower())
         self.assertIn("figure-of-eight at the eyelid margin", VERIF.lower())
         self.assertIn("do not glue-and-home a margin cut", VERIF.lower())
+        self.assertIn("lavage now", VERIF.lower())
+        self.assertIn("do not chemically neutralize", VERIF.lower())
+        self.assertIn("minimum of 20 minutes", VERIF.lower())
+        self.assertIn("2 liters", VERIF.lower())
+        self.assertIn("boric acid", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -301,6 +306,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-eyelid`", MACRO)
         self.assertIn("`dc-eyelid`", MACRO)
         self.assertIn("glue-and-home a margin cut", MACRO.lower())
+        self.assertIn("`ddx-chemeye`", MACRO)
+        self.assertIn("`dc-chemeye`", MACRO)
+        self.assertIn("do not: neutralize", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -443,6 +451,9 @@ class PublicCardInvariants(unittest.TestCase):
             "repair tonight",
             "figure-of-eight at the margin",
             "do not glue-and-home a margin cut",
+            "lavage now",
+            "do not neutralize",
+            "minimum of 20 minutes",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

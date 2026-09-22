@@ -984,6 +984,41 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("stain the", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_alkali_splash_not_neutralize(self):
+        b = analyze(
+            "dog",
+            "alkali splash in the eye, neutralize with boric acid ointment",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("lavage now", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not neutralize", joined)
+        self.assertIn("minimum of 20 minutes", joined)
+        self.assertIn("boric-acid", joined)
+        self.assertNotIn("alkaline phosphatase", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_chem_eye_not_send_home_burning_or_steroid(self):
+        b = analyze(
+            "cat",
+            "bleach in the eye, chemical keratitis, steroid drop, send home still burning",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("lavage now", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send home still burning", joined)
+        self.assertIn("do not put a topical steroid", joined)
+        self.assertIn("fluorescein after", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_alkaline_phosphatase_is_not_chem_eye(self):
+        b = analyze("cat", "alkaline phosphatase high, no eye signs")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lavage now", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertNotIn("do not neutralize", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

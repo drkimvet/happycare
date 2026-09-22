@@ -442,6 +442,36 @@ EYELID_LAC_RE = re.compile(
     re.I,
 )
 GLUE_LID_RE = re.compile(r"\b(glue|skin glue|dermabond|staple).{0,20}\b(lid|eyelid|margin)\b", re.I)
+# alkali / chemical / lye prefixes sit outside a trailing \b group so
+# "alkali splash" and "chemical keratitis" match; do not use \balkali alone
+# (that would fire alkaline phosphatase).
+CHEM_EYE_RE = re.compile(
+    r"\bchemical keratit|"
+    r"\bchemical (ocular |eye |corneal )?(burn|splash|injur|trauma)|"
+    r"\b(ocular|eye|corneal) chemical|"
+    r"\balkali splash|"
+    r"\balkaline (burn|splash|chemical|cleaner|agent|product|gel)|"
+    r"(?:"
+    r"\b(?:alkali|lye|drain cleaner|oven cleaner|pool shock|bleach|dishwasher detergent|corrosive)\b"
+    r".{0,48}"
+    r"\b(?:eye|cornea|ocular|conjunct|globe)\b"
+    r"|"
+    r"\b(?:eye|cornea|ocular|conjunct|globe)\b"
+    r".{0,48}"
+    r"\b(?:alkali|lye|drain cleaner|oven cleaner|pool shock|bleach|dishwasher detergent|corrosive)\b"
+    r")|"
+    r"\bacid (splash|burn).{0,24}\b(?:eye|cornea|ocular)|"
+    r"\b(?:eye|cornea|ocular).{0,24}\bacid (splash|burn)",
+    re.I,
+)
+NEUTRALIZE_RE = re.compile(r"\bneutraliz|\bboric acid\b", re.I)
+STEROID_DROP_RE = re.compile(
+    r"\bsteroid drop|"
+    r"\btopical steroid|"
+    r"\bpred(nisolone)? drop|"
+    r"\bpred acetate",
+    re.I,
+)
 HIGH_IOP_RE = re.compile(r"\b(high iop|elevated iop|iop (high|elevated)|secondary glaucoma)\b", re.I)
 IVT_GENT_RE = re.compile(
     r"\b(intravitreal|ivt).{0,24}\bgent|"
@@ -1290,6 +1320,46 @@ def analyze(
             hard_stops.append("Do not put chlorhexidine in the eye.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for an eyelid laceration.")
+
+    if spec in {"dog", "cat"} and CHEM_EYE_RE.search(text):
+        chem_loc = (
+            "Chemical / alkali ocular burn: lavage now. "
+            "Alkali is worse than acid (liquefactive; may take 12 h). "
+            "Fluorescein after the flush."
+        )
+        localization = f"{localization} Also {chem_loc}" if localization else chem_loc
+        hard_stops.append(
+            "Lavage now. Do not neutralize. Fluorescein after a minimum of 20 minutes."
+        )
+        do_not.append(
+            "Do not put a topical steroid on a chemical burn. "
+            "Do not harvest book 2 liters or an acetylcysteine table. "
+            "Do not send home still burning."
+        )
+        do_next.append(
+            "Water or 0.9% saline now. Flip lids / flush fornices / third eyelid. "
+            "E-collar. Pain △ Plumb. Watch 12 h for alkali depth. "
+            "Ingested corrosive: no emesis, no charcoal."
+        )
+        sources.append(
+            "Merck corrosive toxicoses (Gwaltney-Brant, Mar 2025). "
+            "Plunkett chemical keratitis ~445–446 traps only (2 L / boric neutralize)."
+        )
+        if NEUTRALIZE_RE.search(text):
+            hard_stops.append(
+                "Do not neutralize. Book boric-acid ointment is a trap. "
+                "Merck: neutralizing makes an exothermic thermal burn."
+            )
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ):
+            hard_stops.append("Do not put a topical steroid on a chemical burn.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send home still burning.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a chemical eye burn.")
 
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (

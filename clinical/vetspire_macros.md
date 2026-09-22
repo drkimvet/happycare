@@ -75,6 +75,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-corneal` | Assessment | Corneal laceration / cat claw |
 | `ddx-sards` | Assessment | Sudden blind / SARDS / RD |
 | `ddx-eyelid` | Assessment | Eyelid / lid-margin laceration |
+| `ddx-chemeye` | Assessment | Chemical / alkali ocular burn |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -109,6 +110,7 @@ Suggested names are short so they show up after three letters.
 | `dc-corneal` | Discharge | Corneal laceration / leak |
 | `dc-sards` | Discharge | Sudden vision loss / referral |
 | `dc-eyelid` | Discharge | After lid-margin repair |
+| `dc-chemeye` | Discharge | After chemical / alkali eye flush |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -666,6 +668,20 @@ DDX:
 Do not: glue-and-home a margin cut. Knot on the cornea. Chlorhex in the eye. Harvest 3–0 to 6–0. Skip the globe.
 Do next: repair tonight. Two-layer. Figure-of-eight at the margin. E-collar. Tarsorrhaphy if they cannot blink. △ hospital suture cart.
 
+### `ddx-chemeye`
+
+Chemical / alkali eye — {{patient.name}}
+Agent [alkali / acid / bleach / drain cleaner / unknown]. Lavage started [ ]. Minutes flushed [ ]. Lids / fornices / third eyelid swept [ ]. Fluorescein AFTER lavage [ ]. Ingested too [Y/N].
+
+DDX:
+1. Alkaline ocular burn (liquefactive; deeper; may take 12 h)
+2. Acid ocular burn (coagulative; pain often limits exposure)
+3. Retained product under lids / third eyelid
+4. Concurrent ingested corrosive (no emesis)
+
+Do not: neutralize (book boric-acid ointment is a trap; Merck: exothermic). Harvest 2 liters. Topical steroid. Send home still burning. Harvest an acetylcysteine table.
+Do next: lavage now. Water or 0.9% saline, minimum of 20 minutes. Fluorescein after. E-collar. Pain △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -957,6 +973,14 @@ Referral for a retina test (ERG) or a neurologist was recommended if we discusse
 Give only the medicines we sent, as labeled. Keep the E-collar on. Do not let {{patient.objectPronoun}} rub the stitches. Do not put disinfectant in the eye.
 
 Return now if the lid edge opens, the eye becomes more red or cloudy, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-chemeye`
+
+{{patient.name}} got a chemical in the eye. We flushed it here. Alkali (drain cleaner, lye, some bleach/dishwasher products) can keep damaging the eye after it looks quieter.
+
+Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Do not put vinegar, baking soda, or “neutralizer” in the eye. Keep the E-collar on.
+
+Return now if the eye is more painful, cloudier, or smaller, if {{patient.pronoun}} cannot open it, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -707,3 +707,21 @@ Book/public traps:
 - Look at the medial canthus / punctum and the rest of the head. Do not invent a canaliculus-stent recipe.
 
 Night rule: lid-margin cut → repair tonight. Figure-of-eight at the margin. Stain the cornea. Do not glue-and-home.
+
+## 149. Chemical ocular burn / alkali (Merck Gwaltney-Brant; Plunkett chemical keratitis ~445–446)
+
+Legal split has chemical keratitis (printed ~445–446). Public Merck corrosive toxicoses (Gwaltney-Brant, Mar 2025). No chapter dump. **Do not harvest book 2 liters, boric-acid neutralize, or acetylcysteine tables. Do not harvest Merck diazepam mg/kg, disk-battery 20 mL, or pH > 11 as a night cutoff.**
+
+Agree with Merck: acids = immediate coagulative necrosis; pain often limits exposure. Alkali = penetrating liquefactive necrosis; deeper; **burns from alkaline agents can take up to 12 hours** to become fully apparent. Eyes: flush with water or 0.9% saline for a **minimum of 20 minutes**, then fluorescein. **Do not chemically neutralize** an acid with weak alkali (or alkali with weak acid) — exothermic reaction can add a thermal burn. No emesis if ingested. Charcoal is ineffective and can impede mucosal healing. Flip lids / flush fornices / third eyelid — retained product keeps burning. Book and Merck agree: no topical corticosteroids on chemical keratitis. E-collar. Do not send home still burning.
+
+Book/public traps:
+
+- Book “2 liters” of irrigating saline stays on the page. Night: Merck time (minimum of 20 minutes), not a harvested liter count.
+- Book boric acid ophthalmic ointment “to help neutralize weak alkaline compounds” is a trap. Merck: do not neutralize.
+- Book acetylcysteine if stromal stays on the page — △ Plumb, not a night table.
+- Book atropine if uveitis/ulcer — △ Plumb; already gated if IOP is high.
+- Merck cationic-detergent diazepam mg/kg and disk-battery tap-water 20 mL stay on the page.
+- Do not invent a conjunctival pH-strip cutoff as the stop rule; Merck names time, then stain.
+- Ingested corrosive is a different list (dilute, no emesis). Tonight’s ocular gate is lavage now.
+
+Night rule: alkali / chemical eye → lavage now. Do not neutralize. Fluorescein after. No steroid drop. Do not send home still burning.
