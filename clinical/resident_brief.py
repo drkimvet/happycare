@@ -353,6 +353,19 @@ COLD_NEONATE_RE = re.compile(
     re.I,
 )
 SMALL_LITTER_RE = re.compile(r"\b(small of the litter|\brunt\b)\b", re.I)
+MASTITIS_RE = re.compile(
+    r"\bmastit|"
+    r"\bmetritis\b|"
+    r"\b(mammary|udder|teat).{0,28}\b(hot|pain|swol|abscess|gangrene)|"
+    r"\b(postpartum|post-partum).{0,40}\b(fever|septic|discharge|lochia)|"
+    r"\bgangrenous (mastit|gland|mammary)\b",
+    re.I,
+)
+GANGRENE_GLAND_RE = re.compile(
+    r"\b(gangrene|gangrenous|necrotic gland|teat rupture|ruptured teat)\b",
+    re.I,
+)
+SORE_MILK_RE = re.compile(r"\b(sore milk|just mastitis|engorged|cabbage only)\b", re.I)
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
@@ -913,6 +926,39 @@ def analyze(
             hard_stops.append(
                 "Do not send a cold, not-nursing neonate home as small of the litter."
             )
+
+    if spec in {"dog", "cat"} and MASTITIS_RE.search(text):
+        mast_loc = (
+            "Name the gland or the uterus. "
+            "Mastitis and metritis can coexist. Gangrene is surgery tonight."
+        )
+        localization = f"{localization} Also {mast_loc}" if localization else mast_loc
+        hard_stops.append(
+            "Postpartum dam: name the gland or the uterus. "
+            "Do not send a septic dam home as sore milk."
+        )
+        do_not.append(
+            "Do not harvest cephalexin, amox-clav, PGF2α, or oxytocin IU. "
+            "Do not harvest a 1% iodine flush. Do not cabbage-leaf a shocky dam. "
+            "Do not wean the whole litter from one sore gland."
+        )
+        do_next.append(
+            "Culture milk even if it looks normal. Look at the neonates and the other glands. "
+            "Nursling-safe antibiotic △ Plumb if she is stable. Fluids if septic."
+        )
+        sources.append(
+            "Merck mastitis / metritis (Scully). Plunkett mastitis headings traps only."
+        )
+        if GANGRENE_GLAND_RE.search(text):
+            hard_stops.append("Gangrene is surgery tonight. Do not let neonates nurse that gland.")
+        if SEND_HOME_RE.search(text) or SORE_MILK_RE.search(text):
+            hard_stops.append("Do not send a septic dam home as sore milk.")
+        if DEX_RE.search(text):
+            hard_stops.append("DexSP is not the postpartum-sepsis plan.")
+        if NSAID_RE.search(text):
+            hard_stops.append("Hold NSAID on a septic or azotemic dam.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for mastitis.")
 
     if KCL_BOLUS_RE.search(text):
         hard_stops.append("Never bolus a bag that contains KCl (AAHA).")

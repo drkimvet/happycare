@@ -67,6 +67,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-he` | Assessment | HE / ALF / head press |
 | `ddx-propto` | Assessment | Traumatic proptosis |
 | `ddx-neonate` | Assessment | Fading / newborn resuscitation |
+| `ddx-mastitis` | Assessment | Mastitis / metritis / septic dam |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
 | `ddx-anax` | Assessment | Anaphylaxis / vaccine / sting |
@@ -92,6 +93,7 @@ Suggested names are short so they show up after three letters.
 | `dc-he` | Discharge | Hepatic encephalopathy / liver |
 | `dc-propto` | Discharge | After proptosis replace / enucleate |
 | `dc-neonate` | Discharge | Fading neonate going home |
+| `dc-mastitis` | Discharge | Mastitis / metritis dam |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
 | `dc-aki` | Discharge | Kidney / ureter |
 | `dc-addison` | Discharge | Addison start |
@@ -535,6 +537,20 @@ DDX:
 Do not: swing. Routine doxapram. Atropine for neonatal bradycardia. Tube-feed a cold gut. Adult CPR cart. Harvest 80–100 mL/kg or Merck 0.0002 mg/g. Send home as small of the litter.
 Do next: warm, rub, PPV if not vigorous. Glucose now. Look at dam and umbilicus. △ newborn crash-cart / Plumb.
 
+### `ddx-mastitis`
+
+Mastitis / metritis — {{patient.name}}
+Postpartum day [ ]. Temp [ ]. Glands [which / gangrene Y/N]. Milk appearance [ ]. Lochia [odor / amount]. Eating [ ]. Neonates [nursing / fading].
+
+DDX:
+1. Mastitis (one or many glands) — culture even if milk looks normal
+2. Metritis (not diestrus pyometra; SIPS is not systemically sick)
+3. Both (hematogenous)
+4. Sepsis / peritonitis / eclampsia / inflammatory mammary carcinoma
+
+Do not: send a septic dam home as sore milk. Harvest cephalexin / PGF / oxytocin IU or 1% iodine flush. DexSP. NSAID if septic/azotemic. Wean the whole litter from one sore gland. Cabbage-only shock.
+Do next: name the gland or the uterus. Gangrene is surgery tonight. Look at the neonates. Nursling-safe antibiotic △ Plumb.
+
 ### `ddx-resp`
 
 Dyspnea — {{patient.name}}
@@ -754,6 +770,14 @@ Return now for the eye becoming more swollen or dry, yellow/green discharge, the
 {{patient.name}} is a newborn / very young puppy or kitten. Keep {{patient.objectPronoun}} warm. Feed only after {{patient.pronoun}} is warm and can swallow. Do not swing {{patient.objectPronoun}}. Do not pour formula into the mouth if {{patient.pronoun}} cannot swallow.
 
 Give only the medicines we sent, as labeled. Weigh daily. Return now for nonstop crying, not nursing, cold body, trouble breathing, a red belly button, or black/cold toes. {{location.phonenumber}}
+
+### `dc-mastitis`
+
+{{patient.name}} was treated for an infected mammary gland and/or a postpartum uterine infection. This can make the mother and the babies sick.
+
+Give only the antibiotic and pain medicine we sent, as labeled. Warm compresses on the sore gland as shown. Do not add leftover steroids or leftover pain pills.
+
+The babies may need milk replacer. Weigh them daily. Return now if the gland turns dark or opens, the mother will not eat, she has a foul discharge, she collapses, or a baby stops nursing. {{location.phonenumber}}
 
 ### `dc-dystocia`
 

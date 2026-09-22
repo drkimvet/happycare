@@ -823,6 +823,29 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("small of the litter", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mastitis_not_sore_milk_home_or_dexsp(self):
+        b = analyze(
+            "dog",
+            "postpartum fever, mastitis, send home as sore milk, give DexSP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("name the gland or the uterus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a septic dam home as sore milk", joined)
+        self.assertIn("dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gangrenous_mastitis_is_surgery_tonight(self):
+        b = analyze(
+            "dog",
+            "gangrenous mastitis, necrotic gland, pups still nursing, flunixin",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("gangrene is surgery tonight", joined)
+        self.assertIn("nsaid", joined)
+        self.assertIn("1% iodine", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

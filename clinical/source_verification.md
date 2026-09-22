@@ -558,3 +558,27 @@ Book/public traps:
 - Azotemic dam: still no DexSP.
 
 Night rule: fading / just-born → warm before you feed. Do not swing. Atropine is not for neonatal bradycardia. Fading is not a diagnosis.
+
+## 142. Mastitis / metritis / septic dam (Plunkett p301–440 vs Merck Scully)
+
+Legal split “Mastitis” (printed ~407–408); metritis sits next to pyometra in the same file. No chapter dump. **Do not harvest printed 10–14 day tails, 1% povidone-iodine flush, cephalexin 15–30, amox-clav 14, PGF2α 0.1–0.25, or oxytocin IU.**
+
+Agree with Merck mastitis (Scully, Jul 2023 / Jul 2026): postpartum (or galactorrhea) bitch; E. coli / Staph / Strep; milk may look normal — culture it. Acute: fever, firm painful warm glands, anorexia, less interest in pups. Abscess / gangrene / rupture spreads and becomes sepsis; debridement then. Pups can use nonaffected teats; milk replacer if she will not allow. DDX includes inflammatory mammary carcinoma (dog) and feline mammary hyperplasia.
+
+Agree with Merck metritis (same author/date): postpartum uterine infection, not diestrus pyometra. Distinguish lochia (should settle by ~3 weeks) and SIPS (not systemically sick) from fetid increasing discharge. Culture cytology. Fluids if systemic. Evacuation with oxytocin / PGF is a hospital conversation — do not harvest IU.
+
+Agree with Merck periparturient: mastitis and metritis can coexist via hematogenous spread (usually E. coli). Cabbage leaf / warm compress is adjunct, not the septic plan.
+
+Book/public traps:
+
+- Printed 1% povidone-iodine flush of an abscessed gland stays in 2013. Not peritoneal lavage, and not tonight’s recipe. Hospital debridement protocol.
+- Printed 10–14 days past inflammation stays in the book. Night duration △ culture / Plumb.
+- Do not send a septic dam home as sore milk.
+- Do not wean the whole litter because one gland is sore.
+- Do not cabbage-only a crashing bitch.
+- Do not DexSP a septic postpartum dam. Azotemic: still no DexSP, still no NSAID.
+- Do not collapse postpartum metritis into the pyometra OHE script, or collapse pyometra into “just metritis.”
+- Do not use the dystocia oxytocin-stop as a reason to skip imaging a retained fetus. Stuck labor is already gated; this is a different clock.
+- Look at the neonates. Fading is not a diagnosis (already gated).
+
+Night rule: postpartum fever → name the gland or the uterus. Gangrene is surgery tonight. Do not send a septic dam home as sore milk.
