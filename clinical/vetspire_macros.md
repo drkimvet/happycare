@@ -76,6 +76,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sards` | Assessment | Sudden blind / SARDS / RD |
 | `ddx-eyelid` | Assessment | Eyelid / lid-margin laceration |
 | `ddx-chemeye` | Assessment | Chemical / alkali ocular burn |
+| `ddx-melt` | Assessment | Melting ulcer / descemetocele |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -111,6 +112,7 @@ Suggested names are short so they show up after three letters.
 | `dc-sards` | Discharge | Sudden vision loss / referral |
 | `dc-eyelid` | Discharge | After lid-margin repair |
 | `dc-chemeye` | Discharge | After chemical / alkali eye flush |
+| `dc-melt` | Discharge | Melting ulcer / descemetocele / referral |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -682,6 +684,20 @@ DDX:
 Do not: neutralize (book boric-acid ointment is a trap; Merck: exothermic). Harvest 2 liters. Topical steroid. Send home still burning. Harvest an acetylcysteine table.
 Do next: lavage now. Water or 0.9% saline, minimum of 20 minutes. Fluorescein after. E-collar. Pain △ Plumb.
 
+### `ddx-melt`
+
+Melting ulcer / descemetocele — {{patient.name}}
+Depth [superficial / stromal / descemetocele / perforated]. Malacia [Y/N]. Seidel [ ]. STT [ ]. Cytology [ ]. Culture [aerobic + fungal]. Cause [KCS / lids / FB / unknown].
+
+DDX:
+1. Melting stromal ulcer (proteinase; infected until cytology says otherwise)
+2. Descemetocele (fragile globe; surgery tonight)
+3. Perforation / iris prolapse
+4. Indolent superficial (Boxer) — not tonight’s melt; do not grid a melt or a cat
+
+Do not: send a melting eye home. Steroid a melt. Grid a melt. Harvest serum q-hours / acetylcysteine. BNP in a cat. Systemic enro in a cat.
+Do next: cytology and culture. Serum △ hospital. E-collar. Refer tonight if melting, deep, or Descemet is showing. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -981,6 +997,14 @@ Return now if the lid edge opens, the eye becomes more red or cloudy, or if {{pa
 Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Do not put vinegar, baking soda, or “neutralizer” in the eye. Keep the E-collar on.
 
 Return now if the eye is more painful, cloudier, or smaller, if {{patient.pronoun}} cannot open it, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-melt`
+
+{{patient.name}} has a deep or melting corneal ulcer. The clear surface of the eye can get thinner very fast. This is not a wait-at-home scratch.
+
+Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on. Do not let {{patient.objectPronoun}} rub the eye.
+
+Referral to an eye surgeon was recommended if we discussed it. Return now if the eye looks smaller or wetter, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

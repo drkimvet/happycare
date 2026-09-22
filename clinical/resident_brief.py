@@ -148,6 +148,12 @@ PHENYLEPHRINE_RE = re.compile(r"\bphenylephrine\b", re.I)
 BUTAZONE_RE = re.compile(r"\b(phenylbutazone|bute|right dorsal colitis)\b", re.I)
 BACTERIURIA_RE = re.compile(r"\b(subclinical bacteriuria|asymptomatic bacteriuria|bacteria on culture|culture positive)\b", re.I)
 UTI_RE = re.compile(r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|enrofloxacin|baytril|14.?day)\b", re.I)
+# Enrofloxacin is also an ocular/retina word. Do not open the cystitis block
+# unless the one-liner actually has a urinary context.
+URINE_CONTEXT_RE = re.compile(
+    r"\b(uti|cystitis|pollakiuria|stranguria|flutd|convenia|14.?day|dysuria|hematuria|pyelo|bacteriuria)\b",
+    re.I,
+)
 FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
@@ -407,11 +413,26 @@ CORNEAL_LAC_RE = re.compile(
     r"\bcorneal (lacer|perforat|wound|foreign)|"
     r"\bpenetrating (corneal|ocular|intraocular)|"
     r"\biris prolapse|"
-    r"\bdescemet|"
     r"\bseidel|"
-    r"\bkeratomalac|"
-    r"\bmelting (corneal )?ulcer|"
     r"\bcat claw.{0,24}\b(eye|cornea|globe)",
+    re.I,
+)
+# descemet / keratomalac / melting prefixes sit outside a trailing \b
+# so descemetocele and keratomalacia match.
+MELT_RE = re.compile(
+    r"\bmelting (corneal )?ulcer|"
+    r"\bkeratomalac|"
+    r"\bdescemet|"
+    r"\bcorneal malac|"
+    r"\bmalacic (cornea|ulcer|stroma)|"
+    r"\bstromal melt|"
+    r"\bpaper[- ]thin cornea|"
+    r"\bdeep stromal",
+    re.I,
+)
+GRID_BURR_RE = re.compile(r"\b(grid|diamond burr|keratotom)", re.I)
+BNP_RE = re.compile(
+    r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
 )
 ASPIRIN_RE = re.compile(r"\b(aspirin|asa)\b", re.I)
@@ -1361,6 +1382,53 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a chemical eye burn.")
 
+    if spec in {"dog", "cat"} and MELT_RE.search(text):
+        melt_loc = (
+            "Melting ulcer / descemetocele: proteinase is eating stroma. "
+            "Refer tonight if melting, deep, or Descemet is showing."
+        )
+        localization = f"{localization} Also {melt_loc}" if localization else melt_loc
+        hard_stops.append(
+            "Do not send a melting eye home. Cytology and culture tonight. "
+            "Do not steroid a melt. Do not grid a melt."
+        )
+        do_not.append(
+            "Do not harvest serum q-hours, acetylcysteine, or a homemade 50% cutoff. "
+            "Do not tonometry on a paper-thin cornea. "
+            "Do not put BNP in a cat. Do not give a cat systemic enrofloxacin for the eye."
+        )
+        do_next.append(
+            "Cytology and culture (aerobic + fungal). Serum △ hospital. "
+            "STT, lids, FB. Seidel if leak. E-collar. Offer ophtho tonight."
+        )
+        sources.append(
+            "Merck deep stromal / descemetocele / iris prolapse (Thomasy). "
+            "Merck cornea melting / proteinase (Hamor). "
+            "Plunkett ulcerative keratitis ~444–446 traps only."
+        )
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ):
+            hard_stops.append("Do not steroid a melt.")
+        if GRID_BURR_RE.search(text):
+            hard_stops.append(
+                "Do not grid a melt. Grid / diamond burr is the indolent superficial conversation. "
+                "Keratotomy is not recommended in cats."
+            )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a melting eye home.")
+        if spec == "cat" and BNP_RE.search(text):
+            hard_stops.append("Do not put a neomycin-polymyxin (BNP) product in a cat.")
+        if spec == "cat" and ENRO_RE.search(text):
+            hard_stops.append(
+                "Cat + enrofloxacin: retina until proven otherwise. "
+                "Do not use systemic enrofloxacin as the melting-ulcer antibiotic."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a melting ulcer.")
+
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (
             "Ionized hypercalcemia is its own problem list. "
@@ -1386,7 +1454,7 @@ def analyze(
         )
         if DEX_RE.search(text):
             hard_stops.append("Do not give DexSP before PTH/tissue on a hypercalcemic patient.")
-        if UTI_RE.search(text):
+        if URINE_CONTEXT_RE.search(text):
             hard_stops.append("UTI does not close the calcium problem list.")
 
     if KCL_BOLUS_RE.search(text):
@@ -1998,7 +2066,7 @@ def analyze(
         do_not.append("Do not call a silent positive culture a UTI.")
         sources.append("ISCAID 2019 UTI guidelines")
 
-    if spec in {"dog", "cat"} and UTI_RE.search(text):
+    if spec in {"dog", "cat"} and URINE_CONTEXT_RE.search(text):
         do_not.append("Do not write a 14-day course for sporadic cystitis. ISCAID 2019: 3–5 days.")
         do_not.append("Do not reach for a fluoroquinolone or 3rd-gen cephalosporin as first-tier sporadic cystitis.")
         if CONFIRMED_UTI_RE.search(text):

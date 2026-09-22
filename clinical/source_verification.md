@@ -725,3 +725,23 @@ Book/public traps:
 - Ingested corrosive is a different list (dilute, no emesis). Tonight’s ocular gate is lavage now.
 
 Night rule: alkali / chemical eye → lavage now. Do not neutralize. Fluorescein after. No steroid drop. Do not send home still burning.
+
+## 150. Melting ulcer / descemetocele (Merck Thomasy + Hamor; Plunkett acute ulcerative keratitis ~444–446)
+
+Legal split has acute ulcerative keratitis (printed ~444–446), same pages as chemical keratitis. Public Merck deep stromal / descemetocele / iris prolapse (Thomasy, Jul 2024) and cornea (Hamor, Feb 2023 / Jul 2026). No chapter dump. **Do not harvest serum or acetylcysteine q-hours, atropine 1% q6–8h, l-lysine 500, interferon 30 IU, or a homemade 40% cat band.**
+
+Agree with Merck: infected ulcers show stromal loss, malacia, or cellular infiltrate. **Cytology and culture** (aerobic bacterial and fungal) tonight. Interim medical: topical broad-spectrum antimicrobial, serum, mydriatic, systemic NSAID △ Plumb / kidneys. Melting = microbe and tissue proteinases digesting stroma. Descemetocele and iris prolapse need **immediate surgical support** of a fragile globe. Merck pearl: ulcers with at least 50% stromal loss should be assessed by an ophthalmologist. Hamor: melting that involves >50% of the cornea merits specialist surgery. Brachycephalic and KCS dogs are vulnerable. STT + fluorescein; depth with magnification; Seidel if leak. Find lids / FB / dry eye or it will not heal.
+
+Book/public traps:
+
+- Book “acetylcysteine or fresh serum” and Merck serum q-hours stay on the page — serum is named; the schedule is △ hospital / Plumb, not a night table.
+- Book atropine q6–8h, topical NSAID list, Muro 128, and systemic enrofloxacin / ciprofloxacin stay on the page. Cat + enrofloxacin is already a retina gate.
+- Book neomycin-polymyxin-bacitracin “dogs only” / fatal anaphylaxis in cats — do not put BNP in a cat.
+- Book third-eyelid flap as “corneal support” is not a descemetocele-and-home plan. Night: refer for a graft conversation.
+- Grid / diamond burr / keratotomy is the indolent superficial conversation (Hamor). **Do not grid a melt.** Keratotomy is not recommended in cats.
+- Do not invent a 40% feline stromal-loss cutoff. Merck names 50% as the ophthalmologist conversation.
+- Do not tonometry on a paper-thin / descemetocele cornea.
+- Corticosteroids should be avoided (book agrees).
+- Do not send a melting eye home.
+
+Night rule: melting ulcer / descemetocele → refer tonight. Cytology and culture. Do not steroid. Do not grid a melt. Do not send a melting eye home.

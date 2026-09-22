@@ -1019,6 +1019,36 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("do not neutralize", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_melting_ulcer_not_steroid_or_home(self):
+        b = analyze(
+            "dog",
+            "melting corneal ulcer, keratomalacia, steroid drop, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("refer tonight", loc)
+        self.assertNotIn("cat-claw or corneal laceration", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a melting eye home", joined)
+        self.assertIn("do not steroid a melt", joined)
+        self.assertIn("cytology and culture", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_descemetocele_not_grid_or_burr(self):
+        b = analyze(
+            "cat",
+            "descemetocele, deep stromal ulcer, grid keratotomy, diamond burr, enrofloxacin, triple antibiotic",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("descemetocele", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not grid a melt", joined)
+        self.assertIn("keratotomy is not recommended in cats", joined)
+        self.assertIn("enrofloxacin", joined)
+        self.assertIn("bnp", joined)
+        self.assertNotIn("fic until culture", joined)
+        self.assertNotIn("sporadic cystitis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

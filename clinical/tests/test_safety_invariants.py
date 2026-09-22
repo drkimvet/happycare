@@ -240,6 +240,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("minimum of 20 minutes", VERIF.lower())
         self.assertIn("2 liters", VERIF.lower())
         self.assertIn("boric acid", VERIF.lower())
+        self.assertIn("melting ulcer / descemetocele", VERIF.lower())
+        self.assertIn("do not send a melting eye home", VERIF.lower())
+        self.assertIn("do not grid a melt", VERIF.lower())
+        self.assertIn("cytology and culture", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -309,6 +313,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-chemeye`", MACRO)
         self.assertIn("`dc-chemeye`", MACRO)
         self.assertIn("do not: neutralize", MACRO.lower())
+        self.assertIn("`ddx-melt`", MACRO)
+        self.assertIn("`dc-melt`", MACRO)
+        self.assertIn("do not: send a melting eye home", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -454,6 +461,9 @@ class PublicCardInvariants(unittest.TestCase):
             "lavage now",
             "do not neutralize",
             "minimum of 20 minutes",
+            "do not send a melting eye home",
+            "do not grid a melt",
+            "cytology and culture",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
