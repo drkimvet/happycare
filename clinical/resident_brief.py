@@ -380,9 +380,24 @@ LATANOPROST_RE = re.compile(
     re.I,
 )
 LENS_LUX_RE = re.compile(
-    r"\b(lens lux|luxated lens|anterior lux|lens not seen|before (the )?lens)\b",
+    r"\blens lux|"
+    r"\bluxated lens|"
+    r"\banterior lux|"
+    r"\b(lens not seen|before (the )?lens|"
+    r"lens in (the )?anterior|aphakic crescent|primary lens instab)\b",
     re.I,
 )
+UVEITIS_RE = re.compile(
+    r"\buveitis|"
+    r"\biridocyclitis|"
+    r"\baqueous flare|"
+    r"\bhypopyon|"
+    r"\bkeratic|"
+    r"\bsynechia|"
+    r"\bmiotic (painful )?(eye|pupil)\b",
+    re.I,
+)
+HIGH_IOP_RE = re.compile(r"\b(high iop|elevated iop|iop (high|elevated)|secondary glaucoma)\b", re.I)
 IVT_GENT_RE = re.compile(
     r"\b(intravitreal|ivt).{0,24}\bgent|"
     r"\bgentamicin.{0,24}\b(intravitreal|ivt|ciliary)\b",
@@ -1041,6 +1056,69 @@ def analyze(
             hard_stops.append(
                 "Fluorescein before any steroid drop. Azotemic: still no DexSP."
             )
+
+    if spec in {"dog", "cat"} and UVEITIS_RE.search(text):
+        u_loc = (
+            "Red miotic painful eye with flare is uveitis until IOP says otherwise. "
+            "IOP is typically low. Fluorescein first. Find the cause."
+        )
+        localization = f"{localization} Also {u_loc}" if localization else u_loc
+        hard_stops.append(
+            "Do not send uveitis home as conjunctivitis. Measure IOP. Fluorescein first."
+        )
+        do_not.append(
+            "Do not put a steroid drop on an unstained cornea. "
+            "Do not atropine if IOP is high. "
+            "Do not harvest 2013 atropine q2–3h, pred, carprofen, meloxicam, flunixin, or aspirin tables."
+        )
+        do_next.append(
+            "Look for flare, miosis, and a systemic story if both eyes. "
+            "Atropine only on a hypotonic eye △ Plumb. Pain △ Plumb."
+        )
+        sources.append(
+            "Merck anterior uveitis (Thomasy). Plunkett anterior-uveitis headings traps only."
+        )
+        if SEND_HOME_RE.search(text) and CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append("Do not send uveitis home as conjunctivitis.")
+        if ATROPINE_RE.search(text) and HIGH_IOP_RE.search(text):
+            hard_stops.append("Do not atropine uveitis if IOP is high.")
+        if spec == "cat" and DEX_RE.search(text):
+            hard_stops.append(
+                "Cat uveitis: do not DexSP-only. Infectious / FeLV / FIV / FIP / toxo / crypto stay on the list."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for uveitis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Hold NSAID on an azotemic uveitis patient.")
+
+    if spec in {"dog", "cat"} and LENS_LUX_RE.search(text):
+        lux_loc = (
+            "Look at the lens. Anterior luxation is a referral tonight. "
+            "No latanoprost. Check the other eye."
+        )
+        localization = f"{localization} Also {lux_loc}" if localization else lux_loc
+        hard_stops.append(
+            "Anterior lens luxation: no latanoprost. Miosis traps vitreous and raises IOP. Refer tonight."
+        )
+        do_not.append(
+            "Do not measure IOP on top of the lens. Do not harvest Merck mannitol g/kg. "
+            "Do not treat posterior luxation as the same night surgery."
+        )
+        do_next.append(
+            "Measure IOP off the lens. Visual → lens-out conversation. Blind → globe-out conversation. "
+            "Cats: chronic uveitis is the usual cause. Terrier / Shar-Pei: check the other eye."
+        )
+        sources.append(
+            "Merck dislocation of the lens (Thomasy). Plunkett lens-luxation headings traps only."
+        )
+        if LATANOPROST_RE.search(text):
+            hard_stops.append(
+                "Check the lens before latanoprost. Miosis traps an anterior luxation."
+            )
+        if MANNITOL_RE.search(text) and re.search(
+            r"\b(azotem|dry|dehydrat|creatinine)", text, re.I
+        ):
+            hard_stops.append("Do not give mannitol if dry or azotemic.")
 
     if spec in {"dog", "cat"} and HYPERCA_RE.search(text):
         ca_loc = (

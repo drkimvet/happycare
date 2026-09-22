@@ -894,6 +894,32 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("fic until culture", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_uveitis_not_conjunctivitis_home_or_steroid_on_ulcer(self):
+        b = analyze(
+            "cat",
+            "anterior uveitis, aqueous flare, send home as conjunctivitis, atropine, high IOP, DexSP",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("typically low", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send uveitis home as conjunctivitis", joined)
+        self.assertIn("do not atropine uveitis if iop is high", joined)
+        self.assertIn("dexsp-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_anterior_lens_luxation_no_latanoprost_refer_tonight(self):
+        b = analyze(
+            "dog",
+            "terrier anterior lens luxation latanoprost",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("look at the lens", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("no latanoprost", joined)
+        self.assertIn("refer tonight", joined)
+        self.assertIn("miosis traps", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_render_and_cli_never_emit_mg_per_kg_number(self):
         b = analyze("cat", "lily, AKI, UOP 1", uop_ml_per_kg_hr=1.0)
         text = render(b)

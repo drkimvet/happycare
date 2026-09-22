@@ -219,6 +219,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("uti does not close calcium", VERIF.lower())
         self.assertIn("do not dexsp for maybe-lymphoma", VERIF.lower())
         self.assertIn("frozen or cold sst can raise ica", VERIF.lower())
+        self.assertIn("iop is typically low", VERIF.lower())
+        self.assertIn("prostaglandin analogs are contraindicated", VERIF.lower())
+        self.assertIn("do not latanoprost an anterior luxation", VERIF.lower())
+        self.assertIn("do not dexsp-only a cat", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -269,6 +273,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hyperca`", MACRO)
         self.assertIn("`dc-uti`", MACRO)
         self.assertIn("uti does not close hypercalcemia", MACRO.lower())
+        self.assertIn("`ddx-uveitis`", MACRO)
+        self.assertIn("`dc-uveitis`", MACRO)
+        self.assertIn("`ddx-lenslux`", MACRO)
+        self.assertIn("`dc-lenslux`", MACRO)
+        self.assertIn("latanoprost / miotics", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -395,6 +404,10 @@ class PublicCardInvariants(unittest.TestCase):
             "uti does not close calcium",
             "confirmed uti is infection, not fic",
             "frozen or cold sst can raise ica",
+            "red miotic painful eye with flare is not conjunctivitis",
+            "iop is typically **low**",
+            "look at the lens",
+            "no latanoprost / miotics",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -625,3 +625,24 @@ Book/public traps:
 - Azotemic: still no DexSP, still no NSAID.
 
 Night rule: confirmed UTI is infection, not FIC. UTI does not close calcium. Image for CaOx. Do not DexSP before PTH/tissue.
+
+## 145. Anterior uveitis / lens luxation (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Anterior uveitis” plus lens-luxation headings next to glaucoma (printed ~448–449). No chapter dump. **Do not harvest printed atropine 1% q2–3h, topical pred q2–3h, carprofen 4, meloxicam 0.2, flunixin, aspirin 10–15, azathioprine 2.2, cyclophosphamide 50 mg/m², phenylephrine 10%, or Merck mannitol 1–2 g/kg.**
+
+Agree with Merck anterior uveitis (Thomasy, Jul 2024): blepharospasm, ciliary flush, corneal edema, **miosis**, aqueous flare, fibrin, hypopyon, hyphema. **IOP is typically low**; normal or high means drainage is blocked (secondary glaucoma). Fluorescein always. Bilateral suggests systemic disease. Treat cause plus anti-inflammatory plus mydriatic.
+
+Agree with Merck lens dislocation (Thomasy, Jul 2024): primary in middle-aged terriers / Shar-Pei (ADAMTS17). Cats: **chronic anterior uveitis** is the usual cause. Anterior luxation → often high IOP, corneal edema, pain. Immediate referral: lens out if visual, globe out if blind. **Prostaglandin analogs are contraindicated** (miosis traps vitreous). Do not measure IOP on top of the lens. Posterior luxation is monitored, not the same night ICLE. Prognosis guarded (secondary glaucoma, retinal detachment).
+
+Book/public traps:
+
+- Book atropine “only on the hypotonic eye” agrees with night: do not atropine if IOP is high.
+- Printed NSAID / aspirin / flunixin tables stay in 2013. Azotemic: still no NSAID, still no DexSP.
+- Printed tropicamide / phenylephrine / epinephrine “on the glaucomatous eye” stay in 2013. Night: measure IOP and look at the lens first.
+- Do not send uveitis home as conjunctivitis.
+- Do not DexSP-only a cat (FeLV / FIV / FIP / toxo / crypto stay on the list).
+- Do not latanoprost an anterior luxation.
+- Do not harvest Merck mannitol 1–2 g/kg. Not if dry or azotemic.
+- Do not treat posterior luxation as tonight’s lens extraction.
+
+Night rule: red miotic eye → measure IOP. Uveitis is usually low. Anterior lens → no latanoprost; refer tonight.

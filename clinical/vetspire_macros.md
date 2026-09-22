@@ -69,6 +69,8 @@ Suggested names are short so they show up after three letters.
 | `ddx-neonate` | Assessment | Fading / newborn resuscitation |
 | `ddx-mastitis` | Assessment | Mastitis / metritis / septic dam |
 | `ddx-glaucoma` | Assessment | Acute glaucoma / hard eye |
+| `ddx-uveitis` | Assessment | Anterior uveitis / flare |
+| `ddx-lenslux` | Assessment | Anterior lens luxation |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -97,6 +99,8 @@ Suggested names are short so they show up after three letters.
 | `dc-neonate` | Discharge | Fading neonate going home |
 | `dc-mastitis` | Discharge | Mastitis / metritis dam |
 | `dc-glaucoma` | Discharge | After acute glaucoma |
+| `dc-uveitis` | Discharge | Anterior uveitis going home |
+| `dc-lenslux` | Discharge | Anterior lens luxation / referral |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -569,6 +573,33 @@ DDX:
 Do not: send home as conjunctivitis. Atropine. Latanoprost before the lens is seen. Intravitreal gentamicin in a cat. Steroid drop on an ulcer. Harvest 2013 mmHg / mannitol / oral-CAI tables. DexSP if azotemic.
 Do next: measure IOP now if globe intact. Fluorescein first. Check the lens before latanoprost. Lower pressure tonight △ Plumb / hospital. Check the other eye.
 
+### `ddx-uveitis`
+
+Anterior uveitis — {{patient.name}}
+IOP [usually low / normal / high]  fluorescein [ ]  flare [ ]  miosis [ ]  OU vs OS/OD [ ]. Systemic signs [ ].
+
+DDX:
+1. Infectious / immune / neoplastic / traumatic / lens-induced
+2. Cat: FeLV / FIV / FIP / toxo / crypto still on the list
+3. Secondary glaucoma if IOP is not low
+4. Not conjunctivitis until IOP and stain are done
+
+Do not: send home as conjunctivitis. Steroid drop on an unstained cornea. Atropine if IOP is high. DexSP-only in a cat. Harvest 2013 atropine / NSAID tables. DexSP / NSAID if azotemic.
+Do next: measure IOP. Fluorescein first. Find the cause. Atropine only on a hypotonic eye △ Plumb.
+
+### `ddx-lenslux`
+
+Lens luxation — {{patient.name}}
+Lens [anterior / posterior / sublux / aphakic crescent]. IOP off the lens [ ]. Visual [dazzle / consensual]. Other eye [ ]. Breed [terrier / Shar-Pei / other].
+
+DDX:
+1. Primary (terrier / Shar-Pei, ADAMTS17)
+2. Secondary (chronic uveitis — cats; hypermature cataract; chronic glaucoma)
+3. Anterior luxation is not posterior luxation
+
+Do not: latanoprost / miotics. Measure IOP on top of the lens. Harvest Merck mannitol g/kg. Treat posterior lux as tonight's ICLE. Send home if IOP is high.
+Do next: refer tonight. Visual → lens-out conversation. Blind → globe-out. Check the other eye. △ Plumb / hospital.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -810,6 +841,22 @@ Give only the medicines we sent, as labeled. Weigh daily. Return now for nonstop
 {{patient.name}} was treated for high pressure in the eye (glaucoma). This is painful and can take vision quickly. It is not simple conjunctivitis.
 
 Give only the eye and pain medicines we sent, as labeled. Do not add leftover steroid drops or leftover pain pills. Keep the E-collar on if one was sent.
+
+Return now if the eye becomes more cloudy or painful, if {{patient.pronoun}} stops seeing, or if {{patient.pronoun}} will not eat. The other eye still needs a check. {{location.phonenumber}}
+
+### `dc-uveitis`
+
+{{patient.name}} has inflammation inside the eye (uveitis). This is not simple conjunctivitis. We stained the cornea and checked the pressure.
+
+Give only the eye and pain medicines we sent, as labeled. Do not add leftover steroid drops unless the stain was negative and we said to. Keep {{patient.objectPronoun}} out of bright light.
+
+Return now if the eye becomes more painful or cloudy, if {{patient.pronoun}} stops seeing, or if {{patient.pronoun}} will not eat. Both eyes can be involved if this is a whole-body problem. {{location.phonenumber}}
+
+### `dc-lenslux`
+
+{{patient.name}} has a lens that has moved out of place. If it is in the front of the eye, this is an emergency. Referral for surgery was recommended.
+
+Give only the medicines we sent, as labeled. Do not add leftover glaucoma drops (especially latanoprost) unless we wrote that on the label. Keep the E-collar on if one was sent.
 
 Return now if the eye becomes more cloudy or painful, if {{patient.pronoun}} stops seeing, or if {{patient.pronoun}} will not eat. The other eye still needs a check. {{location.phonenumber}}
 
