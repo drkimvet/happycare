@@ -288,6 +288,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("consciousness is not affected", VERIF.lower())
         self.assertIn("just lockjaw", VERIF.lower())
         self.assertIn("500–1000 iu", VERIF.lower())
+        self.assertIn("tick paralysis", VERIF.lower())
+        self.assertIn("botulism", VERIF.lower())
+        self.assertIn("flaccid", VERIF.lower())
+        self.assertIn("not commercial in the us", VERIF.lower())
+        self.assertIn("10 000 units", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -394,6 +399,12 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-tetanus`", MACRO)
         self.assertIn("do not: pry the jaw open", MACRO.lower())
         self.assertIn("just lockjaw", MACRO.lower())
+        self.assertIn("`ddx-tick`", MACRO)
+        self.assertIn("`dc-tick`", MACRO)
+        self.assertIn("`ddx-botul`", MACRO)
+        self.assertIn("`dc-botul`", MACRO)
+        self.assertIn("search the whole coat", MACRO.lower())
+        self.assertIn("just tired", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -553,6 +564,11 @@ class PublicCardInvariants(unittest.TestCase):
             "quiet / dark",
             "cats can still get tetanus",
             "consciousness is not affected",
+            "search the whole coat",
+            "just tired",
+            "tas is not commercial in the us",
+            "carrion / spoiled food",
+            "flaccid, not tetanus",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -88,6 +88,8 @@ Suggested names are short so they show up after three letters.
 | `ddx-orbit` | Assessment | Orbital cellulitis / retrobulbar |
 | `ddx-mmm` | Assessment | Masticatory myositis / trismus |
 | `ddx-tetanus` | Assessment | Tetanus / risus / sawhorse |
+| `ddx-tick` | Assessment | Tick paralysis / flaccid LMN |
+| `ddx-botul` | Assessment | Botulism / carrion / spoiled food |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -135,6 +137,8 @@ Suggested names are short so they show up after three letters.
 | `dc-orbit` | Discharge | Orbital cellulitis / abscess |
 | `dc-mmm` | Discharge | Masticatory myositis / cannot open jaw |
 | `dc-tetanus` | Discharge | Tetanus / lockjaw going home |
+| `dc-tick` | Discharge | After tick paralysis search |
+| `dc-botul` | Discharge | Botulism / spoiled-food watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -865,6 +869,35 @@ DDX:
 Do not: pry the jaw open. Send home as just lockjaw. Harvest antitoxin IU or metro mg. DexSP as the plan.
 Do next: quiet / dark. Search and debride the wound △ hospital. Antitoxin / metro / sedation △ Plumb. Soft food or airway.
 
+### `ddx-tick`
+
+Tick paralysis — {{patient.name}}
+Coat search [done / repeat]. Tick or crater [found / not found]. Site [ears / toes / mouth / anus / other]. Limbs [ascend / tetra]. Chest [ ].
+
+DDX:
+1. Tick paralysis (flaccid ascending LMN; consciousness spared)
+2. Botulism if carrion / spoiled food
+3. Acute polyradiculoneuritis / fulminant MG
+4. Coral / elapid if little local swell + neuro (other list)
+5. Tetanus only if risus / sawhorse (other list)
+
+Do not: treat flaccid as tetanus. Send home as just tired. Harvest TAS mL/kg (not commercial in the US).
+Do next: search the whole coat again. Remove every tick. Respiratory watch. Acaricide △ hospital.
+
+### `ddx-botul`
+
+Botulism — {{patient.name}}
+Carrion / spoiled food [ ]. Swallow / chew [ ]. Limbs [flaccid / tetra]. Chest [ ].
+
+DDX:
+1. Botulism (preformed toxin; ACh block)
+2. Tick paralysis until the coat is searched
+3. Acute polyradiculoneuritis / fulminant MG
+4. Coral / elapid if the geography fits
+
+Do not: harvest type A–E / 10 000-unit tables. Treat flaccid as tetanus. Aminoglycoside as the night antibiotic.
+Do next: search the coat anyway. Respiratory watch. Antitoxin △ Plumb if toxin may still be circulating.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1260,6 +1293,22 @@ Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes st
 Keep the room quiet and dim as we showed. Give only the medicines we sent, as labeled. Soft food if the mouth will open. Do not try to pry the mouth open at home.
 
 Return now if breathing looks hard, the body goes rigid, {{patient.pronoun}} cannot swallow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-tick`
+
+{{patient.name}} had tick paralysis (a toxin from a tick that makes the body go limp). This is not “just being tired,” and it is not lockjaw.
+
+We searched the coat and removed any ticks we found. Keep searching at home as shown, including ears, toes, and under the collar. Give only the medicines we sent, as labeled.
+
+Return now if the legs get weaker, breathing looks hard, {{patient.pronoun}} cannot swallow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-botul`
+
+{{patient.name}} was treated for suspected botulism (a food toxin that makes the body go limp). This is not “just being tired.”
+
+Give only the medicines we sent, as labeled. Do not feed leftover spoiled food or carrion. Soft food if swallowing is weak.
+
+Return now if the legs get weaker, breathing looks hard, {{patient.pronoun}} cannot swallow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

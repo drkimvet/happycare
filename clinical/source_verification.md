@@ -955,3 +955,26 @@ Book/public traps:
 - Strychnine stays on the minutes-after-bait list; do not invent a strychnine table tonight.
 
 Night rule: wound + risus / sawhorse / third-eyelid spasm → tetanus. Quiet / dark. Find the wound. Do not pry. Antitoxin △ Plumb.
+
+## 162. Tick paralysis vs botulism (Merck Cope Oct 2023 / Sept 2024; Merck Goodrich Sept 2026; Plunkett ~425–427 as traps)
+
+Plunkett indexes botulism 425–426 and tick paralysis 426–427 (also garbage intoxication 538–542). Public Merck tick paralysis (Cope) and botulism (Goodrich, Sept 2026). No chapter dump. **Do not harvest TAS 0.1–1 mL/kg, acepromazine 0.03, type C 10 000 units, type A/B/C/E tables, or horse 30,000 / 70,000 IU.**
+
+Agree with Merck: both are **flaccid** neuromuscular disease. Consciousness is spared. Sensation is usually spared. This is the opposite of packet 161 tetanus (spastic).
+
+Tick paralysis is an ascending symmetrical motor paralysis from salivary neurotoxin. North America: *Dermacentor variabilis* and *D. andersoni*. Australia: *Ixodes holocyclus* is much more severe; **tick antitoxin serum is not commercially available in the US.** Search the entire coat — ears, toes, mouth, anus, collar, prepuce/vulva. A crater counts if the tick already dropped. Except holocyclus, removal usually improves within 24 hours and recovers within 72 hours. Holocyclus can keep worsening about a day after removal. Death is respiratory. Midtown: Dermacentor if travel/season; holocyclus is not the NYC default.
+
+Botulism is usually preformed toxin in carrion or spoiled food. It blocks acetylcholine release at the neuromuscular junction. Dogs are susceptible but reports are few; cats seem relatively resistant. Chewing, swallowing, vision, then progressive paresis. Death is respiratory or cardiac paralysis. Antitoxin works only on circulating unbound toxin △ Plumb. Aminoglycosides, procaine penicillin, and tetracyclines can worsen neuromuscular weakness (Merck). Diagnosis is clinical plus rule-out; toxin assay is hard.
+
+Book/public traps:
+
+- Printed TAS mL/kg stays on the Australian/Merck page — not a US night product.
+- Printed type C 10 000 units and A/B/C/E antitoxin lists stay on the 2013 page.
+- Printed horse botulinum IU stays on the Merck page.
+- Physostigmine / neostigmine book lines stay on the page.
+- Do not treat flaccid as tetanus.
+- Do not send home as just tired or just arthritis.
+- Coral / APN / fulminant MG stay on the DDX — do not invent those tables tonight.
+- Azotemic: still no DexSP.
+
+Night rule: ascending flaccid LMN → search the coat, ask about carrion, watch the chest. Not tetanus.

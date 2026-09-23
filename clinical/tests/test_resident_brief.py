@@ -1363,6 +1363,48 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("sawhorse", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_tick_paralysis_search_coat_not_just_tired(self):
+        b = analyze(
+            "dog",
+            "tick paralysis, Dermacentor, ascending flaccid, send home as just tired",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("flaccid", loc)
+        self.assertIn("not tetanus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("search the whole coat", joined)
+        self.assertIn("just tired", joined)
+        self.assertIn("not commercial in the us", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_botulism_carrion_no_harvest_iu(self):
+        b = analyze(
+            "dog",
+            "botulism, spoiled food, flaccid paralysis, type C 10000 units",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("botulism", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("carrion", joined)
+        self.assertIn("do not harvest", joined)
+        self.assertIn("aminoglycoside", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_flaccid_is_not_called_tetanus(self):
+        b = analyze("cat", "ascending flaccid tetraparesis, search the coat")
+        loc = b["localization"].lower()
+        self.assertIn("flaccid", loc)
+        self.assertNotIn("tetanospasmin", loc)
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertIn("flaccid, not tetanus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_tick_preventative_is_not_tick_paralysis(self):
+        b = analyze("dog", "Lyme vaccine, tick preventative, no weakness")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("flaccid ascending", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

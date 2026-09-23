@@ -616,6 +616,33 @@ TETANUS_RE = re.compile(
     re.I,
 )
 TETANUS_HINT_RE = TETANUS_RE
+# botulism / botulinum. Do not use \bbotul on bottle.
+# Do not use \btick alone (Lyme / preventative). Do not use \bparalys alone (lar par).
+BOTULISM_RE = re.compile(
+    r"\bbotulism|"
+    r"\bbotulinum|"
+    r"\bbont\b|"
+    r"\bcarrion.{0,28}(weak|paralys|flaccid|paresis)|"
+    r"\bspoiled (food|meat|garbage).{0,28}(weak|paralys|flaccid|paresis)",
+    re.I,
+)
+TICK_PARALYSIS_RE = re.compile(
+    r"\btick paralys|"
+    r"\btick toxicosis|"
+    r"\bdermacentor|"
+    r"\bholocycl|"
+    r"\bixodes holocycl|"
+    r"\bparalysis tick|"
+    r"\btick crater",
+    re.I,
+)
+FLACCID_LMN_RE = re.compile(
+    r"\bflaccid.{0,28}(paralys|paresis|tetra|quad|ascend)|"
+    r"\b(paralys|paresis|tetra|ascend).{0,28}flaccid|"
+    r"\bascending (paralys|paresis|flaccid|weak)",
+    re.I,
+)
+JUST_TIRED_RE = re.compile(r"\bjust (tired|old|arthrit|weak)\b", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2123,6 +2150,59 @@ def analyze(
             do_next.append("Cat MMM is rare; a canine 2M ELISA can still be positive.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for MMM.")
+
+    flaccid_hit = spec in {"dog", "cat"} and (
+        TICK_PARALYSIS_RE.search(text)
+        or BOTULISM_RE.search(text)
+        or FLACCID_LMN_RE.search(text)
+    )
+    if flaccid_hit:
+        fl_loc = (
+            "Flaccid ascending LMN, not tetanus. "
+            "Tick paralysis vs botulism. Consciousness spared. Search the whole coat."
+        )
+        localization = f"{localization} Also {fl_loc}" if localization else fl_loc
+        hard_stops.append(
+            "Search the whole coat including ears, toes, mouth, and anus. "
+            "Remove every tick. Do not send home as just tired. "
+            "This is flaccid, not tetanus."
+        )
+        do_not.append(
+            "Do not harvest TAS mL/kg (not commercial in the US) "
+            "or botulinum IU / type A-E tables. "
+            "Do not treat flaccid as tetanus. "
+            "Aminoglycosides can worsen neuromuscular weakness."
+        )
+        do_next.append(
+            "Repeat the tick search. A crater counts. Respiratory watch. "
+            "Carrion / spoiled food is botulism. Antitoxin △ Plumb if toxin may still be circulating."
+        )
+        sources.append(
+            "Merck tick paralysis (Cope, Oct 2023 / Sept 2024): search the whole coat; "
+            "TAS not commercial in the US. Merck botulism (Goodrich, Sept 2026): "
+            "preformed toxin blocks ACh. Plunkett ~425–427 headings are traps."
+        )
+        if TICK_PARALYSIS_RE.search(text):
+            do_next.append(
+                "Dermacentor if North America / travel. "
+                "Holocyclus is not the Midtown default."
+            )
+        if BOTULISM_RE.search(text):
+            do_next.append(
+                "Chew / swallow / progressive paresis. "
+                "Antitoxin does not reverse toxin already at the junction."
+            )
+        if TETANUS_RE.search(text):
+            hard_stops.append(
+                "Risus / sawhorse is tetanus (packet 161). "
+                "Flaccid ascending weakness is this list."
+            )
+        if SEND_HOME_RE.search(text) or JUST_TIRED_RE.search(text):
+            hard_stops.append("Do not send flaccid paralysis home as just tired.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for tick paralysis or botulism.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for tick paralysis or botulism.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (
