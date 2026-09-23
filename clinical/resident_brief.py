@@ -536,6 +536,26 @@ SULFA_KCS_RE = re.compile(
     r"\b(sulfonamide|sulfamethoxazole|trimethoprim[- ]sulfa|\btms\b|\bprimor\b)",
     re.I,
 )
+# dacryocystitis / NLD. Do not use \bpuncta alone (and not punctate ulcers).
+DACRYO_RE = re.compile(
+    r"\bdacryocyst|"
+    r"\bnasolacrimal|"
+    r"\bnld\b|"
+    r"\blacrimal sac|"
+    r"\bepiphora|"
+    r"\b(lower|lacrimal) punctum|"
+    r"\bimperforate punct|"
+    r"\bmedial canthus (swell|fistul|pain|drain)|"
+    r"\bfistula.{0,24}(medial|canthus|eyelid|tear)",
+    re.I,
+)
+CARNASSIAL_RE = re.compile(
+    r"\bcarnassial|"
+    r"\btooth root|"
+    r"\bupper (fourth|4th) premolar",
+    re.I,
+)
+NYLON_FLUSH_RE = re.compile(r"\b2-0 nylon|\bflush every 3", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1868,6 +1888,48 @@ def analyze(
             do_next.append("Cat cherry eye is uncommon; still do not excise.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for cherry eye.")
+
+    if spec in {"dog", "cat"} and DACRYO_RE.search(text):
+        da_loc = (
+            "Dacryocystitis / nasolacrimal obstruction: "
+            "medial canthus and the lacrimal sac until flushed. "
+            "Not conjunctivitis until the duct is open. Look at the carnassial tooth."
+        )
+        localization = f"{localization} Also {da_loc}" if localization else da_loc
+        hard_stops.append(
+            "Do not send dacryocystitis home as conjunctivitis. "
+            "Look at the carnassial tooth. "
+            "Do not flush a melting or open globe."
+        )
+        do_not.append(
+            "Do not harvest 2–0 nylon or a rabbit every-3–7-day flush. "
+            "Do not skip a medial-canthus fistula."
+        )
+        do_next.append(
+            "Stain. Jones test. Flush △ hospital. Culture the reflux. "
+            "If flush fails, contrast imaging."
+        )
+        sources.append(
+            "Merck nasolacrimal (Hamor): dacryocystitis; carnassial lookalike. "
+            "Printed tubing / 2–0 nylon stay on the page. "
+            "No dedicated Plunkett SA dacryocystitis chapter."
+        )
+        if SEND_HOME_RE.search(text) and CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send dacryocystitis home as conjunctivitis."
+            )
+        if CARNASSIAL_RE.search(text) or re.search(r"\btooth\b", text, re.I):
+            do_next.append("Image or probe the carnassial / tooth-root story.")
+        if NYLON_FLUSH_RE.search(text):
+            hard_stops.append(
+                "Do not harvest 2–0 nylon or a 3–7 day flush recipe."
+            )
+        if MELT_RE.search(text):
+            hard_stops.append(
+                "Do not flush a melting or open globe. Packet 150 still owns the melt."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for dacryocystitis.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (

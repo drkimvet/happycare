@@ -1239,6 +1239,31 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("do not excise", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dacryocystitis_not_conjunctivitis_check_tooth(self):
+        b = analyze(
+            "dog",
+            "dacryocystitis, epiphora, medial canthus swell, send home as conjunctivitis, carnassial",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("lacrimal sac", loc)
+        self.assertIn("carnassial", loc)
+        self.assertIn("not conjunctivitis until the duct is open", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send dacryocystitis home as conjunctivitis", joined)
+        self.assertIn("jones", joined)
+        self.assertIn("carnassial", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dacryo_no_harvest_nylon_or_flush_melt(self):
+        b = analyze(
+            "dog",
+            "nasolacrimal obstruction, fistula at medial eyelid, 2-0 nylon, flush every 3 days, melting ulcer",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("nylon", joined)
+        self.assertIn("do not flush a melting", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

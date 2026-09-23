@@ -877,3 +877,22 @@ Book/public traps:
 - Cat cherry eye is uncommon; still do not excise.
 
 Night rule: young dog + red mass at the third eyelid → cherry eye. Replace, do not excise. Lubricate. Check the other eye.
+
+## 158. Dacryocystitis / nasolacrimal obstruction (Merck Hamor nasolacrimal; no dedicated Plunkett SA chapter)
+
+No dog/cat dacryocystitis heading in the owned SA EM splits. Public Merck nasolacrimal / lacrimal apparatus (Hamor, Feb 2023 / Jul 2026) and physical examination of the eye (Jones test). Rabbit NLD-flush lines sit in dropped printed 641–739 / exotic chunk — **not a work item and not a dog recipe.** No chapter dump. **Do not harvest 2–0 nylon, tubing brands, or “flush every 3–7 days.”**
+
+Agree with Merck: dacryocystitis is inflammation of the lacrimal sac, usually from obstruction of the sac or proximal duct by debris, a foreign body, or a mass. Acute cases: medial lower eyelid swollen and painful. Exudate can reflux from the lower punctum and/or the nasal punctum. Epiphora and secondary conjunctivitis that will not clear. Dogs may develop a draining fistula in or below the medial lower eyelid. **Can be confused with carnassial tooth infection — look at the tooth.** Flush to re-establish patency; if flush fails, contrast imaging. Topical antimicrobial; systemic antimicrobial / anti-inflammatory △ hospital / Plumb. A new drainage path (conjunctivorhinostomy) is for an irreversibly destroyed duct, not tonight’s lobby procedure. Imperforate puncta are uncommon in young dogs.
+
+Book/public traps:
+
+- No Plunkett SA dacryocystitis chapter — do not ask for one.
+- Rabbit flush-every-3–7-days stays in the dropped exotic split.
+- Printed 2–0 nylon / polyethylene tubing stay on the Merck page.
+- **Do not send home as conjunctivitis.**
+- Do not skip the carnassial tooth.
+- Do not flush a melting or open globe.
+- Jones test: fluorescein at the nostril means the system is open — not a harvested “few seconds” law.
+- Horse dacryocystitis exists on the same page; Midtown is still SA only.
+
+Night rule: medial canthus swell / epiphora / refractory conjunctivitis → dacryocystitis until flushed. Check the tooth.

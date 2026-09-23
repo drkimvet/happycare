@@ -84,6 +84,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fek` | Assessment | Feline eosinophilic keratitis |
 | `ddx-kcs` | Assessment | KCS / dry eye / STT |
 | `ddx-cherry` | Assessment | Cherry eye / nictitans gland |
+| `ddx-dacryo` | Assessment | Dacryocystitis / NLD obstruction |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -127,6 +128,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fek` | Discharge | Eosinophilic keratitis / plaques |
 | `dc-kcs` | Discharge | KCS / dry eye going home |
 | `dc-cherry` | Discharge | Cherry eye / gland replacement |
+| `dc-dacryo` | Discharge | After NL flush / dacryocystitis |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -802,6 +804,19 @@ DDX:
 Do not: excise it. Cut it off in the lobby. Harvest a pocket recipe or later-KCS percents. Send a dry gland home as it will go back.
 Do next: lubricate. Stain. STT. Replacement / pocket conversation. Look at the other eye.
 
+### `ddx-dacryo`
+
+Dacryocystitis / NLD — {{patient.name}}
+Medial canthus [swell / fistula]. Jones [ ]. Flush [ ]. Tooth / carnassial [ ]. Culture [ ].
+
+DDX:
+1. Dacryocystitis / nasolacrimal obstruction (debris / FB / mass)
+2. Carnassial tooth-root abscess (lookalike)
+3. Refractory conjunctivitis that is actually overflow
+
+Do not: send home as conjunctivitis. Skip the tooth. Harvest 2–0 nylon or a rabbit flush calendar. Flush a melting globe.
+Do next: stain. Jones test. Flush △ hospital. Culture reflux. Image if flush fails.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1165,6 +1180,14 @@ Return now if the eye becomes much more painful or cloudy, if a hole or jelly-li
 Give only the eye medicines we sent, as labeled. Keep the gland moist as shown. Do not try to cut or pinch it at home.
 
 Surgery to replace the gland was recommended if we discussed it. Return now if the eye becomes painful or cloudy, if the pink mass looks dry, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-dacryo`
+
+{{patient.name}} has a blocked or infected tear duct (dacryocystitis). The watery or sticky eye is overflow or pus from the duct, not ordinary conjunctivitis.
+
+Give only the eye medicines we sent, as labeled. Keep the face clean as shown. A tooth problem can look the same — return if we asked for dental follow-up.
+
+Return now if the inner corner swells, a hole drains, the eye becomes painful, or {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
