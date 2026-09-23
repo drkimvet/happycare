@@ -1,35 +1,31 @@
 To: Cole Rice c.rice@urvetcare.com
 Cc: Evan Stoopler, Amy Bain
 From: Dr. Yujin Kim
-Subject: Re: Salary and Production Calculation — dollar amount for the 25th
+Subject: Re: Salary and Production Calculation — $9,900 on the 25th
 
 Cole,
 
-I asked for the math and dollar amount for my payment on the 25th. The overview is not that number.
+I asked for the dollar amount for the 25th. Please confirm this number.
 
-Even in your examples, the regular paycheck is hourly. Production, if any, is quarterly. So for the 25th I need the hourly total you are posting to ADP.
+Amy told me by phone: on-call is $300 per hour, and if I come into the hospital I also receive the regular $250 per hour for time in the building. Those stack. They are not a one-time $300 fee.
 
 Shifts already worked:
-  Sep 8   8:00 PM–12:00 AM   4 hours
-  Sep 10  8:00 AM–8:00 PM   12 hours
-  Sep 14  8:00 PM–12:00 AM   4 hours
-  Sep 15  12:00 AM–8:00 AM   8 hours (logged as on-call)
-  Sep 15  12:00 AM–6:00 AM   6 hours
-  Sep 19  8:00 PM–12:00 AM   4 hours Midtown
 
-Using $250/hour for every hour in the building, plus one $300 on-call fee as you and Amy wrote:
-  4+12+4+8+6+4 = 38 hours × $250 = $9,500
-  + $300 on-call fee
-  = $9,800.00
+  Sep 8   8:00 PM–12:00 AM    4 hours × $250 = $1,000
+  Sep 10  8:00 AM–8:00 PM    12 hours × $250 = $3,000
+  Sep 14  8:00 PM–12:00 AM    4 hours × $250 = $1,000
+  Sep 15  12:00 AM–8:00 AM    8 hours on-call × $300 = $2,400
+  Sep 15  12:00 AM–6:00 AM    6 hours in hospital × $250 = $1,500
+  Sep 19  8:00 PM–12:00 AM    4 hours Midtown × $250 = $1,000
 
-If the Sep 15 8-hour block is $300/hour as I logged, that line is $2,400 instead of $2,000+$300, and the 25th total is $9,900.00.
+  Total for ADP on the 25th: $9,900.00
+
+The Sep 15 night is $2,400 + $1,500 = $3,900. Your email example ($300 one-time fee, then only $250/hour in the building) is not what Amy said on the phone. The Sep 13 line “On Call Fee: $300” does not say per call-in.
+
+Your $8,473.67 × 23% = $1,948.94. That is below $9,900, so under your own Example 2 there is no production bonus on this check. Production can wait until the quarterly true-up. The 25th is still $9,900 for hours already worked.
 
 Please reply with one line:
-  “ADP on the 25th will show $________.”
-
-Your $8,473.67 revenue figure is 23% = $1,948.94. That is below hourly, so under your own Example 2 there is no production bonus on this check. That is a quarterly issue. It is not a reason to leave the 25th blank on ADP.
-
-I am hourly per diem. Your email calls the $250 a “base salary” and an “advance on production.” Amy’s email is titled Per Diem Agreement and lists an On Shift Rate. Those are not the same thing. We can finish the Prod/Sal formula in writing. The 25th still has to pay the hours I already worked.
+  “ADP on the 25th will show $9,900.00.”
 
 Sincerely,
 Dr. Yujin Kim, DVM, PhD
