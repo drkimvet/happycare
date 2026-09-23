@@ -1215,6 +1215,30 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("do not send a melting dry eye home", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cherry_eye_replace_do_not_excise(self):
+        b = analyze(
+            "dog",
+            "cherry eye, red mass third eyelid, excise the gland, send home dry it will go back",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("prolapsed nictitans gland", loc)
+        self.assertIn("do not excise", loc)
+        self.assertIn("other eye", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not excise", joined)
+        self.assertIn("it will go back", joined)
+        self.assertIn("lubricate", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_cherry_eye_still_do_not_excise(self):
+        b = analyze("cat", "cherry eye, nictitans gland prolapse")
+        loc = b["localization"].lower()
+        self.assertIn("tear gland", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("uncommon", joined)
+        self.assertIn("do not excise", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

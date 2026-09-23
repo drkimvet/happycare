@@ -859,3 +859,21 @@ Book/public traps:
 - Sulfa history sits on the list.
 
 Night rule: sticky red / dry lusterless eye → STT before drops. Stain. No steroid on an ulcer. If melting, refer tonight.
+
+## 157. Cherry eye / nictitans gland prolapse (Merck Hamor nasolacrimal; no dedicated Plunkett chapter)
+
+No cherry-eye heading in the owned SA EM splits. Public Merck nasolacrimal / lacrimal apparatus (Hamor, Feb 2023 / Jul 2026) and the dog-owner nasal/tear-duct page. No chapter dump. **Do not harvest pocket/suture recipes or the printed 30–40% / ~20% later-KCS percents.**
+
+Agree with Merck: hypertrophy, inflammation, and prolapse of the nictitans gland is common in young dogs and certain breeds (Beagle, Boston Terrier, Bulldog, Cocker Spaniel, Lhasa Apso, Pekingese). The red glandular mass protrudes between the globe and the leading margin of the third eyelid. Swelling may recede for short periods; the gland often stays out. **Because it is a major tear gland, it should be preserved.** Replace and anchor (orbital rim / periorbital fascia / nictitans cartilage) or cover with conjunctiva (envelope / pocket). Partial or complete excision should be avoided. Complete excision predisposes to later KCS; even successful replacement still needs tear monitoring. Surgical replacement is recommended when the condition persists or recurs.
+
+Book/public traps:
+
+- No Plunkett cherry-eye chapter — do not ask for one.
+- Printed Merck later-KCS percents and suture/pocket steps stay on the page.
+- **Do not excise it** in the lobby or as “a tumor.”
+- Do not send a dry or ulcerated exposed gland home as “it will go back.”
+- Lubricate if exposed. Stain. STT. Look at the other eye.
+- Whole third eyelid up without a gland mass is Horner / Haw’s / tetanus / sedation — not this surgery.
+- Cat cherry eye is uncommon; still do not excise.
+
+Night rule: young dog + red mass at the third eyelid → cherry eye. Replace, do not excise. Lubricate. Check the other eye.

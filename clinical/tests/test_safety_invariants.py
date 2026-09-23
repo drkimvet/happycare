@@ -268,6 +268,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("dermatologic tacrolimus", VERIF.lower())
         self.assertIn("quantitative kcs", VERIF.lower())
         self.assertIn("do not excise", VERIF.lower())
+        self.assertIn("cherry eye", VERIF.lower())
+        self.assertIn("major tear gland", VERIF.lower())
+        self.assertIn("it will go back", VERIF.lower())
+        self.assertIn("pocket", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -358,6 +362,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-kcs`", MACRO)
         self.assertIn("`dc-kcs`", MACRO)
         self.assertIn("do not: send home as conjunctivitis", MACRO.lower())
+        self.assertIn("`ddx-cherry`", MACRO)
+        self.assertIn("`dc-cherry`", MACRO)
+        self.assertIn("do not: excise it", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

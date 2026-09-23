@@ -83,6 +83,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fhv` | Assessment | Feline herpes / dendritic ulcer |
 | `ddx-fek` | Assessment | Feline eosinophilic keratitis |
 | `ddx-kcs` | Assessment | KCS / dry eye / STT |
+| `ddx-cherry` | Assessment | Cherry eye / nictitans gland |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -125,6 +126,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fhv` | Discharge | Feline herpes keratitis / ulcer |
 | `dc-fek` | Discharge | Eosinophilic keratitis / plaques |
 | `dc-kcs` | Discharge | KCS / dry eye going home |
+| `dc-cherry` | Discharge | Cherry eye / gland replacement |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -787,6 +789,19 @@ DDX:
 Do not: send home as conjunctivitis. Steroid combo on an ulcer. Atropine. Skin tacrolimus in the eye. Harvest CSA / STT ≥ 2 mm. Excise a cherry-eye gland.
 Do next: fluorescein. Artificial tears. Lacrimogenic △ Plumb. If melting, refer tonight.
 
+### `ddx-cherry`
+
+Cherry eye — {{patient.name}}
+Side [L / R / both]. Exposed / dry [ ]. Stain [ ]. STT [ ]. Other eye [ ].
+
+DDX:
+1. Prolapsed nictitans gland (cherry eye — a tear gland)
+2. Scrolled nictitans cartilage / mass (not the default in a young brachy)
+3. Horner / Haw's (whole third eyelid, no gland mass)
+
+Do not: excise it. Cut it off in the lobby. Harvest a pocket recipe or later-KCS percents. Send a dry gland home as it will go back.
+Do next: lubricate. Stain. STT. Replacement / pocket conversation. Look at the other eye.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1142,6 +1157,14 @@ Return now if the eye becomes much more painful or cloudy, if a dark spot appear
 Give only the tear and eye medicines we sent, as labeled. Do not add leftover steroid drops unless we said the stain was negative. Keep the E-collar on if one was sent.
 
 Return now if the eye becomes much more painful or cloudy, if a hole or jelly-like melt appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-cherry`
+
+{{patient.name}} has a prolapsed tear gland of the third eyelid (cherry eye). This gland makes tears. It should be put back, not cut out.
+
+Give only the eye medicines we sent, as labeled. Keep the gland moist as shown. Do not try to cut or pinch it at home.
+
+Surgery to replace the gland was recommended if we discussed it. Return now if the eye becomes painful or cloudy, if the pink mass looks dry, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

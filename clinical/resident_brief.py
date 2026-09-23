@@ -513,7 +513,13 @@ CHERRY_EYE_RE = re.compile(
     r"\bcherry eye|"
     r"\bprolapse.{0,20}nictit|"
     r"\bnictitans gland|"
-    r"\bthird eyelid gland",
+    r"\bthird eyelid gland|"
+    r"\bgland of the (third|nictit)|"
+    r"\bred (mass|lump).{0,24}(third eyelid|nictit)",
+    re.I,
+)
+GO_BACK_GLAND_RE = re.compile(
+    r"\b(it will go back|will recede|pop back|goes back on its own)",
     re.I,
 )
 EXCISE_GLAND_RE = re.compile(
@@ -1820,6 +1826,48 @@ def analyze(
             do_next.append("Cat KCS is uncommon; chronic FHV scarring is on the list.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for KCS.")
+
+    if spec in {"dog", "cat"} and CHERRY_EYE_RE.search(text):
+        ch_loc = (
+            "Cherry eye: prolapsed nictitans gland. "
+            "It is a tear gland. Replace it. Do not excise. "
+            "Check the other eye."
+        )
+        localization = f"{localization} Also {ch_loc}" if localization else ch_loc
+        hard_stops.append(
+            "Do not excise a cherry-eye gland. "
+            "Lubricate if the gland is exposed. "
+            "Do not send a dry gland home as it will go back."
+        )
+        do_not.append(
+            "Do not harvest a pocket recipe or later-KCS percents. "
+            "Do not call a whole third eyelid (Horner / Haw's) this surgery."
+        )
+        do_next.append(
+            "Stain. STT before drops. Lubricate. "
+            "Offer replacement / pocket tonight or in the morning if the cornea is safe."
+        )
+        sources.append(
+            "Merck nasolacrimal (Hamor): preserve the nictitans gland. "
+            "Printed excision percents stay on the page. "
+            "No dedicated Plunkett cherry-eye chapter."
+        )
+        if EXCISE_GLAND_RE.search(text):
+            hard_stops.append(
+                "Do not excise a nictitans / cherry-eye gland. Replace it. "
+                "That gland is a tear gland."
+            )
+        if GO_BACK_GLAND_RE.search(text) or (
+            SEND_HOME_RE.search(text)
+            and re.search(r"\b(dry|ulcer|exposed|stain)", text, re.I)
+        ):
+            hard_stops.append(
+                "Do not send a dry or ulcerated cherry-eye gland home as it will go back."
+            )
+        if spec == "cat":
+            do_next.append("Cat cherry eye is uncommon; still do not excise.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cherry eye.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (
