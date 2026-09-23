@@ -1,49 +1,48 @@
-To: Evan / Amy / Cole
-From: Dr. Yujin Kim, DVM, PhD
-Subject: Confirming pay terms — $250/hour + 23% production (not prosal)
+Reply-All to: Amy Bain, Sep 13, 2026, “Per Diem Agreement”
+Cc: Evan Stoopler
+From: Dr. Yujin Kim
+Subject: Re: Per Diem Agreement — please confirm the Prod/Sal formula
 
-Hi Evan, Amy, and Cole,
+Hi Amy and Evan,
 
-Thank you for reviewing the invoices with Amy. I want the formula in writing so ADP and the quarterly true-up match what was agreed before I started.
+Thank you for the September 13 rate email. I want the formula in writing so ADP and any quarterly true-up match that email.
 
-What was documented when I accepted the work
-Amy: “It’s $250 per hour per diem and whatever production you decided.”
-Evan: “23 percent.”
+Your email lists:
+  On Shift Rate: $250
+  On Call Fee: $300
+  Prod/Sal: 23%
 
-That is two pieces, added together:
-  Pay = hours × rate  +  23% × my Gross (positive invoices only; no negative accrual)
+It does not say how Prod/Sal interacts with the hourly. You also said a more formal agreement would follow the next day. I do not have that agreement.
 
-That is production on top of the per diem. It is not prosal.
+Please reply with one of these, copied as written:
 
-What I am being told now
-“23% of Gross less the $250/hour; you get the higher or the delta; difference paid quarterly.”
+Option A — additive
+Pay = (hours × on-shift/on-call rate) + (23% × my positive Gross).
+Hourly and 23% are both paid. Quarterly timing for the 23% is fine.
 
-That is prosal (guarantee vs 23%, pay only the difference if 23% wins). Those are not the same contract.
+Option B — prosal
+Pay each period = hours × rate.
+Quarterly true-up = the amount by which (23% × my positive Gross) exceeds hourly already paid.
+If 23% is lower than hourly, I keep the hourly (no clawback).
+I do not also receive 23% on top of hourly.
 
-Numbers on the invoices I already sent, using Gross and excluding credits/negatives
+On the Gross I already pulled (positives only; credits excluded):
 
-Roslyn Sep 8–15
-  Hourly                          $8,900.00
-  My Gross                        $10,326.32
-  23% of Gross                    $2,375.05
-  Agreed production formula       $11,275.05
-  Prosal / delta                  $8,900.00  (23% is below hourly, so $0 true-up)
+  Roslyn Sep 8–15
+    Hourly $8,900.00
+    23% of $10,326.32 Gross = $2,375.05
+    Option A total $11,275.05
+    Option B total $8,900.00 this period (true-up $0)
 
-Midtown Sep 19, 8:00 PM–12:00 AM
-  Hourly                          $1,000.00
-  My Gross                        $598.64
-  23% of Gross                    $137.69
-  Agreed production formula       $1,137.69
-  Prosal / delta                  $1,000.00
+  Midtown Sep 19, 8:00 PM–12:00 AM
+    Hourly $1,000.00
+    23% of $598.64 Gross = $137.69
+    Option A total $1,137.69
+    Option B total $1,000.00 this period (true-up $0)
 
-If cremation paid to a third party should come out of Gross, please send those line items and I will subtract them from the 23% base. Everything else on my provider Gross counts.
+If cremation paid to a third party comes out of Gross, send those line items and I will subtract them from the 23% base.
 
-Please reply with one sentence confirming:
-  1) Regular pay: hours × $250 (and $300 for the on-call block already invoiced).
-  2) Production: 23% of my positive Gross, paid in addition to hourly, quarterly is fine.
-  3) Not prosal: you will not subtract hourly from the 23% or pay only the higher of the two.
-
-I can stay on the schedule once this is confirmed in email. Please do not hold the hourly pay on ADP while we settle production.
+Please confirm A or B, and please post the hourly on ADP now. Production timing can be quarterly. I do not want the hourly held while the formula is clarified.
 
 Thank you,
 Dr. Yujin Kim, DVM, PhD
