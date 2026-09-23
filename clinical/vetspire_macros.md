@@ -908,7 +908,7 @@ Acute polyradiculoneuritis — {{patient.name}}
 Coat search [clear / tick found]. Raccoon [ ]. Raw chicken [ ]. Vaccine [1–2 wk / no]. Tail wag [ ]. Bladder [ ]. Chest [ ].
 
 DDX:
-1. APN / Coonhound (ventral roots; steroids not helpful)
+1. APN / Coonhound (ventral roots; steroids are not helpful)
 2. Tick paralysis until the coat is searched
 3. Botulism if carrion / spoiled food
 4. Fulminant MG if megaesophagus
