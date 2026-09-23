@@ -284,6 +284,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not pry the jaw", VERIF.lower())
         self.assertIn("2m antibody", VERIF.lower())
         self.assertIn("2 mg/kg", VERIF.lower())
+        self.assertIn("tetanus", VERIF.lower())
+        self.assertIn("consciousness is not affected", VERIF.lower())
+        self.assertIn("just lockjaw", VERIF.lower())
+        self.assertIn("500–1000 iu", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -386,6 +390,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-mmm`", MACRO)
         self.assertIn("`dc-mmm`", MACRO)
         self.assertIn("do not: pry the jaw open", MACRO.lower())
+        self.assertIn("`ddx-tetanus`", MACRO)
+        self.assertIn("`dc-tetanus`", MACRO)
+        self.assertIn("do not: pry the jaw open", MACRO.lower())
+        self.assertIn("just lockjaw", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -541,6 +549,10 @@ class PublicCardInvariants(unittest.TestCase):
             "loose epithelial lip",
             "do not pick or peel it",
             "it will slough",
+            "just lockjaw",
+            "quiet / dark",
+            "cats can still get tetanus",
+            "consciousness is not affected",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

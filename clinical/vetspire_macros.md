@@ -87,6 +87,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dacryo` | Assessment | Dacryocystitis / NLD obstruction |
 | `ddx-orbit` | Assessment | Orbital cellulitis / retrobulbar |
 | `ddx-mmm` | Assessment | Masticatory myositis / trismus |
+| `ddx-tetanus` | Assessment | Tetanus / risus / sawhorse |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -133,6 +134,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dacryo` | Discharge | After NL flush / dacryocystitis |
 | `dc-orbit` | Discharge | Orbital cellulitis / abscess |
 | `dc-mmm` | Discharge | Masticatory myositis / cannot open jaw |
+| `dc-tetanus` | Discharge | Tetanus / lockjaw going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -849,6 +851,20 @@ DDX:
 Do not: pry the jaw open. Steroid before the titer. Send home as picky. Harvest the printed steroid mg/kg.
 Do next: soft gruel or feeding tube. Draw 2M antibody. Immunosuppression △ Plumb.
 
+### `ddx-tetanus`
+
+Tetanus — {{patient.name}}
+Wound [found / healed / not found]. Risus / sawhorse / third-eyelid spasm [ ]. Jaw [trismus / opens]. Limbs [stiff / normal]. Noise trigger [ ].
+
+DDX:
+1. Tetanus (C. tetani / tetanospasmin; consciousness spared)
+2. Masticatory myositis if isolated jaw + temporalis + limbs normal (other list)
+3. Strychnine if minutes after a bait (other conversation)
+4. Distemper myoclonus if young / unvaccinated
+
+Do not: pry the jaw open. Send home as just lockjaw. Harvest antitoxin IU or metro mg. DexSP as the plan.
+Do next: quiet / dark. Search and debride the wound △ hospital. Antitoxin / metro / sedation △ Plumb. Soft food or airway.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1236,6 +1252,14 @@ Return now if {{patient.pronoun}} cannot blink, the eye looks dry or cloudy, the
 Give only the medicines we sent, as labeled. Offer soft food or the feeding plan we showed. Do not try to pry the mouth open at home.
 
 Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes stiff, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-tetanus`
+
+{{patient.name}} has tetanus (lockjaw from a bacterial toxin). The face or body can go stiff. This is not “just being picky,” and the jaw must not be forced open.
+
+Keep the room quiet and dim as we showed. Give only the medicines we sent, as labeled. Soft food if the mouth will open. Do not try to pry the mouth open at home.
+
+Return now if breathing looks hard, the body goes rigid, {{patient.pronoun}} cannot swallow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

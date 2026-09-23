@@ -1307,8 +1307,60 @@ class ResidentBriefTests(unittest.TestCase):
 
     def test_trismus_with_risus_is_tetanus_not_mmm_only(self):
         b = analyze("dog", "trismus, risus sardonicus, sawhorse")
+        loc = b["localization"].lower()
+        self.assertIn("tetanus", loc)
+        self.assertIn("not isolated masticatory", loc)
         joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
         self.assertIn("tetanus", joined)
+        self.assertIn("not mmm", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetanus_risus_sawhorse_quiet_dark_not_just_lockjaw(self):
+        b = analyze(
+            "dog",
+            "puncture wound, risus sardonicus, sawhorse, pry the jaw, send home as just lockjaw",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tetanus", loc)
+        self.assertIn("consciousness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("quiet", joined)
+        self.assertIn("do not pry the jaw", joined)
+        self.assertIn("just lockjaw", joined)
+        self.assertIn("plumb", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetanus_cat_can_get_it_no_harvest_iu(self):
+        b = analyze(
+            "cat",
+            "tetanus, 500 IU antitoxin, metronidazole table, DexSP, azotemia",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tetanus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("cats can get tetanus", joined)
+        self.assertIn("do not harvest antitoxin", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_isolated_mmm_is_not_called_tetanus(self):
+        b = analyze(
+            "dog",
+            "masticatory myositis, cannot open the jaw, temporalis swollen, limbs normal",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("type 2m", loc)
+        self.assertNotIn("tetanospasmin", loc)
+        joined = " ".join(b["hard_stops"] + b["do_next"]).lower()
+        self.assertIn("2m antibody", joined)
+        self.assertNotIn("just lockjaw", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cherry_eye_third_eyelid_is_not_tetanus(self):
+        b = analyze("dog", "cherry eye, red mass at third eyelid")
+        loc = b["localization"].lower()
+        self.assertNotIn("tetanospasmin", loc)
+        self.assertNotIn("sawhorse", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_anesthesia_recovery_is_still_anesthesia(self):

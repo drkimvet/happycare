@@ -597,13 +597,25 @@ PRY_JAW_RE = re.compile(
     r"\b(jaw|mouth).{0,20}\b(pry|forced open|crack)",
     re.I,
 )
-TETANUS_HINT_RE = re.compile(
+# tetanus / tetanic / tetanospasmin. Do not use \btetan (matches eclampsia tetany).
+# Do not use \btrismus or \blockjaw alone (packet 160 owns isolated jaw).
+# Do not use \bthird eyelid alone (cherry / orbit / Horner).
+TETANUS_RE = re.compile(
     r"\btetanus|"
+    r"\btetanic|"
+    r"\btetanospasmin|"
     r"\brisus|"
     r"\bsawhorse|"
-    r"\bsardonic",
+    r"\bsardonic|"
+    r"\bopisthoton|"
+    r"\bgeneralized (spasm|stiff)|"
+    r"\btonic spasm|"
+    r"\blaryngeal spasm|"
+    r"\bthird[- ]eyelid.{0,24}(spasm|flash)|"
+    r"\b(spasm|flash).{0,24}third[- ]eyelid",
     re.I,
 )
+TETANUS_HINT_RE = TETANUS_RE
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2029,7 +2041,54 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for orbital cellulitis.")
 
-    if spec in {"dog", "cat"} and MMM_RE.search(text):
+    tetanus_hit = spec in {"dog", "cat"} and TETANUS_RE.search(text)
+    mmm_hit = spec in {"dog", "cat"} and MMM_RE.search(text)
+
+    if tetanus_hit:
+        te_loc = (
+            "Tetanus (Clostridium tetani / tetanospasmin). "
+            "Risus / sawhorse / third-eyelid spasm. Consciousness spared. "
+            "Not isolated masticatory myositis."
+        )
+        localization = f"{localization} Also {te_loc}" if localization else te_loc
+        hard_stops.append(
+            "Quiet / dark. Do not pry the jaw. "
+            "Do not send home as just lockjaw. "
+            "Antitoxin / metronidazole / sedation △ Plumb."
+        )
+        do_not.append(
+            "Do not harvest antitoxin IU or metronidazole mg/kg. "
+            "Isolated jaw + temporalis swell + limbs normal is masticatory myositis. "
+            "Do not DexSP this as the plan. Relative resistance is not immunity."
+        )
+        do_next.append(
+            "Search the wound (it may already be healed). Debride △ hospital. "
+            "Quiet / dark. Soft food or airway if laryngeal spasm. "
+            "Antitoxin and muscle relaxation △ Plumb."
+        )
+        sources.append(
+            "Merck tetanus in animals (Goodrich, Sept 2026): dogs and cats are relatively "
+            "resistant but they get localized or generalized tetanus. Consciousness not affected. "
+            "Plunkett tetanus ~427–431 headings are traps (ATS/TIG IU)."
+        )
+        if PRY_JAW_RE.search(text):
+            hard_stops.append(
+                "Do not pry the jaw open. That is an iatrogenic fracture."
+            )
+        if mmm_hit:
+            hard_stops.append(
+                "Risus / sawhorse / generalized spasm is tetanus, not MMM."
+            )
+        if SEND_HOME_RE.search(text) or re.search(r"\bjust lockjaw\b", text, re.I):
+            hard_stops.append("Do not send tetanus home as just lockjaw.")
+        if spec == "cat":
+            do_next.append("Cats can get tetanus. Relative resistance is not immunity.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for tetanus.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for tetanus.")
+
+    if mmm_hit and not tetanus_hit:
         mm_loc = (
             "Masticatory myositis: type 2M fibers (temporalis / masseter). "
             "Limbs spared. Cannot open the jaw. Draw 2M antibody before steroids."
@@ -2057,10 +2116,6 @@ def analyze(
         if PRY_JAW_RE.search(text):
             hard_stops.append(
                 "Do not pry the jaw open under anesthesia. That is an iatrogenic fracture."
-            )
-        if TETANUS_HINT_RE.search(text):
-            hard_stops.append(
-                "Risus / sawhorse / generalized spasm is tetanus, not MMM."
             )
         if SEND_HOME_RE.search(text) and re.search(r"\b(picky|just dental|fine at home)\b", text, re.I):
             hard_stops.append("Do not send masticatory myositis home as picky.")

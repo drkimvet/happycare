@@ -935,3 +935,23 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: cannot open the jaw, limbs normal → MMM until 2M. Do not pry. Feed. Draw blood before the steroid.
+
+## 161. Tetanus (Merck Goodrich Sept 2026; Plunkett tetanus headings ~427–431 as traps)
+
+Plunkett has a dedicated tetanus chapter (index 427–431; also in the 301–440 / 441–540 splits). Public Merck tetanus in animals (Goodrich, Sept 2026). No chapter dump. **Do not harvest equine ATS 500–1000 IU, human TIG 500–1000 IU, horse PPG U/kg, or metronidazole mg/kg.**
+
+Agree with Merck: *Clostridium tetani* in a wound (often a deep puncture; the wound may already be healed) releases tetanospasmin. Dogs and cats are relatively more resistant than horses, but they get localized tetanus (stiff wounded limb) that can generalize. Young large-breed dogs are the common SA picture. Generalized: lockjaw, risus (partially open mouth, lips drawn back), sawhorse, third-eyelid spasm, hyperesthesia; noise / light / touch trigger spasms. **Consciousness is not affected.** Diagnosis is clinical. Keep them quiet and dark. Search and debride the wound. Antimicrobials of choice on the page are penicillin and metronidazole — numbers stay there. Antitoxin binds free toxin only; it does not reverse toxin already in neurons. Muscle relaxants / sedatives / analgesics △ Plumb. Recovery, if they live, is weeks. Survivors do not have natural immunity — toxoid later. Cats can get tetanus.
+
+Book/public traps:
+
+- Printed 2013 ATS / TIG 500–1000 IU stays on the book page.
+- Printed horse PPG / metro mg/kg stays on the Merck page.
+- Distemper myoclonus can be mistaken for tetanus (book DDX) — not a night steroid.
+- Isolated jaw + temporalis swell + limbs normal is packet 160, not this.
+- **Do not pry the jaw.**
+- Do not send home as just lockjaw.
+- Relative resistance is not immunity.
+- Azotemic: still no DexSP as a shotgun.
+- Strychnine stays on the minutes-after-bait list; do not invent a strychnine table tonight.
+
+Night rule: wound + risus / sawhorse / third-eyelid spasm → tetanus. Quiet / dark. Find the wound. Do not pry. Antitoxin △ Plumb.
