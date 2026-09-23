@@ -93,6 +93,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-apn` | Assessment | APN / coonhound / raw chicken |
 | `ddx-mg` | Assessment | Myasthenia / fulminant / megaesophagus |
 | `ddx-trigem` | Assessment | Trigeminal neuritis / dropped jaw |
+| `ddx-2m` | Assessment | 2M antibody ELISA / MMM confirm |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -145,6 +146,7 @@ Suggested names are short so they show up after three letters.
 | `dc-apn` | Discharge | APN / coonhound going home |
 | `dc-mg` | Discharge | Myasthenia / megaesophagus watch |
 | `dc-trigem` | Discharge | Trigeminal neuritis / cannot close |
+| `dc-2m` | Discharge | 2M antibody pending / MMM |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -850,7 +852,7 @@ Do next: lubricate. Systemic antimicrobial △ Plumb. Drain behind the last mola
 ### `ddx-mmm`
 
 Masticatory myositis — {{patient.name}}
-Jaw open [mm / cannot]. Muscles [swollen / atrophied]. Limbs [normal]. 2M drawn before steroid [Y/N]. Exophthalmos [ ].
+Jaw open [mm / cannot]. Muscles [swollen / atrophied]. Limbs [normal]. 2M drawn before steroid [Y/N]. Serum frozen [Y/N]. Exophthalmos [ ].
 
 DDX:
 1. Masticatory myositis (type 2M; limbs spared)
@@ -859,8 +861,8 @@ DDX:
 4. Polymyositis if the limbs are involved (2M negative)
 5. Trigeminal neuritis if cannot close / dropped jaw (other list)
 
-Do not: pry the jaw open. Steroid before the titer. Send home as picky. Harvest the printed steroid mg/kg.
-Do next: soft gruel or feeding tube. Draw 2M antibody. Immunosuppression △ Plumb.
+Do not: pry the jaw open. Steroid before the titer. Send home as picky. Harvest the printed steroid mg/kg. Harvest 1:100 / 1:500. Follow the titer for response.
+Do next: serum for 2M ELISA before immunosuppression. Freeze if you treat tonight. Soft gruel or feeding tube. Immunosuppression △ Plumb.
 
 ### `ddx-tetanus`
 
@@ -949,6 +951,20 @@ DDX:
 
 Do not: pry the jaw. Send home as picky. Harvest a steroid table. Call it MMM.
 Do next: fluids and nutrition. Soft food or feeding tube. Lubricate if they cannot blink.
+
+### `ddx-2m`
+
+2M antibody ELISA — {{patient.name}}
+Serum drawn before steroid [Y/N]. Tube [serum / whole blood]. Frozen [Y/N]. Already on steroid [ ]. Titer pending [ ]. Atrophy / fibrosis [ ].
+
+DDX:
+1. MMM if cannot open + 2M positive (confirms)
+2. Still MMM if negative after steroids or fibrotic end-stage → temporalis biopsy (not frontalis)
+3. Polymyositis if limbs involved (2M negative)
+4. Trigeminal neuritis if cannot close (other list)
+
+Do not: harvest 1:100 / 1:500. Follow the titer for response. Call a post-steroid negative a rule-out. Biopsy the frontalis. Send home pending as picky.
+Do next: serum, not whole blood. Freeze if you treat tonight. Watch jaw motion, not the number. Immunosuppression △ Plumb after the draw.
 
 ### `ddx-hyperca`
 
@@ -1334,7 +1350,7 @@ Return now if {{patient.pronoun}} cannot blink, the eye looks dry or cloudy, the
 
 {{patient.name}} has inflammation of the chewing muscles (masticatory myositis). The jaw will not open. This is not “being picky,” and the jaw must not be forced open.
 
-Give only the medicines we sent, as labeled. Offer soft food or the feeding plan we showed. Do not try to pry the mouth open at home.
+We drew blood for the chewing-muscle antibody test (2M) before steroids if we could. That result takes days, not tonight. Give only the medicines we sent, as labeled. Offer soft food or the feeding plan we showed. Do not try to pry the mouth open at home.
 
 Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes stiff, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
@@ -1385,6 +1401,14 @@ Return now if breathing looks hard, coughing after meals, or {{patient.pronoun}}
 Offer the soft food or feeding plan we showed. Fluids if we started them. This often improves over a few weeks. Do not try to pry the mouth closed at home.
 
 Return now if {{patient.pronoun}} cannot drink, the eye dries, the face or legs go weak, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-2m`
+
+{{patient.name}} had blood drawn for the chewing-muscle antibody test (2M ELISA) before steroids if we could. A positive test confirms masticatory myositis. A negative test after steroids, or in a very wasted head, does not prove it is not that disease.
+
+The jaw must not be forced open. Offer the soft food or feeding plan we showed. This blood test is not an overnight result.
+
+Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes stiff, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

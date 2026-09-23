@@ -1485,6 +1485,33 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("still no dexsp", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_2m_elisa_serum_before_steroids_not_ruleout(self):
+        b = analyze(
+            "dog",
+            "2M ELISA, already on steroids 10 days, negative titer, send home as picky",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("type 2m", loc)
+        self.assertIn("2m antibody before steroids", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not a rule-out", joined)
+        self.assertIn("serum", joined)
+        self.assertIn("freeze", joined)
+        self.assertIn("picky", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_2m_do_not_harvest_titer_or_follow_or_frontalis(self):
+        b = analyze(
+            "dog",
+            "2M titer, follow the titer for response, 1:500, biopsy frontalis",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not harvest 2m titer cutoffs", joined)
+        self.assertIn("do not follow the 2m titer", joined)
+        self.assertIn("do not biopsy the frontalis", joined)
+        self.assertIn("not prognosis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ophthalmic_trigeminal_nerve_is_not_dropped_jaw(self):
         b = analyze("dog", "ophthalmic branch of the trigeminal nerve, corneal ulcer")
         loc = (b["localization"] or "").lower()

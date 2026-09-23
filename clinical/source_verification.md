@@ -934,7 +934,7 @@ Book/public traps:
 - Polymyositis involves the limbs and is 2M-negative.
 - Azotemic: still no DexSP as a shotgun.
 
-Night rule: cannot open the jaw, limbs normal → MMM until 2M. Do not pry. Feed. Draw blood before the steroid.
+Night rule: cannot open the jaw, limbs normal → MMM until 2M. Do not pry. Feed. Draw blood before the steroid. Assay detail is packet 165.
 
 ## 161. Tetanus (Merck Goodrich Sept 2026; Plunkett tetanus headings ~427–431 as traps)
 
@@ -1024,3 +1024,26 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: cannot close / dropped jaw → trigeminal. Feed. Fluids. Not MMM. Not picky.
+
+## 165. 2M antibody ELISA (UCSD CNL / Shelton; Merck Williamson Feb 2026)
+
+The assay exists. Public Merck masticatory myositis (Williamson) plus the UCSD Comparative Neuromuscular Laboratory pages (Shelton FAQ; November 2016 2M case). No chapter dump. **Do not harvest printed titer cutoffs (1:100 / 1:500 / 1:1000 / 1:4000), printed 1–2 mL / 500 µL, printed 1 mg/lb, or printed prednisone 2 mg/kg.**
+
+Agree with Merck: diagnosis is type II M antibodies, usually on **serum**. The test is highly sensitive and specific. Cats are rare; a canine ELISA can still be positive. CK may be up in acute disease and normal when chronic. Temporalis biopsy can show necrosis / phagocytosis and is the fibrosis / prognosis conversation — not a lobby pry.
+
+Agree with CNL / Shelton: the ELISA detects circulating autoantibodies against type 2M fibers, which exist only in muscles supplied by the mandibular branch of CN V. Those antibodies are **not** found in polymyositis, dystrophy, or denervating disease. **Draw serum before corticosteroids or other immunosuppression.** If you must treat tonight, freeze or refrigerate that pre-steroid tube and ship later. Steroids therapeutically lower the titer and can make it negative or borderline — that is not a rule-out. End-stage fibrosis with 2M-fiber loss can also be negative; then biopsy **temporalis, not frontalis**. A positive titer confirms MMM. The titer does **not** give prognosis or response to therapy (the drug lowers the number). Follow jaw range of motion and pain. Extra steroid atrophy is not “the disease got worse.” Not STAT. Printed turnaround / dollar / tube-volume lines stay on the lab page.
+
+Book/public traps:
+
+- Printed 1:100 borderline / 1:500–1:4000 positive stay on the CNL page.
+- Printed Merck prednisone 2 mg/kg and CNL 1 mg/lb stay on those pages.
+- Printed 1–2 mL serum / 500 µL minimum stay on the lab page.
+- Do not send whole blood.
+- Do not follow serial titers for remission.
+- Do not call a post-steroid negative “not MMM.”
+- Do not biopsy the frontalis and call it temporalis.
+- Do not send home pending as picky.
+- Dropped jaw / cannot close is still packet 164, not this assay.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot open → draw serum for 2M first. Freeze if you treat. Positive confirms. Negative after steroids or in a fibrotic head is a biopsy, not a rule-out.

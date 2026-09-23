@@ -581,6 +581,7 @@ MMM_RE = re.compile(
     r"\bmasticatory|"
     r"\bmmm\b|"
     r"\b2m antibody|"
+    r"\b2m (elisa|titer|assay|test)|"
     r"\btype 2m|"
     r"\btype ii m|"
     r"\btrismus|"
@@ -592,6 +593,23 @@ MMM_RE = re.compile(
     r"\bmasseter",
     re.I,
 )
+TWO_M_ASSAY_RE = re.compile(
+    r"\b2m (elisa|titer|assay|test|antibody)|"
+    r"\b(elisa|titer|assay).{0,20}\b2m\b|"
+    r"\btype (ii|2) ?m antibod",
+    re.I,
+)
+FOLLOW_TITER_RE = re.compile(
+    r"\b(follow|serial|monitor).{0,24}\b(titer|2m|antibody)|"
+    r"\b(titer|2m).{0,24}\b(response|remission|monitor)",
+    re.I,
+)
+NEGATIVE_TITER_RE = re.compile(
+    r"\b(negative|borderline).{0,24}\b(titer|2m|elisa)|"
+    r"\b(titer|2m|elisa).{0,24}\b(negative|borderline)",
+    re.I,
+)
+FRONTALis_RE = re.compile(r"\bfrontalis\b", re.I)
 PRY_JAW_RE = re.compile(
     r"\b(pry|force|crack|wrench|manual).{0,20}\b(jaw|mouth)|"
     r"\b(jaw|mouth).{0,20}\b(pry|forced open|crack)",
@@ -2160,20 +2178,30 @@ def analyze(
         hard_stops.append(
             "Do not pry the jaw open. "
             "Draw 2M antibody before steroids when you can. "
+            "Serum before immunosuppression. "
+            "A negative after steroids or in fibrotic end-stage is not a rule-out. "
             "Do not send home as picky."
         )
         do_not.append(
             "Do not harvest the printed steroid mg/kg. "
+            "Do not harvest 2M titer cutoffs. "
+            "Do not follow the titer for response. "
+            "Do not biopsy the frontalis. "
             "Unilateral globe plus last-molar swell is orbital cellulitis. "
             "Risus / sawhorse is tetanus."
         )
         do_next.append(
-            "Soft gruel or a feeding tube. 2M antibody. "
+            "Soft gruel or a feeding tube. 2M antibody on serum. "
+            "Freeze the serum if you treat tonight. "
+            "Positive confirms MMM. Titer is not prognosis. "
+            "Chronic or negative → temporalis biopsy. "
             "Immunosuppression △ Plumb after the titer is drawn."
         )
         sources.append(
-            "Merck masticatory myositis (Williamson, Feb 2026): type 2M antibody; "
-            "do not pry the jaw. Printed steroid mg/kg stays on the page. "
+            "Merck masticatory myositis (Williamson, Feb 2026): type 2M antibody on serum; "
+            "highly sensitive and specific; do not pry the jaw. "
+            "UCSD Comparative Neuromuscular Lab (Shelton): ELISA, draw before steroids; "
+            "titer is not prognosis. Printed 1:100 / 1:500 stay on that page. "
             "No dedicated Plunkett MMM chapter."
         )
         if PRY_JAW_RE.search(text):
@@ -2184,6 +2212,20 @@ def analyze(
             hard_stops.append("Do not send masticatory myositis home as picky.")
         if spec == "cat":
             do_next.append("Cat MMM is rare; a canine 2M ELISA can still be positive.")
+        if TWO_M_ASSAY_RE.search(text) or NEGATIVE_TITER_RE.search(text):
+            hard_stops.append(
+                "2M ELISA is serum, not whole blood. "
+                "A post-steroid or end-stage negative is not a rule-out."
+            )
+        if FOLLOW_TITER_RE.search(text):
+            hard_stops.append(
+                "Do not follow the 2M titer for response. "
+                "Steroids lower the titer. Watch jaw motion and pain."
+            )
+        if FRONTALis_RE.search(text):
+            hard_stops.append("Do not biopsy the frontalis. Temporalis is the muscle.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for MMM.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for MMM.")
 
