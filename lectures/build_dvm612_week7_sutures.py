@@ -534,10 +534,10 @@ card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "
 notes(s, "Do not invent a GI size table. Name layers: no mucosa. Original 3D viscus figure.")
 
 s = new_content("Cushing versus Connell")
-figure_panel(s, Inches(0.40), Inches(1.15), Inches(6.15), Inches(3.05), "suture3d_cushing.png", caption="Cushing  ·  original 3D")
-figure_panel(s, Inches(6.75), Inches(1.15), Inches(6.10), Inches(3.05), "suture3d_connell.png", caption="Connell  ·  original 3D")
-card(s, Inches(0.40), Inches(4.32), Inches(6.15), Inches(2.48), "Cushing  (no L)", "Continuous. Inverting. Parallel bites. Does not enter the lumen. Serosa, muscularis, submucosa only (WCVM). Memory: Cushing does not go in.", accent=GOLD)
-card(s, Inches(6.75), Inches(4.32), Inches(6.10), Inches(2.48), "Connell  (has L)", "Continuous. Inverting. Parallel bites. Does enter the lumen (WCVM). Memory: Connell goes into the lumen. The extra letter is the extra depth.", accent=NAVY)
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(6.15), Inches(3.72), "suture3d_cushing.png", caption="Cushing  ·  original 3D")
+figure_panel(s, Inches(6.75), Inches(1.15), Inches(6.10), Inches(3.72), "suture3d_connell.png", caption="Connell  ·  original 3D")
+card(s, Inches(0.40), Inches(4.98), Inches(6.15), Inches(1.82), "Cushing  (no L)", "Continuous. Inverting. Parallel bites. Does not enter the lumen (WCVM). Memory: Cushing does not go in.", accent=GOLD)
+card(s, Inches(6.75), Inches(4.98), Inches(6.10), Inches(1.82), "Connell  (has L)", "Continuous. Inverting. Parallel bites. Does enter the lumen (WCVM). Memory: Connell goes into the lumen.", accent=NAVY)
 notes(s, "This is the highest-yield viscus pair. Repeat the mnemonic once. Connell figure shows full-thickness bites into the lumen. Do not invent which organ prefers which.")
 
 s = new_content("Purse-string and other named closures")
