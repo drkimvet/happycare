@@ -86,6 +86,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cherry` | Assessment | Cherry eye / nictitans gland |
 | `ddx-dacryo` | Assessment | Dacryocystitis / NLD obstruction |
 | `ddx-orbit` | Assessment | Orbital cellulitis / retrobulbar |
+| `ddx-mmm` | Assessment | Masticatory myositis / trismus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -131,6 +132,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cherry` | Discharge | Cherry eye / gland replacement |
 | `dc-dacryo` | Discharge | After NL flush / dacryocystitis |
 | `dc-orbit` | Discharge | Orbital cellulitis / abscess |
+| `dc-mmm` | Discharge | Masticatory myositis / cannot open jaw |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -833,6 +835,20 @@ DDX:
 Do not: send home as conjunctivitis. Call it proptosis. Drain in the lobby without a protocol. Harvest a 4–8 week antibiotic table.
 Do next: lubricate. Systemic antimicrobial △ Plumb. Drain behind the last molar if swollen △ hospital. Image if it relapses.
 
+### `ddx-mmm`
+
+Masticatory myositis — {{patient.name}}
+Jaw open [mm / cannot]. Muscles [swollen / atrophied]. Limbs [normal]. 2M drawn before steroid [Y/N]. Exophthalmos [ ].
+
+DDX:
+1. Masticatory myositis (type 2M; limbs spared)
+2. Orbital cellulitis if one globe + last-molar swell (other list)
+3. Tetanus if risus / sawhorse / generalized spasm
+4. Polymyositis if the limbs are involved (2M negative)
+
+Do not: pry the jaw open. Steroid before the titer. Send home as picky. Harvest the printed steroid mg/kg.
+Do next: soft gruel or feeding tube. Draw 2M antibody. Immunosuppression △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1212,6 +1228,14 @@ Return now if the inner corner swells, a hole drains, the eye becomes painful, o
 Give only the medicines we sent, as labeled. Keep the eye wet with the lubricant we sent. Soft food may be easier if opening the mouth hurts.
 
 Return now if {{patient.pronoun}} cannot blink, the eye looks dry or cloudy, the face swells, or {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-mmm`
+
+{{patient.name}} has inflammation of the chewing muscles (masticatory myositis). The jaw will not open. This is not “being picky,” and the jaw must not be forced open.
+
+Give only the medicines we sent, as labeled. Offer soft food or the feeding plan we showed. Do not try to pry the mouth open at home.
+
+Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes stiff, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

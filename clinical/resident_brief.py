@@ -575,6 +575,35 @@ PAINLESS_EXOPH_RE = re.compile(
     r"\b(open(ing)? the mouth|exophthal).{0,24}(painless|no pain)",
     re.I,
 )
+# MMM / trismus. Do not use \bmmm alone in running text if we can help it —
+# keep \bmmm\b (word). Do not use \btrismus alone without also offering tetanus.
+MMM_RE = re.compile(
+    r"\bmasticatory|"
+    r"\bmmm\b|"
+    r"\b2m antibody|"
+    r"\btype 2m|"
+    r"\btype ii m|"
+    r"\btrismus|"
+    r"\blockjaw|"
+    r"\bcannot open (the )?jaw|"
+    r"\bcan'?t open (the )?(mouth|jaw)|"
+    r"\bunable to open (the )?(mouth|jaw)|"
+    r"\btemporalis|"
+    r"\bmasseter",
+    re.I,
+)
+PRY_JAW_RE = re.compile(
+    r"\b(pry|force|crack|wrench|manual).{0,20}\b(jaw|mouth)|"
+    r"\b(jaw|mouth).{0,20}\b(pry|forced open|crack)",
+    re.I,
+)
+TETANUS_HINT_RE = re.compile(
+    r"\btetanus|"
+    r"\brisus|"
+    r"\bsawhorse|"
+    r"\bsardonic",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1999,6 +2028,46 @@ def analyze(
             )
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for orbital cellulitis.")
+
+    if spec in {"dog", "cat"} and MMM_RE.search(text):
+        mm_loc = (
+            "Masticatory myositis: type 2M fibers (temporalis / masseter). "
+            "Limbs spared. Cannot open the jaw. Draw 2M antibody before steroids."
+        )
+        localization = f"{localization} Also {mm_loc}" if localization else mm_loc
+        hard_stops.append(
+            "Do not pry the jaw open. "
+            "Draw 2M antibody before steroids when you can. "
+            "Do not send home as picky."
+        )
+        do_not.append(
+            "Do not harvest the printed steroid mg/kg. "
+            "Unilateral globe plus last-molar swell is orbital cellulitis. "
+            "Risus / sawhorse is tetanus."
+        )
+        do_next.append(
+            "Soft gruel or a feeding tube. 2M antibody. "
+            "Immunosuppression △ Plumb after the titer is drawn."
+        )
+        sources.append(
+            "Merck masticatory myositis (Williamson, Feb 2026): type 2M antibody; "
+            "do not pry the jaw. Printed steroid mg/kg stays on the page. "
+            "No dedicated Plunkett MMM chapter."
+        )
+        if PRY_JAW_RE.search(text):
+            hard_stops.append(
+                "Do not pry the jaw open under anesthesia. That is an iatrogenic fracture."
+            )
+        if TETANUS_HINT_RE.search(text):
+            hard_stops.append(
+                "Risus / sawhorse / generalized spasm is tetanus, not MMM."
+            )
+        if SEND_HOME_RE.search(text) and re.search(r"\b(picky|just dental|fine at home)\b", text, re.I):
+            hard_stops.append("Do not send masticatory myositis home as picky.")
+        if spec == "cat":
+            do_next.append("Cat MMM is rare; a canine 2M ELISA can still be positive.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for MMM.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (

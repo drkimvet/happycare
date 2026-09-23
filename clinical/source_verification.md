@@ -915,3 +915,23 @@ Book/public traps:
 - Azotemic: still no DexSP, still no NSAID.
 
 Night rule: pain opening the mouth + unilateral exophthalmos → orbit. Lubricate. Look behind the last molar. Not conjunctivitis. Not proptosis.
+
+## 160. Masticatory muscle myositis (Merck Williamson Feb 2026; no dedicated Plunkett chapter)
+
+No MMM heading in the owned SA EM splits. Public Merck masticatory myositis in dogs and cats (Williamson, Feb 2026). Trismus in the book is the tetanus page, not this disease. No chapter dump. **Do not harvest printed prednisone 2 mg/kg or 2M titer cutoffs (1:100 / 1:500).**
+
+Agree with Merck: immune-mediated attack on type II M fibers in temporalis, masseter, and pterygoid. Limbs spared. Young adult large-breed dogs; cats rare but reported (canine ELISA can be positive). Acute: swollen masticatory muscles, cannot open the jaw, occasional exophthalmos or fever. Chronic: atrophy, anorexia, weight loss, still trismus. Diagnosis is type II M antibody on serum — highly sensitive and specific. CK may be up. Biopsy of temporalis (not frontalis) if the titer is negative and you still believe it. **Do not pry the jaw open under anesthesia** — iatrogenic fracture. Soft gruel; feeding tube if they cannot eat. Immunosuppression △ Plumb. Relapses are common; long-term prognosis is often favorable if treated before fibrosis.
+
+Book/public traps:
+
+- No Plunkett MMM chapter — do not ask for one.
+- Printed Merck prednisone 2 mg/kg stays on the page.
+- **Draw 2M antibody before steroids** when you can (false-negative risk).
+- **Do not pry the jaw.**
+- Do not send home as picky.
+- Unilateral painful exophthalmos + last-molar swell is packet 159.
+- Risus sardonicus / sawhorse / generalized spasm is tetanus.
+- Polymyositis involves the limbs and is 2M-negative.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot open the jaw, limbs normal → MMM until 2M. Do not pry. Feed. Draw blood before the steroid.

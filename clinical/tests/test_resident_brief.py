@@ -1291,6 +1291,26 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("neoplasia", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mmm_do_not_pry_draw_2m_first(self):
+        b = analyze(
+            "dog",
+            "masticatory myositis, cannot open the jaw, pry the jaw open, steroid before titer, send home as picky",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("type 2m", loc)
+        self.assertIn("limbs spared", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not pry the jaw", joined)
+        self.assertIn("2m antibody before steroids", joined)
+        self.assertIn("picky", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_trismus_with_risus_is_tetanus_not_mmm_only(self):
+        b = analyze("dog", "trismus, risus sardonicus, sawhorse")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("tetanus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",
