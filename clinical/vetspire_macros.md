@@ -81,6 +81,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-indolent` | Assessment | Indolent / Boxer / SCCED |
 | `ddx-seq` | Assessment | Feline corneal sequestrum |
 | `ddx-fhv` | Assessment | Feline herpes / dendritic ulcer |
+| `ddx-fek` | Assessment | Feline eosinophilic keratitis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -121,6 +122,7 @@ Suggested names are short so they show up after three letters.
 | `dc-indolent` | Discharge | After indolent / SCCED debridement |
 | `dc-seq` | Discharge | Corneal sequestrum / referral |
 | `dc-fhv` | Discharge | Feline herpes keratitis / ulcer |
+| `dc-fek` | Discharge | Eosinophilic keratitis / plaques |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -755,6 +757,20 @@ DDX:
 Do not: steroid a stain-positive / FHV ulcer. Grid a cat. Send a melting eye home as just herpes. Harvest an antiviral or l-lysine table. Require PCR tonight.
 Do next: E-collar. Antiviral △ Plumb / hospital. Lids / STT / FB. If melting or Descemet showing, refer tonight.
 
+### `ddx-fek`
+
+Eosinophilic keratitis — {{patient.name}}
+Color [pink / white]. Limbal [Y/N]. Stain [ ]. Cytology [eos / not yet]. URI / dendrites [ ]. Lip lesion [Y/N].
+
+DDX:
+1. Feline eosinophilic keratitis (cytology confirms)
+2. FHV ulcer / stromal keratitis (stain first — no steroid if open)
+3. Sequestrum if brown/black
+4. Lip rodent ulcer is the skin complex, not this cornea
+
+Do not: steroid a stain-positive cornea. Grid a cat. Valacyclovir. Megestrol as the night default. Harvest CSA / dex percents. Send home as conjunctivitis.
+Do next: fluorescein. Cytology of the plaque. FHV on the list. Immunomodulation △ ophtho / hospital after the stain. E-collar.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1092,6 +1108,14 @@ Referral for surgery was recommended if we discussed it. Return now if the eye i
 {{patient.name}} has a feline herpesvirus eye ulcer. Branching (dendritic) ulcers are typical. This is not a reason to add leftover steroid drops.
 
 Give only the eye medicines we sent, as labeled. Keep the E-collar on. Reduce stress at home as discussed.
+
+Return now if the eye becomes much more painful or cloudy, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-fek`
+
+{{patient.name}} has raised pink or white plaques on the clear part of the eye (eosinophilic keratitis). This is not ordinary conjunctivitis, and it is not the same as a lip sore.
+
+Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops unless we said the stain was negative. Keep the E-collar on.
 
 Return now if the eye becomes much more painful or cloudy, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 

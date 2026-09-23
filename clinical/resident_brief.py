@@ -446,8 +446,7 @@ SEQ_RE = re.compile(
     r"\bsequestrum|"
     r"\bcorneal sequestr|"
     r"\bnigrum|"
-    r"\b(brown|black|dark) (corneal|cornea) (plaque|spot|lesion)|"
-    r"\bcorneal plaque",
+    r"\b(brown|black|dark) (corneal|cornea) (plaque|spot|lesion)",
     re.I,
 )
 PEEL_PLAQUE_RE = re.compile(
@@ -477,6 +476,26 @@ URI_FHV_RE = re.compile(
     re.I,
 )
 JUST_HERPES_RE = re.compile(r"\bjust herpes|\bonly herpes|\bherpes and home", re.I)
+# FEK / pink-white plaques. Do not use \beosinophil alone (blood count)
+# or \beosinophilic ulcer (lip rodent ulcer of the skin complex).
+EK_RE = re.compile(
+    r"\beosinophilic kerat|"
+    r"\beosinophilic keratoconjunct|"
+    r"\bfek\b|"
+    r"\bproliferative keratoconjunct|"
+    r"\bproliferative keratitis|"
+    r"\b(pink|white|cream) (raised |vascular )?(corneal|cornea|limbal) (plaque|mass|infiltrate)|"
+    r"\b(corneal|cornea|limbal).{0,16}(pink|white) (plaque|mass)",
+    re.I,
+)
+VALACYCLOVIR_RE = re.compile(r"\bvalacyclovir|\bvalaciclovir", re.I)
+MEGESTROL_RE = re.compile(r"\bmegestrol", re.I)
+RODENT_ULCER_RE = re.compile(
+    r"\brodent ulcer|"
+    r"\beosinophilic (granuloma|plaque|skin)|"
+    r"\blip (ulcer|rodent)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1633,6 +1652,74 @@ def analyze(
         hard_stops.append(
             "Dendritic ulcer / FHV keratitis is the cat conversation. "
             "Name something else in the dog."
+        )
+
+    if spec == "cat" and EK_RE.search(text):
+        ek_loc = (
+            "Feline eosinophilic keratitis: pink-to-white raised corneal plaques. "
+            "Cytology (eosinophils) confirms. Not a brown sequestrum. "
+            "Not a lip rodent ulcer."
+        )
+        localization = f"{localization} Also {ek_loc}" if localization else ek_loc
+        hard_stops.append(
+            "Stain first. Do not put a steroid on a stain-positive cornea. "
+            "Do not grid a cat. Cytology confirms FEK."
+        )
+        do_not.append(
+            "Do not harvest cyclosporine 1–2% or dexamethasone 0.1%. "
+            "Do not start megestrol as the night default. "
+            "Do not call a lip rodent ulcer this eye."
+        )
+        do_next.append(
+            "Fluorescein. Cytology of the plaque. FHV stays on the list. "
+            "Immunomodulation △ ophtho / hospital after the stain. E-collar."
+        )
+        sources.append(
+            "Merck tear stimulants (Whelan): names eosinophilic keratitis; "
+            "printed CSA / tacrolimus / dex percents stay on the page. "
+            "Merck antiviral: valacyclovir contraindicated in cats. "
+            "No dedicated Plunkett FEK chapter."
+        )
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ) and (
+            re.search(r"\bulcer|stain[- ]positive|fluorescein", text, re.I)
+            or FHV_RE.search(text)
+            or MELT_RE.search(text)
+        ):
+            hard_stops.append(
+                "Do not put a steroid on a stain-positive / ulcerated FEK cornea. "
+                "Packet 154 still owns an FHV ulcer tonight."
+            )
+        if GRID_BURR_RE.search(text):
+            hard_stops.append(
+                "Do not grid a cat. Keratotomy predisposes to corneal sequestrum."
+            )
+        if VALACYCLOVIR_RE.search(text):
+            hard_stops.append(
+                "Valacyclovir is contraindicated in cats (Merck antiviral)."
+            )
+        if MEGESTROL_RE.search(text):
+            hard_stops.append(
+                "Megestrol is not the night default for eosinophilic keratitis."
+            )
+        if RODENT_ULCER_RE.search(text):
+            hard_stops.append(
+                "Lip eosinophilic / rodent ulcer is the skin complex, not this cornea."
+            )
+        if SEND_HOME_RE.search(text) and CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send eosinophilic keratitis home as conjunctivitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for FEK.")
+
+    if spec == "dog" and EK_RE.search(text):
+        hard_stops.append(
+            "Eosinophilic keratitis is a cat conversation. "
+            "In the dog name pannus or immune keratitis, not FEK."
         )
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):

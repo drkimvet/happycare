@@ -818,3 +818,23 @@ Book/public traps:
 - Lids / STT / FB still. Dendritic does not excuse a hidden mechanical cause.
 
 Night rule: cat + dendritic / geographic ulcer → FHV. No steroid. Do not grid. E-collar. Antiviral △ Plumb. Lids/STT/FB still.
+
+## 155. Feline eosinophilic keratitis (Merck Whelan tear stimulants; no dedicated Plunkett chapter)
+
+No FEK / proliferative keratoconjunctivitis heading in the owned SA EM splits. Public Merck tear-stimulant / immunosuppressant page (Whelan, Oct 2021 / Nov 2025) names eosinophilic keratitis as a cyclosporine ± dexamethasone indication. Merck antiviral page: valacyclovir is contraindicated in cats. No chapter dump. **Do not harvest CSA 1–2%, tacrolimus 0.02–0.03%, dexamethasone 0.1%, famciclovir milligrams, or a megestrol table.**
+
+Agree with the named public page: eosinophilic keratitis is an immune-surface disease that sits with pannus / immune keratitis on the cyclosporine list. Night diagnosis is **not** “it looks pink.” Cytology of the plaque (eosinophils) is the confirm. Teaching frame only (Dean JFMS 2013; Nasisse AJVR 1998; Glaze & Gelatt): pink-to-white raised vascular plaques, often limbal, cornea ± conjunctiva; FHV DNA is frequently recovered and the role is unsettled; immunomodulation treats the plaques; steroids can reactivate FHV.
+
+Book/public traps:
+
+- No Plunkett FEK chapter — do not ask for one.
+- Printed Merck CSA / tacrolimus / dex percents stay on the page.
+- **Stain first.** A stain-positive cornea is still packet 154 — no topical steroid tonight.
+- **Valacyclovir is contraindicated in cats.**
+- Megestrol acetate is not the night default.
+- **Do not grid a cat.**
+- Lip eosinophilic / rodent ulcer is the skin complex, not this eye. Cytology confirms FEK.
+- A brown/black plaque is sequestrum (packet 153), not FEK.
+- Do not send home as conjunctivitis.
+
+Night rule: cat + pink/white raised corneal plaques → cytology. Stain first. No steroid on an ulcer. FHV stays on the list.

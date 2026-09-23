@@ -1129,6 +1129,48 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("cat conversation", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_eosinophilic_keratitis_stain_first_no_steroid_on_ulcer(self):
+        b = analyze(
+            "cat",
+            "eosinophilic keratitis, pink corneal plaque, ulcer, steroid drop, valacyclovir, megestrol",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("pink-to-white", loc)
+        self.assertIn("cytology", loc)
+        self.assertIn("not a brown sequestrum", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stain first", joined)
+        self.assertIn("do not put a steroid", joined)
+        self.assertIn("valacyclovir is contraindicated", joined)
+        self.assertIn("megestrol is not the night default", joined)
+        self.assertNotIn("do not pick or peel", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_pink_plaque_is_not_lip_rodent_ulcer(self):
+        b = analyze(
+            "cat",
+            "white corneal plaque, proliferative keratitis, rodent ulcer of the lip, send home as conjunctivitis",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("not a lip rodent ulcer", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("skin complex", joined)
+        self.assertIn("conjunctivitis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_eosinophilic_keratitis_is_cat_conversation(self):
+        b = analyze("dog", "eosinophilic keratitis, pink corneal plaque")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("cat conversation", joined)
+        self.assertIn("pannus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lip_eosinophilic_ulcer_does_not_open_fek(self):
+        b = analyze("cat", "rodent ulcer of the lip, eosinophilic granuloma, no eye signs")
+        loc = (b.get("localization") or "").lower()
+        self.assertNotIn("eosinophilic keratitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",
