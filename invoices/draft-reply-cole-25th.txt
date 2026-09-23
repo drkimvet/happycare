@@ -1,0 +1,37 @@
+To: Cole Rice c.rice@urvetcare.com
+Cc: Evan Stoopler, Amy Bain
+From: Dr. Yujin Kim
+Subject: Re: Salary and Production Calculation — dollar amount for the 25th
+
+Cole,
+
+I asked for the math and dollar amount for my payment on the 25th. The overview is not that number.
+
+Even in your examples, the regular paycheck is hourly. Production, if any, is quarterly. So for the 25th I need the hourly total you are posting to ADP.
+
+Shifts already worked:
+  Sep 8   8:00 PM–12:00 AM   4 hours
+  Sep 10  8:00 AM–8:00 PM   12 hours
+  Sep 14  8:00 PM–12:00 AM   4 hours
+  Sep 15  12:00 AM–8:00 AM   8 hours (logged as on-call)
+  Sep 15  12:00 AM–6:00 AM   6 hours
+  Sep 19  8:00 PM–12:00 AM   4 hours Midtown
+
+Using $250/hour for every hour in the building, plus one $300 on-call fee as you and Amy wrote:
+  4+12+4+8+6+4 = 38 hours × $250 = $9,500
+  + $300 on-call fee
+  = $9,800.00
+
+If the Sep 15 8-hour block is $300/hour as I logged, that line is $2,400 instead of $2,000+$300, and the 25th total is $9,900.00.
+
+Please reply with one line:
+  “ADP on the 25th will show $________.”
+
+Your $8,473.67 revenue figure is 23% = $1,948.94. That is below hourly, so under your own Example 2 there is no production bonus on this check. That is a quarterly issue. It is not a reason to leave the 25th blank on ADP.
+
+I am hourly per diem. Your email calls the $250 a “base salary” and an “advance on production.” Amy’s email is titled Per Diem Agreement and lists an On Shift Rate. Those are not the same thing. We can finish the Prod/Sal formula in writing. The 25th still has to pay the hours I already worked.
+
+Sincerely,
+Dr. Yujin Kim, DVM, PhD
+(646) 801-8225
+kim.yujin@outlook.com
