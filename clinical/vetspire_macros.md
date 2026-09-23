@@ -82,6 +82,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-seq` | Assessment | Feline corneal sequestrum |
 | `ddx-fhv` | Assessment | Feline herpes / dendritic ulcer |
 | `ddx-fek` | Assessment | Feline eosinophilic keratitis |
+| `ddx-kcs` | Assessment | KCS / dry eye / STT |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -123,6 +124,7 @@ Suggested names are short so they show up after three letters.
 | `dc-seq` | Discharge | Corneal sequestrum / referral |
 | `dc-fhv` | Discharge | Feline herpes keratitis / ulcer |
 | `dc-fek` | Discharge | Eosinophilic keratitis / plaques |
+| `dc-kcs` | Discharge | KCS / dry eye going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -771,6 +773,20 @@ DDX:
 Do not: steroid a stain-positive cornea. Grid a cat. Valacyclovir. Megestrol as the night default. Harvest CSA / dex percents. Send home as conjunctivitis.
 Do next: fluorescein. Cytology of the plaque. FHV on the list. Immunomodulation △ ophtho / hospital after the stain. E-collar.
 
+### `ddx-kcs`
+
+KCS / dry eye — {{patient.name}}
+STT [before drops / spoiled]. Stain [ ]. Discharge [mucopurulent / mucoid]. Neurogenic [dry nostril Y/N]. Sulfa [Y/N]. Cherry-eye history [ ].
+
+DDX:
+1. Quantitative KCS (aqueous deficiency; STT before drops)
+2. Qualitative dry eye (STT may be normal)
+3. Ulcer / melting on a dry eye (other list — no steroid)
+4. Cat: FHV scarring
+
+Do not: send home as conjunctivitis. Steroid combo on an ulcer. Atropine. Skin tacrolimus in the eye. Harvest CSA / STT ≥ 2 mm. Excise a cherry-eye gland.
+Do next: fluorescein. Artificial tears. Lacrimogenic △ Plumb. If melting, refer tonight.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1118,6 +1134,14 @@ Return now if the eye becomes much more painful or cloudy, if a dark spot appear
 Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops unless we said the stain was negative. Keep the E-collar on.
 
 Return now if the eye becomes much more painful or cloudy, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-kcs`
+
+{{patient.name}} has dry eye (not enough watery tears). The sticky discharge is from dryness, not “just conjunctivitis.”
+
+Give only the tear and eye medicines we sent, as labeled. Do not add leftover steroid drops unless we said the stain was negative. Keep the E-collar on if one was sent.
+
+Return now if the eye becomes much more painful or cloudy, if a hole or jelly-like melt appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

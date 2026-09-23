@@ -838,3 +838,24 @@ Book/public traps:
 - Do not send home as conjunctivitis.
 
 Night rule: cat + pink/white raised corneal plaques → cytology. Stain first. No steroid on an ulcer. FHV stays on the list.
+
+## 156. KCS emergency / melting from no tears (Merck Hamor nasolacrimal; no dedicated Plunkett chapter)
+
+No dedicated KCS heading in the owned SA EM splits (named only as a metabolic cause of ulcerative keratitis ~444). Public Merck nasolacrimal / lacrimal apparatus (Hamor, Feb 2023 / Jul 2026), physical examination of the eye, and ocular diagnostic tests. Tear-stimulant page (Whelan) already cited in 155. No chapter dump. **Do not harvest CSA 0.2–2%, tacrolimus 0.02%, pilocarpine-in-food drops, STT ≥ 2 mm, or cherry-eye excision percents.**
+
+Agree with Merck: quantitative KCS is aqueous-tear deficiency, usually bilateral and idiopathic in dogs. Autoimmune dacryoadenitis destroys **both** the lacrimal and nictitans glands. Less often: distemper, systemic sulfonamide, heredity, trauma. Cats: uncommon; chronic FHV-1 scarring. Complete lack of tears is acutely painful. Sticky mucopurulent discharge, dull/lusterless cornea, vascularization, pigment, ulcer. **STT before any drops or cleaning.** Fluorescein. If no ulcer, an antimicrobial-steroid combo can be considered — **not** if the cornea is open. Lacrimogenics often raise tears; canine KCS is usually lifetime treatment. Neurogenic KCS: unilateral plus a dry ipsilateral nostril; oral/food pilocarpine is a hospital conversation, not a harvested drop count. Qualitative KCS: aqueous STT can be normal; rapid breakup / rose bengal / lissamine green. Cherry-eye gland is a major tear gland — **replace, do not excise.** Melting or descemetocele on a dry eye is still packet 150.
+
+Book/public traps:
+
+- No Plunkett KCS chapter — do not ask for one.
+- Printed Merck CSA / tacrolimus / pimecrolimus / pilocarpine / STT ≥ 2 mm stay on the page.
+- **Dermatologic tacrolimus or pimecrolimus is not for the eye.**
+- **STT after drops is a spoiled strip.**
+- Atropine dries tears (already on the melt page).
+- Do not send a sticky red eye home as conjunctivitis.
+- Do not put a steroid combo on an ulcerated or melting KCS cornea.
+- Do not invent a mm/min cutoff.
+- Do not excise the nictitans gland.
+- Sulfa history sits on the list.
+
+Night rule: sticky red / dry lusterless eye → STT before drops. Stain. No steroid on an ulcer. If melting, refer tonight.

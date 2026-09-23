@@ -264,6 +264,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("valacyclovir", VERIF.lower())
         self.assertIn("rodent ulcer", VERIF.lower())
         self.assertIn("cytology confirms", VERIF.lower())
+        self.assertIn("stt before any drops", VERIF.lower())
+        self.assertIn("dermatologic tacrolimus", VERIF.lower())
+        self.assertIn("quantitative kcs", VERIF.lower())
+        self.assertIn("do not excise", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -351,6 +355,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`ddx-fek`", MACRO)
         self.assertIn("`dc-fek`", MACRO)
         self.assertIn("do not: steroid a stain-positive cornea", MACRO.lower())
+        self.assertIn("`ddx-kcs`", MACRO)
+        self.assertIn("`dc-kcs`", MACRO)
+        self.assertIn("do not: send home as conjunctivitis", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

@@ -1171,6 +1171,50 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("eosinophilic keratitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_kcs_stt_before_drops_not_conjunctivitis(self):
+        b = analyze(
+            "dog",
+            "dry eye, KCS, mucopurulent ocular discharge, ulcer, steroid drop, send home as conjunctivitis",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("stt before any drops", loc)
+        self.assertIn("not conjunctivitis until the strip", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a sticky red", joined)
+        self.assertIn("do not put a steroid combo", joined)
+        self.assertIn("csa 0.2", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kcs_atropine_and_skin_tacrolimus_and_excise_gland(self):
+        b = analyze(
+            "dog",
+            "keratoconjunctivitis sicca, atropine, dermatologic tacrolimus, cherry eye, excise the gland",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("aqueous tear deficiency", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("atropine dries tears", joined)
+        self.assertIn("dermatologic tacrolimus", joined)
+        self.assertIn("do not excise", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_kcs_is_uncommon_fhv_on_list(self):
+        b = analyze("cat", "dry eye, KCS, lusterless cornea")
+        loc = b["localization"].lower()
+        self.assertIn("cats uncommon", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("fhv scarring", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kcs_melt_not_home(self):
+        b = analyze(
+            "dog",
+            "KCS, melting ulcer, send home still melting",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("do not send a melting dry eye home", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

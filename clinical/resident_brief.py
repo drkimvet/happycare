@@ -496,6 +496,40 @@ RODENT_ULCER_RE = re.compile(
     r"\blip (ulcer|rodent)",
     re.I,
 )
+# KCS / dry eye. Do not use \bstt\b alone (other eye packets say STT).
+KCS_RE = re.compile(
+    r"\bkcs\b|"
+    r"\bkeratoconjunctivitis sicca|"
+    r"\bdry eye|"
+    r"\bschirmer|"
+    r"\baqueous tear|"
+    r"\bquantitative kcs|"
+    r"\bqualitative kcs|"
+    r"\blusterless cornea|"
+    r"\bmucopurulent (ocular|eye) discharge",
+    re.I,
+)
+CHERRY_EYE_RE = re.compile(
+    r"\bcherry eye|"
+    r"\bprolapse.{0,20}nictit|"
+    r"\bnictitans gland|"
+    r"\bthird eyelid gland",
+    re.I,
+)
+EXCISE_GLAND_RE = re.compile(
+    r"\b(excis|amputat|cut out|remove).{0,24}\b(gland|cherry)|"
+    r"\b(gland|cherry).{0,24}\b(excis|amputat|cut out|remove)",
+    re.I,
+)
+DERM_TAC_RE = re.compile(
+    r"\b(dermatolog|skin|atopic|elidel|protopic).{0,24}\b(tacrolimus|pimecrolimus)|"
+    r"\b(tacrolimus|pimecrolimus).{0,24}\b(skin|dermatolog|ointment|cream)",
+    re.I,
+)
+SULFA_KCS_RE = re.compile(
+    r"\b(sulfonamide|sulfamethoxazole|trimethoprim[- ]sulfa|\btms\b|\bprimor\b)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1721,6 +1755,71 @@ def analyze(
             "Eosinophilic keratitis is a cat conversation. "
             "In the dog name pannus or immune keratitis, not FEK."
         )
+
+    if spec in {"dog", "cat"} and KCS_RE.search(text):
+        kcs_loc = (
+            "Quantitative KCS: aqueous tear deficiency. "
+            "STT before any drops. Dogs common; cats uncommon (FHV scarring). "
+            "Not conjunctivitis until the strip."
+        )
+        localization = f"{localization} Also {kcs_loc}" if localization else kcs_loc
+        hard_stops.append(
+            "STT before any drops or cleaning. "
+            "Do not put a steroid on an ulcerated KCS cornea. "
+            "Do not send a sticky red eye home as conjunctivitis."
+        )
+        do_not.append(
+            "Do not harvest CSA 0.2–2% or STT ≥ 2 mm. "
+            "Do not put dermatologic tacrolimus in the eye. "
+            "Do not excise a cherry-eye gland. Atropine dries tears."
+        )
+        do_next.append(
+            "Fluorescein. Artificial tears tonight. Lacrimogenic △ Plumb. "
+            "If melting or Descemet is showing, refer tonight (packet 150)."
+        )
+        sources.append(
+            "Merck nasolacrimal (Hamor): quantitative KCS; STT before drops. "
+            "Printed CSA / pilocarpine / STT ≥ 2 mm stay on the page. "
+            "No dedicated Plunkett KCS chapter."
+        )
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ) and (
+            re.search(r"\bulcer|stain[- ]positive|fluorescein|melt", text, re.I)
+            or MELT_RE.search(text)
+        ):
+            hard_stops.append(
+                "Do not put a steroid combo on an ulcerated or melting KCS cornea."
+            )
+        if ATROPINE_RE.search(text):
+            hard_stops.append("Atropine dries tears. Do not atropine a dry eye.")
+        if DERM_TAC_RE.search(text):
+            hard_stops.append(
+                "Do not put dermatologic tacrolimus or pimecrolimus in the eye."
+            )
+        if EXCISE_GLAND_RE.search(text) or (
+            CHERRY_EYE_RE.search(text) and EXCISE_GLAND_RE.search(text)
+        ):
+            hard_stops.append(
+                "Do not excise a nictitans / cherry-eye gland. Replace it. "
+                "That gland is a tear gland."
+            )
+        if MELT_RE.search(text) and SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a melting dry eye home. Packet 150 still owns the melt."
+            )
+        if SEND_HOME_RE.search(text) and CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a sticky red KCS eye home as conjunctivitis."
+            )
+        if SULFA_KCS_RE.search(text):
+            do_next.append("Sulfonamide history sits on the KCS list.")
+        if spec == "cat":
+            do_next.append("Cat KCS is uncommon; chronic FHV scarring is on the list.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for KCS.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (
