@@ -291,7 +291,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("tick paralysis", VERIF.lower())
         self.assertIn("botulism", VERIF.lower())
         self.assertIn("flaccid", VERIF.lower())
-        self.assertIn("not commercial in the us", VERIF.lower())
+        self.assertIn("not commercially available in the us", VERIF.lower())
         self.assertIn("10 000 units", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
