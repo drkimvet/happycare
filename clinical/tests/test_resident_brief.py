@@ -1333,7 +1333,7 @@ class ResidentBriefTests(unittest.TestCase):
     def test_tetanus_cat_can_get_it_no_harvest_iu(self):
         b = analyze(
             "cat",
-            "tetanus, 500 IU antitoxin, metronidazole table, DexSP, azotemia",
+            "tetanus, 500 IU antitoxin, metronidazole table, DexSP, AKI",
         )
         loc = b["localization"].lower()
         self.assertIn("tetanus", loc)
