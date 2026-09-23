@@ -94,6 +94,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mg` | Assessment | Myasthenia / fulminant / megaesophagus |
 | `ddx-trigem` | Assessment | Trigeminal neuritis / dropped jaw |
 | `ddx-2m` | Assessment | 2M antibody ELISA / MMM confirm |
+| `ddx-face` | Assessment | Facial paralysis / cannot blink |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -147,6 +148,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mg` | Discharge | Myasthenia / megaesophagus watch |
 | `dc-trigem` | Discharge | Trigeminal neuritis / cannot close |
 | `dc-2m` | Discharge | 2M antibody pending / MMM |
+| `dc-face` | Discharge | Facial paralysis / cannot blink |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -966,6 +968,22 @@ DDX:
 Do not: harvest 1:100 / 1:500. Follow the titer for response. Call a post-steroid negative a rule-out. Biopsy the frontalis. Send home pending as picky.
 Do next: serum, not whole blood. Freeze if you treat tonight. Watch jaw motion, not the number. Immunosuppression △ Plumb after the draw.
 
+### `ddx-face`
+
+Facial paralysis — {{patient.name}}
+Blink / palpebral [absent / weak / present]. Sensation [intact / reduced]. Horner [Y/N]. Head tilt [Y/N]. STT [ ]. Stain [ ]. Ear / TM [seen / not seen]. Dry nostril [Y/N].
+
+DDX:
+1. Idiopathic CN VII (exclusion; common in dogs, uncommon in cats)
+2. Otitis media / interna if Horner ± tilt (other list)
+3. Neurogenic KCS / dry nostril if the lesion is proximal
+4. Hypothyroid neuropathy in the dog (not a T4 cutoff tonight)
+5. Brainstem if other CN / mentation / ipsilateral limbs
+6. Trauma / TECA / middle-ear mass / cat polyp
+
+Do not: send home as conjunctivitis or just a droopy face. Call Horner this disease (Horner can blink). Harvest a steroid table. Skip the ear.
+Do next: lubricate now. STT. Stain. Look in both ears. Artificial tears. Watch the cornea.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1409,6 +1427,14 @@ Return now if {{patient.pronoun}} cannot drink, the eye dries, the face or legs 
 The jaw must not be forced open. Offer the soft food or feeding plan we showed. This blood test is not an overnight result.
 
 Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes stiff, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-face`
+
+{{patient.name}} cannot blink well on one side because the facial nerve is not moving the eyelids (facial paralysis). This is not “just a droopy face,” and it is not the same as Horner’s syndrome (those pets can still blink).
+
+Put the lubricating drops or ointment in as we showed, as often as we wrote. Keep the Elizabethan collar on if we sent one. The ear still needs to stay clean and dry. This can last weeks or stay; the other side can later drop.
+
+Return now if the eye looks cloudy, blue, or painful, if {{patient.pronoun}} stops eating, if a head tilt or rolling starts, or if the other side of the face drops. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

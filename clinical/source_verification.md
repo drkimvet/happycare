@@ -1047,3 +1047,28 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: cannot open → draw serum for 2M first. Freeze if you treat. Positive confirms. Negative after steroids or in a fibrotic head is a biopsy, not a rule-out.
+
+## 166. Idiopathic facial paralysis / cannot blink (Merck Thomas Jun 2026 / Sept 2026; Thomas degenerative May 2021 / May 2025)
+
+No dedicated facial-paralysis heading in the owned SA EM splits (named as an otitis complication and on CN-exam lines). Public Merck facial paralysis in animals (Thomas, Jun 2026 / Sept 2026) and idiopathic facial paralysis on the degenerative peripheral-nerve page (Thomas, May 2021 / May 2025). Owner facial-paralysis page agrees. No chapter dump. **Do not harvest a steroid table, a 6–8 week hypothyroid clock as a night law, or Cocker as a diagnosis.** Horse guttural-pouch / THO lines stay on that page — Midtown is SA.
+
+Agree with Merck: facial paralysis is inability to move the muscles of facial expression because of a lesion of the motor facial nerve (CN VII). **The most consistent sign is an inability to blink.** Palpebral reflex and menace are lost; they retract the globe and the third eyelid comes up passively. That is **not Horner.** Sensation of the face is CN V and stays intact in isolated VII. Acute: ipsilateral ear hangs, lip hangs, drool / food falls from that corner. Isolated facial with no other deficits localizes to the peripheral nerve. Ipsilateral head tilt / vestibular and/or ipsilateral Horner (ptosis, miosis, enophthalmos) with normal mentation and limbs localizes to the **middle or inner ear**, where VII and the parasympathetics travel (packet 137). Brainstem: other CN, mentation, ipsilateral limb or proprioceptive deficits. A lesion proximal to the stylomastoid foramen can take the parasympathetic fibers to the lacrimal and nasal glands → **neurogenic KCS and/or a dry ipsilateral nostril** (xeromycteria). **STT in every facial paralysis.** Lubricate. Stain.
+
+Otitis media is a common cause in dogs and cats. Look in the ear before you say idiopathic. Cat: nasopharyngeal polyp extending into the bulla is on the list. Dog: hypothyroidism can hit cranial nerves, including VII — printed 6–8 week improvement after thyroid hormone stays on the page; do not invent a T4 cutoff. Trauma / TECA. Middle-ear masses (ceruminous adenocarcinoma, cholesteatoma; cat SCC). Idiopathic facial neuritis is **common in dogs, uncommon in cats** (table). Middle-aged to older dogs; sudden unilateral or less often bilateral facial paralysis with no other signs. May resemble human Bell palsy. Degenerative page: Cocker Spaniel, Pembroke Welsh Corgi, Boxer, English Setter, domestic long-haired cat over-represented; histopathology is axonal degeneration **without inflammation**; no specific treatment; artificial tears; partial improvement in a few weeks is possible, persistent dysfunction is common. Full facial page: partial or complete improvement over weeks to months; the contralateral side can later be affected. Chronic contracture can lift the lip and look like “it got better.” Isolated facial paralysis is rarely debilitating if the cornea is protected.
+
+Book/public traps:
+
+- No dedicated Plunkett facial-paralysis chapter — do not ask for one.
+- Printed hypothyroid 6–8 week recovery stays on the Merck page.
+- Printed Cocker / Corgi / Boxer lists are risk, not a diagnosis.
+- **Horner can blink.** Miosis / ptosis / enophthalmos is sympathetic, not VII.
+- **Horner + facial ± tilt is the ear** until imaging, not default idiopathic (packet 137).
+- Cannot close the jaw is packet 164. Cannot open is packet 160.
+- Do not send home as conjunctivitis or “just a droopy face.”
+- Do not skip STT / stain / lubrication.
+- Do not harvest a steroid table for idiopathic VII.
+- Do not put chlorhex or aminoglycoside drops in an ear whose TM you have not seen.
+- Horse THO / guttural pouch is not a Midtown default.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot blink → CN VII. Lubricate now. STT. Stain. Look in the ear. Horner can blink. Horner + facial is the ear.

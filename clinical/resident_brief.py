@@ -696,6 +696,22 @@ TRIGEM_RE = re.compile(
     r"\bjaw paralysis",
     re.I,
 )
+# CN VII / idiopathic facial paralysis. Do not use \bfacial alone (swelling / anaphylaxis).
+# Do not use \bhorner alone (vestibular / ear already owns that pair).
+FACIAL_RE = re.compile(
+    r"\bfacial (paralys|paresis|palsy|neurit)|"
+    r"\bidio(pathic)? facial|"
+    r"\bbell.?s palsy|"
+    r"\bcannot blink|"
+    r"\bcan'?t blink|"
+    r"\bunable to blink|"
+    r"\bno palpebral|"
+    r"\babsent palpebral|"
+    r"\bdrooping (lip|ear|face)|"
+    r"\blip droop|"
+    r"\bear droop",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2270,6 +2286,45 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for trigeminal neuritis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for trigeminal neuritis.")
+
+    if spec in {"dog", "cat"} and FACIAL_RE.search(text):
+        fa_loc = (
+            "Facial paralysis (CN VII). Cannot blink. "
+            "Sensation intact. Not Horner (Horner can blink). "
+            "Look in the ear before you say idiopathic."
+        )
+        localization = f"{localization} Also {fa_loc}" if localization else fa_loc
+        hard_stops.append(
+            "Lubricate now. STT. Stain. "
+            "Do not send home as conjunctivitis or just a droopy face."
+        )
+        do_not.append(
+            "Do not harvest a steroid table. "
+            "Horner can blink. Horner + facial is the ear, not default idiopathic. "
+            "Cannot close the jaw is trigeminal. Cannot open is masticatory myositis."
+        )
+        do_next.append(
+            "Otoscopic exam both ears. Palpebral: they may feel the tap (CN V) and still not close the lids (CN VII). "
+            "Dry ipsilateral nostril sits with neurogenic KCS. Thyroid conversation in the dog △ hospital. "
+            "Artificial tears. Watch the cornea."
+        )
+        sources.append(
+            "Merck facial paralysis in animals (Thomas, Jun 2026 / Sept 2026): "
+            "cannot blink is the most consistent sign; Horner + facial = middle/inner ear; "
+            "idiopathic common in dogs, uncommon in cats. "
+            "Degenerative page (Thomas): no specific treatment; artificial tears. "
+            "No dedicated Plunkett facial-paralysis chapter."
+        )
+        if SEND_HOME_RE.search(text) or CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append("Do not send facial paralysis home as conjunctivitis or just a droopy face.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not harvest a steroid table for idiopathic facial paralysis.")
+        if spec == "cat":
+            do_next.append("Cat idiopathic facial paralysis is uncommon; polyp and the bulla stay on the list.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for facial paralysis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for facial paralysis.")
 
     isolated_trigem = bool(
         trigem_hit

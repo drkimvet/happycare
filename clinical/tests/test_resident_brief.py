@@ -1512,6 +1512,50 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not prognosis", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_facial_cannot_blink_not_horner_or_conjunctivitis(self):
+        b = analyze(
+            "dog",
+            "cannot blink, facial paralysis, drooping lip, send home as conjunctivitis",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cannot blink", loc)
+        self.assertIn("not horner", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("lubricate", joined)
+        self.assertIn("stt", joined)
+        self.assertIn("conjunctivitis", joined)
+        self.assertIn("look in the ear", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_facial_horner_is_the_ear_no_steroid_table(self):
+        b = analyze(
+            "dog",
+            "facial paralysis, Horner, cannot blink, steroid table, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("horner can blink", joined)
+        self.assertIn("the ear", joined)
+        self.assertIn("do not harvest a steroid table", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_facial_cat_uncommon_not_dropped_jaw(self):
+        b = analyze("cat", "idiopathic facial paralysis, cannot blink, polyp")
+        loc = b["localization"].lower()
+        self.assertIn("facial paralysis", loc)
+        self.assertNotIn("cannot close", loc)
+        joined = " ".join(b["do_next"] + b["hard_stops"]).lower()
+        self.assertIn("uncommon", joined)
+        self.assertIn("polyp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_facial_swelling_is_not_cn_vii(self):
+        b = analyze("dog", "facial swelling, hives, vaccine")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("cannot blink", loc)
+        self.assertNotIn("cn vii", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ophthalmic_trigeminal_nerve_is_not_dropped_jaw(self):
         b = analyze("dog", "ophthalmic branch of the trigeminal nerve, corneal ulcer")
         loc = (b["localization"] or "").lower()
