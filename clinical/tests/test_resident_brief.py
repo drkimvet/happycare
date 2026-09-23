@@ -1405,6 +1405,46 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("flaccid ascending", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_apn_coonhound_steroids_not_helpful(self):
+        b = analyze(
+            "dog",
+            "coonhound paralysis, raccoon bite last week, DexSP, send home as just tired",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("apn", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("steroids are not helpful", joined)
+        self.assertIn("just tired", joined)
+        self.assertIn("search the coat", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fulminant_mg_no_harvest_tensilon(self):
+        b = analyze(
+            "dog",
+            "fulminant myasthenia, megaesophagus, Tensilon 0.2 mg/kg, send home as just GI",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("myasthenia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not harvest tensilon", joined)
+        self.assertIn("just gi", joined)
+        self.assertIn("upright feeding", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_raw_chicken_flaccid_offers_apn(self):
+        b = analyze("dog", "raw chicken, flaccid tetraparesis, Campylobacter")
+        loc = b["localization"].lower()
+        self.assertIn("apn", loc)
+        joined = " ".join(b["do_next"] + b["hard_stops"]).lower()
+        self.assertIn("raw chicken", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bunny_hop_is_not_apn(self):
+        b = analyze("dog", "polyradiculoneuritis, puppy bunny-hop, pelvic rigidity")
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertIn("protozoal", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

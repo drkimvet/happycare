@@ -293,6 +293,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("flaccid", VERIF.lower())
         self.assertIn("not commercially available in the us", VERIF.lower())
         self.assertIn("10 000 units", VERIF.lower())
+        self.assertIn("polyradiculoneuritis", VERIF.lower())
+        self.assertIn("steroids are not helpful", VERIF.lower())
+        self.assertIn("fulminant", VERIF.lower())
+        self.assertIn("0.1–0.2 mg/kg", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -405,6 +409,12 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-botul`", MACRO)
         self.assertIn("search the whole coat", MACRO.lower())
         self.assertIn("just tired", MACRO.lower())
+        self.assertIn("`ddx-apn`", MACRO)
+        self.assertIn("`dc-apn`", MACRO)
+        self.assertIn("`ddx-mg`", MACRO)
+        self.assertIn("`dc-mg`", MACRO)
+        self.assertIn("steroids are not helpful", MACRO.lower())
+        self.assertIn("just gi", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -569,6 +579,10 @@ class PublicCardInvariants(unittest.TestCase):
             "tas is not commercial in the us",
             "carrion / spoiled food",
             "flaccid, not tetanus",
+            "steroids are not helpful",
+            "fulminant mg",
+            "upright feeding",
+            "raw chicken",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

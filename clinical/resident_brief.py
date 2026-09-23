@@ -643,6 +643,28 @@ FLACCID_LMN_RE = re.compile(
     re.I,
 )
 JUST_TIRED_RE = re.compile(r"\bjust (tired|old|arthrit|weak)\b", re.I)
+# APN / coonhound. Do not use \bparalys alone (lar par). Do not use \braccoon alone.
+APN_RE = re.compile(
+    r"\bpolyradicul|"
+    r"\bcoonhound|"
+    r"\braccoon.{0,28}(paralys|bite|scratch|weak|flaccid)|"
+    r"\b(paralys|weak|flaccid).{0,28}raccoon|"
+    r"\braw chicken.{0,28}(weak|paralys|flaccid|tetra)|"
+    r"\bcampylobacter.{0,28}(weak|paralys|flaccid)",
+    re.I,
+)
+# myasthenia / myasthenic. Do not use \bmegaesophagus alone (GOLPP / many GI).
+MG_RE = re.compile(
+    r"\bmyasthen|"
+    r"\bfulminant mg\b|"
+    r"\bachr (antibody|titer|ab)\b|"
+    r"\bacetylcholine receptor|"
+    r"\btensilon|"
+    r"\bedrophonium|"
+    r"\bpyridostigmine",
+    re.I,
+)
+BUNNY_HOP_RE = re.compile(r"\bbunny[- ]hop", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2203,6 +2225,55 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for tick paralysis or botulism.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for tick paralysis or botulism.")
+
+    apn_hit = spec in {"dog", "cat"} and APN_RE.search(text)
+    mg_hit = spec in {"dog", "cat"} and MG_RE.search(text)
+    if apn_hit or mg_hit:
+        apn_loc = (
+            "Remaining flaccid LMN after the coat search. "
+            "APN vs fulminant myasthenia. Consciousness spared."
+        )
+        localization = f"{localization} Also {apn_loc}" if localization else apn_loc
+        hard_stops.append(
+            "Search the coat first. Do not send home as just tired. "
+            "Respiratory watch."
+        )
+        do_not.append(
+            "Do not harvest Tensilon or pyridostigmine mg/kg. "
+            "Do not DexSP APN. Steroids are not helpful there."
+        )
+        do_next.append(
+            "Raccoon / raw chicken / post-vax story. Megaesophagus film. "
+            "AChR antibody. Edrophonium △ Plumb if generalized."
+        )
+        sources.append(
+            "Merck inflammatory nerve / NMJ (Thomas, May 2021 / Mar 2025): "
+            "APN steroids are not helpful. MG is AChR antibody. "
+            "Plunkett ~423–425 Tensilon lines are traps."
+        )
+        if apn_hit:
+            do_next.append(
+                "Tail and bladder are often spared. Hyperesthesia is allowed. "
+                "Supportive; weeks to months."
+            )
+            hard_stops.append("Steroids are not helpful in APN.")
+        if mg_hit:
+            do_next.append(
+                "Upright feeding. Aspiration is the killer. "
+                "Anticholinesterase △ Plumb after the titer conversation."
+            )
+            hard_stops.append(
+                "Fulminant MG is flaccid plus megaesophagus. "
+                "Do not send regurg home as just GI."
+            )
+        if BUNNY_HOP_RE.search(text):
+            hard_stops.append(
+                "Puppy bunny-hop rigidity is protozoal polyradiculoneuritis, not APN."
+            )
+        if SEND_HOME_RE.search(text) or JUST_TIRED_RE.search(text):
+            hard_stops.append("Do not send APN or fulminant MG home as just tired.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for APN or MG.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (

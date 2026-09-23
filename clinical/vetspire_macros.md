@@ -90,6 +90,8 @@ Suggested names are short so they show up after three letters.
 | `ddx-tetanus` | Assessment | Tetanus / risus / sawhorse |
 | `ddx-tick` | Assessment | Tick paralysis / flaccid LMN |
 | `ddx-botul` | Assessment | Botulism / carrion / spoiled food |
+| `ddx-apn` | Assessment | APN / coonhound / raw chicken |
+| `ddx-mg` | Assessment | Myasthenia / fulminant / megaesophagus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -139,6 +141,8 @@ Suggested names are short so they show up after three letters.
 | `dc-tetanus` | Discharge | Tetanus / lockjaw going home |
 | `dc-tick` | Discharge | After tick paralysis search |
 | `dc-botul` | Discharge | Botulism / spoiled-food watch |
+| `dc-apn` | Discharge | APN / coonhound going home |
+| `dc-mg` | Discharge | Myasthenia / megaesophagus watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -898,6 +902,36 @@ DDX:
 Do not: harvest type A–E / 10 000-unit tables. Treat flaccid as tetanus. Aminoglycoside as the night antibiotic.
 Do next: search the coat anyway. Respiratory watch. Antitoxin △ Plumb if toxin may still be circulating.
 
+### `ddx-apn`
+
+Acute polyradiculoneuritis — {{patient.name}}
+Coat search [clear / tick found]. Raccoon [ ]. Raw chicken [ ]. Vaccine [1–2 wk / no]. Tail wag [ ]. Bladder [ ]. Chest [ ].
+
+DDX:
+1. APN / Coonhound (ventral roots; steroids not helpful)
+2. Tick paralysis until the coat is searched
+3. Botulism if carrion / spoiled food
+4. Fulminant MG if megaesophagus
+5. Puppy bunny-hop rigidity = protozoal PRN (other conversation)
+
+Do not: DexSP / pred as the plan. Send home as just tired. Harvest Tensilon mg. Skip the coat search.
+Do next: respiratory watch. Supportive. Weeks to months. Physical therapy conversation.
+
+### `ddx-mg`
+
+Myasthenia gravis — {{patient.name}}
+Form [focal / generalized / fulminant]. Megaesophagus [ ]. Exercise-rest [ ]. AChR drawn [ ]. Aspiration [ ].
+
+DDX:
+1. Fulminant MG if acute flaccid + megaesophagus
+2. Generalized MG if rest-improves
+3. Focal MG if face / pharynx / esophagus only
+4. Tick / botulism / APN until those are off
+5. Congenital if a young terrier (other conversation)
+
+Do not: harvest Tensilon / pyridostigmine mg. Send regurg home as just GI. DexSP-first before the titer.
+Do next: AChR antibody. Edrophonium △ Plumb if generalized. Upright feeding. Respiratory watch.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1309,6 +1343,22 @@ Return now if the legs get weaker, breathing looks hard, {{patient.pronoun}} can
 Give only the medicines we sent, as labeled. Do not feed leftover spoiled food or carrion. Soft food if swallowing is weak.
 
 Return now if the legs get weaker, breathing looks hard, {{patient.pronoun}} cannot swallow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-apn`
+
+{{patient.name}} has an immune attack on the nerve roots (polyradiculoneuritis). The legs go limp. This is not “just being tired,” and steroids are not the treatment.
+
+Keep searching the coat as shown. Soft bedding and the physical-therapy plan we showed. Give only the medicines we sent, as labeled.
+
+Return now if breathing looks hard, {{patient.pronoun}} cannot swallow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-mg`
+
+{{patient.name}} has myasthenia (the nerves cannot talk to the muscles). Food can sit in a weak esophagus and go into the lungs.
+
+Feed upright as shown. Give only the medicines we sent, as labeled. Do not add leftover steroids unless we said to.
+
+Return now if breathing looks hard, coughing after meals, or {{patient.pronoun}} cannot swallow. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

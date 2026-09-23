@@ -978,3 +978,27 @@ Book/public traps:
 - Azotemic: still no DexSP.
 
 Night rule: ascending flaccid LMN → search the coat, ask about carrion, watch the chest. Not tetanus.
+
+## 163. Acute polyradiculoneuritis vs fulminant myasthenia (Merck Thomas May 2021 / Mar 2025; Plunkett ~423–425 as traps)
+
+Plunkett indexes polyradiculoneuritis / Coonhound 423–424 and myasthenia 424–425. Public Merck inflammatory peripheral nerve / NMJ (Thomas). No chapter dump. **Do not harvest Tensilon 0.1–0.2 mg/kg, 0.25–0.5 mg/cat, pyridostigmine 1–3 mg/kg, neostigmine 0.04, or AChR nmol/L cutoffs.**
+
+Agree with Merck: both sit on the remaining flaccid-LMN list after packet 162. **Search the coat first.** Consciousness is spared.
+
+APN (acute idiopathic polyradiculoneuritis) hits ventral roots. Dogs common; cats rare. Raccoon bite/scratch 7–14 days (Coonhound). Vaccine 1–2 weeks. Raw chicken / *Campylobacter*. Short pelvic stride → 1–2 days flaccid tetra; face and larynx can weaken. **Tail, bladder, mentation, and appetite usually remain.** Pain is intact; some are hyperesthetic. Atrophy shows in 10–14 days. **There is no effective treatment other than supportive care, and corticosteroids are not helpful.** Improve by ~3 weeks; recover 2–6 months. Relapse if they keep meeting raccoons. Puppy bunny-hop + pelvic extensor rigidity is protozoal PRN (*Neospora* / *Toxoplasma*), not this.
+
+Fulminant MG is the least common acquired form: acute flaccid paralysis plus megaesophagus, then respiratory paralysis, usually fatal. Generalized MG may rest-improve; megaesophagus is common. Focal MG is face / pharynx / esophagus without limb weakness. AChR antibody is definitive. Edrophonium can make generalized weakness look better — printed mg/kg stays on the page. Book: focal and fulminant often fail that test. Anticholinesterase △ Plumb. Upright feeding. Aspiration pneumonia kills about half of megaesophagus dogs on that page.
+
+Book/public traps:
+
+- Printed Tensilon 0.1–0.2 / 0.25–0.5 mg/cat stays on the 2013 page.
+- Printed pyridostigmine / neostigmine mg/kg stays on the Merck page.
+- Do not DexSP APN. Steroids are not helpful there.
+- Do not skip the coat search and name APN.
+- Do not send regurg home as just GI if the limbs are going.
+- Do not harvest AChR nmol/L cutoffs.
+- Congenital MG is a young terrier conversation, not tonight’s fulminant adult.
+- Chronic CIDP / steroid-responsive waxing disease is not the 48-hour flaccid crash.
+- Azotemic: still no DexSP.
+
+Night rule: coat clear + raccoon / raw chicken / post-vax flaccid → APN, no steroid. Flaccid + megaesophagus → MG. Watch the chest.
