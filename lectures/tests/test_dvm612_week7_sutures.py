@@ -10,6 +10,7 @@ import unittest
 from pathlib import Path
 
 from pptx import Presentation
+from pptx.enum.shapes import MSO_SHAPE_TYPE
 from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,21 @@ FOOTER = "DVM 612  |  Dr. Yujin Kim, D.V.M., Ph.D., FFCP  |  Lewyt CVM"
 EXPECTED = 40
 MIN_PT = 12
 TITLE_PT = 30
+ASSET_DIR = ROOT / "assets" / "suture3d"
+PATTERN_ASSETS = (
+    "suture3d_simple_interrupted.png",
+    "suture3d_simple_continuous.png",
+    "suture3d_cruciate.png",
+    "suture3d_horizontal_mattress.png",
+    "suture3d_vertical_mattress.png",
+    "suture3d_near_far.png",
+    "suture3d_ford.png",
+    "suture3d_intradermal.png",
+    "suture3d_lembert.png",
+    "suture3d_cushing.png",
+    "suture3d_connell.png",
+    "suture3d_pursestring.png",
+)
 
 
 def _runs(prs):
@@ -92,6 +108,24 @@ class TestWeek7SutureLecture(unittest.TestCase):
         self.assertIn("11577", self.script)
         self.assertNotIn("Nautilus Surgical", self.blob)
         self.assertNotIn("Makers Nutrition", self.blob)
+
+    def test_original_3d_pattern_assets_exist(self):
+        missing = [name for name in PATTERN_ASSETS if not (ASSET_DIR / name).is_file()]
+        self.assertEqual(missing, [])
+        for name in PATTERN_ASSETS:
+            self.assertGreater((ASSET_DIR / name).stat().st_size, 80_000, name)
+
+    def test_pptx_embeds_pattern_pictures(self):
+        pics = [
+            sh
+            for slide in self.prs.slides
+            for sh in slide.shapes
+            if sh.shape_type == MSO_SHAPE_TYPE.PICTURE
+        ]
+        self.assertGreaterEqual(len(pics), 12)
+        self.assertIn("Original 3D teaching figure", self.blob)
+        self.assertIn("Cushing  ·  original 3D", self.blob)
+        self.assertIn("Connell  ·  original 3D", self.blob)
 
 
 if __name__ == "__main__":

@@ -42,6 +42,7 @@ MIN_PT = 12
 
 OUT_DIR = Path(__file__).resolve().parent
 PPTX = OUT_DIR / "DVM-612_Week7_Suture_Patterns_Closures.pptx"
+ASSET_DIR = OUT_DIR / "assets" / "suture3d"
 
 prs = Presentation()
 prs.slide_width = W
@@ -68,12 +69,6 @@ def add_round(slide, l, t, w, h, color):
         sh.adjustments[0] = 0.08
     except Exception:
         pass
-    return sh
-
-
-def add_line(slide, l, t, w, h, color=NAVY, weight=1.75):
-    sh = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, l, t, w, h)
-    _solid(sh, color)
     return sh
 
 
@@ -248,20 +243,31 @@ def assert_title_hygiene(presentation):
         raise SystemExit("Em dash in a title:\n" + "\n".join(bad))
 
 
-def draw_incision(slide, x, y, length=Inches(3.4)):
-    add_line(slide, x, y, length, Inches(0.04), NAVY)
+def add_pic(slide, path, l, t, w, h):
+    return slide.shapes.add_picture(str(path), l, t, w, h)
 
 
-def draw_x(slide, cx, cy, span=Inches(0.22), color=GOLD):
-    add_line(slide, cx - span / 2, cy, span, Inches(0.035), color)
-    add_line(slide, cx, cy - span / 2, Inches(0.035), span, color)
-
-
-def pattern_panel(slide, l, t, w, h, title):
+def figure_panel(slide, l, t, w, h, image_name, caption="Original 3D teaching figure"):
+    path = ASSET_DIR / image_name
+    if not path.exists():
+        raise SystemExit(f"Missing 3D figure: {path}")
     add_round(slide, l, t, w, h, WHITE)
-    add_rect(slide, l, t, w, Inches(0.42), NAVY)
-    add_text(slide, l, t, w, Inches(0.42), title, size=16, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    return l + Inches(0.25), t + Inches(0.70)
+    add_rect(slide, l, t, w, Inches(0.40), NAVY)
+    add_text(slide, l, t, w, Inches(0.40), caption, size=14, bold=True, color=GOLD, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    box_w = w - Inches(0.28)
+    box_h = h - Inches(0.64)
+    bw = float(box_w) / 914400.0
+    bh = float(box_h) / 914400.0
+    aspect = 4 / 3
+    if bw / bh > aspect:
+        pic_h = box_h
+        pic_w = Inches(bh * aspect)
+    else:
+        pic_w = box_w
+        pic_h = Inches(bw / aspect)
+    pic_l = l + Inches(0.14) + (box_w - pic_w) / 2
+    pic_t = t + Inches(0.50) + (box_h - pic_h) / 2
+    add_pic(slide, path, pic_l, pic_t, pic_w, pic_h)
 
 
 # =============================================================================
@@ -480,87 +486,64 @@ for i, (a, b, c, d) in enumerate(rows):
 notes(s, "This is the map, not the recipe. Names only. Confirm construction in Fossum and in lab.")
 
 s = new_content("Simple interrupted")
-px, py = pattern_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "Schematic  ·  original")
-draw_incision(s, px, py + Inches(1.15))
-for i in range(4):
-    x = px + Inches(0.35) + Inches(i * 0.80)
-    draw_x(s, x, py + Inches(1.17))
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_simple_interrupted.png")
 card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. The teaching default for skin.\n\nYou can change tension stitch by stitch. One failed stitch is not a dehiscence.\n\nNot a tension suture. If the edges gape, fix the tension.\n\nLeave room for swelling in dogs and cats.\n\nConfirm bite spacing in Fossum or the lab. Do not invent millimeters.", accent=GOLD)
-notes(s, "WCVM: interrupted, appositional, normal tension. Minimal blood-supply hit unless overtightened.")
+notes(s, "WCVM: interrupted, appositional, normal tension. Minimal blood-supply hit unless overtightened. The figure is original 3D teaching art, not a Fossum plate.")
 
 s = new_content("Simple continuous")
-px, py = pattern_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "Schematic  ·  original")
-draw_incision(s, px, py + Inches(1.15))
-add_line(s, px + Inches(0.20), py + Inches(1.00), Inches(3.10), Inches(0.06), GOLD)
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_simple_continuous.png")
 card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Continuous. Appositional. Faster. Better seal. Less foreign material.\n\nThe whole line fails if a knot or the strand fails.\n\nAdjust after each bite. Do not crush the suture with instruments.\n\nA long clean subcutis or a hollow-organ first layer is a common home. Skin on a swelling patient is not the automatic home.\n\nConfirm construction in Fossum.", accent=NAVY)
-notes(s, "Exam trap: one knot failure opens the line.")
+notes(s, "Exam trap: one knot failure opens the line. Original 3D figure.")
 
 s = new_content("Cruciate")
-px, py = pattern_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "Schematic  ·  original")
-draw_incision(s, px, py + Inches(1.20))
-draw_x(s, px + Inches(1.10), py + Inches(1.22), span=Inches(0.55))
-draw_x(s, px + Inches(2.20), py + Inches(1.22), span=Inches(0.55))
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_cruciate.png")
 card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. A tension suture (WCVM).\n\nTwo simple interrupted bites share one knot, so the X sits over the incision.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.\n\nLeave the loop loose enough for swelling.\n\nUseful on some skin closures when you want fewer knots than a row of simples.", accent=GOLD)
-notes(s, "Students love this one. Make them leave it loose.")
+notes(s, "Students love this one. Make them leave it loose. Original 3D figure.")
 
 s = new_content("Horizontal mattress")
-card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(5.60), "Construction", "Interrupted. Appositional to everting, depending on how hard you pull (WCVM).\n\nThe second bite is parallel to the first. Tension sits lateral to the wound (Merck Professional mattress pages).\n\nMajor blood-supply cost if overtightened.\n\nUseful when you need to spread load. Dangerous on thin or already ischemic skin.", accent=GOLD)
-card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(5.60), "Do not", "Do not use it to hide a closure that needed undermining.\n\nDo not bury the edge until it blanches.\n\nStents or bolsters are a hospital conversation, not a homemade table.\n\nConfirm bite geometry in Fossum or the lab.", accent=RED)
-notes(s, "Merck: mattress transfers tension off the edge. WCVM: major ischemia if tight.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_horizontal_mattress.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "Construction", "Interrupted. Appositional to everting, depending on how hard you pull (WCVM).\n\nThe second bite is parallel to the first. Tension sits lateral to the wound (Merck).\n\nMajor blood-supply cost if overtightened.", accent=GOLD)
+card(s, Inches(6.30), Inches(4.05), Inches(6.55), Inches(2.75), "Do not", "Do not use it to hide a closure that needed undermining.\n\nDo not bury the edge until it blanches.\n\nConfirm bite geometry in Fossum or the lab. Do not invent millimeters.", accent=RED)
+notes(s, "Merck: mattress transfers tension off the edge. WCVM: major ischemia if tight. Original 3D figure.")
 
 s = new_content("Vertical mattress")
-card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(5.60), "Far-far, then near-near", "Interrupted. Everting. A tension suture (WCVM).\n\nMerck Professional: one wide-deep loop, then one narrow-shallow loop. Far-far, then near-near.\n\nAligns deep and superficial tissue in one stitch.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.", accent=GOLD)
-card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(5.60), "Do not", "Do not place the near-near first. The shallow loop can cut the skin.\n\nDo not treat eversion as a cosmetic win on dog or cat skin.\n\nCross-hatching and ischemia are the published costs (Merck).\n\nConfirm distances in Fossum or the lab. Do not invent millimeters.", accent=RED)
-notes(s, "Say far-far near-near twice. That is the exam phrase.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_vertical_mattress.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "Far-far, then near-near", "Interrupted. Everting. A tension suture (WCVM).\n\nMerck Professional: one wide-deep loop, then one narrow-shallow loop. Far-far, then near-near.\n\nAligns deep and superficial tissue in one stitch.", accent=GOLD)
+card(s, Inches(6.30), Inches(4.05), Inches(6.55), Inches(2.75), "Do not", "Do not place the near-near first. The shallow loop can cut the skin.\n\nDo not treat eversion as a cosmetic win on dog or cat skin.\n\nConfirm distances in Fossum or the lab. Do not invent millimeters.", accent=RED)
+notes(s, "Say far-far near-near twice. That is the exam phrase. Original 3D figure: surface bars on each side of the cut.")
 
 s = new_content("Near and far patterns")
-add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(5.4), [
-    "Interrupted. Appositional. A tension suture (WCVM).",
-    "The far bite takes the load. The near bite apposes the edge.",
-    "The name is the order of the bites: near-far-far-near, or far-near-near-far.",
-    "Less blood-supply cost than a horizontal mattress, more than a simple interrupted.",
-    "Use when you need both tension relief and edge-to-edge skin. Still fix the real tension first.",
-], size=20, spacing=12)
-notes(s, "Do not spend five minutes on the order variants. Name the idea.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_near_far.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. A tension suture (WCVM).\n\nThe far bite takes the load. The near bite apposes the edge.\n\nThe name is the order of the bites: near-far-far-near, or far-near-near-far.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.\n\nStill fix the real tension first.", accent=GOLD)
+notes(s, "Do not spend five minutes on the order variants. Name the idea. Original 3D figure.")
 
 s = new_content("Ford interlocking")
-add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(5.4), [
-    "Continuous. Appositional. Blood-supply cost similar to simple continuous (WCVM).",
-    "Each bite locks. You still have one strand, so one cut can still fail the line.",
-    "Adjust tension with each bite. It is hard to fix at the end.",
-    "Finish by making a loop and tying, or by a bite through intact skin off the incision (WCVM options A and B).",
-    "A compromise between interrupted security and continuous speed. Not a reason to skip undermining.",
-], size=20, spacing=12)
-notes(s, "Field and large-animal students will see this again in Week 13. Same three questions.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_ford.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Continuous. Appositional. Blood-supply cost similar to simple continuous (WCVM).\n\nEach bite locks. You still have one strand, so one cut can still fail the line.\n\nAdjust tension with each bite. It is hard to fix at the end.\n\nFinish by making a loop and tying, or by a bite through intact skin off the incision (WCVM options A and B).\n\nNot a reason to skip undermining.", accent=NAVY)
+notes(s, "Field and large-animal students will see this again in Week 13. Same three questions. Original 3D figure.")
 
 s = new_content("Intradermal or subcuticular")
-card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(5.60), "What it is", "Continuous. Appositional. Bites live in the dermis, as close to the surface as you can place them without exiting skin (WCVM).\n\nSuccessive bites backtrack. Buried knots at both ends.\n\nMinimal impact on skin blood supply if you do not strangulate.", accent=GOLD)
-card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(5.60), "What it is not", "It is not a substitute for a dead-space layer.\n\nIt is not a reason to skip an E-collar conversation.\n\nForceps crushing the dermis leaves a bruise. WCVM: stabilize with thumb and finger, palm the forceps.\n\nBurying the knot is a lab skill (WCVM Part 5). Week 8 owns the knot.", accent=NAVY)
-notes(s, "Students will want this on every spay. Make them earn a quiet dermis first.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_intradermal.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "What it is", "Continuous. Appositional. Bites live in the dermis, as close to the surface as you can place them without exiting skin (WCVM).\n\nSuccessive bites backtrack. Buried knots at both ends.", accent=GOLD)
+card(s, Inches(6.30), Inches(4.05), Inches(6.55), Inches(2.75), "What it is not", "Not a substitute for a dead-space layer. Not a reason to skip an E-collar conversation.\n\nBurying the knot is a lab skill (WCVM Part 5). Week 8 owns the knot.", accent=NAVY)
+notes(s, "Students will want this on every spay. Make them earn a quiet dermis first. Original 3D cutaway.")
 
 s = new_content("Lembert")
-add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(5.4), [
-    "Usually continuous. Inverting. Bites run perpendicular to the incision: transverse Lembert (WCVM).",
-    "On a hollow organ: serosa, muscularis, and submucosa. Not through mucosa.",
-    "Farther from the edge means more inversion and a smaller lumen.",
-    "More blood-supply cost than a simple continuous.",
-    "Confirm the organ and the lumen size before you invert. A small-intestine lumen is not a stomach lumen.",
-], size=20, spacing=12)
-notes(s, "Do not invent a GI size table. Name layers: no mucosa.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_lembert.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Usually continuous. Inverting. Bites run perpendicular to the incision: transverse Lembert (WCVM).\n\nOn a hollow organ: serosa, muscularis, and submucosa. Not through mucosa.\n\nFarther from the edge means more inversion and a smaller lumen.\n\nMore blood-supply cost than a simple continuous.\n\nConfirm the organ and the lumen size before you invert.", accent=GOLD)
+notes(s, "Do not invent a GI size table. Name layers: no mucosa. Original 3D viscus figure.")
 
 s = new_content("Cushing versus Connell")
-card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(5.60), "Cushing  (no L)", "Continuous. Inverting. Bites run parallel to the incision.\n\nDoes not enter the lumen. Serosa, muscularis, submucosa only (WCVM).\n\nMemory: Cushing does not go in.", accent=GOLD)
-card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(5.60), "Connell  (has L)", "Continuous. Inverting. Bites also run parallel.\n\nDoes enter the lumen (WCVM).\n\nMemory: Connell goes into the lumen. The extra letter is the extra depth.\n\nMore contamination risk. Confirm in Fossum when this is the first layer versus an oversew.", accent=NAVY)
-notes(s, "This is the highest-yield viscus pair. Repeat the mnemonic once. Do not invent which organ prefers which.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(6.15), Inches(3.05), "suture3d_cushing.png", caption="Cushing  ·  original 3D")
+figure_panel(s, Inches(6.75), Inches(1.15), Inches(6.10), Inches(3.05), "suture3d_connell.png", caption="Connell  ·  original 3D")
+card(s, Inches(0.40), Inches(4.32), Inches(6.15), Inches(2.48), "Cushing  (no L)", "Continuous. Inverting. Parallel bites. Does not enter the lumen. Serosa, muscularis, submucosa only (WCVM). Memory: Cushing does not go in.", accent=GOLD)
+card(s, Inches(6.75), Inches(4.32), Inches(6.10), Inches(2.48), "Connell  (has L)", "Continuous. Inverting. Parallel bites. Does enter the lumen (WCVM). Memory: Connell goes into the lumen. The extra letter is the extra depth.", accent=NAVY)
+notes(s, "This is the highest-yield viscus pair. Repeat the mnemonic once. Connell figure shows full-thickness bites into the lumen. Do not invent which organ prefers which.")
 
 s = new_content("Purse-string and other named closures")
-add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(5.4), [
-    "A purse-string is a circular continuous bite that cinches an opening. Name it. Confirm the organ and the material in Fossum or the lab.",
-    "Parker-Kerr and other oversew names live in the textbook. Do not fake a construction on the board.",
-    "Staples and glue are hospital tools, not this hour’s pattern list.",
-    "If you cannot draw the path of the needle, you do not know the pattern yet.",
-], size=20, spacing=12)
-notes(s, "Do not perform a purse-string demo with invented bite counts.")
+figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_pursestring.png")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "A purse-string is a circular continuous bite that cinches an opening. Name it. Confirm the organ and the material in Fossum or the lab.\n\nParker-Kerr and other oversew names live in the textbook. Do not fake a construction on the board.\n\nStaples and glue are hospital tools, not this hour’s pattern list.\n\nIf you cannot draw the path of the needle, you do not know the pattern yet.", accent=GOLD)
+notes(s, "Do not perform a purse-string demo with invented bite counts. Original 3D figure.")
 
 s = new_section("Part 4", "Layered closure", "Like tissue to like tissue. Then check the mistakes.", "10 minutes")
 notes(s, "Closure block.")
@@ -710,6 +693,8 @@ script_lines = [
     "Makers Nutrition (71 Mall Drive, Commack, NY 11725) is a private-label supplement manufacturer, about 25 miles east of Roslyn Heights 11577. Not a suture trainer.",
     "Named veterinary multilayer pads on the open web include Vetiqo and SurgiReal. Prices stay on those catalogs.",
     "Do not put a vendor quote on the student deck.",
+    "",
+    "FIGURES: original 3D teaching stills in lectures/assets/suture3d/. Not Fossum plates. Not WCVM photos.",
     "",
 ]
 for i, slide in enumerate(prs.slides, 1):

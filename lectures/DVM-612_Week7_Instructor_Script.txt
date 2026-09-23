@@ -13,6 +13,8 @@ Makers Nutrition (71 Mall Drive, Commack, NY 11725) is a private-label supplemen
 Named veterinary multilayer pads on the open web include Vetiqo and SurgiReal. Prices stay on those catalogs.
 Do not put a vendor quote on the student deck.
 
+FIGURES: original 3D teaching stills in lectures/assets/suture3d/. Not Fossum plates. Not WCVM photos.
+
 SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
     SPEAK: Welcome. This is Week 7 of the public DVM 612 outline: suture patterns and surgical closure. Fifty minutes. Forty slides. Do not dump a Fossum size table. Do not teach milligrams. Week 8 is materials and knots. If time is short, protect interrupted versus continuous, appose versus invert, simple interrupted, vertical mattress far-far near-near, Cushing versus Connell, and layered closure.
 
@@ -68,37 +70,37 @@ SLIDE 18. Pattern map
     SPEAK: This is the map, not the recipe. Names only. Confirm construction in Fossum and in lab.
 
 SLIDE 19. Simple interrupted
-    SPEAK: WCVM: interrupted, appositional, normal tension. Minimal blood-supply hit unless overtightened.
+    SPEAK: WCVM: interrupted, appositional, normal tension. Minimal blood-supply hit unless overtightened. The figure is original 3D teaching art, not a Fossum plate.
 
 SLIDE 20. Simple continuous
-    SPEAK: Exam trap: one knot failure opens the line.
+    SPEAK: Exam trap: one knot failure opens the line. Original 3D figure.
 
 SLIDE 21. Cruciate
-    SPEAK: Students love this one. Make them leave it loose.
+    SPEAK: Students love this one. Make them leave it loose. Original 3D figure.
 
 SLIDE 22. Horizontal mattress
-    SPEAK: Merck: mattress transfers tension off the edge. WCVM: major ischemia if tight.
+    SPEAK: Merck: mattress transfers tension off the edge. WCVM: major ischemia if tight. Original 3D figure.
 
 SLIDE 23. Vertical mattress
-    SPEAK: Say far-far near-near twice. That is the exam phrase.
+    SPEAK: Say far-far near-near twice. That is the exam phrase. Original 3D figure: surface bars on each side of the cut.
 
 SLIDE 24. Near and far patterns
-    SPEAK: Do not spend five minutes on the order variants. Name the idea.
+    SPEAK: Do not spend five minutes on the order variants. Name the idea. Original 3D figure.
 
 SLIDE 25. Ford interlocking
-    SPEAK: Field and large-animal students will see this again in Week 13. Same three questions.
+    SPEAK: Field and large-animal students will see this again in Week 13. Same three questions. Original 3D figure.
 
 SLIDE 26. Intradermal or subcuticular
-    SPEAK: Students will want this on every spay. Make them earn a quiet dermis first.
+    SPEAK: Students will want this on every spay. Make them earn a quiet dermis first. Original 3D cutaway.
 
 SLIDE 27. Lembert
-    SPEAK: Do not invent a GI size table. Name layers: no mucosa.
+    SPEAK: Do not invent a GI size table. Name layers: no mucosa. Original 3D viscus figure.
 
 SLIDE 28. Cushing versus Connell
-    SPEAK: This is the highest-yield viscus pair. Repeat the mnemonic once. Do not invent which organ prefers which.
+    SPEAK: This is the highest-yield viscus pair. Repeat the mnemonic once. Connell figure shows full-thickness bites into the lumen. Do not invent which organ prefers which.
 
 SLIDE 29. Purse-string and other named closures
-    SPEAK: Do not perform a purse-string demo with invented bite counts.
+    SPEAK: Do not perform a purse-string demo with invented bite counts. Original 3D figure.
 
 SLIDE 30. PART 4
     SPEAK: Closure block.
