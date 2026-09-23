@@ -556,6 +556,25 @@ CARNASSIAL_RE = re.compile(
     re.I,
 )
 NYLON_FLUSH_RE = re.compile(r"\b2-0 nylon|\bflush every 3", re.I)
+# orbital cellulitis. Do not use \bexophthal alone on proptosis without orbit words
+# if the one-liner is only "eye out" — PROPTOSIS_RE already owns that.
+ORBIT_RE = re.compile(
+    r"\borbital cellul|"
+    r"\bretrobulbar|"
+    r"\borbital abscess|"
+    r"\bexophthal|"
+    r"\bzygomatic sial|"
+    r"\bbehind the last (upper )?molar|"
+    r"\bpain (on |with )?open(ing)? the mouth.{0,28}\b(eye|orbit|globe|exophthal)|"
+    r"\b(eye|orbit|globe|exophthal).{0,28}pain (on |with )?open(ing)? the mouth",
+    re.I,
+)
+LAST_MOLAR_RE = re.compile(r"\b(last (upper )?molar|behind the molar)", re.I)
+PAINLESS_EXOPH_RE = re.compile(
+    r"\b(painless|no pain).{0,24}(open(ing)? the mouth|exophthal)|"
+    r"\b(open(ing)? the mouth|exophthal).{0,24}(painless|no pain)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1930,6 +1949,56 @@ def analyze(
             )
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for dacryocystitis.")
+
+    if spec in {"dog", "cat"} and ORBIT_RE.search(text):
+        or_loc = (
+            "Orbital cellulitis / retrobulbar abscess: "
+            "pain on opening the mouth plus unilateral exophthalmos. "
+            "Not conjunctivitis. Not proptosis. Lubricate the lagophthalmos."
+        )
+        localization = f"{localization} Also {or_loc}" if localization else or_loc
+        hard_stops.append(
+            "Do not send orbital cellulitis home as conjunctivitis. "
+            "Lubricate now. Look behind the last molar and at the tooth roots. "
+            "Do not drain in the lobby without a hospital protocol."
+        )
+        do_not.append(
+            "Do not harvest a 4–8 week antibiotic table. "
+            "Painless exophthalmos is hemorrhage or neoplasia until imaged."
+        )
+        do_next.append(
+            "Stain. Systemic antimicrobial △ Plumb. "
+            "If the last molar is swollen, drain △ hospital and culture. "
+            "Relapse: image teeth, sinuses, nose."
+        )
+        sources.append(
+            "Merck orbit (Hamor): pain opening the mouth; drain behind the last molar "
+            "if that swell is there. No dedicated Plunkett SA orbital chapter."
+        )
+        if SEND_HOME_RE.search(text) and CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send orbital cellulitis home as conjunctivitis."
+            )
+        if LAST_MOLAR_RE.search(text) and re.search(
+            r"\b(lobby|just drain|poke|stab)\b", text, re.I
+        ):
+            hard_stops.append(
+                "Do not drain behind the last molar in the lobby without a protocol."
+            )
+        if PAINLESS_EXOPH_RE.search(text):
+            hard_stops.append(
+                "Painless exophthalmos is not default cellulitis. "
+                "Name hemorrhage or neoplasia and image."
+            )
+        if CARNASSIAL_RE.search(text) or re.search(r"\btooth root\b", text, re.I):
+            do_next.append("Tooth-root abscess can erode into the orbit.")
+        if PROPTOSIS_RE.search(text):
+            hard_stops.append(
+                "If the lids are behind the globe, that is proptosis (packet 140), "
+                "not orbital cellulitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for orbital cellulitis.")
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):
         an_loc = (

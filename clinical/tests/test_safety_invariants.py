@@ -276,6 +276,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("carnassial", VERIF.lower())
         self.assertIn("jones test", VERIF.lower())
         self.assertIn("2–0 nylon", VERIF.lower())
+        self.assertIn("orbital cellulitis", VERIF.lower())
+        self.assertIn("pain on opening the mouth", VERIF.lower())
+        self.assertIn("last molar", VERIF.lower())
+        self.assertIn("not proptosis", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -371,6 +375,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not: excise it", MACRO.lower())
         self.assertIn("`ddx-dacryo`", MACRO)
         self.assertIn("`dc-dacryo`", MACRO)
+        self.assertIn("do not: send home as conjunctivitis", MACRO.lower())
+        self.assertIn("`ddx-orbit`", MACRO)
+        self.assertIn("`dc-orbit`", MACRO)
         self.assertIn("do not: send home as conjunctivitis", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())

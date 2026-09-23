@@ -1264,6 +1264,33 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("do not flush a melting", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_orbital_cellulitis_not_conjunctivitis_lubricate(self):
+        b = analyze(
+            "dog",
+            "orbital cellulitis, pain opening the mouth, exophthalmos, send home as conjunctivitis",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("pain on opening the mouth", loc)
+        self.assertIn("not conjunctivitis", loc)
+        self.assertIn("not proptosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("lubricate", joined)
+        self.assertIn("last molar", joined)
+        self.assertIn("do not send orbital cellulitis home as conjunctivitis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_painless_exophthalmos_not_default_cellulitis(self):
+        b = analyze(
+            "dog",
+            "retrobulbar mass, painless exophthalmos, no pain opening the mouth",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("exophthalmos", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("painless exophthalmos is not default cellulitis", joined)
+        self.assertIn("neoplasia", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

@@ -85,6 +85,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-kcs` | Assessment | KCS / dry eye / STT |
 | `ddx-cherry` | Assessment | Cherry eye / nictitans gland |
 | `ddx-dacryo` | Assessment | Dacryocystitis / NLD obstruction |
+| `ddx-orbit` | Assessment | Orbital cellulitis / retrobulbar |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -129,6 +130,7 @@ Suggested names are short so they show up after three letters.
 | `dc-kcs` | Discharge | KCS / dry eye going home |
 | `dc-cherry` | Discharge | Cherry eye / gland replacement |
 | `dc-dacryo` | Discharge | After NL flush / dacryocystitis |
+| `dc-orbit` | Discharge | Orbital cellulitis / abscess |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -817,6 +819,20 @@ DDX:
 Do not: send home as conjunctivitis. Skip the tooth. Harvest 2–0 nylon or a rabbit flush calendar. Flush a melting globe.
 Do next: stain. Jones test. Flush △ hospital. Culture reflux. Image if flush fails.
 
+### `ddx-orbit`
+
+Orbital cellulitis — {{patient.name}}
+Pain opening mouth [ ]. Exophthalmos [uni / bi]. Last molar swell [ ]. Tooth roots [ ]. Stain / blink [ ].
+
+DDX:
+1. Orbital cellulitis / retrobulbar abscess (painful mouth)
+2. Tooth-root / grass awn / zygomatic sialadenitis
+3. Hemorrhage or neoplasia if the mouth is painless
+4. Proptosis if the lids are behind the globe (other list)
+
+Do not: send home as conjunctivitis. Call it proptosis. Drain in the lobby without a protocol. Harvest a 4–8 week antibiotic table.
+Do next: lubricate. Systemic antimicrobial △ Plumb. Drain behind the last molar if swollen △ hospital. Image if it relapses.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1188,6 +1204,14 @@ Surgery to replace the gland was recommended if we discussed it. Return now if t
 Give only the eye medicines we sent, as labeled. Keep the face clean as shown. A tooth problem can look the same — return if we asked for dental follow-up.
 
 Return now if the inner corner swells, a hole drains, the eye becomes painful, or {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-orbit`
+
+{{patient.name}} has infection or swelling behind the eye (orbital cellulitis). The eye is pushed forward. This is not ordinary conjunctivitis, and it is not the same as an eye that popped out of the lids.
+
+Give only the medicines we sent, as labeled. Keep the eye wet with the lubricant we sent. Soft food may be easier if opening the mouth hurts.
+
+Return now if {{patient.pronoun}} cannot blink, the eye looks dry or cloudy, the face swells, or {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

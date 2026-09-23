@@ -896,3 +896,22 @@ Book/public traps:
 - Horse dacryocystitis exists on the same page; Midtown is still SA only.
 
 Night rule: medial canthus swell / epiphora / refractory conjunctivitis → dacryocystitis until flushed. Check the tooth.
+
+## 159. Orbital cellulitis / retrobulbar abscess (Merck Hamor orbit; no dedicated Plunkett SA chapter)
+
+No orbital-cellulitis heading in the owned SA EM splits. Public Merck orbit (Hamor, Feb 2023 / Jul 2026). Rabbit retrobulbar lines sit in dropped 641–739 — not a work item. No chapter dump. **Do not harvest a behind-the-molar drain recipe, a 4–8 week antibiotic table, or a tarsorrhaphy suture size.**
+
+Agree with Merck: orbital cellulitis is acute pain on opening the mouth, eyelid swelling, unilateral nictitans prolapse, exophthalmos, and conjunctivitis. Lagophthalmos can ulcer the cornea. Tooth-root abscesses may erode into the orbit. Grass awns and zygomatic sialadenitis sit on the list. Orbital hemorrhage and neoplasia can mimic cellulitis but **usually do not hurt when the mouth opens**. Acute medical plan: systemic broad-spectrum antimicrobial and systemic anti-inflammatory △ Plumb / kidneys. Swelling behind the last molar → drainage indicated. Lubricate; warm compress; temporary tarsorrhaphy if exposure keratitis. Relapse → image the teeth, sinuses, and nasal cavity.
+
+Book/public traps:
+
+- No Plunkett SA orbital-cellulitis chapter — do not ask for one.
+- This is **exophthalmos**, not proptosis (packet 140: lids trapped behind the globe).
+- Do not send home as conjunctivitis.
+- Do not skip the last molar and the tooth roots.
+- Do not drain in the lobby without a hospital protocol / culture.
+- Painless chronic exophthalmos is the neoplasia conversation, not a 14-day Convenia default.
+- Do not harvest 4–8 week or UF-lecture antibiotic schedules.
+- Azotemic: still no DexSP, still no NSAID.
+
+Night rule: pain opening the mouth + unilateral exophthalmos → orbit. Lubricate. Look behind the last molar. Not conjunctivitis. Not proptosis.
