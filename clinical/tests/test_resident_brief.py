@@ -1445,6 +1445,53 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("protozoal", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_trigem_dropped_jaw_cannot_close_not_mmm(self):
+        b = analyze(
+            "dog",
+            "dropped jaw, cannot close the mouth, pry the jaw, send home as picky",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cannot close", loc)
+        self.assertIn("not masticatory", loc)
+        self.assertNotIn("type 2m", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not pry the jaw", joined)
+        self.assertIn("picky", joined)
+        self.assertIn("3–4 weeks", joined)
+        self.assertIn("fluids", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cannot_open_is_still_mmm_not_trigem(self):
+        b = analyze(
+            "dog",
+            "masticatory myositis, cannot open the jaw, temporalis swollen, limbs normal",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("type 2m", loc)
+        self.assertNotIn("trigeminal neuritis", loc)
+        self.assertNotIn("cannot close", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_trigem_cat_uncommon_no_harvest_steroid(self):
+        b = analyze(
+            "cat",
+            "trigeminal neuritis, dropped jaw, steroid table, DexSP, AKI",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("trigeminal", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("uncommon", joined)
+        self.assertIn("do not harvest a steroid table", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ophthalmic_trigeminal_nerve_is_not_dropped_jaw(self):
+        b = analyze("dog", "ophthalmic branch of the trigeminal nerve, corneal ulcer")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("trigeminal neuritis", loc)
+        self.assertNotIn("cannot close", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

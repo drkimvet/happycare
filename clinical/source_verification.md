@@ -1002,3 +1002,25 @@ Book/public traps:
 - Azotemic: still no DexSP.
 
 Night rule: coat clear + raccoon / raw chicken / post-vax flaccid → APN, no steroid. Flaccid + megaesophagus → MG. Watch the chest.
+
+## 164. Trigeminal neuritis / dropped jaw (Merck Thomas May 2021 / Mar 2025; no dedicated Plunkett chapter)
+
+No dedicated trigeminal-neuritis heading in the owned SA EM splits. Public Merck inflammatory peripheral nerve / NMJ (Thomas) — same page as packet 163. Plunkett names trigeminal neuropathy only on a rabies / CN DDX line (~201–300 split). No chapter dump. **Do not harvest a steroid table.**
+
+Agree with Merck: idiopathic trigeminal neuropathy is **common in dogs and uncommon in cats**. Acute flaccid jaw paralysis. **They cannot close the mouth** and have difficulty eating and drinking. Horner syndrome, facial paresis, and decreased facial sensation are also possible. Cause unknown. Histopathology is bilateral nonsuppurative inflammation and demyelination in the motor branches of CN V. **Usually recover spontaneously within 3–4 weeks.** Fluid therapy and nutritional support may be necessary.
+
+This is the opposite of packet 160 (cannot **open**, temporalis / 2M) and of packet 161 (spastic lockjaw). Do not force the jaw shut or open.
+
+Book/public traps:
+
+- No dedicated Plunkett trigeminal chapter — do not ask for one.
+- Printed steroid mg/kg on other nerve pages stay there. Powell JAAHA 2002 (29 dogs): corticosteroids did not change the course; lymphoma / *Neospora* were rare necropsy diagnoses — not a night steroid table.
+- **Do not send home as picky.**
+- **Do not pry the jaw.**
+- Trauma → TMJ luxation / mandibular fracture first.
+- Unvaccinated / endemic / other neuro → rabies stays on the list (book DDX names trigeminal neuropathy next to rabies). Do not invent a rabies table.
+- Isolated Horner + facial without a dropped jaw is still the ear (packet vestibular), not this.
+- Cats uncommon; do not default a cat dropped jaw to “it will be fine in three weeks” without imaging if other neuro is present.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot close / dropped jaw → trigeminal. Feed. Fluids. Not MMM. Not picky.

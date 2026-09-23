@@ -297,6 +297,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("steroids are not helpful", VERIF.lower())
         self.assertIn("fulminant", VERIF.lower())
         self.assertIn("0.1–0.2 mg/kg", VERIF.lower())
+        self.assertIn("trigeminal", VERIF.lower())
+        self.assertIn("cannot close", VERIF.lower())
+        self.assertIn("3–4 weeks", VERIF.lower())
+        self.assertIn("do not harvest a steroid table", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -415,6 +419,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-mg`", MACRO)
         self.assertIn("steroids are not helpful", MACRO.lower())
         self.assertIn("just gi", MACRO.lower())
+        self.assertIn("`ddx-trigem`", MACRO)
+        self.assertIn("`dc-trigem`", MACRO)
+        self.assertIn("cannot close", MACRO.lower())
+        self.assertIn("send home as picky", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

@@ -665,6 +665,19 @@ MG_RE = re.compile(
     re.I,
 )
 BUNNY_HOP_RE = re.compile(r"\bbunny[- ]hop", re.I)
+# trigeminal neuritis / idiopathic trigeminal neuropathy.
+# Do not use \btrigeminal alone (ophthalmic CN V on eye pages).
+# Do not use \bhorner alone (ear / vestibular). Do not use \bparalys alone.
+TRIGEM_RE = re.compile(
+    r"\btrigeminal (neurit|neuropath)|"
+    r"\bdropped jaw|"
+    r"\bcannot close (the )?(mouth|jaw)|"
+    r"\bcan'?t close (the )?(mouth|jaw)|"
+    r"\bunable to close (the )?(mouth|jaw)|"
+    r"\bflaccid jaw|"
+    r"\bjaw paralysis",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2092,6 +2105,7 @@ def analyze(
 
     tetanus_hit = spec in {"dog", "cat"} and TETANUS_RE.search(text)
     mmm_hit = spec in {"dog", "cat"} and MMM_RE.search(text)
+    trigem_hit = spec in {"dog", "cat"} and TRIGEM_RE.search(text)
 
     if tetanus_hit:
         te_loc = (
@@ -2137,7 +2151,7 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for tetanus.")
 
-    if mmm_hit and not tetanus_hit:
+    if mmm_hit and not tetanus_hit and not trigem_hit:
         mm_loc = (
             "Masticatory myositis: type 2M fibers (temporalis / masseter). "
             "Limbs spared. Cannot open the jaw. Draw 2M antibody before steroids."
@@ -2173,12 +2187,62 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for MMM.")
 
+    if trigem_hit:
+        tr_loc = (
+            "Trigeminal neuritis: flaccid jaw, cannot close. "
+            "Not masticatory myositis (cannot open). "
+            "Horner / facial / decreased sensation allowed."
+        )
+        localization = f"{localization} Also {tr_loc}" if localization else tr_loc
+        hard_stops.append(
+            "Fluids and nutrition. Do not pry the jaw. "
+            "Do not send home as picky. "
+            "Recovery is usually spontaneous in 3–4 weeks."
+        )
+        do_not.append(
+            "Do not harvest a steroid table. "
+            "Cannot open the jaw is masticatory myositis. "
+            "Do not call isolated dropped jaw tick paralysis."
+        )
+        do_next.append(
+            "Soft food or a feeding tube. Check TMJ / fracture if trauma. "
+            "Rabies stays on the list if unvaccinated or endemic."
+        )
+        sources.append(
+            "Merck inflammatory nerve / NMJ (Thomas, May 2021 / Mar 2025): "
+            "idiopathic trigeminal neuropathy common in dogs, uncommon in cats; "
+            "cannot close; recover 3–4 weeks. No dedicated Plunkett chapter."
+        )
+        if PRY_JAW_RE.search(text):
+            hard_stops.append("Do not pry the jaw. Feed; do not force it shut.")
+        if SEND_HOME_RE.search(text) and re.search(
+            r"\b(picky|just dental|fine at home)\b", text, re.I
+        ):
+            hard_stops.append("Do not send trigeminal neuritis home as picky.")
+        if spec == "cat":
+            do_next.append(
+                "Cat trigeminal neuritis is uncommon; image if they do not recover "
+                "or other neuro is present."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for trigeminal neuritis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for trigeminal neuritis.")
+
+    isolated_trigem = bool(
+        trigem_hit
+        and not TICK_PARALYSIS_RE.search(text)
+        and not BOTULISM_RE.search(text)
+        and not APN_RE.search(text)
+        and not MG_RE.search(text)
+        and not re.search(r"\b(tetra|ascend|hindlimb|pelvic limb|quad)\b", text, re.I)
+    )
     flaccid_hit = spec in {"dog", "cat"} and (
         TICK_PARALYSIS_RE.search(text)
         or BOTULISM_RE.search(text)
         or FLACCID_LMN_RE.search(text)
     )
-    if flaccid_hit:
+    if flaccid_hit and not isolated_trigem:
         fl_loc = (
             "Flaccid ascending LMN, not tetanus. "
             "Tick paralysis vs botulism. Consciousness spared. Search the whole coat."

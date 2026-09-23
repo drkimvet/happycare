@@ -92,6 +92,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-botul` | Assessment | Botulism / carrion / spoiled food |
 | `ddx-apn` | Assessment | APN / coonhound / raw chicken |
 | `ddx-mg` | Assessment | Myasthenia / fulminant / megaesophagus |
+| `ddx-trigem` | Assessment | Trigeminal neuritis / dropped jaw |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -143,6 +144,7 @@ Suggested names are short so they show up after three letters.
 | `dc-botul` | Discharge | Botulism / spoiled-food watch |
 | `dc-apn` | Discharge | APN / coonhound going home |
 | `dc-mg` | Discharge | Myasthenia / megaesophagus watch |
+| `dc-trigem` | Discharge | Trigeminal neuritis / cannot close |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -855,6 +857,7 @@ DDX:
 2. Orbital cellulitis if one globe + last-molar swell (other list)
 3. Tetanus if risus / sawhorse / generalized spasm
 4. Polymyositis if the limbs are involved (2M negative)
+5. Trigeminal neuritis if cannot close / dropped jaw (other list)
 
 Do not: pry the jaw open. Steroid before the titer. Send home as picky. Harvest the printed steroid mg/kg.
 Do next: soft gruel or feeding tube. Draw 2M antibody. Immunosuppression △ Plumb.
@@ -931,6 +934,21 @@ DDX:
 
 Do not: harvest Tensilon / pyridostigmine mg. Send regurg home as just GI. DexSP-first before the titer.
 Do next: AChR antibody. Edrophonium △ Plumb if generalized. Upright feeding. Respiratory watch.
+
+### `ddx-trigem`
+
+Trigeminal neuritis — {{patient.name}}
+Jaw [cannot close / dropped]. Eat / drink [ ]. Horner / facial / sensation [ ]. Trauma / TMJ [ ]. Vaccine / endemic [ ].
+
+DDX:
+1. Idiopathic trigeminal neuropathy (cannot close; recover 3–4 weeks)
+2. Masticatory myositis if cannot open + temporalis (other list)
+3. TMJ luxation / jaw fracture if trauma
+4. Rabies if unvaccinated / endemic / other neuro
+5. Lymphoma / protozoa if a cat or they do not recover
+
+Do not: pry the jaw. Send home as picky. Harvest a steroid table. Call it MMM.
+Do next: fluids and nutrition. Soft food or feeding tube. Lubricate if they cannot blink.
 
 ### `ddx-hyperca`
 
@@ -1359,6 +1377,14 @@ Return now if breathing looks hard, {{patient.pronoun}} cannot swallow, or {{pat
 Feed upright as shown. Give only the medicines we sent, as labeled. Do not add leftover steroids unless we said to.
 
 Return now if breathing looks hard, coughing after meals, or {{patient.pronoun}} cannot swallow. {{location.phonenumber}}
+
+### `dc-trigem`
+
+{{patient.name}} has inflammation of the nerve that closes the jaw (trigeminal neuritis). The mouth hangs open. This is not “being picky,” and the jaw must not be forced shut.
+
+Offer the soft food or feeding plan we showed. Fluids if we started them. This often improves over a few weeks. Do not try to pry the mouth closed at home.
+
+Return now if {{patient.pronoun}} cannot drink, the eye dries, the face or legs go weak, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
