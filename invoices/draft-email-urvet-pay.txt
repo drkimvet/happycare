@@ -1,0 +1,51 @@
+To: Evan / Amy / Cole
+From: Dr. Yujin Kim, DVM, PhD
+Subject: Confirming pay terms — $250/hour + 23% production (not prosal)
+
+Hi Evan, Amy, and Cole,
+
+Thank you for reviewing the invoices with Amy. I want the formula in writing so ADP and the quarterly true-up match what was agreed before I started.
+
+What was documented when I accepted the work
+Amy: “It’s $250 per hour per diem and whatever production you decided.”
+Evan: “23 percent.”
+
+That is two pieces, added together:
+  Pay = hours × rate  +  23% × my Gross (positive invoices only; no negative accrual)
+
+That is production on top of the per diem. It is not prosal.
+
+What I am being told now
+“23% of Gross less the $250/hour; you get the higher or the delta; difference paid quarterly.”
+
+That is prosal (guarantee vs 23%, pay only the difference if 23% wins). Those are not the same contract.
+
+Numbers on the invoices I already sent, using Gross and excluding credits/negatives
+
+Roslyn Sep 8–15
+  Hourly                          $8,900.00
+  My Gross                        $10,326.32
+  23% of Gross                    $2,375.05
+  Agreed production formula       $11,275.05
+  Prosal / delta                  $8,900.00  (23% is below hourly, so $0 true-up)
+
+Midtown Sep 19, 8:00 PM–12:00 AM
+  Hourly                          $1,000.00
+  My Gross                        $598.64
+  23% of Gross                    $137.69
+  Agreed production formula       $1,137.69
+  Prosal / delta                  $1,000.00
+
+If cremation paid to a third party should come out of Gross, please send those line items and I will subtract them from the 23% base. Everything else on my provider Gross counts.
+
+Please reply with one sentence confirming:
+  1) Regular pay: hours × $250 (and $300 for the on-call block already invoiced).
+  2) Production: 23% of my positive Gross, paid in addition to hourly, quarterly is fine.
+  3) Not prosal: you will not subtract hourly from the 23% or pay only the higher of the two.
+
+I can stay on the schedule once this is confirmed in email. Please do not hold the hourly pay on ADP while we settle production.
+
+Thank you,
+Dr. Yujin Kim, DVM, PhD
+(646) 801-8225
+kim.yujin@outlook.com

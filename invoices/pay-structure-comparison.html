@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pay structure comparison — Dr. Yujin Kim / URvet Care</title>
+  <style>
+    :root { --teal:#1a5f58; --deep:#0e3d38; --gold:#b8924a; --ink:#17211f; --muted:#5b6b67; --line:#d5e0dc; }
+    * { box-sizing: border-box; }
+    body { margin:0; padding:24px 16px; background:#e8eeec; color:var(--ink); font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif; }
+    .sheet { width:8.5in; margin:0 auto; background:#fbfaf6; padding:26px 34px 22px; box-shadow:0 18px 50px rgba(14,61,56,.16); }
+    h1 { margin:0 0 4px; font-family:Georgia,serif; color:var(--deep); font-size:22px; }
+    .sub { color:var(--muted); font-size:12px; margin:0 0 14px; }
+    h2 { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin:14px 0 6px; }
+    p { font-size:12.5px; line-height:1.45; margin:0 0 8px; }
+    table { width:100%; border-collapse:collapse; font-size:12px; margin:6px 0 10px; }
+    th { background:var(--teal); color:#f7f1e4; text-align:left; padding:6px 8px; }
+    th.num, td.num { text-align:right; }
+    td { padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+    tr:nth-child(even) td { background:#e8f1ee; }
+    tr.hi td { background:var(--deep); color:#f7f1e4; font-weight:700; }
+    .box { border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:#fff; margin-bottom:10px; }
+    @media print { body { background:#fff; padding:0; } .sheet { box-shadow:none; width:auto; } }
+    @page { size:letter; margin:.4in; }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <h1>Production vs prosal — number check</h1>
+    <p class="sub">Dr. Yujin Kim, DVM, PhD · URvet Care · prepared September 23, 2026</p>
+
+    <div class="box">
+      <p><strong>What was written in the original thread:</strong> Amy: “$250 per hour per diem and whatever production you decided.” Evan: “23 percent.” That is hourly <em>plus</em> 23% of Gross.</p>
+      <p><strong>What Evan is saying now:</strong> “23% of Gross less the $250/hour. You get the higher, or the delta. Difference paid quarterly. No negative accrual. Cremation paid to a third party is out.” That is prosal, not additive production.</p>
+    </div>
+
+    <h2>The two formulas</h2>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Formula</th><th>When you get extra money</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A. Production (your invoices)</td>
+          <td>Hourly + (23% × Gross, positives only)</td>
+          <td>Any positive Gross adds pay</td>
+        </tr>
+        <tr>
+          <td>B. Prosal (Evan now)</td>
+          <td>max(Hourly, 23% × Gross) — or Hourly each period, then quarterly max(0, 23%Gross − Hourly)</td>
+          <td>Only if 23% × Gross beats the hourly already paid</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Your actual shifts</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th class="num">Hourly paid</th>
+          <th class="num">Kim Gross</th>
+          <th class="num">23% × Gross</th>
+          <th class="num">A. Hourly + 23%</th>
+          <th class="num">B. Prosal / delta</th>
+          <th class="num">Gap if they use B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sep 8–15 Roslyn</td>
+          <td class="num">$8,900.00</td>
+          <td class="num">$10,326.32</td>
+          <td class="num">$2,375.05</td>
+          <td class="num">$11,275.05</td>
+          <td class="num">$8,900.00</td>
+          <td class="num">−$2,375.05</td>
+        </tr>
+        <tr>
+          <td>Sep 19 Midtown 8p–12a</td>
+          <td class="num">$1,000.00</td>
+          <td class="num">$598.64</td>
+          <td class="num">$137.69</td>
+          <td class="num">$1,137.69</td>
+          <td class="num">$1,000.00</td>
+          <td class="num">−$137.69</td>
+        </tr>
+        <tr class="hi">
+          <td>Both invoices</td>
+          <td class="num">$9,900.00</td>
+          <td class="num">$10,924.96</td>
+          <td class="num">$2,512.74</td>
+          <td class="num">$12,412.74</td>
+          <td class="num">$9,900.00</td>
+          <td class="num">−$2,512.74</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Under B, 23% × Gross is below hourly on both periods, so the quarterly “difference” is $0. You would be paid hourly only.</p>
+
+    <h2>Gross needed before any production shows up under prosal</h2>
+    <table>
+      <thead>
+        <tr><th>Shift</th><th class="num">Hourly</th><th class="num">Gross needed (Hourly ÷ 0.23)</th><th class="num">Your Gross</th><th class="num">% of threshold</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Roslyn Sep 8–15</td>
+          <td class="num">$8,900.00</td>
+          <td class="num">$38,695.65</td>
+          <td class="num">$10,326.32</td>
+          <td class="num">27%</td>
+        </tr>
+        <tr>
+          <td>Midtown 4 hours</td>
+          <td class="num">$1,000.00</td>
+          <td class="num">$4,347.83</td>
+          <td class="num">$598.64</td>
+          <td class="num">14%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>That is why Evan says additive 23% “creates a huge loss.” It is a different deal than “$250 and 23%.”</p>
+
+    <h2>Other points from the texts</h2>
+    <p>Quarterly production: they can pay the $250/hour on the regular ADP cycle and true-up production later. That is a timing issue, not a formula change.</p>
+    <p>No negative accrual: if 23% × Gross is under hourly, they do not claw back the hourly. That only matters under prosal.</p>
+    <p>Cremation / third-party euthanasia: if that is in Kim Gross, take it out of the 23% base. Need the line items from them to adjust the $10,326.32 / $598.64.</p>
+  </article>
+</body>
+</html>
