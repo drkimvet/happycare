@@ -1095,6 +1095,40 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("cat disease", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_dendritic_fhv_no_steroid_no_grid(self):
+        b = analyze(
+            "cat",
+            "dendritic ulcer, FHV, sneezing, steroid drop, grid keratotomy",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("dendritic", loc)
+        self.assertIn("uri supports", loc)
+        self.assertIn("pcr is not required", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not put a steroid", joined)
+        self.assertIn("do not grid a cat", joined)
+        self.assertIn("l-lysine 500", joined)
+        self.assertIn("antiviral", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_fhv_melt_not_just_herpes(self):
+        b = analyze(
+            "cat",
+            "geographic ulcer, herpes keratitis, melting ulcer, send home just herpes",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("coalesced dendrites", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("just herpes", joined)
+        self.assertIn("melting", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_dendritic_is_cat_conversation(self):
+        b = analyze("dog", "dendritic ulcer, feline herpesvirus")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("cat conversation", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_anesthesia_recovery_is_still_anesthesia(self):
         b = analyze(
             "dog",

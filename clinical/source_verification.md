@@ -798,3 +798,23 @@ Book/public traps:
 - A dog with a brown cornea is not this disease until you name something else (pigment, foreign body, melanoma).
 
 Night rule: cat + brown/black corneal plaque → sequestrum. Do not pick or grid. Keratectomy conversation. Depth may be hidden.
+
+## 154. Feline herpes keratitis / dendritic ulcer (Merck Gelatt owner + Hamor; Plunkett names antivirals only)
+
+No dedicated FHV / dendritic heading in the owned SA EM splits. Public Merck owner page (Gelatt, Jul 2018 / Sep 2024) and Merck cornea / conjunctiva (Hamor). Plunkett ulcerative keratitis ~444–446 names viral-keratitis drops and l-lysine 500 — **traps only**. No chapter dump. **Do not harvest famciclovir, cidofovir, idoxuridine, vidarabine, trifluorothymidine, or l-lysine milligram tables.**
+
+Agree with Merck owner: FHV-1 (feline rhinotracheitis) is common; most cats become latently infected. Causes conjunctivitis, keratitis, and corneal ulcers. Long-term disease can scar, cause KCS, or contribute to sequestrum. Respiratory signs plus keratitis are **suggestive**. Classic **dendritic ulcers confirm**. Laboratory tests on conjunctiva/cornea exist; they are not required to start tonight’s plan. Corticosteroids can reactivate latent virus. Vaccine is core; it reduces shedding/signs, it does not prevent infection.
+
+Agree with literature used only as a night teaching frame (not a dump): dendrites are nearly pathognomonic; they can coalesce into a **geographic** (map-like) ulcer; that is still FHV, not a new diagnosis. Hamor: in cats (and horses), herpesvirus is a frequent cause of ulcerative keratitis; slow recurrent superficial ulcers in cats put herpes on the list. **Keratotomies are not recommended in cats.**
+
+Book/public traps:
+
+- Printed book idoxuridine / vidarabine / trifluorothymidine and **l-lysine 500** stay on the 2013 page.
+- Merck conjunctiva prints cidofovir / trifluridine / famciclovir / l-lysine — △ Plumb. Do not copy those numbers onto the card.
+- **No steroid** on a stain-positive or FHV ulcer.
+- **Do not grid a cat.**
+- PCR tonight is not a requirement.
+- A melting or descemetocele FHV eye is still packet 150. Do not send it home as “just herpes.”
+- Lids / STT / FB still. Dendritic does not excuse a hidden mechanical cause.
+
+Night rule: cat + dendritic / geographic ulcer → FHV. No steroid. Do not grid. E-collar. Antiviral △ Plumb. Lids/STT/FB still.

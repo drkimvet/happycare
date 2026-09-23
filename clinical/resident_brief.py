@@ -455,6 +455,28 @@ PEEL_PLAQUE_RE = re.compile(
     r"\b(plaque|sequestrum|nigrum).{0,20}\b(pick|peel|pluck|flick|lift)",
     re.I,
 )
+# FHV / dendritic / geographic. Do not use \bbranching alone (branching vessels).
+FHV_RE = re.compile(
+    r"\bfhv|"
+    r"\bfeline herpes|"
+    r"\bherpesvirus|"
+    r"\bherpetic kerat|"
+    r"\bherpes.{0,24}\b(eye|cornea|kerat|conjunct|ulcer|rhino)|"
+    r"\bdendritic|"
+    r"\bgeographic (corneal )?ulcer|"
+    r"\bbranching (corneal )?(ulcer|dendrit)",
+    re.I,
+)
+URI_FHV_RE = re.compile(
+    r"\bsneez|"
+    r"\brhinit|"
+    r"\buri\b|"
+    r"\bupper respir|"
+    r"\bnasal discharge|"
+    r"\brhinotrache",
+    re.I,
+)
+JUST_HERPES_RE = re.compile(r"\bjust herpes|\bonly herpes|\bherpes and home", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -1552,6 +1574,65 @@ def analyze(
     if spec == "dog" and SEQ_RE.search(text):
         hard_stops.append(
             "Corneal sequestrum is a cat disease. Name pigment, a foreign body, or a mass in the dog."
+        )
+
+    if spec == "cat" and FHV_RE.search(text):
+        uri_bit = (
+            "Sneezing / URI supports FHV."
+            if URI_FHV_RE.search(text)
+            else "URI if present supports FHV; absence does not rule it out."
+        )
+        fhv_loc = (
+            "Feline herpes keratitis: dendritic ulcer is highly characteristic. "
+            "Geographic is coalesced dendrites. "
+            f"{uri_bit} PCR is not required tonight."
+        )
+        localization = f"{localization} Also {fhv_loc}" if localization else fhv_loc
+        hard_stops.append(
+            "Do not put a steroid on a stain-positive / FHV ulcer. "
+            "Do not grid a cat."
+        )
+        do_not.append(
+            "Do not harvest famciclovir, idoxuridine, or l-lysine 500. "
+            "Do not skip lids / STT / FB. "
+            "Do not send a melting FHV eye home as just herpes."
+        )
+        do_next.append(
+            "Fluorescein; rose bengal can help fine dendrites. "
+            "E-collar. Antiviral △ Plumb / hospital. "
+            "If melting or Descemet is showing, refer tonight."
+        )
+        sources.append(
+            "Merck owner FHV-1 (Gelatt): respiratory signs + keratitis suggest; "
+            "dendritic ulcers confirm. Merck cornea / conjunctiva (Hamor). "
+            "Plunkett ulcerative keratitis names idoxuridine / l-lysine 500 — traps only."
+        )
+        if (
+            STEROID_DROP_RE.search(text)
+            or DEX_RE.search(text)
+            or re.search(r"\bpred(nisolone|nisone)?\b", text, re.I)
+        ):
+            hard_stops.append(
+                "Do not put a steroid on a stain-positive / FHV ulcer. "
+                "Corticosteroids can reactivate FHV and raise sequestrum risk."
+            )
+        if GRID_BURR_RE.search(text):
+            hard_stops.append(
+                "Do not grid a cat. Keratotomy predisposes to corneal sequestrum."
+            )
+        if MELT_RE.search(text) and (
+            SEND_HOME_RE.search(text) or JUST_HERPES_RE.search(text)
+        ):
+            hard_stops.append(
+                "Do not send a melting or descemetocele FHV eye home as just herpes."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for an FHV ulcer.")
+
+    if spec == "dog" and FHV_RE.search(text):
+        hard_stops.append(
+            "Dendritic ulcer / FHV keratitis is the cat conversation. "
+            "Name something else in the dog."
         )
 
     if spec in {"dog", "cat"} and ANESTH_RE.search(text):

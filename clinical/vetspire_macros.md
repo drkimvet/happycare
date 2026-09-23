@@ -80,6 +80,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-anes` | Assessment | SA anesthesia / sedation |
 | `ddx-indolent` | Assessment | Indolent / Boxer / SCCED |
 | `ddx-seq` | Assessment | Feline corneal sequestrum |
+| `ddx-fhv` | Assessment | Feline herpes / dendritic ulcer |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -119,6 +120,7 @@ Suggested names are short so they show up after three letters.
 | `dc-anes` | Discharge | After anesthesia / recovery |
 | `dc-indolent` | Discharge | After indolent / SCCED debridement |
 | `dc-seq` | Discharge | Corneal sequestrum / referral |
+| `dc-fhv` | Discharge | Feline herpes keratitis / ulcer |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -739,6 +741,20 @@ DDX:
 Do not: pick or peel it. Grid a cat. Send home as “it will slough.” Harvest a keratectomy table.
 Do next: E-collar. Keratectomy of the whole plaque. Graft if deep. Depth may be hidden. △ Plumb.
 
+### `ddx-fhv`
+
+FHV / dendritic ulcer — {{patient.name}}
+Dendritic / geographic [ ]. URI / sneezing [ ]. Stain [fluorescein / rose bengal]. STT / lids / FB [ ]. Depth [superficial / melt / descemetocele].
+
+DDX:
+1. Feline herpes keratitis (dendritic confirms; geographic = coalesced dendrites)
+2. Mechanical ulcer (lids / STT / FB) — still look
+3. Melting / descemetocele (other list — not “just herpes”)
+4. Sequestrum if a brown/black plaque is already there
+
+Do not: steroid a stain-positive / FHV ulcer. Grid a cat. Send a melting eye home as just herpes. Harvest an antiviral or l-lysine table. Require PCR tonight.
+Do next: E-collar. Antiviral △ Plumb / hospital. Lids / STT / FB. If melting or Descemet showing, refer tonight.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1070,6 +1086,14 @@ Return now if the eye gets much more painful or cloudy, if a dark spot appears, 
 Give only the eye medicines we sent, as labeled. Do not add leftover steroid drops. Keep the E-collar on.
 
 Referral for surgery was recommended if we discussed it. Return now if the eye is more painful, if the dark spot grows, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
+
+### `dc-fhv`
+
+{{patient.name}} has a feline herpesvirus eye ulcer. Branching (dendritic) ulcers are typical. This is not a reason to add leftover steroid drops.
+
+Give only the eye medicines we sent, as labeled. Keep the E-collar on. Reduce stress at home as discussed.
+
+Return now if the eye becomes much more painful or cloudy, if a dark spot appears, or if {{patient.pronoun}} will not eat. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
