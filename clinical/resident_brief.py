@@ -834,6 +834,13 @@ PIGMENTURIA_RE = re.compile(
     re.I,
 )
 MELARSOMINE_RE = re.compile(r"\b(melarsomine|immiticide)\b", re.I)
+HARD_RE = re.compile(
+    r"\bheartworm[- ]associated respiratory|"
+    r"\bfeline heartworm|"
+    r"\bcat heartworm|"
+    r"\bhw[- ]associated",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2854,6 +2861,46 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for caval syndrome.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for caval syndrome.")
+
+    hard_hit = spec == "cat" and (
+        HARD_RE.search(text) or HEARTWORM_RE.search(text)
+    )
+    if hard_hit:
+        hard_loc = (
+            "Feline HARD / cat heartworm. Not just asthma. "
+            "Not a dog caval or melarsomine script."
+        )
+        localization = f"{localization} Also {hard_loc}" if localization else hard_loc
+        hard_stops.append(
+            "Melarsomine is not recommended in cats. "
+            "Do not call it just asthma. "
+            "A negative antigen does not rule it out."
+        )
+        do_not.append(
+            "Do not dump a dog 3-dose adulticide table. "
+            "Do not harvest doxy 10 or a 5–6 mL water-chase. "
+            "Steroids may quiet the asthma-like signs and will not prevent one-worm-death shock. "
+            "Indoor is not a rule-out. FeLV / FIV is not the predisposing story."
+        )
+        do_next.append(
+            "Oxygen and hands off first. Name the space. "
+            "Antigen and antibody — both can lie. Echo if they crash. "
+            "Preventative to stop new infection. Supportive / doxy conversation △ Plumb. "
+            "Extract only if echo sees worms in the RA / RV / cava — do not lacerate."
+        )
+        sources.append(
+            "Merck heartworm (Ames, Apr 2025 / Aug 2026): HARD = immature worms arriving "
+            "~3–4 months; mimics asthma. One dead adult can shock. "
+            "Melarsomine not recommended in cats. Printed doxy 10 stays on the page."
+        )
+        if MELARSOMINE_RE.search(text):
+            hard_stops.append("Do not give melarsomine to a cat.")
+        if SEND_HOME_RE.search(text) and DYSPNEA_RE.search(text):
+            hard_stops.append("Do not send open-mouth or HARD distress home as just asthma.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for HARD.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for HARD.")
 
     isolated_trigem = bool(
         trigem_hit

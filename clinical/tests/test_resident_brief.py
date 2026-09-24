@@ -1791,6 +1791,28 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("still no dexsp", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_hard_not_just_asthma_ag_can_lie(self):
+        b = analyze(
+            "cat",
+            "feline heartworm, HARD, asthma, send home, open-mouth",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("not just asthma", loc)
+        self.assertIn("not a dog caval", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just asthma", joined)
+        self.assertIn("negative antigen does not rule it out", joined)
+        self.assertIn("home as just asthma", joined)
+        self.assertIn("one-worm-death", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_heartworm_is_not_feline_hard(self):
+        b = analyze("dog", "heartworm antigen positive, wellness preventative")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline hard", loc)
+        self.assertNotIn("not just asthma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_heartworm_wellness_is_not_caval(self):
         b = analyze("dog", "heartworm antigen positive, wellness preventative")
         loc = (b["localization"] or "").lower()

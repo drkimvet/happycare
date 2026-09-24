@@ -103,6 +103,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-htn` | Assessment | Acute systemic hypertension / TOD |
 | `ddx-phtn` | Assessment | Pulmonary hypertension / syncope / RHF |
 | `ddx-caval` | Assessment | Caval syndrome / heartworm extract |
+| `ddx-hard` | Assessment | Feline HARD / cat heartworm |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -165,6 +166,7 @@ Suggested names are short so they show up after three letters.
 | `dc-htn` | Discharge | Systemic hypertension / BP / eye watch |
 | `dc-phtn` | Discharge | Pulmonary hypertension / syncope watch |
 | `dc-caval` | Discharge | After caval extraction / HW crisis |
+| `dc-hard` | Discharge | Cat heartworm / HARD going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1120,6 +1122,21 @@ DDX:
 Do not: dump a melarsomine or doxycycline table tonight. Yank and lacerate the worms. Copy a preventative as mg/kg. Send hemoglobinuria home as a UTI. Harvest sildenafil numbers here.
 Do next: echo now. Right-jugular extraction conversation if worms sit on the TV / RA. Stabilize. AHS later. Cat: no melarsomine.
 
+### `ddx-hard`
+
+Feline HARD / cat heartworm — {{patient.name}}
+Cough / wheeze / vomit / crash [ ]. Indoor [Y/N]. HW Ag [ ]  HW Ab [ ]. Echo worms [Y/N / not seen]. Space [bronchial / pleural / CHF / upper].
+
+DDX:
+1. HARD (immature worms arriving, asthma-like) — not just asthma
+2. Adult-worm death shock / PTE if they crash
+3. Ordinary asthma / bronchitis if HW tests and echo stay quiet — still not a rule-out tonight
+4. Not a dog caval / 3-dose melarsomine script
+5. Pleural / CHF still named first if the chest is quiet (other list)
+
+Do not: give melarsomine. Call it just asthma. Treat a negative Ag or Ab as a rule-out. Skip preventative because the cat is indoor. Harvest doxy 10 or a water-chase. Stack Lasix + albuterol + DexSP.
+Do next: oxygen, name the space. Ag and Ab (both can lie). Echo if they crash. Preventative. Supportive / doxy △ Plumb. Extract only if echo sees RA / RV / cava worms.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1635,6 +1652,14 @@ Return now if {{patient.pronoun}} faints again, collapses, the belly swells, or 
 Give only the medicines we sent, as labeled. Strict rest as discussed. No extra steroids or leftover heartworm shots from the cabinet.
 
 Return now if the urine turns dark again, if {{patient.pronoun}} collapses, the gums stay pale, the belly swells, or breathing gets hard. {{location.phonenumber}}
+
+### `dc-hard`
+
+{{patient.name}} may have heartworm disease in a cat, sometimes called HARD. It can look like asthma (cough, wheeze) or show up as vomiting. Indoor cats can still get it. A negative heartworm test does not always mean the cat is clear. This is not a dog arsenic (melarsomine) injection plan.
+
+Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet. Use the preventative as discussed so new worms do not arrive.
+
+Return now if breathing gets hard, if {{patient.pronoun}} opens the mouth to breathe, collapses, or stops eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

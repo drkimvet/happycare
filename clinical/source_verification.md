@@ -1283,3 +1283,27 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: HW + dark urine + pale / collapse → **echo now, extract conversation, not melarsomine.** Not a seizure. Not IMHA. Cat: no melarsomine.
+
+## 175. Feline HARD / cat heartworm (Merck Ames Apr 2025 / Aug 2026; AHS named only)
+
+Same public Merck heartworm page as packet 174. This is **the cat list**. No dedicated Plunkett feline-HARD chapter in the owned SA EM splits. **Do not harvest doxycycline 10 / 7.5 / 5, the 5–6 mL water chase, a steroid taper, or the 1.6× ninth-rib artery rule.** Packet 174 still owns dog caval extraction. Packet 130 still owns naming the space.
+
+Agree with Ames: cats are more resistant than dogs; most immature worms die before adulthood. Adult burden is often **1–3**. Adults that mature usually live **2–4 years** — that range stays on the page, not a countdown. Indoor cats still get it. FeLV / FIV are **not** predisposing. Circulating microfilariae are uncommon.
+
+**HARD** is the inflammatory lung hit when immature worms arrive in the pulmonary arteries, printed at about **3–4 months** after infection. It looks like asthma or bronchitis: cough, wheeze, episodic distress. Vomiting is on the cat sign list. A second dangerous moment is **death of an adult** — even one worm can make acute respiratory distress and shock (PTE or anaphylactoid) and can kill tonight.
+
+Antigen is often negative (aborted infection, or too few adults). Antibody can be positive from exposure only. **A negative antibody does not rule out** current or past infection (Merck: tests lack sensitivity). Echo if they crash or you need to see a worm.
+
+Melarsomine is **not recommended in cats** (severe pulmonary inflammation and death). Most are managed conservatively. Start a macrocyclic lactone to stop new infection — generally safe even with adults, because cats are usually amicrofilaremic. Slow-kill doxy + moxidectin / ivermectin is named; printed mg/kg stay on the page. △ Plumb. Chase tablets with water (esophageal injury). Steroids may quiet the asthma-like signs and **will not prevent** the ARDS-like crash when an adult dies. Acute crash: oxygen and injectable steroid conversation, not a lobby table. Albuterol is for bronchial reactivity, not pleural fluid (130). Extract via the jugular only if echo sees worms in the RA / RV / cava — laceration still means anaphylaxis.
+
+Book/public traps:
+
+- Printed doxy 10 / 7.5 / 5, 5–6 mL chase, 3–4 months, 2–4 years, and 1.6× rib stay on the page.
+- Do not run a dog 3-dose melarsomine script.
+- Do not call it just asthma.
+- Do not treat a negative Ag or Ab as a rule-out.
+- Do not skip preventative because the cat is indoor.
+- Do not harvest ferret 50% mortality onto the cat.
+- Azotemic: still no NSAID, still no DexSP as a shotgun.
+
+Night rule: coughing / crashing cat + HW on the list → **oxygen, name the space, not just asthma, no melarsomine.** Ag/Ab both can lie. Echo if they crash.
