@@ -1,0 +1,36 @@
+After every pay / schedule call — same day, before the shift
+
+Amy’s number is 561 (Florida). Florida is all-party consent. New York is
+one-party. Do not secretly record a call that may include someone in Florida.
+iPhone’s built-in call recording announces itself. That is the safe record.
+A second phone on speaker + Voice Memos is only safe if you say you are
+recording, or if everyone on the call is in a one-party state.
+
+What actually prevents this next time
+  1) Recap email within an hour. The words in writing beat a file you cannot
+     get from AT&T.
+  2) Do not start the shift until they reply or you have sent the recap.
+  3) Screenshot Phone → Recents that day (number, time, duration).
+
+Paste and send (reply-all if they emailed first)
+
+  Subject: Confirming today’s call — rates
+
+  Amy and Evan,
+
+  Confirming our call today, [date], [time]:
+
+    • On-shift / in the building: $250 per hour
+    • On-call: $300 per hour
+    • Time in the hospital during on-call also pays $250 per hour
+    • Those stack. On-call is not a $300 one-time fee.
+    • Production: 23% of my positive Gross, in addition, [or: quarterly]
+
+  Please reply “confirmed” on this thread. I will work [dates] on these terms.
+
+  Dr. Yujin Kim, DVM, PhD
+  (646) 801-8225
+  kim.yujin@outlook.com
+
+If they do not reply, you still have your sent mail. That is the record AT&T
+cannot give you.
