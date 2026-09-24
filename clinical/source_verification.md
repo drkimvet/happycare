@@ -1232,3 +1232,28 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: sudden blind / hyphema / CKD / hyperT → **BP now**. If TOD is there, treat the pressure and the cause. Cat: amlodipine / telmisartan conversation. Not Lasix. Not SARDS. △ Plumb.
+
+## 173. Pulmonary hypertension (Merck Kittleson Jan 2023 / Jun 2025; ACVIM 2019 PH named only)
+
+Same public Merck page as packet 172. This is **the other list**. No dedicated Plunkett pulmonary-hypertension chapter in the owned SA EM splits. **Do not harvest sildenafil 1–3, tadalafil 1, a TR m/s cutoff, or a reverse-PDA PCV number.** ACVIM 2019 canine PH consensus is **named** only — do not dump the six groups.
+
+Agree with Kittleson: pulmonary hypertension is high pressure in the **pulmonary arterial** circulation. Increased flow (VSD / PDA) or increased resistance (arterial-wall hypertrophy, PTE, vasoconstriction), or both. **Primary pulmonary hypertension is rare in any species other than humans.** Dogs: most often **heartworm, PTE, severe hypoxemia from primary lung disease, and left-heart failure.**
+
+Severe PH looks like **right-heart failure** (ascites, exercise intolerance) and **episodic collapse or syncope**, usually after exercise or excitement. Jugular distension / pulsation is allowed. Direct PA pressure is rarely done. Night test is Doppler echo from a **tricuspid or pulmonary regurgitant jet**. Echo may show systolic septal flattening, RV dilation or wall thickening, RA enlargement. Do not invent a velocity cutoff.
+
+Treatment depends on the cause. Heartworm: successful adulticide often drops the pressure and can resolve right-heart failure — **not a lobby kill tonight.** Reverse (R-to-L) PDA can live years if polycythemia is controlled; the printed years sentence stays on the page, not a PCV cookbook. Sildenafil is the most effective printed drug to lower PAP and improve signs in dogs; Merck warrants it primarily when they have signs, most commonly syncope and right-heart failure. It may stop syncope and make ascites easier to control. Tadalafil has limited printed experience. **Those mg/kg stay on the page. △ Plumb.** Pimobendan decreases PAP when PH is secondary to left-heart failure. Treating the cause is the long-term plan; Merck says that identification and treatment are rare.
+
+Not systemic HTN (172). Not amlodipine. Not the TBI Cushing reflex. Lasix is not the pulmonary-artery drug (left-heart edema / ascites is the other conversation). Do not call syncope a seizure. Heartworm preventative written as mg/kg is still the 2013 unit trap.
+
+Book/public traps:
+
+- Printed sildenafil 1–3 / tadalafil 1 stay on the Merck page.
+- Do not invent a TR-velocity or PA mmHg lobby cutoff.
+- Do not dump ACVIM group 1–6.
+- Do not start adulticide or a reverse-PDA phlebotomy table in the lobby.
+- Do not Lasix pulmonary arterial pressure.
+- Do not start amlodipine for this list.
+- Do not call primary PH the default.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: syncope after exercise + ascites / jugulars → **echo, not a seizure cocktail.** Name HW / PTE / lung / left-heart. Sildenafil conversation only if the signs are this disease. △ Plumb. Not Lasix. Not amlodipine.

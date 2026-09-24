@@ -1741,8 +1741,37 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "pulmonary hypertension, sildenafil")
         loc = (b["localization"] or "").lower()
         self.assertNotIn("acute systemic hypertension", loc)
+        self.assertIn("pulmonary hypertension", loc)
+        self.assertIn("not systemic htn", loc)
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
         self.assertNotIn("amlodipine / telmisartan conversation", joined)
+        self.assertIn("harvest sildenafil or tadalafil", joined)
+        self.assertIn("pulmonary-artery drug", joined)
+        self.assertIn("echo estimates the pressure", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_heartworm_exertional_syncope_is_ph_not_seizure(self):
+        b = analyze(
+            "dog",
+            "heartworm, syncope after exercise, send home as a seizure, Lasix",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("pulmonary hypertension", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("call syncope a seizure", joined)
+        self.assertIn("adulticide", joined)
+        self.assertIn("do not lasix pulmonary hypertension", joined)
+        self.assertIn("home as a seizure", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ph_amlodipine_is_the_other_list(self):
+        b = analyze(
+            "dog",
+            "cor pulmonale, amlodipine, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("amlodipine is systemic hypertension", joined)
+        self.assertIn("still no dexsp", joined)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_tbi_cushing_reflex_is_not_amlodipine(self):

@@ -101,6 +101,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-optic` | Assessment | Dilated fixed pupil / optic neuritis |
 | `ddx-cortex` | Assessment | Cortical / post-ictal blindness |
 | `ddx-htn` | Assessment | Acute systemic hypertension / TOD |
+| `ddx-phtn` | Assessment | Pulmonary hypertension / syncope / RHF |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -161,6 +162,7 @@ Suggested names are short so they show up after three letters.
 | `dc-optic` | Discharge | Sudden blind / dilated fixed / referral |
 | `dc-cortex` | Discharge | Post-ictal / cortical blindness watch |
 | `dc-htn` | Discharge | Systemic hypertension / BP / eye watch |
+| `dc-phtn` | Discharge | Pulmonary hypertension / syncope watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1086,6 +1088,21 @@ DDX:
 Do not: harvest amlodipine or sildenafil numbers. Lasix systemic hypertension. DexSP the blind hypertensive eye. Treat one bouncing cuff with no TOD as gospel. Screen a healthy pet because humans do. Invent a dog first-line cookbook.
 Do next: BP now if the disease causes hypertension or the eye/brain looks like TOD. Single high cuff + TOD is enough to treat. Cat: amlodipine / telmisartan conversation (ACEI / atenolol / Lasix generally do not drop feline systemic pressure). Dog: name the pages, △ Plumb / hospital.
 
+### `ddx-phtn`
+
+Pulmonary hypertension — {{patient.name}}
+Syncope / collapse after exercise [Y/N]. Ascites / jugulars [Y/N]. Echo [TR / PR jet / not yet]. Cause [HW / PTE / lung / left-heart / shunt / unknown]. HW Ag [ ]. SpO2 [ ].
+
+DDX:
+1. Secondary PH (default) — heartworm, PTE, lung / hypoxemia, left-heart
+2. Increased flow (VSD / PDA) or reverse PDA if polycythemia fits
+3. Not systemic HTN / not amlodipine
+4. Not a seizure if it is exertional syncope
+5. Primary PH is rare except in people
+
+Do not: harvest sildenafil or tadalafil numbers. Invent a TR-velocity cutoff. Lasix this as the PA-pressure drug. Dump an adulticide table tonight. Call syncope a seizure. Start amlodipine for this list.
+Do next: oxygen if hypoxic. Echo, not a PA catheter. Name the cause. Sildenafil is the Merck dog conversation when they have signs (syncope / RHF) — △ Plumb. Pimobendan if left-heart PH. Treat the cause.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1585,6 +1602,14 @@ Return now if another seizure starts, if the pupils become large and stay that w
 Give only the blood-pressure medicine we sent, as labeled. This is not a water-pill (Lasix) plan and not a home steroid plan. Recheck blood pressure as discussed. Keep {{patient.pronoun}} in a safe room if vision is poor.
 
 Return now if vision suddenly worsens, if {{patient.pronoun}} seizes, cannot walk, cannot urinate, or if breathing gets hard. {{location.phonenumber}}
+
+### `dc-phtn`
+
+{{patient.name}} has high pressure in the lungs’ arteries (pulmonary hypertension). That is not the same as high blood pressure in the body. It often comes from heartworm, a clot, lung disease, or left-sided heart disease. Fainting after excitement or a pot-bellied right-heart look can be this disease, not “just a seizure.”
+
+Give only the medicines we sent, as labeled. This is not a water-pill plan for the lung arteries and not a home steroid plan. Keep activity calm. Recheck and imaging as discussed.
+
+Return now if {{patient.pronoun}} faints again, collapses, the belly swells, or breathing gets hard. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

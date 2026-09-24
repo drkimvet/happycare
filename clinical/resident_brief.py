@@ -799,8 +799,26 @@ HTN_RE = re.compile(
     re.I,
 )
 HYPERTENS_WORD_RE = re.compile(r"\bhypertens", re.I)
-PULMONARY_HTN_RE = re.compile(r"\bpulmonary hypertens", re.I)
+PULMONARY_HTN_RE = re.compile(
+    r"\bpulmonary hypertens|"
+    r"\bpulm(onary)?[- ]?htn|"
+    r"\bcor pulmonale|"
+    r"\bsildenafil|"
+    r"\btadalafil",
+    re.I,
+)
 HYPERTHYROID_RE = re.compile(r"\b(hyperthyroid|hyperthyroidism)\b", re.I)
+HEARTWORM_RE = re.compile(
+    r"\b(heartworm|dirofilaria|caval syndrome|microfilar)\b",
+    re.I,
+)
+SYNCOPE_RE = re.compile(
+    r"\b(syncop|episodic collapse|"
+    r"collapse after (exercise|excitement)|"
+    r"exercise.{0,20}collapse|"
+    r"excitement.{0,20}collapse)\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2710,6 +2728,57 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hypertension.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hypertension.")
+
+    ph_hit = spec in {"dog", "cat"} and (
+        PULMONARY_HTN_RE.search(text)
+        or (HEARTWORM_RE.search(text) and SYNCOPE_RE.search(text))
+    )
+    if ph_hit:
+        ph_loc = (
+            "Pulmonary hypertension. Almost always secondary. "
+            "Not systemic HTN. Not a Lasix PA-pressure drug."
+        )
+        localization = f"{localization} Also {ph_loc}" if localization else ph_loc
+        hard_stops.append(
+            "Do not harvest sildenafil or tadalafil numbers. "
+            "Do not start amlodipine for pulmonary hypertension. "
+            "Do not Lasix this as the pulmonary-artery drug."
+        )
+        do_not.append(
+            "Do not invent a TR-velocity cutoff. "
+            "Do not dump an adulticide table tonight. "
+            "Do not call syncope a seizure. "
+            "Do not harvest a reverse-PDA PCV cutoff. "
+            "Primary pulmonary hypertension is rare except in people."
+        )
+        do_next.append(
+            "Name the cause: heartworm, PTE, lung / hypoxemia, or left-heart. "
+            "Severe PH looks like right-heart failure and syncope after exercise or excitement. "
+            "Echo estimates the pressure (TR or PR jet). A PA catheter is rare. "
+            "Sildenafil is the Merck dog conversation when they have signs — △ Plumb. "
+            "Pimobendan is the left-heart PH conversation. Treat the cause."
+        )
+        sources.append(
+            "Merck systemic and pulmonary hypertension (Kittleson, Jan 2023 / Jun 2025): "
+            "primary PH rare; dogs = HW / PTE / lung / left-heart; "
+            "signs = RHF + syncope; echo not a PA catheter. "
+            "Printed sildenafil 1–3 / tadalafil 1 stay on the page. ACVIM 2019 PH named only."
+        )
+        if FUROSEMIDE_RE.search(text):
+            hard_stops.append("Do not Lasix pulmonary hypertension as the PA-pressure drug.")
+        if re.search(r"\bamlodipine\b", text, re.I):
+            hard_stops.append("Amlodipine is systemic hypertension, not this list.")
+        if HEARTWORM_RE.search(text):
+            do_next.append(
+                "Heartworm: adulticide can drop the pressure later. Not a lobby kill tonight. "
+                "Caval syndrome is the other crisis list."
+            )
+        if SEND_HOME_RE.search(text) and SYNCOPE_RE.search(text):
+            hard_stops.append("Do not send exertional syncope home as a seizure.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for pulmonary hypertension.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for pulmonary hypertension.")
 
     isolated_trigem = bool(
         trigem_hit
