@@ -98,6 +98,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-polyp` | Assessment | Cat NP / aural inflammatory polyp |
 | `ddx-horner` | Assessment | Isolated Horner / small pupil + ptosis |
 | `ddx-aniso` | Assessment | Anisocoria / the big pupil |
+| `ddx-optic` | Assessment | Dilated fixed pupil / optic neuritis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -155,6 +156,7 @@ Suggested names are short so they show up after three letters.
 | `dc-polyp` | Discharge | Cat polyp traction / VBO / look again |
 | `dc-horner` | Discharge | Horner going home / ear and limb watch |
 | `dc-aniso` | Discharge | Anisocoria / big pupil going home |
+| `dc-optic` | Discharge | Sudden blind / dilated fixed / referral |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1035,6 +1037,21 @@ DDX:
 Do not: call the big pupil Horner. Call old-dog iris atrophy a CN III emergency. Harvest a dilute pilocarpine table. Send home as conjunctivitis or just a funny pupil. Dilate a high-IOP eye.
 Do next: name which pupil is wrong. Stain. STT before drops. IOP if red / painful / cloudy.
 
+### `ddx-optic`
+
+Dilated fixed / optic neuritis — {{patient.name}}
+Vision [none / reduced]. PLR [absent / present]. Disc [swollen / normal / not seen]. BP [ ]. Fundus / B-scan [ ]. ERG offered [Y/N]. Enrofloxacin / ivermectin [ ].
+
+DDX:
+1. Retina (RD / toxin / SARDS) if fundus or flat ERG says so — other list
+2. Optic neuritis (disc swollen or retrobulbar-normal) — meningoencephalitis common
+3. Chiasm / tract if both eyes and the pathway fits
+4. Not cortex (those pupils are normal)
+5. Not papilledema alone (usually still sees, still has PLR)
+
+Do not: harvest book pred 1.0. DexSP a hypertensive or azotemic patient as the blindness plan. Call a normal disc “not optic nerve.” Call it SARDS without an ERG. Send home as just a funny pupil.
+Do next: BP now. Fundus or B-scan. Offer ERG / referral. MRI / CSF if the nerve is the space.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1510,6 +1527,14 @@ Return now if {{patient.pronoun}} cannot blink, the eye looks cloudy or painful,
 Use only the eye medicines we sent. Do not put leftover atropine or other drops in unless we said to. Keep the eye from bright glare if it bothers {{patient.pronoun}}.
 
 Return now if the eye turns red, cloudy, or painful, if vision is suddenly worse, if {{patient.pronoun}} starts vomiting or cannot urinate, or if the other side of the face or a leg goes weak. {{location.phonenumber}}
+
+### `dc-optic`
+
+{{patient.name}} suddenly cannot see well, and the pupils are large and do not shrink to light. That means the problem is in the retina or the optic nerve, not “just the brain cortex.” We still need blood pressure, a look at the back of the eye, and often a referral for an ERG or imaging.
+
+Keep {{patient.pronoun}} in a safe, familiar room so {{patient.pronoun}} does not fall. Use only the medicines we sent. This is not a home steroid plan.
+
+Return now if {{patient.pronoun}} seizes, cannot walk, the eye turns red or painful, or breathing gets hard. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

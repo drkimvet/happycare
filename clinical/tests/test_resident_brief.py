@@ -1641,6 +1641,37 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("still no dexsp", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_optic_neuritis_dilated_fixed_not_cortex(self):
+        b = analyze(
+            "dog",
+            "sudden blind, dilated and fixed pupils, optic neuritis, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("not cortex", loc)
+        self.assertIn("retrobulbar", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pred 1.0", joined)
+        self.assertIn("meningoencephalitis", joined)
+        self.assertIn("normal-looking disc", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_optic_neuritis_no_pred_table_azotemic(self):
+        b = analyze(
+            "dog",
+            "optic neuritis, pred 1.0, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("do not harvest book pred 1.0", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_papilledema_not_blindness(self):
+        b = analyze("dog", "optic neuritis, papilledema")
+        joined = " ".join(b["do_not"] + b["do_next"]).lower()
+        self.assertIn("papilledema", joined)
+        self.assertIn("spares vision", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_iris_atrophy_not_cn_iii_crash(self):
         b = analyze("dog", "old dog, iris atrophy, scalloped pupil, anisocoria")
         joined = " ".join(b["do_not"] + b["do_next"]).lower()

@@ -1158,3 +1158,29 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: anisocoria → **name which pupil is wrong**. Big + sees = atrophy / atropine / dysautonomia / CN III. Big + blind + no PLR = retina / optic nerve. Red painful cloudy = IOP tonight. Small + ptosis = Horner.
+
+## 170. Dilated fixed pupil + sudden blindness / optic neuritis (Merck Hamor optic nerve Feb 2023 / Jul 2026; Thomasy acute vision loss Jul 2024)
+
+Packet 147 already owns the SARDS / RD / BP night rule. This packet is the **PLR pathway**. Do not re-dump SARDS. No chapter dump. **Do not harvest book pred 1.0 for optic neuritis.**
+
+Agree with Merck neuro exam / packet 169: **blind + dilated + no PLR** localizes to retina, optic nerve, chiasm, or optic tract. **Blind + normal pupils** is forebrain / radiation / cortex — not this. A big pupil that still sees is iris atrophy / atropine / dysautonomia / CN III (169), not optic neuritis.
+
+Agree with Hamor (optic nerve, Feb 2023 / Jul 2026): optic neuritis is the most frequent optic-nerve disease. **Bilateral optic neuritis → acute blindness and dilated, fixed pupils.** If the disc is involved it is raised, edematous, blurred, with peripapillary hemorrhage. **If only the retrobulbar nerve is hit, the disc looks normal.** The most common cause is **meningoencephalitis** — physical exam, MRI, and CSF are usually needed. Other causes: viral, mycotic, protozoan, parasitic, trauma, reticulosis, toxins. Specific treatment is aimed at the cause; Merck says systemic corticosteroids are important to limit nerve damage — that is **not** a lobby DexSP table and **not** book pred 1.0. Hypertensive or azotemic: still no DexSP as the blindness plan (147).
+
+Papilledema (raised disc from high ICP) usually **spares vision and PLR** unless atrophy follows — do not call every swollen disc “neuritis.” Optic atrophy after glaucoma / trauma / end-stage retina: disc small and dark, no PLR, no vision, no treatment. Hypoplasia is a neonate / Mini Poodle / in-utero infection story, not tonight’s adult crash.
+
+Thomasy acute vision loss still applies: name the space; ivermectin; cat enrofloxacin; fundus or B-scan; if the retina looks normal and they are blind → ERG (147). Flat ERG = retina (including SARDS). Normal ERG = optic pathway → neuro. Do not call it SARDS at the desk.
+
+Book/public traps:
+
+- Book pred 1.0 for “SARD and optic neuritis” stays in 2013.
+- Do not DexSP a hypertensive or azotemic patient as the blindness plan.
+- Do not skip BP. Hypertensive RD is not neuritis.
+- Do not call a normal-looking disc “not optic nerve” — retrobulbar neuritis is allowed.
+- Do not call papilledema blindness.
+- Do not call cortex blindness this disease (pupils are normal).
+- Do not invent a chiasm visual-field table.
+- Horse / calf vitamin A papilledema stays on those pages.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: sudden blind + dilated + fixed → **retina or optic nerve until the fundus and ERG split them**. Disc can look normal. BP now. Not cortex. Not a pred table.

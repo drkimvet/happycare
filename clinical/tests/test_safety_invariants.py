@@ -321,6 +321,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("iris atrophy", VERIF.lower())
         self.assertIn("dysautonomia", VERIF.lower())
         self.assertIn("0.05–0.1%", VERIF.lower())
+        self.assertIn("dilated, fixed", VERIF.lower())
+        self.assertIn("retrobulbar", VERIF.lower())
+        self.assertIn("meningoencephalitis", VERIF.lower())
+        self.assertIn("pred 1.0", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -463,6 +467,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-aniso`", MACRO)
         self.assertIn("just a funny pupil", MACRO.lower())
         self.assertIn("which pupil is wrong", MACRO.lower())
+        self.assertIn("`ddx-optic`", MACRO)
+        self.assertIn("`dc-optic`", MACRO)
+        self.assertIn("not cortex", MACRO.lower())
+        self.assertIn("normal disc", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -643,6 +651,9 @@ class PublicCardInvariants(unittest.TestCase):
             "which pupil is wrong",
             "just a funny pupil",
             "not horner",
+            "not cortex",
+            "retrobulbar",
+            "dilated and fixed",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

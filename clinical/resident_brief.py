@@ -764,6 +764,23 @@ JUST_FUNNY_PUPIL_RE = re.compile(
     r"\bjust (a )?(funny pupil|dilated pupil|big pupil|anisocoria)\b",
     re.I,
 )
+OPTIC_NEURITIS_RE = re.compile(
+    r"\boptic neurit|"
+    r"\bpapillitis|"
+    r"\bretrobulbar optic",
+    re.I,
+)
+DILATED_FIXED_RE = re.compile(
+    r"\b(dilated and fixed|fixed pupil|unresponsive pupil|"
+    r"pupils? (are )?(fixed|dilated and fixed)|"
+    r"no plr|absent plr|unresponsive plr)\b",
+    re.I,
+)
+BLIND_RE = re.compile(
+    r"\b(blind|no menace|no vision|cannot see|can't see|lost vision)\b",
+    re.I,
+)
+PAPILLEDEMA_RE = re.compile(r"\bpapilledema\b", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2519,6 +2536,47 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for anisocoria.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for anisocoria.")
+
+    if spec in {"dog", "cat"} and (
+        OPTIC_NEURITIS_RE.search(text)
+        or (BLIND_RE.search(text) and DILATED_FIXED_RE.search(text))
+    ):
+        on_loc = (
+            "Blind + dilated + no PLR is retina / optic nerve / chiasm / tract, not cortex. "
+            "The disc can look normal if the nerve is only retrobulbar."
+        )
+        localization = f"{localization} Also {on_loc}" if localization else on_loc
+        hard_stops.append(
+            "Do not harvest book pred 1.0 for optic neuritis. "
+            "BP now. Do not DexSP a hypertensive or azotemic patient as the blindness plan."
+        )
+        do_not.append(
+            "Do not call a normal-looking disc 'not optic nerve.' "
+            "Do not call cortex blindness this disease (those pupils are normal). "
+            "Do not call papilledema blindness. "
+            "Do not re-dump SARDS as the only list — ERG splits retina from nerve."
+        )
+        do_next.append(
+            "Fundus or B-scan. If the retina looks detached, that is packet 147. "
+            "If the retina looks normal and they are blind, offer ERG / referral. "
+            "Bilateral optic neuritis: meningoencephalitis is the common cause — MRI / CSF, not a lobby table."
+        )
+        sources.append(
+            "Merck optic nerve (Hamor, Feb 2023 / Jul 2026): bilateral neuritis = "
+            "acute blind, dilated fixed pupils; retrobulbar form can look normal. "
+            "Thomasy acute vision loss: ERG splits SARDS from optic pathway. "
+            "Book pred 1.0 stays in 2013."
+        )
+        if PAPILLEDEMA_RE.search(text):
+            do_next.append("Papilledema usually spares vision and PLR unless atrophy follows.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send sudden blindness with fixed pupils home as just a funny pupil.")
+        if DEX_RE.search(text) or re.search(r"\bpred(nisolone|nisone)? 1\.0\b", text, re.I):
+            hard_stops.append("Do not copy book pred 1.0 for optic neuritis. Measure BP first.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for optic neuritis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for optic neuritis.")
 
     isolated_trigem = bool(
         trigem_hit
