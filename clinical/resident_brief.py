@@ -841,6 +841,13 @@ HARD_RE = re.compile(
     r"\bhw[- ]associated",
     re.I,
 )
+PTE_RE = re.compile(
+    r"\bpulmonary (thrombo)?embol|"
+    r"\bpulmonary thrombus|"
+    r"\bpulmonary clot|"
+    r"\bpte\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2901,6 +2908,48 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for HARD.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for HARD.")
+
+    if spec in {"dog", "cat"} and PTE_RE.search(text):
+        pte_loc = (
+            "Pulmonary thromboembolism. Clot in the lung arteries, not FATE. "
+            "Normal radiographs do not rule it out."
+        )
+        localization = f"{localization} Also {pte_loc}" if localization else pte_loc
+        hard_stops.append(
+            "Do not Lasix this as CHF. "
+            "Do not promise tPA tonight. "
+            "Do not harvest a heparin or rivaroxaban table."
+        )
+        do_not.append(
+            "Warfarin is not recommended in dogs or cats. "
+            "A normal echo or a normal blood gas does not exclude PTE. "
+            "Do not call the cold hind limbs this disease (that is ATE). "
+            "Printed UFH / LMWH / rivaroxaban and butorphanol 0.4 stay on the page."
+        )
+        do_next.append(
+            "Oxygen. Name the shock. Look for the cause: IMHA, PLN / PLE, Cushing, "
+            "neoplasia, pancreatitis / sepsis, heartworm (weeks after adulticide), "
+            "surgery / trauma / catheter, steroids. "
+            "Cat leading pair: cardiomyopathy and neoplasia. "
+            "Antithrombotic conversation △ Plumb / CURATIVE / hospital. Treat the cause."
+        )
+        sources.append(
+            "Merck pulmonary thromboembolism (Tonozzi, Feb 2022 / Aug 2025): "
+            "no SA gold standard; rads can be normal; warfarin not recommended. "
+            "CURATIVE named only. Thrombosis page: HW PTE often after adulticide."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not Lasix pulmonary thromboembolism as CHF.")
+        if FATE_RE.search(text):
+            do_next.append("Name the bed: lung arteries vs aorta / legs. Pain first if the legs are cold.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send unexplained hypoxemia with a risk disease home as anxiety.")
+        if DEX_RE.search(text):
+            hard_stops.append("Steroids are on the PTE risk list. Do not DexSP the dyspnea as the plan.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for PTE.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for PTE.")
 
     isolated_trigem = bool(
         trigem_hit

@@ -1819,6 +1819,38 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("caval syndrome", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pte_normal_rads_not_chf_not_fate(self):
+        b = analyze(
+            "dog",
+            "pulmonary thromboembolism, IMHA, normal radiographs, Lasix, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("pulmonary thromboembolism", loc)
+        self.assertIn("not fate", loc)
+        self.assertIn("normal radiographs do not rule it out", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not lasix pulmonary thromboembolism", joined)
+        self.assertIn("warfarin is not recommended", joined)
+        self.assertIn("home as anxiety", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_pte_cardiomyopathy_not_just_legs(self):
+        b = analyze(
+            "cat",
+            "PTE, cardiomyopathy, DexSP",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("cardiomyopathy and neoplasia", joined)
+        self.assertIn("steroids are on the pte risk list", joined)
+        self.assertIn("cold hind limbs", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_saddle_thrombus_is_not_pte_script(self):
+        b = analyze("cat", "saddle thrombus, cold pulseless hind limbs")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pulmonary thromboembolism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

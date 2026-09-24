@@ -104,6 +104,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-phtn` | Assessment | Pulmonary hypertension / syncope / RHF |
 | `ddx-caval` | Assessment | Caval syndrome / heartworm extract |
 | `ddx-hard` | Assessment | Feline HARD / cat heartworm |
+| `ddx-pte` | Assessment | Pulmonary thromboembolism |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -167,6 +168,7 @@ Suggested names are short so they show up after three letters.
 | `dc-phtn` | Discharge | Pulmonary hypertension / syncope watch |
 | `dc-caval` | Discharge | After caval extraction / HW crisis |
 | `dc-hard` | Discharge | Cat heartworm / HARD going home |
+| `dc-pte` | Discharge | Pulmonary thromboembolism watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1137,6 +1139,21 @@ DDX:
 Do not: give melarsomine. Call it just asthma. Treat a negative Ag or Ab as a rule-out. Skip preventative because the cat is indoor. Harvest doxy 10 or a water-chase. Stack Lasix + albuterol + DexSP.
 Do next: oxygen, name the space. Ag and Ab (both can lie). Echo if they crash. Preventative. Supportive / doxy △ Plumb. Extract only if echo sees RA / RV / cava worms.
 
+### `ddx-pte`
+
+Pulmonary thromboembolism — {{patient.name}}
+Risk [IMHA / PLN / PLE / Cushing / HW / pancreatitis / neoplasia / CM / surgery / steroids / none]. Rads [normal / too quiet / infiltrate]. SpO2 / blood gas [ ]. Echo [PH / RV strain / normal / not yet]. Legs warm and pulsed [Y/N].
+
+DDX:
+1. PTE if risk disease + sudden dyspnea + rads/echo too quiet
+2. CHF / pleural / airway / HARD — name the space first
+3. Heartworm PTE if weeks after adulticide or worm death
+4. Not FATE (cold pulseless legs)
+5. Not a normal-rads rule-out
+
+Do not: Lasix this as CHF. Promise tPA. Harvest heparin / rivaroxaban numbers. Use warfarin. DexSP the dyspnea (steroids are a risk). Send unexplained hypoxemia home as anxiety.
+Do next: oxygen. Name the shock. Find the cause. Antithrombotic △ Plumb / CURATIVE / hospital.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1660,6 +1677,14 @@ Return now if the urine turns dark again, if {{patient.pronoun}} collapses, the 
 Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet. Use the preventative as discussed so new worms do not arrive.
 
 Return now if breathing gets hard, if {{patient.pronoun}} opens the mouth to breathe, collapses, or stops eating. {{location.phonenumber}}
+
+### `dc-pte`
+
+{{patient.name}} may have a blood clot in the arteries of the lungs (pulmonary thromboembolism). That is not the same as a clot in the back legs. Chest x-rays can look almost normal even when breathing is hard. We treated oxygen and looked for a reason the blood is clotting.
+
+Give only the medicines we sent, as labeled. This is not a water-pill plan and not a home steroid plan. Keep {{patient.pronoun}} quiet.
+
+Return now if breathing gets harder, if {{patient.pronoun}} collapses or faints, gums turn blue, or a leg becomes cold and painful. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

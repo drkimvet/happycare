@@ -344,6 +344,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("feline hard", VERIF.lower())
         self.assertIn("not just asthma", VERIF.lower())
         self.assertIn("negative antibody does not rule out", VERIF.lower())
+        self.assertIn("pulmonary thromboembolism", VERIF.lower())
+        self.assertIn("warfarin is not recommended", VERIF.lower())
+        self.assertIn("no small-animal gold standard", VERIF.lower())
+        self.assertIn("weeks after adulticide", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -510,6 +514,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hard`", MACRO)
         self.assertIn("not a dog arsenic", MACRO.lower())
         self.assertIn("both can lie", MACRO.lower())
+        self.assertIn("`ddx-pte`", MACRO)
+        self.assertIn("`dc-pte`", MACRO)
+        self.assertIn("not the same as a clot in the back legs", MACRO.lower())
+        self.assertIn("use warfarin", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -709,6 +717,9 @@ class PublicCardInvariants(unittest.TestCase):
             "not just asthma",
             "one dead adult",
             "negative ab is",
+            "not the legs",
+            "normal radiographs do not rule it out",
+            "warfarin is not recommended",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

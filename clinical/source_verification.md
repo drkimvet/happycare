@@ -1307,3 +1307,26 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP as a shotgun.
 
 Night rule: coughing / crashing cat + HW on the list → **oxygen, name the space, not just asthma, no melarsomine.** Ag/Ab both can lie. Echo if they crash.
+
+## 176. Acute pulmonary thromboembolism (Merck Tonozzi Feb 2022 / Aug 2025; thrombosis page; CURATIVE named only)
+
+No dedicated Plunkett PTE chapter in the owned SA EM splits. Public Merck respiratory PTE (Tonozzi) and the thrombosis/embolism page. Packet 173 still owns sildenafil numbers. Packet 174 / 175 still own caval / HARD. FATE / ATE is the **leg** list. **Do not harvest UFH 250 / 150, enoxaparin 0.8 / 0.25, dalteparin units, rivaroxaban 1–2, butorphanol 0.4, or PaO2 < 80 as lobby law.**
+
+Agree with Tonozzi: PTE is occlusion of pulmonary vessels by an embolus from the veins or a thrombus that forms in the pulmonary arteries. Incidence unknown. Hypercoagulable disease sits underneath. Dog risk list includes IMHA, PLN / PLE, Cushing, heartworm, necrotizing pancreatitis, sepsis, neoplasia, endocarditis, cardiomyopathy, trauma, surgery. Cat **leading** pair: **cardiomyopathy and neoplasia.** Also named: FIP, hepatic disease, steroids, central venous catheters.
+
+Signs are nonspecific: tachypnea, louder lungs, cough, tachycardia, syncope, cyanosis, sudden death. They can look like the underlying disease. Hemoptysis is more the heartworm-artery page. HW-associated PTE is often **in the weeks after adulticide**, or spontaneous worm death, or in-situ thrombosis from endothelial damage.
+
+Diagnosis is suspicion plus a risk disease plus ruling out other respiratory failure. **There is no small-animal gold standard.** Rads can be normal (printed 9–27% dogs / 9% cats stay on the page). Rads that look too good for how hard they are breathing raise suspicion. Hypoxemia is common; a **normal blood gas does not exclude PTE.** Echo may show PH / a strained right heart; a **normal echo does not exclude PTE.** CT angio is the people gold standard.
+
+Night: oxygen. Name the shock before a bolus (CHF still exists). Anxiety sedation △ Plumb. PPV if they cannot oxygenate. Goals: stop the clot from growing and stop the next one. Antithrombotic conversation △ Plumb / hospital / **CURATIVE named only.** **Warfarin is not recommended** in dogs or cats. Do not promise tPA. Do not Lasix this as CHF. Do not DexSP the dyspnea — steroids are on the risk list. Do not call cold pulseless legs this disease.
+
+Book/public traps:
+
+- Printed heparin / LMWH / rivaroxaban / butorphanol / PaO2 bands stay on the page.
+- Do not invent a D-dimer cutoff.
+- Do not treat normal rads as a rule-out.
+- Do not mix this with FATE.
+- Do not dump a sildenafil cookbook (173).
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: risk disease + sudden dyspnea + rads too quiet → **PTE on the list. Oxygen. Cause. Not Lasix. Not tPA. Not the legs.** △ Plumb.
