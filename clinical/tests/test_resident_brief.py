@@ -1883,6 +1883,52 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("protein-losing nephropathy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ple_low_cholesterol_not_pln_not_lasix(self):
+        b = analyze(
+            "dog",
+            "protein-losing enteropathy, hypoalbuminemia, hypocholesterolemia, Lasix, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("protein-losing enteropathy", loc)
+        self.assertIn("low cholesterol is this list", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not lasix ple", joined)
+        self.assertIn("home as just diarrhea", joined)
+        self.assertIn("low-fat", joined)
+        self.assertIn("split liver / kidney / gut", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lymphangiectasia_not_weeks_long_trial_if_crashing(self):
+        b = analyze(
+            "dog",
+            "lymphangiectasia, diarrhea, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("weeks-long diet trial", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIn("harvest cobalamin or fenbendazole", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nephrotic_only_is_not_ple_script(self):
+        b = analyze("dog", "nephrotic syndrome, hypoalbuminemia, edema")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("protein-losing nephropathy", loc)
+        self.assertNotIn("protein-losing enteropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypoalb_diarrhea_is_ple_even_without_the_name(self):
+        b = analyze(
+            "dog",
+            "hypoalbuminemia, diarrhea, ascites, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("protein-losing enteropathy", loc)
+        self.assertIn("low cholesterol is this list", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("weeks-long diet trial", joined)
+        self.assertIn("home as just diarrhea", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

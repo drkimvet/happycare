@@ -1353,3 +1353,24 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: low albumin + edema / clot / hypertension → **look at the urine tonight.** Quiet sediment, then UPC. BP now. Clot conversation. Not Lasix. Not a pred dump. △ Plumb.
+
+## 178. Protein-losing enteropathy / gut hypoalbuminemia (Merck Collier Aug 2025 / Jun 2026)
+
+No dedicated Plunkett PLE chapter in the owned SA EM splits. Public Merck chronic enteropathies (Collier). Packet 177 still owns the urine / UPC / high-cholesterol tetrad. Packet 114 still owns Addison. Packet 176 still owns the heparin dump. **Do not harvest fenbendazole 50, cobalamin 20–25 / 250 mcg, cyclosporine 5–10, or a 70% diet-response percent as lobby law.**
+
+Agree with Collier: PLE is a fifth type of chronic enteropathy and is usually more guarded. Weight loss, vomiting, diarrhea, ascites, and limb edema are allowed. **GI signs can be minimal.** PTE is uncommon and can still happen. Hypoproteinemia is intake, malabsorption, or gut loss. **Hypocholesterolemia and hypocalcemia** are the malabsorption pair — that is the opposite of nephrotic high cholesterol. Folate / cobalamin can be low. TLI so you do not miss EPI. Soft Coated Wheaten: PLE and PLN can sit together. Yorkie ultra-low-fat diet success is printed; MST numbers stay on the page.
+
+Night split: liver vs kidney vs gut. Urine protein (177). A liver function test. Baseline cortisol if the leukogram is not stressed. Fecal; printed fenbendazole empirical line stays on the page. If they are **debilitated or hypoproteinemic, skip the long diet / antibiotic trial** and work them up. Stable food-responsive dogs get a diet trial; PLE still prioritizes **low-fat** (hypoallergenic allowed). Do not Lasix the ascites as CHF. Do not send a low-albumin “just diarrhea” home.
+
+Imaging: hyperechoic mucosal striations often travel with mucosal inflammation and PLE. Wall-thickness millimeters are **no major diagnostic value** (Merck). Endoscopy vs full-thickness: severe hypoproteinemia and urgent steroids compromise wound healing — most go endoscopic unless another organ needs a piece. Cat: ileum more often shows lymphoma than duodenum. PARR if histology is arguing lymphoma. Do not harvest “ten biopsies” as a lobby count.
+
+Book/public traps:
+
+- Printed fenbendazole 50, cobalamin mcg, cyclosporine 5–10, CCECAI < 8, and MST months stay on the page.
+- Do not harvest a heparin table here.
+- Do not call high cholesterol this disease.
+- Do not skip the urine because the stool is loose.
+- Do not full-thickness a wet, steroid-bound belly as default.
+- Azotemic: still no NSAID, still no DexSP as a shotgun.
+
+Night rule: low albumin + **low cholesterol or diarrhea** → **gut list, still check the urine.** Low-fat conversation. Not Lasix. Not a three-week trial if they are crashing. △ Plumb.

@@ -352,6 +352,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("upc > 2 suggests", VERIF.lower())
         self.assertIn("not definitive", VERIF.lower())
         self.assertIn("clopidogrel 1–4", VERIF.lower())
+        self.assertIn("protein-losing enteropathy", VERIF.lower())
+        self.assertIn("gi signs can be minimal", VERIF.lower())
+        self.assertIn("hypocholesterolemia", VERIF.lower())
+        self.assertIn("fenbendazole 50", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -526,6 +530,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-pln`", MACRO)
         self.assertIn("not “just a liver problem”", MACRO.lower())
         self.assertIn("treat upc > 2 as proof", MACRO.lower())
+        self.assertIn("`ddx-ple`", MACRO)
+        self.assertIn("`dc-ple`", MACRO)
+        self.assertIn("losing protein through the gut", MACRO.lower())
+        self.assertIn("weeks-long diet trial", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -731,6 +739,9 @@ class PublicCardInvariants(unittest.TestCase):
             "look at the urine",
             "nephrotic tetrad",
             "upc > 2 suggests",
+            "low cholesterol is this list",
+            "gi signs can be minimal",
+            "skip a long diet trial",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -106,6 +106,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hard` | Assessment | Feline HARD / cat heartworm |
 | `ddx-pte` | Assessment | Pulmonary thromboembolism |
 | `ddx-pln` | Assessment | PLN / nephrotic crisis |
+| `ddx-ple` | Assessment | PLE / gut hypoalbuminemia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -171,6 +172,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hard` | Discharge | Cat heartworm / HARD going home |
 | `dc-pte` | Discharge | Pulmonary thromboembolism watch |
 | `dc-pln` | Discharge | PLN / nephrotic going home |
+| `dc-ple` | Discharge | PLE / gut protein loss going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1171,6 +1173,21 @@ DDX:
 Do not: Lasix the edema as CHF. DexSP as the shotgun. Harvest clopidogrel / ACEI / telmisartan numbers. Biopsy untreated hypertension or a coagulopathy. Treat UPC > 2 as proof.
 Do next: UA + sediment. UPC when quiet. BP now. Look for a trigger. Antithrombotic conversation △ Plumb (AT lost with albumin). If they cannot breathe, packet 176.
 
+### `ddx-ple`
+
+PLE / gut hypoalbuminemia — {{patient.name}}
+Albumin [ ]. Cholesterol [low / high / pending]. Diarrhea / weight loss [ ]. Urine protein [quiet / dirty / pending]. Liver function [ ]. Cortisol [ ]. TLI [ ]. Cobalamin [ ].
+
+DDX:
+1. Protein-losing enteropathy if low albumin + low cholesterol or gut signs
+2. Lymphangiectasia / CIE / lymphoma (cat: ileum)
+3. Not PLN if cholesterol is high and the urine is spilling protein — other list
+4. Not “just liver” until a function test
+5. Addison / EPI / parasites still on the list
+
+Do not: Lasix the ascites as CHF. Skip the urine. Run a weeks-long diet trial if they are crashing. Harvest cobalamin or fenbendazole numbers. Call GI-quiet PLE “not GI.”
+Do next: split liver / kidney / gut. Low-fat conversation. Fecal / fenbendazole. TLI. If crashing, work up tonight.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1710,6 +1727,14 @@ Return now if breathing gets harder, if {{patient.pronoun}} collapses or faints,
 Give only the medicines we sent, as labeled. Recheck urine protein, albumin, and blood pressure as discussed. Keep {{patient.pronoun}} quiet.
 
 Return now if breathing gets hard, if {{patient.pronoun}} collapses, a leg becomes cold, or the swelling suddenly worsens. {{location.phonenumber}}
+
+### `dc-ple`
+
+{{patient.name}} is losing protein through the gut (protein-losing enteropathy). The blood albumin is low, and the cholesterol is often low too — that is different from losing protein in the urine. Swelling or a pot belly can happen even if the stool looks almost normal.
+
+Give only the food and medicines we sent, as labeled. This is usually a low-fat food plan, not a water-pill plan. Recheck bloodwork as discussed.
+
+Return now if breathing gets hard, if {{patient.pronoun}} collapses, the belly swells fast, or diarrhea becomes bloody. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

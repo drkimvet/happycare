@@ -858,6 +858,12 @@ NEPHROTIC_RE = re.compile(
 )
 HYPOALB_RE = re.compile(r"\bhypoalbumin", re.I)
 PROTEINURIA_RE = re.compile(r"\bproteinuria\b|\bupc\b|\burine protein", re.I)
+PLE_RE = re.compile(
+    r"\bprotein[- ]losing enteropath|"
+    r"\blymphangiectasia",
+    re.I,
+)
+HYPOCHOL_RE = re.compile(r"\bhypocholesterol|low cholesterol", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3003,6 +3009,52 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for PLN.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for PLN.")
+
+    ple_hit = spec in {"dog", "cat"} and (
+        PLE_RE.search(text)
+        or (
+            HYPOALB_RE.search(text)
+            and (
+                HYPOCHOL_RE.search(text)
+                or re.search(r"\b(diarrhea|diarrhoea|melena|melaena)\b", text, re.I)
+            )
+        )
+    )
+    if ple_hit:
+        ple_loc = (
+            "Protein-losing enteropathy. Albumin is leaving through the gut. "
+            "Low cholesterol is this list. High cholesterol is PLN."
+        )
+        localization = f"{localization} Also {ple_loc}" if localization else ple_loc
+        hard_stops.append(
+            "Do not Lasix PLE ascites as CHF. "
+            "Do not skip the urine — PLN can sit with PLE (Wheaten). "
+            "Do not harvest cobalamin or fenbendazole numbers."
+        )
+        do_not.append(
+            "Do not call it just liver without a function test. "
+            "Do not run a weeks-long diet trial on a crashing hypoproteinemic patient. "
+            "GI signs can be minimal. Printed fenbendazole 50 and cobalamin mcg stay on the page."
+        )
+        do_next.append(
+            "Split liver / kidney / gut tonight. UA + sediment. Bile acids or a liver panel. "
+            "Baseline cortisol if Addison is on the list. Fecal / fenbendazole conversation. TLI. "
+            "Low-fat diet is the Merck PLE priority. Cat: lymphoma vs IBD — ileum if you biopsy. "
+            "PTE is uncommon and allowed. △ Plumb."
+        )
+        sources.append(
+            "Merck chronic enteropathies (Collier, Aug 2025 / Jun 2026): PLE is a fifth type, "
+            "guarded; GI signs can be minimal; low-fat diet prioritized; "
+            "hypocholesterolemia from malabsorption. Debilitated: skip long diet trials."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not Lasix PLE third-space fluid as CHF.")
+        if SEND_HOME_RE.search(text) and HYPOALB_RE.search(text):
+            hard_stops.append("Do not send PLE hypoalbuminemia home as just diarrhea.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for PLE.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for PLE.")
 
     isolated_trigem = bool(
         trigem_hit
