@@ -24,6 +24,22 @@ If you find it
   Do not send the audio to Cole first. Use it if Amy/Evan deny the call.
   Then the reply-all can say: the September 13 call was recorded.
 
-If you cannot find it
+AT&T — they will not give a script of what was said
+  Regular wireless calls are not recorded or transcribed by AT&T.
+  Customer service can give Call Detail Records only: date, time, duration,
+  and the other number. That proves Amy/Evan called you on Sep 13. It does
+  not prove $300/hour.
+
+  How to pull the log yourself (faster than calling):
+    myATT app or att.com → bill / usage details → voice for Sep 13
+    Screenshot the incoming call (Amy 561-313-1076 and/or Evan) and duration.
+    Privacy “Access my data” at att.com/mydatarequest is the same metadata,
+    slower (weeks).
+
+  A lawyer with a subpoena still usually gets logs, not audio, unless the
+  call was on a recorded business line (Office@Hand, etc.).
+
+If you cannot find a recording
   Send draft-reply-cole-final.txt as written. Amy and Evan still have to
   answer yes or no. Do not bluff a file you do not have.
+  The AT&T log is still worth saving: it shows the joint call happened.
