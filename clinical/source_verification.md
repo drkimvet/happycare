@@ -1257,3 +1257,29 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: syncope after exercise + ascites / jugulars → **echo, not a seizure cocktail.** Name HW / PTE / lung / left-heart. Sildenafil conversation only if the signs are this disease. △ Plumb. Not Lasix. Not amlodipine.
+
+## 174. Caval syndrome / heartworm crisis (Merck Ames Apr 2025 / Aug 2026; AHS named only)
+
+No dedicated Plunkett caval-syndrome chapter in the owned SA EM splits. Public Merck heartworm (Ames). Packet 173 still owns PH / sildenafil. The 2013 preventative **mg/kg** line is still a unit trap (µg). **Do not harvest doxycycline 10, melarsomine 2.5, pred 0.5, sildenafil 1–2, needle sizes, or the 2–3 mm venotomy as a lobby recipe.**
+
+Agree with Ames: caval syndrome is worms moving **retrograde into the right atrium and venae cavae** after severe pulmonary hypertension and a failing right ventricle, or after a massive simultaneous maturation. Venous return is obstructed; RV stroke volume falls. Young naive dogs can declare the year after a heavy mosquito season; older dogs from chronic infection, PH, and R-CHF. Intracardiac worms are more likely in small dogs.
+
+The picture is **backward failure (R-CHF) plus forward failure (pale, long CRT, poor pulses) plus intravascular hemolysis**. Pigmenturia is **hemoglobinuria** — worms shear RBCs. Weakness, collapse, dyspnea. Right-sided systolic murmur from a wrecked tricuspid apparatus is allowed. Class IV on the Merck table is hemoglobinuria, anemia, low-output failure.
+
+Night test is echo / POC US: worm cuticles are **hyperechoic parallel lines that look like long bright equal signs** in the RA / TV. Antigen. Do not call it IMHA. Do not send the dark urine home as a UTI.
+
+Agree with Ames: **removing the worms from the RA and tricuspid orifice is typically necessary to save the dog.** Right jugular, left lateral. Printed 2–3 mm venotomy stays on the page. Sedation plus local may be enough if they are that sick; otherwise GA △ hospital. Fluoro or echo to steer. **Excessive traction lacerates worms and dumps antigen — anaphylaxis.** After several empty passes or a lighter echo burden, close and keep stabilizing. Doxy and a preventative can start in hospital. Melarsomine follows AHS **after** failure / PH are controlled — **not a lobby kill tonight.**
+
+Cats: more resistant; adults often 1–3; Ag often negative. HARD mimics asthma. Death of even one worm can shock or kill. **Melarsomine is not recommended in cats** (severe pulmonary inflammation and death). Supportive / doxy / extract conversation, not a dog 3-dose script.
+
+Book/public traps:
+
+- Printed doxy 10 / 7.5 / 5, melarsomine 2.5, pred 0.5, sildenafil 1–2, 6–8 week crate, and 2–3 mm stay on those pages.
+- Do not harvest a preventative as mg/kg.
+- Do not yank the worms.
+- Do not start adulticide in the crashing RA-worm dog.
+- Do not call hemoglobinuria a UTI or IMHA.
+- Do not run the dog caval script on a coughing cat.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: HW + dark urine + pale / collapse → **echo now, extract conversation, not melarsomine.** Not a seizure. Not IMHA. Cat: no melarsomine.

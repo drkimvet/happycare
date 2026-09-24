@@ -102,6 +102,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cortex` | Assessment | Cortical / post-ictal blindness |
 | `ddx-htn` | Assessment | Acute systemic hypertension / TOD |
 | `ddx-phtn` | Assessment | Pulmonary hypertension / syncope / RHF |
+| `ddx-caval` | Assessment | Caval syndrome / heartworm extract |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -163,6 +164,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cortex` | Discharge | Post-ictal / cortical blindness watch |
 | `dc-htn` | Discharge | Systemic hypertension / BP / eye watch |
 | `dc-phtn` | Discharge | Pulmonary hypertension / syncope watch |
+| `dc-caval` | Discharge | After caval extraction / HW crisis |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1103,6 +1105,21 @@ DDX:
 Do not: harvest sildenafil or tadalafil numbers. Invent a TR-velocity cutoff. Lasix this as the PA-pressure drug. Dump an adulticide table tonight. Call syncope a seizure. Start amlodipine for this list.
 Do next: oxygen if hypoxic. Echo, not a PA catheter. Name the cause. Sildenafil is the Merck dog conversation when they have signs (syncope / RHF) — △ Plumb. Pimobendan if left-heart PH. Treat the cause.
 
+### `ddx-caval`
+
+Caval syndrome — {{patient.name}}
+Pigmenturia / hemoglobinuria [Y/N]. Anemia [ ]. Pulses / CRT [ ]. Echo equal-sign worms in RA / TV [Y/N / not yet]. HW Ag [ ]. Species [dog / cat].
+
+DDX:
+1. Caval syndrome (worms retrograde into RA / cava) if dark urine + forward/backward failure
+2. Heartworm PH / R-CHF without intracardiac worms (other list)
+3. Not IMHA (this hemolysis is mechanical)
+4. Not a UTI (pigmenturia is hemoglobin)
+5. Cat: HARD / one-worm death — not a dog caval script; no melarsomine
+
+Do not: dump a melarsomine or doxycycline table tonight. Yank and lacerate the worms. Copy a preventative as mg/kg. Send hemoglobinuria home as a UTI. Harvest sildenafil numbers here.
+Do next: echo now. Right-jugular extraction conversation if worms sit on the TV / RA. Stabilize. AHS later. Cat: no melarsomine.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1610,6 +1627,14 @@ Return now if vision suddenly worsens, if {{patient.pronoun}} seizes, cannot wal
 Give only the medicines we sent, as labeled. This is not a water-pill plan for the lung arteries and not a home steroid plan. Keep activity calm. Recheck and imaging as discussed.
 
 Return now if {{patient.pronoun}} faints again, collapses, the belly swells, or breathing gets hard. {{location.phonenumber}}
+
+### `dc-caval`
+
+{{patient.name}} had heartworms in the right heart / vena cava (caval syndrome). Dark urine in this disease is broken-down blood from the worms shearing red cells, not a simple bladder infection. Taking the worms out through the neck vein is what saves a dog in this crisis. This is not a same-day arsenic (melarsomine) injection plan.
+
+Give only the medicines we sent, as labeled. Strict rest as discussed. No extra steroids or leftover heartworm shots from the cabinet.
+
+Return now if the urine turns dark again, if {{patient.pronoun}} collapses, the gums stay pale, the belly swells, or breathing gets hard. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

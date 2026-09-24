@@ -820,6 +820,20 @@ SYNCOPE_RE = re.compile(
     r"\bexcitement.{0,20}collapse\b",
     re.I,
 )
+CAVAL_RE = re.compile(
+    r"\bcaval syndrome|"
+    r"\bvena cava syndrome|"
+    r"\bintracardiac (heart)?worms?|"
+    r"\bworms? in the (right atrium|ra\b|vena cava|cava)|"
+    r"\bheartworm extract|"
+    r"\bjugular (worm )?(extract|retrieval|venotomy)",
+    re.I,
+)
+PIGMENTURIA_RE = re.compile(
+    r"\b(pigmenturia|hemoglobinuria|port[- ]wine urine|cola[- ]colored urine)\b",
+    re.I,
+)
+MELARSOMINE_RE = re.compile(r"\b(melarsomine|immiticide)\b", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2780,6 +2794,66 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for pulmonary hypertension.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for pulmonary hypertension.")
+
+    caval_hit = spec in {"dog", "cat"} and (
+        CAVAL_RE.search(text)
+        or (
+            HEARTWORM_RE.search(text)
+            and (
+                PIGMENTURIA_RE.search(text)
+                or MELARSOMINE_RE.search(text)
+                or (
+                    re.search(r"\banemia\b", text, re.I)
+                    and (
+                        SYNCOPE_RE.search(text)
+                        or re.search(r"\b(collapse|low[- ]output|poor pulse)\b", text, re.I)
+                    )
+                )
+            )
+        )
+    )
+    if caval_hit:
+        cav_loc = (
+            "Caval syndrome. Worms in the right atrium / cava, not a lobby melarsomine. "
+            "Hemoglobinuria is mechanical hemolysis."
+        )
+        localization = f"{localization} Also {cav_loc}" if localization else cav_loc
+        hard_stops.append(
+            "Do not dump a melarsomine or doxycycline table tonight. "
+            "Do not yank and lacerate the worms. "
+            "Do not copy a 2013 heartworm preventative written as mg/kg."
+        )
+        do_not.append(
+            "This hemolysis is not IMHA. "
+            "Do not send hemoglobinuria home as a UTI. "
+            "Do not harvest sildenafil numbers here (packet 173). "
+            "Printed 2–3 mm venotomy, doxy 10, and melarsomine 2.5 stay on the page."
+        )
+        do_next.append(
+            "Echo now: bright parallel equal-sign cuticles in the RA / TV. "
+            "Right-jugular extraction is the life-saving conversation. △ hospital. "
+            "Stabilize forward and backward failure. Antigen. AHS later, not a lobby kill."
+        )
+        sources.append(
+            "Merck heartworm (Ames, Apr 2025 / Aug 2026): caval = retrograde worms in RA / cava; "
+            "pigmenturia is hemoglobinuria from sheared RBCs; extract to save the dog. "
+            "AHS named only. Melarsomine not recommended in cats."
+        )
+        if spec == "cat":
+            hard_stops.append(
+                "Melarsomine is not recommended in cats (severe pulmonary inflammation and death). "
+                "Cat HW is HARD / one-worm death shock, not a dog caval script."
+            )
+        if re.search(r"\b(yank|pull hard|lacerat)\b", text, re.I) or YANK_FB_RE.search(text):
+            hard_stops.append(
+                "Excessive traction lacerates worms and can dump antigen — anaphylaxis."
+            )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send caval syndrome home as a UTI or a seizure.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for caval syndrome.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for caval syndrome.")
 
     isolated_trigem = bool(
         trigem_hit

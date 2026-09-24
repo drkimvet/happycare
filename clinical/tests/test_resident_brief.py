@@ -1764,6 +1764,39 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("home as a seizure", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_caval_pigmenturia_extract_not_imha_not_melarsomine(self):
+        b = analyze(
+            "dog",
+            "caval syndrome, pigmenturia, yank the worms, send home as a UTI",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("caval syndrome", loc)
+        self.assertIn("mechanical hemolysis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("equal-sign", joined)
+        self.assertIn("right-jugular", joined)
+        self.assertIn("not imha", joined)
+        self.assertIn("home as a uti", joined)
+        self.assertIn("lacerates worms", joined)
+        self.assertIn("dump a melarsomine", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_heartworm_no_melarsomine(self):
+        b = analyze(
+            "cat",
+            "heartworm, melarsomine, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("not recommended in cats", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_heartworm_wellness_is_not_caval(self):
+        b = analyze("dog", "heartworm antigen positive, wellness preventative")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("caval syndrome", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
