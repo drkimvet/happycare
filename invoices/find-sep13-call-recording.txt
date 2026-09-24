@@ -1,0 +1,29 @@
+9/13 Amy + owner/Evan call — find the recording first. Do not write “I have a recording”
+on the URvet thread until the file is in your hands and you have played it.
+
+New York is one-party consent. You may keep a recording of a call you were on.
+
+Where to look (iPhone)
+  1) Notes — iOS 18+ Phone recordings land as a Call Recording note.
+     Search Notes for “Amy”, “Evan”, “URvet”, “call recording”, Sep 13.
+  2) Phone → Recents — Sep 13 incoming from Amy / 561-313-1076 / Evan.
+     If iOS recorded it, the recents row often shows a small waveform.
+  3) Voice Memos — sort by date around Sep 13.
+  4) Files → Recents / iCloud Drive / On My iPhone — search “recording”.
+  5) Mail (Outlook + iCloud) — did you forward or auto-save audio?
+  6) If you used TapeACall, Rev Call Recorder, Google Voice, or speaker +
+     a second phone, open that app.
+  7) iCloud.com on a laptop, same Apple ID: Notes and Voice Memos.
+
+What you said you heard
+  On-call base $300/hour, plus $250/hour when in the hospital. Two clocks.
+  Not a $300 one-time fee. Not $550/hour.
+
+If you find it
+  Save a copy off the phone (Files + email to kim.yujin@outlook.com).
+  Do not send the audio to Cole first. Use it if Amy/Evan deny the call.
+  Then the reply-all can say: the September 13 call was recorded.
+
+If you cannot find it
+  Send draft-reply-cole-final.txt as written. Amy and Evan still have to
+  answer yes or no. Do not bluff a file you do not have.
