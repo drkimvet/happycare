@@ -1132,3 +1132,29 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: small pupil + ptosis + third eyelid, **they blink** → Horner. Stain. Look in the ear. Look at the ipsilateral thoracic limb and cutaneous trunci.
+
+## 169. Anisocoria — the big pupil (Merck Thomas neuro exam Oct 2023 / Sept 2024; Hamor anterior uvea Feb 2023 / Aug 2026; Hahn dysautonomia Apr 2024 / Jul 2026)
+
+No dedicated Plunkett anisocoria chapter in the owned SA EM splits. Public Merck neurologic examination (Thomas), anterior uvea (Hamor), canine and feline dysautonomia (Hahn, Apr 2024 / Jul 2026). Glaucoma already owns the red painful cloudy mydriatic eye (packet 143). No chapter dump. **Do not harvest dilute pilocarpine 0.05–0.1%, a 45–60 minute clock, STT < 5 mm, or a bethanechol / metoclopramide table.**
+
+Agree with Merck neuro exam: first decide **which pupil is wrong**. Does the big one constrict to light? Does the small one dilate in the dark? **Big pupil + intact vision** = iris atrophy, parasympatholytic drugs (atropine), dysautonomia, or a lesion of the oculomotor nerve (CN III) or its brainstem nucleus. **Big pupil + no vision + no PLR** = retina / optic nerve / chiasm / tract, not a default CN III. Blindness with **normal** pupils is forebrain / radiation / cortex. CN III also moves the globe (with IV and VI); brainstem CN III comes with other CN, mentation, or ipsilateral limbs — not a lonely pupil.
+
+Agree with Hamor: iris atrophy is common in **older dogs** (pupillary margin or stroma). Scalloped margin, sluggish PLR, photophobia; stromal holes can displace the pupil. **Vision is not affected.** This is not a CN III crash.
+
+Agree with Hahn: dysautonomia is **multisystem**, not a single-eye lobby Horner. Dogs: vomiting, diarrhea, low anal tone, dysuria, mydriasis, third eyelid; often younger / rural / Midwest in the US reports; **prognosis grave**; no effective treatment. Cats (Key-Gaskell): megaesophagus, ileus, bladder, mydriasis, third eyelid, dry eyes; younger cats over-represented; supportive only. Both: bilateral mydriasis with **vision intact** and poor PLR is the ocular pattern. Printed dilute pilocarpine (0.05–0.1%) and STT < 5 mm stay on those pages. FeLV can cause anisocoria plus incontinence — it is not the full dysautonomia picture.
+
+Red, painful, cloudy, mydriatic = **measure IOP** (glaucoma packet). STT before drops. Stain. Do not dilate a high-IOP eye. Small pupil + ptosis is packet 168, not this.
+
+Book/public traps:
+
+- No dedicated Plunkett anisocoria chapter — do not ask for one.
+- Printed pilocarpine 0.05–0.1%, 45–60 minutes, STT < 5, bethanechol mg/cat, and metoclopramide mg/kg stay on the Hahn pages.
+- Do not call the big pupil Horner.
+- Do not call old-dog iris atrophy a CN III emergency.
+- Do not call a blind dilated eye “just atropine” without the fundus / PLR story.
+- Do not send home as conjunctivitis or just a funny pupil.
+- Do not DexSP a big pupil as a stroke.
+- Midtown is not Midwest rural dysautonomia-default — still name the syndrome if the whole autonomic picture is there.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: anisocoria → **name which pupil is wrong**. Big + sees = atrophy / atropine / dysautonomia / CN III. Big + blind + no PLR = retina / optic nerve. Red painful cloudy = IOP tonight. Small + ptosis = Horner.

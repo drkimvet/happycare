@@ -97,6 +97,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-face` | Assessment | Facial paralysis / cannot blink |
 | `ddx-polyp` | Assessment | Cat NP / aural inflammatory polyp |
 | `ddx-horner` | Assessment | Isolated Horner / small pupil + ptosis |
+| `ddx-aniso` | Assessment | Anisocoria / the big pupil |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -153,6 +154,7 @@ Suggested names are short so they show up after three letters.
 | `dc-face` | Discharge | Facial paralysis / cannot blink |
 | `dc-polyp` | Discharge | Cat polyp traction / VBO / look again |
 | `dc-horner` | Discharge | Horner going home / ear and limb watch |
+| `dc-aniso` | Discharge | Anisocoria / big pupil going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1017,6 +1019,22 @@ DDX:
 Do not: send home as conjunctivitis or just a small pupil. Call this CN VII (they blink). Call the small pupil CN III. Harvest a 1st/2nd/3rd-order or phenylephrine-minute table. Skip the ear because the face is normal.
 Do next: stain. Both ears. Feel the limb and cutaneous trunci. Cat: polyp stays on the list.
 
+### `ddx-aniso`
+
+Anisocoria / big pupil — {{patient.name}}
+Which pupil is wrong [big / small / not sure]. Vision [yes / no]. PLR big [Y/N]. PLR small [Y/N]. Stain [ ]. STT [ ]. IOP [ ]. Iris margin [scalloped / holes / normal]. Gut / bladder / dry eye [ ].
+
+DDX:
+1. Iris atrophy if old dog, scalloped pupil, vision stays
+2. Atropine / parasympatholytic drop if the history fits
+3. CN III / brainstem if other CN, mentation, or limbs go with it
+4. Dysautonomia if bilateral mydriasis plus gut / bladder / third eyelid (other list)
+5. Retina / optic nerve if big + blind + no PLR
+6. Glaucoma if red, painful, cloudy — measure IOP (other list)
+
+Do not: call the big pupil Horner. Call old-dog iris atrophy a CN III emergency. Harvest a dilute pilocarpine table. Send home as conjunctivitis or just a funny pupil. Dilate a high-IOP eye.
+Do next: name which pupil is wrong. Stain. STT before drops. IOP if red / painful / cloudy.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1484,6 +1502,14 @@ Return now if breathing is loud or hard, if {{patient.pronoun}} stops eating, if
 Keep the eye clean. Use only the drops we sent. The ear still needs to stay clean and dry. We may still need another look at the ear or the front leg.
 
 Return now if {{patient.pronoun}} cannot blink, the eye looks cloudy or painful, a head tilt or rolling starts, or the front leg on that side goes limp. {{location.phonenumber}}
+
+### `dc-aniso`
+
+{{patient.name}} has pupils that are not the same size. We decided which side is the problem. A large pupil that still sees is often an aging iris or a drop effect, not Horner’s syndrome (that is the small pupil).
+
+Use only the eye medicines we sent. Do not put leftover atropine or other drops in unless we said to. Keep the eye from bright glare if it bothers {{patient.pronoun}}.
+
+Return now if the eye turns red, cloudy, or painful, if vision is suddenly worse, if {{patient.pronoun}} starts vomiting or cannot urinate, or if the other side of the face or a leg goes weak. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

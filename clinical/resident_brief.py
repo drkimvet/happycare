@@ -745,6 +745,25 @@ JUST_SMALL_PUPIL_RE = re.compile(
     r"\bjust (a )?(small pupil|miotic|conjunctivitis)\b",
     re.I,
 )
+# Big-pupil anisocoria. Do not use bare \batropine\b (uveitis drops).
+# Do not use \bmydriasis on a glaucoma-only string if we can help it — glaucoma already owns red/painful.
+ANISO_BIG_RE = re.compile(
+    r"\banisocoria|"
+    r"\b(dilated|big|large) pupil|"
+    r"\boculomotor|"
+    r"\bcn ?iii\b|"
+    r"\biris atrophy|"
+    r"\bdysautonomia|"
+    r"\bkey-?gaskell|"
+    r"\batropine pupil",
+    re.I,
+)
+MYDRIASIS_RE = re.compile(r"\bmydriasis\b", re.I)
+PILOCARPINE_RE = re.compile(r"\bpilocarpine\b", re.I)
+JUST_FUNNY_PUPIL_RE = re.compile(
+    r"\bjust (a )?(funny pupil|dilated pupil|big pupil|anisocoria)\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2456,6 +2475,50 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Horner.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Horner.")
+
+    if spec in {"dog", "cat"} and (ANISO_BIG_RE.search(text) or MYDRIASIS_RE.search(text)):
+        ap_loc = (
+            "Anisocoria: name which pupil is wrong. "
+            "Big pupil + vision is iris atrophy / atropine / dysautonomia / CN III, not Horner. "
+            "Big + blind + no PLR is retina / optic nerve."
+        )
+        localization = f"{localization} Also {ap_loc}" if localization else ap_loc
+        hard_stops.append(
+            "Stain. STT before drops. If the eye is red, painful, or cloudy, measure IOP tonight. "
+            "Do not send home as conjunctivitis or just a funny pupil."
+        )
+        do_not.append(
+            "Do not call the big pupil Horner. "
+            "Do not call old-dog iris atrophy a CN III emergency. "
+            "Do not harvest a dilute pilocarpine table."
+        )
+        do_next.append(
+            "Does the big pupil constrict to light? Does the small one dilate in the dark? "
+            "Iris atrophy: old dog, scalloped margin, vision stays. "
+            "Dysautonomia is bilateral plus gut / bladder / dry eye, not a single-eye lobby finding. "
+            "CN III / brainstem if other cranial nerves, mentation, or limbs go with it."
+        )
+        sources.append(
+            "Merck neurologic examination (Thomas, Oct 2023 / Sept 2024): "
+            "big pupil + vision = iris atrophy / atropine / dysautonomia / CN III. "
+            "Anterior uvea (Hamor): iris atrophy does not take vision. "
+            "Hahn dysautonomia (Apr 2024 / Jul 2026): printed pilocarpine 0.05–0.1% stays on the page. "
+            "No dedicated Plunkett anisocoria chapter."
+        )
+        if SEND_HOME_RE.search(text) or JUST_FUNNY_PUPIL_RE.search(text) or CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append("Do not send a big pupil home as conjunctivitis or just a funny pupil.")
+        if PILOCARPINE_RE.search(text):
+            do_not.append("Printed pilocarpine 0.05–0.1% and the 45–60 minute clock stay on the Merck page.")
+        if re.search(r"\bdysautonomia|key-?gaskell\b", text, re.I):
+            do_next.append(
+                "Dysautonomia: supportive only. Dog prognosis is grave. Not Midwest-default at Midtown, but name it if the whole picture is there."
+            )
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP a big pupil as a stroke.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for anisocoria.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for anisocoria.")
 
     isolated_trigem = bool(
         trigem_hit

@@ -1615,6 +1615,39 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("minute", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_anisocoria_big_pupil_not_horner(self):
+        b = analyze(
+            "dog",
+            "anisocoria, dilated pupil, vision intact, send home as just a funny pupil",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("which pupil is wrong", loc)
+        self.assertIn("not horner", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("iris atrophy", joined)
+        self.assertIn("just a funny pupil", joined)
+        self.assertIn("do not call the big pupil horner", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dysautonomia_not_single_eye_no_pilocarpine_table(self):
+        b = analyze(
+            "dog",
+            "dysautonomia, bilateral mydriasis, pilocarpine, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not a single-eye", joined)
+        self.assertIn("pilocarpine", joined)
+        self.assertIn("grave", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_iris_atrophy_not_cn_iii_crash(self):
+        b = analyze("dog", "old dog, iris atrophy, scalloped pupil, anisocoria")
+        joined = " ".join(b["do_not"] + b["do_next"]).lower()
+        self.assertIn("cn iii emergency", joined)
+        self.assertIn("vision stays", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_miosis_ulcer_alone_is_not_horner(self):
         b = analyze("dog", "miosis, corneal ulcer, painful eye")
         loc = (b["localization"] or "").lower()

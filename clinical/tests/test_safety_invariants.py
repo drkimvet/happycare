@@ -317,6 +317,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("they can still blink", VERIF.lower())
         self.assertIn("first- / second- / third-order", VERIF.lower())
         self.assertIn("2.5% / 10%", VERIF.lower())
+        self.assertIn("which pupil is wrong", VERIF.lower())
+        self.assertIn("iris atrophy", VERIF.lower())
+        self.assertIn("dysautonomia", VERIF.lower())
+        self.assertIn("0.05–0.1%", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -455,6 +459,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-horner`", MACRO)
         self.assertIn("they can blink", MACRO.lower())
         self.assertIn("just a small pupil", MACRO.lower())
+        self.assertIn("`ddx-aniso`", MACRO)
+        self.assertIn("`dc-aniso`", MACRO)
+        self.assertIn("just a funny pupil", MACRO.lower())
+        self.assertIn("which pupil is wrong", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -632,6 +640,9 @@ class PublicCardInvariants(unittest.TestCase):
             "they can blink",
             "just a small pupil",
             "1st/2nd/3rd-order",
+            "which pupil is wrong",
+            "just a funny pupil",
+            "not horner",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
