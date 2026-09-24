@@ -813,10 +813,11 @@ HEARTWORM_RE = re.compile(
     re.I,
 )
 SYNCOPE_RE = re.compile(
-    r"\b(syncop|episodic collapse|"
-    r"collapse after (exercise|excitement)|"
-    r"exercise.{0,20}collapse|"
-    r"excitement.{0,20}collapse)\b",
+    r"\bsyncop|"
+    r"\bepisodic collapse\b|"
+    r"\bcollapse after (exercise|excitement)\b|"
+    r"\bexercise.{0,20}collapse\b|"
+    r"\bexcitement.{0,20}collapse\b",
     re.I,
 )
 BNP_RE = re.compile(
