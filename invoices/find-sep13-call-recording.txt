@@ -6,7 +6,7 @@ New York is one-party consent. You may keep a recording of a call you were on.
 Where to look (iPhone)
   1) Notes — iOS 18+ Phone recordings land as a Call Recording note.
      Search Notes for “Amy”, “Evan”, “URvet”, “call recording”, Sep 13.
-  2) Phone → Recents — Sep 13 incoming from Amy / 561-313-1076 / Evan.
+  2) Phone → Recents — Sep 13 incoming from Evan’s phone (Amy was on that call).
      If iOS recorded it, the recents row often shows a small waveform.
   3) Voice Memos — sort by date around Sep 13.
   4) Files → Recents / iCloud Drive / On My iPhone — search “recording”.
@@ -33,7 +33,7 @@ AT&T — they will not give a script of what was said
 
   How to pull the log yourself (faster than calling):
     myATT app or att.com → bill / usage details → voice for Sep 13
-    Screenshot the incoming call (Amy 561-313-1076 and/or Evan) and duration.
+    Screenshot the incoming call from Evan (number, time, duration).
     Privacy “Access my data” at att.com/mydatarequest is the same metadata,
     slower (weeks).
 

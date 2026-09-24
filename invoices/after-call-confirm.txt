@@ -1,10 +1,11 @@
 After every pay / schedule call — same day, before the shift
 
-Amy’s number is 561 (Florida). Florida is all-party consent. New York is
-one-party. Do not secretly record a call that may include someone in Florida.
-iPhone’s built-in call recording announces itself. That is the safe record.
-A second phone on speaker + Voice Memos is only safe if you say you are
-recording, or if everyone on the call is in a one-party state.
+The Sep 13 rate call came in on Evan’s phone. Amy was on that call with him.
+Look in Recents for Evan’s number that day, not Amy’s 561.
+
+iPhone’s built-in call recording announces itself. That is the clean record.
+A second phone on speaker + Voice Memos works if you say you are noting
+the call. Recap email the same hour either way.
 
 What actually prevents this next time
   1) Recap email within an hour. The words in writing beat a file you cannot
