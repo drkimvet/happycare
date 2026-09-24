@@ -95,6 +95,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-trigem` | Assessment | Trigeminal neuritis / dropped jaw |
 | `ddx-2m` | Assessment | 2M antibody ELISA / MMM confirm |
 | `ddx-face` | Assessment | Facial paralysis / cannot blink |
+| `ddx-polyp` | Assessment | Cat NP / aural inflammatory polyp |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -149,6 +150,7 @@ Suggested names are short so they show up after three letters.
 | `dc-trigem` | Discharge | Trigeminal neuritis / cannot close |
 | `dc-2m` | Discharge | 2M antibody pending / MMM |
 | `dc-face` | Discharge | Facial paralysis / cannot blink |
+| `dc-polyp` | Discharge | Cat polyp traction / VBO / look again |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -984,6 +986,20 @@ DDX:
 Do not: send home as conjunctivitis or just a droopy face. Call Horner this disease (Horner can blink). Harvest a steroid table. Skip the ear.
 Do next: lubricate now. STT. Stain. Look in both ears. Artificial tears. Watch the cornea.
 
+### `ddx-polyp`
+
+Nasopharyngeal / aural polyp — {{patient.name}}
+Age [ ]. Stertor [Y/N]. Soft palate retracted [Y/N]. Ear L / R [seen / not]. TM [intact / not seen]. Horner [Y/N]. Facial [Y/N]. Tilt [Y/N]. Imaging [none / bulla rads / CT].
+
+DDX:
+1. Inflammatory polyp (benign stalk from bulla / tube / pharynx; young cat)
+2. Otitis media / interna if Horner ± facial ± tilt (other list)
+3. Nasopharyngeal mass / foreign body / severe URI if only stertor
+4. Cholesteatoma is the dog destructive cyst — rare in cats
+
+Do not: send home as just URI or just a cold. Treat as otitis externa only. Call it cancer tonight. Harvest a traction-versus-VBO steroid table. Skip the palate.
+Do next: both ears. Retract the soft palate. Traction if you can grab it; stalk left can grow back. VBO conversation if the canal is stenotic or the bulla is the home. Culture the bulla △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1435,6 +1451,14 @@ Return now if {{patient.pronoun}} cannot drink, the eyes bulge, the body goes st
 Put the lubricating drops or ointment in as we showed, as often as we wrote. Keep the Elizabethan collar on if we sent one. The ear still needs to stay clean and dry. This can last weeks or stay; the other side can later drop.
 
 Return now if the eye looks cloudy, blue, or painful, if {{patient.pronoun}} stops eating, if a head tilt or rolling starts, or if the other side of the face drops. {{location.phonenumber}}
+
+### `dc-polyp`
+
+{{patient.name}} has a growth from the middle ear or the back of the nose (an inflammatory polyp). These are not cancer. They can block breathing or the ear and can grow back if the stalk is still there.
+
+Keep the eye lubricated if we showed you how. Keep the ear clean and dry as we wrote. Do not use leftover ear drops unless we said the eardrum was seen. Surgery or another look may still be needed.
+
+Return now if breathing is loud or hard, if {{patient.pronoun}} stops eating, if a head tilt or an eye that cannot blink starts, or if the face looks uneven. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

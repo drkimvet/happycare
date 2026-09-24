@@ -712,6 +712,21 @@ FACIAL_RE = re.compile(
     r"\bear droop",
     re.I,
 )
+# Cat NP / aural inflammatory polyp. Do not use \bpolyp alone (GI / rectal).
+# Do not use \bvbo\b on dogs (PSOM / TECA-BO is another list).
+POLYP_RE = re.compile(
+    r"\b((nasopharyngeal|aural|inflammatory|oropharyngeal) polyps?|"
+    r"ear polyp|"
+    r"retract( the)? soft palate)",
+    re.I,
+)
+CAT_VBO_RE = re.compile(r"\b(ventral bulla osteotomy|\bvbo\b)", re.I)
+STERTOR_RE = re.compile(r"\b(stertor|stertorous)\b", re.I)
+JUST_URI_RE = re.compile(
+    r"\bjust (a )?(uri|cold|upper respiratory|sneeze)|"
+    r"\bjust otitis externa\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2325,6 +2340,57 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for facial paralysis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for facial paralysis.")
+
+    polyp_hit = bool(
+        POLYP_RE.search(text)
+        or (spec == "cat" and (STERTOR_RE.search(text) or CAT_VBO_RE.search(text)))
+    )
+    if spec == "cat" and polyp_hit:
+        po_loc = (
+            "Nasopharyngeal / aural inflammatory polyp until you look. "
+            "Both ears and retract the soft palate. Not just URI."
+        )
+        localization = f"{localization} Also {po_loc}" if localization else po_loc
+        hard_stops.append(
+            "Look in both ears. Retract the soft palate. "
+            "Do not send a stertorous young cat home as just URI."
+        )
+        do_not.append(
+            "Do not treat this as otitis externa only. "
+            "Do not call it cancer tonight. "
+            "Do not harvest a traction-versus-VBO steroid table. "
+            "Do not invent that FHV or FCV caused it."
+        )
+        do_next.append(
+            "Pink pedunculated stalk from the bulla, auditory tube, or pharynx. "
+            "Aural: shake / otorrhea / Horner / facial / tilt. "
+            "Nasopharyngeal: stertor / sneeze / discharge / dysphagia. "
+            "Traction if you can grab it; stalk left can grow back. "
+            "VBO is the surgery conversation if the canal is stenotic or the bulla is the home. "
+            "Cat bulla is septate."
+        )
+        sources.append(
+            "Merck inflammatory polyps in cats (Pieper, Jul 2025): benign; "
+            "3 months to 5 years; look in both ears and the nasopharynx; "
+            "printed 15–50% traction recurrence stays on the page. "
+            "Hoff otitis media: cats often have polyps; feline bulla septate. "
+            "No dedicated Plunkett polyp chapter."
+        )
+        if SEND_HOME_RE.search(text) or JUST_URI_RE.search(text):
+            hard_stops.append("Do not send a nasopharyngeal polyp home as just URI or just a cold.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not harvest a steroid table for polyp traction or VBO.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for a polyp.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a polyp.")
+    elif spec == "dog" and POLYP_RE.search(text):
+        do_next.append(
+            "Inflammatory polyps are uncommon in dogs; do not run the cat nasopharyngeal-polyp script as the default."
+        )
+        sources.append(
+            "Merck inflammatory polyps in cats (Pieper, Jul 2025): cats common, dogs rare."
+        )
 
     isolated_trigem = bool(
         trigem_hit

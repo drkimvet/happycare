@@ -1549,6 +1549,45 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("polyp", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_polyp_cat_stertor_look_both_not_just_uri(self):
+        b = analyze(
+            "cat",
+            "young cat, stertor, nasopharyngeal polyp, send home as just URI",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("polyp", loc)
+        self.assertIn("soft palate", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("both ears", joined)
+        self.assertIn("just uri", joined)
+        self.assertIn("call it cancer", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_polyp_traction_no_steroid_table(self):
+        b = analyze(
+            "cat",
+            "aural polyp, retract the soft palate, VBO, steroid table, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not harvest a steroid table", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIn("septate", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_polyp_dog_rare_not_cat_script(self):
+        b = analyze("dog", "inflammatory polyp, retract the soft palate")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("nasopharyngeal / aural inflammatory polyp until you look", loc)
+        joined = " ".join(b["do_next"] + b["sources"]).lower()
+        self.assertIn("uncommon in dogs", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_polyp_wheeze_alone_is_not_stertor(self):
+        b = analyze("cat", "expiratory wheeze, coughing, asthma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("nasopharyngeal / aural inflammatory polyp until you look", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_facial_swelling_is_not_cn_vii(self):
         b = analyze("dog", "facial swelling, hives, vaccine")
         loc = (b["localization"] or "").lower()

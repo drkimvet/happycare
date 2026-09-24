@@ -1072,3 +1072,33 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: cannot blink → CN VII. Lubricate now. STT. Stain. Look in the ear. Horner can blink. Horner + facial is the ear.
+
+## 167. Feline nasopharyngeal / aural inflammatory polyp (Merck Pieper Jul 2025; Hoff otitis media Dec 2025 / Apr 2026)
+
+No dedicated Plunkett polyp chapter in the owned SA EM splits (named on feline vestibular / otitis lines). Public Merck inflammatory polyps in cats (Pieper, Jul 2025) and otitis media/interna (Hoff). Owner nasopharyngeal-polyp page (Gotthelf, Aug 2018 / Feb 2026) agrees they are benign and recur if the stalk stays. No chapter dump. **Do not harvest a traction-vs-VBO steroid table, a 15–50% recurrence as a night percent law, or a 30–45 day topical-steroid recipe.**
+
+Agree with Merck Pieper: inflammatory polyps (aural / nasopharyngeal / oropharyngeal) arise from the mucosal lining of the **tympanic bulla**, the pharyngeal mucosa, or the auditory tube. They are **benign, not neoplastic**. Cause is not settled — genetic, congenital, and infectious have been proposed. Chronic URI or bacterial otitis media have been thought to contribute; a clear link to *Mycoplasma*, *Bartonella*, *Chlamydophila felis*, FCV, or FHV-1 has **not** been shown, and FCV / FHV-1 have **not** been identified in polyp tissue. No relationship with retrovirus status. They grow into the external canal, middle ear, nose, or nasopharynx depending on the stalk.
+
+Cats common; dogs rare. Age predilection: **juveniles or young adults, 3 months to 5 years**. No sex or breed predilection. Smooth, pink, fleshy, pedunculated. Some middle-ear polyps are subclinical until they extend.
+
+Two rooms: **aural** (head shaking, otorrhea, Horner, head tilt, ataxia, nystagmus, circling, facial nerve paralysis) versus **nasopharyngeal** (nasal discharge, stertor, sneezing, dysphagia, dyspnea). Look at **both ears and the nasopharynx**. Retract the soft palate rostrally. Flush / suction discharge if you cannot see the mass. Sedation or anesthesia may be required. The tympanic membrane can still be intact if the polyp has not come out the canal. Bulla radiographs can show opacities. CT / MRI if the mass sits in the bulla and you cannot see it. Definitive diagnosis is histology.
+
+Agree with Hoff: cats with otitis media frequently have respiratory disease and/or inflammatory polyps; the feline tympanic cavity is divided by a septum, which makes treatment harder. Horner + facial ± tilt is still the bulla (packet 137 / 166), not default idiopathic VII.
+
+Treatment is **removal**. Traction avulsion is a reasonable first-line if the polyp is in the canal or under the soft palate. Incomplete stalk → rapid regrowth; Merck prints **15–50%** recurrence after traction alone — that range stays on the page. Some surgeons call **ventral bulla osteotomy** the treatment of choice; VBO may be the only approach if chronic otitis has stenosed the horizontal canal. Printed topical steroids in the bulla for 30–45 days “seem to slow” regrowth — do not harvest a drug or a mg/kg. Systemic antimicrobials follow culture of bulla material — △ Plumb. Cholesteatoma is the dog destructive middle-ear cyst, rare in cats (separate Merck page) — not this young-cat pink stalk.
+
+Book/public traps:
+
+- No dedicated Plunkett polyp chapter — do not ask for one.
+- Printed 15–50% traction recurrence and 30–45 day bulla steroid stay on the Merck page.
+- Do not send a young cat with stertor home as just URI / just a cold.
+- Do not treat chronic otorrhea as otitis externa only without looking under the palate and at the bulla.
+- Do not call it cancer tonight — histology confirms; it is inflammatory and benign.
+- Do not put chlorhex or aminoglycoside drops in an ear whose TM you have not seen (packet 137).
+- Do not invent that traction always cures, or that every polyp needs VBO tonight.
+- Do not harvest FHV / FCV / FeLV as the cause.
+- Dog inflammatory aural masses are uncommon; do not run the cat script as a dog default.
+- Isolated facial paralysis without looking in the ear is still packet 166.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: young cat + stertor or chronic ear + Horner / facial / tilt → **polyp until you look**. Both ears. Retract the soft palate. Not just URI.
