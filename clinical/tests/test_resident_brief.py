@@ -1851,6 +1851,38 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("pulmonary thromboembolism", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_nephrotic_edema_not_chf_not_pred(self):
+        b = analyze(
+            "dog",
+            "nephrotic syndrome, hypoalbuminemia, edema, Lasix, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("protein-losing nephropathy", loc)
+        self.assertIn("not just chf edema", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not lasix nephrotic", joined)
+        self.assertIn("upc > 2 suggests", joined)
+        self.assertIn("home as just fluid", joined)
+        self.assertIn("bp now", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pln_dexsp_not_the_night_plan(self):
+        b = analyze(
+            "dog",
+            "PLN, proteinuria, hypoalbuminemia, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("do not dexsp pln as the night plan", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIn("harvest a clopidogrel", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_uti_dipstick_protein_is_not_pln(self):
+        b = analyze("dog", "UTI, protein on dipstick, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("protein-losing nephropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

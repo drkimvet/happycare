@@ -105,6 +105,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-caval` | Assessment | Caval syndrome / heartworm extract |
 | `ddx-hard` | Assessment | Feline HARD / cat heartworm |
 | `ddx-pte` | Assessment | Pulmonary thromboembolism |
+| `ddx-pln` | Assessment | PLN / nephrotic crisis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -169,6 +170,7 @@ Suggested names are short so they show up after three letters.
 | `dc-caval` | Discharge | After caval extraction / HW crisis |
 | `dc-hard` | Discharge | Cat heartworm / HARD going home |
 | `dc-pte` | Discharge | Pulmonary thromboembolism watch |
+| `dc-pln` | Discharge | PLN / nephrotic going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1154,6 +1156,21 @@ DDX:
 Do not: Lasix this as CHF. Promise tPA. Harvest heparin / rivaroxaban numbers. Use warfarin. DexSP the dyspnea (steroids are a risk). Send unexplained hypoxemia home as anxiety.
 Do next: oxygen. Name the shock. Find the cause. Antithrombotic △ Plumb / CURATIVE / hospital.
 
+### `ddx-pln`
+
+PLN / nephrotic — {{patient.name}}
+Dipstick protein [ ]. Sediment [quiet / blood / pus / bacteria]. UPC [ ]. Albumin [ ]. Cholesterol [ ]. Edema / ascites [ ]. BP [ ]. Azotemia [ ]. Trigger hunt [infection / inflammation / cancer / not yet].
+
+DDX:
+1. Protein-losing nephropathy if persistent renal proteinuria (quiet sediment)
+2. Nephrotic tetrad if protein + low albumin + high cholesterol + third-space fluid
+3. Not “just liver” and not “just CHF edema” until the urine is seen
+4. Postrenal protein if the sediment is dirty — other list
+5. Medullary amyloid (Shar-Pei / some Abyssinians) can be non-proteinuric CKD
+
+Do not: Lasix the edema as CHF. DexSP as the shotgun. Harvest clopidogrel / ACEI / telmisartan numbers. Biopsy untreated hypertension or a coagulopathy. Treat UPC > 2 as proof.
+Do next: UA + sediment. UPC when quiet. BP now. Look for a trigger. Antithrombotic conversation △ Plumb (AT lost with albumin). If they cannot breathe, packet 176.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1685,6 +1702,14 @@ Return now if breathing gets hard, if {{patient.pronoun}} opens the mouth to bre
 Give only the medicines we sent, as labeled. This is not a water-pill plan and not a home steroid plan. Keep {{patient.pronoun}} quiet.
 
 Return now if breathing gets harder, if {{patient.pronoun}} collapses or faints, gums turn blue, or a leg becomes cold and painful. {{location.phonenumber}}
+
+### `dc-pln`
+
+{{patient.name}} is losing protein in the urine (protein-losing nephropathy). That can drop the blood albumin, swell the belly or legs, raise blood pressure, and make blood clots more likely. This is not “just a liver problem” and not a water-pill plan for the swelling.
+
+Give only the medicines we sent, as labeled. Recheck urine protein, albumin, and blood pressure as discussed. Keep {{patient.pronoun}} quiet.
+
+Return now if breathing gets hard, if {{patient.pronoun}} collapses, a leg becomes cold, or the swelling suddenly worsens. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

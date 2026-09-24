@@ -848,6 +848,16 @@ PTE_RE = re.compile(
     r"\bpte\b",
     re.I,
 )
+NEPHROTIC_RE = re.compile(
+    r"\bnephrotic|"
+    r"\bprotein[- ]losing nephr|"
+    r"\bpln\b|"
+    r"\bglomerulonephr|"
+    r"\bglomerulopath",
+    re.I,
+)
+HYPOALB_RE = re.compile(r"\bhypoalbumin", re.I)
+PROTEINURIA_RE = re.compile(r"\bproteinuria\b|\bupc\b|\burine protein", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2950,6 +2960,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for PTE.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for PTE.")
+
+    pln_hit = spec in {"dog", "cat"} and (
+        NEPHROTIC_RE.search(text)
+        or (HYPOALB_RE.search(text) and PROTEINURIA_RE.search(text))
+    )
+    if pln_hit:
+        pln_loc = (
+            "Protein-losing nephropathy / nephrotic crisis. "
+            "The urine is losing albumin. Not just liver. Not just CHF edema."
+        )
+        localization = f"{localization} Also {pln_loc}" if localization else pln_loc
+        hard_stops.append(
+            "Do not Lasix nephrotic edema as CHF. "
+            "Do not DexSP as the shotgun. "
+            "Do not harvest a clopidogrel or ACEI table."
+        )
+        do_not.append(
+            "Do not call dipstick protein a glomerular disease until the sediment is quiet. "
+            "A UPC > 2 suggests glomerular origin and is not definitive. "
+            "Do not biopsy untreated hypertension or a coagulopathy. "
+            "Printed clopidogrel 1–4, ACEI 0.5–2, telmisartan 1–3 stay on the page."
+        )
+        do_next.append(
+            "UA + sediment. Quantify UPC when the sediment is quiet. Albumin, cholesterol, BP now. "
+            "Nephrotic = protein + low albumin + high cholesterol + third-space fluid. "
+            "Look for infection / inflammation / cancer. Antithrombotic conversation △ Plumb "
+            "(AT is lost with albumin; heparin needs AT). Packet 176 if they cannot breathe."
+        )
+        sources.append(
+            "Merck glomerular disease (Van Vertloo, Mar 2025): hallmark proteinuria; "
+            "nephrotic tetrad; dogs >> cats; UPC > 2 suggests not proves. "
+            "IRIS 2013 GN named only. Thrombosis page: AT lost with albumin."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not Lasix nephrotic third-space fluid as CHF.")
+        if SEND_HOME_RE.search(text) and re.search(r"\b(edema|ascites|swell)\b", text, re.I):
+            hard_stops.append("Do not send nephrotic edema home as just fluid.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP PLN as the night plan. Immunosuppression is a biopsy conversation.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for PLN.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for PLN.")
 
     isolated_trigem = bool(
         trigem_hit

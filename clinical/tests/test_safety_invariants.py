@@ -348,6 +348,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("warfarin is not recommended", VERIF.lower())
         self.assertIn("no small-animal gold standard", VERIF.lower())
         self.assertIn("weeks after adulticide", VERIF.lower())
+        self.assertIn("nephrotic syndrome", VERIF.lower())
+        self.assertIn("upc > 2 suggests", VERIF.lower())
+        self.assertIn("not definitive", VERIF.lower())
+        self.assertIn("clopidogrel 1–4", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -518,6 +522,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-pte`", MACRO)
         self.assertIn("not the same as a clot in the back legs", MACRO.lower())
         self.assertIn("use warfarin", MACRO.lower())
+        self.assertIn("`ddx-pln`", MACRO)
+        self.assertIn("`dc-pln`", MACRO)
+        self.assertIn("not “just a liver problem”", MACRO.lower())
+        self.assertIn("treat upc > 2 as proof", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -720,6 +728,9 @@ class PublicCardInvariants(unittest.TestCase):
             "not the legs",
             "normal radiographs do not rule it out",
             "warfarin is not recommended",
+            "look at the urine",
+            "nephrotic tetrad",
+            "upc > 2 suggests",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

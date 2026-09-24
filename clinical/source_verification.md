@@ -1330,3 +1330,26 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: risk disease + sudden dyspnea + rads too quiet → **PTE on the list. Oxygen. Cause. Not Lasix. Not tPA. Not the legs.** △ Plumb.
+
+## 177. Protein-losing nephropathy / nephrotic crisis (Merck Van Vertloo Mar 2025; thrombosis AT page; IRIS 2013 GN named only)
+
+No dedicated Plunkett PLN chapter in the owned SA EM splits. Public Merck glomerular disease (Van Vertloo). Packet 176 still owns the heparin / tPA dump. Packet 172 still owns the cuff. **Do not harvest clopidogrel 1–4, aspirin 1–5, ACEI 0.5–2, telmisartan 1–3, mycophenolate 10–15, or UPC < 0.5 as lobby law.**
+
+Agree with Van Vertloo: the hallmark is **proteinuria**. Dogs common; cats much less. GBM leak → albumin loss, lean-mass wasting, edema; the protein also wounds the tubule → concentrating loss and azotemic CKD. Persistent renal proteinuria means the sediment is not explaining it (no hematuria / pyuria / bacteriuria as the whole story). Printed **UPC > 2 suggests, but is not definitive for, a glomerular origin** — that sentence stays on the page.
+
+**Nephrotic syndrome** is the tetrad: severe proteinuria + hypoalbuminemia + hypercholesterolemia + third-space fluid. Poor prognosis when paired with severe azotemia. BP now — hypertension is common even without azotemia. Uncommon glomerulotubular imbalance: USG looks too high for the azotemia. Look for an infectious, inflammatory, or neoplastic trigger; treating a found trigger can change the outcome. Biopsy needs EM + IF at a nephropathologist. **Do not biopsy untreated hypertension or a coagulopathy.**
+
+Dogs with substantial proteinuria are at risk for clots and should get an antithrombotic conversation. Optimal protocol unknown; printed clopidogrel / aspirin stay on the page. △ Plumb. The thrombosis page: antithrombin is lost with albumin (similar size); heparin needs AT, so plasma may have to come first. Do not invent an albumin cutoff that says who will clot.
+
+Night: do not Lasix the edema as CHF. Do not DexSP as the shotgun — immunosuppression is ICGN / biopsy, not a lobby pred. RAAS blockade (ACEI or telmisartan) is the proteinuria conversation after they are stable enough to watch K, BP, and creatinine. Shar-Pei / many Abyssinians: medullary amyloid can be **non-proteinuric** CKD — do not force this script. Familial breed list stays on the page.
+
+Book/public traps:
+
+- Printed UPC 2 / 0.5, ACEI / telmisartan / clopidogrel / immunosuppressant mg/kg stay on the page.
+- Do not harvest a heparin table here (176).
+- Do not tap every effusion as the plan.
+- Do not call hypoalbuminemia “just liver” without a urine protein.
+- Do not call edema “just heart” without a urine protein.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: low albumin + edema / clot / hypertension → **look at the urine tonight.** Quiet sediment, then UPC. BP now. Clot conversation. Not Lasix. Not a pred dump. △ Plumb.
