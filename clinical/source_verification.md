@@ -1206,3 +1206,29 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: blind + **normal pupils** → cortex / radiation / forebrain. If they just seized, call it post-ictal first and watch. Dilated and fixed is the other list.
+
+## 172. Acute systemic hypertension (Merck Kittleson Jan 2023 / Jun 2025; IRIS BP table; renal dysfunction page; ACVIM 2018 named only)
+
+No dedicated Plunkett hypertension chapter in the owned SA EM splits. Public Merck systemic and pulmonary hypertension (Kittleson), the IRIS arterial-pressure substage table, and renal-dysfunction hypertension paragraphs. ACVIM 2018 consensus is **named** on the Merck cardiovascular page — do not dump it. Packet 147 still owns SARDS / RD recipes. **Do not harvest amlodipine mg/kg, 0.625 mg/cat, sildenafil 1–3, or IRIS 140 / 160 / 180 as a lobby cutoff law.**
+
+Agree with Kittleson: essential (primary) hypertension is **extremely rare** in dogs and cats. Almost all is secondary. Dogs: renal disease first; also hyperadrenocorticism, diabetes, pheochromocytoma. Cats: **renal disease and hyperthyroidism**. Measure BP when they have a disease that causes hypertension **or** a problem that could be hypertension (acute blindness / detached retina). It is **not** a wellness screening tool. Stress raises the number. Printed “>180 if calm is likely real; >200 is strong evidence” stays on the page. IRIS substages (<140 / 140–159 / 160–179 / ≥180) stay on the table. Document target-organ damage when you can; a single high cuff **plus** TOD is enough to treat (renal page).
+
+TOD: eyes, kidneys, CNS, heart. **Acute blindness is the most common clinical sign.** Hypertensive cats very often have retinal hemorrhage, detachment, tortuosity, or edema. Do not call that SARDS (147). Do not DexSP it.
+
+Cat antihypertensive that actually works: **amlodipine, telmisartan, or both**. ACEI, diltiazem, atenolol, and **furosemide are generally ineffective** for feline systemic hypertension (Kittleson). Dog: Kittleson names amlodipine and hydralazine as the consistently effective pair; the renal page starts dogs on ACEI / telmisartan and adds amlodipine. Night: name the pages, **△ Plumb / hospital**, do not invent a first-line cookbook. Hydralazine plus amlodipine is a cautious refractory-dog conversation, not a lobby stack. Phenoxybenzamine is the pheo conversation.
+
+Pulmonary hypertension is the other list (heartworm, PTE, left-heart). Printed sildenafil / tadalafil mg/kg stay on that page. Cushing reflex (hypertension + bradycardia) is late herniation (127), not a reason to start amlodipine.
+
+Book/public traps:
+
+- Printed IRIS mmHg bands, Kittleson 180 / 200, and all vasodilator mg/kg stay on those pages.
+- Do not harvest amlodipine or sildenafil numbers.
+- Do not Lasix systemic hypertension.
+- Do not DexSP a hypertensive cat as the blindness plan.
+- Do not treat one bouncing-cat cuff with no TOD as gospel.
+- Do not screen a healthy pet “because humans do.”
+- Do not call essential hypertension the default.
+- Do not mix this with pulmonary hypertension or the TBI Cushing reflex.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: sudden blind / hyphema / CKD / hyperT → **BP now**. If TOD is there, treat the pressure and the cause. Cat: amlodipine / telmisartan conversation. Not Lasix. Not SARDS. △ Plumb.

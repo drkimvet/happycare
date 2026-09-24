@@ -788,6 +788,19 @@ CORTICAL_BLIND_RE = re.compile(
     r"normal (pupils?|plrs?).{0,48}blind)",
     re.I,
 )
+HTN_RE = re.compile(
+    r"\bsystemic hypertens|"
+    r"\bhypertensive (retin|crisis|encephal)|"
+    r"\bamlodipine|"
+    r"\btelmisartan|"
+    r"\bhigh (blood )?pressure|"
+    r"\belevated (blood )?pressure|"
+    r"\bhigh bp\b",
+    re.I,
+)
+HYPERTENS_WORD_RE = re.compile(r"\bhypertens", re.I)
+PULMONARY_HTN_RE = re.compile(r"\bpulmonary hypertens", re.I)
+HYPERTHYROID_RE = re.compile(r"\b(hyperthyroid|hyperthyroidism)\b", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2628,6 +2641,75 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for cortical blindness.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for cortical blindness.")
+
+    pulm_only = bool(PULMONARY_HTN_RE.search(text)) and not (
+        re.search(r"\bsystemic hypertens", text, re.I)
+        or re.search(r"\bhypertensive retin", text, re.I)
+        or HTN_RE.search(text)
+    )
+    tbi_htn_skip = bool(TBI_RE.search(text)) and not (
+        HTN_RE.search(text)
+        or RD_RE.search(text)
+        or SUDDEN_BLIND_RE.search(text)
+        or HYPHEMA_RE.search(text)
+    )
+    htn_hit = spec in {"dog", "cat"} and not pulm_only and not tbi_htn_skip and (
+        HTN_RE.search(text)
+        or HYPERTENS_WORD_RE.search(text)
+        or (
+            spec == "cat"
+            and (SUDDEN_BLIND_RE.search(text) or RD_RE.search(text) or HYPHEMA_RE.search(text))
+            and (AZOTEMIA_RE.search(text) or HYPERTHYROID_RE.search(text))
+        )
+    )
+    if htn_hit:
+        htn_loc = (
+            "Acute systemic hypertension. Almost always secondary. "
+            "Not pulmonary HTN. Not the TBI Cushing reflex."
+        )
+        localization = f"{localization} Also {htn_loc}" if localization else htn_loc
+        hard_stops.append(
+            "Do not Lasix systemic hypertension. "
+            "Do not DexSP a hypertensive eye as the blindness plan. "
+            "Do not call it SARDS."
+        )
+        do_not.append(
+            "Do not harvest amlodipine or sildenafil numbers. "
+            "Do not treat one bouncing cuff with no TOD as gospel. "
+            "Do not screen a healthy pet because humans do. "
+            "Do not call essential hypertension the default. "
+            "Cat: ACEI / atenolol / Lasix generally do not drop feline systemic pressure."
+        )
+        do_next.append(
+            "BP now if CKD, hyperT, or the eye/brain looks like TOD. "
+            "Dogs: kidney first. Cats: kidney or hyperT. "
+            "Single high cuff plus TOD is enough to treat. "
+            "Cat: amlodipine / telmisartan conversation. "
+            "Dog: name the pages, △ Plumb / hospital — do not invent a first-line cookbook."
+        )
+        sources.append(
+            "Merck systemic and pulmonary hypertension (Kittleson, Jan 2023 / Jun 2025). "
+            "Essential HTN extremely rare. Dogs: kidney first. Cats: kidney or hyperT. "
+            "IRIS BP table and Kittleson 180 / 200 stay on the page. ACVIM 2018 named only."
+        )
+        if FUROSEMIDE_RE.search(text):
+            hard_stops.append("Do not Lasix systemic hypertension. That is not the feline pressure drug.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP a hypertensive eye as the blindness plan.")
+        if TBI_RE.search(text):
+            hard_stops.append("Cushing reflex is late herniation, not a reason to start amlodipine.")
+        if PULMONARY_HTN_RE.search(text):
+            do_not.append("Pulmonary hypertension is the other list. Printed sildenafil stays on that page.")
+        if SEND_HOME_RE.search(text) and (
+            SUDDEN_BLIND_RE.search(text) or RD_RE.search(text) or SARDS_RE.search(text)
+        ):
+            hard_stops.append("Do not send hypertensive blindness home as SARDS.")
+        if re.search(r"\bwellness\b", text, re.I):
+            hard_stops.append("Hypertension is not a wellness screen.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hypertension.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hypertension.")
 
     isolated_trigem = bool(
         trigem_hit

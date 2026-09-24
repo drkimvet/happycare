@@ -100,6 +100,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aniso` | Assessment | Anisocoria / the big pupil |
 | `ddx-optic` | Assessment | Dilated fixed pupil / optic neuritis |
 | `ddx-cortex` | Assessment | Cortical / post-ictal blindness |
+| `ddx-htn` | Assessment | Acute systemic hypertension / TOD |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -159,6 +160,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aniso` | Discharge | Anisocoria / big pupil going home |
 | `dc-optic` | Discharge | Sudden blind / dilated fixed / referral |
 | `dc-cortex` | Discharge | Post-ictal / cortical blindness watch |
+| `dc-htn` | Discharge | Systemic hypertension / BP / eye watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1069,6 +1071,21 @@ DDX:
 Do not: call it SARDS. Call it optic neuritis when the pupils are normal. DexSP this as a stroke. Harvest a benzo / PB table. Invent a post-ictal hour clock. Send a just-seized blind dog home as SARDS.
 Do next: glucose now. Watch if post-ictal. Persistent → fundus. Dilated and fixed is the other list.
 
+### `ddx-htn`
+
+Systemic hypertension — {{patient.name}}
+BP [ ] (calm / bouncing). TOD [eye / kidney / CNS / heart / none]. Fundus [RD / hemorrhage / tortuosity / normal / not seen]. Cause [CKD / hyperT / Cushing / DM / pheo / unknown]. Species [cat / dog].
+
+DDX:
+1. Secondary hypertension (default) — dog kidney first; cat kidney or hyperT
+2. Hypertensive retinopathy / RD if sudden blind or hyphema (not SARDS)
+3. Not pulmonary HTN (heartworm / PTE / left-heart — other list)
+4. Not the TBI Cushing reflex (hypertension + bradycardia = late herniation)
+5. Essential / primary is extremely rare — do not call it the default
+
+Do not: harvest amlodipine or sildenafil numbers. Lasix systemic hypertension. DexSP the blind hypertensive eye. Treat one bouncing cuff with no TOD as gospel. Screen a healthy pet because humans do. Invent a dog first-line cookbook.
+Do next: BP now if the disease causes hypertension or the eye/brain looks like TOD. Single high cuff + TOD is enough to treat. Cat: amlodipine / telmisartan conversation (ACEI / atenolol / Lasix generally do not drop feline systemic pressure). Dog: name the pages, △ Plumb / hospital.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1560,6 +1577,14 @@ Return now if {{patient.pronoun}} seizes, cannot walk, the eye turns red or pain
 Keep {{patient.pronoun}} in a quiet, familiar room so {{patient.pronoun}} does not fall. This is not a home steroid plan and not “SARDS tonight.”
 
 Return now if another seizure starts, if the pupils become large and stay that way, if {{patient.pronoun}} cannot walk, or if breathing gets hard. {{location.phonenumber}}
+
+### `dc-htn`
+
+{{patient.name}} has high blood pressure that can damage the eyes, kidneys, brain, or heart. This is almost always from another disease (kidney disease or an overactive thyroid in cats; kidney disease first in dogs), not “essential hypertension like people.”
+
+Give only the blood-pressure medicine we sent, as labeled. This is not a water-pill (Lasix) plan and not a home steroid plan. Recheck blood pressure as discussed. Keep {{patient.pronoun}} in a safe room if vision is poor.
+
+Return now if vision suddenly worsens, if {{patient.pronoun}} seizes, cannot walk, cannot urinate, or if breathing gets hard. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -1708,6 +1708,57 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("spares vision", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_hypertensive_rd_not_sards_not_lasix(self):
+        b = analyze(
+            "cat",
+            "sudden blind, retinal detachment, hypertension, Lasix, send home as SARDS",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("systemic hypertension", loc)
+        self.assertIn("not pulmonary htn", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("call it sards", joined)
+        self.assertIn("do not lasix systemic hypertension", joined)
+        self.assertIn("amlodipine / telmisartan", joined)
+        self.assertIn("home as sards", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_htn_kidney_no_cookbook_azotemic(self):
+        b = analyze(
+            "dog",
+            "systemic hypertension, CKD, DexSP, AKI, amlodipine",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("almost always secondary", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("kidney first", joined)
+        self.assertIn("do not invent a first-line cookbook", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIn("harvest amlodipine or sildenafil", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pulmonary_htn_is_not_systemic_script(self):
+        b = analyze("dog", "pulmonary hypertension, sildenafil")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("acute systemic hypertension", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertNotIn("amlodipine / telmisartan conversation", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tbi_cushing_reflex_is_not_amlodipine(self):
+        b = analyze("dog", "TBI, Cushing reflex, hypertension, bradycardia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cushing reflex", loc)
+        self.assertNotIn("acute systemic hypertension", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wellness_bp_not_a_screen(self):
+        b = analyze("cat", "wellness, high blood pressure, no TOD")
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("not a wellness screen", joined)
+        self.assertIn("bouncing cuff", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_iris_atrophy_not_cn_iii_crash(self):
         b = analyze("dog", "old dog, iris atrophy, scalloped pupil, anisocoria")
         joined = " ".join(b["do_not"] + b["do_next"]).lower()

@@ -329,6 +329,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("postictal", VERIF.lower())
         self.assertIn("circle toward", VERIF.lower())
         self.assertIn("post-ictal hour clock", VERIF.lower())
+        self.assertIn("acute systemic hypertension", VERIF.lower())
+        self.assertIn("extremely rare", VERIF.lower())
+        self.assertIn("amlodipine mg/kg", VERIF.lower())
+        self.assertIn("do not lasix systemic hypertension", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -479,6 +483,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-cortex`", MACRO)
         self.assertIn("post-ictal hour clock", MACRO.lower())
         self.assertIn("just-seized blind dog", MACRO.lower())
+        self.assertIn("`ddx-htn`", MACRO)
+        self.assertIn("`dc-htn`", MACRO)
+        self.assertIn("bouncing cuff", MACRO.lower())
+        self.assertIn("not a water-pill", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -665,6 +673,10 @@ class PublicCardInvariants(unittest.TestCase):
             "normal pupils",
             "post-ictal",
             "stroke blindness",
+            "not a wellness screen",
+            "bouncing cuff",
+            "not pulmonary htn",
+            "amlodipine / telmisartan",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
