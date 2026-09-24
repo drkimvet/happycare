@@ -1102,3 +1102,33 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: young cat + stertor or chronic ear + Horner / facial / tilt → **polyp until you look**. Both ears. Retract the soft palate. Not just URI.
+
+## 168. Isolated Horner (Merck Thomas neuro exam Oct 2023 / Sept 2024; monoplegia Jul 2026; plexus trauma May 2021 / Feb 2025; Hoff media; phenylephrine diagnostic line)
+
+No dedicated Plunkett Horner chapter in the owned SA EM splits (named on vestibular / otitis / facial lines). Public Merck neurologic examination (Thomas, Oct 2023 / Sept 2024), monoplegia (Thomas, Jul 2026), peripheral-nerve trauma (Thomas, May 2021 / Feb 2025), otitis media (Hoff), and the ocular phenylephrine diagnostic sentence. No chapter dump. **Do not harvest a first- / second- / third-order table, a phenylephrine minute clock, or 2.5% / 10% as a night drop recipe.**
+
+Agree with Merck: Horner is loss of sympathetic innervation to the eye. The set is **miosis, ptosis, enophthalmos, and elevation of the third eyelid**. They can still blink. Cannot blink is CN VII (packet 166), not this. The passive third eyelid of facial paralysis is globe retraction, not Horner.
+
+Small-pupil DDX first (neuro exam): uveitis, painful cornea / ulcer, parasympathomimetic drugs, then Horner. **Stain before you lock Horner.** Anisocoria: decide which pupil is wrong — big one constricts to light? small one dilates in the dark? A **big** pupil with vision is iris atrophy / atropine / dysautonomia / CN III, not Horner.
+
+Isolated Horner (no tilt, no facial, limbs normal) is still **look in both ears**. Otitis media causes Horner (Hoff). Horner + facial ± tilt is the middle / inner ear (packets 137 / 166), not default idiopathic VII. Cat: polyp stays on the list (packet 167).
+
+Horner + a dead ipsilateral thoracic limb and lost cutaneous trunci is **T1–T2 / brachial plexus** until proven otherwise (monoplegia; complete plexus avulsion). Do not call that idiopathic Horner. C1–C5 or C6–T2 myelopathy can carry ipsilateral Horner with the matching limb signs (neuro exam). Horse facial/neck sweating and cattle muzzle anhidrosis stay on those pages — Midtown is SA.
+
+Merck names phenylephrine (printed 2.5% and 10%) as a diagnostic agonist that can mimic the missing transmitter in **third-order** Horner; frequent use can raise heart rate and blood pressure. That sentence is not a lobby drop table. Do not invent hydroxyamphetamine minutes or a 1st/2nd/3rd-order cookbook.
+
+Book/public traps:
+
+- No dedicated Plunkett Horner chapter — do not ask for one.
+- Printed phenylephrine 2.5% / 10% and any minute clocks stay on the Merck page.
+- Do not harvest a first- / second- / third-order table as night law.
+- **Horner can blink.** Cannot blink is packet 166.
+- Do not call the small pupil CN III.
+- Do not skip stain / uveitis / ulcer.
+- Do not skip the ear because the face and the tilt are normal.
+- Do not call plexus avulsion “just Horner.”
+- Do not send home as conjunctivitis or just a small pupil.
+- Do not DexSP a Horner as a stroke.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: small pupil + ptosis + third eyelid, **they blink** → Horner. Stain. Look in the ear. Look at the ipsilateral thoracic limb and cutaneous trunci.

@@ -96,6 +96,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-2m` | Assessment | 2M antibody ELISA / MMM confirm |
 | `ddx-face` | Assessment | Facial paralysis / cannot blink |
 | `ddx-polyp` | Assessment | Cat NP / aural inflammatory polyp |
+| `ddx-horner` | Assessment | Isolated Horner / small pupil + ptosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -151,6 +152,7 @@ Suggested names are short so they show up after three letters.
 | `dc-2m` | Discharge | 2M antibody pending / MMM |
 | `dc-face` | Discharge | Facial paralysis / cannot blink |
 | `dc-polyp` | Discharge | Cat polyp traction / VBO / look again |
+| `dc-horner` | Discharge | Horner going home / ear and limb watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1000,6 +1002,21 @@ DDX:
 Do not: send home as just URI or just a cold. Treat as otitis externa only. Call it cancer tonight. Harvest a traction-versus-VBO steroid table. Skip the palate.
 Do next: both ears. Retract the soft palate. Traction if you can grab it; stalk left can grow back. VBO conversation if the canal is stenotic or the bulla is the home. Culture the bulla △ Plumb.
 
+### `ddx-horner`
+
+Horner — {{patient.name}}
+Blink [present / absent]. Miosis [Y/N]. Ptosis [Y/N]. Third eyelid [ ]. Stain [ ]. Ear / TM [seen / not]. Facial [Y/N]. Tilt [Y/N]. Thoracic limb / cutaneous trunci [normal / flaccid / lost].
+
+DDX:
+1. Isolated Horner (sympathetic; they can blink) — still look in the ear
+2. Otitis media / interna if facial ± tilt (other list)
+3. T1–T2 / brachial plexus if the ipsilateral thoracic limb is dead
+4. C1–C5 / C6–T2 myelopathy if the matching limbs are weak
+5. Uveitis / ulcer / drugs if you have not stained (not Horner yet)
+
+Do not: send home as conjunctivitis or just a small pupil. Call this CN VII (they blink). Call the small pupil CN III. Harvest a 1st/2nd/3rd-order or phenylephrine-minute table. Skip the ear because the face is normal.
+Do next: stain. Both ears. Feel the limb and cutaneous trunci. Cat: polyp stays on the list.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1459,6 +1476,14 @@ Return now if the eye looks cloudy, blue, or painful, if {{patient.pronoun}} sto
 Keep the eye lubricated if we showed you how. Keep the ear clean and dry as we wrote. Do not use leftover ear drops unless we said the eardrum was seen. Surgery or another look may still be needed.
 
 Return now if breathing is loud or hard, if {{patient.pronoun}} stops eating, if a head tilt or an eye that cannot blink starts, or if the face looks uneven. {{location.phonenumber}}
+
+### `dc-horner`
+
+{{patient.name}} has Horner’s syndrome: a small pupil, a droopy lid, and a raised third eyelid on one side because the sympathetic nerve to that eye is not working. {{patient.pronoun}} can still blink. This is not the same as facial paralysis.
+
+Keep the eye clean. Use only the drops we sent. The ear still needs to stay clean and dry. We may still need another look at the ear or the front leg.
+
+Return now if {{patient.pronoun}} cannot blink, the eye looks cloudy or painful, a head tilt or rolling starts, or the front leg on that side goes limp. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -727,6 +727,24 @@ JUST_URI_RE = re.compile(
     r"\bjust otitis externa\b",
     re.I,
 )
+# Isolated Horner. Do not use \bmiosis or \bptosis alone (uveitis / CN III / tired).
+# Do not use \banisocoria alone.
+HORNER_RE = re.compile(
+    r"\bhorner|"
+    r"\b(miosis|miotic).{0,48}\b(ptosis|enophthalm|third eyelid)|"
+    r"\b(ptosis|enophthalm|third eyelid).{0,48}\b(miosis|miotic)",
+    re.I,
+)
+PLEXUS_HORNER_RE = re.compile(
+    r"\b(brachial plexus|plexus avulsion|cutaneous trunci|panniculus|"
+    r"flaccid (thoracic|fore) limb|dead (front|thoracic) leg)\b",
+    re.I,
+)
+PHENYLEPHRINE_RE = re.compile(r"\bphenylephrine\b", re.I)
+JUST_SMALL_PUPIL_RE = re.compile(
+    r"\bjust (a )?(small pupil|miotic|conjunctivitis)\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2391,6 +2409,53 @@ def analyze(
         sources.append(
             "Merck inflammatory polyps in cats (Pieper, Jul 2025): cats common, dogs rare."
         )
+
+    if spec in {"dog", "cat"} and HORNER_RE.search(text):
+        ho_loc = (
+            "Horner (sympathetic). Miosis, ptosis, enophthalmos, third eyelid up. "
+            "They can blink. Not CN VII. Not the big-pupil CN III list."
+        )
+        localization = f"{localization} Also {ho_loc}" if localization else ho_loc
+        hard_stops.append(
+            "Stain first. Look in both ears even if the face and the tilt are normal. "
+            "Do not send home as conjunctivitis or just a small pupil."
+        )
+        do_not.append(
+            "Do not harvest a first- / second- / third-order table. "
+            "Do not invent a phenylephrine minute clock. "
+            "Do not call the small pupil CN III. "
+            "Cannot blink is facial paralysis, not Horner."
+        )
+        do_next.append(
+            "Otoscopic exam both ears. Feel the ipsilateral thoracic limb and cutaneous trunci. "
+            "Horner + facial ± tilt is the ear. "
+            "Horner + a dead thoracic limb is T1–T2 / plexus, not idiopathic."
+        )
+        sources.append(
+            "Merck neurologic examination (Thomas, Oct 2023 / Sept 2024): "
+            "Horner is miosis / ptosis / enophthalmos / third eyelid; stain the small pupil. "
+            "Monoplegia (Thomas, Jul 2026): T1–T2 / plexus avulsion carries ipsilateral Horner. "
+            "Printed phenylephrine 2.5% / 10% stays on the page. "
+            "No dedicated Plunkett Horner chapter."
+        )
+        if SEND_HOME_RE.search(text) or JUST_SMALL_PUPIL_RE.search(text) or CONJUNCTIVITIS_HOME_RE.search(text):
+            hard_stops.append("Do not send Horner home as conjunctivitis or just a small pupil.")
+        if PLEXUS_HORNER_RE.search(text):
+            do_next.append(
+                "Flaccid thoracic limb plus lost cutaneous trunci with Horner is plexus / T1–T2, not idiopathic Horner."
+            )
+        if PHENYLEPHRINE_RE.search(text):
+            do_not.append(
+                "Printed phenylephrine 2.5% / 10% stays on the Merck page; it can raise HR and BP."
+            )
+        if spec == "cat":
+            do_next.append("Cat Horner keeps the polyp and the bulla on the list.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP Horner as a stroke.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Horner.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Horner.")
 
     isolated_trigem = bool(
         trigem_hit

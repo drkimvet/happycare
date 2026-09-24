@@ -313,6 +313,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("retract the soft palate", VERIF.lower())
         self.assertIn("just uri", VERIF.lower())
         self.assertIn("15–50%", VERIF.lower())
+        self.assertIn("isolated horner", VERIF.lower())
+        self.assertIn("they can still blink", VERIF.lower())
+        self.assertIn("first- / second- / third-order", VERIF.lower())
+        self.assertIn("2.5% / 10%", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -447,6 +451,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-polyp`", MACRO)
         self.assertIn("just uri", MACRO.lower())
         self.assertIn("retract the soft palate", MACRO.lower())
+        self.assertIn("`ddx-horner`", MACRO)
+        self.assertIn("`dc-horner`", MACRO)
+        self.assertIn("they can blink", MACRO.lower())
+        self.assertIn("just a small pupil", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -621,6 +629,9 @@ class PublicCardInvariants(unittest.TestCase):
             "not just uri",
             "retract the soft palate",
             "benign pink stalk",
+            "they can blink",
+            "just a small pupil",
+            "1st/2nd/3rd-order",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

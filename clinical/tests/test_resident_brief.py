@@ -1582,6 +1582,45 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("uncommon in dogs", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_horner_isolated_can_blink_stain_look_ear(self):
+        b = analyze(
+            "dog",
+            "isolated Horner, miosis, ptosis, third eyelid, send home as just a small pupil",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("can blink", loc)
+        self.assertIn("not cn vii", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stain", joined)
+        self.assertIn("both ears", joined)
+        self.assertIn("just a small pupil", joined)
+        self.assertIn("do not harvest a first", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horner_plexus_not_idiopathic(self):
+        b = analyze(
+            "dog",
+            "Horner, brachial plexus avulsion, flaccid thoracic limb, cutaneous trunci lost, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("plexus", joined)
+        self.assertIn("not idiopathic", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horner_phenylephrine_no_minute_table(self):
+        b = analyze("dog", "Horner, phenylephrine test")
+        joined = " ".join(b["do_not"] + b["sources"]).lower()
+        self.assertIn("phenylephrine", joined)
+        self.assertIn("minute", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_miosis_ulcer_alone_is_not_horner(self):
+        b = analyze("dog", "miosis, corneal ulcer, painful eye")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("horner (sympathetic)", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_polyp_wheeze_alone_is_not_stertor(self):
         b = analyze("cat", "expiratory wheeze, coughing, asthma")
         loc = (b["localization"] or "").lower()
