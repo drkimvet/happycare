@@ -1665,6 +1665,42 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("still no dexsp", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cortical_postictal_blind_normal_pupils_not_sards(self):
+        b = analyze(
+            "dog",
+            "post-ictal blindness, normal pupils, send home as SARDS",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cortical", loc)
+        self.assertIn("normal pupils", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("call it sards", joined)
+        self.assertIn("optic neuritis", joined)
+        self.assertIn("post-ictal hour clock", joined)
+        self.assertIn("home as sards", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cortical_forebrain_circle_toward_no_dexsp_stroke(self):
+        b = analyze(
+            "dog",
+            "cortical blindness, normal PLR, circling, DexSP, AKI",
+        )
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("circle toward", joined)
+        self.assertIn("do not dexsp cortical blindness as a stroke", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_seizure_dilated_fixed_blind_is_not_cortex_first(self):
+        b = analyze(
+            "dog",
+            "seizure, sudden blind, dilated and fixed pupils, optic neuritis",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("not cortex", loc)
+        self.assertNotIn("cortical / post-geniculate blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_papilledema_not_blindness(self):
         b = analyze("dog", "optic neuritis, papilledema")
         joined = " ".join(b["do_not"] + b["do_next"]).lower()

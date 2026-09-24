@@ -325,6 +325,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("retrobulbar", VERIF.lower())
         self.assertIn("meningoencephalitis", VERIF.lower())
         self.assertIn("pred 1.0", VERIF.lower())
+        self.assertIn("blindness with normal pupils", VERIF.lower())
+        self.assertIn("postictal", VERIF.lower())
+        self.assertIn("circle toward", VERIF.lower())
+        self.assertIn("post-ictal hour clock", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -471,6 +475,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-optic`", MACRO)
         self.assertIn("not cortex", MACRO.lower())
         self.assertIn("normal disc", MACRO.lower())
+        self.assertIn("`ddx-cortex`", MACRO)
+        self.assertIn("`dc-cortex`", MACRO)
+        self.assertIn("post-ictal hour clock", MACRO.lower())
+        self.assertIn("just-seized blind dog", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -654,6 +662,9 @@ class PublicCardInvariants(unittest.TestCase):
             "not cortex",
             "retrobulbar",
             "dilated and fixed",
+            "normal pupils",
+            "post-ictal",
+            "stroke blindness",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

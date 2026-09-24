@@ -781,6 +781,13 @@ BLIND_RE = re.compile(
     re.I,
 )
 PAPILLEDEMA_RE = re.compile(r"\bpapilledema\b", re.I)
+CORTICAL_BLIND_RE = re.compile(
+    r"\b(cortical blind|post[- ]?ictal blind|post[- ]?geniculate|"
+    r"central blind|"
+    r"blind.{0,48}normal (pupils?|plrs?)|"
+    r"normal (pupils?|plrs?).{0,48}blind)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -2577,6 +2584,50 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for optic neuritis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for optic neuritis.")
+
+    cortical_hit = bool(
+        CORTICAL_BLIND_RE.search(text)
+        or (
+            SEIZURE_RE.search(text)
+            and BLIND_RE.search(text)
+            and not DILATED_FIXED_RE.search(text)
+        )
+    )
+    if spec in {"dog", "cat"} and cortical_hit:
+        cb_loc = (
+            "Cortical / post-geniculate blindness. "
+            "Normal pupils. Not SARDS. Not optic neuritis."
+        )
+        localization = f"{localization} Also {cb_loc}" if localization else cb_loc
+        hard_stops.append(
+            "Do not call it SARDS or optic neuritis when the pupils and PLR are normal. "
+            "Do not DexSP cortical blindness as a stroke."
+        )
+        do_not.append(
+            "Do not invent a post-ictal hour clock. "
+            "Do not harvest a benzo / PB table here. "
+            "Unilateral: contralateral visual field; they circle toward the lesion."
+        )
+        do_next.append(
+            "If they just seized, call it post-ictal first and watch. Glucose now. "
+            "Persistent blindness still gets a fundus. Dilated and fixed is the other list."
+        )
+        sources.append(
+            "Merck neurologic examination (Thomas, Oct 2023 / Sept 2024): "
+            "blind + normal pupils = forebrain / radiation / cortex. "
+            "Epilepsy (Charalambous, Oct 2025): postictal blindness is allowed. "
+            "Packets 147 / 170 own SARDS and dilated-fixed neuritis."
+        )
+        if SEND_HOME_RE.search(text) and SARDS_RE.search(text):
+            hard_stops.append("Do not send a just-seized blind dog home as SARDS.")
+        if SEND_HOME_RE.search(text) and re.search(r"\bpost[- ]?ictal\b", text, re.I):
+            hard_stops.append("Do not send post-ictal blindness home as SARDS.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP cortical blindness as a stroke.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for cortical blindness.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cortical blindness.")
 
     isolated_trigem = bool(
         trigem_hit

@@ -1184,3 +1184,25 @@ Book/public traps:
 - Azotemic: still no DexSP as a shotgun.
 
 Night rule: sudden blind + dilated + fixed → **retina or optic nerve until the fundus and ERG split them**. Disc can look normal. BP now. Not cortex. Not a pred table.
+
+## 171. Cortical / post-geniculate blindness (Merck Thomas neuro exam Oct 2023 / Sept 2024; Charalambous epilepsy Oct 2025)
+
+Packets 147 / 170 own SARDS and dilated-fixed optic neuritis. This packet is **blind with normal pupils**. No chapter dump. **Do not harvest a benzo / PB table. Do not invent how many hours post-ictal blindness lasts.**
+
+Agree with Merck neuro exam: **blindness with normal pupils** localizes to the **forebrain, optic radiation, or occipital cortex**. Dilated unresponsive pupils are retina / optic nerve / chiasm / tract (170), not this. Unilateral forebrain: circling **usually toward** the lesion; **contralateral** visual-field loss with **normal PLRs**; decreased conscious pain on the contralateral body and face is allowed. Seizures and abnormal behavior also point to the forebrain.
+
+Agree with Merck epilepsy (Charalambous, Oct 2025): the postictal period is the recovery phase. Owners often count it as the seizure. Idiopathic-epilepsy exams are typically unremarkable **except** postictal deficits — proprioceptive mistakes, **blindness**, or odd behavior. That blindness is allowed and is not SARDS until it stays and the pupils / fundus say so. Status / cluster drugs stay on packet 116.
+
+Ivermectin can still be central (147). Glucose if they just seized. Do not DexSP “stroke blindness.” Do not send a just-seized blind dog home as SARDS.
+
+Book/public traps:
+
+- Do not call it SARDS or optic neuritis when the pupils and PLR are normal.
+- Do not invent a post-ictal hour clock.
+- Do not harvest packet 116 drug tables here.
+- Do not DexSP cortical blindness as a stroke.
+- Do not skip glucose after a seizure.
+- Unilateral: opposite visual field, circle toward the lesion — do not flip those.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: blind + **normal pupils** → cortex / radiation / forebrain. If they just seized, call it post-ictal first and watch. Dilated and fixed is the other list.

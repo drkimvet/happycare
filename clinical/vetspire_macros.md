@@ -99,6 +99,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-horner` | Assessment | Isolated Horner / small pupil + ptosis |
 | `ddx-aniso` | Assessment | Anisocoria / the big pupil |
 | `ddx-optic` | Assessment | Dilated fixed pupil / optic neuritis |
+| `ddx-cortex` | Assessment | Cortical / post-ictal blindness |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -157,6 +158,7 @@ Suggested names are short so they show up after three letters.
 | `dc-horner` | Discharge | Horner going home / ear and limb watch |
 | `dc-aniso` | Discharge | Anisocoria / big pupil going home |
 | `dc-optic` | Discharge | Sudden blind / dilated fixed / referral |
+| `dc-cortex` | Discharge | Post-ictal / cortical blindness watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1052,6 +1054,21 @@ DDX:
 Do not: harvest book pred 1.0. DexSP a hypertensive or azotemic patient as the blindness plan. Call a normal disc “not optic nerve.” Call it SARDS without an ERG. Send home as just a funny pupil.
 Do next: BP now. Fundus or B-scan. Offer ERG / referral. MRI / CSF if the nerve is the space.
 
+### `ddx-cortex`
+
+Cortical / post-ictal blindness — {{patient.name}}
+Pupils [normal / dilated]. PLR [present / absent]. Just seized [Y/N]. Circle [toward L / toward R / none]. Glucose [ ]. Menace [ ].
+
+DDX:
+1. Post-ictal cortical blindness if they just seized (watch; do not invent hours)
+2. Forebrain / radiation / occipital if it persists (other list)
+3. Not SARDS / optic neuritis if pupils and PLR are normal
+4. Unilateral forebrain if contralateral field + circle toward the lesion
+5. Ivermectin can still be central (other list)
+
+Do not: call it SARDS. Call it optic neuritis when the pupils are normal. DexSP this as a stroke. Harvest a benzo / PB table. Invent a post-ictal hour clock. Send a just-seized blind dog home as SARDS.
+Do next: glucose now. Watch if post-ictal. Persistent → fundus. Dilated and fixed is the other list.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1535,6 +1552,14 @@ Return now if the eye turns red, cloudy, or painful, if vision is suddenly worse
 Keep {{patient.pronoun}} in a safe, familiar room so {{patient.pronoun}} does not fall. Use only the medicines we sent. This is not a home steroid plan.
 
 Return now if {{patient.pronoun}} seizes, cannot walk, the eye turns red or painful, or breathing gets hard. {{location.phonenumber}}
+
+### `dc-cortex`
+
+{{patient.name}} cannot see well right now, but the pupils still shrink to light. That usually means the problem is in the brain, not the retina or the optic nerve. If a seizure just happened, this can be the recovery phase and often improves.
+
+Keep {{patient.pronoun}} in a quiet, familiar room so {{patient.pronoun}} does not fall. This is not a home steroid plan and not “SARDS tonight.”
+
+Return now if another seizure starts, if the pupils become large and stay that way, if {{patient.pronoun}} cannot walk, or if breathing gets hard. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
