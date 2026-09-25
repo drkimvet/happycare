@@ -109,6 +109,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ple` | Assessment | PLE / gut hypoalbuminemia |
 | `ddx-gbm` | Assessment | Gallbladder mucocele / EHBO |
 | `ddx-cchs` | Assessment | Feline cholangitis / triaditis |
+| `ddx-hl` | Assessment | Feline hepatic lipidosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -177,6 +178,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ple` | Discharge | PLE / gut protein loss going home |
 | `dc-gbm` | Discharge | Mucocele / EHBO / decline surgery |
 | `dc-cchs` | Discharge | Cat cholangitis / triaditis going home |
+| `dc-hl` | Discharge | Hepatic lipidosis / decline feeding |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1222,6 +1224,21 @@ DDX:
 Do not: DexSP / pred as the night plan. Harvest pred / chlorambucil / NAC 140. NPO 12 hours. Send home as just hepatitis. Lobby CHOP.
 Do next: antimicrobials covering anaerobes + enteric gram-negatives △ Plumb. Feed. Culture bile if you sample. Look at pancreas and gut.
 
+### `ddx-hl`
+
+Feline hepatic lipidosis — {{patient.name}}
+Days not eating [ ]. Weight loss [ ]. ALP / GGT [ ]. K / Phos [ ]. Neck ventroflexion [ ]. Why they stopped [ ].
+
+DDX:
+1. Hepatic lipidosis if an overconditioned cat stopped eating
+2. Underlying disease (> 90%) — look before calling idiopathic
+3. CCHS / pancreatitis if GGT fold exceeds ALP or they are febrile
+4. Neck drop = K / phosphorus / thiamine, not default HE
+5. Not a reason for ursodiol or a dextrose bag
+
+Do not: hang dextrose. Ursodiol. Starve / NPO 12 hours. Appetite-stimulant rescue. Harvest RER / tube / NAC 140. DexSP (can start HL). Cysto or aspirate before vitamin K.
+Do next: lean-weight 0.9% NaCl. K / phos / thiamine, then food. Find why they stopped. Aspirate after vitamin K.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1789,6 +1806,16 @@ Return now if the belly becomes painful or swollen, gums or eyes turn more yello
 Give only the food and medicines we sent, as labeled. Keep offering food. This is not a leftover steroid plan unless we said so after a biopsy.
 
 Return now if {{patient.pronoun}} will not eat, gums or eyes turn more yellow, the belly becomes painful, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-hl`
+
+{{patient.name}} has fat building up in the liver because {{patient.pronoun}} stopped eating (hepatic lipidosis). This is not “just picky,” and it is not a leftover steroid plan.
+
+[If going home against advice:] We recommended hospital fluids, electrolytes, and assisted feeding. Going home tonight without calories carries a high risk of worsening liver failure. You may return at any time.
+
+Give only the food and medicines we sent, as labeled. Keep offering food as we showed. Do not add leftover steroids or human appetite pills.
+
+Return now if {{patient.pronoun}} will not eat, the neck drops, gums or eyes turn more yellow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

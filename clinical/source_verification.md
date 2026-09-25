@@ -1414,3 +1414,21 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: febrile / yellow / painful cat + cholangitis or triaditis → **antibiotics and food tonight, not pred, not a mucocele tap.** △ Plumb.
+
+## 181. Feline hepatic lipidosis (Merck Center Aug 2023 / Jun 2025)
+
+No dedicated Plunkett FHL chapter in the owned SA EM splits. Public Merck feline hepatic lipidosis (Center). Packet 180 still owns febrile neutrophilic CCHS. Packet 139 still owns HE. Packet 124 still owns “do not starve the pancreas.” **Do not harvest RER formulas, NE/E-tube French sizes, phosphate mmol/kg/h, magnesium mEq, B12 mcg, vitamin K 0.5–1.5, NAC 140/70, SAMe 20–40, L-carnitine / taurine 250–500, or a 75–80% survival percent as lobby law. NAC 140/70 stays the APAP family.**
+
+Agree with Center: FHL is the most common acquired and potentially lethal feline liver disease. A primary disease or stress that stops food sets it in an overconditioned cat. “Idiopathic” is **< 10%** after you looked. It is **not necroinflammatory** — canaliculi are squeezed by fat. ALP is often markedly up; **GGT stays modest unless CCHS / pancreatitis / ducts sit underneath** (that fold-GGT is the 180 look). Neck ventroflexion is **K / phosphorus / thiamine**, not default HE. Ammonium biurate is not the picture. Bleeding is vitamin K from canalicular squeeze, not synthetic failure. Aspirate **after** vitamin K; biopsy is not required to diagnose HL (> 80% of hepatocytes lipid). Do not cysto before vitamin K.
+
+Night split: **fluids and electrolytes before the first meal.** 0.9% NaCl is the Merck fluid of choice; **do not hang dextrose** (it blocks using the fat). Dose fluids on **ideal / lean weight**, not the fat cat. Then food — high-calorie feline protein, not l/d. Tube is **not** the first critical action. If they turn away, take the food out (aversion). Appetite stimulants do not rescue severe HL; benzos are off. **Refeeding: potassium, phosphate, and thiamine before you feed.** **Do not give ursodiol in HL.** Glucocorticoids can start HL. Repeat propofol is a Heinz-body conversation. Find why they stopped eating.
+
+Book/public traps:
+
+- Printed RER / tube / electrolyte / NAC / vitamin K / carnitine tables stay on the page.
+- Do not treat ventroflexion as HE.
+- Do not call every yellow cat CCHS — look at the fever / GGT / left shift (180).
+- Do not starve. Do not NPO 12 hours.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: fat yellow cat that stopped eating → **K / phos / thiamine, then food. Not pred. Not ursodiol. Not a tube-first cookbook.** △ Plumb.

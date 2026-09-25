@@ -901,6 +901,23 @@ CCHS_RE = re.compile(
     r"\btriaditis\b",
     re.I,
 )
+LIPIDOSIS_RE = re.compile(
+    r"\bhepatic lipidosis|"
+    r"\bfatty liver|"
+    r"\bfeline hl\b|"
+    r"\bfhl\b|"
+    r"\blipidosis\b",
+    re.I,
+)
+VENTROFLEX_RE = re.compile(
+    r"\bventriflex|"
+    r"\bventroflex|"
+    r"\bneck (drop|ventro)|"
+    r"\bcannot hold (up )?(the )?head|"
+    r"\bcan't hold (up )?(the )?head",
+    re.I,
+)
+JAUNDICE_RE = re.compile(r"\bjaundice\b|\bicterus\b|\bhyperbilirubin|\byellow (cat|gums|eyes|mucosa)", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3676,6 +3693,43 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for CCHS.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for CCHS.")
+
+    hl_hit = spec == "cat" and (
+        LIPIDOSIS_RE.search(text)
+        or (VENTROFLEX_RE.search(text) and JAUNDICE_RE.search(text))
+    )
+    if hl_hit:
+        hl_loc = (
+            "Feline hepatic lipidosis. Fat is in the hepatocytes because they stopped eating. "
+            "Neck drop is potassium, phosphorus, or thiamine — not default HE."
+        )
+        localization = f"{localization} Also {hl_loc}" if localization else hl_loc
+        hard_stops.append(
+            "Do not hang dextrose. Do not give ursodiol in hepatic lipidosis. "
+            "Do not starve. Electrolytes before the first meal. "
+            "Do not harvest RER, tube sizes, or NAC 140 as a lipidosis drip."
+        )
+        do_not.append(
+            "Do not start with a feeding tube before potassium, phosphate, and thiamine. "
+            "Do not dose fluids on the fat weight. Do not rescue severe HL with an appetite stimulant. "
+            "Printed vitamin K 0.5–1.5 and NAC 140/70 stay on the page."
+        )
+        do_next.append(
+            "Find why they stopped eating. 0.9% NaCl on lean weight. Then food — feline calories, not l/d. "
+            "Aspirate after vitamin K. GGT higher than ALP fold → look at 180. △ Plumb."
+        )
+        sources.append(
+            "Merck feline hepatic lipidosis (Center, Aug 2023 / Jun 2025): "
+            "electrolytes then food; no dextrose; no ursodiol; tube is not first."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send hepatic lipidosis home as just not eating.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP hepatic lipidosis — glucocorticoids can start it.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for lipidosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for lipidosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

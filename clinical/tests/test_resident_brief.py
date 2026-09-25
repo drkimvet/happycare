@@ -2010,6 +2010,44 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline neutrophilic cholangitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hepatic_lipidosis_no_dextrose_no_ursodiol(self):
+        b = analyze(
+            "cat",
+            "hepatic lipidosis, jaundice, DexSP, send home, not eating",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("feline hepatic lipidosis", loc)
+        self.assertIn("not default he", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not hang dextrose", joined)
+        self.assertIn("do not give ursodiol", joined)
+        self.assertIn("electrolytes before the first meal", joined)
+        self.assertIn("home as just not eating", joined)
+        self.assertIn("glucocorticoids can start it", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_neck_ventroflexion_jaundice_is_electrolyte_not_he(self):
+        b = analyze("cat", "jaundice, neck ventroflexion, collapse")
+        loc = b["localization"].lower()
+        self.assertIn("feline hepatic lipidosis", loc)
+        self.assertIn("potassium, phosphorus, or thiamine", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not start with a feeding tube", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_febrile_cchs_is_not_lipidosis_script(self):
+        b = analyze("cat", "neutrophilic cholangitis, fever, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline neutrophilic cholangitis", loc)
+        self.assertNotIn("feline hepatic lipidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_feline_lipidosis(self):
+        b = analyze("dog", "hepatic lipidosis, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline hepatic lipidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

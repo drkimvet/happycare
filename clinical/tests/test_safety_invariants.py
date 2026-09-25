@@ -364,6 +364,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not starve", VERIF.lower())
         self.assertIn("pred 2–4", VERIF.lower())
         self.assertIn("not a lobby chop", VERIF.lower())
+        self.assertIn("feline hepatic lipidosis", VERIF.lower())
+        self.assertIn("do not hang dextrose", VERIF.lower())
+        self.assertIn("do not give ursodiol in hl", VERIF.lower())
+        self.assertIn("idiopathic", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -550,6 +554,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-cchs`", MACRO)
         self.assertIn("not a dog gallbladder", MACRO.lower())
         self.assertIn("dexsp / pred as the night plan", MACRO.lower())
+        self.assertIn("`ddx-hl`", MACRO)
+        self.assertIn("`dc-hl`", MACRO)
+        self.assertIn("just picky", MACRO.lower())
+        self.assertIn("hang dextrose", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
