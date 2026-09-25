@@ -372,6 +372,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not an isolation ward", VERIF.lower())
         self.assertIn("doxycycline 5", VERIF.lower())
         self.assertIn("infecting serovar", VERIF.lower())
+        self.assertIn("ehrlichiosis", VERIF.lower())
+        self.assertIn("4dx / snap antibody is exposure", VERIF.lower())
+        self.assertIn("rmsf before the titer", VERIF.lower())
+        self.assertIn("chloramphenicol is not the plan", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -566,6 +570,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-lepto`", MACRO)
         self.assertIn("people can catch it from urine", MACRO.lower())
         self.assertIn("skip doxy after penicillin", MACRO.lower())
+        self.assertIn("`ddx-ehr`", MACRO)
+        self.assertIn("`dc-ehr`", MACRO)
+        self.assertIn("do not catch this from the dog", MACRO.lower())
+        self.assertIn("well 4dx as active infection", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

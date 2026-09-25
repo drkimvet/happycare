@@ -2082,6 +2082,43 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("leptospirosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ehrlichia_fever_not_well_4dx_not_lepto_urine(self):
+        b = analyze(
+            "dog",
+            "ehrlichia, fever, thrombocytopenia, 4Dx, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tick-borne rickettsial", loc)
+        self.assertIn("4dx is exposure", loc)
+        self.assertNotIn("not just the outdoor male", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("well 4dx-positive", joined)
+        self.assertIn("febrile 4dx home", joined)
+        self.assertIn("smear cannot split", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_rmsf_treat_before_titer(self):
+        b = analyze("dog", "RMSF, fever, petechiae, seizure")
+        loc = b["localization"].lower()
+        self.assertIn("tick-borne rickettsial", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("do not wait for serology if rmsf", joined)
+        self.assertIn("chloramphenicol is not the rmsf plan", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wellness_4dx_alone_is_not_tick_script(self):
+        b = analyze("dog", "wellness, 4Dx positive, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tick-borne rickettsial", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lepto_aki_jaundice_is_not_ehrlichia_script(self):
+        b = analyze("dog", "AKI, jaundice, thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("leptospirosis", loc)
+        self.assertNotIn("tick-borne rickettsial", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -111,6 +111,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cchs` | Assessment | Feline cholangitis / triaditis |
 | `ddx-hl` | Assessment | Feline hepatic lipidosis |
 | `ddx-lepto` | Assessment | Canine leptospirosis / liver-kidney |
+| `ddx-ehr` | Assessment | Ehrlichia / Anaplasma / RMSF |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -181,6 +182,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cchs` | Discharge | Cat cholangitis / triaditis going home |
 | `dc-hl` | Discharge | Hepatic lipidosis / decline feeding |
 | `dc-lepto` | Discharge | Lepto going home / zoonosis |
+| `dc-ehr` | Discharge | Tick-borne rickettsial going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1256,6 +1258,21 @@ DDX:
 Do not: send home as just GI. Isolation-ward as the plan (barrier, not isolation). Skip doxy after penicillin. Treat one MAT as the serovar. Harvest doxy 5. DexSP / NSAID if azotemic.
 Do next: barrier. Start treatment tonight. Acute + convalescent MAT and PCR. Owner zoonosis talk.
 
+### `ddx-ehr`
+
+Ehrlichia / Anaplasma / RMSF — {{patient.name}}
+Fever [ ]. Platelets [ ]. 4Dx [ ]. Morulae [none / neutrophil / platelet / monocyte]. Neuro / petechiae [ ]. Tick [ ].
+
+DDX:
+1. Ehrlichia / Anaplasma if fever + thrombocytopenia ± tick
+2. RMSF if vasculitis / neuro / edema — treat before the titer
+3. Neutrophil morulae = Anaplasma or E. ewingii (smear cannot split)
+4. Not lepto unless kidney + jaundice sit with it
+5. Not IMHA if the anemia is not the story
+
+Do not: treat a well 4Dx as active infection. Wait for serology if RMSF is the picture. Harvest doxy 5 / 10 / 28 days. Chloramphenicol. DexSP / NSAID if azotemic.
+Do next: smear. Start the doxy conversation △ Plumb. PCR if you need the species.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1843,6 +1860,16 @@ Wear gloves when cleaning urine. Wash your hands after handling {{patient.name}}
 Give only the medicines we sent, as labeled. This is not a leftover steroid plan.
 
 Return now for no urine, vomiting that will not stop, yellow gums or eyes, trouble breathing, or collapse. {{location.phonenumber}}
+
+### `dc-ehr`
+
+{{patient.name}} was treated for a suspected tick-borne infection (ehrlichia, anaplasma, or Rocky Mountain spotted fever). A positive SNAP test means exposure, not always active disease.
+
+Give only the medicines we sent, as labeled. Use tick prevention as discussed. This is not a leftover steroid plan.
+
+People do not catch this from the dog’s urine. Ticks spread it. Check people and other pets for ticks.
+
+Return now for more bruising, collapse, a seizure, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

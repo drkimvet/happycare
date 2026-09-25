@@ -1452,3 +1452,25 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: sick dog, kidney ± liver ± zoonosis → **barrier and start treatment tonight, not a titer-and-home.** △ Plumb.
+
+## 183. Canine ehrlichiosis / anaplasmosis / RMSF (Merck Palerme Sept 2025 / Jun 2026)
+
+No dedicated Plunkett rickettsial chapter in the owned SA EM splits. Public Merck rickettsial pages (Palerme): ehrlichiosis, anaplasmosis, Rocky Mountain spotted fever. Packet 182 still owns lepto (urine zoonosis, AKI + jaundice). Packet 126 still owns IMHA. **Do not harvest doxycycline 5 / 10, a 28-day clock, minocycline 5–10, or enrofloxacin 3 as lobby law.**
+
+Agree with Palerme: fever + thrombocytopenia is the night cluster. **4Dx / SNAP antibody is exposure, not tonight’s diagnosis** — can be negative in the first week. Treat suspected **RMSF before the titer** (delay raises death). Response is often fast. Morulae in neutrophils = *A. phagocytophilum* **or** *E. ewingii* (cannot split on the smear). Platelet morulae = *A. platys*. Monocyte morulae = *E. canis*. PCR speciates. Chronic *E. canis*: German Shepherd over-represented; hyperglobulin / pancytopenia can linger — not a wellness 4Dx-and-doxy.
+
+**RMSF** is vasculitis: petechiae, face/scrotal edema, uveitis, neuro (ataxia, vestibular, seizure). Dog is a **sentinel**, not a urine-shedder. Tick required — **not lepto barrier**. Chloramphenicol is not the plan. Cats rarely get RMSF.
+
+**Anaplasma**: often milder; *A. phagocytophilum* = Northeast / Midwest *Ixodes* (Midtown geography). Transfusion can move it. Direct dog-to-human does not.
+
+Night split: fever + low platelets ± tick ≠ automatically lepto. Look at the kidney/bilirubin (182) vs the smear / 4Dx / neuro / petechiae (this list). Do not doxy a well 4Dx-positive dog as the night default. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed doxy 5 / 10 / 28-day / enro 3 stay on the page.
+- Do not read one SNAP as active infection.
+- Do not wait for serology if RMSF is the picture.
+- Do not use chloramphenicol.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: fever + thrombocytopenia + tick story → **smear, start doxy conversation, not a 4Dx-and-home.** RMSF: treat now. △ Plumb.

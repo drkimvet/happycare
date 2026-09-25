@@ -926,6 +926,18 @@ LEPTO_HINT_RE = re.compile(
     r"\bpulmonary hemorrhage",
     re.I,
 )
+TICK_RICK_RE = re.compile(
+    r"\behrlich|"
+    r"\banaplasm|"
+    r"\brmsf\b|"
+    r"\brocky mountain|"
+    r"\brickettsia|"
+    r"\brickettsii",
+    re.I,
+)
+MORULA_RE = re.compile(r"\bmorul", re.I)
+FOURDX_RE = re.compile(r"\b4dx\b|\bsnap 4dx\b|\bidexx 4dx\b", re.I)
+PETECH_RE = re.compile(r"\bpetech|ecchymo", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3782,6 +3794,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for lepto.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for lepto.")
+
+    tick_rick_hit = spec in {"dog", "cat"} and (
+        TICK_RICK_RE.search(text)
+        or MORULA_RE.search(text)
+        or (
+            FOURDX_RE.search(text)
+            and (
+                re.search(r"\b(fever|febrile|pyrexia)\b", text, re.I)
+                or LEPTO_HINT_RE.search(text)
+                or PETECH_RE.search(text)
+            )
+        )
+    )
+    if tick_rick_hit:
+        tick_loc = (
+            "Tick-borne rickettsial disease. Fever and low platelets are this list. "
+            "4Dx is exposure, not a diagnosis. Not lepto urine."
+        )
+        localization = f"{localization} Also {tick_loc}" if localization else tick_loc
+        hard_stops.append(
+            "Do not wait for serology if RMSF is the picture. "
+            "Do not treat a well 4Dx-positive dog as the night default. "
+            "Do not harvest doxycycline 5 / 10 as lobby law."
+        )
+        do_not.append(
+            "Do not read one SNAP as active infection. "
+            "Neutrophil morulae are Anaplasma or E. ewingii — the smear cannot split them. "
+            "Chloramphenicol is not the RMSF plan. Printed doxy 5 / 10 / 28 days stay on the page."
+        )
+        do_next.append(
+            "Smear for morulae. PCR if you need the species. Start the doxy conversation △ Plumb. "
+            "Look at kidney and bilirubin — that is still 182 if they are yellow and azotemic."
+        )
+        sources.append(
+            "Merck ehrlichiosis / anaplasmosis / RMSF (Palerme, Sept 2025 / Jun 2026): "
+            "treat suspected RMSF before serology; 4Dx is exposure."
+        )
+        if SEND_HOME_RE.search(text) and FOURDX_RE.search(text):
+            hard_stops.append("Do not send a febrile 4Dx home as just a positive SNAP.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for ehrlichia / RMSF.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for ehrlichia / RMSF.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
