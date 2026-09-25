@@ -116,6 +116,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ivdd` | Assessment | Senior gait / IVDD / not just old |
 | `ddx-babe` | Assessment | Babesia / piroplasm / not pred-first IMHA |
 | `ddx-cytx` | Assessment | Feline cytauxzoon / bobcat fever |
+| `ddx-fia` | Assessment | Hemoplasma / feline infectious anemia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -191,6 +192,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ivdd` | Discharge | After disc / gait / cage-rest talk |
 | `dc-babe` | Discharge | After babesia / hemolysis watch |
 | `dc-cytx` | Discharge | After cytauxzoon / not a donor |
+| `dc-fia` | Discharge | After hemoplasma / FIA |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1341,6 +1343,21 @@ DDX:
 Do not: pred as IMHA. Imidocarb as the night plan. Harvest atovaquone 15 / azithromycin 10 / heparin 100–200. Wait for RBC piroplasms. NSAID if dry or azotemic. Call schizonts platelet clumps.
 Do next: smear + FNA tonight. Start the atovaquone + azithromycin conversation △ Plumb. Quiet cage. Survivors are not blood donors.
 
+### `ddx-fia`
+
+Hemoplasma / FIA — {{patient.name}}
+PCV / regen [ ]. Smear [on the red cell / none / aged EDTA]. PCR [ ]. FeLV / FIV [ ]. Spleen [present / gone]. Fight / fleas / transfusion [ ].
+
+DDX:
+1. *M. haemofelis* if a cat crashes with regenerative hemolysis (can be immunocompetent)
+2. *Candidatus* haemominutum is common — not the crash in a healthy cat
+3. Not cytauxzoon (schizonts / FNA / south woods)
+4. Not pred-first IMHA even if Coombs is positive
+5. Dog: usually quiet unless splenectomized
+
+Do not: pred before the antimicrobial conversation. Treat a well PCR-positive cat. Harvest doxy 10 / 2 weeks. Trust an aged EDTA smear. Call Howell-Jolly the organism.
+Do next: PCR tonight. Fresh smear. Doxy + water after the tablet. Donor PCR. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1976,6 +1993,14 @@ Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet. Use
 {{patient.name}} should not donate blood. Surviving cats can still carry the parasite.
 
 Return now for high fever, yellow gums or eyes, hard breathing, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-fia`
+
+{{patient.name}} was treated for a red-blood-cell infection (hemoplasma / feline infectious anemia). This is not a leftover steroid plan. A positive Coombs test does not by itself mean we start steroids.
+
+Give only the medicines we sent, as labeled. If a doxycycline tablet was sent, follow it with water as shown so it does not stick in the throat.
+
+Return now for pale gums, collapse, fast breathing, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

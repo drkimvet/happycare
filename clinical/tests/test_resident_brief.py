@@ -2296,6 +2296,52 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("schizonts occlude vessels", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_haemofelis_not_pred_first_imha(self):
+        b = analyze(
+            "cat",
+            "Mycoplasma haemofelis, regenerative hemolysis, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("on the red cell, not a schizont", loc)
+        self.assertIn("not pred-first imha", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("well pcr-positive", joined)
+        self.assertIn("just imha", joined)
+        self.assertIn("water after the tablet", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_haemominutum_not_the_healthy_cat_crash(self):
+        b = analyze("cat", "Candidatus Mycoplasma haemominutum, well, PCR positive")
+        loc = b["localization"].lower()
+        self.assertIn("feline infectious anemia", loc)
+        joined = " ".join(b["do_not"]).lower()
+        self.assertIn("not the crash in a healthy cat", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cytauxzoon_is_not_hemoplasma_script(self):
+        b = analyze("cat", "cytauxzoonosis, high fever, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("schizonts occlude vessels", loc)
+        self.assertNotIn("on the red cell, not a schizont", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_haemocanis_quiet_unless_spleen_gone(self):
+        b = analyze("dog", "Mycoplasma haemocanis, hemolytic anemia")
+        loc = b["localization"].lower()
+        self.assertIn("usually quiet unless the spleen is gone", loc)
+        self.assertNotIn("on the red cell, not a schizont", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_imha_garlic_is_not_hemoplasma_script(self):
+        b = analyze(
+            "dog",
+            "IMHA, autoagglutination, give prednisolone for garlic hemolytic anemia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline infectious anemia", loc)
+        self.assertNotIn("canine hemoplasma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -986,6 +986,18 @@ CYTAUX_RE = re.compile(
     r"c\.?\s*felis",
     re.I,
 )
+HEMOPLASMA_RE = re.compile(
+    r"\bhemoplasma|"
+    r"\bhaemoplasma|"
+    r"\bhaemofelis|"
+    r"\bhemofelis|"
+    r"\bhaemominutum|"
+    r"\bhaemocanis|"
+    r"\bhaemobartonell|"
+    r"\bhemobartonell|"
+    r"feline infectious anemia",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4054,6 +4066,46 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for cytauxzoon.")
         if NSAID_RE.search(text) and re.search(r"dehydrat|\bdry\b", text, re.I):
             hard_stops.append("Dry: still no NSAID in cytauxzoon.")
+
+    hemoplasma_hit = spec in {"dog", "cat"} and HEMOPLASMA_RE.search(text)
+    if hemoplasma_hit:
+        if spec == "cat":
+            hp_loc = (
+                "Feline infectious anemia / hemoplasma. On the red cell, not a schizont. "
+                "Not pred-first IMHA."
+            )
+        else:
+            hp_loc = (
+                "Canine hemoplasma. Usually quiet unless the spleen is gone. "
+                "Not pred-first IMHA."
+            )
+        localization = f"{localization} Also {hp_loc}" if localization else hp_loc
+        hard_stops.append(
+            "Do not pred hemoplasma as primary IMHA. "
+            "Do not treat a well PCR-positive cat. "
+            "Do not harvest doxycycline 10 as lobby law."
+        )
+        do_not.append(
+            "The smear can miss more than half and can vanish in 2 hours. "
+            "Candidatus haemominutum is not the crash in a healthy cat. "
+            "Turicensis is never on the smear. Printed doxy 10 / 2 weeks stay on the page."
+        )
+        do_next.append(
+            "PCR tonight. Smear if fresh. Doxy conversation — water after the tablet. "
+            "FeLV / FIV. Not cytauxzoon schizonts. △ Plumb."
+        )
+        sources.append(
+            "Merck hemotropic mycoplasma (Foley, Mar 2022 / Jul 2026): "
+            "M. haemofelis can crash a healthy cat; PCR over smear; do not treat well PCR-positive cats."
+        )
+        if SEND_HOME_RE.search(text) and spec == "cat":
+            hard_stops.append("Do not send regenerative hemolysis home as just IMHA.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress hemoplasma before the antimicrobial conversation.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hemoplasma.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hemoplasma.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

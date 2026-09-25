@@ -1560,3 +1560,25 @@ Book/public traps:
 - Azotemic or dry: still no NSAID.
 
 Night rule: sick outdoor / traveled cat, high fever, yellow, crash → **smear and FNA tonight, start the A+A conversation, not a steroid.** △ Plumb.
+
+## 188. Feline hemoplasma / *Mycoplasma haemofelis* (Merck Foley Mar 2022 / Jul 2026)
+
+No dedicated Plunkett hemoplasma chapter in the owned SA EM splits. Public Merck hemotropic mycoplasma (Foley). Packet 126 still owns IMHA. Packet 187 still owns cytauxzoon schizonts. Packet 186 still owns canine babesia. Skip pig / cattle / camelid as their own packets. **Do not harvest doxycycline 10, a 2-week clock, or a pradofloxacin / marbofloxacin table as lobby law.**
+
+Agree with Foley: wall-less bacteria **on the red cell**, not inside like *Babesia* / *Cytauxzoon* piroplasms. *M. haemofelis* (old large *Haemobartonella felis* / Ohio) can crash an **immunocompetent** cat — feline infectious anemia. *Candidatus M. haemominutum* is the common worldwide form and is **not clearly disease in a healthy cat**. *Candidatus M. turicensis* has **never been seen on a smear**. FeLV / FIV / stress sit underneath the Candidatus pair. Dog *M. haemocanis* is usually quiet unless the spleen is gone.
+
+Blood / dirty needles / fighting (DNA in saliva / claws) / arthropods / rare vertical. Hemolysis is immune and **extravascular**; Coombs often positive in acute *M. haemofelis* — that is **not** a reason to pred-first. Smear: cyclic; can vanish in 2 hours; EDTA age drops them off the cell. Visible in **< 50%** of acute *M. haemofelis*. PCR on blood or spleen is the test. Do not treat a well PCR-positive cat — no regimen clears every carrier. Donors: PCR.
+
+Doxycycline is the night conversation; **water after the tablet** (stricture). Prado / marbo are the alternatives. Printed 10 / 2 weeks stay on the page. Glucocorticoids only if antimicrobials fail or primary IMHA is still the other list. Transfuse for oxygen; the new cells can get infected. One third of untreated acute cats may die. Recrudescence when stressed.
+
+Night split: regenerative hemolysis in a cat ≠ cytauxzoon (187: schizonts, A+A, south/woods) and ≠ pred-first IMHA (126). Howell-Jolly / stain ≠ the organism. Azotemic: still no NSAID, still no DexSP as the shotgun.
+
+Book/public traps:
+
+- Printed doxy 10 / 2 weeks stay on the page.
+- Do not treat a well PCR-positive cat.
+- Do not wait on a smear as the only test.
+- Do not pred before the antimicrobial conversation.
+- Do not call *Candidatus* haemominutum the crash in a healthy cat.
+
+Night rule: pale febrile cat, regenerative hemolysis → **PCR + smear tonight, doxy conversation with water, not a steroid-first IMHA.** △ Plumb.
