@@ -1582,3 +1582,25 @@ Book/public traps:
 - Do not call *Candidatus* haemominutum the crash in a healthy cat.
 
 Night rule: pale febrile cat, regenerative hemolysis → **PCR + smear tonight, doxy conversation with water, not a steroid-first IMHA.** △ Plumb.
+
+## 189. Feline Bartonella / cat-scratch (Merck Gentry Apr 2026; Kittleson Jan 2023 / May 2025)
+
+No dedicated Plunkett Bartonella chapter in the owned SA EM splits. Public Merck fleas (Gentry) plus infectious endocarditis (Kittleson). CDC veterinary bartonellosis and ABCD feline bartonellosis named only — no note dump. Packet 188 still owns hemoplasma / FIA. Packet 184 still owns Lyme shifting lameness. Packet 126 still owns IMHA. Skip cattle mastitis / large-animal IE as their own packets. **Do not harvest azithromycin, doxycycline, ampicillin-plus-gentamicin, or a 1–2 / 6–8 week clock as lobby law.**
+
+Agree with Gentry: *Bartonella henselae* lives in the flea. Humans get cat-scratch disease when **flea fecal pellets contact a scratch or bite**, not because the claw is magic. Cats are **generally subclinically affected**; they can develop a self-limiting febrile illness. Dogs are more likely to be clinical: fever, lymphadenitis, endocarditis.
+
+Agree with Kittleson: *Bartonella* is a recognized cause of **aortic-valve infectious endocarditis** in dogs. Fever is usually there. A murmur is present in most cases. Shifting-leg lameness can show — that is still **echo tonight, not a Lyme-first script** (184 owns well Lyme+ / putative nephropathy). Blood cultures should be drawn and **can be negative**; **echocardiography is the diagnostic test of choice**. The valve is hyperechoic, thickened, often vegetative. IE is rare in cats. Aortic-valve destruction can make heart failure intractable; that prognosis stays grave on the page. Printed 1–2 week parenteral / 6–8 week oral / amp+gent (or enro / cephalothin+gent) stay on the page. Routine dental prophylaxis is not warranted for myxomatous mitral disease.
+
+CDC / ABCD (named only): treat the **sick** pet; eradication is not established; do not treat a well seropositive or PCR-positive cat as default. No vaccine. Flea control is the public-health move. Indoor helps. Never permethrin on a cat. Owner scratch plus a swollen node is **their physician**, not a lobby human-medicine script.
+
+Night split: well cat Bartonella+ ≠ a long antibiotic. Dog fever + new murmur / culture-negative aortic vegetation ≠ Lyme doxy-and-home. Regenerative hemolysis is still 188, not this. Pred is not the FUO first move.
+
+Book/public traps:
+
+- Printed azithromycin / amp+gent / 1–2 week parenteral / 6–8 week oral stay on the page.
+- Do not treat a well Bartonella-positive cat.
+- Do not send culture-negative endocarditis home as just Lyme.
+- Do not pred Bartonella as FUO first.
+- Do not tell the owner they catch this from a titer.
+
+Night rule: well cat PCR+ / sero+ → **flea control, not a long antibiotic.** Dog fever + new murmur or culture-negative aortic vegetation → **echo tonight, Bartonella on the list.** △ Plumb.

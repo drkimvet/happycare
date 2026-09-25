@@ -117,6 +117,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-babe` | Assessment | Babesia / piroplasm / not pred-first IMHA |
 | `ddx-cytx` | Assessment | Feline cytauxzoon / bobcat fever |
 | `ddx-fia` | Assessment | Hemoplasma / feline infectious anemia |
+| `ddx-bart` | Assessment | Bartonella / cat-scratch / culture-neg IE |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -193,6 +194,7 @@ Suggested names are short so they show up after three letters.
 | `dc-babe` | Discharge | After babesia / hemolysis watch |
 | `dc-cytx` | Discharge | After cytauxzoon / not a donor |
 | `dc-fia` | Discharge | After hemoplasma / FIA |
+| `dc-bart` | Discharge | After Bartonella / flea-control talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1358,6 +1360,21 @@ DDX:
 Do not: pred before the antimicrobial conversation. Treat a well PCR-positive cat. Harvest doxy 10 / 2 weeks. Trust an aged EDTA smear. Call Howell-Jolly the organism.
 Do next: PCR tonight. Fresh smear. Doxy + water after the tablet. Donor PCR. △ Plumb.
 
+### `ddx-bart`
+
+Bartonella / cat-scratch — {{patient.name}}
+Species [cat / dog]. Well vs sick [ ]. PCR / serology [ ]. Fleas [ ]. Murmur [ ]. Fever [ ]. Echo [ ]. Blood culture [ ].
+
+DDX:
+1. Cat: most are quiet bacteremic — self-limiting fever possible; **do not treat a well Bartonella-positive cat**
+2. Human CSD: flea feces in the scratch / bite, not a magic claw. Owner node → their physician
+3. Dog: fever, lymphadenitis, endocarditis more than the cat
+4. Culture-negative aortic vegetation → Bartonella on the list; echo is the test, not Lyme-first
+5. Not hemoplasma (on the red cell). Not pred-first FUO
+
+Do not: treat a well Bartonella-positive cat. Harvest azithromycin / amp+gent / 6–8 weeks. Send culture-negative endocarditis home as just Lyme. Tell the owner they catch this from a titer. Pred as FUO first.
+Do next: flea control. Echo if fever plus a new murmur. Never permethrin on a cat. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2001,6 +2018,14 @@ Return now for high fever, yellow gums or eyes, hard breathing, collapse, or not
 Give only the medicines we sent, as labeled. If a doxycycline tablet was sent, follow it with water as shown so it does not stick in the throat.
 
 Return now for pale gums, collapse, fast breathing, or not eating. {{location.phonenumber}}
+
+### `dc-bart`
+
+{{patient.name}} was evaluated for Bartonella (the bacteria behind cat-scratch disease). Most cats carry it quietly. We do not treat a well Bartonella-positive cat as default.
+
+Flea control is the main public-health step. Wash scratches with soap and water. If a person in the house has a swollen lymph node after a scratch, that is their physician — do not catch this from a titer.
+
+Give only the medicines we sent, as labeled. Return now for fever, a new or louder heart murmur, lameness, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

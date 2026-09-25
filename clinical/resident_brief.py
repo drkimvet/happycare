@@ -998,6 +998,21 @@ HEMOPLASMA_RE = re.compile(
     r"feline infectious anemia",
     re.I,
 )
+# Bare "scratch" is a wound, not cat-scratch disease.
+BARTONELLA_RE = re.compile(
+    r"\bbartonella|"
+    r"\bhenselae|"
+    r"cat[- ]scratch|"
+    r"catscratch",
+    re.I,
+)
+ENDOCARD_RE = re.compile(
+    r"\bendocarditis|"
+    r"vegetative valve|"
+    r"valve vegetation|"
+    r"aortic vegetation",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4106,6 +4121,60 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hemoplasma.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hemoplasma.")
+
+    bartonella_named = spec in {"dog", "cat"} and BARTONELLA_RE.search(text)
+    ie_hit = spec == "dog" and ENDOCARD_RE.search(text)
+    if bartonella_named or ie_hit:
+        if spec == "cat":
+            bart_loc = (
+                "Feline Bartonella / cat-scratch. Most cats quiet. "
+                "Flea feces in the wound. Not a treat-the-titer night."
+            )
+        elif ie_hit:
+            bart_loc = (
+                "Canine Bartonella / culture-negative aortic valve. "
+                "Echo is the test. Not Lyme-first."
+            )
+        else:
+            bart_loc = (
+                "Canine Bartonella. Dogs get the clinical disease. "
+                "Fever, nodes, endocarditis. Not a treat-the-titer night."
+            )
+        localization = f"{localization} Also {bart_loc}" if localization else bart_loc
+        hard_stops.append(
+            "Do not treat a well Bartonella-positive cat. "
+            "Do not harvest azithromycin or a 6–8 week clock as lobby law. "
+            "Do not pred Bartonella as FUO first."
+        )
+        do_not.append(
+            "Flea fecal pellets in the scratch or bite are the usual human inoculum. "
+            "Printed 1–2 week parenteral / 6–8 week oral / amp+gent stay on the page. "
+            "Blood culture can be negative."
+        )
+        do_next.append(
+            "Flea control is the public-health move. "
+            "Echo if fever plus a new murmur. "
+            "Owner scratch plus a node → their physician. "
+            "Never permethrin on a cat. △ Plumb."
+        )
+        sources.append(
+            "Merck fleas (Gentry, Apr 2026): cats generally subclinical; "
+            "flea feces in the scratch/bite; dogs more clinical. "
+            "Merck infectious endocarditis (Kittleson, Jan 2023 / May 2025): "
+            "Bartonella is a recognized cause of aortic-valve IE; echo is the test."
+        )
+        if SEND_HOME_RE.search(text) and spec == "cat":
+            hard_stops.append(
+                "Do not send a well Bartonella-positive cat home on a long antibiotic as default."
+            )
+        if SEND_HOME_RE.search(text) and ie_hit:
+            hard_stops.append("Do not send culture-negative endocarditis home as just Lyme.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress Bartonella as FUO.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Bartonella.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Bartonella.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

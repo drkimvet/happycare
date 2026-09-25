@@ -395,6 +395,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("feline hemoplasma", VERIF.lower())
         self.assertIn("not clearly disease in a healthy cat", VERIF.lower())
         self.assertIn("do not treat a well pcr-positive cat", VERIF.lower())
+        self.assertIn("feline bartonella", VERIF.lower())
+        self.assertIn("generally subclinically affected", VERIF.lower())
+        self.assertIn("do not treat a well bartonella-positive cat", VERIF.lower())
+        self.assertIn("aortic-valve infectious endocarditis", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -613,6 +617,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-fia`", MACRO)
         self.assertIn("treat a well pcr-positive cat", MACRO.lower())
         self.assertIn("water after the tablet", MACRO.lower())
+        self.assertIn("`ddx-bart`", MACRO)
+        self.assertIn("`dc-bart`", MACRO)
+        self.assertIn("treat a well bartonella-positive cat", MACRO.lower())
+        self.assertIn("catch this from a titer", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

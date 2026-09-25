@@ -2342,6 +2342,58 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine hemoplasma", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_well_cat_bartonella_not_treat(self):
+        b = analyze(
+            "cat",
+            "Bartonella henselae PCR positive, well, fleas, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("most cats quiet", loc)
+        self.assertIn("flea feces in the wound", loc)
+        self.assertIn("not a treat-the-titer night", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("well bartonella-positive cat", joined)
+        self.assertIn("long antibiotic as default", joined)
+        self.assertIn("flea control is the public-health move", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_aortic_endocarditis_culture_neg_is_bartonella_list(self):
+        b = analyze(
+            "dog",
+            "culture-negative aortic endocarditis, fever, murmur, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("culture-negative aortic valve", loc)
+        self.assertIn("echo is the test", loc)
+        self.assertIn("not lyme-first", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just lyme", joined)
+        self.assertIn("6–8 week", joined)
+        self.assertIn("blood culture can be negative", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_haemofelis_is_not_bartonella(self):
+        b = analyze("cat", "Mycoplasma haemofelis, regenerative hemolysis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("on the red cell, not a schizont", loc)
+        self.assertNotIn("most cats quiet", loc)
+        self.assertNotIn("flea feces in the wound", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_lameness_is_not_ie_script(self):
+        b = analyze("dog", "Lyme, shifting lameness, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("culture-negative aortic valve", loc)
+        self.assertNotIn("echo is the test", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_scratch_is_not_bartonella(self):
+        b = analyze("cat", "scratch on the face, bite wound")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("most cats quiet", loc)
+        self.assertNotIn("flea feces in the wound", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
