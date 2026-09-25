@@ -1474,3 +1474,23 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: fever + thrombocytopenia + tick story → **smear, start doxy conversation, not a 4Dx-and-home.** RMSF: treat now. △ Plumb.
+
+## 184. Canine Lyme nephritis / borreliosis (Merck Labato May 2026 / Jun 2026; ACVIM 2018 Littman named only)
+
+No dedicated Plunkett Lyme chapter in the owned SA EM splits. Public Merck Lyme borreliosis (Labato). Packet 177 still owns the urine / UPC / nephrotic tetrad. Packet 182 still owns lepto (urine zoonosis, AKI + jaundice). Packet 183 still owns fever + low platelets / RMSF. **Do not harvest doxycycline 10, amoxicillin 20, mycophenolate 5–10, gabapentin 10–20 / 8, or a 4-week / 30-day clock as lobby law.** Skip horse neuroborreliosis as its own packet.
+
+Agree with Labato: **most seropositive dogs have no clinical signs.** A C6 / SNAP positive is **exposure**, not tonight’s diagnosis — low positive predictive value; not vaccinal. Whole-cell ELISA / IFA / Western blot are **no longer recommended**. Common dog picture: intermittent **shifting lameness**, fever, dull, lymphadenopathy ± swollen joints. *Ixodes scapularis* in the Northeast (Midtown). Attachment ≥ 24 hours; usually 36–48 hours. Not urine / saliva / semen / bite. Animals are **not reservoirs**; they can carry unattached ticks onto people. Cats: similar if they get it, uncommon.
+
+**Lyme nephropathy** is attributed to *B. burgdorferi*; **a causal relationship has yet to be established.** Severe protein-losing nephropathy, uremia, hyperphosphatemia, edema, clots. Immune-complex glomerulus is the thought. Can look acute because the secondary signs (ascites, hypertension, thromboembolism) crash. Incidence of this chronic form is extremely low. Retriever over-representation is Littman JVECC 2013 named only. ACVIM 2018 named only (proteinuria uncommon among seropositive dogs; most Lyme-nephritis dogs have no arthritis history).
+
+Night split: well Lyme+ ≠ treat. Shifting lameness + fever ≠ pred-first polyarthritis and ≠ a harvested 4-week doxy. Proteinuric / azotemic Lyme+ is still **177 tonight** — not doxy-and-home, not proven cause-and-effect. Low platelets stay 183. Yellow + AKI stays 182. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed doxy 10 / amoxicillin 20 / mycophenolate 5–10 / gabapentin 10–20 and the 4-week line stay on the page.
+- Do not treat a healthy seropositive dog as the night default.
+- Do not read one C6 as the cause of the PLN.
+- Do not use whole-cell ELISA / IFA / Western blot as the night test.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: Lyme+ and sick → **name the room (joint vs kidney).** Kidney = urine and 177, not a doxy-and-home. Well SNAP = exposure. △ Plumb.

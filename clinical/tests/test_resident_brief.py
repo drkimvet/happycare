@@ -1404,6 +1404,7 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "Lyme vaccine, tick preventative, no weakness")
         loc = (b["localization"] or "").lower()
         self.assertNotIn("flaccid ascending", loc)
+        self.assertNotIn("putative nephropathy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_apn_coonhound_steroids_not_helpful(self):
@@ -2117,6 +2118,59 @@ class ResidentBriefTests(unittest.TestCase):
         loc = (b["localization"] or "").lower()
         self.assertIn("leptospirosis", loc)
         self.assertNotIn("tick-borne rickettsial", loc)
+        self.assertNotIn("putative nephropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_nephritis_not_just_doxy_not_lepto(self):
+        b = analyze(
+            "dog",
+            "Lyme nephritis, proteinuria, hypoalbuminemia, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("putative nephropathy", loc)
+        self.assertIn("seropositive is exposure", loc)
+        self.assertIn("not lepto urine", loc)
+        self.assertIn("urine is losing albumin", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just doxy", joined)
+        self.assertIn("just a positive c6", joined)
+        self.assertIn("causal relationship", joined)
+        self.assertIn("no longer recommended", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_shifting_lameness_not_pred_first(self):
+        b = analyze("dog", "Lyme, fever, shifting lameness, DexSP")
+        loc = b["localization"].lower()
+        self.assertIn("lyme borreliosis", loc)
+        self.assertNotIn("tick-borne rickettsial", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not pred-first polyarthritis", joined)
+        self.assertIn("dexsp lyme arthritis", joined)
+        self.assertIn("well lyme-seropositive", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wellness_lyme_alone_is_not_lyme_script(self):
+        b = analyze("dog", "wellness, Lyme positive, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("putative nephropathy", loc)
+        self.assertNotIn("lyme borreliosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pln_without_lyme_is_not_lyme_script(self):
+        b = analyze("dog", "PLN, hypoalbuminemia, proteinuria, edema")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("protein-losing nephropathy", loc)
+        self.assertNotIn("putative nephropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ehrlichia_fever_is_not_lyme_script(self):
+        b = analyze(
+            "dog",
+            "ehrlichia, fever, thrombocytopenia, 4Dx, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tick-borne rickettsial", loc)
+        self.assertNotIn("putative nephropathy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_ph_amlodipine_is_the_other_list(self):

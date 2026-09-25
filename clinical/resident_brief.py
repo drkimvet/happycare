@@ -938,6 +938,21 @@ TICK_RICK_RE = re.compile(
 MORULA_RE = re.compile(r"\bmorul", re.I)
 FOURDX_RE = re.compile(r"\b4dx\b|\bsnap 4dx\b|\bidexx 4dx\b", re.I)
 PETECH_RE = re.compile(r"\bpetech|ecchymo", re.I)
+LYME_RE = re.compile(r"\blyme\b|\bborrelia|\bborrelios", re.I)
+LYME_NEPH_RE = re.compile(
+    r"lyme nephr|"
+    r"lyme gn|"
+    r"lyme glomerul|"
+    r"borrelia nephr",
+    re.I,
+)
+LYME_ARTH_RE = re.compile(
+    r"\bshifting|"
+    r"\blameness|"
+    r"\bpolyarthr|"
+    r"\bjoint (swell|pain)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3837,6 +3852,60 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for ehrlichia / RMSF.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for ehrlichia / RMSF.")
+
+    lyme_hit = spec in {"dog", "cat"} and (
+        LYME_NEPH_RE.search(text)
+        or (
+            LYME_RE.search(text)
+            and (
+                NEPHROTIC_RE.search(text)
+                or PROTEINURIA_RE.search(text)
+                or HYPOALB_RE.search(text)
+                or AZOTEMIA_RE.search(text)
+                or LYME_ARTH_RE.search(text)
+            )
+        )
+    )
+    if lyme_hit:
+        lyme_loc = (
+            "Lyme borreliosis / putative nephropathy. "
+            "Seropositive is exposure. Not lepto urine."
+        )
+        localization = f"{localization} Also {lyme_loc}" if localization else lyme_loc
+        hard_stops.append(
+            "Do not treat a well Lyme-seropositive dog as the night default. "
+            "Do not send Lyme nephritis home as just doxy. "
+            "Do not harvest doxycycline 10 as lobby law."
+        )
+        do_not.append(
+            "Causal relationship for Lyme nephropathy is not proven. "
+            "Most seropositive dogs have no signs. "
+            "Printed doxy 10 / amoxicillin 20 / mycophenolate 5–10 stay on the page. "
+            "Whole-cell ELISA / IFA / Western blot are no longer recommended."
+        )
+        do_next.append(
+            "Name the room: joint vs kidney. Proteinuric is still 177 — urine tonight. "
+            "Shifting lameness is not pred-first polyarthritis. "
+            "Low platelets stay 183. Yellow plus AKI stays 182. △ Plumb."
+        )
+        sources.append(
+            "Merck Lyme borreliosis (Labato, May 2026 / Jun 2026): "
+            "most seropositive dogs have no signs; nephropathy causal link not established. "
+            "ACVIM 2018 Littman named only."
+        )
+        if SEND_HOME_RE.search(text) and (
+            NEPHROTIC_RE.search(text)
+            or PROTEINURIA_RE.search(text)
+            or HYPOALB_RE.search(text)
+            or AZOTEMIA_RE.search(text)
+        ):
+            hard_stops.append("Do not send Lyme nephritis home as just a positive C6.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP Lyme arthritis or Lyme PLN as the night plan.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Lyme nephritis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Lyme nephritis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

@@ -112,6 +112,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hl` | Assessment | Feline hepatic lipidosis |
 | `ddx-lepto` | Assessment | Canine leptospirosis / liver-kidney |
 | `ddx-ehr` | Assessment | Ehrlichia / Anaplasma / RMSF |
+| `ddx-lyme` | Assessment | Lyme nephritis / borreliosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -183,6 +184,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hl` | Discharge | Hepatic lipidosis / decline feeding |
 | `dc-lepto` | Discharge | Lepto going home / zoonosis |
 | `dc-ehr` | Discharge | Tick-borne rickettsial going home |
+| `dc-lyme` | Discharge | Lyme going home / not a urine zoonosis |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1273,6 +1275,21 @@ DDX:
 Do not: treat a well 4Dx as active infection. Wait for serology if RMSF is the picture. Harvest doxy 5 / 10 / 28 days. Chloramphenicol. DexSP / NSAID if azotemic.
 Do next: smear. Start the doxy conversation △ Plumb. PCR if you need the species.
 
+### `ddx-lyme`
+
+Lyme / borreliosis — {{patient.name}}
+C6 / SNAP [ ]. Lameness [shifting / none]. Fever [ ]. Urine protein [ ]. Albumin [ ]. Azotemia [ ]. Platelets [ ]. Tick geography [Northeast / other].
+
+DDX:
+1. Lyme arthritis if shifting lameness + fever in an endemic dog
+2. Putative Lyme nephropathy if proteinuric / azotemic — causal link not proven
+3. Still 177 if the urine is spilling protein
+4. Not lepto unless kidney + jaundice sit with it
+5. Low platelets stay the rickettsial list
+
+Do not: treat a well Lyme+ as active infection. Send nephritis home as just doxy. Harvest doxy 10 / amoxicillin 20 / mycophenolate 5–10. Whole-cell ELISA / IFA / Western blot. DexSP / NSAID if azotemic.
+Do next: name the room (joint vs kidney). UA + UPC. Tick preventative. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1870,6 +1887,16 @@ Give only the medicines we sent, as labeled. Use tick prevention as discussed. T
 People do not catch this from the dog’s urine. Ticks spread it. Check people and other pets for ticks.
 
 Return now for more bruising, collapse, a seizure, or not eating. {{location.phonenumber}}
+
+### `dc-lyme`
+
+{{patient.name}} was evaluated for Lyme disease (a tick-borne infection). A positive SNAP or C6 test means exposure. Most dogs with a positive test are not sick from Lyme.
+
+Give only the medicines we sent, as labeled. Use tick prevention as discussed. This is not a leftover steroid plan.
+
+People do not catch Lyme from the dog’s urine. Ticks spread it. The dog can carry unattached ticks onto people.
+
+Return now for new lameness, swelling of the belly or legs, no urine, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
