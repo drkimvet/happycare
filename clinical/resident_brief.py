@@ -864,6 +864,36 @@ PLE_RE = re.compile(
     re.I,
 )
 HYPOCHOL_RE = re.compile(r"\bhypocholesterol|low cholesterol", re.I)
+MUCOCELE_RE = re.compile(
+    r"\bgallbladder mucocele|"
+    r"\bgb mucocele|"
+    r"\bkiwi (sign|gb|gallbladder)|"
+    r"\bstellate (pattern|gb|gallbladder)|"
+    r"\bimmobile (gallbladder )?sludge",
+    re.I,
+)
+EHBO_RE = re.compile(
+    r"\bextrahepatic bile|"
+    r"\behbdo\b|"
+    r"\behbo\b|"
+    r"\bbile duct obstruct|"
+    r"\bbiliary obstruct|"
+    r"\bcholedocholith|"
+    r"\bcholelith",
+    re.I,
+)
+BILE_PERIT_RE = re.compile(
+    r"\bbile peritonitis|"
+    r"\bbiliary (tree )?rupture|"
+    r"\bruptured gallbladder|"
+    r"\bgallbladder rupture",
+    re.I,
+)
+CHOLECYSTITIS_RE = re.compile(
+    r"\bcholecystitis|"
+    r"\bemphysematous (gallbladder|cholecyst)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3055,6 +3085,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for PLE.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for PLE.")
+
+    mucocele_hit = spec in {"dog", "cat"} and (
+        MUCOCELE_RE.search(text)
+        or EHBO_RE.search(text)
+        or BILE_PERIT_RE.search(text)
+        or CHOLECYSTITIS_RE.search(text)
+    )
+    if mucocele_hit:
+        muco_loc = (
+            "Gallbladder mucocele / extrahepatic biliary obstruction. "
+            "Immobile or mature gallbladder contents are this list. Halo is not."
+            if spec == "dog"
+            else "Biliary obstruction / cholecystitis. Classic gallbladder mucocele is uncommon in the cat."
+        )
+        localization = f"{localization} Also {muco_loc}" if localization else muco_loc
+        hard_stops.append(
+            "Do not send a sick jaundiced mucocele home on ursodiol. "
+            "Do not cholecystocentesis a suspected mucocele. "
+            "Do not harvest ursodiol or vitamin K numbers."
+        )
+        do_not.append(
+            "Do not call gallbladder halo a mucocele. "
+            "Do not cholecystotomy-only as the default (it recurs; wall necrosis can be occult). "
+            "Printed ursodiol 15–25, SAMe 20–40, and vitamin K 0.5–1.5 stay on the page."
+        )
+        do_next.append(
+            "Ultrasound. If inflamed, obstructed, or ruptured: cholecystectomy conversation tonight. "
+            "Bile peritonitis: tap near the biliary tree to see bile — surgery and lavage are the treatment. "
+            "Pancreatitis EHBO often recedes; do not percutaneous-tap the GB as default. △ Plumb."
+        )
+        sources.append(
+            "Merck canine gallbladder mucocele (Center, Aug 2023 / Sept 2024); "
+            "EHBO and bile peritonitis (Center, Aug 2023 / Jul 2026): "
+            "cholecystectomy if inflamed / obstructed / ruptured; do not tap a suspected mucocele."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not Lasix biliary jaundice as CHF.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send mucocele / EHBO home as just hepatitis.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for mucocele / EHBO.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for mucocele / EHBO.")
 
     isolated_trigem = bool(
         trigem_hit

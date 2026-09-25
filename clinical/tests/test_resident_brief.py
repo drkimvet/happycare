@@ -366,6 +366,7 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not pathognomonic", joined)
         self.assertIn("2013", joined)
         self.assertNotIn("90 ml/kg", joined)
+        self.assertNotIn("gallbladder mucocele", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_cat_anaphylaxis_respiratory_not_high_dose_epi(self):
@@ -1927,6 +1928,47 @@ class ResidentBriefTests(unittest.TestCase):
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
         self.assertIn("weeks-long diet trial", joined)
         self.assertIn("home as just diarrhea", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mucocele_kiwi_not_halo_not_ursodiol_home(self):
+        b = analyze(
+            "dog",
+            "kiwi gallbladder, jaundice, ursodiol, send home as hepatitis, Lasix",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("gallbladder mucocele", loc)
+        self.assertIn("halo is not", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a sick jaundiced mucocele home on ursodiol", joined)
+        self.assertIn("do not cholecystocentesis", joined)
+        self.assertIn("home as just hepatitis", joined)
+        self.assertIn("do not lasix biliary", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bile_peritonitis_not_tap_as_treatment(self):
+        b = analyze(
+            "dog",
+            "bile peritonitis, gallbladder rupture, DexSP, AKI",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("gallbladder mucocele", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery and lavage", joined)
+        self.assertIn("still no dexsp", joined)
+        self.assertIn("harvest ursodiol or vitamin k", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_cholecystitis_is_not_the_dog_kiwi_script(self):
+        b = analyze("cat", "cholecystitis, jaundice")
+        loc = b["localization"].lower()
+        self.assertIn("uncommon in the cat", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pancreatitis_jaundice_alone_is_not_ehbo_script(self):
+        b = analyze("dog", "pancreatitis, jaundice, cranial abdomen")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("gallbladder mucocele", loc)
+        self.assertNotIn("extrahepatic biliary", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_ph_amlodipine_is_the_other_list(self):

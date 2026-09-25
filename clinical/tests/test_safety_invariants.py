@@ -356,6 +356,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("gi signs can be minimal", VERIF.lower())
         self.assertIn("hypocholesterolemia", VERIF.lower())
         self.assertIn("fenbendazole 50", VERIF.lower())
+        self.assertIn("gallbladder mucocele", VERIF.lower())
+        self.assertIn("do not do transhepatic cholecystocentesis", VERIF.lower())
+        self.assertIn("ursodiol 15–25", VERIF.lower())
+        self.assertIn("halo", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -534,6 +538,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-ple`", MACRO)
         self.assertIn("losing protein through the gut", MACRO.lower())
         self.assertIn("weeks-long diet trial", MACRO.lower())
+        self.assertIn("`ddx-gbm`", MACRO)
+        self.assertIn("`dc-gbm`", MACRO)
+        self.assertIn("not “just hepatitis”", MACRO.lower())
+        self.assertIn("cholecystocentesis if mucocele is suspected", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

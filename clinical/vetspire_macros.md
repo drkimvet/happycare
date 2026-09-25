@@ -107,6 +107,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pte` | Assessment | Pulmonary thromboembolism |
 | `ddx-pln` | Assessment | PLN / nephrotic crisis |
 | `ddx-ple` | Assessment | PLE / gut hypoalbuminemia |
+| `ddx-gbm` | Assessment | Gallbladder mucocele / EHBO |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -173,6 +174,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pte` | Discharge | Pulmonary thromboembolism watch |
 | `dc-pln` | Discharge | PLN / nephrotic going home |
 | `dc-ple` | Discharge | PLE / gut protein loss going home |
+| `dc-gbm` | Discharge | Mucocele / EHBO / decline surgery |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1188,6 +1190,21 @@ DDX:
 Do not: Lasix the ascites as CHF. Skip the urine. Run a weeks-long diet trial if they are crashing. Harvest cobalamin or fenbendazole numbers. Call GI-quiet PLE “not GI.”
 Do next: split liver / kidney / gut. Low-fat conversation. Fecal / fenbendazole. TLI. If crashing, work up tonight.
 
+### `ddx-gbm`
+
+Mucocele / EHBO — {{patient.name}}
+Bilirubin [ ]. GB ultrasound [immobile / kiwi / rupture / halo / not yet]. Cranial belly [ ]. Coags [ ]. Species [dog / cat].
+
+DDX:
+1. Gallbladder mucocele if immobile / mature GB contents (not halo)
+2. Extrahepatic biliary obstruction (stone / pancreatitis / mass / mucocele)
+3. Bile peritonitis if the tree or GB has ruptured
+4. Cat: cholecystitis / triaditis / EHBO — classic mucocele is uncommon
+5. Not anaphylaxis halo and not HE until those lists are named
+
+Do not: send a sick jaundiced kiwi home on ursodiol. Cholecystocentesis if mucocele is suspected. Cholecystotomy-only as default. Harvest ursodiol / SAMe / vitamin K numbers. Percutaneous GB tap as the pancreatitis-EHBO default.
+Do next: surgeon if inflamed / obstructed / ruptured. Tap near the biliary tree only to see bile. Vitamin K conversation if chronically jaundiced △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1735,6 +1752,16 @@ Return now if breathing gets hard, if {{patient.pronoun}} collapses, a leg becom
 Give only the food and medicines we sent, as labeled. This is usually a low-fat food plan, not a water-pill plan. Recheck bloodwork as discussed.
 
 Return now if breathing gets hard, if {{patient.pronoun}} collapses, the belly swells fast, or diarrhea becomes bloody. {{location.phonenumber}}
+
+### `dc-gbm`
+
+{{patient.name}} has a problem in the gallbladder or bile duct (mucocele, blockage, or a leak of bile). This is not “just hepatitis” and not a halo from an allergic reaction.
+
+[If going home against advice:] We recommended hospital care and likely surgery to remove the gallbladder or relieve the blockage. Going home tonight carries a risk of bile leaking into the belly, worsening jaundice, and shock. You may return at any time.
+
+Give only the food and medicines we sent, as labeled. This is not a water-pill plan and not a leftover steroid plan.
+
+Return now if the belly becomes painful or swollen, gums or eyes turn more yellow, vomiting will not stop, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

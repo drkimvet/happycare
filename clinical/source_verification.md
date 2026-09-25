@@ -1374,3 +1374,23 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP as a shotgun.
 
 Night rule: low albumin + **low cholesterol or diarrhea** → **gut list, still check the urine.** Low-fat conversation. Not Lasix. Not a three-week trial if they are crashing. △ Plumb.
+
+## 179. Gallbladder mucocele / extrahepatic biliary obstruction / bile peritonitis (Merck Center Aug 2023 / Sept 2024 / Jul 2026)
+
+No dedicated Plunkett mucocele chapter in the owned SA EM splits. Public Merck hepatic pages (Center). Packet 125 still owns gallbladder **halo** (anaphylaxis / right heart). Packet 139 still owns HE / FHF. Packet 129 still owns the septic-abdomen dump. **Do not harvest ursodiol 15–25, SAMe 20–40, erythromycin 0.5–1, vitamin K 0.5–1.5, a 25% ejection-fraction, a 50% pancreatitis-surgery death line, or an antibiotic week-clock as lobby law.**
+
+Agree with Center: canine GBM is tenacious mucin-laden bile that can fill cystic / hepatic / common ducts. It can **obstruct** or **rupture** (ischemic necrosis → bile peritonitis). Shetland Sheepdog / Miniature Schnauzer / Cocker over-represented; endocrinopathy and hyperlipidemia sit underneath. Cats have fewer gallbladder mucus glands — **GBM is uncommon in cats**; cholecystitis / EHBO / triaditis is the feline list. A mature GBM has a highly recognizable ultrasound pattern; immobile sludge that does not empty after a meal is the motility conversation. Clinicians say kiwi / stellate — that is this list, **not halo**.
+
+Night split: sick + immobile / mature GB + jaundice or a cranial belly → **surgical conversation tonight**, not ursodiol and home. **Do not do transhepatic cholecystocentesis if GBM is suspected.** Cholecystectomy is the Merck treatment of choice once there are signs of inflammation, obstruction, or rupture. Cholecystotomy without taking the gallbladder is not advised (recurs; occult wall necrosis). Medical hydrocholeresis is only the conversation if there is **no leak and no obstruction** at diagnosis; rare resolve; any progression is surgery. Rupture / bile peritonitis: tap near the biliary tree to look for bilirubin crystals / bacteria — **tap is not the treatment.** Surgery + lavage. Early signs can be vague; a free-moving mucocele can sit in the belly.
+
+EHBO is many things (pancreatitis, stone, mucocele, mass). Bilirubin can rise within hours. Vitamin K deficiency is the bleeding conversation — cats earlier than dogs; printed 0.5–1.5 stays on the page. **Pancreatitis EHBO: most dogs recede over weeks; extrahepatic biliary surgery in those dogs may carry a high death risk (Merck names 50% — stay on page). Do not percutaneous-tap the GB as the default (bile peritonitis).** Do not needle-biopsy a dilated tree as the decompression. Do not invent a bile-acid cutoff in an already jaundiced dog. Do not start a high-fat diet tonight.
+
+Book/public traps:
+
+- Printed ursodiol / SAMe / erythromycin / vitamin K / 4–8 week antibiotic clocks stay on the page.
+- Do not harvest a cholecystectomy technique.
+- Do not call halo a mucocele.
+- Do not send a sick jaundiced kiwi home as hepatitis.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: immobile / mature GB + sick or yellow → **surgeon tonight, not a choleretic to-go.** Halo is the other list. Cat: not the dog kiwi script. △ Plumb.
