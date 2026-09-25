@@ -113,6 +113,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lepto` | Assessment | Canine leptospirosis / liver-kidney |
 | `ddx-ehr` | Assessment | Ehrlichia / Anaplasma / RMSF |
 | `ddx-lyme` | Assessment | Lyme nephritis / borreliosis |
+| `ddx-ivdd` | Assessment | Senior gait / IVDD / not just old |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -185,6 +186,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lepto` | Discharge | Lepto going home / zoonosis |
 | `dc-ehr` | Discharge | Tick-borne rickettsial going home |
 | `dc-lyme` | Discharge | Lyme going home / not a urine zoonosis |
+| `dc-ivdd` | Discharge | After disc / gait / cage-rest talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1290,6 +1292,21 @@ DDX:
 Do not: treat a well Lyme+ as active infection. Send nephritis home as just doxy. Harvest doxy 10 / amoxicillin 20 / mycophenolate 5–10. Whole-cell ELISA / IFA / Western blot. DexSP / NSAID if azotemic.
 Do next: name the room (joint vs kidney). UA + UPC. Tick preventative. △ Plumb.
 
+### `ddx-ivdd`
+
+Senior gait / IVDD — {{patient.name}}
+Gait [short stride / knuckling / non-ambulatory]. Ataxia [ ]. Deep pain [bark-head-turn / withdrawal only / none]. Neck or back pain [ ]. Voice / stridor [ ]. Head tilt [ ]. Kidneys [ ].
+
+DDX:
+1. IVDD if acute pain ± ataxia / paraparesis (chondrodystrophoid young-hard; large-breed slower)
+2. Pain / OA if short stride and no ataxia — old age is not a diagnosis
+3. Degenerative myelopathy if older, nonpainful, proprioceptive early
+4. Voice / stridor is still lar par (other list)
+5. Head tilt is still vestibular (other list)
+
+Do not: send knuckling home as arthritis. NSAID a walking disc without cage rest. Harvest pred 0.5 or recovery percents. Call radiographs definitive. DexSP / NSAID if azotemic. Mistake withdrawal for deep pain.
+Do next: name lameness versus ataxia. Lost deep pain → surgeon tonight. Cage rest if they stay. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1897,6 +1914,14 @@ Give only the medicines we sent, as labeled. Use tick prevention as discussed. T
 People do not catch Lyme from the dog’s urine. Ticks spread it. The dog can carry unattached ticks onto people.
 
 Return now for new lameness, swelling of the belly or legs, no urine, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-ivdd`
+
+{{patient.name}} was evaluated for a back or neck problem (a disc or a gait change). Slowing down is not “just old.” If the paws knuckle or the walk wobbles, that is the spine, not simple arthritis.
+
+Give only the medicines we sent, as labeled. Strict rest as shown. Do not add leftover pain pills or steroids.
+
+Return now if {{patient.pronoun}} cannot walk, cannot feel the toes, cannot urinate, or cries when touched. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

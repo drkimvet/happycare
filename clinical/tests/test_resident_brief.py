@@ -2173,6 +2173,47 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("putative nephropathy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ivdd_deep_pain_not_nsaid_and_home(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertIn("old age is not a diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgeon tonight", joined)
+        self.assertIn("not withdrawal", joined)
+        self.assertIn("without cage rest", joined)
+        self.assertIn("just old", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_slowing_down_not_just_old(self):
+        b = analyze("dog", "slowing down, just old, osteoarthritis, send home")
+        loc = b["localization"].lower()
+        self.assertIn("old age is not a diagnosis", loc)
+        self.assertIn("knuckling is not arthritis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("does not typically cause ataxia", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_vestibular_ataxia_is_not_ivdd_script(self):
+        b = analyze(
+            "dog",
+            "old dog head tilt and nystagmus, give DexSP for stroke",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("peripheral vs central before home", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_lameness_is_not_ivdd_script(self):
+        b = analyze("dog", "Lyme, fever, shifting lameness, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lyme borreliosis", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

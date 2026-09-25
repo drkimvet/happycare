@@ -1494,3 +1494,25 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: Lyme+ and sick → **name the room (joint vs kidney).** Kidney = urine and 177, not a doxy-and-home. Well SNAP = exposure. △ Plumb.
+
+## 185. Senior gait / IVDD night (Merck Barnes May 2026; Thomas Oct 2021 / Apr 2025; Epstein OA Oct 2024 / Aug 2025)
+
+No dedicated Plunkett IVDD chapter in the owned SA EM splits. User-supplied WVC 2026 Learning Hub gait / “old age is not a diagnosis” sessions are **named only — do not dump the notes.** Equine and food-animal WVC catalogs are dropped (Midtown is SA). Packet 134 still owns lar par / GOLPP. Packet 137 still owns vestibular. Packet 184 still owns Lyme shifting lameness. **Do not harvest prednisone 0.5, EPA 50–100, recovery percents, a 2–3 week rest clock, or FGF4 / SOD1 as lobby law.**
+
+Agree with Barnes: **lameness is pain or musculoskeletal dysfunction. It does not typically cause ataxia.** Ataxia, bad proprioception, or abnormal spinal reflexes = look at the nervous system. Agree with Thomas: chondrodystrophoid dogs (Dachshund / Frenchie) extrude young and hard; large-breed protrusion is slower. **Deep pain is a behavioral response** (bark / head turn) after pinching bone — not withdrawal, not skin pinch. Radiographs are not definitive (MRI / CT / myelography). NSAID or analgesic **without cage rest is contraindicated** (they walk more → more extrusion). Steroids do **not** improve neurologic recovery. Lost deep pain → surgeon tonight, not a pain-pill-and-home. Progressive myelomalacia printed 5–10% stays on the page. Cat disk signs are rare.
+
+Degenerative myelopathy (Thomas): usually > 8 years, **nonpainful** pelvic ataxia; proprioceptive deficits early — that is not orthopedic. Steroids do not change the course. SOD1 is risk, not tonight’s proof. Skip horse DM / EMND.
+
+Epstein OA: common, under-recognized in cats; slowing / stiff after rest is the OA room if there is **no ataxia**. Azotemic: still no NSAID. Intra-articular steroid is not the night default. Printed NSAID / frunevetmab / gabapentin lines stay on the page.
+
+Night split: owner “just old / slowing down” is a finding, not a diagnosis. Short stride, no ataxia = pain / OA list. Knuckling / crossing / hopping deficit = spinal. Voice / stridor = 134. Head tilt = 137. Acute overnight DISHA is not CCDS. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed pred 0.5 / rest weeks / recovery percents stay on the page.
+- Do not send knuckling home as arthritis.
+- Do not NSAID a walking disc without rest.
+- Do not call spondylosis the cause (often incidental).
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: name **lameness vs ataxia** before the NSAID. Non-ambulatory or lost deep pain → **surgeon tonight.** Old age is not a diagnosis. △ Plumb.

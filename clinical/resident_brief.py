@@ -953,6 +953,26 @@ LYME_ARTH_RE = re.compile(
     r"\bjoint (swell|pain)",
     re.I,
 )
+IVDD_RE = re.compile(
+    r"\bivdd\b|"
+    r"\bintervertebral|"
+    r"\b(disc|disk) (extrusion|herniat|protrusion)|"
+    r"\bslipped (disc|disk)|"
+    r"\bhansen type|"
+    r"\bthoracolumbar (disc|disk|pain)|"
+    r"\bdeep pain",
+    re.I,
+)
+KNUCKLE_RE = re.compile(r"\bknuckl", re.I)
+PARAP_RE = re.compile(r"\bparapleg|\bparapar|\bnon-?ambulat", re.I)
+SLOWING_RE = re.compile(
+    r"slowing down|"
+    r"just old|"
+    r"old age is not|"
+    r"old age is a diagnosis",
+    re.I,
+)
+OA_RE = re.compile(r"\bosteoarth|\bdegenerative joint|\bdjd\b", re.I)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3906,6 +3926,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Lyme nephritis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Lyme nephritis.")
+
+    gait_hit = spec in {"dog", "cat"} and (
+        IVDD_RE.search(text)
+        or KNUCKLE_RE.search(text)
+        or PARAP_RE.search(text)
+        or SLOWING_RE.search(text)
+        or (OA_RE.search(text) and SEND_HOME_RE.search(text))
+    )
+    if gait_hit:
+        gait_loc = (
+            "Senior gait / spinal. Name lameness versus ataxia. "
+            "Knuckling is not arthritis. Old age is not a diagnosis."
+        )
+        localization = f"{localization} Also {gait_loc}" if localization else gait_loc
+        hard_stops.append(
+            "Do not send knuckling home as arthritis. "
+            "Do not NSAID a walking disc without cage rest. "
+            "Do not harvest prednisone 0.5 as lobby law."
+        )
+        do_not.append(
+            "Lameness does not typically cause ataxia. "
+            "Deep pain is a bark or head turn, not withdrawal. "
+            "Radiographs are not definitive. Steroids do not improve neurologic recovery. "
+            "Printed pred 0.5 and recovery percents stay on the page."
+        )
+        do_next.append(
+            "Name the gait before the NSAID. Lost deep pain → surgeon tonight. "
+            "Voice / stridor is still 134. Head tilt is still 137. △ Plumb."
+        )
+        sources.append(
+            "Merck lameness (Barnes, May 2026); IVDD / DM (Thomas, Oct 2021 / Apr 2025); "
+            "OA (Epstein, Oct 2024 / Aug 2025). WVC 2026 Learning Hub gait sessions named only."
+        )
+        if SEND_HOME_RE.search(text) and (
+            IVDD_RE.search(text) or KNUCKLE_RE.search(text) or PARAP_RE.search(text)
+        ):
+            hard_stops.append("Do not send a non-ambulatory disc home as just old.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP IVDD as the recovery plan.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for IVDD.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a painful back.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

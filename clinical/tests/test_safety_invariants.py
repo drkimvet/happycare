@@ -380,6 +380,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("causal relationship has yet to be established", VERIF.lower())
         self.assertIn("most seropositive dogs have no clinical signs", VERIF.lower())
         self.assertIn("doxycycline 10", VERIF.lower())
+        self.assertIn("senior gait / ivdd", VERIF.lower())
+        self.assertIn("old age is not a diagnosis", VERIF.lower())
+        self.assertIn("prednisone 0.5", VERIF.lower())
+        self.assertIn("deep pain is a behavioral response", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -582,6 +586,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-lyme`", MACRO)
         self.assertIn("do not catch lyme from the dog", MACRO.lower())
         self.assertIn("well lyme+ as active infection", MACRO.lower())
+        self.assertIn("`ddx-ivdd`", MACRO)
+        self.assertIn("`dc-ivdd`", MACRO)
+        self.assertIn("send knuckling home as arthritis", MACRO.lower())
+        self.assertIn("mistake withdrawal for deep pain", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
