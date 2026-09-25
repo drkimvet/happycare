@@ -2254,6 +2254,48 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("intraerythrocytic parasite", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cytauxzoon_not_pred_not_imidocarb(self):
+        b = analyze(
+            "cat",
+            "cytauxzoonosis, high fever, jaundice, prednisolone, imidocarb, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("schizonts occlude vessels", loc)
+        self.assertIn("not canine babesia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("imidocarb as the night plan", joined)
+        self.assertIn("just fever", joined)
+        self.assertIn("fna if the smear is quiet", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bobcat_fever_nsaid_off_if_dry(self):
+        b = analyze("cat", "bobcat fever, NSAID, dehydrated")
+        loc = b["localization"].lower()
+        self.assertIn("feline cytauxzoonosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("dry: still no nsaid", joined)
+        self.assertIn("piroplasms in rbcs may be late", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_babesia_is_not_cytauxzoon_script(self):
+        b = analyze("dog", "babesia, fever, hemolytic anemia, prednisolone")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("intraerythrocytic parasite", loc)
+        self.assertNotIn("schizonts occlude vessels", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_febrile_cchs_is_not_cytauxzoon_script(self):
+        b = analyze("cat", "cholangitis, fever, jaundice, left shift")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("schizonts occlude vessels", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_cytauxzoon_word_is_not_cat_script(self):
+        b = analyze("dog", "cytauxzoonosis, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("schizonts occlude vessels", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

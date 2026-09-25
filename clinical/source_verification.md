@@ -1536,3 +1536,27 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: fever + hemolysis + tick / fight / transfusion → **smear tonight, not a steroid-first IMHA.** Species before the drug. △ Plumb.
+
+## 187. Feline cytauxzoonosis (Merck Tarigo Mar 2022 / Jul 2026)
+
+No dedicated Plunkett cytauxzoon chapter in the owned SA EM splits. Public Merck cytauxzoonosis in cats (Tarigo). Packet 126 still owns IMHA. Packet 186 still owns canine babesia. Packet 181 still owns lipidosis jaundice. **Do not harvest atovaquone 15, azithromycin 10, heparin 100–200, imidocarb 3.5, or a 64% / 10-day clock as lobby law.** Dog is not this host.
+
+Agree with Tarigo: *C. felis*, lone-star tick (*A. americanum*); *D. variabilis* is a weaker experimental vector. South-central / southeastern US (Missouri through the Carolinas; anecdotally Ohio / Alabama). **Bobcat is the reservoir.** Domestic cats were called dead-end; survivors exist and can stay parasitemic. Not cat-to-cat, not oral, vertical uncommon. Tick as early as 36–48 hours. April–September is the season, climate can stretch it.
+
+**Schizonts in macrophages occlude vessels** (LN / spleen / liver / lung / marrow) → ischemia, DIC, death. Piroplasms in RBCs come later and are “innocuous”; 1–4% typical. Fever to 41 °C; dull / not eating; jaundice; big nodes / liver / spleen; dyspnea. Untreated: death 2–3 days after the fever peak. In extremis they are hypothermic and vocal.
+
+Night diagnosis: smear — piroplasms may be **late** (1–3 days before death). Schizonts at the feathered edge or on **LN / spleen / liver FNA** come first. Do not call them platelet clumps. Exclude *Mycoplasma*, Howell-Jolly, stain. PCR if the smear is quiet. Leukopenia + toxic neutrophils + thrombocytopenia; anemia later. Hyperbilirubin / low albumin.
+
+Treatment conversation: **atovaquone + azithromycin**, not imidocarb as the plan (less success). Heparin / fluids / tube / oxygen / transfusion as needed. **NSAID off if azotemic or dry.** Quiet cage. Printed 15 / 10 / 100–200 stay on the page. Atovaquone–proguanil is the dog-GI product, not this. Survivors can be reservoirs — not blood donors. Indoor is still the best prevention; topical alone has failed.
+
+Night split: febrile jaundiced cat ≠ lipidosis (181) and ≠ neutrophilic cholangitis (180) until the smear / travel / wooded-tick story is named. Not pred-first IMHA. Not canine babesia imidocarb. Midtown geography is not the endemic belt — ask travel / outdoor / south. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed atovaquone 15 / azithromycin 10 / heparin 100–200 stay on the page.
+- Do not wait for RBC piroplasms.
+- Do not imidocarb this as babesia.
+- Do not pred as IMHA.
+- Azotemic or dry: still no NSAID.
+
+Night rule: sick outdoor / traveled cat, high fever, yellow, crash → **smear and FNA tonight, start the A+A conversation, not a steroid.** △ Plumb.

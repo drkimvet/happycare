@@ -980,6 +980,12 @@ BABESIA_RE = re.compile(
     r"\bvogeli\b",
     re.I,
 )
+CYTAUX_RE = re.compile(
+    r"\bcytauxzoon|"
+    r"bobcat fever|"
+    r"c\.?\s*felis",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4011,6 +4017,43 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for babesia.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for babesia.")
+
+    cytaux_hit = spec == "cat" and CYTAUX_RE.search(text)
+    if cytaux_hit:
+        cz_loc = (
+            "Feline cytauxzoonosis. Schizonts occlude vessels. "
+            "Not primary IMHA. Not canine babesia."
+        )
+        localization = f"{localization} Also {cz_loc}" if localization else cz_loc
+        hard_stops.append(
+            "Do not pred cytauxzoon as primary IMHA. "
+            "Do not use imidocarb as the night plan. "
+            "Do not harvest atovaquone 15 as lobby law."
+        )
+        do_not.append(
+            "Piroplasms in RBCs may be late. Schizonts on LN / spleen / liver FNA come first. "
+            "Do not call them platelet clumps. "
+            "Printed atovaquone 15 / azithromycin 10 / heparin 100–200 stay on the page."
+        )
+        do_next.append(
+            "Smear the feathered edge. FNA if the smear is quiet. PCR. "
+            "Start the atovaquone + azithromycin conversation △ Plumb. Quiet cage. "
+            "NSAID off if dry or azotemic."
+        )
+        sources.append(
+            "Merck cytauxzoonosis in cats (Tarigo, Mar 2022 / Jul 2026): "
+            "schizonts first; atovaquone + azithromycin, not imidocarb."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a crashing febrile jaundiced cat home as just fever.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress cytauxzoon as primary IMHA.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for cytauxzoon.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cytauxzoon.")
+        if NSAID_RE.search(text) and re.search(r"dehydrat|\bdry\b", text, re.I):
+            hard_stops.append("Dry: still no NSAID in cytauxzoon.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

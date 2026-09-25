@@ -115,6 +115,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lyme` | Assessment | Lyme nephritis / borreliosis |
 | `ddx-ivdd` | Assessment | Senior gait / IVDD / not just old |
 | `ddx-babe` | Assessment | Babesia / piroplasm / not pred-first IMHA |
+| `ddx-cytx` | Assessment | Feline cytauxzoon / bobcat fever |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -189,6 +190,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lyme` | Discharge | Lyme going home / not a urine zoonosis |
 | `dc-ivdd` | Discharge | After disc / gait / cage-rest talk |
 | `dc-babe` | Discharge | After babesia / hemolysis watch |
+| `dc-cytx` | Discharge | After cytauxzoon / not a donor |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1324,6 +1326,21 @@ DDX:
 Do not: pred a piroplasm as primary IMHA. Give imidocarb IV. Harvest imidocarb 6.6 / atovaquone 13.3. Treat gibsoni as an ordinary-babesiacide cure. Invent a PCV transfusion cutoff.
 Do next: smear tonight. PCR if species unknown. Support / type-specific blood △ Plumb. Tick preventative.
 
+### `ddx-cytx`
+
+Cytauxzoon — {{patient.name}}
+Fever [ ]. Jaundice [ ]. Smear [piroplasm / schizont / none]. FNA LN / spleen / liver [ ]. PCR [ ]. Travel / woods / lone-star [ ]. Dyspnea [ ]. Kidneys / hydration [ ].
+
+DDX:
+1. Cytauxzoonosis if a sick outdoor or traveled cat, high fever, yellow, crash
+2. Schizonts occlude vessels — FNA / feathered edge before late RBC piroplasms
+3. Not primary IMHA
+4. Not canine babesia / imidocarb
+5. Not default lipidosis or neutrophilic cholangitis until those lists are named
+
+Do not: pred as IMHA. Imidocarb as the night plan. Harvest atovaquone 15 / azithromycin 10 / heparin 100–200. Wait for RBC piroplasms. NSAID if dry or azotemic. Call schizonts platelet clumps.
+Do next: smear + FNA tonight. Start the atovaquone + azithromycin conversation △ Plumb. Quiet cage. Survivors are not blood donors.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1949,6 +1966,16 @@ Give only the medicines we sent, as labeled. Use tick prevention as discussed. D
 People do not catch this from the dog’s urine. Ticks and, rarely, transfusion spread related parasites to people.
 
 Return now for pale gums, collapse, dark urine, or not eating. {{location.phonenumber}}
+
+### `dc-cytx`
+
+{{patient.name}} was treated for a life-threatening tick-borne infection called cytauxzoonosis (sometimes called bobcat fever). This is not a leftover steroid plan and not a simple bladder infection.
+
+Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet. Use tick prevention. Indoor is safest.
+
+{{patient.name}} should not donate blood. Surviving cats can still carry the parasite.
+
+Return now for high fever, yellow gums or eyes, hard breathing, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

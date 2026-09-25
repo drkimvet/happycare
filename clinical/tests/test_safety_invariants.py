@@ -388,6 +388,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not readily treated with ordinary babesiacides", VERIF.lower())
         self.assertIn("imidocarb 6.6", VERIF.lower())
         self.assertIn("smear first", VERIF.lower())
+        self.assertIn("feline cytauxzoonosis", VERIF.lower())
+        self.assertIn("schizonts in macrophages occlude vessels", VERIF.lower())
+        self.assertIn("atovaquone 15", VERIF.lower())
+        self.assertIn("do not imidocarb this as babesia", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -598,6 +602,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-babe`", MACRO)
         self.assertIn("pred a piroplasm as primary imha", MACRO.lower())
         self.assertIn("do not catch this from the dog", MACRO.lower())
+        self.assertIn("`ddx-cytx`", MACRO)
+        self.assertIn("`dc-cytx`", MACRO)
+        self.assertIn("imidocarb as the night plan", MACRO.lower())
+        self.assertIn("should not donate blood", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
