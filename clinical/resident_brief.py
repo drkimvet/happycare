@@ -973,6 +973,13 @@ SLOWING_RE = re.compile(
     re.I,
 )
 OA_RE = re.compile(r"\bosteoarth|\bdegenerative joint|\bdjd\b", re.I)
+BABESIA_RE = re.compile(
+    r"\bbabesia|"
+    r"\bpiroplasm|"
+    r"\bgibsoni\b|"
+    r"\bvogeli\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3969,6 +3976,41 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for IVDD.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a painful back.")
+
+    babesia_hit = spec in {"dog", "cat"} and BABESIA_RE.search(text)
+    if babesia_hit:
+        babe_loc = (
+            "Babesiosis. Intraerythrocytic parasite. "
+            "Not primary IMHA until the smear is seen."
+        )
+        localization = f"{localization} Also {babe_loc}" if localization else babe_loc
+        hard_stops.append(
+            "Do not pred a piroplasm as primary IMHA. "
+            "Do not give imidocarb IV. "
+            "Do not harvest imidocarb 6.6 as lobby law."
+        )
+        do_not.append(
+            "B. gibsoni is not an ordinary-babesiacide cure. "
+            "Printed imidocarb 6.6 / atovaquone 13.3 / azithromycin 10 stay on the page. "
+            "Cattle diminazene 3.5 stays on the Merck cattle line."
+        )
+        do_next.append(
+            "Smear tonight. PCR if you need the species. Large vs small chooses the drug family △ Plumb. "
+            "Transfuse for oxygen failure, not a PCV number. "
+            "Hemoglobinuria is hemolysis, not a UTI."
+        )
+        sources.append(
+            "Merck babesiosis (Carter / Rolls, Mar 2022 / Jul 2026): smear first; "
+            "B. gibsoni not ordinary babesiacides. CAPC 2019 named only."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send febrile hemolysis home as just IMHA.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress babesia as primary IMHA.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for babesia.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for babesia.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

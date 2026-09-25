@@ -114,6 +114,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ehr` | Assessment | Ehrlichia / Anaplasma / RMSF |
 | `ddx-lyme` | Assessment | Lyme nephritis / borreliosis |
 | `ddx-ivdd` | Assessment | Senior gait / IVDD / not just old |
+| `ddx-babe` | Assessment | Babesia / piroplasm / not pred-first IMHA |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -187,6 +188,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ehr` | Discharge | Tick-borne rickettsial going home |
 | `dc-lyme` | Discharge | Lyme going home / not a urine zoonosis |
 | `dc-ivdd` | Discharge | After disc / gait / cage-rest talk |
+| `dc-babe` | Discharge | After babesia / hemolysis watch |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1307,6 +1309,21 @@ DDX:
 Do not: send knuckling home as arthritis. NSAID a walking disc without cage rest. Harvest pred 0.5 or recovery percents. Call radiographs definitive. DexSP / NSAID if azotemic. Mistake withdrawal for deep pain.
 Do next: name lameness versus ataxia. Lost deep pain → surgeon tonight. Cage rest if they stay. △ Plumb.
 
+### `ddx-babe`
+
+Babesia — {{patient.name}}
+Smear [piroplasm / none / not yet]. Size [large / small / unknown]. PCR [ ]. Fever [ ]. PCV / TS [ ]. Hemoglobinuria [ ]. Tick / fight / transfusion [ ]. Spleen [ ].
+
+DDX:
+1. Babesiosis if intraerythrocytic piroplasms or PCR in a febrile hemolytic dog
+2. Large (*B. vogeli*) vs small (*B. gibsoni*) — the drug family changes
+3. Not primary IMHA until the smear is seen
+4. Not allium / zinc (oxidative, other list)
+5. Not lepto unless kidney + jaundice sit without hemolysis
+
+Do not: pred a piroplasm as primary IMHA. Give imidocarb IV. Harvest imidocarb 6.6 / atovaquone 13.3. Treat gibsoni as an ordinary-babesiacide cure. Invent a PCV transfusion cutoff.
+Do next: smear tonight. PCR if species unknown. Support / type-specific blood △ Plumb. Tick preventative.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1922,6 +1939,16 @@ Return now for new lameness, swelling of the belly or legs, no urine, collapse, 
 Give only the medicines we sent, as labeled. Strict rest as shown. Do not add leftover pain pills or steroids.
 
 Return now if {{patient.pronoun}} cannot walk, cannot feel the toes, cannot urinate, or cries when touched. {{location.phonenumber}}
+
+### `dc-babe`
+
+{{patient.name}} was treated for a blood parasite called babesia. It can burst red blood cells and make the urine look dark. This is not the same as a simple bladder infection, and it is not a leftover steroid plan.
+
+Give only the medicines we sent, as labeled. Use tick prevention as discussed. Do not share needles or allow fighting with other dogs.
+
+People do not catch this from the dog’s urine. Ticks and, rarely, transfusion spread related parasites to people.
+
+Return now for pale gums, collapse, dark urine, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

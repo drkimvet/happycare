@@ -1516,3 +1516,23 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: name **lameness vs ataxia** before the NSAID. Non-ambulatory or lost deep pain → **surgeon tonight.** Old age is not a diagnosis. △ Plumb.
+
+## 186. Canine babesiosis (Merck Carter / Rolls Mar 2022 / Jul 2026; CAPC 2019 named only)
+
+No dedicated Plunkett babesia chapter in the owned SA EM splits. Public Merck blood-parasite page is cattle-heavy — use the dog/cat sentences plus CAPC named only. Packet 126 still owns IMHA. Packet 136 still owns the transfusion cutoff. Packet 183 still owns fever + low platelets. Skip bovine / equine piroplasm as its own packet. **Do not harvest imidocarb 6.6, cattle 1.2 / 3.5, atovaquone 13.3, azithromycin 10, or a 10 / 14-day clock as lobby law.**
+
+Agree with Merck: intraerythrocytic protozoa; fever + intravascular hemolysis → anemia, hemoglobinuria, jaundice. **Smear first.** PCR if the smear is quiet or you need the species. *B. vogeli* (*Rhipicephalus* / brown dog tick) is the US large form. *B. gibsoni* is small; **not readily treated with ordinary babesiacides.** *B. felis* (southern Africa) does not respond to those drugs; CAPC: domestic-cat infection not reported in the US.
+
+CAPC named only: large vs small chooses the drug family (imidocarb vs atovaquone + azithromycin). Imidocarb is **not IV**. *B. gibsoni* travels with dog fights / pit-bull–type / transfusion / dirty needles, not just a tick. Healthy spleen-intact US adults are often quiet. Tick usually 24–48 hours.
+
+Night split: pale + fever + dark urine ≠ pred-first IMHA until the smear is seen. Hemoglobinuria is hemolysis, not a UTI and not caval unless the heartworm list sits with it. Allium / zinc stay oxidative (126). Yellow + AKI without hemolysis is still 182. Low platelets without piroplasms stay 183. Transfuse for oxygen failure, not a memorized PCV. People: *B. microti* / *B. divergens* from ticks or transfusion — **not dog urine.** Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed imidocarb / atovaquone / azithromycin / cattle diminazene numbers stay on those pages.
+- Do not pred a piroplasm as primary IMHA.
+- Do not give imidocarb IV.
+- Do not treat *B. gibsoni* as a large-Babesia imidocarb cure.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: fever + hemolysis + tick / fight / transfusion → **smear tonight, not a steroid-first IMHA.** Species before the drug. △ Plumb.

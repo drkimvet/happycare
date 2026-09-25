@@ -2214,6 +2214,46 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("lameness versus ataxia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_babesia_smear_not_pred_first_imha(self):
+        b = analyze(
+            "dog",
+            "babesia, fever, hemolytic anemia, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("intraerythrocytic parasite", loc)
+        self.assertIn("not primary imha until the smear", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pred a piroplasm", joined)
+        self.assertIn("just imha", joined)
+        self.assertIn("smear tonight", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gibsoni_not_ordinary_babesiacide(self):
+        b = analyze("dog", "Babesia gibsoni, imidocarb IV")
+        loc = b["localization"].lower()
+        self.assertIn("babesiosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("ordinary-babesiacide", joined)
+        self.assertIn("imidocarb iv", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_imha_garlic_is_not_babesia_script(self):
+        b = analyze(
+            "dog",
+            "IMHA, autoagglutination, give prednisolone for garlic hemolytic anemia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hemolysis", loc)
+        self.assertNotIn("intraerythrocytic parasite", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lepto_aki_is_not_babesia_script(self):
+        b = analyze("dog", "AKI, jaundice, thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("leptospirosis", loc)
+        self.assertNotIn("intraerythrocytic parasite", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
