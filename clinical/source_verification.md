@@ -1394,3 +1394,23 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: immobile / mature GB + sick or yellow → **surgeon tonight, not a choleretic to-go.** Halo is the other list. Cat: not the dog kiwi script. △ Plumb.
+
+## 180. Feline neutrophilic cholangitis / triaditis (Merck Center Aug 2023 / Sept 2024)
+
+No dedicated Plunkett CCHS chapter in the owned SA EM splits. Public Merck feline cholangitis / cholangiohepatitis syndrome (Center). Packet 179 still owns dog mucocele / EHBO / “do not tap a kiwi.” Packet 124 still owns fPL / opioid. Packet 139 still owns HE. **Do not harvest enro / metro / ampicillin tables, an 8–12 week clock, pred 2–4, metro 7.5, SAMe 40–50, chlorambucil 2 mg/cat, methotrexate 0.4, or NAC 140/70 as a cholangitis drip. NAC 140/70 stays the APAP family.**
+
+Agree with Center: CCHS is the most common acquired inflammatory liver disease in cats (more than dogs). Cat bile and pancreatic ducts share anatomy. **Suppurative / neutrophilic** = the night cat: illness often **< 5 days**, fever, dull, dry, not eating, vomit, variable jaundice, cranial pain. Left shift / toxic neutrophils. ALT/AST often up more than ALP/GGT; **some have no cholestatic enzymes.** Ultrasound can be **normal.** Sternal LN can be inflammation or lymphoma. Bile / imprint cytology often shows bacteria; culture can be negative if already on antibiotics or anaerobes were skipped. Common names: *E. coli*, *Streptococcus*, *Clostridium*, *Bacteroides*, *Actinomyces*.
+
+**Triaditis** = CCHS plus pancreatitis plus IBD (kidneys / chronic interstitial nephritis also sit on the Merck list). Concurrent **hepatic lipidosis** confuses the first look — **do not starve.** Feed a feline maximum-calorie conversation. Do not NPO 12 hours.
+
+Night split: febrile yellow cat ≠ DexSP. Neutrophilic needs **antimicrobials that cover anaerobes and gram-negative enterics** △ Plumb / hospital / culture — not a pred dump. Pred / chlorambucil / methotrexate are the **lymphocytic / destructive** conversation **after** biopsy, not tonight’s syringe. Small-cell lymphoma can wear a lymphocytic mask — **not a lobby CHOP.** Ursodiol / SAMe numbers stay on the page; **ursodiol is not recommended in destructive cholangitis.** Vitamin K if they bleed — overdose hemolyzes; numbers stay on the page. EHBDO / cholecystitis still 179. Do not percutaneous-decompress a dilated tree as the default.
+
+Book/public traps:
+
+- Printed antibiotic weeks, pred mg/kg, chlorambucil / methotrexate / NAC 140 stay on the page.
+- Do not call it the dog kiwi script.
+- Do not treat a left-shift febrile cat as immune cholangitis.
+- Do not skip food.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: febrile / yellow / painful cat + cholangitis or triaditis → **antibiotics and food tonight, not pred, not a mucocele tap.** △ Plumb.

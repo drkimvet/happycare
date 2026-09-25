@@ -360,6 +360,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("do not do transhepatic cholecystocentesis", VERIF.lower())
         self.assertIn("ursodiol 15–25", VERIF.lower())
         self.assertIn("halo", VERIF.lower())
+        self.assertIn("feline neutrophilic cholangitis", VERIF.lower())
+        self.assertIn("do not starve", VERIF.lower())
+        self.assertIn("pred 2–4", VERIF.lower())
+        self.assertIn("not a lobby chop", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -542,6 +546,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-gbm`", MACRO)
         self.assertIn("not “just hepatitis”", MACRO.lower())
         self.assertIn("cholecystocentesis if mucocele is suspected", MACRO.lower())
+        self.assertIn("`ddx-cchs`", MACRO)
+        self.assertIn("`dc-cchs`", MACRO)
+        self.assertIn("not a dog gallbladder", MACRO.lower())
+        self.assertIn("dexsp / pred as the night plan", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

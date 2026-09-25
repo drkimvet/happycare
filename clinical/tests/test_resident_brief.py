@@ -1971,6 +1971,45 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("extrahepatic biliary", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_neutrophilic_cholangitis_not_pred_first(self):
+        b = analyze(
+            "cat",
+            "neutrophilic cholangitis, fever, jaundice, DexSP, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("feline neutrophilic cholangitis", loc)
+        self.assertIn("not the dog kiwi", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not dexsp", joined)
+        self.assertIn("anaerobes and enteric", joined)
+        self.assertIn("home as just hepatitis", joined)
+        self.assertIn("do not starve", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_triaditis_not_lobby_chop_not_mucocele(self):
+        b = analyze("cat", "triaditis, DexSP, AKI")
+        loc = b["localization"].lower()
+        self.assertIn("triaditis", loc)
+        self.assertNotIn("gallbladder mucocele", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("still no dexsp", joined)
+        self.assertIn("chop is a biopsy", joined)
+        self.assertIn("harvest pred, chlorambucil, or nac 140", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_kiwi_is_not_feline_cchs(self):
+        b = analyze("dog", "kiwi gallbladder, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gallbladder mucocele", loc)
+        self.assertNotIn("feline neutrophilic cholangitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_pancreatitis_alone_is_not_cchs_script(self):
+        b = analyze("cat", "mild pancreatitis, SNAP fPL weak positive")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline neutrophilic cholangitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -108,6 +108,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pln` | Assessment | PLN / nephrotic crisis |
 | `ddx-ple` | Assessment | PLE / gut hypoalbuminemia |
 | `ddx-gbm` | Assessment | Gallbladder mucocele / EHBO |
+| `ddx-cchs` | Assessment | Feline cholangitis / triaditis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -175,6 +176,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pln` | Discharge | PLN / nephrotic going home |
 | `dc-ple` | Discharge | PLE / gut protein loss going home |
 | `dc-gbm` | Discharge | Mucocele / EHBO / decline surgery |
+| `dc-cchs` | Discharge | Cat cholangitis / triaditis going home |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1205,6 +1207,21 @@ DDX:
 Do not: send a sick jaundiced kiwi home on ursodiol. Cholecystocentesis if mucocele is suspected. Cholecystotomy-only as default. Harvest ursodiol / SAMe / vitamin K numbers. Percutaneous GB tap as the pancreatitis-EHBO default.
 Do next: surgeon if inflamed / obstructed / ruptured. Tap near the biliary tree only to see bile. Vitamin K conversation if chronically jaundiced △ Plumb.
 
+### `ddx-cchs`
+
+Feline CCHS / triaditis — {{patient.name}}
+Fever [ ]. Bilirubin [ ]. Left shift [ ]. US [normal / thick ducts / EHBO / not yet]. Food offered [ ]. Bile cytology [ ].
+
+DDX:
+1. Neutrophilic / suppurative cholangitis if acute febrile yellow cat
+2. Triaditis if pancreas and gut sit with the liver
+3. Concurrent hepatic lipidosis — do not starve
+4. Lymphocytic / destructive CCHS — biopsy conversation, not tonight’s pred
+5. Not the dog kiwi / mucocele script; EHBO still the other list
+
+Do not: DexSP / pred as the night plan. Harvest pred / chlorambucil / NAC 140. NPO 12 hours. Send home as just hepatitis. Lobby CHOP.
+Do next: antimicrobials covering anaerobes + enteric gram-negatives △ Plumb. Feed. Culture bile if you sample. Look at pancreas and gut.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1762,6 +1779,16 @@ Return now if breathing gets hard, if {{patient.pronoun}} collapses, the belly s
 Give only the food and medicines we sent, as labeled. This is not a water-pill plan and not a leftover steroid plan.
 
 Return now if the belly becomes painful or swollen, gums or eyes turn more yellow, vomiting will not stop, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-cchs`
+
+{{patient.name}} has inflammation of the bile ducts (cholangitis). In cats this often travels with the pancreas and the gut. It is not a dog gallbladder “kiwi,” and it is not a reason to skip food.
+
+[If going home against advice:] We recommended continued hospital fluids, food, and antibiotics. Going home tonight while still febrile or not eating carries a risk of worsening jaundice and liver fat. You may return at any time.
+
+Give only the food and medicines we sent, as labeled. Keep offering food. This is not a leftover steroid plan unless we said so after a biopsy.
+
+Return now if {{patient.pronoun}} will not eat, gums or eyes turn more yellow, the belly becomes painful, or {{patient.pronoun}} collapses. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

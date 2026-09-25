@@ -894,6 +894,13 @@ CHOLECYSTITIS_RE = re.compile(
     r"\bemphysematous (gallbladder|cholecyst)",
     re.I,
 )
+CCHS_RE = re.compile(
+    r"\bcholangitis|"
+    r"\bcholangiohepatitis|"
+    r"\bcchs\b|"
+    r"\btriaditis\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3634,6 +3641,41 @@ def analyze(
             "(not greasy leftovers). High fiber works against it."
         )
         sources.append("Forman ACVIM 2021: highly digestible; fat is not the feline lever")
+
+    cchs_hit = spec == "cat" and CCHS_RE.search(text)
+    if cchs_hit:
+        cchs_loc = (
+            "Feline neutrophilic cholangitis / triaditis. "
+            "Fever and jaundice are this list. Not the dog kiwi."
+        )
+        localization = f"{localization} Also {cchs_loc}" if localization else cchs_loc
+        hard_stops.append(
+            "Do not DexSP / pred a febrile cholangitis cat as the night plan. "
+            "Antibiotics that cover anaerobes and enteric gram-negatives tonight. "
+            "Do not harvest pred, chlorambucil, or NAC 140 as a cholangitis drip."
+        )
+        do_not.append(
+            "Do not starve — lipidosis can sit with CCHS. "
+            "Do not treat a left-shift cat as immune lymphocytic disease. "
+            "Printed pred 2–4, chlorambucil 2 mg/cat, and 8–12 week clocks stay on the page."
+        )
+        do_next.append(
+            "Bile / imprint cytology and culture △ hospital. Feed a feline calorie conversation. "
+            "Look at pancreas and gut (triaditis). Ultrasound can be normal. "
+            "Lymphocytic / CHOP is a biopsy conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck feline cholangitis / cholangiohepatitis (Center, Aug 2023 / Sept 2024): "
+            "suppurative CCHS is the acute febrile cat; immunomodulation is after biopsy."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send febrile cholangitis home as just hepatitis.")
+        if DEX_RE.search(text):
+            hard_stops.append("Do not DexSP neutrophilic cholangitis as the night plan.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for CCHS.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for CCHS.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
