@@ -1432,3 +1432,23 @@ Book/public traps:
 - Azotemic: still no NSAID, still no DexSP.
 
 Night rule: fat yellow cat that stopped eating → **K / phos / thiamine, then food. Not pred. Not ursodiol. Not a tube-first cookbook.** △ Plumb.
+
+## 182. Canine leptospirosis / acute liver-kidney (Merck Lunn Feb 2022 / Jul 2026; ACVIM 2023 Sykes named only)
+
+No dedicated Plunkett lepto chapter in the owned SA EM splits. Public Merck leptospirosis in dogs (Lunn). Packet 119 still owns UO / UOP. Packet 126 still owns IMHA. Packet 139 still owns HE. Packet 181 is the cat fat-liver list. **Do not harvest doxycycline 5 mg/kg, a 2-week clock, a MAT 1:800, or an isolation-ward recipe as lobby law.**
+
+Agree with Lunn: any age, breed, sex, or lifestyle — **not just the outdoor intact male.** AKI is the usual night picture; liver can sit with it or alone. Glucosuria with **normal blood glucose**. Mild-moderate thrombocytopenia — usually not low enough for spontaneous bleed. Pulmonary hemorrhage is common in people and less common in dogs, but cough / dyspnea / caudodorsal rads are allowed. MAT does **not** name the infecting serovar. Start antimicrobials **before** the confirmatory tests come back. Doxycycline covers the blood phase **and** the renal carrier; a penicillin first is allowed if they cannot take doxy — **still finish with doxy** or the kidney keeps shedding. Acute + convalescent MAT plus PCR (blood early, urine later). SNAP / WITNESS can light up after a vaccine. Four-serovar vaccine; the old every-6-month line is not justified. Vaccinated dogs can still get it — other lists become more likely (ACVIM 2023 named only).
+
+**Zoonosis tonight.** Barrier. Urine and blood. Designated pee spot you can disinfect. Merck: **not an isolation ward.** Owners: gloves for urine, wash hands, call their physician if they are worried. Cats can shed and are usually milder — not the dog script.
+
+Night split: dog AKI + jaundice + low-ish platelets or sugar-in-urine-with-normal-glucose → **lepto until the tests say otherwise.** Do not send home as just GI. Do not call mild thrombocytopenia IMHA. Do not Lasix the lung as CHF. Azotemic: still no NSAID, still no DexSP. UOP in mL/kg/hr.
+
+Book/public traps:
+
+- Printed doxy 5 / 14-day / MAT tables stay on the page.
+- Do not treat a single MAT as the serovar or as a rule-out.
+- Do not skip doxy after a penicillin start.
+- Do not isolate-and-forget fluids.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: sick dog, kidney ± liver ± zoonosis → **barrier and start treatment tonight, not a titer-and-home.** △ Plumb.

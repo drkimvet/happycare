@@ -918,6 +918,14 @@ VENTROFLEX_RE = re.compile(
     re.I,
 )
 JAUNDICE_RE = re.compile(r"\bjaundice\b|\bicterus\b|\bhyperbilirubin|\byellow (cat|gums|eyes|mucosa)", re.I)
+LEPTO_RE = re.compile(r"\bleptospir|\blepto\b|\bweil('s)? (disease|jaundice)", re.I)
+LEPTO_HINT_RE = re.compile(
+    r"\bthrombocytop|"
+    r"\blow platelets|"
+    r"\bglucosuria|"
+    r"\bpulmonary hemorrhage",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -3730,6 +3738,50 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for lipidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for lipidosis.")
+
+    lepto_hit = spec in {"dog", "cat"} and (
+        LEPTO_RE.search(text)
+        or (
+            spec == "dog"
+            and AZOTEMIA_RE.search(text)
+            and JAUNDICE_RE.search(text)
+            and LEPTO_HINT_RE.search(text)
+        )
+    )
+    if lepto_hit:
+        lepto_loc = (
+            "Leptospirosis. Kidney plus or minus liver. Zoonosis. "
+            "Not just the outdoor male."
+            if spec == "dog"
+            else "Leptospirosis is possible in the cat but usually milder. They can still shed."
+        )
+        localization = f"{localization} Also {lepto_loc}" if localization else lepto_loc
+        hard_stops.append(
+            "Barrier tonight — urine and blood. Not an isolation ward. "
+            "Start treatment before the titer. "
+            "Do not harvest doxycycline 5 as lobby law."
+        )
+        do_not.append(
+            "Do not send home as just GI. Do not call mild thrombocytopenia IMHA. "
+            "Do not skip doxy after a penicillin start — the kidney keeps shedding. "
+            "MAT does not name the infecting serovar. Printed doxy 5 / 14 days stay on the page."
+        )
+        do_next.append(
+            "Acute plus convalescent MAT and PCR (blood early, urine later). "
+            "Fluids and UOP. Owner: gloves for urine, wash hands, call their physician if worried. △ Plumb."
+        )
+        sources.append(
+            "Merck leptospirosis in dogs (Lunn, Feb 2022 / Jul 2026): "
+            "doxy for blood and carrier; barrier not isolation. ACVIM 2023 named only."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append("Do not Lasix lepto lung as CHF.")
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send leptospirosis home as just GI.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for lepto.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for lepto.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

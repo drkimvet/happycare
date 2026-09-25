@@ -2048,6 +2048,40 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline hepatic lipidosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_lepto_not_just_outdoor_male_not_titer_and_home(self):
+        b = analyze(
+            "dog",
+            "leptospirosis, AKI, jaundice, send home as GI, Lasix",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("leptospirosis", loc)
+        self.assertIn("not just the outdoor male", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not an isolation ward", joined)
+        self.assertIn("start treatment before the titer", joined)
+        self.assertIn("home as just gi", joined)
+        self.assertIn("do not lasix lepto lung", joined)
+        self.assertIn("skip doxy after a penicillin", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_aki_jaundice_thrombocytopenia_is_lepto_hint(self):
+        b = analyze("dog", "AKI, jaundice, thrombocytopenia")
+        loc = b["localization"].lower()
+        self.assertIn("leptospirosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lily_aki_is_not_lepto_script(self):
+        b = analyze("cat", "lily, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("leptospirosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_aki_alone_is_not_lepto_script(self):
+        b = analyze("dog", "AKI, vomiting")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("leptospirosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

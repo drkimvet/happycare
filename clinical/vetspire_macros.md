@@ -110,6 +110,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gbm` | Assessment | Gallbladder mucocele / EHBO |
 | `ddx-cchs` | Assessment | Feline cholangitis / triaditis |
 | `ddx-hl` | Assessment | Feline hepatic lipidosis |
+| `ddx-lepto` | Assessment | Canine leptospirosis / liver-kidney |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -179,6 +180,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gbm` | Discharge | Mucocele / EHBO / decline surgery |
 | `dc-cchs` | Discharge | Cat cholangitis / triaditis going home |
 | `dc-hl` | Discharge | Hepatic lipidosis / decline feeding |
+| `dc-lepto` | Discharge | Lepto going home / zoonosis |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1239,6 +1241,21 @@ DDX:
 Do not: hang dextrose. Ursodiol. Starve / NPO 12 hours. Appetite-stimulant rescue. Harvest RER / tube / NAC 140. DexSP (can start HL). Cysto or aspirate before vitamin K.
 Do next: lean-weight 0.9% NaCl. K / phos / thiamine, then food. Find why they stopped. Aspirate after vitamin K.
 
+### `ddx-lepto`
+
+Leptospirosis — {{patient.name}}
+AKI [ ]. Bilirubin [ ]. Platelets [ ]. Glucosuria with normal glucose [ ]. Vaccine [4-serovar / 2-serovar / none]. PCR / MAT [ ].
+
+DDX:
+1. Leptospirosis if dog AKI ± jaundice ± mild thrombocytopenia
+2. Glucosuria with normal blood glucose supports the kidney tubule
+3. Not IMHA if the anemia is not the story
+4. Pulmonary hemorrhage if they cough — not default CHF
+5. Cat: possible, usually milder; they can still shed
+
+Do not: send home as just GI. Isolation-ward as the plan (barrier, not isolation). Skip doxy after penicillin. Treat one MAT as the serovar. Harvest doxy 5. DexSP / NSAID if azotemic.
+Do next: barrier. Start treatment tonight. Acute + convalescent MAT and PCR. Owner zoonosis talk.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -1816,6 +1833,16 @@ Return now if {{patient.pronoun}} will not eat, gums or eyes turn more yellow, t
 Give only the food and medicines we sent, as labeled. Keep offering food as we showed. Do not add leftover steroids or human appetite pills.
 
 Return now if {{patient.pronoun}} will not eat, the neck drops, gums or eyes turn more yellow, or {{patient.pronoun}} collapses. {{location.phonenumber}}
+
+### `dc-lepto`
+
+{{patient.name}} was treated for a suspected or confirmed infection called leptospirosis. It can hit the kidneys and the liver. People can catch it from urine.
+
+Wear gloves when cleaning urine. Wash your hands after handling {{patient.name}}. Use the bathroom spot we discussed until the antibiotic course is done. Call your physician if anyone at home is worried.
+
+Give only the medicines we sent, as labeled. This is not a leftover steroid plan.
+
+Return now for no urine, vomiting that will not stop, yellow gums or eyes, trouble breathing, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
