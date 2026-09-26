@@ -121,6 +121,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-bru` | Assessment | Brucella / discospondylitis / not doxy-and-clear |
 | `ddx-blast` | Assessment | Blastomycosis / Midtown travel fungus |
 | `ddx-crypto` | Assessment | Cryptococcosis / nasal-CNS fungus |
+| `ddx-histo` | Assessment | Histoplasmosis / GI-respiratory fungus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -201,6 +202,7 @@ Suggested names are short so they show up after three letters.
 | `dc-bru` | Discharge | After Brucella / disco / zoonosis talk |
 | `dc-blast` | Discharge | After blastomycosis / travel-fungus talk |
 | `dc-crypto` | Discharge | After cryptococcosis / roman-nose talk |
+| `dc-histo` | Discharge | After histoplasmosis / travel-GI talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1426,6 +1428,21 @@ DDX:
 Do not: harvest fluconazole 10 / itra 5–10. Pred as lymphoma or IBD first. Use flucytosine in a dog. Send a roman-nose cat home as just a cold.
 Do next: smear the discharge or mass. Capsular antigen. △ Plumb.
 
+### `ddx-histo`
+
+Histoplasmosis / GI-respiratory — {{patient.name}}
+Travel / river valley / cave / roost [ ]. Midtown-only [Y/N]. Diarrhea / hepatomegaly / ascites [ ]. Cough / tachypnea [ ]. Smear [tiny yeasts in macrophages / none]. Urine antigen [ ]. Lab warned [ ].
+
+DDX:
+1. *H. capsulatum* after Mississippi / Ohio River travel — **Midtown is not the river-valley default**
+2. Dogs: diarrhea / big liver / ascites. Cats: tachypnea / skin
+3. **Tiny yeasts inside macrophages** on FNA or the blood smear. Urine antigen cross-reacts with Blastomyces
+4. Not pred-first IBD or PLE-only (178). Not blasto broad-based (191). Not crypto capsule (192)
+5. Culture is hazardous — warn the lab
+
+Do not: harvest itraconazole 10 / 6 months. Pred as IBD. Culture without warning the lab. Send river-valley diarrhea home as just IBD.
+Do next: look inside the macrophages. Urine antigen. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2101,6 +2118,14 @@ Return now for harder breathing, new draining skin sores, eye pain, collapse, or
 Give only the medicines we sent, as labeled. Recheck antigen as discussed — treatment is long.
 
 Return now for worse nasal discharge, seizures, blindness, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-histo`
+
+{{patient.name}} was evaluated for a soil fungus (histoplasmosis). People get this from the environment, not from the pet. This is not a leftover steroid plan and not “just IBD.”
+
+Give only the medicines we sent, as labeled. Recheck as discussed — treatment is long and relapse can happen.
+
+Return now for worse diarrhea, harder breathing, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

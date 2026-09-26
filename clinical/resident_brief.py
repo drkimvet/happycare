@@ -1078,6 +1078,26 @@ ROMAN_NOSE_RE = re.compile(
     r"nasal bridge",
     re.I,
 )
+# Bare "histo" is history. Not cryptosporidium.
+HISTO_RE = re.compile(
+    r"\bhistoplasm|"
+    r"\bcapsulatum\b",
+    re.I,
+)
+GI_HISTO_RE = re.compile(
+    r"\bdiarrhea|"
+    r"\bascites\b|"
+    r"hepatomegal",
+    re.I,
+)
+HISTO_SICK_RE = re.compile(
+    r"\bfever\b|"
+    r"weight loss|"
+    r"\bcough|"
+    r"\bdyspnea|"
+    r"\brespira",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4375,6 +4395,47 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for cryptococcosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for cryptococcosis.")
+
+    histo_named = spec in {"dog", "cat"} and HISTO_RE.search(text)
+    histo_travel = (
+        spec in {"dog", "cat"}
+        and TRAVEL_FUNGUS_RE.search(text)
+        and GI_HISTO_RE.search(text)
+        and HISTO_SICK_RE.search(text)
+    )
+    if histo_named or histo_travel:
+        histo_loc = (
+            "Histoplasmosis / GI-respiratory fungus. Tiny yeasts inside macrophages. "
+            "Midtown is not the river-valley default. Not pred-first."
+        )
+        localization = f"{localization} Also {histo_loc}" if localization else histo_loc
+        hard_stops.append(
+            "Do not harvest itraconazole 10 as lobby law. "
+            "Do not culture without warning the lab. "
+            "Do not pred histo as IBD or IMHA first."
+        )
+        do_not.append(
+            "Printed itraconazole 10 / 6 months / 10–40% stay on the page. "
+            "Urine antigen cross-reacts with Blastomyces. "
+            "Culture is hazardous."
+        )
+        do_next.append(
+            "Look inside the macrophages on FNA or the blood smear. "
+            "Urine antigen. Ask travel / caves / roosts. △ Plumb."
+        )
+        sources.append(
+            "Merck histoplasmosis in animals (Gull, Apr 2023 / Jul 2026): "
+            "tiny intracellular yeasts; urine antigen; culture hazardous; "
+            "printed itraconazole 10 stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send river-valley diarrhea home as just IBD.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress histo as primary IBD.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for histo.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for histo.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

@@ -2543,6 +2543,54 @@ class ResidentBriefTests(unittest.TestCase):
         loc = (b["localization"] or "").lower()
         self.assertIn("midtown is not the river-basin default", loc)
         self.assertNotIn("narrow-based budding tonight", loc)
+        self.assertNotIn("tiny yeasts inside macrophages", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_histo_gi_not_pred_first(self):
+        b = analyze(
+            "dog",
+            "histoplasmosis, chronic diarrhea, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tiny yeasts inside macrophages", loc)
+        self.assertIn("midtown is not the river-valley default", loc)
+        self.assertIn("not pred-first", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("itraconazole 10", joined)
+        self.assertIn("just ibd", joined)
+        self.assertIn("culture is hazardous", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ohio_river_diarrhea_is_histo_list(self):
+        b = analyze(
+            "dog",
+            "Ohio River valley, chronic diarrhea, fever, weight loss",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tiny yeasts inside macrophages", loc)
+        self.assertIn("midtown is not the river-valley default", loc)
+        self.assertNotIn("broad-based budding tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_crypto_roman_nose_is_not_histo(self):
+        b = analyze("cat", "firm swelling over the bridge of the nose, chronic nasal discharge")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("the nose, then the brain", loc)
+        self.assertNotIn("tiny yeasts inside macrophages", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_blasto_drain_is_not_histo(self):
+        b = analyze("dog", "blastomycosis, draining nodules, cough")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("broad-based budding tonight", loc)
+        self.assertNotIn("tiny yeasts inside macrophages", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_midtown_diarrhea_alone_is_not_histo(self):
+        b = analyze("dog", "diarrhea, Midtown, no travel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tiny yeasts inside macrophages", loc)
+        self.assertNotIn("midtown is not the river-valley default", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_ph_amlodipine_is_the_other_list(self):

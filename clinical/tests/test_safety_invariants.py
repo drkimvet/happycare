@@ -411,6 +411,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("narrow-based budding", VERIF.lower())
         self.assertIn("fluconazole 10", VERIF.lower())
         self.assertIn("do not use flucytosine in dogs", VERIF.lower())
+        self.assertIn("canine histoplasmosis", VERIF.lower())
+        self.assertIn("inside macrophages", VERIF.lower())
+        self.assertIn("itraconazole 10", VERIF.lower())
+        self.assertIn("warn the lab", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -645,6 +649,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-crypto`", MACRO)
         self.assertIn("no flucytosine in dogs", MACRO.lower())
         self.assertIn("roman-nose cat home as just a cold", MACRO.lower())
+        self.assertIn("`ddx-histo`", MACRO)
+        self.assertIn("`dc-histo`", MACRO)
+        self.assertIn("tiny yeasts inside macrophages", MACRO.lower())
+        self.assertIn("warn the lab", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

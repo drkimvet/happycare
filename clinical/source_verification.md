@@ -1668,3 +1668,25 @@ Book/public traps:
 - Do not send a roman-nose cat home as just a cold.
 
 Night rule: cat, bridge-of-nose swelling or chronic nasal mass → **smear tonight for a capsule and narrow-based budding, not a steroid.** △ Plumb.
+
+## 193. Canine histoplasmosis / GI-respiratory fungus (Merck Gull Apr 2023 / Jul 2026)
+
+No dedicated Plunkett histoplasmosis chapter in the owned SA EM splits. Public Merck histoplasmosis in animals (Gull). Packet 191 still owns blasto / broad-based budding. Packet 192 still owns crypto / capsule / roman nose. Packet 178 still owns PLE. Skip large-animal as its own packet. **Do not harvest itraconazole 10, ketoconazole 10–15, a 6-month clock, or a 10–40% relapse table as lobby law.**
+
+Agree with Gull: dimorphic *H. capsulatum* in soil with **bird and bat feces**. **Noncontagious.** Highly endemic Mississippi and Ohio River valleys. **Midtown is not the river-valley default** — ask travel / caves / roosts. Inhaled microconidia; lungs and thoracic nodes first. Dogs: hepatomegaly, ascites, diarrhea more common. Cats: tachypnea and skin more common. Both: weight loss, fever, pale, nodes, eye, meningitis, weeping skin nodules.
+
+Diagnosis: **tiny yeasts inside macrophages** (1–4 mcm, thin wall, clear halo; narrow-based budding may be seen). FNA / exfoliative cytology. Disseminated: organisms in monocytes or neutrophils on a routine blood smear. Cat: bone marrow can win. Culture is **hazardous** — warn the lab. Urine antigen is the most sensitive ELISA substrate and **cross-reacts with Blastomyces**. POC antigen is less sensitive. Use the lab ELISA to watch treatment.
+
+Printed itraconazole 10 / fluconazole also effective / keto 10–15 for 4–6 months stay on the page. Severe: amphotericin conversation. Minimum 6 months; many need > 12. Stop on signs plus urine antigen, not a calendar. Relapse 10–40% stays on the page.
+
+Night split: Midtown diarrhea alone ≠ histo. River-valley dog, chronic diarrhea + fever ≠ pred-first IBD / PLE (178). Broad-based draining + harsh lungs is still 191. Roman-nose capsule is still 192. People get it from the environment, not from the dog.
+
+Book/public traps:
+
+- Printed itraconazole 10 / keto 10–15 / 6 months / 10–40% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not culture without warning the lab.
+- Do not pred histo as IBD or IMHA first.
+- Do not send river-valley diarrhea home as just IBD.
+
+Night rule: travel dog, chronic diarrhea or interstitial lung, fever → **look inside the macrophages tonight, not a steroid.** △ Plumb.
