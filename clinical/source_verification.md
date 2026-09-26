@@ -1710,3 +1710,23 @@ Book/public traps:
 - Do not send Southwest cough / seizure home as just kennel cough or idiopathic epilepsy.
 
 Night rule: Southwest travel dog, chronic cough or new seizure → **spherule / serology conversation tonight, not a steroid.** △ Plumb.
+
+## 195. Canine nasal aspergillosis / destructive rhinitis (Merck Gull Apr 2023 / Jul 2026)
+
+No dedicated Plunkett nasal-aspergillosis chapter in the owned SA EM splits. Public Merck aspergillosis in animals (Gull) plus rhinitis / sinusitis (mycotic rhinosinusitis named only for the intact-cribriform caveat). Packet 192 still owns crypto / roman nose. Packet 194 still owns valley fever. Packet 190 still owns Brucella disco. Skip poultry / cattle abortion / horse guttural pouch as their own packets. **Do not harvest clotrimazole 0.5 g, a 1-hour soak, enilconazole 10, or an 80% success table as lobby law.**
+
+Agree with Gull: *Aspergillus* is ubiquitous. **Culture alone is not a diagnosis** — healthy noses grow it. Dogs: localized nasal / sinus disease, mainly dolichocephalic. Starts caudal ventral maxilloturbinate. **Nasal pain, ulceration and depigmentation of the nares**, sneeze / reverse sneeze, sanguinopurulent discharge, epistaxis. Turbinate destruction (radiolucent nose). Frontal / maxillary osteomyelitis in a printed 80%. Cribriform can open into the CNS. Diagnosis = fungal plaques on rhinoscopy plus hyphae in the lesion (narrow, hyaline, septate, branching) or imaging. Serology is unreliable (false negatives). Disseminated invasive disease is a different list: middle-aged female German Shepherd, often *A. terreus*, kidneys / vertebrae / disco — 190 still owns Brucella testing on disco. Cats: rare; sino-orbital *A. felis* can be aggressive (exophthalmos, palate ulcer) and is not a dog clotrimazole-soak script.
+
+Treatment of choice for the nose: **debride, then topical**. Clotrimazole in PEG is first-line (nares or frontal tubes). Printed 0.5 g each side / 1 hour / ~80% stay on the page. Enilconazole 10 via implanted tubes stays on the page. Systemic azoles are the other conversation, not the lobby default. Merck rhinitis page: topical clotrimazole / enilconazole infusion is based on an **intact cribriform on CT** before you soak. Systemic therapy is not recommended unless there are systemic signs, which are rare.
+
+Night split: depigmented nares + epistaxis ≠ just a cold and ≠ crypto roman-nose (192). Arizona cough is still 194. Culture-positive nose without plaques / destruction is colonization. Do not soak a cribriform-open skull.
+
+Book/public traps:
+
+- Printed clotrimazole 0.5 g / 1 hour / 80% / enilconazole 10 stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not diagnose on culture alone.
+- Do not soak before you know the cribriform is intact.
+- Do not send depigmented-nares epistaxis home as just a cold.
+
+Night rule: dolichocephalic dog, depigmented nares, chronic epistaxis → **CT + plaques tonight, not a culture-and-home.** △ Plumb.

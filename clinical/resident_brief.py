@@ -1127,6 +1127,24 @@ COCCI_SICK_RE = re.compile(
     r"\bfever\b",
     re.I,
 )
+# Bare "asp" is aspiration / AST. Not aspergillus.
+ASPERG_RE = re.compile(
+    r"\baspergill|"
+    r"\bfumigatus\b|"
+    r"a\.?\s*terreus\b|"
+    r"a\.?\s*felis\b",
+    re.I,
+)
+NARES_DEPIG_RE = re.compile(
+    r"depigment.{0,28}(nare|nose|planum)|"
+    r"(nare|nasal planum).{0,28}depigment",
+    re.I,
+)
+FUNGAL_PLAQUE_RE = re.compile(
+    r"fungal plaque|"
+    r"turbinate destruct",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4507,6 +4525,52 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for valley fever.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for valley fever.")
+
+    asperg_named = spec in {"dog", "cat"} and ASPERG_RE.search(text)
+    nasal_asp = spec == "dog" and (
+        NARES_DEPIG_RE.search(text) or FUNGAL_PLAQUE_RE.search(text)
+    )
+    if asperg_named or nasal_asp:
+        if spec == "cat":
+            asp_loc = (
+                "Feline aspergillosis. Sino-orbital can be aggressive. "
+                "Not a dog clotrimazole soak. Not pred-first."
+            )
+        else:
+            asp_loc = (
+                "Canine nasal aspergillosis. Depigmented nares, not just a cold. "
+                "Culture alone is not a diagnosis."
+            )
+        localization = f"{localization} Also {asp_loc}" if localization else asp_loc
+        hard_stops.append(
+            "Do not diagnose aspergillus on culture alone. "
+            "Do not harvest clotrimazole 0.5 g as lobby law. "
+            "Do not soak before the cribriform is known intact."
+        )
+        do_not.append(
+            "Printed 0.5 g / 1 hour / 80% / enilconazole 10 stay on the page. "
+            "Serology is unreliable. "
+            "Healthy noses grow Aspergillus."
+        )
+        do_next.append(
+            "CT plus rhinoscopy for plaques and hyphae. Debride then topical. "
+            "Not crypto roman-nose. Not valley-fever dust. △ Plumb."
+        )
+        sources.append(
+            "Merck aspergillosis in animals (Gull, Apr 2023 / Jul 2026): "
+            "culture alone is not a diagnosis; debride then topical clotrimazole; "
+            "printed 0.5 g stays on the page."
+        )
+        if SEND_HOME_RE.search(text) and spec == "dog":
+            hard_stops.append(
+                "Do not send depigmented-nares epistaxis home as just a cold."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress aspergillus as primary rhinitis.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for aspergillus.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for aspergillus.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

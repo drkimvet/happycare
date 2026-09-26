@@ -123,6 +123,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-crypto` | Assessment | Cryptococcosis / nasal-CNS fungus |
 | `ddx-histo` | Assessment | Histoplasmosis / GI-respiratory fungus |
 | `ddx-cocci` | Assessment | Coccidioidomycosis / valley fever |
+| `ddx-asp` | Assessment | Nasal aspergillosis / destructive rhinitis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -205,6 +206,7 @@ Suggested names are short so they show up after three letters.
 | `dc-crypto` | Discharge | After cryptococcosis / roman-nose talk |
 | `dc-histo` | Discharge | After histoplasmosis / travel-GI talk |
 | `dc-cocci` | Discharge | After valley fever / Southwest-travel talk |
+| `dc-asp` | Discharge | After nasal aspergillus / soak talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1460,6 +1462,21 @@ DDX:
 Do not: harvest fluconazole 5–10 / 6–12 months. Culture in the lobby. Treat a well seropositive desert dog as default. Send Southwest cough or seizure home as just kennel cough.
 Do next: travel history. Serology plus spherule hunt. △ Plumb.
 
+### `ddx-asp`
+
+Nasal aspergillosis — {{patient.name}}
+Breed [dolicho / other]. Nares [depigment / ulcer / normal]. Epistaxis [ ]. CT cribriform [intact / open / not yet]. Plaques [ ]. Hyphae in tissue [ ]. Culture-only [Y/N].
+
+DDX:
+1. Canine nasal *Aspergillus* — **depigmented nares**, turbinate destruction, plaques
+2. **Culture alone is not a diagnosis** — healthy noses grow it
+3. Debride then topical clotrimazole. **Intact cribriform on CT before you soak**
+4. Not crypto roman-nose (192). Not valley-fever dust (194). Not just a cold
+5. Disseminated GSD *A. terreus* / disco is a different list — still 190 for Brucella
+
+Do not: diagnose on culture alone. Harvest clotrimazole 0.5 g / 1 hour. Soak before the cribriform is known intact. Send depigmented-nares epistaxis home as just a cold.
+Do next: CT + rhinoscopy. Hyphae in the lesion. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2151,6 +2168,14 @@ Return now for worse diarrhea, harder breathing, collapse, or not eating. {{loca
 Give only the medicines we sent, as labeled. Recheck as discussed — treatment is long.
 
 Return now for worse cough, seizures, lameness, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-asp`
+
+{{patient.name}} was evaluated for a nasal fungus (aspergillosis). This is not “just a cold.” Culture of the nose by itself does not prove infection.
+
+Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} from bumping the nose as discussed.
+
+Return now for worse nosebleeds, seizures, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

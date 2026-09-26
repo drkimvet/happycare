@@ -2637,6 +2637,50 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("spherules tonight", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_depigmented_nares_is_asperg(self):
+        b = analyze(
+            "dog",
+            "depigmentation of the nares, epistaxis, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("depigmented nares, not just a cold", loc)
+        self.assertIn("culture alone is not a diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just a cold", joined)
+        self.assertIn("clotrimazole 0.5 g", joined)
+        self.assertIn("cribriform", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_aspergillus_culture_alone_not_enough(self):
+        b = analyze("dog", "Aspergillus fumigatus culture from the nose")
+        loc = b["localization"].lower()
+        self.assertIn("culture alone is not a diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("healthy noses grow aspergillus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_crypto_roman_nose_is_not_asperg(self):
+        b = analyze("cat", "firm swelling over the bridge of the nose, chronic nasal discharge")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("the nose, then the brain", loc)
+        self.assertNotIn("depigmented nares, not just a cold", loc)
+        self.assertNotIn("dog clotrimazole soak", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_arizona_cocci_is_not_asperg(self):
+        b = analyze("dog", "just back from Arizona, cough, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("midtown is not the desert default", loc)
+        self.assertNotIn("depigmented nares, not just a cold", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_disco_brucella_is_not_asperg(self):
+        b = analyze("dog", "discospondylitis, back pain")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("end-plate pain, not just ivdd", loc)
+        self.assertNotIn("depigmented nares, not just a cold", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
