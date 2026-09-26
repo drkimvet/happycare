@@ -1,17 +1,27 @@
-ADP September 25, 2026 — actual vs due
-Source: ADP Pay day screenshot, 11:02, Take Home $5,550.00
-1099 Compensation $5,550.00 · Gross $5,550.00 · Deductions none
-
-  Call terms (Amy + Evan, Sep 13)     $9,900.00
-  Cole lock (Sep 23, 9:34 PM)         $7,800.00
-  ADP paid                            $5,550.00
-
-  Short vs the call                   $4,350.00
-  Short vs Cole’s own lock            $2,250.00
+ADP September 25, 2026 — why $5,550
+1099 Compensation $5,550.00 · no deductions
 
 $5,550 = 21 × $250 + $300
-Cole’s lock is 30 hospital hours × $250 + $300 = $7,800
-They paid 21 hours + the $300 fee. Nine hospital hours ($2,250) are missing
-even under their story — likely Sep 14 (4h), Sep 19 Midtown (4h), and 1h
-of Sep 15, unless they claim a cutoff and those dates are on the next check.
-They must list the dates on this statement. $5,550 is not payment in full.
+
+That 21 hours is what you get if they count only about 3 hours of the
+Sep 10 12-hour booking (and pay the other hospital days in full):
+
+  Sep 8     4h × $250 = $1,000
+  Sep 10    3h × $250 = $750     ← scheduled 12h; sent home; never called back
+  Sep 14    4h × $250 = $1,000
+  Sep 15    6h × $250 = $1,500
+  Sep 15    $300 fee
+  Sep 19    4h × $250 = $1,000
+  --------------------------------
+  ADP                         $5,550
+
+Sep 10 remainder: 9h × $250 = $2,250
+Sep 15 overnight vs $300 fee:           $2,100
+                                      --------
+Short vs the $9,900 call              $4,350
+INV-2026-0924                         $1,600
+                                      --------
+Demand now                            $5,950
+
+They said go home, wait, we will call if a client comes. They did not call.
+The booking was 12 hours. Pay the 12 hours.

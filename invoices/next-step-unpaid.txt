@@ -1,27 +1,15 @@
-Next step — they paid $5,550. You are owed $5,950 more that we can invoice now.
+Next step — they paid $5,550. Demand $5,950. Do not go in.
 
-  $9,900 already-worked (Sep 8–19) − $5,550 ADP = $4,350
-  + INV-2026-0924 Midtown                 $1,600
-  = demand now                            $5,950
+$5,550 = 21 × $250 + $300. That is Sep 10 cut from 12 hours to ~3 hours
+(plus their $300 overnight fee). The rest of Sep 10 is $2,250. That is
+not a courtesy. You were booked 12 hours, sent home, told to wait for
+a call, and never called.
 
-Do this, in order
-
-1) Today — send draft-demand-7-days.txt
-   Reply-all: Cole, Evan, Amy.
-   Attach: INV-2026-0915.pdf, INV-2026-0919.pdf, INV-2026-0924.pdf,
-   and the ADP $5,550 screenshot.
-   Deadline in the email: Friday, October 3, 2026.
-
-2) Today — ADP → View statement
-   Screenshot which dates/hours made $5,550. That stops “it’s on the next check.”
-
-3) Do not take another shift until $5,950 is on ADP.
-   Same rule as every other hospital: check at the end of the shift.
-
-4) If October 3 passes with no pay
-   You are 1099. Next step is a written demand already sent, then
-   small claims (NYC up to $10,000; $5,950 fits).
-   Do not wait on AT&T. Do not put a recording in the first email.
-
-Do not work extra Midtown nights to “make it up.” That adds hours they
-can underpay the same way.
+1) Screenshot the “go home / we will call” messages and the 12-hour
+   schedule. Put them in the same folder as the ADP shot.
+2) Today — send draft-demand-7-days.txt to Cole, Evan, Amy.
+   Attach the three invoices and the ADP $5,550 screenshot.
+   Deadline: Friday, October 3, 2026.
+3) No further shifts until $5,950 is paid.
+4) Court only after that email exists. Last time small claims lost
+   without this paper. The 3-year-ago case stays out of their inbox.
