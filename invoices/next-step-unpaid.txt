@@ -1,0 +1,27 @@
+Next step — they paid $5,550. You are owed $5,950 more that we can invoice now.
+
+  $9,900 already-worked (Sep 8–19) − $5,550 ADP = $4,350
+  + INV-2026-0924 Midtown                 $1,600
+  = demand now                            $5,950
+
+Do this, in order
+
+1) Today — send draft-demand-7-days.txt
+   Reply-all: Cole, Evan, Amy.
+   Attach: INV-2026-0915.pdf, INV-2026-0919.pdf, INV-2026-0924.pdf,
+   and the ADP $5,550 screenshot.
+   Deadline in the email: Friday, October 3, 2026.
+
+2) Today — ADP → View statement
+   Screenshot which dates/hours made $5,550. That stops “it’s on the next check.”
+
+3) Do not take another shift until $5,950 is on ADP.
+   Same rule as every other hospital: check at the end of the shift.
+
+4) If October 3 passes with no pay
+   You are 1099. Next step is a written demand already sent, then
+   small claims (NYC up to $10,000; $5,950 fits).
+   Do not wait on AT&T. Do not put a recording in the first email.
+
+Do not work extra Midtown nights to “make it up.” That adds hours they
+can underpay the same way.
