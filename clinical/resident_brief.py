@@ -1165,6 +1165,23 @@ EPISTAXIS_RE = re.compile(
     r"bleeding from the nose",
     re.I,
 )
+# Bare "lung" is every cough. Bare "mass" is every lobby. Need lung/pulmonary + mass words.
+# Do not use bronchoalveolar (that is BAL). Do not use bare nodule.
+PRIMARY_LUNG_RE = re.compile(
+    r"primary lung|"
+    r"lung adenocarcinoma|"
+    r"pulmonary adenocarcinoma|"
+    r"alveolar carcinoma|"
+    r"lung lobe (mass|tumor|neoplas)|"
+    r"pulmonary (mass|nodule|tumor|neoplas)|"
+    r"lung (mass|nodule|tumor)|"
+    r"incidental (lung|pulmonary)",
+    re.I,
+)
+HO_RE = re.compile(
+    r"hypertrophic osteopath",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4649,6 +4666,52 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for a nasal mass.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a nasal mass.")
+
+    lung_named = spec in {"dog", "cat"} and PRIMARY_LUNG_RE.search(text)
+    ho_chest = spec in {"dog", "cat"} and HO_RE.search(text)
+    if lung_named or ho_chest:
+        if spec == "cat":
+            plung_loc = (
+                "Feline primary lung tumor. Cough is rare. "
+                "Lethargy and weight loss can be the room."
+            )
+        else:
+            plung_loc = (
+                "Canine primary lung tumor. Incidental mass is still a mass. "
+                "One-third are found on films for something else."
+            )
+        localization = f"{localization} Also {plung_loc}" if localization else plung_loc
+        hard_stops.append(
+            "Do not send an incidental lung mass home as just old. "
+            "Do not harvest 120 days as lobby law. "
+            "Do not skip staging before a lobectomy."
+        )
+        do_not.append(
+            "Printed 120 days / 12 months / 2 months stay on the page. "
+            "Auscultation can be normal. "
+            "Not nasal epistaxis. Not PTE with normal rads. "
+            "Metastatic lung is the other list."
+        )
+        do_next.append(
+            "Stage the chest. Biopsy is definitive. "
+            "Lobectomy is the treatment of choice if operable. "
+            "Hypertrophic osteopathy looks at the chest. △ Plumb."
+        )
+        sources.append(
+            "Merck neoplasia of the respiratory system (Tonozzi, Feb 2022 / Sept 2024): "
+            "primary lung tumors; one-third or more incidental; "
+            "lobectomy if operable; printed 120 days stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send an incidental lung mass home as just old or just pneumonia."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress a lung mass as primary pneumonia.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for a lung mass.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a lung mass.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

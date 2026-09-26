@@ -428,6 +428,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("radiation therapy", VERIF.lower())
         self.assertIn("3–5 months", VERIF.lower())
         self.assertIn("ct is vastly superior", VERIF.lower())
+        self.assertIn("canine primary lung tumor", VERIF.lower())
+        self.assertIn("one-third", VERIF.lower())
+        self.assertIn("lobectomy", VERIF.lower())
+        self.assertIn("120 days", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -674,9 +678,12 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-asp`", MACRO)
         self.assertIn("`ddx-nmass`", MACRO)
         self.assertIn("`dc-nmass`", MACRO)
+        self.assertIn("`ddx-lmass`", MACRO)
+        self.assertIn("`dc-lmass`", MACRO)
         self.assertIn("culture alone is not a diagnosis", MACRO.lower())
         self.assertIn("intact cribriform", MACRO.lower())
         self.assertIn("facial deformity plus epistaxis is a mass until proven", MACRO.lower())
+        self.assertIn("incidental mass is still a mass", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

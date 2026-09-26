@@ -125,6 +125,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cocci` | Assessment | Coccidioidomycosis / valley fever |
 | `ddx-asp` | Assessment | Nasal aspergillosis / destructive rhinitis |
 | `ddx-nmass` | Assessment | Nasal neoplasia / epistaxis mass |
+| `ddx-lmass` | Assessment | Primary lung tumor / incidental lung mass |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -209,6 +210,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cocci` | Discharge | After valley fever / Southwest-travel talk |
 | `dc-asp` | Discharge | After nasal aspergillus / soak talk |
 | `dc-nmass` | Discharge | After nasal mass / epistaxis talk |
+| `dc-lmass` | Discharge | After lung mass / incidental-nodule talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1494,6 +1496,21 @@ DDX:
 Do not: send facial-deformity epistaxis home as just a cold. Harvest radiation fractions / 3–5 months as lobby law. Diagnose a mass on culture alone.
 Do next: CT plus biopsy. △ Plumb.
 
+### `ddx-lmass`
+
+Primary lung tumor — {{patient.name}}
+Age [ ]. Signs [cough / none / weight loss]. Found [incidental / for cough / lame HO]. Nodes [ ]. Pleural fluid [ ]. Staging [chest / elsewhere / not yet]. Biopsy [ ].
+
+DDX:
+1. Primary lung tumor — **incidental mass is still a mass**. One-third are found on films for something else
+2. Dogs: chronic nonproductive cough, or no signs. Cats: cough is rare; lethargy / weight loss can be the room
+3. Hypertrophic osteopathy looks at the chest. Biopsy is definitive. Lobectomy if operable after staging
+4. Metastatic lung (mammary / OSA / HSA / melanoma) is the other list
+5. Not nasal epistaxis (196). Not PTE with normal rads (154). Not Midtown cough-alone
+
+Do not: send an incidental lung mass home as just old. Harvest 120 days / 12 months / 2 months as lobby law. Skip staging before a lobectomy.
+Do next: stage the chest. Biopsy. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2201,6 +2218,14 @@ Return now for worse nosebleeds, seizures, or not eating. {{location.phonenumber
 Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} from bumping the nose as discussed.
 
 Return now for worse nosebleeds, a changing face, seizures, or not eating. {{location.phonenumber}}
+
+### `dc-lmass`
+
+{{patient.name}} was evaluated for a lung mass / nodule. A spot found on chest films for another problem is still a mass, not “just old age.”
+
+Give only the medicines we sent, as labeled. Limit activity as discussed until the staging plan is done.
+
+Return now for trouble breathing, collapse, not eating, or a new lame leg. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

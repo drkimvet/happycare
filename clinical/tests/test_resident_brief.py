@@ -2737,6 +2737,58 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine nasal neoplasia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_incidental_lung_mass_is_primary_lung(self):
+        b = analyze(
+            "dog",
+            "incidental lung mass on dental rads, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("incidental mass is still a mass", loc)
+        self.assertIn("one-third are found on films for something else", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just old", joined)
+        self.assertIn("120 days", joined)
+        self.assertIn("lobectomy", joined)
+        self.assertIn("hypertrophic osteopathy looks at the chest", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypertrophic_osteopathy_looks_at_the_chest(self):
+        b = analyze("dog", "hypertrophic osteopathy, lame")
+        loc = b["localization"].lower()
+        self.assertIn("canine primary lung tumor", loc)
+        joined = " ".join(b["do_next"]).lower()
+        self.assertIn("looks at the chest", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nasal_adeno_is_not_primary_lung(self):
+        b = analyze("dog", "nasal adenocarcinoma, chronic discharge")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine nasal neoplasia", loc)
+        self.assertNotIn("incidental mass is still a mass", loc)
+        self.assertNotIn("one-third are found on films", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_midtown_cough_alone_is_not_primary_lung(self):
+        b = analyze("dog", "cough, Midtown, no travel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("incidental mass is still a mass", loc)
+        self.assertNotIn("canine primary lung tumor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pte_is_not_primary_lung(self):
+        b = analyze("dog", "pulmonary thromboembolism, normal radiographs")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("clot in the lung arteries, not fate", loc)
+        self.assertNotIn("incidental mass is still a mass", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_arizona_cough_is_not_primary_lung(self):
+        b = analyze("dog", "just back from Arizona, cough, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("midtown is not the desert default", loc)
+        self.assertNotIn("incidental mass is still a mass", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

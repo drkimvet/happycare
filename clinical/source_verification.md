@@ -1750,3 +1750,23 @@ Book/public traps:
 - Coagulopathy stays on the epistaxis list.
 
 Night rule: older dog or cat, facial deformity plus epistaxis → **CT plus biopsy tonight, not a cold-and-home.** △ Plumb.
+
+## 197. Canine primary lung tumor / incidental lung mass (Merck Tonozzi Feb 2022 / Sept 2024)
+
+No dedicated Plunkett primary-lung-tumor chapter in the owned SA EM splits. Same public Merck neoplasia of the respiratory system page (Tonozzi). Packet 196 still owns the nose. Packet 154 still owns PTE (normal rads do not rule PTE out). Packet 176 still owns HARD / HW. Metastatic lung (mammary / osteosarcoma / HSA / oral melanoma) is the other list on this page — not its own packet tonight. Skip larynx / trachea as their own packet. **Do not harvest 120 days / 12 months / 2 months or a chemo table as lobby law.**
+
+Agree with Tonozzi: primary lung tumors are rare. Mean age 10–12 years in dogs, 12 years in cats. No consistent breed or sex predilection. Usually from terminal bronchioles and alveoli. Adenocarcinoma and alveolar carcinoma are the usual malignancies. A second coincidental tumor can make primary vs metastatic hard. Intrapulmonary airway spread in a printed ~50% of canine adenocarcinoma — that percent stays on the page. Dogs: most common room is a chronic nonproductive cough; **25% have no tumor-related signs.** **One-third or more are found incidentally** on films for something else, or at necropsy. Acute distress = burden, mets, or pleural fluid. Hypertrophic osteopathy is a chest disease (unusual in cats). Cats: **cough is rare**; 20%–40% present as lethargy / anorexia / weight loss — those percents stay on the page. Dogs may be a single mass, many nodules, a diffuse pattern, or lobar consolidation. Cats more often diffuse or lobar, with pleural fluid more often than dogs. Auscultation can be normal. Tentative on rads after you exclude look-alikes. **Definitive diagnosis requires biopsy.**
+
+Treatment of choice if operable after staging: **lobectomy**. Inoperable or metastatic disease is a chemo conversation, not a lobby default. Printed overall median 120 days after surgery, 12 months if operable without nodes, 2 months if nodes or multiple tumors — stay on the page. Recurrence / metastasis is a common cause of death.
+
+Night split: incidental lung mass is still a mass, not “just old” and not “just pneumonia.” Midtown cough alone is not this. Facial-deformity epistaxis is still 196. Normal-rad dyspnea is still 154. Arizona / river-basin travel fungus stays 194 / 191 / 193. Do not Lasix a mass as CHF.
+
+Book/public traps:
+
+- Printed 120 days / 12 months / 2 months / 25% / one-third / 50% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not send an incidental lung mass home as just old.
+- Do not call hypertrophic osteopathy a primary bone night without looking at the chest.
+- Do not skip staging before you promise a lobectomy.
+
+Night rule: older dog, incidental lung mass or hypertrophic osteopathy → **the chest is the disease tonight, not a dental add-on.** △ Plumb.
