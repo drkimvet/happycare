@@ -1098,6 +1098,35 @@ HISTO_SICK_RE = re.compile(
     r"\brespira",
     re.I,
 )
+# Bare "immitis" is heartworm. Not cocci.
+COCCI_RE = re.compile(
+    r"\bcoccidioid|"
+    r"valley fever|"
+    r"\bposadasii\b|"
+    r"c\.?\s*immitis\b",
+    re.I,
+)
+TRAVEL_SW_RE = re.compile(
+    r"arizona|"
+    r"sonoran|"
+    r"tucson|"
+    r"phoenix|"
+    r"new mexico|"
+    r"west texas|"
+    r"baja|"
+    r"dust storm|"
+    r"southwest",
+    re.I,
+)
+COCCI_SICK_RE = re.compile(
+    r"\bcough|"
+    r"\bseizure|"
+    r"\blameness|"
+    r"draining|"
+    r"\bdyspnea|"
+    r"\bfever\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4436,6 +4465,48 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for histo.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for histo.")
+
+    cocci_named = spec in {"dog", "cat"} and COCCI_RE.search(text)
+    cocci_travel = (
+        spec in {"dog", "cat"}
+        and TRAVEL_SW_RE.search(text)
+        and COCCI_SICK_RE.search(text)
+    )
+    if cocci_named or cocci_travel:
+        cocci_loc = (
+            "Coccidioidomycosis / valley fever. Midtown is not the desert default. "
+            "Spherules tonight, not a macrophage speck. Not pred-first."
+        )
+        localization = f"{localization} Also {cocci_loc}" if localization else cocci_loc
+        hard_stops.append(
+            "Do not harvest fluconazole 5–10 as lobby law. "
+            "Do not culture outside a BSL-3 lab. "
+            "Do not treat a well seropositive desert dog as default."
+        )
+        do_not.append(
+            "Printed fluconazole 5–10 / 6–12 months stay on the page. "
+            "Compounded bulk itraconazole is not bioavailable. "
+            "Antigen is largely insensitive."
+        )
+        do_next.append(
+            "Ask Southwest / dust-storm travel. Serology plus spherule hunt. "
+            "Not histo inside macrophages. Not HW immitis. △ Plumb."
+        )
+        sources.append(
+            "Merck coccidioidomycosis / valley fever (Gull, Apr 2023 / Aug 2026): "
+            "dustborne, noncontagious; spherules; BSL-3 culture; "
+            "printed fluconazole 5–10 stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send Southwest cough or seizure home as just kennel cough."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress valley fever as primary epilepsy.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for valley fever.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for valley fever.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

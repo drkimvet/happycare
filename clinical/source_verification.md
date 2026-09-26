@@ -1690,3 +1690,23 @@ Book/public traps:
 - Do not send river-valley diarrhea home as just IBD.
 
 Night rule: travel dog, chronic diarrhea or interstitial lung, fever → **look inside the macrophages tonight, not a steroid.** △ Plumb.
+
+## 194. Canine coccidioidomycosis / valley fever (Merck Gull Apr 2023 / Aug 2026)
+
+No dedicated Plunkett coccidioidomycosis chapter in the owned SA EM splits. Public Merck coccidioidomycosis / valley fever (Gull). Packet 191 still owns blasto. Packet 193 still owns histo. Packet 192 still owns crypto. Packet 176 still owns HARD / heartworm — **do not use bare *immitis*** as a cocci token. Skip horse abortion / llama / ruminant as their own packets. **Do not harvest fluconazole 5–10, itraconazole 10, or a 6–12 month clock as lobby law.**
+
+Agree with Gull: dustborne, **noncontagious**. *C. immitis* / *C. posadasii* arthrospores on dust after rain-then-drought. Endemic arid Southwest US, Mexico, Central / South America. **Midtown is not the desert default** — ask Arizona / Sonoran / dust-storm travel. Dogs are the usual clinical species. Primarily respiratory (cough, fever, tachypnea). Dissemination in a printed ~20% — brain, eye, skin, bone, joints. CNS: seizure first. Cats: draining skin / SQ masses more than lungs. Spherules 20–200 mcm with endospores — large, not a macrophage speck (193) and not broad-based budding (191). Aspirates often miss them. Serology (AGID / EIA / LFA) can be positive in well dogs from exposure. Antigen is largely insensitive except some CSF. Culture is **BSL-3 / dangerously infective** — do not plate it in the lobby.
+
+Printed fluconazole 5–10 / itraconazole 10 / 6–12 months stay on the page. Itra may be the bone conversation. **Compounded bulk itraconazole is not bioavailable.** Compounded azoles may not contain a therapeutic dose. Amphotericin if they fail or cannot take an azole (nephrotoxic). Short disease can be self-limiting; chronic respiratory / CNS / multi-system needs long treatment.
+
+Night split: Midtown cough alone ≠ valley fever. Ohio-river diarrhea is still 193. Wisconsin drain + cough is still 191. Roman-nose capsule is still 192. Heartworm *D. immitis* is still 176.
+
+Book/public traps:
+
+- Printed fluconazole 5–10 / itraconazole 10 / 6–12 months stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not culture outside a BSL-3 lab.
+- Do not treat a well seropositive desert dog as default.
+- Do not send Southwest cough / seizure home as just kennel cough or idiopathic epilepsy.
+
+Night rule: Southwest travel dog, chronic cough or new seizure → **spherule / serology conversation tonight, not a steroid.** △ Plumb.

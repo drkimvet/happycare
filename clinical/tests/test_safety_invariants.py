@@ -415,6 +415,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("inside macrophages", VERIF.lower())
         self.assertIn("itraconazole 10", VERIF.lower())
         self.assertIn("warn the lab", VERIF.lower())
+        self.assertIn("canine coccidioidomycosis", VERIF.lower())
+        self.assertIn("spherules", VERIF.lower())
+        self.assertIn("fluconazole 5–10", VERIF.lower())
+        self.assertIn("bsl-3", VERIF.lower())
+        self.assertIn("midtown is not the desert default", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -653,6 +658,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-histo`", MACRO)
         self.assertIn("tiny yeasts inside macrophages", MACRO.lower())
         self.assertIn("warn the lab", MACRO.lower())
+        self.assertIn("`ddx-cocci`", MACRO)
+        self.assertIn("`dc-cocci`", MACRO)
+        self.assertIn("midtown is not the desert default", MACRO.lower())
+        self.assertIn("compounded bulk itra", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

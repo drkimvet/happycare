@@ -2593,6 +2593,50 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("midtown is not the river-valley default", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_valley_fever_not_pred_first(self):
+        b = analyze(
+            "dog",
+            "valley fever, cough, seizure, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("midtown is not the desert default", loc)
+        self.assertIn("spherules tonight", loc)
+        self.assertIn("not a macrophage speck", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("fluconazole 5–10", joined)
+        self.assertIn("just kennel cough", joined)
+        self.assertIn("bsl-3", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_arizona_cough_is_cocci_list(self):
+        b = analyze("dog", "just back from Arizona, cough, fever")
+        loc = b["localization"].lower()
+        self.assertIn("midtown is not the desert default", loc)
+        self.assertIn("spherules tonight", loc)
+        self.assertNotIn("tiny yeasts inside macrophages", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ohio_histo_is_not_cocci(self):
+        b = analyze("dog", "Ohio River valley, chronic diarrhea, fever, weight loss")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tiny yeasts inside macrophages", loc)
+        self.assertNotIn("midtown is not the desert default", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_blasto_drain_is_not_cocci(self):
+        b = analyze("dog", "blastomycosis, draining nodules, cough")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("broad-based budding tonight", loc)
+        self.assertNotIn("midtown is not the desert default", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_heartworm_immitis_is_not_cocci(self):
+        b = analyze("dog", "Dirofilaria immitis, coughing, heartworm")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("midtown is not the desert default", loc)
+        self.assertNotIn("spherules tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

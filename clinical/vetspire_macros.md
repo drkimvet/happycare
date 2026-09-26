@@ -122,6 +122,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-blast` | Assessment | Blastomycosis / Midtown travel fungus |
 | `ddx-crypto` | Assessment | Cryptococcosis / nasal-CNS fungus |
 | `ddx-histo` | Assessment | Histoplasmosis / GI-respiratory fungus |
+| `ddx-cocci` | Assessment | Coccidioidomycosis / valley fever |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -203,6 +204,7 @@ Suggested names are short so they show up after three letters.
 | `dc-blast` | Discharge | After blastomycosis / travel-fungus talk |
 | `dc-crypto` | Discharge | After cryptococcosis / roman-nose talk |
 | `dc-histo` | Discharge | After histoplasmosis / travel-GI talk |
+| `dc-cocci` | Discharge | After valley fever / Southwest-travel talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1443,6 +1445,21 @@ DDX:
 Do not: harvest itraconazole 10 / 6 months. Pred as IBD. Culture without warning the lab. Send river-valley diarrhea home as just IBD.
 Do next: look inside the macrophages. Urine antigen. △ Plumb.
 
+### `ddx-cocci`
+
+Coccidioidomycosis / valley fever — {{patient.name}}
+Southwest / dust-storm travel [ ]. Midtown-only [Y/N]. Cough / seizure / lameness / drain [ ]. Spherule [ ]. Serology [exposure / sick]. Lab BSL-3 [ ].
+
+DDX:
+1. *Coccidioides* after arid Southwest travel — **Midtown is not the desert default**
+2. Dogs: cough then bone / CNS / skin. Cats: draining skin first
+3. **Spherules** (large, endospores) — not a macrophage speck (193), not broad-based (191)
+4. Serology can be exposure in a well desert dog. Antigen is largely insensitive
+5. Culture is BSL-3 / dangerously infective. Compounded bulk itra is not bioavailable. Not HW *immitis* (176)
+
+Do not: harvest fluconazole 5–10 / 6–12 months. Culture in the lobby. Treat a well seropositive desert dog as default. Send Southwest cough or seizure home as just kennel cough.
+Do next: travel history. Serology plus spherule hunt. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2126,6 +2143,14 @@ Return now for worse nasal discharge, seizures, blindness, collapse, or not eati
 Give only the medicines we sent, as labeled. Recheck as discussed — treatment is long and relapse can happen.
 
 Return now for worse diarrhea, harder breathing, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-cocci`
+
+{{patient.name}} was evaluated for valley fever (coccidioidomycosis), a desert dust fungus. People get this from the environment, not from the pet. This is not a leftover steroid plan and not “just kennel cough.”
+
+Give only the medicines we sent, as labeled. Recheck as discussed — treatment is long.
+
+Return now for worse cough, seizures, lameness, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
