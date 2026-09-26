@@ -1182,6 +1182,28 @@ HO_RE = re.compile(
     r"hypertrophic osteopath",
     re.I,
 )
+# Bare "metastas" is every cancer. Bare "nodule" is skin. Need lung / named high-met primaries.
+# Bare "mammary" is mastitis. Bare "melanoma" is a skin spot. Not \bosa\b (too short).
+MET_LUNG_RE = re.compile(
+    r"pulmonary metast|"
+    r"lung metast|"
+    r"metastatic (pulmonary|lung|nodule)|"
+    r"cannon[- ]ball",
+    re.I,
+)
+MULTI_PULM_RE = re.compile(
+    r"multiple (pulmonary |lung )(nodule|mass)|"
+    r"multifocal (pulmonary |lung )(nodule|mass)",
+    re.I,
+)
+HIGH_MET_RE = re.compile(
+    r"mammary adenocarcinoma|"
+    r"osteosarcoma|"
+    r"hemangiosarcoma|"
+    r"\bhsa\b|"
+    r"oral melanoma",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4668,6 +4690,8 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for a nasal mass.")
 
     lung_named = spec in {"dog", "cat"} and PRIMARY_LUNG_RE.search(text)
+    if lung_named and (MET_LUNG_RE.search(text) or MULTI_PULM_RE.search(text)):
+        lung_named = False
     ho_chest = spec in {"dog", "cat"} and HO_RE.search(text)
     if lung_named or ho_chest:
         if spec == "cat":
@@ -4712,6 +4736,46 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for a lung mass.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for a lung mass.")
+
+    met_named = spec in {"dog", "cat"} and MET_LUNG_RE.search(text)
+    multi_pulm = spec in {"dog", "cat"} and MULTI_PULM_RE.search(text)
+    high_met = spec in {"dog", "cat"} and HIGH_MET_RE.search(text)
+    if met_named or multi_pulm or high_met:
+        pmet_loc = (
+            "Metastatic pulmonary nodules. Stage the chest before you cut. "
+            "Rads miss 3 mm."
+        )
+        localization = f"{localization} Also {pmet_loc}" if localization else pmet_loc
+        hard_stops.append(
+            "Do not cut a high-met-risk tumor before a chest film. "
+            "Do not harvest 3 mm as lobby law. "
+            "Prognosis is poor once the lungs are involved."
+        )
+        do_not.append(
+            "Printed ≤3 mm / ≥40% stay on the page. "
+            "Not a primary-lung incidental. Not PTE with clean rads. "
+            "Find the primary or the old surgery."
+        )
+        do_next.append(
+            "Chest rads or CT. Look for mammary adenocarcinoma, osteosarcoma, "
+            "HSA, or oral melanoma. "
+            "Solitary slow met can be a surgery conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck neoplasia of the respiratory system (Tonozzi, Feb 2022 / Sept 2024): "
+            "metastatic lung; chest films before you cut; "
+            "printed ≤3 mm / ≥40% stay on the page; prognosis is poor."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send multiple lung nodules home as just old or just pneumonia."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress cannonball nodules as primary pneumonia.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for pulmonary mets.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for pulmonary mets.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

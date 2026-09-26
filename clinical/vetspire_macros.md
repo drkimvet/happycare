@@ -126,6 +126,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-asp` | Assessment | Nasal aspergillosis / destructive rhinitis |
 | `ddx-nmass` | Assessment | Nasal neoplasia / epistaxis mass |
 | `ddx-lmass` | Assessment | Primary lung tumor / incidental lung mass |
+| `ddx-pmet` | Assessment | Metastatic pulmonary nodules / staging chest |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -211,6 +212,7 @@ Suggested names are short so they show up after three letters.
 | `dc-asp` | Discharge | After nasal aspergillus / soak talk |
 | `dc-nmass` | Discharge | After nasal mass / epistaxis talk |
 | `dc-lmass` | Discharge | After lung mass / incidental-nodule talk |
+| `dc-pmet` | Discharge | After pulmonary mets / staging-chest talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1511,6 +1513,21 @@ DDX:
 Do not: send an incidental lung mass home as just old. Harvest 120 days / 12 months / 2 months as lobby law. Skip staging before a lobectomy.
 Do next: stage the chest. Biopsy. △ Plumb.
 
+### `ddx-pmet`
+
+Pulmonary mets — {{patient.name}}
+Primary [mammary adenoCA / OSA / HSA / oral melanoma / occult / old surgery]. Nodules [single / multiple / cannonball / none yet]. Chest [rads / CT / not yet]. Cut planned [amputate / mastectomy / splenectomy / no].
+
+DDX:
+1. Metastatic pulmonary nodules — **stage the chest before you cut**
+2. Usual primaries: mammary adenocarcinoma, osteosarcoma, HSA, oral melanoma
+3. Rads miss printed ≤3 mm (a printed ≥40%). CT sees what films miss
+4. Prognosis is poor once the lungs are involved. Solitary slow met can still be a surgery talk
+5. Not a primary-lung incidental (197). Not PTE with clean rads (154). Not hemoabdomen-only (120)
+
+Do not: cut a high-met primary before a chest film. Harvest 3 mm / 40% as lobby law. Send multiple nodules home as just old.
+Do next: chest rads or CT. Hunt the primary. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2224,6 +2241,14 @@ Return now for worse nosebleeds, a changing face, seizures, or not eating. {{loc
 {{patient.name}} was evaluated for a lung mass / nodule. A spot found on chest films for another problem is still a mass, not “just old age.”
 
 Give only the medicines we sent, as labeled. Limit activity as discussed until the staging plan is done.
+
+Return now for trouble breathing, collapse, not eating, or a new lame leg. {{location.phonenumber}}
+
+### `dc-pmet`
+
+{{patient.name}} was evaluated for possible cancer spread to the lungs. Chest films come before a big surgery on a high-risk tumor. Small spots can hide on regular x-rays.
+
+Give only the medicines we sent, as labeled. Limit activity as discussed until staging is done.
 
 Return now for trouble breathing, collapse, not eating, or a new lame leg. {{location.phonenumber}}
 

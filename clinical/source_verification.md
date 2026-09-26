@@ -1770,3 +1770,21 @@ Book/public traps:
 - Do not skip staging before you promise a lobectomy.
 
 Night rule: older dog, incidental lung mass or hypertrophic osteopathy → **the chest is the disease tonight, not a dental add-on.** △ Plumb.
+
+## 198. Metastatic pulmonary nodules / staging chest (Merck Tonozzi Feb 2022 / Sept 2024)
+
+No dedicated Plunkett pulmonary-metastasis chapter in the owned SA EM splits. Same public Merck neoplasia of the respiratory system page (Tonozzi), metastatic-lung section. Packet 197 still owns the incidental primary / hypertrophic osteopathy. Packet 196 still owns the nose. Packet 154 still owns PTE (normal rads do not rule PTE out). Packet 120 still owns hemoabdomen without lung words. Skip larynx / trachea as their own packet. **Do not harvest ≤3 mm / ≥40% or a chemo table as lobby law.**
+
+Agree with Tonozzi: a localized tumor reaches the lungs by blood, lymph, or direct extension. The usual high-met primaries are **mammary adenocarcinoma, osteosarcoma, hemangiosarcoma, and oral melanoma**. Lungs may be the only met site — then hunt the occult primary or the old surgery. Pulmonary metastasis is late; **prognosis is poor**. Signs look like primary lung disease and scale with burden. Routine rads miss small lesions (printed ≤3 mm, present in a printed ≥40%) — those numbers stay on the page. **Thoracic CT sees what films miss.** **Chest films before you cut** a high-met-risk tumor. The major goal is preventing metastasis, not erasing cancer tonight. Slow or solitary mets can be a surgery conversation. Chemo / radiation for the rest. Overall prognosis once the lungs are involved is poor.
+
+Night split: multiple pulmonary nodules = mets until you look for a primary. Osteosarcoma / HSA / mammary adenocarcinoma / oral melanoma → stage the chest before you cut. A single incidental mass without a high-met primary is still 197. Clean-rad dyspnea is still 154. Hemoabdomen without lung words is still 120. Midtown cough-alone is not this.
+
+Book/public traps:
+
+- Printed ≤3 mm / ≥40% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not amputate, mastectomy, or splenectomy a high-met primary before a chest film.
+- Do not send multiple lung nodules home as just old or just pneumonia.
+- Do not call cannonball nodules a primary-lung incidental.
+
+Night rule: high-met primary or multiple lung nodules → **stage the chest before you cut.** △ Plumb.

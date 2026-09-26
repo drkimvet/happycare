@@ -2789,6 +2789,60 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("incidental mass is still a mass", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_multiple_pulmonary_nodules_is_mets(self):
+        b = analyze(
+            "dog",
+            "multiple pulmonary nodules, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("metastatic pulmonary nodules", loc)
+        self.assertIn("stage the chest before you cut", loc)
+        self.assertNotIn("incidental mass is still a mass", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just old", joined)
+        self.assertIn("3 mm", joined)
+        self.assertIn("chest rads or ct", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_osteosarcoma_amputate_stages_the_chest(self):
+        b = analyze("dog", "osteosarcoma, amputate tonight")
+        loc = b["localization"].lower()
+        self.assertIn("stage the chest before you cut", loc)
+        self.assertIn("rads miss 3 mm", loc)
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertIn("before a chest film", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_incidental_lung_mass_is_not_mets(self):
+        b = analyze("dog", "incidental lung mass on dental rads, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("incidental mass is still a mass", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertNotIn("stage the chest before you cut", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemoabdomen_alone_is_not_mets(self):
+        b = analyze("dog", "hemoabdomen, give vitamin K, transfuse at PCV 20")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pcv/ts", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertNotIn("stage the chest before you cut", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pte_is_not_mets(self):
+        b = analyze("dog", "pulmonary thromboembolism, normal radiographs")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("clot in the lung arteries, not fate", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nasal_adeno_is_not_mets(self):
+        b = analyze("dog", "nasal adenocarcinoma, chronic discharge")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine nasal neoplasia", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
