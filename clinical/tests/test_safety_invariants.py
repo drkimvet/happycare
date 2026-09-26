@@ -399,6 +399,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("generally subclinically affected", VERIF.lower())
         self.assertIn("do not treat a well bartonella-positive cat", VERIF.lower())
         self.assertIn("aortic-valve infectious endocarditis", VERIF.lower())
+        self.assertIn("canine brucellosis", VERIF.lower())
+        self.assertIn("considered to be permanent", VERIF.lower())
+        self.assertIn("do not treat brucella as a doxy-and-clear", VERIF.lower())
+        self.assertIn("tested for brucellosis", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -621,6 +625,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-bart`", MACRO)
         self.assertIn("treat a well bartonella-positive cat", MACRO.lower())
         self.assertIn("catch this from a titer", MACRO.lower())
+        self.assertIn("`ddx-bru`", MACRO)
+        self.assertIn("`dc-bru`", MACRO)
+        self.assertIn("treat brucella as a doxy-and-clear", MACRO.lower())
+        self.assertIn("test every disco dog for brucella", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

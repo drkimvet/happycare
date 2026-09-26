@@ -1013,6 +1013,24 @@ ENDOCARD_RE = re.compile(
     r"aortic vegetation",
     re.I,
 )
+# Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
+BRUCELLA_RE = re.compile(
+    r"\bbrucell|"
+    r"b\.?\s*canis\b",
+    re.I,
+)
+DISCO_RE = re.compile(
+    r"dis[ck]ospondyl|"
+    r"vertebral osteomyelit|"
+    r"vertebral physit",
+    re.I,
+)
+REPRO_BRU_RE = re.compile(
+    r"\b(stillbirth|miscarriage|epididymit|orchitis|placentitis)\b|"
+    r"late[- ]term abort|"
+    r"\babortions?\b",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4175,6 +4193,56 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Bartonella.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Bartonella.")
+
+    bru_hit = spec == "dog" and (
+        BRUCELLA_RE.search(text)
+        or DISCO_RE.search(text)
+        or REPRO_BRU_RE.search(text)
+    )
+    if bru_hit:
+        if DISCO_RE.search(text):
+            bru_loc = (
+                "Canine discospondylitis. End-plate pain, not just IVDD. "
+                "Test for Brucella. Not a doxy-and-clear."
+            )
+        else:
+            bru_loc = (
+                "Canine brucellosis. Zoonosis. Infection is considered permanent. "
+                "Not a doxy-and-clear."
+            )
+        localization = f"{localization} Also {bru_loc}" if localization else bru_loc
+        hard_stops.append(
+            "Do not treat Brucella as a doxy-and-clear. "
+            "Do not harvest a 12–16 week or 2–3 month clock as lobby law. "
+            "Do not skip the Brucella test on a disco dog."
+        )
+        do_not.append(
+            "Fever is not a hallmark in the dog. "
+            "Printed 12–16 weeks / 2–3 months / amox-clav stay on the page. "
+            "Gold standard is isolation or PCR; serology is screening."
+        )
+        do_next.append(
+            "Blood and urine culture. Brucella test every disco dog. "
+            "Barrier / PPE for aborted tissue and fluids. State report rules vary. △ Plumb."
+        )
+        sources.append(
+            "Merck brucellosis in dogs (Burns, Mar 2024 / May 2026): "
+            "zoonosis; infection considered permanent; fever is not a hallmark. "
+            "Merck spinal inflammatory (Thomas, Oct 2021 / Aug 2025): "
+            "test disco dogs for Brucella; printed 12–16 weeks stay on the page."
+        )
+        if SEND_HOME_RE.search(text) and DISCO_RE.search(text):
+            hard_stops.append("Do not send discospondylitis home as just IVDD.")
+        if SEND_HOME_RE.search(text) and (
+            BRUCELLA_RE.search(text) or REPRO_BRU_RE.search(text)
+        ):
+            hard_stops.append("Do not send Brucella home as just infertility.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress Brucella or disco as IVDD.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Brucella.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Brucella.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

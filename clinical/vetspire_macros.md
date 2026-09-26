@@ -118,6 +118,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cytx` | Assessment | Feline cytauxzoon / bobcat fever |
 | `ddx-fia` | Assessment | Hemoplasma / feline infectious anemia |
 | `ddx-bart` | Assessment | Bartonella / cat-scratch / culture-neg IE |
+| `ddx-bru` | Assessment | Brucella / discospondylitis / not doxy-and-clear |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -195,6 +196,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cytx` | Discharge | After cytauxzoon / not a donor |
 | `dc-fia` | Discharge | After hemoplasma / FIA |
 | `dc-bart` | Discharge | After Bartonella / flea-control talk |
+| `dc-bru` | Discharge | After Brucella / disco / zoonosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1375,6 +1377,21 @@ DDX:
 Do not: treat a well Bartonella-positive cat. Harvest azithromycin / amp+gent / 6–8 weeks. Send culture-negative endocarditis home as just Lyme. Tell the owner they catch this from a titer. Pred as FUO first.
 Do next: flea control. Echo if fever plus a new murmur. Never permethrin on a cat. △ Plumb.
 
+### `ddx-bru`
+
+Brucella / discospondylitis — {{patient.name}}
+Intact vs neutered [ ]. Abortion / stillbirth / orchitis / epididymitis [ ]. Back pain [ ]. Disco rads [end-plate / none]. Blood culture [ ]. Urine culture [ ]. Brucella test [ ]. PPE [ ].
+
+DDX:
+1. *B. canis* — zoonosis; infection is considered to be permanent; **not a doxy-and-clear**
+2. Late abortion / orchitis / epididymitis even if they are not febrile (fever is not a hallmark)
+3. Discospondylitis — Staph common; **test every disco dog for Brucella**
+4. Not IVDD extrusion (185). Not Lyme-first (184). Not Bartonella IE (189)
+5. Other *Brucella* spp if livestock exposure — reportable in all US states
+
+Do not: treat Brucella as a doxy-and-clear. Skip the Brucella test on a disco dog. Send discospondylitis home as just IVDD. Harvest 12–16 weeks / 2–3 months / amox-clav. Handle aborted tissue without PPE.
+Do next: blood + urine culture. Brucella serology / PCR. Barrier. State report rules vary. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2026,6 +2043,14 @@ Return now for pale gums, collapse, fast breathing, or not eating. {{location.ph
 Flea control is the main public-health step. Wash scratches with soap and water. If a person in the house has a swollen lymph node after a scratch, that is their physician — do not catch this from a titer.
 
 Give only the medicines we sent, as labeled. Return now for fever, a new or louder heart murmur, lameness, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-bru`
+
+{{patient.name}} was evaluated for Brucella and/or a spinal disk infection (discospondylitis). This is not a leftover steroid plan and not “just a slipped disk.”
+
+Brucella can infect people from birthing fluids, urine, and semen. Use gloves as shown. This infection is considered to be permanent — it is not a doxy-and-clear. Do not breed. State rules vary.
+
+Give only the medicines we sent, as labeled. Return now for back pain, fever, abortion, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

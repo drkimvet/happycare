@@ -2394,6 +2394,61 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("flea feces in the wound", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_discospondylitis_test_for_brucella(self):
+        b = analyze(
+            "dog",
+            "discospondylitis, back pain, send home as IVDD",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("end-plate pain, not just ivdd", loc)
+        self.assertIn("test for brucella", loc)
+        self.assertIn("not a doxy-and-clear", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just ivdd", joined)
+        self.assertIn("brucella test every disco dog", joined)
+        self.assertIn("12–16 week", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_late_abortion_is_brucella_list(self):
+        b = analyze("dog", "late-term abortion, stillbirth, send home")
+        loc = b["localization"].lower()
+        self.assertIn("canine brucellosis", loc)
+        self.assertIn("infection is considered permanent", loc)
+        self.assertIn("not a doxy-and-clear", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just infertility", joined)
+        self.assertIn("fever is not a hallmark", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_well_ivdd_knuckle_is_not_brucella(self):
+        b = analyze("dog", "IVDD, knuckling, lost deep pain")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("end-plate pain, not just ivdd", loc)
+        self.assertNotIn("canine brucellosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bartonella_ie_is_not_brucella(self):
+        b = analyze("dog", "culture-negative aortic endocarditis, fever, murmur")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("culture-negative aortic valve", loc)
+        self.assertNotIn("end-plate pain, not just ivdd", loc)
+        self.assertNotIn("canine brucellosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_lameness_is_not_brucella(self):
+        b = analyze("dog", "Lyme, shifting lameness, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine brucellosis", loc)
+        self.assertNotIn("end-plate pain, not just ivdd", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_disco_is_not_canine_brucella_script(self):
+        b = analyze("cat", "discospondylitis, back pain")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine discospondylitis", loc)
+        self.assertNotIn("canine brucellosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -1604,3 +1604,23 @@ Book/public traps:
 - Do not tell the owner they catch this from a titer.
 
 Night rule: well cat PCR+ / sero+ → **flea control, not a long antibiotic.** Dog fever + new murmur or culture-negative aortic vegetation → **echo tonight, Bartonella on the list.** △ Plumb.
+
+## 190. Canine brucellosis / discospondylitis (Merck Burns Mar 2024 / May 2026; Thomas Oct 2021 / Aug 2025)
+
+No dedicated Plunkett *Brucella canis* or discospondylitis chapter in the owned SA EM splits. Public Merck brucellosis in dogs (Burns) plus spinal inflammatory / infectious (Thomas). CDC veterinary brucellosis and USDA 2015 kennel best-practices named only — no note dump. Packet 185 still owns IVDD / lost deep pain. Packet 189 still owns Bartonella IE. Packet 184 still owns Lyme shifting lameness. Packet 183 still owns rickettsial myelitis on the same Thomas page. Skip horse / ruminant / pig disco and bovine *B. abortus* as their own packets. **Do not harvest doxycycline, a 12–16 week disco clock, a 2–3 month Brucella clock, or amox-clav as lobby law.**
+
+Agree with Burns: *B. canis* is intracellular and **zoonotic**. Dogs are the preferred host. Other *Brucella* spp can come from livestock. Venereal plus aborted tissue / vaginal fluid; also urine, semen, milk, fomites, kennel aerosol. Target organs are testis, epididymis, prostate, uterus, placenta. Late-term abortion (printed 45–55 days) is classic but abortion can be any stage. Neutered dogs can stay quiet for years, then uveitis or **discospondylitis**. **Fever is not a hallmark** in the dog. Infection is **considered to be permanent**. No regimen is known to clear it for certain. Euthanasia is often the conversation because of zoonosis. If declined: neuter, antimicrobials, lifelong monitoring, isolation. Printed 2–3 months / tetracycline or FQ plus an aminoglycoside stay on the page. *B. canis* is not nationally reportable in the US; many states still report it. *B. suis* / *abortus* / *melitensis* are reportable in all US states. Gold standard is isolation or PCR. Serology (RSAT / 2ME-RSAT / TAT / AGID / ELISA) is screening and can lag. Culture has biosafety risk — PPE.
+
+Agree with Thomas: discospondylitis is the disk plus the adjacent vertebral bodies (not IVDD extrusion). Hematogenous. Large-breed dogs. Cats are rare and usually an adjacent wound. Staph is the common isolate. *B. canis* is on that list. **Spinal pain is the most consistent sign**; fever is less common. Early rads: end-plate destruction and disk-space collapse. Blood and urine cultures. **Affected dogs should be tested for brucellosis.** Signs often ease within 5 days of the right drug — keep going; printed 12–16 weeks / amox-clav-if-no-growth stay on the page. Lost deep pain / knuckling without a disco word is still 185. Plant-awn lumbar osteomyelitis stays named, not a Midtown default.
+
+Night split: dog late abortion / orchitis / epididymitis ≠ “just infertility.” Disco back pain ≠ NSAID-and-home as old IVDD. Bartonella murmur is still 189. Lyme lameness is still 184. Rickettsial doxy 5 / chloramphenicol 30 on the same Thomas page stay with 183.
+
+Book/public traps:
+
+- Printed 12–16 weeks / 2–3 months / amox-clav / tetracycline-plus-aminoglycoside stay on the page.
+- Do not treat Brucella as a doxy-and-clear.
+- Do not send discospondylitis home as just IVDD.
+- Do not skip the Brucella test on a disco dog.
+- Do not tell the owner this is a urine-shedder like lepto (182) — it is still zoonotic via fluids and products of abortion.
+
+Night rule: dog late abortion, orchitis, or discospondylitis → **Brucella test + barrier tonight, not a doxy-and-home.** △ Plumb.
