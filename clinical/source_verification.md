@@ -1730,3 +1730,23 @@ Book/public traps:
 - Do not send depigmented-nares epistaxis home as just a cold.
 
 Night rule: dolichocephalic dog, depigmented nares, chronic epistaxis → **CT + plaques tonight, not a culture-and-home.** △ Plumb.
+
+## 196. Canine nasal neoplasia / epistaxis mass (Merck Tonozzi Feb 2022 / Sept 2024)
+
+No dedicated Plunkett nasal-tumor chapter in the owned SA EM splits. Public Merck neoplasia of the respiratory system in dogs and cats (Tonozzi). Packet 195 still owns aspergillus / depigmented nares. Packet 192 still owns crypto / roman nose. Coagulopathy stays on the epistaxis list. Skip larynx / trachea and primary lung tumors as their own packets. **Do not harvest radiation fractions, cisplatin, or an 8–20 month survival table as lobby law.**
+
+Agree with Tonozzi: tumors of the nose and paranasal sinuses are 1%–2% of all canine or feline tumors. Dogs twice cats; males more than females. Mean age 9.5–10 years in dogs, 12 years in cats. Dogs: nearly all malignant; slightly more than 60% carcinomas, adenocarcinoma most common; ethmoturbinates are the predilection site; dolicho / meso more than brachy. Cats: at least 90% malignant; lymphoma then carcinoma. Locally invasive, late mets (nodes, lungs, brain). Survival of untreated animals is 3–5 months after diagnosis — that number stays on the page.
+
+Chronic nasal discharge is the most common sign; uni then bilateral. Epistaxis, sneeze, stertor. Facial and oral deformity from bone / soft-tissue destruction. Retrobulbar extension → exophthalmos and exposure keratitis. Late CNS if the cranial vault opens. CT is vastly superior to plain radiographs. Definitive diagnosis is biopsy (CT-guided blind or rhinoscopic). Hydropulsion can yield tissue and open the airway. Radiation therapy is the treatment of choice for canine nasal adenocarcinoma.
+
+Night split: facial deformity plus epistaxis is a mass until proven, not just a cold and not a culture-and-home. Depigmented nares still 195. Roman-nose cat still 192. Bare epistaxis without a mass or deformity is still coagulopathy / hypertension / foreign body until you look.
+
+Book/public traps:
+
+- Printed 3–5 months untreated and radiation-fraction / cisplatin tables stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not diagnose a mass on culture alone.
+- Do not send facial-deformity epistaxis home as just a cold.
+- Coagulopathy stays on the epistaxis list.
+
+Night rule: older dog or cat, facial deformity plus epistaxis → **CT plus biopsy tonight, not a cold-and-home.** △ Plumb.

@@ -124,6 +124,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-histo` | Assessment | Histoplasmosis / GI-respiratory fungus |
 | `ddx-cocci` | Assessment | Coccidioidomycosis / valley fever |
 | `ddx-asp` | Assessment | Nasal aspergillosis / destructive rhinitis |
+| `ddx-nmass` | Assessment | Nasal neoplasia / epistaxis mass |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -207,6 +208,7 @@ Suggested names are short so they show up after three letters.
 | `dc-histo` | Discharge | After histoplasmosis / travel-GI talk |
 | `dc-cocci` | Discharge | After valley fever / Southwest-travel talk |
 | `dc-asp` | Discharge | After nasal aspergillus / soak talk |
+| `dc-nmass` | Discharge | After nasal mass / epistaxis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1477,6 +1479,21 @@ DDX:
 Do not: diagnose on culture alone. Harvest clotrimazole 0.5 g / 1 hour. Soak before the cribriform is known intact. Send depigmented-nares epistaxis home as just a cold.
 Do next: CT + rhinoscopy. Hyphae in the lesion. △ Plumb.
 
+### `ddx-nmass`
+
+Nasal neoplasia — {{patient.name}}
+Age [ ]. Discharge [uni / bilateral]. Epistaxis [ ]. Facial deformity [Y/N]. Exophthalmos [ ]. Coag [checked / not]. CT [ ]. Biopsy [ ].
+
+DDX:
+1. Nasal / sinonasal mass — **facial deformity plus epistaxis is a mass until proven**
+2. Dogs: nearly all malignant; adenocarcinoma most common. Cats: lymphoma then carcinoma
+3. Locally invasive, late mets. CT is vastly superior. Biopsy is definitive
+4. Radiation therapy is TOC for canine nasal adenocarcinoma. Hydropulsion can yield tissue
+5. Not aspergillus depigmented nares (195). Not crypto roman-nose (192). Coagulopathy stays on the epistaxis list
+
+Do not: send facial-deformity epistaxis home as just a cold. Harvest radiation fractions / 3–5 months as lobby law. Diagnose a mass on culture alone.
+Do next: CT plus biopsy. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2176,6 +2193,14 @@ Return now for worse cough, seizures, lameness, collapse, or not eating. {{locat
 Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} from bumping the nose as discussed.
 
 Return now for worse nosebleeds, seizures, or not eating. {{location.phonenumber}}
+
+### `dc-nmass`
+
+{{patient.name}} was evaluated for a nasal mass / nosebleed. Facial change plus bleeding from the nose is not “just a cold.” A clotting problem can still sit on the same list.
+
+Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} from bumping the nose as discussed.
+
+Return now for worse nosebleeds, a changing face, seizures, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

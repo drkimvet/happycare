@@ -2681,6 +2681,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("depigmented nares, not just a cold", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_facial_deformity_epistaxis_is_nasal_mass(self):
+        b = analyze(
+            "dog",
+            "facial deformity, epistaxis, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("facial deformity plus epistaxis is a mass until proven", loc)
+        self.assertIn("nearly all malignant", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just a cold", joined)
+        self.assertIn("radiation fractions", joined)
+        self.assertIn("ct is vastly superior", joined)
+        self.assertIn("coagulopathy stays on the epistaxis list", joined)
+        self.assertIn("3–5 months", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_named_nasal_adenocarcinoma_is_nasal_mass(self):
+        b = analyze("dog", "nasal adenocarcinoma, chronic discharge")
+        loc = b["localization"].lower()
+        self.assertIn("canine nasal neoplasia", loc)
+        self.assertIn("radiation therapy is the treatment of choice", " ".join(b["do_next"]).lower())
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_depigmented_nares_is_not_nasal_neo(self):
+        b = analyze(
+            "dog",
+            "depigmentation of the nares, epistaxis, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("depigmented nares, not just a cold", loc)
+        self.assertNotIn("facial deformity plus epistaxis is a mass until proven", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_crypto_roman_nose_is_not_nasal_neo(self):
+        b = analyze("cat", "firm swelling over the bridge of the nose, chronic nasal discharge")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("the nose, then the brain", loc)
+        self.assertNotIn("facial deformity plus epistaxis is a mass until proven", loc)
+        self.assertNotIn("feline nasal neoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_crypto_nasal_mass_is_not_nasal_neo(self):
+        b = analyze("cat", "Cryptococcus neoformans, nasal mass, prednisolone")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline cryptococcosis", loc)
+        self.assertNotIn("feline nasal neoplasia", loc)
+        self.assertNotIn("facial deformity plus epistaxis is a mass until proven", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_epistaxis_is_not_nasal_neo(self):
+        b = analyze("dog", "epistaxis, sneezing")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("facial deformity plus epistaxis is a mass until proven", loc)
+        self.assertNotIn("canine nasal neoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

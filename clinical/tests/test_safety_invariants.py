@@ -424,6 +424,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("culture alone is not a diagnosis", VERIF.lower())
         self.assertIn("depigmentation of the nares", VERIF.lower())
         self.assertIn("clotrimazole 0.5 g", VERIF.lower())
+        self.assertIn("canine nasal neoplasia", VERIF.lower())
+        self.assertIn("radiation therapy", VERIF.lower())
+        self.assertIn("3–5 months", VERIF.lower())
+        self.assertIn("ct is vastly superior", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -668,8 +672,11 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("compounded bulk itra", MACRO.lower())
         self.assertIn("`ddx-asp`", MACRO)
         self.assertIn("`dc-asp`", MACRO)
+        self.assertIn("`ddx-nmass`", MACRO)
+        self.assertIn("`dc-nmass`", MACRO)
         self.assertIn("culture alone is not a diagnosis", MACRO.lower())
         self.assertIn("intact cribriform", MACRO.lower())
+        self.assertIn("facial deformity plus epistaxis is a mass until proven", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

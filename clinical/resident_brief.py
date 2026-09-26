@@ -1145,6 +1145,26 @@ FUNGAL_PLAQUE_RE = re.compile(
     r"turbinate destruct",
     re.I,
 )
+# Bare "mass" / "tumor" / "cancer" is every lobby. Need the nasal / sinonasal prefix.
+# Bare "nasal" is discharge / FB. Not a neoplasia gate.
+NASAL_NEO_RE = re.compile(
+    r"nasal (tumor|neoplas|carcinoma|adenocarcinoma|lymphoma|sarcoma|mass)|"
+    r"sinonasal (tumor|neoplas|carcinoma|adenocarcinoma|mass)|"
+    r"intranasal (tumor|neoplas|mass)",
+    re.I,
+)
+FACIAL_DEF_RE = re.compile(
+    r"facial (deform|swell|asymmet)|"
+    r"\bexophthalm",
+    re.I,
+)
+EPISTAXIS_RE = re.compile(
+    r"\bepistax|"
+    r"nosebleed|"
+    r"nasal bleed|"
+    r"bleeding from the nose",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4571,6 +4591,64 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for aspergillus.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for aspergillus.")
+
+    nasal_neo_named = spec in {"dog", "cat"} and NASAL_NEO_RE.search(text)
+    if nasal_neo_named and (
+        CRYPTO_RE.search(text)
+        or ASPERG_RE.search(text)
+        or ROMAN_NOSE_RE.search(text)
+        or NARES_DEPIG_RE.search(text)
+    ):
+        nasal_neo_named = False
+    facial_epistaxis = spec in {"dog", "cat"} and (
+        EPISTAXIS_RE.search(text)
+        and FACIAL_DEF_RE.search(text)
+        and not NARES_DEPIG_RE.search(text)
+        and not ROMAN_NOSE_RE.search(text)
+    )
+    if nasal_neo_named or facial_epistaxis:
+        if spec == "cat":
+            nmass_loc = (
+                "Feline nasal neoplasia. Lymphoma then carcinoma. "
+                "Facial deformity plus epistaxis is a mass until proven."
+            )
+        else:
+            nmass_loc = (
+                "Canine nasal neoplasia. Facial deformity plus epistaxis is a mass until proven. "
+                "Nearly all malignant."
+            )
+        localization = f"{localization} Also {nmass_loc}" if localization else nmass_loc
+        hard_stops.append(
+            "Do not send facial-deformity epistaxis home as just a cold. "
+            "Do not harvest radiation fractions as lobby law. "
+            "Coagulopathy stays on the epistaxis list."
+        )
+        do_not.append(
+            "Printed 3–5 months untreated and radiation-fraction tables stay on the page. "
+            "Culture is not a diagnosis of a mass. "
+            "Not aspergillus depigmented nares. Not crypto roman-nose."
+        )
+        do_next.append(
+            "CT is vastly superior to radiographs. Biopsy is definitive. "
+            "Hydropulsion can yield tissue and open the airway. "
+            "Radiation therapy is the treatment of choice for canine nasal adenocarcinoma. △ Plumb."
+        )
+        sources.append(
+            "Merck neoplasia of the respiratory system (Tonozzi, Feb 2022 / Sept 2024): "
+            "nearly all malignant; CT is vastly superior; "
+            "radiation therapy is TOC for canine nasal adenocarcinoma; "
+            "untreated 3–5 months stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send facial-deformity epistaxis home as just a cold."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress a nasal mass as primary rhinitis.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for a nasal mass.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a nasal mass.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
