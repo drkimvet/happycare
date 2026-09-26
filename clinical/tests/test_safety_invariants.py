@@ -403,6 +403,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("considered to be permanent", VERIF.lower())
         self.assertIn("do not treat brucella as a doxy-and-clear", VERIF.lower())
         self.assertIn("tested for brucellosis", VERIF.lower())
+        self.assertIn("canine blastomycosis", VERIF.lower())
+        self.assertIn("do not acquire infection from animals", VERIF.lower())
+        self.assertIn("itraconazole 5", VERIF.lower())
+        self.assertIn("midtown is not the river-basin default", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -629,6 +633,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-bru`", MACRO)
         self.assertIn("treat brucella as a doxy-and-clear", MACRO.lower())
         self.assertIn("test every disco dog for brucella", MACRO.lower())
+        self.assertIn("`ddx-blast`", MACRO)
+        self.assertIn("`dc-blast`", MACRO)
+        self.assertIn("catch this from the dog", MACRO.lower())
+        self.assertIn("midtown is not the river-basin default", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

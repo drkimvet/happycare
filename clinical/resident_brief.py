@@ -1031,6 +1031,39 @@ REPRO_BRU_RE = re.compile(
     r"\babortions?\b",
     re.I,
 )
+BLASTO_RE = re.compile(
+    r"\bblastomyc|"
+    r"\bblastomyces|"
+    r"\bblasto\b|"
+    r"\bgilchristii\b",
+    re.I,
+)
+TRAVEL_FUNGUS_RE = re.compile(
+    r"wisconsin|"
+    r"minnesota|"
+    r"missouri river|"
+    r"tennessee river|"
+    r"ohio river|"
+    r"mississippi river|"
+    r"great lakes|"
+    r"st\.?\s*lawrence|"
+    r"pacific northwest|"
+    r"beaver dam",
+    re.I,
+)
+DRAIN_SKIN_RE = re.compile(
+    r"draining (tract|nodule|skin|wound|cutaneous)|"
+    r"cutaneous nodule",
+    re.I,
+)
+RESP_BLASTO_RE = re.compile(
+    r"\bcough|"
+    r"\bdyspnea|"
+    r"harsh lung|"
+    r"\bpneumonia|"
+    r"\brespira",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4243,6 +4276,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Brucella.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Brucella.")
+
+    blasto_named = spec in {"dog", "cat"} and BLASTO_RE.search(text)
+    blasto_travel = (
+        spec in {"dog", "cat"}
+        and TRAVEL_FUNGUS_RE.search(text)
+        and DRAIN_SKIN_RE.search(text)
+        and RESP_BLASTO_RE.search(text)
+    )
+    if blasto_named or blasto_travel:
+        blast_loc = (
+            "Blastomycosis / travel fungus. Midtown is not the river-basin default. "
+            "Broad-based budding tonight. Not pred-first."
+        )
+        localization = f"{localization} Also {blast_loc}" if localization else blast_loc
+        hard_stops.append(
+            "Do not harvest itraconazole 5 as lobby law. "
+            "Do not pred blastomycosis as IMHA or uveitis-first. "
+            "Do not tell the owner they catch this from the dog."
+        )
+        do_not.append(
+            "Humans get it from the environment, not from the animal. "
+            "Printed 5 / 3 months / 70% / 20% stay on the page. "
+            "Urine antigen can cross-react with Histoplasma."
+        )
+        do_next.append(
+            "Ask travel / waterway / hunting. Cytology of the drain or node. "
+            "Urine antigen. PPE for aspirates (needle-stick). △ Plumb."
+        )
+        sources.append(
+            "Merck blastomycosis in animals (Gull, Apr 2023 / Jul 2026): "
+            "broad-based budding; urine antigen; humans do not acquire it from animals; "
+            "printed itraconazole 5 stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send draining tracts plus travel cough home as just pneumonia."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress blastomycosis as primary IMHA.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for blastomycosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for blastomycosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

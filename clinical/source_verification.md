@@ -1624,3 +1624,25 @@ Book/public traps:
 - Do not tell the owner this is a urine-shedder like lepto (182) — it is still zoonotic via fluids and products of abortion.
 
 Night rule: dog late abortion, orchitis, or discospondylitis → **Brucella test + barrier tonight, not a doxy-and-home.** △ Plumb.
+
+## 191. Canine blastomycosis / Midtown travel fungus (Merck Gull Apr 2023 / Jul 2026)
+
+No dedicated Plunkett blastomycosis chapter in the owned SA EM splits. Public Merck blastomycosis in animals (Gull). MiraVista treatment sheets named only — no dose dump. Packet 190 still owns Brucella / disco. Packet 185 still owns IVDD. Packet 176 still owns HARD. Packet 150 still owns melting-ulcer fungal culture. Packet 143 still owns IOP. Skip horse as its own packet. Cattle / sheep / pigs are not reported susceptible. **Do not harvest itraconazole 5, a 3-month clock, or amphotericin as lobby law.**
+
+Agree with Gull: dimorphic *Blastomyces* in moist decaying soil. Inhaled conidia, then yeast. **Midtown is not the river-basin default** — ask travel / hunting / waterway (Mississippi, Missouri, Tennessee, Ohio rivers; Great Lakes; St. Lawrence; Pacific Northwest). Most dogs live within a printed 400 m of a waterway — that number stays on the page. Humans can get blastomycosis; **they do not acquire infection from animals.** Both get it from the environment. Needle-stick after aspirating a drain can give staff a primary cutaneous infection — PPE.
+
+Young adult large-breed / hunting dogs. Harsh lungs; pulmonary signs in a printed 85%. Draining cutaneous nodules plus respiratory disease is the night picture. Planum, face, nail beds. Ocular 30–50% (uveitis, glaucoma, detach) — 143 still owns the pressure. Bone / paronychia about one quarter. CNS uncommon in dogs, more in cats. Cats are uncommon; large abscesses possible. Hypoxemia is a poor-prognosis mark.
+
+Diagnosis: thick-walled yeasts with **broad-based budding** on impression / FNA / fluid. Urine antigen is sensitive and can cross-react with *Histoplasma*. AGID antibody is neither sensitive nor specific. Printed itraconazole 5 / minimum 3 months / ~70% clinical cure / ~20% recurrence stay on the page. Fluconazole is less effective. Fulminant / hypoxemic: amphotericin conversation. Short anti-inflammatory steroids only if they worsen after starting antifungals — **not pred-first IMHA or uveitis-first.** Serial urine antigen; two negatives 3–4 weeks apart stay on the page.
+
+Night split: Midtown cough alone ≠ blasto. Disco back pain is still 190. Bartonella murmur is still 189. Draining tract without travel / yeast is not a default fungus.
+
+Book/public traps:
+
+- Printed itraconazole 5 / 3 months / 70% / 20% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not tell the owner they catch this from the dog.
+- Do not pred blastomycosis as IMHA or uveitis-first.
+- Do not send draining tracts plus travel cough home as just pneumonia.
+
+Night rule: travel dog, draining nodule, harsh lungs → **cytology tonight for broad-based budding, not a steroid.** △ Plumb.

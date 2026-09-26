@@ -119,6 +119,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fia` | Assessment | Hemoplasma / feline infectious anemia |
 | `ddx-bart` | Assessment | Bartonella / cat-scratch / culture-neg IE |
 | `ddx-bru` | Assessment | Brucella / discospondylitis / not doxy-and-clear |
+| `ddx-blast` | Assessment | Blastomycosis / Midtown travel fungus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -197,6 +198,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fia` | Discharge | After hemoplasma / FIA |
 | `dc-bart` | Discharge | After Bartonella / flea-control talk |
 | `dc-bru` | Discharge | After Brucella / disco / zoonosis talk |
+| `dc-blast` | Discharge | After blastomycosis / travel-fungus talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1392,6 +1394,21 @@ DDX:
 Do not: treat Brucella as a doxy-and-clear. Skip the Brucella test on a disco dog. Send discospondylitis home as just IVDD. Harvest 12–16 weeks / 2–3 months / amox-clav. Handle aborted tissue without PPE.
 Do next: blood + urine culture. Brucella serology / PCR. Barrier. State report rules vary. △ Plumb.
 
+### `ddx-blast`
+
+Blastomycosis / travel fungus — {{patient.name}}
+Travel / waterway / hunting [ ]. Midtown-only [Y/N]. Draining nodule [ ]. Harsh lungs [ ]. Eye [ ]. Cytology [broad-based budding / none]. Urine antigen [ ].
+
+DDX:
+1. *Blastomyces* after river-basin / Great Lakes / waterway travel — **Midtown is not the river-basin default**
+2. Draining cutaneous nodules + respiratory disease; planum / face / nail beds
+3. Broad-based budding on FNA tonight; urine antigen can cross-react with Histoplasma
+4. Not pred-first IMHA or uveitis-first. Not disco (190). Not HARD (176)
+5. People get it from the environment — **they do not catch this from the dog**
+
+Do not: harvest itraconazole 5 / 3 months. Pred as IMHA. Tell the owner they catch this from the dog. Send draining tracts plus travel cough home as just pneumonia. Aspirate without PPE (needle-stick).
+Do next: travel history. Cytology. Urine antigen. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2051,6 +2068,14 @@ Give only the medicines we sent, as labeled. Return now for fever, a new or loud
 Brucella can infect people from birthing fluids, urine, and semen. Use gloves as shown. This infection is considered to be permanent — it is not a doxy-and-clear. Do not breed. State rules vary.
 
 Give only the medicines we sent, as labeled. Return now for back pain, fever, abortion, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-blast`
+
+{{patient.name}} was evaluated for a soil fungus (blastomycosis). People get this from the environment. They do not catch this from the dog.
+
+This is not a leftover steroid plan and not “just pneumonia.” Give only the medicines we sent, as labeled.
+
+Return now for harder breathing, new draining skin sores, eye pain, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

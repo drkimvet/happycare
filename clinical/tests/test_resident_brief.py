@@ -2449,6 +2449,52 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine brucellosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_blasto_not_pred_first(self):
+        b = analyze(
+            "dog",
+            "blastomycosis, draining nodules, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("midtown is not the river-basin default", loc)
+        self.assertIn("broad-based budding tonight", loc)
+        self.assertIn("not pred-first", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("itraconazole 5", joined)
+        self.assertIn("catch this from the dog", joined)
+        self.assertIn("just pneumonia", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wisconsin_drain_cough_is_blasto_list(self):
+        b = analyze(
+            "dog",
+            "just back from Wisconsin, draining cutaneous nodules, cough",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("midtown is not the river-basin default", loc)
+        self.assertIn("broad-based budding tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_discospondylitis_is_not_blasto(self):
+        b = analyze("dog", "discospondylitis, back pain")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("end-plate pain, not just ivdd", loc)
+        self.assertNotIn("midtown is not the river-basin default", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bartonella_ie_is_not_blasto(self):
+        b = analyze("dog", "culture-negative aortic endocarditis, fever, murmur")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("culture-negative aortic valve", loc)
+        self.assertNotIn("midtown is not the river-basin default", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_midtown_cough_alone_is_not_blasto(self):
+        b = analyze("dog", "cough, Midtown, no travel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("midtown is not the river-basin default", loc)
+        self.assertNotIn("broad-based budding tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
