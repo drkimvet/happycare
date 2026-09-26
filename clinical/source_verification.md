@@ -1646,3 +1646,25 @@ Book/public traps:
 - Do not send draining tracts plus travel cough home as just pneumonia.
 
 Night rule: travel dog, draining nodule, harsh lungs → **cytology tonight for broad-based budding, not a steroid.** △ Plumb.
+
+## 192. Feline cryptococcosis / nasal-CNS fungus (Merck Gull Apr 2023 / Aug 2026)
+
+No dedicated Plunkett cryptococcosis chapter in the owned SA EM splits. Public Merck cryptococcosis in animals (Gull). ABCD feline cryptococcosis named only — no note dump. Packet 191 still owns blasto / broad-based budding. Packet 167 still owns inflammatory polyp. Packet 154 still owns FHV. Packet 116 still owns seizure drugs. Packet 147 still owns SARDS. Skip bovine mastitis and horse nasal-mass crypto as their own packets. **Do not harvest fluconazole 10, itraconazole 5–10, or an amphotericin table as lobby law.**
+
+Agree with Gull: *C. neoformans* / *C. gattii*, worldwide in soil and **bird (especially pigeon) feces**. Inhalation or wound. Encapsulated yeast in tissue. **Cats are the usual patient**; often stays in the nose. Sneeze; chronic uni- or bilateral discharge (sero / mucopurulent / blood); polyp-like mass in the nostril; **firm swelling over the bridge of the nose**. Skin papules / nodules that can ulcerate. CNS: dull, personality change, seizure, circle, paresis, blind. Eye: dilated fixed pupils, exudative detach, chorioretinitis, optic neuritis. Dogs: more than half disseminated — CNS / eye first, nose is not why they present. Midtown can see this (pigeon); it is **not a river-basin travel fungus** (191).
+
+Cytology tonight: 5–10 mcm ovoid yeast, **narrow-based budding**, capsule. Gram is useful; India ink silhouettes; Wright can shrink the capsule. Capsular antigen in serum / urine / CSF; POC assay exists. Localized nasal disease can still need cytology — do not wait on a titer alone. Culture if the volume is there.
+
+Printed fluconazole 10 q12 / itraconazole 5–10 stay on the page. Disseminated dogs: add amphotericin. Flucytosine resistance if used alone; **do not use flucytosine in dogs** (toxic epidermal necrolysis). Voriconazole is usually not tolerated. Treat until **at least two antigen tests are negative** (months to years). Short glucocorticoids only for CNS deterioration in the first days of antifungal treatment — **not pred-first lymphoma, IBD, or uveitis.** Monitor liver enzymes.
+
+Night split: roman-nose cat ≠ just URI / just polyp (167) until you look at the smear. Dilated-fixed with a nasal mass ≠ 147 SARDS. Seizure is still 116 for the drug. Broad-based budding is still 191. FeLV / FIV sit underneath if they fail.
+
+Book/public traps:
+
+- Printed fluconazole 10 / itraconazole 5–10 stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not use flucytosine in dogs.
+- Do not pred cryptococcosis as lymphoma or IBD first.
+- Do not send a roman-nose cat home as just a cold.
+
+Night rule: cat, bridge-of-nose swelling or chronic nasal mass → **smear tonight for a capsule and narrow-based budding, not a steroid.** △ Plumb.

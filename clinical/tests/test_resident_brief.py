@@ -2495,6 +2495,56 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("broad-based budding tonight", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cat_roman_nose_is_crypto(self):
+        b = analyze(
+            "cat",
+            "firm swelling over the bridge of the nose, chronic nasal discharge, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("the nose, then the brain", loc)
+        self.assertIn("narrow-based budding tonight", loc)
+        self.assertIn("not pred-first", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just a cold", joined)
+        self.assertIn("fluconazole 10", joined)
+        self.assertIn("do not use flucytosine in dogs", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_crypto_not_pred_first(self):
+        b = analyze("cat", "Cryptococcus neoformans, nasal mass, prednisolone")
+        loc = b["localization"].lower()
+        self.assertIn("feline cryptococcosis", loc)
+        joined = " ".join(b["hard_stops"]).lower()
+        self.assertIn("lymphoma or ibd first", joined)
+        self.assertIn("lymphoma first", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_blasto_is_not_crypto(self):
+        b = analyze("dog", "blastomycosis, draining nodules, cough")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("broad-based budding tonight", loc)
+        self.assertNotIn("narrow-based budding tonight", loc)
+        self.assertNotIn("the nose, then the brain", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_polyp_alone_is_not_crypto(self):
+        b = analyze("cat", "nasopharyngeal polyp, stertor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("nasopharyngeal / aural inflammatory polyp", loc)
+        self.assertNotIn("the nose, then the brain", loc)
+        self.assertNotIn("narrow-based budding tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wisconsin_blasto_is_not_crypto(self):
+        b = analyze(
+            "dog",
+            "just back from Wisconsin, draining cutaneous nodules, cough",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("midtown is not the river-basin default", loc)
+        self.assertNotIn("narrow-based budding tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

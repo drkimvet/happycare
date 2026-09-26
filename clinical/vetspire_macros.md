@@ -120,6 +120,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-bart` | Assessment | Bartonella / cat-scratch / culture-neg IE |
 | `ddx-bru` | Assessment | Brucella / discospondylitis / not doxy-and-clear |
 | `ddx-blast` | Assessment | Blastomycosis / Midtown travel fungus |
+| `ddx-crypto` | Assessment | Cryptococcosis / nasal-CNS fungus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -199,6 +200,7 @@ Suggested names are short so they show up after three letters.
 | `dc-bart` | Discharge | After Bartonella / flea-control talk |
 | `dc-bru` | Discharge | After Brucella / disco / zoonosis talk |
 | `dc-blast` | Discharge | After blastomycosis / travel-fungus talk |
+| `dc-crypto` | Discharge | After cryptococcosis / roman-nose talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1409,6 +1411,21 @@ DDX:
 Do not: harvest itraconazole 5 / 3 months. Pred as IMHA. Tell the owner they catch this from the dog. Send draining tracts plus travel cough home as just pneumonia. Aspirate without PPE (needle-stick).
 Do next: travel history. Cytology. Urine antigen. △ Plumb.
 
+### `ddx-crypto`
+
+Cryptococcosis / nasal-CNS — {{patient.name}}
+Species [cat / dog]. Bridge of nose [ ]. Chronic nasal discharge [ ]. Nostril mass [ ]. CNS / eye [ ]. Smear [narrow-based + capsule / none]. Antigen [ ]. FeLV / FIV [ ].
+
+DDX:
+1. Cat: the nose — roman-nose swelling, chronic discharge, polyp-like mass; **narrow-based budding tonight**
+2. Dog: often CNS / eye first, not a nose-first
+3. Pigeon / soil worldwide — not a river-basin blasto script (191)
+4. Not just URI. Not polyp-only (167) until you smear. Not pred-first lymphoma
+5. Treat until at least two antigen tests are negative. **No flucytosine in dogs**
+
+Do not: harvest fluconazole 10 / itra 5–10. Pred as lymphoma or IBD first. Use flucytosine in a dog. Send a roman-nose cat home as just a cold.
+Do next: smear the discharge or mass. Capsular antigen. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2076,6 +2093,14 @@ Give only the medicines we sent, as labeled. Return now for back pain, fever, ab
 This is not a leftover steroid plan and not “just pneumonia.” Give only the medicines we sent, as labeled.
 
 Return now for harder breathing, new draining skin sores, eye pain, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-crypto`
+
+{{patient.name}} was evaluated for a yeast infection (cryptococcosis), often in the nose or nervous system. This is not a leftover steroid plan and not “just a cold.”
+
+Give only the medicines we sent, as labeled. Recheck antigen as discussed — treatment is long.
+
+Return now for worse nasal discharge, seizures, blindness, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

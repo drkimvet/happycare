@@ -1064,6 +1064,20 @@ RESP_BLASTO_RE = re.compile(
     r"\brespira",
     re.I,
 )
+# Not bare "crypto" (cryptorchid / cryptosporidium).
+CRYPTO_RE = re.compile(
+    r"\bcryptococc|"
+    r"\bneoformans\b|"
+    r"c\.?\s*gattii|"
+    r"\bgattii\b",
+    re.I,
+)
+ROMAN_NOSE_RE = re.compile(
+    r"roman nose|"
+    r"bridge of the nose|"
+    r"nasal bridge",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4319,6 +4333,48 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for blastomycosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for blastomycosis.")
+
+    crypto_named = spec in {"dog", "cat"} and CRYPTO_RE.search(text)
+    roman_nose = spec == "cat" and ROMAN_NOSE_RE.search(text)
+    if crypto_named or roman_nose:
+        if spec == "cat":
+            crypto_loc = (
+                "Feline cryptococcosis. The nose, then the brain. "
+                "Narrow-based budding tonight. Not pred-first."
+            )
+        else:
+            crypto_loc = (
+                "Canine cryptococcosis. Often CNS / eye, not a nose-first. "
+                "Narrow-based budding tonight. Not pred-first."
+            )
+        localization = f"{localization} Also {crypto_loc}" if localization else crypto_loc
+        hard_stops.append(
+            "Do not harvest fluconazole 10 as lobby law. "
+            "Do not pred cryptococcosis as lymphoma or IBD first. "
+            "Do not use flucytosine in dogs."
+        )
+        do_not.append(
+            "Printed fluconazole 10 / itraconazole 5–10 stay on the page. "
+            "Treat until at least two antigen tests are negative. "
+            "Wright stain can shrink the capsule."
+        )
+        do_next.append(
+            "Smear the discharge or the nasal mass. Capsular antigen. "
+            "Not a river-basin blasto script. △ Plumb."
+        )
+        sources.append(
+            "Merck cryptococcosis in animals (Gull, Apr 2023 / Aug 2026): "
+            "cats, the nose; narrow-based budding; fluconazole; "
+            "no flucytosine in dogs; treat until antigen repeatedly negative."
+        )
+        if SEND_HOME_RE.search(text) and spec == "cat":
+            hard_stops.append("Do not send a roman-nose cat home as just a cold.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress cryptococcosis as lymphoma first.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for cryptococcosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cryptococcosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
