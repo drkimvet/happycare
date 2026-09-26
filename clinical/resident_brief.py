@@ -1204,6 +1204,29 @@ HIGH_MET_RE = re.compile(
     r"oral melanoma",
     re.I,
 )
+# Not \bosa\b (too short). Bare "fracture" is every trauma. Bare "lameness" is 185.
+OSA_RE = re.compile(
+    r"osteosarcoma",
+    re.I,
+)
+PATH_FX_RE = re.compile(
+    r"patholog\w* (bone )?fracture|"
+    r"non[- ]traumatic.{0,24}fracture",
+    re.I,
+)
+OSA_SITE_RE = re.compile(
+    r"distal radius|"
+    r"proximal humerus|"
+    r"distal femur|"
+    r"proximal tibia",
+    re.I,
+)
+LYTIC_BONE_RE = re.compile(
+    r"osteolys|"
+    r"lytic (bone|lesion|metaphys)|"
+    r"periosteal (new bone|prolif)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4776,6 +4799,53 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for pulmonary mets.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for pulmonary mets.")
+
+    osa_named = spec in {"dog", "cat"} and OSA_RE.search(text)
+    path_fx = spec in {"dog", "cat"} and PATH_FX_RE.search(text)
+    lytic_site = spec in {"dog", "cat"} and (
+        OSA_SITE_RE.search(text) and LYTIC_BONE_RE.search(text)
+    )
+    if osa_named or path_fx or lytic_site:
+        if spec == "cat":
+            osa_loc = (
+                "Feline osteosarcoma. Less aggressive than the dog. "
+                "Not a plate-and-home."
+            )
+        else:
+            osa_loc = (
+                "Canine osteosarcoma. Nontraumatic pathologic fracture, "
+                "not a plate-and-home. Chest staging is 198."
+            )
+        localization = f"{localization} Also {osa_loc}" if localization else osa_loc
+        hard_stops.append(
+            "Do not plate a pathologic fracture as trauma. "
+            "Do not harvest 1–2 months as lobby law. "
+            "Do not amputate before a chest film."
+        )
+        do_not.append(
+            "Printed 1–2 / 4–6.5 / 9–12 months and carboplatin / cisplatin / "
+            "doxorubicin stay on the page. "
+            "Cats are not the dog script. "
+            "Not hypertrophic osteopathy. Not IVDD knuckle."
+        )
+        do_next.append(
+            "Film the bone. Jamshidi or Michele confirms. "
+            "Thoracic films are packet 198. Pain △ Plumb. "
+            "Amputation is the local conversation after staging."
+        )
+        sources.append(
+            "Merck bone tumors in dogs and cats (Chou, Nov 2025): "
+            "osteosarcoma most common; nontraumatic pathologic fracture; "
+            "Jamshidi / Michele confirms; printed 1–2 months stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a lytic metaphysis or pathologic fracture home as a sprain."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for bone pain.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for a bone tumor.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

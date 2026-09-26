@@ -2843,6 +2843,60 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("metastatic pulmonary nodules", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dog_pathologic_fracture_is_osa(self):
+        b = analyze(
+            "dog",
+            "pathologic fracture, distal radius, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("nontraumatic pathologic fracture, not a plate-and-home", loc)
+        self.assertIn("chest staging is 198", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("plate a pathologic fracture", joined)
+        self.assertIn("1–2 months", joined)
+        self.assertIn("jamshidi", joined)
+        self.assertIn("as a sprain", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_distal_radius_lytic_is_osa(self):
+        b = analyze("dog", "distal radius, osteolysis, bone swelling")
+        loc = b["localization"].lower()
+        self.assertIn("canine osteosarcoma", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_multiple_nodules_is_not_osa_bone(self):
+        b = analyze("dog", "multiple pulmonary nodules, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("metastatic pulmonary nodules", loc)
+        self.assertNotIn("not a plate-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_osa(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("not a plate-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ho_is_not_osa_bone(self):
+        b = analyze("dog", "hypertrophic osteopathy, lame")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine primary lung tumor", loc)
+        self.assertNotIn("not a plate-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_trauma_radius_fracture_is_not_osa(self):
+        b = analyze("dog", "hit by car, distal radius fracture")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("not a plate-and-home", loc)
+        self.assertNotIn("canine osteosarcoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

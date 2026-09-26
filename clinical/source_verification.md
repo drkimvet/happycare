@@ -1788,3 +1788,21 @@ Book/public traps:
 - Do not call cannonball nodules a primary-lung incidental.
 
 Night rule: high-met primary or multiple lung nodules → **stage the chest before you cut.** △ Plumb.
+
+## 199. Canine osteosarcoma / pathologic fracture (Merck Chou Nov 2025)
+
+No dedicated Plunkett osteosarcoma chapter in the owned SA EM splits. Public Merck bone tumors in dogs and cats (Chou). Packet 198 still owns the chest before you cut. Packet 197 still owns hypertrophic osteopathy. Packet 185 still owns knuckle / IVDD. Skip equine bone tumors as their own packet. **Do not harvest 1–2 / 4–6.5 / 9–12 months, or carboplatin / cisplatin / doxorubicin, as lobby law.**
+
+Agree with Chou: incidence is markedly lower in cats than dogs. Dogs: distal radius, proximal humerus, distal femur, or proximal tibia. Cats: evenly appendicular and axial. Osteosarcoma is the most common primary bone tumor — over 80% of bone tumors in dogs, over 50% in cats. Also chondrosarcoma, fibrosarcoma, hemangiosarcoma. Signs: lameness, bone swelling, and an **acute, nontraumatic pathological bone fracture**. Radiographs: osteolysis, proliferation, soft-tissue swelling. Thoracic radiographs to look for mets — that film is 198. **Bone biopsy (Michele trephine or Jamshidi) is imperative to confirm.** Treatment: amputation, chemotherapy (carboplatin / cisplatin / doxorubicin named only), sometimes radiation. Palliation: NSAIDs, opioids, or radiation — △ Plumb / kidneys. Untreated dogs: printed 1–2 months from pain or fractures. Amputation alone: printed 4–6.5 months. Amputation plus chemotherapy: printed 9–12 months. Mandible / scapula printed ~18 months; limbs ~11; spine / skull ~6 — stay on the page. Most dogs die of pulmonary metastasis. High ALP, proximal humerus, and young age are negative indicators. **Feline osteosarcoma is much less aggressive**; amputation median survival printed 2–4 years. Chondrosarcoma is the second most common primary bone tumor in dogs and is slower to metastasize.
+
+Night split: nontraumatic fracture through a lytic metaphysis is a tumor, not a plate-and-home. Named osteosarcoma still needs 198 before you amputate. Multiple lung nodules without a bone story stay 198. HO is 197. Knuckle / IVDD is 185. A hit-by-car radius without lysis is trauma. Cats are not the dog MST script.
+
+Book/public traps:
+
+- Printed 1–2 / 4–6.5 / 9–12 months and named chemo drugs stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not plate a pathologic fracture as trauma.
+- Do not amputate before a chest film (198).
+- Do not NSAID an azotemic patient for bone pain.
+
+Night rule: dog, nontraumatic pathologic fracture or lytic distal radius → **tumor until the biopsy, not a plate-and-home.** △ Plumb.

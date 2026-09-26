@@ -127,6 +127,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-nmass` | Assessment | Nasal neoplasia / epistaxis mass |
 | `ddx-lmass` | Assessment | Primary lung tumor / incidental lung mass |
 | `ddx-pmet` | Assessment | Metastatic pulmonary nodules / staging chest |
+| `ddx-osa` | Assessment | Osteosarcoma / pathologic fracture |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -213,6 +214,7 @@ Suggested names are short so they show up after three letters.
 | `dc-nmass` | Discharge | After nasal mass / epistaxis talk |
 | `dc-lmass` | Discharge | After lung mass / incidental-nodule talk |
 | `dc-pmet` | Discharge | After pulmonary mets / staging-chest talk |
+| `dc-osa` | Discharge | After osteosarcoma / pathologic-fracture talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1528,6 +1530,21 @@ DDX:
 Do not: cut a high-met primary before a chest film. Harvest 3 mm / 40% as lobby law. Send multiple nodules home as just old.
 Do next: chest rads or CT. Hunt the primary. △ Plumb.
 
+### `ddx-osa`
+
+Osteosarcoma — {{patient.name}}
+Site [distal radius / proximal humerus / distal femur / proximal tibia / axial]. Pathologic fracture [Y/N]. Lysis [ ]. Chest [rads / CT / not yet]. Biopsy [Jamshidi / Michele / not yet].
+
+DDX:
+1. Osteosarcoma — **nontraumatic pathologic fracture, not a plate-and-home**
+2. Dogs: distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script
+3. Jamshidi / Michele confirms. Chest films before you amputate (198)
+4. Printed 1–2 / 4–6.5 / 9–12 months stay on the page. Named chemo stays on the page
+5. Not HO (197). Not IVDD knuckle (185). Not a hit-by-car radius without lysis
+
+Do not: plate a pathologic fracture as trauma. Harvest 1–2 months as lobby law. Amputate before a chest film. NSAID an azotemic patient for bone pain.
+Do next: film the bone. Biopsy. Thoracic films. Pain △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2251,6 +2268,14 @@ Return now for trouble breathing, collapse, not eating, or a new lame leg. {{loc
 Give only the medicines we sent, as labeled. Limit activity as discussed until staging is done.
 
 Return now for trouble breathing, collapse, not eating, or a new lame leg. {{location.phonenumber}}
+
+### `dc-osa`
+
+{{patient.name}} was evaluated for a bone tumor / a break through weak bone. This is not a sprain and not a plate-and-home fracture. Chest films come before amputation talk.
+
+Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet and off the bad leg as discussed.
+
+Return now for worse pain, a snap in the leg, trouble breathing, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
