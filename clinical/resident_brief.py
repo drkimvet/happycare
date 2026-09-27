@@ -1084,6 +1084,15 @@ NME_RE = re.compile(
     r"necrotizing leukoencephal",
     re.I,
 )
+# Bare "pug" / "seizure" is 116. Bare "patent fontanelle" is not enough.
+# Not NME (207). Not GME (206). Not HE (139). Not oto (208).
+HYDRO_RE = re.compile(
+    r"hydrocephalus|"
+    r"dome[- ]?(shaped )?head|"
+    r"domed head|"
+    r"setting[- ]sun",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5132,6 +5141,7 @@ def analyze(
     steal_gme = GME_RE.search(text)
     steal_nme = NME_RE.search(text)
     steal_oto = OTO_MEN_RE.search(text)
+    steal_hydro = HYDRO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5142,6 +5152,7 @@ def analyze(
         or steal_gme
         or steal_nme
         or steal_oto
+        or steal_hydro
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5382,6 +5393,51 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for otogenic meningitis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for otogenic meningitis.")
+
+    hydro_named = spec in {"dog", "cat"} and HYDRO_RE.search(text)
+    if hydro_named and not (
+        NME_RE.search(text)
+        or GME_RE.search(text)
+        or HE_RE.search(text)
+        or OTO_MEN_RE.search(text)
+    ):
+        hydro_loc = (
+            "Hydrocephalus. Dome-head puppy is not idiopathic epilepsy. "
+            "Ultrasound through the fontanelle."
+        )
+        localization = f"{localization} Also {hydro_loc}" if localization else hydro_loc
+        hard_stops.append(
+            "Do not send a dome-head seizuring puppy home as idiopathic epilepsy. "
+            "Do not harvest omeprazole, acetazolamide, or pred as lobby law. "
+            "Do not treat hydrocephalus as NME-only."
+        )
+        do_not.append(
+            "Toy and brachycephalic dogs. Signs often progress; some stay subclinical. "
+            "Ventricles keep a complete ependymal lining. Setting-sun strabismus stays on the page. "
+            "Printed 1–10 / 10 / 0.5–1 stay on the page. "
+            "Not hydranencephaly-only. Not NME-only. Not HE-only. Not oto-only."
+        )
+        do_next.append(
+            "Ultrasound through the fontanelle. CT / MRI. Stop the seizure (116). "
+            "Check glucose. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebral (Parsley, Mar 2026): "
+            "hydrocephalus; dome-shaped head; ventrolateral setting-sun strabismus; "
+            "ultrasound through the fontanelle, CT, or MRI; "
+            "printed omeprazole / acetazolamide / pred stay on the page; "
+            "or shunt CSF into the peritoneum."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a dome-head seizuring puppy home as idiopathic epilepsy."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest omeprazole, acetazolamide, or pred as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hydrocephalus.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hydrocephalus.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

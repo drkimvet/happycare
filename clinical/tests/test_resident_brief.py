@@ -3465,6 +3465,81 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("otogenic meningitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hydrocephalus_is_dome_head_not_epilepsy(self):
+        b = analyze(
+            "dog",
+            "hydrocephalus, dome-shaped head, setting-sun, seizures, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("hydrocephalus", loc)
+        self.assertIn("dome-head puppy is not idiopathic epilepsy", loc)
+        self.assertIn("ultrasound through the fontanelle", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("omeprazole", joined)
+        self.assertIn("setting-sun", joined)
+        self.assertIn("stop the seizure", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydrocephalus_is_not_nme(self):
+        b = analyze("dog", "hydrocephalus, dome-head puppy, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head puppy is not idiopathic epilepsy", loc)
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertNotIn("pug encephalitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nme_is_not_hydrocephalus(self):
+        b = analyze("dog", "NME, pug encephalitis, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fatal necrosis", loc)
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gme_is_not_hydrocephalus(self):
+        b = analyze("dog", "GME, MUO, prednisolone")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mri and csf", loc)
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_otogenic_is_not_hydrocephalus(self):
+        b = analyze("dog", "otogenic meningitis, otitis interna, dull, febrile")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ear-to-brain tonight", loc)
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_yorkie_he_is_not_hydrocephalus(self):
+        b = analyze("dog", "Yorkshire Terrier, hepatic encephalopathy, lactulose")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pug_seizure_is_not_hydrocephalus(self):
+        b = analyze("dog", "pug, seizure, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_chihuahua_is_not_hydrocephalus(self):
+        b = analyze("dog", "Chihuahua, patent fontanelle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydranencephaly_is_not_hydrocephalus(self):
+        b = analyze("cat", "hydranencephaly, panleukopenia, circling")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -1971,3 +1971,21 @@ Book/public traps:
 - Otitis interna does not cause altered mentation.
 
 Night rule: dull + febrile + an ear → **ear-to-brain tonight, not just a tilt.** △ Plumb.
+
+## 209. Hydrocephalus / dome-head puppy (Merck Parsley Mar 2026)
+
+No dedicated Plunkett hydrocephalus chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley). Packet 207 still owns named NME. Packet 206 still owns named GME. Packet 208 still owns named otogenic. Packet 139 still owns HE / shunt. Packet 116 still owns seizure drugs. Hydranencephaly / FPV kitten on the same page is the next room, not this dump. Skip large-animal hydrocephalus / calf vitamin A. Skip lissencephaly, pendular nystagmus, congenital deafness, and Standard Poodle neonatal encephalopathy as their own packets. Do not harvest omeprazole 1–10, acetazolamide 10, or pred 0.5–1 as lobby law.
+
+Agree with Parsley: hydrocephalus is an increase in CSF volume. It can look like hydranencephaly; in hydrocephalus the ventricles retain a complete ependymal lining. When born alive, affected animals often have a characteristic dome-shaped head. They might also have decreased appetite, seizures, lethargy, and altered mental status. Most common in dogs, particularly toy and brachycephalic breeds. Communicating (nonobstructive) vs noncommunicating (obstructive). Known obstructive causes: atresia of the mesencephalic aqueduct, perinatal encephalitis, or adhesions from intraventricular hemorrhage at birth. Signs usually indicate cerebral dysfunction and often progress; some animals remain subclinical. Fontanelles are often patent. Ventrolateral strabismus / setting-sun stays on the page. Imaging: ultrasonography through the fontanelle, CT, or MRI. CSF analysis should show encephalitis. Printed omeprazole / acetazolamide / pred stay on the page, or surgery to shunt CSF into the peritoneum. Parsley idiopathic-epilepsy line: diagnosis depends on eliminating structural brain abnormalities such as hydrocephalus.
+
+Night split: named hydrocephalus / dome-head / setting-sun is a structural puppy tonight, not idiopathic epilepsy. Bare pug or Chihuahua seizure does not fire. Named NME stays 207. Named GME stays 206. Named oto stays 208. Yorkie HE without hydro words stays 139.
+
+Book/public traps:
+
+- Do not send a dome-head seizuring puppy home as idiopathic epilepsy.
+- Do not harvest omeprazole / acetazolamide / pred as lobby law.
+- Do not treat hydrocephalus as NME-only.
+- Do not skip ultrasound through the fontanelle.
+- Printed 1–10 / 10 / 0.5–1 stay on the page.
+
+Night rule: dome-head puppy + neuro → **not idiopathic epilepsy; ultrasound through the fontanelle.** △ Plumb.

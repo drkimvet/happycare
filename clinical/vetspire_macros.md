@@ -137,6 +137,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gme` | Assessment | GME / MUO |
 | `ddx-nme` | Assessment | NME / pug encephalitis |
 | `ddx-oto` | Assessment | Otogenic meningitis / ear-to-brain |
+| `ddx-hydro` | Assessment | Hydrocephalus / dome-head puppy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -233,6 +234,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gme` | Discharge | After GME / MUO talk |
 | `dc-nme` | Discharge | After NME / pug-encephalitis talk |
 | `dc-oto` | Discharge | After otogenic / ear-to-brain talk |
+| `dc-hydro` | Discharge | After hydrocephalus / dome-head talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1698,6 +1700,21 @@ DDX:
 Do not: send a dull febrile ear home as just a tilt. Pred as SRMA. Harvest a 3–6 week clock. Put ototoxic drops in a middle ear you cannot see.
 Do next: Look in both ears. MRI / CT. CSF. Culture the middle ear. △ Plumb.
 
+### `ddx-hydro`
+
+Hydrocephalus — {{patient.name}}
+Head [dome / normal]. Fontanelle [patent / closed / US done]. Eyes [setting-sun / other]. Seizures [Y/N]. Glucose [ ]. Imaging [US / CT / MRI / not yet]. Referring [Y/N].
+
+DDX:
+1. Hydrocephalus — **dome-head puppy is not idiopathic epilepsy**
+2. Setting-sun / ventrolateral strabismus. Fontanelles often patent
+3. Toy / brachycephalic. Signs often progress; some stay subclinical
+4. Ultrasound through the fontanelle. CT / MRI. Stop the seizure (116)
+5. Not NME-only (207). Not GME-only (206). Not HE-only (139). Not oto (208). Not hydranencephaly-only
+
+Do not: send a dome-head seizuring puppy home as idiopathic epilepsy. Harvest omeprazole / acetazolamide / pred. Treat hydrocephalus as NME-only. Skip the fontanelle.
+Do next: Ultrasound through the fontanelle. CT / MRI. Stop the seizure. Check glucose. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2501,6 +2518,14 @@ Return now for more seizures, collapse, blindness, or not eating. {{location.pho
 Give only the medicines we sent, as labeled. Do not put leftover ear drops in without a veterinarian checking the eardrum. Do not start a steroid from the cabinet.
 
 Return now for dullness, fever, not eating, seizures, or a worsening head tilt. {{location.phonenumber}}
+
+### `dc-hydro`
+
+{{patient.name}} was evaluated for possible hydrocephalus (extra fluid in the brain). A dome-shaped head in a puppy is not ordinary epilepsy. Ultrasound through the open soft spot, or a CT / MRI, is the test.
+
+Give only the medicines we sent, as labeled. Do not start omeprazole, a water pill, or a steroid from the cabinet.
+
+Return now for more seizures, collapse, blindness, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
