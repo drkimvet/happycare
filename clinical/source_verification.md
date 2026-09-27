@@ -1846,3 +1846,21 @@ Book/public traps:
 - Do not treat a cat as a small dog — infection first.
 
 Night rule: fever plus shifting lameness plus more than one joint → **three taps tonight, not a steroid.** △ Plumb.
+
+## 202. Infectious endocarditis / fever plus new murmur (Merck Kittleson Jan 2023 / May 2025)
+
+No dedicated Plunkett endocarditis chapter in the owned SA EM splits. Public Merck infectious endocarditis in dogs and cats (Kittleson). Packet 189 still owns Bartonella / culture-negative aortic valve. Packet 201 still owns IMPA type II once you have many joints. Packet 184 still owns Lyme shifting without a murmur. Skip cattle mastitis IE as its own packet. **Do not harvest amp+gent, 1–2 weeks parenteral, or 6–8 weeks oral as lobby law.**
+
+Agree with Kittleson: infection usually sits on AV or aortic valves. SAS can predispose; a normal valve can still get it. Rare in cats. Dogs: middle-aged large-breed males more often. Emboli go to organs and limbs — neuro / GI / urine / joints can be the room. **Fever is usually there** (intermittent or continuous). Shifting lameness, weight loss, lethargy. Mitral or aortic destruction → left-sided failure (edema, tachypnea, cough). Tricuspid is rare (ascites / jugular pulses). **A murmur is present in most cases.** Isolates: Streptococcus, Staphylococcus, Klebsiella, E. coli; Bartonella is the culture-neg aortic list (189). CBC: neutrophilic leukocytosis and anemia of chronic disease. Blood cultures plus sensitivity; if blood is negative, urine can grow the organism. **Blood cultures may be negative even with bacterial lesions. Echocardiography is the diagnostic test of choice** — hyperechoic, thickened, often vegetative. Treat failure (furosemide / ACE / pimobendan named only) and sterilize the valve. Aortic destruction can make failure intractable — that prognosis stays grave on the page. Printed 1–2 week parenteral then 6–8 week oral stay on the page. **Routine dental prophylaxis is not warranted for myxomatous mitral disease.** SAS: prophylaxis when a procedure will shower bacteria.
+
+Night split: fever plus a new or diastolic murmur is echo tonight, not “just a fever” and not Lasix-as-MMVD. Culture-negative aortic valve is still 189. Many joints without a murmur stay 201. Lyme shifting without a murmur stays 184. Do not pred FUO.
+
+Book/public traps:
+
+- Printed 1–2 / 6–8 weeks and amp+gent / enro / cephalothin+gent stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not send fever plus a new murmur home as just a fever.
+- Do not dental-prophy every MMVD dog “for IE.”
+- Do not skip echo because the blood culture is pending.
+
+Night rule: large-breed dog, fever plus a new murmur → **blood cultures and echo tonight, not a steroid.** △ Plumb.

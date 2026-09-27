@@ -130,6 +130,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-osa` | Assessment | Osteosarcoma / pathologic fracture |
 | `ddx-jtap` | Assessment | Septic arthritis / hot joint tap |
 | `ddx-impa` | Assessment | IMPA / multi-joint tap |
+| `ddx-ie` | Assessment | Infectious endocarditis / fever + new murmur |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -219,6 +220,7 @@ Suggested names are short so they show up after three letters.
 | `dc-osa` | Discharge | After osteosarcoma / pathologic-fracture talk |
 | `dc-jtap` | Discharge | After septic joint / tap talk |
 | `dc-impa` | Discharge | After IMPA / multi-joint tap talk |
+| `dc-ie` | Discharge | After endocarditis / echo talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1579,6 +1581,21 @@ DDX:
 Do not: pred-first before three taps and a culture. Harvest prednisolone / aza / cyclosporine. Call one hot joint IMPA.
 Do next: three taps, especially carpi and tarsi. Culture. Tick panel. △ Plumb.
 
+### `ddx-ie`
+
+Infectious endocarditis — {{patient.name}}
+Fever [ ]. Murmur [new / diastolic / old / none]. Valve [aortic / mitral / unknown]. Culture [blood / urine / neg / pending]. Echo [veg / not yet]. SAS [ ]. CHF [ ].
+
+DDX:
+1. Infectious endocarditis — **fever plus a new murmur is echo tonight**
+2. Staph / strep / Klebsiella / E. coli. Blood cultures can be negative
+3. Bartonella if culture-neg aortic (189). SAS predisposes; normal valves still get it
+4. Printed 1–2 / 6–8 weeks stay on the page. No routine dental prophy for MMVD
+5. Not IMPA-only (201). Not Lyme-only shifting (184). Not Lasix-as-MMVD
+
+Do not: send fever plus a new murmur home as just a fever. Harvest amp+gent / 6–8 weeks. Dental-prophy every MMVD dog.
+Do next: blood cultures. Echo. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2326,6 +2343,14 @@ Return now for worse lameness, a hotter joint, fever, or not eating. {{location.
 Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet as discussed.
 
 Return now for worse lameness, fever, not walking, or not eating. {{location.phonenumber}}
+
+### `dc-ie`
+
+{{patient.name}} was evaluated for a possible heart-valve infection. Fever plus a new heart murmur is not “just a fever.” An ultrasound of the heart is the test. Blood cultures can be negative even when the valve is infected.
+
+Give only the medicines we sent, as labeled. Limit activity as discussed.
+
+Return now for trouble breathing, collapse, fever that returns, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

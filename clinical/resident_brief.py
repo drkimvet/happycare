@@ -1013,6 +1013,22 @@ ENDOCARD_RE = re.compile(
     r"aortic vegetation",
     re.I,
 )
+CULTURE_NEG_AORTIC_RE = re.compile(
+    r"culture[- ]negativ.{0,40}aortic|"
+    r"aortic.{0,40}culture[- ]negativ",
+    re.I,
+)
+NEW_MURMUR_RE = re.compile(
+    r"new (heart )?murmur|"
+    r"diastolic murmur|"
+    r"changing murmur|"
+    r"worsening murmur",
+    re.I,
+)
+FEVER_IE_RE = re.compile(
+    r"\b(fever|febrile|pyrexia)\b",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -4380,7 +4396,9 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for hemoplasma.")
 
     bartonella_named = spec in {"dog", "cat"} and BARTONELLA_RE.search(text)
-    ie_hit = spec == "dog" and ENDOCARD_RE.search(text)
+    ie_hit = spec == "dog" and ENDOCARD_RE.search(text) and (
+        BARTONELLA_RE.search(text) or CULTURE_NEG_AORTIC_RE.search(text)
+    )
     if bartonella_named or ie_hit:
         if spec == "cat":
             bart_loc = (
@@ -4980,6 +4998,57 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for IMPA.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for IMPA.")
+
+    ie_named = spec in {"dog", "cat"} and ENDOCARD_RE.search(text)
+    if ie_named and (
+        BARTONELLA_RE.search(text) or CULTURE_NEG_AORTIC_RE.search(text)
+    ):
+        ie_named = False
+    fever_new_murmur = spec in {"dog", "cat"} and (
+        FEVER_IE_RE.search(text) and NEW_MURMUR_RE.search(text)
+    )
+    if ie_named or fever_new_murmur:
+        if spec == "cat":
+            ie_loc = (
+                "Feline infectious endocarditis. Rare. "
+                "Fever plus a new murmur is echo tonight."
+            )
+        else:
+            ie_loc = (
+                "Infectious endocarditis. Fever plus a new murmur is echo tonight. "
+                "Blood culture can be negative."
+            )
+        localization = f"{localization} Also {ie_loc}" if localization else ie_loc
+        hard_stops.append(
+            "Do not send fever plus a new murmur home as just a fever. "
+            "Do not harvest amp+gent or 6–8 weeks as lobby law. "
+            "Do not Lasix a vegetation as simple MMVD."
+        )
+        do_not.append(
+            "Printed 1–2 week parenteral / 6–8 week oral stay on the page. "
+            "Routine dental prophylaxis is not warranted for myxomatous mitral disease. "
+            "Not Bartonella-only. Not IMPA-only. Not Lyme-only shifting."
+        )
+        do_next.append(
+            "Blood cultures. Echo. Look for SAS. "
+            "Culture-negative aortic valve is still 189. "
+            "Many joints without a murmur stay 201. △ Plumb."
+        )
+        sources.append(
+            "Merck infectious endocarditis (Kittleson, Jan 2023 / May 2025): "
+            "echo is the diagnostic test of choice; blood cultures may be negative; "
+            "no routine dental prophy for MMVD."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send fever plus a new murmur home as just a fever."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not immunosuppress endocarditis as FUO.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for endocarditis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for endocarditis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

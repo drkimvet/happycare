@@ -3002,6 +3002,57 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("tap at least three joints", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_fever_new_murmur_is_ie(self):
+        b = analyze(
+            "dog",
+            "fever, new murmur, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("fever plus a new murmur is echo tonight", loc)
+        self.assertIn("blood culture can be negative", loc)
+        self.assertNotIn("culture-negative aortic valve", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just a fever", joined)
+        self.assertIn("myxomatous mitral", joined)
+        self.assertIn("6–8 week", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_named_endocarditis_is_ie(self):
+        b = analyze("dog", "infectious endocarditis, Staph, fever")
+        loc = b["localization"].lower()
+        self.assertIn("fever plus a new murmur is echo tonight", loc)
+        self.assertNotIn("culture-negative aortic valve", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_culture_neg_aortic_is_not_general_ie(self):
+        b = analyze(
+            "dog",
+            "culture-negative aortic endocarditis, fever, murmur, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("culture-negative aortic valve", loc)
+        self.assertNotIn("fever plus a new murmur is echo tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_impa_is_not_ie(self):
+        b = analyze("dog", "polyarthritis, fever, shifting lameness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("immune-mediated polyarthritis", loc)
+        self.assertNotIn("fever plus a new murmur is echo tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_shifting_is_not_ie(self):
+        b = analyze("dog", "Lyme, fever, shifting lameness, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fever plus a new murmur is echo tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_chf_edema_is_not_ie(self):
+        b = analyze("dog", "CHF pulmonary edema, give a shock bolus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fever plus a new murmur is echo tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
