@@ -1227,6 +1227,26 @@ LYTIC_BONE_RE = re.compile(
     r"periosteal (new bone|prolif)",
     re.I,
 )
+# Bare "arthritis" is OA. Bare "joint" is every ortho. Bare "lameness" is 185.
+# Not \bosa\b. Not a pathologic fracture (199).
+SEPTIC_ARTH_RE = re.compile(
+    r"septic arthrit|"
+    r"infective arthrit|"
+    r"infectious arthrit|"
+    r"septic joint",
+    re.I,
+)
+ARTHRO_TAP_RE = re.compile(
+    r"arthrocentesis|"
+    r"joint tap",
+    re.I,
+)
+HOT_JOINT_RE = re.compile(
+    r"(hot|swollen) joint|"
+    r"joint (heat|effusion|swell)|"
+    r"purulent (joint|synov)",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4846,6 +4866,47 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for bone pain.")
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for a bone tumor.")
+
+    septic_named = spec in {"dog", "cat"} and SEPTIC_ARTH_RE.search(text)
+    joint_tap = spec in {"dog", "cat"} and ARTHRO_TAP_RE.search(text)
+    hot_joint = spec in {"dog", "cat"} and HOT_JOINT_RE.search(text)
+    if (septic_named or joint_tap or hot_joint) and not (
+        OSA_RE.search(text)
+        or PATH_FX_RE.search(text)
+        or (OSA_SITE_RE.search(text) and LYTIC_BONE_RE.search(text))
+    ):
+        jtap_loc = (
+            "Septic arthritis. Tap the hot joint tonight. "
+            "Culture-negative does not rule it out."
+        )
+        localization = f"{localization} Also {jtap_loc}" if localization else jtap_loc
+        hard_stops.append(
+            "Do not send a hot joint home as a sprain. "
+            "Do not harvest amox-clav 22 as lobby law. "
+            "Culture-negative is not a rule-out."
+        )
+        do_not.append(
+            "Printed 22 mg/kg / 6 weeks / 3,000 stay on the page. "
+            "Lavage is not the default. "
+            "Not IVDD. Not a plate-and-home fracture. Not pred-first."
+        )
+        do_next.append(
+            "Arthrocentesis. Cytology plus culture. Start after the tap. "
+            "Pain △ Plumb. Azotemic: still no NSAID."
+        )
+        sources.append(
+            "Merck septic arthritis in dogs and cats (Lafuente, Dec 2025): "
+            "tap; culture can be negative in up to 50%; "
+            "printed amox-clav 22 stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a hot joint home as a sprain.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not pred-first a hot joint before you tap.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for a hot joint.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for a hot joint.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

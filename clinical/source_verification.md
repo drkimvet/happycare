@@ -1806,3 +1806,23 @@ Book/public traps:
 - Do not NSAID an azotemic patient for bone pain.
 
 Night rule: dog, nontraumatic pathologic fracture or lytic distal radius → **tumor until the biopsy, not a plate-and-home.** △ Plumb.
+
+## 200. Septic arthritis / hot joint tap (Merck Lafuente Dec 2025)
+
+No dedicated Plunkett septic-arthritis chapter in the owned SA EM splits. Public Merck septic arthritis in dogs and cats (Lafuente). Packet 199 still owns the lytic metaphysis / pathologic fracture. Packet 185 still owns knuckle / IVDD. Packet 184 still owns Lyme shifting lameness. Packet 183 still owns RMSF / ehrlichia. Skip equine joint infection as its own packet. **Do not harvest amoxicillin–clavulanic acid 22 mg/kg, q8–12 h, or a 6-week table as lobby law.**
+
+Agree with Lafuente: infectious arthritis is most often bacterial — staphylococci, streptococci, coliforms. Routes: hematogenous, direct inoculation (including surgery), or extension from adjacent tissue. Degenerated joints are more permeable. Other named agents (blasto / cocci / RMSF / ehrlichia / borrelia / mycoplasma / leishmania) stay on their own packets. Signs: lameness, swelling, joint pain, and sometimes fever / malaise / anorexia / stiffness — not all are required. Early rads: effusion and soft-tissue swelling. Arthrocentesis: more WBCs, especially neutrophils (printed > 3,000/mcL). Bacteria might be visible. Fluid can be grossly purulent. Culture can confirm, **but culture can be negative in up to 50%**. Serology is for the nonbacterial list.
+
+Treatment: antimicrobials for printed 4–6 weeks (generally 6) plus analgesics. Printed amox-clav 22 mg/kg PO every 8–12 hours for 6 weeks stays on the page. Cephalosporins are named. Severe: IV antimicrobials and opioids in hospital. Lavage / debridement is not necessary in most cases. Early treatment matters because the joint can be destroyed.
+
+Night split: a hot swollen joint is a tap tonight, not a sprain-and-home and not pred-first. Culture-negative is not a rule-out. Lytic metaphysis / pathologic fracture is still 199. Knuckle is still 185. Lyme shifting without a hot joint is still 184. Azotemic: still no NSAID.
+
+Book/public traps:
+
+- Printed 22 mg/kg / 6 weeks / 3,000/mcL / 50% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not send a hot joint home as a sprain.
+- Do not treat on culture-negative as “not septic.”
+- Do not lavage every joint as the default.
+
+Night rule: hot swollen joint, lame → **tap tonight, then start. Culture-negative does not rule it out.** △ Plumb.

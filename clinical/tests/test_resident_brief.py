@@ -2897,6 +2897,58 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine osteosarcoma", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hot_swollen_joint_is_septic(self):
+        b = analyze(
+            "dog",
+            "hot swollen joint, lame, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tap the hot joint tonight", loc)
+        self.assertIn("culture-negative does not rule it out", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("as a sprain", joined)
+        self.assertIn("amox-clav 22", joined)
+        self.assertIn("arthrocentesis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_named_septic_arthritis_culture_can_be_negative(self):
+        b = analyze("dog", "septic arthritis, culture negative")
+        loc = b["localization"].lower()
+        self.assertIn("culture-negative does not rule it out", loc)
+        joined = " ".join(b["do_not"]).lower()
+        self.assertIn("3,000", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_septic_joint(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("tap the hot joint tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pathologic_fracture_is_not_septic_joint(self):
+        b = analyze("dog", "pathologic fracture, distal radius, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("not a plate-and-home", loc)
+        self.assertNotIn("tap the hot joint tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_shifting_is_not_septic_joint(self):
+        b = analyze("dog", "Lyme, fever, shifting lameness, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tap the hot joint tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_osa_lytic_radius_is_not_septic_joint(self):
+        b = analyze("dog", "distal radius, osteolysis, bone swelling")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine osteosarcoma", loc)
+        self.assertNotIn("tap the hot joint tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

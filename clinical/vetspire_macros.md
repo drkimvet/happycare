@@ -128,6 +128,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lmass` | Assessment | Primary lung tumor / incidental lung mass |
 | `ddx-pmet` | Assessment | Metastatic pulmonary nodules / staging chest |
 | `ddx-osa` | Assessment | Osteosarcoma / pathologic fracture |
+| `ddx-jtap` | Assessment | Septic arthritis / hot joint tap |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -215,6 +216,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lmass` | Discharge | After lung mass / incidental-nodule talk |
 | `dc-pmet` | Discharge | After pulmonary mets / staging-chest talk |
 | `dc-osa` | Discharge | After osteosarcoma / pathologic-fracture talk |
+| `dc-jtap` | Discharge | After septic joint / tap talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1545,6 +1547,21 @@ DDX:
 Do not: plate a pathologic fracture as trauma. Harvest 1–2 months as lobby law. Amputate before a chest film. NSAID an azotemic patient for bone pain.
 Do next: film the bone. Biopsy. Thoracic films. Pain △ Plumb.
 
+### `ddx-jtap`
+
+Septic arthritis — {{patient.name}}
+Joint [ ]. Heat / swell [ ]. Fever [ ]. Fluid [purulent / cloudy / not yet]. Tap [ ]. Neutrophils [ ]. Culture [pending / neg / pos]. Surgery / wound [ ].
+
+DDX:
+1. Septic arthritis — **tap the hot joint tonight**. Culture-negative does not rule it out
+2. Staph / strep / coliforms. Inoculation, hematogenous, or next-door. Degenerated joints are easier to infect
+3. Printed 22 / 6 weeks / 3,000 stay on the page. Lavage is not the default
+4. Not a sprain. Not pred-first. Not IVDD (185). Not a plate-and-home fracture (199)
+5. Lyme shifting without a hot joint is still 184
+
+Do not: send a hot joint home as a sprain. Harvest amox-clav 22 as lobby law. Treat culture-negative as “not septic.”
+Do next: arthrocentesis. Cytology plus culture. Start after the tap. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2276,6 +2293,14 @@ Return now for trouble breathing, collapse, not eating, or a new lame leg. {{loc
 Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet and off the bad leg as discussed.
 
 Return now for worse pain, a snap in the leg, trouble breathing, or not eating. {{location.phonenumber}}
+
+### `dc-jtap`
+
+{{patient.name}} was evaluated for a painful swollen joint. This is not a sprain. A joint tap tells us if there is infection. A negative culture does not always mean the joint is clean.
+
+Give only the medicines we sent, as labeled. Finish the antibiotic if one was started. Keep {{patient.pronoun}} quiet as discussed.
+
+Return now for worse lameness, a hotter joint, fever, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
