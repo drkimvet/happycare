@@ -3129,6 +3129,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("fever is not heatstroke to ice", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_named_fip_taps_the_effusion(self):
+        b = analyze(
+            "cat",
+            "FIP, wet FIP, effusion, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("feline infectious peritonitis", loc)
+        self.assertIn("tap the effusion", loc)
+        self.assertIn("a titer is not a diagnosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("titer as fip", joined)
+        self.assertIn("84-day", joined)
+        self.assertIn("rivalta", joined)
+        self.assertIn("no single antemortem", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_named_fip_is_not_fuo(self):
+        b = analyze("cat", "FIP, FUO, recurrent fever, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the effusion", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("feline fuo", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fuo_without_fip_is_not_fip(self):
+        b = analyze("cat", "FUO, recurrent fever, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline fuo", loc)
+        self.assertIn("fip on the list", loc)
+        self.assertNotIn("tap the effusion", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_fip(self):
+        b = analyze("dog", "FIP, wet FIP, effusion")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tap the effusion", loc)
+        self.assertNotIn("a titer is not a diagnosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pyothorax_is_not_fip(self):
+        b = analyze("cat", "pyothorax pleural effusion, one tap and send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pleural", loc)
+        self.assertNotIn("tap the effusion", loc)
+        self.assertNotIn("a titer is not a diagnosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_uveitis_alone_is_not_fip(self):
+        b = analyze("cat", "uveitis, red eye, flare")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tap the effusion", loc)
+        self.assertNotIn("a titer is not a diagnosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coronavirus_diarrhea_is_not_fip(self):
+        b = analyze("cat", "coronavirus, diarrhea, FCoV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tap the effusion", loc)
+        self.assertNotIn("a titer is not a diagnosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

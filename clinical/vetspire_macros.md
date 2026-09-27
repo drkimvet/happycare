@@ -132,6 +132,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-impa` | Assessment | IMPA / multi-joint tap |
 | `ddx-ie` | Assessment | Infectious endocarditis / fever + new murmur |
 | `ddx-fuo` | Assessment | FUO / do not pred first |
+| `ddx-fip` | Assessment | FIP / tap the effusion |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -223,6 +224,7 @@ Suggested names are short so they show up after three letters.
 | `dc-impa` | Discharge | After IMPA / multi-joint tap talk |
 | `dc-ie` | Discharge | After endocarditis / echo talk |
 | `dc-fuo` | Discharge | After FUO / do-not-pred talk |
+| `dc-fip` | Discharge | After FIP / effusion-tap talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1613,6 +1615,21 @@ DDX:
 Do not: pred FUO first. Ice true fever. Harvest pred / NSAID tables / the human 2–3 week definition. Start trial steroids if referring.
 Do next: stage 1 labs / films / urine culture. Blood culture. Joint taps in the dog. Echo if murmur. △ Plumb.
 
+### `ddx-fip`
+
+FIP — {{patient.name}}
+Age [ ]. Housing [single / multicat / shelter]. Effusion [none / belly / chest / both]. Color / stickiness [ ]. A:G [ ]. Rivalta [neg / pos / not done]. Titer [ ]. Eyes [ ]. Neuro [ ]. Referring [Y/N].
+
+DDX:
+1. Feline infectious peritonitis — **tap the effusion**. A titer is not a diagnosis
+2. There is no single antemortem test. Rivalta negative makes FIP very unlikely; positive is not specific
+3. Wet / dry overlap. Fluctuating fever that does not answer antimicrobials
+4. Printed 15 / 84 days / 12 weeks stay on the page. Do not pred FIP first as the antiviral
+5. Not FUO-only (203). Not pyothorax-only. Not uveitis-only. Not lymphoma-only
+
+Do not: treat a coronavirus titer as FIP. Harvest GS-441524 15 / 84 days. Drain the belly just because it is there. Pred as the antiviral.
+Do next: tap effusion. Cytology plus protein / A:G. Look at the eyes. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2376,6 +2393,14 @@ Return now for trouble breathing, collapse, fever that returns, or not eating. {
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse fever, collapse, not eating, trouble breathing, or new lameness. {{location.phonenumber}}
+
+### `dc-fip`
+
+{{patient.name}} was evaluated for possible feline infectious peritonitis. A coronavirus blood titer is not a diagnosis. If fluid is present, sampling that fluid is the useful test. Steroids are not the antiviral.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for trouble breathing, a bigger belly, collapse, seizures, not eating, or fever that returns. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

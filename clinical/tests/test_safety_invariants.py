@@ -455,6 +455,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("fever of unknown origin", VERIF.lower())
         self.assertIn("do not pred", VERIF.lower())
         self.assertIn("external cooling not recommended", VERIF.lower())
+        self.assertIn("feline infectious peritonitis", VERIF.lower())
+        self.assertIn("a titer is not a diagnosis", VERIF.lower())
+        self.assertIn("no single antemortem", VERIF.lower())
+        self.assertIn("rivalta", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -715,6 +719,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-ie`", MACRO)
         self.assertIn("`ddx-fuo`", MACRO)
         self.assertIn("`dc-fuo`", MACRO)
+        self.assertIn("`ddx-fip`", MACRO)
+        self.assertIn("`dc-fip`", MACRO)
         self.assertIn("culture alone is not a diagnosis", MACRO.lower())
         self.assertIn("intact cribriform", MACRO.lower())
         self.assertIn("facial deformity plus epistaxis is a mass until proven", MACRO.lower())
@@ -726,6 +732,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("fever plus a new murmur is echo tonight", MACRO.lower())
         self.assertIn("do not pred fuo first", MACRO.lower())
         self.assertIn("external cooling not recommended", MACRO.lower())
+        self.assertIn("tap the effusion", MACRO.lower())
+        self.assertIn("a titer is not a diagnosis", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())
@@ -937,6 +945,9 @@ class PublicCardInvariants(unittest.TestCase):
             "fever of unknown origin",
             "do not pred",
             "external cooling not recommended",
+            "feline infectious peritonitis",
+            "a titer is not a diagnosis",
+            "tap the effusion",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

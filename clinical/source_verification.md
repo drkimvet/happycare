@@ -1881,3 +1881,21 @@ Book/public traps:
 - ANA / RF alone do not diagnose.
 
 Night rule: named FUO → do not pred first; fever is not heatstroke to ice. △ Plumb.
+
+## 204. Feline infectious peritonitis / FIP fever (Merck Roman Jan 2024 / Apr 2026)
+
+No dedicated Plunkett FIP chapter in the owned SA EM splits. Public Merck feline infectious peritonitis (Roman). Packet 203 still owns unnamed feline FUO (FIP stays on that list). Packet 201 still owns named IMPA. Packet 202 still owns fever plus a new murmur. Uveitis without FIP words stays the uveitis gate. Pyothorax without FIP words stays pleural. Skip cheetah / wild Felidae as their own packet. Do not harvest GS-441524 15 mg/kg, remdesivir 10–20, GC376 15, molnupiravir 12.8–14.6, pred 2–4, or the 84-day / 12-week clock as lobby law. AAFP/EveryCat 2022 and ABCD named only — no guideline dump.
+
+Agree with Roman: FIP is a severe immune-mediated coronaviral disease of cats. Most FCoV is enteric and stays quiet or mild GI. A small fraction mutate to FIPV inside the cat; FIPV is not the fecal-oral shedder. Young (< 2 years) and geriatric, multicat, recent stress, intact males, some purebreds. Effusion is the most typical sign, not always there — wet / dry overlap. Fluctuating fever that does not respond to antimicrobials is common. There is no single antemortem test. A titer is not a diagnosis (most cats have been exposed; some FIP cats are seronegative). Effusion tests beat blood: yellow to straw, sticky, high protein, A:G printed < 0.4 stay on the page. Rivalta negative makes FIP very unlikely; positive is not specific. Definitive historically is FCoV antigen in macrophages. Antivirals (GS-441524 / remdesivir) exist and are not licensed everywhere. Printed 15 / 84 days / 12 weeks stay on the page. Drain chest if dyspneic; do not drain the belly just because it is there (it reaccumulates). Vaccine is not generally recommended (AAHA/AAFP 2020 named). Not a zoonosis as the night default.
+
+Night split: named FIP / wet / dry / FIPV is tap-the-effusion, not a titer and not pred-as-the-antiviral. Unnamed feline FUO stays 203. Pyothorax without FIP words stays pleural. Cat uveitis without FIP words stays uveitis (FIP already sits on that list). Dog “FIP” does not fire. Bare coronavirus diarrhea does not fire.
+
+Book/public traps:
+
+- Do not harvest GS-441524 15 / 84 days / remdesivir / GC376 / molnupiravir as lobby law.
+- Do not treat a coronavirus titer as FIP.
+- Do not pred FIP first as the antiviral.
+- Do not drain the belly just because it is there.
+- Do not invent a compounding recipe.
+
+Night rule: young cat, fever plus sticky yellow effusion → **tap it; a titer is not a diagnosis.** △ Plumb.

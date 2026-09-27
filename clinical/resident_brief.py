@@ -1039,6 +1039,19 @@ FUO_RE = re.compile(
     r"recurrent fever",
     re.I,
 )
+# Bare "coronavirus" is kitten diarrhea. Bare "feline coronavirus" / FCoV is enteric.
+# Not FUO (203). Not pyothorax-only. Not uveitis-only.
+FIP_RE = re.compile(
+    r"\bfip\b|"
+    r"feline infectious periton|"
+    r"\bfipv\b|"
+    r"wet fip|"
+    r"dry fip|"
+    r"effusive fip|"
+    r"noneffusive fip|"
+    r"non-effusive fip",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -5071,7 +5084,8 @@ def analyze(
         or MULTI_JOINT_RE.search(text)
     )
     steal_hot = HOT_JOINT_RE.search(text) or SEPTIC_ARTH_RE.search(text)
-    if fuo_named and not (steal_ie or steal_bart or steal_impa or steal_hot):
+    steal_fip = FIP_RE.search(text)
+    if fuo_named and not (steal_ie or steal_bart or steal_impa or steal_hot or steal_fip):
         if spec == "cat":
             fuo_loc = (
                 "Feline FUO. Infection first, FIP on the list. "
@@ -5114,6 +5128,43 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for FUO.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for FUO.")
+
+    if spec == "cat" and FIP_RE.search(text):
+        fip_loc = (
+            "Feline infectious peritonitis. Tap the effusion. "
+            "A titer is not a diagnosis."
+        )
+        localization = f"{localization} Also {fip_loc}" if localization else fip_loc
+        hard_stops.append(
+            "Do not treat a coronavirus titer as FIP. "
+            "Do not harvest GS-441524 15 or an 84-day clock as lobby law. "
+            "Do not pred FIP first as the antiviral. "
+            "Do not drain the belly just because it is there."
+        )
+        do_not.append(
+            "Printed 15 / 84 days / 12 weeks stay on the page. "
+            "Rivalta negative makes FIP very unlikely; positive is not specific. "
+            "There is no single antemortem test. "
+            "Not FUO-only. Not pyothorax-only. Not lymphoma-only."
+        )
+        do_next.append(
+            "If effusion, tap it. Cytology plus protein / A:G. "
+            "Look at the eyes. Neuro is a different conversation on the page. "
+            "AAFP/EveryCat 2022 and ABCD named only. △ Plumb."
+        )
+        sources.append(
+            "Merck feline infectious peritonitis (Roman, Jan 2024 / Apr 2026): "
+            "no single antemortem test; titer often unhelpful; "
+            "effusion tests beat blood; antivirals exist, not licensed everywhere."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send named FIP home as just a fever.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not pred FIP first as the antiviral.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for FIP.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for FIP.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
