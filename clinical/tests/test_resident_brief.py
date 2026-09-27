@@ -3053,6 +3053,82 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("fever plus a new murmur is echo tonight", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_named_fuo_is_not_pred_first(self):
+        b = analyze(
+            "dog",
+            "fever of unknown origin, persistent fever, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("fever of unknown origin", loc)
+        self.assertIn("do not pred fuo first", loc)
+        self.assertIn("fever is not heatstroke to ice", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not pred", joined)
+        self.assertIn("external cooling not recommended", joined)
+        self.assertIn("blood culture all unexplained fever", joined)
+        self.assertIn("urine culture always", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_fuo_infection_first(self):
+        b = analyze("cat", "FUO, recurrent fever, DexSP")
+        loc = b["localization"].lower()
+        self.assertIn("feline fuo", loc)
+        self.assertIn("infection first", loc)
+        self.assertIn("fip on the list", loc)
+        self.assertIn("do not pred fuo first", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("external cooling not recommended", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fever_new_murmur_is_not_fuo(self):
+        b = analyze("dog", "FUO, fever, new murmur, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fever plus a new murmur is echo tonight", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_impa_is_not_fuo(self):
+        b = analyze("dog", "FUO, polyarthritis, fever, shifting lameness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("immune-mediated polyarthritis", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hot_joint_is_not_fuo(self):
+        b = analyze("dog", "FUO, septic arthritis, culture negative")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the hot joint tonight", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_shifting_is_not_fuo(self):
+        b = analyze("dog", "Lyme, fever, shifting lameness, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_culture_neg_aortic_is_not_fuo(self):
+        b = analyze(
+            "dog",
+            "FUO, culture-negative aortic endocarditis, fever, murmur",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("culture-negative aortic valve", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fever_dexsp_is_not_fuo(self):
+        b = analyze("dog", "fever, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

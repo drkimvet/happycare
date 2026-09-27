@@ -1864,3 +1864,20 @@ Book/public traps:
 - Do not skip echo because the blood culture is pending.
 
 Night rule: large-breed dog, fever plus a new murmur → **blood cultures and echo tonight, not a steroid.** △ Plumb.
+
+## 203. Fever of unknown origin / do not pred first (Merck Lunn Aug 2022 / Sept 2024)
+
+No dedicated Plunkett FUO chapter in the owned SA EM splits. Public Merck fever of unknown origin in animals (Lunn). Packet 202 still owns fever plus a new murmur / named IE. Packet 201 still owns named IMPA / multi-joint. Packet 200 still owns the hot joint. Packet 189 still owns Bartonella / culture-negative aortic valve. Skip farm / horse as their own packet. Do not harvest pred 2 mg/kg, NSAID tables, or the human 2–3 week definition as lobby law.
+
+Agree with Lunn: fever of unknown origin is persistent fever that does not resolve spontaneously or with empirical antimicrobials, cause not from history / PE / initial tests. True fever is a regulated set-point (typical 39.5–41.1°C / 103–106°F). Heatstroke is unregulated — do not ice true fever. External cooling not recommended for true fever (water baths work against the set-point). Dogs: noninfectious inflammatory (including IMPA) common. Cats: infectious more likely; FIP the most common named series. Staged work-up. Blood culture is recommended in all unexplained fever. Urine culture always, regardless of sediment. Dogs: arthrocentesis of multiple joints even if they feel normal (201 owns named IMPA). Echo if murmur is 202. ANA / RF alone do not diagnose SLE / RA. Trial steroids only after work-up; if referring, do not start.
+
+Night split: named FUO / unexplained / persistent / recurrent fever is a staged work-up, not a steroid and not ice. Fever plus a new murmur stays 202. Many joints stay 201. A hot joint stays 200. Culture-negative aortic / Bartonella stays 189. Bare fever or fever plus DexSP without FUO words does not fire this gate.
+
+Book/public traps:
+
+- Do not harvest pred 2 / NSAID tables / the human 2–3 week definition.
+- Do not ice true fever.
+- Do not start trial steroids if referring.
+- ANA / RF alone do not diagnose.
+
+Night rule: named FUO → do not pred first; fever is not heatstroke to ice. △ Plumb.

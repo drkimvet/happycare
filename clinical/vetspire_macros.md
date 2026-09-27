@@ -131,6 +131,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-jtap` | Assessment | Septic arthritis / hot joint tap |
 | `ddx-impa` | Assessment | IMPA / multi-joint tap |
 | `ddx-ie` | Assessment | Infectious endocarditis / fever + new murmur |
+| `ddx-fuo` | Assessment | FUO / do not pred first |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -221,6 +222,7 @@ Suggested names are short so they show up after three letters.
 | `dc-jtap` | Discharge | After septic joint / tap talk |
 | `dc-impa` | Discharge | After IMPA / multi-joint tap talk |
 | `dc-ie` | Discharge | After endocarditis / echo talk |
+| `dc-fuo` | Discharge | After FUO / do-not-pred talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1596,6 +1598,21 @@ DDX:
 Do not: send fever plus a new murmur home as just a fever. Harvest amp+gent / 6–8 weeks. Dental-prophy every MMVD dog.
 Do next: blood cultures. Echo. △ Plumb.
 
+### `ddx-fuo`
+
+FUO — {{patient.name}}
+Duration [ ]. Empiric antimicrobial [Y/N / failed]. Temp [ ]. Murmur [none / new / old]. Joints [normal / one hot / many]. Sediment [ ]. Culture [urine / blood / pending / none]. Referring [Y/N].
+
+DDX:
+1. Fever of unknown origin — staged work-up. Do not pred FUO first
+2. Blood culture all unexplained fever. Urine culture always, even if the sediment is quiet
+3. Dogs: tap multiple joints even if they feel normal (201 owns named IMPA). Echo if murmur is 202
+4. Cats: infection first, FIP on the list. FeLV / FIV
+5. External cooling not recommended for true fever. Not heatstroke to ice. ANA / RF alone do not diagnose
+
+Do not: pred FUO first. Ice true fever. Harvest pred / NSAID tables / the human 2–3 week definition. Start trial steroids if referring.
+Do next: stage 1 labs / films / urine culture. Blood culture. Joint taps in the dog. Echo if murmur. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2351,6 +2368,14 @@ Return now for worse lameness, fever, not walking, or not eating. {{location.pho
 Give only the medicines we sent, as labeled. Limit activity as discussed.
 
 Return now for trouble breathing, collapse, fever that returns, or not eating. {{location.phonenumber}}
+
+### `dc-fuo`
+
+{{patient.name}} was evaluated for a fever that has not gone away on its own or with a first antibiotic. This is not “just a fever” and it is not heatstroke to ice. Steroids are not the first step. We still need cultures and a staged work-up.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse fever, collapse, not eating, trouble breathing, or new lameness. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

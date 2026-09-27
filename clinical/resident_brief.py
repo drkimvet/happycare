@@ -1029,6 +1029,16 @@ FEVER_IE_RE = re.compile(
     r"\b(fever|febrile|pyrexia)\b",
     re.I,
 )
+# Bare "fever" is every night. Not IE (202). Not IMPA (201). Not a hot joint (200).
+FUO_RE = re.compile(
+    r"\bfuo\b|"
+    r"fever of unknown|"
+    r"pyrexia of unknown|"
+    r"unexplained fever|"
+    r"persistent fever|"
+    r"recurrent fever",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -5049,6 +5059,61 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for endocarditis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for endocarditis.")
+
+    fuo_named = spec in {"dog", "cat"} and FUO_RE.search(text)
+    steal_ie = ENDOCARD_RE.search(text) or (
+        FEVER_IE_RE.search(text) and NEW_MURMUR_RE.search(text)
+    )
+    steal_bart = BARTONELLA_RE.search(text) or CULTURE_NEG_AORTIC_RE.search(text)
+    steal_impa = (
+        IMPA_RE.search(text)
+        or POLYARTH_RE.search(text)
+        or MULTI_JOINT_RE.search(text)
+    )
+    steal_hot = HOT_JOINT_RE.search(text) or SEPTIC_ARTH_RE.search(text)
+    if fuo_named and not (steal_ie or steal_bart or steal_impa or steal_hot):
+        if spec == "cat":
+            fuo_loc = (
+                "Feline FUO. Infection first, FIP on the list. "
+                "Do not pred FUO first."
+            )
+        else:
+            fuo_loc = (
+                "Fever of unknown origin. Do not pred FUO first. "
+                "Fever is not heatstroke to ice."
+            )
+        localization = f"{localization} Also {fuo_loc}" if localization else fuo_loc
+        hard_stops.append(
+            "Do not pred FUO first. "
+            "External cooling not recommended for true fever. "
+            "Do not harvest pred 2 or the human 2–3 week definition as lobby law. "
+            "If referring, do not start trial steroids."
+        )
+        do_not.append(
+            "True fever is a regulated set-point, not heatstroke to ice. "
+            "ANA / RF alone do not diagnose SLE / RA. "
+            "Printed NSAID / steroid tables stay on the page. "
+            "Not IE-only. Not IMPA-only. Not a hot joint. Not Bartonella-only."
+        )
+        do_next.append(
+            "Staged work-up. Blood culture all unexplained fever. "
+            "Urine culture always. Dogs: tap multiple joints even if they feel normal. "
+            "Echo if murmur is 202. Cats: infection first, FIP on the list. △ Plumb."
+        )
+        sources.append(
+            "Merck fever of unknown origin (Lunn, Aug 2022 / Sept 2024): "
+            "persistent fever; staged work-up; external cooling not recommended for true fever; "
+            "blood culture all unexplained fever; urine culture always; "
+            "dogs tap multiple joints even if they feel normal; cats infection first, FIP on the list."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send named FUO home as just a fever to ice.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not pred FUO first.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for FUO.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for FUO.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
