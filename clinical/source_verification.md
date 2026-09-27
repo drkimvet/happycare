@@ -1989,3 +1989,21 @@ Book/public traps:
 - Printed 1–10 / 10 / 0.5–1 stay on the page.
 
 Night rule: dome-head puppy + neuro → **not idiopathic epilepsy; ultrasound through the fontanelle.** △ Plumb.
+
+## 210. Hydranencephaly / FPV kitten (Merck Parsley Mar 2026)
+
+No dedicated Plunkett hydranencephaly chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley). Packet 209 still owns named hydrocephalus / dome-head. Packet 207 still owns named NME. Packet 206 still owns named GME. Packet 139 still owns HE / head-press without hydran words. Cerebellar hypoplasia as its own night is the next room, not this dump. Skip large-animal hydranencephaly. Skip lissencephaly, pendular nystagmus, and Standard Poodle neonatal encephalopathy. Do not harvest an FPV vaccine table as lobby law.
+
+Agree with Parsley: hydranencephaly is a marked loss of cerebral cortical tissue (primarily the neocortex) within a cranial vault of **normal conformation**. The cavity communicates with the ventricular system, has an **incomplete ependymal lining**, and is filled with CSF. It develops from destruction of developing neural tissue and is sometimes accompanied by cerebellar hypoplasia and arthrogryposis. In small animals it has been described mainly in kittens after in utero exposure to feline panleukopenia virus (feline parvovirus); it has been reported sporadically in dogs without an identifiable viral infection. Brainstem malformations and cerebellar hypoplasia can occur concomitantly. Clinical signs: lethargy, propulsive circling, head pressing, and blindness.
+
+Night split: named hydranencephaly or in-utero FPV / panleuk is a normal-skull cortical-loss kitten, not dome-head hydrocephalus and not a GI parvo dump. Bare panleukopenia diarrhea does not fire. Bare head pressing stays 139. Named hydrocephalus stays 209. Named NME stays 207.
+
+Book/public traps:
+
+- Do not treat hydranencephaly as dome-head hydrocephalus.
+- Do not send a circling blind kitten home as just cerebellar hypoplasia.
+- Do not harvest an FPV vaccine table.
+- Incomplete ependyma, not the complete lining of hydrocephalus.
+- Normal cranial vault, not a dome.
+
+Night rule: FPV kitten, normal skull, circling / blind → **hydranencephaly tonight, not hydrocephalus.** △ Plumb.

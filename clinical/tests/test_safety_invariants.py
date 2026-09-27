@@ -476,6 +476,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("hydrocephalus", VERIF.lower())
         self.assertIn("dome-shaped head", VERIF.lower())
         self.assertIn("ultrasound through the fontanelle", VERIF.lower())
+        self.assertIn("hydranencephaly", VERIF.lower())
+        self.assertIn("incomplete ependymal", VERIF.lower())
+        self.assertIn("in utero", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -748,6 +751,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-oto`", MACRO)
         self.assertIn("`ddx-hydro`", MACRO)
         self.assertIn("`dc-hydro`", MACRO)
+        self.assertIn("`ddx-hydran`", MACRO)
+        self.assertIn("`dc-hydran`", MACRO)
+        self.assertIn("incomplete ependyma, not hydrocephalus", MACRO.lower())
+        self.assertIn("fpv kitten, normal skull", MACRO.lower())
         self.assertIn("otitis interna does not cause altered mentation", MACRO.lower())
         self.assertIn("dome-head puppy is not idiopathic epilepsy", MACRO.lower())
         self.assertIn("ultrasound through the fontanelle", MACRO.lower())
@@ -1002,6 +1009,9 @@ class PublicCardInvariants(unittest.TestCase):
             "hydrocephalus",
             "dome-head puppy is not idiopathic epilepsy",
             "ultrasound through the fontanelle",
+            "hydranencephaly",
+            "fpv kitten, normal skull",
+            "incomplete ependyma",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

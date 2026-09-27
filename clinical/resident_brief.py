@@ -1085,12 +1085,20 @@ NME_RE = re.compile(
     re.I,
 )
 # Bare "pug" / "seizure" is 116. Bare "patent fontanelle" is not enough.
-# Not NME (207). Not GME (206). Not HE (139). Not oto (208).
+# Not NME (207). Not GME (206). Not HE (139). Not oto (208). Not hydran (210).
 HYDRO_RE = re.compile(
     r"hydrocephalus|"
     r"dome[- ]?(shaped )?head|"
     r"domed head|"
     r"setting[- ]sun",
+    re.I,
+)
+# Bare panleuk / FPV diarrhea is GI, not this. Bare head press is 139.
+# Not hydro (209). Not NME (207). Not GME (206).
+HYDRAN_RE = re.compile(
+    r"hydranencephal|"
+    r"in utero.{0,40}(panleuk|fpv|feline parvovirus)|"
+    r"(panleuk|fpv|feline parvovirus).{0,40}in utero",
     re.I,
 )
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
@@ -1908,7 +1916,7 @@ def analyze(
         if SNAKE_VAX_RE.search(text):
             hard_stops.append("A rattlesnake vaccine does not replace antivenom.")
 
-    if spec in {"dog", "cat"} and HE_RE.search(text):
+    if spec in {"dog", "cat"} and HE_RE.search(text) and not HYDRAN_RE.search(text):
         he_loc = (
             "Hepatic encephalopathy or fulminant failure. "
             "Ammonia is not the diagnosis. Glucose now. "
@@ -5142,6 +5150,7 @@ def analyze(
     steal_nme = NME_RE.search(text)
     steal_oto = OTO_MEN_RE.search(text)
     steal_hydro = HYDRO_RE.search(text)
+    steal_hydran = HYDRAN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5153,6 +5162,7 @@ def analyze(
         or steal_nme
         or steal_oto
         or steal_hydro
+        or steal_hydran
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5400,6 +5410,7 @@ def analyze(
         or GME_RE.search(text)
         or HE_RE.search(text)
         or OTO_MEN_RE.search(text)
+        or HYDRAN_RE.search(text)
     ):
         hydro_loc = (
             "Hydrocephalus. Dome-head puppy is not idiopathic epilepsy. "
@@ -5438,6 +5449,48 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hydrocephalus.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hydrocephalus.")
+
+    hydran_named = spec in {"dog", "cat"} and HYDRAN_RE.search(text)
+    if hydran_named and not (
+        NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        hydran_loc = (
+            "Hydranencephaly. FPV kitten, normal skull. "
+            "Incomplete ependyma, not hydrocephalus."
+        )
+        localization = f"{localization} Also {hydran_loc}" if localization else hydran_loc
+        hard_stops.append(
+            "Do not treat hydranencephaly as dome-head hydrocephalus. "
+            "Do not send a circling blind kitten home as just cerebellar hypoplasia. "
+            "Do not harvest an FPV vaccine table as lobby law."
+        )
+        do_not.append(
+            "Marked loss of neocortex inside a cranial vault of normal conformation. "
+            "The cavity communicates with the ventricles, has an incomplete ependymal lining, and is filled with CSF. "
+            "Mainly kittens after in utero FPV; dogs sporadic without an identifiable virus. "
+            "Cerebellar hypoplasia and arthrogryposis can sit alongside. "
+            "Not hydro-only. Not HE-only. Not NME-only. Not GI panleuk-only."
+        )
+        do_next.append(
+            "Name in utero FPV. Imaging. Not a shunt-first hydro script. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebral (Parsley, Mar 2026): "
+            "hydranencephaly; mainly kittens after in utero feline panleukopenia virus; "
+            "normal cranial vault; incomplete ependymal lining; "
+            "lethargy, propulsive circling, head pressing, blindness."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a circling blind kitten home as just cerebellar hypoplasia."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not treat hydranencephaly as dome-head hydrocephalus.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hydranencephaly.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hydranencephaly.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

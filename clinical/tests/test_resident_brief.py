@@ -3536,8 +3536,73 @@ class ResidentBriefTests(unittest.TestCase):
     def test_hydranencephaly_is_not_hydrocephalus(self):
         b = analyze("cat", "hydranencephaly, panleukopenia, circling")
         loc = (b["localization"] or "").lower()
+        self.assertIn("hydranencephaly", loc)
+        self.assertIn("incomplete ependyma", loc)
+        self.assertIn("not hydrocephalus", loc)
         self.assertNotIn("dome-head", loc)
         self.assertNotIn("through the fontanelle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydranencephaly_is_fpv_kitten_not_hydro(self):
+        b = analyze(
+            "cat",
+            "hydranencephaly, in utero FPV, circling, blindness, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("fpv kitten, normal skull", loc)
+        self.assertIn("incomplete ependyma, not hydrocephalus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("just cerebellar hypoplasia", joined)
+        self.assertIn("normal conformation", joined)
+        self.assertIn("in utero fpv", joined)
+        self.assertNotIn("hepatic encephalopathy or fulminant", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydrocephalus_is_not_hydranencephaly(self):
+        b = analyze("dog", "hydrocephalus, dome-shaped head, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head puppy is not idiopathic epilepsy", loc)
+        self.assertNotIn("incomplete ependyma", loc)
+        self.assertNotIn("fpv kitten", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_he_is_not_hydranencephaly(self):
+        b = analyze("dog", "Yorkshire Terrier, hepatic encephalopathy, head pressing")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hepatic encephalopathy", loc)
+        self.assertNotIn("incomplete ependyma", loc)
+        self.assertNotIn("fpv kitten", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_panleuk_is_not_hydranencephaly(self):
+        b = analyze("cat", "panleukopenia, diarrhea, vomiting")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("incomplete ependyma", loc)
+        self.assertNotIn("fpv kitten", loc)
+        self.assertNotIn("hydranencephaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nme_is_not_hydranencephaly(self):
+        b = analyze("dog", "NME, pug encephalitis, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fatal necrosis", loc)
+        self.assertNotIn("incomplete ependyma", loc)
+        self.assertNotIn("fpv kitten", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_head_press_alone_is_not_hydranencephaly(self):
+        b = analyze("dog", "head pressing, lactulose")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hepatic encephalopathy", loc)
+        self.assertNotIn("incomplete ependyma", loc)
+        self.assertNotIn("fpv kitten", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_in_utero_panleuk_is_hydranencephaly(self):
+        b = analyze("cat", "in utero panleukopenia, circling, blindness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hydranencephaly", loc)
+        self.assertIn("incomplete ependyma", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_ph_amlodipine_is_the_other_list(self):

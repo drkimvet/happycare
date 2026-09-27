@@ -138,6 +138,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-nme` | Assessment | NME / pug encephalitis |
 | `ddx-oto` | Assessment | Otogenic meningitis / ear-to-brain |
 | `ddx-hydro` | Assessment | Hydrocephalus / dome-head puppy |
+| `ddx-hydran` | Assessment | Hydranencephaly / FPV kitten |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -235,6 +236,7 @@ Suggested names are short so they show up after three letters.
 | `dc-nme` | Discharge | After NME / pug-encephalitis talk |
 | `dc-oto` | Discharge | After otogenic / ear-to-brain talk |
 | `dc-hydro` | Discharge | After hydrocephalus / dome-head talk |
+| `dc-hydran` | Discharge | After hydranencephaly / FPV-kitten talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1715,6 +1717,21 @@ DDX:
 Do not: send a dome-head seizuring puppy home as idiopathic epilepsy. Harvest omeprazole / acetazolamide / pred. Treat hydrocephalus as NME-only. Skip the fontanelle.
 Do next: Ultrasound through the fontanelle. CT / MRI. Stop the seizure. Check glucose. △ Plumb.
 
+### `ddx-hydran`
+
+Hydranencephaly — {{patient.name}}
+Skull [normal / dome]. In utero FPV [Y/N / unknown]. Circling [Y/N]. Blind [Y/N]. Head press [Y/N]. Cerebellar [wobble / no]. Imaging [ / not yet]. Referring [Y/N].
+
+DDX:
+1. Hydranencephaly — **FPV kitten, normal skull. Incomplete ependyma, not hydrocephalus**
+2. Marked neocortex loss. Cavity communicates with the ventricles
+3. Lethargy, propulsive circling, head pressing, blindness
+4. Mainly in utero panleukopenia; dogs sporadic without a named virus
+5. Not hydro-only (209). Not HE-only (139). Not GI panleuk-only. Not just cerebellar hypoplasia
+
+Do not: treat as dome-head hydrocephalus. Send a circling blind kitten home as just a wobble. Harvest an FPV vaccine table.
+Do next: Name in utero FPV. Imaging. Not a shunt-first hydro script. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2526,6 +2543,14 @@ Return now for dullness, fever, not eating, seizures, or a worsening head tilt. 
 Give only the medicines we sent, as labeled. Do not start omeprazole, a water pill, or a steroid from the cabinet.
 
 Return now for more seizures, collapse, blindness, or not eating. {{location.phonenumber}}
+
+### `dc-hydran`
+
+{{patient.name}} was evaluated for possible hydranencephaly (loss of brain tissue after an in-utero infection, often feline panleukopenia). The skull is usually a normal shape. This is not the same as hydrocephalus (water on the brain) and it is not just a wobbly cerebellum.
+
+Give only the medicines we sent, as labeled. Do not start a steroid or leftover vaccine protocol from the cabinet.
+
+Return now for circling, blindness, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
