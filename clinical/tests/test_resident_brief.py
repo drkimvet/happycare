@@ -3322,6 +3322,64 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("relapse is on the page", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_named_nme_is_fatal_necrosis(self):
+        b = analyze(
+            "dog",
+            "NME, pug encephalitis, seizures, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("pug encephalitis", loc)
+        self.assertIn("fatal necrosis", loc)
+        self.assertIn("not idiopathic epilepsy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("ultimately fatal", joined)
+        self.assertIn("csf pleocytosis", joined)
+        self.assertIn("not gme-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nme_is_not_gme(self):
+        b = analyze("dog", "NME, GME, pug encephalitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fatal necrosis", loc)
+        self.assertNotIn("relapse is on the page", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gme_is_not_nme(self):
+        b = analyze("dog", "GME, MUO, prednisolone")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mri and csf", loc)
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertNotIn("pug encephalitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_is_not_nme(self):
+        b = analyze("dog", "SRMA, neck pain, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neck pain plus fever is csf tonight", loc)
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fip_is_not_nme(self):
+        b = analyze("cat", "FIP, wet FIP, effusion")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the effusion", loc)
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pug_seizure_is_not_nme(self):
+        b = analyze("dog", "pug, seizure, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertNotIn("pug encephalitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_yorkie_he_is_not_nme(self):
+        b = analyze("dog", "Yorkshire Terrier, hepatic encephalopathy, lactulose")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertNotIn("pug encephalitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

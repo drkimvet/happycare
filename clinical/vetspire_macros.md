@@ -135,6 +135,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fip` | Assessment | FIP / tap the effusion |
 | `ddx-srma` | Assessment | SRMA / neck-pain fever |
 | `ddx-gme` | Assessment | GME / MUO |
+| `ddx-nme` | Assessment | NME / pug encephalitis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -229,6 +230,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fip` | Discharge | After FIP / effusion-tap talk |
 | `dc-srma` | Discharge | After SRMA / CSF talk |
 | `dc-gme` | Discharge | After GME / MUO talk |
+| `dc-nme` | Discharge | After NME / pug-encephalitis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1664,6 +1666,21 @@ DDX:
 Do not: send a small-breed multifocal brain home as a disc. Harvest cytarabine / cyclosporine. Pred first until infection and fungus are off. Call a mass a tumor until MUO is on the list.
 Do next: MRI. CSF. Infection / fungus screen. △ Plumb.
 
+### `ddx-nme`
+
+NME — {{patient.name}}
+Breed [Pug / Maltese / Yorkie / Chihuahua / other]. Behavior change [ ]. Seizures [ ]. CSF [pleocytosis / not yet]. MRI [necrosis / not yet]. Referring [Y/N].
+
+DDX:
+1. Necrotizing meningoencephalitis — **pug encephalitis is ultimately fatal**. Not GME-only
+2. Behavior change, seizures, CSF pleocytosis
+3. Yorkie / Maltese / Chihuahua sit on the same necrosis list
+4. Mild mononuclear CSF. MRI and CSF. Stop the seizure (116)
+5. Not GME-only (206). Not hydrocephalus-only. Not HE-only (139)
+
+Do not: send pug encephalitis home as idiopathic epilepsy. Harvest a pred table. Treat NME as GME-only. Skip MRI and CSF.
+Do next: MRI. CSF. Stop the seizure. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2451,6 +2468,14 @@ Return now for worse neck pain, fever that returns, not walking, seizures, or no
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse seizures, not walking, neck pain, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-nme`
+
+{{patient.name}} was evaluated for possible necrotizing encephalitis (sometimes called pug encephalitis). This is not ordinary epilepsy and it is not the same as GME. MRI and spinal fluid are the tests.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for more seizures, collapse, blindness, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

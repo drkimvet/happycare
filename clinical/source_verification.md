@@ -1935,3 +1935,21 @@ Book/public traps:
 - Do not send a small-breed multifocal brain home as a disc.
 
 Night rule: small-breed dog, multifocal brain or neck → **MRI and CSF; relapse is on the page.** △ Plumb.
+
+## 207. Necrotizing meningoencephalitis / Pug NME (Merck Parsley Mar 2026; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett NME chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley) plus meningitis / encephalitis (Callanan). Packet 206 still owns named GME / MUO. Packet 205 still owns named SRMA. Packet 204 still owns named FIP. Packet 116 still owns seizure drugs. Packet 139 still owns HE. Hydrocephalus on the same Parsley page is the next room, not this dump. Skip Greyhound meningoencephalitis / Pointer pyogranulomatous as their own packets. Do not harvest a pred table or hydrocephalus omeprazole as lobby law.
+
+Agree with Parsley: necrotizing meningoencephalitis (also known as pug encephalitis) is ultimately fatal and might have a familial basis. Association with dog leukocyte antigen II loci in Pugs, Maltese, and Chihuahuas, plus ILR7 and FBXW7 mutations, stays on the page. Affected Pugs show behavioral changes, seizures, and CSF pleocytosis. A similar nonsuppurative necrotizing encephalitis is reported in Yorkshire Terriers, Chihuahuas, and Maltese. Callanan: young adult Pug / Maltese / Yorkshire Terrier lesions carry significant necrosis. Necrotizing encephalitides typically cause a mild increase in CSF mononuclear cells and protein — not the SRMA neutrophil dump. MRI and CSF still belong tonight. Stop the seizure first (116). Infection and fungus stay off before you call it immune.
+
+Night split: named NME / pug encephalitis / NLE is fatal necrosis, not GME-only and not idiopathic epilepsy. Bare pug plus seizure does not fire. Named GME / MUO stays 206. Named SRMA stays 205. Yorkie HE without NME words stays 139.
+
+Book/public traps:
+
+- Do not harvest a pred table as lobby law.
+- Do not send pug encephalitis home as idiopathic epilepsy.
+- Do not treat NME as GME-only.
+- Do not skip MRI and CSF.
+- Ultimately fatal stays on the page — do not promise a GME-style remission.
+
+Night rule: Pug / toy breed, named NME → **fatal necrosis, not idiopathic epilepsy.** △ Plumb.

@@ -1073,6 +1073,17 @@ GME_RE = re.compile(
     r"meningoencephalomyelitis of unknown",
     re.I,
 )
+# Bare "pug" / "seizure" is hydrocephalus / idiopathic epilepsy / 116.
+# Not GME (206). Not SRMA (205). Not HE (139).
+NME_RE = re.compile(
+    r"\bnme\b|"
+    r"necrotizing meningoencephal|"
+    r"necrotizing encephalitis|"
+    r"pug encephalitis|"
+    r"\bnle\b|"
+    r"necrotizing leukoencephal",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -5108,6 +5119,7 @@ def analyze(
     steal_fip = FIP_RE.search(text)
     steal_srma = SRMA_RE.search(text)
     steal_gme = GME_RE.search(text)
+    steal_nme = NME_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5116,6 +5128,7 @@ def analyze(
         or steal_fip
         or steal_srma
         or steal_gme
+        or steal_nme
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5242,7 +5255,7 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for SRMA.")
 
     gme_named = spec == "dog" and GME_RE.search(text)
-    if gme_named and not SRMA_RE.search(text):
+    if gme_named and not SRMA_RE.search(text) and not NME_RE.search(text):
         gme_loc = (
             "GME / MUO. MRI and CSF. "
             "Relapse is on the page."
@@ -5278,6 +5291,42 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for GME.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for GME.")
+
+    nme_named = spec == "dog" and NME_RE.search(text)
+    if nme_named and not SRMA_RE.search(text):
+        nme_loc = (
+            "NME / pug encephalitis. Fatal necrosis, not GME. "
+            "Seizures plus CSF, not idiopathic epilepsy."
+        )
+        localization = f"{localization} Also {nme_loc}" if localization else nme_loc
+        hard_stops.append(
+            "Do not send pug encephalitis home as idiopathic epilepsy. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not treat NME as GME-only. "
+            "Do not skip MRI and CSF."
+        )
+        do_not.append(
+            "Ultimately fatal. Familial / DLA associations stay on the page. "
+            "Yorkie / Maltese / Chihuahua sit on the same necrosis list. "
+            "Not GME-only. Not hydrocephalus-only. Not HE-only."
+        )
+        do_next.append(
+            "MRI. CSF pleocytosis. Stop the seizure (116). △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebral (Parsley, Mar 2026): "
+            "NME / pug encephalitis is ultimately fatal; seizures and CSF pleocytosis. "
+            "Merck meningitis (Callanan, Mar 2021 / Mar 2025): "
+            "young adult Pug / Maltese / Yorkshire Terrier necrosis; mild mononuclear CSF."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send pug encephalitis home as idiopathic epilepsy.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not treat NME as GME-only.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for NME.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for NME.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
