@@ -1094,11 +1094,19 @@ HYDRO_RE = re.compile(
     re.I,
 )
 # Bare panleuk / FPV diarrhea is GI, not this. Bare head press is 139.
-# Not hydro (209). Not NME (207). Not GME (206).
+# Not hydro (209). Not NME (207). Not GME (206). Not CH wobble-only (211).
 HYDRAN_RE = re.compile(
     r"hydranencephal|"
     r"in utero.{0,40}(panleuk|fpv|feline parvovirus)|"
     r"(panleuk|fpv|feline parvovirus).{0,40}in utero",
+    re.I,
+)
+# Bare tremor / ataxia is not enough. Bare panleuk diarrhea is GI.
+# Named hydranencephaly stays 210. Not abiotrophy. Not COMS / Chiari.
+CHYPO_RE = re.compile(
+    r"cerebellar hypoplas|"
+    r"fpv wobble|"
+    r"wobble kitten",
     re.I,
 )
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
@@ -5151,6 +5159,7 @@ def analyze(
     steal_oto = OTO_MEN_RE.search(text)
     steal_hydro = HYDRO_RE.search(text)
     steal_hydran = HYDRAN_RE.search(text)
+    steal_chypo = CHYPO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5163,6 +5172,7 @@ def analyze(
         or steal_oto
         or steal_hydro
         or steal_hydran
+        or steal_chypo
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5451,9 +5461,11 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for hydrocephalus.")
 
     hydran_named = spec in {"dog", "cat"} and HYDRAN_RE.search(text)
+    hydran_core = bool(re.search(r"hydranencephal", text, re.I))
     if hydran_named and not (
         NME_RE.search(text)
         or GME_RE.search(text)
+        or (CHYPO_RE.search(text) and not hydran_core)
     ):
         hydran_loc = (
             "Hydranencephaly. FPV kitten, normal skull. "
@@ -5491,6 +5503,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hydranencephaly.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hydranencephaly.")
+
+    chypo_named = spec in {"dog", "cat"} and CHYPO_RE.search(text)
+    if chypo_named and not (
+        hydran_core
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        chypo_loc = (
+            "Cerebellar hypoplasia. FPV wobble is nonprogressive. "
+            "Not abiotrophy."
+        )
+        localization = f"{localization} Also {chypo_loc}" if localization else chypo_loc
+        hard_stops.append(
+            "Do not treat a wobble kitten as progressive abiotrophy. "
+            "Do not harvest an FPV vaccine table as lobby law. "
+            "Do not skip MRI if hydrocephalus or hydranencephaly might sit alongside."
+        )
+        do_not.append(
+            "Present from birth / first ambulation. Tremor, ataxia, hypermetria. "
+            "Occasional head tilt or circling. Not degenerative. Suitable pets. "
+            "Chow Chow is on the page. Not Dandy-Walker-only. Not COMS-only. "
+            "Not hydran-only. Not GI panleuk-only."
+        )
+        do_next.append(
+            "MRI. Look for concomitant hydro or hydran. Name in utero FPV. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebellar (Parsley, Mar 2026): "
+            "cerebellar hypoplasia after in utero FPV; nonprogressive; suitable pets; "
+            "not abiotrophy; MRI; tremor, ataxia, hypermetria. "
+            "Merck feline panleukopenia: perinatal destruction of cerebellar or retinal cells; "
+            "tremors persist throughout life."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not treat a wobble kitten as progressive abiotrophy."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest an FPV vaccine table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for cerebellar hypoplasia.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cerebellar hypoplasia.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

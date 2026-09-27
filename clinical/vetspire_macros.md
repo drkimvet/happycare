@@ -139,6 +139,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-oto` | Assessment | Otogenic meningitis / ear-to-brain |
 | `ddx-hydro` | Assessment | Hydrocephalus / dome-head puppy |
 | `ddx-hydran` | Assessment | Hydranencephaly / FPV kitten |
+| `ddx-chypo` | Assessment | Cerebellar hypoplasia / FPV wobble |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -237,6 +238,7 @@ Suggested names are short so they show up after three letters.
 | `dc-oto` | Discharge | After otogenic / ear-to-brain talk |
 | `dc-hydro` | Discharge | After hydrocephalus / dome-head talk |
 | `dc-hydran` | Discharge | After hydranencephaly / FPV-kitten talk |
+| `dc-chypo` | Discharge | After cerebellar-hypoplasia / wobble talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1732,6 +1734,21 @@ DDX:
 Do not: treat as dome-head hydrocephalus. Send a circling blind kitten home as just a wobble. Harvest an FPV vaccine table.
 Do next: Name in utero FPV. Imaging. Not a shunt-first hydro script. △ Plumb.
 
+### `ddx-chypo`
+
+Cerebellar hypoplasia — {{patient.name}}
+Onset [from birth / later]. Tremor [Y/N]. Ataxia [Y/N]. Hypermetria [Y/N]. Progressive [N / Y]. In utero FPV [Y/N / unknown]. MRI [ / not yet]. Referring [Y/N].
+
+DDX:
+1. Cerebellar hypoplasia — **FPV wobble is nonprogressive. Not abiotrophy**
+2. Tremor, ataxia, hypermetria from birth / first ambulation
+3. Suitable pets. Occasional tilt or circling
+4. MRI. Concomitant hydrocephalus or hydranencephaly can sit alongside
+5. Not hydran-only (210). Not hydro-only (209). Not GI panleuk-only. Not COMS-only
+
+Do not: treat a wobble kitten as progressive abiotrophy. Harvest an FPV vaccine table. Skip MRI if hydro or hydran might sit alongside.
+Do next: MRI. Look for concomitant hydro or hydran. Name in utero FPV. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2551,6 +2568,14 @@ Return now for more seizures, collapse, blindness, or not eating. {{location.pho
 Give only the medicines we sent, as labeled. Do not start a steroid or leftover vaccine protocol from the cabinet.
 
 Return now for circling, blindness, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-chypo`
+
+{{patient.name}} was evaluated for cerebellar hypoplasia (an underdeveloped cerebellum, often after in-utero feline panleukopenia). The wobble and tremor are usually present from the time the animal starts to walk, and they do not get worse the way a degenerative disease would. Many of these animals can be suitable pets.
+
+Give only the medicines we sent, as labeled. Do not start a leftover vaccine protocol or a steroid from the cabinet.
+
+Return now for worsening wobble, blindness, circling, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

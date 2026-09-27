@@ -1996,7 +1996,7 @@ No dedicated Plunkett hydranencephaly chapter in the owned SA EM splits. Public 
 
 Agree with Parsley: hydranencephaly is a marked loss of cerebral cortical tissue (primarily the neocortex) within a cranial vault of **normal conformation**. The cavity communicates with the ventricular system, has an **incomplete ependymal lining**, and is filled with CSF. It develops from destruction of developing neural tissue and is sometimes accompanied by cerebellar hypoplasia and arthrogryposis. In small animals it has been described mainly in kittens after in utero exposure to feline panleukopenia virus (feline parvovirus); it has been reported sporadically in dogs without an identifiable viral infection. Brainstem malformations and cerebellar hypoplasia can occur concomitantly. Clinical signs: lethargy, propulsive circling, head pressing, and blindness.
 
-Night split: named hydranencephaly or in-utero FPV / panleuk is a normal-skull cortical-loss kitten, not dome-head hydrocephalus and not a GI parvo dump. Bare panleukopenia diarrhea does not fire. Bare head pressing stays 139. Named hydrocephalus stays 209. Named NME stays 207.
+Night split: named hydranencephaly or in-utero FPV / panleuk is a normal-skull cortical-loss kitten, not dome-head hydrocephalus and not a GI parvo dump. Bare panleukopenia diarrhea does not fire. Bare head pressing stays 139. Named hydrocephalus stays 209. Named cerebellar hypoplasia without hydranencephaly words stays 211. Named NME stays 207.
 
 Book/public traps:
 
@@ -2007,3 +2007,21 @@ Book/public traps:
 - Normal cranial vault, not a dome.
 
 Night rule: FPV kitten, normal skull, circling / blind → **hydranencephaly tonight, not hydrocephalus.** △ Plumb.
+
+## 211. Cerebellar hypoplasia / FPV wobble kitten (Merck Parsley Mar 2026 cerebellar; panleukopenia page)
+
+No dedicated Plunkett cerebellar-hypoplasia chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley) plus feline panleukopenia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 139 still owns HE / head-press without CH words. Chiari-like / COMS on the same cerebellar page is the next room, not this dump. Skip Dandy-Walker / VLDLR Eurasier, lissencephaly, large-animal BVD, and cerebellar abiotrophy as their own packets. Do not harvest an FPV vaccine table or a COMS gabapentin / omeprazole table as lobby law.
+
+Agree with Parsley: cerebellar hypoplasia occurs in kittens after in utero infection with feline panleukopenia virus. The condition is **nonprogressive**, and affected cats can be **suitable pets**. Unlike cerebellar abiotrophy, it is not degenerative. Antemortem diagnosis by MRI. Concomitant hydrocephalus or hydranencephaly can also occur. Also reported in Chow Chows. Clinical signs are typical of a cerebellar disorder: tremors, ataxia, and hypermetria; occasionally head tilt and circling. The vermis can be partially or completely absent. Pearl: hypoplasia is present from birth / first ambulation and nonprogressive; abiotrophy animals are born normal. Panleukopenia page: perinatal infection may destroy rapidly dividing cerebellar or retinal cells, leading to cerebellar hypoplasia, incoordination, and tremors that persist throughout life.
+
+Night split: named cerebellar hypoplasia / FPV wobble / wobble kitten is a nonprogressive birth wobble, not abiotrophy and not hydran-only. Named hydranencephaly stays 210. Bare tremor does not fire. Bare GI panleuk does not fire.
+
+Book/public traps:
+
+- Do not treat a wobble kitten as progressive abiotrophy.
+- Do not harvest an FPV vaccine table.
+- Do not skip MRI if hydrocephalus or hydranencephaly might sit alongside.
+- Nonprogressive and present from birth.
+- Suitable pets stays on the page — do not euthanize a wobble as hopeless tonight.
+
+Night rule: FPV wobble from birth → **nonprogressive, not abiotrophy.** △ Plumb.

@@ -3605,6 +3605,57 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("incomplete ependyma", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cerebellar_hypoplasia_is_nonprogressive_not_abiotrophy(self):
+        b = analyze(
+            "cat",
+            "cerebellar hypoplasia, in utero FPV, tremor, ataxia, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cerebellar hypoplasia", loc)
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertIn("not abiotrophy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("suitable pets", joined)
+        self.assertIn("hypermetria", joined)
+        self.assertIn("concomitant hydro", joined)
+        self.assertNotIn("incomplete ependyma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydranencephaly_is_not_cerebellar_hypoplasia(self):
+        b = analyze("cat", "hydranencephaly, cerebellar hypoplasia, circling")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("incomplete ependyma", loc)
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_abiotrophy_is_not_cerebellar_hypoplasia(self):
+        b = analyze("dog", "cerebellar abiotrophy, progressive ataxia, intention tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("cerebellar hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tremor_is_not_cerebellar_hypoplasia(self):
+        b = analyze("cat", "tremor, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("not abiotrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_panleuk_is_not_cerebellar_hypoplasia(self):
+        b = analyze("cat", "panleukopenia, diarrhea, vomiting")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("not abiotrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydrocephalus_is_not_cerebellar_hypoplasia(self):
+        b = analyze("dog", "hydrocephalus, dome-shaped head, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head puppy is not idiopathic epilepsy", loc)
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

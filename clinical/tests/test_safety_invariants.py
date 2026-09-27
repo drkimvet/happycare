@@ -479,6 +479,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("hydranencephaly", VERIF.lower())
         self.assertIn("incomplete ependymal", VERIF.lower())
         self.assertIn("in utero", VERIF.lower())
+        self.assertIn("cerebellar hypoplasia", VERIF.lower())
+        self.assertIn("nonprogressive", VERIF.lower())
+        self.assertIn("suitable pets", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -753,6 +756,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hydro`", MACRO)
         self.assertIn("`ddx-hydran`", MACRO)
         self.assertIn("`dc-hydran`", MACRO)
+        self.assertIn("`ddx-chypo`", MACRO)
+        self.assertIn("`dc-chypo`", MACRO)
+        self.assertIn("fpv wobble is nonprogressive", MACRO.lower())
+        self.assertIn("not abiotrophy", MACRO.lower())
         self.assertIn("incomplete ependyma, not hydrocephalus", MACRO.lower())
         self.assertIn("fpv kitten, normal skull", MACRO.lower())
         self.assertIn("otitis interna does not cause altered mentation", MACRO.lower())
@@ -1012,6 +1019,9 @@ class PublicCardInvariants(unittest.TestCase):
             "hydranencephaly",
             "fpv kitten, normal skull",
             "incomplete ependyma",
+            "cerebellar hypoplasia",
+            "fpv wobble is nonprogressive",
+            "not abiotrophy",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
