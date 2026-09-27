@@ -134,6 +134,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fuo` | Assessment | FUO / do not pred first |
 | `ddx-fip` | Assessment | FIP / tap the effusion |
 | `ddx-srma` | Assessment | SRMA / neck-pain fever |
+| `ddx-gme` | Assessment | GME / MUO |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -227,6 +228,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fuo` | Discharge | After FUO / do-not-pred talk |
 | `dc-fip` | Discharge | After FIP / effusion-tap talk |
 | `dc-srma` | Discharge | After SRMA / CSF talk |
+| `dc-gme` | Discharge | After GME / MUO talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1647,6 +1649,21 @@ DDX:
 Do not: send neck pain plus fever home as a disc. Harvest pred 2 / 6–8 months. Pred first until infection is off. Skip CSF.
 Do next: CSF. Infection screen. △ Plumb.
 
+### `ddx-gme`
+
+GME / MUO — {{patient.name}}
+Age [ ]. Breed [Poodle / small / other]. Signs [brain / neck / tetra / seizure]. MRI [mass / multifocal / not yet]. CSF [mono / neut / not yet]. Fungus / protozoa [off / pending]. Referring [Y/N].
+
+DDX:
+1. Granulomatous meningoencephalomyelitis — **MRI and CSF**. Relapse is on the page
+2. Focal form can look like a mass. Enhancing masses
+3. Rule out infection and fungus first. Many become refractory
+4. Printed cytarabine / cyclosporine / procarbazine stay on the page
+5. Not SRMA-only (205). Not FUO-only (203). Not a disc (185)
+
+Do not: send a small-breed multifocal brain home as a disc. Harvest cytarabine / cyclosporine. Pred first until infection and fungus are off. Call a mass a tumor until MUO is on the list.
+Do next: MRI. CSF. Infection / fungus screen. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2426,6 +2443,14 @@ Return now for trouble breathing, a bigger belly, collapse, seizures, not eating
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse neck pain, fever that returns, not walking, seizures, or not eating. {{location.phonenumber}}
+
+### `dc-gme`
+
+{{patient.name}} was evaluated for possible inflammatory brain or spinal disease (GME / MUO). This is not a slipped disc. MRI and spinal fluid are the tests. Steroids are not the first step until infection and fungus are off the list. Relapse can happen.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse seizures, not walking, neck pain, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

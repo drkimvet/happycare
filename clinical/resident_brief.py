@@ -1062,6 +1062,17 @@ SRMA_RE = re.compile(
     r"aseptic (suppurative )?meningit",
     re.I,
 )
+# Bare "encephalitis" / "seizure" / "poodle" is every small-breed night.
+# Not SRMA (205). Not FUO (203). Not FIP (204). Not a disc (185).
+GME_RE = re.compile(
+    r"\bgme\b|"
+    r"granulomatous meningoencephal|"
+    r"\bmuo\b|"
+    r"meningitis of unknown origin|"
+    r"meningoencephalitis of unknown|"
+    r"meningoencephalomyelitis of unknown",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -5096,8 +5107,15 @@ def analyze(
     steal_hot = HOT_JOINT_RE.search(text) or SEPTIC_ARTH_RE.search(text)
     steal_fip = FIP_RE.search(text)
     steal_srma = SRMA_RE.search(text)
+    steal_gme = GME_RE.search(text)
     if fuo_named and not (
-        steal_ie or steal_bart or steal_impa or steal_hot or steal_fip or steal_srma
+        steal_ie
+        or steal_bart
+        or steal_impa
+        or steal_hot
+        or steal_fip
+        or steal_srma
+        or steal_gme
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5222,6 +5240,44 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for SRMA.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for SRMA.")
+
+    gme_named = spec == "dog" and GME_RE.search(text)
+    if gme_named and not SRMA_RE.search(text):
+        gme_loc = (
+            "GME / MUO. MRI and CSF. "
+            "Relapse is on the page."
+        )
+        localization = f"{localization} Also {gme_loc}" if localization else gme_loc
+        hard_stops.append(
+            "Do not send a small-breed multifocal brain home as a disc. "
+            "Do not harvest cytarabine or cyclosporine as lobby law. "
+            "Do not pred GME first until infection and fungus are off the table. "
+            "Do not call enhancing masses a tumor until MUO is on the list."
+        )
+        do_not.append(
+            "Printed cytarabine / cyclosporine / procarbazine stay on the page. "
+            "Focal form can look like a mass. Relapse is possible; many become refractory. "
+            "Not SRMA-only. Not FUO-only. Not FIP. Not disco."
+        )
+        do_next.append(
+            "MRI. CSF. Rule out infection and fungus. △ Plumb."
+        )
+        sources.append(
+            "Merck inflammatory spinal (Thomas, Oct 2021 / Aug 2025): "
+            "GME; MRI / CSF; relapse and refractory are on the page. "
+            "Merck meningitis (Callanan, Mar 2021 / Mar 2025): "
+            "young to middle-aged small-breed dogs; distinguish fungus from GME."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a small-breed multifocal brain home as a disc.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append(
+                "Do not pred GME first until infection and fungus are off the table."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for GME.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for GME.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

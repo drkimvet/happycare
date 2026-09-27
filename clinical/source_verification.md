@@ -1917,3 +1917,21 @@ Book/public traps:
 - Rapid tapering can result in relapse.
 
 Night rule: young large-breed dog, neck pain plus fever → **CSF tonight, not a disc.** △ Plumb.
+
+## 206. Granulomatous meningoencephalomyelitis / GME MUO (Merck Thomas Oct 2021 / Aug 2025; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett GME chapter in the owned SA EM splits. Public Merck inflammatory spinal (Thomas) plus meningitis / encephalitis (Callanan). Packet 205 still owns named SRMA. Packet 204 still owns named FIP. Packet 203 still owns unnamed FUO. Packet 185 still owns named IVDD. Packet 190 still owns disco. Packet 183 still owns rickettsial myelitis on the same Thomas page. Skip goat CAE / horse EHV-1 as their own packets. Do not harvest cytarabine, cyclosporine, procarbazine, or a pred table as lobby law. Pug / Maltese / Yorkshire necrotizing encephalitis is named on Callanan, not this dump.
+
+Agree with Thomas / Callanan: GME is an inflammatory CNS disease of dogs worldwide. Cause unknown; a virus is suspected and not proven. Adult dogs of any breed; female small-breed dogs, especially Poodles, may be predisposed. Callanan: young to middle-aged; no clear familial basis. Disseminated (inflammatory reticulosis) vs focal (neoplastic reticulosis) — focal can look like a mass. Cervical pain and tetraparesis are the most common spinal signs. Often acute; focal form can progress over months. CSF: increased protein and pleocytosis, mononuclear or neutrophils. MRI / CT: single or multiple enhancing masses. Tentative diagnosis = signs + imaging + CSF + exclusion. Dogs often improve with immunosuppressive corticosteroids plus named immunomodulators (cytarabine / cyclosporine / procarbazine stay on the page). Relapse is possible; many become refractory. Distinguishing granulomatous infection (fungus / protozoa) from GME is often difficult. Radiation is named on Callanan. Some older “neoplastic reticulosis / malignant GME” cases are now histiocytic sarcoma or lymphoma (neoplasia page named only).
+
+Night split: named GME / MUO is MRI and CSF, not a disc and not pred-first until infection and fungus are off. Named SRMA stays 205. Bare poodle seizure does not fire. Unnamed FUO stays 203. Cat FIP stays 204.
+
+Book/public traps:
+
+- Do not harvest cytarabine / cyclosporine / procarbazine as lobby law.
+- Do not pred infectious or fungal meningoencephalitis as GME.
+- Do not call an enhancing mass a tumor until MUO is on the list.
+- Relapse is possible; many become refractory.
+- Do not send a small-breed multifocal brain home as a disc.
+
+Night rule: small-breed dog, multifocal brain or neck → **MRI and CSF; relapse is on the page.** △ Plumb.

@@ -3257,6 +3257,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("neck pain plus fever is csf tonight", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_named_gme_is_mri_csf(self):
+        b = analyze(
+            "dog",
+            "GME, MUO, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("gme / muo", loc)
+        self.assertIn("mri and csf", loc)
+        self.assertIn("relapse is on the page", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("cytarabine", joined)
+        self.assertIn("enhancing masses", joined)
+        self.assertIn("refractory", joined)
+        self.assertIn("infection and fungus", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gme_is_not_srma(self):
+        b = analyze("dog", "GME, cervical pain, tetraparesis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mri and csf", loc)
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_is_not_gme(self):
+        b = analyze("dog", "SRMA, GME, neck pain, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neck pain plus fever is csf tonight", loc)
+        self.assertNotIn("mri and csf", loc)
+        self.assertNotIn("relapse is on the page", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fuo_without_gme_is_not_gme(self):
+        b = analyze("dog", "fever of unknown origin, persistent fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fever of unknown origin", loc)
+        self.assertNotIn("mri and csf", loc)
+        self.assertNotIn("relapse is on the page", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_gme(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("mri and csf", loc)
+        self.assertNotIn("relapse is on the page", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fip_is_not_gme(self):
+        b = analyze("cat", "FIP, wet FIP, effusion")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the effusion", loc)
+        self.assertNotIn("mri and csf", loc)
+        self.assertNotIn("relapse is on the page", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_seizure_poodle_is_not_gme(self):
+        b = analyze("dog", "poodle, seizure, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mri and csf", loc)
+        self.assertNotIn("relapse is on the page", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
