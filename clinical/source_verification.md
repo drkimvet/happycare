@@ -1953,3 +1953,21 @@ Book/public traps:
 - Ultimately fatal stays on the page — do not promise a GME-style remission.
 
 Night rule: Pug / toy breed, named NME → **fatal necrosis, not idiopathic epilepsy.** △ Plumb.
+
+## 208. Otogenic bacterial meningitis / ear-to-brain (Merck Hoff Dec 2025 / Apr 2026; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett otogenic-meningitis chapter in the owned SA EM splits. Public Merck otitis media and interna (Hoff) plus meningitis / encephalitis (Callanan). Packet 137 still owns peripheral vestibular / named otitis interna without brain-extension words. Packet 167 still owns named polyp. Packet 207 still owns named NME. Packet 206 still owns named GME. Packet 205 still owns named SRMA. Skip cattle *Mycoplasma bovis* / horse THO as their own packets. Do not harvest a middle-ear antimicrobial table, a 3–6 week clock, or a myringotomy recipe as lobby law.
+
+Agree with Hoff: otitis media does not cause a neurological head tilt. Otitis interna is ipsilateral tilt, horizontal or rotary nystagmus, nausea — and **by itself does not cause altered mentation**. Extension of infection from the inner ear to the brain leads to meningitis, meningoencephalitis, or abscesses. Animals with media or interna are usually alert, nonfebrile, and eating. Animals with meningitis or meningoencephalitis are usually lethargic, febrile, and inappetent. Look in both ears. CT / MRI. CSF. Culture the middle ear, not just the canal. Do not put ototoxic drops in a middle ear you cannot see. Callanan: bacteria reach the CNS by direct extension, including otitis media or interna. Steroids are not the SRMA script when the ear is the source.
+
+Night split: named otogenic / ear-to-brain / otitis-plus-meningitis is brain tonight, not just a tilt. Bare head tilt or bare otitis media does not fire. Named polyp stays 167. Named NME / GME / SRMA stay theirs.
+
+Book/public traps:
+
+- Do not send a dull febrile ear home as just a tilt.
+- Do not pred otogenic meningitis as SRMA.
+- Do not harvest a middle-ear drug table or 3–6 week clock.
+- Do not put ototoxic drops in a middle ear you cannot see.
+- Otitis interna does not cause altered mentation.
+
+Night rule: dull + febrile + an ear → **ear-to-brain tonight, not just a tilt.** △ Plumb.

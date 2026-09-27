@@ -3380,6 +3380,91 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("pug encephalitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_otogenic_is_ear_to_brain(self):
+        b = analyze(
+            "dog",
+            "otogenic meningitis, otitis interna, dull, febrile, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("otogenic meningitis", loc)
+        self.assertIn("ear-to-brain tonight", loc)
+        self.assertIn("otitis interna does not cause altered mentation", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("dull febrile ear home as just a tilt", joined)
+        self.assertIn("look in both ears", joined)
+        self.assertIn("culture the middle ear", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_otogenic_is_not_nme(self):
+        b = analyze("dog", "otogenic meningitis, otitis interna, dull, febrile")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ear-to-brain tonight", loc)
+        self.assertNotIn("fatal necrosis", loc)
+        self.assertNotIn("pug encephalitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nme_is_not_otogenic(self):
+        b = analyze("dog", "NME, pug encephalitis, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fatal necrosis", loc)
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_is_not_otogenic(self):
+        b = analyze("dog", "SRMA, neck pain, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neck pain plus fever is csf tonight", loc)
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gme_is_not_otogenic(self):
+        b = analyze("dog", "GME, MUO, prednisolone")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mri and csf", loc)
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_head_tilt_alone_is_not_otogenic(self):
+        b = analyze("dog", "old dog head tilt and nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("peripheral vs central before home", loc)
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_polyp_is_not_otogenic(self):
+        b = analyze("cat", "nasopharyngeal polyp, stertor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("nasopharyngeal / aural inflammatory polyp", loc)
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_otitis_media_is_not_otogenic(self):
+        b = analyze("dog", "otitis media")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fuo_plus_otogenic_is_otogenic(self):
+        b = analyze("dog", "otogenic meningitis, fever of unknown origin")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ear-to-brain tonight", loc)
+        self.assertNotIn("fever of unknown origin", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horner_facial_is_not_otogenic(self):
+        b = analyze("dog", "Horner and facial paralysis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ear-to-brain", loc)
+        self.assertNotIn("otogenic meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -470,6 +470,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("pug encephalitis", VERIF.lower())
         self.assertIn("ultimately fatal", VERIF.lower())
         self.assertIn("csf pleocytosis", VERIF.lower())
+        self.assertIn("otogenic", VERIF.lower())
+        self.assertIn("ear-to-brain", VERIF.lower())
+        self.assertIn("otitis interna does not cause altered mentation", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -738,6 +741,12 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-gme`", MACRO)
         self.assertIn("`ddx-nme`", MACRO)
         self.assertIn("`dc-nme`", MACRO)
+        self.assertIn("`ddx-oto`", MACRO)
+        self.assertIn("`dc-oto`", MACRO)
+        self.assertIn("otitis interna does not cause altered mentation", MACRO.lower())
+        self.assertIn("ear-to-brain", MACRO.lower())
+        self.assertIn("dull febrile ear home as just a tilt", MACRO.lower())
+        self.assertIn("look in both ears", MACRO.lower())
         self.assertIn("culture alone is not a diagnosis", MACRO.lower())
         self.assertIn("intact cribriform", MACRO.lower())
         self.assertIn("facial deformity plus epistaxis is a mass until proven", MACRO.lower())
@@ -980,6 +989,9 @@ class PublicCardInvariants(unittest.TestCase):
             "necrotizing meningoencephalitis",
             "pug encephalitis",
             "ultimately fatal",
+            "otogenic",
+            "ear-to-brain",
+            "otitis interna does not cause altered mentation",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -1084,6 +1084,17 @@ NME_RE = re.compile(
     r"necrotizing leukoencephal",
     re.I,
 )
+# Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
+# Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
+OTO_MEN_RE = re.compile(
+    r"otogenic|"
+    r"ear[- ]to[- ]brain|"
+    r"otitis.{0,60}meningit|"
+    r"meningit.{0,60}(otitis|inner ear|middle ear|bulla)|"
+    r"(inner ear|otitis interna).{0,50}(brain|encephalit|abscess)|"
+    r"(brain|encephalit|abscess).{0,50}(inner ear|otitis interna)",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -5120,6 +5131,7 @@ def analyze(
     steal_srma = SRMA_RE.search(text)
     steal_gme = GME_RE.search(text)
     steal_nme = NME_RE.search(text)
+    steal_oto = OTO_MEN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5129,6 +5141,7 @@ def analyze(
         or steal_srma
         or steal_gme
         or steal_nme
+        or steal_oto
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5327,6 +5340,48 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for NME.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for NME.")
+
+    oto_named = spec in {"dog", "cat"} and OTO_MEN_RE.search(text)
+    if oto_named and not (
+        NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or POLYP_RE.search(text)
+    ):
+        oto_loc = (
+            "Otogenic meningitis. Ear-to-brain tonight. "
+            "Otitis interna does not cause altered mentation."
+        )
+        localization = f"{localization} Also {oto_loc}" if localization else oto_loc
+        hard_stops.append(
+            "Do not send a dull febrile ear home as just a tilt. "
+            "Do not harvest a 3–6 week antibiotic clock as lobby law. "
+            "Do not put ototoxic drops in a middle ear you cannot see. "
+            "Do not pred otogenic meningitis as SRMA."
+        )
+        do_not.append(
+            "Media or interna animals are usually alert and nonfebrile. "
+            "Extension from the inner ear leads to meningitis, meningoencephalitis, or abscesses. "
+            "Not NME-only. Not GME-only. Not SRMA-only. Not polyp-only."
+        )
+        do_next.append(
+            "Look in both ears. MRI / CT. CSF. Culture the middle ear. △ Plumb."
+        )
+        sources.append(
+            "Merck otitis media and interna (Hoff, Dec 2025 / Apr 2026): "
+            "otitis interna does not cause altered mentation; "
+            "dull, febrile, inappetent means extension. "
+            "Merck meningitis (Callanan, Mar 2021 / Mar 2025): "
+            "direct extension from otitis media or interna."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send a dull febrile ear home as just a tilt.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not pred otogenic meningitis as SRMA.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for otogenic meningitis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for otogenic meningitis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

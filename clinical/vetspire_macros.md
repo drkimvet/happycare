@@ -136,6 +136,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-srma` | Assessment | SRMA / neck-pain fever |
 | `ddx-gme` | Assessment | GME / MUO |
 | `ddx-nme` | Assessment | NME / pug encephalitis |
+| `ddx-oto` | Assessment | Otogenic meningitis / ear-to-brain |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -231,6 +232,7 @@ Suggested names are short so they show up after three letters.
 | `dc-srma` | Discharge | After SRMA / CSF talk |
 | `dc-gme` | Discharge | After GME / MUO talk |
 | `dc-nme` | Discharge | After NME / pug-encephalitis talk |
+| `dc-oto` | Discharge | After otogenic / ear-to-brain talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1681,6 +1683,21 @@ DDX:
 Do not: send pug encephalitis home as idiopathic epilepsy. Harvest a pred table. Treat NME as GME-only. Skip MRI and CSF.
 Do next: MRI. CSF. Stop the seizure. △ Plumb.
 
+### `ddx-oto`
+
+Otogenic meningitis — {{patient.name}}
+Ear [left / right / both]. Mentation [alert / dull]. Fever [Y/N]. Eating [Y/N]. TM [seen / not seen]. CSF [ / not yet]. Imaging [MRI / CT / not yet]. Referring [Y/N].
+
+DDX:
+1. Otogenic meningitis / ear-to-brain — **otitis interna does not cause altered mentation**
+2. Dull, febrile, inappetent = extension (meningitis / meningoencephalitis / abscess)
+3. Media or interna animals are usually alert and nonfebrile
+4. Look in both ears. MRI / CT. CSF. Culture the middle ear
+5. Not just a tilt (137). Not polyp-only (167). Not SRMA (205). Not GME (206). Not NME (207)
+
+Do not: send a dull febrile ear home as just a tilt. Pred as SRMA. Harvest a 3–6 week clock. Put ototoxic drops in a middle ear you cannot see.
+Do next: Look in both ears. MRI / CT. CSF. Culture the middle ear. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2476,6 +2493,14 @@ Return now for worse seizures, not walking, neck pain, collapse, or not eating. 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for more seizures, collapse, blindness, or not eating. {{location.phonenumber}}
+
+### `dc-oto`
+
+{{patient.name}} was evaluated for possible spread of an ear infection into the brain (otogenic meningitis / ear-to-brain). Otitis interna does not cause altered mentation. Dull or febrile means we look for extension tonight.
+
+Give only the medicines we sent, as labeled. Do not put leftover ear drops in without a veterinarian checking the eardrum. Do not start a steroid from the cabinet.
+
+Return now for dullness, fever, not eating, seizures, or a worsening head tilt. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
