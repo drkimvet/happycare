@@ -1247,6 +1247,29 @@ HOT_JOINT_RE = re.compile(
     r"purulent (joint|synov)",
     re.I,
 )
+# Bare "arthritis" is OA. Bare "impa" is safe as a word. Not Lyme-only shifting (184).
+IMPA_RE = re.compile(
+    r"immune[- ]mediated polyarth|"
+    r"\bimpa\b|"
+    r"nonerosive polyarth|"
+    r"erosive polyarth|"
+    r"fcpp\b|"
+    r"chronic progressive polyarth",
+    re.I,
+)
+POLYARTH_RE = re.compile(
+    r"polyarthrit",
+    re.I,
+)
+MULTI_JOINT_RE = re.compile(
+    r"multiple joints|"
+    r"several joints|"
+    r"(at least )?(three|3) joints|"
+    r"carpi and tarsi|"
+    r"swollen joints|"
+    r"hot joints",
+    re.I,
+)
 BNP_RE = re.compile(
     r"\b(neomycin.{0,24}polymyxin|triple antibiotic|\bbnp\b|neopoly)",
     re.I,
@@ -4874,6 +4897,9 @@ def analyze(
         OSA_RE.search(text)
         or PATH_FX_RE.search(text)
         or (OSA_SITE_RE.search(text) and LYTIC_BONE_RE.search(text))
+        or IMPA_RE.search(text)
+        or POLYARTH_RE.search(text)
+        or MULTI_JOINT_RE.search(text)
     ):
         jtap_loc = (
             "Septic arthritis. Tap the hot joint tonight. "
@@ -4907,6 +4933,53 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for a hot joint.")
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for a hot joint.")
+
+    impa_named = spec in {"dog", "cat"} and (
+        IMPA_RE.search(text) or POLYARTH_RE.search(text)
+    )
+    multi_joint = spec in {"dog", "cat"} and MULTI_JOINT_RE.search(text)
+    if (impa_named or multi_joint) and not SEPTIC_ARTH_RE.search(text):
+        if spec == "cat":
+            impa_loc = (
+                "Feline polyarthritis. Infection is more likely than IMPA. "
+                "Tap at least three joints tonight."
+            )
+        else:
+            impa_loc = (
+                "Immune-mediated polyarthritis. Tap at least three joints. "
+                "Nondegenerate neutrophils. Not a steroid first."
+            )
+        localization = f"{localization} Also {impa_loc}" if localization else impa_loc
+        hard_stops.append(
+            "Do not pred-first before three taps and a culture. "
+            "Do not harvest prednisolone as lobby law. "
+            "Do not call a single hot joint IMPA."
+        )
+        do_not.append(
+            "Printed steroid / azathioprine / cyclosporine / leflunomide stay on the page. "
+            "Hunt type II–IV: UTI, GI, tumor, endocarditis. "
+            "Not a septic monoarthritis. Not Lyme-only shifting."
+        )
+        do_next.append(
+            "Tap at least three joints, especially carpi and tarsi. "
+            "Cytology plus culture. Tick panel. "
+            "If tick exposure, doxy until serology (183 / 184). △ Plumb."
+        )
+        sources.append(
+            "Merck immune-mediated polyarthritis (Lafuente, Dec 2025): "
+            "tap at least three joints; nondegenerate neutrophils; "
+            "in cats, polyarthritis is more likely to be infectious."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send fever plus shifting multi-joint lameness home as a sprain."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not pred-first IMPA before the taps and culture.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for IMPA.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for IMPA.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

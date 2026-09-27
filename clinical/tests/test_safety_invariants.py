@@ -444,6 +444,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("culture can be negative", VERIF.lower())
         self.assertIn("3,000", VERIF.lower())
         self.assertIn("22 mg/kg", VERIF.lower())
+        self.assertIn("immune-mediated polyarthritis", VERIF.lower())
+        self.assertIn("at least three joints", VERIF.lower())
+        self.assertIn("nondegenerate neutrophils", VERIF.lower())
+        self.assertIn("more likely to be infectious", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -698,6 +702,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-osa`", MACRO)
         self.assertIn("`ddx-jtap`", MACRO)
         self.assertIn("`dc-jtap`", MACRO)
+        self.assertIn("`ddx-impa`", MACRO)
+        self.assertIn("`dc-impa`", MACRO)
         self.assertIn("culture alone is not a diagnosis", MACRO.lower())
         self.assertIn("intact cribriform", MACRO.lower())
         self.assertIn("facial deformity plus epistaxis is a mass until proven", MACRO.lower())
@@ -705,6 +711,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("stage the chest before you cut", MACRO.lower())
         self.assertIn("not a plate-and-home", MACRO.lower())
         self.assertIn("tap the hot joint tonight", MACRO.lower())
+        self.assertIn("tap at least three joints", MACRO.lower())
         self.assertIn("bloody diarrhea is a syndrome", MACRO.lower())
         self.assertIn("weak/equivocal = abnormal snap", MACRO.lower())
         self.assertIn("replaces a veterinary license", MACRO.lower())

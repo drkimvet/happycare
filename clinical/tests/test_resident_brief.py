@@ -2949,6 +2949,59 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("tap the hot joint tonight", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_impa_three_joints_is_impa(self):
+        b = analyze(
+            "dog",
+            "IMPA, tap at least three joints, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("tap at least three joints", loc)
+        self.assertIn("nondegenerate neutrophils", loc)
+        self.assertNotIn("tap the hot joint tonight", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pred-first", joined)
+        self.assertIn("carpi and tarsi", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_polyarthritis_fever_is_impa(self):
+        b = analyze("dog", "polyarthritis, fever, shifting lameness")
+        loc = b["localization"].lower()
+        self.assertIn("immune-mediated polyarthritis", loc)
+        self.assertNotIn("tap the hot joint tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hot_single_joint_is_not_impa(self):
+        b = analyze("dog", "hot swollen joint, lame, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the hot joint tonight", loc)
+        self.assertNotIn("tap at least three joints", loc)
+        self.assertNotIn("immune-mediated polyarthritis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lyme_shifting_is_not_impa(self):
+        b = analyze("dog", "Lyme, fever, shifting lameness, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("tap at least three joints", loc)
+        self.assertNotIn("immune-mediated polyarthritis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_impa(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("tap at least three joints", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_septic_named_is_not_impa(self):
+        b = analyze("dog", "septic arthritis, culture negative")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the hot joint tonight", loc)
+        self.assertNotIn("tap at least three joints", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

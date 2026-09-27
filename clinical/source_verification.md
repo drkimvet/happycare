@@ -1826,3 +1826,23 @@ Book/public traps:
 - Do not lavage every joint as the default.
 
 Night rule: hot swollen joint, lame → **tap tonight, then start. Culture-negative does not rule it out.** △ Plumb.
+
+## 201. Immune-mediated polyarthritis / multi-joint tap (Merck Lafuente Dec 2025)
+
+No dedicated Plunkett IMPA chapter in the owned SA EM splits. Public Merck immune-mediated polyarthritis in dogs and cats (Lafuente). Packet 200 still owns the single hot joint / septic tap. Packet 184 still owns Lyme shifting without IMPA words. Packet 183 still owns the tick panel. Packet 189 still owns Bartonella IE if the murmur is the room. Skip equine IMPA as its own packet. **Do not harvest prednisolone / azathioprine / cyclosporine / leflunomide / cyclophosphamide as lobby law.**
+
+Agree with Lafuente: IMPA is noninfectious synovitis from immune-complex deposition. Usually **multiple joints, often symmetrical**. Type I idiopathic (most common). Type II reactive (remote infection — UTI, respiratory, infective endocarditis). Type III GI / IBD. Type IV neoplasia. Dogs more than cats. Dogs: fever, lethargy, anorexia, **shifting lameness**; carpi and tarsi hurt and can swell. Diagnosis is synovial fluid. **Tap at least three joints.** Increased nucleated cells, **predominantly nondegenerate neutrophils**, decreased viscosity. Cytology plus culture to exclude septic arthritis. Nonerosive vs erosive on films. Hunt the secondary cause: CBC / chem / UA, chest and abdomen, tick panel. If tick exposure or endemic travel, doxycycline can start until serology — that doxy is still 183 / 184, not a harvested 5 / 10. Immunosuppression is corticosteroids first; aza / cyclosporine / leflunomide named for refractory. Relapse happens.
+
+Cats: less common. **In cats, polyarthritis is more likely to be infectious than immune mediated.** Secondary list: FIP, FeLV, FIV, toxoplasma, chronic infection. FeLV / FIV / coronavirus / Toxoplasma sit underneath. FCPP (proliferative young vs deforming older male) stays named, not a dog script. Erosive IMPA in a cat with FeLV is a poor-prognosis conversation.
+
+Night split: many joints / shifting / fever → tap at least three tonight, then culture, then steroids. One hot joint is still 200. Lyme shifting without IMPA / multi-joint words is still 184. Do not pred-first before the taps. Azotemic: still no DexSP as a shotgun.
+
+Book/public traps:
+
+- Printed steroid / aza / cyclosporine / leflunomide / cyclophosphamide tables stay on the page.
+- Do not harvest those as lobby law.
+- Do not pred-first before three taps and a culture.
+- Do not call a single hot joint IMPA.
+- Do not treat a cat as a small dog — infection first.
+
+Night rule: fever plus shifting lameness plus more than one joint → **three taps tonight, not a steroid.** △ Plumb.

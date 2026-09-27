@@ -129,6 +129,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pmet` | Assessment | Metastatic pulmonary nodules / staging chest |
 | `ddx-osa` | Assessment | Osteosarcoma / pathologic fracture |
 | `ddx-jtap` | Assessment | Septic arthritis / hot joint tap |
+| `ddx-impa` | Assessment | IMPA / multi-joint tap |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -217,6 +218,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pmet` | Discharge | After pulmonary mets / staging-chest talk |
 | `dc-osa` | Discharge | After osteosarcoma / pathologic-fracture talk |
 | `dc-jtap` | Discharge | After septic joint / tap talk |
+| `dc-impa` | Discharge | After IMPA / multi-joint tap talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1562,6 +1564,21 @@ DDX:
 Do not: send a hot joint home as a sprain. Harvest amox-clav 22 as lobby law. Treat culture-negative as “not septic.”
 Do next: arthrocentesis. Cytology plus culture. Start after the tap. △ Plumb.
 
+### `ddx-impa`
+
+IMPA — {{patient.name}}
+Joints [carpi / tarsi / other]. Fever [ ]. Shifting [Y/N]. Taps [0 / 1 / ≥3]. Neutrophils [nondeg / deg]. Culture [ ]. Tick / travel [ ]. Type [I idiopathic / II infection / III GI / IV tumor].
+
+DDX:
+1. Immune-mediated polyarthritis — **tap at least three joints**. Nondegenerate neutrophils
+2. Types I–IV: hunt UTI / GI / tumor / endocarditis. Tick panel
+3. Steroids after the taps, △ Plumb. Not pred-first
+4. Cats: infection is more likely than IMPA. FeLV / FIV / FIP / toxoplasma sit underneath
+5. Not a single hot joint (200). Not Lyme-only shifting (184)
+
+Do not: pred-first before three taps and a culture. Harvest prednisolone / aza / cyclosporine. Call one hot joint IMPA.
+Do next: three taps, especially carpi and tarsi. Culture. Tick panel. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2301,6 +2318,14 @@ Return now for worse pain, a snap in the leg, trouble breathing, or not eating. 
 Give only the medicines we sent, as labeled. Finish the antibiotic if one was started. Keep {{patient.pronoun}} quiet as discussed.
 
 Return now for worse lameness, a hotter joint, fever, or not eating. {{location.phonenumber}}
+
+### `dc-impa`
+
+{{patient.name}} was evaluated for inflammation in more than one joint. This is not a sprain. We tap several joints and wait for culture before immune-suppressing medicines.
+
+Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet as discussed.
+
+Return now for worse lameness, fever, not walking, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
