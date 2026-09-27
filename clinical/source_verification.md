@@ -1899,3 +1899,21 @@ Book/public traps:
 - Do not invent a compounding recipe.
 
 Night rule: young cat, fever plus sticky yellow effusion → **tap it; a titer is not a diagnosis.** △ Plumb.
+
+## 205. Steroid-responsive meningitis-arteritis / SRMA neck-pain fever (Merck Parsley Mar 2026; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett SRMA chapter in the owned SA EM splits. Public Merck breed-associated aseptic meningitis (Parsley) plus meningitis / encephalitis (Callanan). Packet 185 still owns named IVDD / knuckle. Packet 190 still owns disco / Brucella. Packet 201 still owns named IMPA. Packet 203 still owns unnamed FUO. Packet 204 still owns named FIP. Skip farm bacterial meningitis / foal navel-ill as their own packet. Do not harvest pred 2 mg/kg or a 6–8 month clock as lobby law. GME / MUO is the next room, not this dump.
+
+Agree with Parsley / Callanan: breed-associated aseptic meningitis (steroid-responsive meningitis-arteritis) in young dogs — Beagles, Bernese Mountain Dogs, Boxers, German Shorthaired Pointers, and sporadically others. Callanan also names necrotizing vasculitis in Beagles / BMD / GSHP / Nova Scotia Duck Tolling Retrievers. Main signs: neck pain, fever, and dramatic CSF pleocytosis. Usual meningitis picture: fever, hyperesthesia, neck rigidity, painful paraspinal spasms — can be mistaken for IVDD or polyarthritis. CSF is the most reliable test; without it, neck pain plus fever is easy to misdiagnose. Steroid-responsive suppurative meningitis: marked neutrophilic pleocytosis; protein printed 100 mg/dL stays on the page. Infectious causes of meningitis should be ruled out before immunosuppression. Glucocorticoids are usually contraindicated in infectious meningitis. Prognosis guarded to favorable if acute and treated promptly. Taper slowly over 6–8 months. Rapid tapering can result in relapse.
+
+Night split: named SRMA / beagle pain / aseptic meningitis is CSF tonight, not a disc and not pred-first until infection is off. Bare neck pain plus fever without those words does not fire. Named IVDD stays 185. Named disco stays 190. Named IMPA stays 201. Unnamed FUO stays 203. Cat FIP stays 204.
+
+Book/public traps:
+
+- Do not harvest pred 2 / 6–8 months as lobby law.
+- Do not pred infectious meningitis.
+- Do not skip CSF.
+- Do not send neck pain plus fever home as a disc.
+- Rapid tapering can result in relapse.
+
+Night rule: young large-breed dog, neck pain plus fever → **CSF tonight, not a disc.** △ Plumb.

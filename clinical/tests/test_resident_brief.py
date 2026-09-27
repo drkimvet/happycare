@@ -3190,6 +3190,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("a titer is not a diagnosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_named_srma_is_csf_tonight(self):
+        b = analyze(
+            "dog",
+            "SRMA, neck pain, fever, prednisolone, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("neck pain plus fever is csf tonight", loc)
+        self.assertIn("not a disc", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not skip csf", joined)
+        self.assertIn("6–8 month", joined)
+        self.assertIn("rapid tapering", joined)
+        self.assertIn("infectious meningitis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_is_not_fuo(self):
+        b = analyze("dog", "SRMA, FUO, neck pain, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neck pain plus fever is csf tonight", loc)
+        self.assertNotIn("do not pred fuo first", loc)
+        self.assertNotIn("fever is not heatstroke to ice", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fuo_without_srma_is_not_srma(self):
+        b = analyze("dog", "fever of unknown origin, persistent fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fever of unknown origin", loc)
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_srma(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_impa_is_not_srma(self):
+        b = analyze("dog", "SRMA, IMPA, polyarthritis, fever")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("immune-mediated polyarthritis", loc)
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_disco_is_not_srma(self):
+        b = analyze("dog", "SRMA, discospondylitis, back pain")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("discospondylitis", loc)
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_fip_is_not_srma(self):
+        b = analyze("cat", "FIP, wet FIP, effusion")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tap the effusion", loc)
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_neck_fever_is_not_srma(self):
+        b = analyze("dog", "neck pain, fever, DexSP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("neck pain plus fever is csf tonight", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

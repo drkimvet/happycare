@@ -133,6 +133,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ie` | Assessment | Infectious endocarditis / fever + new murmur |
 | `ddx-fuo` | Assessment | FUO / do not pred first |
 | `ddx-fip` | Assessment | FIP / tap the effusion |
+| `ddx-srma` | Assessment | SRMA / neck-pain fever |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -225,6 +226,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ie` | Discharge | After endocarditis / echo talk |
 | `dc-fuo` | Discharge | After FUO / do-not-pred talk |
 | `dc-fip` | Discharge | After FIP / effusion-tap talk |
+| `dc-srma` | Discharge | After SRMA / CSF talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1630,6 +1632,21 @@ DDX:
 Do not: treat a coronavirus titer as FIP. Harvest GS-441524 15 / 84 days. Drain the belly just because it is there. Pred as the antiviral.
 Do next: tap effusion. Cytology plus protein / A:G. Look at the eyes. △ Plumb.
 
+### `ddx-srma`
+
+SRMA — {{patient.name}}
+Age [ ]. Breed [Beagle / BMD / Boxer / GSHP / other]. Neck pain [ ]. Fever [ ]. CSF [not yet / neutrophilic / other]. Infection screen [ ]. Joints [normal / many]. Referring [Y/N].
+
+DDX:
+1. Steroid-responsive meningitis-arteritis — **neck pain plus fever is CSF tonight**. Not a disc
+2. Marked neutrophilic pleocytosis. Printed 6–8 months / 100 mg/dL stay on the page
+3. Rule out infectious meningitis first. Rapid tapering can result in relapse
+4. Look at the joints (201 owns named IMPA)
+5. Not IVDD-only (185). Not disco (190). Not FUO-only (203)
+
+Do not: send neck pain plus fever home as a disc. Harvest pred 2 / 6–8 months. Pred first until infection is off. Skip CSF.
+Do next: CSF. Infection screen. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2401,6 +2418,14 @@ Return now for worse fever, collapse, not eating, trouble breathing, or new lame
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for trouble breathing, a bigger belly, collapse, seizures, not eating, or fever that returns. {{location.phonenumber}}
+
+### `dc-srma`
+
+{{patient.name}} was evaluated for possible steroid-responsive meningitis. Neck pain plus fever is not a slipped disc. The useful test is spinal fluid. Steroids are not the first step until infection is off the list.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse neck pain, fever that returns, not walking, seizures, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

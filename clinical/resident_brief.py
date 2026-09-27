@@ -1052,6 +1052,16 @@ FIP_RE = re.compile(
     r"non-effusive fip",
     re.I,
 )
+# Bare "meningitis" is infectious until named. Bare "neck pain" is IVDD / AA / wobbler.
+# Not FUO (203). Not IMPA (201). Not IVDD (185). Not disco (190).
+SRMA_RE = re.compile(
+    r"\bsrma\b|"
+    r"steroid[- ]responsive meningit|"
+    r"beagle pain|"
+    r"breed[- ]associated aseptic meningit|"
+    r"aseptic (suppurative )?meningit",
+    re.I,
+)
 # Bare "canis" is a species epithet, not Brucella. Not prostatitis / metritis alone.
 BRUCELLA_RE = re.compile(
     r"\bbrucell|"
@@ -5085,7 +5095,10 @@ def analyze(
     )
     steal_hot = HOT_JOINT_RE.search(text) or SEPTIC_ARTH_RE.search(text)
     steal_fip = FIP_RE.search(text)
-    if fuo_named and not (steal_ie or steal_bart or steal_impa or steal_hot or steal_fip):
+    steal_srma = SRMA_RE.search(text)
+    if fuo_named and not (
+        steal_ie or steal_bart or steal_impa or steal_hot or steal_fip or steal_srma
+    ):
         if spec == "cat":
             fuo_loc = (
                 "Feline FUO. Infection first, FIP on the list. "
@@ -5165,6 +5178,50 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for FIP.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for FIP.")
+
+    srma_named = spec == "dog" and SRMA_RE.search(text)
+    if srma_named and not (
+        IVDD_RE.search(text)
+        or DISCO_RE.search(text)
+        or IMPA_RE.search(text)
+        or POLYARTH_RE.search(text)
+        or MULTI_JOINT_RE.search(text)
+    ):
+        srma_loc = (
+            "SRMA. Neck pain plus fever is CSF tonight. "
+            "Not a disc."
+        )
+        localization = f"{localization} Also {srma_loc}" if localization else srma_loc
+        hard_stops.append(
+            "Do not send neck pain plus fever home as a disc. "
+            "Do not harvest pred 2 or a 6–8 month clock as lobby law. "
+            "Do not pred SRMA first until infectious meningitis is off the table. "
+            "Do not skip CSF."
+        )
+        do_not.append(
+            "Printed 6–8 months / 100 mg/dL stay on the page. "
+            "Marked neutrophilic pleocytosis. Rapid tapering can result in relapse. "
+            "Not IVDD-only. Not IMPA-only. Not FUO-only. Not disco."
+        )
+        do_next.append(
+            "CSF. Rule out infection. Look at the joints (201 owns named IMPA). △ Plumb."
+        )
+        sources.append(
+            "Merck breed-associated aseptic meningitis (Parsley, Mar 2026): "
+            "neck pain, fever, dramatic CSF pleocytosis; taper slowly over 6–8 months. "
+            "Merck meningitis (Callanan, Mar 2021 / Mar 2025): "
+            "CSF is the most reliable test; steroid-responsive suppurative meningitis is neutrophilic."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not send neck pain plus fever home as a disc.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append(
+                "Do not pred SRMA first until infectious meningitis is off the table."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for SRMA.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for SRMA.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
