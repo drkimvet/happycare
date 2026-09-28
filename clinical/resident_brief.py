@@ -1109,6 +1109,17 @@ CHYPO_RE = re.compile(
     r"wobble kitten",
     re.I,
 )
+# Bare Cavalier / bare scratch is not enough. Bare tremor is 211.
+# Not CH (211). Not hydro dome-head (209). Not IVDD (185).
+COMS_RE = re.compile(
+    r"\bcoms\b|"
+    r"chiari|"
+    r"caudal occipital|"
+    r"syringomyel|"
+    r"syringohydromyel|"
+    r"phantom scratch",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5160,6 +5171,7 @@ def analyze(
     steal_hydro = HYDRO_RE.search(text)
     steal_hydran = HYDRAN_RE.search(text)
     steal_chypo = CHYPO_RE.search(text)
+    steal_coms = COMS_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5173,6 +5185,7 @@ def analyze(
         or steal_hydro
         or steal_hydran
         or steal_chypo
+        or steal_coms
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5421,6 +5434,7 @@ def analyze(
         or HE_RE.search(text)
         or OTO_MEN_RE.search(text)
         or HYDRAN_RE.search(text)
+        or COMS_RE.search(text)
     ):
         hydro_loc = (
             "Hydrocephalus. Dome-head puppy is not idiopathic epilepsy. "
@@ -5509,6 +5523,7 @@ def analyze(
         hydran_core
         or NME_RE.search(text)
         or GME_RE.search(text)
+        or COMS_RE.search(text)
     ):
         chypo_loc = (
             "Cerebellar hypoplasia. FPV wobble is nonprogressive. "
@@ -5546,6 +5561,52 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for cerebellar hypoplasia.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for cerebellar hypoplasia.")
+
+    coms_named = spec == "dog" and COMS_RE.search(text)
+    if coms_named and not (
+        NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        coms_loc = (
+            "Chiari-like / COMS. Phantom scratch is a syrinx tonight. "
+            "MRI the whole cord."
+        )
+        localization = f"{localization} Also {coms_loc}" if localization else coms_loc
+        hard_stops.append(
+            "Do not treat phantom scratch as a skin allergy. "
+            "Do not harvest gabapentin, pregabalin, or omeprazole as lobby law. "
+            "Do not MRI only the brain."
+        )
+        do_not.append(
+            "Malformation is present at birth; signs often come later. "
+            "Printed 25–70% of MRI-positive Cavaliers are subclinical. "
+            "Syrinx can sit anywhere in the cord and is not necessarily continuous. "
+            "Medical management is often not curative. "
+            "Printed 10 / 5 / 0.7 stay on the page. "
+            "Caudal occipital craniectomy is preferred; printed 25–47% recurrence stays on the page. "
+            "Not CH-only. Not hydro-only. Not IVDD-only."
+        )
+        do_next.append(
+            "MRI the brain and the entire spinal cord. Pain conversation △ Plumb. "
+            "Surgery conversation."
+        )
+        sources.append(
+            "Merck congenital cerebellar (Parsley, Mar 2026): "
+            "COMS / Chiari-like; Cavalier and Brussels Griffon; "
+            "phantom scratching; syringohydromyelia; "
+            "MRI brain and entire cord; printed gabapentin / pregabalin / omeprazole stay on the page; "
+            "caudal occipital craniectomy preferred."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append("Do not treat phantom scratch as a skin allergy.")
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append(
+                "Do not harvest gabapentin, pregabalin, or omeprazole as lobby law."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for COMS.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for COMS.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

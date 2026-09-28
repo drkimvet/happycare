@@ -3656,6 +3656,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("fpv wobble is nonprogressive", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_coms_is_phantom_scratch_syrinx(self):
+        b = analyze(
+            "dog",
+            "COMS, Chiari-like, phantom scratch, Cavalier, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("chiari-like / coms", loc)
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertIn("mri the whole cord", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("skin allergy", joined)
+        self.assertIn("entire spinal cord", joined)
+        self.assertIn("often not curative", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_coms(self):
+        b = analyze("cat", "cerebellar hypoplasia, in utero FPV, tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coms_is_not_ch(self):
+        b = analyze("dog", "Chiari-like, cerebellar hypoplasia, phantom scratch")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydrocephalus_is_not_coms(self):
+        b = analyze("dog", "hydrocephalus, dome-shaped head, seizures")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head puppy is not idiopathic epilepsy", loc)
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_coms(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cavalier_is_not_coms(self):
+        b = analyze("dog", "Cavalier King Charles Spaniel, cough")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertNotIn("mri the whole cord", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_scratch_is_not_coms(self):
+        b = analyze("dog", "scratch, itch, skin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertNotIn("mri the whole cord", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_chiari_is_not_coms(self):
+        b = analyze("cat", "Chiari-like malformation, phantom scratch")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertNotIn("mri the whole cord", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

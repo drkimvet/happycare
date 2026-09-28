@@ -140,6 +140,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hydro` | Assessment | Hydrocephalus / dome-head puppy |
 | `ddx-hydran` | Assessment | Hydranencephaly / FPV kitten |
 | `ddx-chypo` | Assessment | Cerebellar hypoplasia / FPV wobble |
+| `ddx-coms` | Assessment | Chiari-like / COMS / phantom scratch |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -239,6 +240,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hydro` | Discharge | After hydrocephalus / dome-head talk |
 | `dc-hydran` | Discharge | After hydranencephaly / FPV-kitten talk |
 | `dc-chypo` | Discharge | After cerebellar-hypoplasia / wobble talk |
+| `dc-coms` | Discharge | After Chiari / COMS / phantom-scratch talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1749,6 +1751,21 @@ DDX:
 Do not: treat a wobble kitten as progressive abiotrophy. Harvest an FPV vaccine table. Skip MRI if hydro or hydran might sit alongside.
 Do next: MRI. Look for concomitant hydro or hydran. Name in utero FPV. △ Plumb.
 
+### `ddx-coms`
+
+Chiari-like / COMS — {{patient.name}}
+Breed [Cavalier / Brussels Griffon / other]. Phantom scratch [Y/N]. Face rub [Y/N]. Ataxia [Y/N]. MRI [brain only / whole cord / not yet]. Referring [Y/N].
+
+DDX:
+1. Chiari-like / COMS — **phantom scratch is a syrinx tonight**
+2. MRI the brain and the entire spinal cord. Syrinx is not necessarily continuous
+3. Malformation from birth; signs often later. Many MRI-positive Cavaliers are subclinical
+4. Medical management is often not curative. Printed 10 / 5 / 0.7 stay on the page
+5. Not CH-only (211). Not hydro-only (209). Not IVDD-only (185). Not a skin allergy
+
+Do not: treat phantom scratch as a skin allergy. Harvest gabapentin / pregabalin / omeprazole. MRI only the brain.
+Do next: MRI the whole cord. Pain conversation △ Plumb. Surgery conversation.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2576,6 +2593,14 @@ Return now for circling, blindness, collapse, or not eating. {{location.phonenum
 Give only the medicines we sent, as labeled. Do not start a leftover vaccine protocol or a steroid from the cabinet.
 
 Return now for worsening wobble, blindness, circling, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-coms`
+
+{{patient.name}} was evaluated for a Chiari-like malformation (also called COMS). The “phantom scratch” at the back of the neck can be spinal-cord fluid, not an itch. MRI of the brain and the whole spine is the test.
+
+Give only the medicines we sent, as labeled. Do not start leftover gabapentin or omeprazole from the cabinet.
+
+Return now for worsening scratch, weakness, wobbliness, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

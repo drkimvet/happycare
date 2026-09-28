@@ -482,6 +482,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("cerebellar hypoplasia", VERIF.lower())
         self.assertIn("nonprogressive", VERIF.lower())
         self.assertIn("suitable pets", VERIF.lower())
+        self.assertIn("chiari", VERIF.lower())
+        self.assertIn("phantom scratch", VERIF.lower())
+        self.assertIn("entire spinal cord", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -758,6 +761,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hydran`", MACRO)
         self.assertIn("`ddx-chypo`", MACRO)
         self.assertIn("`dc-chypo`", MACRO)
+        self.assertIn("`ddx-coms`", MACRO)
+        self.assertIn("`dc-coms`", MACRO)
+        self.assertIn("phantom scratch is a syrinx tonight", MACRO.lower())
+        self.assertIn("mri the whole cord", MACRO.lower())
         self.assertIn("fpv wobble is nonprogressive", MACRO.lower())
         self.assertIn("not abiotrophy", MACRO.lower())
         self.assertIn("incomplete ependyma, not hydrocephalus", MACRO.lower())
@@ -1022,6 +1029,9 @@ class PublicCardInvariants(unittest.TestCase):
             "cerebellar hypoplasia",
             "fpv wobble is nonprogressive",
             "not abiotrophy",
+            "chiari",
+            "phantom scratch is a syrinx tonight",
+            "entire spinal cord",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

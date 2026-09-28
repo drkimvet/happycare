@@ -2025,3 +2025,21 @@ Book/public traps:
 - Suitable pets stays on the page — do not euthanize a wobble as hopeless tonight.
 
 Night rule: FPV wobble from birth → **nonprogressive, not abiotrophy.** △ Plumb.
+
+## 212. Chiari-like / COMS Cavalier (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett COMS chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 185 still owns named IVDD / knuckle. Cerebellar abiotrophy on the same page is the next room, not this dump. Skip Dandy-Walker / VLDLR Eurasier. Do not harvest gabapentin 10, pregabalin 5 / 13–19, or omeprazole 0.7 as lobby law.
+
+Agree with Parsley: caudal occipital malformation syndrome (COMS, or Chiari-like malformation) and subsequent syringohydromyelia is commonly reported in Cavalier King Charles Spaniels, American Brussels Griffons, and less commonly other small-breed dogs. Comparable to human Chiari type I. Congenital malformation of the occipital bone → crowded caudal fossa and cerebellar herniation at the foramen magnum. Disrupted CSF flow accumulates in the dorsal cord (syringomyelia), central canal (hydromyelia), or both (syringohydromyelia). Printed 25–70% of Cavaliers with MRI-identifiable caudal occipital malformation are subclinical, increasing with age. The malformation is present at birth; clinical signs often appear later. Common signs: paresthesias (face rubbing, **phantom scratching** of the back of the head), ataxia, and weakness from the syrinx. Diagnosis: MRI of the brain **and the entire spinal cord**, because syringohydromyelia can appear anywhere and is not necessarily continuous. Medical management is often not curative. Printed gabapentin / pregabalin / omeprazole stay on the page. Caudal occipital craniectomy is preferred as definitive treatment; printed 25–47% recurrence stays on the page.
+
+Night split: named COMS / Chiari / syrinx / phantom scratch is a cord-fluid night, not a skin allergy and not a disc. Bare Cavalier does not fire. Bare scratch does not fire. Named CH stays 211. Named hydro stays 209. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not treat phantom scratch as a skin allergy.
+- Do not harvest gabapentin / pregabalin / omeprazole as lobby law.
+- Do not MRI only the brain.
+- Medical management is often not curative.
+- Printed 10 / 5 / 0.7 and 25–47% stay on the page.
+
+Night rule: Cavalier, phantom scratch → **syrinx tonight; MRI the whole cord.** △ Plumb.
