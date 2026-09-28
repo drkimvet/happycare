@@ -148,6 +148,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-bandera` | Assessment | Bandera's neonatal ataxia / Coton de Tulear |
 | `ddx-lem` | Assessment | Rottweiler leukoencephalomyelopathy |
 | `ddx-hatax` | Assessment | Hereditary ataxia / Jack Russell KCNJ10 |
+| `ddx-afghan` | Assessment | Afghan hound myelopathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -255,6 +256,7 @@ Suggested names are short so they show up after three letters.
 | `dc-bandera` | Discharge | After Bandera's / Coton talk |
 | `dc-lem` | Discharge | After Rottweiler LEM talk |
 | `dc-hatax` | Discharge | After hereditary-ataxia / KCNJ10 talk |
+| `dc-afghan` | Discharge | After Afghan-myelopathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1885,6 +1887,21 @@ DDX:
 Do not: send home as a disc. Harvest a pred table. Treat myokymia as a skin twitch.
 Do next: Name myokymia and seizures. Genetic-test conversation. △ Plumb.
 
+### `ddx-afghan`
+
+Afghan myelopathy — {{patient.name}}
+Age [first year / other]. Breed [Afghan / Kooikerhondje / other]. Paraplegia [within 1 week / other]. Forelimbs [Y/N / days]. Referring [Y/N].
+
+DDX:
+1. Afghan myelopathy — **paraplegia within a week. Forelimbs next. Poor prognosis**
+2. First year. Demyelination and necrosis of the cord
+3. Kooikerhondje 3–12 months is on the same poor-prognosis page
+4. Not IVDD-only (185). Not KCNJ10-only (219). Not LEM-only (218)
+5. Cat does not fire
+
+Do not: send home as a disc to rest. Harvest a pred table. Treat as KCNJ10 myokymia.
+Do next: Name the week. Prognosis conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2776,6 +2793,14 @@ Return now for falling, knuckling, or not eating. {{location.phonenumber}}
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worsening ataxia, seizures, or not eating. {{location.phonenumber}}
+
+### `dc-afghan`
+
+{{patient.name}} was evaluated for Afghan hound myelopathy (a fast inherited spinal-cord disease of young Afghan Hounds; a similar poor-prognosis disease exists in Kooikerhondje dogs). Weak back legs can become paralysis within about a week, then the front legs. This is not a disc, and it is not Jack Russell hereditary ataxia.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

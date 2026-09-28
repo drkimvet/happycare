@@ -4168,6 +4168,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("myokymia is this list", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_afghan_myelopathy_is_paraplegia_within_a_week(self):
+        b = analyze(
+            "dog",
+            "Afghan hound myelopathy, paraparesis, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("afghan myelopathy", loc)
+        self.assertIn("paraplegia within a week", loc)
+        self.assertIn("forelimbs next", loc)
+        self.assertIn("poor prognosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("disc to rest", joined)
+        self.assertIn("kooikerhondje", joined)
+        self.assertIn("1–2 weeks", joined)
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hatax_is_not_afghan(self):
+        b = analyze("dog", "hereditary ataxia, Jack Russell, KCNJ10, myokymia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("myokymia is this list", loc)
+        self.assertNotIn("paraplegia within a week", loc)
+        self.assertNotIn("afghan myelopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lem_is_not_afghan(self):
+        b = analyze("dog", "leukoencephalomyelopathy, Rottweiler, delayed proprioception")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("delayed proprioception", loc)
+        self.assertNotIn("paraplegia within a week", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_afghan(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("paraplegia within a week", loc)
+        self.assertNotIn("afghan myelopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_afghan_is_not_myelopathy_gate(self):
+        b = analyze("dog", "Afghan hound, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("paraplegia within a week", loc)
+        self.assertNotIn("afghan myelopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_afghan_myelopathy(self):
+        b = analyze("cat", "Afghan hound myelopathy, paraparesis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("paraplegia within a week", loc)
+        self.assertNotIn("poor prognosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kooiker_is_afghan_page(self):
+        b = analyze("dog", "Kooikerhondje, myelopathy, 6 months")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("afghan myelopathy", loc)
+        self.assertIn("poor prognosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -1186,6 +1186,14 @@ HATAX_RE = re.compile(
     r"myokymia",
     re.I,
 )
+# Bare "afghan" / bare myelopathy is not enough. Not IVDD (185). Not KCNJ10 (219).
+# Dogs only on this page.
+AFGHAN_MYEL_RE = re.compile(
+    r"afghan.{0,40}myelopath|"
+    r"myelopath.{0,40}afghan|"
+    r"kooikerhond",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5245,6 +5253,7 @@ def analyze(
     steal_bandera = BANDERA_RE.search(text)
     steal_lem = LEM_RE.search(text)
     steal_hatax = HATAX_RE.search(text)
+    steal_afghan = AFGHAN_MYEL_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5266,6 +5275,7 @@ def analyze(
         or steal_bandera
         or steal_lem
         or steal_hatax
+        or steal_afghan
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6007,6 +6017,54 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hereditary ataxia.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hereditary ataxia.")
+
+    afghan_named = spec == "dog" and AFGHAN_MYEL_RE.search(text)
+    if afghan_named and not (
+        HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        afghan_loc = (
+            "Afghan myelopathy. Paraplegia within a week. "
+            "Forelimbs next. Poor prognosis."
+        )
+        localization = f"{localization} Also {afghan_loc}" if localization else afghan_loc
+        hard_stops.append(
+            "Do not send Afghan myelopathy home as a disc to rest. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not treat as KCNJ10 myokymia."
+        )
+        do_not.append(
+            "First year of life. Demyelination and necrosis of the cord. "
+            "Thoracic limbs over the next 1–2 weeks. "
+            "Kooikerhondje 3–12 months is on the same poor-prognosis page. "
+            "Not IVDD-only. Not LEM-only. Not hereditary-ataxia-only. Not DM-only."
+        )
+        do_next.append(
+            "Name the week. Prognosis conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "Afghan Hound myelopathy; demyelination and necrosis; "
+            "paraparesis in the first year progresses to paraplegia within 1 week; "
+            "thoracic limbs over the next 1–2 weeks; "
+            "Kooikerhondje similar 3–12 months; prognosis poor in both breeds."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send Afghan myelopathy home as a disc to rest."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Afghan myelopathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Afghan myelopathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

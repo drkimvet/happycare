@@ -2154,7 +2154,7 @@ Night rule: named Rottweiler LEM → **delayed proprioception, no head tremor. N
 
 ## 219. Hereditary ataxia / Jack Russell KCNJ10 (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett hereditary-ataxia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker. Packet 185 still owns named IVDD. Afghan hound myelopathy is the next room, not this dump. Do not harvest a pred table as lobby law.
+No dedicated Plunkett hereditary-ataxia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker. Packet 185 still owns named IVDD. Packet 220 owns named Afghan hound myelopathy. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: hereditary ataxia is reported in **Parson Russell, Jack Russell, and Smooth Fox Terriers**. In general these are **spinocerebellar ataxia**. One form has an autosomal recessive **KCNJ10** mutation; **CAPN1** is a rare variant on the page. Predominant signs are cerebellar (cerebellar ataxia, intention tremor, hypermetria). Some forms include **myokymia** (verminous muscle movement) and/or seizures. Onset about **2–6 months**; some forms **6–12 months**. Necropsy: spinal cord demyelination. Ataxia is progressive; in some cases signs stabilize but do not regress, and some affected animals live a relatively normal life despite the gait.
 
@@ -2168,3 +2168,20 @@ Book/public traps:
 - Do not call it LEM (Rottweiler, delayed CP, no head tremor).
 
 Night rule: named hereditary ataxia / KCNJ10 → **myokymia is this list. Not a disc.** △ Plumb.
+
+## 220. Afghan hound myelopathy (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett Afghan-myelopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD. Packet 185 still owns named IVDD. Degenerative myelopathy / SOD1 is the next room, not this dump. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: Afghan Hound myelopathy is an inherited disorder that causes **both demyelination and necrosis** of the spinal cord. **Paraparesis develops during the first year of life and progresses to paraplegia within 1 week.** The thoracic limbs become involved over the next **1–2 weeks**. A similar condition occurs in young **Kooikerhondje** dogs, signs beginning at **3–12 months**. **The prognosis is poor in both breeds.**
+
+Night split: named Afghan myelopathy / Kooikerhondje is paraplegia-within-a-week, poor prognosis. Bare Afghan / bare myelopathy does not fire. Named hereditary ataxia stays 219. Named LEM stays 218. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not send home as a disc to rest.
+- Do not harvest a pred table.
+- Do not treat as KCNJ10 myokymia.
+- Do not call it slow DM of an old GSD.
+
+Night rule: named Afghan myelopathy → **paraplegia within a week. Forelimbs next. Poor prognosis.** △ Plumb.
