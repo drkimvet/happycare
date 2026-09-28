@@ -2043,3 +2043,21 @@ Book/public traps:
 - Printed 10 / 5 / 0.7 and 25–47% stay on the page.
 
 Night rule: Cavalier, phantom scratch → **syrinx tonight; MRI the whole cord.** △ Plumb.
+
+## 213. Cerebellar abiotrophy / born normal then progressive (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett cerebellar-abiotrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS / Chiari. Packet 185 still owns named IVDD. Congenital hypomyelination / shaking puppy on the same page is the next room, not this dump. Skip neuraxonal dystrophy, Bandera's, and Dandy-Walker as their own packets. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: unlike cerebellar hypoplasia, cerebellar abiotrophy in dogs is most often an inherited degenerative disease. Signs may appear at first ambulation (Samoyed / Beagle), at 4–16 weeks (Kelpie / rough-coated collie / Border Collie / Kerry Blue), or in young or mature adults (Brittany / OES / Gordon Setter). Named autosomal recessive mutations (Vizsla SNX14, Finnish Hound SEL1L) stay on the page. Signs: progressive cerebellar ataxia, intention tremor, hypermetria, and possible loss of menace from the cerebellum. Postural reactions remain normal, as with any pure cerebellar disease. Mode of onset distinguishes it from hypoplasia: hypoplasia is present from birth / first ambulation and nonprogressive; abiotrophy animals are **born normal** and then develop signs. Gross lesions can look similar; histopathology shows degeneration, not failed development. Pearl: hypoplasia is nonprogressive and present from birth; abiotrophy animals are born normal.
+
+Night split: named cerebellar abiotrophy / cerebellar atrophy is progressive after a normal start, not FPV wobble. Named CH stays 211. Named COMS stays 212. Bare intention tremor does not fire. Cat does not fire.
+
+Book/public traps:
+
+- Do not treat progressive cerebellar signs as FPV wobble.
+- Do not harvest a pred table.
+- Do not call a lost menace cortical until the cerebellum is named.
+- Born normal, then progressive.
+- Postural reactions stay normal.
+
+Night rule: normal at birth, then progressive cerebellar signs → **abiotrophy tonight, not hypoplasia.** △ Plumb.

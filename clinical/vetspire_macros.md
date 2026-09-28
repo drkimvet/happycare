@@ -141,6 +141,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hydran` | Assessment | Hydranencephaly / FPV kitten |
 | `ddx-chypo` | Assessment | Cerebellar hypoplasia / FPV wobble |
 | `ddx-coms` | Assessment | Chiari-like / COMS / phantom scratch |
+| `ddx-abiot` | Assessment | Cerebellar abiotrophy / progressive after birth |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -241,6 +242,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hydran` | Discharge | After hydranencephaly / FPV-kitten talk |
 | `dc-chypo` | Discharge | After cerebellar-hypoplasia / wobble talk |
 | `dc-coms` | Discharge | After Chiari / COMS / phantom-scratch talk |
+| `dc-abiot` | Discharge | After cerebellar-abiotrophy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1766,6 +1768,21 @@ DDX:
 Do not: treat phantom scratch as a skin allergy. Harvest gabapentin / pregabalin / omeprazole. MRI only the brain.
 Do next: MRI the whole cord. Pain conversation △ Plumb. Surgery conversation.
 
+### `ddx-abiot`
+
+Cerebellar abiotrophy — {{patient.name}}
+Onset [born normal then later / from first walk]. Progressive [Y/N]. Intention tremor [Y/N]. Hypermetria [Y/N]. Menace [lost / present]. Posture [normal / other]. Referring [Y/N].
+
+DDX:
+1. Cerebellar abiotrophy — **born normal, then progressive. Not hypoplasia**
+2. Progressive cerebellar ataxia, intention tremor, hypermetria
+3. Menace can drop from the cerebellum. Postural reactions stay normal
+4. Gross can look like CH; histopath is degeneration
+5. Not CH-only (211). Not COMS-only (212). Not IVDD-only (185)
+
+Do not: treat progressive cerebellar signs as FPV wobble. Harvest a pred table. Call lost menace cortical until the cerebellum is named.
+Do next: Name the onset. Progressive after a normal start is this list. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2601,6 +2618,14 @@ Return now for worsening wobble, blindness, circling, collapse, or not eating. {
 Give only the medicines we sent, as labeled. Do not start leftover gabapentin or omeprazole from the cabinet.
 
 Return now for worsening scratch, weakness, wobbliness, or not eating. {{location.phonenumber}}
+
+### `dc-abiot`
+
+{{patient.name}} was evaluated for cerebellar abiotrophy (a degenerative cerebellar disease). These animals are usually normal at birth and then become wobbly later. That is not the same as cerebellar hypoplasia from an in-utero infection, which is present from the first steps and does not get worse.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worsening wobble, falling, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -3723,6 +3723,59 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("mri the whole cord", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_abiotrophy_is_born_normal_then_progressive(self):
+        b = analyze(
+            "dog",
+            "cerebellar abiotrophy, progressive ataxia, intention tremor, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cerebellar abiotrophy", loc)
+        self.assertIn("born normal, then progressive", loc)
+        self.assertIn("not hypoplasia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("fpv wobble", joined)
+        self.assertIn("postural reactions stay normal", joined)
+        self.assertIn("intention tremor", joined)
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_plus_abiotrophy_is_abiotrophy(self):
+        b = analyze("dog", "cerebellar hypoplasia, cerebellar abiotrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("born normal, then progressive", loc)
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coms_is_not_abiotrophy(self):
+        b = analyze("dog", "Chiari-like, phantom scratch, cerebellar abiotrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertNotIn("born normal, then progressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_intention_tremor_is_not_abiotrophy(self):
+        b = analyze("dog", "intention tremor, progressive ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("born normal, then progressive", loc)
+        self.assertNotIn("not hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_abiotrophy_is_not_abiotrophy(self):
+        b = analyze("cat", "cerebellar abiotrophy, progressive ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("born normal, then progressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_abiotrophy(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("born normal, then progressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

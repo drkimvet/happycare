@@ -1120,6 +1120,13 @@ COMS_RE = re.compile(
     r"phantom scratch",
     re.I,
 )
+# Bare intention tremor / progressive ataxia is not enough.
+# Not CH (211). Not COMS (212). Dogs only on this page.
+ABIOT_RE = re.compile(
+    r"cerebellar abiotroph|"
+    r"cerebellar atroph",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5172,6 +5179,7 @@ def analyze(
     steal_hydran = HYDRAN_RE.search(text)
     steal_chypo = CHYPO_RE.search(text)
     steal_coms = COMS_RE.search(text)
+    steal_abiot = ABIOT_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5186,6 +5194,7 @@ def analyze(
         or steal_hydran
         or steal_chypo
         or steal_coms
+        or steal_abiot
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5524,6 +5533,7 @@ def analyze(
         or NME_RE.search(text)
         or GME_RE.search(text)
         or COMS_RE.search(text)
+        or ABIOT_RE.search(text)
     ):
         chypo_loc = (
             "Cerebellar hypoplasia. FPV wobble is nonprogressive. "
@@ -5607,6 +5617,49 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for COMS.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for COMS.")
+
+    abiot_named = spec == "dog" and ABIOT_RE.search(text)
+    if abiot_named and not (
+        NME_RE.search(text)
+        or GME_RE.search(text)
+        or COMS_RE.search(text)
+    ):
+        abiot_loc = (
+            "Cerebellar abiotrophy. Born normal, then progressive. "
+            "Not hypoplasia."
+        )
+        localization = f"{localization} Also {abiot_loc}" if localization else abiot_loc
+        hard_stops.append(
+            "Do not treat progressive cerebellar signs as FPV wobble. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not call lost menace a cortical night until the cerebellum is named."
+        )
+        do_not.append(
+            "Inherited degenerative disease in dogs. Born normal; signs after onset. "
+            "Progressive cerebellar ataxia, intention tremor, hypermetria. "
+            "Menace can drop from the cerebellum. Postural reactions stay normal. "
+            "Gross can look like hypoplasia; histopath is degeneration. "
+            "Not CH-only. Not COMS-only. Not IVDD-only."
+        )
+        do_next.append(
+            "Name the onset. Progressive after a normal start is this list. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebellar (Parsley, Mar 2026): "
+            "cerebellar abiotrophy; inherited degenerative; "
+            "born normal then progressive; not hypoplasia; "
+            "intention tremor, hypermetria; postural reactions remain normal."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not treat progressive cerebellar signs as FPV wobble."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for cerebellar abiotrophy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cerebellar abiotrophy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
