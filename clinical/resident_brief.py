@@ -1158,6 +1158,15 @@ NAD_RE = re.compile(
     r"\bpla2g6\b",
     re.I,
 )
+# Bare "coton" / bare neonatal ataxia is not enough.
+# Not NAD (216). Not CH (211). Not abiotrophy (213). Dogs only on this page.
+BANDERA_RE = re.compile(
+    r"bandera|"
+    r"coton de tul|"
+    r"\bbnat\b|"
+    r"\bgrm1\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5214,6 +5223,7 @@ def analyze(
     steal_hypomy = HYPOMY_RE.search(text)
     steal_shaker = SHAKER_RE.search(text)
     steal_nad = NAD_RE.search(text)
+    steal_bandera = BANDERA_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5232,6 +5242,7 @@ def analyze(
         or steal_hypomy
         or steal_shaker
         or steal_nad
+        or steal_bandera
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5833,6 +5844,50 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for neuraxonal dystrophy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for neuraxonal dystrophy.")
+
+    bandera_named = spec == "dog" and BANDERA_RE.search(text)
+    if bandera_named and not (
+        NAD_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        bandera_loc = (
+            "Bandera's. Coton from birth, never walks. "
+            "Cerebellum looks normal."
+        )
+        localization = f"{localization} Also {bandera_loc}" if localization else bandera_loc
+        hard_stops.append(
+            "Do not treat Bandera's as FPV wobble. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not send home as they will learn to walk."
+        )
+        do_not.append(
+            "Autosomal recessive. Nonprogressive. Never able to walk. "
+            "Cerebellum is anatomically normal. Neurotransmitter / GRM1 stays on the page. "
+            "DNA test. Not CH-only. Not abiotrophy-only. Not NAD-only. Not shaker-only."
+        )
+        do_next.append(
+            "DNA-test conversation. Not a walk-it-off puppy. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebellar (Parsley, Mar 2026): "
+            "Bandera's neonatal ataxia; Coton de Tulear; from birth; "
+            "nonprogressive; never able to walk; cerebellum anatomically normal; "
+            "mutation affecting neurotransmitter function; DNA test. "
+            "Zeng JVIM 2011 GRM1 named only."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send home as they will learn to walk."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Bandera's.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Bandera's.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

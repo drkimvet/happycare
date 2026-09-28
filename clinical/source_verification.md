@@ -2100,7 +2100,7 @@ Night rule: named white shaker / IGTS → **exclusion first, not pred-first. MRI
 
 ## 216. Neuraxonal dystrophy / Rottweiler VPS11 (Merck Parsley Mar 2026 cerebellar)
 
-No dedicated Plunkett neuraxonal-dystrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026) plus spinal LEM contrast on the same author's spinal page. Lucot / Bannasch G3 2018 VPS11 named only (doi:10.1534/g3.118.200376). Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Bandera's neonatal ataxia / Coton is the next room, not this dump. Rottweiler leukoencephalomyelopathy is contrast, not this dump. Skip horse / sheep / vitamin-E NAD. Do not harvest a pred table as lobby law.
+No dedicated Plunkett neuraxonal-dystrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026) plus spinal LEM contrast on the same author's spinal page. Lucot / Bannasch G3 2018 VPS11 named only (doi:10.1534/g3.118.200376). Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 217 owns named Bandera's / Coton. Rottweiler leukoencephalomyelopathy is contrast, not this dump. Skip horse / sheep / vitamin-E NAD. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: neuraxonal dystrophy is described in dogs and cats; primarily Rottweilers (autosomal recessive **VPS11**) and Papillons (**PLA2G6**). In Rottweilers, onset is **3–24 months** and the disorder progresses slowly over several years. Clinical signs: cerebellar dysfunction and dysmetria in all four limbs, **with preservation of normal conscious proprioception**, which should distinguish this disorder from **leukoencephalomyelopathy** and from advanced motor neuron disease in the same breed. Collies in Australia and New Zealand develop similar signs at **2–4 months**. Early onset also in Papillons and Chihuahuas, and in cats (autosomal recessive in domestic tricolored cats). Axonal spheroids, often in specific regions of the brain and spinal cord, are the characteristic pathological finding.
 
@@ -2117,3 +2117,20 @@ Book/public traps:
 - Axonal spheroids are the path finding, not a lobby stain.
 
 Night rule: named neuraxonal dystrophy → **Rottweiler VPS11. Proprioception stays. Not LEM.** △ Plumb.
+
+## 217. Bandera's neonatal ataxia / Coton de Tulear (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett Bandera chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Zeng et al. JVIM 2011 GRM1 named only. Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Rottweiler leukoencephalomyelopathy is the next room, not this dump. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: Bandera's neonatal ataxia (Bandera's syndrome) is an autosomal recessive cerebellar ataxia in the **Coton de Tulear**. It manifests as cerebellar ataxia **from the time of birth**. The disorder is **nonprogressive**; however, affected animals are **never able to walk**. The cerebellum is **anatomically normal**, and clinical signs result from a mutation that affects neurotransmitter function. A DNA test is available. Zeng 2011: GRM1 retrotransposon insert stays on that page.
+
+Night split: named Bandera / BNAt / Coton de Tulear / GRM1 is from birth, never walks, cerebellum looks normal. Bare “Coton” does not fire. Bare neonatal ataxia does not fire. Named NAD stays 216. Named white shaker stays 215. Named shaking puppy stays 214. Named abiotrophy stays 213 (born normal, then progressive — these never walk). Named CH stays 211 (FPV wobble; suitable pets; cerebellum is small). Cat does not fire.
+
+Book/public traps:
+
+- Do not treat as FPV wobble (cerebellum looks normal).
+- Do not treat as abiotrophy (they are not born normal then progressive).
+- Do not harvest a pred table.
+- Do not send home as they will learn to walk.
+
+Night rule: named Bandera's / Coton de Tulear → **from birth, never walks. Cerebellum looks normal.** △ Plumb.

@@ -3958,6 +3958,76 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("proprioception stays", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_bandera_is_never_walks_cerebellum_looks_normal(self):
+        b = analyze(
+            "dog",
+            "Bandera's neonatal ataxia, Coton de Tulear, never able to walk, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("bandera", loc)
+        self.assertIn("from birth", loc)
+        self.assertIn("never walks", loc)
+        self.assertIn("cerebellum looks normal", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("learn to walk", joined)
+        self.assertIn("grm1", joined)
+        self.assertIn("dna", joined)
+        self.assertNotIn("proprioception stays", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nad_is_not_bandera(self):
+        b = analyze("dog", "neuraxonal dystrophy, Rottweiler, VPS11")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("proprioception stays", loc)
+        self.assertNotIn("never walks", loc)
+        self.assertNotIn("cerebellum looks normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_white_shaker_is_not_bandera(self):
+        b = analyze("dog", "white shaker, Maltese, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white shaker", loc)
+        self.assertNotIn("never walks", loc)
+        self.assertNotIn("cerebellum looks normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_bandera(self):
+        b = analyze("cat", "cerebellar hypoplasia, in utero FPV, tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("never walks", loc)
+        self.assertNotIn("cerebellum looks normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_abiotrophy_is_not_bandera(self):
+        b = analyze("dog", "cerebellar abiotrophy, intention tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("born normal, then progressive", loc)
+        self.assertNotIn("never walks", loc)
+        self.assertNotIn("cerebellum looks normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypomyelin_is_not_bandera(self):
+        b = analyze("dog", "congenital hypomyelination, shaking puppy, 6 weeks")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("never walks", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_coton_is_not_bandera(self):
+        b = analyze("dog", "Coton, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("never walks", loc)
+        self.assertNotIn("bandera", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_bandera(self):
+        b = analyze("cat", "Bandera's neonatal ataxia, Coton de Tulear")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("never walks", loc)
+        self.assertNotIn("cerebellum looks normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

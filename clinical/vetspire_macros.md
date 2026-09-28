@@ -145,6 +145,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hypomy` | Assessment | Congenital hypomyelination / shaking puppy |
 | `ddx-shaker` | Assessment | White shaker / IGTS / idiopathic generalized tremor |
 | `ddx-nad` | Assessment | Neuraxonal dystrophy / Rottweiler VPS11 |
+| `ddx-bandera` | Assessment | Bandera's neonatal ataxia / Coton de Tulear |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -249,6 +250,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hypomy` | Discharge | After shaking-puppy / hypomyelination talk |
 | `dc-shaker` | Discharge | After white-shaker / IGTS talk |
 | `dc-nad` | Discharge | After neuraxonal-dystrophy / VPS11 talk |
+| `dc-bandera` | Discharge | After Bandera's / Coton talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1834,6 +1836,21 @@ DDX:
 Do not: pred as white-shaker. Harvest a pred table. Call delayed proprioception neuraxonal dystrophy.
 Do next: Name proprioception. Genetic-test conversation. △ Plumb.
 
+### `ddx-bandera`
+
+Bandera's neonatal ataxia — {{patient.name}}
+Breed [Coton de Tulear / other]. Walk [never / other]. Cerebellum [normal / small / not imaged]. DNA [ / not yet]. Referring [Y/N].
+
+DDX:
+1. Bandera's — **Coton from birth, never walks. Cerebellum looks normal**
+2. Autosomal recessive. Nonprogressive. DNA test. GRM1 stays on the page
+3. Not CH-only (211). Not abiotrophy-only (213). Not NAD-only (216)
+4. Not hypomyelin-only (214). Not white-shaker-only (215)
+5. Cat does not fire
+
+Do not: treat as FPV wobble. Harvest a pred table. Send home as they will learn to walk.
+Do next: DNA-test conversation. Not a walk-it-off puppy. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2701,6 +2718,14 @@ Return now for worsening tremor, inability to eat, collapse, or seizure. {{locat
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for falling, inability to walk, or not eating. {{location.phonenumber}}
+
+### `dc-bandera`
+
+{{patient.name}} was evaluated for Bandera's neonatal ataxia (a Coton de Tulear cerebellar problem present from birth). The cerebellum usually looks normal on imaging; these puppies do not learn to walk. That is not the same as cerebellar hypoplasia from an in-utero infection, and it is not progressive abiotrophy.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for not eating, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
