@@ -1203,6 +1203,14 @@ DEGEN_MYEL_RE = re.compile(
     r"\bmir26b\b",
     re.I,
 )
+# Bare "boxer" is SRMA / DM / wobbler. Bare axonopathy is not enough.
+# Not NAD (216). Not DM (221). Dogs only on this page.
+BOXER_AXON_RE = re.compile(
+    r"progressive axonopath|"
+    r"boxer.{0,40}axonopath|"
+    r"axonopath.{0,40}boxer",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5264,6 +5272,7 @@ def analyze(
     steal_hatax = HATAX_RE.search(text)
     steal_afghan = AFGHAN_MYEL_RE.search(text)
     steal_dm = DEGEN_MYEL_RE.search(text)
+    steal_boxax = BOXER_AXON_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5287,6 +5296,7 @@ def analyze(
         or steal_hatax
         or steal_afghan
         or steal_dm
+        or steal_boxax
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6130,6 +6140,59 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for degenerative myelopathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for degenerative myelopathy.")
+
+    boxax_named = spec == "dog" and BOXER_AXON_RE.search(text)
+    if boxax_named and not (
+        DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        boxax_loc = (
+            "Boxer axonopathy. 1–7 months. "
+            "Lost proprioception. Can live comfortably."
+        )
+        localization = f"{localization} Also {boxax_loc}" if localization else boxax_loc
+        hard_stops.append(
+            "There is no treatment. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not send home as a neuropathy-only."
+        )
+        do_not.append(
+            "Autosomal recessive. Onset 1–7 months. "
+            "Patellar hyporeflexia, severe dysmetria, spastic paresis. "
+            "Axonal spheroids in CNS and PNS. "
+            "Patellar loss still looks spinal, not a peripheral neuropathy. "
+            "Can live relatively comfortably for a considerable amount of time. "
+            "Not DM-only. Not NAD-only. Not SRMA-only. Not Afghan-only."
+        )
+        do_next.append(
+            "Name the months. Comfort conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "progressive axonopathy of Boxer dogs; autosomal recessive; "
+            "patellar hyporeflexia, severe dysmetria, loss of proprioception, "
+            "and spastic paresis at 1–7 months; axonal spheroids CNS and PNS; "
+            "signs more suggestive of spinal cord disease than peripheral neuropathy; "
+            "no treatment; can live relatively comfortably for a considerable amount of time."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send Boxer axonopathy home as a neuropathy-only."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Boxer axonopathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Boxer axonopathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

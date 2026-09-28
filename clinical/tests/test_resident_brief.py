@@ -4299,6 +4299,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("sod1 is risk", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_boxer_axonopathy_is_1_7_months_lost_proprioception(self):
+        b = analyze(
+            "dog",
+            "progressive axonopathy, Boxer, 4 months, patellar hyporeflexia, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("boxer axonopathy", loc)
+        self.assertIn("1–7 months", loc)
+        self.assertIn("lost proprioception", loc)
+        self.assertIn("can live comfortably", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("proprioception stays", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("no treatment", joined)
+        self.assertIn("neuropathy-only", joined)
+        self.assertIn("axonal spheroids", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dm_is_not_boxer_axonopathy(self):
+        b = analyze(
+            "dog",
+            "degenerative myelopathy, German Shepherd, 10 years, nonpainful pelvic ataxia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("painless and slow", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertNotIn("boxer axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nad_is_not_boxer_axonopathy(self):
+        b = analyze("dog", "neuraxonal dystrophy, Rottweiler, VPS11")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("proprioception stays", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertNotIn("boxer axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_afghan_is_not_boxer_axonopathy(self):
+        b = analyze("dog", "Afghan hound myelopathy, paraparesis, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("paraplegia within a week", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_boxer_is_not_axonopathy(self):
+        b = analyze("dog", "Boxer, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("boxer axonopathy", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_boxer_is_not_axonopathy(self):
+        b = analyze("dog", "Boxer, neck pain, fever, SRMA")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("boxer axonopathy", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_boxer_axonopathy(self):
+        b = analyze("cat", "progressive axonopathy, Boxer, 4 months")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("boxer axonopathy", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

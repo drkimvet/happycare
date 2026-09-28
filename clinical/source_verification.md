@@ -2188,7 +2188,7 @@ Night rule: named Afghan myelopathy → **paraplegia within a week. Forelimbs ne
 
 ## 221. Degenerative myelopathy / SOD1 (Merck Thomas Oct 2021 / Apr 2025; Parsley Mar 2026 spinal)
 
-No dedicated Plunkett degenerative-myelopathy chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 185 still owns named IVDD. Progressive axonopathy of Boxer dogs is the next room, not this dump. Do not harvest a pred table as lobby law. Skip horse EDM / EMND. Skip wobbler pred 0.5 and DLSS methylpred 1 as lobby law.
+No dedicated Plunkett degenerative-myelopathy chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 185 still owns named IVDD. Packet 222 owns named progressive axonopathy of Boxer dogs. Do not harvest a pred table as lobby law. Skip horse EDM / EMND. Skip wobbler pred 0.5 and DLSS methylpred 1 as lobby law.
 
 Agree with Thomas: also called chronic degenerative radiculomyelopathy. Slowly progressive, noninflammatory axon and myelin degeneration, white matter, worst thoracic. GSD / Pembroke Corgi / Boxer / Rhodesian Ridgeback / Chesapeake; many other breeds. SOD1 mutation, autosomal recessive incomplete penetrance; similar to familial ALS. Usually **>8 years**; insidious **nonpainful** pelvic ataxia and weakness. Reflexes normal or exaggerated; advanced flaccid tetraparesis / hyporeflexia (LMN). Early confused with orthopedic; **proprioceptive deficits are an early feature and are not evident in orthopedic disease**. MRI / myelography plus CSF are essential to exclude compressive and inflammatory disease. DNA test OFA; homozygous at risk; heterozygotes low risk. **There is no specific treatment and no evidence that glucocorticoids, other drugs, or supplements alter the course.** Most dogs are euthanized for disability within **1–3 years** — printed clock stays on the page. Agree with Parsley: **painless, slowly progressive**; SOD1 associated with increased risk; miR26b named only; **physical therapy slows the progression**; **there is no treatment**.
 
@@ -2203,3 +2203,20 @@ Book/public traps:
 - Do not call it Afghan myelopathy of a young hound.
 
 Night rule: named degenerative myelopathy / SOD1 → **painless and slow. SOD1 is risk, not proof.** △ Plumb.
+
+## 222. Progressive axonopathy of Boxer dogs (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett Boxer-axonopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 221 still owns named degenerative myelopathy / SOD1. Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 216 still owns named NAD / VPS11. Packet 205 still owns named SRMA. Wobbler / caudal cervical spondylomyelopathy is the next room, not this dump. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: progressive axonopathy of Boxers is an **autosomal recessive** disorder that causes **patellar hyporeflexia**, **severe dysmetria**, **loss of proprioception**, and **spastic paresis** at the age of **1–7 months**. Axonal spheroids are widespread in both the **central and the peripheral nervous systems** on necropsy. Although this condition causes loss of the patellar reflex, in general the clinical signs are **more suggestive of spinal cord disease than of peripheral neuropathy**. **There is no treatment**; however, affected dogs **can live relatively comfortably for a considerable amount of time**.
+
+Night split: named progressive axonopathy / Boxer axonopathy is 1–7 months, lost proprioception, can live comfortably. Bare Boxer does not fire. Named DM stays 221 (old, painless, SOD1). Named NAD stays 216 (proprioception stays). Named Afghan stays 220. Named SRMA stays 205 (neck pain + fever). Cat does not fire.
+
+Book/public traps:
+
+- Do not send home as a neuropathy-only.
+- Do not harvest a pred table.
+- Do not call it old-Boxer DM.
+- Do not call preserved proprioception this list (that is NAD).
+
+Night rule: named Boxer progressive axonopathy → **1–7 months. Lost proprioception. Can live comfortably.** △ Plumb.

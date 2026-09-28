@@ -150,6 +150,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hatax` | Assessment | Hereditary ataxia / Jack Russell KCNJ10 |
 | `ddx-afghan` | Assessment | Afghan hound myelopathy |
 | `ddx-dm` | Assessment | Degenerative myelopathy / SOD1 |
+| `ddx-boxax` | Assessment | Progressive axonopathy of Boxer dogs |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -259,6 +260,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hatax` | Discharge | After hereditary-ataxia / KCNJ10 talk |
 | `dc-afghan` | Discharge | After Afghan-myelopathy talk |
 | `dc-dm` | Discharge | After degenerative-myelopathy / SOD1 talk |
+| `dc-boxax` | Discharge | After Boxer-axonopathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1919,6 +1921,21 @@ DDX:
 Do not: send home as arthritis. Harvest a pred table. Treat SOD1 as proof.
 Do next: Name pain and the years. Image to exclude a disc. △ Plumb.
 
+### `ddx-boxax`
+
+Progressive axonopathy — {{patient.name}}
+Age [1–7 months / other]. Breed [Boxer / other]. Patellar reflex [lost / reduced / other]. Proprioception [lost / other]. Dysmetria [Y/N]. Comfort [living / other].
+
+DDX:
+1. Boxer axonopathy — **1–7 months. Lost proprioception. Can live comfortably**
+2. Autosomal recessive. Patellar hyporeflexia, severe dysmetria, spastic paresis
+3. Axonal spheroids CNS and PNS. Patellar loss still looks spinal, not a neuropathy
+4. Not DM-only (221). Not NAD-only (216). Not SRMA-only (205)
+5. Cat does not fire
+
+Do not: send home as a neuropathy-only. Harvest a pred table. Call it old-Boxer DM.
+Do next: Name the months. Comfort conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2822,6 +2839,14 @@ Return now for inability to walk, or if you cannot keep them comfortable. {{loca
 ### `dc-dm`
 
 {{patient.name}} was evaluated for degenerative myelopathy (a slow, painless spinal-cord disease of older dogs; SOD1 is a risk gene, not proof by itself). This is not a disc, and steroids do not change the course.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for falling, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-boxax`
+
+{{patient.name}} was evaluated for progressive axonopathy of Boxer dogs (an inherited spinal-cord disease of young Boxers, usually 1–7 months). The kneecap reflex can be weak, but this still looks like a spinal problem, not a simple nerve disease. There is no specific treatment; many of these dogs live relatively comfortably for a long time.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
