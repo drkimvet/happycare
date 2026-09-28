@@ -4232,6 +4232,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("poor prognosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dm_is_painless_slow_sod1_risk_not_proof(self):
+        b = analyze(
+            "dog",
+            "degenerative myelopathy, German Shepherd, 10 years, nonpainful pelvic ataxia, send home, prednisone",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("degenerative myelopathy", loc)
+        self.assertIn("painless and slow", loc)
+        self.assertIn("sod1 is risk", loc)
+        self.assertIn("not proof", loc)
+        self.assertNotIn("paraplegia within a week", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("steroids do not change", joined)
+        self.assertIn("arthritis or old age", joined)
+        self.assertIn(">8 years", joined)
+        self.assertIn("not orthopedic", joined)
+        self.assertIn("1–3 years", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_afghan_is_not_dm(self):
+        b = analyze("dog", "Afghan hound myelopathy, paraparesis, send home")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("paraplegia within a week", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("sod1 is risk", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hatax_is_not_dm(self):
+        b = analyze("dog", "hereditary ataxia, Jack Russell, KCNJ10, myokymia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("myokymia is this list", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lem_is_not_dm(self):
+        b = analyze("dog", "leukoencephalomyelopathy, Rottweiler, delayed proprioception")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("delayed proprioception", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_dm(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("sod1 is risk", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gsd_ataxia_is_not_dm(self):
+        b = analyze("dog", "German Shepherd, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("degenerative myelopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_dm(self):
+        b = analyze("cat", "degenerative myelopathy, SOD1, nonpainful pelvic ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("sod1 is risk", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

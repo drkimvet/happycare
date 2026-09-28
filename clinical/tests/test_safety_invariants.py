@@ -509,6 +509,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("afghan hound myelopathy", VERIF.lower())
         self.assertIn("paraplegia within 1 week", VERIF.lower())
         self.assertIn("prognosis is poor", VERIF.lower())
+        self.assertIn("degenerative myelopathy", VERIF.lower())
+        self.assertIn("painless and slow", VERIF.lower())
+        self.assertIn("sod1 is risk, not proof", VERIF.lower())
+        self.assertIn("no evidence that glucocorticoids", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -803,6 +807,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hatax`", MACRO)
         self.assertIn("`ddx-afghan`", MACRO)
         self.assertIn("`dc-afghan`", MACRO)
+        self.assertIn("`ddx-dm`", MACRO)
+        self.assertIn("`dc-dm`", MACRO)
+        self.assertIn("painless and slow", MACRO.lower())
+        self.assertIn("sod1 is risk, not proof", MACRO.lower())
         self.assertIn("paraplegia within a week", MACRO.lower())
         self.assertIn("myokymia is this list", MACRO.lower())
         self.assertIn("delayed proprioception, no head tremor", MACRO.lower())
@@ -1109,6 +1117,10 @@ class PublicCardInvariants(unittest.TestCase):
             "afghan hound myelopathy",
             "paraplegia within a week",
             "poor prognosis",
+            "degenerative myelopathy",
+            "painless and slow",
+            "sod1 is risk",
+            "steroids do not change",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

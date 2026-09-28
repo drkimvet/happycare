@@ -1501,7 +1501,7 @@ No dedicated Plunkett IVDD chapter in the owned SA EM splits. User-supplied WVC 
 
 Agree with Barnes: **lameness is pain or musculoskeletal dysfunction. It does not typically cause ataxia.** Ataxia, bad proprioception, or abnormal spinal reflexes = look at the nervous system. Agree with Thomas: chondrodystrophoid dogs (Dachshund / Frenchie) extrude young and hard; large-breed protrusion is slower. **Deep pain is a behavioral response** (bark / head turn) after pinching bone — not withdrawal, not skin pinch. Radiographs are not definitive (MRI / CT / myelography). NSAID or analgesic **without cage rest is contraindicated** (they walk more → more extrusion). Steroids do **not** improve neurologic recovery. Lost deep pain → surgeon tonight, not a pain-pill-and-home. Progressive myelomalacia printed 5–10% stays on the page. Cat disk signs are rare.
 
-Degenerative myelopathy (Thomas): usually > 8 years, **nonpainful** pelvic ataxia; proprioceptive deficits early — that is not orthopedic. Steroids do not change the course. SOD1 is risk, not tonight’s proof. Skip horse DM / EMND.
+Named degenerative myelopathy / SOD1 is packet 221, not this dump. Contrast only (Thomas): usually > 8 years, **nonpainful** pelvic ataxia; proprioceptive deficits early — that is not orthopedic. Skip horse DM / EMND.
 
 Epstein OA: common, under-recognized in cats; slowing / stiff after rest is the OA room if there is **no ataxia**. Azotemic: still no NSAID. Intra-articular steroid is not the night default. Printed NSAID / frunevetmab / gabapentin lines stay on the page.
 
@@ -2171,7 +2171,7 @@ Night rule: named hereditary ataxia / KCNJ10 → **myokymia is this list. Not a 
 
 ## 220. Afghan hound myelopathy (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett Afghan-myelopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD. Packet 185 still owns named IVDD. Degenerative myelopathy / SOD1 is the next room, not this dump. Do not harvest a pred table as lobby law.
+No dedicated Plunkett Afghan-myelopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD. Packet 185 still owns named IVDD. Packet 221 owns named degenerative myelopathy / SOD1. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: Afghan Hound myelopathy is an inherited disorder that causes **both demyelination and necrosis** of the spinal cord. **Paraparesis develops during the first year of life and progresses to paraplegia within 1 week.** The thoracic limbs become involved over the next **1–2 weeks**. A similar condition occurs in young **Kooikerhondje** dogs, signs beginning at **3–12 months**. **The prognosis is poor in both breeds.**
 
@@ -2185,3 +2185,21 @@ Book/public traps:
 - Do not call it slow DM of an old GSD.
 
 Night rule: named Afghan myelopathy → **paraplegia within a week. Forelimbs next. Poor prognosis.** △ Plumb.
+
+## 221. Degenerative myelopathy / SOD1 (Merck Thomas Oct 2021 / Apr 2025; Parsley Mar 2026 spinal)
+
+No dedicated Plunkett degenerative-myelopathy chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 185 still owns named IVDD. Progressive axonopathy of Boxer dogs is the next room, not this dump. Do not harvest a pred table as lobby law. Skip horse EDM / EMND. Skip wobbler pred 0.5 and DLSS methylpred 1 as lobby law.
+
+Agree with Thomas: also called chronic degenerative radiculomyelopathy. Slowly progressive, noninflammatory axon and myelin degeneration, white matter, worst thoracic. GSD / Pembroke Corgi / Boxer / Rhodesian Ridgeback / Chesapeake; many other breeds. SOD1 mutation, autosomal recessive incomplete penetrance; similar to familial ALS. Usually **>8 years**; insidious **nonpainful** pelvic ataxia and weakness. Reflexes normal or exaggerated; advanced flaccid tetraparesis / hyporeflexia (LMN). Early confused with orthopedic; **proprioceptive deficits are an early feature and are not evident in orthopedic disease**. MRI / myelography plus CSF are essential to exclude compressive and inflammatory disease. DNA test OFA; homozygous at risk; heterozygotes low risk. **There is no specific treatment and no evidence that glucocorticoids, other drugs, or supplements alter the course.** Most dogs are euthanized for disability within **1–3 years** — printed clock stays on the page. Agree with Parsley: **painless, slowly progressive**; SOD1 associated with increased risk; miR26b named only; **physical therapy slows the progression**; **there is no treatment**.
+
+Night split: named degenerative myelopathy / SOD1 / miR26b / chronic degenerative radiculomyelopathy is painless and slow; SOD1 is risk, not proof. Bare “DM” does not fire (diabetes). Bare GSD / bare ataxia does not fire. Named Afghan myelopathy stays 220. Named hereditary ataxia stays 219. Named LEM stays 218. Named IVDD stays 185. Cat does not fire. Skip horse.
+
+Book/public traps:
+
+- Do not send home as arthritis or old age.
+- Do not harvest a pred table.
+- Do not treat SOD1 as tonight's proof.
+- Do not harvest the 1–3 year clock as lobby law.
+- Do not call it Afghan myelopathy of a young hound.
+
+Night rule: named degenerative myelopathy / SOD1 → **painless and slow. SOD1 is risk, not proof.** △ Plumb.

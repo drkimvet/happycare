@@ -1194,6 +1194,15 @@ AFGHAN_MYEL_RE = re.compile(
     r"kooikerhond",
     re.I,
 )
+# Bare "dm" is diabetes. Bare GSD / corgi / ataxia is not enough. Not IVDD (185).
+# Not Afghan (220). Not KCNJ10 (219). Dogs only on this page.
+DEGEN_MYEL_RE = re.compile(
+    r"degenerative myelopath|"
+    r"chronic degenerative radiculomyel|"
+    r"\bsod1\b|"
+    r"\bmir26b\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5254,6 +5263,7 @@ def analyze(
     steal_lem = LEM_RE.search(text)
     steal_hatax = HATAX_RE.search(text)
     steal_afghan = AFGHAN_MYEL_RE.search(text)
+    steal_dm = DEGEN_MYEL_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5276,6 +5286,7 @@ def analyze(
         or steal_lem
         or steal_hatax
         or steal_afghan
+        or steal_dm
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6065,6 +6076,60 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Afghan myelopathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Afghan myelopathy.")
+
+    dm_named = spec == "dog" and DEGEN_MYEL_RE.search(text)
+    if dm_named and not (
+        AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        dm_loc = (
+            "Degenerative myelopathy. Painless and slow. "
+            "SOD1 is risk, not proof."
+        )
+        localization = f"{localization} Also {dm_loc}" if localization else dm_loc
+        hard_stops.append(
+            "Steroids do not change the course. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not send home as arthritis or old age."
+        )
+        do_not.append(
+            "Usually >8 years. Nonpainful pelvic ataxia. "
+            "Proprioceptive deficits are early and are not orthopedic. "
+            "MRI or myelography plus CSF to exclude compression and inflammation. "
+            "Homozygous SOD1 is at risk, not tonight's proof. "
+            "Printed 1–3 years stay on the page. "
+            "Physical therapy slows progression. "
+            "Not Afghan-only. Not IVDD-only. Not LEM-only. Skip horse EDM / EMND."
+        )
+        do_next.append(
+            "Name pain and the years. Image to exclude a disc. △ Plumb."
+        )
+        sources.append(
+            "Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025): "
+            "chronic degenerative radiculomyelopathy; SOD1 AR incomplete penetrance; "
+            "usually >8 years; nonpainful; proprioceptive deficits early vs orthopedic; "
+            "MRI/CSF essential; no evidence glucocorticoids alter the course; "
+            "printed 1–3 years stay on the page. "
+            "Merck congenital spinal (Parsley, Mar 2026): painless, slowly progressive; "
+            "SOD1 increased risk; miR26b named only; physical therapy slows; no treatment."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send degenerative myelopathy home as arthritis or old age."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for degenerative myelopathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for degenerative myelopathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

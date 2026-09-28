@@ -149,6 +149,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lem` | Assessment | Rottweiler leukoencephalomyelopathy |
 | `ddx-hatax` | Assessment | Hereditary ataxia / Jack Russell KCNJ10 |
 | `ddx-afghan` | Assessment | Afghan hound myelopathy |
+| `ddx-dm` | Assessment | Degenerative myelopathy / SOD1 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -257,6 +258,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lem` | Discharge | After Rottweiler LEM talk |
 | `dc-hatax` | Discharge | After hereditary-ataxia / KCNJ10 talk |
 | `dc-afghan` | Discharge | After Afghan-myelopathy talk |
+| `dc-dm` | Discharge | After degenerative-myelopathy / SOD1 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1902,6 +1904,21 @@ DDX:
 Do not: send home as a disc to rest. Harvest a pred table. Treat as KCNJ10 myokymia.
 Do next: Name the week. Prognosis conversation. △ Plumb.
 
+### `ddx-dm`
+
+Degenerative myelopathy — {{patient.name}}
+Age [>8 years / other]. Breed [GSD / Corgi / Boxer / Ridgeback / Chesapeake / other]. Pain [none / other]. SOD1 [homo / hetero / not tested]. Imaging [MRI / myelo / not yet]. CSF [ ]. PT [Y/N].
+
+DDX:
+1. Degenerative myelopathy — **painless and slow. SOD1 is risk, not proof**
+2. Usually >8 years. Proprioceptive deficits early — not orthopedic
+3. MRI / CSF to exclude a disc or inflammation. Printed 1–3 years stay on the page
+4. Not IVDD-only (185). Not Afghan-only (220). Not LEM-only (218)
+5. Cat does not fire. Skip horse EDM / EMND
+
+Do not: send home as arthritis. Harvest a pred table. Treat SOD1 as proof.
+Do next: Name pain and the years. Image to exclude a disc. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2801,6 +2818,14 @@ Return now for worsening ataxia, seizures, or not eating. {{location.phonenumber
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-dm`
+
+{{patient.name}} was evaluated for degenerative myelopathy (a slow, painless spinal-cord disease of older dogs; SOD1 is a risk gene, not proof by itself). This is not a disc, and steroids do not change the course.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for falling, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
