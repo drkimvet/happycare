@@ -2137,7 +2137,7 @@ Night rule: named Bandera's / Coton de Tulear → **from birth, never walks. Cer
 
 ## 218. Rottweiler leukoencephalomyelopathy (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett LEM chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Minor et al. Sci Rep 2018 NAPEPLD named only (doi:10.1038/s41598-018-23938-7). Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker / IGTS. Packet 185 still owns named IVDD. Hereditary ataxia / Jack Russell KCNJ10 is the next room, not this dump. Do not harvest a pred table as lobby law.
+No dedicated Plunkett LEM chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Minor et al. Sci Rep 2018 NAPEPLD named only (doi:10.1038/s41598-018-23938-7). Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker / IGTS. Packet 185 still owns named IVDD. Packet 219 owns named hereditary ataxia / Jack Russell KCNJ10. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: leukoencephalomyelopathy of Rottweilers has a **later onset than neuraxonal dystrophy, usually at approximately 2–3 years**. A similar basis is suggested because animals occasionally show histopathological features of both (co-occurrence reported in Rottweilers and Chihuahuas). A genetic test is available through UC Davis VGL. In LEM there is **no head tremor**, and **proprioception is delayed**. Bilaterally symmetrical areas of spinal cord demyelination are the predominant necropsy findings. Minor 2018: Rottweiler / Great Dane **NAPEPLD** stays on that page.
 
@@ -2151,3 +2151,20 @@ Book/public traps:
 - Do not send home as a disc.
 
 Night rule: named Rottweiler LEM → **delayed proprioception, no head tremor. Not NAD.** △ Plumb.
+
+## 219. Hereditary ataxia / Jack Russell KCNJ10 (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett hereditary-ataxia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker. Packet 185 still owns named IVDD. Afghan hound myelopathy is the next room, not this dump. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: hereditary ataxia is reported in **Parson Russell, Jack Russell, and Smooth Fox Terriers**. In general these are **spinocerebellar ataxia**. One form has an autosomal recessive **KCNJ10** mutation; **CAPN1** is a rare variant on the page. Predominant signs are cerebellar (cerebellar ataxia, intention tremor, hypermetria). Some forms include **myokymia** (verminous muscle movement) and/or seizures. Onset about **2–6 months**; some forms **6–12 months**. Necropsy: spinal cord demyelination. Ataxia is progressive; in some cases signs stabilize but do not regress, and some affected animals live a relatively normal life despite the gait.
+
+Night split: named hereditary ataxia / spinocerebellar ataxia / KCNJ10 / CAPN1 / myokymia is this list, not a disc. Bare Jack Russell / bare ataxia does not fire. Named LEM stays 218. Named NAD stays 216. Named Bandera stays 217. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not send home as a disc.
+- Do not harvest a pred table.
+- Do not treat myokymia as a skin twitch.
+- Do not call it LEM (Rottweiler, delayed CP, no head tremor).
+
+Night rule: named hereditary ataxia / KCNJ10 → **myokymia is this list. Not a disc.** △ Plumb.

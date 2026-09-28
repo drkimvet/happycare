@@ -1176,6 +1176,16 @@ LEM_RE = re.compile(
     r"\bnapepld\b",
     re.I,
 )
+# Bare Jack Russell / bare ataxia is not enough. Bare "sca" is not enough.
+# Not LEM (218). Not IVDD (185). Not NAD (216). Dogs only on this page.
+HATAX_RE = re.compile(
+    r"hereditary ataxia|"
+    r"spinocerebellar ataxia|"
+    r"\bkcnj10\b|"
+    r"\bcapn1\b|"
+    r"myokymia",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5234,6 +5244,7 @@ def analyze(
     steal_nad = NAD_RE.search(text)
     steal_bandera = BANDERA_RE.search(text)
     steal_lem = LEM_RE.search(text)
+    steal_hatax = HATAX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5254,6 +5265,7 @@ def analyze(
         or steal_nad
         or steal_bandera
         or steal_lem
+        or steal_hatax
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5946,6 +5958,55 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for LEM.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for LEM.")
+
+    hatax_named = spec == "dog" and HATAX_RE.search(text)
+    if hatax_named and not (
+        LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        hatax_loc = (
+            "Hereditary ataxia. JRT KCNJ10. "
+            "Myokymia is this list. Not a disc."
+        )
+        localization = f"{localization} Also {hatax_loc}" if localization else hatax_loc
+        hard_stops.append(
+            "Do not send hereditary ataxia home as a disc. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not treat myokymia as a skin twitch."
+        )
+        do_not.append(
+            "Parson Russell / Jack Russell / Smooth Fox. "
+            "Onset about 2–6 months; some forms 6–12 months. "
+            "Progressive; some stabilize and live with the gait. "
+            "CAPN1 is a rare variant on the page. Spinal demyelination. "
+            "Not LEM-only. Not IVDD-only. Not NAD-only. Not Bandera-only."
+        )
+        do_next.append(
+            "Name myokymia and seizures. Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "hereditary ataxia; Parson Russell / Jack Russell / Smooth Fox Terrier; "
+            "spinocerebellar; KCNJ10; CAPN1 rare variant; "
+            "cerebellar ataxia, intention tremor, hypermetria; "
+            "myokymia and seizures in some forms; onset 2–6 months, some 6–12; "
+            "progressive, some stabilize."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send hereditary ataxia home as a disc."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hereditary ataxia.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hereditary ataxia.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

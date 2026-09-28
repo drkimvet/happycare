@@ -147,6 +147,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-nad` | Assessment | Neuraxonal dystrophy / Rottweiler VPS11 |
 | `ddx-bandera` | Assessment | Bandera's neonatal ataxia / Coton de Tulear |
 | `ddx-lem` | Assessment | Rottweiler leukoencephalomyelopathy |
+| `ddx-hatax` | Assessment | Hereditary ataxia / Jack Russell KCNJ10 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -253,6 +254,7 @@ Suggested names are short so they show up after three letters.
 | `dc-nad` | Discharge | After neuraxonal-dystrophy / VPS11 talk |
 | `dc-bandera` | Discharge | After Bandera's / Coton talk |
 | `dc-lem` | Discharge | After Rottweiler LEM talk |
+| `dc-hatax` | Discharge | After hereditary-ataxia / KCNJ10 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1868,6 +1870,21 @@ DDX:
 Do not: pred as NAD or white-shaker. Harvest a pred table. Call preserved proprioception LEM.
 Do next: Name proprioception and head tremor. Genetic-test conversation. △ Plumb.
 
+### `ddx-hatax`
+
+Hereditary ataxia — {{patient.name}}
+Age [2–6 mo / 6–12 mo / other]. Breed [Jack Russell / Parson / Smooth Fox / other]. Myokymia [Y/N]. Seizures [Y/N]. Referring [Y/N].
+
+DDX:
+1. Hereditary ataxia — **JRT KCNJ10. Myokymia is this list. Not a disc**
+2. Parson / Jack / Smooth Fox. Onset 2–6 months; some 6–12
+3. Progressive; some stabilize. CAPN1 rare variant
+4. Not LEM-only (218). Not IVDD-only (185). Not NAD-only (216)
+5. Cat does not fire
+
+Do not: send home as a disc. Harvest a pred table. Treat myokymia as a skin twitch.
+Do next: Name myokymia and seizures. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2751,6 +2768,14 @@ Return now for not eating, or if you cannot keep them comfortable. {{location.ph
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for falling, knuckling, or not eating. {{location.phonenumber}}
+
+### `dc-hatax`
+
+{{patient.name}} was evaluated for hereditary ataxia (a spinocerebellar problem of Jack Russell / Parson / Smooth Fox terriers; KCNJ10 is the named gene). Rippling muscle (myokymia) belongs on this list. This is not a disc, and it is not Rottweiler leukoencephalomyelopathy.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worsening ataxia, seizures, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

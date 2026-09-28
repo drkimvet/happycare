@@ -4095,6 +4095,79 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("delayed proprioception", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hatax_is_kcnj10_myokymia_not_a_disc(self):
+        b = analyze(
+            "dog",
+            "hereditary ataxia, Jack Russell, KCNJ10, myokymia, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("hereditary ataxia", loc)
+        self.assertIn("kcnj10", loc)
+        self.assertIn("myokymia is this list", loc)
+        self.assertIn("not a disc", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("skin twitch", joined)
+        self.assertIn("2–6 months", joined)
+        self.assertIn("capn1", joined)
+        self.assertNotIn("rottweiler lem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lem_is_not_hatax(self):
+        b = analyze("dog", "leukoencephalomyelopathy, Rottweiler, delayed proprioception")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("delayed proprioception", loc)
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertNotIn("kcnj10", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nad_is_not_hatax(self):
+        b = analyze("dog", "neuraxonal dystrophy, Rottweiler, VPS11")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("proprioception stays", loc)
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bandera_is_not_hatax(self):
+        b = analyze("dog", "Bandera's neonatal ataxia, Coton de Tulear")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("never walks", loc)
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertNotIn("kcnj10", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_jrt_ataxia_is_not_hatax(self):
+        b = analyze("dog", "Jack Russell, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertNotIn("kcnj10", loc)
+        self.assertNotIn("hereditary ataxia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_hatax(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertNotIn("kcnj10", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_hatax(self):
+        b = analyze("cat", "hereditary ataxia, KCNJ10, myokymia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertNotIn("jrt kcnj10", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_white_shaker_is_not_hatax(self):
+        b = analyze("dog", "white shaker, Maltese, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white shaker", loc)
+        self.assertNotIn("myokymia is this list", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
