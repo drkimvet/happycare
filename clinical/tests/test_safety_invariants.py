@@ -517,6 +517,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("1–7 months", VERIF.lower())
         self.assertIn("live relatively comfortably", VERIF.lower())
         self.assertIn("patellar hyporeflexia", VERIF.lower())
+        self.assertIn("wobbler", VERIF.lower())
+        self.assertIn("two-engine gait", VERIF.lower())
+        self.assertIn("survey radiographs cannot confirm", VERIF.lower())
+        self.assertIn("not survey films", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -815,6 +819,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-dm`", MACRO)
         self.assertIn("`ddx-boxax`", MACRO)
         self.assertIn("`dc-boxax`", MACRO)
+        self.assertIn("`ddx-wobbler`", MACRO)
+        self.assertIn("`dc-wobbler`", MACRO)
+        self.assertIn("two-engine gait", MACRO.lower())
+        self.assertIn("not survey films", MACRO.lower())
         self.assertIn("1–7 months", MACRO.lower())
         self.assertIn("lost proprioception", MACRO.lower())
         self.assertIn("can live comfortably", MACRO.lower())
@@ -1134,6 +1142,9 @@ class PublicCardInvariants(unittest.TestCase):
             "1–7 months",
             "lost proprioception",
             "can live comfortably",
+            "wobbler",
+            "two-engine gait",
+            "not survey films",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

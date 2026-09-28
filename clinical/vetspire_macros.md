@@ -151,6 +151,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-afghan` | Assessment | Afghan hound myelopathy |
 | `ddx-dm` | Assessment | Degenerative myelopathy / SOD1 |
 | `ddx-boxax` | Assessment | Progressive axonopathy of Boxer dogs |
+| `ddx-wobbler` | Assessment | Wobbler / caudal cervical spondylomyelopathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -261,6 +262,7 @@ Suggested names are short so they show up after three letters.
 | `dc-afghan` | Discharge | After Afghan-myelopathy talk |
 | `dc-dm` | Discharge | After degenerative-myelopathy / SOD1 talk |
 | `dc-boxax` | Discharge | After Boxer-axonopathy talk |
+| `dc-wobbler` | Discharge | After wobbler / CSM talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1936,6 +1938,21 @@ DDX:
 Do not: send home as a neuropathy-only. Harvest a pred table. Call it old-Boxer DM.
 Do next: Name the months. Comfort conversation. △ Plumb.
 
+### `ddx-wobbler`
+
+Wobbler / CSM — {{patient.name}}
+Age [~7 years Doberman / months–4 years giant / other]. Breed [Doberman / Great Dane / Mastiff / Rottweiler / other]. Gait [two-engine / tetra / other]. Neck pain [Y/N / variable]. Imaging [MRI / CT / myelo / survey only].
+
+DDX:
+1. Wobbler / CSM — **two-engine gait. MRI, not survey films**
+2. DAWS middle-aged Doberman ~7 years. Bony young giant Dane / Mastiff / Rottweiler
+3. Neck pain variable. Printed 0.5 / 50% / 80% stay on the page
+4. Not IVDD-only (185). Not boxax-only (222). Not SRMA-only (205)
+5. Cat does not fire. Skip horse
+
+Do not: harvest pred 0.5. Confirm on survey films. Send a tetraparetic neck home as a pull.
+Do next: Name the engine gait. Image the neck. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2851,6 +2868,14 @@ Return now for falling, inability to walk, or if you cannot keep them comfortabl
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for falling, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-wobbler`
+
+{{patient.name}} was evaluated for wobbler syndrome (cervical spondylomyelopathy: a neck-spinal-cord compression of large and giant-breed dogs). The gait can look like two different engines, front and back. Plain neck films do not prove this diagnosis; advanced imaging is the test. A steroid from the cabinet is not the night plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, neck pain with collapse, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

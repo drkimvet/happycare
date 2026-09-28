@@ -4364,6 +4364,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("can live comfortably", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_wobbler_is_two_engine_gait_mri_not_survey_films(self):
+        b = analyze(
+            "dog",
+            "wobbler, Doberman, two-engine gait, send home, prednisone",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("wobbler", loc)
+        self.assertIn("two-engine gait", loc)
+        self.assertIn("not survey films", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pred 0.5", joined)
+        self.assertIn("survey films do not confirm", joined)
+        self.assertIn("daws", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boxax_is_not_wobbler(self):
+        b = analyze(
+            "dog",
+            "progressive axonopathy, Boxer, 4 months, patellar hyporeflexia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("can live comfortably", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("not survey films", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dm_is_not_wobbler(self):
+        b = analyze(
+            "dog",
+            "degenerative myelopathy, German Shepherd, 10 years, nonpainful pelvic ataxia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("painless and slow", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_wobbler(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("not survey films", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_is_not_wobbler(self):
+        b = analyze("dog", "Boxer, neck pain, fever, SRMA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("csf tonight", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_doberman_is_not_wobbler(self):
+        b = analyze("dog", "Doberman, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("not survey films", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_wobbler(self):
+        b = analyze("cat", "wobbler, two-engine gait, cervical spondylomyelopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("not survey films", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

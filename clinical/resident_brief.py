@@ -1211,6 +1211,17 @@ BOXER_AXON_RE = re.compile(
     r"axonopath.{0,40}boxer",
     re.I,
 )
+# Bare Doberman / Great Dane / neck pain is not enough. Not IVDD (185).
+# Not Boxer axonopathy (222). Not SRMA (205). Dogs only. Skip horse.
+WOBBLER_RE = re.compile(
+    r"\bwobbler|"
+    r"cervical spondylomyel|"
+    r"caudal cervical spondylomyel|"
+    r"two[- ]engine gait|"
+    r"disk[- ]associated wobbler|"
+    r"disc[- ]associated wobbler",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5273,6 +5284,7 @@ def analyze(
     steal_afghan = AFGHAN_MYEL_RE.search(text)
     steal_dm = DEGEN_MYEL_RE.search(text)
     steal_boxax = BOXER_AXON_RE.search(text)
+    steal_wobbler = WOBBLER_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5297,6 +5309,7 @@ def analyze(
         or steal_afghan
         or steal_dm
         or steal_boxax
+        or steal_wobbler
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6193,6 +6206,63 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Boxer axonopathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Boxer axonopathy.")
+
+    wobbler_named = spec == "dog" and WOBBLER_RE.search(text)
+    if wobbler_named and not (
+        BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        wobbler_loc = (
+            "Wobbler / CSM. Two-engine gait. "
+            "MRI, not survey films."
+        )
+        localization = f"{localization} Also {wobbler_loc}" if localization else wobbler_loc
+        hard_stops.append(
+            "Do not harvest pred 0.5 as lobby law. "
+            "Survey films do not confirm wobbler. "
+            "Do not send a tetraparetic neck home as a pull."
+        )
+        do_not.append(
+            "Two forms: DAWS middle-aged Doberman about 7 years; "
+            "bony young giant Dane / Mastiff / Rottweiler, months to 4 years. "
+            "Neck pain is variable. Two-engine gait. "
+            "Survey radiographs cannot confirm. "
+            "Printed 0.5 / 50% / 80% stay on the page. "
+            "Not IVDD-only. Not boxax-only. Not DM-only. Not SRMA-only. "
+            "Not calcium-phosphate Great Dane puppies. Skip horse."
+        )
+        do_next.append(
+            "Name the engine gait. Image the neck. △ Plumb."
+        )
+        sources.append(
+            "Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025): "
+            "cervical spondylomyelopathy / wobbler; DAWS vs bony-associated; "
+            "two-engine gait; neck pain variable; survey radiographs cannot confirm; "
+            "MRI / CT / myelography; printed pred 0.5 and 50% / 80% stay on the page. "
+            "Merck congenital spinal (Parsley, Mar 2026): caudal cervical spondylomyelopathy; "
+            "disk-associated older vs facet-associated younger giant; "
+            "neck flexed ventrally; skip horse."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a tetraparetic wobbler home as a pulled neck."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest pred 0.5 as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for wobbler.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for wobbler.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

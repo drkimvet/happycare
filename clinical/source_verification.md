@@ -2206,7 +2206,7 @@ Night rule: named degenerative myelopathy / SOD1 → **painless and slow. SOD1 i
 
 ## 222. Progressive axonopathy of Boxer dogs (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett Boxer-axonopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 221 still owns named degenerative myelopathy / SOD1. Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 216 still owns named NAD / VPS11. Packet 205 still owns named SRMA. Wobbler / caudal cervical spondylomyelopathy is the next room, not this dump. Do not harvest a pred table as lobby law.
+No dedicated Plunkett Boxer-axonopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 221 still owns named degenerative myelopathy / SOD1. Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 216 still owns named NAD / VPS11. Packet 205 still owns named SRMA. Packet 223 owns named wobbler / caudal cervical spondylomyelopathy. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: progressive axonopathy of Boxers is an **autosomal recessive** disorder that causes **patellar hyporeflexia**, **severe dysmetria**, **loss of proprioception**, and **spastic paresis** at the age of **1–7 months**. Axonal spheroids are widespread in both the **central and the peripheral nervous systems** on necropsy. Although this condition causes loss of the patellar reflex, in general the clinical signs are **more suggestive of spinal cord disease than of peripheral neuropathy**. **There is no treatment**; however, affected dogs **can live relatively comfortably for a considerable amount of time**.
 
@@ -2220,3 +2220,21 @@ Book/public traps:
 - Do not call preserved proprioception this list (that is NAD).
 
 Night rule: named Boxer progressive axonopathy → **1–7 months. Lost proprioception. Can live comfortably.** △ Plumb.
+
+## 223. Wobbler / caudal cervical spondylomyelopathy (Merck Thomas Oct 2021 / Apr 2025; Parsley Mar 2026 spinal)
+
+No dedicated Plunkett wobbler chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 222 still owns named progressive axonopathy of Boxer dogs. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 205 still owns named SRMA. DLSS / degenerative lumbosacral stenosis is the next room, not this dump. Do not harvest pred 0.5 as lobby law. Skip horse wobbler.
+
+Agree with Thomas: cervical spondylomyelopathy, also called cervical vertebral malformation-malarticulation and **wobbler syndrome**. Two dog forms: **disk-associated wobbler (DAWS)** in middle-aged large-breeds, especially Doberman (typical onset **7 years**), ventral compression from caudal cervical disks; **bony-associated** in young giant-breeds (Great Dane / Mastiff / Rottweiler, months to **4 years**), articular process / pedicle proliferation, usually C4–C7. Mild cases: **two-engine gait** (long pelvic stride, short thoracic stride). Severe: paresis or paralysis of all limbs. **Neck pain is variable.** **Survey radiographs cannot confirm** a diagnosis; they help exclude diskospondylitis and bony neoplasia. Definitive diagnosis requires **myelography, CT, or MRI**. Printed pred 0.5 / ~50% medical improve / ~80% do well with surgery stay on the page. Agree with Parsley: caudal cervical spondylomyelopathy; heritable mention in Borzoi / Basset / Doberman / Great Dane; neck often flexed ventrally; disk-associated older vs facet-associated younger giant; distinct from calcium phosphate deposition in Great Dane puppies.
+
+Night split: named wobbler / cervical spondylomyelopathy / two-engine gait is MRI, not survey films. Bare Doberman / bare Great Dane / bare neck pain does not fire. Named IVDD stays 185. Named boxax stays 222. Named DM stays 221. Named SRMA stays 205. Cat does not fire. Skip horse.
+
+Book/public traps:
+
+- Do not harvest pred 0.5 as lobby law.
+- Do not confirm on survey films.
+- Do not send a tetraparetic neck home as a pull.
+- Do not call dachshund TL IVDD this list.
+- Do not call 1–7 month Boxer axonopathy this list.
+
+Night rule: named wobbler / CSM → **two-engine gait. MRI, not survey films.** △ Plumb.
