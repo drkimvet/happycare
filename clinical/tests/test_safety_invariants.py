@@ -494,6 +494,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("white shaker", VERIF.lower())
         self.assertIn("exclusion first", VERIF.lower())
         self.assertIn("mri is often normal", VERIF.lower())
+        self.assertIn("neuraxonal dystrophy", VERIF.lower())
+        self.assertIn("vps11", VERIF.lower())
+        self.assertIn("preservation of normal conscious proprioception", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -778,6 +781,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hypomy`", MACRO)
         self.assertIn("`ddx-shaker`", MACRO)
         self.assertIn("`dc-shaker`", MACRO)
+        self.assertIn("`ddx-nad`", MACRO)
+        self.assertIn("`dc-nad`", MACRO)
+        self.assertIn("proprioception stays", MACRO.lower())
+        self.assertIn("not lem", MACRO.lower())
         self.assertIn("exclusion first, not pred-first", MACRO.lower())
         self.assertIn("mri is often normal", MACRO.lower())
         self.assertIn("shaking puppy at 2–8 weeks", MACRO.lower())
@@ -1062,6 +1069,9 @@ class PublicCardInvariants(unittest.TestCase):
             "white shaker",
             "exclusion first, not pred-first",
             "mri is often normal",
+            "neuraxonal dystrophy",
+            "proprioception stays",
+            "not lem",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

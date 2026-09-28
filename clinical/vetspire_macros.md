@@ -144,6 +144,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-abiot` | Assessment | Cerebellar abiotrophy / progressive after birth |
 | `ddx-hypomy` | Assessment | Congenital hypomyelination / shaking puppy |
 | `ddx-shaker` | Assessment | White shaker / IGTS / idiopathic generalized tremor |
+| `ddx-nad` | Assessment | Neuraxonal dystrophy / Rottweiler VPS11 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -247,6 +248,7 @@ Suggested names are short so they show up after three letters.
 | `dc-abiot` | Discharge | After cerebellar-abiotrophy talk |
 | `dc-hypomy` | Discharge | After shaking-puppy / hypomyelination talk |
 | `dc-shaker` | Discharge | After white-shaker / IGTS talk |
+| `dc-nad` | Discharge | After neuraxonal-dystrophy / VPS11 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1817,6 +1819,21 @@ DDX:
 Do not: pred a tremor until glucose, toxin, and infection are off. Harvest a pred table. Call a 2–8 week shaking puppy white-shaker.
 Do next: Glucose now. MRI/CSF if referring. △ Plumb.
 
+### `ddx-nad`
+
+Neuraxonal dystrophy — {{patient.name}}
+Age [3–24 mo / other]. Breed [Rottweiler / Papillon / Collie / Chihuahua / tricolor cat / other]. Proprioception [normal / delayed]. Head tremor [Y/N]. Referring [Y/N].
+
+DDX:
+1. Neuraxonal dystrophy — **Rottweiler VPS11. Proprioception stays. Not LEM**
+2. Onset 3–24 months in Rottweilers; slow over years. Papillon PLA2G6
+3. Axonal spheroids. Tricolor cats are on the page
+4. Not LEM-only (delayed proprioception, no head tremor). Not IVDD-only (185)
+5. Not white-shaker-only (215). Not hypomyelin-only (214). Not abiotrophy-only (213)
+
+Do not: pred as white-shaker. Harvest a pred table. Call delayed proprioception neuraxonal dystrophy.
+Do next: Name proprioception. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2676,6 +2693,14 @@ Return now for worsening tremor, inability to eat, or collapse. {{location.phone
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worsening tremor, inability to eat, collapse, or seizure. {{location.phonenumber}}
+
+### `dc-nad`
+
+{{patient.name}} was evaluated for neuraxonal dystrophy (a slow inherited nerve-ending disease; Rottweiler VPS11 is the named gene). Position sense is usually still there, which is how this is told apart from leukoencephalomyelopathy in the same breed. This is not white-shaker disease and it is not a disc.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for falling, inability to walk, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

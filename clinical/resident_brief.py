@@ -1149,6 +1149,15 @@ SHAKER_RE = re.compile(
     r"idiopathic cerebellitis",
     re.I,
 )
+# Bare "nad" is not enough (nicotinamide / chart shorthand). Bare Rottweiler is not enough.
+# Not LEM-only. Not white-shaker (215). Not hypomyelin (214). Not abiotrophy (213).
+NAD_RE = re.compile(
+    r"neuraxonal|"
+    r"neuroaxonal|"
+    r"\bvps11\b|"
+    r"\bpla2g6\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5204,6 +5213,7 @@ def analyze(
     steal_abiot = ABIOT_RE.search(text)
     steal_hypomy = HYPOMY_RE.search(text)
     steal_shaker = SHAKER_RE.search(text)
+    steal_nad = NAD_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5221,6 +5231,7 @@ def analyze(
         or steal_abiot
         or steal_hypomy
         or steal_shaker
+        or steal_nad
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5776,6 +5787,52 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for white shaker.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for white shaker.")
+
+    nad_named = spec in {"dog", "cat"} and NAD_RE.search(text)
+    if nad_named and not (
+        SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        nad_loc = (
+            "Neuraxonal dystrophy. Rottweiler VPS11. "
+            "Proprioception stays. Not LEM."
+        )
+        localization = f"{localization} Also {nad_loc}" if localization else nad_loc
+        hard_stops.append(
+            "Do not pred neuraxonal dystrophy as white-shaker. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not call delayed proprioception neuraxonal dystrophy."
+        )
+        do_not.append(
+            "Onset 3–24 months in Rottweilers; slow over years. "
+            "Papillon PLA2G6. Collie 2–4 months in Australia / New Zealand. "
+            "Axonal spheroids. Tricolor cats are on the page. "
+            "Not LEM-only. Not IVDD-only. Not shaker-only. Not horse/sheep NAD."
+        )
+        do_next.append(
+            "Name proprioception. Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebellar (Parsley, Mar 2026): "
+            "neuraxonal dystrophy; Rottweiler VPS11; Papillon PLA2G6; "
+            "onset 3–24 months; cerebellar dysfunction and dysmetria with "
+            "preservation of normal conscious proprioception; "
+            "distinguishes from leukoencephalomyelopathy. "
+            "Merck congenital spinal: LEM later onset 2–3 years; "
+            "no head tremor; proprioception delayed."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not call delayed proprioception neuraxonal dystrophy."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for neuraxonal dystrophy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for neuraxonal dystrophy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

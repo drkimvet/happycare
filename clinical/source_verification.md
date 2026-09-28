@@ -2082,7 +2082,7 @@ Night rule: 2–8 week shaking puppy → **hypomyelination tonight; some resolve
 
 ## 215. Idiopathic generalized tremor / white shaker (Frontiers Vet Sci 2024 Carlson / Ives)
 
-No dedicated Plunkett white-shaker chapter in the owned SA EM splits. Merck has **no dedicated IGTS / white-shaker page**. Public named source: Carlson / Ives et al., Front. Vet. Sci. 20 Sept 2024, doi:10.3389/fvets.2024.1453698. Merck Coates myelin (Jul 2023 / Sept 2024) is contrast only: shaking pup / hypomyelin stays 214; tremor absent during sleep is myelin language, not this dump. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 116 still owns seizure drugs. Neuraxonal dystrophy / Rottweiler VPS11 is the next room, not this dump. Do not harvest a pred table as lobby law.
+No dedicated Plunkett white-shaker chapter in the owned SA EM splits. Merck has **no dedicated IGTS / white-shaker page**. Public named source: Carlson / Ives et al., Front. Vet. Sci. 20 Sept 2024, doi:10.3389/fvets.2024.1453698. Merck Coates myelin (Jul 2023 / Sept 2024) is contrast only: shaking pup / hypomyelin stays 214; tremor absent during sleep is myelin language, not this dump. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 116 still owns seizure drugs. Packet 216 owns named neuraxonal dystrophy / Rottweiler VPS11. Do not harvest a pred table as lobby law.
 
 Agree with Carlson / Ives: idiopathic generalized tremor syndrome (IGTS) is an acute-onset full-body tremor, sometimes with vestibulo-cerebellar signs, that is corticosteroid-responsive. Also called idiopathic cerebellitis / corticosteroid-responsive tremor syndrome / little white shaker / steroid-responsive tremors. Initially small <15 kg white dogs (Maltese, Westie, Bichon), but other colors and sizes since — little-white-shaker is a misnomer. Young; most <5 years; most <15 kg. Fine whole-body tremor worsening with anxiety/excitement; cerebellar ataxia / hypermetria / wide-based stance ± vestibular, decreased menace, opsoclonus, paresis, mild hyperthermia, seizures. Presumptive diagnosis = signalment + signs + neuro exam + **exclusion of other whole-body tremor causes**. **MRI usually normal**. CSF pleocytosis in a limited number (~40% this series; 13/33). Good outcome but relapsing and persistent mild signs described. Immune-mediated suspected. Printed prednisolone **1 / 2 / 4 mg/kg/day** and diazepam **0.63** stay on the page — do not harvest as lobby law.
 
@@ -2097,3 +2097,23 @@ Book/public traps:
 - MRI is usually normal. CSF can be normal. Relapses described.
 
 Night rule: named white shaker / IGTS → **exclusion first, not pred-first. MRI is often normal.** △ Plumb.
+
+## 216. Neuraxonal dystrophy / Rottweiler VPS11 (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett neuraxonal-dystrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026) plus spinal LEM contrast on the same author's spinal page. Lucot / Bannasch G3 2018 VPS11 named only (doi:10.1534/g3.118.200376). Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Bandera's neonatal ataxia / Coton is the next room, not this dump. Rottweiler leukoencephalomyelopathy is contrast, not this dump. Skip horse / sheep / vitamin-E NAD. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: neuraxonal dystrophy is described in dogs and cats; primarily Rottweilers (autosomal recessive **VPS11**) and Papillons (**PLA2G6**). In Rottweilers, onset is **3–24 months** and the disorder progresses slowly over several years. Clinical signs: cerebellar dysfunction and dysmetria in all four limbs, **with preservation of normal conscious proprioception**, which should distinguish this disorder from **leukoencephalomyelopathy** and from advanced motor neuron disease in the same breed. Collies in Australia and New Zealand develop similar signs at **2–4 months**. Early onset also in Papillons and Chihuahuas, and in cats (autosomal recessive in domestic tricolored cats). Axonal spheroids, often in specific regions of the brain and spinal cord, are the characteristic pathological finding.
+
+Spinal-page contrast (do not steal as 216): leukoencephalomyelopathy of Rottweilers has a later onset than NAD, usually **2–3 years**. No head tremor. Proprioception is delayed. Co-occurrence of histopath features has been reported. Genetic test named through UC Davis VGL stays on that page.
+
+Night split: named neuraxonal / neuroaxonal / VPS11 / PLA2G6 is proprioception-stays, not LEM. Bare Rottweiler / bare ataxia does not fire. Bare “NAD” does not fire. Named white shaker stays 215. Named shaking puppy stays 214. Named abiotrophy stays 213. Named CH stays 211. Named LEM without NAD words does not fire.
+
+Book/public traps:
+
+- Do not pred as white-shaker.
+- Do not harvest a pred table.
+- Do not call delayed proprioception neuraxonal dystrophy (that is LEM).
+- Do not treat horse / sheep NAD as this dump.
+- Axonal spheroids are the path finding, not a lobby stain.
+
+Night rule: named neuraxonal dystrophy → **Rottweiler VPS11. Proprioception stays. Not LEM.** △ Plumb.

@@ -3884,6 +3884,80 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("shaking puppy at 2–8 weeks", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_nad_is_vps11_proprioception_stays(self):
+        b = analyze(
+            "dog",
+            "neuraxonal dystrophy, Rottweiler, VPS11, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("neuraxonal dystrophy", loc)
+        self.assertIn("vps11", loc)
+        self.assertIn("proprioception stays", loc)
+        self.assertIn("not lem", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("delayed proprioception", joined)
+        self.assertIn("pla2g6", joined)
+        self.assertIn("3–24 months", joined)
+        self.assertNotIn("exclusion first", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_white_shaker_is_not_nad(self):
+        b = analyze("dog", "white shaker, Maltese, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white shaker", loc)
+        self.assertNotIn("proprioception stays", loc)
+        self.assertNotIn("rottweiler vps11", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_shaking_puppy_is_not_nad(self):
+        b = analyze(
+            "dog",
+            "congenital hypomyelination, shaking puppy, 6 weeks",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("proprioception stays", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_abiotrophy_is_not_nad(self):
+        b = analyze("dog", "cerebellar abiotrophy, intention tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("born normal, then progressive", loc)
+        self.assertNotIn("proprioception stays", loc)
+        self.assertNotIn("rottweiler vps11", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_nad(self):
+        b = analyze("cat", "cerebellar hypoplasia, in utero FPV, tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("proprioception stays", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_rottweiler_is_not_nad(self):
+        b = analyze("dog", "Rottweiler, ataxia, hypermetria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("proprioception stays", loc)
+        self.assertNotIn("neuraxonal dystrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lem_is_not_nad(self):
+        b = analyze(
+            "dog",
+            "leukoencephalomyelopathy, Rottweiler, delayed proprioception",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("proprioception stays", loc)
+        self.assertNotIn("neuraxonal dystrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_tricolor_nad_fires(self):
+        b = analyze("cat", "neuraxonal dystrophy, tricolor cat")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neuraxonal dystrophy", loc)
+        self.assertIn("proprioception stays", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
