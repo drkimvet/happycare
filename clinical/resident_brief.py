@@ -1127,6 +1127,15 @@ ABIOT_RE = re.compile(
     r"cerebellar atroph",
     re.I,
 )
+# Bare tremor is not enough. Bare "shaker" is white-shaker / adult, not this.
+# Not abiotrophy (213). Not CH (211). Not COMS (212).
+HYPOMY_RE = re.compile(
+    r"hypomyelin|"
+    r"dysmyelin|"
+    r"shaking puppy|"
+    r"shaker puppy",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5180,6 +5189,7 @@ def analyze(
     steal_chypo = CHYPO_RE.search(text)
     steal_coms = COMS_RE.search(text)
     steal_abiot = ABIOT_RE.search(text)
+    steal_hypomy = HYPOMY_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5195,6 +5205,7 @@ def analyze(
         or steal_chypo
         or steal_coms
         or steal_abiot
+        or steal_hypomy
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5534,6 +5545,7 @@ def analyze(
         or GME_RE.search(text)
         or COMS_RE.search(text)
         or ABIOT_RE.search(text)
+        or HYPOMY_RE.search(text)
     ):
         chypo_loc = (
             "Cerebellar hypoplasia. FPV wobble is nonprogressive. "
@@ -5623,6 +5635,7 @@ def analyze(
         NME_RE.search(text)
         or GME_RE.search(text)
         or COMS_RE.search(text)
+        or HYPOMY_RE.search(text)
     ):
         abiot_loc = (
             "Cerebellar abiotrophy. Born normal, then progressive. "
@@ -5660,6 +5673,48 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for cerebellar abiotrophy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for cerebellar abiotrophy.")
+
+    hypomy_named = spec in {"dog", "cat"} and HYPOMY_RE.search(text)
+    if hypomy_named and not (
+        NME_RE.search(text)
+        or GME_RE.search(text)
+        or COMS_RE.search(text)
+    ):
+        hypomy_loc = (
+            "Congenital hypomyelination. Shaking puppy at 2–8 weeks. "
+            "Some resolve."
+        )
+        localization = f"{localization} Also {hypomy_loc}" if localization else hypomy_loc
+        hard_stops.append(
+            "Do not treat a shaking puppy as progressive abiotrophy. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not call it adult white-shaker syndrome."
+        )
+        do_not.append(
+            "Springer, Chow Chow, Weimaraner, Bernese. FNIP2 stays on the page. "
+            "Generalized tremor at about 2–8 weeks. Rare in cats. "
+            "Chow / Weimaraner / Bernese are often called dysmyelination because "
+            "whole-body tremor usually resolves. MRI confirms. "
+            "Not abiotrophy-only. Not CH-only. Not white-shaker-only."
+        )
+        do_next.append(
+            "MRI. Name the breed and the week. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital cerebellar (Parsley, Mar 2026): "
+            "congenital hypomyelination; 2–8 weeks; Springer / Chow / Weimaraner / Bernese; "
+            "dysmyelination often resolves; rare in cats; MRI."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not treat a shaking puppy as progressive abiotrophy."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hypomyelination.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hypomyelination.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

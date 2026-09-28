@@ -2061,3 +2061,21 @@ Book/public traps:
 - Postural reactions stay normal.
 
 Night rule: normal at birth, then progressive cerebellar signs → **abiotrophy tonight, not hypoplasia.** △ Plumb.
+
+## 214. Congenital hypomyelination / shaking puppy (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett hypomyelination chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS. Idiopathic generalized tremor / white shaker is the next room, not this dump. Skip neuraxonal dystrophy and Bandera's. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: congenital hypomyelination is a familial or inherited disorder in Springer Spaniels, Chow Chows, Weimaraners (FNIP2 mutation named), and Bernese Mountain Dogs. Clinical signs (generalized tremor) usually develop at approximately **2–8 weeks**. Rare in cats. In Chow Chows, Weimaraners, and Bernese Mountain Dogs the disorder is often termed **dysmyelination** because whole-body tremor usually resolves spontaneously with time. MRI can confirm. Key point on the same page: CH is present at birth; hypomyelination develops within weeks; Chiari-like signs may come years later.
+
+Night split: named hypomyelination / dysmyelination / shaking puppy is a 2–8 week whole-body tremor, not progressive abiotrophy and not adult white-shaker. Bare tremor does not fire. Bare “shaker” / white shaker does not fire. Named abiotrophy stays 213 unless hypomyelin words are also present. Named CH stays 211. Named COMS stays 212.
+
+Book/public traps:
+
+- Do not treat a shaking puppy as progressive abiotrophy.
+- Do not harvest a pred table.
+- Do not call it adult white-shaker syndrome.
+- Some breeds resolve (dysmyelination).
+- MRI confirms.
+
+Night rule: 2–8 week shaking puppy → **hypomyelination tonight; some resolve.** △ Plumb.

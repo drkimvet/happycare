@@ -488,6 +488,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("cerebellar abiotrophy", VERIF.lower())
         self.assertIn("born normal", VERIF.lower())
         self.assertIn("postural reactions remain normal", VERIF.lower())
+        self.assertIn("hypomyelination", VERIF.lower())
+        self.assertIn("2–8 weeks", VERIF.lower())
+        self.assertIn("dysmyelination", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -768,6 +771,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-coms`", MACRO)
         self.assertIn("`ddx-abiot`", MACRO)
         self.assertIn("`dc-abiot`", MACRO)
+        self.assertIn("`ddx-hypomy`", MACRO)
+        self.assertIn("`dc-hypomy`", MACRO)
+        self.assertIn("shaking puppy at 2–8 weeks", MACRO.lower())
+        self.assertIn("some resolve", MACRO.lower())
         self.assertIn("born normal, then progressive", MACRO.lower())
         self.assertIn("not hypoplasia", MACRO.lower())
         self.assertIn("phantom scratch is a syrinx tonight", MACRO.lower())
@@ -1042,6 +1049,9 @@ class PublicCardInvariants(unittest.TestCase):
             "cerebellar abiotrophy",
             "born normal, then progressive",
             "not hypoplasia",
+            "hypomyelination",
+            "shaking puppy at 2–8 weeks",
+            "some resolve",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

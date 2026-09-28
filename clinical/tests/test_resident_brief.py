@@ -3776,6 +3776,57 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("born normal, then progressive", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hypomyelination_is_shaking_puppy(self):
+        b = analyze(
+            "dog",
+            "congenital hypomyelination, shaking puppy, 6 weeks, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("congenital hypomyelination", loc)
+        self.assertIn("shaking puppy at 2–8 weeks", loc)
+        self.assertIn("some resolve", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("white-shaker", joined)
+        self.assertIn("dysmyelination", joined)
+        self.assertIn("2–8 weeks", joined)
+        self.assertNotIn("born normal, then progressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_abiotrophy_plus_hypomyelin_is_hypomyelin(self):
+        b = analyze("dog", "cerebellar abiotrophy, hypomyelination")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("born normal, then progressive", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_hypomyelination(self):
+        b = analyze("cat", "cerebellar hypoplasia, in utero FPV, tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("shaking puppy at 2–8 weeks", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_white_shaker_is_not_hypomyelination(self):
+        b = analyze("dog", "white shaker, Maltese, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("some resolve", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tremor_is_not_hypomyelination(self):
+        b = analyze("dog", "tremor, 6 week puppy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("congenital hypomyelination", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coms_is_not_hypomyelination(self):
+        b = analyze("dog", "Chiari-like, phantom scratch")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertNotIn("shaking puppy at 2–8 weeks", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

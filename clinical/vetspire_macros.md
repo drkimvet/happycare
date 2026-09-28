@@ -142,6 +142,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-chypo` | Assessment | Cerebellar hypoplasia / FPV wobble |
 | `ddx-coms` | Assessment | Chiari-like / COMS / phantom scratch |
 | `ddx-abiot` | Assessment | Cerebellar abiotrophy / progressive after birth |
+| `ddx-hypomy` | Assessment | Congenital hypomyelination / shaking puppy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -243,6 +244,7 @@ Suggested names are short so they show up after three letters.
 | `dc-chypo` | Discharge | After cerebellar-hypoplasia / wobble talk |
 | `dc-coms` | Discharge | After Chiari / COMS / phantom-scratch talk |
 | `dc-abiot` | Discharge | After cerebellar-abiotrophy talk |
+| `dc-hypomy` | Discharge | After shaking-puppy / hypomyelination talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1783,6 +1785,21 @@ DDX:
 Do not: treat progressive cerebellar signs as FPV wobble. Harvest a pred table. Call lost menace cortical until the cerebellum is named.
 Do next: Name the onset. Progressive after a normal start is this list. △ Plumb.
 
+### `ddx-hypomy`
+
+Congenital hypomyelination — {{patient.name}}
+Age [2–8 weeks / other]. Tremor [generalized / other]. Breed [Springer / Chow / Weimaraner / Bernese / other]. Resolving [Y/N / unknown]. MRI [ / not yet]. Referring [Y/N].
+
+DDX:
+1. Congenital hypomyelination — **shaking puppy at 2–8 weeks. Some resolve**
+2. Springer / Chow / Weimaraner / Bernese. FNIP2 stays on the page
+3. Chow / Weimaraner / Bernese often called dysmyelination because whole-body tremor usually resolves
+4. Rare in cats. MRI confirms
+5. Not abiotrophy-only (213). Not CH-only (211). Not white-shaker-only
+
+Do not: treat a shaking puppy as progressive abiotrophy. Harvest a pred table. Call it adult white-shaker syndrome.
+Do next: MRI. Name the breed and the week. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2626,6 +2643,14 @@ Return now for worsening scratch, weakness, wobbliness, or not eating. {{locatio
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worsening wobble, falling, or not eating. {{location.phonenumber}}
+
+### `dc-hypomy`
+
+{{patient.name}} was evaluated for congenital hypomyelination (a myelin problem that can make a young puppy shake all over, usually at 2 to 8 weeks). In some breeds this is called dysmyelination and the tremor often gets better with time. This is not the same as adult “white shaker” disease and it is not progressive cerebellar abiotrophy.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worsening tremor, inability to eat, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
