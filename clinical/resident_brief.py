@@ -1136,6 +1136,19 @@ HYPOMY_RE = re.compile(
     r"shaker puppy",
     re.I,
 )
+# Bare tremor / bare "shaker" / shaking puppy is not enough.
+# Not hypomyelin (214). Not NME (207). Not GME (206). Dogs only on this page.
+SHAKER_RE = re.compile(
+    r"white shaker|"
+    r"little white shaker|"
+    r"shaker (dog |syndrome|disease)|"
+    r"idiopathic generalized tremor|"
+    r"\bigts\b|"
+    r"corticosteroid[- ]responsive tremor|"
+    r"steroid[- ]responsive tremor|"
+    r"idiopathic cerebellitis",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5190,6 +5203,7 @@ def analyze(
     steal_coms = COMS_RE.search(text)
     steal_abiot = ABIOT_RE.search(text)
     steal_hypomy = HYPOMY_RE.search(text)
+    steal_shaker = SHAKER_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5206,6 +5220,7 @@ def analyze(
         or steal_coms
         or steal_abiot
         or steal_hypomy
+        or steal_shaker
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5715,6 +5730,52 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hypomyelination.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hypomyelination.")
+
+    shaker_named = spec == "dog" and SHAKER_RE.search(text)
+    if shaker_named and not (
+        HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        shaker_loc = (
+            "White shaker / IGTS. Exclusion first, not pred-first. "
+            "MRI is often normal."
+        )
+        localization = f"{localization} Also {shaker_loc}" if localization else shaker_loc
+        hard_stops.append(
+            "Do not pred a tremor until glucose, toxin, and infection are off. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not call a 2–8 week shaking puppy white-shaker."
+        )
+        do_not.append(
+            "Little-white-shaker is a misnomer; other colors and sizes are on the page. "
+            "MRI is usually normal. CSF can be normal. Relapses described. "
+            "Printed 1 / 2 / 4 stay on the page. "
+            "Not hypomyelin-only. Not CH-only. Not abiotrophy-only."
+        )
+        do_next.append(
+            "Glucose now. MRI/CSF if referring. △ Plumb."
+        )
+        sources.append(
+            "Frontiers Vet Sci 2024 Carlson / Ives et al. "
+            "(doi:10.3389/fvets.2024.1453698): "
+            "canine idiopathic generalized tremor syndrome; corticosteroid-responsive; "
+            "MRI usually normal; CSF pleocytosis in a limited number; "
+            "exclusion of other whole-body tremor causes; "
+            "printed pred 1 / 2 / 4 and diazepam 0.63 stay on the page. "
+            "Merck Coates myelin: shaking pup / hypomyelin stays 214; "
+            "no dedicated white-shaker page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not pred a tremor until glucose, toxin, and infection are off."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for white shaker.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for white shaker.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

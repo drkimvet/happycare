@@ -3806,11 +3806,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("shaking puppy at 2–8 weeks", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_white_shaker_is_exclusion_not_pred_first(self):
+        b = analyze("dog", "white shaker, Maltese, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white shaker", loc)
+        self.assertIn("exclusion first", loc)
+        self.assertIn("not pred-first", loc)
+        self.assertIn("mri is often normal", loc)
+        self.assertNotIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("some resolve", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("glucose now", joined)
+        self.assertIn("misnomer", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_white_shaker_is_not_hypomyelination(self):
         b = analyze("dog", "white shaker, Maltese, generalized tremor")
         loc = (b["localization"] or "").lower()
         self.assertNotIn("shaking puppy at 2–8 weeks", loc)
         self.assertNotIn("some resolve", loc)
+        self.assertIn("white shaker", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_shaking_puppy_is_not_white_shaker(self):
+        b = analyze(
+            "dog",
+            "congenital hypomyelination, shaking puppy, 6 weeks, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("exclusion first", loc)
+        self.assertNotIn("mri is often normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tremor_is_not_white_shaker(self):
+        b = analyze("dog", "tremor, 6 week puppy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("white shaker", loc)
+        self.assertNotIn("exclusion first", loc)
+        self.assertNotIn("mri is often normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_white_shaker(self):
+        b = analyze("cat", "cerebellar hypoplasia, in utero FPV, tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("white shaker", loc)
+        self.assertNotIn("exclusion first", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_abiotrophy_is_not_white_shaker(self):
+        b = analyze("dog", "cerebellar abiotrophy, intention tremor, progressive ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("born normal, then progressive", loc)
+        self.assertNotIn("white shaker", loc)
+        self.assertNotIn("exclusion first", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_white_shaker_is_not(self):
+        b = analyze("cat", "white shaker, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("exclusion first", loc)
+        self.assertNotIn("mri is often normal", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_bare_tremor_is_not_hypomyelination(self):

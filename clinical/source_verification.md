@@ -2064,7 +2064,7 @@ Night rule: normal at birth, then progressive cerebellar signs → **abiotrophy 
 
 ## 214. Congenital hypomyelination / shaking puppy (Merck Parsley Mar 2026 cerebellar)
 
-No dedicated Plunkett hypomyelination chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS. Idiopathic generalized tremor / white shaker is the next room, not this dump. Skip neuraxonal dystrophy and Bandera's. Do not harvest a pred table as lobby law.
+No dedicated Plunkett hypomyelination chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS. Packet 215 owns named white shaker / IGTS. Skip neuraxonal dystrophy and Bandera's. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: congenital hypomyelination is a familial or inherited disorder in Springer Spaniels, Chow Chows, Weimaraners (FNIP2 mutation named), and Bernese Mountain Dogs. Clinical signs (generalized tremor) usually develop at approximately **2–8 weeks**. Rare in cats. In Chow Chows, Weimaraners, and Bernese Mountain Dogs the disorder is often termed **dysmyelination** because whole-body tremor usually resolves spontaneously with time. MRI can confirm. Key point on the same page: CH is present at birth; hypomyelination develops within weeks; Chiari-like signs may come years later.
 
@@ -2079,3 +2079,21 @@ Book/public traps:
 - MRI confirms.
 
 Night rule: 2–8 week shaking puppy → **hypomyelination tonight; some resolve.** △ Plumb.
+
+## 215. Idiopathic generalized tremor / white shaker (Frontiers Vet Sci 2024 Carlson / Ives)
+
+No dedicated Plunkett white-shaker chapter in the owned SA EM splits. Merck has **no dedicated IGTS / white-shaker page**. Public named source: Carlson / Ives et al., Front. Vet. Sci. 20 Sept 2024, doi:10.3389/fvets.2024.1453698. Merck Coates myelin (Jul 2023 / Sept 2024) is contrast only: shaking pup / hypomyelin stays 214; tremor absent during sleep is myelin language, not this dump. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 116 still owns seizure drugs. Neuraxonal dystrophy / Rottweiler VPS11 is the next room, not this dump. Do not harvest a pred table as lobby law.
+
+Agree with Carlson / Ives: idiopathic generalized tremor syndrome (IGTS) is an acute-onset full-body tremor, sometimes with vestibulo-cerebellar signs, that is corticosteroid-responsive. Also called idiopathic cerebellitis / corticosteroid-responsive tremor syndrome / little white shaker / steroid-responsive tremors. Initially small <15 kg white dogs (Maltese, Westie, Bichon), but other colors and sizes since — little-white-shaker is a misnomer. Young; most <5 years; most <15 kg. Fine whole-body tremor worsening with anxiety/excitement; cerebellar ataxia / hypermetria / wide-based stance ± vestibular, decreased menace, opsoclonus, paresis, mild hyperthermia, seizures. Presumptive diagnosis = signalment + signs + neuro exam + **exclusion of other whole-body tremor causes**. **MRI usually normal**. CSF pleocytosis in a limited number (~40% this series; 13/33). Good outcome but relapsing and persistent mild signs described. Immune-mediated suspected. Printed prednisolone **1 / 2 / 4 mg/kg/day** and diazepam **0.63** stay on the page — do not harvest as lobby law.
+
+Night split: named white shaker / IGTS / idiopathic generalized tremor / idiopathic cerebellitis / corticosteroid-responsive tremor is exclusion first, not pred-first. MRI is often normal. Bare tremor does not fire. Bare “shaker” does not fire. Named shaking puppy / hypomyelin stays 214. Named NME stays 207. Named GME stays 206. Cat generalized tremor is permethrin first, not this dump. Glucose still tonight when tremor words fire HYPOGLY.
+
+Book/public traps:
+
+- Do not pred a tremor until glucose, toxin, and infection are off.
+- Do not harvest pred 1 / 2 / 4 or diazepam 0.63 as lobby law.
+- Do not call a 2–8 week shaking puppy white-shaker.
+- Little-white-shaker is a misnomer (other colors/sizes).
+- MRI is usually normal. CSF can be normal. Relapses described.
+
+Night rule: named white shaker / IGTS → **exclusion first, not pred-first. MRI is often normal.** △ Plumb.

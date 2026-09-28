@@ -143,6 +143,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-coms` | Assessment | Chiari-like / COMS / phantom scratch |
 | `ddx-abiot` | Assessment | Cerebellar abiotrophy / progressive after birth |
 | `ddx-hypomy` | Assessment | Congenital hypomyelination / shaking puppy |
+| `ddx-shaker` | Assessment | White shaker / IGTS / idiopathic generalized tremor |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -245,6 +246,7 @@ Suggested names are short so they show up after three letters.
 | `dc-coms` | Discharge | After Chiari / COMS / phantom-scratch talk |
 | `dc-abiot` | Discharge | After cerebellar-abiotrophy talk |
 | `dc-hypomy` | Discharge | After shaking-puppy / hypomyelination talk |
+| `dc-shaker` | Discharge | After white-shaker / IGTS talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1800,6 +1802,21 @@ DDX:
 Do not: treat a shaking puppy as progressive abiotrophy. Harvest a pred table. Call it adult white-shaker syndrome.
 Do next: MRI. Name the breed and the week. △ Plumb.
 
+### `ddx-shaker`
+
+White shaker / IGTS — {{patient.name}}
+Age [ / <5 y]. Weight [ / <15 kg]. Color [white / other]. Tremor [whole-body / head]. Glucose [ / not yet]. MRI [normal / not yet]. CSF [ / not yet]. Referring [Y/N].
+
+DDX:
+1. White shaker / IGTS — **exclusion first, not pred-first. MRI is often normal**
+2. Little-white-shaker is a misnomer; other colors and sizes are on the page
+3. CSF can be normal. Relapses described. Printed 1 / 2 / 4 stay on the page
+4. Not hypomyelin-only (214). Not CH-only (211). Not abiotrophy-only (213)
+5. Cat tremor is permethrin first, not this dump
+
+Do not: pred a tremor until glucose, toxin, and infection are off. Harvest a pred table. Call a 2–8 week shaking puppy white-shaker.
+Do next: Glucose now. MRI/CSF if referring. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2651,6 +2668,14 @@ Return now for worsening wobble, falling, or not eating. {{location.phonenumber}
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worsening tremor, inability to eat, or collapse. {{location.phonenumber}}
+
+### `dc-shaker`
+
+{{patient.name}} was evaluated for idiopathic generalized tremor (white shaker / IGTS). This is a whole-body tremor that is diagnosed only after other causes are off the list (low glucose, toxin, infection). An MRI is often normal. This is not the same as a shaking puppy with congenital hypomyelination.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worsening tremor, inability to eat, collapse, or seizure. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
