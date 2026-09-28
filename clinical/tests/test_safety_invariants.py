@@ -500,6 +500,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("bandera", VERIF.lower())
         self.assertIn("never able to walk", VERIF.lower())
         self.assertIn("anatomically normal", VERIF.lower())
+        self.assertIn("leukoencephalomyelopathy", VERIF.lower())
+        self.assertIn("no head tremor", VERIF.lower())
+        self.assertIn("proprioception is delayed", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -788,6 +791,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-nad`", MACRO)
         self.assertIn("`ddx-bandera`", MACRO)
         self.assertIn("`dc-bandera`", MACRO)
+        self.assertIn("`ddx-lem`", MACRO)
+        self.assertIn("`dc-lem`", MACRO)
+        self.assertIn("delayed proprioception, no head tremor", MACRO.lower())
         self.assertIn("never walks", MACRO.lower())
         self.assertIn("cerebellum looks normal", MACRO.lower())
         self.assertIn("proprioception stays", MACRO.lower())
@@ -1082,6 +1088,9 @@ class PublicCardInvariants(unittest.TestCase):
             "bandera",
             "never walks",
             "cerebellum looks normal",
+            "leukoencephalomyelopathy",
+            "delayed proprioception, no head tremor",
+            "not nad",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

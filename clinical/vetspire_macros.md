@@ -146,6 +146,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-shaker` | Assessment | White shaker / IGTS / idiopathic generalized tremor |
 | `ddx-nad` | Assessment | Neuraxonal dystrophy / Rottweiler VPS11 |
 | `ddx-bandera` | Assessment | Bandera's neonatal ataxia / Coton de Tulear |
+| `ddx-lem` | Assessment | Rottweiler leukoencephalomyelopathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -251,6 +252,7 @@ Suggested names are short so they show up after three letters.
 | `dc-shaker` | Discharge | After white-shaker / IGTS talk |
 | `dc-nad` | Discharge | After neuraxonal-dystrophy / VPS11 talk |
 | `dc-bandera` | Discharge | After Bandera's / Coton talk |
+| `dc-lem` | Discharge | After Rottweiler LEM talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1851,6 +1853,21 @@ DDX:
 Do not: treat as FPV wobble. Harvest a pred table. Send home as they will learn to walk.
 Do next: DNA-test conversation. Not a walk-it-off puppy. △ Plumb.
 
+### `ddx-lem`
+
+Rottweiler LEM — {{patient.name}}
+Age [2–3 y / other]. Breed [Rottweiler / Great Dane / other]. Proprioception [delayed / normal]. Head tremor [N / Y]. Referring [Y/N].
+
+DDX:
+1. Rottweiler LEM — **delayed proprioception, no head tremor. Not NAD**
+2. Later onset 2–3 years. Bilateral symmetrical spinal demyelination
+3. NAPEPLD stays on the page. Great Dane is on the test page
+4. Not NAD-only (216). Not IVDD-only (185). Not Bandera-only (217)
+5. Cat does not fire
+
+Do not: pred as NAD or white-shaker. Harvest a pred table. Call preserved proprioception LEM.
+Do next: Name proprioception and head tremor. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2726,6 +2743,14 @@ Return now for falling, inability to walk, or not eating. {{location.phonenumber
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for not eating, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-lem`
+
+{{patient.name}} was evaluated for leukoencephalomyelopathy (a slow spinal myelin disease of Rottweilers; position sense is usually delayed and there is usually no head tremor). That is not the same as neuraxonal dystrophy, where position sense stays, and it is not a disc.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for falling, knuckling, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

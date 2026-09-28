@@ -1167,6 +1167,15 @@ BANDERA_RE = re.compile(
     r"\bgrm1\b",
     re.I,
 )
+# Bare "lem" / bare Rottweiler is not enough. Not NAD (216). Not NME leukoencephalitis.
+# Dogs only on this page.
+LEM_RE = re.compile(
+    r"leukoencephalomyel|"
+    r"leucoencephalomyel|"
+    r"\blemp\b|"
+    r"\bnapepld\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5224,6 +5233,7 @@ def analyze(
     steal_shaker = SHAKER_RE.search(text)
     steal_nad = NAD_RE.search(text)
     steal_bandera = BANDERA_RE.search(text)
+    steal_lem = LEM_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5243,6 +5253,7 @@ def analyze(
         or steal_shaker
         or steal_nad
         or steal_bandera
+        or steal_lem
     ):
         if spec == "cat":
             fuo_loc = (
@@ -5888,6 +5899,53 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Bandera's.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Bandera's.")
+
+    lem_named = spec == "dog" and LEM_RE.search(text)
+    if lem_named and not (
+        NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+    ):
+        lem_loc = (
+            "Rottweiler LEM. Delayed proprioception, no head tremor. "
+            "Not NAD."
+        )
+        localization = f"{localization} Also {lem_loc}" if localization else lem_loc
+        hard_stops.append(
+            "Do not pred LEM as NAD or white-shaker. "
+            "Do not harvest a pred table as lobby law. "
+            "Do not call preserved proprioception LEM."
+        )
+        do_not.append(
+            "Later onset 2–3 years. No head tremor. Proprioception delayed. "
+            "Bilateral symmetrical spinal demyelination. NAPEPLD stays on the page. "
+            "Co-occurrence with NAD histopath is reported. Great Dane is on the test page. "
+            "Not IVDD-only. Not Bandera-only. Not NAD-only."
+        )
+        do_next.append(
+            "Name proprioception and head tremor. Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "leukoencephalomyelopathy of Rottweilers; later onset than NAD, usually 2–3 years; "
+            "no head tremor; proprioception delayed; "
+            "bilaterally symmetrical spinal cord demyelination; "
+            "genetic test named through UC Davis VGL. "
+            "Minor Sci Rep 2018 NAPEPLD named only."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not call preserved proprioception LEM."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for LEM.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for LEM.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

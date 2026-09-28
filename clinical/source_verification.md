@@ -2120,7 +2120,7 @@ Night rule: named neuraxonal dystrophy → **Rottweiler VPS11. Proprioception st
 
 ## 217. Bandera's neonatal ataxia / Coton de Tulear (Merck Parsley Mar 2026 cerebellar)
 
-No dedicated Plunkett Bandera chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Zeng et al. JVIM 2011 GRM1 named only. Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Rottweiler leukoencephalomyelopathy is the next room, not this dump. Do not harvest a pred table as lobby law.
+No dedicated Plunkett Bandera chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Zeng et al. JVIM 2011 GRM1 named only. Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 218 owns named Rottweiler leukoencephalomyelopathy. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: Bandera's neonatal ataxia (Bandera's syndrome) is an autosomal recessive cerebellar ataxia in the **Coton de Tulear**. It manifests as cerebellar ataxia **from the time of birth**. The disorder is **nonprogressive**; however, affected animals are **never able to walk**. The cerebellum is **anatomically normal**, and clinical signs result from a mutation that affects neurotransmitter function. A DNA test is available. Zeng 2011: GRM1 retrotransposon insert stays on that page.
 
@@ -2134,3 +2134,20 @@ Book/public traps:
 - Do not send home as they will learn to walk.
 
 Night rule: named Bandera's / Coton de Tulear → **from birth, never walks. Cerebellum looks normal.** △ Plumb.
+
+## 218. Rottweiler leukoencephalomyelopathy (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett LEM chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Minor et al. Sci Rep 2018 NAPEPLD named only (doi:10.1038/s41598-018-23938-7). Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker / IGTS. Packet 185 still owns named IVDD. Hereditary ataxia / Jack Russell KCNJ10 is the next room, not this dump. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: leukoencephalomyelopathy of Rottweilers has a **later onset than neuraxonal dystrophy, usually at approximately 2–3 years**. A similar basis is suggested because animals occasionally show histopathological features of both (co-occurrence reported in Rottweilers and Chihuahuas). A genetic test is available through UC Davis VGL. In LEM there is **no head tremor**, and **proprioception is delayed**. Bilaterally symmetrical areas of spinal cord demyelination are the predominant necropsy findings. Minor 2018: Rottweiler / Great Dane **NAPEPLD** stays on that page.
+
+Night split: named leukoencephalomyelopathy / LEMP / NAPEPLD is delayed proprioception, no head tremor, not NAD. Bare Rottweiler does not fire. Bare “LEM” does not fire. Named NAD stays 216 (proprioception stays). Named Bandera stays 217. Named white shaker stays 215. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not pred as NAD or white-shaker.
+- Do not harvest a pred table.
+- Do not call preserved proprioception LEM (that is NAD).
+- Do not send home as a disc.
+
+Night rule: named Rottweiler LEM → **delayed proprioception, no head tremor. Not NAD.** △ Plumb.

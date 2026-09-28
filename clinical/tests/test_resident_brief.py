@@ -3941,6 +3941,23 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("neuraxonal dystrophy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_lem_is_delayed_proprioception_no_head_tremor(self):
+        b = analyze(
+            "dog",
+            "leukoencephalomyelopathy, Rottweiler, delayed proprioception, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("rottweiler lem", loc)
+        self.assertIn("delayed proprioception", loc)
+        self.assertIn("no head tremor", loc)
+        self.assertIn("not nad", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("napepld", joined)
+        self.assertIn("2–3 years", joined)
+        self.assertNotIn("proprioception stays", loc)
+        self.assertNotIn("neuraxonal dystrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_lem_is_not_nad(self):
         b = analyze(
             "dog",
@@ -3949,6 +3966,7 @@ class ResidentBriefTests(unittest.TestCase):
         loc = (b["localization"] or "").lower()
         self.assertNotIn("proprioception stays", loc)
         self.assertNotIn("neuraxonal dystrophy", loc)
+        self.assertIn("delayed proprioception", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_cat_tricolor_nad_fires(self):
@@ -4026,6 +4044,55 @@ class ResidentBriefTests(unittest.TestCase):
         loc = (b["localization"] or "").lower()
         self.assertNotIn("never walks", loc)
         self.assertNotIn("cerebellum looks normal", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nad_is_not_lem(self):
+        b = analyze("dog", "neuraxonal dystrophy, Rottweiler, VPS11")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("proprioception stays", loc)
+        self.assertNotIn("delayed proprioception", loc)
+        self.assertNotIn("no head tremor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bandera_is_not_lem(self):
+        b = analyze("dog", "Bandera's neonatal ataxia, Coton de Tulear")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("never walks", loc)
+        self.assertNotIn("delayed proprioception", loc)
+        self.assertNotIn("rottweiler lem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_white_shaker_is_not_lem(self):
+        b = analyze("dog", "white shaker, Maltese, generalized tremor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white shaker", loc)
+        self.assertNotIn("delayed proprioception", loc)
+        self.assertNotIn("rottweiler lem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_rottweiler_is_not_lem(self):
+        b = analyze("dog", "Rottweiler, ataxia, hypermetria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("delayed proprioception", loc)
+        self.assertNotIn("rottweiler lem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_lem(self):
+        b = analyze("cat", "leukoencephalomyelopathy, delayed proprioception")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("rottweiler lem", loc)
+        self.assertNotIn("no head tremor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_lem(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("rottweiler lem", loc)
+        self.assertNotIn("delayed proprioception", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_ph_amlodipine_is_the_other_list(self):
