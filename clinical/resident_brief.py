@@ -1270,6 +1270,12 @@ CAPHYP_RE = re.compile(
     r"articular process (hypoplas|dysplas|aplas)",
     re.I,
 )
+# Bare GSD is not enough. Not DLSS (224). Not caudal articular (228). Dogs only.
+MCE_RE = re.compile(
+    r"cartilaginous exostos|"
+    r"multiple cartilaginous",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5338,6 +5344,7 @@ def analyze(
     steal_arach = ARACH_DIV_RE.search(text)
     steal_hemiv = HEMIV_RE.search(text)
     steal_caphyp = CAPHYP_RE.search(text)
+    steal_mce = MCE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5368,6 +5375,7 @@ def analyze(
         or steal_arach
         or steal_hemiv
         or steal_caphyp
+        or steal_mce
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6628,6 +6636,66 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for caudal articular hypoplasia.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for caudal articular hypoplasia.")
+
+    mce_named = spec == "dog" and MCE_RE.search(text)
+    if mce_named and not (
+        CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        mce_loc = (
+            "Cartilaginous exostosis. Benign. "
+            "Recurrence common."
+        )
+        localization = f"{localization} Also {mce_loc}" if localization else mce_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send a vertebral mass home as incidental OA."
+        )
+        do_not.append(
+            "Most common in German Shepherd Dogs. "
+            "Benign cartilage or bone. Ribs, long bones, or vertebrae. "
+            "Might be familial. Surgical removal. Recurrence common. "
+            "Not caudal-articular-only. Not hemivertebra-only. Not DLSS-only. "
+            "Not IVDD-only."
+        )
+        do_next.append(
+            "Name the mass. Image. Surgeon. Recurrence conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "multiple cartilaginous exostosis; most common in German Shepherd Dogs; "
+            "benign proliferation of cartilage or bone; ribs, long bones, or vertebrae; "
+            "might have a familial basis; surgical removal; "
+            "recurrence or occurrence at additional sites is common."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a vertebral mass home as incidental OA."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for cartilaginous exostosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for cartilaginous exostosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

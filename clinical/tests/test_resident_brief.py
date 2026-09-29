@@ -4795,6 +4795,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("caudal articular hypoplasia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mce_is_benign_recurrence_common(self):
+        b = analyze(
+            "dog",
+            "multiple cartilaginous exostosis, German Shepherd",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("cartilaginous exostosis", loc)
+        self.assertIn("benign", loc)
+        self.assertIn("recurrence common", loc)
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("recurrence common", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("german shepherd", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_caphyp_is_not_mce(self):
+        b = analyze("dog", "caudal articular hypoplasia, Pug")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("often multiple vertebrae", loc)
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("cartilaginous exostosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemiv_is_not_mce(self):
+        b = analyze("dog", "hemivertebra, French Bulldog, kyphosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("often incidental", loc)
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("cartilaginous exostosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dlss_is_not_mce(self):
+        b = analyze(
+            "dog",
+            "degenerative lumbosacral stenosis, German Shepherd, pain on LS extension",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pain on ls extension", loc)
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("cartilaginous exostosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aalux_is_not_mce(self):
+        b = analyze(
+            "dog",
+            "atlantoaxial subluxation, Yorkshire Terrier, neck pain, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("do not flex the neck", loc)
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("cartilaginous exostosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gsd_is_not_mce(self):
+        b = analyze("dog", "German Shepherd, back pain")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("cartilaginous exostosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_mce(self):
+        b = analyze("cat", "multiple cartilaginous exostosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("cartilaginous exostosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

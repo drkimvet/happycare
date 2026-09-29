@@ -2313,7 +2313,7 @@ Night rule: named hemivertebra → **often incidental. Pug more than Frenchie.**
 
 ## 228. Caudal articular hypoplasia (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett caudal-articular-hypoplasia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 227 still owns named hemivertebra. Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Multiple cartilaginous exostosis is the next room, not this dump. Do not harvest a surgery table as lobby law.
+No dedicated Plunkett caudal-articular-hypoplasia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 227 still owns named hemivertebra. Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Packet 229 owns named multiple cartilaginous exostosis. Do not harvest a surgery table as lobby law.
 
 Agree with Parsley: **caudal articular hypoplasia** is reported in **Pugs, French Bulldogs, and English Bulldogs** and can cause **spinal instability**. Surgical stabilization might be beneficial; however, **often multiple vertebrae are affected**.
 
@@ -2328,3 +2328,21 @@ Book/public traps:
 - Do not call AA lux this list.
 
 Night rule: named caudal articular hypoplasia → **instability. Often multiple vertebrae.** △ Plumb.
+
+## 229. Multiple cartilaginous exostosis (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett cartilaginous-exostosis chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 228 still owns named caudal articular hypoplasia. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 225 still owns named atlantoaxial. Packet 185 still owns named IVDD. Spinal dysraphism / myelodysplasia is the next room, not this dump. Do not harvest a surgery table as lobby law. Transitional vertebrae stay with 224.
+
+Agree with Parsley: **multiple cartilaginous exostosis** occurs most commonly in **German Shepherd Dogs**. It is a **benign** proliferation of cartilage or bone that can affect the **ribs, long bones, or vertebrae**. It might have a familial basis. Treatment is **surgical removal**; however, **recurrence or occurrence at additional sites is common**.
+
+Night split: named cartilaginous exostosis / multiple cartilaginous is benign; recurrence common. Bare GSD does not fire. Named caudal articular stays 228. Named hemivertebra stays 227. Named DLSS stays 224. Named AA stays 225. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a vertebral mass home as incidental OA.
+- Do not call DLSS this list.
+- Do not call hemivertebra this list.
+- Do not call caudal articular this list.
+
+Night rule: named cartilaginous exostosis → **benign. Recurrence common.** △ Plumb.

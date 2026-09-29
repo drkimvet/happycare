@@ -157,6 +157,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-arach` | Assessment | Arachnoid diverticulum |
 | `ddx-hemiv` | Assessment | Hemivertebra / congenital vertebral malformation |
 | `ddx-caphyp` | Assessment | Caudal articular hypoplasia |
+| `ddx-mce` | Assessment | Multiple cartilaginous exostosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -273,6 +274,7 @@ Suggested names are short so they show up after three letters.
 | `dc-arach` | Discharge | After arachnoid-diverticulum talk |
 | `dc-hemiv` | Discharge | After hemivertebra talk |
 | `dc-caphyp` | Discharge | After caudal-articular-hypoplasia talk |
+| `dc-mce` | Discharge | After cartilaginous-exostosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2038,6 +2040,21 @@ DDX:
 Do not: harvest a surgery table. Send Pug facet instability home as incidental hemivertebra.
 Do next: Name the facet. Image. Surgeon if unstable. △ Plumb.
 
+### `ddx-mce`
+
+Cartilaginous exostosis — {{patient.name}}
+Breed [GSD / other]. Sites [rib / long bone / vertebra / other]. Compression [yes / no / unknown]. Surgery [discussed / not yet]. Recurrence [discussed / not yet].
+
+DDX:
+1. Multiple cartilaginous exostosis — **benign. Recurrence common**
+2. Most common in German Shepherd Dogs. Cartilage or bone
+3. Ribs, long bones, or vertebrae. Might be familial
+4. Not caudal-articular-only (228). Not hemivertebra-only (227). Not DLSS-only (224)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Send a vertebral mass home as incidental OA.
+Do next: Name the mass. Image. Surgeon. Recurrence conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3001,6 +3018,14 @@ Return now for inability to walk, worse ataxia, or if you cannot keep them comfo
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-mce`
+
+{{patient.name}} was evaluated for multiple cartilaginous exostosis (benign cartilage or bone growths, most often in German Shepherds). They can sit on a rib, a long bone, or a vertebra. Surgery can remove a problem mass, but new ones can appear.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, a new painful lump, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
