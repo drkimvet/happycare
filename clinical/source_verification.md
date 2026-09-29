@@ -2385,7 +2385,7 @@ Night rule: named spina bifida → **occulta silent. Manifesta LMN incontinent.*
 
 ## 232. Tethered cord syndrome (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett tethered-cord chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 231 still owns named spina bifida. Packet 230 still owns named spinal dysraphism. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Pilonidal / dermoid sinus is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest 64 percent as lobby law.
+No dedicated Plunkett tethered-cord chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 231 still owns named spina bifida. Packet 230 still owns named spinal dysraphism. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Packet 233 owns named pilonidal / dermoid sinus. Do not harvest a surgery table as lobby law. Do not harvest 64 percent as lobby law.
 
 Agree with Parsley: **tethered cord syndrome** in the **absence of another congenital malformation such as spina bifida** has been identified in **dogs**. A **tight filum terminale** prevents normal movement of the spinal cord. Diagnosis is **dynamic MRI**. Currently underrecognized. Median age at diagnosis is **13 months**; some begin showing signs as early as **8 weeks**. Occult tethered signs: **low back pain**, intermittent lameness or **skipping gait**, anxiety, and **urinary incontinence**. Treatment is **detethering** by transecting the intradural or extradural filum terminale. Printed **64 percent** long-term success stays on the page.
 
@@ -2400,3 +2400,21 @@ Book/public traps:
 - Do not call DLSS this list.
 
 Night rule: named tethered cord → **dynamic MRI. Median 13 months.** △ Plumb.
+
+## 233. Pilonidal / dermoid sinus (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett pilonidal-sinus chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 232 still owns named tethered cord. Packet 231 still owns named spina bifida. Packet 208 still owns named otogenic meningitis. Packet 205 still owns named SRMA. Spinal muscular atrophy is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 15–30 mg/kg table as lobby law.
+
+Agree with Parsley: **pilonidal sinus** (also called **dermoid sinus**, dermoid cyst) appears to result from faulty neurulation and is inherited (**autosomal recessive**) in **Rhodesian Ridgebacks**; it can occur in other dog breeds as well. **Dogs and cats.** The sinus is **lined by skin** and can communicate with the **subarachnoid space**, causing **meningitis or myelitis**. Treatment is **surgical excision to the dura**, plus long-term antimicrobials if bacterial meningitis (culture-guided; CSF culture often negative; BBB-penetrating bactericidal preferred). Printed TMS 15–30 / enro 10 / amox-clav 11–20 and the 3-month / 4–8 week clocks stay on the page.
+
+Night split: named pilonidal / dermoid sinus is excise to dura; can seed meningitis. Bare Ridgeback / bare sinus does not fire. Named tethered stays 232. Named spina bifida stays 231. Named oto stays 208. Named SRMA stays 205. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 15–30 mg/kg table.
+- Do not send a Ridgeback dorsal sinus home as a skin tag.
+- Do not call it oto meningitis.
+- Do not call it tethered cord-only.
+
+Night rule: named dermoid sinus → **excise to dura. Can seed meningitis.** △ Plumb.

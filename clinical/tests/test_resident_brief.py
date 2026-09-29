@@ -5073,6 +5073,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("median 13 months", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pilo_is_excise_to_dura_can_seed_meningitis(self):
+        b = analyze("dog", "dermoid sinus, Rhodesian Ridgeback")
+        loc = b["localization"].lower()
+        self.assertIn("dermoid sinus", loc)
+        self.assertIn("excise to dura", loc)
+        self.assertIn("can seed meningitis", loc)
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("ear-to-brain tonight", loc)
+        self.assertNotIn("occulta silent", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("excise to dura", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("antimicrobial", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tether_is_not_pilo(self):
+        b = analyze("dog", "tethered cord, skipping gait")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dynamic mri", loc)
+        self.assertNotIn("excise to dura", loc)
+        self.assertNotIn("can seed meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_spinab_is_not_pilo(self):
+        b = analyze("dog", "spina bifida, English Bulldog")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("occulta silent", loc)
+        self.assertNotIn("excise to dura", loc)
+        self.assertNotIn("can seed meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oto_is_not_pilo(self):
+        b = analyze(
+            "dog",
+            "otogenic meningitis, otitis interna, dull, febrile, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ear-to-brain tonight", loc)
+        self.assertNotIn("excise to dura", loc)
+        self.assertNotIn("can seed meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_ridgeback_is_not_pilo(self):
+        b = analyze("dog", "Rhodesian Ridgeback")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("excise to dura", loc)
+        self.assertNotIn("dermoid sinus", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sinus_is_not_pilo(self):
+        b = analyze("dog", "nasal sinus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("excise to dura", loc)
+        self.assertNotIn("dermoid sinus", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_pilo_still_fires(self):
+        b = analyze("cat", "pilonidal sinus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("excise to dura", loc)
+        self.assertIn("can seed meningitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

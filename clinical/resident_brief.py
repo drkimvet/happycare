@@ -1301,6 +1301,13 @@ TETHER_RE = re.compile(
     r"filum terminale",
     re.I,
 )
+# Bare Ridgeback / bare sinus / bare dermoid is not enough. Not ovarian dermoid.
+# Not tethered (232). Not oto (208). Dog or cat.
+PILO_RE = re.compile(
+    r"pilonidal|"
+    r"dermoid sinus",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5373,6 +5380,7 @@ def analyze(
     steal_dysraph = DYSRAPH_RE.search(text)
     steal_spinab = SPINA_BIF_RE.search(text)
     steal_tether = TETHER_RE.search(text)
+    steal_pilo = PILO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5407,6 +5415,7 @@ def analyze(
         or steal_dysraph
         or steal_spinab
         or steal_tether
+        or steal_pilo
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6937,6 +6946,77 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for tethered cord.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for tethered cord.")
+
+    pilo_named = spec in {"dog", "cat"} and PILO_RE.search(text)
+    if pilo_named and not (
+        TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        pilo_loc = (
+            "Dermoid sinus. Excise to dura. "
+            "Can seed meningitis."
+        )
+        localization = f"{localization} Also {pilo_loc}" if localization else pilo_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 15–30 mg/kg table as lobby law. "
+            "Do not send a Ridgeback dorsal sinus home as a skin tag."
+        )
+        do_not.append(
+            "Pilonidal / dermoid sinus. Faulty neurulation. "
+            "Autosomal recessive in Rhodesian Ridgebacks; other breeds too. "
+            "Lined by skin. Can communicate with the subarachnoid space. "
+            "Meningitis or myelitis. Excise to dura. "
+            "Culture-guided antimicrobials; CSF culture often negative. "
+            "Printed TMS / enro / amox-clav tables stay on the page. "
+            "Not tethered-only. Not spina-bifida-only. Not oto-only."
+        )
+        do_next.append(
+            "Name the tract. Image. Surgeon to dura. Culture. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "pilonidal sinus (dermoid sinus, dermoid cyst); dogs and cats; "
+            "faulty neurulation; autosomal recessive in Rhodesian Ridgebacks; "
+            "other breeds too; sinus lined by skin; can communicate with the "
+            "subarachnoid space causing meningitis or myelitis; "
+            "surgical excision to the dura; bacterial meningitis gets "
+            "long-term culture-guided antimicrobials that penetrate the BBB; "
+            "printed TMS / enro / amox-clav tables stay on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Ridgeback dorsal sinus home as a skin tag."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for dermoid sinus.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for dermoid sinus.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

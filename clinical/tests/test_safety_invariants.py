@@ -550,6 +550,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("tethered cord", VERIF.lower())
         self.assertIn("dynamic mri", VERIF.lower())
         self.assertIn("median 13 months", VERIF.lower())
+        self.assertIn("dermoid sinus", VERIF.lower())
+        self.assertIn("excise to dura", VERIF.lower())
+        self.assertIn("can seed meningitis", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -868,6 +871,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-spinab`", MACRO)
         self.assertIn("`ddx-tether`", MACRO)
         self.assertIn("`dc-tether`", MACRO)
+        self.assertIn("`ddx-pilo`", MACRO)
+        self.assertIn("`dc-pilo`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -879,6 +884,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("bunny-hop by 4–6 weeks", MACRO.lower())
         self.assertIn("occulta silent", MACRO.lower())
         self.assertIn("dynamic mri", MACRO.lower())
+        self.assertIn("excise to dura", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1230,6 +1236,9 @@ class PublicCardInvariants(unittest.TestCase):
             "tethered cord",
             "dynamic mri",
             "median 13 months",
+            "dermoid sinus",
+            "excise to dura",
+            "can seed meningitis",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

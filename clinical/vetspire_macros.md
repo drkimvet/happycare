@@ -161,6 +161,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dysraph` | Assessment | Spinal dysraphism / myelodysplasia |
 | `ddx-spinab` | Assessment | Spina bifida |
 | `ddx-tether` | Assessment | Tethered cord syndrome |
+| `ddx-pilo` | Assessment | Pilonidal / dermoid sinus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -281,6 +282,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dysraph` | Discharge | After spinal-dysraphism talk |
 | `dc-spinab` | Discharge | After spina-bifida talk |
 | `dc-tether` | Discharge | After tethered-cord talk |
+| `dc-pilo` | Discharge | After dermoid-sinus talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2106,6 +2108,21 @@ DDX:
 Do not: harvest a surgery table. Harvest 64 percent. Send skipping gait home as a sprain.
 Do next: Dynamic MRI. Detether conversation. △ Plumb.
 
+### `ddx-pilo`
+
+Dermoid sinus — {{patient.name}}
+Breed [Ridgeback / other]. Tract [open / unknown]. Neuro [none / meningitis / myelitis / other]. Imaging [yes / not yet]. Surgeon [called / not yet]. Culture [yes / not yet].
+
+DDX:
+1. Dermoid sinus — **excise to dura. Can seed meningitis**
+2. Dogs and cats. AR in Rhodesian Ridgebacks. Lined by skin
+3. Printed antimicrobial tables stay on the page
+4. Not tethered-only (232). Not spina-bifida-only (231). Not oto-only (208)
+5. Cat can fire
+
+Do not: harvest a surgery table. Harvest a printed antimicrobial table. Send a Ridgeback dorsal sinus home as a skin tag.
+Do next: Name the tract. Image. Surgeon to dura. Culture. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3101,6 +3118,14 @@ Return now for inability to walk, new leaking of urine or stool, or if you canno
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new leaking of urine, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-pilo`
+
+{{patient.name}} was evaluated for a dermoid sinus (a skin-lined tract on the back, also called a pilonidal sinus, seen in Rhodesian Ridgebacks and some other dogs). The tract can open into the spinal fluid space and seed meningitis. Surgery removes it down to the covering of the cord. Medicines, if needed, follow culture and the hospital protocol.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for fever, neck pain, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
