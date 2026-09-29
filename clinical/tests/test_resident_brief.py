@@ -5136,6 +5136,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("can seed meningitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_sma_is_looks_like_a_neuropathy_no_treatment(self):
+        b = analyze("dog", "spinal muscular atrophy, Brittany Spaniel")
+        loc = b["localization"].lower()
+        self.assertIn("spinal muscular atrophy", loc)
+        self.assertIn("looks like a neuropathy", loc)
+        self.assertIn("no treatment", loc)
+        self.assertNotIn("excise to dura", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertNotIn("remaining flaccid lmn", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("looks like a neuropathy", loc)
+        self.assertIn("surgery table", joined)
+        self.assertIn("flaccid puppy", joined)
+        self.assertIn("apn-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pilo_is_not_sma(self):
+        b = analyze("dog", "dermoid sinus, Rhodesian Ridgeback")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("excise to dura", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boxax_is_not_sma(self):
+        b = analyze(
+            "dog",
+            "progressive axonopathy, Boxer, 4 months, patellar hyporeflexia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("can live comfortably", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertNotIn("spinal muscular atrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_apn_is_not_sma(self):
+        b = analyze("dog", "coonhound paralysis, raccoon bite last week")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("apn", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertNotIn("spinal muscular atrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_brittany_is_not_sma(self):
+        b = analyze("dog", "Brittany Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertNotIn("spinal muscular atrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_sma(self):
+        b = analyze("cat", "spinal muscular atrophy, Brittany Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertNotIn("spinal muscular atrophy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nad_is_not_sma(self):
+        b = analyze("dog", "neuraxonal dystrophy, Rottweiler, VPS11")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("proprioception stays", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

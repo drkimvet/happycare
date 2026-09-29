@@ -162,6 +162,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-spinab` | Assessment | Spina bifida |
 | `ddx-tether` | Assessment | Tethered cord syndrome |
 | `ddx-pilo` | Assessment | Pilonidal / dermoid sinus |
+| `ddx-sma` | Assessment | Spinal muscular atrophy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -283,6 +284,7 @@ Suggested names are short so they show up after three letters.
 | `dc-spinab` | Discharge | After spina-bifida talk |
 | `dc-tether` | Discharge | After tethered-cord talk |
 | `dc-pilo` | Discharge | After dermoid-sinus talk |
+| `dc-sma` | Discharge | After spinal-muscular-atrophy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2123,6 +2125,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a printed antimicrobial table. Send a Ridgeback dorsal sinus home as a skin tag.
 Do next: Name the tract. Image. Surgeon to dura. Culture. △ Plumb.
 
+### `ddx-sma`
+
+Spinal muscular atrophy — {{patient.name}}
+Breed [Brittany / Rottweiler / Lapland / Stockard / Pointer / GSD / other]. Onset [early / intermediate / delayed / 5–7 weeks / 11–14 weeks / ~5 months / other]. Form [generalized LMN / focal thoracic-limb / other]. Coat search [done / not yet].
+
+DDX:
+1. Spinal muscular atrophy — **looks like a neuropathy. No treatment**
+2. Brittany early / intermediate / delayed. Rottweiler motor neuron disease named
+3. Neurogenic atrophy. Motor-neuron loss. No surgery table
+4. Not APN-only (204). Not boxax-only (222). Not dermoid-only (233)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Send a flaccid puppy home as tired. Call it APN-only.
+Do next: Name the LMN. No treatment conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3126,6 +3143,14 @@ Return now for inability to walk, new leaking of urine, or if you cannot keep th
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for fever, neck pain, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-sma`
+
+{{patient.name}} was evaluated for spinal muscular atrophy (an inherited lower-motor-neuron disease that can look like a neuropathy). Brittany Spaniels, some Rottweilers, and a few other breeds are on this list. There is no treatment that reverses the neuron loss. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
