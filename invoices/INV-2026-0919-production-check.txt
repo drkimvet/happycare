@@ -1,0 +1,20 @@
+INV-2026-0919 production check — URvet Care Midtown
+Shift: Sep 19, 2026  8:00 PM – 12:00 AM  4.00 hr × $250 = $1,000.00
+Source: Midtown invoice board, Sep 19, 2026 (All Providers)
+
+Dr. Yujin Kim positive Gross only (credits/negatives excluded):
+  846925019  Galgal (Sara Leeds)   Paid  Gross $140.09  Total $140.09
+  846925012  Grey   (Sara Leeds)   Paid  Gross $458.55  Total $458.55
+  --------------------------------------------------------------
+  Gross included                               $598.64
+  Client paid (Total; Due $0)                  $598.64
+  23% production                               $137.69
+  Hourly base                                $1,000.00
+  Amount due                                 $1,137.69
+
+Gross and client-paid match (no order discount).
+No Kim credits or negative Gross on the visible rows.
+
+Note: board showed 17 invoices; only these two listed Dr. Yujin Kim
+in the provided screenshot (top of newest-first list). Remaining
+visible rows were other providers.

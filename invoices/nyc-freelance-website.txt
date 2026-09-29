@@ -1,0 +1,28 @@
+Last time: NYC website = DCWP Freelance Isn't Free Act
+https://www.nyc.gov/site/dca/workers/workersrights/freelancer-workers.page
+File: https://a866-dcwpbp.nyc.gov/worker-complaint/file-complaint?topic=freelancer
+
+What that site does
+  Sends your complaint to the hiring party. They have 20 days to answer.
+  If they stay silent, DCWP gives you a “did not respond” notice.
+  In court that silence is treated as a violation unless they prove otherwise.
+  The website does not deposit money. Double damages are a court remedy,
+  not a DCWP check. NYC small claims cap is $10,000, so claim $5,950 unpaid.
+  Do not claim $11,900 (double) — it will not fit.
+
+This time, order
+  1) October 3 deadline (already running)
+  2) October 6 — DCWP complaint (No, I have not filed in court yet)
+     plus NYS Attorney General freelance complaint (covers Roslyn too)
+     https://dol.ny.gov/freelance-isnt-free-act
+  3) Wait the 20 days
+  4) Then Manhattan Small Claims with the DCWP no-response letter
+     + exhibits A–J. That is the stack you did not have last time.
+
+DCWP form
+  Occupation: veterinarian / independent contractor
+  Agreement: per diem relief, $250/hour in hospital, $300/hour past midnight
+  Amount: $5,950.00
+  Violations: not paid in full; no written contract
+  Hiring party: business — UR VET CARE, LLC
+  Do not attach the 3-year-ago case.
