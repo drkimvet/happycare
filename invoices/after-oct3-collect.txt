@@ -31,47 +31,63 @@
 10월 3일 밤 (무응답이면)
 ------------------------------------------------
 4. 받은편지함·스팸 전체 캡처. “No reply as of 10/3/2026 11:59 PM ET.”
-5. 아래 마지막 통지 메일 발송 (draft-final-notice-oct3.txt).
-   내용: 10월 6일 월요일까지 $5,950 없으면 맨해튼 스몰클레임.
-   새 협상 없음. $5,950만.
+5. 마지막 통지 (draft-final-notice-oct3.txt).
+   월요일까지 $5,950 없으면 NYC 프리랜서 진정 + 그다음 맨해튼 소장.
 
 ------------------------------------------------
-10월 6일 월요일 — 소장
+지난번 “뉴욕 시 웹사이트”가 실패한 이유
 ------------------------------------------------
-6. 피고 이름 조회
+그건 NYC DCWP Freelance Isn't Free Act 진정입니다.
+사이트는 상대에게 글을 보내고 20일을 줍니다. 수표를 끊어 주지 않습니다.
+무응답이면 나중에 법정에서 “위반으로 추정”이 됩니다. 그 통지를 들고
+법원에 가야 돈이 붙습니다. 사이트만 하고 끝내면, 또는 종이 없이 바로
+스몰클레임만 가면, 지난번처럼 집니다.
+
+Roslyn은 나소라 시 법만으로는 안 덮일 수 있음.
+2024-08-28부터 주 전체 Freelance Isn't Free (GBS Article 44-A)도 있음.
+주 진정은 NY Attorney General. 노동부 페이지:
+https://dol.ny.gov/freelance-isnt-free-act
+
+------------------------------------------------
+10월 6일 월요일 — 법원보다 시 진정 먼저
+------------------------------------------------
+6. NYC DCWP 프리랜서 진정 (지난번에 쓴 그 사이트)
+   https://a866-dcwpbp.nyc.gov/worker-complaint/file-complaint?topic=freelancer
+   또는 nyc.gov → File Workplace Complaint → Freelance Isn't Free Act
+   Hiring party: UR VET CARE, LLC / 252 E 57 St
+   얼마: $5,950 (또는 미드타운분만 시 건으로 넣고 전체는 설명란)
+   위반 체크: 전액 미지급, 서면 계약 없음
+   질문 “이미 법원에 넣었나?” → 아직 아니면 No.
+   첨부: 청구 메일, ADP, 인보이스, 에이미 문자
+   상대 20일. 무응답 통지를 저장.
+
+7. 같은 날 주 AG 프리랜서 진정 (Roslyn 포함 주 전체)
+   dol.ny.gov/freelance-isnt-free-act 안내 → Attorney General 진정.
+   3년 전 다른 병원 건은 이 양식에 새로 쓰지 말 것. 이번 URvet만.
+
+8. 피고 이름 조회
    https://apps.dos.ny.gov/publicInquiry
-   검색: UR VET CARE, LLC / 6509023
-   출력해서 소장에 그 철자 그대로.
+   UR VET CARE, LLC / 6509023
 
-7. 맨해튼 Civil Court Small Claims
-   111 Centre Street, New York, NY 10013
-   Room 322 · (646) 386-5484
-   한도 $10,000 · 인지 $20 (클레임 $1,000 초과)
-   현금 우편 금지. Money order / certified check
-   수취인: Clerk of the Civil Court  또는  CLERK, CIVIL COURT
-   개인수표 안 됨.
-
-   시 밖에 살면 우편 접수 가능:
-   작성한 Statement of Claim + $20 +
-   반송용 6x9 봉투(우표 3온스분)
-   양식: ny courts small claims CIV-SC-50
+------------------------------------------------
+DCWP 20일 후 (~10월 27일) — 맨해튼 소장
+------------------------------------------------
+9. DCWP가 “Hiring Party did not respond” 통지를 주면 그걸 Exhibit K.
+   그 추정 때문에 법원이 당신 쪽으로 기울어짐. 지난번에 없던 것.
+   그다음 맨해튼 Civil Court Small Claims
+   111 Centre Street, New York, NY 10013 · Room 322 · (646) 386-5484
+   한도 $10,000 · 인지 $20
+   Money order / certified check to Clerk of the Civil Court. 개인수표 안 됨.
+   시 밖이면 우편: Statement of Claim + $20 + 반송 6x9 봉투
    https://nycourts.gov/COURTS/nyc/smallclaims/startingcase.shtml
-   청구 문장: statement-of-claim-nyc.txt 그대로.
-
-   피고 주소 (사업장, PO박스 안 됨):
-   UR VET CARE, LLC
-   252 East 57th Street
-   New York, NY 10022
-   (DOS 프로세스 주소가 다르면 조회 결과를 같이 냄)
-
-8. 법원 날짜는 접수 후 약 6주. 저녁 기일이 기본.
-   출석 전 증거 A–J를 탭으로 묶고, 사본 3부
-   (나 / 상대 / 판사).
+   문구: statement-of-claim-nyc.txt
+   피고: UR VET CARE, LLC · 252 East 57th Street · New York, NY 10022
+   기일 약 6주. 증거 A–K 사본 3부.
 
 ------------------------------------------------
 법정에서 (2분)
 ------------------------------------------------
-9. 읽을 말:
+10. 읽을 말:
    I am an independent veterinarian. They booked me, paid $5,550 of
    $9,900 for September 8–19, and nothing on the September 24–25
    invoice. That is $5,950 unpaid. September 10 was a 12-hour booking.
@@ -83,7 +99,7 @@
 ------------------------------------------------
 이긴 뒤 안 주면
 ------------------------------------------------
-10. 판결문 받기 → 14일 대기 →
+11. 판결문 받기 → 14일 대기 →
     information subpoena / bank levy / NYC marshal.
     승소만으로 통장에 안 들어옴. 집행이 마지막 단계.
     ny courts “Collecting a Judgment” 가이드.
@@ -93,4 +109,5 @@
   23%까지 한 번에 넣어 사건 흐리기. 1차는 시급 $5,950.
   3년 전 패소를 자백처럼 쓰기.
   시프트 다시 서서 “이번엔 잘 해주겠지.”
-  변호사 시간당으로 $5,950 사건 키우기. 스몰클레임이 맞음.
+  DCWP랑 소장을 같은 날 넣기 (진정 양식이 이미 법원 있냐고 물음).
+  사이트만 넣고 20일 통지 없이 끝내기.
