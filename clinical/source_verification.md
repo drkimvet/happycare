@@ -2223,7 +2223,7 @@ Night rule: named Boxer progressive axonopathy → **1–7 months. Lost proprioc
 
 ## 223. Wobbler / caudal cervical spondylomyelopathy (Merck Thomas Oct 2021 / Apr 2025; Parsley Mar 2026 spinal)
 
-No dedicated Plunkett wobbler chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 222 still owns named progressive axonopathy of Boxer dogs. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 205 still owns named SRMA. DLSS / degenerative lumbosacral stenosis is the next room, not this dump. Do not harvest pred 0.5 as lobby law. Skip horse wobbler.
+No dedicated Plunkett wobbler chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 222 still owns named progressive axonopathy of Boxer dogs. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 205 still owns named SRMA. Packet 224 owns named DLSS / degenerative lumbosacral stenosis. Do not harvest pred 0.5 as lobby law. Skip horse wobbler.
 
 Agree with Thomas: cervical spondylomyelopathy, also called cervical vertebral malformation-malarticulation and **wobbler syndrome**. Two dog forms: **disk-associated wobbler (DAWS)** in middle-aged large-breeds, especially Doberman (typical onset **7 years**), ventral compression from caudal cervical disks; **bony-associated** in young giant-breeds (Great Dane / Mastiff / Rottweiler, months to **4 years**), articular process / pedicle proliferation, usually C4–C7. Mild cases: **two-engine gait** (long pelvic stride, short thoracic stride). Severe: paresis or paralysis of all limbs. **Neck pain is variable.** **Survey radiographs cannot confirm** a diagnosis; they help exclude diskospondylitis and bony neoplasia. Definitive diagnosis requires **myelography, CT, or MRI**. Printed pred 0.5 / ~50% medical improve / ~80% do well with surgery stay on the page. Agree with Parsley: caudal cervical spondylomyelopathy; heritable mention in Borzoi / Basset / Doberman / Great Dane; neck often flexed ventrally; disk-associated older vs facet-associated younger giant; distinct from calcium phosphate deposition in Great Dane puppies.
 
@@ -2238,3 +2238,21 @@ Book/public traps:
 - Do not call 1–7 month Boxer axonopathy this list.
 
 Night rule: named wobbler / CSM → **two-engine gait. MRI, not survey films.** △ Plumb.
+
+## 224. DLSS / degenerative lumbosacral stenosis (Merck Thomas Oct 2021 / Apr 2025)
+
+No dedicated Plunkett DLSS chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025). Packet 223 still owns named wobbler / CSM. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 222 still owns named Boxer axonopathy. Atlantoaxial subluxation is the next room, not this dump. Do not harvest methylpred 1 as lobby law.
+
+Agree with Thomas: narrowing of the lumbosacral canal or foramina compresses the **cauda equina** or nerve roots. Most common in large-breed dogs, especially **German Shepherd Dogs**; **rare in cats**. From degeneration and protrusion of the **L7–S1** disk, ligamentum flavum hypertrophy, or rarely LS subluxation. GSD with **congenital transitional vertebrae** are at increased risk. Onset typically **3–7 years**: pelvic limb difficulty or lameness, tail weakness, incontinence. **Pain on palpation or extension of the lumbosacral joint is the most consistent finding.** May have proprioceptive deficits, muscle atrophy, or a weak pelvic flexor. Plain radiographs may show degeneration; **definitive diagnosis requires MRI, CT, or epidurography**. Mild pain-only may improve with **4–6 weeks of rest**. Printed epidural methylprednisolone acetate **1 mg/kg on day 1, 14, and 42** (~80% if pain and minimal deficits) stays on the page. Surgery if pain is refractory or there are neurologic deficits (dorsal laminectomy ± diskectomy; foramenotomy or stabilization in some). Printed **70–95%** improve with surgery; **preexisting urinary incontinence may not resolve**.
+
+Night split: named DLSS / degenerative lumbosacral stenosis / cauda equina compression / LS extension is pain on LS extension; image the LS junction. Bare GSD does not fire. Named wobbler stays 223. Named DM stays 221. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest methylpred 1 as lobby law.
+- Do not confirm on plain films.
+- Do not send incontinence home as just arthritis.
+- Do not call a wobbler neck this list.
+- Do not call painless old-GSD DM this list.
+
+Night rule: named DLSS → **pain on LS extension. Image the LS junction.** △ Plumb.

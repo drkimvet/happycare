@@ -152,6 +152,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dm` | Assessment | Degenerative myelopathy / SOD1 |
 | `ddx-boxax` | Assessment | Progressive axonopathy of Boxer dogs |
 | `ddx-wobbler` | Assessment | Wobbler / caudal cervical spondylomyelopathy |
+| `ddx-dlss` | Assessment | DLSS / degenerative lumbosacral stenosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -263,6 +264,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dm` | Discharge | After degenerative-myelopathy / SOD1 talk |
 | `dc-boxax` | Discharge | After Boxer-axonopathy talk |
 | `dc-wobbler` | Discharge | After wobbler / CSM talk |
+| `dc-dlss` | Discharge | After DLSS / LS-stenosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1953,6 +1955,21 @@ DDX:
 Do not: harvest pred 0.5. Confirm on survey films. Send a tetraparetic neck home as a pull.
 Do next: Name the engine gait. Image the neck. △ Plumb.
 
+### `ddx-dlss`
+
+DLSS — {{patient.name}}
+Age [3–7 years / other]. Breed [GSD / large / other]. LS extension pain [Y/N]. Tail [weak / other]. Incontinence [Y/N]. Imaging [MRI / CT / epidurography / survey only].
+
+DDX:
+1. DLSS — **pain on LS extension. Image the LS junction**
+2. L7–S1 / flavum. Transitional vertebrae increase risk
+3. Printed 1 / day 1–14–42 / 4–6 weeks stay on the page. Incontinence may not resolve
+4. Not wobbler-only (223). Not DM-only (221). Not IVDD-only (185)
+5. Cat does not fire
+
+Do not: harvest methylpred 1. Confirm on plain films. Send incontinence home as arthritis.
+Do next: Name the LS pain. Image the junction. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2876,6 +2893,14 @@ Return now for falling, inability to walk, or if you cannot keep them comfortabl
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, neck pain with collapse, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-dlss`
+
+{{patient.name}} was evaluated for degenerative lumbosacral stenosis (a low-back spinal narrowing, often in large-breed dogs such as German Shepherds). Pain when the tail-base / low back is stretched is the key finding. Plain films do not prove this diagnosis; advanced imaging of that junction is the test. A steroid from the cabinet is not the night plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new incontinence, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

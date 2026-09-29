@@ -4435,6 +4435,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not survey films", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dlss_is_pain_on_ls_extension(self):
+        b = analyze(
+            "dog",
+            "degenerative lumbosacral stenosis, German Shepherd, pain on LS extension, send home, methylpred",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("dlss", loc)
+        self.assertIn("pain on ls extension", loc)
+        self.assertIn("image the ls junction", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("painless and slow", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("methylpred 1", joined)
+        self.assertIn("plain films do not confirm", joined)
+        self.assertIn("incontinence", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wobbler_is_not_dlss(self):
+        b = analyze("dog", "wobbler, Doberman, two-engine gait")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("two-engine gait", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertNotIn("image the ls junction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dm_is_not_dlss(self):
+        b = analyze(
+            "dog",
+            "degenerative myelopathy, German Shepherd, 10 years, nonpainful pelvic ataxia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("painless and slow", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_dlss(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertNotIn("image the ls junction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gsd_is_not_dlss(self):
+        b = analyze("dog", "German Shepherd, ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertNotIn("image the ls junction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boxax_is_not_dlss(self):
+        b = analyze(
+            "dog",
+            "progressive axonopathy, Boxer, 4 months, patellar hyporeflexia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("can live comfortably", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_dlss(self):
+        b = analyze("cat", "degenerative lumbosacral stenosis, pain on LS extension")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pain on ls extension", loc)
+        self.assertNotIn("image the ls junction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

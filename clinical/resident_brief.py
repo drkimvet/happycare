@@ -1222,6 +1222,17 @@ WOBBLER_RE = re.compile(
     r"disc[- ]associated wobbler",
     re.I,
 )
+# Bare GSD / bare incontinence is not enough. Not wobbler (223). Not DM (221).
+# Not IVDD (185). Dogs only. Rare in cats — do not fire the cat.
+DLSS_RE = re.compile(
+    r"\bdlss\b|"
+    r"degenerative lumbosacral|"
+    r"lumbosacral stenos|"
+    r"cauda equina (syndrome|compress)|"
+    r"lumbosacral (pain|joint|extension)|"
+    r"\bls extension\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5285,6 +5296,7 @@ def analyze(
     steal_dm = DEGEN_MYEL_RE.search(text)
     steal_boxax = BOXER_AXON_RE.search(text)
     steal_wobbler = WOBBLER_RE.search(text)
+    steal_dlss = DLSS_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5310,6 +5322,7 @@ def analyze(
         or steal_dm
         or steal_boxax
         or steal_wobbler
+        or steal_dlss
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6263,6 +6276,66 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for wobbler.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for wobbler.")
+
+    dlss_named = spec == "dog" and DLSS_RE.search(text)
+    if dlss_named and not (
+        WOBBLER_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        dlss_loc = (
+            "DLSS. Pain on LS extension. "
+            "Image the LS junction."
+        )
+        localization = f"{localization} Also {dlss_loc}" if localization else dlss_loc
+        hard_stops.append(
+            "Do not harvest methylpred 1 as lobby law. "
+            "Plain films do not confirm DLSS. "
+            "Do not send incontinence home as just arthritis."
+        )
+        do_not.append(
+            "Large-breed, especially GSD. Typical onset 3–7 years. "
+            "L7–S1 disk, flavum, rarely subluxation. "
+            "Transitional vertebrae increase risk. "
+            "Pain on LS extension is the most consistent finding. "
+            "Tail weakness, incontinence. "
+            "Plain rads may show degeneration; MRI / CT / epidurography confirm. "
+            "Printed 1 / day 1–14–42 / 4–6 weeks / 80% / 70–95% stay on the page. "
+            "Preexisting incontinence may not resolve. Rare in cats. "
+            "Not wobbler-only. Not DM-only. Not IVDD-only."
+        )
+        do_next.append(
+            "Name the LS pain. Image the junction. △ Plumb."
+        )
+        sources.append(
+            "Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025): "
+            "degenerative lumbosacral stenosis; GSD; L7–S1; "
+            "pain on palpation or extension of the lumbosacral joint is the most consistent finding; "
+            "plain radiographs may show degeneration; MRI / CT / epidurography confirm; "
+            "printed methylpred 1 on day 1, 14, 42 and 4–6 weeks rest stay on the page; "
+            "surgery if pain is refractory or there are neurologic deficits; "
+            "incontinence may not resolve; rare in cats."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send DLSS home as just arthritis."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone|methylpred)\b", text, re.I):
+            hard_stops.append("Do not harvest methylpred 1 as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for DLSS.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for DLSS.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

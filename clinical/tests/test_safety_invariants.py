@@ -521,6 +521,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("two-engine gait", VERIF.lower())
         self.assertIn("survey radiographs cannot confirm", VERIF.lower())
         self.assertIn("not survey films", VERIF.lower())
+        self.assertIn("degenerative lumbosacral", VERIF.lower())
+        self.assertIn("pain on ls extension", VERIF.lower())
+        self.assertIn("image the ls junction", VERIF.lower())
+        self.assertIn("most consistent finding", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -821,6 +825,10 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-boxax`", MACRO)
         self.assertIn("`ddx-wobbler`", MACRO)
         self.assertIn("`dc-wobbler`", MACRO)
+        self.assertIn("`ddx-dlss`", MACRO)
+        self.assertIn("`dc-dlss`", MACRO)
+        self.assertIn("pain on ls extension", MACRO.lower())
+        self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
         self.assertIn("not survey films", MACRO.lower())
         self.assertIn("1–7 months", MACRO.lower())
@@ -1145,6 +1153,9 @@ class PublicCardInvariants(unittest.TestCase):
             "wobbler",
             "two-engine gait",
             "not survey films",
+            "degenerative lumbosacral",
+            "pain on ls extension",
+            "image the ls junction",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
