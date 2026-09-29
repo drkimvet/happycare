@@ -156,6 +156,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aalux` | Assessment | Atlantoaxial subluxation |
 | `ddx-arach` | Assessment | Arachnoid diverticulum |
 | `ddx-hemiv` | Assessment | Hemivertebra / congenital vertebral malformation |
+| `ddx-caphyp` | Assessment | Caudal articular hypoplasia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -271,6 +272,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aalux` | Discharge | After atlantoaxial-lux talk |
 | `dc-arach` | Discharge | After arachnoid-diverticulum talk |
 | `dc-hemiv` | Discharge | After hemivertebra talk |
+| `dc-caphyp` | Discharge | After caudal-articular-hypoplasia talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2021,6 +2023,21 @@ DDX:
 Do not: harvest a surgery table. Harvest 80 percent. Send a compressive screw-tail home as incidental.
 Do next: Name the malformation. Image (rads or CT; MRI if cord). Surgeon if compressive. △ Plumb.
 
+### `ddx-caphyp`
+
+Caudal articular hypoplasia — {{patient.name}}
+Breed [Pug / Frenchie / English Bulldog / other]. Levels [one / multiple / unknown]. Instability [yes / no / unknown]. Imaging [rads / CT / MRI / not yet]. Surgeon [called / not yet].
+
+DDX:
+1. Caudal articular hypoplasia — **instability. Often multiple vertebrae**
+2. Pugs, French Bulldogs, English Bulldogs
+3. Stabilization might help; often several vertebrae
+4. Not hemivertebra-only (227). Not arachnoid-only (226). Not AA-only (225)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Send Pug facet instability home as incidental hemivertebra.
+Do next: Name the facet. Image. Surgeon if unstable. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2972,6 +2989,14 @@ Return now for inability to walk, worse ataxia, or if you cannot keep them comfo
 ### `dc-hemiv`
 
 {{patient.name}} was evaluated for a congenital vertebral malformation such as a hemivertebra (a shortened or misshapen back bone, common in screw-tailed breeds). Many of these are found by chance. Imaging decides whether the cord is compressed. If surgery is needed it is often decompression plus stabilization.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-caphyp`
+
+{{patient.name}} was evaluated for caudal articular hypoplasia (underdeveloped facet joints of the spine, seen in Pugs, French Bulldogs, and English Bulldogs). This can make the spine unstable. Often more than one vertebra is involved. A surgeon decides if stabilization is useful.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

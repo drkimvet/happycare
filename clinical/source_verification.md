@@ -2295,7 +2295,7 @@ Night rule: named arachnoid diverticulum → **MRI or myelo. Recurrence possible
 
 ## 227. Hemivertebra / congenital vertebral malformation (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett hemivertebra chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Caudal articular hypoplasia is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest 80 percent as lobby law.
+No dedicated Plunkett hemivertebra chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Packet 228 owns named caudal articular hypoplasia. Do not harvest a surgery table as lobby law. Do not harvest 80 percent as lobby law.
 
 Agree with Parsley: congenital vertebral malformations in dogs include **hemivertebrae** (shortened or misshapen vertebrae), **block (fused) vertebrae**, and **butterfly vertebrae** (sagittal cleft). Hemivertebrae are most common in **screw-tailed** dog breeds and are inherited in German Shorthaired Pointers. Printed **80 percent** of neurologically normal Pugs, French Bulldogs, and English Bulldogs have vertebral malformations — that number stays on the page. The likelihood that these malformations will be clinically important is **greater in Pugs than in French Bulldogs**. Decompressive surgery can be successful; often surgery needs to be combined with spinal stabilization. Plain radiography or CT can help for vertebral malformations.
 
@@ -2310,3 +2310,21 @@ Book/public traps:
 - Do not call AA lux this list.
 
 Night rule: named hemivertebra → **often incidental. Pug more than Frenchie.** △ Plumb.
+
+## 228. Caudal articular hypoplasia (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett caudal-articular-hypoplasia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 227 still owns named hemivertebra. Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Multiple cartilaginous exostosis is the next room, not this dump. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: **caudal articular hypoplasia** is reported in **Pugs, French Bulldogs, and English Bulldogs** and can cause **spinal instability**. Surgical stabilization might be beneficial; however, **often multiple vertebrae are affected**.
+
+Night split: named caudal articular hypoplasia / articular process hypoplasia is instability; often multiple vertebrae. Bare Pug / Frenchie does not fire. Named hemivertebra stays 227. Named arachnoid stays 226. Named AA stays 225. Named COMS stays 212. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send Pug facet instability home as incidental hemivertebra.
+- Do not call hemivertebra this list.
+- Do not call arachnoid this list.
+- Do not call AA lux this list.
+
+Night rule: named caudal articular hypoplasia → **instability. Often multiple vertebrae.** △ Plumb.

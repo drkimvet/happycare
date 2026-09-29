@@ -4724,6 +4724,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("pug more than frenchie", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_caphyp_is_instability_often_multiple_vertebrae(self):
+        b = analyze("dog", "caudal articular hypoplasia, Pug")
+        loc = b["localization"].lower()
+        self.assertIn("caudal articular hypoplasia", loc)
+        self.assertIn("instability", loc)
+        self.assertIn("often multiple vertebrae", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("often multiple vertebrae", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("spinal instability", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemiv_is_not_caphyp(self):
+        b = analyze("dog", "hemivertebra, French Bulldog, kyphosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("often incidental", loc)
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("caudal articular hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_arach_is_not_caphyp(self):
+        b = analyze(
+            "dog",
+            "arachnoid diverticulum, young dog, progressive ataxia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mri or myelo", loc)
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("caudal articular hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aalux_is_not_caphyp(self):
+        b = analyze(
+            "dog",
+            "atlantoaxial subluxation, Yorkshire Terrier, neck pain, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("do not flex the neck", loc)
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("caudal articular hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coms_is_not_caphyp(self):
+        b = analyze(
+            "dog",
+            "COMS, Chiari-like, phantom scratch, Cavalier, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("caudal articular hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pug_is_not_caphyp(self):
+        b = analyze("dog", "Pug, back pain")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("caudal articular hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_caphyp(self):
+        b = analyze("cat", "caudal articular hypoplasia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("often multiple vertebrae", loc)
+        self.assertNotIn("caudal articular hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
