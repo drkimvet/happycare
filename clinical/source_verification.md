@@ -2403,7 +2403,7 @@ Night rule: named tethered cord → **dynamic MRI. Median 13 months.** △ Plumb
 
 ## 233. Pilonidal / dermoid sinus (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett pilonidal-sinus chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 232 still owns named tethered cord. Packet 231 still owns named spina bifida. Packet 208 still owns named otogenic meningitis. Packet 205 still owns named SRMA. Packet 234 owns named spinal muscular atrophy. Demyelination of Miniature Poodles is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 15–30 mg/kg table as lobby law.
+No dedicated Plunkett pilonidal-sinus chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 232 still owns named tethered cord. Packet 231 still owns named spina bifida. Packet 208 still owns named otogenic meningitis. Packet 205 still owns named SRMA. Packet 234 owns named spinal muscular atrophy. Packet 235 owns named Mini Poodle demyelination. Do not harvest a surgery table as lobby law. Do not harvest a 15–30 mg/kg table as lobby law.
 
 Agree with Parsley: **pilonidal sinus** (also called **dermoid sinus**, dermoid cyst) appears to result from faulty neurulation and is inherited (**autosomal recessive**) in **Rhodesian Ridgebacks**; it can occur in other dog breeds as well. **Dogs and cats.** The sinus is **lined by skin** and can communicate with the **subarachnoid space**, causing **meningitis or myelitis**. Treatment is **surgical excision to the dura**, plus long-term antimicrobials if bacterial meningitis (culture-guided; CSF culture often negative; BBB-penetrating bactericidal preferred). Printed TMS 15–30 / enro 10 / amox-clav 11–20 and the 3-month / 4–8 week clocks stay on the page.
 
@@ -2421,7 +2421,7 @@ Night rule: named dermoid sinus → **excise to dura. Can seed meningitis.** △
 
 ## 234. Spinal muscular atrophy (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett spinal-muscular-atrophy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 233 still owns named dermoid sinus. Packet 221 still owns named DM. Demyelination of Miniature Poodles is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bsma\b`. Do not fire on bare Brittany.
+No dedicated Plunkett spinal-muscular-atrophy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 233 still owns named dermoid sinus. Packet 221 still owns named DM. Packet 235 owns named Mini Poodle demyelination. Fibrinoid leukodystrophy / Alexander disease is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bsma\b`. Do not fire on bare Brittany.
 
 Agree with Parsley: **spinal muscular atrophy** is an inherited LMN disease of **Brittany Spaniels** with **early** (by 1 month), **intermediate** (by 4–6 months), and **delayed** (>1 year) forms. **Rottweilers:** an early form is called **motor neuron disease**. **Swedish Lapland** dogs 5–7 weeks; **Stockard paralysis** (Great Dane × Bloodhound or Saint Bernard) 11–14 weeks; **English Pointers** ~5 months; other puppies Doberman / Briquet Griffon Vendeen; a **focal thoracic-limb** form in GSD. Main sign: paraparesis or tetraparesis with **neurogenic muscle atrophy**. Severe generalized LMN **closely resembles peripheral neuropathy**. **Motor-neuron loss** on necropsy. **There is no treatment.**
 
@@ -2436,3 +2436,21 @@ Book/public traps:
 - Do not call it dermoid-only.
 
 Night rule: named spinal muscular atrophy → **looks like a neuropathy. No treatment.** △ Plumb.
+
+## 235. Demyelination of Miniature Poodles (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett Mini-Poodle-demyelination chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 234 still owns named SMA. Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 220 still owns named Afghan myelopathy. Fibrinoid leukodystrophy / Alexander disease is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare demyelination.
+
+Agree with Parsley: **demyelination of Miniature Poodles** is presumed to be an **inherited** disorder involving **primarily the spinal cord**. This **rare** condition causes **paraparesis at 2–4 months** that **rapidly progresses to tetraplegia**. **There is no treatment.**
+
+Night split: named Mini Poodle demyelination is 2–4 months; rapidly to tetraplegia. Bare Poodle / bare demyelination does not fire. Named SMA stays 234. Named APN stays 204. Named Boxer axonopathy stays 222. Named Afghan stays 220. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a 3-month Poodle home as a disc.
+- Do not call it SMA-only.
+- Do not call it Afghan myelopathy-only.
+- Do not call it APN-only.
+
+Night rule: named Mini Poodle demyelination → **2–4 months. Rapidly to tetraplegia.** △ Plumb.

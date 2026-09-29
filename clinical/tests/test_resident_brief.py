@@ -5199,6 +5199,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("looks like a neuropathy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pdemy_is_2_to_4_months_rapidly_to_tetraplegia(self):
+        b = analyze("dog", "demyelination of Miniature Poodles")
+        loc = b["localization"].lower()
+        self.assertIn("poodle demyelination", loc)
+        self.assertIn("2–4 months", loc)
+        self.assertIn("rapidly to tetraplegia", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        self.assertNotIn("can live comfortably", loc)
+        self.assertNotIn("paraplegia within a week", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("3-month poodle", joined)
+        self.assertIn("sma-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sma_is_not_pdemy(self):
+        b = analyze("dog", "spinal muscular atrophy, Brittany Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("looks like a neuropathy", loc)
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boxax_is_not_pdemy(self):
+        b = analyze(
+            "dog",
+            "progressive axonopathy, Boxer, 4 months, patellar hyporeflexia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("can live comfortably", loc)
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_apn_is_not_pdemy(self):
+        b = analyze("dog", "coonhound paralysis, raccoon bite last week")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("apn", loc)
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_afghan_is_not_pdemy(self):
+        b = analyze("dog", "Afghan hound myelopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("paraplegia within a week", loc)
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_poodle_is_not_pdemy(self):
+        b = analyze("dog", "Miniature Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_pdemy(self):
+        b = analyze("cat", "demyelination of Miniature Poodles")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

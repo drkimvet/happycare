@@ -163,6 +163,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tether` | Assessment | Tethered cord syndrome |
 | `ddx-pilo` | Assessment | Pilonidal / dermoid sinus |
 | `ddx-sma` | Assessment | Spinal muscular atrophy |
+| `ddx-pdemy` | Assessment | Mini Poodle demyelination |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -285,6 +286,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tether` | Discharge | After tethered-cord talk |
 | `dc-pilo` | Discharge | After dermoid-sinus talk |
 | `dc-sma` | Discharge | After spinal-muscular-atrophy talk |
+| `dc-pdemy` | Discharge | After Mini-Poodle-demyelination talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2140,6 +2142,21 @@ DDX:
 Do not: harvest a surgery table. Send a flaccid puppy home as tired. Call it APN-only.
 Do next: Name the LMN. No treatment conversation. △ Plumb.
 
+### `ddx-pdemy`
+
+Mini Poodle demyelination — {{patient.name}}
+Age [2–4 months / other]. Course [rapid tetraplegia / other]. Breed [Miniature Poodle / other]. Coat search [done / not yet].
+
+DDX:
+1. Poodle demyelination — **2–4 months. Rapidly to tetraplegia**
+2. Presumed inherited. Primarily spinal cord. Rare. No treatment
+3. Not SMA-only (234). Not APN-only (204). Not boxax-only (222). Not Afghan-only (220)
+4. Bare Poodle / bare demyelination does not fire
+5. Cat does not fire
+
+Do not: harvest a surgery table. Send a 3-month Poodle home as a disc. Call it SMA-only.
+Do next: Name the demyelination. No treatment conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3147,6 +3164,14 @@ Return now for fever, neck pain, inability to walk, or if you cannot keep them c
 ### `dc-sma`
 
 {{patient.name}} was evaluated for spinal muscular atrophy (an inherited lower-motor-neuron disease that can look like a neuropathy). Brittany Spaniels, some Rottweilers, and a few other breeds are on this list. There is no treatment that reverses the neuron loss. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-pdemy`
+
+{{patient.name}} was evaluated for demyelination of Miniature Poodles (a rare inherited spinal-cord disease that starts around 2–4 months and can go to all four legs quickly). There is no treatment that reverses the myelin loss. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
