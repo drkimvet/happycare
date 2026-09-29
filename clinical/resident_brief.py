@@ -1284,6 +1284,15 @@ DYSRAPH_RE = re.compile(
     r"bilateral flexor",
     re.I,
 )
+# Bare screw-tail / bare Manx / bare incontinence is not enough.
+# Not dysraphism (230). Not hemivertebra (227). Dog or cat.
+SPINA_BIF_RE = re.compile(
+    r"spina bifida|"
+    r"meningomyelocele|"
+    r"myelomeningocele|"
+    r"sacrocaudal dysgenes",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5354,6 +5363,7 @@ def analyze(
     steal_caphyp = CAPHYP_RE.search(text)
     steal_mce = MCE_RE.search(text)
     steal_dysraph = DYSRAPH_RE.search(text)
+    steal_spinab = SPINA_BIF_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5386,6 +5396,7 @@ def analyze(
         or steal_caphyp
         or steal_mce
         or steal_dysraph
+        or steal_spinab
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6774,6 +6785,79 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for spinal dysraphism.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for spinal dysraphism.")
+
+    spinab_named = spec in {"dog", "cat"} and SPINA_BIF_RE.search(text)
+    if spinab_named and not (
+        DYSRAPH_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        spinab_loc = (
+            "Spina bifida. Occulta silent. "
+            "Manifesta LMN incontinent."
+        )
+        localization = f"{localization} Also {spinab_loc}" if localization else spinab_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send incontinence home as house-training. "
+            "Do not call it dysraphism-only."
+        )
+        do_not.append(
+            "Occulta silent. Manifesta involves the cord. "
+            "Vertebral arch fails to fuse. Dogs and cats. "
+            "Meningomyelocele can occur. "
+            "LMN pelvic limbs and urinary or fecal incontinence. "
+            "Substantial deficits: prognosis poor. "
+            "Screw-tail breeds most common. "
+            "Can accompany sacrocaudal dysgenesis. "
+            "Manx sacrocaudal dysgenesis is autosomal dominant "
+            "(printed inheritance stays on the page). "
+            "Not dysraphism-only. Not hemivertebra-only. Not MCE-only. "
+            "Tethered cord without spina bifida is the next room."
+        )
+        do_next.append(
+            "Name occulta vs manifesta. Image. Incontinence conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "spina bifida; failure of the vertebral arch to fuse; dogs and cats; "
+            "occulta (bones only, no clinical signs) vs manifesta (cord involved); "
+            "meningomyeloceles can occur, as can tethered cord syndrome; "
+            "LMN pelvic-limb signs and urinary or fecal incontinence in dogs; "
+            "prognosis poor with substantial neurologic deficits; "
+            "screw-tail breeds most commonly affected; "
+            "can accompany sacrocaudal dysgenesis; "
+            "Manx sacrocaudal dysgenesis inherited as an autosomal dominant trait."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send incontinence home as house-training."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for spina bifida.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for spina bifida.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

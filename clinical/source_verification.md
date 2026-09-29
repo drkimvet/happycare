@@ -2349,11 +2349,11 @@ Night rule: named cartilaginous exostosis → **benign. Recurrence common.** △
 
 ## 230. Spinal dysraphism / myelodysplasia (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett spinal-dysraphism chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 214 still owns named hypomyelination / shaking puppy. Packet 185 still owns named IVDD. Spina bifida is the next room, not this dump. Do not harvest a surgery table as lobby law.
+No dedicated Plunkett spinal-dysraphism chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 214 still owns named hypomyelination / shaking puppy. Packet 185 still owns named IVDD. Packet 231 owns named spina bifida. Do not harvest a surgery table as lobby law.
 
 Agree with Parsley: **spinal dysraphism** (also known as **myelodysplasia**) includes anomalies of the skin, vertebrae, and spinal cord secondary to faulty neural-tube closure. The term is generally used for **neural tissues rather than vertebrae**; where vertebral malformations occur, the condition is generally **spina bifida**. Inherited in **Weimaraners**; similar malformations in other breeds. Signs by **4–6 weeks**: paraparesis and a **symmetrical bunny-hopping** gait in the pelvic limbs. **Bilateral flexor reflex**: pinching one paw flexes both pelvic limbs. Scoliosis or abnormal hair streams on the dorsal neck. Diagnosis: clinical signs and myelography or MRI. **There is no treatment**; neurological deficits **usually do not progress**.
 
-Night split: named spinal dysraphism / myelodysplasia / bilateral flexor is bunny-hop by 4–6 weeks; usually nonprogressive. Bare Weimaraner / bare bunny-hop does not fire. Named hypomyelin stays 214. Named MCE stays 229. Named hemivertebra stays 227. Named IVDD stays 185. Cat does not fire. Spina bifida is the next room.
+Night split: named spinal dysraphism / myelodysplasia / bilateral flexor is bunny-hop by 4–6 weeks; usually nonprogressive. Bare Weimaraner / bare bunny-hop does not fire. Named hypomyelin stays 214. Named MCE stays 229. Named hemivertebra stays 227. Named IVDD stays 185. Cat does not fire. Packet 231 owns named spina bifida.
 
 Book/public traps:
 
@@ -2364,3 +2364,21 @@ Book/public traps:
 - Do not call MCE this list.
 
 Night rule: named spinal dysraphism → **bunny-hop by 4–6 weeks. Usually nonprogressive.** △ Plumb.
+
+## 231. Spina bifida (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett spina-bifida chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 230 still owns named spinal dysraphism / myelodysplasia. Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Tethered cord syndrome is the next room, not this dump. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: **spina bifida** is failure of the **vertebral arch to fuse**; it affects **dogs and cats**. **Occulta**: bones only, no clinical signs. **Manifesta**: spinal cord also involved. Meningomyeloceles can occur, as can tethered cord syndrome. Most likely signs in dogs: **LMN pelvic limbs** and **urinary or fecal incontinence**. Prognosis is **poor** with substantial neurologic deficits. **Screw-tail** breeds most commonly affected. Can accompany **sacrocaudal dysgenesis**. In **Manx cats**, sacrocaudal dysgenesis is inherited as an **autosomal dominant** trait (printed inheritance stays on the page).
+
+Night split: named spina bifida / meningomyelocele / sacrocaudal dysgenesis is occulta silent; manifesta LMN incontinent. Bare screw-tail / bare Manx / bare incontinence does not fire. Named dysraphism stays 230. Named hemivertebra stays 227. Named DLSS stays 224. Named IVDD stays 185. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send incontinence home as house-training.
+- Do not call it dysraphism-only.
+- Do not call hemivertebra this list.
+- Do not harvest a Manx inheritance table.
+
+Night rule: named spina bifida → **occulta silent. Manifesta LMN incontinent.** △ Plumb.

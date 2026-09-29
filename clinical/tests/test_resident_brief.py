@@ -4936,6 +4936,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("spinal dysraphism", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_spinab_is_occulta_silent_manifesta_lmn(self):
+        b = analyze("dog", "spina bifida, English Bulldog")
+        loc = b["localization"].lower()
+        self.assertIn("spina bifida", loc)
+        self.assertIn("occulta silent", loc)
+        self.assertIn("manifesta lmn incontinent", loc)
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("occulta silent", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("house-training", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dysraph_is_not_spinab(self):
+        b = analyze(
+            "dog",
+            "spinal dysraphism, Weimaraner, bunny-hopping",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("occulta silent", loc)
+        self.assertNotIn("manifesta lmn incontinent", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemiv_is_not_spinab(self):
+        b = analyze("dog", "hemivertebra, French Bulldog, kyphosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("often incidental", loc)
+        self.assertNotIn("occulta silent", loc)
+        self.assertNotIn("manifesta lmn incontinent", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mce_is_not_spinab(self):
+        b = analyze(
+            "dog",
+            "multiple cartilaginous exostosis, German Shepherd",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("recurrence common", loc)
+        self.assertNotIn("occulta silent", loc)
+        self.assertNotIn("manifesta lmn incontinent", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dlss_is_not_spinab(self):
+        b = analyze(
+            "dog",
+            "degenerative lumbosacral stenosis, German Shepherd, pain on LS extension",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pain on ls extension", loc)
+        self.assertNotIn("occulta silent", loc)
+        self.assertNotIn("manifesta lmn incontinent", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_frenchie_is_not_spinab(self):
+        b = analyze("dog", "French Bulldog")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("occulta silent", loc)
+        self.assertNotIn("spina bifida", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_spinab_still_fires(self):
+        b = analyze("cat", "spina bifida, sacrocaudal dysgenesis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("occulta silent", loc)
+        self.assertIn("manifesta lmn incontinent", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

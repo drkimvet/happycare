@@ -159,6 +159,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-caphyp` | Assessment | Caudal articular hypoplasia |
 | `ddx-mce` | Assessment | Multiple cartilaginous exostosis |
 | `ddx-dysraph` | Assessment | Spinal dysraphism / myelodysplasia |
+| `ddx-spinab` | Assessment | Spina bifida |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -277,6 +278,7 @@ Suggested names are short so they show up after three letters.
 | `dc-caphyp` | Discharge | After caudal-articular-hypoplasia talk |
 | `dc-mce` | Discharge | After cartilaginous-exostosis talk |
 | `dc-dysraph` | Discharge | After spinal-dysraphism talk |
+| `dc-spinab` | Discharge | After spina-bifida talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2066,11 +2068,26 @@ DDX:
 1. Spinal dysraphism — **bunny-hop by 4–6 weeks. Usually nonprogressive**
 2. Also myelodysplasia. Neural tissues, not vertebrae
 3. Inherited in Weimaraners. Bilateral flexor reflex. No treatment
-4. Not spina-bifida-only (next). Not hypomyelin-only (214). Not MCE-only (229)
+4. Not spina-bifida-only (231). Not hypomyelin-only (214). Not MCE-only (229)
 5. Cat does not fire
 
 Do not: harvest a surgery table. Send a 5-week bunny-hop home as hip dysplasia. Call it spina bifida-only.
 Do next: Name the gait. Image if needed. Do not promise surgery. △ Plumb.
+
+### `ddx-spinab`
+
+Spina bifida — {{patient.name}}
+Species [dog / cat]. Type [occulta / manifesta / unknown]. Incontinence [urine / feces / none]. Meningomyelocele [yes / no / unknown]. Imaging [rads / CT / MRI / not yet].
+
+DDX:
+1. Spina bifida — **occulta silent. Manifesta LMN incontinent**
+2. Dogs and cats. Vertebral arch fails to fuse. Screw-tail most common
+3. Substantial deficits: poor. Sacrocaudal dysgenesis / Manx AD on the page
+4. Not dysraphism-only (230). Not hemivertebra-only (227). Not DLSS-only (224)
+5. Cat can fire
+
+Do not: harvest a surgery table. Send incontinence home as house-training. Call it dysraphism-only.
+Do next: Name occulta vs manifesta. Image. Incontinence conversation. △ Plumb.
 
 ### `ddx-hyperca`
 
@@ -3051,6 +3068,14 @@ Return now for inability to walk, a new painful lump, or if you cannot keep them
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-spinab`
+
+{{patient.name}} was evaluated for spina bifida (the back bones did not close over the spinal cord). If only bone is involved there may be no signs. If the cord is involved, weak back legs and urine or stool leaking are common, and the outlook can be poor.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new leaking of urine or stool, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
