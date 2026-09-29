@@ -5007,6 +5007,72 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("manifesta lmn incontinent", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_tether_is_dynamic_mri_median_13_months(self):
+        b = analyze("dog", "tethered cord, skipping gait")
+        loc = b["localization"].lower()
+        self.assertIn("tethered cord", loc)
+        self.assertIn("dynamic mri", loc)
+        self.assertIn("median 13 months", loc)
+        self.assertNotIn("occulta silent", loc)
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("dynamic mri", joined)
+        self.assertIn("64 percent", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_spinab_is_not_tether(self):
+        b = analyze("dog", "spina bifida, English Bulldog")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("occulta silent", loc)
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("median 13 months", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dysraph_is_not_tether(self):
+        b = analyze(
+            "dog",
+            "spinal dysraphism, Weimaraner, bunny-hopping",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("median 13 months", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dlss_is_not_tether(self):
+        b = analyze(
+            "dog",
+            "degenerative lumbosacral stenosis, German Shepherd, pain on LS extension",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pain on ls extension", loc)
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("median 13 months", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_skipping_gait_is_not_tether(self):
+        b = analyze("dog", "skipping gait, young dog")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("tethered cord", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_incontinence_is_not_tether(self):
+        b = analyze("dog", "urinary incontinence")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("tethered cord", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_tether(self):
+        b = analyze("cat", "tethered cord, skipping gait")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dynamic mri", loc)
+        self.assertNotIn("median 13 months", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

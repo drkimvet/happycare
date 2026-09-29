@@ -160,6 +160,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mce` | Assessment | Multiple cartilaginous exostosis |
 | `ddx-dysraph` | Assessment | Spinal dysraphism / myelodysplasia |
 | `ddx-spinab` | Assessment | Spina bifida |
+| `ddx-tether` | Assessment | Tethered cord syndrome |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -279,6 +280,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mce` | Discharge | After cartilaginous-exostosis talk |
 | `dc-dysraph` | Discharge | After spinal-dysraphism talk |
 | `dc-spinab` | Discharge | After spina-bifida talk |
+| `dc-tether` | Discharge | After tethered-cord talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2089,6 +2091,21 @@ DDX:
 Do not: harvest a surgery table. Send incontinence home as house-training. Call it dysraphism-only.
 Do next: Name occulta vs manifesta. Image. Incontinence conversation. △ Plumb.
 
+### `ddx-tether`
+
+Tethered cord — {{patient.name}}
+Age [13 months / 8 weeks / other]. Signs [low back pain / skipping gait / anxiety / incontinence / other]. Dynamic MRI [yes / not yet]. Filum [tight / unknown]. Detether [discussed / not yet].
+
+DDX:
+1. Tethered cord — **dynamic MRI. Median 13 months**
+2. Occult tethered without another malformation such as spina bifida
+3. Tight filum. Skipping gait. Printed 64% stay on the page
+4. Not spina-bifida-only (231). Not dysraphism-only (230). Not DLSS-only (224)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Harvest 64 percent. Send skipping gait home as a sprain.
+Do next: Dynamic MRI. Detether conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3076,6 +3093,14 @@ Return now for inability to walk, worse ataxia, or if you cannot keep them comfo
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new leaking of urine or stool, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-tether`
+
+{{patient.name}} was evaluated for tethered cord syndrome (the end of the spinal cord is held too tight by a band called the filum, usually without another birth defect such as spina bifida). Diagnosis is a dynamic MRI. A surgeon may cut that band. The printed success number stays in our notes, not as a promise.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new leaking of urine, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -1293,6 +1293,14 @@ SPINA_BIF_RE = re.compile(
     r"sacrocaudal dysgenes",
     re.I,
 )
+# Bare skipping gait / bare incontinence / bare anxiety is not enough.
+# Not spina bifida (231). Not DLSS (224). Dogs only.
+TETHER_RE = re.compile(
+    r"tethered cord|"
+    r"tight filum|"
+    r"filum terminale",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5364,6 +5372,7 @@ def analyze(
     steal_mce = MCE_RE.search(text)
     steal_dysraph = DYSRAPH_RE.search(text)
     steal_spinab = SPINA_BIF_RE.search(text)
+    steal_tether = TETHER_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5397,6 +5406,7 @@ def analyze(
         or steal_mce
         or steal_dysraph
         or steal_spinab
+        or steal_tether
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6832,7 +6842,7 @@ def analyze(
             "Manx sacrocaudal dysgenesis is autosomal dominant "
             "(printed inheritance stays on the page). "
             "Not dysraphism-only. Not hemivertebra-only. Not MCE-only. "
-            "Tethered cord without spina bifida is the next room."
+            "Packet 232 owns named occult tethered cord."
         )
         do_next.append(
             "Name occulta vs manifesta. Image. Incontinence conversation. △ Plumb."
@@ -6858,6 +6868,75 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for spina bifida.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for spina bifida.")
+
+    tether_named = spec == "dog" and TETHER_RE.search(text)
+    if tether_named and not (
+        SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        tether_loc = (
+            "Tethered cord. Dynamic MRI. "
+            "Median 13 months."
+        )
+        localization = f"{localization} Also {tether_loc}" if localization else tether_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest 64 percent as lobby law. "
+            "Do not send skipping gait home as a sprain."
+        )
+        do_not.append(
+            "Occult tethered without another malformation such as spina bifida. "
+            "Tight filum terminale. Dynamic MRI. Underrecognized. "
+            "Median 13 months; signs as early as 8 weeks. "
+            "Low back pain, skipping gait, anxiety, urinary incontinence. "
+            "Detether the filum. Printed 64 percent stay on the page. "
+            "Not spina-bifida-only. Not dysraphism-only. Not DLSS-only."
+        )
+        do_next.append(
+            "Dynamic MRI. Detether conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "tethered cord syndrome in the absence of another congenital "
+            "malformation such as spina bifida; tight filum terminale; "
+            "dynamic MRI; underrecognized; median age at diagnosis 13 months; "
+            "signs as early as 8 weeks; occult tethered signs include low back "
+            "pain, intermittent lameness or skipping gait, anxiety, and "
+            "urinary incontinence; detethering by transecting the intradural "
+            "or extradural filum terminale; printed 64 percent long-term "
+            "success stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send skipping gait home as a sprain."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for tethered cord.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for tethered cord.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

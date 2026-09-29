@@ -2367,7 +2367,7 @@ Night rule: named spinal dysraphism → **bunny-hop by 4–6 weeks. Usually nonp
 
 ## 231. Spina bifida (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett spina-bifida chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 230 still owns named spinal dysraphism / myelodysplasia. Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Tethered cord syndrome is the next room, not this dump. Do not harvest a surgery table as lobby law.
+No dedicated Plunkett spina-bifida chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 230 still owns named spinal dysraphism / myelodysplasia. Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Packet 232 owns named occult tethered cord. Do not harvest a surgery table as lobby law.
 
 Agree with Parsley: **spina bifida** is failure of the **vertebral arch to fuse**; it affects **dogs and cats**. **Occulta**: bones only, no clinical signs. **Manifesta**: spinal cord also involved. Meningomyeloceles can occur, as can tethered cord syndrome. Most likely signs in dogs: **LMN pelvic limbs** and **urinary or fecal incontinence**. Prognosis is **poor** with substantial neurologic deficits. **Screw-tail** breeds most commonly affected. Can accompany **sacrocaudal dysgenesis**. In **Manx cats**, sacrocaudal dysgenesis is inherited as an **autosomal dominant** trait (printed inheritance stays on the page).
 
@@ -2382,3 +2382,21 @@ Book/public traps:
 - Do not harvest a Manx inheritance table.
 
 Night rule: named spina bifida → **occulta silent. Manifesta LMN incontinent.** △ Plumb.
+
+## 232. Tethered cord syndrome (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett tethered-cord chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 231 still owns named spina bifida. Packet 230 still owns named spinal dysraphism. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Pilonidal / dermoid sinus is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest 64 percent as lobby law.
+
+Agree with Parsley: **tethered cord syndrome** in the **absence of another congenital malformation such as spina bifida** has been identified in **dogs**. A **tight filum terminale** prevents normal movement of the spinal cord. Diagnosis is **dynamic MRI**. Currently underrecognized. Median age at diagnosis is **13 months**; some begin showing signs as early as **8 weeks**. Occult tethered signs: **low back pain**, intermittent lameness or **skipping gait**, anxiety, and **urinary incontinence**. Treatment is **detethering** by transecting the intradural or extradural filum terminale. Printed **64 percent** long-term success stays on the page.
+
+Night split: named tethered cord / tight filum / filum terminale is dynamic MRI; median 13 months. Bare skipping gait / bare incontinence does not fire. Named spina bifida stays 231. Named dysraphism stays 230. Named DLSS stays 224. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest 64 percent.
+- Do not send skipping gait home as a sprain.
+- Do not call it spina bifida-only.
+- Do not call DLSS this list.
+
+Night rule: named tethered cord → **dynamic MRI. Median 13 months.** △ Plumb.
