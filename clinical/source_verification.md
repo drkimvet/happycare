@@ -2241,7 +2241,7 @@ Night rule: named wobbler / CSM → **two-engine gait. MRI, not survey films.** 
 
 ## 224. DLSS / degenerative lumbosacral stenosis (Merck Thomas Oct 2021 / Apr 2025)
 
-No dedicated Plunkett DLSS chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025). Packet 223 still owns named wobbler / CSM. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 222 still owns named Boxer axonopathy. Atlantoaxial subluxation is the next room, not this dump. Do not harvest methylpred 1 as lobby law.
+No dedicated Plunkett DLSS chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025). Packet 223 still owns named wobbler / CSM. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 222 still owns named Boxer axonopathy. Packet 225 owns named atlantoaxial subluxation. Do not harvest methylpred 1 as lobby law.
 
 Agree with Thomas: narrowing of the lumbosacral canal or foramina compresses the **cauda equina** or nerve roots. Most common in large-breed dogs, especially **German Shepherd Dogs**; **rare in cats**. From degeneration and protrusion of the **L7–S1** disk, ligamentum flavum hypertrophy, or rarely LS subluxation. GSD with **congenital transitional vertebrae** are at increased risk. Onset typically **3–7 years**: pelvic limb difficulty or lameness, tail weakness, incontinence. **Pain on palpation or extension of the lumbosacral joint is the most consistent finding.** May have proprioceptive deficits, muscle atrophy, or a weak pelvic flexor. Plain radiographs may show degeneration; **definitive diagnosis requires MRI, CT, or epidurography**. Mild pain-only may improve with **4–6 weeks of rest**. Printed epidural methylprednisolone acetate **1 mg/kg on day 1, 14, and 42** (~80% if pain and minimal deficits) stays on the page. Surgery if pain is refractory or there are neurologic deficits (dorsal laminectomy ± diskectomy; foramenotomy or stabilization in some). Printed **70–95%** improve with surgery; **preexisting urinary incontinence may not resolve**.
 
@@ -2256,3 +2256,21 @@ Book/public traps:
 - Do not call painless old-GSD DM this list.
 
 Night rule: named DLSS → **pain on LS extension. Image the LS junction.** △ Plumb.
+
+## 225. Atlantoaxial subluxation (Merck Parsley Mar 2026 spinal; Malek Mar 2025 musculoskeletal)
+
+No dedicated Plunkett atlantoaxial chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026) plus musculoskeletal congenital (Malek, Mar 2025). Packet 224 still owns named DLSS. Packet 223 still owns named wobbler / CSM. Packet 205 still owns named SRMA. Arachnoid diverticulum is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not flex the neck.
+
+Agree with Parsley: atlantoaxial subluxation is instability or increased mobility between **C1 (atlas) and C2 (axis)**. Most common as a congenital disorder in **young toy or miniature** dogs; occasionally congenital in large breeds including Rottweilers and Doberman Pinschers. Signs usually within the **first few years**: acute or slowly progressive **neck pain** or gait dysfunction from ataxia to tetraplegia. Radiographic confirmation (absent / aplastic dens; caudal dorsal displacement of C2 vs C1) should be followed by **stabilization using ventral fixation**. **The prognosis is guarded.** Agree with Malek: congenital form more common than acquired. Yorkie / Chihuahua / Pomeranian frequently; **large-breed dogs and cats as well**. Aplastic or hypoplastic dens, or absence / laxity of transverse or alar ligaments. Mild cases may wait for a traumatic event. Neurologic localization is **C1–C5**. Work-up often radiographs and CT. Surgery typically **ventral approach**. Prognosis depends on malformation severity, concurrent cord injury, and technique (dorsal vs ventral, implants) — printed implant table stays on that page.
+
+Night split: named atlantoaxial / AA lux / C1–C2 lux / aplastic dens is do not flex the neck; ventral fix; guarded. Bare Yorkie / bare neck pain does not fire. Named wobbler stays 223. Named DLSS stays 224. Named SRMA stays 205. Cat can fire.
+
+Book/public traps:
+
+- Do not flex the neck.
+- Do not harvest a surgery / implant table.
+- Do not send a tetraparetic toy neck home as a pull.
+- Do not call a Doberman wobbler this list.
+- Do not call LS pain this list.
+
+Night rule: named atlantoaxial → **do not flex the neck. Ventral fix. Guarded.** △ Plumb.

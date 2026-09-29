@@ -4506,6 +4506,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("image the ls junction", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_aalux_is_do_not_flex_the_neck(self):
+        b = analyze(
+            "dog",
+            "atlantoaxial subluxation, Yorkshire Terrier, neck pain, send home",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("atlantoaxial", loc)
+        self.assertIn("do not flex the neck", loc)
+        self.assertIn("ventral fix", loc)
+        self.assertIn("guarded", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("pain on ls extension", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not flex the neck", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("aplastic", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wobbler_is_not_aalux(self):
+        b = analyze("dog", "wobbler, Doberman, two-engine gait")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("two-engine gait", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertNotIn("ventral fix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dlss_is_not_aalux(self):
+        b = analyze(
+            "dog",
+            "degenerative lumbosacral stenosis, German Shepherd, pain on LS extension",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pain on ls extension", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_is_not_aalux(self):
+        b = analyze("dog", "Boxer, neck pain, fever, SRMA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("csf tonight", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_aalux(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertNotIn("ventral fix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_yorkie_neck_is_not_aalux(self):
+        b = analyze("dog", "Yorkshire Terrier, neck pain")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertNotIn("ventral fix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_aalux_still_do_not_flex(self):
+        b = analyze("cat", "atlantoaxial subluxation, aplastic dens")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("do not flex the neck", loc)
+        self.assertIn("ventral fix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

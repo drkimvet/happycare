@@ -153,6 +153,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-boxax` | Assessment | Progressive axonopathy of Boxer dogs |
 | `ddx-wobbler` | Assessment | Wobbler / caudal cervical spondylomyelopathy |
 | `ddx-dlss` | Assessment | DLSS / degenerative lumbosacral stenosis |
+| `ddx-aalux` | Assessment | Atlantoaxial subluxation |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -265,6 +266,7 @@ Suggested names are short so they show up after three letters.
 | `dc-boxax` | Discharge | After Boxer-axonopathy talk |
 | `dc-wobbler` | Discharge | After wobbler / CSM talk |
 | `dc-dlss` | Discharge | After DLSS / LS-stenosis talk |
+| `dc-aalux` | Discharge | After atlantoaxial-lux talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1970,6 +1972,21 @@ DDX:
 Do not: harvest methylpred 1. Confirm on plain films. Send incontinence home as arthritis.
 Do next: Name the LS pain. Image the junction. △ Plumb.
 
+### `ddx-aalux`
+
+Atlantoaxial — {{patient.name}}
+Age [first few years / other]. Breed [Yorkie / Chihuahua / Pomeranian / other]. Flexion [avoided / other]. Dens [aplastic / hypoplastic / not seen]. Imaging [lat rads / CT / other]. Surgeon [called / not yet].
+
+DDX:
+1. Atlantoaxial — **do not flex the neck. Ventral fix. Guarded**
+2. Young toy / miniature. Occasionally large-breed and cats
+3. Aplastic dens or ligament laxity. C1–C5. Rads and CT
+4. Not wobbler-only (223). Not DLSS-only (224). Not SRMA-only (205)
+5. Cat can fire
+
+Do not: flex the neck. Harvest a surgery table. Send a tetraparetic toy neck home as a pull.
+Do next: Immobilize. Do not flex. Image. Surgeon. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2901,6 +2918,14 @@ Return now for inability to walk, neck pain with collapse, or if you cannot keep
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new incontinence, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-aalux`
+
+{{patient.name}} was evaluated for atlantoaxial subluxation (an unstable joint between the first and second neck bones, often in small young dogs). Do not flex the neck. Advanced imaging and a surgeon decide about ventral stabilization. The outlook is guarded.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet. Keep the neck still as we showed you.
+
+Return now for inability to walk, worse neck pain, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

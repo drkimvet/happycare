@@ -1233,6 +1233,17 @@ DLSS_RE = re.compile(
     r"\bls extension\b",
     re.I,
 )
+# Bare "aa" is AAHA. Bare Yorkie / bare neck pain is not enough.
+# Not wobbler (223). Not DLSS (224). Not SRMA (205). Dog or cat.
+AA_LUX_RE = re.compile(
+    r"atlantoaxial|"
+    r"atlanto[- ]axial|"
+    r"\baa (lux|sublux|instabil)|"
+    r"\bc1[- ]c2 (lux|sublux|instabil)|"
+    r"absent dens|"
+    r"aplastic dens",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5297,6 +5308,7 @@ def analyze(
     steal_boxax = BOXER_AXON_RE.search(text)
     steal_wobbler = WOBBLER_RE.search(text)
     steal_dlss = DLSS_RE.search(text)
+    steal_aalux = AA_LUX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5323,6 +5335,7 @@ def analyze(
         or steal_boxax
         or steal_wobbler
         or steal_dlss
+        or steal_aalux
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6336,6 +6349,67 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for DLSS.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for DLSS.")
+
+    aalux_named = spec in {"dog", "cat"} and AA_LUX_RE.search(text)
+    if aalux_named and not (
+        DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        aalux_loc = (
+            "Atlantoaxial. Do not flex the neck. "
+            "Ventral fix. Guarded."
+        )
+        localization = f"{localization} Also {aalux_loc}" if localization else aalux_loc
+        hard_stops.append(
+            "Do not flex the neck. "
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send a tetraparetic toy neck home as a pull."
+        )
+        do_not.append(
+            "Young toy / miniature (Yorkie / Chihuahua / Pomeranian). "
+            "Occasionally large-breed and cats. "
+            "Aplastic or hypoplastic dens, or ligament laxity. "
+            "First few years. C1–C5: neck pain to ataxia to tetraplegia. "
+            "Mild cases may wait for trauma. Rads and CT. "
+            "Ventral fixation is the usual surgery. Prognosis is guarded. "
+            "Not wobbler-only. Not DLSS-only. Not SRMA-only."
+        )
+        do_next.append(
+            "Immobilize. Do not flex. Image. Surgeon. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "atlantoaxial subluxation; young toy or miniature; "
+            "occasionally Rottweiler / Doberman; first few years; "
+            "neck pain or ataxia to tetraplegia; radiographic confirmation "
+            "then ventral fixation; prognosis guarded. "
+            "Merck musculoskeletal congenital (Malek, Mar 2025): "
+            "congenital more common than acquired; Yorkie / Chihuahua / Pomeranian; "
+            "cats also; aplastic or hypoplastic dens or ligament laxity; "
+            "C1–C5; rads and CT; ventral approach most common."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send atlantoaxial lux home as a pulled neck."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for atlantoaxial lux.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for atlantoaxial lux.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
