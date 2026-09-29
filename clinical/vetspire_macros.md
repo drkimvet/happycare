@@ -155,6 +155,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dlss` | Assessment | DLSS / degenerative lumbosacral stenosis |
 | `ddx-aalux` | Assessment | Atlantoaxial subluxation |
 | `ddx-arach` | Assessment | Arachnoid diverticulum |
+| `ddx-hemiv` | Assessment | Hemivertebra / congenital vertebral malformation |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -269,6 +270,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dlss` | Discharge | After DLSS / LS-stenosis talk |
 | `dc-aalux` | Discharge | After atlantoaxial-lux talk |
 | `dc-arach` | Discharge | After arachnoid-diverticulum talk |
+| `dc-hemiv` | Discharge | After hemivertebra talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2004,6 +2006,21 @@ DDX:
 Do not: harvest a surgery table. Send progressive young-dog ataxia home as a disc. Call it a syrinx or COMS.
 Do next: Image (MRI or myelo). Recurrence conversation. △ Plumb.
 
+### `ddx-hemiv`
+
+Hemivertebra — {{patient.name}}
+Breed [Pug / Frenchie / English Bulldog / GSHP / other]. Type [hemi / block / butterfly / other]. Neurologic [none / ataxia / paresis / other]. Imaging [rads / CT / MRI / not yet]. Compression [yes / no / unknown]. Surgeon [called / not yet].
+
+DDX:
+1. Hemivertebra — **often incidental. Pug more than Frenchie**
+2. Shortened / misshapen, block, or butterfly. Screw-tailed breeds
+3. Printed 80% of neurologically normal Pugs / Frenchies / English Bulldogs stay on the page
+4. Not arachnoid-only (226). Not AA-only (225). Not wobbler-only (223)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Harvest 80 percent. Send a compressive screw-tail home as incidental.
+Do next: Name the malformation. Image (rads or CT; MRI if cord). Surgeon if compressive. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2947,6 +2964,14 @@ Return now for inability to walk, worse neck pain, or if you cannot keep them co
 ### `dc-arach`
 
 {{patient.name}} was evaluated for an arachnoid diverticulum (a CSF pocket that can compress the spinal cord, usually in young dogs). Diagnosis is MRI or myelography. Surgery can help, but the pocket can come back.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-hemiv`
+
+{{patient.name}} was evaluated for a congenital vertebral malformation such as a hemivertebra (a shortened or misshapen back bone, common in screw-tailed breeds). Many of these are found by chance. Imaging decides whether the cord is compressed. If surgery is needed it is often decompression plus stabilization.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

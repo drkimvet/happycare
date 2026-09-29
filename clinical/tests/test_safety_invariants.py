@@ -532,6 +532,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("arachnoid diverticulum", VERIF.lower())
         self.assertIn("mri or myelo", VERIF.lower())
         self.assertIn("recurrence possible", VERIF.lower())
+        self.assertIn("hemivertebra", VERIF.lower())
+        self.assertIn("often incidental", VERIF.lower())
+        self.assertIn("pug more than frenchie", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -838,10 +841,14 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-aalux`", MACRO)
         self.assertIn("`ddx-arach`", MACRO)
         self.assertIn("`dc-arach`", MACRO)
+        self.assertIn("`ddx-hemiv`", MACRO)
+        self.assertIn("`dc-hemiv`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
         self.assertIn("recurrence possible", MACRO.lower())
+        self.assertIn("often incidental", MACRO.lower())
+        self.assertIn("pug more than frenchie", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1177,6 +1184,9 @@ class PublicCardInvariants(unittest.TestCase):
             "arachnoid diverticulum",
             "mri or myelo",
             "recurrence possible",
+            "hemivertebra",
+            "often incidental",
+            "pug more than frenchie",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

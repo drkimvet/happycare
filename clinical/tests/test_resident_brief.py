@@ -4649,6 +4649,81 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("recurrence possible", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hemiv_is_often_incidental_pug_more_than_frenchie(self):
+        b = analyze(
+            "dog",
+            "hemivertebra, French Bulldog, kyphosis",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("hemivertebra", loc)
+        self.assertIn("often incidental", loc)
+        self.assertIn("pug more than frenchie", loc)
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("often incidental", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("80 percent", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_arach_is_not_hemiv(self):
+        b = analyze(
+            "dog",
+            "arachnoid diverticulum, young dog, progressive ataxia",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mri or myelo", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aalux_is_not_hemiv(self):
+        b = analyze(
+            "dog",
+            "atlantoaxial subluxation, Yorkshire Terrier, neck pain, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("do not flex the neck", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coms_is_not_hemiv(self):
+        b = analyze(
+            "dog",
+            "COMS, Chiari-like, phantom scratch, Cavalier, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wobbler_is_not_hemiv(self):
+        b = analyze("dog", "wobbler, Doberman, two-engine gait")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("two-engine gait", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_frenchie_is_not_hemiv(self):
+        b = analyze("dog", "French Bulldog, kyphosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertNotIn("hemivertebra", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_hemiv(self):
+        b = analyze("cat", "hemivertebra, kyphosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("pug more than frenchie", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

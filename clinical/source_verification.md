@@ -2277,7 +2277,7 @@ Night rule: named atlantoaxial → **do not flex the neck. Ventral fix. Guarded.
 
 ## 226. Arachnoid diverticulum (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett arachnoid-diverticulum chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 209 still owns named hydrocephalus. Packet 185 still owns named IVDD. Hemivertebra / congenital vertebral malformation is the next room, not this dump. Do not harvest a surgery table as lobby law.
+No dedicated Plunkett arachnoid-diverticulum chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 209 still owns named hydrocephalus. Packet 185 still owns named IVDD. Packet 227 owns named hemivertebra / congenital vertebral malformation. Do not harvest a surgery table as lobby law.
 
 Agree with Parsley: arachnoid diverticuli (also called arachnoid cysts, arachnoid pseudocysts, meningeal cysts, leptomeningeal cysts, subarachnoid cysts) cause CSF accumulations and focal myelopathy in **young dogs**. Cause unknown; some congenital. Progressive ataxia and weakness. Diagnosis: myelography and/or MRI. Prognosis might be favorable after surgical excision; **recurrence is possible**.
 
@@ -2292,3 +2292,21 @@ Book/public traps:
 - Do not call wobbler this list.
 
 Night rule: named arachnoid diverticulum → **MRI or myelo. Recurrence possible.** △ Plumb.
+
+## 227. Hemivertebra / congenital vertebral malformation (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett hemivertebra chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Caudal articular hypoplasia is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest 80 percent as lobby law.
+
+Agree with Parsley: congenital vertebral malformations in dogs include **hemivertebrae** (shortened or misshapen vertebrae), **block (fused) vertebrae**, and **butterfly vertebrae** (sagittal cleft). Hemivertebrae are most common in **screw-tailed** dog breeds and are inherited in German Shorthaired Pointers. Printed **80 percent** of neurologically normal Pugs, French Bulldogs, and English Bulldogs have vertebral malformations — that number stays on the page. The likelihood that these malformations will be clinically important is **greater in Pugs than in French Bulldogs**. Decompressive surgery can be successful; often surgery needs to be combined with spinal stabilization. Plain radiography or CT can help for vertebral malformations.
+
+Night split: named hemivertebra / block vertebra / butterfly vertebra / congenital vertebral malformation is often incidental; Pug more than Frenchie. Bare Pug / Frenchie / screw-tail does not fire. Named arachnoid stays 226. Named AA stays 225. Named wobbler stays 223. Named COMS stays 212. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest 80 percent.
+- Do not send a compressive screw-tail home as incidental.
+- Do not call arachnoid this list.
+- Do not call AA lux this list.
+
+Night rule: named hemivertebra → **often incidental. Pug more than Frenchie.** △ Plumb.

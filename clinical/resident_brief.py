@@ -1253,6 +1253,16 @@ ARACH_DIV_RE = re.compile(
     r"subarachnoid cyst",
     re.I,
 )
+# Bare Pug / Frenchie / Bulldog / screw-tail is not enough.
+# Not arachnoid (226). Not AA (225). Not wobbler (223). Dogs only.
+HEMIV_RE = re.compile(
+    r"hemivertebr|"
+    r"block vertebr|"
+    r"butterfly vertebr|"
+    r"congenital vertebral|"
+    r"vertebral malform",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5319,6 +5329,7 @@ def analyze(
     steal_dlss = DLSS_RE.search(text)
     steal_aalux = AA_LUX_RE.search(text)
     steal_arach = ARACH_DIV_RE.search(text)
+    steal_hemiv = HEMIV_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5347,6 +5358,7 @@ def analyze(
         or steal_dlss
         or steal_aalux
         or steal_arach
+        or steal_hemiv
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6480,6 +6492,74 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for arachnoid diverticulum.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for arachnoid diverticulum.")
+
+    hemiv_named = spec == "dog" and HEMIV_RE.search(text)
+    if hemiv_named and not (
+        ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        hemiv_loc = (
+            "Hemivertebra. Often incidental. "
+            "Pug more than Frenchie."
+        )
+        localization = f"{localization} Also {hemiv_loc}" if localization else hemiv_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest 80 percent as lobby law. "
+            "Do not send a compressive screw-tail home as incidental."
+        )
+        do_not.append(
+            "Often incidental. "
+            "Shortened or misshapen, block (fused), or butterfly (sagittal cleft). "
+            "Most common in screw-tailed breeds. Inherited in German Shorthaired Pointers. "
+            "Printed 80 percent of neurologically normal Pugs / French Bulldogs / "
+            "English Bulldogs stay on the page. "
+            "Clinically important more in Pugs than French Bulldogs. "
+            "Rads or CT. Decomp may work; often needs stabilization. "
+            "Not arachnoid-only. Not AA-only. Not wobbler-only. "
+            "Not COMS-only. Not IVDD-only."
+        )
+        do_next.append(
+            "Name the malformation. Image (rads or CT; MRI if cord). "
+            "Surgeon if compressive. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "congenital vertebral malformations include hemivertebrae "
+            "(shortened or misshapen), block (fused) vertebrae, and "
+            "butterfly vertebrae (sagittal cleft); most common in screw-tailed "
+            "breeds; inherited in German Shorthaired Pointers; printed 80 percent "
+            "of neurologically normal Pugs / French Bulldogs / English Bulldogs; "
+            "clinically important more in Pugs than French Bulldogs; "
+            "decompressive surgery can succeed, often combined with stabilization; "
+            "plain radiography or CT can help for vertebral malformations."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a compressive screw-tail home as incidental."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for hemivertebra.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for hemivertebra.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
