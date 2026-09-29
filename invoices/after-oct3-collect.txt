@@ -1,0 +1,96 @@
+10월 3일 이후 — 받아내는 순서
+오늘: 2026-09-29 (화) · 기한: 2026-10-03 (금) · 청구: $5,950.00
+변호사가 아닌 실무 계획. 3년 전 패소는 메일·소장에 쓰지 않음.
+
+왜 나소가 아니라 맨해튼인가
+  나소 스몰클레임 한도 $5,000. $5,950이 안 들어감.
+  NYC 스몰클레임 한도 $10,000. 미드타운 252 E 57 St가 NYC 사업장.
+  당신 주소는 브룩빌(시 밖)이라 맨해튼에 우편 접수 가능.
+  피고 정식 이름: UR VET CARE, LLC (NY DOS ID 6509023)
+  접수 전 apps.dos.ny.gov 에서 이름·주소를 한 번 더 확인.
+
+------------------------------------------------
+10월 3일 금요일까지 (아직 법원 아님)
+------------------------------------------------
+1. 받은편지함 검색: Cole / Salary and Production / $5,950
+   보낸 메일 + 첨부 스크린샷. 스팸함도.
+2. 증거 폴더를 USB + 출력 2부.
+     A  ADP 9/25 $5,550
+     B  ADP View statement (시간 내역)
+     C  9/10 12시간 스케줄
+     D  “집 가 있어, 오면 부를게” 글
+     E  그날 전화 기록 (안 부름)
+     F  9/13 에이미 Per Diem 메일
+     G  9/23 콜 메일 3통 (프로셀 / 당신 $9,900 / 회사 방침)
+     H  에이미 9/24 11:44 PM $300/hour 문자
+     I  INV-2026-0915, 0919, 0924
+     J  10월 3일 기한 청구 메일 (보낸시간 보이게)
+3. 시프트 계속 안 감.
+
+------------------------------------------------
+10월 3일 밤 (무응답이면)
+------------------------------------------------
+4. 받은편지함·스팸 전체 캡처. “No reply as of 10/3/2026 11:59 PM ET.”
+5. 아래 마지막 통지 메일 발송 (draft-final-notice-oct3.txt).
+   내용: 10월 6일 월요일까지 $5,950 없으면 맨해튼 스몰클레임.
+   새 협상 없음. $5,950만.
+
+------------------------------------------------
+10월 6일 월요일 — 소장
+------------------------------------------------
+6. 피고 이름 조회
+   https://apps.dos.ny.gov/publicInquiry
+   검색: UR VET CARE, LLC / 6509023
+   출력해서 소장에 그 철자 그대로.
+
+7. 맨해튼 Civil Court Small Claims
+   111 Centre Street, New York, NY 10013
+   Room 322 · (646) 386-5484
+   한도 $10,000 · 인지 $20 (클레임 $1,000 초과)
+   현금 우편 금지. Money order / certified check
+   수취인: Clerk of the Civil Court  또는  CLERK, CIVIL COURT
+   개인수표 안 됨.
+
+   시 밖에 살면 우편 접수 가능:
+   작성한 Statement of Claim + $20 +
+   반송용 6x9 봉투(우표 3온스분)
+   양식: ny courts small claims CIV-SC-50
+   https://nycourts.gov/COURTS/nyc/smallclaims/startingcase.shtml
+   청구 문장: statement-of-claim-nyc.txt 그대로.
+
+   피고 주소 (사업장, PO박스 안 됨):
+   UR VET CARE, LLC
+   252 East 57th Street
+   New York, NY 10022
+   (DOS 프로세스 주소가 다르면 조회 결과를 같이 냄)
+
+8. 법원 날짜는 접수 후 약 6주. 저녁 기일이 기본.
+   출석 전 증거 A–J를 탭으로 묶고, 사본 3부
+   (나 / 상대 / 판사).
+
+------------------------------------------------
+법정에서 (2분)
+------------------------------------------------
+9. 읽을 말:
+   I am an independent veterinarian. They booked me, paid $5,550 of
+   $9,900 for September 8–19, and nothing on the September 24–25
+   invoice. That is $5,950 unpaid. September 10 was a 12-hour booking.
+   After about three hours they sent me home and said they would call
+   if a client came. They did not call. Nine hours at $250 is $2,250.
+   I asked in writing for payment by October 3. They did not pay.
+   그다음 폴더만 넘김. 3년 전, GLG, 우버, 녹음 이야기 하지 않음.
+
+------------------------------------------------
+이긴 뒤 안 주면
+------------------------------------------------
+10. 판결문 받기 → 14일 대기 →
+    information subpoena / bank levy / NYC marshal.
+    승소만으로 통장에 안 들어옴. 집행이 마지막 단계.
+    ny courts “Collecting a Judgment” 가이드.
+
+하지 말 것
+  나소에 $5,950 넣기 (한도 초과).
+  23%까지 한 번에 넣어 사건 흐리기. 1차는 시급 $5,950.
+  3년 전 패소를 자백처럼 쓰기.
+  시프트 다시 서서 “이번엔 잘 해주겠지.”
+  변호사 시간당으로 $5,950 사건 키우기. 스몰클레임이 맞음.
