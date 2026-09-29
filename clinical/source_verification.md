@@ -2259,7 +2259,7 @@ Night rule: named DLSS → **pain on LS extension. Image the LS junction.** △ 
 
 ## 225. Atlantoaxial subluxation (Merck Parsley Mar 2026 spinal; Malek Mar 2025 musculoskeletal)
 
-No dedicated Plunkett atlantoaxial chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026) plus musculoskeletal congenital (Malek, Mar 2025). Packet 224 still owns named DLSS. Packet 223 still owns named wobbler / CSM. Packet 205 still owns named SRMA. Arachnoid diverticulum is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not flex the neck.
+No dedicated Plunkett atlantoaxial chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026) plus musculoskeletal congenital (Malek, Mar 2025). Packet 224 still owns named DLSS. Packet 223 still owns named wobbler / CSM. Packet 205 still owns named SRMA. Packet 226 owns named arachnoid diverticulum. Do not harvest a surgery table as lobby law. Do not flex the neck.
 
 Agree with Parsley: atlantoaxial subluxation is instability or increased mobility between **C1 (atlas) and C2 (axis)**. Most common as a congenital disorder in **young toy or miniature** dogs; occasionally congenital in large breeds including Rottweilers and Doberman Pinschers. Signs usually within the **first few years**: acute or slowly progressive **neck pain** or gait dysfunction from ataxia to tetraplegia. Radiographic confirmation (absent / aplastic dens; caudal dorsal displacement of C2 vs C1) should be followed by **stabilization using ventral fixation**. **The prognosis is guarded.** Agree with Malek: congenital form more common than acquired. Yorkie / Chihuahua / Pomeranian frequently; **large-breed dogs and cats as well**. Aplastic or hypoplastic dens, or absence / laxity of transverse or alar ligaments. Mild cases may wait for a traumatic event. Neurologic localization is **C1–C5**. Work-up often radiographs and CT. Surgery typically **ventral approach**. Prognosis depends on malformation severity, concurrent cord injury, and technique (dorsal vs ventral, implants) — printed implant table stays on that page.
 
@@ -2274,3 +2274,21 @@ Book/public traps:
 - Do not call LS pain this list.
 
 Night rule: named atlantoaxial → **do not flex the neck. Ventral fix. Guarded.** △ Plumb.
+
+## 226. Arachnoid diverticulum (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett arachnoid-diverticulum chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 209 still owns named hydrocephalus. Packet 185 still owns named IVDD. Hemivertebra / congenital vertebral malformation is the next room, not this dump. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: arachnoid diverticuli (also called arachnoid cysts, arachnoid pseudocysts, meningeal cysts, leptomeningeal cysts, subarachnoid cysts) cause CSF accumulations and focal myelopathy in **young dogs**. Cause unknown; some congenital. Progressive ataxia and weakness. Diagnosis: myelography and/or MRI. Prognosis might be favorable after surgical excision; **recurrence is possible**.
+
+Night split: named arachnoid diverticulum / arachnoid cyst / meningeal cyst is MRI or myelo; recurrence possible. Bare young-dog ataxia does not fire. Named AA stays 225. Named wobbler stays 223. Named COMS stays 212. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send progressive young-dog ataxia home as a disc.
+- Do not call it a syrinx or COMS.
+- Do not call AA lux this list.
+- Do not call wobbler this list.
+
+Night rule: named arachnoid diverticulum → **MRI or myelo. Recurrence possible.** △ Plumb.

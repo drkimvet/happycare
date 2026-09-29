@@ -154,6 +154,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-wobbler` | Assessment | Wobbler / caudal cervical spondylomyelopathy |
 | `ddx-dlss` | Assessment | DLSS / degenerative lumbosacral stenosis |
 | `ddx-aalux` | Assessment | Atlantoaxial subluxation |
+| `ddx-arach` | Assessment | Arachnoid diverticulum |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -267,6 +268,7 @@ Suggested names are short so they show up after three letters.
 | `dc-wobbler` | Discharge | After wobbler / CSM talk |
 | `dc-dlss` | Discharge | After DLSS / LS-stenosis talk |
 | `dc-aalux` | Discharge | After atlantoaxial-lux talk |
+| `dc-arach` | Discharge | After arachnoid-diverticulum talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -1987,6 +1989,21 @@ DDX:
 Do not: flex the neck. Harvest a surgery table. Send a tetraparetic toy neck home as a pull.
 Do next: Immobilize. Do not flex. Image. Surgeon. △ Plumb.
 
+### `ddx-arach`
+
+Arachnoid diverticulum — {{patient.name}}
+Age [young / other]. Signs [progressive ataxia / weakness / other]. Imaging [MRI / myelo / not yet]. Surgery [discussed / not yet]. Recurrence [discussed / not yet].
+
+DDX:
+1. Arachnoid diverticulum — **MRI or myelo. Recurrence possible**
+2. Young dogs. CSF accumulation. Focal myelopathy. Some congenital
+3. Progressive ataxia and weakness
+4. Not AA-only (225). Not wobbler-only (223). Not COMS/syrinx-only (212)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Send progressive young-dog ataxia home as a disc. Call it a syrinx or COMS.
+Do next: Image (MRI or myelo). Recurrence conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -2926,6 +2943,14 @@ Return now for inability to walk, new incontinence, or if you cannot keep them c
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet. Keep the neck still as we showed you.
 
 Return now for inability to walk, worse neck pain, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-arach`
+
+{{patient.name}} was evaluated for an arachnoid diverticulum (a CSF pocket that can compress the spinal cord, usually in young dogs). Diagnosis is MRI or myelography. Surgery can help, but the pocket can come back.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

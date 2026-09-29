@@ -4574,6 +4574,81 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("ventral fix", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_arach_is_mri_or_myelo_recurrence_possible(self):
+        b = analyze(
+            "dog",
+            "arachnoid diverticulum, young dog, progressive ataxia",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("arachnoid diverticulum", loc)
+        self.assertIn("mri or myelo", loc)
+        self.assertIn("recurrence possible", loc)
+        self.assertNotIn("do not flex the neck", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("phantom scratch is a syrinx", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mri or myelo", joined)
+        self.assertIn("recurrence possible", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aalux_is_not_arach(self):
+        b = analyze(
+            "dog",
+            "atlantoaxial subluxation, Yorkshire Terrier, neck pain, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("do not flex the neck", loc)
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("recurrence possible", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wobbler_is_not_arach(self):
+        b = analyze("dog", "wobbler, Doberman, two-engine gait")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("two-engine gait", loc)
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("recurrence possible", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_coms_is_not_arach(self):
+        b = analyze(
+            "dog",
+            "COMS, Chiari-like, phantom scratch, Cavalier, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("phantom scratch is a syrinx tonight", loc)
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("recurrence possible", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ivdd_is_not_arach(self):
+        b = analyze(
+            "dog",
+            "IVDD, dachshund, non-ambulatory, deep pain lost, NSAID, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lameness versus ataxia", loc)
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("recurrence possible", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_young_dog_ataxia_is_not_arach(self):
+        b = analyze("dog", "young dog, progressive ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("recurrence possible", loc)
+        self.assertNotIn("arachnoid diverticulum", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_arach(self):
+        b = analyze("cat", "arachnoid diverticulum, progressive ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mri or myelo", loc)
+        self.assertNotIn("recurrence possible", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
