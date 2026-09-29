@@ -158,6 +158,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hemiv` | Assessment | Hemivertebra / congenital vertebral malformation |
 | `ddx-caphyp` | Assessment | Caudal articular hypoplasia |
 | `ddx-mce` | Assessment | Multiple cartilaginous exostosis |
+| `ddx-dysraph` | Assessment | Spinal dysraphism / myelodysplasia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -275,6 +276,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hemiv` | Discharge | After hemivertebra talk |
 | `dc-caphyp` | Discharge | After caudal-articular-hypoplasia talk |
 | `dc-mce` | Discharge | After cartilaginous-exostosis talk |
+| `dc-dysraph` | Discharge | After spinal-dysraphism talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2055,6 +2057,21 @@ DDX:
 Do not: harvest a surgery table. Send a vertebral mass home as incidental OA.
 Do next: Name the mass. Image. Surgeon. Recurrence conversation. △ Plumb.
 
+### `ddx-dysraph`
+
+Spinal dysraphism — {{patient.name}}
+Breed [Weimaraner / other]. Age [4–6 weeks / other]. Gait [bunny-hop / other]. Bilateral flexor [yes / no / not tested]. Imaging [myelo / MRI / not yet].
+
+DDX:
+1. Spinal dysraphism — **bunny-hop by 4–6 weeks. Usually nonprogressive**
+2. Also myelodysplasia. Neural tissues, not vertebrae
+3. Inherited in Weimaraners. Bilateral flexor reflex. No treatment
+4. Not spina-bifida-only (next). Not hypomyelin-only (214). Not MCE-only (229)
+5. Cat does not fire
+
+Do not: harvest a surgery table. Send a 5-week bunny-hop home as hip dysplasia. Call it spina bifida-only.
+Do next: Name the gait. Image if needed. Do not promise surgery. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3026,6 +3043,14 @@ Return now for inability to walk, worse ataxia, or if you cannot keep them comfo
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, a new painful lump, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-dysraph`
+
+{{patient.name}} was evaluated for spinal dysraphism (a neural-tube problem of the spinal cord, also called myelodysplasia, seen in young Weimaraners and some other breeds). The bunny-hop gait is usually present by 4 to 6 weeks and typically does not get worse. There is no specific treatment.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

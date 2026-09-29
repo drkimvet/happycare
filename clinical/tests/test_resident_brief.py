@@ -4866,6 +4866,76 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("cartilaginous exostosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dysraph_is_bunny_hop_by_4_to_6_weeks(self):
+        b = analyze(
+            "dog",
+            "spinal dysraphism, Weimaraner, bunny-hopping",
+        )
+        loc = b["localization"].lower()
+        self.assertIn("spinal dysraphism", loc)
+        self.assertIn("bunny-hop by 4–6 weeks", loc)
+        self.assertIn("usually nonprogressive", loc)
+        self.assertNotIn("recurrence common", loc)
+        self.assertNotIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("often incidental", loc)
+        self.assertNotIn("lameness versus ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("bunny-hop by 4–6 weeks", joined)
+        self.assertIn("surgery table", joined)
+        self.assertIn("bilateral flexor", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mce_is_not_dysraph(self):
+        b = analyze(
+            "dog",
+            "multiple cartilaginous exostosis, German Shepherd",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("recurrence common", loc)
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("spinal dysraphism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemiv_is_not_dysraph(self):
+        b = analyze("dog", "hemivertebra, French Bulldog, kyphosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("often incidental", loc)
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("spinal dysraphism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypomy_is_not_dysraph(self):
+        b = analyze(
+            "dog",
+            "congenital hypomyelination, shaking puppy, 6 weeks, send home",
+        )
+        loc = (b["localization"] or "").lower()
+        self.assertIn("shaking puppy at 2–8 weeks", loc)
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("spinal dysraphism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_weimaraner_is_not_dysraph(self):
+        b = analyze("dog", "Weimaraner, 5 weeks")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("spinal dysraphism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_bunny_hop_is_not_dysraph(self):
+        b = analyze("dog", "bunny-hopping gait, young dog")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("spinal dysraphism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_dysraph(self):
+        b = analyze("cat", "spinal dysraphism, bunny-hopping")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("spinal dysraphism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

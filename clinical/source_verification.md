@@ -2331,7 +2331,7 @@ Night rule: named caudal articular hypoplasia → **instability. Often multiple 
 
 ## 229. Multiple cartilaginous exostosis (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett cartilaginous-exostosis chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 228 still owns named caudal articular hypoplasia. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 225 still owns named atlantoaxial. Packet 185 still owns named IVDD. Spinal dysraphism / myelodysplasia is the next room, not this dump. Do not harvest a surgery table as lobby law. Transitional vertebrae stay with 224.
+No dedicated Plunkett cartilaginous-exostosis chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 228 still owns named caudal articular hypoplasia. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 225 still owns named atlantoaxial. Packet 185 still owns named IVDD. Packet 230 owns named spinal dysraphism / myelodysplasia. Do not harvest a surgery table as lobby law. Transitional vertebrae stay with 224.
 
 Agree with Parsley: **multiple cartilaginous exostosis** occurs most commonly in **German Shepherd Dogs**. It is a **benign** proliferation of cartilage or bone that can affect the **ribs, long bones, or vertebrae**. It might have a familial basis. Treatment is **surgical removal**; however, **recurrence or occurrence at additional sites is common**.
 
@@ -2346,3 +2346,21 @@ Book/public traps:
 - Do not call caudal articular this list.
 
 Night rule: named cartilaginous exostosis → **benign. Recurrence common.** △ Plumb.
+
+## 230. Spinal dysraphism / myelodysplasia (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett spinal-dysraphism chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 214 still owns named hypomyelination / shaking puppy. Packet 185 still owns named IVDD. Spina bifida is the next room, not this dump. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: **spinal dysraphism** (also known as **myelodysplasia**) includes anomalies of the skin, vertebrae, and spinal cord secondary to faulty neural-tube closure. The term is generally used for **neural tissues rather than vertebrae**; where vertebral malformations occur, the condition is generally **spina bifida**. Inherited in **Weimaraners**; similar malformations in other breeds. Signs by **4–6 weeks**: paraparesis and a **symmetrical bunny-hopping** gait in the pelvic limbs. **Bilateral flexor reflex**: pinching one paw flexes both pelvic limbs. Scoliosis or abnormal hair streams on the dorsal neck. Diagnosis: clinical signs and myelography or MRI. **There is no treatment**; neurological deficits **usually do not progress**.
+
+Night split: named spinal dysraphism / myelodysplasia / bilateral flexor is bunny-hop by 4–6 weeks; usually nonprogressive. Bare Weimaraner / bare bunny-hop does not fire. Named hypomyelin stays 214. Named MCE stays 229. Named hemivertebra stays 227. Named IVDD stays 185. Cat does not fire. Spina bifida is the next room.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a 5-week bunny-hop home as hip dysplasia.
+- Do not call it spina bifida-only.
+- Do not call hypomyelin this list.
+- Do not call MCE this list.
+
+Night rule: named spinal dysraphism → **bunny-hop by 4–6 weeks. Usually nonprogressive.** △ Plumb.

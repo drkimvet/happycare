@@ -1276,6 +1276,14 @@ MCE_RE = re.compile(
     r"multiple cartilaginous",
     re.I,
 )
+# Bare Weimaraner / bare bunny-hop is not enough. Not spina bifida (next).
+# Not hypomyelin (214). Not MCE (229). Dogs only.
+DYSRAPH_RE = re.compile(
+    r"spinal dysraph|"
+    r"myelodysplas|"
+    r"bilateral flexor",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5345,6 +5353,7 @@ def analyze(
     steal_hemiv = HEMIV_RE.search(text)
     steal_caphyp = CAPHYP_RE.search(text)
     steal_mce = MCE_RE.search(text)
+    steal_dysraph = DYSRAPH_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5376,6 +5385,7 @@ def analyze(
         or steal_hemiv
         or steal_caphyp
         or steal_mce
+        or steal_dysraph
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6696,6 +6706,74 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for cartilaginous exostosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for cartilaginous exostosis.")
+
+    dysraph_named = spec == "dog" and DYSRAPH_RE.search(text)
+    if dysraph_named and not (
+        MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        dysraph_loc = (
+            "Spinal dysraphism. Bunny-hop by 4–6 weeks. "
+            "Usually nonprogressive."
+        )
+        localization = f"{localization} Also {dysraph_loc}" if localization else dysraph_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send a 5-week bunny-hop home as hip dysplasia. "
+            "Do not call it spina bifida-only."
+        )
+        do_not.append(
+            "Also called myelodysplasia. Neural tissues, not vertebrae. "
+            "Inherited in Weimaraners; other breeds too. "
+            "Bunny-hop by 4–6 weeks. Bilateral flexor reflex. "
+            "Scoliosis or abnormal dorsal-neck hair streams. Myelo or MRI. "
+            "No treatment. Deficits usually do not progress. "
+            "Not spina-bifida-only. Not hypomyelin-only. Not MCE-only. "
+            "Not hemivertebra-only."
+        )
+        do_next.append(
+            "Name the gait. Image if needed. Do not promise surgery. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital spinal (Parsley, Mar 2026): "
+            "spinal dysraphism (myelodysplasia); neural-tube closure; "
+            "term used for neural tissues rather than vertebrae "
+            "(vertebral malformations are generally spina bifida); "
+            "inherited in Weimaraners; similar malformations in other breeds; "
+            "signs by 4–6 weeks; paraparesis and symmetrical bunny-hopping; "
+            "bilateral flexor reflex; scoliosis or abnormal hair streams "
+            "on the dorsal neck; myelography or MRI; no treatment; "
+            "deficits usually do not progress."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a 5-week bunny-hop home as hip dysplasia."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for spinal dysraphism.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for spinal dysraphism.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

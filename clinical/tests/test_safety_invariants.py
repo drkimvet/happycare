@@ -541,6 +541,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("cartilaginous exostosis", VERIF.lower())
         self.assertIn("recurrence common", VERIF.lower())
         self.assertIn("german shepherd", VERIF.lower())
+        self.assertIn("spinal dysraphism", VERIF.lower())
+        self.assertIn("bunny-hop by 4–6 weeks", VERIF.lower())
+        self.assertIn("usually nonprogressive", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -853,6 +856,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-caphyp`", MACRO)
         self.assertIn("`ddx-mce`", MACRO)
         self.assertIn("`dc-mce`", MACRO)
+        self.assertIn("`ddx-dysraph`", MACRO)
+        self.assertIn("`dc-dysraph`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -861,6 +866,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("pug more than frenchie", MACRO.lower())
         self.assertIn("often multiple vertebrae", MACRO.lower())
         self.assertIn("recurrence common", MACRO.lower())
+        self.assertIn("bunny-hop by 4–6 weeks", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1203,6 +1209,9 @@ class PublicCardInvariants(unittest.TestCase):
             "often multiple vertebrae",
             "cartilaginous exostosis",
             "recurrence common",
+            "spinal dysraphism",
+            "bunny-hop by 4–6 weeks",
+            "usually nonprogressive",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
