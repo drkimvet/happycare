@@ -165,6 +165,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sma` | Assessment | Spinal muscular atrophy |
 | `ddx-pdemy` | Assessment | Mini Poodle demyelination |
 | `ddx-alex` | Assessment | Fibrinoid leukodystrophy / Alexander |
+| `ddx-globoid` | Assessment | Globoid cell / Krabbe |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -289,6 +290,7 @@ Suggested names are short so they show up after three letters.
 | `dc-sma` | Discharge | After spinal-muscular-atrophy talk |
 | `dc-pdemy` | Discharge | After Mini-Poodle-demyelination talk |
 | `dc-alex` | Discharge | After Alexander / fibrinoid talk |
+| `dc-globoid` | Discharge | After globoid-cell / Krabbe talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2174,6 +2176,21 @@ DDX:
 Do not: harvest a surgery table. Send personality change home as behavior. Call it PDEM-only.
 Do next: Name the leukodystrophy. Poor-prognosis conversation. △ Plumb.
 
+### `ddx-globoid`
+
+Globoid cell / Krabbe — {{patient.name}}
+Breed [Cairn / WHWT / other]. Course [ascending / cerebellar / both / other]. Species [dog / cat]. Genetic test [yes / not yet].
+
+DDX:
+1. Globoid cell — **ascending or cerebellar. Dogs and cats**
+2. Krabbe disease. Galactosylceramide beta-galactosidase. GALC stays on the page
+3. Printed 2–3 month death clock and AAV line stay on the page
+4. Not Alexander-only (236). Not PDEM-only (235). Not globoid-heart tamponade
+5. Cat can fire
+
+Do not: harvest a surgery table. Harvest a 2–3 month death clock. Send a Cairn puppy home as a disc. Call it Alexander-only.
+Do next: Name the storage. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3201,6 +3218,14 @@ Return now for inability to walk, trouble breathing, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, a sudden behavior change, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-globoid`
+
+{{patient.name}} was evaluated for globoid cell leukodystrophy (also called Krabbe disease). This inherited storage disease can look like an ascending paralysis or a cerebellar problem. Dogs and cats are both on this list. The printed gene name and the printed clock stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

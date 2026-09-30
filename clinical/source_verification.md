@@ -2457,7 +2457,7 @@ Night rule: named Mini Poodle demyelination → **2–4 months. Rapidly to tetra
 
 ## 236. Fibrinoid leukodystrophy / Alexander disease (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett fibrinoid-leukodystrophy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 235 still owns named Mini Poodle demyelination. Packet 234 still owns named SMA. Packet 218 still owns named LEM. Packet 220 still owns named Afghan myelopathy. Globoid cell leukodystrophy / Krabbe is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare Labrador. Do not put GFAP in the regex.
+No dedicated Plunkett fibrinoid-leukodystrophy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 235 still owns named Mini Poodle demyelination. Packet 234 still owns named SMA. Packet 218 still owns named LEM. Packet 220 still owns named Afghan myelopathy. Packet 237 owns named globoid cell leukodystrophy / Krabbe. Gangliosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare Labrador. Do not put GFAP in the regex.
 
 Agree with Parsley: **fibrinoid leukodystrophy** (**Alexander disease**) is an inherited disease affecting the **brain and spinal cord**, described in **Labrador Retrievers, Scottish Terriers, Miniature Poodles, Bernese Mountain Dogs, and French Bulldogs**. Onset **2 months to 4 years**. Progressive ataxia and tetraparesis, **with personality changes**. **Rosenthal fibers** around blood vessels of the CNS; astrocyte function. **Prognosis is poor.** Most mutations associated with **GFAP** stay on the page.
 
@@ -2472,3 +2472,21 @@ Book/public traps:
 - Do not harvest GFAP as lobby law.
 
 Night rule: named fibrinoid leukodystrophy → **personality changes. Rosenthal fibers.** △ Plumb.
+
+## 237. Globoid cell leukodystrophy / Krabbe (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett globoid-cell chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck myelin disorders names lipid-laden macrophages and GALC. Packet 236 still owns named Alexander / fibrinoid. Packet 235 still owns named Mini Poodle demyelination. Packet 218 still owns named LEM. Gangliosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bkrabbe\b` or `\bgloboid\b` (globoid heart is tamponade). Do not fire on bare Cairn / bare terrier / bare Poodle. Do not put GALC in the regex.
+
+Agree with Parsley: **globoid cell leukodystrophy** (**Krabbe disease**) is inherited; loss of **galactosylceramide beta-galactosidase**. Mainly **Cairn Terriers and West Highland White Terriers**, plus other dogs and cats. Signs are **variable and multifocal**: **ascending paralysis** alone or with **cerebellar** disturbance. Printed **2–3 month** death clock stays on the page. CSF protein can be increased. Large globoid cells perivascular in white matter of cord and brain. Genetic testing. Printed AAV gene-therapy line stays on the page. Merck myelin: lipid-laden macrophages; **GALC** stays on the table. Skip sheep.
+
+Night split: named globoid cell / Krabbe disease is ascending or cerebellar; dogs and cats. Bare Cairn / bare terrier / bare Poodle / globoid heart does not fire. Named Alexander stays 236. Named Mini Poodle demyelination stays 235. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 2–3 month death clock.
+- Do not send a Cairn puppy home as a disc.
+- Do not call it Alexander-only.
+- Do not treat globoid heart as this list.
+
+Night rule: named globoid cell → **ascending or cerebellar. Dogs and cats.** △ Plumb.

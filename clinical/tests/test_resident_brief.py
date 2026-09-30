@@ -5325,6 +5325,65 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("rosenthal fibers", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_globoid_is_ascending_or_cerebellar_dogs_and_cats(self):
+        b = analyze("dog", "globoid cell leukodystrophy")
+        loc = b["localization"].lower()
+        self.assertIn("globoid cell", loc)
+        self.assertIn("ascending or cerebellar", loc)
+        self.assertIn("dogs and cats", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertNotIn("poodle demyelination", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("cairn puppy", joined)
+        self.assertIn("alexander-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_alex_is_not_globoid(self):
+        b = analyze("dog", "Alexander disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("personality changes", loc)
+        self.assertNotIn("ascending or cerebellar", loc)
+        self.assertNotIn("globoid cell.", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pdemy_is_not_globoid(self):
+        b = analyze("dog", "demyelination of Miniature Poodles")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("poodle demyelination", loc)
+        self.assertNotIn("ascending or cerebellar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cairn_is_not_globoid(self):
+        b = analyze("dog", "Cairn Terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("globoid cell", loc)
+        self.assertNotIn("ascending or cerebellar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_poodle_is_not_globoid(self):
+        b = analyze("dog", "Miniature Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("globoid cell", loc)
+        self.assertNotIn("ascending or cerebellar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_globoid_heart_is_not_globoid(self):
+        b = analyze("dog", "globoid heart, tamponade")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ascending or cerebellar", loc)
+        self.assertNotIn("globoid cell", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_globoid_still_fires(self):
+        b = analyze("cat", "globoid cell leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("globoid cell", loc)
+        self.assertIn("ascending or cerebellar", loc)
+        self.assertIn("dogs and cats", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

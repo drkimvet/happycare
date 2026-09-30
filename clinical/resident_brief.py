@@ -1333,6 +1333,14 @@ ALEX_RE = re.compile(
     r"rosenthal fib",
     re.I,
 )
+# Do not use \bkrabbe\b or \bgloboid\b (globoid heart is tamponade).
+# Do not use \bgalc\b. Bare Cairn / WHWT / terrier / Poodle is not enough.
+# Not Alexander (236). Not Mini Poodle demyelination (235). Dog or cat.
+GLOBOID_RE = re.compile(
+    r"globoid cell|"
+    r"krabbe disease",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5409,6 +5417,7 @@ def analyze(
     steal_sma = SMA_RE.search(text)
     steal_pdem = PDEM_RE.search(text)
     steal_alex = ALEX_RE.search(text)
+    steal_globoid = GLOBOID_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5447,6 +5456,7 @@ def analyze(
         or steal_sma
         or steal_pdem
         or steal_alex
+        or steal_globoid
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7266,6 +7276,87 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for fibrinoid leukodystrophy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for fibrinoid leukodystrophy.")
+
+    globoid_named = spec in {"dog", "cat"} and GLOBOID_RE.search(text)
+    if globoid_named and not (
+        ALEX_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        globoid_loc = (
+            "Globoid cell. Ascending or cerebellar. "
+            "Dogs and cats."
+        )
+        localization = f"{localization} Also {globoid_loc}" if localization else globoid_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 2–3 month death clock as lobby law. "
+            "Do not send a Cairn puppy home as a disc. "
+            "Do not call it Alexander-only."
+        )
+        do_not.append(
+            "Krabbe disease. Loss of galactosylceramide beta-galactosidase. "
+            "Mainly Cairn and West Highland White Terriers; other dogs and cats. "
+            "Variable multifocal. Ascending paralysis or cerebellar disturbance. "
+            "Printed 2–3 month death clock stays on the page. "
+            "CSF protein can rise. Large globoid cells in white matter. "
+            "Genetic testing. Printed AAV line stays on the page. "
+            "GALC stays on the myelin table. Skip sheep. "
+            "Not Alexander-only. Not PDEM-only. Not LEM-only."
+        )
+        do_next.append(
+            "Name the storage. Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "globoid cell leukodystrophy (Krabbe disease); inherited; "
+            "loss of galactosylceramide beta-galactosidase; mainly Cairn "
+            "Terriers and West Highland White Terriers, other dogs and cats; "
+            "variable multifocal; ascending paralysis alone or with cerebellar "
+            "disturbance; printed 2–3 month death clock stays on the page; "
+            "CSF protein can be increased; large globoid cells perivascular "
+            "in white matter of cord and brain; genetic testing; printed AAV "
+            "gene-therapy line stays on the page. "
+            "Merck myelin disorders: lipid-laden macrophages; GALC stays "
+            "on the table; skip Dorset sheep."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Cairn puppy home as a disc."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for globoid cell leukodystrophy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for globoid cell leukodystrophy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
