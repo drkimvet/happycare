@@ -557,6 +557,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("looks like a neuropathy", VERIF.lower())
         self.assertIn("poodle demyelination", VERIF.lower())
         self.assertIn("rapidly to tetraplegia", VERIF.lower())
+        self.assertIn("fibrinoid leukodystrophy", VERIF.lower())
+        self.assertIn("personality changes", VERIF.lower())
+        self.assertIn("rosenthal fibers", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -881,6 +884,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-sma`", MACRO)
         self.assertIn("`ddx-pdemy`", MACRO)
         self.assertIn("`dc-pdemy`", MACRO)
+        self.assertIn("`ddx-alex`", MACRO)
+        self.assertIn("`dc-alex`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -895,6 +900,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("excise to dura", MACRO.lower())
         self.assertIn("looks like a neuropathy", MACRO.lower())
         self.assertIn("rapidly to tetraplegia", MACRO.lower())
+        self.assertIn("personality changes", MACRO.lower())
+        self.assertIn("rosenthal fibers", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1253,6 +1260,9 @@ class PublicCardInvariants(unittest.TestCase):
             "looks like a neuropathy",
             "poodle demyelination",
             "rapidly to tetraplegia",
+            "fibrinoid leukodystrophy",
+            "personality changes",
+            "rosenthal fibers",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

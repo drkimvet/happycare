@@ -2421,7 +2421,7 @@ Night rule: named dermoid sinus → **excise to dura. Can seed meningitis.** △
 
 ## 234. Spinal muscular atrophy (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett spinal-muscular-atrophy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 233 still owns named dermoid sinus. Packet 221 still owns named DM. Packet 235 owns named Mini Poodle demyelination. Fibrinoid leukodystrophy / Alexander disease is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bsma\b`. Do not fire on bare Brittany.
+No dedicated Plunkett spinal-muscular-atrophy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 233 still owns named dermoid sinus. Packet 221 still owns named DM. Packet 235 owns named Mini Poodle demyelination. Packet 236 owns named fibrinoid leukodystrophy / Alexander disease. Do not harvest a surgery table as lobby law. Do not use `\bsma\b`. Do not fire on bare Brittany.
 
 Agree with Parsley: **spinal muscular atrophy** is an inherited LMN disease of **Brittany Spaniels** with **early** (by 1 month), **intermediate** (by 4–6 months), and **delayed** (>1 year) forms. **Rottweilers:** an early form is called **motor neuron disease**. **Swedish Lapland** dogs 5–7 weeks; **Stockard paralysis** (Great Dane × Bloodhound or Saint Bernard) 11–14 weeks; **English Pointers** ~5 months; other puppies Doberman / Briquet Griffon Vendeen; a **focal thoracic-limb** form in GSD. Main sign: paraparesis or tetraparesis with **neurogenic muscle atrophy**. Severe generalized LMN **closely resembles peripheral neuropathy**. **Motor-neuron loss** on necropsy. **There is no treatment.**
 
@@ -2439,7 +2439,7 @@ Night rule: named spinal muscular atrophy → **looks like a neuropathy. No trea
 
 ## 235. Demyelination of Miniature Poodles (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett Mini-Poodle-demyelination chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 234 still owns named SMA. Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 220 still owns named Afghan myelopathy. Fibrinoid leukodystrophy / Alexander disease is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare demyelination.
+No dedicated Plunkett Mini-Poodle-demyelination chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 234 still owns named SMA. Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 220 still owns named Afghan myelopathy. Packet 236 owns named fibrinoid leukodystrophy / Alexander disease. Globoid cell leukodystrophy / Krabbe is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare demyelination.
 
 Agree with Parsley: **demyelination of Miniature Poodles** is presumed to be an **inherited** disorder involving **primarily the spinal cord**. This **rare** condition causes **paraparesis at 2–4 months** that **rapidly progresses to tetraplegia**. **There is no treatment.**
 
@@ -2454,3 +2454,21 @@ Book/public traps:
 - Do not call it APN-only.
 
 Night rule: named Mini Poodle demyelination → **2–4 months. Rapidly to tetraplegia.** △ Plumb.
+
+## 236. Fibrinoid leukodystrophy / Alexander disease (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett fibrinoid-leukodystrophy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 235 still owns named Mini Poodle demyelination. Packet 234 still owns named SMA. Packet 218 still owns named LEM. Packet 220 still owns named Afghan myelopathy. Globoid cell leukodystrophy / Krabbe is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare Labrador. Do not put GFAP in the regex.
+
+Agree with Parsley: **fibrinoid leukodystrophy** (**Alexander disease**) is an inherited disease affecting the **brain and spinal cord**, described in **Labrador Retrievers, Scottish Terriers, Miniature Poodles, Bernese Mountain Dogs, and French Bulldogs**. Onset **2 months to 4 years**. Progressive ataxia and tetraparesis, **with personality changes**. **Rosenthal fibers** around blood vessels of the CNS; astrocyte function. **Prognosis is poor.** Most mutations associated with **GFAP** stay on the page.
+
+Night split: named fibrinoid / Alexander disease / Rosenthal fibers is personality changes; Rosenthal fibers. Bare Poodle / bare Labrador / bare Frenchie does not fire. Named Mini Poodle demyelination stays 235. Named SMA stays 234. Named LEM stays 218. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send personality change home as behavior.
+- Do not call it Mini-Poodle-demyelination-only.
+- Do not call it SMA-only.
+- Do not harvest GFAP as lobby law.
+
+Night rule: named fibrinoid leukodystrophy → **personality changes. Rosenthal fibers.** △ Plumb.

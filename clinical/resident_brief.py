@@ -1325,6 +1325,14 @@ PDEM_RE = re.compile(
     r"demyelin.{0,40}poodle",
     re.I,
 )
+# Do not use \bpoodle\b or bare Labrador / Frenchie / leukodystroph (globoid next).
+# Not Mini Poodle demyelination (235). Not SMA (234). Dogs only.
+ALEX_RE = re.compile(
+    r"fibrinoid leukodystroph|"
+    r"alexander disease|"
+    r"rosenthal fib",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5400,6 +5408,7 @@ def analyze(
     steal_pilo = PILO_RE.search(text)
     steal_sma = SMA_RE.search(text)
     steal_pdem = PDEM_RE.search(text)
+    steal_alex = ALEX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5437,6 +5446,7 @@ def analyze(
         or steal_pilo
         or steal_sma
         or steal_pdem
+        or steal_alex
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7180,6 +7190,82 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Poodle demyelination.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Poodle demyelination.")
+
+    alex_named = spec == "dog" and ALEX_RE.search(text)
+    if alex_named and not (
+        PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        alex_loc = (
+            "Fibrinoid leukodystrophy. Personality changes. "
+            "Rosenthal fibers."
+        )
+        localization = f"{localization} Also {alex_loc}" if localization else alex_loc
+        hard_stops.append(
+            "Prognosis is poor. "
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send personality change home as behavior. "
+            "Do not call it PDEM-only."
+        )
+        do_not.append(
+            "Alexander disease. Brain and spinal cord. "
+            "Labrador / Scottish Terrier / Miniature Poodle / Bernese / "
+            "French Bulldog. Onset 2 months to 4 years. "
+            "Progressive ataxia and tetraparesis with personality changes. "
+            "Rosenthal fibers around vessels. Astrocyte disorder. "
+            "GFAP stays on the page. Prognosis is poor. "
+            "Not PDEM-only. Not SMA-only. Not LEM-only. Not Afghan-only."
+        )
+        do_next.append(
+            "Name the leukodystrophy. Poor-prognosis conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "fibrinoid leukodystrophy (Alexander disease); inherited; "
+            "brain and spinal cord; Labrador Retrievers, Scottish Terriers, "
+            "Miniature Poodles, Bernese Mountain Dogs, and French Bulldogs; "
+            "onset 2 months to 4 years; progressive ataxia and tetraparesis "
+            "with personality changes; Rosenthal fibers around blood vessels "
+            "of the CNS; astrocyte function; prognosis is poor; "
+            "most mutations associated with GFAP stay on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send personality change home as behavior."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for fibrinoid leukodystrophy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for fibrinoid leukodystrophy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

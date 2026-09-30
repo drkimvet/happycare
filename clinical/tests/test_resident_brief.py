@@ -5263,6 +5263,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("rapidly to tetraplegia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_alex_is_personality_changes_rosenthal_fibers(self):
+        b = analyze("dog", "Alexander disease")
+        loc = b["localization"].lower()
+        self.assertIn("fibrinoid leukodystrophy", loc)
+        self.assertIn("personality changes", loc)
+        self.assertIn("rosenthal fibers", loc)
+        self.assertNotIn("poodle demyelination", loc)
+        self.assertNotIn("rapidly to tetraplegia", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("behavior", joined)
+        self.assertIn("pdem-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pdemy_is_not_alex(self):
+        b = analyze("dog", "demyelination of Miniature Poodles")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("poodle demyelination", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sma_is_not_alex(self):
+        b = analyze("dog", "spinal muscular atrophy, Brittany Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("looks like a neuropathy", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_poodle_is_not_alex(self):
+        b = analyze("dog", "Miniature Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fibrinoid leukodystrophy", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_labrador_is_not_alex(self):
+        b = analyze("dog", "Labrador Retriever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fibrinoid leukodystrophy", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lem_is_not_alex(self):
+        b = analyze("dog", "leukoencephalomyelopathy, Rottweiler")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("delayed proprioception", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_alex(self):
+        b = analyze("cat", "Alexander disease, fibrinoid leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fibrinoid leukodystrophy", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
