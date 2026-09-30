@@ -166,6 +166,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pdemy` | Assessment | Mini Poodle demyelination |
 | `ddx-alex` | Assessment | Fibrinoid leukodystrophy / Alexander |
 | `ddx-globoid` | Assessment | Globoid cell / Krabbe |
+| `ddx-ganglio` | Assessment | Gangliosidosis GM1 / GM2 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -291,6 +292,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pdemy` | Discharge | After Mini-Poodle-demyelination talk |
 | `dc-alex` | Discharge | After Alexander / fibrinoid talk |
 | `dc-globoid` | Discharge | After globoid-cell / Krabbe talk |
+| `dc-ganglio` | Discharge | After gangliosidosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2191,6 +2193,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 2–3 month death clock. Send a Cairn puppy home as a disc. Call it Alexander-only.
 Do next: Name the storage. Genetic-test conversation. △ Plumb.
 
+### `ddx-ganglio`
+
+Gangliosidosis — {{patient.name}}
+Type [GM1 / GM2 / Derry / Sandhoff / Tay-Sachs / other]. Breed [Siamese / Korat / Beagle / other]. Cornea [clouded / clear / not checked]. Course [cerebellar / visual / behavior / other]. Genetic test [yes / not yet].
+
+DDX:
+1. Gangliosidosis — **cerebellar. Corneal clouding**
+2. GM1 / Derry / GLB1 and GM2 / HEXA / HEXB stay on the page
+3. Printed 6-month / 3-month clocks and AAV line stay on the page
+4. Not Krabbe-only (237). Not Alexander-only (236). Not CH-only (211)
+5. Cat can fire
+
+Do not: harvest a surgery table. Harvest a 3-month or 6-month clock. Send a Siamese wobble home as FPV. Call it Krabbe-only.
+Do next: Name the storage. Look at the cornea. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3226,6 +3243,14 @@ Return now for inability to walk, a sudden behavior change, trouble breathing, o
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-ganglio`
+
+{{patient.name}} was evaluated for gangliosidosis (an inherited storage disease that often looks cerebellar and can cloud the cornea). Dogs and cats are both on this list. The printed gene names and the printed clocks stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new blindness, a sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

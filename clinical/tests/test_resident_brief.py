@@ -5384,6 +5384,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("dogs and cats", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ganglio_is_cerebellar_corneal_clouding(self):
+        b = analyze("cat", "GM1 gangliosidosis")
+        loc = b["localization"].lower()
+        self.assertIn("gangliosidosis", loc)
+        self.assertIn("cerebellar", loc)
+        self.assertIn("corneal clouding", loc)
+        self.assertNotIn("globoid cell", loc)
+        self.assertNotIn("ascending or cerebellar", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("siamese wobble", joined)
+        self.assertIn("krabbe-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_globoid_is_not_ganglio(self):
+        b = analyze("dog", "globoid cell leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ascending or cerebellar", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_alex_is_not_ganglio(self):
+        b = analyze("dog", "Alexander disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("personality changes", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_ganglio(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_siamese_is_not_ganglio(self):
+        b = analyze("cat", "Siamese")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_beagle_is_not_ganglio(self):
+        b = analyze("dog", "Beagle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_ganglio_still_fires(self):
+        b = analyze("dog", "Sandhoff disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gangliosidosis", loc)
+        self.assertIn("corneal clouding", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

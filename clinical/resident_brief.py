@@ -1341,6 +1341,16 @@ GLOBOID_RE = re.compile(
     r"krabbe disease",
     re.I,
 )
+# Do not use bare Siamese / Korat / Beagle. Do not use \bgm\s*[12]\b alone.
+# Not globoid (237). Not Alexander (236). Not CH (211). Dog or cat.
+GANGLIO_RE = re.compile(
+    r"gangliosidos|"
+    r"gm\s*[12] gangliosid|"
+    r"derry disease|"
+    r"sandhoff|"
+    r"tay[- ]sachs",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5418,6 +5428,7 @@ def analyze(
     steal_pdem = PDEM_RE.search(text)
     steal_alex = ALEX_RE.search(text)
     steal_globoid = GLOBOID_RE.search(text)
+    steal_ganglio = GANGLIO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5457,6 +5468,7 @@ def analyze(
         or steal_pdem
         or steal_alex
         or steal_globoid
+        or steal_ganglio
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7357,6 +7369,91 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for globoid cell leukodystrophy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for globoid cell leukodystrophy.")
+
+    ganglio_named = spec in {"dog", "cat"} and GANGLIO_RE.search(text)
+    if ganglio_named and not (
+        GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        ganglio_loc = (
+            "Gangliosidosis. Cerebellar. "
+            "Corneal clouding."
+        )
+        localization = f"{localization} Also {ganglio_loc}" if localization else ganglio_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 3-month or 6-month clock as lobby law. "
+            "Do not send a Siamese wobble home as FPV. "
+            "Do not call it Krabbe-only."
+        )
+        do_not.append(
+            "GM1 is Derry disease; GLB1 stays on the page. "
+            "Primarily Asian-breed cats; also Beagle, Portuguese Water Dog, "
+            "English Springer, Alaskan Husky, Shiba. "
+            "Cerebellar signs predominate. Corneal clouding can develop. "
+            "GM2 is Sandhoff / Tay-Sachs; HEXA / HEXB stay on the page. "
+            "Printed 6-month dog and 3-month kitten clocks stay on the page. "
+            "Genetic testing. Printed AAV line stays on the page. "
+            "Not globoid-only. Not Alexander-only. Not CH-only."
+        )
+        do_next.append(
+            "Name the storage. Look at the cornea. Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "GM1 gangliosidosis (Derry disease); GLB1; primarily cats "
+            "especially Asian breeds including Siamese and Korat; also "
+            "Beagles, Portuguese Water Dogs, English Springer Spaniels, "
+            "Alaskan Huskies, and Shiba Inus; cerebellar dysfunction "
+            "predominates; corneal clouding can develop; genetic testing; "
+            "printed AAV line stays on the page. "
+            "GM2 gangliosidosis (Sandhoff, Tay-Sachs); GSHP, Japanese "
+            "Spaniel, Shiba, Japanese Chin, mixed-breed cats, Korat; "
+            "printed 6-month onset and later ataxia/dementia stay on the "
+            "page; kittens ataxia/hypermetria/head tremor/corneal opacity "
+            "at about 3 months stay on the page; HEXA / HEXB stay on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Siamese wobble home as FPV."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for gangliosidosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for gangliosidosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

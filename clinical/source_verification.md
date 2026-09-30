@@ -2475,7 +2475,7 @@ Night rule: named fibrinoid leukodystrophy → **personality changes. Rosenthal 
 
 ## 237. Globoid cell leukodystrophy / Krabbe (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett globoid-cell chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck myelin disorders names lipid-laden macrophages and GALC. Packet 236 still owns named Alexander / fibrinoid. Packet 235 still owns named Mini Poodle demyelination. Packet 218 still owns named LEM. Gangliosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bkrabbe\b` or `\bgloboid\b` (globoid heart is tamponade). Do not fire on bare Cairn / bare terrier / bare Poodle. Do not put GALC in the regex.
+No dedicated Plunkett globoid-cell chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck myelin disorders names lipid-laden macrophages and GALC. Packet 236 still owns named Alexander / fibrinoid. Packet 235 still owns named Mini Poodle demyelination. Packet 218 still owns named LEM. Packet 238 owns named gangliosidosis. Alpha-mannosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bkrabbe\b` or `\bgloboid\b` (globoid heart is tamponade). Do not fire on bare Cairn / bare terrier / bare Poodle. Do not put GALC in the regex.
 
 Agree with Parsley: **globoid cell leukodystrophy** (**Krabbe disease**) is inherited; loss of **galactosylceramide beta-galactosidase**. Mainly **Cairn Terriers and West Highland White Terriers**, plus other dogs and cats. Signs are **variable and multifocal**: **ascending paralysis** alone or with **cerebellar** disturbance. Printed **2–3 month** death clock stays on the page. CSF protein can be increased. Large globoid cells perivascular in white matter of cord and brain. Genetic testing. Printed AAV gene-therapy line stays on the page. Merck myelin: lipid-laden macrophages; **GALC** stays on the table. Skip sheep.
 
@@ -2490,3 +2490,21 @@ Book/public traps:
 - Do not treat globoid heart as this list.
 
 Night rule: named globoid cell → **ascending or cerebellar. Dogs and cats.** △ Plumb.
+
+## 238. Gangliosidosis GM1 / GM2 (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett gangliosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 237 still owns named globoid / Krabbe. Packet 236 still owns named Alexander. Packet 211 still owns named cerebellar hypoplasia / FPV wobble. Alpha-mannosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Siamese. Do not put GLB1 / HEXA / HEXB in the regex.
+
+Agree with Parsley: **GM1 gangliosidosis** (**Derry disease**) is fatal and progressive; **GLB1** stays on the page. Primarily cats, especially **Asian breeds** (Siamese, Korat, and others named on the page); also Beagles, Portuguese Water Dogs, English Springer Spaniels, Alaskan Huskies, and Shiba Inus. **Cerebellar** signs predominate; **corneal clouding** can develop. Genetic testing. Printed AAV line stays on the page. **GM2 gangliosidosis** (**Sandhoff**, **Tay-Sachs**) is reported in GSHP, Japanese Spaniel, Shiba, Japanese Chin, mixed-breed cats, and Korat. Printed **6-month** onset and later ataxia/dementia stay on the page. Kittens: ataxia, hypermetria, head tremor, corneal opacity at about **3 months** stay on the page. **HEXA / HEXB** stay on the page.
+
+Night split: named gangliosidosis / GM1 / GM2 / Derry / Sandhoff / Tay-Sachs is cerebellar; corneal clouding. Bare Siamese / bare Korat / bare Beagle does not fire. Named globoid stays 237. Named Alexander stays 236. Named CH stays 211. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 3-month or 6-month clock.
+- Do not send a Siamese wobble home as FPV.
+- Do not call it Krabbe-only.
+- Do not harvest AAV as lobby law.
+
+Night rule: named gangliosidosis → **cerebellar. Corneal clouding.** △ Plumb.
