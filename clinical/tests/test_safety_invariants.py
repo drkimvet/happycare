@@ -566,6 +566,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("corneal clouding", VERIF.lower())
         self.assertIn("alpha-mannosidosis", VERIF.lower())
         self.assertIn("retina and skeleton", VERIF.lower())
+        self.assertIn("ceroid lipofuscinosis", VERIF.lower())
+        self.assertIn("behavior and central blindness", VERIF.lower())
+        self.assertIn("late-onset", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -898,6 +901,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-ganglio`", MACRO)
         self.assertIn("`ddx-manno`", MACRO)
         self.assertIn("`dc-manno`", MACRO)
+        self.assertIn("`ddx-cln`", MACRO)
+        self.assertIn("`dc-cln`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -917,6 +922,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("ascending or cerebellar", MACRO.lower())
         self.assertIn("corneal clouding", MACRO.lower())
         self.assertIn("retina and skeleton", MACRO.lower())
+        self.assertIn("behavior and central blindness", MACRO.lower())
+        self.assertIn("late-onset", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1284,6 +1291,9 @@ class PublicCardInvariants(unittest.TestCase):
             "corneal clouding",
             "alpha-mannosidosis",
             "retina and skeleton",
+            "ceroid lipofuscinosis",
+            "behavior and central blindness",
+            "late-onset",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

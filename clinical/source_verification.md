@@ -2511,7 +2511,7 @@ Night rule: named gangliosidosis → **cerebellar. Corneal clouding.** △ Plumb
 
 ## 239. Alpha-mannosidosis (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck storage table names Persian and domestic cats. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 211 still owns named CH / FPV wobble. Ceroid lipofuscinosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Persian. Do not fire on dogs (alpha page is cats). Skip cattle and guinea pigs. Beta-mannosidosis one-dog / MANBA stays on the page.
+No dedicated Plunkett mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck storage table names Persian and domestic cats. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 211 still owns named CH / FPV wobble. Packet 240 owns named neuronal ceroid lipofuscinosis / NCL / Batten, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Persian. Do not fire on dogs (alpha page is cats). Skip cattle and guinea pigs. Beta-mannosidosis one-dog / MANBA stays on the page.
 
 Agree with Parsley: **alpha-mannosidosis** has been reported mainly in **cats** and cattle, less commonly in guinea pigs. Clinical signs include **retinal and skeletal abnormalities**, as well as neurological deficits. **Cerebellar signs** are the most consistent feature of otherwise variable neuro deficits. Printed adenoviral intrathecal gene-therapy line stays on the page. Merck storage table: mannosidosis in **Persian and domestic cats**.
 
@@ -2526,3 +2526,21 @@ Book/public traps:
 - Do not treat the one-dog beta page as this list.
 
 Night rule: named alpha-mannosidosis → **cerebellar. Retina and skeleton.** △ Plumb.
+
+## 240. Ceroid lipofuscinosis / NCL / Batten (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett ceroid-lipofuscinosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026) Less Common Storage Disorders plus the storage tables. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 147 still owns SARDS / RD. Mucopolysaccharidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bncl\b` or `\bbatten\b`. Do not fire on bare Setter / Cocker / Border Collie / Siamese / Chihuahua. Skip large-animal NCL.
+
+Agree with Parsley: **neuronal ceroid lipofuscinosis** (Batten disease) is AR. English Setters, Tibetan Terriers, Australian Cattle Dogs, Border Collies, American Bulldogs, AmStaff, Mini Schnauzers, Cocker Spaniels, longhaired Chihuahuas, many other dogs, **Siamese cats**. Storage table also Dachshunds, Salukis, domestic cats. Signs: **behavioral changes, aggression, and central blindness**; some ataxia / hypermetria / tremors / seizures. **Late-onset**, typically 12–24 months stay on the page; some earlier/later; progress slowly over several years. CLN5 / CLN7 / CLN8 / MFSD8 / PPT1 stay on the page. Fatal. No treatment yet; gene therapy being investigated stays on the page.
+
+Night split: named ceroid lipofuscinosis / neuronal ceroid / Batten disease is behavior and central blindness; late-onset. Bare Setter / Cocker does not fire. Named manno stays 239. Named ganglio stays 238. Named SARDS stays 147. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 12–24 month clock.
+- Do not send behavior and central blindness home as SARDS.
+- Do not call it manno-only.
+- Do not treat large-animal NCL as this list.
+
+Night rule: named ceroid lipofuscinosis → **behavior and central blindness. Late-onset.** △ Plumb.

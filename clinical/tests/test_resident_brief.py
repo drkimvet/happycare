@@ -5503,6 +5503,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("retina and skeleton", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cln_is_behavior_and_central_blindness_late_onset(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = b["localization"].lower()
+        self.assertIn("ceroid lipofuscinosis", loc)
+        self.assertIn("behavior and central blindness", loc)
+        self.assertIn("late-onset", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertNotIn("do not call it sards without an erg", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("12–24 month clock", joined)
+        self.assertIn("home as sards", joined)
+        self.assertIn("manno-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_manno_is_not_cln(self):
+        b = analyze("cat", "alpha-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("alpha-mannosidosis", loc)
+        self.assertNotIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("behavior and central blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ganglio_is_not_cln(self):
+        b = analyze("cat", "GM1 gangliosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gangliosidosis", loc)
+        self.assertNotIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("behavior and central blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sards_is_not_cln(self):
+        b = analyze("dog", "SARDS")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("behavior and central blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_setter_is_not_cln(self):
+        b = analyze("dog", "English Setter")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("behavior and central blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cocker_is_not_cln(self):
+        b = analyze("dog", "Cocker Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("behavior and central blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_cln_still_fires(self):
+        b = analyze("cat", "Batten disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ceroid lipofuscinosis", loc)
+        self.assertIn("behavior and central blindness", loc)
+        self.assertIn("late-onset", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

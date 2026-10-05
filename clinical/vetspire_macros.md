@@ -168,6 +168,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-globoid` | Assessment | Globoid cell / Krabbe |
 | `ddx-ganglio` | Assessment | Gangliosidosis GM1 / GM2 |
 | `ddx-manno` | Assessment | Alpha-mannosidosis |
+| `ddx-cln` | Assessment | Ceroid lipofuscinosis / NCL / Batten |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -295,6 +296,7 @@ Suggested names are short so they show up after three letters.
 | `dc-globoid` | Discharge | After globoid-cell / Krabbe talk |
 | `dc-ganglio` | Discharge | After gangliosidosis talk |
 | `dc-manno` | Discharge | After alpha-mannosidosis talk |
+| `dc-cln` | Discharge | After ceroid-lipofuscinosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2225,6 +2227,21 @@ DDX:
 Do not: harvest a surgery table. Harvest adenoviral gene therapy. Send a Persian wobble home as FPV. Call it ganglio-only.
 Do next: Name the storage. Look at retina and skeleton. △ Plumb.
 
+### `ddx-cln`
+
+Ceroid lipofuscinosis — {{patient.name}}
+Species [dog / cat]. Course [behavior / central blindness / aggression / ataxia / seizure / other]. Onset [late / earlier / not dated]. Genetic test [yes / not yet].
+
+DDX:
+1. Ceroid lipofuscinosis — **behavior and central blindness. Late-onset**
+2. Batten disease. CLN5 / CLN7 / CLN8 / MFSD8 / PPT1 stay on the page
+3. Printed 12–24 month and years clocks stay on the page. Fatal. Gene therapy being investigated stays on the page
+4. Not manno-only (239). Not ganglio-only (238). Not SARDS-only (147)
+5. Dog or cat can fire. Bare Setter / Cocker does not fire
+
+Do not: harvest a surgery table. Harvest a 12–24 month clock. Send behavior and central blindness home as SARDS. Call it manno-only.
+Do next: Name the storage. Behavior and central blindness. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3276,6 +3293,14 @@ Return now for inability to walk, new blindness, a sudden behavior change, or if
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new vision change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-cln`
+
+{{patient.name}} was evaluated for ceroid lipofuscinosis (also called Batten disease). This inherited storage disease can change behavior and cause central blindness. It is often late-onset. Dogs and cats are both on this list. The printed gene names and the printed clocks stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a sudden behavior change, new blindness, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

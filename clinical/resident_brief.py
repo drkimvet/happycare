@@ -1351,11 +1351,20 @@ GANGLIO_RE = re.compile(
     r"tay[- ]sachs",
     re.I,
 )
-# Do not use bare Persian. Do not use beta-mannosidosis (one dog, next room).
+# Do not use bare Persian. Do not use beta-mannosidosis (one dog, later room).
 # Not ganglio (238). Not CH (211). Cats only on the alpha page.
 MANNO_RE = re.compile(
     r"alpha[- ]mannosidos|"
     r"(?<!beta[- ])(?<!beta )mannosidos",
+    re.I,
+)
+# Do not use \bncl\b or \bbatten\b. Do not use \bcln\d.
+# Do not fire on bare Setter / Cocker / Border Collie / Siamese / Chihuahua.
+# Not manno (239). Not ganglio (238). Not SARDS (147). Dog or cat.
+CLN_RE = re.compile(
+    r"ceroid lipofuscin|"
+    r"neuronal ceroid|"
+    r"batten disease",
     re.I,
 )
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
@@ -5437,6 +5446,7 @@ def analyze(
     steal_globoid = GLOBOID_RE.search(text)
     steal_ganglio = GANGLIO_RE.search(text)
     steal_manno = MANNO_RE.search(text)
+    steal_cln = CLN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5478,6 +5488,7 @@ def analyze(
         or steal_globoid
         or steal_ganglio
         or steal_manno
+        or steal_cln
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7544,6 +7555,99 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for alpha-mannosidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for alpha-mannosidosis.")
+
+    cln_named = spec in {"dog", "cat"} and CLN_RE.search(text)
+    if cln_named and not (
+        MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        cln_loc = (
+            "Ceroid lipofuscinosis. Behavior and central blindness. "
+            "Late-onset."
+        )
+        localization = f"{localization} Also {cln_loc}" if localization else cln_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 12–24 month clock as lobby law. "
+            "Do not send behavior and central blindness home as SARDS. "
+            "Do not call it manno-only."
+        )
+        do_not.append(
+            "AR. English Setter, Tibetan Terrier, Australian Cattle Dog, "
+            "Border Collie, American Bulldog, AmStaff, Mini Schnauzer, "
+            "Cocker Spaniel, longhaired Chihuahua, many other dogs, "
+            "Siamese cats. Storage table also Dachshunds, Salukis, "
+            "domestic cats. Behavioral changes, aggression, and central "
+            "blindness; some ataxia / hypermetria / tremors / seizures. "
+            "Printed 12–24 month and years clocks stay on the page. "
+            "CLN5 / CLN7 / CLN8 / MFSD8 / PPT1 stay on the page. Fatal. "
+            "No treatment yet; printed gene-therapy investigation stays "
+            "on the page. Skip large-animal NCL. "
+            "Not manno-only. Not ganglio-only. Not SARDS-only."
+        )
+        do_next.append(
+            "Name the storage. Behavior and central blindness. "
+            "Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "neuronal ceroid lipofuscinosis (Batten disease); AR; "
+            "English Setters, Tibetan Terriers, Australian Cattle Dogs, "
+            "Border Collies, American Bulldogs, AmStaff, Mini Schnauzers, "
+            "Cocker Spaniels, longhaired Chihuahuas, many other dogs, "
+            "Siamese cats; behavioral changes, aggression, and central "
+            "blindness; some ataxia/hypermetria/tremors/seizures; "
+            "late-onset, typically 12–24 months stay on the page; some "
+            "earlier/later; progress slowly over several years; "
+            "CLN5 / CLN7 / CLN8 / MFSD8 / PPT1 stay on the page; fatal; "
+            "no treatment yet; gene therapy being investigated stays on "
+            "the page. Merck storage table: Dachshunds, Salukis, domestic "
+            "cats also named. Skip large-animal NCL."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send behavior and central blindness home as SARDS."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for ceroid lipofuscinosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for ceroid lipofuscinosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
