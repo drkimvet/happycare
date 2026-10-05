@@ -1367,6 +1367,13 @@ CLN_RE = re.compile(
     r"batten disease",
     re.I,
 )
+# Do not use \bmps\b. Do not fire on bare Plott.
+# Not NCL (240). Not ganglio (238). Not manno (239). Dog or cat.
+MPS_RE = re.compile(
+    r"mucopolysaccharidos|"
+    r"\bmps\s+(type\s+)?(vii|vi|iii|ii|i)\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5447,6 +5454,7 @@ def analyze(
     steal_ganglio = GANGLIO_RE.search(text)
     steal_manno = MANNO_RE.search(text)
     steal_cln = CLN_RE.search(text)
+    steal_mps = MPS_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5489,6 +5497,7 @@ def analyze(
         or steal_ganglio
         or steal_manno
         or steal_cln
+        or steal_mps
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7648,6 +7657,99 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for ceroid lipofuscinosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for ceroid lipofuscinosis.")
+
+    mps_named = spec in {"dog", "cat"} and MPS_RE.search(text)
+    if mps_named and not (
+        CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        mps_loc = (
+            "Mucopolysaccharidosis. Flattening of the face. "
+            "Bone dysplasia."
+        )
+        localization = f"{localization} Also {mps_loc}" if localization else mps_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 9-month clock as lobby law. "
+            "Do not send a flattened face home as FPV. "
+            "Do not call it ganglio-only."
+        )
+        do_not.append(
+            "Primarily cats; some subtypes affect dogs. "
+            "Flattening of the face, corneal clouding, multiple bone dysplasias. "
+            "Plott Hounds stay on the page. Types I, II, III, VI, and VII. "
+            "MPS VI / ARSB and MPS VII / GUSB stay on the page. "
+            "Printed bony-protrusion paraparesis and failed secondary "
+            "ossification stay on the page. Printed 9-month nonprogressive "
+            "skeletal line stays on the page. Decompressive surgery can "
+            "improve neuro deficits — stays on the page. Genetic test. "
+            "Printed enzyme-replacement and adenoviral / retroviral lines "
+            "stay on the page. Skip large animal. "
+            "Not NCL-only. Not ganglio-only. Not manno-only."
+        )
+        do_next.append(
+            "Name the storage. Look at the face and bones. "
+            "Genetic-test conversation. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "mucopolysaccharidosis; primarily cats, some subtypes dogs; "
+            "flattening of the face, corneal clouding, multiple bone "
+            "dysplasias; Plott Hounds; types I, II, III, VI, and VII; "
+            "MPS VI ARSB; progressive paraparesis from focal bony "
+            "protrusions into the vertebral canal stays on the page; "
+            "MPS VII GUSB; failed initiation of secondary ossification "
+            "centers stays on the page; skeletal changes nonprogressive "
+            "after 9 months stay on the page; decompressive surgery can "
+            "improve neurological deficits stays on the page; genetic "
+            "test; enzyme replacement or adenoviral- and retroviral-based "
+            "gene therapy might benefit some types stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a flattened face home as FPV."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for mucopolysaccharidosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for mucopolysaccharidosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

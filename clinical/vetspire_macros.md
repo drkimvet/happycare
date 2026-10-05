@@ -169,6 +169,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ganglio` | Assessment | Gangliosidosis GM1 / GM2 |
 | `ddx-manno` | Assessment | Alpha-mannosidosis |
 | `ddx-cln` | Assessment | Ceroid lipofuscinosis / NCL / Batten |
+| `ddx-mps` | Assessment | Mucopolysaccharidosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -297,6 +298,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ganglio` | Discharge | After gangliosidosis talk |
 | `dc-manno` | Discharge | After alpha-mannosidosis talk |
 | `dc-cln` | Discharge | After ceroid-lipofuscinosis talk |
+| `dc-mps` | Discharge | After mucopolysaccharidosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2242,6 +2244,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 12–24 month clock. Send behavior and central blindness home as SARDS. Call it manno-only.
 Do next: Name the storage. Behavior and central blindness. Genetic-test conversation. △ Plumb.
 
+### `ddx-mps`
+
+Mucopolysaccharidosis — {{patient.name}}
+Species [cat / dog]. Face [flattened / not]. Cornea [clouded / clear / not checked]. Bones [dysplasia / not checked]. Type [I / II / III / VI / VII / unknown]. Genetic test [yes / not yet].
+
+DDX:
+1. Mucopolysaccharidosis — **flattening of the face. Bone dysplasia**
+2. Primarily cats; some subtypes dogs. Plott Hounds stay on the page
+3. Types I / II / III / VI / VII. ARSB / GUSB stay on the page. Printed 9-month and decomp lines stay on the page
+4. Not NCL-only (240). Not ganglio-only (238). Not manno-only (239)
+5. Dog or cat can fire. Bare Plott does not fire
+
+Do not: harvest a surgery table. Harvest a 9-month clock. Send a flattened face home as FPV. Call it ganglio-only.
+Do next: Name the storage. Look at the face and bones. Genetic-test conversation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3301,6 +3318,14 @@ Return now for inability to walk, new vision change, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a sudden behavior change, new blindness, inability to walk, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-mps`
+
+{{patient.name}} was evaluated for mucopolysaccharidosis (an inherited storage disease that can flatten the face and change the bones). Dogs and cats are both on this list. The printed gene names and the printed clocks stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new vision change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

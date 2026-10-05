@@ -5565,6 +5565,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("late-onset", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mps_is_flattening_of_the_face_bone_dysplasia(self):
+        b = analyze("cat", "mucopolysaccharidosis")
+        loc = b["localization"].lower()
+        self.assertIn("mucopolysaccharidosis", loc)
+        self.assertIn("flattening of the face", loc)
+        self.assertIn("bone dysplasia", loc)
+        self.assertNotIn("behavior and central blindness", loc)
+        self.assertNotIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("9-month clock", joined)
+        self.assertIn("flattened face home as fpv", joined)
+        self.assertIn("ganglio-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cln_is_not_mps(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ceroid lipofuscinosis", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertNotIn("bone dysplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ganglio_is_not_mps(self):
+        b = analyze("cat", "GM1 gangliosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gangliosidosis", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertNotIn("mucopolysaccharidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_manno_is_not_mps(self):
+        b = analyze("cat", "alpha-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("alpha-mannosidosis", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertNotIn("mucopolysaccharidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_plott_is_not_mps(self):
+        b = analyze("dog", "Plott Hound")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mucopolysaccharidosis", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_mps_acronym_is_not_mps(self):
+        b = analyze("dog", "mps")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mucopolysaccharidosis", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_mps_still_fires(self):
+        b = analyze("dog", "MPS VI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mucopolysaccharidosis", loc)
+        self.assertIn("flattening of the face", loc)
+        self.assertIn("bone dysplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

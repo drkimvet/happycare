@@ -2529,7 +2529,7 @@ Night rule: named alpha-mannosidosis → **cerebellar. Retina and skeleton.** �
 
 ## 240. Ceroid lipofuscinosis / NCL / Batten (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett ceroid-lipofuscinosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026) Less Common Storage Disorders plus the storage tables. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 147 still owns SARDS / RD. Mucopolysaccharidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bncl\b` or `\bbatten\b`. Do not fire on bare Setter / Cocker / Border Collie / Siamese / Chihuahua. Skip large-animal NCL.
+No dedicated Plunkett ceroid-lipofuscinosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026) Less Common Storage Disorders plus the storage tables. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 147 still owns SARDS / RD. Packet 241 owns named mucopolysaccharidosis, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bncl\b` or `\bbatten\b`. Do not fire on bare Setter / Cocker / Border Collie / Siamese / Chihuahua. Skip large-animal NCL.
 
 Agree with Parsley: **neuronal ceroid lipofuscinosis** (Batten disease) is AR. English Setters, Tibetan Terriers, Australian Cattle Dogs, Border Collies, American Bulldogs, AmStaff, Mini Schnauzers, Cocker Spaniels, longhaired Chihuahuas, many other dogs, **Siamese cats**. Storage table also Dachshunds, Salukis, domestic cats. Signs: **behavioral changes, aggression, and central blindness**; some ataxia / hypermetria / tremors / seizures. **Late-onset**, typically 12–24 months stay on the page; some earlier/later; progress slowly over several years. CLN5 / CLN7 / CLN8 / MFSD8 / PPT1 stay on the page. Fatal. No treatment yet; gene therapy being investigated stays on the page.
 
@@ -2544,3 +2544,21 @@ Book/public traps:
 - Do not treat large-animal NCL as this list.
 
 Night rule: named ceroid lipofuscinosis → **behavior and central blindness. Late-onset.** △ Plumb.
+
+## 241. Mucopolysaccharidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett mucopolysaccharidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 240 still owns named NCL / Batten. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Glycogenosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bmps\b`. Do not fire on bare Plott. Skip large animal.
+
+Agree with Parsley: **mucopolysaccharidosis** is primarily a disorder of **cats**, but some subtypes affect dogs. Associated with **flattening of the face**, corneal clouding, and **multiple bone dysplasias**. Plott Hounds can also be affected. Types I, II, III, VI, and VII. MPS VI / ARSB: progressive paraparesis from focal bony protrusions into the vertebral canal stays on the page. MPS VII / GUSB: failed initiation of secondary ossification centers stays on the page; skeletal changes nonprogressive after **9 months** stay on the page; decompressive surgery can improve neurological deficits stays on the page. Genetic test available. Enzyme replacement or adenoviral- and retroviral-based gene therapy might benefit some types stays on the page.
+
+Night split: named mucopolysaccharidosis / MPS type is flattening of the face; bone dysplasia. Bare Plott does not fire. Named NCL stays 240. Named ganglio stays 238 (corneal clouding). Named manno stays 239. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 9-month clock.
+- Do not send a flattened face home as FPV.
+- Do not call it ganglio-only.
+- Do not treat large-animal MPS as this list.
+
+Night rule: named mucopolysaccharidosis → **flattening of the face. Bone dysplasia.** △ Plumb.
