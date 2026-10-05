@@ -1351,6 +1351,13 @@ GANGLIO_RE = re.compile(
     r"tay[- ]sachs",
     re.I,
 )
+# Do not use bare Persian. Do not use beta-mannosidosis (one dog, next room).
+# Not ganglio (238). Not CH (211). Cats only on the alpha page.
+MANNO_RE = re.compile(
+    r"alpha[- ]mannosidos|"
+    r"(?<!beta[- ])(?<!beta )mannosidos",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5429,6 +5436,7 @@ def analyze(
     steal_alex = ALEX_RE.search(text)
     steal_globoid = GLOBOID_RE.search(text)
     steal_ganglio = GANGLIO_RE.search(text)
+    steal_manno = MANNO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5469,6 +5477,7 @@ def analyze(
         or steal_alex
         or steal_globoid
         or steal_ganglio
+        or steal_manno
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7454,6 +7463,87 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for gangliosidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for gangliosidosis.")
+
+    manno_named = spec == "cat" and MANNO_RE.search(text)
+    if manno_named and not (
+        GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        manno_loc = (
+            "Alpha-mannosidosis. Cerebellar. "
+            "Retina and skeleton."
+        )
+        localization = f"{localization} Also {manno_loc}" if localization else manno_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest adenoviral gene therapy as lobby law. "
+            "Do not send a Persian wobble home as FPV. "
+            "Do not call it ganglio-only."
+        )
+        do_not.append(
+            "Mainly cats. Retinal and skeletal abnormalities. "
+            "Cerebellar signs are the most consistent neuro feature. "
+            "Otherwise variable. Persian / domestic stay on the storage table. "
+            "Printed intrathecal adenoviral line stays on the page. "
+            "Skip cattle and guinea pigs. "
+            "Beta-mannosidosis one dog / MANBA stays on the page. "
+            "Not ganglio-only. Not globoid-only. Not CH-only."
+        )
+        do_next.append(
+            "Name the storage. Look at retina and skeleton. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "alpha-mannosidosis; mainly cats and cattle, less commonly "
+            "guinea pigs; retinal and skeletal abnormalities; neurological "
+            "deficits; cerebellar signs most consistent; printed adenoviral "
+            "intrathecal gene-therapy line stays on the page. "
+            "Merck storage table: mannosidosis in Persian and domestic cats. "
+            "Skip cattle / guinea pigs. Beta-mannosidosis one dog stays "
+            "on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Persian wobble home as FPV."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for alpha-mannosidosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for alpha-mannosidosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

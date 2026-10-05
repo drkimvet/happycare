@@ -5444,6 +5444,65 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("corneal clouding", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_manno_is_cerebellar_retina_and_skeleton(self):
+        b = analyze("cat", "alpha-mannosidosis")
+        loc = b["localization"].lower()
+        self.assertIn("alpha-mannosidosis", loc)
+        self.assertIn("cerebellar", loc)
+        self.assertIn("retina and skeleton", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("persian wobble", joined)
+        self.assertIn("ganglio-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ganglio_is_not_manno(self):
+        b = analyze("cat", "GM1 gangliosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("corneal clouding", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_persian_is_not_manno(self):
+        b = analyze("cat", "Persian")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_manno(self):
+        b = analyze("dog", "alpha-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_beta_dog_is_not_manno(self):
+        b = analyze("dog", "beta-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_manno(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_globoid_is_not_manno(self):
+        b = analyze("cat", "globoid cell leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ascending or cerebellar", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -2493,7 +2493,7 @@ Night rule: named globoid cell → **ascending or cerebellar. Dogs and cats.** �
 
 ## 238. Gangliosidosis GM1 / GM2 (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett gangliosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 237 still owns named globoid / Krabbe. Packet 236 still owns named Alexander. Packet 211 still owns named cerebellar hypoplasia / FPV wobble. Alpha-mannosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Siamese. Do not put GLB1 / HEXA / HEXB in the regex.
+No dedicated Plunkett gangliosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 237 still owns named globoid / Krabbe. Packet 236 still owns named Alexander. Packet 211 still owns named cerebellar hypoplasia / FPV wobble. Packet 239 owns named alpha-mannosidosis. Ceroid lipofuscinosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Siamese. Do not put GLB1 / HEXA / HEXB in the regex.
 
 Agree with Parsley: **GM1 gangliosidosis** (**Derry disease**) is fatal and progressive; **GLB1** stays on the page. Primarily cats, especially **Asian breeds** (Siamese, Korat, and others named on the page); also Beagles, Portuguese Water Dogs, English Springer Spaniels, Alaskan Huskies, and Shiba Inus. **Cerebellar** signs predominate; **corneal clouding** can develop. Genetic testing. Printed AAV line stays on the page. **GM2 gangliosidosis** (**Sandhoff**, **Tay-Sachs**) is reported in GSHP, Japanese Spaniel, Shiba, Japanese Chin, mixed-breed cats, and Korat. Printed **6-month** onset and later ataxia/dementia stay on the page. Kittens: ataxia, hypermetria, head tremor, corneal opacity at about **3 months** stay on the page. **HEXA / HEXB** stay on the page.
 
@@ -2508,3 +2508,21 @@ Book/public traps:
 - Do not harvest AAV as lobby law.
 
 Night rule: named gangliosidosis → **cerebellar. Corneal clouding.** △ Plumb.
+
+## 239. Alpha-mannosidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck storage table names Persian and domestic cats. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 211 still owns named CH / FPV wobble. Ceroid lipofuscinosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Persian. Do not fire on dogs (alpha page is cats). Skip cattle and guinea pigs. Beta-mannosidosis one-dog / MANBA stays on the page.
+
+Agree with Parsley: **alpha-mannosidosis** has been reported mainly in **cats** and cattle, less commonly in guinea pigs. Clinical signs include **retinal and skeletal abnormalities**, as well as neurological deficits. **Cerebellar signs** are the most consistent feature of otherwise variable neuro deficits. Printed adenoviral intrathecal gene-therapy line stays on the page. Merck storage table: mannosidosis in **Persian and domestic cats**.
+
+Night split: named alpha-mannosidosis / mannosidosis (not beta) is cerebellar; retina and skeleton. Bare Persian does not fire. Dog does not fire. Named gangliosidosis stays 238. Named globoid stays 237. Named CH stays 211. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest adenoviral gene therapy.
+- Do not send a Persian wobble home as FPV.
+- Do not call it ganglio-only.
+- Do not treat the one-dog beta page as this list.
+
+Night rule: named alpha-mannosidosis → **cerebellar. Retina and skeleton.** △ Plumb.

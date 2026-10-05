@@ -167,6 +167,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-alex` | Assessment | Fibrinoid leukodystrophy / Alexander |
 | `ddx-globoid` | Assessment | Globoid cell / Krabbe |
 | `ddx-ganglio` | Assessment | Gangliosidosis GM1 / GM2 |
+| `ddx-manno` | Assessment | Alpha-mannosidosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -293,6 +294,7 @@ Suggested names are short so they show up after three letters.
 | `dc-alex` | Discharge | After Alexander / fibrinoid talk |
 | `dc-globoid` | Discharge | After globoid-cell / Krabbe talk |
 | `dc-ganglio` | Discharge | After gangliosidosis talk |
+| `dc-manno` | Discharge | After alpha-mannosidosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2208,6 +2210,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 3-month or 6-month clock. Send a Siamese wobble home as FPV. Call it Krabbe-only.
 Do next: Name the storage. Look at the cornea. Genetic-test conversation. △ Plumb.
 
+### `ddx-manno`
+
+Alpha-mannosidosis — {{patient.name}}
+Breed [Persian / domestic / other]. Retina [abnormal / not checked]. Skeleton [abnormal / not checked]. Course [cerebellar / other].
+
+DDX:
+1. Alpha-mannosidosis — **cerebellar. Retina and skeleton**
+2. Mainly cats. Persian / domestic stay on the storage table
+3. Printed adenoviral IT line stays on the page. Skip cattle / guinea pigs
+4. Not ganglio-only (238). Not globoid-only (237). Not CH-only (211)
+5. Cat can fire. Dog does not fire
+
+Do not: harvest a surgery table. Harvest adenoviral gene therapy. Send a Persian wobble home as FPV. Call it ganglio-only.
+Do next: Name the storage. Look at retina and skeleton. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3251,6 +3268,14 @@ Return now for inability to walk, trouble breathing, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new blindness, a sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-manno`
+
+{{patient.name}} was evaluated for alpha-mannosidosis (an inherited storage disease in cats that often looks cerebellar and can involve the eyes and bones). The printed gene-therapy line stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new vision change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
