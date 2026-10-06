@@ -5685,6 +5685,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("weakness and exercise intolerance", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ml2_is_facial_dysmorphia_dull_from_birth(self):
+        b = analyze("cat", "mucolipidosis II")
+        loc = b["localization"].lower()
+        self.assertIn("mucolipidosis ii", loc)
+        self.assertIn("facial dysmorphia", loc)
+        self.assertIn("dull from birth", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("4-month clock", joined)
+        self.assertIn("dull kitten home as fpv", joined)
+        self.assertIn("mps-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mps_is_not_ml2(self):
+        b = analyze("cat", "mucopolysaccharidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("flattening of the face", loc)
+        self.assertNotIn("facial dysmorphia", loc)
+        self.assertNotIn("mucolipidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_glyco_is_not_ml2(self):
+        b = analyze("cat", "glycogenosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("glycogenosis", loc)
+        self.assertNotIn("facial dysmorphia", loc)
+        self.assertNotIn("mucolipidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dsh_is_not_ml2(self):
+        b = analyze("cat", "DSH")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mucolipidosis", loc)
+        self.assertNotIn("facial dysmorphia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_ml2(self):
+        b = analyze("dog", "mucolipidosis II")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("mucolipidosis", loc)
+        self.assertNotIn("facial dysmorphia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_ml2(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("facial dysmorphia", loc)
+        self.assertNotIn("mucolipidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_ml2_still_fires(self):
+        b = analyze("cat", "mucolipidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("mucolipidosis ii", loc)
+        self.assertIn("facial dysmorphia", loc)
+        self.assertIn("dull from birth", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

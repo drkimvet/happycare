@@ -2565,7 +2565,7 @@ Night rule: named mucopolysaccharidosis → **flattening of the face. Bone dyspl
 
 ## 242. Glycogenosis (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett glycogenosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 241 still owns named mucopolysaccharidosis. Packet 240 still owns named NCL. Packet 234 still owns named SMA. Mucolipidosis II is the next room, not this dump. Lafora is a later glycogen-clump room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bglycogen\b`. Do not fire on bare GSD / Springer / Forest. Skip large animal.
+No dedicated Plunkett glycogenosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 241 still owns named mucopolysaccharidosis. Packet 240 still owns named NCL. Packet 234 still owns named SMA. Packet 243 owns named mucolipidosis II, not this dump. Lafora is a later glycogen-clump room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bglycogen\b`. Do not fire on bare GSD / Springer / Forest. Skip large animal.
 
 Agree with Parsley: **glycogenosis** (types II, III, IV, VII) is **not well described**. Glycogen storage diseases can cause **muscle weakness and exercise intolerance** in **young** dogs and cats. Examples: type II Lapland dogs; type III German Shepherd Dogs and Akitas; type IV Norwegian Forest Cats (autosomal recessive); type VII English Springer Spaniels. Clinical signs generally include generalized myopathy, weakness, exercise intolerance, muscle tremors, or dysphagia.
 
@@ -2581,3 +2581,21 @@ Book/public traps:
 - Do not treat large-animal glycogenosis as this list.
 
 Night rule: named glycogenosis → **weakness and exercise intolerance.** △ Plumb.
+
+## 243. Mucolipidosis II (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett mucolipidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 241 still owns named mucopolysaccharidosis. Packet 211 still owns named CH / FPV wobble. Lafora is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month clock. Do not fire on bare DSH. Cats only. Skip dogs.
+
+Agree with Parsley: **mucolipidosis II** is AR in **domestic shorthair cats** and generally causes **skeletal malformations**. Signs from birth: **dull mentation, failure to thrive, facial dysmorphia, and ataxia**. Printed radiographic metaphyseal flaring, radial bowing, joint laxity, and vertebral fusion stay on the page. Printed retinal degeneration and blindness by **4 months** stay on the page.
+
+Night split: named mucolipidosis is facial dysmorphia; dull from birth. Bare DSH does not fire. Dog does not fire. Named MPS stays 241 (flattening of the face / bone dysplasia). Named glyco stays 242. Named CH stays 211. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4-month clock.
+- Do not send a dull kitten home as FPV.
+- Do not call it MPS-only.
+- Do not invent I-cell as a night name (not on this page).
+
+Night rule: named mucolipidosis II → **facial dysmorphia. Dull from birth.** △ Plumb.

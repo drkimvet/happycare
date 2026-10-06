@@ -1381,6 +1381,12 @@ GLYCO_RE = re.compile(
     r"glycogen storage",
     re.I,
 )
+# Do not fire on bare DSH. Do not use I-cell (not on the Parsley page).
+# Cats only. Not MPS (241). Not glyco (242). Not CH (211).
+ML2_RE = re.compile(
+    r"mucolipidos",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5463,6 +5469,7 @@ def analyze(
     steal_cln = CLN_RE.search(text)
     steal_mps = MPS_RE.search(text)
     steal_glyco = GLYCO_RE.search(text)
+    steal_ml2 = ML2_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5507,6 +5514,7 @@ def analyze(
         or steal_cln
         or steal_mps
         or steal_glyco
+        or steal_ml2
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7844,6 +7852,92 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for glycogenosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for glycogenosis.")
+
+    ml2_named = spec == "cat" and ML2_RE.search(text)
+    if ml2_named and not (
+        GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        ml2_loc = (
+            "Mucolipidosis II. Facial dysmorphia. "
+            "Dull from birth."
+        )
+        localization = f"{localization} Also {ml2_loc}" if localization else ml2_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 4-month clock as lobby law. "
+            "Do not send a dull kitten home as FPV. "
+            "Do not call it MPS-only."
+        )
+        do_not.append(
+            "AR. Domestic shorthair cats. Skeletal malformations. "
+            "From birth: dull mentation, failure to thrive, facial "
+            "dysmorphia, and ataxia. Printed metaphyseal flaring, "
+            "radial bowing, joint laxity, and vertebral fusion stay "
+            "on the page. Printed retinal degeneration and blindness "
+            "by 4 months stay on the page. Skip dogs. "
+            "Not MPS-only. Not glyco-only. Not CH-only."
+        )
+        do_next.append(
+            "Name the storage. Look at the face and skeleton. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "mucolipidosis II; AR; domestic shorthair cats; generally "
+            "skeletal malformations; signs from birth include dull "
+            "mentation, failure to thrive, facial dysmorphia, and "
+            "ataxia; printed radiographic metaphyseal flaring, radial "
+            "bowing, joint laxity, and vertebral fusion stay on the "
+            "page; retinal degeneration and blindness can occur by "
+            "4 months stay on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a dull kitten home as FPV."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for mucolipidosis II.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for mucolipidosis II.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

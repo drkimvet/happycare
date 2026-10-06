@@ -171,6 +171,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cln` | Assessment | Ceroid lipofuscinosis / NCL / Batten |
 | `ddx-mps` | Assessment | Mucopolysaccharidosis |
 | `ddx-glyco` | Assessment | Glycogenosis |
+| `ddx-ml2` | Assessment | Mucolipidosis II |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -301,6 +302,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cln` | Discharge | After ceroid-lipofuscinosis talk |
 | `dc-mps` | Discharge | After mucopolysaccharidosis talk |
 | `dc-glyco` | Discharge | After glycogenosis talk |
+| `dc-ml2` | Discharge | After mucolipidosis II talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2276,6 +2278,21 @@ DDX:
 Do not: harvest a surgery table. Send a weak puppy home as tired. Call it MPS-only. Call it SMA-only.
 Do next: Name the storage. Weakness and exercise intolerance. △ Plumb.
 
+### `ddx-ml2`
+
+Mucolipidosis II — {{patient.name}}
+Face [dysmorphic / not]. Mentation [dull from birth / other]. Skeleton [malformed / not checked]. Eyes [retina not checked / degenerate / blind / other].
+
+DDX:
+1. Mucolipidosis II — **facial dysmorphia. Dull from birth**
+2. AR. DSH cats. Skeletal malformations
+3. Printed radiographic lines and 4-month retinal/blindness stay on the page
+4. Not MPS-only (241). Not glyco-only (242). Not CH-only (211)
+5. Cat can fire. Dog does not fire. Bare DSH does not fire
+
+Do not: harvest a surgery table. Harvest a 4-month clock. Send a dull kitten home as FPV. Call it MPS-only.
+Do next: Name the storage. Look at the face and skeleton. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3351,6 +3368,14 @@ Return now for inability to walk, new vision change, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-ml2`
+
+{{patient.name}} was evaluated for mucolipidosis II (an inherited storage disease in cats that can flatten or reshape the face and is dull from birth). The printed radiographic lines and the printed clock stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new vision change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
