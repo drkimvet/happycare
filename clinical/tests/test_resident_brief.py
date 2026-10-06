@@ -5627,6 +5627,64 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("bone dysplasia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_glyco_is_weakness_and_exercise_intolerance(self):
+        b = analyze("dog", "glycogenosis")
+        loc = b["localization"].lower()
+        self.assertIn("glycogenosis", loc)
+        self.assertIn("weakness and exercise intolerance", loc)
+        self.assertNotIn("flattening of the face", loc)
+        self.assertNotIn("mucopolysaccharidosis", loc)
+        self.assertNotIn("looks like a neuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("weak puppy home as tired", joined)
+        self.assertIn("mps-only", joined)
+        self.assertIn("sma-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mps_is_not_glyco(self):
+        b = analyze("cat", "mucopolysaccharidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("flattening of the face", loc)
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("weakness and exercise intolerance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gsd_is_not_glyco(self):
+        b = analyze("dog", "German Shepherd")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("weakness and exercise intolerance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_springer_is_not_glyco(self):
+        b = analyze("dog", "English Springer Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("weakness and exercise intolerance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_forest_is_not_glyco(self):
+        b = analyze("cat", "Norwegian Forest")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("weakness and exercise intolerance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_glycogen_is_not_glyco(self):
+        b = analyze("dog", "glycogen")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("weakness and exercise intolerance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_glyco_still_fires(self):
+        b = analyze("cat", "glycogen storage disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("glycogenosis", loc)
+        self.assertIn("weakness and exercise intolerance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

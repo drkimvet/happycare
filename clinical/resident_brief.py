@@ -1374,6 +1374,13 @@ MPS_RE = re.compile(
     r"\bmps\s+(type\s+)?(vii|vi|iii|ii|i)\b",
     re.I,
 )
+# Do not use \bglycogen\b. Do not fire on bare GSD / Springer / Forest.
+# Not MPS (241). Not NCL (240). Not SMA (234). Dog or cat.
+GLYCO_RE = re.compile(
+    r"glycogenos|"
+    r"glycogen storage",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5455,6 +5462,7 @@ def analyze(
     steal_manno = MANNO_RE.search(text)
     steal_cln = CLN_RE.search(text)
     steal_mps = MPS_RE.search(text)
+    steal_glyco = GLYCO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5498,6 +5506,7 @@ def analyze(
         or steal_manno
         or steal_cln
         or steal_mps
+        or steal_glyco
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7750,6 +7759,91 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for mucopolysaccharidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for mucopolysaccharidosis.")
+
+    glyco_named = spec in {"dog", "cat"} and GLYCO_RE.search(text)
+    if glyco_named and not (
+        MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        glyco_loc = (
+            "Glycogenosis. Weakness and exercise intolerance."
+        )
+        localization = f"{localization} Also {glyco_loc}" if localization else glyco_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send a weak puppy home as tired. "
+            "Do not call it MPS-only. "
+            "Do not call it SMA-only."
+        )
+        do_not.append(
+            "Types II, III, IV, VII. Not well described. "
+            "Muscle weakness and exercise intolerance in young dogs and cats. "
+            "II Lapland, III GSD and Akita, IV Norwegian Forest AR, "
+            "VII English Springer stay on the page. "
+            "Generalized myopathy, weakness, exercise intolerance, "
+            "muscle tremors, or dysphagia. Skip large animal. "
+            "Lafora stays the next glycogen-clump room, not this dump. "
+            "Not MPS-only. Not NCL-only. Not SMA-only."
+        )
+        do_next.append(
+            "Name the storage. Weakness and exercise intolerance. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "glycogenosis types II, III, IV, VII; not well described; "
+            "muscle weakness and exercise intolerance in young dogs and "
+            "cats; type II Lapland dogs; type III German Shepherd Dogs "
+            "and Akitas; type IV Norwegian Forest Cats autosomal "
+            "recessive; type VII English Springer Spaniels; generalized "
+            "myopathy, weakness, exercise intolerance, muscle tremors, "
+            "or dysphagia. Skip large animal. Lafora is a later room."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a weak puppy home as tired."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for glycogenosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for glycogenosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

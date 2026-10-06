@@ -170,6 +170,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-manno` | Assessment | Alpha-mannosidosis |
 | `ddx-cln` | Assessment | Ceroid lipofuscinosis / NCL / Batten |
 | `ddx-mps` | Assessment | Mucopolysaccharidosis |
+| `ddx-glyco` | Assessment | Glycogenosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -299,6 +300,7 @@ Suggested names are short so they show up after three letters.
 | `dc-manno` | Discharge | After alpha-mannosidosis talk |
 | `dc-cln` | Discharge | After ceroid-lipofuscinosis talk |
 | `dc-mps` | Discharge | After mucopolysaccharidosis talk |
+| `dc-glyco` | Discharge | After glycogenosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2259,6 +2261,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 9-month clock. Send a flattened face home as FPV. Call it ganglio-only.
 Do next: Name the storage. Look at the face and bones. Genetic-test conversation. △ Plumb.
 
+### `ddx-glyco`
+
+Glycogenosis — {{patient.name}}
+Species [dog / cat]. Type [II / III / IV / VII / unknown]. Course [weakness / exercise intolerance / myopathy / tremor / dysphagia / other].
+
+DDX:
+1. Glycogenosis — **weakness and exercise intolerance**
+2. Types II / III / IV / VII. Not well described. Young dogs and cats
+3. II Lapland / III GSD and Akita / IV Norwegian Forest AR / VII ESS stay on the page
+4. Not MPS-only (241). Not NCL-only (240). Not SMA-only (234)
+5. Dog or cat can fire. Bare GSD / Springer / Forest does not fire
+
+Do not: harvest a surgery table. Send a weak puppy home as tired. Call it MPS-only. Call it SMA-only.
+Do next: Name the storage. Weakness and exercise intolerance. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3326,6 +3343,14 @@ Return now for a sudden behavior change, new blindness, inability to walk, or if
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new vision change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-glyco`
+
+{{patient.name}} was evaluated for glycogenosis (an inherited storage disease that can look like weakness and exercise intolerance in a young dog or cat). Dogs and cats are both on this list. The printed type names stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

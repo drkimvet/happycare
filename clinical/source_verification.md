@@ -2547,7 +2547,7 @@ Night rule: named ceroid lipofuscinosis → **behavior and central blindness. La
 
 ## 241. Mucopolysaccharidosis (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett mucopolysaccharidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 240 still owns named NCL / Batten. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Glycogenosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bmps\b`. Do not fire on bare Plott. Skip large animal.
+No dedicated Plunkett mucopolysaccharidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 240 still owns named NCL / Batten. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Packet 242 owns named glycogenosis, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bmps\b`. Do not fire on bare Plott. Skip large animal.
 
 Agree with Parsley: **mucopolysaccharidosis** is primarily a disorder of **cats**, but some subtypes affect dogs. Associated with **flattening of the face**, corneal clouding, and **multiple bone dysplasias**. Plott Hounds can also be affected. Types I, II, III, VI, and VII. MPS VI / ARSB: progressive paraparesis from focal bony protrusions into the vertebral canal stays on the page. MPS VII / GUSB: failed initiation of secondary ossification centers stays on the page; skeletal changes nonprogressive after **9 months** stay on the page; decompressive surgery can improve neurological deficits stays on the page. Genetic test available. Enzyme replacement or adenoviral- and retroviral-based gene therapy might benefit some types stays on the page.
 
@@ -2562,3 +2562,22 @@ Book/public traps:
 - Do not treat large-animal MPS as this list.
 
 Night rule: named mucopolysaccharidosis → **flattening of the face. Bone dysplasia.** △ Plumb.
+
+## 242. Glycogenosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett glycogenosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 241 still owns named mucopolysaccharidosis. Packet 240 still owns named NCL. Packet 234 still owns named SMA. Mucolipidosis II is the next room, not this dump. Lafora is a later glycogen-clump room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bglycogen\b`. Do not fire on bare GSD / Springer / Forest. Skip large animal.
+
+Agree with Parsley: **glycogenosis** (types II, III, IV, VII) is **not well described**. Glycogen storage diseases can cause **muscle weakness and exercise intolerance** in **young** dogs and cats. Examples: type II Lapland dogs; type III German Shepherd Dogs and Akitas; type IV Norwegian Forest Cats (autosomal recessive); type VII English Springer Spaniels. Clinical signs generally include generalized myopathy, weakness, exercise intolerance, muscle tremors, or dysphagia.
+
+Night split: named glycogenosis / glycogen storage is weakness and exercise intolerance. Bare GSD / Springer / Forest does not fire. Bare glycogen does not fire. Named MPS stays 241. Named NCL stays 240. Named SMA stays 234. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a weak puppy home as tired.
+- Do not call it MPS-only.
+- Do not call it SMA-only.
+- Do not treat Lafora as this list.
+- Do not treat large-animal glycogenosis as this list.
+
+Night rule: named glycogenosis → **weakness and exercise intolerance.** △ Plumb.
