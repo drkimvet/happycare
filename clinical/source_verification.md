@@ -2584,7 +2584,7 @@ Night rule: named glycogenosis → **weakness and exercise intolerance.** △ Pl
 
 ## 243. Mucolipidosis II (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett mucolipidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 241 still owns named mucopolysaccharidosis. Packet 211 still owns named CH / FPV wobble. Lafora is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month clock. Do not fire on bare DSH. Cats only. Skip dogs.
+No dedicated Plunkett mucolipidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 241 still owns named mucopolysaccharidosis. Packet 211 still owns named CH / FPV wobble. Packet 244 owns named Lafora, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month clock. Do not fire on bare DSH. Cats only. Skip dogs.
 
 Agree with Parsley: **mucolipidosis II** is AR in **domestic shorthair cats** and generally causes **skeletal malformations**. Signs from birth: **dull mentation, failure to thrive, facial dysmorphia, and ataxia**. Printed radiographic metaphyseal flaring, radial bowing, joint laxity, and vertebral fusion stay on the page. Printed retinal degeneration and blindness by **4 months** stay on the page.
 
@@ -2599,3 +2599,21 @@ Book/public traps:
 - Do not invent I-cell as a night name (not on this page).
 
 Night rule: named mucolipidosis II → **facial dysmorphia. Dull from birth.** △ Plumb.
+
+## 244. Lafora (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Lafora chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 243 still owns named mucolipidosis II. Packet 116 still owns seizure-drug numbers. Packet 240 still owns named NCL. Niemann-Pick is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a seizure table. Do not fire on bare Dachshund / Beagle / Poodle / Chihuahua. Dogs only. Skip cats.
+
+Agree with Parsley: **Lafora disease** (Lafora bodies = insoluble glycogen clumps in neurons) occurs most commonly in **miniature wirehaired Dachshunds**; also Basset Hounds, Beagles, Poodles, Chihuahuas, and mixed-breed dogs. **NHLRC1** stays on the page. Genetic testing. Signs: **myoclonic seizures that begin late in life**; visual or auditory triggers allowed. Other clinical examination findings are not commonly reported.
+
+Night split: named Lafora is myoclonic seizures; late in life. Bare Dachshund / Beagle / Poodle / Chihuahua does not fire. Cat does not fire. Named glyco stays 242. Named ml2 stays 243. Named NCL stays 240. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a seizure table.
+- Do not send late myoclonus home as geriatric.
+- Do not call it glyco-only.
+- Do not treat 116 numbers as this list.
+
+Night rule: named Lafora → **myoclonic seizures. Late in life.** △ Plumb.

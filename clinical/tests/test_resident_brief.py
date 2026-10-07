@@ -5747,6 +5747,72 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("dull from birth", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_lafora_is_myoclonic_seizures_late_in_life(self):
+        b = analyze("dog", "Lafora disease")
+        loc = b["localization"].lower()
+        self.assertIn("lafora", loc)
+        self.assertIn("myoclonic seizures", loc)
+        self.assertIn("late in life", loc)
+        self.assertNotIn("weakness and exercise intolerance", loc)
+        self.assertNotIn("glycogenosis", loc)
+        self.assertNotIn("facial dysmorphia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("seizure table", joined)
+        self.assertIn("late myoclonus home as geriatric", joined)
+        self.assertIn("glyco-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_glyco_is_not_lafora(self):
+        b = analyze("dog", "glycogenosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("glycogenosis", loc)
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dachshund_is_not_lafora(self):
+        b = analyze("dog", "miniature wirehaired Dachshund")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_beagle_is_not_lafora(self):
+        b = analyze("dog", "Beagle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_poodle_is_not_lafora(self):
+        b = analyze("dog", "Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_chihuahua_is_not_lafora(self):
+        b = analyze("dog", "Chihuahua")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_lafora(self):
+        b = analyze("cat", "Lafora disease")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_seizure_is_not_lafora(self):
+        b = analyze("dog", "seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lafora", loc)
+        self.assertNotIn("late in life", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

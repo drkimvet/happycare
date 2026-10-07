@@ -172,6 +172,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mps` | Assessment | Mucopolysaccharidosis |
 | `ddx-glyco` | Assessment | Glycogenosis |
 | `ddx-ml2` | Assessment | Mucolipidosis II |
+| `ddx-lafora` | Assessment | Lafora disease |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -303,6 +304,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mps` | Discharge | After mucopolysaccharidosis talk |
 | `dc-glyco` | Discharge | After glycogenosis talk |
 | `dc-ml2` | Discharge | After mucolipidosis II talk |
+| `dc-lafora` | Discharge | After Lafora talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2293,6 +2295,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 4-month clock. Send a dull kitten home as FPV. Call it MPS-only.
 Do next: Name the storage. Look at the face and skeleton. △ Plumb.
 
+### `ddx-lafora`
+
+Lafora — {{patient.name}}
+Onset [late / other]. Trigger [visual / auditory / none / unknown]. Myoclonus [Y/N]. Genetic test [yes / not yet].
+
+DDX:
+1. Lafora — **myoclonic seizures. Late in life**
+2. Miniature wirehaired Dachshund most common. NHLRC1 stays on the page
+3. Visual or auditory triggers allowed. Other exam findings not commonly reported
+4. Not glyco-only (242). Not ml2-only (243). Not NCL-only (240). Packet 116 still owns crash-cart numbers
+5. Dog can fire. Cat does not fire. Bare Dachshund / Beagle / Poodle / Chihuahua does not fire
+
+Do not: harvest a surgery table. Harvest a seizure table. Send late myoclonus home as geriatric. Call it glyco-only.
+Do next: Name the storage. Myoclonic late. Genetic-test conversation. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3376,6 +3393,14 @@ Return now for inability to walk, trouble breathing, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new vision change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-lafora`
+
+{{patient.name}} was evaluated for Lafora disease (an inherited storage disease in dogs that can look like myoclonic seizures later in life). Flashing lights or sudden sounds can trigger it. The printed gene name stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of jerks or seizures, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
