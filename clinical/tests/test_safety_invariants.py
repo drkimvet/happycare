@@ -580,6 +580,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("lafora", VERIF.lower())
         self.assertIn("myoclonic seizures", VERIF.lower())
         self.assertIn("late in life", VERIF.lower())
+        self.assertIn("niemann-pick", VERIF.lower())
+        self.assertIn("hepatosplenomegaly", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -922,6 +924,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-ml2`", MACRO)
         self.assertIn("`ddx-lafora`", MACRO)
         self.assertIn("`dc-lafora`", MACRO)
+        self.assertIn("`ddx-npc`", MACRO)
+        self.assertIn("`dc-npc`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -950,6 +954,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("dull from birth", MACRO.lower())
         self.assertIn("myoclonic seizures", MACRO.lower())
         self.assertIn("late in life", MACRO.lower())
+        self.assertIn("hepatosplenomegaly", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1331,6 +1336,8 @@ class PublicCardInvariants(unittest.TestCase):
             "lafora",
             "myoclonic seizures",
             "late in life",
+            "niemann-pick",
+            "hepatosplenomegaly",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

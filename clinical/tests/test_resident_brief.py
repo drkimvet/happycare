@@ -5813,6 +5813,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("late in life", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_npc_is_cerebellar_hepatosplenomegaly(self):
+        b = analyze("cat", "Niemann-Pick")
+        loc = b["localization"].lower()
+        self.assertIn("niemann-pick", loc)
+        self.assertIn("cerebellar", loc)
+        self.assertIn("hepatosplenomegaly", loc)
+        self.assertNotIn("corneal clouding", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        self.assertNotIn("fpv wobble", loc)
+        self.assertNotIn("lafora", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("cyclodextrin", joined)
+        self.assertIn("cerebellar kitten home as fpv", joined)
+        self.assertIn("ganglio-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ganglio_is_not_npc(self):
+        b = analyze("cat", "GM1 gangliosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gangliosidosis", loc)
+        self.assertNotIn("niemann-pick", loc)
+        self.assertNotIn("hepatosplenomegaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_npc(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("niemann-pick", loc)
+        self.assertNotIn("hepatosplenomegaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lafora_is_not_npc(self):
+        b = analyze("dog", "Lafora disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lafora", loc)
+        self.assertNotIn("niemann-pick", loc)
+        self.assertNotIn("hepatosplenomegaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cat_is_not_npc(self):
+        b = analyze("cat", "lethargy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("niemann-pick", loc)
+        self.assertNotIn("hepatosplenomegaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_npc(self):
+        b = analyze("dog", "Niemann-Pick")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("niemann-pick", loc)
+        self.assertNotIn("hepatosplenomegaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_npc_still_fires(self):
+        b = analyze("cat", "Niemann Pick")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("niemann-pick", loc)
+        self.assertIn("hepatosplenomegaly", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

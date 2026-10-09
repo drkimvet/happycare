@@ -2602,7 +2602,7 @@ Night rule: named mucolipidosis II → **facial dysmorphia. Dull from birth.** �
 
 ## 244. Lafora (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett Lafora chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 243 still owns named mucolipidosis II. Packet 116 still owns seizure-drug numbers. Packet 240 still owns named NCL. Niemann-Pick is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a seizure table. Do not fire on bare Dachshund / Beagle / Poodle / Chihuahua. Dogs only. Skip cats.
+No dedicated Plunkett Lafora chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 243 still owns named mucolipidosis II. Packet 116 still owns seizure-drug numbers. Packet 240 still owns named NCL. Packet 245 owns named Niemann-Pick, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a seizure table. Do not fire on bare Dachshund / Beagle / Poodle / Chihuahua. Dogs only. Skip cats.
 
 Agree with Parsley: **Lafora disease** (Lafora bodies = insoluble glycogen clumps in neurons) occurs most commonly in **miniature wirehaired Dachshunds**; also Basset Hounds, Beagles, Poodles, Chihuahuas, and mixed-breed dogs. **NHLRC1** stays on the page. Genetic testing. Signs: **myoclonic seizures that begin late in life**; visual or auditory triggers allowed. Other clinical examination findings are not commonly reported.
 
@@ -2617,3 +2617,21 @@ Book/public traps:
 - Do not treat 116 numbers as this list.
 
 Night rule: named Lafora → **myoclonic seizures. Late in life.** △ Plumb.
+
+## 245. Niemann-Pick (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Niemann-Pick chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 238 still owns named gangliosidosis. Packet 244 still owns named Lafora. Packet 211 still owns named CH / FPV wobble. Glucocerebrosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest cyclodextrin. Do not use `\bnpc\b` or NPC2 in the regex. Do not fire on a bare cat. Cats only. Skip dogs.
+
+Agree with Parsley: **Niemann-Pick disease** is inherited in **cats** (NPC2 stays on the page). **Cerebellar dysfunction** with **abdominal enlargement due to hepatosplenomegaly**. Six subtypes; types A and C severe cerebellar-like; type A variant neuropathic — stay on the page. Printed intrathecal 2-hydroxylpropyl-beta-cyclodextrin for type C1 might stabilize — stays on the page.
+
+Night split: named Niemann-Pick is cerebellar; hepatosplenomegaly. Bare cat does not fire. Dog does not fire. Named ganglio stays 238. Named CH stays 211. Named Lafora stays 244. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest cyclodextrin.
+- Do not send a cerebellar kitten home as FPV.
+- Do not call it ganglio-only.
+- Do not put NPC2 in the regex.
+
+Night rule: named Niemann-Pick → **cerebellar. Hepatosplenomegaly.** △ Plumb.

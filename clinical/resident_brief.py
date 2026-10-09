@@ -1393,6 +1393,12 @@ LAFORA_RE = re.compile(
     r"lafora",
     re.I,
 )
+# Do not use \bnpc\b or NPC2 in the regex. Do not fire on a bare cat.
+# Cats only. Not ganglio (238). Not CH (211). Not Lafora (244).
+NPC_RE = re.compile(
+    r"niemann[- ]pick",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5477,6 +5483,7 @@ def analyze(
     steal_glyco = GLYCO_RE.search(text)
     steal_ml2 = ML2_RE.search(text)
     steal_lafora = LAFORA_RE.search(text)
+    steal_npc = NPC_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5523,6 +5530,7 @@ def analyze(
         or steal_glyco
         or steal_ml2
         or steal_lafora
+        or steal_npc
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8034,6 +8042,94 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Lafora.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Lafora.")
+
+    npc_named = spec == "cat" and NPC_RE.search(text)
+    if npc_named and not (
+        LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        npc_loc = (
+            "Niemann-Pick. Cerebellar. "
+            "Hepatosplenomegaly."
+        )
+        localization = f"{localization} Also {npc_loc}" if localization else npc_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest cyclodextrin as lobby law. "
+            "Do not send a cerebellar kitten home as FPV. "
+            "Do not call it ganglio-only."
+        )
+        do_not.append(
+            "NPC2 stays on the page. Cerebellar dysfunction with "
+            "abdominal enlargement from hepatosplenomegaly. "
+            "Six subtypes; types A and C cerebellar-like; type A "
+            "variant neuropathic — stay on the page. Printed "
+            "intrathecal 2-hydroxylpropyl-beta-cyclodextrin for "
+            "type C1 might stabilize — stays on the page. Skip dogs. "
+            "Not ganglio-only. Not CH-only. Not Lafora-only."
+        )
+        do_next.append(
+            "Name the storage. Feel the belly. Look cerebellar. △ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "Niemann-Pick disease; inherited in cats; NPC2 stays on "
+            "the page; cerebellar dysfunction with abdominal "
+            "enlargement due to hepatosplenomegaly; six subtypes; "
+            "types A and C severe cerebellar-like; type A variant "
+            "neuropathic; printed intrathecal "
+            "2-hydroxylpropyl-beta-cyclodextrin in cats with type C1 "
+            "might stabilize stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a cerebellar kitten home as FPV."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Niemann-Pick.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Niemann-Pick.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

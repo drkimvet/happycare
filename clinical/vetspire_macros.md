@@ -173,6 +173,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-glyco` | Assessment | Glycogenosis |
 | `ddx-ml2` | Assessment | Mucolipidosis II |
 | `ddx-lafora` | Assessment | Lafora disease |
+| `ddx-npc` | Assessment | Niemann-Pick |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -305,6 +306,7 @@ Suggested names are short so they show up after three letters.
 | `dc-glyco` | Discharge | After glycogenosis talk |
 | `dc-ml2` | Discharge | After mucolipidosis II talk |
 | `dc-lafora` | Discharge | After Lafora talk |
+| `dc-npc` | Discharge | After Niemann-Pick talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2310,6 +2312,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a seizure table. Send late myoclonus home as geriatric. Call it glyco-only.
 Do next: Name the storage. Myoclonic late. Genetic-test conversation. △ Plumb. Do not copy a 116 table.
 
+### `ddx-npc`
+
+Niemann-Pick — {{patient.name}}
+Belly [enlarged / hepatosplenomegaly / not checked]. Course [cerebellar / neuropathic / other]. Type [A / C / A variant / unknown].
+
+DDX:
+1. Niemann-Pick — **cerebellar. Hepatosplenomegaly**
+2. Cats. NPC2 stays on the page. Types A and C stay on the page
+3. Printed cyclodextrin line stays on the page
+4. Not ganglio-only (238). Not CH-only (211). Not Lafora-only (244)
+5. Cat can fire. Dog does not fire. Bare cat does not fire
+
+Do not: harvest a surgery table. Harvest cyclodextrin. Send a cerebellar kitten home as FPV. Call it ganglio-only.
+Do next: Name the storage. Feel the belly. Look cerebellar. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3401,6 +3418,14 @@ Return now for inability to walk, new vision change, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of jerks or seizures, trouble breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-npc`
+
+{{patient.name}} was evaluated for Niemann-Pick disease (an inherited storage disease in cats that can look cerebellar and enlarge the liver and spleen). The printed gene name and the printed treatment line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, a swelling belly, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
