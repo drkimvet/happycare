@@ -5875,6 +5875,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("hepatosplenomegaly", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_gaucher_is_cerebellar_hyperactivity(self):
+        b = analyze("dog", "glucocerebrosidosis")
+        loc = b["localization"].lower()
+        self.assertIn("glucocerebrosidosis", loc)
+        self.assertIn("cerebellar", loc)
+        self.assertIn("hyperactivity", loc)
+        self.assertNotIn("hepatosplenomegaly", loc)
+        self.assertNotIn("niemann-pick", loc)
+        self.assertNotIn("gangliosidosis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("4–6 month clock", joined)
+        self.assertIn("silky wobble home as a disc", joined)
+        self.assertIn("ganglio-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_npc_is_not_gaucher(self):
+        b = analyze("cat", "Niemann-Pick")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hepatosplenomegaly", loc)
+        self.assertNotIn("glucocerebrosidosis", loc)
+        self.assertNotIn("hyperactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ganglio_is_not_gaucher(self):
+        b = analyze("dog", "GM1 gangliosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gangliosidosis", loc)
+        self.assertNotIn("glucocerebrosidosis", loc)
+        self.assertNotIn("hyperactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_silky_is_not_gaucher(self):
+        b = analyze("dog", "Australian Silky Terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glucocerebrosidosis", loc)
+        self.assertNotIn("hyperactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_terrier_is_not_gaucher(self):
+        b = analyze("dog", "terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glucocerebrosidosis", loc)
+        self.assertNotIn("hyperactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_gaucher(self):
+        b = analyze("cat", "Gaucher disease")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("glucocerebrosidosis", loc)
+        self.assertNotIn("hyperactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_gaucher_still_fires(self):
+        b = analyze("dog", "Gaucher disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("glucocerebrosidosis", loc)
+        self.assertIn("hyperactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

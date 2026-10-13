@@ -2620,7 +2620,7 @@ Night rule: named Lafora → **myoclonic seizures. Late in life.** △ Plumb.
 
 ## 245. Niemann-Pick (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett Niemann-Pick chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 238 still owns named gangliosidosis. Packet 244 still owns named Lafora. Packet 211 still owns named CH / FPV wobble. Glucocerebrosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest cyclodextrin. Do not use `\bnpc\b` or NPC2 in the regex. Do not fire on a bare cat. Cats only. Skip dogs.
+No dedicated Plunkett Niemann-Pick chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 238 still owns named gangliosidosis. Packet 244 still owns named Lafora. Packet 211 still owns named CH / FPV wobble. Packet 246 owns named glucocerebrosidosis / Gaucher, not this dump. Do not harvest a surgery table as lobby law. Do not harvest cyclodextrin. Do not use `\bnpc\b` or NPC2 in the regex. Do not fire on a bare cat. Cats only. Skip dogs.
 
 Agree with Parsley: **Niemann-Pick disease** is inherited in **cats** (NPC2 stays on the page). **Cerebellar dysfunction** with **abdominal enlargement due to hepatosplenomegaly**. Six subtypes; types A and C severe cerebellar-like; type A variant neuropathic — stay on the page. Printed intrathecal 2-hydroxylpropyl-beta-cyclodextrin for type C1 might stabilize — stays on the page.
 
@@ -2635,3 +2635,21 @@ Book/public traps:
 - Do not put NPC2 in the regex.
 
 Night rule: named Niemann-Pick → **cerebellar. Hepatosplenomegaly.** △ Plumb.
+
+## 246. Glucocerebrosidosis / Gaucher (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett glucocerebrosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 245 still owns named Niemann-Pick. Packet 238 still owns named gangliosidosis. Packet 211 still owns named CH / FPV wobble. Fucosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4–6 month clock. Do not use `\bgaucher\b`. Do not fire on bare Silky / terrier. Dogs only. Skip cats.
+
+Agree with Parsley: **glucocerebrosidosis** (Gaucher disease) is a **rare** disorder of **Australian Silky Terriers** that produces **multifocal** signs, with **cerebellar ataxia, tremors, and hyperactivity** predominating. Printed age of onset **4–6 months** stays on the page.
+
+Night split: named glucocerebrosidosis / Gaucher disease is cerebellar; hyperactivity. Bare Silky / terrier does not fire. Cat does not fire. Named NPC stays 245. Named ganglio stays 238. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4–6 month clock.
+- Do not send a Silky wobble home as a disc.
+- Do not call it ganglio-only.
+- Do not use `\bgaucher\b`.
+
+Night rule: named glucocerebrosidosis → **cerebellar. Hyperactivity.** △ Plumb.

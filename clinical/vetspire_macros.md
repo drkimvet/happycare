@@ -174,6 +174,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ml2` | Assessment | Mucolipidosis II |
 | `ddx-lafora` | Assessment | Lafora disease |
 | `ddx-npc` | Assessment | Niemann-Pick |
+| `ddx-gaucher` | Assessment | Glucocerebrosidosis / Gaucher |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -307,6 +308,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ml2` | Discharge | After mucolipidosis II talk |
 | `dc-lafora` | Discharge | After Lafora talk |
 | `dc-npc` | Discharge | After Niemann-Pick talk |
+| `dc-gaucher` | Discharge | After Gaucher talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2327,6 +2329,21 @@ DDX:
 Do not: harvest a surgery table. Harvest cyclodextrin. Send a cerebellar kitten home as FPV. Call it ganglio-only.
 Do next: Name the storage. Feel the belly. Look cerebellar. △ Plumb.
 
+### `ddx-gaucher`
+
+Glucocerebrosidosis — {{patient.name}}
+Breed [Australian Silky / other]. Course [cerebellar / tremor / hyperactivity / other]. Onset [4–6 months / other / not dated].
+
+DDX:
+1. Glucocerebrosidosis — **cerebellar. Hyperactivity**
+2. Gaucher disease. Rare. Australian Silky Terriers stay on the page
+3. Printed 4–6 month onset stays on the page. Multifocal. Tremors allowed
+4. Not ganglio-only (238). Not NPC-only (245). Not CH-only (211)
+5. Dog can fire. Cat does not fire. Bare Silky / terrier does not fire
+
+Do not: harvest a surgery table. Harvest a 4–6 month clock. Send a Silky wobble home as a disc. Call it ganglio-only.
+Do next: Name the storage. Cerebellar and hyperactivity. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3426,6 +3443,14 @@ Return now for a cluster of jerks or seizures, trouble breathing, or if you cann
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, a swelling belly, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-gaucher`
+
+{{patient.name}} was evaluated for glucocerebrosidosis (also called Gaucher disease). This rare inherited storage disease can look cerebellar and hyperactive. The printed clock stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for inability to walk, new tremors, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
