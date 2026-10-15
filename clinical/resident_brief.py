@@ -1351,7 +1351,7 @@ GANGLIO_RE = re.compile(
     r"tay[- ]sachs",
     re.I,
 )
-# Do not use bare Persian. Do not use beta-mannosidosis (one dog, later room).
+# Do not use bare Persian. Do not use beta-mannosidosis (one dog, packet 248).
 # Not ganglio (238). Not CH (211). Cats only on the alpha page.
 MANNO_RE = re.compile(
     r"alpha[- ]mannosidos|"
@@ -1410,6 +1410,12 @@ GAUCHER_RE = re.compile(
 # Dogs only. Not Gaucher (246). Not Alexander (236). Not 116 drug dump.
 FUCO_RE = re.compile(
     r"fucosidos",
+    re.I,
+)
+# Do not use \bmanba\b. Do not use bare mannosidos (239).
+# Dogs only. Not manno (239). Not fuco (247). Not SMA (234). Skip goats/cattle.
+BMAN_RE = re.compile(
+    r"beta[- ]mannosidos",
     re.I,
 )
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
@@ -5499,6 +5505,7 @@ def analyze(
     steal_npc = NPC_RE.search(text)
     steal_gaucher = GAUCHER_RE.search(text)
     steal_fuco = FUCO_RE.search(text)
+    steal_bman = BMAN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5548,6 +5555,7 @@ def analyze(
         or steal_npc
         or steal_gaucher
         or steal_fuco
+        or steal_bman
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8326,6 +8334,94 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for fucosidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for fucosidosis.")
+
+    bman_named = spec == "dog" and BMAN_RE.search(text)
+    if bman_named and not (
+        FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        bman_loc = (
+            "Beta-mannosidosis. Central and peripheral "
+            "neuropathy."
+        )
+        localization = f"{localization} Also {bman_loc}" if localization else bman_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest MANBA as lobby law. "
+            "Do not send a neuropathy home as APN. "
+            "Do not call it manno-only. "
+            "Do not call it SMA-only."
+        )
+        do_not.append(
+            "One dog. Central and peripheral neuropathy. "
+            "Printed stray at approximately 1 year stays on the "
+            "page. MANBA stays on the page. Skip goats and cattle. "
+            "Not manno-only. Not fuco-only. Not SMA-only."
+        )
+        do_next.append(
+            "Name the storage. Central and peripheral. "
+            "△ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "beta-mannosidosis more commonly goats, cattle, and "
+            "humans than small animals; one dog with central and "
+            "peripheral neuropathy; age of onset unknown, stray "
+            "at approximately 1 year; MANBA duplication stays "
+            "on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a neuropathy home as APN."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for beta-mannosidosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for beta-mannosidosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

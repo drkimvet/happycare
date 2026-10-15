@@ -176,6 +176,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-npc` | Assessment | Niemann-Pick |
 | `ddx-gaucher` | Assessment | Glucocerebrosidosis / Gaucher |
 | `ddx-fuco` | Assessment | Fucosidosis |
+| `ddx-bman` | Assessment | Beta-mannosidosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -311,6 +312,7 @@ Suggested names are short so they show up after three letters.
 | `dc-npc` | Discharge | After Niemann-Pick talk |
 | `dc-gaucher` | Discharge | After Gaucher talk |
 | `dc-fuco` | Discharge | After fucosidosis talk |
+| `dc-bman` | Discharge | After beta-mannosidosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2361,6 +2363,21 @@ DDX:
 Do not: harvest a surgery table. Harvest BMT. Harvest a 6-month or 24-month clock. Send a Springer home as behavior. Call it Gaucher-only. Call it Alexander-only.
 Do next: Name the storage. Personality and voice. Genetic-test conversation. △ Plumb. Do not copy a 116 table.
 
+### `ddx-bman`
+
+Beta-mannosidosis — {{patient.name}}
+Central [yes / not]. Peripheral [yes / not]. Course [one dog / stray / other]. Genetic test [yes / not yet].
+
+DDX:
+1. Beta-mannosidosis — **central and peripheral neuropathy**
+2. One dog. Printed stray at approximately 1 year stays on the page
+3. MANBA stays on the page. Skip goats and cattle
+4. Not manno-only (239). Not fuco-only (247). Not SMA-only (234). Not APN-only (204)
+5. Dog can fire. Cat does not fire. Bare mannosidosis does not fire. Bare neuropathy does not fire
+
+Do not: harvest a surgery table. Harvest MANBA. Send a neuropathy home as APN. Call it manno-only. Call it SMA-only.
+Do next: Name the storage. Central and peripheral. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3476,6 +3493,14 @@ Return now for inability to walk, new tremors, or if you cannot keep them comfor
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of seizures, trouble swallowing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-bman`
+
+{{patient.name}} was evaluated for beta-mannosidosis (an inherited storage disease; one dog has been reported with central and peripheral neuropathy). The printed stray clock and the printed gene line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for new weakness, a worsening neuropathy, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -5997,6 +5997,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("dysphonia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_bman_is_central_and_peripheral_neuropathy(self):
+        b = analyze("dog", "beta-mannosidosis")
+        loc = b["localization"].lower()
+        self.assertIn("beta-mannosidosis", loc)
+        self.assertIn("central and peripheral neuropathy", loc)
+        self.assertNotIn("alpha-mannosidosis", loc)
+        self.assertNotIn("retina and skeleton", loc)
+        self.assertNotIn("fucosidosis", loc)
+        self.assertNotIn("dysphonia", loc)
+        self.assertNotIn("spinal muscular", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("manba", joined)
+        self.assertIn("neuropathy home as apn", joined)
+        self.assertIn("manno-only", joined)
+        self.assertIn("sma-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_manno_is_not_bman(self):
+        b = analyze("cat", "alpha-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("alpha-mannosidosis", loc)
+        self.assertNotIn("beta-mannosidosis", loc)
+        self.assertNotIn("central and peripheral neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fuco_is_not_bman(self):
+        b = analyze("dog", "fucosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fucosidosis", loc)
+        self.assertNotIn("beta-mannosidosis", loc)
+        self.assertNotIn("central and peripheral neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_bare_mannosidosis_is_not_bman(self):
+        b = analyze("dog", "mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("beta-mannosidosis", loc)
+        self.assertNotIn("central and peripheral neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_bman(self):
+        b = analyze("cat", "beta-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("beta-mannosidosis", loc)
+        self.assertNotIn("central and peripheral neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_neuropathy_is_not_bman(self):
+        b = analyze("dog", "peripheral neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("beta-mannosidosis", loc)
+        self.assertNotIn("central and peripheral neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_bman_still_fires(self):
+        b = analyze("dog", "beta mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("beta-mannosidosis", loc)
+        self.assertIn("central and peripheral neuropathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

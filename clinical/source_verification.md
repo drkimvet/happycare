@@ -2656,7 +2656,7 @@ Night rule: named glucocerebrosidosis → **cerebellar. Hyperactivity.** △ Plu
 
 ## 247. Fucosidosis (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett fucosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 246 still owns named glucocerebrosidosis / Gaucher. Packet 236 still owns named Alexander / personality changes. Packet 116 still owns seizure-drug numbers. Beta-mannosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest BMT. Do not harvest a 6-month or 24-month clock. Do not fire on bare Springer. Dogs only. Skip cats.
+No dedicated Plunkett fucosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 246 still owns named glucocerebrosidosis / Gaucher. Packet 236 still owns named Alexander / personality changes. Packet 116 still owns seizure-drug numbers. Packet 248 owns named beta-mannosidosis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest BMT. Do not harvest a 6-month or 24-month clock. Do not fire on bare Springer. Dogs only. Skip cats.
 
 Agree with Parsley: **fucosidosis of English Springer Spaniels** has been reported in Australia, New Zealand, the UK, and North America. Signs: **ataxia, personality change, dysphonia, dysphagia, hearing or visual deficits, and seizures**. Printed progressive clock from **6 months to >24 months** stays on the page. Fatal. Lymphocyte cytoplasmic vacuolation and DNA testing stay on the page. Printed BMT (impractical) and intracisternal enzyme infusion being investigated stay on the page.
 
@@ -2672,3 +2672,21 @@ Book/public traps:
 - Do not call it Alexander-only.
 
 Night rule: named fucosidosis → **personality change. Dysphonia.** △ Plumb.
+
+## 248. Beta-mannosidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett beta-mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 239 still owns named alpha-mannosidosis. Packet 247 still owns named fucosidosis. Packet 234 still owns named SMA. Packet 204 still owns named APN. Canine multiple system degeneration is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest MANBA. Do not fire on bare mannosidosis. Do not fire on bare neuropathy. Dogs only. Skip cats. Skip goats and cattle.
+
+Agree with Parsley: **beta-mannosidosis** is more commonly identified in goats and cattle, as well as in humans, than in small animals. **One dog** has been reported with **central and peripheral neuropathy**. Age of onset unknown; the case was found as a stray at approximately 1 year. A duplication mutation in the MANBA gene stays on the page.
+
+Night split: named beta-mannosidosis is central and peripheral neuropathy. Bare mannosidosis does not fire. Bare neuropathy does not fire. Cat does not fire. Named alpha-mannosidosis stays 239. Named fucosidosis stays 247. Named SMA stays 234. Named APN stays 204. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest MANBA.
+- Do not send a neuropathy home as APN.
+- Do not call it manno-only.
+- Do not call it SMA-only.
+
+Night rule: named beta-mannosidosis → **central and peripheral neuropathy.** △ Plumb.
