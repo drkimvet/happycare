@@ -5935,6 +5935,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("hyperactivity", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_fuco_is_personality_change_dysphonia(self):
+        b = analyze("dog", "fucosidosis")
+        loc = b["localization"].lower()
+        self.assertIn("fucosidosis", loc)
+        self.assertIn("personality change", loc)
+        self.assertIn("dysphonia", loc)
+        self.assertNotIn("hyperactivity", loc)
+        self.assertNotIn("glucocerebrosidosis", loc)
+        self.assertNotIn("rosenthal fibers", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("bmt", joined)
+        self.assertIn("6-month or 24-month clock", joined)
+        self.assertIn("springer home as behavior", joined)
+        self.assertIn("gaucher-only", joined)
+        self.assertIn("alexander-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gaucher_is_not_fuco(self):
+        b = analyze("dog", "glucocerebrosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hyperactivity", loc)
+        self.assertNotIn("fucosidosis", loc)
+        self.assertNotIn("dysphonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_alex_is_not_fuco(self):
+        b = analyze("dog", "Alexander disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("personality changes", loc)
+        self.assertNotIn("fucosidosis", loc)
+        self.assertNotIn("dysphonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_springer_is_not_fuco(self):
+        b = analyze("dog", "English Springer Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fucosidosis", loc)
+        self.assertNotIn("dysphonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_fuco(self):
+        b = analyze("cat", "fucosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fucosidosis", loc)
+        self.assertNotIn("dysphonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_seizure_is_not_fuco(self):
+        b = analyze("dog", "seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fucosidosis", loc)
+        self.assertNotIn("dysphonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_fuco_still_fires(self):
+        b = analyze("dog", "fucosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fucosidosis", loc)
+        self.assertIn("dysphonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

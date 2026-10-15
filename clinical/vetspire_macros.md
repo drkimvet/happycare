@@ -175,6 +175,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lafora` | Assessment | Lafora disease |
 | `ddx-npc` | Assessment | Niemann-Pick |
 | `ddx-gaucher` | Assessment | Glucocerebrosidosis / Gaucher |
+| `ddx-fuco` | Assessment | Fucosidosis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -309,6 +310,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lafora` | Discharge | After Lafora talk |
 | `dc-npc` | Discharge | After Niemann-Pick talk |
 | `dc-gaucher` | Discharge | After Gaucher talk |
+| `dc-fuco` | Discharge | After fucosidosis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2344,6 +2346,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 4–6 month clock. Send a Silky wobble home as a disc. Call it ganglio-only.
 Do next: Name the storage. Cerebellar and hyperactivity. △ Plumb.
 
+### `ddx-fuco`
+
+Fucosidosis — {{patient.name}}
+Voice [dysphonia / not]. Personality [changed / not]. Course [ataxia / dysphagia / hearing / vision / seizure / other]. Genetic test [yes / not yet].
+
+DDX:
+1. Fucosidosis — **personality change. Dysphonia**
+2. English Springer Spaniels. Printed 6 to >24 month clock stays on the page
+3. Lymphocyte vacuolation and DNA testing stay on the page. Printed BMT / enzyme-infusion lines stay on the page
+4. Not Gaucher-only (246). Not Alexander-only (236). Packet 116 still owns crash-cart numbers
+5. Dog can fire. Cat does not fire. Bare Springer does not fire
+
+Do not: harvest a surgery table. Harvest BMT. Harvest a 6-month or 24-month clock. Send a Springer home as behavior. Call it Gaucher-only. Call it Alexander-only.
+Do next: Name the storage. Personality and voice. Genetic-test conversation. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3451,6 +3468,14 @@ Return now for inability to walk, a swelling belly, or if you cannot keep them c
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for inability to walk, new tremors, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-fuco`
+
+{{patient.name}} was evaluated for fucosidosis (an inherited storage disease in dogs that can change personality and voice). The printed clocks and the printed transplant line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of seizures, trouble swallowing, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

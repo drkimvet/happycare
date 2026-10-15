@@ -2638,7 +2638,7 @@ Night rule: named Niemann-Pick → **cerebellar. Hepatosplenomegaly.** △ Plumb
 
 ## 246. Glucocerebrosidosis / Gaucher (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett glucocerebrosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 245 still owns named Niemann-Pick. Packet 238 still owns named gangliosidosis. Packet 211 still owns named CH / FPV wobble. Fucosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4–6 month clock. Do not use `\bgaucher\b`. Do not fire on bare Silky / terrier. Dogs only. Skip cats.
+No dedicated Plunkett glucocerebrosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 245 still owns named Niemann-Pick. Packet 238 still owns named gangliosidosis. Packet 211 still owns named CH / FPV wobble. Packet 247 owns named fucosidosis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4–6 month clock. Do not use `\bgaucher\b`. Do not fire on bare Silky / terrier. Dogs only. Skip cats.
 
 Agree with Parsley: **glucocerebrosidosis** (Gaucher disease) is a **rare** disorder of **Australian Silky Terriers** that produces **multifocal** signs, with **cerebellar ataxia, tremors, and hyperactivity** predominating. Printed age of onset **4–6 months** stays on the page.
 
@@ -2653,3 +2653,22 @@ Book/public traps:
 - Do not use `\bgaucher\b`.
 
 Night rule: named glucocerebrosidosis → **cerebellar. Hyperactivity.** △ Plumb.
+
+## 247. Fucosidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett fucosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 246 still owns named glucocerebrosidosis / Gaucher. Packet 236 still owns named Alexander / personality changes. Packet 116 still owns seizure-drug numbers. Beta-mannosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest BMT. Do not harvest a 6-month or 24-month clock. Do not fire on bare Springer. Dogs only. Skip cats.
+
+Agree with Parsley: **fucosidosis of English Springer Spaniels** has been reported in Australia, New Zealand, the UK, and North America. Signs: **ataxia, personality change, dysphonia, dysphagia, hearing or visual deficits, and seizures**. Printed progressive clock from **6 months to >24 months** stays on the page. Fatal. Lymphocyte cytoplasmic vacuolation and DNA testing stay on the page. Printed BMT (impractical) and intracisternal enzyme infusion being investigated stay on the page.
+
+Night split: named fucosidosis is personality change; dysphonia. Bare Springer does not fire. Cat does not fire. Named Gaucher stays 246. Named Alexander stays 236. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest BMT.
+- Do not harvest a 6-month or 24-month clock.
+- Do not send a Springer home as behavior.
+- Do not call it Gaucher-only.
+- Do not call it Alexander-only.
+
+Night rule: named fucosidosis → **personality change. Dysphonia.** △ Plumb.

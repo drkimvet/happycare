@@ -1406,6 +1406,12 @@ GAUCHER_RE = re.compile(
     r"gaucher disease",
     re.I,
 )
+# Do not fire on bare Springer. Do not use \bess\b.
+# Dogs only. Not Gaucher (246). Not Alexander (236). Not 116 drug dump.
+FUCO_RE = re.compile(
+    r"fucosidos",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5492,6 +5498,7 @@ def analyze(
     steal_lafora = LAFORA_RE.search(text)
     steal_npc = NPC_RE.search(text)
     steal_gaucher = GAUCHER_RE.search(text)
+    steal_fuco = FUCO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5540,6 +5547,7 @@ def analyze(
         or steal_lafora
         or steal_npc
         or steal_gaucher
+        or steal_fuco
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8223,6 +8231,101 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for glucocerebrosidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for glucocerebrosidosis.")
+
+    fuco_named = spec == "dog" and FUCO_RE.search(text)
+    if fuco_named and not (
+        GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        fuco_loc = (
+            "Fucosidosis. Personality change. "
+            "Dysphonia."
+        )
+        localization = f"{localization} Also {fuco_loc}" if localization else fuco_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest BMT as lobby law. "
+            "Do not harvest a 6-month or 24-month clock as lobby law. "
+            "Do not send a Springer home as behavior. "
+            "Do not call it Gaucher-only. "
+            "Do not call it Alexander-only."
+        )
+        do_not.append(
+            "English Springer Spaniels. Ataxia, personality change, "
+            "dysphonia, dysphagia, hearing or visual deficits, and "
+            "seizures. Printed 6 to >24 month clock stays on the page. "
+            "Fatal. Lymphocyte vacuolation and DNA testing stay on the "
+            "page. Printed BMT impractical and intracisternal enzyme "
+            "infusion stay on the page. Packet 116 still owns the "
+            "crash-cart numbers. Skip cats. "
+            "Not Gaucher-only. Not Alexander-only. Not 116-only."
+        )
+        do_next.append(
+            "Name the storage. Personality and voice. "
+            "Genetic-test conversation. △ Plumb. Do not copy a 116 table."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "fucosidosis of English Springer Spaniels; Australia, "
+            "New Zealand, the UK, and North America; ataxia, "
+            "personality change, dysphonia, dysphagia, hearing or "
+            "visual deficits, and seizures; signs progressively "
+            "develop from 6 months to >24 months stay on the page; "
+            "fatal; lymphocyte cytoplasmic vacuolation; DNA testing; "
+            "printed BMT impractical and intracisternal enzyme "
+            "infusion being investigated stay on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Springer home as behavior."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for fucosidosis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for fucosidosis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
