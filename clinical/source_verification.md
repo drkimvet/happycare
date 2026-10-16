@@ -2675,7 +2675,7 @@ Night rule: named fucosidosis → **personality change. Dysphonia.** △ Plumb.
 
 ## 248. Beta-mannosidosis (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett beta-mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 239 still owns named alpha-mannosidosis. Packet 247 still owns named fucosidosis. Packet 234 still owns named SMA. Packet 204 still owns named APN. Canine multiple system degeneration is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest MANBA. Do not fire on bare mannosidosis. Do not fire on bare neuropathy. Dogs only. Skip cats. Skip goats and cattle.
+No dedicated Plunkett beta-mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 239 still owns named alpha-mannosidosis. Packet 247 still owns named fucosidosis. Packet 234 still owns named SMA. Packet 204 still owns named APN. Packet 249 owns named canine multiple system degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest MANBA. Do not fire on bare mannosidosis. Do not fire on bare neuropathy. Dogs only. Skip cats. Skip goats and cattle.
 
 Agree with Parsley: **beta-mannosidosis** is more commonly identified in goats and cattle, as well as in humans, than in small animals. **One dog** has been reported with **central and peripheral neuropathy**. Age of onset unknown; the case was found as a stray at approximately 1 year. A duplication mutation in the MANBA gene stays on the page.
 
@@ -2690,3 +2690,21 @@ Book/public traps:
 - Do not call it SMA-only.
 
 Night rule: named beta-mannosidosis → **central and peripheral neuropathy.** △ Plumb.
+
+## 249. Canine multiple system degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett canine-multiple-system-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 248 still owns named beta-mannosidosis. Packet 239 still owns named alpha-mannosidosis. Packet 211 still owns named CH / FPV wobble. Packet 213 still owns named cerebellar abiotrophy. Multisystemic chromatolytic neuronal degeneration in Cairn Terriers is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month or 12–18 month clock. Do not fire on bare Kerry / bare Crested. Dogs only. Skip cats.
+
+Agree with Parsley: **canine multiple system degeneration** has been identified in **Kerry Blue Terriers and Chinese Crested dogs**. Signs reflect **cerebellar and brainstem** dysfunction, including ataxia, dysmetria, and festination (a quick, shuffling, short-stepped gait). AR. Printed age of onset approximately **4 months**, severe by **12–18 months**, stays on the page. No treatment.
+
+Night split: named canine multiple system degeneration is cerebellar and brainstem. Bare Kerry does not fire. Bare Crested does not fire. Cat does not fire. Named beta-mannosidosis stays 248. Named alpha-mannosidosis stays 239. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4-month or 12–18 month clock.
+- Do not send a Kerry wobble home as CH.
+- Do not call it manno-only.
+- Do not call it bman-only.
+
+Night rule: named canine multiple system degeneration → **cerebellar and brainstem.** △ Plumb.

@@ -6059,6 +6059,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("central and peripheral neuropathy", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cmsd_is_cerebellar_and_brainstem(self):
+        b = analyze("dog", "canine multiple system degeneration")
+        loc = b["localization"].lower()
+        self.assertIn("canine multiple system degeneration", loc)
+        self.assertIn("cerebellar and brainstem", loc)
+        self.assertNotIn("central and peripheral neuropathy", loc)
+        self.assertNotIn("beta-mannosidosis", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("4-month or 12–18 month clock", joined)
+        self.assertIn("kerry wobble home as ch", joined)
+        self.assertIn("manno-only", joined)
+        self.assertIn("bman-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_kerry_is_not_cmsd(self):
+        b = analyze("dog", "Kerry Blue Terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_crested_is_not_cmsd(self):
+        b = analyze("dog", "Chinese Crested")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_cmsd(self):
+        b = analyze("cat", "canine multiple system degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bman_is_not_cmsd(self):
+        b = analyze("dog", "beta-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("central and peripheral neuropathy", loc)
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_manno_is_not_cmsd(self):
+        b = analyze("cat", "alpha-mannosidosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("alpha-mannosidosis", loc)
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_cmsd(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_cmsd_still_fires(self):
+        b = analyze("dog", "multiple system degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine multiple system degeneration", loc)
+        self.assertIn("cerebellar and brainstem", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

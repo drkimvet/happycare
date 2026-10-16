@@ -1418,6 +1418,13 @@ BMAN_RE = re.compile(
     r"beta[- ]mannosidos",
     re.I,
 )
+# Do not use \bcmsd\b. Do not fire on bare Kerry / bare Crested.
+# Dogs only. Not bman (248). Not manno (239). Not CH (211). Skip cats.
+CMSD_RE = re.compile(
+    r"canine multiple system degenerat|"
+    r"multiple system degenerat",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5506,6 +5513,7 @@ def analyze(
     steal_gaucher = GAUCHER_RE.search(text)
     steal_fuco = FUCO_RE.search(text)
     steal_bman = BMAN_RE.search(text)
+    steal_cmsd = CMSD_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5556,6 +5564,7 @@ def analyze(
         or steal_gaucher
         or steal_fuco
         or steal_bman
+        or steal_cmsd
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8422,6 +8431,99 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for beta-mannosidosis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for beta-mannosidosis.")
+
+    cmsd_named = spec == "dog" and CMSD_RE.search(text)
+    if cmsd_named and not (
+        BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        cmsd_loc = (
+            "Canine multiple system degeneration. Cerebellar "
+            "and brainstem."
+        )
+        localization = f"{localization} Also {cmsd_loc}" if localization else cmsd_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 4-month or 12–18 month clock as lobby law. "
+            "Do not send a Kerry wobble home as CH. "
+            "Do not call it manno-only. "
+            "Do not call it bman-only."
+        )
+        do_not.append(
+            "Kerry Blue Terriers and Chinese Crested dogs. "
+            "Cerebellar and brainstem. Ataxia, dysmetria, and "
+            "festination stay on the page. AR. Printed 4-month "
+            "onset and 12–18 month severe clock stay on the page. "
+            "No treatment. Skip cats. Not manno-only. Not "
+            "bman-only. Not CH-only."
+        )
+        do_next.append(
+            "Name the degeneration. Cerebellar and brainstem. "
+            "△ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "canine multiple system degeneration in Kerry Blue "
+            "Terriers and Chinese Crested dogs; cerebellar and "
+            "brainstem dysfunction including ataxia, dysmetria, "
+            "and festination (quick shuffling short-stepped gait); "
+            "AR; age of onset approximately 4 months with severe "
+            "progression by 12–18 months stay on the page; no "
+            "treatment."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Kerry wobble home as CH."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for canine multiple system degeneration.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for canine multiple system degeneration.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

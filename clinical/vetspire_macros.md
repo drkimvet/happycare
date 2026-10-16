@@ -177,6 +177,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gaucher` | Assessment | Glucocerebrosidosis / Gaucher |
 | `ddx-fuco` | Assessment | Fucosidosis |
 | `ddx-bman` | Assessment | Beta-mannosidosis |
+| `ddx-cmsd` | Assessment | Canine multiple system degeneration |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -313,6 +314,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gaucher` | Discharge | After Gaucher talk |
 | `dc-fuco` | Discharge | After fucosidosis talk |
 | `dc-bman` | Discharge | After beta-mannosidosis talk |
+| `dc-cmsd` | Discharge | After canine multiple system degeneration talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2378,6 +2380,21 @@ DDX:
 Do not: harvest a surgery table. Harvest MANBA. Send a neuropathy home as APN. Call it manno-only. Call it SMA-only.
 Do next: Name the storage. Central and peripheral. △ Plumb.
 
+### `ddx-cmsd`
+
+Canine multiple system degeneration — {{patient.name}}
+Cerebellar [yes / not]. Brainstem [yes / not]. Gait [festination / dysmetria / other]. Breed [Kerry / Crested / other].
+
+DDX:
+1. Canine multiple system degeneration — **cerebellar and brainstem**
+2. Kerry Blue Terriers and Chinese Crested dogs. Printed 4-month / 12–18 month clocks stay on the page
+3. Festination (quick shuffling short-stepped gait) stays on the page. AR. No treatment
+4. Not bman-only (248). Not manno-only (239). Not CH-only (211)
+5. Dog can fire. Cat does not fire. Bare Kerry / Crested does not fire
+
+Do not: harvest a surgery table. Harvest a 4-month or 12–18 month clock. Send a Kerry wobble home as CH. Call it manno-only. Call it bman-only.
+Do next: Name the degeneration. Cerebellar and brainstem. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3501,6 +3518,14 @@ Return now for a cluster of seizures, trouble swallowing, or if you cannot keep 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for new weakness, a worsening neuropathy, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-cmsd`
+
+{{patient.name}} was evaluated for canine multiple system degeneration (an inherited cerebellar and brainstem disease reported in Kerry Blue Terriers and Chinese Crested dogs). The printed clocks stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a fall, a worsening shuffle, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
