@@ -2693,7 +2693,7 @@ Night rule: named beta-mannosidosis → **central and peripheral neuropathy.** �
 
 ## 249. Canine multiple system degeneration (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett canine-multiple-system-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 248 still owns named beta-mannosidosis. Packet 239 still owns named alpha-mannosidosis. Packet 211 still owns named CH / FPV wobble. Packet 213 still owns named cerebellar abiotrophy. Multisystemic chromatolytic neuronal degeneration in Cairn Terriers is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month or 12–18 month clock. Do not fire on bare Kerry / bare Crested. Dogs only. Skip cats.
+No dedicated Plunkett canine-multiple-system-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 248 still owns named beta-mannosidosis. Packet 239 still owns named alpha-mannosidosis. Packet 211 still owns named CH / FPV wobble. Packet 213 still owns named cerebellar abiotrophy. Packet 250 owns named chromatolytic neuronal degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month or 12–18 month clock. Do not fire on bare Kerry / bare Crested. Dogs only. Skip cats.
 
 Agree with Parsley: **canine multiple system degeneration** has been identified in **Kerry Blue Terriers and Chinese Crested dogs**. Signs reflect **cerebellar and brainstem** dysfunction, including ataxia, dysmetria, and festination (a quick, shuffling, short-stepped gait). AR. Printed age of onset approximately **4 months**, severe by **12–18 months**, stays on the page. No treatment.
 
@@ -2708,3 +2708,21 @@ Book/public traps:
 - Do not call it bman-only.
 
 Night rule: named canine multiple system degeneration → **cerebellar and brainstem.** △ Plumb.
+
+## 250. Chromatolytic neuronal degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett chromatolytic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 249 still owns named canine multiple system degeneration. Packet 211 still owns named CH / FPV wobble. Packet 234 still owns named SMA. Packet 237 still owns named globoid / Cairn. Multisystemic neuronal degeneration in red-haired Cocker Spaniels is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cairn / bare terrier. Dogs only. Skip cats.
+
+Agree with Parsley: **multisystemic chromatolytic neuronal degeneration in Cairn Terriers** causes paraparesis in young puppies that progresses rapidly to produce **cerebellar** involvement with bouts of **cataplectic collapse**. Degeneration of neurons is widespread in the brain, spinal cord, and sensory ganglia. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named chromatolytic neuronal degeneration is cerebellar; cataplectic collapse. Bare Cairn does not fire. Cat does not fire. Named CMSD stays 249. Named CH stays 211. Named SMA stays 234. Named globoid stays 237. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not send a Cairn wobble home as CH.
+- Do not call it cmsd-only.
+- Do not call it SMA-only.
+
+Night rule: named chromatolytic neuronal degeneration → **cerebellar. Cataplectic collapse.** △ Plumb.

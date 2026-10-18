@@ -178,6 +178,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fuco` | Assessment | Fucosidosis |
 | `ddx-bman` | Assessment | Beta-mannosidosis |
 | `ddx-cmsd` | Assessment | Canine multiple system degeneration |
+| `ddx-chrom` | Assessment | Chromatolytic neuronal degeneration |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -315,6 +316,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fuco` | Discharge | After fucosidosis talk |
 | `dc-bman` | Discharge | After beta-mannosidosis talk |
 | `dc-cmsd` | Discharge | After canine multiple system degeneration talk |
+| `dc-chrom` | Discharge | After chromatolytic neuronal degeneration talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2395,6 +2397,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 4-month or 12–18 month clock. Send a Kerry wobble home as CH. Call it manno-only. Call it bman-only.
 Do next: Name the degeneration. Cerebellar and brainstem. △ Plumb.
 
+### `ddx-chrom`
+
+Chromatolytic neuronal degeneration — {{patient.name}}
+Cerebellar [yes / not]. Cataplexy [yes / not]. Course [puppy / other]. Breed [Cairn / other].
+
+DDX:
+1. Chromatolytic neuronal degeneration — **cerebellar. Cataplectic collapse**
+2. Cairn Terriers. Printed young-puppy paraparesis stays on the page
+3. Neurons in brain, spinal cord, and sensory ganglia stay on the page. Printed no treatment / euthanasia stay on the page
+4. Not cmsd-only (249). Not SMA-only (234). Not CH-only (211). Not globoid-only (237)
+5. Dog can fire. Cat does not fire. Bare Cairn / terrier does not fire
+
+Do not: harvest a surgery table. Harvest euthanasia. Send a Cairn wobble home as CH. Call it cmsd-only. Call it SMA-only.
+Do next: Name the degeneration. Cerebellar and cataplexy. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3526,6 +3543,14 @@ Return now for new weakness, a worsening neuropathy, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a fall, a worsening shuffle, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-chrom`
+
+{{patient.name}} was evaluated for chromatolytic neuronal degeneration (an inherited cerebellar disease reported in Cairn Terriers that can include cataplectic collapse). The printed puppy course stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a collapse, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -6127,6 +6127,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("cerebellar and brainstem", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_chrom_is_cerebellar_cataplectic_collapse(self):
+        b = analyze("dog", "chromatolytic neuronal degeneration")
+        loc = b["localization"].lower()
+        self.assertIn("chromatolytic", loc)
+        self.assertIn("cataplectic collapse", loc)
+        self.assertNotIn("canine multiple system degeneration", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("euthanasia", joined)
+        self.assertIn("cairn wobble home as ch", joined)
+        self.assertIn("cmsd-only", joined)
+        self.assertIn("sma-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cairn_is_not_chrom(self):
+        b = analyze("dog", "Cairn Terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("chromatolytic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_chrom(self):
+        b = analyze("cat", "chromatolytic neuronal degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("chromatolytic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmsd_is_not_chrom(self):
+        b = analyze("dog", "canine multiple system degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cerebellar and brainstem", loc)
+        self.assertNotIn("chromatolytic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_chrom(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("chromatolytic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sma_is_not_chrom(self):
+        b = analyze("dog", "spinal muscular atrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("chromatolytic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_chrom_still_fires(self):
+        b = analyze("dog", "multisystemic chromatolytic")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("chromatolytic", loc)
+        self.assertIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
