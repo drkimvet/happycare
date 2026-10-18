@@ -1432,6 +1432,13 @@ CHROM_RE = re.compile(
     r"multisystemic chromatolytic",
     re.I,
 )
+# Do not use \bmsnd\b. Do not fire on bare Cocker / bare Poodle.
+# Do not match chromatolytic (250). Dogs only. Not chrom (250).
+# Not CMSD (249). Not NCL (240). Skip cats.
+MSND_RE = re.compile(
+    r"multisystemic neuronal degenerat",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5522,6 +5529,7 @@ def analyze(
     steal_bman = BMAN_RE.search(text)
     steal_cmsd = CMSD_RE.search(text)
     steal_chrom = CHROM_RE.search(text)
+    steal_msnd = MSND_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5574,6 +5582,7 @@ def analyze(
         or steal_bman
         or steal_cmsd
         or steal_chrom
+        or steal_msnd
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8628,6 +8637,103 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for chromatolytic neuronal degeneration.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for chromatolytic neuronal degeneration.")
+
+    msnd_named = spec == "dog" and MSND_RE.search(text)
+    if msnd_named and not (
+        CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        msnd_loc = (
+            "Multisystemic neuronal degeneration. Abnormal "
+            "behavior. Cerebellar."
+        )
+        localization = f"{localization} Also {msnd_loc}" if localization else msnd_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest euthanasia as lobby law. "
+            "Do not send a Cocker wobble home as NCL. "
+            "Do not call it chrom-only. "
+            "Do not call it cmsd-only."
+        )
+        do_not.append(
+            "Red-haired Cocker Spaniels. Abnormal behavior and "
+            "cerebellar signs. Brainstem nuclei stay on the page. "
+            "Printed Mini Poodle 3–4 week rolling, cannot stand "
+            "or right, opisthotonos, intention tremor, and no "
+            "menace stay on the page. Printed no treatment and "
+            "euthanasia or death stay on the page. Skip cats. "
+            "Not chrom-only. Not cmsd-only. Not NCL-only."
+        )
+        do_next.append(
+            "Name the degeneration. Behavior and cerebellar. "
+            "△ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "multisystemic neuronal degeneration in red-haired "
+            "Cocker Spaniels; abnormal behavior and cerebellar "
+            "signs; neuronal changes in various brainstem nuclei; "
+            "similar Mini Poodle 3–4 week rolling, inability to "
+            "stand or right, periodic opisthotonos, intention "
+            "tremors, and lack of a menace stay on the page; no "
+            "treatment; typically euthanasia or death stay on "
+            "the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Cocker wobble home as NCL."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for multisystemic neuronal degeneration.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for multisystemic neuronal degeneration.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

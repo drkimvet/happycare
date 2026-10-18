@@ -2711,7 +2711,7 @@ Night rule: named canine multiple system degeneration → **cerebellar and brain
 
 ## 250. Chromatolytic neuronal degeneration (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett chromatolytic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 249 still owns named canine multiple system degeneration. Packet 211 still owns named CH / FPV wobble. Packet 234 still owns named SMA. Packet 237 still owns named globoid / Cairn. Multisystemic neuronal degeneration in red-haired Cocker Spaniels is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cairn / bare terrier. Dogs only. Skip cats.
+No dedicated Plunkett chromatolytic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 249 still owns named canine multiple system degeneration. Packet 211 still owns named CH / FPV wobble. Packet 234 still owns named SMA. Packet 237 still owns named globoid / Cairn. Packet 251 owns named multisystemic neuronal degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cairn / bare terrier. Dogs only. Skip cats.
 
 Agree with Parsley: **multisystemic chromatolytic neuronal degeneration in Cairn Terriers** causes paraparesis in young puppies that progresses rapidly to produce **cerebellar** involvement with bouts of **cataplectic collapse**. Degeneration of neurons is widespread in the brain, spinal cord, and sensory ganglia. Printed no treatment, typically euthanasia or death, stays on the page.
 
@@ -2726,3 +2726,21 @@ Book/public traps:
 - Do not call it SMA-only.
 
 Night rule: named chromatolytic neuronal degeneration → **cerebellar. Cataplectic collapse.** △ Plumb.
+
+## 251. Multisystemic neuronal degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett multisystemic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 250 still owns named chromatolytic neuronal degeneration. Packet 249 still owns named canine multiple system degeneration. Packet 240 still owns named NCL. Packet 211 still owns named CH / FPV wobble. Familial cerebellar ataxia with hydrocephalus in Bullmastiffs is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cocker / bare Poodle. Dogs only. Skip cats.
+
+Agree with Parsley: **multisystemic neuronal degeneration** has been reported in **red-haired Cocker Spaniels** and causes **abnormal behavior and cerebellar signs**. Neuronal changes occur in various brainstem nuclei. A similar Mini Poodle 3–4 week rolling / cannot stand or right / opisthotonos / intention tremor / no menace condition stays on the page. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named multisystemic neuronal degeneration is abnormal behavior; cerebellar. Bare Cocker does not fire. Bare Poodle does not fire. Cat does not fire. Named chromatolytic stays 250. Named CMSD stays 249. Named NCL stays 240. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not send a Cocker wobble home as NCL.
+- Do not call it chrom-only.
+- Do not call it cmsd-only.
+
+Night rule: named multisystemic neuronal degeneration → **abnormal behavior. Cerebellar.** △ Plumb.

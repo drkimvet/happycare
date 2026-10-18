@@ -6187,6 +6187,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("cataplectic collapse", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_msnd_is_abnormal_behavior_cerebellar(self):
+        b = analyze("dog", "multisystemic neuronal degeneration")
+        loc = b["localization"].lower()
+        self.assertIn("multisystemic neuronal degeneration", loc)
+        self.assertIn("abnormal behavior", loc)
+        self.assertNotIn("chromatolytic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertNotIn("cerebellar and brainstem", loc)
+        self.assertNotIn("central blindness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("euthanasia", joined)
+        self.assertIn("cocker wobble home as ncl", joined)
+        self.assertIn("chrom-only", joined)
+        self.assertIn("cmsd-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cocker_is_not_msnd(self):
+        b = analyze("dog", "Cocker Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("multisystemic neuronal degeneration", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_msnd(self):
+        b = analyze("cat", "multisystemic neuronal degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("multisystemic neuronal degeneration", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_chrom_is_not_msnd(self):
+        b = analyze("dog", "chromatolytic neuronal degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cataplectic collapse", loc)
+        self.assertNotIn("multisystemic neuronal degeneration", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmsd_is_not_msnd(self):
+        b = analyze("dog", "canine multiple system degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cerebellar and brainstem", loc)
+        self.assertNotIn("multisystemic neuronal degeneration", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ncl_is_not_msnd(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("behavior and central blindness", loc)
+        self.assertNotIn("multisystemic neuronal degeneration", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_msnd_still_fires(self):
+        b = analyze("dog", "Multisystemic Neuronal Degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("multisystemic neuronal degeneration", loc)
+        self.assertIn("abnormal behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

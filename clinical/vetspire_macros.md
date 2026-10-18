@@ -179,6 +179,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-bman` | Assessment | Beta-mannosidosis |
 | `ddx-cmsd` | Assessment | Canine multiple system degeneration |
 | `ddx-chrom` | Assessment | Chromatolytic neuronal degeneration |
+| `ddx-msnd` | Assessment | Multisystemic neuronal degeneration |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -317,6 +318,7 @@ Suggested names are short so they show up after three letters.
 | `dc-bman` | Discharge | After beta-mannosidosis talk |
 | `dc-cmsd` | Discharge | After canine multiple system degeneration talk |
 | `dc-chrom` | Discharge | After chromatolytic neuronal degeneration talk |
+| `dc-msnd` | Discharge | After multisystemic neuronal degeneration talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2412,6 +2414,21 @@ DDX:
 Do not: harvest a surgery table. Harvest euthanasia. Send a Cairn wobble home as CH. Call it cmsd-only. Call it SMA-only.
 Do next: Name the degeneration. Cerebellar and cataplexy. △ Plumb.
 
+### `ddx-msnd`
+
+Multisystemic neuronal degeneration — {{patient.name}}
+Behavior [abnormal / not]. Cerebellar [yes / not]. Breed [red-haired Cocker / Mini Poodle / other].
+
+DDX:
+1. Multisystemic neuronal degeneration — **abnormal behavior. Cerebellar**
+2. Red-haired Cocker Spaniels. Brainstem nuclei stay on the page
+3. Printed Mini Poodle 3–4 week rolling / opisthotonos stay on the page. Printed no treatment / euthanasia stay on the page
+4. Not chrom-only (250). Not cmsd-only (249). Not NCL-only (240). Not CH-only (211)
+5. Dog can fire. Cat does not fire. Bare Cocker / Poodle does not fire
+
+Do not: harvest a surgery table. Harvest euthanasia. Send a Cocker wobble home as NCL. Call it chrom-only. Call it cmsd-only.
+Do next: Name the degeneration. Behavior and cerebellar. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3551,6 +3568,14 @@ Return now for a fall, a worsening shuffle, or if you cannot keep them comfortab
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a collapse, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-msnd`
+
+{{patient.name}} was evaluated for multisystemic neuronal degeneration (an inherited disease reported in red-haired Cocker Spaniels that can change behavior and look cerebellar). The printed Mini Poodle similar line stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a fall, a sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
