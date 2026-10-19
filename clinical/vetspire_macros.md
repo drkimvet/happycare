@@ -188,6 +188,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ahe` | Assessment | Alaskan Husky encephalopathy / Leigh-like |
 | `ddx-deen` | Assessment | Toller degenerative encephalopathy / REM sleep |
 | `ddx-l2hga` | Assessment | L-2-hydroxyglutaric aciduria |
+| `ddx-nepo` | Assessment | Standard Poodle neonatal encephalopathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -335,6 +336,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ahe` | Discharge | After Alaskan Husky encephalopathy talk |
 | `dc-deen` | Discharge | After Toller degenerative encephalopathy talk |
 | `dc-l2hga` | Discharge | After L-2-hydroxyglutaric aciduria talk |
+| `dc-nepo` | Discharge | After neonatal encephalopathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2565,6 +2567,21 @@ DDX:
 Do not: harvest a surgery table. Harvest an 8-month clock. Harvest L2HGDH. Copy a 116 table. Send a Yorkie home as AHE. Call it deen-only.
 Do next: Name the aciduria. Aggression and hyperactivity. △ Plumb. Do not copy a 116 table.
 
+### `ddx-nepo`
+
+Neonatal encephalopathy — {{patient.name}}
+Stunted [yes / not]. Weak from birth [yes / not]. Breed [Standard Poodle / other]. Genetic test [offered / not].
+
+DDX:
+1. Neonatal encephalopathy — **stunted. Weak from birth**
+2. Printed ATF2 and 4–5 week clock stay on the page
+3. Printed fatal and genetic test stay on the page. Packet 116 still owns crash-cart numbers
+4. Not l2hga-only (259). Not IE-only (202). Not NME-only (207). Not hydro-only (209). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Poodle does not fire
+
+Do not: harvest a surgery table. Harvest a 4–5 week clock. Harvest ATF2. Copy a 116 table. Send a Poodle home as IE. Call it l2hga-only.
+Do next: Name the encephalopathy. Stunted and weak from birth. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3776,6 +3793,14 @@ Return now for a cluster of seizures, a fall, or if you cannot keep them comfort
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of seizures, sudden aggression, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-nepo`
+
+{{patient.name}} was evaluated for neonatal encephalopathy (an inherited Standard Poodle disease; affected puppies are stunted and weak from birth). The printed clock and the printed genetic-test line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of seizures, collapse, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

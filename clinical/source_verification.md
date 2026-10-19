@@ -2875,7 +2875,7 @@ Night rule: named degenerative encephalopathy → **REM sleep disorder. Anxiety.
 
 ## 259. L-2-hydroxyglutaric aciduria (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett L-2-hydroxyglutaric-aciduria chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 258 still owns named degenerative encephalopathy. Packet 257 still owns named Alaskan Husky encephalopathy. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. Standard Poodle neonatal encephalopathy on the cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest L2HGDH. Do not harvest an 8-month clock. Do not fire on bare Yorkie / Staffie / WHWT. Dogs only. Skip cats.
+No dedicated Plunkett L-2-hydroxyglutaric-aciduria chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 258 still owns named degenerative encephalopathy. Packet 257 still owns named Alaskan Husky encephalopathy. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. Packet 260 owns named neonatal encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest L2HGDH. Do not harvest an 8-month clock. Do not fire on bare Yorkie / Staffie / WHWT. Dogs only. Skip cats.
 
 Agree with Parsley: **L-2-hydroxyglutaric aciduria** is an inherited metabolic disease of dogs caused by a mutation in the L2HGDH gene (printed gene stays on the page). Diagnosis is supported by increased L-2-hydroxyglutaric acid in the urine on organic acid screens (stays on the page). Signs: seizures, ataxia, **aggression**, and **hyperactivity**. Printed onset **approximately 8 months** stays on the page. Bilaterally symmetrical gray-matter lesions in the thalamus, cerebral cortex, and cerebellum stay on the page. Yorkshire Terriers, Staffordshire Bull Terriers, and West Highland White Terriers are known to be affected; a mutation has not been described in West Highland White Terriers (stays on the page). Printed no treatment, typically euthanasia or death, stays on the page.
 
@@ -2891,3 +2891,22 @@ Book/public traps:
 - Do not call it deen-only.
 
 Night rule: named L-2-hydroxyglutaric aciduria → **aggression. Hyperactivity.** △ Plumb.
+
+## 260. Neonatal encephalopathy (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett neonatal-encephalopathy chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 259 still owns named L-2-hydroxyglutaric aciduria. Packet 207 still owns named NME. Packet 209 still owns named hydrocephalus. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Lissencephaly on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest ATF2. Do not harvest a 4–5 week clock. Do not fire on bare Poodle. Dogs only. Skip cats.
+
+Agree with Parsley: **neonatal encephalopathy in Standard Poodles** is an inherited genetic disorder caused by a mutation in the ATF2 gene (printed gene stays on the page). Affected dogs appear **stunted** and **weak from birth** and begin having seizures at the age of 4–5 weeks (printed clock stays on the page). Printed fatal. Printed genetic test available for diagnosis in Standard Poodles stays on the page.
+
+Night split: named neonatal encephalopathy is stunted; weak from birth. Bare Poodle does not fire. Cat does not fire. Named L2HGA stays 259. Named NME stays 207. Named hydro stays 209. General IE stays 202. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4–5 week clock.
+- Do not harvest ATF2.
+- Do not copy a 116 table.
+- Do not send a Poodle home as IE.
+- Do not call it l2hga-only.
+
+Night rule: named neonatal encephalopathy → **stunted. Weak from birth.** △ Plumb.

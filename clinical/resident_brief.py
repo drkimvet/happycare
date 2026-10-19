@@ -1501,6 +1501,14 @@ L2HGA_RE = re.compile(
     r"hydroxyglutaric aciduria",
     re.I,
 )
+# Do not use \batf2\b. Do not fire on bare Poodle.
+# Dogs only. Not L2HGA (259). Not IE (202). Not NME (207). Not hydro (209).
+# Not 116 drug dump. Skip cats.
+NEPO_RE = re.compile(
+    r"neonatal encephalopath|"
+    r"standard poodle.{0,30}encephalopath",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5600,6 +5608,7 @@ def analyze(
     steal_ahe = AHE_RE.search(text)
     steal_deen = DEEN_RE.search(text)
     steal_l2hga = L2HGA_RE.search(text)
+    steal_nepo = NEPO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5661,6 +5670,7 @@ def analyze(
         or steal_ahe
         or steal_deen
         or steal_l2hga
+        or steal_nepo
     ):
         if spec == "cat":
             fuo_loc = (
@@ -9645,6 +9655,109 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for L-2-hydroxyglutaric aciduria.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for L-2-hydroxyglutaric aciduria.")
+
+    nepo_named = spec == "dog" and NEPO_RE.search(text)
+    if nepo_named and not (
+        L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        nepo_loc = (
+            "Neonatal encephalopathy. Stunted. "
+            "Weak from birth."
+        )
+        localization = f"{localization} Also {nepo_loc}" if localization else nepo_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 4–5 week clock as lobby law. "
+            "Do not harvest ATF2 as lobby law. "
+            "Do not copy a 116 table as lobby law. "
+            "Do not send a Poodle home as IE. "
+            "Do not call it l2hga-only."
+        )
+        do_not.append(
+            "Standard Poodles. Printed ATF2 stays on the page. "
+            "Printed 4–5 week clock stays on the page. "
+            "Stunted and weak from birth. Printed fatal and "
+            "genetic test stay on the page. Packet 116 still "
+            "owns the crash-cart numbers. Skip cats. Not "
+            "l2hga-only. Not IE-only. Not NME-only. Not "
+            "hydro-only. Not 116-only."
+        )
+        do_next.append(
+            "Name the encephalopathy. Stunted and weak from "
+            "birth. △ Plumb. Do not copy a 116 table."
+        )
+        sources.append(
+            "Merck congenital cerebral (Parsley, Mar 2026): "
+            "neonatal encephalopathy in Standard Poodles; "
+            "ATF2 stays on the page; stunted and weak from "
+            "birth; seizures at 4–5 weeks stay on the page; "
+            "fatal; genetic test available stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Poodle home as IE."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for neonatal encephalopathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for neonatal encephalopathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

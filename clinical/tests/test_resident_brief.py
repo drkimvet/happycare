@@ -6739,6 +6739,76 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("aggression", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_nepo_is_stunted_weak_from_birth(self):
+        b = analyze("dog", "neonatal encephalopathy")
+        loc = b["localization"].lower()
+        self.assertIn("neonatal encephalopathy", loc)
+        self.assertIn("stunted", loc)
+        self.assertIn("weak from birth", loc)
+        self.assertNotIn("l-2-hydroxyglutaric", loc)
+        self.assertNotIn("pug encephalitis", loc)
+        self.assertNotIn("dome-head", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("4–5 week clock", joined)
+        self.assertIn("atf2", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("poodle home as ie", joined)
+        self.assertIn("l2hga-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_poodle_is_not_nepo(self):
+        b = analyze("dog", "Standard Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_nepo(self):
+        b = analyze("cat", "neonatal encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_l2hga_is_not_nepo(self):
+        b = analyze("dog", "L-2-hydroxyglutaric aciduria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("aggression", loc)
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nme_is_not_nepo(self):
+        b = analyze("dog", "necrotizing meningoencephalitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pug encephalitis", loc)
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydro_is_not_nepo(self):
+        b = analyze("dog", "hydrocephalus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head", loc)
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ie_is_not_nepo(self):
+        b = analyze("dog", "idiopathic epilepsy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_nepo_still_fires(self):
+        b = analyze("dog", "Standard Poodle encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neonatal encephalopathy", loc)
+        self.assertIn("stunted", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
