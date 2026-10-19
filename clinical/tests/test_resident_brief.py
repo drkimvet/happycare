@@ -6490,6 +6490,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("spongiform degeneration", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hqam_is_amblyopia_swimmers(self):
+        b = analyze("dog", "hereditary quadriplegia")
+        loc = b["localization"].lower()
+        self.assertIn("hereditary quadriplegia", loc)
+        self.assertIn("amblyopia", loc)
+        self.assertNotIn("spongiform degeneration", loc)
+        self.assertNotIn("central blindness", loc)
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("euthanasia", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("setter home as ncl", joined)
+        self.assertIn("spong-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_setter_is_not_hqam(self):
+        b = analyze("dog", "Irish Setter")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hereditary quadriplegia", loc)
+        self.assertNotIn("amblyopia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_hqam(self):
+        b = analyze("cat", "hereditary quadriplegia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hereditary quadriplegia", loc)
+        self.assertNotIn("amblyopia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_spong_is_not_hqam(self):
+        b = analyze("dog", "spongiform degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("head tremor", loc)
+        self.assertNotIn("hereditary quadriplegia", loc)
+        self.assertNotIn("amblyopia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ncl_is_not_hqam(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("behavior and central blindness", loc)
+        self.assertNotIn("hereditary quadriplegia", loc)
+        self.assertNotIn("amblyopia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mfe_is_not_hqam(self):
+        b = analyze("dog", "familial cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("blindness", loc)
+        self.assertNotIn("hereditary quadriplegia", loc)
+        self.assertNotIn("amblyopia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_hqam_still_fires(self):
+        b = analyze("dog", "quadriplegia and amblyopia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hereditary quadriplegia", loc)
+        self.assertIn("amblyopia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

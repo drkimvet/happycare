@@ -2802,7 +2802,7 @@ Night rule: named central axonopathy → **tremors. Progressive.** △ Plumb.
 
 ## 255. Spongiform degeneration (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett spongiform-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 254 still owns named central axonopathy. Packet 215 still owns named white shaker. Packet 211 still owns named CH / FPV wobble. Packet 236 still owns named Alexander. Hereditary quadriplegia and amblyopia in Irish Setters is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Labrador / Sheltie / Silky / Cocker / Rottweiler. Dog or cat.
+No dedicated Plunkett spongiform-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 254 still owns named central axonopathy. Packet 215 still owns named white shaker. Packet 211 still owns named CH / FPV wobble. Packet 236 still owns named Alexander. Packet 256 owns named hereditary quadriplegia and amblyopia, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Labrador / Sheltie / Silky / Cocker / Rottweiler. Dog or cat.
 
 Agree with Parsley: **spongiform degenerative conditions** have been described in **young dogs and cats** and are often associated with **ataxia/hypermetria**, **head tremors**, intermittent contractures, postural abnormalities, and behavioral changes. Named breeds and Egyptian Mau / Burmese stay on the page. Spongy degeneration of white or gray matter stays on the page. Printed mutation in Australian Cattle Dogs / Shetland Sheepdogs / Belgian Shepherds stays on the page. Printed poor prognosis stays on the page.
 
@@ -2816,3 +2816,21 @@ Book/public traps:
 - Do not call it shaker-only.
 
 Night rule: named spongiform degeneration → **ataxia. Head tremor.** △ Plumb.
+
+## 256. Hereditary quadriplegia and amblyopia (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett hereditary-quadriplegia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 255 still owns named spongiform degeneration. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Alaskan Husky encephalopathy is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Setter. Do not fire on bare swimmer. Dogs only. Skip cats.
+
+Agree with Parsley: **hereditary quadriplegia and amblyopia in Irish Setters** is AR, homozygous lethal. Signs: **head tremor, visual impairment, nystagmus, inability to stand, and seizures beginning at birth**. Animals are called **swimmers**. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named hereditary quadriplegia is amblyopia; swimmers. Bare Setter does not fire. Cat does not fire. Named spongiform stays 255. Named NCL stays 240. Named MFE stays 252. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not copy a 116 table.
+- Do not send a Setter home as NCL.
+- Do not call it spong-only.
+
+Night rule: named hereditary quadriplegia → **amblyopia. Swimmers.** △ Plumb.
