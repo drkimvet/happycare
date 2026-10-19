@@ -6990,6 +6990,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("pigment-associated", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_poly_is_visual_disturbances_extra_gyri(self):
+        b = analyze("dog", "polymicrogyria")
+        loc = b["localization"].lower()
+        self.assertIn("polymicrogyria", loc)
+        self.assertIn("visual disturbances", loc)
+        self.assertIn("extra gyri", loc)
+        self.assertNotIn("smooth gyri", loc)
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("congenital deafness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("hydro table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("poodle home as nepo", joined)
+        self.assertIn("liss-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_poodle_is_not_poly(self):
+        b = analyze("dog", "Standard Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("polymicrogyria", loc)
+        self.assertNotIn("extra gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_poly(self):
+        b = analyze("cat", "polymicrogyria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("polymicrogyria", loc)
+        self.assertNotIn("extra gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_liss_is_not_poly(self):
+        b = analyze("dog", "lissencephaly")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("smooth gyri", loc)
+        self.assertNotIn("polymicrogyria", loc)
+        self.assertNotIn("extra gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nepo_is_not_poly(self):
+        b = analyze("dog", "neonatal encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("stunted", loc)
+        self.assertNotIn("polymicrogyria", loc)
+        self.assertNotIn("extra gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_deaf_is_not_poly(self):
+        b = analyze("dog", "congenital deafness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pigment-associated", loc)
+        self.assertNotIn("polymicrogyria", loc)
+        self.assertNotIn("extra gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_poly_still_fires(self):
+        b = analyze("dog", "polymicrogyria, Standard Poodle")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("polymicrogyria", loc)
+        self.assertIn("extra gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -192,6 +192,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-liss` | Assessment | Lissencephaly / smooth gyri |
 | `ddx-pend` | Assessment | Pendular nystagmus / visual pathway |
 | `ddx-deaf` | Assessment | Congenital deafness / pigment-associated |
+| `ddx-poly` | Assessment | Polymicrogyria / extra gyri |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -343,6 +344,7 @@ Suggested names are short so they show up after three letters.
 | `dc-liss` | Discharge | After lissencephaly talk |
 | `dc-pend` | Discharge | After pendular nystagmus talk |
 | `dc-deaf` | Discharge | After congenital deafness talk |
+| `dc-poly` | Discharge | After polymicrogyria talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2633,6 +2635,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a BAER table. Copy a 116 table. Send a Dalmatian home as DALV. Call it pend-only.
 Do next: Name the deafness. Pigment-associated and BAER. △ Plumb. Do not copy a 116 table.
 
+### `ddx-poly`
+
+Polymicrogyria — {{patient.name}}
+Visual disturbances [yes / not]. Extra gyri [yes / not]. Breed [Standard Poodle / other]. Ventricles [asymmetric / not / not imaged].
+
+DDX:
+1. Polymicrogyria — **visual disturbances. Extra gyri**
+2. Printed smaller and more numerous gyri stay on the page
+3. Printed ventriculomegaly / hydrocephalus stay on the page. Packet 209 still owns hydro. Packet 116 still owns crash-cart numbers
+4. Not deaf-only (263). Not liss-only (261). Not nepo-only (260). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Poodle / bare gyri do not fire
+
+Do not: harvest a surgery table. Harvest a hydro table. Copy a 116 table. Send a Poodle home as NEPO. Call it liss-only.
+Do next: Name the gyri. Visual disturbances and extra gyri. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3876,6 +3893,14 @@ Return now for a new head tilt, dullness, or if you cannot keep them comfortable
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a new head tilt, sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-poly`
+
+{{patient.name}} was evaluated for polymicrogyria (an inherited Standard Poodle brain difference with extra small gyri that most often shows as visual trouble). The printed ventricle line stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for sudden blindness, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

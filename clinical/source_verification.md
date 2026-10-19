@@ -2949,7 +2949,7 @@ Night rule: named pendular nystagmus → **visual pathway. No clinical importanc
 
 ## 263. Congenital deafness (Merck Parsley Mar 2026 cerebral)
 
-No dedicated Plunkett congenital-deafness chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 262 still owns named pendular nystagmus. Packet 261 still owns named lissencephaly. Packet 253 still owns named Dalmatian leukodystrophy. Packet 116 still owns seizure-drug numbers. Polymicrogyria on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a BAER table. Do not fire on bare Dalmatian. Do not fire on bare deaf. Dog or cat.
+No dedicated Plunkett congenital-deafness chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 262 still owns named pendular nystagmus. Packet 261 still owns named lissencephaly. Packet 253 still owns named Dalmatian leukodystrophy. Packet 116 still owns seizure-drug numbers. Packet 264 owns named polymicrogyria, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a BAER table. Do not fire on bare Dalmatian. Do not fire on bare deaf. Dog or cat.
 
 Agree with Parsley: **congenital deafness** is associated primarily with Dalmatians; also recorded in Doberman Pinscher, Puli, Blue Heeler, Australian Shepherd, English Setter, Boston Terrier, and Old English Sheepdog (stays on the page). **Pigment-associated** in Dalmatians; not pigment-associated in Doberman Pinschers and Pulis (stays on the page). Linked to **blue eye color in white cats** (stays on the page). **BAER** is a useful diagnostic test used primarily to identify carriers in a litter (stays on the page).
 
@@ -2964,3 +2964,21 @@ Book/public traps:
 - Do not call it pend-only.
 
 Night rule: named congenital deafness → **pigment-associated. BAER.** △ Plumb.
+
+## 264. Polymicrogyria (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett polymicrogyria chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 263 still owns named congenital deafness. Packet 261 still owns named lissencephaly. Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Paroxysmal dyskinesia on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Poodle. Do not fire on bare gyri. Dogs only. Skip cats.
+
+Agree with Parsley: **polymicrogyria** is an inherited disease identified in Standard Poodles that results in focal areas of the brain having **smaller and more numerous gyri** than normal. Most common signs are **visual disturbances**; ataxia, behavior problems, and asymmetrical lateral ventricle dilatation (ventriculomegaly) or hydrocephalus stay on the page. Signs are attributable to the portion of the brain affected by the abnormal gyri.
+
+Night split: named polymicrogyria is visual disturbances; extra gyri. Bare Poodle does not fire. Cat does not fire. Named DEAF stays 263. Named LISS stays 261. Named NEPO stays 260. Named hydro stays 209. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a hydro table.
+- Do not copy a 116 table.
+- Do not send a Poodle home as NEPO.
+- Do not call it liss-only.
+
+Night rule: named polymicrogyria → **visual disturbances. Extra gyri.** △ Plumb.
