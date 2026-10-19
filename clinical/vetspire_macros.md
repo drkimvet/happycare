@@ -182,6 +182,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-msnd` | Assessment | Multisystemic neuronal degeneration |
 | `ddx-mfe` | Assessment | Familial cerebellar ataxia / mitochondrial fission |
 | `ddx-dalv` | Assessment | Dalmatian leukodystrophy |
+| `ddx-saxon` | Assessment | Central axonopathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -323,6 +324,7 @@ Suggested names are short so they show up after three letters.
 | `dc-msnd` | Discharge | After multisystemic neuronal degeneration talk |
 | `dc-mfe` | Discharge | After familial cerebellar ataxia talk |
 | `dc-dalv` | Discharge | After Dalmatian leukodystrophy talk |
+| `dc-saxon` | Discharge | After central axonopathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2463,6 +2465,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 3–6 month clock. Harvest euthanasia. Send a Dalmatian home as hydro-only. Call it mfe-only. Call it NCL-only.
 Do next: Name the leukodystrophy. Vision and cavitation. △ Plumb.
 
+### `ddx-saxon`
+
+Central axonopathy — {{patient.name}}
+Tremors [yes / not]. Progressive [yes / not]. Breed [Scottish Terrier / other].
+
+DDX:
+1. Central axonopathy — **tremors. Progressive**
+2. Scottish Terriers. Printed 10–12 week clock stays on the page
+3. NAD-similar and diffuse white matter degeneration stay on the page. Printed paraparesis stays on the page. No treatment
+4. Not dalv-only (253). Not NAD-only (216). Not Alexander-only (236). Not Boxer-axonopathy-only (222)
+5. Dog can fire. Cat does not fire. Bare Scottish Terrier does not fire. Bare axonopathy does not fire
+
+Do not: harvest a surgery table. Harvest a 10–12 week clock. Send a Scottish Terrier home as NAD-only. Call it dalv-only. Call it Alexander-only.
+Do next: Name the axonopathy. Tremors and progressive. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3626,6 +3643,14 @@ Return now for a fall, sudden blindness, or if you cannot keep them comfortable.
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for sudden vision loss, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-saxon`
+
+{{patient.name}} was evaluated for central axonopathy (an inherited progressive tremor disease reported in Scottish Terriers). The printed clock and the printed NAD-similar line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worsening tremors, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

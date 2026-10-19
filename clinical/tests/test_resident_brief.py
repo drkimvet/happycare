@@ -6378,6 +6378,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("white-matter cavitation", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_saxon_is_tremors_progressive(self):
+        b = analyze("dog", "central axonopathy")
+        loc = b["localization"].lower()
+        self.assertIn("central axonopathy", loc)
+        self.assertIn("tremors", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        self.assertNotIn("dalmatian leukodystrophy", loc)
+        self.assertNotIn("personality changes", loc)
+        self.assertNotIn("proprioception stays", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("10–12 week clock", joined)
+        self.assertIn("scottish terrier home as nad-only", joined)
+        self.assertIn("dalv-only", joined)
+        self.assertIn("alexander-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_scottish_terrier_is_not_saxon(self):
+        b = analyze("dog", "Scottish Terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("central axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_saxon(self):
+        b = analyze("cat", "central axonopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("central axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dalv_is_not_saxon(self):
+        b = analyze("dog", "Dalmatian leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white-matter cavitation", loc)
+        self.assertNotIn("central axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nad_is_not_saxon(self):
+        b = analyze("dog", "neuraxonal dystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("neuraxonal dystrophy", loc)
+        self.assertNotIn("central axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_alexander_is_not_saxon(self):
+        b = analyze("dog", "Alexander disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("personality changes", loc)
+        self.assertNotIn("central axonopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_saxon_still_fires(self):
+        b = analyze("dog", "Scottish Terrier axonopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("central axonopathy", loc)
+        self.assertIn("tremors", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

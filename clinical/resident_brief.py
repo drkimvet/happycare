@@ -1455,6 +1455,14 @@ DALV_RE = re.compile(
     r"cavitating leukodystroph",
     re.I,
 )
+# Do not use \bnad\b. Do not use bare axonopath (Boxer is 222).
+# Do not fire on bare Scottish / bare terrier.
+# Dogs only. Not DALV (253). Not NAD (216). Not Alexander (236). Skip cats.
+SAXON_RE = re.compile(
+    r"central axonopath|"
+    r"scottish terrier axonopath",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5548,6 +5556,7 @@ def analyze(
     steal_msnd = MSND_RE.search(text)
     steal_mfe = MFE_RE.search(text)
     steal_dalv = DALV_RE.search(text)
+    steal_saxon = SAXON_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5603,6 +5612,7 @@ def analyze(
         or steal_msnd
         or steal_mfe
         or steal_dalv
+        or steal_saxon
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8953,6 +8963,105 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Dalmatian leukodystrophy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Dalmatian leukodystrophy.")
+
+    saxon_named = spec == "dog" and SAXON_RE.search(text)
+    if saxon_named and not (
+        DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        saxon_loc = (
+            "Central axonopathy. Tremors. "
+            "Progressive."
+        )
+        localization = f"{localization} Also {saxon_loc}" if localization else saxon_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 10–12 week clock as lobby law. "
+            "Do not send a Scottish Terrier home as NAD-only. "
+            "Do not call it dalv-only. "
+            "Do not call it Alexander-only."
+        )
+        do_not.append(
+            "Scottish Terriers. Tremors, ataxia, and printed "
+            "paraparesis stay on the page. Similarities to "
+            "neuraxonal dystrophies stay on the page. Diffuse "
+            "white matter degeneration in brain and spinal "
+            "cord stay on the page. Printed 10–12 week onset "
+            "and progressive stay on the page. No treatment. "
+            "Skip cats. Not dalv-only. Not NAD-only. Not "
+            "Alexander-only. Not Boxer-axonopathy-only."
+        )
+        do_next.append(
+            "Name the axonopathy. Tremors and progressive. "
+            "△ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "central axonopathy in Scottish Terriers; tremors, "
+            "ataxia, and paraparesis stay on the page; "
+            "similarities to neuraxonal dystrophies stay on "
+            "the page; diffuse white matter degeneration in "
+            "brain and spinal cord; age of onset 10–12 weeks "
+            "and progressive stay on the page; no treatment."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Scottish Terrier home as NAD-only."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for central axonopathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for central axonopathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
