@@ -2894,7 +2894,7 @@ Night rule: named L-2-hydroxyglutaric aciduria → **aggression. Hyperactivity.*
 
 ## 260. Neonatal encephalopathy (Merck Parsley Mar 2026 cerebral)
 
-No dedicated Plunkett neonatal-encephalopathy chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 259 still owns named L-2-hydroxyglutaric aciduria. Packet 207 still owns named NME. Packet 209 still owns named hydrocephalus. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Lissencephaly on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest ATF2. Do not harvest a 4–5 week clock. Do not fire on bare Poodle. Dogs only. Skip cats.
+No dedicated Plunkett neonatal-encephalopathy chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 259 still owns named L-2-hydroxyglutaric aciduria. Packet 207 still owns named NME. Packet 209 still owns named hydrocephalus. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Packet 261 owns named lissencephaly, not this dump. Do not harvest a surgery table as lobby law. Do not harvest ATF2. Do not harvest a 4–5 week clock. Do not fire on bare Poodle. Dogs only. Skip cats.
 
 Agree with Parsley: **neonatal encephalopathy in Standard Poodles** is an inherited genetic disorder caused by a mutation in the ATF2 gene (printed gene stays on the page). Affected dogs appear **stunted** and **weak from birth** and begin having seizures at the age of 4–5 weeks (printed clock stays on the page). Printed fatal. Printed genetic test available for diagnosis in Standard Poodles stays on the page.
 
@@ -2910,3 +2910,21 @@ Book/public traps:
 - Do not call it l2hga-only.
 
 Night rule: named neonatal encephalopathy → **stunted. Weak from birth.** △ Plumb.
+
+## 261. Lissencephaly (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett lissencephaly chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 210 still owns named hydranencephaly. Packet 211 still owns named cerebellar hypoplasia. Packet 207 still owns named NME. Packet 116 still owns seizure-drug numbers. Pendular nystagmus on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Lhasa / Pekingese / Kelpie. Dog or cat.
+
+Agree with Parsley: **lissencephaly** is an absence of or decrease in cerebral gyri. Rare. Lhasa Apsos, Pekingese, and Australian Kelpies stay on the page. Association with cerebellar hypoplasia in Irish Setters, Wire Fox Terriers, and Samoyeds stays on the page. Korat cats with microencephaly stay on the page. Signs: **mild behavioral abnormalities** and seizures (printed seizure line stays on the page).
+
+Night split: named lissencephaly is mild behavior; smooth gyri. Bare Lhasa does not fire. Cat can fire. Named NEPO stays 260. Named hydro stays 209. Named hydran stays 210. Named CH stays 211. Named NME stays 207. Seizure crash-cart stays 116. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a hydro table.
+- Do not copy a 116 table.
+- Do not send a Lhasa home as IE.
+- Do not call it nepo-only.
+
+Night rule: named lissencephaly → **mild behavior. Smooth gyri.** △ Plumb.

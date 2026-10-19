@@ -189,6 +189,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-deen` | Assessment | Toller degenerative encephalopathy / REM sleep |
 | `ddx-l2hga` | Assessment | L-2-hydroxyglutaric aciduria |
 | `ddx-nepo` | Assessment | Standard Poodle neonatal encephalopathy |
+| `ddx-liss` | Assessment | Lissencephaly / smooth gyri |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -337,6 +338,7 @@ Suggested names are short so they show up after three letters.
 | `dc-deen` | Discharge | After Toller degenerative encephalopathy talk |
 | `dc-l2hga` | Discharge | After L-2-hydroxyglutaric aciduria talk |
 | `dc-nepo` | Discharge | After neonatal encephalopathy talk |
+| `dc-liss` | Discharge | After lissencephaly talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2582,6 +2584,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 4–5 week clock. Harvest ATF2. Copy a 116 table. Send a Poodle home as IE. Call it l2hga-only.
 Do next: Name the encephalopathy. Stunted and weak from birth. △ Plumb. Do not copy a 116 table.
 
+### `ddx-liss`
+
+Lissencephaly — {{patient.name}}
+Mild behavior [yes / not]. Smooth gyri [yes / not]. Breed [Lhasa / Pekingese / Kelpie / Korat / other]. CH association [named / not].
+
+DDX:
+1. Lissencephaly — **mild behavior. Smooth gyri**
+2. Printed Lhasa / Pekingese / Kelpie and Korat microencephaly stay on the page
+3. Printed CH association stays on the page. Packet 211 still owns CH. Packet 116 still owns crash-cart numbers
+4. Not nepo-only (260). Not hydro-only (209). Not hydran-only (210). Not NME-only (207). Not 116-only
+5. Dog or cat can fire. Bare Lhasa / Pekingese / Kelpie do not fire
+
+Do not: harvest a surgery table. Harvest a hydro table. Copy a 116 table. Send a Lhasa home as IE. Call it nepo-only.
+Do next: Name the lissencephaly. Mild behavior and smooth gyri. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3801,6 +3818,14 @@ Return now for a cluster of seizures, sudden aggression, or if you cannot keep t
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of seizures, collapse, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-liss`
+
+{{patient.name}} was evaluated for lissencephaly (an inherited smooth-gyri brain difference that can include mild behavior change). The printed breed list and the printed CH-association line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of seizures, sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

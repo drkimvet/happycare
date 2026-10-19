@@ -6809,6 +6809,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("stunted", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_liss_is_mild_behavior_smooth_gyri(self):
+        b = analyze("dog", "lissencephaly")
+        loc = b["localization"].lower()
+        self.assertIn("lissencephaly", loc)
+        self.assertIn("mild behavior", loc)
+        self.assertIn("smooth gyri", loc)
+        self.assertNotIn("neonatal encephalopathy", loc)
+        self.assertNotIn("stunted", loc)
+        self.assertNotIn("dome-head", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("hydro table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("lhasa home as ie", joined)
+        self.assertIn("nepo-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_lhasa_is_not_liss(self):
+        b = analyze("dog", "Lhasa Apso")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lissencephaly", loc)
+        self.assertNotIn("smooth gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nepo_is_not_liss(self):
+        b = analyze("dog", "neonatal encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("stunted", loc)
+        self.assertNotIn("lissencephaly", loc)
+        self.assertNotIn("smooth gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydro_is_not_liss(self):
+        b = analyze("dog", "hydrocephalus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head", loc)
+        self.assertNotIn("lissencephaly", loc)
+        self.assertNotIn("smooth gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nme_is_not_liss(self):
+        b = analyze("dog", "necrotizing meningoencephalitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pug encephalitis", loc)
+        self.assertNotIn("lissencephaly", loc)
+        self.assertNotIn("smooth gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_liss_still_fires(self):
+        b = analyze("dog", "lissencephalic")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lissencephaly", loc)
+        self.assertIn("smooth gyri", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_liss_still_fires(self):
+        b = analyze("cat", "lissencephaly")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lissencephaly", loc)
+        self.assertIn("mild behavior", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

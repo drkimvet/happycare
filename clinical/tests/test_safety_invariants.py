@@ -611,6 +611,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("hydroxyglutaric aciduria", VERIF.lower())
         self.assertIn("neonatal encephalopathy", VERIF.lower())
         self.assertIn("stunted", VERIF.lower())
+        self.assertIn("lissencephaly", VERIF.lower())
+        self.assertIn("smooth gyri", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -985,6 +987,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-l2hga`", MACRO)
         self.assertIn("`ddx-nepo`", MACRO)
         self.assertIn("`dc-nepo`", MACRO)
+        self.assertIn("`ddx-liss`", MACRO)
+        self.assertIn("`dc-liss`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1035,6 +1039,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("hydroxyglutaric aciduria", MACRO.lower())
         self.assertIn("neonatal encephalopathy", MACRO.lower())
         self.assertIn("stunted", MACRO.lower())
+        self.assertIn("lissencephaly", MACRO.lower())
+        self.assertIn("smooth gyri", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1447,6 +1453,8 @@ class PublicCardInvariants(unittest.TestCase):
             "hydroxyglutaric aciduria",
             "neonatal encephalopathy",
             "stunted",
+            "lissencephaly",
+            "smooth gyri",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
