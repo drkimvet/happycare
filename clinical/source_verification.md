@@ -2967,7 +2967,7 @@ Night rule: named congenital deafness → **pigment-associated. BAER.** △ Plum
 
 ## 264. Polymicrogyria (Merck Parsley Mar 2026 cerebral)
 
-No dedicated Plunkett polymicrogyria chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 263 still owns named congenital deafness. Packet 261 still owns named lissencephaly. Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Paroxysmal dyskinesia on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Poodle. Do not fire on bare gyri. Dogs only. Skip cats.
+No dedicated Plunkett polymicrogyria chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 263 still owns named congenital deafness. Packet 261 still owns named lissencephaly. Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Packet 265 owns named paroxysmal dyskinesia, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Poodle. Do not fire on bare gyri. Dogs only. Skip cats.
 
 Agree with Parsley: **polymicrogyria** is an inherited disease identified in Standard Poodles that results in focal areas of the brain having **smaller and more numerous gyri** than normal. Most common signs are **visual disturbances**; ataxia, behavior problems, and asymmetrical lateral ventricle dilatation (ventriculomegaly) or hydrocephalus stay on the page. Signs are attributable to the portion of the brain affected by the abnormal gyri.
 
@@ -2982,3 +2982,20 @@ Book/public traps:
 - Do not call it liss-only.
 
 Night rule: named polymicrogyria → **visual disturbances. Extra gyri.** △ Plumb.
+
+## 265. Paroxysmal dyskinesia (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett paroxysmal-dyskinesia chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 264 still owns named polymicrogyria. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Puppy hypoglycemia on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not copy a 116 table. Do not fire on bare Cavalier / Wheaten / Border Terrier. Dogs only. Skip cats.
+
+Agree with Parsley: **paroxysmal dyskinesia** is a movement disorder identified in several dog breeds, including the Soft Coated Wheaten Terrier (PIGN), the Cavalier King Charles Spaniel (episodic falling; BCAN), the Border Terrier (Spike's disease), and the Chinook (printed genes stay on the page). Episodes of involuntary movement include hyper- or hypotonicity or dysmetria. It can resemble partial or generalized seizures except that **conscious awareness is maintained** and **no autonomic signs** occur (printed seizure-lookalike line stays on the page). Episodes can last minutes to hours and occur rarely or many times daily (printed clock stays on the page).
+
+Night split: named paroxysmal dyskinesia is conscious; no autonomic signs. Bare Cavalier does not fire. Cat does not fire. Named POLY stays 264. General IE stays 202. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not copy a 116 table.
+- Do not send a Cavalier home as IE.
+- Do not call it poly-only.
+
+Night rule: named paroxysmal dyskinesia → **conscious. No autonomic signs.** △ Plumb.

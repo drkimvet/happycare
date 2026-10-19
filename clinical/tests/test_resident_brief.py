@@ -7052,6 +7052,65 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("extra gyri", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pdys_is_conscious_no_autonomic(self):
+        b = analyze("dog", "paroxysmal dyskinesia")
+        loc = b["localization"].lower()
+        self.assertIn("paroxysmal dyskinesia", loc)
+        self.assertIn("conscious", loc)
+        self.assertIn("no autonomic", loc)
+        self.assertNotIn("polymicrogyria", loc)
+        self.assertNotIn("extra gyri", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("cavalier home as ie", joined)
+        self.assertIn("poly-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cavalier_is_not_pdys(self):
+        b = analyze("dog", "Cavalier King Charles Spaniel")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("paroxysmal dyskinesia", loc)
+        self.assertNotIn("no autonomic", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_pdys(self):
+        b = analyze("cat", "paroxysmal dyskinesia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("paroxysmal dyskinesia", loc)
+        self.assertNotIn("no autonomic", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_poly_is_not_pdys(self):
+        b = analyze("dog", "polymicrogyria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("extra gyri", loc)
+        self.assertNotIn("paroxysmal dyskinesia", loc)
+        self.assertNotIn("no autonomic", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_pdys_still_fires(self):
+        b = analyze("dog", "episodic falling")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("paroxysmal dyskinesia", loc)
+        self.assertIn("conscious", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_spikes_disease_still_fires(self):
+        b = analyze("dog", "Spike's disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("paroxysmal dyskinesia", loc)
+        self.assertIn("no autonomic", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_deaf_is_not_pdys(self):
+        b = analyze("dog", "congenital deafness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pigment-associated", loc)
+        self.assertNotIn("paroxysmal dyskinesia", loc)
+        self.assertNotIn("no autonomic", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

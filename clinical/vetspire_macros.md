@@ -193,6 +193,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pend` | Assessment | Pendular nystagmus / visual pathway |
 | `ddx-deaf` | Assessment | Congenital deafness / pigment-associated |
 | `ddx-poly` | Assessment | Polymicrogyria / extra gyri |
+| `ddx-pdys` | Assessment | Paroxysmal dyskinesia / episodic falling |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -345,6 +346,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pend` | Discharge | After pendular nystagmus talk |
 | `dc-deaf` | Discharge | After congenital deafness talk |
 | `dc-poly` | Discharge | After polymicrogyria talk |
+| `dc-pdys` | Discharge | After paroxysmal dyskinesia talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2650,6 +2652,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a hydro table. Copy a 116 table. Send a Poodle home as NEPO. Call it liss-only.
 Do next: Name the gyri. Visual disturbances and extra gyri. △ Plumb. Do not copy a 116 table.
 
+### `ddx-pdys`
+
+Paroxysmal dyskinesia — {{patient.name}}
+Conscious during episode [yes / not]. Autonomic signs [none / yes]. Breed [Wheaten / Cavalier / Border Terrier / Chinook / other]. Duration [minutes / hours].
+
+DDX:
+1. Paroxysmal dyskinesia — **conscious. No autonomic signs**
+2. Printed episodic falling / Spike's disease stay on the page. Printed PIGN / BCAN stay on the page
+3. Printed minutes-to-hours clock stays on the page. Packet 116 still owns crash-cart numbers
+4. Not poly-only (264). Not IE-only (202). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Cavalier / Wheaten / Border Terrier do not fire
+
+Do not: harvest a surgery table. Copy a 116 table. Send a Cavalier home as IE. Call it poly-only.
+Do next: Name the dyskinesia. Conscious and no autonomic signs. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3901,6 +3918,14 @@ Return now for a new head tilt, sudden behavior change, or if you cannot keep th
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for sudden blindness, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-pdys`
+
+{{patient.name}} was evaluated for paroxysmal dyskinesia (an inherited movement episode in which they stay conscious and do not show autonomic signs). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now if an episode lasts longer than usual, they are not themselves after it, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

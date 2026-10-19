@@ -619,6 +619,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("pigment-associated", VERIF.lower())
         self.assertIn("polymicrogyria", VERIF.lower())
         self.assertIn("extra gyri", VERIF.lower())
+        self.assertIn("paroxysmal dyskinesia", VERIF.lower())
+        self.assertIn("no autonomic", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1001,6 +1003,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-deaf`", MACRO)
         self.assertIn("`ddx-poly`", MACRO)
         self.assertIn("`dc-poly`", MACRO)
+        self.assertIn("`ddx-pdys`", MACRO)
+        self.assertIn("`dc-pdys`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1059,6 +1063,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("pigment-associated", MACRO.lower())
         self.assertIn("polymicrogyria", MACRO.lower())
         self.assertIn("extra gyri", MACRO.lower())
+        self.assertIn("paroxysmal dyskinesia", MACRO.lower())
+        self.assertIn("no autonomic", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1479,6 +1485,8 @@ class PublicCardInvariants(unittest.TestCase):
             "pigment-associated",
             "polymicrogyria",
             "extra gyri",
+            "paroxysmal dyskinesia",
+            "no autonomic",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
