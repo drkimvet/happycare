@@ -6317,6 +6317,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("blindness", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dalv_is_visual_deficits_white_matter_cavitation(self):
+        b = analyze("dog", "Dalmatian leukodystrophy")
+        loc = b["localization"].lower()
+        self.assertIn("dalmatian leukodystrophy", loc)
+        self.assertIn("white-matter cavitation", loc)
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertNotIn("central blindness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("3–6 month clock", joined)
+        self.assertIn("euthanasia", joined)
+        self.assertIn("dalmatian home as hydro-only", joined)
+        self.assertIn("mfe-only", joined)
+        self.assertIn("ncl-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dalmatian_is_not_dalv(self):
+        b = analyze("dog", "Dalmatian")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dalmatian leukodystrophy", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_dalv(self):
+        b = analyze("cat", "Dalmatian leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dalmatian leukodystrophy", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mfe_is_not_dalv(self):
+        b = analyze("dog", "familial cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("blindness", loc)
+        self.assertNotIn("dalmatian leukodystrophy", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydro_is_not_dalv(self):
+        b = analyze("dog", "hydrocephalus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dalmatian leukodystrophy", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ncl_is_not_dalv(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("behavior and central blindness", loc)
+        self.assertNotIn("dalmatian leukodystrophy", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_dalv_still_fires(self):
+        b = analyze("dog", "cavitating leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dalmatian leukodystrophy", loc)
+        self.assertIn("white-matter cavitation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

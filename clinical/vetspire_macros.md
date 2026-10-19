@@ -181,6 +181,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-chrom` | Assessment | Chromatolytic neuronal degeneration |
 | `ddx-msnd` | Assessment | Multisystemic neuronal degeneration |
 | `ddx-mfe` | Assessment | Familial cerebellar ataxia / mitochondrial fission |
+| `ddx-dalv` | Assessment | Dalmatian leukodystrophy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -321,6 +322,7 @@ Suggested names are short so they show up after three letters.
 | `dc-chrom` | Discharge | After chromatolytic neuronal degeneration talk |
 | `dc-msnd` | Discharge | After multisystemic neuronal degeneration talk |
 | `dc-mfe` | Discharge | After familial cerebellar ataxia talk |
+| `dc-dalv` | Discharge | After Dalmatian leukodystrophy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2446,6 +2448,21 @@ DDX:
 Do not: harvest a surgery table. Harvest euthanasia. Send a Bullmastiff home as hydro-only. Call it msnd-only. Call it CH-only.
 Do next: Name the ataxia. Blindness and cerebellar. △ Plumb.
 
+### `ddx-dalv`
+
+Dalmatian leukodystrophy — {{patient.name}}
+Vision [deficit / not]. Cavitation [yes / not]. Course [3–6 mo / other]. Breed [Dalmatian / other].
+
+DDX:
+1. Dalmatian leukodystrophy — **visual deficits. White-matter cavitation**
+2. Very rare. Printed 3–6 month clock and tetraparesis stay on the page
+3. Dilatation of ventricles and widespread myelin loss stay on the page. Printed no treatment / euthanasia stay on the page
+4. Not mfe-only (252). Not hydro-only (209). Not NCL-only (240). Not Alexander-only (236)
+5. Dog can fire. Cat does not fire. Bare Dalmatian does not fire. Bare leukodystrophy does not fire
+
+Do not: harvest a surgery table. Harvest a 3–6 month clock. Harvest euthanasia. Send a Dalmatian home as hydro-only. Call it mfe-only. Call it NCL-only.
+Do next: Name the leukodystrophy. Vision and cavitation. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3601,6 +3618,14 @@ Return now for a fall, a sudden behavior change, or if you cannot keep them comf
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a fall, sudden blindness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-dalv`
+
+{{patient.name}} was evaluated for Dalmatian leukodystrophy (a rare inherited white-matter cavitation that can take vision). The printed clock stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for sudden vision loss, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

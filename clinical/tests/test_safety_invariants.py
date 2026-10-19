@@ -596,6 +596,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("abnormal behavior", VERIF.lower())
         self.assertIn("familial cerebellar ataxia", VERIF.lower())
         self.assertIn("mitochondrial fission", VERIF.lower())
+        self.assertIn("dalmatian leukodystrophy", VERIF.lower())
+        self.assertIn("white-matter cavitation", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -954,6 +956,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-msnd`", MACRO)
         self.assertIn("`ddx-mfe`", MACRO)
         self.assertIn("`dc-mfe`", MACRO)
+        self.assertIn("`ddx-dalv`", MACRO)
+        self.assertIn("`dc-dalv`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -991,6 +995,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("abnormal behavior", MACRO.lower())
         self.assertIn("familial cerebellar ataxia", MACRO.lower())
         self.assertIn("mitochondrial fission", MACRO.lower())
+        self.assertIn("white-matter cavitation", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1388,6 +1393,8 @@ class PublicCardInvariants(unittest.TestCase):
             "abnormal behavior",
             "familial cerebellar ataxia",
             "mitochondrial fission",
+            "dalmatian leukodystrophy",
+            "white-matter cavitation",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

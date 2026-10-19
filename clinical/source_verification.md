@@ -2747,7 +2747,7 @@ Night rule: named multisystemic neuronal degeneration → **abnormal behavior. C
 
 ## 252. Familial cerebellar ataxia / mitochondrial fission encephalopathy (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett familial-cerebellar-ataxia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 251 still owns named multisystemic neuronal degeneration. Packet 209 still owns named hydrocephalus. Packet 211 still owns named CH / FPV wobble. Packet 219 still owns named hereditary ataxia. Hereditary cavitating leukodystrophy in Dalmatians is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Bullmastiff. Do not fire on bare hydrocephalus. Dogs only. Skip cats.
+No dedicated Plunkett familial-cerebellar-ataxia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 251 still owns named multisystemic neuronal degeneration. Packet 209 still owns named hydrocephalus. Packet 211 still owns named CH / FPV wobble. Packet 219 still owns named hereditary ataxia. Packet 253 owns named Dalmatian leukodystrophy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Bullmastiff. Do not fire on bare hydrocephalus. Dogs only. Skip cats.
 
 Agree with Parsley: **familial cerebellar ataxia with hydrocephalus in Bullmastiffs (mitochondrial fission encephalopathy)** has AR inheritance and results in **blindness**, abnormal behavior, and **cerebellar signs**. Bilaterally symmetrical spongiform lesions and astrogliosis in the deep cerebellar nuclei stay on the page. Some reported cases also show abnormal myelin. Printed no treatment, typically euthanasia or death, stays on the page.
 
@@ -2762,3 +2762,22 @@ Book/public traps:
 - Do not call it CH-only.
 
 Night rule: named familial cerebellar ataxia → **blindness. Cerebellar.** △ Plumb.
+
+## 253. Dalmatian leukodystrophy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Dalmatian-leukodystrophy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 252 still owns named familial cerebellar ataxia / mitochondrial fission encephalopathy. Packet 209 still owns named hydrocephalus. Packet 240 still owns named NCL. Packet 236 still owns named Alexander / fibrinoid leukodystrophy. Central axonopathy in Scottish Terriers is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 3–6 month clock. Do not harvest euthanasia. Do not fire on bare Dalmatian. Do not use bare leukodystrophy. Dogs only. Skip cats.
+
+Agree with Parsley: **hereditary cavitating leukodystrophy in Dalmatians** is a very rare inherited condition that causes **visual deficits** with progressive ataxia and tetraparesis at 3–6 months. Dilatation of ventricles, **cavitation of cerebral white matter**, and widespread loss of myelin stay on the page. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named Dalmatian leukodystrophy is visual deficits; white-matter cavitation. Bare Dalmatian does not fire. Cat does not fire. Named MFE stays 252. Named hydro stays 209. Named NCL stays 240. Named Alexander stays 236. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 3–6 month clock.
+- Do not harvest euthanasia.
+- Do not send a Dalmatian home as hydro-only.
+- Do not call it mfe-only.
+- Do not call it NCL-only.
+
+Night rule: named Dalmatian leukodystrophy → **visual deficits. White-matter cavitation.** △ Plumb.
