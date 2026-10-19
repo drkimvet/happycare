@@ -6930,6 +6930,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("visual pathway", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_deaf_is_pigment_associated_baer(self):
+        b = analyze("dog", "congenital deafness")
+        loc = b["localization"].lower()
+        self.assertIn("congenital deafness", loc)
+        self.assertIn("pigment-associated", loc)
+        self.assertIn("baer", loc)
+        self.assertNotIn("pendular nystagmus", loc)
+        self.assertNotIn("white-matter cavitation", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("baer table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("dalmatian home as dalv", joined)
+        self.assertIn("pend-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dalmatian_is_not_deaf(self):
+        b = analyze("dog", "Dalmatian")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital deafness", loc)
+        self.assertNotIn("pigment-associated", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_deaf_is_not_deaf(self):
+        b = analyze("dog", "deaf")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital deafness", loc)
+        self.assertNotIn("pigment-associated", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pend_is_not_deaf(self):
+        b = analyze("cat", "pendular nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("visual pathway", loc)
+        self.assertNotIn("congenital deafness", loc)
+        self.assertNotIn("pigment-associated", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dalv_is_not_deaf(self):
+        b = analyze("dog", "Dalmatian leukodystrophy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white-matter cavitation", loc)
+        self.assertNotIn("congenital deafness", loc)
+        self.assertNotIn("pigment-associated", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_deaf_still_fires(self):
+        b = analyze("dog", "pigment-associated deafness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital deafness", loc)
+        self.assertIn("baer", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_deaf_still_fires(self):
+        b = analyze("cat", "congenital deafness")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital deafness", loc)
+        self.assertIn("pigment-associated", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

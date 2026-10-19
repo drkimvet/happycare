@@ -191,6 +191,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-nepo` | Assessment | Standard Poodle neonatal encephalopathy |
 | `ddx-liss` | Assessment | Lissencephaly / smooth gyri |
 | `ddx-pend` | Assessment | Pendular nystagmus / visual pathway |
+| `ddx-deaf` | Assessment | Congenital deafness / pigment-associated |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -341,6 +342,7 @@ Suggested names are short so they show up after three letters.
 | `dc-nepo` | Discharge | After neonatal encephalopathy talk |
 | `dc-liss` | Discharge | After lissencephaly talk |
 | `dc-pend` | Discharge | After pendular nystagmus talk |
+| `dc-deaf` | Discharge | After congenital deafness talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2616,6 +2618,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a vestibular table. Copy a 116 table. Send a Siamese home as oto. Call it liss-only.
 Do next: Name the nystagmus. Visual pathway and no clinical importance. △ Plumb. Do not copy a 116 table.
 
+### `ddx-deaf`
+
+Congenital deafness — {{patient.name}}
+Pigment-associated [yes / not / Doberman-Puli not]. Breed [Dalmatian / Doberman / Puli / other]. White cat blue eye [yes / not]. BAER [offered / not].
+
+DDX:
+1. Congenital deafness — **pigment-associated. BAER**
+2. Printed Dalmatian-first breed list and Doberman/Puli not-pigment-associated stay on the page
+3. Printed blue-eye white cats stay on the page. Packet 253 still owns DALV. Packet 116 still owns crash-cart numbers
+4. Not pend-only (262). Not dalv-only (253). Not liss-only (261). Not 116-only
+5. Dog or cat can fire. Bare Dalmatian / bare deaf do not fire
+
+Do not: harvest a surgery table. Harvest a BAER table. Copy a 116 table. Send a Dalmatian home as DALV. Call it pend-only.
+Do next: Name the deafness. Pigment-associated and BAER. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3851,6 +3868,14 @@ Return now for a cluster of seizures, sudden behavior change, or if you cannot k
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a new head tilt, dullness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-deaf`
+
+{{patient.name}} was evaluated for congenital deafness (a pigment-associated inherited deafness in some breeds; BAER can identify affected littermates). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a new head tilt, sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

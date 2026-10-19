@@ -2931,7 +2931,7 @@ Night rule: named lissencephaly → **mild behavior. Smooth gyri.** △ Plumb.
 
 ## 262. Pendular nystagmus (Merck Parsley Mar 2026 cerebral)
 
-No dedicated Plunkett pendular-nystagmus chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 261 still owns named lissencephaly. Packet 208 still owns named otogenic. Packet 137 still owns bare nystagmus / vestibular. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Congenital deafness on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a vestibular table. Do not fire on bare Siamese / Himalayan / Persian. Do not fire on bare nystagmus. Cats only. Skip dogs.
+No dedicated Plunkett pendular-nystagmus chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 261 still owns named lissencephaly. Packet 208 still owns named otogenic. Packet 137 still owns bare nystagmus / vestibular. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Packet 263 owns named congenital deafness, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a vestibular table. Do not fire on bare Siamese / Himalayan / Persian. Do not fire on bare nystagmus. Cats only. Skip dogs.
 
 Agree with Parsley: **pendular nystagmus** occurs in various Asian breeds of cats (Siamese, Himalayan, Persian). Compared with pathological nystagmus, there is **no fast or slow phase**, and the arcs are similar to the pendulum movement of a clock (stays on the page). Caused by a congenital abnormality in the **visual pathway**. **No other neurological signs.** Nonprogressive. **Of no clinical importance.**
 
@@ -2946,3 +2946,21 @@ Book/public traps:
 - Do not call it liss-only.
 
 Night rule: named pendular nystagmus → **visual pathway. No clinical importance.** △ Plumb.
+
+## 263. Congenital deafness (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett congenital-deafness chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 262 still owns named pendular nystagmus. Packet 261 still owns named lissencephaly. Packet 253 still owns named Dalmatian leukodystrophy. Packet 116 still owns seizure-drug numbers. Polymicrogyria on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a BAER table. Do not fire on bare Dalmatian. Do not fire on bare deaf. Dog or cat.
+
+Agree with Parsley: **congenital deafness** is associated primarily with Dalmatians; also recorded in Doberman Pinscher, Puli, Blue Heeler, Australian Shepherd, English Setter, Boston Terrier, and Old English Sheepdog (stays on the page). **Pigment-associated** in Dalmatians; not pigment-associated in Doberman Pinschers and Pulis (stays on the page). Linked to **blue eye color in white cats** (stays on the page). **BAER** is a useful diagnostic test used primarily to identify carriers in a litter (stays on the page).
+
+Night split: named congenital deafness is pigment-associated; BAER. Bare Dalmatian does not fire. Bare deaf does not fire. Named PEND stays 262. Named DALV stays 253. Named LISS stays 261. Seizure crash-cart stays 116. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a BAER table.
+- Do not copy a 116 table.
+- Do not send a Dalmatian home as DALV.
+- Do not call it pend-only.
+
+Night rule: named congenital deafness → **pigment-associated. BAER.** △ Plumb.
