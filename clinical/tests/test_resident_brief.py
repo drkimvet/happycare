@@ -6613,6 +6613,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("acute ataxia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_deen_is_rem_sleep_anxiety(self):
+        b = analyze("dog", "degenerative encephalopathy")
+        loc = b["localization"].lower()
+        self.assertIn("degenerative encephalopathy", loc)
+        self.assertIn("rem sleep", loc)
+        self.assertIn("anxiety", loc)
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        self.assertNotIn("leigh-like", loc)
+        self.assertNotIn("acute ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("2-month or 5-year clock", joined)
+        self.assertIn("aed table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("toller home as ahe", joined)
+        self.assertIn("ahe-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_toller_is_not_deen(self):
+        b = analyze("dog", "Nova Scotia Duck Toller")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("degenerative encephalopathy", loc)
+        self.assertNotIn("rem sleep", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_deen(self):
+        b = analyze("cat", "degenerative encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("degenerative encephalopathy", loc)
+        self.assertNotIn("rem sleep", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ahe_is_not_deen(self):
+        b = analyze("dog", "Alaskan Husky encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("acute ataxia", loc)
+        self.assertNotIn("degenerative encephalopathy", loc)
+        self.assertNotIn("rem sleep", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hqam_is_not_deen(self):
+        b = analyze("dog", "hereditary quadriplegia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("amblyopia", loc)
+        self.assertNotIn("degenerative encephalopathy", loc)
+        self.assertNotIn("rem sleep", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ncl_is_not_deen(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("behavior and central blindness", loc)
+        self.assertNotIn("degenerative encephalopathy", loc)
+        self.assertNotIn("rem sleep", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_deen_still_fires(self):
+        b = analyze("dog", "Toller encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("degenerative encephalopathy", loc)
+        self.assertIn("rem sleep", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

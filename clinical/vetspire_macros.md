@@ -186,6 +186,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-spong` | Assessment | Spongiform degeneration |
 | `ddx-hqam` | Assessment | Hereditary quadriplegia and amblyopia |
 | `ddx-ahe` | Assessment | Alaskan Husky encephalopathy / Leigh-like |
+| `ddx-deen` | Assessment | Toller degenerative encephalopathy / REM sleep |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -331,6 +332,7 @@ Suggested names are short so they show up after three letters.
 | `dc-spong` | Discharge | After spongiform degeneration talk |
 | `dc-hqam` | Discharge | After hereditary quadriplegia talk |
 | `dc-ahe` | Discharge | After Alaskan Husky encephalopathy talk |
+| `dc-deen` | Discharge | After Toller degenerative encephalopathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2531,6 +2533,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 7-month or 2.5-year clock. Harvest thiamine. Copy a 116 table. Send a Husky home as NCL. Call it hqam-only.
 Do next: Name the encephalopathy. Acute ataxia and blindness. △ Plumb. Do not copy a 116 table.
 
+### `ddx-deen`
+
+Degenerative encephalopathy — {{patient.name}}
+REM sleep disorder [yes / not]. Anxiety [yes / not]. Breed [Toller / other]. Genetic test [offered / not].
+
+DDX:
+1. Degenerative encephalopathy — **REM sleep disorder. Anxiety**
+2. Printed 2-month to 5-year clock, caudate, and OCD stay on the page
+3. Printed guarded prognosis and antiepileptic medications might help stay on the page. Packet 116 still owns crash-cart numbers
+4. Not ahe-only (257). Not hqam-only (256). Not NCL-only (240). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Toller does not fire
+
+Do not: harvest a surgery table. Harvest a 2-month or 5-year clock. Harvest an AED table. Copy a 116 table. Send a Toller home as AHE. Call it ahe-only.
+Do next: Name the encephalopathy. REM sleep and anxiety. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3726,6 +3743,14 @@ Return now for a cluster of seizures, sudden blindness, or if you cannot keep th
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of seizures, sudden blindness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-deen`
+
+{{patient.name}} was evaluated for degenerative encephalopathy (an inherited Toller disease that can include a REM sleep disorder and anxiety). The printed clock and the printed genetic-test line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of seizures, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

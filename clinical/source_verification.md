@@ -2837,7 +2837,7 @@ Night rule: named hereditary quadriplegia → **amblyopia. Swimmers.** △ Plumb
 
 ## 257. Alaskan Husky encephalopathy (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett Alaskan-Husky-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Degenerative encephalopathy in Nova Scotia Duck Tolling Retrievers is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest thiamine. Do not harvest a 7-month or 2.5-year clock. Do not fire on bare Husky / bare Yorkie. Dogs only. Skip cats.
+No dedicated Plunkett Alaskan-Husky-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Packet 258 owns named degenerative encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest thiamine. Do not harvest a 7-month or 2.5-year clock. Do not fire on bare Husky / bare Yorkie. Dogs only. Skip cats.
 
 Agree with Parsley: **Alaskan Husky encephalopathy (Leigh-like syndrome)** is AR, caused by a mutation in a thiamine transporter gene (SLC19A3). Printed onset **7 months to 2.5 years** stays on the page. Signs: **acute-onset ataxia**, seizures, behavior abnormalities, **blindness**, facial hypalgesia, and difficulty eating. Bilaterally symmetrical lesions stay on the page. Printed no treatment, typically euthanasia or death, stays on the page. A similar Yorkshire Terrier disease without a named mutation stays on the page.
 
@@ -2853,3 +2853,22 @@ Book/public traps:
 - Do not call it hqam-only.
 
 Night rule: named Alaskan Husky encephalopathy → **acute ataxia. Blindness.** △ Plumb.
+
+## 258. Degenerative encephalopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett degenerative-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 257 still owns named Alaskan Husky encephalopathy. Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. L-2-hydroxyglutaric aciduria is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an AED table. Do not harvest a 2-month or 5-year clock. Do not fire on bare Toller. Dogs only. Skip cats.
+
+Agree with Parsley: **degenerative encephalopathy of Nova Scotia Duck Tolling Retrievers** is AR and results in neurological dysfunction and a **REM sleep disorder**. Printed onset **2 months to 5 years** stays on the page. Caudate nuclei primarily affected, with axonal dystrophy in the brainstem and spinal cord, stay on the page. Additional signs: **anxiety** and obsessive-compulsive tendencies, ataxia, tetraparesis, and mild hypermetria stay on the page. Printed guarded prognosis, supportive care and antiepileptic medications might help, and a genetic test stay on the page.
+
+Night split: named degenerative encephalopathy is REM sleep disorder; anxiety. Bare Toller does not fire. Cat does not fire. Named AHE stays 257. Named HQAM stays 256. Named NCL stays 240. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 2-month or 5-year clock.
+- Do not harvest an AED table.
+- Do not copy a 116 table.
+- Do not send a Toller home as AHE.
+- Do not call it ahe-only.
+
+Night rule: named degenerative encephalopathy → **REM sleep disorder. Anxiety.** △ Plumb.
