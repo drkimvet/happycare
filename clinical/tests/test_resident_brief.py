@@ -6551,6 +6551,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("amblyopia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ahe_is_acute_ataxia_blindness(self):
+        b = analyze("dog", "Alaskan Husky encephalopathy")
+        loc = b["localization"].lower()
+        self.assertIn("alaskan husky encephalopathy", loc)
+        self.assertIn("acute ataxia", loc)
+        self.assertNotIn("hereditary quadriplegia", loc)
+        self.assertNotIn("amblyopia", loc)
+        self.assertNotIn("central blindness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("7-month or 2.5-year clock", joined)
+        self.assertIn("thiamine", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("husky home as ncl", joined)
+        self.assertIn("hqam-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_husky_is_not_ahe(self):
+        b = analyze("dog", "Alaskan Husky")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        self.assertNotIn("leigh-like", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_ahe(self):
+        b = analyze("cat", "Alaskan Husky encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        self.assertNotIn("leigh-like", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hqam_is_not_ahe(self):
+        b = analyze("dog", "hereditary quadriplegia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("amblyopia", loc)
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        self.assertNotIn("leigh-like", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ncl_is_not_ahe(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("behavior and central blindness", loc)
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        self.assertNotIn("leigh-like", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mfe_is_not_ahe(self):
+        b = analyze("dog", "familial cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        self.assertNotIn("leigh-like", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_ahe_still_fires(self):
+        b = analyze("dog", "Leigh-like syndrome")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("alaskan husky encephalopathy", loc)
+        self.assertIn("acute ataxia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

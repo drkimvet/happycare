@@ -2819,7 +2819,7 @@ Night rule: named spongiform degeneration → **ataxia. Head tremor.** △ Plumb
 
 ## 256. Hereditary quadriplegia and amblyopia (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett hereditary-quadriplegia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 255 still owns named spongiform degeneration. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Alaskan Husky encephalopathy is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Setter. Do not fire on bare swimmer. Dogs only. Skip cats.
+No dedicated Plunkett hereditary-quadriplegia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 255 still owns named spongiform degeneration. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Packet 257 owns named Alaskan Husky encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Setter. Do not fire on bare swimmer. Dogs only. Skip cats.
 
 Agree with Parsley: **hereditary quadriplegia and amblyopia in Irish Setters** is AR, homozygous lethal. Signs: **head tremor, visual impairment, nystagmus, inability to stand, and seizures beginning at birth**. Animals are called **swimmers**. Printed no treatment, typically euthanasia or death, stays on the page.
 
@@ -2834,3 +2834,22 @@ Book/public traps:
 - Do not call it spong-only.
 
 Night rule: named hereditary quadriplegia → **amblyopia. Swimmers.** △ Plumb.
+
+## 257. Alaskan Husky encephalopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Alaskan-Husky-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Degenerative encephalopathy in Nova Scotia Duck Tolling Retrievers is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest thiamine. Do not harvest a 7-month or 2.5-year clock. Do not fire on bare Husky / bare Yorkie. Dogs only. Skip cats.
+
+Agree with Parsley: **Alaskan Husky encephalopathy (Leigh-like syndrome)** is AR, caused by a mutation in a thiamine transporter gene (SLC19A3). Printed onset **7 months to 2.5 years** stays on the page. Signs: **acute-onset ataxia**, seizures, behavior abnormalities, **blindness**, facial hypalgesia, and difficulty eating. Bilaterally symmetrical lesions stay on the page. Printed no treatment, typically euthanasia or death, stays on the page. A similar Yorkshire Terrier disease without a named mutation stays on the page.
+
+Night split: named Alaskan Husky encephalopathy is acute ataxia; blindness. Bare Husky does not fire. Cat does not fire. Named HQAM stays 256. Named NCL stays 240. Named MFE stays 252. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 7-month or 2.5-year clock.
+- Do not harvest thiamine.
+- Do not copy a 116 table.
+- Do not send a Husky home as NCL.
+- Do not call it hqam-only.
+
+Night rule: named Alaskan Husky encephalopathy → **acute ataxia. Blindness.** △ Plumb.

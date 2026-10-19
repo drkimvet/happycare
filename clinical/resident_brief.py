@@ -1478,6 +1478,13 @@ HQAM_RE = re.compile(
     r"irish setter.{0,20}swimmer",
     re.I,
 )
+# Do not use \bah\b or \bslc19a3\b. Do not fire on bare Husky / bare Leigh.
+# Dogs only. Not HQAM (256). Not NCL (240). Not 116 drug dump. Skip cats.
+AHE_RE = re.compile(
+    r"alaskan husky encephalopath|"
+    r"leigh[- ]like",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5574,6 +5581,7 @@ def analyze(
     steal_saxon = SAXON_RE.search(text)
     steal_spong = SPONG_RE.search(text)
     steal_hqam = HQAM_RE.search(text)
+    steal_ahe = AHE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5632,6 +5640,7 @@ def analyze(
         or steal_saxon
         or steal_spong
         or steal_hqam
+        or steal_ahe
     ):
         if spec == "cat":
             fuo_loc = (
@@ -9284,6 +9293,115 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for hereditary quadriplegia.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for hereditary quadriplegia.")
+
+    ahe_named = spec == "dog" and AHE_RE.search(text)
+    if ahe_named and not (
+        HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        ahe_loc = (
+            "Alaskan Husky encephalopathy. Acute ataxia. "
+            "Blindness."
+        )
+        localization = f"{localization} Also {ahe_loc}" if localization else ahe_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 7-month or 2.5-year clock as lobby law. "
+            "Do not harvest thiamine as lobby law. "
+            "Do not copy a 116 table as lobby law. "
+            "Do not send a Husky home as NCL. "
+            "Do not call it hqam-only."
+        )
+        do_not.append(
+            "Alaskan Huskies. AR. Printed SLC19A3 thiamine "
+            "transporter stays on the page. Printed 7-month "
+            "to 2.5-year clock stays on the page. Acute-onset "
+            "ataxia, seizures, behavior, blindness, facial "
+            "hypalgesia, and difficulty eating stay on the "
+            "page. Printed Yorkie similar without a named "
+            "mutation stays on the page. Printed no treatment "
+            "and euthanasia or death stay on the page. "
+            "Packet 116 still owns the crash-cart numbers. "
+            "Skip cats. Not hqam-only. Not NCL-only. Not "
+            "116-only."
+        )
+        do_next.append(
+            "Name the encephalopathy. Acute ataxia and "
+            "blindness. △ Plumb. Do not copy a 116 table."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "Alaskan Husky encephalopathy (Leigh-like); AR; "
+            "SLC19A3 thiamine transporter stays on the page; "
+            "onset 7 months to 2.5 years stays on the page; "
+            "acute-onset ataxia, seizures, behavior "
+            "abnormalities, blindness, facial hypalgesia, and "
+            "difficulty eating; bilaterally symmetrical "
+            "lesions stay on the page; no treatment; typically "
+            "euthanasia or death; similar Yorkshire Terrier "
+            "disease without a named mutation stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Husky home as NCL."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Alaskan Husky encephalopathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Alaskan Husky encephalopathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

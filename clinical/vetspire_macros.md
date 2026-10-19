@@ -185,6 +185,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-saxon` | Assessment | Central axonopathy |
 | `ddx-spong` | Assessment | Spongiform degeneration |
 | `ddx-hqam` | Assessment | Hereditary quadriplegia and amblyopia |
+| `ddx-ahe` | Assessment | Alaskan Husky encephalopathy / Leigh-like |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -329,6 +330,7 @@ Suggested names are short so they show up after three letters.
 | `dc-saxon` | Discharge | After central axonopathy talk |
 | `dc-spong` | Discharge | After spongiform degeneration talk |
 | `dc-hqam` | Discharge | After hereditary quadriplegia talk |
+| `dc-ahe` | Discharge | After Alaskan Husky encephalopathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2514,6 +2516,21 @@ DDX:
 Do not: harvest a surgery table. Harvest euthanasia. Copy a 116 table. Send a Setter home as NCL. Call it spong-only.
 Do next: Name the quadriplegia. Amblyopia and swimmers. △ Plumb. Do not copy a 116 table.
 
+### `ddx-ahe`
+
+Alaskan Husky encephalopathy — {{patient.name}}
+Acute ataxia [yes / not]. Blindness [yes / not]. Breed [Husky / Yorkie / other]. Leigh-like [named / not].
+
+DDX:
+1. Alaskan Husky encephalopathy — **acute ataxia. Blindness**
+2. Leigh-like. Printed SLC19A3 and 7-month to 2.5-year clock stay on the page
+3. Printed Yorkie similar without a named mutation stays on the page. Packet 116 still owns crash-cart numbers
+4. Not hqam-only (256). Not NCL-only (240). Not MFE-only (252). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Husky / Yorkie does not fire
+
+Do not: harvest a surgery table. Harvest a 7-month or 2.5-year clock. Harvest thiamine. Copy a 116 table. Send a Husky home as NCL. Call it hqam-only.
+Do next: Name the encephalopathy. Acute ataxia and blindness. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3697,6 +3714,14 @@ Return now for a fall, worsening tremor, or if you cannot keep them comfortable.
 ### `dc-hqam`
 
 {{patient.name}} was evaluated for hereditary quadriplegia and amblyopia (an inherited Irish Setter disease; affected puppies are called swimmers). The printed birth-seizure line stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of seizures, sudden blindness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-ahe`
+
+{{patient.name}} was evaluated for Alaskan Husky encephalopathy (a Leigh-like inherited disease that can start as acute ataxia and blindness). The printed clock and the printed transporter line stay in our notes. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
