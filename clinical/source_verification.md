@@ -2913,7 +2913,7 @@ Night rule: named neonatal encephalopathy → **stunted. Weak from birth.** △ 
 
 ## 261. Lissencephaly (Merck Parsley Mar 2026 cerebral)
 
-No dedicated Plunkett lissencephaly chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 210 still owns named hydranencephaly. Packet 211 still owns named cerebellar hypoplasia. Packet 207 still owns named NME. Packet 116 still owns seizure-drug numbers. Pendular nystagmus on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Lhasa / Pekingese / Kelpie. Dog or cat.
+No dedicated Plunkett lissencephaly chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 210 still owns named hydranencephaly. Packet 211 still owns named cerebellar hypoplasia. Packet 207 still owns named NME. Packet 116 still owns seizure-drug numbers. Packet 262 owns named pendular nystagmus, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Lhasa / Pekingese / Kelpie. Dog or cat.
 
 Agree with Parsley: **lissencephaly** is an absence of or decrease in cerebral gyri. Rare. Lhasa Apsos, Pekingese, and Australian Kelpies stay on the page. Association with cerebellar hypoplasia in Irish Setters, Wire Fox Terriers, and Samoyeds stays on the page. Korat cats with microencephaly stay on the page. Signs: **mild behavioral abnormalities** and seizures (printed seizure line stays on the page).
 
@@ -2928,3 +2928,21 @@ Book/public traps:
 - Do not call it nepo-only.
 
 Night rule: named lissencephaly → **mild behavior. Smooth gyri.** △ Plumb.
+
+## 262. Pendular nystagmus (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett pendular-nystagmus chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 261 still owns named lissencephaly. Packet 208 still owns named otogenic. Packet 137 still owns bare nystagmus / vestibular. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Congenital deafness on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a vestibular table. Do not fire on bare Siamese / Himalayan / Persian. Do not fire on bare nystagmus. Cats only. Skip dogs.
+
+Agree with Parsley: **pendular nystagmus** occurs in various Asian breeds of cats (Siamese, Himalayan, Persian). Compared with pathological nystagmus, there is **no fast or slow phase**, and the arcs are similar to the pendulum movement of a clock (stays on the page). Caused by a congenital abnormality in the **visual pathway**. **No other neurological signs.** Nonprogressive. **Of no clinical importance.**
+
+Night split: named pendular nystagmus is visual pathway; no clinical importance. Bare Siamese does not fire. Bare nystagmus does not fire. Dog does not fire. Named LISS stays 261. Named oto stays 208. Bare nystagmus / vestibular stays 137. Seizure crash-cart stays 116. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a vestibular table.
+- Do not copy a 116 table.
+- Do not send a Siamese home as oto.
+- Do not call it liss-only.
+
+Night rule: named pendular nystagmus → **visual pathway. No clinical importance.** △ Plumb.

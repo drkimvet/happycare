@@ -190,6 +190,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-l2hga` | Assessment | L-2-hydroxyglutaric aciduria |
 | `ddx-nepo` | Assessment | Standard Poodle neonatal encephalopathy |
 | `ddx-liss` | Assessment | Lissencephaly / smooth gyri |
+| `ddx-pend` | Assessment | Pendular nystagmus / visual pathway |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -339,6 +340,7 @@ Suggested names are short so they show up after three letters.
 | `dc-l2hga` | Discharge | After L-2-hydroxyglutaric aciduria talk |
 | `dc-nepo` | Discharge | After neonatal encephalopathy talk |
 | `dc-liss` | Discharge | After lissencephaly talk |
+| `dc-pend` | Discharge | After pendular nystagmus talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2599,6 +2601,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a hydro table. Copy a 116 table. Send a Lhasa home as IE. Call it nepo-only.
 Do next: Name the lissencephaly. Mild behavior and smooth gyri. △ Plumb. Do not copy a 116 table.
 
+### `ddx-pend`
+
+Pendular nystagmus — {{patient.name}}
+Visual pathway [yes / not]. Fast/slow phase [none / present]. Breed [Siamese / Himalayan / Persian / other]. Other neuro signs [none / yes].
+
+DDX:
+1. Pendular nystagmus — **visual pathway. No clinical importance**
+2. Printed no fast or slow phase and pendulum-like arcs stay on the page
+3. Printed nonprogressive. Packet 137 still owns bare nystagmus / vestibular. Packet 116 still owns crash-cart numbers
+4. Not liss-only (261). Not oto-only (208). Not 137-only. Not 116-only
+5. Cat can fire. Dog does not fire. Bare Siamese / nystagmus do not fire
+
+Do not: harvest a surgery table. Harvest a vestibular table. Copy a 116 table. Send a Siamese home as oto. Call it liss-only.
+Do next: Name the nystagmus. Visual pathway and no clinical importance. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3826,6 +3843,14 @@ Return now for a cluster of seizures, collapse, or if you cannot keep them comfo
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of seizures, sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-pend`
+
+{{patient.name}} was evaluated for pendular nystagmus (a congenital visual-pathway nystagmus that is nonprogressive and of no clinical importance). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a new head tilt, dullness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -6871,6 +6871,65 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("mild behavior", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pend_is_visual_pathway_no_clinical_importance(self):
+        b = analyze("cat", "pendular nystagmus")
+        loc = b["localization"].lower()
+        self.assertIn("pendular nystagmus", loc)
+        self.assertIn("visual pathway", loc)
+        self.assertIn("no clinical importance", loc)
+        self.assertNotIn("lissencephaly", loc)
+        self.assertNotIn("smooth gyri", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("vestibular table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("siamese home as oto", joined)
+        self.assertIn("liss-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_siamese_is_not_pend(self):
+        b = analyze("cat", "Siamese")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pendular nystagmus", loc)
+        self.assertNotIn("no clinical importance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_pend(self):
+        b = analyze("dog", "pendular nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pendular nystagmus", loc)
+        self.assertNotIn("no clinical importance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_liss_is_not_pend(self):
+        b = analyze("cat", "lissencephaly")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("smooth gyri", loc)
+        self.assertNotIn("pendular nystagmus", loc)
+        self.assertNotIn("no clinical importance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_nystagmus_is_not_pend(self):
+        b = analyze("cat", "nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pendular nystagmus", loc)
+        self.assertNotIn("no clinical importance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oto_is_not_pend(self):
+        b = analyze("cat", "otogenic meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pendular nystagmus", loc)
+        self.assertNotIn("no clinical importance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_pend_still_fires(self):
+        b = analyze("cat", "pendular nystagmus, Himalayan")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pendular nystagmus", loc)
+        self.assertIn("visual pathway", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

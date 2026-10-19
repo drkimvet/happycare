@@ -1516,6 +1516,13 @@ LISS_RE = re.compile(
     r"lissencephal",
     re.I,
 )
+# Do not use \bnystagmus\b alone. Do not fire on bare Siamese / Himalayan / Persian.
+# Cats only. Not LISS (261). Not oto (208). Not vestibular dump (137).
+# Not 116 drug dump. Skip dogs.
+PEND_RE = re.compile(
+    r"pendular nystagmus",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5617,6 +5624,7 @@ def analyze(
     steal_l2hga = L2HGA_RE.search(text)
     steal_nepo = NEPO_RE.search(text)
     steal_liss = LISS_RE.search(text)
+    steal_pend = PEND_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5680,6 +5688,7 @@ def analyze(
         or steal_l2hga
         or steal_nepo
         or steal_liss
+        or steal_pend
     ):
         if spec == "cat":
             fuo_loc = (
@@ -9878,6 +9887,116 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for lissencephaly.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for lissencephaly.")
+
+    pend_named = spec == "cat" and PEND_RE.search(text)
+    if pend_named and not (
+        LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        pend_loc = (
+            "Pendular nystagmus. Visual pathway. "
+            "No clinical importance."
+        )
+        localization = f"{localization} Also {pend_loc}" if localization else pend_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a vestibular table as lobby law. "
+            "Do not copy a 116 table as lobby law. "
+            "Do not send a Siamese home as oto. "
+            "Do not call it liss-only."
+        )
+        do_not.append(
+            "Siamese, Himalayan, and Persian cats. Printed "
+            "no fast or slow phase and pendulum-like arcs "
+            "stay on the page. Printed visual-pathway "
+            "abnormality stays on the page. Printed no other "
+            "neurological signs stay on the page. Printed "
+            "nonprogressive and of no clinical importance "
+            "stay on the page. Packet 116 still owns the "
+            "crash-cart numbers. Skip dogs. Not liss-only. "
+            "Not oto-only. Not 116-only."
+        )
+        do_next.append(
+            "Name the nystagmus. Visual pathway and no "
+            "clinical importance. △ Plumb. Do not copy a "
+            "116 table."
+        )
+        sources.append(
+            "Merck congenital cerebral (Parsley, Mar 2026): "
+            "pendular nystagmus in Asian-breed cats "
+            "(Siamese, Himalayan, Persian); no fast or slow "
+            "phase; pendulum-like arcs stay on the page; "
+            "congenital visual-pathway abnormality; no other "
+            "neurological signs; nonprogressive; of no "
+            "clinical importance."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Siamese home as oto."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for pendular nystagmus.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for pendular nystagmus.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
