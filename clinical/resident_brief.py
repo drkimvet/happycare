@@ -1439,6 +1439,14 @@ MSND_RE = re.compile(
     r"multisystemic neuronal degenerat",
     re.I,
 )
+# Do not use \bmfe\b. Do not fire on bare Bullmastiff / bare hydrocephalus.
+# Do not put HYDRO_RE in this gate's exclude (printed name has hydrocephalus).
+# Dogs only. Not MSND (251). Not hydro (209). Not CH (211). Skip cats.
+MFE_RE = re.compile(
+    r"familial cerebellar ataxia|"
+    r"mitochondrial fission encephalopath",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5530,6 +5538,7 @@ def analyze(
     steal_cmsd = CMSD_RE.search(text)
     steal_chrom = CHROM_RE.search(text)
     steal_msnd = MSND_RE.search(text)
+    steal_mfe = MFE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5583,6 +5592,7 @@ def analyze(
         or steal_cmsd
         or steal_chrom
         or steal_msnd
+        or steal_mfe
     ):
         if spec == "cat":
             fuo_loc = (
@@ -8734,6 +8744,105 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for multisystemic neuronal degeneration.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for multisystemic neuronal degeneration.")
+
+    mfe_named = spec == "dog" and MFE_RE.search(text)
+    if mfe_named and not (
+        MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        mfe_loc = (
+            "Familial cerebellar ataxia. Blindness. "
+            "Cerebellar."
+        )
+        localization = f"{localization} Also {mfe_loc}" if localization else mfe_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest euthanasia as lobby law. "
+            "Do not send a Bullmastiff home as hydro-only. "
+            "Do not call it msnd-only. "
+            "Do not call it CH-only."
+        )
+        do_not.append(
+            "Bullmastiffs. AR. Blindness, abnormal behavior, "
+            "and cerebellar signs. Printed mitochondrial "
+            "fission encephalopathy stays on the page. "
+            "Spongiform lesions and astrogliosis in deep "
+            "cerebellar nuclei stay on the page. Printed "
+            "abnormal myelin stays on the page. Printed no "
+            "treatment and euthanasia or death stay on the "
+            "page. Skip cats. Not msnd-only. Not hydro-only. "
+            "Not CH-only."
+        )
+        do_next.append(
+            "Name the ataxia. Blindness and cerebellar. "
+            "△ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "familial cerebellar ataxia with hydrocephalus in "
+            "Bullmastiffs (mitochondrial fission encephalopathy); "
+            "AR; blindness, abnormal behavior, and cerebellar "
+            "signs; bilaterally symmetrical spongiform lesions "
+            "and astrogliosis in the deep cerebellar nuclei; "
+            "some cases abnormal myelin stay on the page; no "
+            "treatment; typically euthanasia or death stay on "
+            "the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Bullmastiff home as hydro-only."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for familial cerebellar ataxia.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for familial cerebellar ataxia.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

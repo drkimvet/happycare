@@ -2729,7 +2729,7 @@ Night rule: named chromatolytic neuronal degeneration → **cerebellar. Cataplec
 
 ## 251. Multisystemic neuronal degeneration (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett multisystemic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 250 still owns named chromatolytic neuronal degeneration. Packet 249 still owns named canine multiple system degeneration. Packet 240 still owns named NCL. Packet 211 still owns named CH / FPV wobble. Familial cerebellar ataxia with hydrocephalus in Bullmastiffs is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cocker / bare Poodle. Dogs only. Skip cats.
+No dedicated Plunkett multisystemic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 250 still owns named chromatolytic neuronal degeneration. Packet 249 still owns named canine multiple system degeneration. Packet 240 still owns named NCL. Packet 211 still owns named CH / FPV wobble. Packet 252 owns named familial cerebellar ataxia / mitochondrial fission encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cocker / bare Poodle. Dogs only. Skip cats.
 
 Agree with Parsley: **multisystemic neuronal degeneration** has been reported in **red-haired Cocker Spaniels** and causes **abnormal behavior and cerebellar signs**. Neuronal changes occur in various brainstem nuclei. A similar Mini Poodle 3–4 week rolling / cannot stand or right / opisthotonos / intention tremor / no menace condition stays on the page. Printed no treatment, typically euthanasia or death, stays on the page.
 
@@ -2744,3 +2744,21 @@ Book/public traps:
 - Do not call it cmsd-only.
 
 Night rule: named multisystemic neuronal degeneration → **abnormal behavior. Cerebellar.** △ Plumb.
+
+## 252. Familial cerebellar ataxia / mitochondrial fission encephalopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett familial-cerebellar-ataxia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 251 still owns named multisystemic neuronal degeneration. Packet 209 still owns named hydrocephalus. Packet 211 still owns named CH / FPV wobble. Packet 219 still owns named hereditary ataxia. Hereditary cavitating leukodystrophy in Dalmatians is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Bullmastiff. Do not fire on bare hydrocephalus. Dogs only. Skip cats.
+
+Agree with Parsley: **familial cerebellar ataxia with hydrocephalus in Bullmastiffs (mitochondrial fission encephalopathy)** has AR inheritance and results in **blindness**, abnormal behavior, and **cerebellar signs**. Bilaterally symmetrical spongiform lesions and astrogliosis in the deep cerebellar nuclei stay on the page. Some reported cases also show abnormal myelin. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named familial cerebellar ataxia is blindness; cerebellar. Bare Bullmastiff does not fire. Bare hydrocephalus does not fire. Cat does not fire. Named MSND stays 251. Named hydro stays 209. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not send a Bullmastiff home as hydro-only.
+- Do not call it msnd-only.
+- Do not call it CH-only.
+
+Night rule: named familial cerebellar ataxia → **blindness. Cerebellar.** △ Plumb.

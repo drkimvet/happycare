@@ -180,6 +180,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cmsd` | Assessment | Canine multiple system degeneration |
 | `ddx-chrom` | Assessment | Chromatolytic neuronal degeneration |
 | `ddx-msnd` | Assessment | Multisystemic neuronal degeneration |
+| `ddx-mfe` | Assessment | Familial cerebellar ataxia / mitochondrial fission |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -319,6 +320,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cmsd` | Discharge | After canine multiple system degeneration talk |
 | `dc-chrom` | Discharge | After chromatolytic neuronal degeneration talk |
 | `dc-msnd` | Discharge | After multisystemic neuronal degeneration talk |
+| `dc-mfe` | Discharge | After familial cerebellar ataxia talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2429,6 +2431,21 @@ DDX:
 Do not: harvest a surgery table. Harvest euthanasia. Send a Cocker wobble home as NCL. Call it chrom-only. Call it cmsd-only.
 Do next: Name the degeneration. Behavior and cerebellar. △ Plumb.
 
+### `ddx-mfe`
+
+Familial cerebellar ataxia — {{patient.name}}
+Blindness [yes / not]. Cerebellar [yes / not]. Breed [Bullmastiff / other]. Fission [named / not].
+
+DDX:
+1. Familial cerebellar ataxia — **blindness. Cerebellar**
+2. Bullmastiffs. Mitochondrial fission encephalopathy stays on the page
+3. Printed spongiform deep nuclei and abnormal myelin stay on the page. Printed no treatment / euthanasia stay on the page
+4. Not msnd-only (251). Not hydro-only (209). Not CH-only (211). Not hereditary-ataxia-only (219)
+5. Dog can fire. Cat does not fire. Bare Bullmastiff does not fire. Bare hydrocephalus does not fire
+
+Do not: harvest a surgery table. Harvest euthanasia. Send a Bullmastiff home as hydro-only. Call it msnd-only. Call it CH-only.
+Do next: Name the ataxia. Blindness and cerebellar. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3576,6 +3593,14 @@ Return now for a collapse, a fall, or if you cannot keep them comfortable. {{loc
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a fall, a sudden behavior change, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-mfe`
+
+{{patient.name}} was evaluated for familial cerebellar ataxia (also called mitochondrial fission encephalopathy; reported in Bullmastiffs and can include blindness). The printed hydrocephalus line stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a fall, sudden blindness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

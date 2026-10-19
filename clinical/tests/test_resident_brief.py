@@ -6249,6 +6249,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("abnormal behavior", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mfe_is_blindness_cerebellar(self):
+        b = analyze("dog", "familial cerebellar ataxia")
+        loc = b["localization"].lower()
+        self.assertIn("familial cerebellar ataxia", loc)
+        self.assertIn("blindness", loc)
+        self.assertNotIn("abnormal behavior", loc)
+        self.assertNotIn("multisystemic neuronal degeneration", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("euthanasia", joined)
+        self.assertIn("bullmastiff home as hydro-only", joined)
+        self.assertIn("msnd-only", joined)
+        self.assertIn("ch-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_bullmastiff_is_not_mfe(self):
+        b = analyze("dog", "Bullmastiff")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("mitochondrial fission", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hydrocephalus_is_not_mfe(self):
+        b = analyze("dog", "hydrocephalus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("mitochondrial fission", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_mfe(self):
+        b = analyze("cat", "familial cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("mitochondrial fission", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_msnd_is_not_mfe(self):
+        b = analyze("dog", "multisystemic neuronal degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("abnormal behavior", loc)
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("mitochondrial fission", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_chrom_is_not_mfe(self):
+        b = analyze("dog", "chromatolytic neuronal degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cataplectic collapse", loc)
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("mitochondrial fission", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_mfe(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("mitochondrial fission", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_mfe_still_fires(self):
+        b = analyze("dog", "mitochondrial fission encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("familial cerebellar ataxia", loc)
+        self.assertIn("blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
