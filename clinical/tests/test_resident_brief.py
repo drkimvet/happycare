@@ -6676,6 +6676,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("rem sleep", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_l2hga_is_aggression_hyperactivity(self):
+        b = analyze("dog", "L-2-hydroxyglutaric aciduria")
+        loc = b["localization"].lower()
+        self.assertIn("l-2-hydroxyglutaric", loc)
+        self.assertIn("aggression", loc)
+        self.assertIn("hyperactivity", loc)
+        self.assertNotIn("degenerative encephalopathy", loc)
+        self.assertNotIn("rem sleep", loc)
+        self.assertNotIn("alaskan husky encephalopathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("8-month clock", joined)
+        self.assertIn("l2hgdh", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("yorkie home as ahe", joined)
+        self.assertIn("deen-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_yorkie_is_not_l2hga(self):
+        b = analyze("dog", "Yorkshire Terrier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("l-2-hydroxyglutaric", loc)
+        self.assertNotIn("hydroxyglutaric aciduria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_l2hga(self):
+        b = analyze("cat", "L-2-hydroxyglutaric aciduria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("l-2-hydroxyglutaric", loc)
+        self.assertNotIn("hydroxyglutaric aciduria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ahe_is_not_l2hga(self):
+        b = analyze("dog", "Alaskan Husky encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("acute ataxia", loc)
+        self.assertNotIn("l-2-hydroxyglutaric", loc)
+        self.assertNotIn("hydroxyglutaric aciduria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_deen_is_not_l2hga(self):
+        b = analyze("dog", "degenerative encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("rem sleep", loc)
+        self.assertNotIn("l-2-hydroxyglutaric", loc)
+        self.assertNotIn("hydroxyglutaric aciduria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ncl_is_not_l2hga(self):
+        b = analyze("dog", "neuronal ceroid lipofuscinosis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("behavior and central blindness", loc)
+        self.assertNotIn("l-2-hydroxyglutaric", loc)
+        self.assertNotIn("hydroxyglutaric aciduria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_l2hga_still_fires(self):
+        b = analyze("dog", "hydroxyglutaric aciduria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("l-2-hydroxyglutaric", loc)
+        self.assertIn("aggression", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

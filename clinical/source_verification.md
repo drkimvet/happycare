@@ -2856,7 +2856,7 @@ Night rule: named Alaskan Husky encephalopathy → **acute ataxia. Blindness.** 
 
 ## 258. Degenerative encephalopathy (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett degenerative-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 257 still owns named Alaskan Husky encephalopathy. Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. L-2-hydroxyglutaric aciduria is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an AED table. Do not harvest a 2-month or 5-year clock. Do not fire on bare Toller. Dogs only. Skip cats.
+No dedicated Plunkett degenerative-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 257 still owns named Alaskan Husky encephalopathy. Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. Packet 259 owns named L-2-hydroxyglutaric aciduria, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an AED table. Do not harvest a 2-month or 5-year clock. Do not fire on bare Toller. Dogs only. Skip cats.
 
 Agree with Parsley: **degenerative encephalopathy of Nova Scotia Duck Tolling Retrievers** is AR and results in neurological dysfunction and a **REM sleep disorder**. Printed onset **2 months to 5 years** stays on the page. Caudate nuclei primarily affected, with axonal dystrophy in the brainstem and spinal cord, stay on the page. Additional signs: **anxiety** and obsessive-compulsive tendencies, ataxia, tetraparesis, and mild hypermetria stay on the page. Printed guarded prognosis, supportive care and antiepileptic medications might help, and a genetic test stay on the page.
 
@@ -2872,3 +2872,22 @@ Book/public traps:
 - Do not call it ahe-only.
 
 Night rule: named degenerative encephalopathy → **REM sleep disorder. Anxiety.** △ Plumb.
+
+## 259. L-2-hydroxyglutaric aciduria (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett L-2-hydroxyglutaric-aciduria chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 258 still owns named degenerative encephalopathy. Packet 257 still owns named Alaskan Husky encephalopathy. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. Standard Poodle neonatal encephalopathy on the cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest L2HGDH. Do not harvest an 8-month clock. Do not fire on bare Yorkie / Staffie / WHWT. Dogs only. Skip cats.
+
+Agree with Parsley: **L-2-hydroxyglutaric aciduria** is an inherited metabolic disease of dogs caused by a mutation in the L2HGDH gene (printed gene stays on the page). Diagnosis is supported by increased L-2-hydroxyglutaric acid in the urine on organic acid screens (stays on the page). Signs: seizures, ataxia, **aggression**, and **hyperactivity**. Printed onset **approximately 8 months** stays on the page. Bilaterally symmetrical gray-matter lesions in the thalamus, cerebral cortex, and cerebellum stay on the page. Yorkshire Terriers, Staffordshire Bull Terriers, and West Highland White Terriers are known to be affected; a mutation has not been described in West Highland White Terriers (stays on the page). Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named L-2-hydroxyglutaric aciduria is aggression; hyperactivity. Bare Yorkie / Staffie / WHWT do not fire. Cat does not fire. Named DEEN stays 258. Named AHE stays 257. Named NCL stays 240. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest an 8-month clock.
+- Do not harvest L2HGDH.
+- Do not copy a 116 table.
+- Do not send a Yorkie home as AHE.
+- Do not call it deen-only.
+
+Night rule: named L-2-hydroxyglutaric aciduria → **aggression. Hyperactivity.** △ Plumb.

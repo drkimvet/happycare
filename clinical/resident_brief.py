@@ -1493,6 +1493,14 @@ DEEN_RE = re.compile(
     r"toller.{0,20}encephalopath",
     re.I,
 )
+# Do not use \bl2h\b or \bl2hgdh\b. Do not fire on bare Yorkie / Staffie / WHWT.
+# Dogs only. Not AHE (257). Not DEEN (258). Not 116 drug dump. Skip cats.
+L2HGA_RE = re.compile(
+    r"l-2-hydroxyglutar|"
+    r"l2[- ]hydroxyglutar|"
+    r"hydroxyglutaric aciduria",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5591,6 +5599,7 @@ def analyze(
     steal_hqam = HQAM_RE.search(text)
     steal_ahe = AHE_RE.search(text)
     steal_deen = DEEN_RE.search(text)
+    steal_l2hga = L2HGA_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5651,6 +5660,7 @@ def analyze(
         or steal_hqam
         or steal_ahe
         or steal_deen
+        or steal_l2hga
     ):
         if spec == "cat":
             fuo_loc = (
@@ -9522,6 +9532,119 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for degenerative encephalopathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for degenerative encephalopathy.")
+
+    l2hga_named = spec == "dog" and L2HGA_RE.search(text)
+    if l2hga_named and not (
+        DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        l2hga_loc = (
+            "L-2-hydroxyglutaric aciduria. Aggression. "
+            "Hyperactivity."
+        )
+        localization = f"{localization} Also {l2hga_loc}" if localization else l2hga_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest an 8-month clock as lobby law. "
+            "Do not harvest L2HGDH as lobby law. "
+            "Do not copy a 116 table as lobby law. "
+            "Do not send a Yorkie home as AHE. "
+            "Do not call it deen-only."
+        )
+        do_not.append(
+            "Yorkshire Terriers, Staffordshire Bull Terriers, "
+            "and West Highland White Terriers. Printed L2HGDH "
+            "stays on the page. Printed urine organic acids "
+            "stay on the page. Seizures, ataxia, aggression, "
+            "and hyperactivity stay on the page. Printed "
+            "8-month clock stays on the page. Printed mutation "
+            "not described in WHWT stays on the page. Printed "
+            "no treatment and euthanasia or death stay on the "
+            "page. Packet 116 still owns the crash-cart "
+            "numbers. Skip cats. Not deen-only. Not ahe-only. "
+            "Not 116-only."
+        )
+        do_next.append(
+            "Name the aciduria. Aggression and hyperactivity. "
+            "△ Plumb. Do not copy a 116 table."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "L-2-hydroxyglutaric aciduria; L2HGDH stays on the "
+            "page; increased L-2-hydroxyglutaric acid in urine "
+            "on organic acid screens stays on the page; "
+            "seizures, ataxia, aggression, and hyperactivity; "
+            "onset approximately 8 months stays on the page; "
+            "bilaterally symmetrical gray-matter lesions in "
+            "thalamus, cerebral cortex, and cerebellum stay "
+            "on the page; Yorkshire Terriers, Staffordshire "
+            "Bull Terriers, and West Highland White Terriers; "
+            "mutation not described in WHWT stays on the page; "
+            "no treatment; typically euthanasia or death."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Yorkie home as AHE."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for L-2-hydroxyglutaric aciduria.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for L-2-hydroxyglutaric aciduria.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

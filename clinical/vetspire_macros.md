@@ -187,6 +187,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hqam` | Assessment | Hereditary quadriplegia and amblyopia |
 | `ddx-ahe` | Assessment | Alaskan Husky encephalopathy / Leigh-like |
 | `ddx-deen` | Assessment | Toller degenerative encephalopathy / REM sleep |
+| `ddx-l2hga` | Assessment | L-2-hydroxyglutaric aciduria |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -333,6 +334,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hqam` | Discharge | After hereditary quadriplegia talk |
 | `dc-ahe` | Discharge | After Alaskan Husky encephalopathy talk |
 | `dc-deen` | Discharge | After Toller degenerative encephalopathy talk |
+| `dc-l2hga` | Discharge | After L-2-hydroxyglutaric aciduria talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2548,6 +2550,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 2-month or 5-year clock. Harvest an AED table. Copy a 116 table. Send a Toller home as AHE. Call it ahe-only.
 Do next: Name the encephalopathy. REM sleep and anxiety. △ Plumb. Do not copy a 116 table.
 
+### `ddx-l2hga`
+
+L-2-hydroxyglutaric aciduria — {{patient.name}}
+Aggression [yes / not]. Hyperactivity [yes / not]. Breed [Yorkie / Staffie / WHWT / other]. Urine organic acids [sent / not].
+
+DDX:
+1. L-2-hydroxyglutaric aciduria — **aggression. Hyperactivity**
+2. Printed L2HGDH, urine organic acids, and 8-month clock stay on the page
+3. Printed mutation not described in WHWT stays on the page. Packet 116 still owns crash-cart numbers
+4. Not deen-only (258). Not ahe-only (257). Not NCL-only (240). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Yorkie / Staffie / WHWT do not fire
+
+Do not: harvest a surgery table. Harvest an 8-month clock. Harvest L2HGDH. Copy a 116 table. Send a Yorkie home as AHE. Call it deen-only.
+Do next: Name the aciduria. Aggression and hyperactivity. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3751,6 +3768,14 @@ Return now for a cluster of seizures, sudden blindness, or if you cannot keep th
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a cluster of seizures, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-l2hga`
+
+{{patient.name}} was evaluated for L-2-hydroxyglutaric aciduria (an inherited metabolic disease that can include aggression and hyperactivity). The printed clock and the printed urine-organic-acid line stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a cluster of seizures, sudden aggression, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
