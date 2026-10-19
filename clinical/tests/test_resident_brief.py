@@ -6435,6 +6435,61 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("tremors", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_spong_is_ataxia_head_tremor(self):
+        b = analyze("dog", "spongiform degeneration")
+        loc = b["localization"].lower()
+        self.assertIn("spongiform degeneration", loc)
+        self.assertIn("head tremor", loc)
+        self.assertNotIn("central axonopathy", loc)
+        self.assertNotIn("white shaker", loc)
+        self.assertNotIn("fpv wobble", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("young wobble home as ch", joined)
+        self.assertIn("saxon-only", joined)
+        self.assertIn("shaker-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_spong_fires(self):
+        b = analyze("cat", "spongy degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("spongiform degeneration", loc)
+        self.assertIn("head tremor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_labrador_is_not_spong(self):
+        b = analyze("dog", "Labrador")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("spongiform degeneration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sheltie_is_not_spong(self):
+        b = analyze("dog", "Shetland Sheepdog")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("spongiform degeneration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_saxon_is_not_spong(self):
+        b = analyze("dog", "central axonopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tremors", loc)
+        self.assertNotIn("spongiform degeneration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_shaker_is_not_spong(self):
+        b = analyze("dog", "white shaker")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("white shaker", loc)
+        self.assertNotIn("spongiform degeneration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_spong(self):
+        b = analyze("cat", "cerebellar hypoplasia, FPV wobble")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble", loc)
+        self.assertNotIn("spongiform degeneration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

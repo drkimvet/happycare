@@ -1463,6 +1463,13 @@ SAXON_RE = re.compile(
     r"scottish terrier axonopath",
     re.I,
 )
+# Do not use \bspongiform\b alone. Do not fire on bare Labrador / Sheltie.
+# Dog or cat. Not SAXON (254). Not shaker (215). Not CH (211).
+SPONG_RE = re.compile(
+    r"spongiform degenerat|"
+    r"spongy degenerat",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5557,6 +5564,7 @@ def analyze(
     steal_mfe = MFE_RE.search(text)
     steal_dalv = DALV_RE.search(text)
     steal_saxon = SAXON_RE.search(text)
+    steal_spong = SPONG_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5613,6 +5621,7 @@ def analyze(
         or steal_mfe
         or steal_dalv
         or steal_saxon
+        or steal_spong
     ):
         if spec == "cat":
             fuo_loc = (
@@ -9062,6 +9071,108 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for central axonopathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for central axonopathy.")
+
+    spong_named = spec in {"dog", "cat"} and SPONG_RE.search(text)
+    if spong_named and not (
+        SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRO_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or CHYPO_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        spong_loc = (
+            "Spongiform degeneration. Ataxia. "
+            "Head tremor."
+        )
+        localization = f"{localization} Also {spong_loc}" if localization else spong_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not send a young wobble home as CH. "
+            "Do not call it saxon-only. "
+            "Do not call it shaker-only."
+        )
+        do_not.append(
+            "Young dogs and cats. Ataxia/hypermetria, head "
+            "tremors, intermittent contractures, postural "
+            "abnormalities, and behavioral changes stay on "
+            "the page. Named breeds stay on the page. Spongy "
+            "white or gray matter stays on the page. Printed "
+            "mutation in Australian Cattle Dogs, Shelties, "
+            "and Belgian Shepherds stays on the page. Printed "
+            "poor prognosis stays on the page. Not saxon-only. "
+            "Not shaker-only. Not CH-only."
+        )
+        do_next.append(
+            "Name the degeneration. Ataxia and head tremor. "
+            "△ Plumb."
+        )
+        sources.append(
+            "Merck congenital generalized (Parsley, Mar 2026): "
+            "spongiform degenerative conditions in young dogs "
+            "and cats; ataxia/hypermetria, head tremors, "
+            "intermittent contractures, postural abnormalities, "
+            "and behavioral changes; named dog and cat breeds "
+            "stay on the page; spongy degeneration of white or "
+            "gray matter; printed mutation in Australian Cattle "
+            "Dogs, Shetland Sheepdogs, and Belgian Shepherds "
+            "stays on the page; prognosis poor stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a young wobble home as CH."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for spongiform degeneration.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for spongiform degeneration.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

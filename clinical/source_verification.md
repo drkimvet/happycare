@@ -2784,7 +2784,7 @@ Night rule: named Dalmatian leukodystrophy → **visual deficits. White-matter c
 
 ## 254. Central axonopathy (Merck Parsley Mar 2026 generalized)
 
-No dedicated Plunkett central-axonopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 253 still owns named Dalmatian leukodystrophy. Packet 216 still owns named NAD. Packet 236 still owns named Alexander. Packet 222 still owns named Boxer axonopathy. Spongiform degenerative conditions are the next room, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 10–12 week clock. Do not fire on bare Scottish Terrier. Do not use bare axonopath. Dogs only. Skip cats.
+No dedicated Plunkett central-axonopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 253 still owns named Dalmatian leukodystrophy. Packet 216 still owns named NAD. Packet 236 still owns named Alexander. Packet 222 still owns named Boxer axonopathy. Packet 255 owns named spongiform degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 10–12 week clock. Do not fire on bare Scottish Terrier. Do not use bare axonopath. Dogs only. Skip cats.
 
 Agree with Parsley: **central axonopathy in Scottish Terriers** causes **tremors**, ataxia, and paraparesis. It shows similarities to neuraxonal dystrophies. Diffuse white matter degeneration in the brain and spinal cord stays on the page. Printed age of onset **10–12 weeks**, signs progressive, stays on the page. No treatment.
 
@@ -2799,3 +2799,20 @@ Book/public traps:
 - Do not call it Alexander-only.
 
 Night rule: named central axonopathy → **tremors. Progressive.** △ Plumb.
+
+## 255. Spongiform degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett spongiform-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 254 still owns named central axonopathy. Packet 215 still owns named white shaker. Packet 211 still owns named CH / FPV wobble. Packet 236 still owns named Alexander. Hereditary quadriplegia and amblyopia in Irish Setters is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Labrador / Sheltie / Silky / Cocker / Rottweiler. Dog or cat.
+
+Agree with Parsley: **spongiform degenerative conditions** have been described in **young dogs and cats** and are often associated with **ataxia/hypermetria**, **head tremors**, intermittent contractures, postural abnormalities, and behavioral changes. Named breeds and Egyptian Mau / Burmese stay on the page. Spongy degeneration of white or gray matter stays on the page. Printed mutation in Australian Cattle Dogs / Shetland Sheepdogs / Belgian Shepherds stays on the page. Printed poor prognosis stays on the page.
+
+Night split: named spongiform degeneration is ataxia; head tremor. Bare breed does not fire. Named SAXON stays 254. Named shaker stays 215. Named CH stays 211. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a young wobble home as CH.
+- Do not call it saxon-only.
+- Do not call it shaker-only.
+
+Night rule: named spongiform degeneration → **ataxia. Head tremor.** △ Plumb.

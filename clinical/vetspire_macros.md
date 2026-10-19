@@ -183,6 +183,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mfe` | Assessment | Familial cerebellar ataxia / mitochondrial fission |
 | `ddx-dalv` | Assessment | Dalmatian leukodystrophy |
 | `ddx-saxon` | Assessment | Central axonopathy |
+| `ddx-spong` | Assessment | Spongiform degeneration |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -325,6 +326,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mfe` | Discharge | After familial cerebellar ataxia talk |
 | `dc-dalv` | Discharge | After Dalmatian leukodystrophy talk |
 | `dc-saxon` | Discharge | After central axonopathy talk |
+| `dc-spong` | Discharge | After spongiform degeneration talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2480,6 +2482,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 10–12 week clock. Send a Scottish Terrier home as NAD-only. Call it dalv-only. Call it Alexander-only.
 Do next: Name the axonopathy. Tremors and progressive. △ Plumb.
 
+### `ddx-spong`
+
+Spongiform degeneration — {{patient.name}}
+Ataxia [yes / not]. Head tremor [yes / not]. Species [dog / cat]. Course [young / other].
+
+DDX:
+1. Spongiform degeneration — **ataxia. Head tremor**
+2. Young dogs and cats. Named breeds stay on the page. Egyptian Mau / Burmese stay on the page
+3. Spongy white or gray matter stays on the page. Printed mutation and poor-prognosis lines stay on the page
+4. Not saxon-only (254). Not shaker-only (215). Not CH-only (211). Not Alexander-only (236)
+5. Dog or cat can fire. Bare Labrador / Sheltie / Silky does not fire
+
+Do not: harvest a surgery table. Send a young wobble home as CH. Call it saxon-only. Call it shaker-only.
+Do next: Name the degeneration. Ataxia and head tremor. △ Plumb.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3651,6 +3668,14 @@ Return now for sudden vision loss, a fall, or if you cannot keep them comfortabl
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worsening tremors, a fall, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-spong`
+
+{{patient.name}} was evaluated for a spongiform degeneration (an inherited young-animal ataxia that can include a head tremor). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a fall, worsening tremor, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
