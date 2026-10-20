@@ -201,6 +201,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cmyo` | Assessment | Congenital myoclonus / Labrador |
 | `ddx-cmega` | Assessment | Congenital megaesophagus |
 | `ddx-leon` | Assessment | Leonberger polyneuropathy |
+| `ddx-tmhn` | Assessment | Tibetan Mastiff hypertrophic neuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -361,6 +362,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cmyo` | Discharge | After congenital myoclonus talk |
 | `dc-cmega` | Discharge | After congenital megaesophagus talk |
 | `dc-leon` | Discharge | After Leonberger polyneuropathy talk |
+| `dc-tmhn` | Discharge | After hypertrophic neuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2786,6 +2788,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 1–9 year clock. Copy a 268 table. Send a Leonberger home as GOLPP. Call it golpp-only.
 Do next: Name the Leonberger polyneuropathy. Distal neuropathy. High-stepping gait. △ Plumb. Do not copy a 268 table.
 
+### `ddx-tmhn`
+
+Hypertrophic neuropathy — {{patient.name}}
+Hypotonia [yes / not]. Sensory preserved [yes / not]. Breed [Tibetan Mastiff / other].
+
+DDX:
+1. Hypertrophic neuropathy — **hypotonia. Sensory preserved**
+2. Printed Tibetan Mastiff AR / 7.5–10 week clock stay on the page
+3. Printed marked hyporeflexia, demyelination / remyelination, may stabilize and remain weak stay on the page. Packet 272 still owns Leonberger
+4. Not leon-only (272). Not 271-only. Not 268-only
+5. Dog can fire. Cat does not fire. Bare Tibetan Mastiff / hypotonia / hyporeflexia do not fire
+
+Do not: harvest a surgery table. Harvest a 7.5–10 week clock. Copy a 272 table. Send a Mastiff home as Leonberger. Call it leon-only.
+Do next: Name the hypertrophic neuropathy. Hypotonia. Sensory preserved. △ Plumb. Do not copy a 272 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4101,6 +4118,14 @@ Return now for cough, fever, or if you cannot keep them comfortable. {{location.
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse weakness, louder breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-tmhn`
+
+{{patient.name}} was evaluated for hypertrophic neuropathy (an inherited Tibetan Mastiff nerve disease with floppy muscle tone and preserved sensation). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

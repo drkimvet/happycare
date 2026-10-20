@@ -7574,6 +7574,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("high-stepping", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_tmhn_is_hypotonia_sensory_preserved(self):
+        b = analyze("dog", "hypertrophic neuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("hypertrophic neuropathy", loc)
+        self.assertIn("hypotonia", loc)
+        self.assertIn("sensory preserved", loc)
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        self.assertNotIn("high-stepping", loc)
+        self.assertNotIn("aspiration pneumonia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("7.5–10 week clock", joined)
+        self.assertIn("272 table", joined)
+        self.assertIn("mastiff home as leonberger", joined)
+        self.assertIn("leon-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tibetan_mastiff_is_not_tmhn(self):
+        b = analyze("dog", "Tibetan Mastiff")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        self.assertNotIn("hypotonia", loc)
+        self.assertNotIn("sensory preserved", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_leon_is_not_tmhn(self):
+        b = analyze("dog", "Leonberger polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("high-stepping", loc)
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        self.assertNotIn("hypotonia", loc)
+        self.assertNotIn("sensory preserved", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmega_is_not_tmhn(self):
+        b = analyze("dog", "congenital megaesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("aspiration pneumonia", loc)
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        self.assertNotIn("hypotonia", loc)
+        self.assertNotIn("sensory preserved", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_tmhn_still_fires(self):
+        b = analyze("dog", "Tibetan Mastiff neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hypertrophic neuropathy", loc)
+        self.assertIn("sensory preserved", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_tmhn(self):
+        b = analyze("cat", "hypertrophic neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        self.assertNotIn("hypotonia", loc)
+        self.assertNotIn("sensory preserved", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hypotonia_is_not_tmhn(self):
+        b = analyze("dog", "hypotonia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        self.assertNotIn("sensory preserved", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

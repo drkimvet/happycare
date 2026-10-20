@@ -3129,3 +3129,21 @@ Book/public traps:
 - Do not call it golpp-only.
 
 Night rule: named Leonberger polyneuropathy → **distal neuropathy. High-stepping gait.** △ Plumb.
+
+## 273. Hypertrophic neuropathy of Tibetan Mastiffs (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett hypertrophic-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 272 still owns named Leonberger polyneuropathy. Packet 271 still owns named congenital megaesophagus. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 274 owns named hereditary hyperchylomicronemia neuropathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 7.5–10 week clock. Do not fire on bare Tibetan Mastiff / hypertrophic / hypotonia / hyporeflexia. Dogs only. Skip cats.
+
+Agree with Parsley: **hypertrophic neuropathy of Tibetan Mastiffs** is an autosomal recessive disease recognized in the US, Switzerland, and Australia (printed geography stays on the page). The age of onset is **7.5–10 weeks** (printed clock stays on the page). Clinical signs include rapidly progressive paresis and **muscle hypotonia**. **Hyporeflexia is marked, but sensory function is preserved.** Demyelination and remyelination are evident on nerve biopsy (printed line stays on the page). The disease can stabilize, and some puppies might regain the ability to walk, but they remain weak. There is no treatment, and the prognosis is guarded.
+
+Night split: named hypertrophic neuropathy is hypotonia; sensory preserved. Bare Tibetan Mastiff does not fire. Bare hypotonia does not fire. Cat does not fire. Named Leonberger stays 272. Named congenital megaesophagus stays 271. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 7.5–10 week clock.
+- Do not copy a 272 table.
+- Do not send a Mastiff home as Leonberger.
+- Do not call it leon-only.
+
+Night rule: named hypertrophic neuropathy → **hypotonia. Sensory preserved.** △ Plumb.
