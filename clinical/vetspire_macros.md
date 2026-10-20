@@ -195,6 +195,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-poly` | Assessment | Polymicrogyria / extra gyri |
 | `ddx-pdys` | Assessment | Paroxysmal dyskinesia / episodic falling |
 | `ddx-narc` | Assessment | Narcolepsy / cataplexy |
+| `ddx-dandy` | Assessment | Dandy-Walker / vermis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -349,6 +350,7 @@ Suggested names are short so they show up after three letters.
 | `dc-poly` | Discharge | After polymicrogyria talk |
 | `dc-pdys` | Discharge | After paroxysmal dyskinesia talk |
 | `dc-narc` | Discharge | After narcolepsy talk |
+| `dc-dandy` | Discharge | After Dandy-Walker talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2684,6 +2686,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a physostigmine table. Harvest an imipramine table. Copy a 116 table. Send a Doberman home as IE. Call it pdys-only.
 Do next: Name the narcolepsy. Conserved consciousness and excitement. △ Plumb. Do not copy a 116 table.
 
+### `ddx-dandy`
+
+Dandy-Walker — {{patient.name}}
+Vermis hypoplasia [yes / not]. Fourth ventricle cystlike [yes / not]. Breed [Eurasier / Toy Fox Terrier / other].
+
+DDX:
+1. Dandy-Walker — **vermis hypoplasia. Fourth ventricle**
+2. Printed VLDLR / familial / Eurasier / Toy Fox Terrier stay on the page. Printed hydrocephalus stays on the page
+3. Packet 211 still owns named cerebellar hypoplasia. Packet 209 still owns named hydrocephalus. Packet 116 still owns crash-cart numbers
+4. Not ch-only (211). Not hydro-only (209). Not COMS-only (212). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Eurasier / Toy Fox Terrier do not fire
+
+Do not: harvest a surgery table. Harvest a hydro table. Harvest a COMS gabapentin table. Copy a 116 table. Send a Eurasier home as CH. Call it ch-only.
+Do next: Name the Dandy-Walker. Vermis and fourth ventricle. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3951,6 +3968,14 @@ Return now if an episode lasts longer than usual, they are not themselves after 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now if an episode lasts longer than usual, they do not recover as they usually do, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-dandy`
+
+{{patient.name}} was evaluated for Dandy-Walker syndrome (a congenital cerebellar-vermis difference with a cystlike fourth ventricle). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for a fall, worsening wobbliness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

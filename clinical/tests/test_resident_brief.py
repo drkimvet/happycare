@@ -7176,6 +7176,75 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("excitement", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_dandy_is_vermis_fourth_ventricle(self):
+        b = analyze("dog", "Dandy-Walker")
+        loc = b["localization"].lower()
+        self.assertIn("dandy-walker", loc)
+        self.assertIn("vermis hypoplasia", loc)
+        self.assertIn("fourth ventricle", loc)
+        self.assertNotIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("dome-head", loc)
+        self.assertNotIn("narcolepsy", loc)
+        self.assertNotIn("conserved consciousness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("hydro table", joined)
+        self.assertIn("coms gabapentin table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("eurasier home as ch", joined)
+        self.assertIn("ch-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_eurasier_is_not_dandy(self):
+        b = analyze("dog", "Eurasier")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dandy-walker", loc)
+        self.assertNotIn("vermis hypoplasia", loc)
+        self.assertNotIn("fourth ventricle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ch_is_not_dandy(self):
+        b = analyze("cat", "cerebellar hypoplasia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fpv wobble is nonprogressive", loc)
+        self.assertNotIn("dandy-walker", loc)
+        self.assertNotIn("vermis hypoplasia", loc)
+        self.assertNotIn("fourth ventricle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_narc_is_not_dandy(self):
+        b = analyze("dog", "narcolepsy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("conserved consciousness", loc)
+        self.assertNotIn("dandy-walker", loc)
+        self.assertNotIn("vermis hypoplasia", loc)
+        self.assertNotIn("fourth ventricle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_dandy_still_fires(self):
+        b = analyze("dog", "dandy walker")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dandy-walker", loc)
+        self.assertIn("vermis hypoplasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_dandy(self):
+        b = analyze("cat", "Dandy-Walker")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("dandy-walker", loc)
+        self.assertNotIn("vermis hypoplasia", loc)
+        self.assertNotIn("fourth ventricle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hydro_is_not_dandy(self):
+        b = analyze("dog", "dome-head puppy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("dome-head", loc)
+        self.assertNotIn("dandy-walker", loc)
+        self.assertNotIn("vermis hypoplasia", loc)
+        self.assertNotIn("fourth ventricle", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

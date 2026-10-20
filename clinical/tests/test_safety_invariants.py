@@ -623,6 +623,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("no autonomic", VERIF.lower())
         self.assertIn("narcolepsy", VERIF.lower())
         self.assertIn("conserved consciousness", VERIF.lower())
+        self.assertIn("dandy-walker", VERIF.lower())
+        self.assertIn("vermis hypoplasia", VERIF.lower())
+        self.assertIn("fourth ventricle", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1009,6 +1012,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-pdys`", MACRO)
         self.assertIn("`ddx-narc`", MACRO)
         self.assertIn("`dc-narc`", MACRO)
+        self.assertIn("`ddx-dandy`", MACRO)
+        self.assertIn("`dc-dandy`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1071,6 +1076,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("no autonomic", MACRO.lower())
         self.assertIn("narcolepsy", MACRO.lower())
         self.assertIn("conserved consciousness", MACRO.lower())
+        self.assertIn("dandy-walker", MACRO.lower())
+        self.assertIn("vermis hypoplasia", MACRO.lower())
+        self.assertIn("fourth ventricle", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1495,6 +1503,9 @@ class PublicCardInvariants(unittest.TestCase):
             "no autonomic",
             "narcolepsy",
             "conserved consciousness",
+            "dandy-walker",
+            "vermis hypoplasia",
+            "fourth ventricle",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

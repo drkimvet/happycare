@@ -2010,7 +2010,7 @@ Night rule: FPV kitten, normal skull, circling / blind → **hydranencephaly ton
 
 ## 211. Cerebellar hypoplasia / FPV wobble kitten (Merck Parsley Mar 2026 cerebellar; panleukopenia page)
 
-No dedicated Plunkett cerebellar-hypoplasia chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley) plus feline panleukopenia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 139 still owns HE / head-press without CH words. Chiari-like / COMS on the same cerebellar page is the next room, not this dump. Skip Dandy-Walker / VLDLR Eurasier, lissencephaly, large-animal BVD, and cerebellar abiotrophy as their own packets. Do not harvest an FPV vaccine table or a COMS gabapentin / omeprazole table as lobby law.
+No dedicated Plunkett cerebellar-hypoplasia chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley) plus feline panleukopenia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 139 still owns HE / head-press without CH words. Chiari-like / COMS on the same cerebellar page is the next room, not this dump. Packet 267 owns named Dandy-Walker / VLDLR Eurasier. Skip lissencephaly, large-animal BVD, and cerebellar abiotrophy as their own packets. Do not harvest an FPV vaccine table or a COMS gabapentin / omeprazole table as lobby law.
 
 Agree with Parsley: cerebellar hypoplasia occurs in kittens after in utero infection with feline panleukopenia virus. The condition is **nonprogressive**, and affected cats can be **suitable pets**. Unlike cerebellar abiotrophy, it is not degenerative. Antemortem diagnosis by MRI. Concomitant hydrocephalus or hydranencephaly can also occur. Also reported in Chow Chows. Clinical signs are typical of a cerebellar disorder: tremors, ataxia, and hypermetria; occasionally head tilt and circling. The vermis can be partially or completely absent. Pearl: hypoplasia is present from birth / first ambulation and nonprogressive; abiotrophy animals are born normal. Panleukopenia page: perinatal infection may destroy rapidly dividing cerebellar or retinal cells, leading to cerebellar hypoplasia, incoordination, and tremors that persist throughout life.
 
@@ -2028,7 +2028,7 @@ Night rule: FPV wobble from birth → **nonprogressive, not abiotrophy.** △ Pl
 
 ## 212. Chiari-like / COMS Cavalier (Merck Parsley Mar 2026 cerebellar)
 
-No dedicated Plunkett COMS chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 185 still owns named IVDD / knuckle. Cerebellar abiotrophy on the same page is the next room, not this dump. Skip Dandy-Walker / VLDLR Eurasier. Do not harvest gabapentin 10, pregabalin 5 / 13–19, or omeprazole 0.7 as lobby law.
+No dedicated Plunkett COMS chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 185 still owns named IVDD / knuckle. Cerebellar abiotrophy on the same page is the next room, not this dump. Packet 267 owns named Dandy-Walker / VLDLR Eurasier. Do not harvest gabapentin 10, pregabalin 5 / 13–19, or omeprazole 0.7 as lobby law.
 
 Agree with Parsley: caudal occipital malformation syndrome (COMS, or Chiari-like malformation) and subsequent syringohydromyelia is commonly reported in Cavalier King Charles Spaniels, American Brussels Griffons, and less commonly other small-breed dogs. Comparable to human Chiari type I. Congenital malformation of the occipital bone → crowded caudal fossa and cerebellar herniation at the foramen magnum. Disrupted CSF flow accumulates in the dorsal cord (syringomyelia), central canal (hydromyelia), or both (syringohydromyelia). Printed 25–70% of Cavaliers with MRI-identifiable caudal occipital malformation are subclinical, increasing with age. The malformation is present at birth; clinical signs often appear later. Common signs: paresthesias (face rubbing, **phantom scratching** of the back of the head), ataxia, and weakness from the syrinx. Diagnosis: MRI of the brain **and the entire spinal cord**, because syringohydromyelia can appear anywhere and is not necessarily continuous. Medical management is often not curative. Printed gabapentin / pregabalin / omeprazole stay on the page. Caudal occipital craniectomy is preferred as definitive treatment; printed 25–47% recurrence stays on the page.
 
@@ -2046,7 +2046,7 @@ Night rule: Cavalier, phantom scratch → **syrinx tonight; MRI the whole cord.*
 
 ## 213. Cerebellar abiotrophy / born normal then progressive (Merck Parsley Mar 2026 cerebellar)
 
-No dedicated Plunkett cerebellar-abiotrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS / Chiari. Packet 185 still owns named IVDD. Congenital hypomyelination / shaking puppy on the same page is the next room, not this dump. Skip neuraxonal dystrophy, Bandera's, and Dandy-Walker as their own packets. Do not harvest a pred table as lobby law.
+No dedicated Plunkett cerebellar-abiotrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS / Chiari. Packet 185 still owns named IVDD. Congenital hypomyelination / shaking puppy on the same page is the next room, not this dump. Skip neuraxonal dystrophy and Bandera's as their own packets. Packet 267 owns named Dandy-Walker. Do not harvest a pred table as lobby law.
 
 Agree with Parsley: unlike cerebellar hypoplasia, cerebellar abiotrophy in dogs is most often an inherited degenerative disease. Signs may appear at first ambulation (Samoyed / Beagle), at 4–16 weeks (Kelpie / rough-coated collie / Border Collie / Kerry Blue), or in young or mature adults (Brittany / OES / Gordon Setter). Named autosomal recessive mutations (Vizsla SNX14, Finnish Hound SEL1L) stay on the page. Signs: progressive cerebellar ataxia, intention tremor, hypermetria, and possible loss of menace from the cerebellum. Postural reactions remain normal, as with any pure cerebellar disease. Mode of onset distinguishes it from hypoplasia: hypoplasia is present from birth / first ambulation and nonprogressive; abiotrophy animals are **born normal** and then develop signs. Gross lesions can look similar; histopathology shows degeneration, not failed development. Pearl: hypoplasia is nonprogressive and present from birth; abiotrophy animals are born normal.
 
@@ -3018,3 +3018,22 @@ Book/public traps:
 - Do not call it pdys-only.
 
 Night rule: named narcolepsy → **conserved consciousness. Excitement.** △ Plumb.
+
+## 267. Dandy-Walker / vermis (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett Dandy-Walker chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Packet 211 still owns named cerebellar hypoplasia. Packet 209 still owns named hydrocephalus / dome-head. Packet 212 still owns named COMS / Chiari. Packet 266 still owns named narcolepsy. Packet 116 still owns seizure-drug numbers. The cerebellar leftover that was skipped from 211–213 is this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not harvest a COMS gabapentin table. Do not fire on bare Eurasier / Toy Fox Terrier. Do not put VLDLR in the regex. Dogs only. Skip cats.
+
+Agree with Parsley: selective hypoplasia of the cerebellar vermis combined with hydrocephalus and **cystlike dilatation of the fourth ventricle** has been termed **Dandy-Walker syndrome**, which might have a familial basis. An autosomal recessive deletion mutation in the very low density lipoprotein receptor (**VLDLR**) gene in Eurasier dogs has been identified (printed gene stays on the page). Toy Fox Terriers are predisposed to the Dandy-Walker form. Printed tremor / ataxia / hypermetria and occasional head tilt / circling stay on the cerebellar-hypoplasia lines of the same page.
+
+Night split: named Dandy-Walker is vermis hypoplasia; fourth ventricle. Bare Eurasier does not fire. Cat does not fire. Named CH stays 211. Named hydro stays 209. Named COMS stays 212. Named narcolepsy stays 266. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a hydro table.
+- Do not harvest a COMS gabapentin table.
+- Do not copy a 116 table.
+- Do not send a Eurasier home as CH.
+- Do not call it ch-only.
+
+Night rule: named Dandy-Walker → **vermis hypoplasia. Fourth ventricle.** △ Plumb.
