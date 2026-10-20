@@ -1671,6 +1671,14 @@ PSN_RE = re.compile(
     r"sensory neuropath.{0,40}pointer",
     re.I,
 )
+# Do not use \bbengal\b or \bplantigrade\b or \bpolyneuropath\b or
+# \bparesis\b alone. Do not harvest a 3–44 month clock. Cats only.
+# Not PSN (280). Not PHOX (277). Not BCSN (279). Skip dogs.
+BENGPN_RE = re.compile(
+    r"bengal.{0,40}polyneuropath|"
+    r"polyneuropath.{0,40}bengal",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5791,6 +5799,7 @@ def analyze(
     steal_lhsn = LHSN_RE.search(text)
     steal_bcsn = BCSN_RE.search(text)
     steal_psn = PSN_RE.search(text)
+    steal_bengpn = BENGPN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5873,6 +5882,7 @@ def analyze(
         or steal_lhsn
         or steal_bcsn
         or steal_psn
+        or steal_bengpn
     ):
         if spec == "cat":
             fuo_loc = (
@@ -12295,7 +12305,8 @@ def analyze(
 
     psn_named = spec == "dog" and PSN_RE.search(text)
     if psn_named and not (
-        BCSN_RE.search(text)
+        BENGPN_RE.search(text)
+        or BCSN_RE.search(text)
         or LHSN_RE.search(text)
         or PHOX_RE.search(text)
         or AMPN_RE.search(text)
@@ -12425,6 +12436,147 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Pointer sensory neuropathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Pointer sensory neuropathy.")
+
+    bengpn_named = spec == "cat" and BENGPN_RE.search(text)
+    if bengpn_named and not (
+        PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+    ):
+        bengpn_loc = (
+            "Bengal polyneuropathy. Relapsing. "
+            "Demyelination."
+        )
+        localization = f"{localization} Also {bengpn_loc}" if localization else bengpn_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 3–44 month clock as lobby law. "
+            "Do not copy a 280 table as lobby law. "
+            "Do not send a Bengal home as hyperoxaluria. "
+            "Do not call it 280-only."
+        )
+        do_not.append(
+            "Bengal cats. Printed chronic relapsing "
+            "polyneuropathy stays on the page. Printed "
+            "weakness from demyelination stays on the "
+            "page. Printed 3–44 month clock stays on the "
+            "page. Printed paresis, plantigrade stance, "
+            "exercise intolerance, and stiff or stilted "
+            "gait stay on the page. Printed pelvic-limb "
+            "predominance and possible tetraparesis stay "
+            "on the page. Printed muscle atrophy, weight "
+            "loss, and stunted growth stay on the page. "
+            "Printed no specific treatment, remyelination "
+            "and recovery, residual deficits, and "
+            "relapses stay on the page. Packet 280 still "
+            "owns Pointer sensory neuropathy. Packet 277 "
+            "still owns primary hyperoxaluria. Packet 279 "
+            "still owns Border Collie sensory neuropathy. "
+            "Skip dogs. Not 280-only. Not 277-only. Not "
+            "279-only."
+        )
+        do_next.append(
+            "Name the Bengal polyneuropathy. Relapsing. "
+            "Demyelination. △ Plumb. Do not copy a 280 "
+            "table."
+        )
+        sources.append(
+            "Merck congenital neuromuscular (Parsley, Mar "
+            "2026): polyneuropathy of Bengal cats; "
+            "chronic relapsing; weakness from "
+            "demyelination; 3–44 month onset stays on "
+            "the page; paresis, plantigrade stance, "
+            "exercise intolerance, stiff or stilted "
+            "gait; pelvic limbs then possible "
+            "tetraparesis; atrophy, weight loss, stunted "
+            "growth stay on the page; no specific "
+            "treatment; remyelination and recovery "
+            "possible; residual deficits; relapses."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Bengal home as hyperoxaluria."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Bengal polyneuropathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Bengal polyneuropathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

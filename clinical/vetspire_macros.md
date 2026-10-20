@@ -209,6 +209,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lhsn` | Assessment | Longhaired Dachshund sensory neuropathy |
 | `ddx-bcsn` | Assessment | Border Collie sensory neuropathy |
 | `ddx-psn` | Assessment | Pointer sensory neuropathy |
+| `ddx-bengpn` | Assessment | Bengal cat polyneuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -377,6 +378,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lhsn` | Discharge | After longhaired Dachshund sensory neuropathy talk |
 | `dc-bcsn` | Discharge | After Border Collie sensory neuropathy talk |
 | `dc-psn` | Discharge | After Pointer sensory neuropathy talk |
+| `dc-bengpn` | Discharge | After Bengal polyneuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2922,6 +2924,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a <6 month clock. Copy a 279 table. Send a Pointer home as longhaired Dachshund. Call it 279-only.
 Do next: Name the Pointer sensory neuropathy. Digit self-mutilation. Pelvic pain absent. △ Plumb. Do not copy a 279 table.
 
+### `ddx-bengpn`
+
+Bengal polyneuropathy — {{patient.name}}
+Relapsing [yes / not]. Demyelination [yes / not]. Plantigrade [yes / not].
+
+DDX:
+1. Bengal polyneuropathy — **relapsing. Demyelination**
+2. Printed 3–44 month clock / plantigrade stance / stiff or stilted gait stay on the page
+3. Printed remyelination and recovery / residual deficits / relapses stay on the page. Packet 280 still owns Pointer SN. Packet 277 still owns PHOX
+4. Not 280-only. Not 277-only. Not 279-only
+5. Cat can fire. Dog does not fire. Bare Bengal / plantigrade / polyneuropathy do not fire
+
+Do not: harvest a surgery table. Harvest a 3–44 month clock. Copy a 280 table. Send a Bengal home as hyperoxaluria. Call it 280-only.
+Do next: Name the Bengal polyneuropathy. Relapsing. Demyelination. △ Plumb. Do not copy a 280 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4301,6 +4318,14 @@ Return now for worse ataxia, or if you cannot keep them comfortable. {{location.
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse self-trauma, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-bengpn`
+
+{{patient.name}} was evaluated for Bengal polyneuropathy (a chronic relapsing nerve problem from demyelination). Recovery can occur, but relapses are possible. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

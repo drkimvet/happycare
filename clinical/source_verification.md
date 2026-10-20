@@ -3279,3 +3279,21 @@ Book/public traps:
 - Do not call it 279-only.
 
 Night rule: named Pointer sensory neuropathy → **digit self-mutilation. Pelvic pain absent.** △ Plumb.
+
+## 281. Polyneuropathy of Bengal cats (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Bengal-polyneuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 280 still owns named Pointer sensory neuropathy. Packet 277 still owns named primary hyperoxaluria. Packet 279 still owns named Border Collie sensory neuropathy. Packet 282 owns named calcium phosphate deposition in Great Danes, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 3–44 month clock. Do not fire on bare Bengal / plantigrade / polyneuropathy / paresis. Cats only. Skip dogs.
+
+Agree with Parsley: **polyneuropathy of Bengal cats** is a **chronic, relapsing** polyneuropathy that results in weakness from **demyelination**. The age of onset ranges from **3 to 44 months** (printed clock stays on the page). Clinical signs include paresis, plantigrade stance, exercise intolerance, and stiff or stilted gait. Signs affect predominantly the pelvic limbs but can progress to tetraparesis. Muscle atrophy, weight loss, and stunted growth might occur. There is no specific treatment. Remyelination and recovery can occur; residual deficits often remain, and relapses are possible.
+
+Night split: named Bengal polyneuropathy is relapsing; demyelination. Bare Bengal does not fire. Bare plantigrade does not fire. Dog does not fire. Named PSN stays 280. Named PHOX stays 277. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 3–44 month clock.
+- Do not copy a 280 table.
+- Do not send a Bengal home as hyperoxaluria.
+- Do not call it 280-only.
+
+Night rule: named Bengal polyneuropathy → **relapsing. Demyelination.** △ Plumb.

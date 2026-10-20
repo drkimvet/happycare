@@ -8074,6 +8074,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("digit self-mutilation", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_bengpn_is_relapsing_demyelination(self):
+        b = analyze("cat", "bengal polyneuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("bengal polyneuropathy", loc)
+        self.assertIn("relapsing", loc)
+        self.assertIn("demyelination", loc)
+        self.assertNotIn("pointer sensory neuropathy", loc)
+        self.assertNotIn("digit self-mutilation", loc)
+        self.assertNotIn("primary hyperoxaluria", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("3–44 month clock", joined)
+        self.assertIn("280 table", joined)
+        self.assertIn("bengal home as hyperoxaluria", joined)
+        self.assertIn("280-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_bengal_is_not_bengpn(self):
+        b = analyze("cat", "Bengal")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("bengal polyneuropathy", loc)
+        self.assertNotIn("relapsing", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_psn_is_not_bengpn(self):
+        b = analyze("dog", "pointer sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("digit self-mutilation", loc)
+        self.assertNotIn("bengal polyneuropathy", loc)
+        self.assertNotIn("relapsing", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_bengpn(self):
+        b = analyze("dog", "bengal polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("bengal polyneuropathy", loc)
+        self.assertNotIn("relapsing", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_bengpn_still_fires(self):
+        b = analyze("cat", "polyneuropathy of a Bengal")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("bengal polyneuropathy", loc)
+        self.assertIn("relapsing", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_plantigrade_is_not_bengpn(self):
+        b = analyze("cat", "plantigrade")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("bengal polyneuropathy", loc)
+        self.assertNotIn("relapsing", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_phox_is_not_bengpn(self):
+        b = analyze("cat", "primary hyperoxaluria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("plantigrade stance", loc)
+        self.assertNotIn("bengal polyneuropathy", loc)
+        self.assertNotIn("relapsing", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
