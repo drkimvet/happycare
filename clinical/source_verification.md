@@ -3224,3 +3224,21 @@ Book/public traps:
 - Do not call it 276-only.
 
 Night rule: named primary hyperoxaluria → **plantigrade stance. Oxalate in urine.** △ Plumb.
+
+## 278. Sensory neuropathy in longhaired Dachshunds (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett longhaired-Dachshund-sensory-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 277 still owns named primary hyperoxaluria. Packet 244 still owns Lafora. IVDD still owns dachshund TL. Packet 279 owns named sensory neuropathy in Border Collies, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an 8–12 week clock. Do not fire on bare Dachshund / ataxia / self-mutilation / sensory. Dogs only. Skip cats.
+
+Agree with Parsley: **sensory neuropathy in longhaired Dachshunds** (probably autosomal recessive) causes **pelvic limb ataxia** at the age of **8–12 weeks** (printed clock stays on the page). Urinary and GI function might also be disturbed. Proprioception, spinal reflexes, and pain sensation are depressed, and **self-mutilation** can occur. There is a loss of myelinated fibers in sensory nerves and in selected areas of the spinal cord (printed histology stays on the page). There is no treatment; however, affected dogs can have a relatively normal quality of life, provided that self-mutilation does not occur.
+
+Night split: named longhaired Dachshund sensory neuropathy is pelvic limb ataxia; self-mutilation. Bare Dachshund does not fire. Bare self-mutilation does not fire. Cat does not fire. Named PHOX stays 277. Named Lafora stays 244. Named IVDD stays IVDD. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest an 8–12 week clock.
+- Do not copy a 277 table.
+- Do not send a Dachshund home as IVDD.
+- Do not call it 277-only.
+
+Night rule: named longhaired Dachshund sensory neuropathy → **pelvic limb ataxia. Self-mutilation.** △ Plumb.

@@ -7890,6 +7890,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("plantigrade stance", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_lhsn_is_ataxia_self_mutilation(self):
+        b = analyze("dog", "longhaired dachshund sensory neuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertIn("pelvic limb ataxia", loc)
+        self.assertIn("self-mutilation", loc)
+        self.assertNotIn("primary hyperoxaluria", loc)
+        self.assertNotIn("plantigrade stance", loc)
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("8–12 week clock", joined)
+        self.assertIn("277 table", joined)
+        self.assertIn("dachshund home as ivdd", joined)
+        self.assertIn("277-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dachshund_is_not_lhsn(self):
+        b = analyze("dog", "dachshund")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertNotIn("self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_phox_is_not_lhsn(self):
+        b = analyze("cat", "primary hyperoxaluria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("plantigrade stance", loc)
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertNotIn("self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_lhsn(self):
+        b = analyze("cat", "longhaired dachshund sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertNotIn("self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_lhsn_still_fires(self):
+        b = analyze("dog", "dachshund sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertIn("self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_self_mutilation_is_not_lhsn(self):
+        b = analyze("dog", "self-mutilation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertNotIn("pelvic limb ataxia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ampn_is_not_lhsn(self):
+        b = analyze("dog", "alaskan malamute polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("axonal necrosis", loc)
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertNotIn("self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

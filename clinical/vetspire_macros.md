@@ -206,6 +206,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mls` | Assessment | Musladin-Lueke / Beagle |
 | `ddx-ampn` | Assessment | Alaskan Malamute polyneuropathy |
 | `ddx-phox` | Assessment | Primary hyperoxaluria / l-glyceric |
+| `ddx-lhsn` | Assessment | Longhaired Dachshund sensory neuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -371,6 +372,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mls` | Discharge | After Musladin-Lueke talk |
 | `dc-ampn` | Discharge | After Alaskan Malamute polyneuropathy talk |
 | `dc-phox` | Discharge | After primary hyperoxaluria talk |
+| `dc-lhsn` | Discharge | After longhaired Dachshund sensory neuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2871,6 +2873,21 @@ DDX:
 Do not: harvest a surgery table. Harvest AGXT. Harvest a 5–9 month clock. Harvest a 3–4 week clock. Copy a 276 table. Send a plantigrade patient home as glycogenosis. Call it 276-only.
 Do next: Name the primary hyperoxaluria. Plantigrade stance. Oxalate in urine. △ Plumb. Do not copy a 276 table.
 
+### `ddx-lhsn`
+
+Longhaired Dachshund sensory neuropathy — {{patient.name}}
+Pelvic limb ataxia [yes / not]. Self-mutilation [yes / not]. Pain sensation [depressed / not].
+
+DDX:
+1. Longhaired Dachshund sensory neuropathy — **pelvic limb ataxia. Self-mutilation**
+2. Printed 8–12 week clock / urinary and GI disturbance stay on the page
+3. Printed loss of myelinated fibers stay on the page. Packet 277 still owns primary hyperoxaluria. Packet 244 still owns Lafora. IVDD still owns dachshund TL
+4. Not 277-only. Not 244-only. Not ivdd-only
+5. Dog can fire. Cat does not fire. Bare Dachshund / ataxia / self-mutilation do not fire
+
+Do not: harvest a surgery table. Harvest an 8–12 week clock. Copy a 277 table. Send a Dachshund home as IVDD. Call it 277-only.
+Do next: Name the longhaired Dachshund sensory neuropathy. Pelvic limb ataxia. Self-mutilation. △ Plumb. Do not copy a 277 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4226,6 +4243,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-lhsn`
+
+{{patient.name}} was evaluated for longhaired Dachshund sensory neuropathy (a breed-linked sensory nerve problem that can show pelvic limb ataxia and self-mutilation). There is no printed treatment. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse ataxia or self-trauma, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
