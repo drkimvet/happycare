@@ -7639,6 +7639,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("sensory preserved", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hchylo_is_tomato_soup_low_fat(self):
+        b = analyze("cat", "hyperchylomicronemia")
+        loc = b["localization"].lower()
+        self.assertIn("hyperchylomicronemia", loc)
+        self.assertIn("cream of tomato soup", loc)
+        self.assertIn("low-fat diet", loc)
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        self.assertNotIn("sensory preserved", loc)
+        self.assertNotIn("protein-losing enteropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("8-month clock", joined)
+        self.assertIn("low-fat recipe", joined)
+        self.assertIn("273 table", joined)
+        self.assertIn("cat home as ple", joined)
+        self.assertIn("ple-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hyperlipidemia_is_not_hchylo(self):
+        b = analyze("cat", "hyperlipidemia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hyperchylomicronemia", loc)
+        self.assertNotIn("cream of tomato soup", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tmhn_is_not_hchylo(self):
+        b = analyze("dog", "hypertrophic neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("sensory preserved", loc)
+        self.assertNotIn("hyperchylomicronemia", loc)
+        self.assertNotIn("cream of tomato soup", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_hchylo(self):
+        b = analyze("dog", "hyperchylomicronemia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hyperchylomicronemia", loc)
+        self.assertNotIn("cream of tomato soup", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_hchylo_still_fires(self):
+        b = analyze("cat", "cream of tomato soup")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("hyperchylomicronemia", loc)
+        self.assertIn("cream of tomato soup", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_low_fat_is_not_hchylo(self):
+        b = analyze("cat", "low-fat diet")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("hyperchylomicronemia", loc)
+        self.assertNotIn("cream of tomato soup", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ple_is_not_hchylo(self):
+        b = analyze("dog", "protein-losing enteropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("albumin is leaving through the gut", loc)
+        self.assertNotIn("hyperchylomicronemia", loc)
+        self.assertNotIn("cream of tomato soup", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

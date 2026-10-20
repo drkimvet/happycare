@@ -3147,3 +3147,22 @@ Book/public traps:
 - Do not call it leon-only.
 
 Night rule: named hypertrophic neuropathy → **hypotonia. Sensory preserved.** △ Plumb.
+
+## 274. Neuropathy of hereditary hyperchylomicronemia in cats (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett hyperchylomicronemia chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 273 still owns named hypertrophic neuropathy. Packet 272 still owns named Leonberger polyneuropathy. Packet 178 still owns PLE. Packet 275 owns named Musladin-Lueke syndrome, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an 8-month clock. Do not harvest a homemade low-fat recipe. Do not fire on bare hyperlipidemia / low-fat / triglyceride / cat. Cats only. Skip dogs.
+
+Agree with Parsley: **neuropathy of hereditary hyperchylomicronemia** (hyperlipidemia) is a suspected autosomal recessive disorder that causes generalized peripheral neuropathy in cats. Affected cats show decreased lipoprotein lipase activity. Serum cholesterol and triglyceride concentrations are typically increased. Clinical signs do not develop until the age of at least **8 months** (printed clock stays on the page). Hyperlipidemia results in the deposition of lipid granules within nerves. Evidence suggests that the clinical signs can be controlled by a **low-fat diet**. Blood samples from affected cats have the appearance of **cream of tomato soup**.
+
+Night split: named hyperchylomicronemia is cream of tomato soup; low-fat diet. Bare hyperlipidemia does not fire. Bare low-fat does not fire. Dog does not fire. Named TMHN stays 273. Named PLE stays 178. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest an 8-month clock.
+- Do not harvest a low-fat recipe.
+- Do not copy a 273 table.
+- Do not send a cat home as PLE.
+- Do not call it ple-only.
+
+Night rule: named hyperchylomicronemia → **cream of tomato soup. Low-fat diet.** △ Plumb.

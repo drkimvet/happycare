@@ -643,6 +643,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("hypertrophic neuropathy", VERIF.lower())
         self.assertIn("hypotonia", VERIF.lower())
         self.assertIn("sensory preserved", VERIF.lower())
+        self.assertIn("hyperchylomicronemia", VERIF.lower())
+        self.assertIn("cream of tomato soup", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1043,6 +1045,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-leon`", MACRO)
         self.assertIn("`ddx-tmhn`", MACRO)
         self.assertIn("`dc-tmhn`", MACRO)
+        self.assertIn("`ddx-hchylo`", MACRO)
+        self.assertIn("`dc-hchylo`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1125,6 +1129,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("hypertrophic neuropathy", MACRO.lower())
         self.assertIn("hypotonia", MACRO.lower())
         self.assertIn("sensory preserved", MACRO.lower())
+        self.assertIn("hyperchylomicronemia", MACRO.lower())
+        self.assertIn("cream of tomato soup", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1569,6 +1575,8 @@ class PublicCardInvariants(unittest.TestCase):
             "hypertrophic neuropathy",
             "hypotonia",
             "sensory preserved",
+            "hyperchylomicronemia",
+            "cream of tomato soup",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

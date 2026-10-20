@@ -202,6 +202,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cmega` | Assessment | Congenital megaesophagus |
 | `ddx-leon` | Assessment | Leonberger polyneuropathy |
 | `ddx-tmhn` | Assessment | Tibetan Mastiff hypertrophic neuropathy |
+| `ddx-hchylo` | Assessment | Feline hyperchylomicronemia neuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -363,6 +364,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cmega` | Discharge | After congenital megaesophagus talk |
 | `dc-leon` | Discharge | After Leonberger polyneuropathy talk |
 | `dc-tmhn` | Discharge | After hypertrophic neuropathy talk |
+| `dc-hchylo` | Discharge | After hyperchylomicronemia talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2803,6 +2805,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 7.5–10 week clock. Copy a 272 table. Send a Mastiff home as Leonberger. Call it leon-only.
 Do next: Name the hypertrophic neuropathy. Hypotonia. Sensory preserved. △ Plumb. Do not copy a 272 table.
 
+### `ddx-hchylo`
+
+Hyperchylomicronemia — {{patient.name}}
+Cream of tomato soup [yes / not]. Low-fat diet [yes / not]. Triglyceride [high / not].
+
+DDX:
+1. Hyperchylomicronemia — **cream of tomato soup. Low-fat diet**
+2. Printed LPL / high cholesterol and triglyceride / 8-month clock stay on the page
+3. Printed lipid granules in nerves stay on the page. Packet 178 still owns PLE. Packet 273 still owns hypertrophic neuropathy
+4. Not ple-only (178). Not 273-only. Not 272-only
+5. Cat can fire. Dog does not fire. Bare hyperlipidemia / low-fat / triglyceride do not fire
+
+Do not: harvest a surgery table. Harvest an 8-month clock. Harvest a low-fat recipe. Copy a 273 table. Send a cat home as PLE. Call it ple-only.
+Do next: Name the hyperchylomicronemia. Cream of tomato soup. Low-fat diet. △ Plumb. Do not copy a 273 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4124,6 +4141,14 @@ Return now for worse weakness, louder breathing, or if you cannot keep them comf
 {{patient.name}} was evaluated for hypertrophic neuropathy (an inherited Tibetan Mastiff nerve disease with floppy muscle tone and preserved sensation). The printed breed list stays in our notes. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-hchylo`
+
+{{patient.name}} was evaluated for hereditary hyperchylomicronemia (a feline nerve problem tied to very high blood fat, with blood that can look like cream of tomato soup). A low-fat diet is the printed plan. Comfort and safety are the plan.
+
+Give only the food and medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
