@@ -7111,6 +7111,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("no autonomic", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_narc_is_flaccid_conserved_consciousness(self):
+        b = analyze("dog", "narcolepsy")
+        loc = b["localization"].lower()
+        self.assertIn("narcolepsy", loc)
+        self.assertIn("conserved consciousness", loc)
+        self.assertIn("excitement", loc)
+        self.assertNotIn("paroxysmal dyskinesia", loc)
+        self.assertNotIn("no autonomic", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("physostigmine table", joined)
+        self.assertIn("imipramine table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("doberman home as ie", joined)
+        self.assertIn("pdys-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_doberman_is_not_narc(self):
+        b = analyze("dog", "Doberman Pinscher")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("narcolepsy", loc)
+        self.assertNotIn("conserved consciousness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pdys_is_not_narc(self):
+        b = analyze("dog", "paroxysmal dyskinesia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("no autonomic", loc)
+        self.assertNotIn("narcolepsy", loc)
+        self.assertNotIn("conserved consciousness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_chrom_is_not_narc(self):
+        b = analyze("dog", "chromatolytic neuronal degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cataplectic collapse", loc)
+        self.assertNotIn("narcolepsy", loc)
+        self.assertNotIn("conserved consciousness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_narc_still_fires(self):
+        b = analyze("dog", "cataplexy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("narcolepsy", loc)
+        self.assertIn("conserved consciousness", loc)
+        self.assertNotIn("cataplectic collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_puppy_hypoglycemia_is_not_narc(self):
+        b = analyze("dog", "8-week Maltese, dull, hypoglycemia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("glucose now is the syringe", loc)
+        self.assertNotIn("narcolepsy", loc)
+        self.assertNotIn("conserved consciousness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_narc_still_fires(self):
+        b = analyze("cat", "narcolepsy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("narcolepsy", loc)
+        self.assertIn("conserved consciousness", loc)
+        self.assertIn("excitement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

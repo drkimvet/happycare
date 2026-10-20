@@ -2985,7 +2985,7 @@ Night rule: named polymicrogyria → **visual disturbances. Extra gyri.** △ Pl
 
 ## 265. Paroxysmal dyskinesia (Merck Parsley Mar 2026 cerebral)
 
-No dedicated Plunkett paroxysmal-dyskinesia chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 264 still owns named polymicrogyria. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Puppy hypoglycemia on the same cerebral page is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not copy a 116 table. Do not fire on bare Cavalier / Wheaten / Border Terrier. Dogs only. Skip cats.
+No dedicated Plunkett paroxysmal-dyskinesia chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 264 still owns named polymicrogyria. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Packet 135 already owns puppy hypoglycemia on this page. Packet 266 owns named narcolepsy, not this dump. Do not harvest a surgery table as lobby law. Do not copy a 116 table. Do not fire on bare Cavalier / Wheaten / Border Terrier. Dogs only. Skip cats.
 
 Agree with Parsley: **paroxysmal dyskinesia** is a movement disorder identified in several dog breeds, including the Soft Coated Wheaten Terrier (PIGN), the Cavalier King Charles Spaniel (episodic falling; BCAN), the Border Terrier (Spike's disease), and the Chinook (printed genes stay on the page). Episodes of involuntary movement include hyper- or hypotonicity or dysmetria. It can resemble partial or generalized seizures except that **conscious awareness is maintained** and **no autonomic signs** occur (printed seizure-lookalike line stays on the page). Episodes can last minutes to hours and occur rarely or many times daily (printed clock stays on the page).
 
@@ -2999,3 +2999,22 @@ Book/public traps:
 - Do not call it poly-only.
 
 Night rule: named paroxysmal dyskinesia → **conscious. No autonomic signs.** △ Plumb.
+
+## 266. Narcolepsy and cataplexy (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett narcolepsy chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 135 already owns puppy hypoglycemia from this same page — do not double-gate glucose. Packet 265 still owns named paroxysmal dyskinesia. Packet 250 still owns named chromatolytic / cataplectic collapse. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. The cerebral leftover list on this page is now used. Packet 267 owns named Dandy-Walker / vermis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest physostigmine or imipramine. Do not fire on bare Doberman / Labrador / Dachshund. Do not fire on bare collapse / syncope. Dog or cat.
+
+Agree with Parsley: **narcolepsy** is a disorder of sleep-wake control (excessive sleepiness or sudden paroxysmal attacks of **flaccid paralysis with conservation of consciousness**). AR in Doberman Pinschers, Labrador Retrievers, and Dachshunds; described in other breeds; **rare in cats**. A mutation in the hypocretin (orexin) receptor 2 (**Hcrtr2**) gene has been identified in Dobermans (printed gene stays on the page). Attacks are often stimulated by **excitement** and sometimes accompanied by **cataplexy**. Must be differentiated from syncope. Printed physostigmine and imipramine stay on the page.
+
+Night split: named narcolepsy is conserved consciousness; excitement. Bare Doberman does not fire. Bare collapse does not fire. Named PDYS stays 265. Named CHROM stays 250. Puppy hypoglycemia stays 135. Seizure crash-cart stays 116. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a physostigmine table.
+- Do not harvest an imipramine table.
+- Do not copy a 116 table.
+- Do not send a Doberman home as IE.
+- Do not call it pdys-only.
+
+Night rule: named narcolepsy → **conserved consciousness. Excitement.** △ Plumb.

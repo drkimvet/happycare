@@ -194,6 +194,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-deaf` | Assessment | Congenital deafness / pigment-associated |
 | `ddx-poly` | Assessment | Polymicrogyria / extra gyri |
 | `ddx-pdys` | Assessment | Paroxysmal dyskinesia / episodic falling |
+| `ddx-narc` | Assessment | Narcolepsy / cataplexy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -347,6 +348,7 @@ Suggested names are short so they show up after three letters.
 | `dc-deaf` | Discharge | After congenital deafness talk |
 | `dc-poly` | Discharge | After polymicrogyria talk |
 | `dc-pdys` | Discharge | After paroxysmal dyskinesia talk |
+| `dc-narc` | Discharge | After narcolepsy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2667,6 +2669,21 @@ DDX:
 Do not: harvest a surgery table. Copy a 116 table. Send a Cavalier home as IE. Call it poly-only.
 Do next: Name the dyskinesia. Conscious and no autonomic signs. △ Plumb. Do not copy a 116 table.
 
+### `ddx-narc`
+
+Narcolepsy — {{patient.name}}
+Conserved consciousness [yes / not]. Excitement trigger [yes / not]. Cataplexy [yes / not]. Breed [Doberman / Labrador / Dachshund / other / cat].
+
+DDX:
+1. Narcolepsy — **conserved consciousness. Excitement**
+2. Printed Hcrtr2 / flaccid paralysis / cataplexy stay on the page. Printed differentiate from syncope stays on the page
+3. Printed physostigmine and imipramine stay on the page. Packet 135 still owns puppy hypoglycemia. Packet 116 still owns crash-cart numbers
+4. Not pdys-only (265). Not chrom-only (250). Not IE-only (202). Not 116-only
+5. Dog or cat can fire. Bare Doberman / Labrador / Dachshund do not fire. Bare collapse / syncope do not fire
+
+Do not: harvest a surgery table. Harvest a physostigmine table. Harvest an imipramine table. Copy a 116 table. Send a Doberman home as IE. Call it pdys-only.
+Do next: Name the narcolepsy. Conserved consciousness and excitement. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3926,6 +3943,14 @@ Return now for sudden blindness, a fall, or if you cannot keep them comfortable.
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now if an episode lasts longer than usual, they are not themselves after it, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-narc`
+
+{{patient.name}} was evaluated for narcolepsy (a sleep-wake disorder with sudden flaccid attacks in which consciousness is conserved). Excitement can trigger an episode. The printed breed list and the syncope look-alike stay in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now if an episode lasts longer than usual, they do not recover as they usually do, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
