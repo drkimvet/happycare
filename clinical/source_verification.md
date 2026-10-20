@@ -3111,3 +3111,21 @@ Book/public traps:
 - Do not call it 163-only.
 
 Night rule: named congenital megaesophagus → **regurgitation. Aspiration pneumonia.** △ Plumb.
+
+## 272. Inherited polyneuropathy of Leonberger dogs (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Leonberger-polyneuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 271 still owns named congenital megaesophagus. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 163 still owns fulminant / acquired MG. Packet 273 owns named hypertrophic neuropathy of Tibetan Mastiffs, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1–9 year clock. Do not fire on bare Leonberger / polyneuropathy / high-stepping / dyspnea. Dogs only. Skip cats.
+
+Agree with Parsley: **inherited polyneuropathy of Leonberger dogs** is a **distal neuropathy**, with an age at onset of 1–9 years (printed clock stays on the page). Clinical signs include weakness, exercise intolerance, change in bark, and dyspnea. A **high-stepping gait**, representative of sensory dysfunction, is often present. No treatment for this disease is currently available. Pedigree analysis suggests X-linked inheritance. Printed genetic testing through UC San Diego's Comparative Neuromuscular Laboratory stays on the page.
+
+Night split: named Leonberger polyneuropathy is distal neuropathy; high-stepping gait. Bare Leonberger does not fire. Bare polyneuropathy does not fire. Cat does not fire. Named congenital megaesophagus stays 271. Named congenital LP stays 268. Named GOLPP stays 134. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 1–9 year clock.
+- Do not copy a 268 table.
+- Do not send a Leonberger home as GOLPP.
+- Do not call it golpp-only.
+
+Night rule: named Leonberger polyneuropathy → **distal neuropathy. High-stepping gait.** △ Plumb.

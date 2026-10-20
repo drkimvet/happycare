@@ -7508,6 +7508,72 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("aspiration pneumonia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_leon_is_distal_high_stepping(self):
+        b = analyze("dog", "Leonberger polyneuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("leonberger polyneuropathy", loc)
+        self.assertIn("distal neuropathy", loc)
+        self.assertIn("high-stepping", loc)
+        self.assertNotIn("congenital megaesophagus", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        self.assertNotIn("old large-breed", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("1–9 year clock", joined)
+        self.assertIn("268 table", joined)
+        self.assertIn("leonberger home as golpp", joined)
+        self.assertIn("golpp-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_leonberger_is_not_leon(self):
+        b = analyze("dog", "Leonberger")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        self.assertNotIn("distal neuropathy", loc)
+        self.assertNotIn("high-stepping", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmega_is_not_leon(self):
+        b = analyze("dog", "congenital megaesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("aspiration pneumonia", loc)
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        self.assertNotIn("distal neuropathy", loc)
+        self.assertNotIn("high-stepping", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_conglp_is_not_leon(self):
+        b = analyze("dog", "congenital laryngeal paralysis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("young dog, not golpp", loc)
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        self.assertNotIn("distal neuropathy", loc)
+        self.assertNotIn("high-stepping", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_leon_still_fires(self):
+        b = analyze("dog", "polyneuropathy of Leonberger")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("leonberger polyneuropathy", loc)
+        self.assertIn("high-stepping", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_leon(self):
+        b = analyze("cat", "Leonberger polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        self.assertNotIn("distal neuropathy", loc)
+        self.assertNotIn("high-stepping", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_polyneuropathy_is_not_leon(self):
+        b = analyze("dog", "polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        self.assertNotIn("distal neuropathy", loc)
+        self.assertNotIn("high-stepping", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

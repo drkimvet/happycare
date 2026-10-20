@@ -200,6 +200,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cmg` | Assessment | Congenital myasthenia gravis |
 | `ddx-cmyo` | Assessment | Congenital myoclonus / Labrador |
 | `ddx-cmega` | Assessment | Congenital megaesophagus |
+| `ddx-leon` | Assessment | Leonberger polyneuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -359,6 +360,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cmg` | Discharge | After congenital myasthenia talk |
 | `dc-cmyo` | Discharge | After congenital myoclonus talk |
 | `dc-cmega` | Discharge | After congenital megaesophagus talk |
+| `dc-leon` | Discharge | After Leonberger polyneuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2769,6 +2771,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a sildenafil table. Copy a 163 table. Send a Schnauzer home as acquired MG. Call it 163-only.
 Do next: Name the congenital megaesophagus. Regurgitation and aspiration. △ Plumb. Do not copy a 163 table.
 
+### `ddx-leon`
+
+Leonberger polyneuropathy — {{patient.name}}
+Distal neuropathy [yes / not]. High-stepping gait [yes / not]. Bark change [yes / not].
+
+DDX:
+1. Leonberger polyneuropathy — **distal neuropathy. High-stepping gait**
+2. Printed 1–9 year clock / change in bark / dyspnea stay on the page
+3. Printed no treatment, X-linked pedigree, and UC San Diego genetic test stay on the page. Packet 268 still owns congenital LP. Packet 134 still owns GOLPP
+4. Not golpp-only (134). Not 268-only. Not 271-only
+5. Dog can fire. Cat does not fire. Bare Leonberger / polyneuropathy / high-stepping do not fire
+
+Do not: harvest a surgery table. Harvest a 1–9 year clock. Copy a 268 table. Send a Leonberger home as GOLPP. Call it golpp-only.
+Do next: Name the Leonberger polyneuropathy. Distal neuropathy. High-stepping gait. △ Plumb. Do not copy a 268 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4076,6 +4093,14 @@ Return now if they cannot stay comfortable, cannot rest, or if stiffness lasts a
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for cough, fever, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-leon`
+
+{{patient.name}} was evaluated for Leonberger polyneuropathy (an inherited distal nerve disease with a high-stepping gait). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, louder breathing, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
