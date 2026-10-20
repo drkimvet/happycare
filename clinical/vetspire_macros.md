@@ -210,6 +210,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-bcsn` | Assessment | Border Collie sensory neuropathy |
 | `ddx-psn` | Assessment | Pointer sensory neuropathy |
 | `ddx-bengpn` | Assessment | Bengal cat polyneuropathy |
+| `ddx-cpd` | Assessment | Great Dane calcium phosphate / C7 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -379,6 +380,7 @@ Suggested names are short so they show up after three letters.
 | `dc-bcsn` | Discharge | After Border Collie sensory neuropathy talk |
 | `dc-psn` | Discharge | After Pointer sensory neuropathy talk |
 | `dc-bengpn` | Discharge | After Bengal polyneuropathy talk |
+| `dc-cpd` | Discharge | After calcium phosphate / C7 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2939,6 +2941,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 3–44 month clock. Copy a 280 table. Send a Bengal home as hyperoxaluria. Call it 280-only.
 Do next: Name the Bengal polyneuropathy. Relapsing. Demyelination. △ Plumb. Do not copy a 280 table.
 
+### `ddx-cpd`
+
+Calcium phosphate — {{patient.name}}
+C7 dorsal displacement [yes / not]. Not wobbler [yes / not]. Compressive myelopathy [yes / not].
+
+DDX:
+1. Calcium phosphate — **C7 dorsal displacement. Not wobbler**
+2. Printed mineralization of soft tissues and bone deformity / 1–2 month clock stay on the page
+3. Printed distinct from caudal cervical spondylomyelopathy stay on the page. Packet 223 still owns wobbler
+4. Not wobbler-only. Not 281-only. Not 223-only
+5. Dog can fire. Cat does not fire. Bare Great Dane / calcium / C7 / mineralization do not fire
+
+Do not: harvest a surgery table. Harvest a 1–2 month clock. Copy a 281 table. Send a Great Dane home as wobbler. Call it wobbler-only.
+Do next: Name the calcium phosphate. C7 dorsal displacement. Not wobbler. △ Plumb. Do not copy a 281 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4322,6 +4339,14 @@ Return now for worse self-trauma, or if you cannot keep them comfortable. {{loca
 ### `dc-bengpn`
 
 {{patient.name}} was evaluated for Bengal polyneuropathy (a chronic relapsing nerve problem from demyelination). Recovery can occur, but relapses are possible. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-cpd`
+
+{{patient.name}} was evaluated for calcium phosphate deposition (a Great Dane puppy problem that can displace C7 and compress the spinal cord). This is not wobbler. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

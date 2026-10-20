@@ -3297,3 +3297,21 @@ Book/public traps:
 - Do not call it 280-only.
 
 Night rule: named Bengal polyneuropathy → **relapsing. Demyelination.** △ Plumb.
+
+## 282. Calcium phosphate deposition in Great Danes (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett calcium-phosphate-Great-Dane chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 223 still owns named wobbler / CSM. Packet 281 still owns named Bengal polyneuropathy. Packet 283 owns the next unused named leftover on a cited Parsley SA congenital/inherited nervous-system page, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1–2 month clock. Do not fire on bare Great Dane / calcium / C7 / mineralization. Dogs only. Skip cats.
+
+Agree with Parsley: **calcium phosphate deposition in Great Danes** causes mineralization of soft tissues and bone deformity, with **dorsal displacement of C7**. The resultant **compressive myelopathy** occurs in puppies **1–2 months old** (printed clock stays on the page). This condition is **distinct from caudal cervical spondylomyelopathy**.
+
+Night split: named calcium phosphate is C7 dorsal displacement; not wobbler. Bare Great Dane does not fire. Bare C7 does not fire. Cat does not fire. Named wobbler stays 223. Named BENGPN stays 281. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 1–2 month clock.
+- Do not copy a 281 table.
+- Do not send a Great Dane home as wobbler.
+- Do not call it wobbler-only.
+
+Night rule: named calcium phosphate → **C7 dorsal displacement. Not wobbler.** △ Plumb.

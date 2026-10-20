@@ -8135,6 +8135,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("relapsing", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cpd_is_c7_not_wobbler(self):
+        b = analyze("dog", "calcium phosphate")
+        loc = b["localization"].lower()
+        self.assertIn("calcium phosphate", loc)
+        self.assertIn("c7 dorsal displacement", loc)
+        self.assertIn("not wobbler", loc)
+        self.assertNotIn("two-engine gait", loc)
+        self.assertNotIn("bengal polyneuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("1–2 month clock", joined)
+        self.assertIn("281 table", joined)
+        self.assertIn("great dane home as wobbler", joined)
+        self.assertIn("wobbler-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_great_dane_is_not_cpd(self):
+        b = analyze("dog", "Great Dane")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("calcium phosphate", loc)
+        self.assertNotIn("c7 dorsal displacement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_wobbler_is_not_cpd(self):
+        b = analyze("dog", "wobbler, two-engine gait")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("two-engine gait", loc)
+        self.assertNotIn("calcium phosphate", loc)
+        self.assertNotIn("c7 dorsal displacement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_cpd(self):
+        b = analyze("cat", "calcium phosphate")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("calcium phosphate", loc)
+        self.assertNotIn("c7 dorsal displacement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_cpd_still_fires(self):
+        b = analyze("dog", "dorsal displacement of C7")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("calcium phosphate", loc)
+        self.assertIn("c7 dorsal displacement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_c7_is_not_cpd(self):
+        b = analyze("dog", "C7")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("calcium phosphate", loc)
+        self.assertNotIn("c7 dorsal displacement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bengpn_is_not_cpd(self):
+        b = analyze("cat", "bengal polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("relapsing", loc)
+        self.assertNotIn("calcium phosphate", loc)
+        self.assertNotIn("c7 dorsal displacement", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
