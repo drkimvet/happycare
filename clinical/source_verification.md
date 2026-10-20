@@ -997,7 +997,7 @@ Book/public traps:
 - Do not skip the coat search and name APN.
 - Do not send regurg home as just GI if the limbs are going.
 - Do not harvest AChR nmol/L cutoffs.
-- Congenital MG is a young terrier conversation, not tonight’s fulminant adult.
+- Congenital MG is a young terrier conversation, not tonight’s fulminant adult. Packet 269 owns named congenital myasthenia.
 - Chronic CIDP / steroid-responsive waxing disease is not the 48-hour flaccid crash.
 - Azotemic: still no DexSP.
 
@@ -3055,3 +3055,22 @@ Book/public traps:
 - Do not call it golpp-only.
 
 Night rule: named congenital laryngeal paralysis → **young dog, not GOLPP.** △ Plumb.
+
+## 269. Congenital myasthenia gravis (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-myasthenia chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 163 still owns fulminant / acquired MG. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 270 owns named congenital myoclonus of Labrador Retrievers, not this dump. Do not harvest a surgery table as lobby law. Do not harvest pyridostigmine or Tensilon. Do not fire on bare myasthenia / megaesophagus / weakness / Labrador. Do not put CHRNE / CHAT / COLQ in the regex. Dog or cat.
+
+Agree with Parsley: **congenital myasthenia gravis** (autosomal recessive) has been described in Parson Russell Terrier, Smooth Fox Terrier, smooth miniature Dachshund, English Springer Spaniel, Labrador Retriever, Golden Retriever, Sphynx cat, and Devon Rex cat. It is due to a deficiency or dysfunction of the acetylcholine receptor, and **no circulating antireceptor antibody** is evident in the more common acquired form. Printed CHRNE / CHAT / COLQ stay on the page. Clinical signs usually start at **5–10 weeks in dogs** and **10–16 weeks in cats** (printed clocks stay on the page). The characteristic finding is **exercise-induced weakness**, often associated with megaesophagus. Prognosis is more guarded than acquired MG. Cats also show weakness, ventroflexion of the head and neck, and difficulty swallowing. Printed Old Danish Pointing presynaptic, postsynaptic-may-respond, pyridostigmine, and Labrador anticholinergic-worsen stay on the page.
+
+Night split: named congenital myasthenia is exercise-induced weakness; no circulating antibody. Bare myasthenia stays 163. Bare megaesophagus does not fire. Bare Labrador does not fire. Named congenital LP stays 268. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a pyridostigmine table.
+- Do not harvest a Tensilon table.
+- Do not copy a 163 table.
+- Do not send a Labrador home as acquired MG.
+- Do not call it fulminant-only.
+
+Night rule: named congenital myasthenia → **exercise-induced weakness. No circulating antibody.** △ Plumb.

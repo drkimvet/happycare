@@ -7306,6 +7306,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("young dog, not golpp", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cmg_is_exercise_weakness_no_antibody(self):
+        b = analyze("dog", "congenital myasthenia")
+        loc = b["localization"].lower()
+        self.assertIn("congenital myasthenia", loc)
+        self.assertIn("exercise-induced weakness", loc)
+        self.assertIn("no circulating antibody", loc)
+        self.assertNotIn("fulminant myasthenia", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("pyridostigmine table", joined)
+        self.assertIn("tensilon table", joined)
+        self.assertIn("163 table", joined)
+        self.assertIn("labrador home as acquired mg", joined)
+        self.assertIn("fulminant-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_myasthenia_is_not_cmg(self):
+        b = analyze("dog", "fulminant myasthenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fulminant myasthenia", loc)
+        self.assertNotIn("congenital myasthenia", loc)
+        self.assertNotIn("exercise-induced weakness", loc)
+        self.assertNotIn("no circulating antibody", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_conglp_is_not_cmg(self):
+        b = analyze("dog", "congenital laryngeal paralysis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("young dog, not golpp", loc)
+        self.assertNotIn("congenital myasthenia", loc)
+        self.assertNotIn("exercise-induced weakness", loc)
+        self.assertNotIn("no circulating antibody", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_labrador_is_not_cmg(self):
+        b = analyze("dog", "Labrador Retriever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital myasthenia", loc)
+        self.assertNotIn("exercise-induced weakness", loc)
+        self.assertNotIn("no circulating antibody", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_cmg_still_fires(self):
+        b = analyze("dog", "congenital myasthenic syndrome")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital myasthenia", loc)
+        self.assertIn("no circulating antibody", loc)
+        self.assertNotIn("fulminant myasthenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_cmg_still_fires(self):
+        b = analyze("cat", "congenital myasthenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital myasthenia", loc)
+        self.assertIn("exercise-induced weakness", loc)
+        self.assertIn("no circulating antibody", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_megaesophagus_is_not_cmg(self):
+        b = analyze("dog", "megaesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital myasthenia", loc)
+        self.assertNotIn("exercise-induced weakness", loc)
+        self.assertNotIn("no circulating antibody", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

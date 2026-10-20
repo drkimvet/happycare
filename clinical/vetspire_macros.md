@@ -197,6 +197,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-narc` | Assessment | Narcolepsy / cataplexy |
 | `ddx-dandy` | Assessment | Dandy-Walker / vermis |
 | `ddx-conglp` | Assessment | Congenital laryngeal paralysis |
+| `ddx-cmg` | Assessment | Congenital myasthenia gravis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -353,6 +354,7 @@ Suggested names are short so they show up after three letters.
 | `dc-narc` | Discharge | After narcolepsy talk |
 | `dc-dandy` | Discharge | After Dandy-Walker talk |
 | `dc-conglp` | Discharge | After congenital laryngeal paralysis talk |
+| `dc-cmg` | Discharge | After congenital myasthenia talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2718,6 +2720,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a tie-back table. Copy a 134 table. Send a Bouvier home as GOLPP. Call it golpp-only.
 Do next: Name the congenital laryngeal paralysis. Young dog, not GOLPP. △ Plumb. Do not copy a 134 table.
 
+### `ddx-cmg`
+
+Congenital myasthenia — {{patient.name}}
+Exercise-induced weakness [yes / not]. Circulating AChR antibody [none / present / pending]. Megaesophagus [yes / not]. Species [dog / cat].
+
+DDX:
+1. Congenital myasthenia — **exercise-induced weakness. No circulating antibody**
+2. Printed CHRNE / CHAT / COLQ stay on the page. Printed 5–10 week dog / 10–16 week cat clocks stay on the page
+3. Printed megaesophagus, cat ventroflexion, pyridostigmine, and Labrador anticholinergic-worsen stay on the page. Packet 163 still owns fulminant / acquired MG
+4. Not fulminant-only (163). Not 163-only. Not 268-only
+5. Dog or cat can fire. Bare myasthenia / megaesophagus / Labrador do not fire
+
+Do not: harvest a surgery table. Harvest a pyridostigmine table. Harvest a Tensilon table. Copy a 163 table. Send a Labrador home as acquired MG. Call it fulminant-only.
+Do next: Name the congenital myasthenia. Exercise-induced weakness. No circulating antibody. △ Plumb. Do not copy a 163 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4001,6 +4018,14 @@ Return now for a fall, worsening wobbliness, or if you cannot keep them comforta
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse noise when breathing, collapse, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-cmg`
+
+{{patient.name}} was evaluated for congenital myasthenia (a young-animal nerve-to-muscle problem without circulating receptor antibody). Exercise can bring out the weakness. The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now if they cannot stand after play, regurgitate, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

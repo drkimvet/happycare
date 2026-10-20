@@ -1568,6 +1568,13 @@ CONGLP_RE = re.compile(
     r"congenital lar ?par",
     re.I,
 )
+# Do not use \bchrne\b, \bchat\b, or \bcolq\b. Do not fire on bare myasthenia (163).
+# Do not fire on bare megaesophagus / bare weakness / bare Labrador.
+# Dog or cat. Not 163 fulminant / acquired. Not 268 congenital LP. Not 134.
+CMG_RE = re.compile(
+    r"congenital myasthen",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -4133,7 +4140,7 @@ def analyze(
             hard_stops.append("Azotemic: still no NSAID, including for tick paralysis or botulism.")
 
     apn_hit = spec in {"dog", "cat"} and APN_RE.search(text)
-    mg_hit = spec in {"dog", "cat"} and MG_RE.search(text)
+    mg_hit = spec in {"dog", "cat"} and MG_RE.search(text) and not CMG_RE.search(text)
     if apn_hit or mg_hit:
         apn_loc = (
             "Remaining flaccid LMN after the coat search. "
@@ -5676,6 +5683,7 @@ def analyze(
     steal_narc = NARC_RE.search(text)
     steal_dandy = DANDY_RE.search(text)
     steal_conglp = CONGLP_RE.search(text)
+    steal_cmg = CMG_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5746,6 +5754,7 @@ def analyze(
         or steal_narc
         or steal_dandy
         or steal_conglp
+        or steal_cmg
     ):
         if spec == "cat":
             fuo_loc = (
@@ -10577,6 +10586,7 @@ def analyze(
         or GME_RE.search(text)
         or SRMA_RE.search(text)
         or CONGLP_RE.search(text)
+        or CMG_RE.search(text)
     ):
         dandy_loc = (
             "Dandy-Walker. Vermis hypoplasia. "
@@ -10693,6 +10703,7 @@ def analyze(
         or NME_RE.search(text)
         or GME_RE.search(text)
         or SRMA_RE.search(text)
+        or CMG_RE.search(text)
     ):
         conglp_loc = (
             "Congenital laryngeal paralysis. "
@@ -10743,6 +10754,132 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for congenital laryngeal paralysis.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for congenital laryngeal paralysis.")
+
+    cmg_named = spec in {"dog", "cat"} and CMG_RE.search(text)
+    if cmg_named and not (
+        CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        cmg_loc = (
+            "Congenital myasthenia. Exercise-induced "
+            "weakness. No circulating antibody."
+        )
+        localization = f"{localization} Also {cmg_loc}" if localization else cmg_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a pyridostigmine table as lobby law. "
+            "Do not harvest a Tensilon table as lobby law. "
+            "Do not copy a 163 table as lobby law. "
+            "Do not send a Labrador home as acquired MG. "
+            "Do not call it fulminant-only."
+        )
+        do_not.append(
+            "Parson Russell Terriers, Smooth Fox Terriers, "
+            "miniature Dachshunds, English Springer "
+            "Spaniels, Labradors, Goldens, Sphynx, and "
+            "Devon Rex. Printed CHRNE, CHAT, and COLQ stay "
+            "on the page. Printed 5–10 week dog and 10–16 "
+            "week cat clocks stay on the page. Printed "
+            "megaesophagus stays on the page. Printed cat "
+            "ventroflexion and dysphagia stay on the page. "
+            "Printed Old Danish Pointing presynaptic stays "
+            "on the page. Printed postsynaptic may respond "
+            "and pre/synaptic do not stay on the page. "
+            "Printed pyridostigmine and Labrador "
+            "anticholinergic-worsen stay on the page. "
+            "Packet 163 still owns fulminant / acquired MG. "
+            "Packet 268 still owns congenital laryngeal "
+            "paralysis. Dog or cat. Not 163-only. Not "
+            "268-only."
+        )
+        do_next.append(
+            "Name the congenital myasthenia. "
+            "Exercise-induced weakness. No circulating "
+            "antibody. △ Plumb. Do not copy a 163 table."
+        )
+        sources.append(
+            "Merck congenital neuromuscular (Parsley, Mar "
+            "2026): congenital myasthenia gravis; AR; AChR "
+            "deficiency or dysfunction; no circulating "
+            "antireceptor antibody; CHRNE / CHAT / COLQ "
+            "stay on the page; exercise-induced weakness "
+            "often with megaesophagus; cats also "
+            "ventroflexion and dysphagia; pyridostigmine "
+            "stays on the page; Labrador anticholinergic "
+            "worsen stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Labrador home as acquired MG."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for congenital myasthenia.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for congenital myasthenia.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
