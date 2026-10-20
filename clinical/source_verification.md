@@ -3185,3 +3185,22 @@ Book/public traps:
 - Do not call it 274-only.
 
 Night rule: named Musladin-Lueke → **tiptoe posture. Thickened ear cartilage.** △ Plumb.
+
+## 276. Alaskan Malamute polyneuropathy (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Alaskan-Malamute-polyneuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 275 still owns named Musladin-Lueke. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 277 owns named primary hyperoxaluria, not this dump. Do not harvest a surgery table as lobby law. Do not harvest NDRG1. Do not harvest a 10–18 month clock. Do not fire on bare Malamute / polyneuropathy / laryngeal paralysis. Dogs only. Skip cats.
+
+Agree with Parsley: **Alaskan Malamute polyneuropathy** affects **10- to 18-month-old** dogs of this breed (printed clock stays on the page) and is caused by a mutation in the **NDRG1** gene (named gene stays on the page, not in the regex). Clinical signs include laryngeal paralysis, exercise intolerance, decreased postural reactions, paraparesis progressing to tetraparesis, hyporeflexia, and muscle atrophy. Electromyography shows diffuse fibrillation potentials and positive sharp waves (printed EMG stays on the page). On nerve biopsy, there is **axonal necrosis with demyelination**. There is no effective treatment, but clinical signs stabilize in some dogs. In most affected dogs, progressive disability leads to euthanasia.
+
+Night split: named Alaskan Malamute polyneuropathy is axonal necrosis; muscle atrophy. Bare Malamute does not fire. Bare polyneuropathy does not fire. Cat does not fire. Named MLS stays 275. Named LEON stays 272. Named CONGLP stays 268. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest NDRG1.
+- Do not harvest a 10–18 month clock.
+- Do not copy a 275 table.
+- Do not send a Malamute home as Musladin-Lueke.
+- Do not call it 275-only.
+
+Night rule: named Alaskan Malamute polyneuropathy → **axonal necrosis. Muscle atrophy.** △ Plumb.

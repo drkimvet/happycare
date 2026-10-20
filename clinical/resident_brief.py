@@ -1622,6 +1622,17 @@ MLS_RE = re.compile(
     r"musladin",
     re.I,
 )
+# Do not use \bmalamute\b or \bpolyneuropath\b or \blaryngeal\b alone.
+# Do not put NDRG1 in the regex. Do not harvest a 10–18 month clock.
+# Dogs only. Not MLS (275). Not LEON (272). Not CONGLP (268). Not 134.
+# Skip cats.
+AMPN_RE = re.compile(
+    r"alaskan malamute.{0,40}polyneuropath|"
+    r"polyneuropath.{0,40}alaskan malamute|"
+    r"malamute.{0,40}polyneuropath|"
+    r"polyneuropath.{0,40}malamute",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5737,6 +5748,7 @@ def analyze(
     steal_tmhn = TMHN_RE.search(text)
     steal_hchylo = HCHYLO_RE.search(text)
     steal_mls = MLS_RE.search(text)
+    steal_ampn = AMPN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5814,6 +5826,7 @@ def analyze(
         or steal_tmhn
         or steal_hchylo
         or steal_mls
+        or steal_ampn
     ):
         if spec == "cat":
             fuo_loc = (
@@ -11563,7 +11576,8 @@ def analyze(
 
     mls_named = spec == "dog" and MLS_RE.search(text)
     if mls_named and not (
-        HCHYLO_RE.search(text)
+        AMPN_RE.search(text)
+        or HCHYLO_RE.search(text)
         or TMHN_RE.search(text)
         or LEON_RE.search(text)
         or CMEGA_RE.search(text)
@@ -11691,6 +11705,142 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Musladin-Lueke.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Musladin-Lueke.")
+
+    ampn_named = spec == "dog" and AMPN_RE.search(text)
+    if ampn_named and not (
+        MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+    ):
+        ampn_loc = (
+            "Alaskan Malamute polyneuropathy. Axonal necrosis. "
+            "Muscle atrophy."
+        )
+        localization = f"{localization} Also {ampn_loc}" if localization else ampn_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest NDRG1 as lobby law. "
+            "Do not harvest a 10–18 month clock as lobby law. "
+            "Do not copy a 275 table as lobby law. "
+            "Do not send a Malamute home as Musladin-Lueke. "
+            "Do not call it 275-only."
+        )
+        do_not.append(
+            "Alaskan Malamutes. Printed NDRG1 stays on the "
+            "page. Printed 10–18 month clock stays on the "
+            "page. Printed laryngeal paralysis, exercise "
+            "intolerance, decreased postural reactions, "
+            "paraparesis progressing to tetraparesis, "
+            "hyporeflexia, and muscle atrophy stay on the "
+            "page. Printed EMG fibrillation and positive "
+            "sharp waves stay on the page. Printed axonal "
+            "necrosis with demyelination stays on the "
+            "page. Printed no effective treatment, some "
+            "stabilize, and most progressive to "
+            "euthanasia stay on the page. Packet 275 "
+            "still owns Musladin-Lueke. Packet 272 still "
+            "owns Leonberger polyneuropathy. Packet 268 "
+            "still owns congenital laryngeal paralysis. "
+            "Packet 134 still owns GOLPP. Skip cats. Not "
+            "275-only. Not 272-only. Not 268-only."
+        )
+        do_next.append(
+            "Name the Alaskan Malamute polyneuropathy. "
+            "Axonal necrosis. Muscle atrophy. △ Plumb. "
+            "Do not copy a 275 table."
+        )
+        sources.append(
+            "Merck congenital neuromuscular (Parsley, Mar "
+            "2026): Alaskan Malamute polyneuropathy; "
+            "NDRG1 stays on the page; 10–18 month onset "
+            "stays on the page; laryngeal paralysis, "
+            "exercise intolerance, decreased postural "
+            "reactions, paraparesis to tetraparesis, "
+            "hyporeflexia, muscle atrophy; EMG "
+            "fibrillation and positive sharp waves stay "
+            "on the page; axonal necrosis with "
+            "demyelination; no effective treatment; some "
+            "stabilize; most progressive to euthanasia."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Malamute home as Musladin-Lueke."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Alaskan Malamute polyneuropathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Alaskan Malamute polyneuropathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

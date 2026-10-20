@@ -7765,6 +7765,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("tiptoe posture", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ampn_is_axonal_necrosis_atrophy(self):
+        b = analyze("dog", "alaskan malamute polyneuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("alaskan malamute polyneuropathy", loc)
+        self.assertIn("axonal necrosis", loc)
+        self.assertIn("muscle atrophy", loc)
+        self.assertNotIn("musladin-lueke", loc)
+        self.assertNotIn("tiptoe posture", loc)
+        self.assertNotIn("leonberger polyneuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("ndrg1", joined)
+        self.assertIn("10–18 month clock", joined)
+        self.assertIn("275 table", joined)
+        self.assertIn("malamute home as musladin-lueke", joined)
+        self.assertIn("275-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_malamute_is_not_ampn(self):
+        b = analyze("dog", "Alaskan Malamute")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        self.assertNotIn("axonal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mls_is_not_ampn(self):
+        b = analyze("dog", "musladin-lueke")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tiptoe posture", loc)
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        self.assertNotIn("axonal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_ampn(self):
+        b = analyze("cat", "alaskan malamute polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        self.assertNotIn("axonal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_ampn_still_fires(self):
+        b = analyze("dog", "malamute polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("alaskan malamute polyneuropathy", loc)
+        self.assertIn("axonal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_polyneuropathy_is_not_ampn(self):
+        b = analyze("dog", "polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        self.assertNotIn("axonal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_leon_is_not_ampn(self):
+        b = analyze("dog", "Leonberger polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("high-stepping", loc)
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        self.assertNotIn("axonal necrosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -204,6 +204,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tmhn` | Assessment | Tibetan Mastiff hypertrophic neuropathy |
 | `ddx-hchylo` | Assessment | Feline hyperchylomicronemia neuropathy |
 | `ddx-mls` | Assessment | Musladin-Lueke / Beagle |
+| `ddx-ampn` | Assessment | Alaskan Malamute polyneuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -367,6 +368,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tmhn` | Discharge | After hypertrophic neuropathy talk |
 | `dc-hchylo` | Discharge | After hyperchylomicronemia talk |
 | `dc-mls` | Discharge | After Musladin-Lueke talk |
+| `dc-ampn` | Discharge | After Alaskan Malamute polyneuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2837,6 +2839,21 @@ DDX:
 Do not: harvest a surgery table. Harvest ADAMTSL2. Harvest a seizure table. Copy a 274 table. Send a Beagle home as hyperchylomicronemia. Call it 274-only.
 Do next: Name the Musladin-Lueke. Tiptoe posture. Thickened ear cartilage. △ Plumb. Do not copy a 274 table.
 
+### `ddx-ampn`
+
+Alaskan Malamute polyneuropathy — {{patient.name}}
+Axonal necrosis [yes / not]. Muscle atrophy [yes / not]. Exercise intolerance [yes / not].
+
+DDX:
+1. Alaskan Malamute polyneuropathy — **axonal necrosis. Muscle atrophy**
+2. Printed NDRG1 / 10–18 month clock / laryngeal paralysis stay on the page
+3. Printed EMG fibrillation / positive sharp waves stay on the page. Packet 275 still owns Musladin-Lueke. Packet 268 still owns congenital LP. Packet 134 still owns GOLPP
+4. Not 275-only. Not 272-only. Not 268-only
+5. Dog can fire. Cat does not fire. Bare Malamute / polyneuropathy / laryngeal paralysis do not fire
+
+Do not: harvest a surgery table. Harvest NDRG1. Harvest a 10–18 month clock. Copy a 275 table. Send a Malamute home as Musladin-Lueke. Call it 275-only.
+Do next: Name the Alaskan Malamute polyneuropathy. Axonal necrosis. Muscle atrophy. △ Plumb. Do not copy a 275 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4176,6 +4193,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse stiffness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-ampn`
+
+{{patient.name}} was evaluated for Alaskan Malamute polyneuropathy (a breed-linked nerve problem with axonal necrosis and muscle atrophy). There is no printed effective treatment. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
