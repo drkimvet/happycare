@@ -7827,6 +7827,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("axonal necrosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_phox_is_plantigrade_oxalate(self):
+        b = analyze("cat", "primary hyperoxaluria")
+        loc = b["localization"].lower()
+        self.assertIn("primary hyperoxaluria", loc)
+        self.assertIn("plantigrade stance", loc)
+        self.assertIn("oxalate in urine", loc)
+        self.assertNotIn("alaskan malamute polyneuropathy", loc)
+        self.assertNotIn("axonal necrosis", loc)
+        self.assertNotIn("musladin-lueke", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("agxt", joined)
+        self.assertIn("5–9 month clock", joined)
+        self.assertIn("3–4 week clock", joined)
+        self.assertIn("276 table", joined)
+        self.assertIn("plantigrade patient home as glycogenosis", joined)
+        self.assertIn("276-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_plantigrade_is_not_phox(self):
+        b = analyze("cat", "plantigrade")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("primary hyperoxaluria", loc)
+        self.assertNotIn("oxalate in urine", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ampn_is_not_phox(self):
+        b = analyze("dog", "alaskan malamute polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("axonal necrosis", loc)
+        self.assertNotIn("primary hyperoxaluria", loc)
+        self.assertNotIn("plantigrade stance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_phox_still_fires(self):
+        b = analyze("dog", "l-glyceric aciduria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("primary hyperoxaluria", loc)
+        self.assertIn("plantigrade stance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_oxalate_is_not_phox(self):
+        b = analyze("cat", "oxalate")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("primary hyperoxaluria", loc)
+        self.assertNotIn("plantigrade stance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mls_is_not_phox(self):
+        b = analyze("dog", "musladin-lueke")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tiptoe posture", loc)
+        self.assertNotIn("primary hyperoxaluria", loc)
+        self.assertNotIn("plantigrade stance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_coton_is_not_phox(self):
+        b = analyze("dog", "Coton de Tulear")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("primary hyperoxaluria", loc)
+        self.assertNotIn("plantigrade stance", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

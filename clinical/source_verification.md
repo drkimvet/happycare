@@ -3204,3 +3204,23 @@ Book/public traps:
 - Do not call it 275-only.
 
 Night rule: named Alaskan Malamute polyneuropathy → **axonal necrosis. Muscle atrophy.** △ Plumb.
+
+## 277. Primary hyperoxaluria (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett primary-hyperoxaluria chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 276 still owns named Alaskan Malamute polyneuropathy. Packet 275 still owns named Musladin-Lueke. Packet 242 still owns glycogenosis. Packet 278 owns named sensory neuropathy in longhaired Dachshunds, not this dump. Do not harvest a surgery table as lobby law. Do not harvest AGXT / GRHPR. Do not harvest a 5–9 month or 3–4 week clock. Do not fire on bare plantigrade / oxalate / Coton / Tibetan Spaniel / cat. Dog or cat. Dogs have no printed neurologic signs.
+
+Agree with Parsley: **primary hyperoxaluria** (l-glyceric aciduria) is a rare, inherited (autosomal recessive) neurofilament disorder of domestic shorthair cats and Coton de Tulear and Tibetan Spaniel dogs. Neurological signs have not been reported in dogs; in cats, clinical signs include renal disease and weakness due to peripheral neuropathy. Signs develop at **5–9 months** in cats and **3–4 weeks** in dogs (printed clocks stay on the page). A **plantigrade stance** is the most prominent sign, and spinal reflexes are sometimes decreased. Urine contains increased **oxalate** and **l-glycerate**. Genetic mutations in the **AGXT** and **GRHPR** genes have been identified in the Coton de Tulear (named genes stay on the page, not in the regex). There is no treatment.
+
+Night split: named primary hyperoxaluria is plantigrade stance; oxalate in urine. Bare plantigrade does not fire. Bare oxalate does not fire. Named AMPN stays 276. Named MLS stays 275. Named glycogenosis stays 242. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest AGXT.
+- Do not harvest a 5–9 month clock.
+- Do not harvest a 3–4 week clock.
+- Do not copy a 276 table.
+- Do not send a plantigrade patient home as glycogenosis.
+- Do not call it 276-only.
+
+Night rule: named primary hyperoxaluria → **plantigrade stance. Oxalate in urine.** △ Plumb.

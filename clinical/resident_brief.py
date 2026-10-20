@@ -1633,6 +1633,16 @@ AMPN_RE = re.compile(
     r"polyneuropath.{0,40}malamute",
     re.I,
 )
+# Do not use \bplantigrade\b or \boxalate\b alone. Do not fire on bare
+# Coton / Tibetan Spaniel / cat. Do not put AGXT or GRHPR in the regex.
+# Do not harvest a 5–9 month or 3–4 week clock. Dog or cat. Not AMPN
+# (276). Not MLS (275). Not glycogenosis (242).
+PHOX_RE = re.compile(
+    r"hyperoxalur|"
+    r"l[- ]glyceric|"
+    r"l[- ]glycerate",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5749,6 +5759,7 @@ def analyze(
     steal_hchylo = HCHYLO_RE.search(text)
     steal_mls = MLS_RE.search(text)
     steal_ampn = AMPN_RE.search(text)
+    steal_phox = PHOX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5827,6 +5838,7 @@ def analyze(
         or steal_hchylo
         or steal_mls
         or steal_ampn
+        or steal_phox
     ):
         if spec == "cat":
             fuo_loc = (
@@ -11708,7 +11720,8 @@ def analyze(
 
     ampn_named = spec == "dog" and AMPN_RE.search(text)
     if ampn_named and not (
-        MLS_RE.search(text)
+        PHOX_RE.search(text)
+        or MLS_RE.search(text)
         or HCHYLO_RE.search(text)
         or TMHN_RE.search(text)
         or LEON_RE.search(text)
@@ -11841,6 +11854,143 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Alaskan Malamute polyneuropathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Alaskan Malamute polyneuropathy.")
+
+    phox_named = spec in {"dog", "cat"} and PHOX_RE.search(text)
+    if phox_named and not (
+        AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+    ):
+        phox_loc = (
+            "Primary hyperoxaluria. Plantigrade stance. "
+            "Oxalate in urine."
+        )
+        localization = f"{localization} Also {phox_loc}" if localization else phox_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest AGXT as lobby law. "
+            "Do not harvest a 5–9 month clock as lobby law. "
+            "Do not harvest a 3–4 week clock as lobby law. "
+            "Do not copy a 276 table as lobby law. "
+            "Do not send a plantigrade patient home as glycogenosis. "
+            "Do not call it 276-only."
+        )
+        do_not.append(
+            "DSH cats and Coton de Tulear / Tibetan "
+            "Spaniel dogs. Printed AR neurofilament "
+            "stays on the page. Printed no neurologic "
+            "signs in dogs stays on the page. Printed "
+            "renal disease and peripheral neuropathy in "
+            "cats stay on the page. Printed 5–9 month "
+            "cat and 3–4 week dog clocks stay on the "
+            "page. Printed plantigrade stance and "
+            "sometimes decreased spinal reflexes stay "
+            "on the page. Printed urine oxalate and "
+            "l-glycerate stay on the page. Printed AGXT "
+            "and GRHPR stay on the page. Printed no "
+            "treatment stays on the page. Packet 276 "
+            "still owns Alaskan Malamute polyneuropathy. "
+            "Packet 275 still owns Musladin-Lueke. "
+            "Packet 242 still owns glycogenosis. Not "
+            "276-only. Not 275-only. Not 242-only."
+        )
+        do_next.append(
+            "Name the primary hyperoxaluria. Plantigrade "
+            "stance. Oxalate in urine. △ Plumb. Do not "
+            "copy a 276 table."
+        )
+        sources.append(
+            "Merck congenital neuromuscular (Parsley, Mar "
+            "2026): primary hyperoxaluria; l-glyceric "
+            "aciduria; AR neurofilament; DSH cats and "
+            "Coton de Tulear / Tibetan Spaniel dogs; no "
+            "neurologic signs in dogs; cats renal "
+            "disease and peripheral neuropathy; 5–9 "
+            "month cat and 3–4 week dog clocks stay on "
+            "the page; plantigrade stance; urine oxalate "
+            "and l-glycerate; AGXT and GRHPR stay on "
+            "the page; no treatment."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a plantigrade patient home as glycogenosis."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for primary hyperoxaluria.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for primary hyperoxaluria.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

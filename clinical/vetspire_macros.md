@@ -205,6 +205,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hchylo` | Assessment | Feline hyperchylomicronemia neuropathy |
 | `ddx-mls` | Assessment | Musladin-Lueke / Beagle |
 | `ddx-ampn` | Assessment | Alaskan Malamute polyneuropathy |
+| `ddx-phox` | Assessment | Primary hyperoxaluria / l-glyceric |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -369,6 +370,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hchylo` | Discharge | After hyperchylomicronemia talk |
 | `dc-mls` | Discharge | After Musladin-Lueke talk |
 | `dc-ampn` | Discharge | After Alaskan Malamute polyneuropathy talk |
+| `dc-phox` | Discharge | After primary hyperoxaluria talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2854,6 +2856,21 @@ DDX:
 Do not: harvest a surgery table. Harvest NDRG1. Harvest a 10–18 month clock. Copy a 275 table. Send a Malamute home as Musladin-Lueke. Call it 275-only.
 Do next: Name the Alaskan Malamute polyneuropathy. Axonal necrosis. Muscle atrophy. △ Plumb. Do not copy a 275 table.
 
+### `ddx-phox`
+
+Primary hyperoxaluria — {{patient.name}}
+Plantigrade stance [yes / not]. Oxalate in urine [yes / not]. Renal disease [yes / not].
+
+DDX:
+1. Primary hyperoxaluria — **plantigrade stance. Oxalate in urine**
+2. Printed l-glyceric aciduria / AR neurofilament / 5–9 month cat and 3–4 week dog clocks stay on the page
+3. Printed AGXT / GRHPR and no neurologic signs in dogs stay on the page. Packet 276 still owns AMPN. Packet 242 still owns glycogenosis
+4. Not 276-only. Not 275-only. Not 242-only
+5. Dog or cat can fire. Bare plantigrade / oxalate / Coton / Tibetan Spaniel do not fire
+
+Do not: harvest a surgery table. Harvest AGXT. Harvest a 5–9 month clock. Harvest a 3–4 week clock. Copy a 276 table. Send a plantigrade patient home as glycogenosis. Call it 276-only.
+Do next: Name the primary hyperoxaluria. Plantigrade stance. Oxalate in urine. △ Plumb. Do not copy a 276 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4197,6 +4214,14 @@ Return now for worse stiffness, or if you cannot keep them comfortable. {{locati
 ### `dc-ampn`
 
 {{patient.name}} was evaluated for Alaskan Malamute polyneuropathy (a breed-linked nerve problem with axonal necrosis and muscle atrophy). There is no printed effective treatment. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-phox`
+
+{{patient.name}} was evaluated for primary hyperoxaluria (l-glyceric aciduria; a rare inherited problem that can show a plantigrade stance and oxalate in the urine). There is no printed treatment. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

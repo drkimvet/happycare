@@ -649,6 +649,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("tiptoe posture", VERIF.lower())
         self.assertIn("alaskan malamute polyneuropathy", VERIF.lower())
         self.assertIn("axonal necrosis", VERIF.lower())
+        self.assertIn("primary hyperoxaluria", VERIF.lower())
+        self.assertIn("plantigrade stance", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1055,6 +1057,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-mls`", MACRO)
         self.assertIn("`ddx-ampn`", MACRO)
         self.assertIn("`dc-ampn`", MACRO)
+        self.assertIn("`ddx-phox`", MACRO)
+        self.assertIn("`dc-phox`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1143,6 +1147,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("tiptoe posture", MACRO.lower())
         self.assertIn("alaskan malamute polyneuropathy", MACRO.lower())
         self.assertIn("axonal necrosis", MACRO.lower())
+        self.assertIn("primary hyperoxaluria", MACRO.lower())
+        self.assertIn("plantigrade stance", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1593,6 +1599,8 @@ class PublicCardInvariants(unittest.TestCase):
             "tiptoe posture",
             "alaskan malamute polyneuropathy",
             "axonal necrosis",
+            "primary hyperoxaluria",
+            "plantigrade stance",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
