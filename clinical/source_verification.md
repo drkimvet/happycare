@@ -3074,3 +3074,22 @@ Book/public traps:
 - Do not call it fulminant-only.
 
 Night rule: named congenital myasthenia → **exercise-induced weakness. No circulating antibody.** △ Plumb.
+
+## 270. Congenital myoclonus of Labrador Retrievers (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-myoclonus chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 269 still owns named congenital myasthenia. Packet 244 still owns named Lafora. Packet 163 still owns fulminant / acquired MG. Packet 116 still owns seizure-drug numbers. Packet 271 owns named congenital megaesophagus, not this dump. Do not harvest a surgery table as lobby law. Do not harvest diazepam or clonazepam. Do not fire on bare Labrador / bare myoclonus / bare hypertonicity. Dogs only. Skip cats.
+
+Agree with Parsley: **congenital myoclonus of Labrador Retrievers** (familial reflex myoclonus) causes **stimulus-induced muscle spasms/hypertonicity** from an early age. Puppies might be unable to walk or even maintain a sternal position because of extensor rigidity that is triggered with movement. **At rest, muscles are relaxed.** The neurological examination is normal, but stimulus from performing parts of the examination (eg, reflexes) results in generalized stiffness. Printed diazepam and clonazepam have not been effective stay on the page. The prognosis is very poor.
+
+Night split: named congenital myoclonus is stimulus-induced hypertonicity; relaxed at rest. Bare Labrador does not fire. Bare myoclonus does not fire. Cat does not fire. Named CMG stays 269. Named Lafora stays 244. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a diazepam table.
+- Do not harvest a clonazepam table.
+- Do not copy a 116 table.
+- Do not send a Labrador home as Lafora.
+- Do not call it lafora-only.
+
+Night rule: named congenital myoclonus → **stimulus-induced hypertonicity. Relaxed at rest.** △ Plumb.

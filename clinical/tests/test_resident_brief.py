@@ -7373,6 +7373,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("no circulating antibody", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cmyo_is_stimulus_induced_relaxed_at_rest(self):
+        b = analyze("dog", "congenital myoclonus")
+        loc = b["localization"].lower()
+        self.assertIn("congenital myoclonus", loc)
+        self.assertIn("stimulus-induced", loc)
+        self.assertIn("relaxed at rest", loc)
+        self.assertNotIn("congenital myasthenia", loc)
+        self.assertNotIn("no circulating antibody", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("diazepam table", joined)
+        self.assertIn("clonazepam table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("labrador home as lafora", joined)
+        self.assertIn("lafora-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_labrador_is_not_cmyo(self):
+        b = analyze("dog", "Labrador Retriever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital myoclonus", loc)
+        self.assertNotIn("stimulus-induced", loc)
+        self.assertNotIn("relaxed at rest", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmg_is_not_cmyo(self):
+        b = analyze("dog", "congenital myasthenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("no circulating antibody", loc)
+        self.assertNotIn("congenital myoclonus", loc)
+        self.assertNotIn("stimulus-induced", loc)
+        self.assertNotIn("relaxed at rest", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lafora_is_not_cmyo(self):
+        b = analyze("dog", "Lafora disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("myoclonic seizures", loc)
+        self.assertNotIn("congenital myoclonus", loc)
+        self.assertNotIn("stimulus-induced", loc)
+        self.assertNotIn("relaxed at rest", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_cmyo_still_fires(self):
+        b = analyze("dog", "familial reflex myoclonus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital myoclonus", loc)
+        self.assertIn("relaxed at rest", loc)
+        self.assertNotIn("myoclonic seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_cmyo(self):
+        b = analyze("cat", "congenital myoclonus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital myoclonus", loc)
+        self.assertNotIn("stimulus-induced", loc)
+        self.assertNotIn("relaxed at rest", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_myoclonus_is_not_cmyo(self):
+        b = analyze("dog", "myoclonus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital myoclonus", loc)
+        self.assertNotIn("stimulus-induced", loc)
+        self.assertNotIn("relaxed at rest", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -198,6 +198,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dandy` | Assessment | Dandy-Walker / vermis |
 | `ddx-conglp` | Assessment | Congenital laryngeal paralysis |
 | `ddx-cmg` | Assessment | Congenital myasthenia gravis |
+| `ddx-cmyo` | Assessment | Congenital myoclonus / Labrador |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -355,6 +356,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dandy` | Discharge | After Dandy-Walker talk |
 | `dc-conglp` | Discharge | After congenital laryngeal paralysis talk |
 | `dc-cmg` | Discharge | After congenital myasthenia talk |
+| `dc-cmyo` | Discharge | After congenital myoclonus talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2735,6 +2737,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a pyridostigmine table. Harvest a Tensilon table. Copy a 163 table. Send a Labrador home as acquired MG. Call it fulminant-only.
 Do next: Name the congenital myasthenia. Exercise-induced weakness. No circulating antibody. △ Plumb. Do not copy a 163 table.
 
+### `ddx-cmyo`
+
+Congenital myoclonus — {{patient.name}}
+Stimulus-induced hypertonicity [yes / not]. Relaxed at rest [yes / not]. Breed [Labrador / other].
+
+DDX:
+1. Congenital myoclonus — **stimulus-induced hypertonicity. Relaxed at rest**
+2. Printed familial reflex myoclonus / extensor rigidity with movement stay on the page
+3. Printed diazepam and clonazepam not effective stay on the page. Packet 244 still owns Lafora. Packet 116 still owns crash-cart numbers
+4. Not lafora-only (244). Not cmg-only (269). Not 116-only
+5. Dog can fire. Cat does not fire. Bare Labrador / bare myoclonus do not fire
+
+Do not: harvest a surgery table. Harvest a diazepam table. Harvest a clonazepam table. Copy a 116 table. Send a Labrador home as Lafora. Call it lafora-only.
+Do next: Name the congenital myoclonus. Stimulus-induced. Relaxed at rest. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4026,6 +4043,14 @@ Return now for worse noise when breathing, collapse, or if you cannot keep them 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now if they cannot stand after play, regurgitate, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-cmyo`
+
+{{patient.name}} was evaluated for congenital myoclonus (a young-dog movement problem that stiffens with stimulus and relaxes at rest). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now if they cannot stay comfortable, cannot rest, or if stiffness lasts after they are still. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
