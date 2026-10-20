@@ -634,6 +634,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("congenital myoclonus", VERIF.lower())
         self.assertIn("stimulus-induced", VERIF.lower())
         self.assertIn("relaxed at rest", VERIF.lower())
+        self.assertIn("congenital megaesophagus", VERIF.lower())
+        self.assertIn("regurgitation", VERIF.lower())
+        self.assertIn("aspiration pneumonia", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1028,6 +1031,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-cmg`", MACRO)
         self.assertIn("`ddx-cmyo`", MACRO)
         self.assertIn("`dc-cmyo`", MACRO)
+        self.assertIn("`ddx-cmega`", MACRO)
+        self.assertIn("`dc-cmega`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1101,6 +1106,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("congenital myoclonus", MACRO.lower())
         self.assertIn("stimulus-induced", MACRO.lower())
         self.assertIn("relaxed at rest", MACRO.lower())
+        self.assertIn("congenital megaesophagus", MACRO.lower())
+        self.assertIn("regurgitation", MACRO.lower())
+        self.assertIn("aspiration pneumonia", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1536,6 +1544,9 @@ class PublicCardInvariants(unittest.TestCase):
             "congenital myoclonus",
             "stimulus-induced",
             "relaxed at rest",
+            "congenital megaesophagus",
+            "regurgitation",
+            "aspiration pneumonia",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

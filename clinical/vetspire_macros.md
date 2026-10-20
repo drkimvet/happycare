@@ -199,6 +199,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-conglp` | Assessment | Congenital laryngeal paralysis |
 | `ddx-cmg` | Assessment | Congenital myasthenia gravis |
 | `ddx-cmyo` | Assessment | Congenital myoclonus / Labrador |
+| `ddx-cmega` | Assessment | Congenital megaesophagus |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -357,6 +358,7 @@ Suggested names are short so they show up after three letters.
 | `dc-conglp` | Discharge | After congenital laryngeal paralysis talk |
 | `dc-cmg` | Discharge | After congenital myasthenia talk |
 | `dc-cmyo` | Discharge | After congenital myoclonus talk |
+| `dc-cmega` | Discharge | After congenital megaesophagus talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2752,6 +2754,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a diazepam table. Harvest a clonazepam table. Copy a 116 table. Send a Labrador home as Lafora. Call it lafora-only.
 Do next: Name the congenital myoclonus. Stimulus-induced. Relaxed at rest. △ Plumb. Do not copy a 116 table.
 
+### `ddx-cmega`
+
+Congenital megaesophagus — {{patient.name}}
+Regurgitation [yes / not]. Aspiration pneumonia [yes / not]. Breed [Wire Fox / Mini Schnauzer / Siamese / other].
+
+DDX:
+1. Congenital megaesophagus — **regurgitation. Aspiration pneumonia**
+2. Printed Wire Fox / Mini Schnauzer and possible GSD / Dane / Setter / Newf / Shar-Pei / Greyhound / Siamese stay on the page
+3. Printed sildenafil stays on the page. Packet 163 still owns fulminant / acquired MG. Packet 269 still owns congenital myasthenia
+4. Not 163-only. Not cmg-only (269). Not 270-only
+5. Dog or cat can fire. Bare megaesophagus / regurgitation / Schnauzer do not fire
+
+Do not: harvest a surgery table. Harvest a sildenafil table. Copy a 163 table. Send a Schnauzer home as acquired MG. Call it 163-only.
+Do next: Name the congenital megaesophagus. Regurgitation and aspiration. △ Plumb. Do not copy a 163 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4051,6 +4068,14 @@ Return now if they cannot stand after play, regurgitate, or if you cannot keep t
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now if they cannot stay comfortable, cannot rest, or if stiffness lasts after they are still. {{location.phonenumber}}
+
+### `dc-cmega`
+
+{{patient.name}} was evaluated for congenital megaesophagus (a young-animal esophagus that does not move food well). Regurgitation and inhalation pneumonia are the night risks. The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for cough, fever, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

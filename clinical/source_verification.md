@@ -3093,3 +3093,21 @@ Book/public traps:
 - Do not call it lafora-only.
 
 Night rule: named congenital myoclonus → **stimulus-induced hypertonicity. Relaxed at rest.** △ Plumb.
+
+## 271. Congenital megaesophagus (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-megaesophagus chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 269 still owns named congenital myasthenia. Packet 163 still owns fulminant / acquired MG. Packet 270 still owns named congenital myoclonus. Packet 134 still owns GOLPP. Packet 272 owns named Leonberger polyneuropathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest sildenafil. Do not fire on bare megaesophagus / regurgitation / Wire Fox / Schnauzer / Siamese. Dog or cat.
+
+Agree with Parsley: **congenital megaesophagus** is inherited in Wire Fox Terriers and Miniature Schnauzers and possibly also in German Shepherd Dogs, Great Danes, Irish Setters, Newfoundlands, Chinese Shar-Pei, Greyhounds, and Siamese cats. Clinical signs include **regurgitation** and **aspiration pneumonia**. Printed sildenafil oral suspension stays on the page. The prognosis is guarded.
+
+Night split: named congenital megaesophagus is regurgitation; aspiration pneumonia. Bare megaesophagus does not fire. Bare regurgitation does not fire. Named CMG stays 269. Named fulminant MG stays 163. Named congenital myoclonus stays 270. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a sildenafil table.
+- Do not copy a 163 table.
+- Do not send a Schnauzer home as acquired MG.
+- Do not call it 163-only.
+
+Night rule: named congenital megaesophagus → **regurgitation. Aspiration pneumonia.** △ Plumb.

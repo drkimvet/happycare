@@ -7441,6 +7441,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("relaxed at rest", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cmega_is_regurg_aspiration(self):
+        b = analyze("dog", "congenital megaesophagus")
+        loc = b["localization"].lower()
+        self.assertIn("congenital megaesophagus", loc)
+        self.assertIn("regurgitation", loc)
+        self.assertIn("aspiration pneumonia", loc)
+        self.assertNotIn("no circulating antibody", loc)
+        self.assertNotIn("fulminant myasthenia", loc)
+        self.assertNotIn("relaxed at rest", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("sildenafil table", joined)
+        self.assertIn("163 table", joined)
+        self.assertIn("schnauzer home as acquired mg", joined)
+        self.assertIn("163-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_megaesophagus_is_not_cmega(self):
+        b = analyze("dog", "megaesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital megaesophagus", loc)
+        self.assertNotIn("regurgitation", loc)
+        self.assertNotIn("aspiration pneumonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmg_is_not_cmega(self):
+        b = analyze("dog", "congenital myasthenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("no circulating antibody", loc)
+        self.assertNotIn("congenital megaesophagus", loc)
+        self.assertNotIn("regurgitation", loc)
+        self.assertNotIn("aspiration pneumonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cmyo_is_not_cmega(self):
+        b = analyze("dog", "congenital myoclonus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("relaxed at rest", loc)
+        self.assertNotIn("congenital megaesophagus", loc)
+        self.assertNotIn("regurgitation", loc)
+        self.assertNotIn("aspiration pneumonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fulminant_mg_is_not_cmega(self):
+        b = analyze("dog", "fulminant myasthenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fulminant myasthenia", loc)
+        self.assertNotIn("congenital megaesophagus", loc)
+        self.assertNotIn("regurgitation", loc)
+        self.assertNotIn("aspiration pneumonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_cmega_still_fires(self):
+        b = analyze("dog", "congenital megaoesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital megaesophagus", loc)
+        self.assertIn("aspiration pneumonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_cmega_still_fires(self):
+        b = analyze("cat", "congenital megaesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital megaesophagus", loc)
+        self.assertIn("regurgitation", loc)
+        self.assertIn("aspiration pneumonia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
