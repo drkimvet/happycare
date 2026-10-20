@@ -1561,6 +1561,13 @@ DANDY_RE = re.compile(
     r"dandy[- ]walker",
     re.I,
 )
+# Do not use \bparalys alone. Do not fire on bare laryngeal paralysis / GOLPP (134).
+# Do not fire on bare Bouvier / Husky / Rottweiler. Dogs only. Not 134. Skip cats.
+CONGLP_RE = re.compile(
+    r"congenital laryngeal paralys|"
+    r"congenital lar ?par",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -4330,7 +4337,7 @@ def analyze(
         if ALBUTEROL_RE.search(text) and (PLEURAL_RE.search(text) or PNEUMO_RE.search(text)):
             hard_stops.append("Bronchodilator is not therapy for pleural air or fluid.")
 
-    if spec == "dog" and LARPAR_RE.search(text):
+    if spec == "dog" and LARPAR_RE.search(text) and not CONGLP_RE.search(text):
         larpar_loc = (
             "Upper airway: the larynx is not abducting. "
             "Old large-breed inspiratory stridor / voice change is laryngeal paralysis "
@@ -5668,6 +5675,7 @@ def analyze(
     steal_pdys = PDYS_RE.search(text)
     steal_narc = NARC_RE.search(text)
     steal_dandy = DANDY_RE.search(text)
+    steal_conglp = CONGLP_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5737,6 +5745,7 @@ def analyze(
         or steal_pdys
         or steal_narc
         or steal_dandy
+        or steal_conglp
     ):
         if spec == "cat":
             fuo_loc = (
@@ -10567,6 +10576,7 @@ def analyze(
         or NME_RE.search(text)
         or GME_RE.search(text)
         or SRMA_RE.search(text)
+        or CONGLP_RE.search(text)
     ):
         dandy_loc = (
             "Dandy-Walker. Vermis hypoplasia. "
@@ -10617,6 +10627,122 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Dandy-Walker.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Dandy-Walker.")
+
+    conglp_named = spec == "dog" and CONGLP_RE.search(text)
+    if conglp_named and not (
+        DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+    ):
+        conglp_loc = (
+            "Congenital laryngeal paralysis. "
+            "Young dog, not GOLPP."
+        )
+        localization = f"{localization} Also {conglp_loc}" if localization else conglp_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a tie-back table as lobby law. "
+            "Do not copy a 134 table as lobby law. "
+            "Do not send a Bouvier home as GOLPP. "
+            "Do not call it golpp-only."
+        )
+        do_not.append(
+            "Bouviers, Huskies, Rottweilers, and Bull "
+            "Terriers. Printed under-one-year clock stays "
+            "on the page. Printed Dalmatian / Pyrenees "
+            "neuropathy stays on the page. Printed AD / AR "
+            "lines stay on the page. Printed laryngoscopy "
+            "stays on the page. Printed guarded-to-poor "
+            "untreated and unilateral cricoarytenoid "
+            "lateralization stay on the page. Packet 134 "
+            "still owns GOLPP oxygen and not-Lasix. Skip "
+            "cats. Not golpp-only. Not 134-only."
+        )
+        do_next.append(
+            "Name the congenital laryngeal paralysis. "
+            "Young dog, not GOLPP. △ Plumb. Do not copy a "
+            "134 table."
+        )
+        sources.append(
+            "Merck congenital neuromuscular (Parsley, Mar "
+            "2026): congenital laryngeal paralysis; Bouvier "
+            "des Flandres autosomal dominant; Siberian "
+            "Huskies, Rottweilers, and Bull Terriers under "
+            "one year stay on the page; Dalmatian / "
+            "Rottweiler / Pyrenees neuropathy stays on the "
+            "page; laryngoscopy; unilateral cricoarytenoid "
+            "lateralization stays on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Bouvier home as GOLPP."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for congenital laryngeal paralysis.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for congenital laryngeal paralysis.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

@@ -3021,7 +3021,7 @@ Night rule: named narcolepsy → **conserved consciousness. Excitement.** △ Pl
 
 ## 267. Dandy-Walker / vermis (Merck Parsley Mar 2026 cerebellar)
 
-No dedicated Plunkett Dandy-Walker chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Packet 211 still owns named cerebellar hypoplasia. Packet 209 still owns named hydrocephalus / dome-head. Packet 212 still owns named COMS / Chiari. Packet 266 still owns named narcolepsy. Packet 116 still owns seizure-drug numbers. The cerebellar leftover that was skipped from 211–213 is this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not harvest a COMS gabapentin table. Do not fire on bare Eurasier / Toy Fox Terrier. Do not put VLDLR in the regex. Dogs only. Skip cats.
+No dedicated Plunkett Dandy-Walker chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Packet 211 still owns named cerebellar hypoplasia. Packet 209 still owns named hydrocephalus / dome-head. Packet 212 still owns named COMS / Chiari. Packet 266 still owns named narcolepsy. Packet 116 still owns seizure-drug numbers. The cerebellar leftover that was skipped from 211–213 is this dump. Packet 268 owns named congenital laryngeal paralysis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not harvest a COMS gabapentin table. Do not fire on bare Eurasier / Toy Fox Terrier. Do not put VLDLR in the regex. Dogs only. Skip cats.
 
 Agree with Parsley: selective hypoplasia of the cerebellar vermis combined with hydrocephalus and **cystlike dilatation of the fourth ventricle** has been termed **Dandy-Walker syndrome**, which might have a familial basis. An autosomal recessive deletion mutation in the very low density lipoprotein receptor (**VLDLR**) gene in Eurasier dogs has been identified (printed gene stays on the page). Toy Fox Terriers are predisposed to the Dandy-Walker form. Printed tremor / ataxia / hypermetria and occasional head tilt / circling stay on the cerebellar-hypoplasia lines of the same page.
 
@@ -3037,3 +3037,21 @@ Book/public traps:
 - Do not call it ch-only.
 
 Night rule: named Dandy-Walker → **vermis hypoplasia. Fourth ventricle.** △ Plumb.
+
+## 268. Congenital laryngeal paralysis (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-laryngeal-paralysis chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 134 still owns named GOLPP / old large-breed laryngeal paralysis. Packet 267 still owns named Dandy-Walker. Packet 269 owns named congenital myasthenia gravis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a tie-back table. Do not fire on bare laryngeal paralysis / inspiratory stridor. Do not fire on bare Bouvier / Husky / Rottweiler. Dogs only. Skip cats.
+
+Agree with Parsley: **congenital laryngeal paralysis** occurs in Bouvier des Flandres (autosomal dominant) and in Siberian Huskies, Rottweilers, and Bull Terriers **< 1 year old** (printed clock stays on the page). It results in exercise intolerance and inspiratory dyspnea. Diagnosis is confirmed by visualization on laryngoscopy. Congenital laryngeal paralysis with diffuse peripheral neuropathy occurs in Dalmatians, Rottweilers, and Pyrenean mountain dogs (Great Pyrenees); AR suspected (printed line stays on the page). Prognosis untreated is guarded to poor. Printed surgical unilateral cricoarytenoid lateralization stays on the page.
+
+Night split: named congenital laryngeal paralysis is a young dog, not GOLPP. Bare laryngeal paralysis stays 134. Bare stridor stays 134. Cat does not fire. Named Dandy-Walker stays 267. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a tie-back table.
+- Do not copy a 134 table.
+- Do not send a Bouvier home as GOLPP.
+- Do not call it golpp-only.
+
+Night rule: named congenital laryngeal paralysis → **young dog, not GOLPP.** △ Plumb.

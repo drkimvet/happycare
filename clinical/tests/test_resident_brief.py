@@ -7245,6 +7245,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("fourth ventricle", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_conglp_is_young_dog_not_golpp(self):
+        b = analyze("dog", "congenital laryngeal paralysis")
+        loc = b["localization"].lower()
+        self.assertIn("congenital laryngeal paralysis", loc)
+        self.assertIn("young dog, not golpp", loc)
+        self.assertNotIn("old large-breed", loc)
+        self.assertNotIn("dandy-walker", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("tie-back table", joined)
+        self.assertIn("134 table", joined)
+        self.assertIn("bouvier home as golpp", joined)
+        self.assertIn("golpp-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_larpar_is_not_conglp(self):
+        b = analyze("dog", "laryngeal paralysis, crashing")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("old large-breed", loc)
+        self.assertNotIn("congenital laryngeal paralysis", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dandy_is_not_conglp(self):
+        b = analyze("dog", "Dandy-Walker")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("vermis hypoplasia", loc)
+        self.assertNotIn("congenital laryngeal paralysis", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_bouvier_is_not_conglp(self):
+        b = analyze("dog", "Bouvier des Flandres")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital laryngeal paralysis", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_conglp_still_fires(self):
+        b = analyze("dog", "congenital lar par")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("congenital laryngeal paralysis", loc)
+        self.assertIn("young dog, not golpp", loc)
+        self.assertNotIn("old large-breed", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_conglp(self):
+        b = analyze("cat", "congenital laryngeal paralysis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("congenital laryngeal paralysis", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_stridor_is_not_conglp(self):
+        b = analyze("dog", "inspiratory stridor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("old large-breed", loc)
+        self.assertNotIn("congenital laryngeal paralysis", loc)
+        self.assertNotIn("young dog, not golpp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -196,6 +196,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pdys` | Assessment | Paroxysmal dyskinesia / episodic falling |
 | `ddx-narc` | Assessment | Narcolepsy / cataplexy |
 | `ddx-dandy` | Assessment | Dandy-Walker / vermis |
+| `ddx-conglp` | Assessment | Congenital laryngeal paralysis |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -351,6 +352,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pdys` | Discharge | After paroxysmal dyskinesia talk |
 | `dc-narc` | Discharge | After narcolepsy talk |
 | `dc-dandy` | Discharge | After Dandy-Walker talk |
+| `dc-conglp` | Discharge | After congenital laryngeal paralysis talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2701,6 +2703,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a hydro table. Harvest a COMS gabapentin table. Copy a 116 table. Send a Eurasier home as CH. Call it ch-only.
 Do next: Name the Dandy-Walker. Vermis and fourth ventricle. △ Plumb. Do not copy a 116 table.
 
+### `ddx-conglp`
+
+Congenital laryngeal paralysis — {{patient.name}}
+Young dog [yes / not]. Laryngoscopy [yes / not]. Neuropathy [none / Dalmatian-Pyrenees / other]. Breed [Bouvier / Husky / Rottweiler / Bull Terrier / other].
+
+DDX:
+1. Congenital laryngeal paralysis — **young dog, not GOLPP**
+2. Printed Bouvier AD / Husky / Rottweiler / Bull Terrier under-one-year stay on the page
+3. Printed Dalmatian / Pyrenees neuropathy and laryngoscopy stay on the page. Packet 134 still owns GOLPP oxygen and not-Lasix
+4. Not golpp-only (134). Not 134-only
+5. Dog can fire. Cat does not fire. Bare laryngeal paralysis / stridor do not fire
+
+Do not: harvest a surgery table. Harvest a tie-back table. Copy a 134 table. Send a Bouvier home as GOLPP. Call it golpp-only.
+Do next: Name the congenital laryngeal paralysis. Young dog, not GOLPP. △ Plumb. Do not copy a 134 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -3976,6 +3993,14 @@ Return now if an episode lasts longer than usual, they do not recover as they us
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for a fall, worsening wobbliness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-conglp`
+
+{{patient.name}} was evaluated for congenital laryngeal paralysis (a young-dog voice-box problem, not the old large-breed GOLPP form). The printed breed list stays in our notes. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse noise when breathing, collapse, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
