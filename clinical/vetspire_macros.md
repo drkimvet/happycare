@@ -207,6 +207,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ampn` | Assessment | Alaskan Malamute polyneuropathy |
 | `ddx-phox` | Assessment | Primary hyperoxaluria / l-glyceric |
 | `ddx-lhsn` | Assessment | Longhaired Dachshund sensory neuropathy |
+| `ddx-bcsn` | Assessment | Border Collie sensory neuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -373,6 +374,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ampn` | Discharge | After Alaskan Malamute polyneuropathy talk |
 | `dc-phox` | Discharge | After primary hyperoxaluria talk |
 | `dc-lhsn` | Discharge | After longhaired Dachshund sensory neuropathy talk |
+| `dc-bcsn` | Discharge | After Border Collie sensory neuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2888,6 +2890,21 @@ DDX:
 Do not: harvest a surgery table. Harvest an 8–12 week clock. Copy a 277 table. Send a Dachshund home as IVDD. Call it 277-only.
 Do next: Name the longhaired Dachshund sensory neuropathy. Pelvic limb ataxia. Self-mutilation. △ Plumb. Do not copy a 277 table.
 
+### `ddx-bcsn`
+
+Border Collie sensory neuropathy — {{patient.name}}
+Lack of proprioception [yes / not]. Relentless [yes / not]. Ataxia [yes / not].
+
+DDX:
+1. Border Collie sensory neuropathy — **lack of proprioception. Relentless**
+2. Printed AR / 5–7 month clock / abnormal sensory testing stay on the page
+3. Printed FAM134B and euthanasia as the common end point stay on the page. Packet 278 still owns longhaired Dachshund SN. Packet 219 still owns hereditary ataxia
+4. Not 278-only. Not 219-only. Not 277-only
+5. Dog can fire. Cat does not fire. Bare Border Collie / ataxia / proprioception do not fire
+
+Do not: harvest a surgery table. Harvest FAM134B. Harvest a 5–7 month clock. Copy a 278 table. Send a Border Collie home as hereditary ataxia. Call it 278-only.
+Do next: Name the Border Collie sensory neuropathy. Lack of proprioception. Relentless. △ Plumb. Do not copy a 278 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4251,6 +4268,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse ataxia or self-trauma, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-bcsn`
+
+{{patient.name}} was evaluated for Border Collie sensory neuropathy (a breed-linked sensory nerve problem with lack of proprioception that progresses relentlessly). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

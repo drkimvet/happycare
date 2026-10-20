@@ -7951,6 +7951,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("self-mutilation", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_bcsn_is_proprioception_relentless(self):
+        b = analyze("dog", "border collie sensory neuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("border collie sensory neuropathy", loc)
+        self.assertIn("lack of proprioception", loc)
+        self.assertIn("relentless", loc)
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        self.assertNotIn("self-mutilation", loc)
+        self.assertNotIn("hereditary ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("fam134b", joined)
+        self.assertIn("5–7 month clock", joined)
+        self.assertIn("278 table", joined)
+        self.assertIn("border collie home as hereditary ataxia", joined)
+        self.assertIn("278-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_border_collie_is_not_bcsn(self):
+        b = analyze("dog", "Border Collie")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("border collie sensory neuropathy", loc)
+        self.assertNotIn("lack of proprioception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lhsn_is_not_bcsn(self):
+        b = analyze("dog", "longhaired dachshund sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("self-mutilation", loc)
+        self.assertNotIn("border collie sensory neuropathy", loc)
+        self.assertNotIn("lack of proprioception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_bcsn(self):
+        b = analyze("cat", "border collie sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("border collie sensory neuropathy", loc)
+        self.assertNotIn("lack of proprioception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_bcsn_still_fires(self):
+        b = analyze("dog", "sensory neuropathy in a Border Collie")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("border collie sensory neuropathy", loc)
+        self.assertIn("lack of proprioception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_ataxia_is_not_bcsn(self):
+        b = analyze("dog", "ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("border collie sensory neuropathy", loc)
+        self.assertNotIn("lack of proprioception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hatax_is_not_bcsn(self):
+        b = analyze("dog", "hereditary ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("myokymia is this list", loc)
+        self.assertNotIn("border collie sensory neuropathy", loc)
+        self.assertNotIn("lack of proprioception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

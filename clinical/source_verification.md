@@ -3242,3 +3242,22 @@ Book/public traps:
 - Do not call it 277-only.
 
 Night rule: named longhaired Dachshund sensory neuropathy → **pelvic limb ataxia. Self-mutilation.** △ Plumb.
+
+## 279. Sensory neuropathy in Border Collies (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Border-Collie-sensory-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 278 still owns named longhaired Dachshund sensory neuropathy. Packet 219 still owns hereditary ataxia. Packet 277 still owns primary hyperoxaluria. Packet 280 owns named sensory neuropathy in Pointers, not this dump. Do not harvest a surgery table as lobby law. Do not harvest FAM134B. Do not harvest a 5–7 month clock. Do not fire on bare Border Collie / ataxia / proprioception / sensory. Dogs only. Skip cats.
+
+Agree with Parsley: **sensory neuropathy in Border Collies** is an autosomal recessive disease that manifests as ataxia, **lack of proprioception**, and abnormal sensory testing. The age of onset is usually **5–7 months** (printed clock stays on the page), and the disorder progresses **relentlessly**. Euthanasia is the common end point. Disruption of the **FAM134B** gene has been identified (named gene stays on the page, not in the regex).
+
+Night split: named Border Collie sensory neuropathy is lack of proprioception; relentless. Bare Border Collie does not fire. Bare ataxia does not fire. Cat does not fire. Named LHSN stays 278. Named HATAX stays 219. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest FAM134B.
+- Do not harvest a 5–7 month clock.
+- Do not copy a 278 table.
+- Do not send a Border Collie home as hereditary ataxia.
+- Do not call it 278-only.
+
+Night rule: named Border Collie sensory neuropathy → **lack of proprioception. Relentless.** △ Plumb.
