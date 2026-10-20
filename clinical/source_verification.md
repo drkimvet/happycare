@@ -3261,3 +3261,21 @@ Book/public traps:
 - Do not call it 278-only.
 
 Night rule: named Border Collie sensory neuropathy → **lack of proprioception. Relentless.** △ Plumb.
+
+## 280. Sensory neuropathy in Pointers (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Pointer-sensory-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 279 still owns named Border Collie sensory neuropathy. Packet 278 still owns named longhaired Dachshund sensory neuropathy. Packet 281 owns named polyneuropathy of Bengal cats, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a <6 month clock. Do not fire on bare Pointer / self-mutilation / digit / sensory. Dogs only. Skip cats.
+
+Agree with Parsley: **sensory neuropathy in Pointers** occurs in English Pointers (autosomal recessive) in the US and in Shorthaired Pointers in Europe. **Self-mutilation of the digits** is the main clinical sign, and the age of onset is **< 6 months** (printed clock stays on the page). Pain perception is **absent in the pelvic limbs** and depressed in the thoracic limbs. There is neuronal loss in dorsal root ganglia (printed histology stays on the page). There is no treatment, and the prognosis is poor.
+
+Night split: named Pointer sensory neuropathy is digit self-mutilation; pelvic pain absent. Bare Pointer does not fire. Bare self-mutilation does not fire. Cat does not fire. Named BCSN stays 279. Named LHSN stays 278. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a <6 month clock.
+- Do not copy a 279 table.
+- Do not send a Pointer home as longhaired Dachshund.
+- Do not call it 279-only.
+
+Night rule: named Pointer sensory neuropathy → **digit self-mutilation. Pelvic pain absent.** △ Plumb.

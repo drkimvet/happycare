@@ -8013,6 +8013,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("lack of proprioception", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_psn_is_digit_self_mutilation(self):
+        b = analyze("dog", "pointer sensory neuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("pointer sensory neuropathy", loc)
+        self.assertIn("digit self-mutilation", loc)
+        self.assertIn("pelvic pain absent", loc)
+        self.assertNotIn("border collie sensory neuropathy", loc)
+        self.assertNotIn("lack of proprioception", loc)
+        self.assertNotIn("longhaired dachshund sensory neuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("<6 month clock", joined)
+        self.assertIn("279 table", joined)
+        self.assertIn("pointer home as longhaired dachshund", joined)
+        self.assertIn("279-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pointer_is_not_psn(self):
+        b = analyze("dog", "Pointer")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pointer sensory neuropathy", loc)
+        self.assertNotIn("digit self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bcsn_is_not_psn(self):
+        b = analyze("dog", "border collie sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lack of proprioception", loc)
+        self.assertNotIn("pointer sensory neuropathy", loc)
+        self.assertNotIn("digit self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_psn(self):
+        b = analyze("cat", "pointer sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pointer sensory neuropathy", loc)
+        self.assertNotIn("digit self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_psn_still_fires(self):
+        b = analyze("dog", "sensory neuropathy in a Pointer")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pointer sensory neuropathy", loc)
+        self.assertIn("digit self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_self_mutilation_is_not_psn(self):
+        b = analyze("dog", "self-mutilation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pointer sensory neuropathy", loc)
+        self.assertNotIn("pelvic pain absent", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lhsn_is_not_psn(self):
+        b = analyze("dog", "longhaired dachshund sensory neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pelvic limb ataxia", loc)
+        self.assertNotIn("pointer sensory neuropathy", loc)
+        self.assertNotIn("digit self-mutilation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

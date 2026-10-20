@@ -1663,6 +1663,14 @@ BCSN_RE = re.compile(
     r"sensory neuropath.{0,40}border collie",
     re.I,
 )
+# Do not use \bpointer\b or \bself-mutilat\b or \bdigit\b alone. Do
+# not harvest a <6 month clock. Dogs only. Not BCSN (279). Not LHSN
+# (278). Skip cats.
+PSN_RE = re.compile(
+    r"pointer.{0,40}sensory neuropath|"
+    r"sensory neuropath.{0,40}pointer",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5782,6 +5790,7 @@ def analyze(
     steal_phox = PHOX_RE.search(text)
     steal_lhsn = LHSN_RE.search(text)
     steal_bcsn = BCSN_RE.search(text)
+    steal_psn = PSN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5863,6 +5872,7 @@ def analyze(
         or steal_phox
         or steal_lhsn
         or steal_bcsn
+        or steal_psn
     ):
         if spec == "cat":
             fuo_loc = (
@@ -12155,7 +12165,8 @@ def analyze(
 
     bcsn_named = spec == "dog" and BCSN_RE.search(text)
     if bcsn_named and not (
-        LHSN_RE.search(text)
+        PSN_RE.search(text)
+        or LHSN_RE.search(text)
         or PHOX_RE.search(text)
         or AMPN_RE.search(text)
         or MLS_RE.search(text)
@@ -12281,6 +12292,139 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for Border Collie sensory neuropathy.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Border Collie sensory neuropathy.")
+
+    psn_named = spec == "dog" and PSN_RE.search(text)
+    if psn_named and not (
+        BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+    ):
+        psn_loc = (
+            "Pointer sensory neuropathy. Digit self-mutilation. "
+            "Pelvic pain absent."
+        )
+        localization = f"{localization} Also {psn_loc}" if localization else psn_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a <6 month clock as lobby law. "
+            "Do not copy a 279 table as lobby law. "
+            "Do not send a Pointer home as longhaired Dachshund. "
+            "Do not call it 279-only."
+        )
+        do_not.append(
+            "English Pointers in the US and Shorthaired "
+            "Pointers in Europe. Printed AR stays on the "
+            "page. Printed digit self-mutilation stays on "
+            "the page. Printed <6 month clock stays on "
+            "the page. Printed pelvic-limb pain absent "
+            "and thoracic-limb pain depressed stay on "
+            "the page. Printed dorsal-root-ganglia "
+            "neuronal loss stays on the page. Printed no "
+            "treatment and poor prognosis stay on the "
+            "page. Packet 279 still owns Border Collie "
+            "sensory neuropathy. Packet 278 still owns "
+            "longhaired Dachshund sensory neuropathy. "
+            "Skip cats. Not 279-only. Not 278-only. Not "
+            "ivdd-only."
+        )
+        do_next.append(
+            "Name the Pointer sensory neuropathy. Digit "
+            "self-mutilation. Pelvic pain absent. "
+            "△ Plumb. Do not copy a 279 table."
+        )
+        sources.append(
+            "Merck congenital neuromuscular (Parsley, Mar "
+            "2026): sensory neuropathy in Pointers; "
+            "English Pointer AR in the US; Shorthaired "
+            "Pointer in Europe; digit self-mutilation; "
+            "<6 month onset stays on the page; pelvic "
+            "pain absent, thoracic pain depressed; "
+            "dorsal-root-ganglia neuronal loss stays on "
+            "the page; no treatment; poor prognosis."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Pointer home as longhaired Dachshund."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for Pointer sensory neuropathy.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for Pointer sensory neuropathy.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

@@ -655,6 +655,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("self-mutilation", VERIF.lower())
         self.assertIn("border collie sensory neuropathy", VERIF.lower())
         self.assertIn("lack of proprioception", VERIF.lower())
+        self.assertIn("pointer sensory neuropathy", VERIF.lower())
+        self.assertIn("digit self-mutilation", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1067,6 +1069,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-lhsn`", MACRO)
         self.assertIn("`ddx-bcsn`", MACRO)
         self.assertIn("`dc-bcsn`", MACRO)
+        self.assertIn("`ddx-psn`", MACRO)
+        self.assertIn("`dc-psn`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1161,6 +1165,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("self-mutilation", MACRO.lower())
         self.assertIn("border collie sensory neuropathy", MACRO.lower())
         self.assertIn("lack of proprioception", MACRO.lower())
+        self.assertIn("pointer sensory neuropathy", MACRO.lower())
+        self.assertIn("digit self-mutilation", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1617,6 +1623,8 @@ class PublicCardInvariants(unittest.TestCase):
             "self-mutilation",
             "border collie sensory neuropathy",
             "lack of proprioception",
+            "pointer sensory neuropathy",
+            "digit self-mutilation",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

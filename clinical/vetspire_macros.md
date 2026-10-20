@@ -208,6 +208,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-phox` | Assessment | Primary hyperoxaluria / l-glyceric |
 | `ddx-lhsn` | Assessment | Longhaired Dachshund sensory neuropathy |
 | `ddx-bcsn` | Assessment | Border Collie sensory neuropathy |
+| `ddx-psn` | Assessment | Pointer sensory neuropathy |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -375,6 +376,7 @@ Suggested names are short so they show up after three letters.
 | `dc-phox` | Discharge | After primary hyperoxaluria talk |
 | `dc-lhsn` | Discharge | After longhaired Dachshund sensory neuropathy talk |
 | `dc-bcsn` | Discharge | After Border Collie sensory neuropathy talk |
+| `dc-psn` | Discharge | After Pointer sensory neuropathy talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2905,6 +2907,21 @@ DDX:
 Do not: harvest a surgery table. Harvest FAM134B. Harvest a 5–7 month clock. Copy a 278 table. Send a Border Collie home as hereditary ataxia. Call it 278-only.
 Do next: Name the Border Collie sensory neuropathy. Lack of proprioception. Relentless. △ Plumb. Do not copy a 278 table.
 
+### `ddx-psn`
+
+Pointer sensory neuropathy — {{patient.name}}
+Digit self-mutilation [yes / not]. Pelvic pain absent [yes / not]. Thoracic pain [depressed / not].
+
+DDX:
+1. Pointer sensory neuropathy — **digit self-mutilation. Pelvic pain absent**
+2. Printed English Pointer AR / Shorthaired Pointer Europe / <6 month clock stay on the page
+3. Printed dorsal-root-ganglia neuronal loss stay on the page. Packet 279 still owns Border Collie SN. Packet 278 still owns longhaired Dachshund SN
+4. Not 279-only. Not 278-only. Not ivdd-only
+5. Dog can fire. Cat does not fire. Bare Pointer / self-mutilation / digit do not fire
+
+Do not: harvest a surgery table. Harvest a <6 month clock. Copy a 279 table. Send a Pointer home as longhaired Dachshund. Call it 279-only.
+Do next: Name the Pointer sensory neuropathy. Digit self-mutilation. Pelvic pain absent. △ Plumb. Do not copy a 279 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4276,6 +4293,14 @@ Return now for worse ataxia or self-trauma, or if you cannot keep them comfortab
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse ataxia, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-psn`
+
+{{patient.name}} was evaluated for Pointer sensory neuropathy (a breed-linked sensory nerve problem that can show digit self-mutilation and absent pelvic-limb pain). There is no printed treatment. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse self-trauma, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
