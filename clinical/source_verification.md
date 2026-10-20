@@ -3166,3 +3166,22 @@ Book/public traps:
 - Do not call it ple-only.
 
 Night rule: named hyperchylomicronemia → **cream of tomato soup. Low-fat diet.** △ Plumb.
+
+## 275. Musladin-Lueke syndrome in Beagles (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Musladin-Lueke chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 274 still owns named hyperchylomicronemia. Packet 273 still owns named hypertrophic neuropathy. Packet 116 still owns seizures. Packet 276 owns named Alaskan Malamute polyneuropathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest ADAMTSL2. Do not harvest a seizure table. Do not fire on bare Beagle / tiptoe / seizure. Dogs only. Skip cats.
+
+Agree with Parsley: **Musladin-Lueke syndrome (MLS)** is an autosomal recessive connective-tissue disorder in Beagles that affects muscles, bone, heart, and skin. It is caused by a mutation in the **ADAMTSL2** gene (named gene stays on the page, not in the regex). Clinical signs most prominently reflect muscle fibrosis and contractures. The resulting posture is walking on **tiptoes**. The abnormal posture is present shortly after birth. Other signs include **thickened cartilage of the ear** and **wide-set eyes**. Seizures can occur concurrently; it is not yet known whether they are related to the primary disorder (printed seizures stay on the page; packet 116 still owns the seizure-drug table). There is no treatment. The human counterpart (geleophysic dysplasia) is progressive and frequently fatal; in dogs the disease appears to stabilize.
+
+Night split: named Musladin-Lueke is tiptoe posture; thickened ear cartilage. Bare Beagle does not fire. Bare tiptoe does not fire. Cat does not fire. Named HCHYLO stays 274. Named TMHN stays 273. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest ADAMTSL2.
+- Do not harvest a seizure table.
+- Do not copy a 274 table.
+- Do not send a Beagle home as hyperchylomicronemia.
+- Do not call it 274-only.
+
+Night rule: named Musladin-Lueke → **tiptoe posture. Thickened ear cartilage.** △ Plumb.

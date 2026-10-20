@@ -203,6 +203,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-leon` | Assessment | Leonberger polyneuropathy |
 | `ddx-tmhn` | Assessment | Tibetan Mastiff hypertrophic neuropathy |
 | `ddx-hchylo` | Assessment | Feline hyperchylomicronemia neuropathy |
+| `ddx-mls` | Assessment | Musladin-Lueke / Beagle |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -365,6 +366,7 @@ Suggested names are short so they show up after three letters.
 | `dc-leon` | Discharge | After Leonberger polyneuropathy talk |
 | `dc-tmhn` | Discharge | After hypertrophic neuropathy talk |
 | `dc-hchylo` | Discharge | After hyperchylomicronemia talk |
+| `dc-mls` | Discharge | After Musladin-Lueke talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2820,6 +2822,21 @@ DDX:
 Do not: harvest a surgery table. Harvest an 8-month clock. Harvest a low-fat recipe. Copy a 273 table. Send a cat home as PLE. Call it ple-only.
 Do next: Name the hyperchylomicronemia. Cream of tomato soup. Low-fat diet. △ Plumb. Do not copy a 273 table.
 
+### `ddx-mls`
+
+Musladin-Lueke — {{patient.name}}
+Tiptoe posture [yes / not]. Thickened ear cartilage [yes / not]. Wide-set eyes [yes / not].
+
+DDX:
+1. Musladin-Lueke — **tiptoe posture. Thickened ear cartilage**
+2. Printed ADAMTSL2 / muscle fibrosis and contractures / shortly after birth stay on the page
+3. Printed wide-set eyes and seizures stay on the page. Packet 274 still owns hyperchylomicronemia. Packet 116 still owns seizures
+4. Not 274-only. Not 273-only. Not 116-only
+5. Dog can fire. Cat does not fire. Bare Beagle / tiptoe / seizure do not fire
+
+Do not: harvest a surgery table. Harvest ADAMTSL2. Harvest a seizure table. Copy a 274 table. Send a Beagle home as hyperchylomicronemia. Call it 274-only.
+Do next: Name the Musladin-Lueke. Tiptoe posture. Thickened ear cartilage. △ Plumb. Do not copy a 274 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4151,6 +4168,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 Give only the food and medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-mls`
+
+{{patient.name}} was evaluated for Musladin-Lueke syndrome (a Beagle connective-tissue problem that can make them walk on tiptoe, with thickened ear cartilage). There is no printed treatment. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse stiffness, or if you cannot keep them comfortable. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -7701,6 +7701,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("cream of tomato soup", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mls_is_tiptoe_thickened_ear(self):
+        b = analyze("dog", "musladin-lueke")
+        loc = b["localization"].lower()
+        self.assertIn("musladin-lueke", loc)
+        self.assertIn("tiptoe posture", loc)
+        self.assertIn("thickened ear cartilage", loc)
+        self.assertNotIn("hyperchylomicronemia", loc)
+        self.assertNotIn("cream of tomato soup", loc)
+        self.assertNotIn("hypertrophic neuropathy", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("adamtsl2", joined)
+        self.assertIn("seizure table", joined)
+        self.assertIn("274 table", joined)
+        self.assertIn("beagle home as hyperchylomicronemia", joined)
+        self.assertIn("274-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_beagle_is_not_mls(self):
+        b = analyze("dog", "Beagle")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("musladin-lueke", loc)
+        self.assertNotIn("tiptoe posture", loc)
+        self.assertNotIn("thickened ear cartilage", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hchylo_is_not_mls(self):
+        b = analyze("cat", "hyperchylomicronemia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cream of tomato soup", loc)
+        self.assertNotIn("musladin-lueke", loc)
+        self.assertNotIn("tiptoe posture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_mls(self):
+        b = analyze("cat", "musladin-lueke")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("musladin-lueke", loc)
+        self.assertNotIn("tiptoe posture", loc)
+        self.assertNotIn("thickened ear cartilage", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_mls_still_fires(self):
+        b = analyze("dog", "musladin")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("musladin-lueke", loc)
+        self.assertIn("tiptoe posture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tiptoe_is_not_mls(self):
+        b = analyze("dog", "tiptoe")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("musladin-lueke", loc)
+        self.assertNotIn("thickened ear cartilage", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tmhn_is_not_mls(self):
+        b = analyze("dog", "hypertrophic neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("sensory preserved", loc)
+        self.assertNotIn("musladin-lueke", loc)
+        self.assertNotIn("tiptoe posture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
