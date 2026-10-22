@@ -1,6 +1,7 @@
 Last time: NYC website = DCWP Freelance Isn't Free Act
 https://www.nyc.gov/site/dca/workers/workersrights/freelancer-workers.page
 File: https://a866-dcwpbp.nyc.gov/worker-complaint/file-complaint?topic=freelancer
+Ask first: freelancer@dcwp.nyc.gov  (draft-dcwp-dvm-question.txt)
 
 What that site does
   Sends your complaint to the hiring party. They have 20 days to answer.
@@ -10,16 +11,27 @@ What that site does
   not a DCWP check. NYC small claims cap is $10,000, so claim $5,950 unpaid.
   Do not claim $11,900 (double) — it will not fit.
 
-This time, order
-  1) October 3 deadline (already running)
-  2) October 6 — DCWP complaint (No, I have not filed in court yet)
-     plus NYS Attorney General freelance complaint (covers Roslyn too)
-     https://dol.ny.gov/freelance-isnt-free-act
-  3) Wait the 20 days
-  4) Then Manhattan Small Claims with the DCWP no-response letter
-     + exhibits A–J. That is the stack you did not have last time.
+Oct 22, 2026 — do not treat DCWP as automatic
+  City law § 20-927(3) and State GBS § 1410(3)(c) exclude
+  “any person who is a licensed medical professional.”
+  They never define the phrase. A DVM is NYSED-licensed
+  (Veterinary Medicine). Coverage is uncertain.
+  If DCWP says you are excluded, skip FIFA. File Manhattan
+  small claims for the $5,950 contract balance.
+  That is the stack that wins. The website is optional.
 
-DCWP form
+This time, order (only if not already in court)
+  1) October 3 deadline — already passed
+  2) Email DCWP: am I covered as a DVM? Wait until Friday Oct 24.
+  3) If yes — DCWP complaint (court/other agency = No), then AG
+     https://ag.ny.gov/file-complaint
+     https://dol.ny.gov/freelance-isnt-free-act
+     Do not file AG before DCWP (§ 20-931(c)(1)(b)).
+     Wait the 20 days
+  4) If no / no answer — Manhattan Small Claims with exhibits A–J.
+     Add the DCWP no-response letter only if you have one.
+
+DCWP form (use only after they say a DVM is covered)
   Occupation: veterinarian / independent contractor
   Agreement: per diem relief, $250/hour in hospital, $300/hour past midnight
   Amount: $5,950.00
