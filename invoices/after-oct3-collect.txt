@@ -1,14 +1,12 @@
 10월 3일 이후 — 받아내는 순서
-오늘: 2026-10-22 (목) · 기한 10/3은 지남 · 청구: $5,950.00
+오늘: 2026-10-23 (금) · 청구 메일 보냄 · 입금 기한 10/30 5pm ET · $5,950.00
 변호사가 아닌 실무 계획. 3년 전 패소는 메일·소장에 쓰지 않음.
-자세한 진행: oct22-status.txt
+자세한 진행: oct23-status.txt · 발송 기록: demand-sent.txt
 
-지금 어디인가 (10/22 연구 기준)
-  서류·금액·법원 경로는 짜 둠. 내가 대신 넣을 수는 없음.
-  새 발견: 시·주 FIFA는 “licensed medical professional”을 뺌.
-  DVM이 빠질 수 있음. DCWP만 20일 더 기다리지 말 것.
-  승부는 맨해튼 스몰클레임 $5,950 + 증거 폴더.
-  FIFA는 들어가면 보너스, 안 들어가면 계약 청구로 감.
+지금 어디인가 (10/23)
+  청구 메일 발송됨. Exhibit J. 오늘은 소장 넣지 말 것.
+  입금 없으면 10/30 이후 맨해튼. 거절 메일이 오면 그전에.
+  DVM은 FIFA에서 빠질 수 있음. DCWP만 기다리지 말 것.
 
 왜 나소가 아니라 맨해튼인가
   나소 스몰클레임 한도 $5,000. $5,950이 안 들어감.
@@ -34,7 +32,7 @@
      G  9/23 콜 메일 3통 (프로셀 / 당신 $9,900 / 회사 방침)
      H  에이미 9/24 11:44 PM $300/hour 문자
      I  INV-2026-0915, 0919, 0924
-     J  10월 3일 기한 청구 메일 (보낸시간 보이게)
+     J  2026-10-23 청구 메일 (Sent, 보낸시간, To/Cc, 첨부)
 3. 시프트 계속 안 감.
 
 ------------------------------------------------
@@ -118,7 +116,7 @@ https://ag.ny.gov/file-complaint
    invoice. That is $5,950 unpaid. September 10 was a 12-hour booking.
    After about three hours they sent me home and said they would call
    if a client came. They did not call. Nine hours at $250 is $2,250.
-   I asked in writing for payment by October 3. They did not pay.
+   I asked in writing for payment on October 23. They did not pay.
    그다음 폴더만 넘김. 3년 전, GLG, 우버, 녹음 이야기 하지 않음.
 
 ------------------------------------------------

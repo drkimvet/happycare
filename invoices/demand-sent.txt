@@ -1,0 +1,35 @@
+Demand letter — sent
+Recorded: 2026-10-23 (Fri)
+Amount: $5,950.00
+Draft used: draft-demand-7-days.txt
+To: c.rice@urvetcare.com
+Cc: Evan@urvetcare.com, A.Bain@urvetcare.com
+From: kim.yujin@outlook.com (confirm Sent folder)
+Subject: Unpaid balance $5,950.00 — no further shifts
+Attachments (confirm they went): INV-2026-0915, INV-2026-0919, INV-2026-0924
+
+This is Exhibit J.
+
+Do this once, today
+  1) Sent 폴더에서 그 메일 연다.
+  2) 보낸 날짜·시간, To/Cc, 첨부 파일 이름이 보이게 스크린샷.
+  3) 반송(bounce) 없는지 Inbox/Spam 확인.
+  4) USB + 출력 1부. 폰에만 두지 말 것.
+
+Clock from this send
+  Sent:     Friday, October 23, 2026
+  Pay by:   Friday, October 30, 2026, 5:00 PM Eastern
+  If unpaid then: Manhattan small claims. Do not file today.
+
+If the letter still said “by Friday, October 3”
+  That date is already past. The demand is still good.
+  Do not send a second essay today.
+  The Oct 30 date is the court clock from this send.
+  Optional one-line follow-up only if they write back
+  asking what the deadline is: draft-followup-oct30.txt
+
+Do not
+  File small claims today (the demand just landed).
+  File DCWP today unless they already said a DVM is covered.
+  Work another URvet shift.
+  Argue ProSal or 23% in a new email.

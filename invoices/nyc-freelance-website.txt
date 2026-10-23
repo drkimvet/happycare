@@ -21,15 +21,16 @@ Oct 22, 2026 — do not treat DCWP as automatic
   That is the stack that wins. The website is optional.
 
 This time, order (only if not already in court)
-  1) October 3 deadline — already passed
-  2) Email DCWP: am I covered as a DVM? Wait until Friday Oct 24.
-  3) If yes — DCWP complaint (court/other agency = No), then AG
+  1) Demand sent October 23. Pay by October 30, 5:00 PM ET.
+     Do not file court on the send day.
+  2) Optional same weekend: email DCWP — am I covered as a DVM?
+  3) If yes before you file court — DCWP complaint (court/other agency = No), then AG
      https://ag.ny.gov/file-complaint
      https://dol.ny.gov/freelance-isnt-free-act
      Do not file AG before DCWP (§ 20-931(c)(1)(b)).
      Wait the 20 days
-  4) If no / no answer — Manhattan Small Claims with exhibits A–J.
-     Add the DCWP no-response letter only if you have one.
+  4) If no / no answer, and still unpaid Oct 30 — Manhattan Small Claims
+     with exhibits A–J. Add a DCWP no-response letter only if you have one.
 
 DCWP form (use only after they say a DVM is covered)
   Occupation: veterinarian / independent contractor
