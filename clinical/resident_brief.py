@@ -1688,6 +1688,17 @@ CPD_RE = re.compile(
     r"c7.{0,20}dorsal displacement",
     re.I,
 )
+# Do not use \bgreat dane\b or \blaryngeal paralys\b or
+# \bpolyneuropath\b or \bstridor\b alone. Do not harvest a
+# 1.5–1.8 year clock or a 6-month euthanasia clock. Dogs
+# only. Not CPD (282). Not LEON (272). Not CONGLP (268).
+# Not 134. Skip cats.
+LPPN_RE = re.compile(
+    r"laryngeal paralysis polyneuropath|"
+    r"\blppn3?\b|"
+    r"\bcntnap1\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -4457,7 +4468,7 @@ def analyze(
         if ALBUTEROL_RE.search(text) and (PLEURAL_RE.search(text) or PNEUMO_RE.search(text)):
             hard_stops.append("Bronchodilator is not therapy for pleural air or fluid.")
 
-    if spec == "dog" and LARPAR_RE.search(text) and not CONGLP_RE.search(text):
+    if spec == "dog" and LARPAR_RE.search(text) and not CONGLP_RE.search(text) and not LPPN_RE.search(text):
         larpar_loc = (
             "Upper airway: the larynx is not abducting. "
             "Old large-breed inspiratory stridor / voice change is laryngeal paralysis "
@@ -5810,6 +5821,7 @@ def analyze(
     steal_psn = PSN_RE.search(text)
     steal_bengpn = BENGPN_RE.search(text)
     steal_cpd = CPD_RE.search(text)
+    steal_lppn = LPPN_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5894,6 +5906,7 @@ def analyze(
         or steal_psn
         or steal_bengpn
         or steal_cpd
+        or steal_lppn
     ):
         if spec == "cat":
             fuo_loc = (
@@ -12720,6 +12733,139 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for calcium phosphate.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for calcium phosphate.")
+
+    lppn_named = spec == "dog" and LPPN_RE.search(text)
+    if lppn_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or DYSRAPH_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+    ):
+        lppn_loc = (
+            "LPPN3. CNTNAP1. Not calcium phosphate."
+        )
+        localization = f"{localization} Also {lppn_loc}" if localization else lppn_loc
+        hard_stops.append(
+            "Do not harvest a surgery table as lobby law. "
+            "Do not harvest a 1.5–1.8 year clock as lobby law. "
+            "Do not copy a 282 table as lobby law. "
+            "Do not send a Great Dane home as calcium phosphate. "
+            "Do not call it 134-only."
+        )
+        do_not.append(
+            "Young Great Danes. Printed gait abnormalities "
+            "and respiratory difficulty stay on the page. "
+            "Printed lower motor neuron / axonal "
+            "degeneration / large nerve fiber loss stay "
+            "on the page. Printed homozygous CNTNAP1 "
+            "p.G937E stays on the page. Printed test "
+            "even if laryngeal paralysis is not noted "
+            "stays on the page. Printed ~6 month "
+            "progression stays on the page. Packet 282 "
+            "still owns calcium phosphate. Packet 272 "
+            "still owns Leonberger. Packet 268 still "
+            "owns congenital LP. Packet 134 still owns "
+            "GOLPP. Skip cats. Not 282-only. Not "
+            "134-only. Not 272-only."
+        )
+        do_next.append(
+            "Name the LPPN3. CNTNAP1. Not calcium "
+            "phosphate. △ Plumb. Do not copy a 282 table."
+        )
+        sources.append(
+            "Shelton JVIM 2025 (PMID 40622077 / PMC12231043): "
+            "homozygous CNTNAP1 p.G937E (LPPN3) in young "
+            "Great Dane dogs with laryngeal paralysis and "
+            "polyneuropathy; LMN; axonal degeneration and "
+            "large nerve fiber loss; test even if laryngeal "
+            "paralysis is not noted; printed 1.5–1.8 year "
+            "clock and ~6 month euthanasia stay on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Great Dane home as calcium phosphate."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for LPPN3.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for LPPN3.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

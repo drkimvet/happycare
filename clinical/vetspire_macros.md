@@ -211,6 +211,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-psn` | Assessment | Pointer sensory neuropathy |
 | `ddx-bengpn` | Assessment | Bengal cat polyneuropathy |
 | `ddx-cpd` | Assessment | Great Dane calcium phosphate / C7 |
+| `ddx-lppn` | Assessment | LPPN3 / CNTNAP1 young Great Dane |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -381,6 +382,7 @@ Suggested names are short so they show up after three letters.
 | `dc-psn` | Discharge | After Pointer sensory neuropathy talk |
 | `dc-bengpn` | Discharge | After Bengal polyneuropathy talk |
 | `dc-cpd` | Discharge | After calcium phosphate / C7 talk |
+| `dc-lppn` | Discharge | After LPPN3 / CNTNAP1 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2956,6 +2958,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 1–2 month clock. Copy a 281 table. Send a Great Dane home as wobbler. Call it wobbler-only.
 Do next: Name the calcium phosphate. C7 dorsal displacement. Not wobbler. △ Plumb. Do not copy a 281 table.
 
+### `ddx-lppn`
+
+LPPN3 — {{patient.name}}
+CNTNAP1 [yes / pending / not]. Laryngeal paralysis noted [yes / not]. Not calcium phosphate [yes / not].
+
+DDX:
+1. Laryngeal paralysis polyneuropathy / LPPN3 — **CNTNAP1. Not calcium phosphate**
+2. Printed homozygous p.G937E / LMN / axonal degeneration / large nerve fiber loss stay on the page
+3. Printed test even if laryngeal paralysis is not noted stays on the page. Packet 282 still owns calcium phosphate
+4. Not 282-only. Not 134-only. Not 272-only
+5. Dog can fire. Cat does not fire. Bare Great Dane / laryngeal paralysis / polyneuropathy / stridor do not fire
+
+Do not: harvest a surgery table. Harvest a 1.5–1.8 year clock. Copy a 282 table. Send a Great Dane home as calcium phosphate. Call it 134-only.
+Do next: Name the LPPN3. CNTNAP1. Not calcium phosphate. △ Plumb. Do not copy a 282 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4347,6 +4364,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-cpd`
 
 {{patient.name}} was evaluated for calcium phosphate deposition (a Great Dane puppy problem that can displace C7 and compress the spinal cord). This is not wobbler. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-lppn`
+
+{{patient.name}} was evaluated for LPPN3 (a CNTNAP1 laryngeal-paralysis polyneuropathy reported in young Great Danes). This is not calcium-phosphate C7 disease. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

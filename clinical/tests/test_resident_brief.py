@@ -8195,6 +8195,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("c7 dorsal displacement", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_lppn_is_cntnap1_not_cpd(self):
+        b = analyze("dog", "laryngeal paralysis polyneuropathy")
+        loc = b["localization"].lower()
+        self.assertIn("lppn3", loc)
+        self.assertIn("cntnap1", loc)
+        self.assertIn("not calcium phosphate", loc)
+        self.assertNotIn("c7 dorsal displacement", loc)
+        self.assertNotIn("old large-breed", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("surgery table", joined)
+        self.assertIn("1.5–1.8 year clock", joined)
+        self.assertIn("282 table", joined)
+        self.assertIn("great dane home as calcium phosphate", joined)
+        self.assertIn("134-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_great_dane_is_not_lppn(self):
+        b = analyze("dog", "Great Dane")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lppn3", loc)
+        self.assertNotIn("cntnap1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cpd_is_not_lppn(self):
+        b = analyze("dog", "calcium phosphate")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("c7 dorsal displacement", loc)
+        self.assertNotIn("lppn3", loc)
+        self.assertNotIn("cntnap1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_lppn(self):
+        b = analyze("cat", "laryngeal paralysis polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("lppn3", loc)
+        self.assertNotIn("cntnap1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_lppn_still_fires(self):
+        b = analyze("dog", "cntnap1")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lppn3", loc)
+        self.assertIn("cntnap1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_stridor_is_not_lppn(self):
+        b = analyze("dog", "inspiratory stridor, voice change")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("old large-breed", loc)
+        self.assertNotIn("lppn3", loc)
+        self.assertNotIn("cntnap1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_leon_is_not_lppn(self):
+        b = analyze("dog", "leonberger polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("leonberger", loc)
+        self.assertNotIn("lppn3", loc)
+        self.assertNotIn("not calcium phosphate", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

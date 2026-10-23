@@ -661,6 +661,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("relapsing", VERIF.lower())
         self.assertIn("calcium phosphate", VERIF.lower())
         self.assertIn("c7 dorsal displacement", VERIF.lower())
+        self.assertIn("laryngeal paralysis polyneuropathy", VERIF.lower())
+        self.assertIn("lppn3", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1079,6 +1081,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-bengpn`", MACRO)
         self.assertIn("`ddx-cpd`", MACRO)
         self.assertIn("`dc-cpd`", MACRO)
+        self.assertIn("`ddx-lppn`", MACRO)
+        self.assertIn("`dc-lppn`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1179,6 +1183,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("relapsing", MACRO.lower())
         self.assertIn("calcium phosphate", MACRO.lower())
         self.assertIn("c7 dorsal displacement", MACRO.lower())
+        self.assertIn("laryngeal paralysis polyneuropathy", MACRO.lower())
+        self.assertIn("lppn3", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1641,6 +1647,8 @@ class PublicCardInvariants(unittest.TestCase):
             "relapsing",
             "calcium phosphate",
             "c7 dorsal displacement",
+            "laryngeal paralysis polyneuropathy",
+            "lppn3",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

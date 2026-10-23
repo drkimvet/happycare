@@ -3300,7 +3300,7 @@ Night rule: named Bengal polyneuropathy → **relapsing. Demyelination.** △ Pl
 
 ## 282. Calcium phosphate deposition in Great Danes (Merck Parsley Mar 2026 spinal)
 
-No dedicated Plunkett calcium-phosphate-Great-Dane chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 223 still owns named wobbler / CSM. Packet 281 still owns named Bengal polyneuropathy. Packet 283 owns the next unused named leftover on a cited Parsley SA congenital/inherited nervous-system page, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1–2 month clock. Do not fire on bare Great Dane / calcium / C7 / mineralization. Dogs only. Skip cats.
+No dedicated Plunkett calcium-phosphate-Great-Dane chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 223 still owns named wobbler / CSM. Packet 281 still owns named Bengal polyneuropathy. Packet 283 owns named LPPN3 / CNTNAP1, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1–2 month clock. Do not fire on bare Great Dane / calcium / C7 / mineralization. Dogs only. Skip cats.
 
 Agree with Parsley: **calcium phosphate deposition in Great Danes** causes mineralization of soft tissues and bone deformity, with **dorsal displacement of C7**. The resultant **compressive myelopathy** occurs in puppies **1–2 months old** (printed clock stays on the page). This condition is **distinct from caudal cervical spondylomyelopathy**.
 
@@ -3315,3 +3315,21 @@ Book/public traps:
 - Do not call it wobbler-only.
 
 Night rule: named calcium phosphate → **C7 dorsal displacement. Not wobbler.** △ Plumb.
+
+## 283. LPPN3 / CNTNAP1 in young Great Danes (Shelton JVIM 2025)
+
+No dedicated Plunkett LPPN3 chapter in the owned SA EM splits. Public Shelton et al. J Vet Intern Med. 2025 Jul-Aug;39(4):e70185. doi: 10.1111/jvim.70185. PMID: 40622077. PMCID: PMC12231043. Packet 282 still owns named calcium phosphate / C7. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP / old large-breed lar par. Packet 284 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1.5–1.8 year clock. Do not harvest pred 30 mg or gabapentin 200 mg. Do not fire on bare Great Dane / laryngeal paralysis / polyneuropathy / stridor. Dogs only. Skip cats.
+
+Agree with Shelton 2025: a **homozygous missense CNTNAP1** variant (p.G937E; **LPPN3**) is confirmed in **young Great Dane** dogs with **laryngeal paralysis and polyneuropathy**. Exam, electrodiagnostics, and muscle/nerve biopsy were **lower motor neuron** with **axonal degeneration** and **large nerve fiber loss**. **Test for LPPN3 even if laryngeal paralysis is not noted** at diagnosis. Printed 1.5–1.8 year onset range, ~6 month progression to euthanasia, and the height/onset table stay on the page. Leonberger / Saint Bernard / Labrador LPPN variants stay on the page.
+
+Night split: named LPPN3 is CNTNAP1; not calcium phosphate. Bare Great Dane does not fire. Bare laryngeal paralysis stays 134. Bare stridor stays 134. Cat does not fire. Named CPD stays 282. Named LEON stays 272. Named CONGLP stays 268. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 1.5–1.8 year clock.
+- Do not copy a 282 table.
+- Do not send a Great Dane home as calcium phosphate.
+- Do not call it 134-only.
+
+Night rule: named laryngeal paralysis polyneuropathy / LPPN3 → **CNTNAP1. Not calcium phosphate.** △ Plumb.
