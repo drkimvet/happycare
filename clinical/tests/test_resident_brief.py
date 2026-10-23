@@ -8256,6 +8256,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not calcium phosphate", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pilose_is_experimental_not_drops(self):
+        b = analyze("dog", "experimental pilocarpine")
+        loc = b["localization"].lower()
+        self.assertIn("experimental pilocarpine", loc)
+        self.assertIn("temporal lobe model", loc)
+        self.assertIn("not diagnostic drops", loc)
+        self.assertNotIn("lppn3", loc)
+        self.assertNotIn("stop the seizure", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("convulsing-dose table", joined)
+        self.assertIn("sub-convulsing table", joined)
+        self.assertIn("116 table", joined)
+        self.assertIn("research model home as 169", joined)
+        self.assertIn("116-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pilocarpine_is_not_pilose(self):
+        b = analyze("dog", "pilocarpine")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("experimental pilocarpine", loc)
+        self.assertNotIn("temporal lobe model", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lppn_is_not_pilose(self):
+        b = analyze("dog", "laryngeal paralysis polyneuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("lppn3", loc)
+        self.assertNotIn("experimental pilocarpine", loc)
+        self.assertNotIn("temporal lobe model", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_pilose(self):
+        b = analyze("horse", "experimental pilocarpine")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("experimental pilocarpine", loc)
+        self.assertNotIn("temporal lobe model", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_pilose_still_fires(self):
+        b = analyze("cat", "pilocarpine model")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("experimental pilocarpine", loc)
+        self.assertIn("temporal lobe model", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_status_is_not_pilose(self):
+        b = analyze("dog", "status epilepticus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("stop the seizure", loc)
+        self.assertNotIn("experimental pilocarpine", loc)
+        self.assertNotIn("temporal lobe model", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_anisocoria_pilocarpine_is_not_pilose(self):
+        b = analyze("dog", "anisocoria, pilocarpine")
+        loc = (b["localization"] or "").lower()
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("dilute pilocarpine", joined)
+        self.assertNotIn("temporal lobe model", loc)
+        self.assertNotIn("experimental pilocarpine", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

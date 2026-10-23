@@ -212,6 +212,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-bengpn` | Assessment | Bengal cat polyneuropathy |
 | `ddx-cpd` | Assessment | Great Dane calcium phosphate / C7 |
 | `ddx-lppn` | Assessment | LPPN3 / CNTNAP1 young Great Dane |
+| `ddx-pilose` | Assessment | Experimental pilocarpine / temporal lobe model |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -383,6 +384,7 @@ Suggested names are short so they show up after three letters.
 | `dc-bengpn` | Discharge | After Bengal polyneuropathy talk |
 | `dc-cpd` | Discharge | After calcium phosphate / C7 talk |
 | `dc-lppn` | Discharge | After LPPN3 / CNTNAP1 talk |
+| `dc-pilose` | Discharge | After experimental pilocarpine / temporal lobe model talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2973,6 +2975,21 @@ DDX:
 Do not: harvest a surgery table. Harvest a 1.5–1.8 year clock. Copy a 282 table. Send a Great Dane home as calcium phosphate. Call it 134-only.
 Do next: Name the LPPN3. CNTNAP1. Not calcium phosphate. △ Plumb. Do not copy a 282 table.
 
+### `ddx-pilose`
+
+Experimental pilocarpine — {{patient.name}}
+Temporal lobe model [yes / not]. Not diagnostic drops [yes / not].
+
+DDX:
+1. Experimental pilocarpine — **Temporal lobe model. Not diagnostic drops**
+2. Printed convulsing / sub-convulsing tables stay on the page
+3. Packet 169 still owns dilute diagnostic drops. Packet 116 still owns cluster / status
+4. Not 169-only. Not 116-only
+5. Dog or cat can fire. Horse does not fire. Bare pilocarpine / bare status do not fire
+
+Do not: harvest a convulsing-dose table. Harvest a sub-convulsing table. Copy a 116 table. Send a research model home as 169. Call it 116-only.
+Do next: Name the experimental pilocarpine. Temporal lobe model. Not diagnostic drops. △ Plumb. Do not copy a 116 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4372,6 +4389,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-lppn`
 
 {{patient.name}} was evaluated for LPPN3 (a CNTNAP1 laryngeal-paralysis polyneuropathy reported in young Great Danes). This is not calcium-phosphate C7 disease. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-pilose`
+
+{{patient.name}} was evaluated for experimental pilocarpine (a rodent temporal lobe model, not a night diagnostic drop). This is not 169 dilute pilocarpine and not 116 cluster protocol. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

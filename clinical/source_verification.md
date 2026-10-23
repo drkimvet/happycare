@@ -3318,7 +3318,7 @@ Night rule: named calcium phosphate → **C7 dorsal displacement. Not wobbler.**
 
 ## 283. LPPN3 / CNTNAP1 in young Great Danes (Shelton JVIM 2025)
 
-No dedicated Plunkett LPPN3 chapter in the owned SA EM splits. Public Shelton et al. J Vet Intern Med. 2025 Jul-Aug;39(4):e70185. doi: 10.1111/jvim.70185. PMID: 40622077. PMCID: PMC12231043. Packet 282 still owns named calcium phosphate / C7. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP / old large-breed lar par. Packet 284 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1.5–1.8 year clock. Do not harvest pred 30 mg or gabapentin 200 mg. Do not fire on bare Great Dane / laryngeal paralysis / polyneuropathy / stridor. Dogs only. Skip cats.
+No dedicated Plunkett LPPN3 chapter in the owned SA EM splits. Public Shelton et al. J Vet Intern Med. 2025 Jul-Aug;39(4):e70185. doi: 10.1111/jvim.70185. PMID: 40622077. PMCID: PMC12231043. Packet 282 still owns named calcium phosphate / C7. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP / old large-breed lar par. Packet 284 owns named experimental pilocarpine / temporal lobe model, not this dump. Packet 285 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1.5–1.8 year clock. Do not harvest pred 30 mg or gabapentin 200 mg. Do not fire on bare Great Dane / laryngeal paralysis / polyneuropathy / stridor. Dogs only. Skip cats.
 
 Agree with Shelton 2025: a **homozygous missense CNTNAP1** variant (p.G937E; **LPPN3**) is confirmed in **young Great Dane** dogs with **laryngeal paralysis and polyneuropathy**. Exam, electrodiagnostics, and muscle/nerve biopsy were **lower motor neuron** with **axonal degeneration** and **large nerve fiber loss**. **Test for LPPN3 even if laryngeal paralysis is not noted** at diagnosis. Printed 1.5–1.8 year onset range, ~6 month progression to euthanasia, and the height/onset table stay on the page. Leonberger / Saint Bernard / Labrador LPPN variants stay on the page.
 
@@ -3333,3 +3333,21 @@ Book/public traps:
 - Do not call it 134-only.
 
 Night rule: named laryngeal paralysis polyneuropathy / LPPN3 → **CNTNAP1. Not calcium phosphate.** △ Plumb.
+
+## 284. Experimental pilocarpine / temporal lobe model (Francisco Front Neurosci 2018)
+
+No dedicated Plunkett experimental-pilocarpine chapter in the owned SA EM splits. Public Francisco EDS, Guedes RCA. Front Neurosci. 2018;12:897. doi: 10.3389/fnins.2018.00897. PMID: 30559645. PMCID: PMC6287009. Packet 169 still owns named anisocoria / dilute diagnostic drops. Packet 146 still owns named hyphema. Packet 156 still owns named KCS-in-food. Packet 116 still owns unnamed cluster / status. Packet 233 still owns named pilonidal / dermoid sinus. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 285 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a convulsing-dose table as lobby law. Do not harvest a sub-convulsing table as lobby law. Do not harvest printed 300–380 or 45. Do not fire on bare pilocarpine / bare status. Dog or cat. Skip horse.
+
+Agree with Francisco 2018: pilocarpine is a **muscarinic cholinergic agonist**. A **single intraperitoneal** printed 300–380 reproduces **temporal lobe epilepsy** in rats. Chronic printed 45 is **sub-convulsing** and does not produce behavioral epilepsy in that series. Printed CSD / anxiety-like / glycemia stay on the page. Picmonic, ScienceDirect-topics, Drugs.com, and human Alzheimer JAMA are not night sources.
+
+Night split: named experimental pilocarpine is a rodent temporal lobe model, not a night drug. Bare pilocarpine does not fire. Bare status stays 116. Anisocoria plus pilocarpine stays 169. Named hyphema stays 146. Named KCS stays 156. Named pilonidal stays 233. Named LPPN stays 283. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a convulsing-dose table.
+- Do not harvest a sub-convulsing table.
+- Do not copy a 116 table.
+- Do not send a research model home as 169.
+- Do not call it 116-only.
+
+Night rule: named experimental pilocarpine / pilocarpine model → **Temporal lobe model. Not diagnostic drops.** △ Plumb.
