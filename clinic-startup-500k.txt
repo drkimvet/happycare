@@ -1,0 +1,139 @@
+Starting a clinic with about $500,000 — Dr. Yujin Kim, NY
+Not legal or tax advice. Talk to a NY veterinary practice attorney and a CPA
+before you sign a lease or a purchase agreement.
+
+$500,000 is enough to get off other people’s payroll. It is not enough for a
+Midtown build-from-scratch hospital. Do not spend it proving a point to URvet.
+Send the $5,950 demand, then stop taking their shifts.
+
+------------------------------------------------
+What $500k actually buys in 2026
+------------------------------------------------
+De novo (new) small-animal GP, US average: $300k–$1M all-in.
+NY metro runs high. Leasehold build-out often $150k–$400k. Equipment
+$80k–$300k. Six months of payroll/rent $100k–$250k. Ground-up
+construction $275–$400 / sq ft before soft costs — skip that.
+
+Buy an existing GP: many sell $400k–$1.5M (often ~0.65–0.85× trailing
+gross, or an EBITDA multiple). SBA 7(a) can do ~10% down plus a seller
+note. Your $500k is the down payment + closing + six months of oxygen,
+not the whole purchase price of a busy 3-doctor hospital.
+
+Mobile / house-call: $50k–$150k to start. Rest stays in the bank.
+
+------------------------------------------------
+Pick one path (do not mix them)
+------------------------------------------------
+A) BUY a small existing practice on Long Island / outer boroughs  [best]
+   Immediate revenue, staff, DEA cabinet, clients. You are the boss on
+   day one. Use a vet-practice broker + SBA lender + your own CPA.
+   Walk from anything that needs you to drain the $500k to zero.
+
+B) LEASE a former clinic (already plumbed for wet tables / x-ray)
+   Two exam rooms. Used digital rad + dental. One LVT + one CSR.
+   Nassau / western Suffolk / Queens — not 57th Street.
+
+C) HOUSE-CALL or mobile first
+   Fastest exit from URvet. Keep LIU + GLG. Add scheduled home visits
+   and vaccine/wellness. Open a room later with cash flow, not hope.
+
+D) Do not do
+   Midtown Manhattan de novo. Ground-up construction. Buying a dying
+   ER that needs $1M of equipment. A partner who “knows business”
+   and wants your cash.
+
+------------------------------------------------
+Week 1–2 — entity and money
+------------------------------------------------
+1. NY professional entity: typically PLLC or PC (vets cannot just use a
+   regular LLC for the professional practice). NY attorney who does
+   professional entities. EIN. Dedicated business bank. Do not commingle.
+2. Park the $500k. Do not buy an x-ray this week.
+3. CPA: tax year, sales tax, payroll service, 1099 vs W-2 for staff.
+4. Personal runway separate from clinic cash: 6 months of YOUR bills
+   (LIU pay already helps). Clinic working capital is extra.
+
+------------------------------------------------
+Week 2–6 — NY licenses (start these while you shop)
+------------------------------------------------
+You already have DVM, PhD. Confirm:
+  • NY veterinarian license is current and registered
+    https://www.op.nysed.gov/professions/veterinarian
+  • DEA registration in YOUR name at the new address (cannot prescribe
+    controlled drugs without it)
+  • If the hospital will stock/dispense as an institution: NYS DOH
+    Class 3 controlled-substance license, then DEA for the facility
+  • NYS Board of Pharmacy rules if you run an in-house pharmacy
+  • USDA accreditation (if you do health certificates)
+  • Town/village CO, veterinary occupancy, medical waste, radiation
+    (x-ray) permit, sharps, DEA safe bolted down
+  • Malpractice (PLIT or equivalent), general liability, property,
+    workers’ comp, cyber (records)
+  • OSHA, SDS, radiation badges
+
+NY does not hand you a single “clinic license.” The building, the
+drugs, and your personal license are separate.
+
+------------------------------------------------
+Week 2–8 — find the practice or the box
+------------------------------------------------
+Buy path
+  • Brokers: vet-specific (not a random commercial realtor)
+  • NDA, then trailing 24 months P&L, production by doctor, rent,
+    staff list, equipment list, non-competes
+  • Independent valuation. Do not trust the seller’s multiple.
+  • Red flags: owner is the only doctor and is leaving town; rent resets
+    in 12 months; no dental; AR older than 90 days; “cash” not on books
+
+Lease path
+  • Only spaces that were already a vet, dentist, or medical with drains
+  • Landlord must allow veterinary use, boarding if you want it, and
+    after-hours
+  • 5–10 year lease, TI allowance, no personal guarantee if you can
+    avoid it (you often cannot — cap it)
+
+------------------------------------------------
+What to open with (lean GP)
+------------------------------------------------
+Must have day one
+  Two exam rooms, surgery + wet table, anesthesia, monitoring,
+  dental unit + digital dental, digital rad (used is fine),
+  in-house or reference lab, pharmacy starter, practice-management
+  software, phones, payment processing, website + Google Business
+
+Lease or wait
+  Ultrasound, endoscope, chemotherapy, CT
+
+Staff day one
+  You + 1 LVT + 1 CSR. Do not hire a hospital manager in month one.
+
+------------------------------------------------
+Rough $500k split if you LEASE a former clinic on LI
+------------------------------------------------
+  Lease deposit + first months          $20–40k
+  Build-out / paint / plumbing fix      $80–180k
+  Equipment (mix used + lease analyzers)$120–200k
+  Licenses, legal, insurance            $10–25k
+  Software, deposit, opening marketing  $10–20k
+  Working capital (6 months)            $120–180k
+  -----------------------------------------------
+  Stay above $50k unused. That is the oxygen.
+
+If the split does not fit, you are in the wrong space. Go mobile
+or buy with SBA instead of forcing a pretty build.
+
+------------------------------------------------
+URvet while you do this
+------------------------------------------------
+Still send draft-demand-7-days.txt ($5,950, October 3).
+Do not work another unpaid commute to fund their hospital.
+Do not tell them you are opening. It does not help the claim.
+The $5,950 is walking-away money. Collect it on paper.
+
+------------------------------------------------
+First three phone calls (this week)
+------------------------------------------------
+1. NY attorney: professional entity + later lease/purchase review
+2. CPA who has other vet clients
+3. Practice broker OR a commercial broker who has done vet conversions
+   on Long Island — ask for former-clinic listings only

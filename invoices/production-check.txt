@@ -1,0 +1,34 @@
+Dr. Yujin Kim production check — URvet Care Roslyn
+Period: Sep 8, 2026 4:00am UTC – Sep 16, 2026 3:59am UTC
+Source: clinic invoice export (Gross column)
+Rule: 23% of Gross; exclude credits, not-rendered, and any negative amount
+
+Positive Gross invoices (Provider ID 591576, Dr. Yujin Kim)
+  $1,981.95  Willie (Samantha Ali)
+  $1,564.10  Willie (Samantha Ali)
+     $79.56  Bean (Christine Darcy)
+    $285.78  N/A (Christine Darcy)
+    $700.50  Bean (Christine Darcy)
+    $125.74  N/A (Christine Darcy)
+    $244.26  N/A (Christine Darcy)
+    $102.04  Sheru (Amninder Singh)
+  $1,385.08  Sheru (Amninder Singh)
+    $360.70  Rio (Ayal Yavetz)
+    $920.34  Rio (Ayal Yavetz)
+    $321.18  Finnegan (Jean Steinbach)
+    $507.68  Finnegan (Jean Steinbach)
+  $1,747.41  Henry (Lauren Steinberg)
+  ----------
+  $10,326.32  Gross included
+
+Excluded (do not reduce production)
+  Credits / not rendered totaling $1,622.63 in negative Gross
+  (Willie/Samantha Ali credits, Rio credit memo, $0 credit, etc.)
+
+23% × $10,326.32 = $2,375.0536 → $2,375.05
+Hourly base                         $8,900.00
+Amount due                         $11,275.05
+
+Not used:
+  Net after negatives  $8,703.69 × 23% = $2,001.85
+  Totals after order discount (Willie $542.88 off) × 23% = $2,250.19

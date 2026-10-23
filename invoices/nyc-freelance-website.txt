@@ -1,0 +1,41 @@
+Last time: NYC website = DCWP Freelance Isn't Free Act
+https://www.nyc.gov/site/dca/workers/workersrights/freelancer-workers.page
+File: https://a866-dcwpbp.nyc.gov/worker-complaint/file-complaint?topic=freelancer
+Ask first: freelancer@dcwp.nyc.gov  (draft-dcwp-dvm-question.txt)
+
+What that site does
+  Sends your complaint to the hiring party. They have 20 days to answer.
+  If they stay silent, DCWP gives you a “did not respond” notice.
+  In court that silence is treated as a violation unless they prove otherwise.
+  The website does not deposit money. Double damages are a court remedy,
+  not a DCWP check. NYC small claims cap is $10,000, so claim $5,950 unpaid.
+  Do not claim $11,900 (double) — it will not fit.
+
+Oct 22, 2026 — do not treat DCWP as automatic
+  City law § 20-927(3) and State GBS § 1410(3)(c) exclude
+  “any person who is a licensed medical professional.”
+  They never define the phrase. A DVM is NYSED-licensed
+  (Veterinary Medicine). Coverage is uncertain.
+  If DCWP says you are excluded, skip FIFA. File Manhattan
+  small claims for the $5,950 contract balance.
+  That is the stack that wins. The website is optional.
+
+This time, order (only if not already in court)
+  1) Demand sent October 23. Pay by October 30, 5:00 PM ET.
+     Do not file court on the send day.
+  2) Optional same weekend: email DCWP — am I covered as a DVM?
+  3) If yes before you file court — DCWP complaint (court/other agency = No), then AG
+     https://ag.ny.gov/file-complaint
+     https://dol.ny.gov/freelance-isnt-free-act
+     Do not file AG before DCWP (§ 20-931(c)(1)(b)).
+     Wait the 20 days
+  4) If no / no answer, and still unpaid Oct 30 — Manhattan Small Claims
+     with exhibits A–J. Add a DCWP no-response letter only if you have one.
+
+DCWP form (use only after they say a DVM is covered)
+  Occupation: veterinarian / independent contractor
+  Agreement: per diem relief, $250/hour in hospital, $300/hour past midnight
+  Amount: $5,950.00
+  Violations: not paid in full; no written contract
+  Hiring party: business — UR VET CARE, LLC
+  Do not attach the 3-year-ago case.
