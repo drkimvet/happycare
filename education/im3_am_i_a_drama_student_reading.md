@@ -32,11 +32,11 @@ Therapeutic hierarchy for this course: identify and treat confirmed medical abno
 
 ## Why these two cases
 
-Owners rarely say "my dog has a thyroid problem" or "my dog's calcium is off." They say the dog panics in the elevator, or paces all night and seems lost. Those are behavioral complaints. They are easy to label as training, anxiety, or old age.
+Owners rarely say "my dog has a thyroid problem" or "my dog's calcium is off." They say the dog freezes in the lobby, or paces all night and seems lost. Those are behavioral complaints. They are easy to label as training, anxiety, or old age.
 
 The lecture idea is that **behavior is an integrative endpoint of multiple physiologic systems**. When a behavior is uncontrollable or refractory to environmental change and training, ask what is driving it from underneath before you treat the behavior itself.
 
-Oliver is the case in which the medical screen is normal and the physiology is still the point: a conditioned autonomic storm in one context. Coco is the case in which the owner sees night-time restlessness and "dementia," and the chart underneath is a pile of endocrine, urinary, cardiopulmonary, and mineral problems. The first urinalysis looks like a urinary tract infection. The renal values stay normal. That combination is the trap.
+Oliver is the case in which a building visit looks like "drama," and the physiology is a three-step sympathetic storm. The same dog was hospitalized for parvovirus at 11 weeks. Coco is the case in which the owner sees night-time restlessness and "dementia," and the chart underneath is a pile of endocrine, urinary, cardiopulmonary, and mineral problems. The first urinalysis looks like a urinary tract infection. The renal values stay normal. That combination is the trap.
 
 Background to have in mind:
 
@@ -49,32 +49,144 @@ Background to have in mind:
 
 ## Case 1. Oliver
 
-### Situational phobia with physiologic amplification
+### Situational phobia, a three-step sympathetic storm, and a parvo hospitalization at 11 weeks
 
-**Signalment (lecture case):** 2-year-old mixed-breed dog.
+This section is built from the short Integration Medicine III Oliver deck (7 slides). The overview lecture also names a 2-year-old mixed-breed dog with panic confined to elevator use and a normal CBC, chemistry, and thyroid profile. The short deck does not reprint that laboratory screen. Write both sources down. Do not collapse them into one sentence until you decide they are the same visit.
 
-**Primary complaint:** Panic confined to elevator use: tremor, vocalization, urination, and avoidance.
+---
 
-**Medical history as given in the lecture notes:** CBC, serum chemistry, and thyroid profile normal. No endocrinopathy and no neurologic deficit recorded.
+### Stage O1. The building sequence (printed as "Investigating Oliver's situational phobia")
 
-**How a doctor frames it:** The stimulus is vestibular motion plus spatial confinement. That can activate the sympathetic branch of the autonomic nervous system (tachycardia, tremor, acute cortisol elevation as a stress response, not as a Cushing's diagnosis). Repeated pairing can strengthen an associative fear memory. The phenotype looks like "drama." The localization is context-specific autonomic reactivity, not generalized anxiety, until you prove otherwise.
+The short deck walks the body through three places in one outing. Treat each line as an observed finding first, then as a proposed circuit.
+
+| Place | Observed finding on the slide | Circuit named on the slide | Interpretation named on the slide |
+| --- | --- | --- | --- |
+| Hallway | Panting, mydriasis, tachycardia, scanning the environment | Locus coeruleus–adrenal axis | Early sympathetic activation; heightened arousal; acute anxiety or catecholamine surge |
+| Lobby | Refused to walk further, stood still; the owner carried him | Periaqueductal gray (PAG) and amygdalo-cortical circuits | Behavioral freezing; motor inhibition from fear paralysis |
+| Concierge | Hyperthermia, severe tachycardia, sweaty paw pads | Sympathoadrenal hyperactivation | Catecholamine surge with a thermogenic and cardiovascular response |
+
+This is still a stress response until a validated adrenal test says otherwise. Hyperthermia and sweaty pads at the concierge are not a fever workup by themselves, and they are not proof of heatstroke. They are the same axis turning up.
 
 **Pause and think**
 
-1. Write a problem representation in one sentence. Include species, age, the exact context, and the four body signs.
-2. What would make you abandon a purely situational diagnosis tonight? Name history and exam findings, not a drug.
-3. Why is a normal thyroid panel necessary here, and why is it not sufficient?
-4. Design a desensitization plan in four steps that does not start with a daily SSRI.
-5. If the panic generalizes to hallways and cars, what changes in your plan, and what does not?
+1. Write a one-sentence problem representation that names the three places and the new sign that appears at each step.
+2. Sort each row of the table into the four boxes (observed finding, interpretation, causal hypothesis, diagnostic conclusion). Which column is already a conclusion you have not proved?
+3. What would make this no longer "situational only" tonight? Name history and exam findings, not a drug.
+4. If the overview slide says elevator and this deck says hallway, lobby, and concierge, what do you write in the problem list?
+5. Design a desensitization plan that starts in the hallway and does not start with a daily SSRI.
+
+---
+
+### Stage O2. The 11-week parvo record (4 Jan 2021)
+
+The short deck then shows a medical record from when Oliver was 11 weeks old. Diarrhea and vomiting had stopped. He was lethargic and inappetent. The owner was concerned about progression.
+
+| Parameter | Printed value |
+| --- | --- |
+| Weight | 4.15 lb |
+| Temperature | 101 F |
+| Mucous membranes | Pale, tacky |
+| CRT | 2 to 3 seconds |
+| Heart | 120 / min, regular, strong synchronous femoral pulses, no murmur or arrhythmia |
+| Lungs | Normal bronchovesicular sounds |
+| Abdomen | Soft, nonpainful, no masses |
+| Hydration | 5 to 10 percent dehydrated |
+| Neurologic | Alert, however generalized weakness |
+| Body condition | 3.5 / 9 |
+| Coat | Unkempt, no ectoparasites |
+| Urogenital | Male intact |
+
+Assessment as written: parvovirus, dehydrated, lethargic, generalized weakness.
+
+Plan as written: the clinic could offer fluids, blood work, day hospitalization, antimicrobials, anti-nausea medication, a stomach protectant, an appetite stimulant, and a blood-pressure check. The estimate was over $1,000 and was described as not gold-standard for a sick parvo puppy because of limited capacity. A tertiary-hospital estimate of about $6,000 to $7,000 was not affordable. The owner agreed to take him to a lower-cost referral hospital.
+
+**Pause and think**
+
+1. Which problems are urgent on this page, and which can wait?
+2. Why does "no longer having diarrhea" not take parvovirus off the list?
+3. Pale tacky membranes, CRT 2 to 3 seconds, and 5 to 10 percent dehydration: what do you do first, and what number do you not invent?
+4. How does a week in a hospital at 11 weeks change the socialization window of 3 to 12 weeks?
+5. Write the two sentences you would say to the owner about gold-standard care versus the care you can actually deliver tonight.
+
+---
+
+### Stage O3. After parvo (25 Jan 2021)
+
+Twenty-one days later the record says the historical parvo diagnosis is cleared.
+
+| Parameter | Printed value |
+| --- | --- |
+| Weight | 5.8 lb |
+| Temperature | 101.5 F |
+| Mentation | Bright, alert, responsive; hydrated |
+| Mucous membranes | Pink, moist; CRT 1.5 seconds |
+| Heart | 100 / min, regular sinus rhythm, no murmur, pulses strong and synchronous |
+| Lungs | Normal, no increased effort |
+| Neurologic | Normal mentation, no nystagmus or head tilt, cranial nerves intact |
+| Musculoskeletal | Ambulatory in all four limbs, normal gait, BCS 4 / 9 |
+| Coat | Healthy, no ectoparasites |
+
+Plan as written: DA2PP plus lepto in the right forelimb in three weeks; oral Bordetella; a topical parasite preventive, with a later conversation about an oral chewable; consider Lyme later because the family has a house upstate; return in three weeks for the DA2PP plus lepto booster and rabies.
+
+**Pause and think**
+
+1. What did 21 days change on the exam, and what did it not prove about future fear?
+2. A recovered parvo puppy is not a behavior diagnosis. Which follow-up questions protect the 3-to-12-week window now?
+3. The overview slide lists a later normal CBC, chemistry, and thyroid. Which of those, if any, belongs on 25 Jan 2021?
+
+---
+
+### Stage O4. Problem list and differentials (as printed)
+
+The short deck lists, on one slide, the problems, differentials, and tests to rule out:
+
+- Poor socialization during the critical window of 3 to 12 weeks
+- Generalized anxiety disorder
+- Thunder phobia
+- Noise aversion
+- Situational phobia
+- Trauma
+- Hospitalized for parvovirus infection at 11 weeks old
+
+That slide does not print the tests. It also does not print a single winner. Situational phobia is one row, not the diagnosis until you have watched the context and excluded the others.
+
+**Pause and think**
+
+1. Which items on that list are observed history, and which are diagnoses that still need criteria?
+2. Can situational phobia and thunder phobia both be true? What history separates them?
+3. What medical tests would you still run before you keep a behavior-only plan, and why?
+4. If the dog freezes only in this building, which rows become less likely, and which stay open?
+
+---
+
+### Stage O5. Pharmacology recap (class matching, not a prescription)
+
+The last slide is a simplified matching chart. It names drug **classes**, not milligram-per-kilogram standing orders. Confirm every number in Plumb or the hospital protocol.
+
+| Behavior category | Brain region focus | Main transmitter to modulate | Drug class on the slide |
+| --- | --- | --- | --- |
+| Panic / noise phobia | Locus coeruleus, PAG | Decrease norepinephrine | Alpha-2 agonist |
+| Chronic anxiety | Amygdala, cortex | Increase serotonin | SSRI / TCA |
+| Fear aggression | Amygdala, PAG | Increase serotonin and GABA | SSRI plus a benzodiazepine |
+| Compulsive disorder | Basal ganglia, cortex | Increase serotonin, decrease dopamine | SSRI, clomipramine |
+| Cognitive dysfunction | Hippocampus, cortex | Increase dopamine and acetylcholine | Selegiline |
+| Social fear / trauma | Amygdala, locus coeruleus | Increase serotonin, decrease norepinephrine | SSRI plus clonidine |
+
+**Pause and think**
+
+1. Using only the building-sequence signs, which row of this table do you start with, and which row do you not start with?
+2. Why is a daily SSRI the wrong first move if the panic is still one lobby?
+3. Clonidine appears in two rows (alpha-2 agonist; social fear / trauma). What history would make you consider it, and what would you check first?
+4. Coco later carries a cognitive-dysfunction label. Which row of this table is about Coco, and why is it dangerous to give Oliver that row?
+
+**Teaching point:** The hallway is early sympathetic activation. The lobby is freezing. The concierge is a catecholamine surge you can see on the pads. A parvo hospitalization at 11 weeks is history that belongs on the problem list. It is not, by itself, the diagnosis of the freeze. Drug class follows the circuit you have actually localized.
 
 **Management principles (not a recipe):**
 
-- Behavioral desensitization and counterconditioning to the elevator context come first.
-- Vestibular habituation exercises are a sensory plan, not a personality plan.
-- Short-term situational anxiolysis and, if generalization occurs, a serotonergic trial are hospital-protocol conversations. Do not copy a milligram-per-kilogram from a slide.
-- Reassess after the context is trained. If the dog is still panicking in one place only, you have not failed medically. You have more training to do. If the dog is now panicking everywhere, reopen the medical screen.
-
-**Teaching point:** Environment-specific autonomic reactivity can mimic generalized anxiety. A normal CBC, chemistry, and thyroid panel do not make the physiology irrelevant. They tell you the physiology is the fear circuit, not an endocrinopathy.
+- Localize the step (hallway versus lobby versus concierge) before you name a drug class.
+- Desensitization and counterconditioning start at the earliest step the dog can still eat.
+- Situational anxiolysis or a serotonergic trial is a hospital-protocol conversation.
+- Reassess after the context is trained. If the dog now panics everywhere, reopen the medical screen and the differential on the problem-list slide.
 
 ---
 
@@ -482,11 +594,11 @@ Build a master problem list. For each problem, record the evidence, whether it i
 
 |  | Oliver | Coco |
 | --- | --- | --- |
-| Behavioral phenotype | Panic in one context (elevator) | Restless, disoriented, vocal at night |
-| Medical screen | Normal CBC, chemistry, thyroid as given | Overlapping endocrine, urinary, cardiopulmonary, and mineral problems |
-| Functional axes | Autonomic / fear circuit; vestibular and confinement | Endocrine, metabolic, urinary, cardiac, pulmonary |
-| First priority | Train the context; do not skip the medical screen | Treat the medical drivers of night-time restlessness, then reassess cognition |
-| Trap | Calling a situational phobia "just drama" | Calling nocturia and panting "dementia" after a UTI is cleared |
+| Behavioral phenotype | Hallway arousal, lobby freeze, concierge catecholamine surge | Restless, disoriented, vocal at night |
+| Medical screen | Overview slide: later normal CBC, chemistry, thyroid. Short deck: parvo at 11 weeks, then cleared | Overlapping endocrine, urinary, cardiopulmonary, and mineral problems |
+| Functional axes | Locus coeruleus, PAG, amygdala; sympathoadrenal | Endocrine, metabolic, urinary, cardiac, pulmonary |
+| First priority | Localize the step; train from the hallway; do not skip a medical screen | Treat the medical drivers of night-time restlessness, then reassess cognition |
+| Trap | Calling a lobby freeze "just drama," or calling 11-week parvo the whole diagnosis | Calling nocturia and panting "dementia" after a UTI is cleared |
 
 Bodaway (the Irish Wolfhound mix with refractory itch) remains in the original short pre-lecture if you were assigned that case. The same hierarchy applies: complete the pruritus workup, treat confirmed abnormalities, and do not call chronic scratch a habit.
 
@@ -496,9 +608,10 @@ Bodaway (the Irish Wolfhound mix with refractory itch) remains in the original s
 
 **Oliver**
 
-1. One-sentence problem representation.
-2. Three findings that would make the case no longer "situational only."
-3. The two sentences you would say to the owner to separate a fear response from a moral failure.
+1. One-sentence problem representation that includes hallway, lobby, and concierge.
+2. Three findings that would make the case no longer situational only.
+3. Which row of the pharmacology table matches the lobby freeze, and which row matches Coco's dementia label.
+4. The two sentences you would say to the owner to separate a fear response from a moral failure, and the two sentences about gold-standard parvo care versus the care you can deliver.
 
 **Coco**
 
@@ -516,7 +629,7 @@ Bring your written answers and one question about something in this reading that
 
 ## Sources used to build this packet
 
-- Integration Medicine III lecture notes, "Am I a Drama?" (Oliver case; Coco lecture figures marked as unverified against the laboratory PDFs).
+- Integration Medicine III short Oliver deck (7 slides): building-sequence investigation, 4 Jan 2021 and 25 Jan 2021 parvo records, problem-list slide, pharmacology recap. Overview lecture "Am I a Drama?" for the later 2-year-old / elevator / normal-lab lines, marked as not reprinted on the short deck. Coco lecture PTH and calcium figures marked as unverified against the laboratory PDFs.
 - De-identified primary-care chart extracts (Jan 2022 through Jun 2023), including the June 2022 cystocentesis/culture sequence and the desmopressin USG series.
 - Antech Vet Screen and UPC (27 to 28 Jan 2022; 31 Mar 2022).
 - Nelco allergy panel (14 to 15 Sep 2021), food list only as printed.
