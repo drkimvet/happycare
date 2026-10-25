@@ -459,6 +459,12 @@ Calcium lactate and vitamin D3 drops were on the 2023 medication list. When they
 
 The lecture slides list values that are **not on those PDFs**: PTH 25 pmol/L (slide reference 1.1 to 10.6), total calcium 8.8 mg/dL, ionized calcium 1.30 mmol/L, and a USG change 1.006 to 1.017 after vitamin D3. Treat those as lecture-note figures to be reconciled in class, not as findings you have already verified. The August 2023 IDEXX total calcium is 10.8 mg/dL, not 8.8. That is a chart conflict. Write it down.
 
+**Figure 1. Conventional CDI path versus the metabolic working model**
+
+![From Resistance to Recovery: Breaking the Metabolic Lock](IM3_Coco_Metabolic_Lock_Figure.png)
+
+Two-panel teaching figure. Left: the conventional specialist path that labeled primary central diabetes insipidus, then stopped trilostane and raised desmopressin from 1 drop three times daily to 2 drops twice daily (printed chart). Right: the lecture working model of secondary nephrogenic DI and secondary hyperparathyroidism, with a proposed V2 / AQP2 lock. Values marked * are lecture-note figures (PTH 25.00 pmol/L; USG 1.004–1.006 and 1.012–1.017). They are not on the Antech / IDEXX pages in this packet. The V2 / AQP2 lock is a hypothesis, not a receptor assay. A rising USG after diet and vitamin D support does not prove receptor-level resistance and does not exclude residual CDI, hyperadrenocorticism, or infection. Confirm every milligram-per-kilogram in Plumb. Do not copy a calcitriol number from a lecture slide as a standing order.
+
 **Pause and think**
 
 1. Before you supplement calcium and vitamin D in a dog, which measurements must you have, and why?
@@ -630,6 +636,7 @@ Bring your written answers and one question about something in this reading that
 ## Sources used to build this packet
 
 - Integration Medicine III short Oliver deck (7 slides): building-sequence investigation, 4 Jan 2021 and 25 Jan 2021 parvo records, problem-list slide, pharmacology recap. Overview lecture "Am I a Drama?" for the later 2-year-old / elevator / normal-lab lines, marked as not reprinted on the short deck. Coco lecture PTH and calcium figures marked as unverified against the laboratory PDFs.
+- Teaching figure (`IM3_Coco_Metabolic_Lock_Figure.png`): two-panel conventional-CDI path versus proposed secondary nDI / secondary HPT. Lecture-note PTH and USG values asterisked. V2 / AQP2 labeled as hypothesis, not as a receptor assay.
 - De-identified primary-care chart extracts (Jan 2022 through Jun 2023), including the June 2022 cystocentesis/culture sequence and the desmopressin USG series.
 - Antech Vet Screen and UPC (27 to 28 Jan 2022; 31 Mar 2022).
 - Nelco allergy panel (14 to 15 Sep 2021), food list only as printed.
