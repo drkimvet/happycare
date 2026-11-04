@@ -665,6 +665,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("lppn3", VERIF.lower())
         self.assertIn("experimental pilocarpine", VERIF.lower())
         self.assertIn("temporal lobe model", VERIF.lower())
+        self.assertIn("cmm1", VERIF.lower())
+        self.assertIn("efnb3 frameshift", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1087,6 +1089,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-lppn`", MACRO)
         self.assertIn("`ddx-pilose`", MACRO)
         self.assertIn("`dc-pilose`", MACRO)
+        self.assertIn("`ddx-cmm1`", MACRO)
+        self.assertIn("`dc-cmm1`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1191,6 +1195,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("lppn3", MACRO.lower())
         self.assertIn("experimental pilocarpine", MACRO.lower())
         self.assertIn("temporal lobe model", MACRO.lower())
+        self.assertIn("cmm1", MACRO.lower())
+        self.assertIn("efnb3 frameshift", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1657,6 +1663,8 @@ class PublicCardInvariants(unittest.TestCase):
             "lppn3",
             "experimental pilocarpine",
             "temporal lobe model",
+            "cmm1",
+            "efnb3 frameshift",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

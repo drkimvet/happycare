@@ -213,6 +213,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cpd` | Assessment | Great Dane calcium phosphate / C7 |
 | `ddx-lppn` | Assessment | LPPN3 / CNTNAP1 young Great Dane |
 | `ddx-pilose` | Assessment | Experimental pilocarpine / temporal lobe model |
+| `ddx-cmm1` | Assessment | Weimaraner CMM1 / EFNB3 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -385,6 +386,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cpd` | Discharge | After calcium phosphate / C7 talk |
 | `dc-lppn` | Discharge | After LPPN3 / CNTNAP1 talk |
 | `dc-pilose` | Discharge | After experimental pilocarpine / temporal lobe model talk |
+| `dc-cmm1` | Discharge | After Weimaraner CMM1 / EFNB3 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -2990,6 +2992,21 @@ DDX:
 Do not: harvest a convulsing-dose table. Harvest a sub-convulsing table. Copy a 116 table. Send a research model home as 169. Call it 116-only.
 Do next: Name the experimental pilocarpine. Temporal lobe model. Not diagnostic drops. △ Plumb. Do not copy a 116 table.
 
+### `ddx-cmm1`
+
+CMM1 — {{patient.name}}
+EFNB3 frameshift [yes / not]. Not NKX2-8 dysraphism [yes / not].
+
+DDX:
+1. CMM1 — **EFNB3 frameshift. Not NKX2-8 dysraphism**
+2. Printed c.643_644dup / 3 of 11 / saltatorial gait stay on the page
+3. Packet 230 still owns NKX2-8 spinal dysraphism
+4. Not 230-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Weimaraner / bunny-hop do not fire
+
+Do not: harvest a 3–4 week clock. Harvest an 8-week euthanasia clock. Copy a 230 table. Send a Weimaraner home as NKX2-8 dysraphism. Call it 230-only.
+Do next: Name the CMM1. EFNB3 frameshift. Not NKX2-8 dysraphism. △ Plumb. Do not copy a 230 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4397,6 +4414,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-pilose`
 
 {{patient.name}} was evaluated for experimental pilocarpine (a rodent temporal lobe model, not a night diagnostic drop). This is not 169 dilute pilocarpine and not 116 cluster protocol. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-cmm1`
+
+{{patient.name}} was evaluated for CMM1 (an EFNB3 frameshift congenital mirror-movement gait in Weimaraners). This is not NKX2-8 spinal dysraphism. Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

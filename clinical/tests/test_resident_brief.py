@@ -8318,6 +8318,64 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("experimental pilocarpine", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_cmm1_is_efnb3_not_dysraphism(self):
+        b = analyze("dog", "congenital mirror movement")
+        loc = b["localization"].lower()
+        self.assertIn("cmm1", loc)
+        self.assertIn("efnb3 frameshift", loc)
+        self.assertIn("not nkx2-8 dysraphism", loc)
+        self.assertNotIn("bunny-hop by 4–6 weeks", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("3–4 week clock", joined)
+        self.assertIn("8-week euthanasia", joined)
+        self.assertIn("230 table", joined)
+        self.assertIn("weimaraner home as nkx2-8", joined)
+        self.assertIn("230-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_weimaraner_is_not_cmm1(self):
+        b = analyze("dog", "weimaraner")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("cmm1", loc)
+        self.assertNotIn("efnb3 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_bunny_hop_is_not_cmm1(self):
+        b = analyze("dog", "bunny-hopping gait")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("cmm1", loc)
+        self.assertNotIn("efnb3 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dysraph_is_not_cmm1(self):
+        b = analyze("dog", "spinal dysraphism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("bunny-hop by 4–6 weeks", loc)
+        self.assertNotIn("cmm1", loc)
+        self.assertNotIn("efnb3 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cmm1(self):
+        b = analyze("horse", "cmm1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("cmm1", loc)
+        self.assertNotIn("efnb3 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_cmm1(self):
+        b = analyze("cat", "efnb3")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("cmm1", loc)
+        self.assertNotIn("efnb3 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_efnb3_still_fires(self):
+        b = analyze("dog", "efnb3")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cmm1", loc)
+        self.assertIn("efnb3 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

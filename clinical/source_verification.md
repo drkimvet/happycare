@@ -3318,7 +3318,7 @@ Night rule: named calcium phosphate → **C7 dorsal displacement. Not wobbler.**
 
 ## 283. LPPN3 / CNTNAP1 in young Great Danes (Shelton JVIM 2025)
 
-No dedicated Plunkett LPPN3 chapter in the owned SA EM splits. Public Shelton et al. J Vet Intern Med. 2025 Jul-Aug;39(4):e70185. doi: 10.1111/jvim.70185. PMID: 40622077. PMCID: PMC12231043. Packet 282 still owns named calcium phosphate / C7. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP / old large-breed lar par. Packet 284 owns named experimental pilocarpine / temporal lobe model, not this dump. Packet 285 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1.5–1.8 year clock. Do not harvest pred 30 mg or gabapentin 200 mg. Do not fire on bare Great Dane / laryngeal paralysis / polyneuropathy / stridor. Dogs only. Skip cats.
+No dedicated Plunkett LPPN3 chapter in the owned SA EM splits. Public Shelton et al. J Vet Intern Med. 2025 Jul-Aug;39(4):e70185. doi: 10.1111/jvim.70185. PMID: 40622077. PMCID: PMC12231043. Packet 282 still owns named calcium phosphate / C7. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP / old large-breed lar par. Packet 284 owns named experimental pilocarpine / temporal lobe model, not this dump. Packet 285 owns named CMM1 / EFNB3, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1.5–1.8 year clock. Do not harvest pred 30 mg or gabapentin 200 mg. Do not fire on bare Great Dane / laryngeal paralysis / polyneuropathy / stridor. Dogs only. Skip cats.
 
 Agree with Shelton 2025: a **homozygous missense CNTNAP1** variant (p.G937E; **LPPN3**) is confirmed in **young Great Dane** dogs with **laryngeal paralysis and polyneuropathy**. Exam, electrodiagnostics, and muscle/nerve biopsy were **lower motor neuron** with **axonal degeneration** and **large nerve fiber loss**. **Test for LPPN3 even if laryngeal paralysis is not noted** at diagnosis. Printed 1.5–1.8 year onset range, ~6 month progression to euthanasia, and the height/onset table stay on the page. Leonberger / Saint Bernard / Labrador LPPN variants stay on the page.
 
@@ -3336,7 +3336,7 @@ Night rule: named laryngeal paralysis polyneuropathy / LPPN3 → **CNTNAP1. Not 
 
 ## 284. Experimental pilocarpine / temporal lobe model (Francisco Front Neurosci 2018)
 
-No dedicated Plunkett experimental-pilocarpine chapter in the owned SA EM splits. Public Francisco EDS, Guedes RCA. Front Neurosci. 2018;12:897. doi: 10.3389/fnins.2018.00897. PMID: 30559645. PMCID: PMC6287009. Packet 169 still owns named anisocoria / dilute diagnostic drops. Packet 146 still owns named hyphema. Packet 156 still owns named KCS-in-food. Packet 116 still owns unnamed cluster / status. Packet 233 still owns named pilonidal / dermoid sinus. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 285 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a convulsing-dose table as lobby law. Do not harvest a sub-convulsing table as lobby law. Do not harvest printed 300–380 or 45. Do not fire on bare pilocarpine / bare status. Dog or cat. Skip horse.
+No dedicated Plunkett experimental-pilocarpine chapter in the owned SA EM splits. Public Francisco EDS, Guedes RCA. Front Neurosci. 2018;12:897. doi: 10.3389/fnins.2018.00897. PMID: 30559645. PMCID: PMC6287009. Packet 169 still owns named anisocoria / dilute diagnostic drops. Packet 146 still owns named hyphema. Packet 156 still owns named KCS-in-food. Packet 116 still owns unnamed cluster / status. Packet 233 still owns named pilonidal / dermoid sinus. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 285 owns named CMM1 / EFNB3, not this dump. Do not harvest a convulsing-dose table as lobby law. Do not harvest a sub-convulsing table as lobby law. Do not harvest printed 300–380 or 45. Do not fire on bare pilocarpine / bare status. Dog or cat. Skip horse.
 
 Agree with Francisco 2018: pilocarpine is a **muscarinic cholinergic agonist**. A **single intraperitoneal** printed 300–380 reproduces **temporal lobe epilepsy** in rats. Chronic printed 45 is **sub-convulsing** and does not produce behavioral epilepsy in that series. Printed CSD / anxiety-like / glycemia stay on the page. Picmonic, ScienceDirect-topics, Drugs.com, and human Alzheimer JAMA are not night sources.
 
@@ -3351,3 +3351,30 @@ Book/public traps:
 - Do not call it 116-only.
 
 Night rule: named experimental pilocarpine / pilocarpine model → **Temporal lobe model. Not diagnostic drops.** △ Plumb.
+
+## 285. Weimaraner CMM1 / EFNB3 (Schwarz Mov Disord 2025)
+
+No dedicated Plunkett CMM1 chapter in the owned SA EM splits. Public Schwarz C, Bartenschlager F, Kershaw O, et al. EFNB3 frameshift variant in Weimaraner dogs with a condition resembling a congenital mirror movement disorder. Mov Disord. 2025;40(9):1883-1891. doi:10.1002/mds.30243. PMID: 40401490. PMCID: PMC12485594. Packet 230 still owns named spinal dysraphism / myelodysplasia / NKX2-8 bunny-hop. Packet 284 still owns named experimental pilocarpine. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 286 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3–4 week clock as lobby law. Do not harvest an 8-week euthanasia clock as lobby law. Do not fire on bare Weimaraner / bunny-hop / saltatorial. Dogs only. Skip cats. Skip horse.
+
+Agree with Schwarz 2025: **CMM1** in Weimaraner dogs is an **autosomal recessive** **EFNB3** 2-bp duplication (XM_038536724.1:c.643_644dup) predicted to cause **p.(Ala216Valfs*79)**. Three of 11 puppies had synchronized saltatorial locomotion, pelvic limbs worse than thoracic, onset about 3 to 4 weeks, normal mentation, and were euthanized at 8 weeks. Postmortem histology of brain and cord was normal. They were wild-type at **NKX2-8**; this is **not** Weimaraner spinal dysraphism / BHS1. Printed variant, 3 of 11, saltatorial gait, and 8-week clock stay on the page.
+
+Night split: named CMM1 / EFNB3 / congenital mirror movement is EFNB3 frameshift; not NKX2-8 dysraphism. Bare Weimaraner does not fire. Bare bunny-hop does not fire. Cat does not fire. Horse does not fire. Named dysraphism stays 230. Named PILOSE stays 284. Named LPPN stays 283. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3–4 week clock.
+- Do not harvest an 8-week euthanasia clock.
+- Do not copy a 230 table.
+- Do not send a Weimaraner home as NKX2-8 dysraphism.
+- Do not call it 230-only.
+
+Night rule: named congenital mirror movement / CMM1 / EFNB3 → **EFNB3 frameshift. Not NKX2-8 dysraphism.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A 4-week Weimaraner bunny-hops. Mentation is normal. Which gene split matters at night, and what does wild-type NKX2-8 tell you?
+- NAVLE 2: Three of eleven Weimaraner littermates hop synchronously. Inheritance on the printed page is what, and what do you not promise from histology?
+- NAVLE 3: You are asked to copy a 3–4 week clock into a standing order. What stays on the page?
+- Oral: How do you tell the owner CMM1 is not “the Weimaraner spinal dysraphism they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Weimaraner,” why does this gate stay dark?
+- Attending: Horse CMM1 — fire or skip?
+- Attending: Dual-named “spinal dysraphism, EFNB3” — which loc should win, and why?

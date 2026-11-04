@@ -1712,6 +1712,16 @@ PILOSE_RE = re.compile(
     r"temporal lobe.{0,40}pilocarpine",
     re.I,
 )
+# Do not use \bweimaraner\b or bunny-hop / saltatorial alone
+# (230 harvest-ban). Not NKX2-8 spinal dysraphism (230).
+# Do not harvest a 3–4 week or 8-week clock. Dogs only.
+# Skip cats. Skip horse.
+CMM1_RE = re.compile(
+    r"congenital mirror movement|"
+    r"\bcmm1\b|"
+    r"\befnb3\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5836,6 +5846,7 @@ def analyze(
     steal_cpd = CPD_RE.search(text)
     steal_lppn = LPPN_RE.search(text)
     steal_pilose = PILOSE_RE.search(text)
+    steal_cmm1 = CMM1_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5922,6 +5933,7 @@ def analyze(
         or steal_cpd
         or steal_lppn
         or steal_pilose
+        or steal_cmm1
     ):
         if spec == "cat":
             fuo_loc = (
@@ -7247,7 +7259,8 @@ def analyze(
 
     dysraph_named = spec == "dog" and DYSRAPH_RE.search(text)
     if dysraph_named and not (
-        MCE_RE.search(text)
+        CMM1_RE.search(text)
+        or MCE_RE.search(text)
         or CAPHYP_RE.search(text)
         or HEMIV_RE.search(text)
         or ARACH_DIV_RE.search(text)
@@ -12751,7 +12764,8 @@ def analyze(
 
     lppn_named = spec == "dog" and LPPN_RE.search(text)
     if lppn_named and not (
-        CPD_RE.search(text)
+        CMM1_RE.search(text)
+        or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
         or BCSN_RE.search(text)
@@ -12884,7 +12898,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        LPPN_RE.search(text)
+        CMM1_RE.search(text)
+        or LPPN_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
@@ -13013,6 +13028,132 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for experimental pilocarpine.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for experimental pilocarpine.")
+
+    cmm1_named = spec == "dog" and CMM1_RE.search(text)
+    if cmm1_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or NARC_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or DEEN_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or ANISO_BIG_RE.search(text)
+        or MYDRIASIS_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        cmm1_loc = (
+            "CMM1. EFNB3 frameshift. Not NKX2-8 dysraphism."
+        )
+        localization = f"{localization} Also {cmm1_loc}" if localization else cmm1_loc
+        hard_stops.append(
+            "Do not harvest a 3–4 week clock as lobby law. "
+            "Do not harvest an 8-week euthanasia clock as lobby law. "
+            "Do not copy a 230 table as lobby law. "
+            "Do not send a Weimaraner home as NKX2-8 dysraphism. "
+            "Do not call it 230-only."
+        )
+        do_not.append(
+            "Autosomal recessive Weimaraner CMM1. Printed "
+            "c.643_644dup / p.(Ala216Valfs*79) stay on the "
+            "page. Printed 3 of 11 puppies, synchronized "
+            "saltatorial gait, and 8-week euthanasia stay on "
+            "the page. Packet 230 still owns NKX2-8 spinal "
+            "dysraphism. Skip horse. Not 230-only."
+        )
+        do_next.append(
+            "Name the CMM1. EFNB3 frameshift. Not NKX2-8 "
+            "dysraphism. △ Plumb. Do not copy a 230 table."
+        )
+        sources.append(
+            "Schwarz et al. Mov Disord. 2025;40(9):1883-1891. "
+            "doi:10.1002/mds.30243. PMID 40401490. PMC12485594: "
+            "Weimaraner CMM1; EFNB3 2-bp duplication; autosomal "
+            "recessive; synchronized saltatorial locomotion; "
+            "distinct from NKX2-8 spinal dysraphism."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Weimaraner home as NKX2-8 dysraphism."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for CMM1.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for CMM1.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
