@@ -3432,3 +3432,10 @@ Night rule: named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** �
 - Attending: If the query is only “cerebellar ataxia,” why does this gate stay dark?
 - Attending: Cat RAB24 — fire or skip?
 - Attending: Dual-named “familial cerebellar ataxia, RAB24” — which loc should win, and why?
+
+가채점 (rotate 1; cited vs Plunkett vs Plumb vs VIN-off vs instinct-compare):
+- Cited (Schwarz Genes 2025 PMID 40869982 / PMC12385749): named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** Printed c.239G>T / p.(Gly80Val), MRI atrophy, and the Gordon Setter / OES RAB24 missense stay on the page. Dual-named “familial cerebellar ataxia, RAB24” later-wins this loc. Bare cerebellar ataxia / Gordon Setter stay dark. Cat skip. Horse skip.
+- Plunkett: no dedicated RAB24 chapter in the owned SA EM splits. Do not harvest a 2013 ataxia table. Packet 252 still owns named familial cerebellar ataxia / MFE. Packet 213 still owns abiotrophy. Packet 219 still owns hereditary ataxia.
+- Plumb: not a night drug. Do not invent mg/kg. △ Plumb stays on the night rule because there is no monograph to dump.
+- VIN-off: do not login to VIN. Do not harvest a VIN cerebellar-ataxia table as lobby law.
+- Instinct-compare: Instinct Attending does not replace a license. Fluent “familial cerebellar ataxia” on a named RAB24 query is a miss. Do not send a bulldog-cross home as MFE. Do not copy a 252 table.
