@@ -1733,6 +1733,17 @@ FAM8A1_RE = re.compile(
     r"\brbd\b",
     re.I,
 )
+# Do not use bare cerebellar ataxia / hypermetria / menace /
+# American Bulldog / Old English Bulldog / Gordon Setter / OES
+# (252 harvest-ban / 213 / 219 / 211). Not MFE blindness (252).
+# Not abiotrophy-only (213). Not hereditary ataxia-only (219).
+# Do not harvest a 5-month or 1576-genome table. Dogs only.
+# Skip cats. Skip horse.
+RAB24_RE = re.compile(
+    r"\brab24\b|"
+    r"gly80val",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5859,6 +5870,7 @@ def analyze(
     steal_pilose = PILOSE_RE.search(text)
     steal_cmm1 = CMM1_RE.search(text)
     steal_fam8a1 = FAM8A1_RE.search(text)
+    steal_rab24 = RAB24_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5947,6 +5959,7 @@ def analyze(
         or steal_pilose
         or steal_cmm1
         or steal_fam8a1
+        or steal_rab24
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6282,7 +6295,8 @@ def analyze(
 
     chypo_named = spec in {"dog", "cat"} and CHYPO_RE.search(text)
     if chypo_named and not (
-        hydran_core
+        RAB24_RE.search(text)
+        or hydran_core
         or NME_RE.search(text)
         or GME_RE.search(text)
         or COMS_RE.search(text)
@@ -6375,7 +6389,8 @@ def analyze(
 
     abiot_named = spec == "dog" and ABIOT_RE.search(text)
     if abiot_named and not (
-        NME_RE.search(text)
+        RAB24_RE.search(text)
+        or NME_RE.search(text)
         or GME_RE.search(text)
         or COMS_RE.search(text)
         or HYPOMY_RE.search(text)
@@ -6644,7 +6659,8 @@ def analyze(
 
     hatax_named = spec == "dog" and HATAX_RE.search(text)
     if hatax_named and not (
-        LEM_RE.search(text)
+        RAB24_RE.search(text)
+        or LEM_RE.search(text)
         or NAD_RE.search(text)
         or BANDERA_RE.search(text)
         or SHAKER_RE.search(text)
@@ -9104,7 +9120,8 @@ def analyze(
 
     mfe_named = spec == "dog" and MFE_RE.search(text)
     if mfe_named and not (
-        MSND_RE.search(text)
+        RAB24_RE.search(text)
+        or MSND_RE.search(text)
         or CHROM_RE.search(text)
         or CMSD_RE.search(text)
         or BMAN_RE.search(text)
@@ -12912,7 +12929,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        FAM8A1_RE.search(text)
+        RAB24_RE.search(text)
+        or FAM8A1_RE.search(text)
         or CMM1_RE.search(text)
         or LPPN_RE.search(text)
         or CPD_RE.search(text)
@@ -13046,7 +13064,8 @@ def analyze(
 
     cmm1_named = spec == "dog" and CMM1_RE.search(text)
     if cmm1_named and not (
-        CPD_RE.search(text)
+        RAB24_RE.search(text)
+        or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
         or BCSN_RE.search(text)
@@ -13294,6 +13313,128 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for FAM8A1.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for FAM8A1.")
+
+    rab24_named = spec == "dog" and RAB24_RE.search(text)
+    if rab24_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        rab24_loc = (
+            "RAB24 missense. Not MFE blindness."
+        )
+        localization = f"{localization} Also {rab24_loc}" if localization else rab24_loc
+        hard_stops.append(
+            "Do not harvest a 5-month clock as lobby law. "
+            "Do not harvest a 1576-genome table as lobby law. "
+            "Do not copy a 252 table as lobby law. "
+            "Do not send a bulldog-cross home as MFE. "
+            "Do not call it 252-only."
+        )
+        do_not.append(
+            "Autosomal recessive RAB24. Printed c.239G>T / "
+            "p.(Gly80Val) stay on the page. Printed cerebellar "
+            "ataxia, hypermetria, absent menace, intention "
+            "tremor, and MRI atrophy stay on the page. Packet "
+            "252 still owns familial cerebellar ataxia / MFE. "
+            "Packet 213 still owns abiotrophy. Packet 219 "
+            "still owns hereditary ataxia. Skip horse. Not "
+            "252-only."
+        )
+        do_next.append(
+            "Name the RAB24. Missense. Not MFE blindness. "
+            "△ Plumb. Do not copy a 252 table."
+        )
+        sources.append(
+            "Schwarz et al. Genes (Basel). 2025;16(8):934. "
+            "doi:10.3390/genes16080934. PMID 40869982. "
+            "PMC12385749: random-bred RAB24 p.(Gly80Val); "
+            "autosomal recessive; progressive cerebellar "
+            "ataxia; distinct from Bullmastiff MFE and from "
+            "Gordon Setter / OES RAB24 missense on the page."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a bulldog-cross home as MFE."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for RAB24.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for RAB24.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

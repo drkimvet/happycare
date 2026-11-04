@@ -215,6 +215,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pilose` | Assessment | Experimental pilocarpine / temporal lobe model |
 | `ddx-cmm1` | Assessment | Weimaraner CMM1 / EFNB3 |
 | `ddx-fam8a1` | Assessment | Russian Blue FAM8A1 / RBD |
+| `ddx-rab24` | Assessment | RAB24 cerebellar ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -389,6 +390,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pilose` | Discharge | After experimental pilocarpine / temporal lobe model talk |
 | `dc-cmm1` | Discharge | After Weimaraner CMM1 / EFNB3 talk |
 | `dc-fam8a1` | Discharge | After Russian Blue FAM8A1 / RBD talk |
+| `dc-rab24` | Discharge | After RAB24 cerebellar ataxia talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3024,6 +3026,21 @@ DDX:
 Do not: harvest a 23-bp table. Harvest a 1.5% allele-frequency table. Copy a 258 table. Send a Russian Blue home as Key-Gaskell. Call it 258-only.
 Do next: Name the FAM8A1. RBD with retention. Not Toller DEEN. △ Plumb. Do not copy a 258 table.
 
+### `ddx-rab24`
+
+RAB24 — {{patient.name}}
+RAB24 missense [yes / not]. Not MFE blindness [yes / not].
+
+DDX:
+1. RAB24 — **RAB24 missense. Not MFE blindness**
+2. Printed c.239G>T / p.(Gly80Val) / MRI atrophy stay on the page
+3. Packet 252 still owns familial cerebellar ataxia / MFE. Packet 213 still owns abiotrophy. Packet 219 still owns hereditary ataxia
+4. Not 252-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare cerebellar ataxia / Gordon Setter / OES do not fire
+
+Do not: harvest a 5-month clock. Harvest a 1576-genome table. Copy a 252 table. Send a bulldog-cross home as MFE. Call it 252-only.
+Do next: Name the RAB24. Missense. Not MFE blindness. △ Plumb. Do not copy a 252 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4447,6 +4464,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-fam8a1`
 
 {{patient.name}} was evaluated for FAM8A1 (an RBD-with-retention frameshift encephalopathy in Russian Blue cats). This is not Toller DEEN and not Key-Gaskell. Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-rab24`
+
+{{patient.name}} was evaluated for RAB24 (a missense cerebellar ataxia, not Bullmastiff MFE blindness). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

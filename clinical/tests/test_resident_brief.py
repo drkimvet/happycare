@@ -8434,6 +8434,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("rbd with retention", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_rab24_is_missense_not_mfe(self):
+        b = analyze("dog", "rab24")
+        loc = b["localization"].lower()
+        self.assertIn("rab24 missense", loc)
+        self.assertIn("not mfe blindness", loc)
+        self.assertNotIn("familial cerebellar ataxia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("5-month clock", joined)
+        self.assertIn("1576-genome", joined)
+        self.assertIn("252 table", joined)
+        self.assertIn("bulldog-cross home as mfe", joined)
+        self.assertIn("252-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cerebellar_ataxia_is_not_rab24(self):
+        b = analyze("dog", "cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("rab24 missense", loc)
+        self.assertNotIn("not mfe blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gordon_setter_is_not_rab24(self):
+        b = analyze("dog", "gordon setter")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("rab24 missense", loc)
+        self.assertNotIn("not mfe blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mfe_is_not_rab24(self):
+        b = analyze("dog", "familial cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("familial cerebellar ataxia", loc)
+        self.assertNotIn("rab24 missense", loc)
+        self.assertNotIn("not mfe blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_rab24(self):
+        b = analyze("horse", "rab24")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("rab24 missense", loc)
+        self.assertNotIn("not mfe blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_rab24(self):
+        b = analyze("cat", "rab24")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("rab24 missense", loc)
+        self.assertNotIn("not mfe blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_gly80val_still_fires(self):
+        b = analyze("dog", "gly80val")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("rab24 missense", loc)
+        self.assertIn("not mfe blindness", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

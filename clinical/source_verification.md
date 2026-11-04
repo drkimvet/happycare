@@ -3381,7 +3381,7 @@ Night rule: named congenital mirror movement / CMM1 / EFNB3 → **EFNB3 frameshi
 
 ## 286. Russian Blue FAM8A1 / RBD (Stee Anim Genet 2025)
 
-No dedicated Plunkett FAM8A1 chapter in the owned SA EM splits. Public Stee K, Van Poucke M, Huguet JA, et al. A FAM8A1 frameshift variant is associated with REM sleep behavior disorder, urinary retention, and mydriasis in Russian Blue cats. Anim Genet. 2025;56(3):e70013. doi:10.1111/age.70013. PMID: 40266280. Packet 258 still owns named degenerative encephalopathy / Toller REM. Packet 169 still owns named anisocoria / Key-Gaskell / dilute diagnostic drops. Packet 266 still owns named narcolepsy / cataplexy. Packet 116 still owns unnamed cluster / status. Packet 287 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 23-bp table as lobby law. Do not harvest a 1.5% allele-frequency table as lobby law. Do not fire on bare Russian Blue / rem sleep / mydriasis / urinary retention. Cats only. Skip dogs. Skip horse.
+No dedicated Plunkett FAM8A1 chapter in the owned SA EM splits. Public Stee K, Van Poucke M, Huguet JA, et al. A FAM8A1 frameshift variant is associated with REM sleep behavior disorder, urinary retention, and mydriasis in Russian Blue cats. Anim Genet. 2025;56(3):e70013. doi:10.1111/age.70013. PMID: 40266280. Packet 258 still owns named degenerative encephalopathy / Toller REM. Packet 169 still owns named anisocoria / Key-Gaskell / dilute diagnostic drops. Packet 266 still owns named narcolepsy / cataplexy. Packet 116 still owns unnamed cluster / status. Packet 287 owns named RAB24 cerebellar ataxia, not this dump. Do not harvest a 23-bp table as lobby law. Do not harvest a 1.5% allele-frequency table as lobby law. Do not fire on bare Russian Blue / rem sleep / mydriasis / urinary retention. Cats only. Skip dogs. Skip horse.
 
 Agree with Stee 2025: **FAM8A1** in Russian Blue cats is an **autosomal recessive** 23-bp deletion (NC_058372.1:g.11622168_11622190del) predicted to cause **XM_019831563.3:c.485_507del p.(Gln162Profs*115)**. Five young adult cats from two related families had progressively worsening RBD episodes frequently associated with urinary loss. Three also had urinary retention with overflow incontinence between episodes. Three had a large bladder. Two had bilateral mydriasis with absent PLRs. Further examinations were unremarkable. Treatment attempts were unsatisfactory. Four cats were euthanized. Brain histopathology did not reveal abnormalities. The variant segregated recessively, showed an allele frequency of 1.5% in West-European Russian Blue cats (N=68), and was absent from 276 cats of 32 other breeds including Nebelung. The variant isoform is predicted to affect ERAD assembly. Printed variant, RBD-with-retention picture, mydriasis/PLR, and genetic-test line stay on the page.
 
@@ -3405,3 +3405,30 @@ Night rule: named FAM8A1 / RBD / rem sleep behavior → **FAM8A1 frameshift. RBD
 - Attending: If the query is only “Russian Blue,” why does this gate stay dark?
 - Attending: Dog FAM8A1 — fire or skip?
 - Attending: Dual-named “narcolepsy, FAM8A1” in a cat — which loc should win, and why?
+
+## 287. RAB24 cerebellar ataxia (Schwarz Genes 2025)
+
+No dedicated Plunkett RAB24 chapter in the owned SA EM splits. Public Schwarz C, Wennemuth J, Guevar J, Dörn F, Jagannathan V, Leeb T. RAB24 missense variant in dogs with cerebellar ataxia. Genes (Basel). 2025;16(8):934. doi:10.3390/genes16080934. PMID: 40869982. PMCID: PMC12385749. Packet 252 still owns named familial cerebellar ataxia / mitochondrial fission encephalopathy. Packet 213 still owns named cerebellar abiotrophy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 211 still owns named cerebellar hypoplasia. Packet 288 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 5-month clock as lobby law. Do not harvest a 1576-genome table as lobby law. Do not fire on bare cerebellar ataxia / hypermetria / Gordon Setter / OES / American Bulldog. Dogs only. Skip cats. Skip horse.
+
+Agree with Schwarz 2025: **RAB24** p.(Gly80Val) (XM_038534663.1:c.239G>T) is an **autosomal recessive** missense in two 5-month-old random-bred (American Bulldog × Old English Bulldog) siblings with progressive cerebellar ataxia, hypermetria, intention tremor, and absent menace. MRI showed generalized brain atrophy, reduced cortical demarcation, hypoplastic corpus callosum, and cerebellar folia thinning. CSF was non-inflammatory. Both dogs were alive with impaired coordination. A previously reported RAB24 missense in Gordon Setters and Old English Sheepdogs stays on the page (printed Glu38Pro / Gln38Pro). Printed Gly80Val, MRI atrophy, and the Gordon Setter / OES line stay on the page.
+
+Night split: named RAB24 / Gly80Val is RAB24 missense; not MFE blindness. Bare cerebellar ataxia does not fire. Bare Gordon Setter does not fire. Cat does not fire. Horse does not fire. Named MFE stays 252. Named abiotrophy stays 213. Named hereditary ataxia stays 219. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 5-month clock.
+- Do not harvest a 1576-genome table.
+- Do not copy a 252 table.
+- Do not send a bulldog-cross home as MFE.
+- Do not call it 252-only.
+
+Night rule: named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Two 5-month bulldog-cross littermates hop with hypermetria and no menace. Which gene split matters at night, and why is this not Bullmastiff MFE?
+- NAVLE 2: MRI shows a thin corpus callosum and folia thinning. What stays on the page, and what do you not harvest from 1576 genomes?
+- NAVLE 3: An owner Googled Gordon Setter RAB24. What stays on the page, and what does this gate not fire on if they only said “Gordon Setter”?
+- Oral: How do you tell the owner this is not “the familial cerebellar ataxia they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “cerebellar ataxia,” why does this gate stay dark?
+- Attending: Cat RAB24 — fire or skip?
+- Attending: Dual-named “familial cerebellar ataxia, RAB24” — which loc should win, and why?
