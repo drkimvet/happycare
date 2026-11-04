@@ -8491,6 +8491,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not mfe blindness", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_ralgapa1_is_deletion_not_rab24(self):
+        b = analyze("dog", "ralgapa1")
+        loc = b["localization"].lower()
+        self.assertIn("ralgapa1 deletion", loc)
+        self.assertIn("not rab24 missense", loc)
+        self.assertNotIn("rab24 missense. not mfe blindness", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("6-week clock", joined)
+        self.assertIn("5-week euthanasia", joined)
+        self.assertIn("5% carrier", joined)
+        self.assertIn("287 table", joined)
+        self.assertIn("belgian home as rab24", joined)
+        self.assertIn("287-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_belgian_shepherd_is_not_ralgapa1(self):
+        b = analyze("dog", "belgian shepherd")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ralgapa1 deletion", loc)
+        self.assertNotIn("not rab24 missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cerebellar_ataxia_is_not_ralgapa1(self):
+        b = analyze("dog", "cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ralgapa1 deletion", loc)
+        self.assertNotIn("not rab24 missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_rab24_is_not_ralgapa1(self):
+        b = analyze("dog", "rab24")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("rab24 missense", loc)
+        self.assertNotIn("ralgapa1 deletion", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_ralgapa1(self):
+        b = analyze("horse", "ralgapa1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ralgapa1 deletion", loc)
+        self.assertNotIn("not rab24 missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_ralgapa1(self):
+        b = analyze("cat", "ralgapa1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("ralgapa1 deletion", loc)
+        self.assertNotIn("not rab24 missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_garnl1_still_fires(self):
+        b = analyze("dog", "garnl1")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ralgapa1 deletion", loc)
+        self.assertIn("not rab24 missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

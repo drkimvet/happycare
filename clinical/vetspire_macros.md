@@ -216,6 +216,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cmm1` | Assessment | Weimaraner CMM1 / EFNB3 |
 | `ddx-fam8a1` | Assessment | Russian Blue FAM8A1 / RBD |
 | `ddx-rab24` | Assessment | RAB24 cerebellar ataxia |
+| `ddx-ralgapa1` | Assessment | Belgian Shepherd RALGAPA1 ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -391,6 +392,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cmm1` | Discharge | After Weimaraner CMM1 / EFNB3 talk |
 | `dc-fam8a1` | Discharge | After Russian Blue FAM8A1 / RBD talk |
 | `dc-rab24` | Discharge | After RAB24 cerebellar ataxia talk |
+| `dc-ralgapa1` | Discharge | After Belgian Shepherd RALGAPA1 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3041,6 +3043,21 @@ DDX:
 Do not: harvest a 5-month clock. Harvest a 1576-genome table. Copy a 252 table. Send a bulldog-cross home as MFE. Call it 252-only.
 Do next: Name the RAB24. Missense. Not MFE blindness. △ Plumb. Do not copy a 252 table.
 
+### `ddx-ralgapa1`
+
+RALGAPA1 — {{patient.name}}
+RALGAPA1 deletion [yes / not]. Not RAB24 missense [yes / not].
+
+DDX:
+1. RALGAPA1 — **RALGAPA1 deletion. Not RAB24 missense**
+2. Printed exon-35 deletion / Purkinje cytoplasmic granules stay on the page
+3. Packet 287 still owns RAB24 missense. Packet 252 still owns MFE. Packet 255 still owns spongiform degeneration
+4. Not 287-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Belgian Shepherd / cerebellar ataxia do not fire
+
+Do not: harvest a 6-week clock. Harvest a 5-week euthanasia clock. Harvest a 5% carrier table. Copy a 287 table. Send a Belgian home as RAB24. Call it 287-only.
+Do next: Name the RALGAPA1. Deletion. Not RAB24 missense. △ Plumb. Do not copy a 287 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4472,6 +4489,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-rab24`
 
 {{patient.name}} was evaluated for RAB24 (a missense cerebellar ataxia, not Bullmastiff MFE blindness). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-ralgapa1`
+
+{{patient.name}} was evaluated for RALGAPA1 (a Belgian Shepherd deletion ataxia, not RAB24 missense). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

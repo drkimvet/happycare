@@ -3408,7 +3408,7 @@ Night rule: named FAM8A1 / RBD / rem sleep behavior → **FAM8A1 frameshift. RBD
 
 ## 287. RAB24 cerebellar ataxia (Schwarz Genes 2025)
 
-No dedicated Plunkett RAB24 chapter in the owned SA EM splits. Public Schwarz C, Wennemuth J, Guevar J, Dörn F, Jagannathan V, Leeb T. RAB24 missense variant in dogs with cerebellar ataxia. Genes (Basel). 2025;16(8):934. doi:10.3390/genes16080934. PMID: 40869982. PMCID: PMC12385749. Packet 252 still owns named familial cerebellar ataxia / mitochondrial fission encephalopathy. Packet 213 still owns named cerebellar abiotrophy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 211 still owns named cerebellar hypoplasia. Packet 288 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 5-month clock as lobby law. Do not harvest a 1576-genome table as lobby law. Do not fire on bare cerebellar ataxia / hypermetria / Gordon Setter / OES / American Bulldog. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett RAB24 chapter in the owned SA EM splits. Public Schwarz C, Wennemuth J, Guevar J, Dörn F, Jagannathan V, Leeb T. RAB24 missense variant in dogs with cerebellar ataxia. Genes (Basel). 2025;16(8):934. doi:10.3390/genes16080934. PMID: 40869982. PMCID: PMC12385749. Packet 252 still owns named familial cerebellar ataxia / mitochondrial fission encephalopathy. Packet 213 still owns named cerebellar abiotrophy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 211 still owns named cerebellar hypoplasia. Packet 288 owns named RALGAPA1 / GARNL1, not this dump. Do not harvest a 5-month clock as lobby law. Do not harvest a 1576-genome table as lobby law. Do not fire on bare cerebellar ataxia / hypermetria / Gordon Setter / OES / American Bulldog. Dogs only. Skip cats. Skip horse.
 
 Agree with Schwarz 2025: **RAB24** p.(Gly80Val) (XM_038534663.1:c.239G>T) is an **autosomal recessive** missense in two 5-month-old random-bred (American Bulldog × Old English Bulldog) siblings with progressive cerebellar ataxia, hypermetria, intention tremor, and absent menace. MRI showed generalized brain atrophy, reduced cortical demarcation, hypoplastic corpus callosum, and cerebellar folia thinning. CSF was non-inflammatory. Both dogs were alive with impaired coordination. A previously reported RAB24 missense in Gordon Setters and Old English Sheepdogs stays on the page (printed Glu38Pro / Gln38Pro). Printed Gly80Val, MRI atrophy, and the Gordon Setter / OES line stay on the page.
 
@@ -3439,3 +3439,31 @@ Night rule: named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** �
 - Plumb: not a night drug. Do not invent mg/kg. △ Plumb stays on the night rule because there is no monograph to dump.
 - VIN-off: do not login to VIN. Do not harvest a VIN cerebellar-ataxia table as lobby law.
 - Instinct-compare: Instinct Attending does not replace a license. Fluent “familial cerebellar ataxia” on a named RAB24 query is a miss. Do not send a bulldog-cross home as MFE. Do not copy a 252 table.
+
+## 288. Belgian Shepherd RALGAPA1 / GARNL1 (Christen Genes 2023)
+
+No dedicated Plunkett RALGAPA1 chapter in the owned SA EM splits. Public Christen M, Zdora I, Leschnik M, et al. RALGAPA1 deletion in Belgian Shepherd dogs with cerebellar ataxia. Genes (Basel). 2023;14(8):1520. doi:10.3390/genes14081520. PMID: 37628572. PMCID: PMC10454311. Packet 287 still owns named RAB24 / Gly80Val. Packet 252 still owns named familial cerebellar ataxia / MFE. Packet 255 still owns named spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 289 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 6-week clock as lobby law. Do not harvest a 5-week euthanasia clock as lobby law. Do not harvest a 5% carrier table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Christen 2023: **RALGAPA1** (also GARNL1) exon-35 ~4.8 kb deletion (XM_038544497.1:c.6080-2893_6944+1003del) is **autosomal recessive** in Belgian Shepherd dogs with cerebellar ataxia. Two littermates stabilized around six weeks and remained ataxic into adulthood. Three additional homozygotes from another litter were euthanized at five weeks for a severe phenotype. Histopathology showed cytoplasmic accumulation of granular material in Purkinje cells. Carrier frequency in a ~900-dog Belgian cohort stays on the page. Printed deletion, Purkinje granules, and stabilize-into-adulthood stay on the page.
+
+Night split: named RALGAPA1 / GARNL1 is RALGAPA1 deletion; not RAB24 missense. Bare Belgian Shepherd does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named RAB24 stays 287. Named MFE stays 252. Named spongiform stays 255. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 6-week clock.
+- Do not harvest a 5-week euthanasia clock.
+- Do not harvest a 5% carrier table.
+- Do not copy a 287 table.
+- Do not send a Belgian home as RAB24.
+- Do not call it 287-only.
+
+Night rule: named RALGAPA1 / GARNL1 → **RALGAPA1 deletion. Not RAB24 missense.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A Belgian puppy is ataxic at six weeks then plateaus. Which gene split matters at night, and why is this not RAB24?
+- NAVLE 2: Purkinje cells hold cytoplasmic granules. What stays on the page, and what do you not harvest from a 5% carrier table?
+- NAVLE 3: Dual-named “spongy degeneration, RALGAPA1” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Belgian SDCA they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Belgian Shepherd,” why does this gate stay dark?
+- Attending: Cat RALGAPA1 — fire or skip?
+- Attending: Dual-named “RAB24, RALGAPA1” — which loc should win, and why?
