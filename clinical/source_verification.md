@@ -3354,7 +3354,7 @@ Night rule: named experimental pilocarpine / pilocarpine model → **Temporal lo
 
 ## 285. Weimaraner CMM1 / EFNB3 (Schwarz Mov Disord 2025)
 
-No dedicated Plunkett CMM1 chapter in the owned SA EM splits. Public Schwarz C, Bartenschlager F, Kershaw O, et al. EFNB3 frameshift variant in Weimaraner dogs with a condition resembling a congenital mirror movement disorder. Mov Disord. 2025;40(9):1883-1891. doi:10.1002/mds.30243. PMID: 40401490. PMCID: PMC12485594. Packet 230 still owns named spinal dysraphism / myelodysplasia / NKX2-8 bunny-hop. Packet 284 still owns named experimental pilocarpine. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 286 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3–4 week clock as lobby law. Do not harvest an 8-week euthanasia clock as lobby law. Do not fire on bare Weimaraner / bunny-hop / saltatorial. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett CMM1 chapter in the owned SA EM splits. Public Schwarz C, Bartenschlager F, Kershaw O, et al. EFNB3 frameshift variant in Weimaraner dogs with a condition resembling a congenital mirror movement disorder. Mov Disord. 2025;40(9):1883-1891. doi:10.1002/mds.30243. PMID: 40401490. PMCID: PMC12485594. Packet 230 still owns named spinal dysraphism / myelodysplasia / NKX2-8 bunny-hop. Packet 284 still owns named experimental pilocarpine. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 286 owns named FAM8A1 / RBD, not this dump. Do not harvest a 3–4 week clock as lobby law. Do not harvest an 8-week euthanasia clock as lobby law. Do not fire on bare Weimaraner / bunny-hop / saltatorial. Dogs only. Skip cats. Skip horse.
 
 Agree with Schwarz 2025: **CMM1** in Weimaraner dogs is an **autosomal recessive** **EFNB3** 2-bp duplication (XM_038536724.1:c.643_644dup) predicted to cause **p.(Ala216Valfs*79)**. Three of 11 puppies had synchronized saltatorial locomotion, pelvic limbs worse than thoracic, onset about 3 to 4 weeks, normal mentation, and were euthanized at 8 weeks. Postmortem histology of brain and cord was normal. They were wild-type at **NKX2-8**; this is **not** Weimaraner spinal dysraphism / BHS1. Printed variant, 3 of 11, saltatorial gait, and 8-week clock stay on the page.
 
@@ -3378,3 +3378,30 @@ Night rule: named congenital mirror movement / CMM1 / EFNB3 → **EFNB3 frameshi
 - Attending: If the query is only “Weimaraner,” why does this gate stay dark?
 - Attending: Horse CMM1 — fire or skip?
 - Attending: Dual-named “spinal dysraphism, EFNB3” — which loc should win, and why?
+
+## 286. Russian Blue FAM8A1 / RBD (Stee Anim Genet 2025)
+
+No dedicated Plunkett FAM8A1 chapter in the owned SA EM splits. Public Stee K, Van Poucke M, Huguet JA, et al. A FAM8A1 frameshift variant is associated with REM sleep behavior disorder, urinary retention, and mydriasis in Russian Blue cats. Anim Genet. 2025;56(3):e70013. doi:10.1111/age.70013. PMID: 40266280. Packet 258 still owns named degenerative encephalopathy / Toller REM. Packet 169 still owns named anisocoria / Key-Gaskell / dilute diagnostic drops. Packet 266 still owns named narcolepsy / cataplexy. Packet 116 still owns unnamed cluster / status. Packet 287 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 23-bp table as lobby law. Do not harvest a 1.5% allele-frequency table as lobby law. Do not fire on bare Russian Blue / rem sleep / mydriasis / urinary retention. Cats only. Skip dogs. Skip horse.
+
+Agree with Stee 2025: **FAM8A1** in Russian Blue cats is an **autosomal recessive** 23-bp deletion (NC_058372.1:g.11622168_11622190del) predicted to cause **XM_019831563.3:c.485_507del p.(Gln162Profs*115)**. Five young adult cats from two related families had progressively worsening RBD episodes frequently associated with urinary loss. Three also had urinary retention with overflow incontinence between episodes. Three had a large bladder. Two had bilateral mydriasis with absent PLRs. Further examinations were unremarkable. Treatment attempts were unsatisfactory. Four cats were euthanized. Brain histopathology did not reveal abnormalities. The variant segregated recessively, showed an allele frequency of 1.5% in West-European Russian Blue cats (N=68), and was absent from 276 cats of 32 other breeds including Nebelung. The variant isoform is predicted to affect ERAD assembly. Printed variant, RBD-with-retention picture, mydriasis/PLR, and genetic-test line stay on the page.
+
+Night split: named FAM8A1 / RBD / rem sleep behavior is FAM8A1 frameshift; RBD with retention; not Toller DEEN. Bare Russian Blue does not fire. Bare rem sleep does not fire. Bare mydriasis does not fire. Dog does not fire. Horse does not fire. Named DEEN stays 258. Named Key-Gaskell / anisocoria stays 169. Named narcolepsy stays 266. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a 23-bp table.
+- Do not harvest a 1.5% allele-frequency table.
+- Do not copy a 258 table.
+- Do not send a Russian Blue home as Key-Gaskell.
+- Do not call it 258-only.
+
+Night rule: named FAM8A1 / RBD / rem sleep behavior → **FAM8A1 frameshift. RBD with retention. Not Toller DEEN.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A young adult Russian Blue acts out dreams and then dribbles urine. Which gene split matters at night, and why is this not Toller DEEN?
+- NAVLE 2: The same cat has a large bladder and bilateral mydriasis with absent PLRs. What stays on the page, and what do you not send home as Key-Gaskell?
+- NAVLE 3: You are asked to copy a 1.5% allele frequency into a standing order. What stays on the page?
+- Oral: How do you tell the owner this is not “the Key-Gaskell they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Russian Blue,” why does this gate stay dark?
+- Attending: Dog FAM8A1 — fire or skip?
+- Attending: Dual-named “narcolepsy, FAM8A1” in a cat — which loc should win, and why?

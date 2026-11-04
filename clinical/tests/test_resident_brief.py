@@ -8376,6 +8376,64 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("efnb3 frameshift", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_fam8a1_is_rbd_with_retention_not_deen(self):
+        b = analyze("cat", "rem sleep behavior disorder")
+        loc = b["localization"].lower()
+        self.assertIn("fam8a1 frameshift", loc)
+        self.assertIn("rbd with retention", loc)
+        self.assertIn("not toller deen", loc)
+        self.assertNotIn("rem sleep disorder. anxiety", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("23-bp table", joined)
+        self.assertIn("1.5% allele-frequency", joined)
+        self.assertIn("258 table", joined)
+        self.assertIn("russian blue home as key-gaskell", joined)
+        self.assertIn("258-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_russian_blue_is_not_fam8a1(self):
+        b = analyze("cat", "russian blue")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fam8a1 frameshift", loc)
+        self.assertNotIn("rbd with retention", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_rem_sleep_is_not_fam8a1(self):
+        b = analyze("cat", "rem sleep")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fam8a1 frameshift", loc)
+        self.assertNotIn("rbd with retention", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_deen_is_not_fam8a1(self):
+        b = analyze("dog", "degenerative encephalopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("rem sleep", loc)
+        self.assertNotIn("fam8a1 frameshift", loc)
+        self.assertNotIn("rbd with retention", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fam8a1(self):
+        b = analyze("horse", "fam8a1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fam8a1 frameshift", loc)
+        self.assertNotIn("rbd with retention", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_fam8a1(self):
+        b = analyze("dog", "fam8a1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("fam8a1 frameshift", loc)
+        self.assertNotIn("rbd with retention", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_named_fam8a1_still_fires(self):
+        b = analyze("cat", "fam8a1")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("fam8a1 frameshift", loc)
+        self.assertIn("rbd with retention", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

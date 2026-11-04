@@ -1722,6 +1722,17 @@ CMM1_RE = re.compile(
     r"\befnb3\b",
     re.I,
 )
+# Do not use \brussian blue\b or rem sleep / mydriasis / urinary
+# retention alone (258 harvest-ban / 169 / 266). Not Toller DEEN
+# (258). Not Key-Gaskell-only (169). Not narcolepsy (266).
+# Do not harvest a 23-bp or 1.5% table. Cats only. Skip dogs.
+# Skip horse.
+FAM8A1_RE = re.compile(
+    r"\bfam8a1\b|"
+    r"rem sleep behavior|"
+    r"\brbd\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -3702,7 +3713,7 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for Horner.")
 
-    if spec in {"dog", "cat"} and (ANISO_BIG_RE.search(text) or MYDRIASIS_RE.search(text)):
+    if spec in {"dog", "cat"} and (ANISO_BIG_RE.search(text) or MYDRIASIS_RE.search(text)) and not FAM8A1_RE.search(text):
         ap_loc = (
             "Anisocoria: name which pupil is wrong. "
             "Big pupil + vision is iris atrophy / atropine / dysautonomia / CN III, not Horner. "
@@ -5847,6 +5858,7 @@ def analyze(
     steal_lppn = LPPN_RE.search(text)
     steal_pilose = PILOSE_RE.search(text)
     steal_cmm1 = CMM1_RE.search(text)
+    steal_fam8a1 = FAM8A1_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5934,6 +5946,7 @@ def analyze(
         or steal_lppn
         or steal_pilose
         or steal_cmm1
+        or steal_fam8a1
     ):
         if spec == "cat":
             fuo_loc = (
@@ -10584,7 +10597,8 @@ def analyze(
 
     narc_named = spec in {"dog", "cat"} and NARC_RE.search(text)
     if narc_named and not (
-        PDYS_RE.search(text)
+        FAM8A1_RE.search(text)
+        or PDYS_RE.search(text)
         or POLY_RE.search(text)
         or DEAF_RE.search(text)
         or PEND_RE.search(text)
@@ -12898,7 +12912,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        CMM1_RE.search(text)
+        FAM8A1_RE.search(text)
+        or CMM1_RE.search(text)
         or LPPN_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
@@ -13154,6 +13169,131 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for CMM1.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for CMM1.")
+
+    fam8a1_named = spec == "cat" and FAM8A1_RE.search(text)
+    if fam8a1_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SPONG_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MFE_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or HATAX_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or ABIOT_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        fam8a1_loc = (
+            "FAM8A1 frameshift. RBD with retention. Not Toller DEEN."
+        )
+        localization = f"{localization} Also {fam8a1_loc}" if localization else fam8a1_loc
+        hard_stops.append(
+            "Do not harvest a 23-bp table as lobby law. "
+            "Do not harvest a 1.5% allele-frequency table as lobby law. "
+            "Do not copy a 258 table as lobby law. "
+            "Do not send a Russian Blue home as Key-Gaskell. "
+            "Do not call it 258-only."
+        )
+        do_not.append(
+            "Autosomal recessive Russian Blue FAM8A1. Printed "
+            "c.485_507del / p.(Gln162Profs*115) stay on the "
+            "page. Printed RBD with urinary loss, overflow "
+            "retention, bilateral mydriasis, and absent PLR "
+            "stay on the page. Packet 258 still owns Toller "
+            "DEEN. Packet 169 still owns Key-Gaskell. Packet "
+            "266 still owns narcolepsy. Skip horse. Not "
+            "258-only."
+        )
+        do_next.append(
+            "Name the FAM8A1. RBD with retention. Not Toller "
+            "DEEN. △ Plumb. Do not copy a 258 table."
+        )
+        sources.append(
+            "Stee et al. Anim Genet. 2025;56(3):e70013. "
+            "doi:10.1111/age.70013. PMID 40266280: Russian "
+            "Blue FAM8A1 23-bp deletion; autosomal recessive; "
+            "REM sleep behavior disorder with urinary "
+            "retention and mydriasis; distinct from Toller "
+            "DEEN and Key-Gaskell."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Russian Blue home as Key-Gaskell."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for FAM8A1.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for FAM8A1.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
@@ -13554,7 +13694,7 @@ def analyze(
         if toy and re.search(r"\b(keppra|levetiracetam)\b", text, re.I):
             hard_stops.append("Keppra does not raise glucose. Glucose first.")
 
-    if spec in {"dog", "cat"} and SEIZURE_RE.search(text) and not PILOSE_RE.search(text):
+    if spec in {"dog", "cat"} and SEIZURE_RE.search(text) and not PILOSE_RE.search(text) and not FAM8A1_RE.search(text):
         hard_stops.append(
             "Seizure emergency: status is >5 min or two or more without recovery, not the 2013 30-minute line."
         )
