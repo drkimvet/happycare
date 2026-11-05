@@ -12,13 +12,14 @@ SKILL = (ROOT / ".cursor" / "skills" / "midtown-attending" / "SKILL.md").read_te
 LAND = (ROOT / "clinical" / "vet_ai_landscape.md").read_text(encoding="utf-8")
 BRIEF = (ROOT / "clinical" / "resident_brief.py").read_text(encoding="utf-8")
 SYLL = (ROOT / "clinical" / "five_minute_syllabus.md").read_text(encoding="utf-8")
+NAVLE_SYLL = (ROOT / "clinical" / "navle_mosby_syllabus.md").read_text(encoding="utf-8")
 VERIF = (ROOT / "clinical" / "source_verification.md").read_text(encoding="utf-8")
 MACRO = (ROOT / "clinical" / "vetspire_macros.md").read_text(encoding="utf-8")
 
 
 class PublicCardInvariants(unittest.TestCase):
     def test_license_line_on_all_user_facing_docs(self):
-        for name, text in ("card", CARD), ("skill", SKILL), ("landscape", LAND):
+        for name, text in ("card", CARD), ("skill", SKILL), ("landscape", LAND), ("navle", NAVLE_SYLL):
             self.assertIn("replaces a veterinary license", text, msg=name)
 
     def test_never_invent_doses(self):
@@ -81,7 +82,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("decompression", CARD.lower())
 
     def test_no_owner_phi_patterns(self):
-        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL, VERIF, MACRO))
+        blob = "\n".join((CARD, SKILL, LAND, BRIEF, SYLL, NAVLE_SYLL, VERIF, MACRO))
         self.assertNotRegex(blob, r"\bVIN\s+\d{4,}\b")
         self.assertNotRegex(blob, r"Wlsdb840")
         self.assertNotRegex(blob, r"ykim", re.I)
@@ -121,6 +122,9 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertNotIn("booksvets", SYLL.lower())
         self.assertIn("do not fetch pdfs from third-party book mirrors", SYLL.lower())
         self.assertIn("978-1-119-51317-9", SYLL)
+        self.assertIn("do not pirate mosby", NAVLE_SYLL.lower())
+        self.assertIn("gene leftovers 285–298 are closed", NAVLE_SYLL.lower())
+        self.assertIn("canine hypothyroidism", NAVLE_SYLL.lower())
 
     def test_verification_log_flags_outdated_and_unit_traps(self):
         self.assertIn("tartaric", VERIF.lower())
@@ -693,6 +697,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not atg4d", VERIF.lower())
         self.assertIn("scn8a missense", VERIF.lower())
         self.assertIn("not snx14", VERIF.lower())
+        self.assertIn("canine hypothyroidism", VERIF.lower())
+        self.assertIn("not t4-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1143,6 +1149,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-snx14`", MACRO)
         self.assertIn("`ddx-scn8a`", MACRO)
         self.assertIn("`dc-scn8a`", MACRO)
+        self.assertIn("`ddx-hypothyroid`", MACRO)
+        self.assertIn("`dc-hypothyroid`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1275,6 +1283,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not atg4d", MACRO.lower())
         self.assertIn("scn8a missense", MACRO.lower())
         self.assertIn("not snx14", MACRO.lower())
+        self.assertIn("canine hypothyroidism", MACRO.lower())
+        self.assertIn("not t4-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1769,6 +1779,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not atg4d",
             "scn8a missense",
             "not snx14",
+            "canine hypothyroidism",
+            "not t4-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

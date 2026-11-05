@@ -227,6 +227,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-atg4d` | Assessment | Lagotto ATG4D vacuolar ataxia |
 | `ddx-snx14` | Assessment | Hungarian Vizsla SNX14 CCD |
 | `ddx-scn8a` | Assessment | Alpine Dachsbracke SCN8A ataxia |
+| `ddx-hypothyroid` | Assessment | Canine hypothyroidism / not T4-alone |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -413,6 +414,7 @@ Suggested names are short so they show up after three letters.
 | `dc-atg4d` | Discharge | After Lagotto ATG4D talk |
 | `dc-snx14` | Discharge | After Hungarian Vizsla SNX14 talk |
 | `dc-scn8a` | Discharge | After Alpine Dachsbracke SCN8A talk |
+| `dc-hypothyroid` | Discharge | After hypothyroidism / T4 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3228,6 +3230,21 @@ DDX:
 Do not: harvest a 3-week clock. Harvest a 600-control table. Copy a 297 table. Send a Dachsbracke home as SNX14. Call it 297-only.
 Do next: Name the SCN8A. Missense. Not SNX14. △ Plumb. Do not copy a 297 table.
 
+### `ddx-hypothyroid`
+
+Hypothyroidism — {{patient.name}}
+Canine hypothyroidism [yes / not]. Not T4-alone [yes / not]. Sick euthyroid [yes / not]. Greyhound / sighthound [yes / not].
+
+DDX:
+1. Canine hypothyroidism — **Canine hypothyroidism. Not T4-alone**
+2. Printed lymphocytic thyroiditis / idiopathic atrophy stay on the page
+3. Nonthyroidal illness, glucocorticoids, phenobarbital, sulfonamides, Greyhound T4
+4. Adult cat: usually iatrogenic after hyperthyroid treatment
+5. Dog can fire. Cat can fire as iatrogenic. Horse does not fire. Bare Golden / lethargy / alopecia / T4 do not fire
+
+Do not: harvest a 22-mcg table. Harvest an 80% cholesterol table. Copy a T4-alone table. Send a fat Golden home as hypothyroid on T4 alone. Harvest a 20–40% TSH table.
+Do next: Name canine hypothyroidism. Not T4-alone. △ Plumb. Do not copy a levothyroxine table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4751,6 +4768,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
 Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-hypothyroid`
+
+{{patient.name}} was evaluated for hypothyroidism (low thyroid hormone). A single low T4 on a sick day is not the diagnosis. We still need the rest of the thyroid tests before calling this a lifelong problem.
+
+Give only the medicines we sent, as labeled. Do not start a thyroid pill from the cabinet. Do not add leftover steroids.
+
+Return now for collapse, not eating, or if the skin or energy is getting worse instead of better. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -3713,7 +3713,7 @@ Night rule: named SNX14 → **SNX14 splice donor. Not ATG4D.** △ Plumb.
 
 ## 298. Alpine Dachsbracke SCN8A (Letko Genes 2019)
 
-No dedicated Plunkett SCN8A chapter in the owned SA EM splits. Public Letko A, Dietschi E, Nieburg M, Jagannathan V, Gurtner C, Oevermann A, Drogemuller C. A missense variant in SCN8A in Alpine Dachsbracke dogs affected by spinocerebellar ataxia. Genes (Basel). 2019;10(5):362. doi:10.3390/genes10050362. PMID: 31083464. PMCID: PMC6562999. Packet 297 still owns named SNX14. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 296 still owns named ATG4D. Packet 299 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3-week clock as lobby law. Do not harvest a 600-control table as lobby law. Do not fire on bare Dachsbracke / dachshund / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett SCN8A chapter in the owned SA EM splits. Public Letko A, Dietschi E, Nieburg M, Jagannathan V, Gurtner C, Oevermann A, Drogemuller C. A missense variant in SCN8A in Alpine Dachsbracke dogs affected by spinocerebellar ataxia. Genes (Basel). 2019;10(5):362. doi:10.3390/genes10050362. PMID: 31083464. PMCID: PMC6562999. Packet 297 still owns named SNX14. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 296 still owns named ATG4D. Gene leftovers 285–298 are closed. Packet 299 is Mosby/NAVLE canine hypothyroidism, not another ataxia gene. Do not harvest a 3-week clock as lobby law. Do not harvest a 600-control table as lobby law. Do not fire on bare Dachsbracke / dachshund / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Letko 2019: **SCN8A** missense (c.4898G>T; p.Gly1633Val) is **autosomal recessive** in Alpine Dachsbracke dogs with spinocerebellar ataxia, tremor, and loss of balance. Printed missense, Nav1.6 line, and spongy/axonal degeneration stay on the page. Do not harvest a jolting-mouse or human epilepsy table as lobby law.
 
@@ -3737,3 +3737,30 @@ Night rule: named SCN8A → **SCN8A missense. Not SNX14.** △ Plumb.
 - Attending: If the query is only “Dachsbracke,” why does this gate stay dark?
 - Attending: Cat SCN8A — fire or skip?
 - Attending: Dual-named “SNX14, SCN8A” — which loc should win, and why?
+
+## 299. Canine hypothyroidism (Heseltine Merck 2024/2025)
+
+No dedicated Plunkett hypothyroidism chapter in the owned SA EM splits. Public Heseltine J. Hypothyroidism in Animals. Merck Veterinary Manual. Full review May 2024; last updated May 2025. Peer reviewed by Carnevale J. Gene leftovers 285–298 are closed. Packet 298 still owns named SCN8A. Packet 300 is canine hyperadrenocorticism diagnosis traps, not another ataxia gene. Do not harvest a 22-mcg levothyroxine table as lobby law. Do not harvest an 80% cholesterol table as lobby law. Do not fire on bare Golden / lethargy / alopecia / T4. Dogs can fire. Cats fire as iatrogenic. Skip horse.
+
+Agree with Heseltine 2024/2025: **canine hypothyroidism** is usually primary (lymphocytic thyroiditis or idiopathic atrophy). Hypothyroidism is overdiagnosed. Low total T4 alone has low specificity. Pair with fT4 (equilibrium dialysis) or TSH. Do not treat nonthyroidal illness / sick euthyroid. Greyhound T4 is lower. Adult cat disease is usually iatrogenic after hyperthyroid treatment. Printed levothyroxine mcg/kg stays on the page (`△ Plumb`).
+
+Night split: named hypothyroidism is canine hypothyroidism; not T4-alone. Bare Golden does not fire. Bare lethargy does not fire. Hyperthyroid does not fire. Horse does not fire. Named SCN8A stays 298. Dog can fire. Cat can fire as iatrogenic.
+
+Book/public traps:
+
+- Do not harvest a 22-mcg table.
+- Do not harvest an 80% cholesterol table.
+- Do not copy a T4-alone table.
+- Do not send a fat Golden home as hypothyroid on T4 alone.
+- Do not harvest a 20–40% TSH table.
+
+Night rule: named hypothyroidism → **Canine hypothyroidism. Not T4-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A fat Golden Retriever has a low T4 during gastroenteritis. Is that hypothyroidism tonight, and why not?
+- NAVLE 2: Why is TSH never read alone, and what stays on the page about dogs whose TSH stays in RI?
+- NAVLE 3: Dual-named “hypothyroidism, SCN8A” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just start thyroxine from the cabinet,” without inventing a mcg/kg?
+- Attending: If the query is only “Golden Retriever,” why does this gate stay dark?
+- Attending: Cat hypothyroidism — fire or skip, and what loc?
+- Attending: Dual-named “hyperthyroidism, hypothyroidism” — which loc should win, and why?

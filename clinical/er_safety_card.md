@@ -316,6 +316,14 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine hypothyroidism (Merck Heseltine May 2024 / May 2025)
+
+- **Canine hypothyroidism. Not T4-alone.** Overdiagnosed. Primary (lymphocytic thyroiditis or idiopathic atrophy) is the usual dog disease. Printed T4-sensitivity / cholesterol / TSH-in-RI percents stay on the page — do not harvest them as lobby law.
+- A T4 well inside the reference interval argues against hypothyroidism. A low T4 is **not** the diagnosis: nonthyroidal illness, glucocorticoids, phenobarbital, sulfonamides, and Greyhound / sighthound T4 all lower the number in euthyroid dogs.
+- Pair T4 with fT4 (equilibrium dialysis) or TSH. Never read TSH alone. Analogue fT4 is not a magic upgrade. T3 is not the usual test except the Greyhound conversation.
+- Do **not** treat sick euthyroid. Do not harvest a 22-mcg levothyroxine table (`△ Plumb`). Lethargy/mentation often improves in printed weeks; derm and weight take longer — those clocks stay on the page.
+- Adult cat hypothyroidism is usually **iatrogenic** after hyperthyroid treatment. Naturally occurring adult feline disease is rare. Skip horse. Do not send a fat Golden home as hypothyroid on T4 alone. Azotemic: still no NSAID, still no DexSP.
+
 ## Seizure emergency (dog and cat; ACVIM 2024 SE/CS + Merck)
 
 - Status epilepticus is **>5 minutes** or two or more seizures without recovery — not the 2013 “30-minute” line. Cluster is ≥2 in 24 hours.
@@ -459,6 +467,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - Merck: congenital cerebellar (Parsley, Mar 2026). Bandera's neonatal ataxia. Coton de Tulear. From birth. Never able to walk. Cerebellum anatomically normal. DNA test. Zeng JVIM 2011 GRM1 named only. No dedicated Plunkett Bandera chapter.
 - Merck: congenital spinal (Parsley, Mar 2026). Leukoencephalomyelopathy of Rottweilers. Later onset 2–3 years. No head tremor. Proprioception delayed. Bilateral symmetrical spinal demyelination. Minor Sci Rep 2018 NAPEPLD named only. No dedicated Plunkett LEM chapter.
 - Merck: congenital spinal (Parsley, Mar 2026). Hereditary ataxia. Parson / Jack Russell / Smooth Fox. KCNJ10. CAPN1 rare variant. Myokymia / seizures in some forms. Onset 2–6 months. Progressive; some stabilize. No dedicated Plunkett hereditary-ataxia chapter.
+- Heseltine. Merck Veterinary Manual. Hypothyroidism in Animals (May 2024 / May 2025). Canine hypothyroidism. Not T4-alone. Primary lymphocytic thyroiditis / idiopathic atrophy. Low T4 alone is not the diagnosis. Greyhound T4 is lower. Adult cat disease is usually iatrogenic. Skip horse. △ levothyroxine in Plumb. No dedicated Plunkett hypothyroidism chapter.
 - Letko et al. Genes (Basel). 2019;10(5):362 (PMID 31083464 / PMC6562999). SCN8A missense. Not SNX14. Printed c.4898G>T and Gly1633Val stay on the page. Skip cats. Skip horse. Packet 297 still owns SNX14. Packet 219 still owns KCNJ10. Packet 296 still owns ATG4D. Dogs only. No dedicated Plunkett SCN8A chapter.
 - Fenn et al. BMC Genet. 2016;17:123 (PMID 27566131 / PMC5002145). SNX14 splice donor. Not ATG4D. Printed c.2653+1G>A and exon-26 splice donor stay on the page. Skip cats. Skip horse. Packet 296 still owns ATG4D. Packet 295 still owns SEL1L. Packet 213 still owns unnamed abiotrophy. Dogs only. No dedicated Plunkett SNX14 chapter.
 - Kyostila et al. PLoS Genet. 2015;11(4):e1005169 (PMID 25875846 / PMC4398399). ATG4D missense. Not SEL1L. Printed c.1288G>A and A430T stay on the page. Skip cats. Skip horse. Packet 295 still owns SEL1L. Packet 217 still owns Bandera / GRM1. Packet 213 still owns unnamed abiotrophy. Dogs only. No dedicated Plunkett ATG4D chapter.

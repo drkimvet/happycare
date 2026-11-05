@@ -1837,6 +1837,18 @@ SCN8A_RE = re.compile(
     r"\bscn8a\b",
     re.I,
 )
+# Do not use \bgolden\b, bare lethargy, alopecia, T4, or TSH
+# (Addison / HAC / sick-euthyroid). Not hyperthyroid. Not
+# SCN8A (298). Do not harvest a 22-mcg or 80% cholesterol
+# table. Dogs and cats. Skip horse.
+HYPOTHYROID_RE = re.compile(
+    r"\bhypothyroid|"
+    r"\beuthyroid sick|"
+    r"\bnonthyroidal illness|"
+    r"\bmyxedema|"
+    r"\blevothyroxine\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5975,6 +5987,7 @@ def analyze(
     steal_atg4d = ATG4D_RE.search(text)
     steal_snx14 = SNX14_RE.search(text)
     steal_scn8a = SCN8A_RE.search(text)
+    steal_hypothyroid = HYPOTHYROID_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6075,6 +6088,7 @@ def analyze(
         or steal_atg4d
         or steal_snx14
         or steal_scn8a
+        or steal_hypothyroid
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15345,6 +15359,57 @@ def analyze(
         do_not.append("Do not dump hypotonic fluid into a chronic hypernatremia / hyperosmolar diabetic.")
         do_next.append("Correct osmolality slowly. Fluids first. △ insulin in Plumb if used.")
         sources.append("Merck diabetes; Plunkett HHS chapter (legal split) for the ketone-negative trap only")
+
+    hypo_named = spec in {"dog", "cat"} and HYPOTHYROID_RE.search(text)
+    if hypo_named:
+        if spec == "cat":
+            hypo_loc = "Iatrogenic feline hypothyroidism. Not T4-alone."
+        else:
+            hypo_loc = "Canine hypothyroidism. Not T4-alone."
+        localization = f"{localization} Also {hypo_loc}" if localization else hypo_loc
+        hard_stops.append(
+            "Low T4 alone is not hypothyroidism. Do not treat sick euthyroid."
+        )
+        do_not.append(
+            "Do not harvest a 22-mcg table. Do not harvest an 80% cholesterol table. "
+            "Do not copy a T4-alone table."
+        )
+        if spec == "dog":
+            do_not.append(
+                "Do not send a fat Golden home as hypothyroid on T4 alone. "
+                "Do not harvest a 20–40% TSH table. Do not harvest a 4–10 year clock."
+            )
+            do_next.append(
+                "Name canine hypothyroidism. Not T4-alone. "
+                "△ Plumb. Do not copy a levothyroxine table."
+            )
+        else:
+            do_not.append(
+                "Adult cat hypothyroidism is usually iatrogenic after hyperthyroid treatment. "
+                "Naturally occurring adult feline hypothyroidism is rare."
+            )
+            do_next.append(
+                "Name iatrogenic feline hypothyroidism. Not T4-alone. "
+                "△ Plumb. Do not copy a levothyroxine table."
+            )
+        sources.append(
+            "Heseltine. Merck Veterinary Manual. Hypothyroidism in Animals. "
+            "May 2024 / May 2025: primary canine hypothyroidism; T4 alone has low "
+            "specificity; fT4 or TSH; nonthyroidal illness; Greyhound T4 lower; "
+            "△ levothyroxine in Plumb."
+        )
+        if spec == "dog" and SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a fat Golden home as hypothyroid on T4 alone."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for hypothyroidism."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for hypothyroidism."
+            )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
         toy = bool(TOY_PUPPY_RE.search(text))

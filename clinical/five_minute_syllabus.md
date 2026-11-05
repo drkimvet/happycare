@@ -29,3 +29,5 @@ Also on the official series page (study when Midtown or NAVLE hits them): Infect
 3. If a number is required, open Plumb or the hospital protocol. The 2026 Drug Consult is a reminder that formulary lookup is a licensed job.
 
 No third-party book-mirror URLs belong in this repo.
+
+NAVLE / Mosby map: `clinical/navle_mosby_syllabus.md`. Do not pirate Mosby. Gene leftovers 285–298 are closed.

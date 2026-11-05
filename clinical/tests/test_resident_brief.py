@@ -9124,6 +9124,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not snx14", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hypothyroid_is_not_t4_alone(self):
+        b = analyze("dog", "hypothyroidism")
+        loc = b["localization"].lower()
+        self.assertIn("canine hypothyroidism", loc)
+        self.assertIn("not t4-alone", loc)
+        self.assertNotIn("scn8a missense", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("22-mcg table", joined)
+        self.assertIn("80% cholesterol", joined)
+        self.assertIn("t4-alone table", joined)
+        self.assertIn("fat golden home as hypothyroid", joined)
+        self.assertIn("20–40% tsh", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_golden_is_not_hypothyroid(self):
+        b = analyze("dog", "golden retriever")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertNotIn("not t4-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_lethargy_is_not_hypothyroid(self):
+        b = analyze("dog", "lethargy, weight gain, alopecia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertNotIn("not t4-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hyperthyroid_is_not_hypothyroid(self):
+        b = analyze("cat", "hyperthyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertNotIn("iatrogenic feline hypothyroidism", loc)
+        self.assertNotIn("not t4-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_hypothyroid(self):
+        b = analyze("horse", "hypothyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertNotIn("not t4-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_hypothyroid_is_iatrogenic(self):
+        b = analyze("cat", "hypothyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("iatrogenic feline hypothyroidism", loc)
+        self.assertIn("not t4-alone", loc)
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_scn8a_is_not_hypothyroid(self):
+        b = analyze("dog", "scn8a")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("scn8a missense", loc)
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_euthyroid_sick_fires_hypothyroid(self):
+        b = analyze("dog", "euthyroid sick")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hypothyroidism", loc)
+        self.assertIn("not t4-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("sick euthyroid", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
