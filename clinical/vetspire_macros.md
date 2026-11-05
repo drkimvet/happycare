@@ -230,6 +230,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hypothyroid` | Assessment | Canine hypothyroidism / not T4-alone |
 | `ddx-hac` | Assessment | Canine HAC / not Cushing reflex |
 | `ddx-hyperthyroid` | Assessment | Feline hyperthyroidism / not a wellness T4 |
+| `ddx-felv` | Assessment | FeLV antigen / FIV antibody / not SNAP-alone |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -419,6 +420,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hypothyroid` | Discharge | After hypothyroidism / T4 talk |
 | `dc-hac` | Discharge | After HAC / Cushing talk |
 | `dc-hyperthyroid` | Discharge | After hyperthyroid / methimazole talk |
+| `dc-felv` | Discharge | After FeLV / FIV SNAP talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3279,6 +3281,21 @@ DDX:
 Do not: harvest a methimazole table. Harvest an I-131 table. Use PTU in cats. Send a skinny yowling cat home as old. Treat a one-time high T4 in a well cat.
 Do next: Name feline hyperthyroidism. Not a wellness T4. △ Plumb. Do not copy a methimazole table.
 
+### `ddx-felv`
+
+FeLV / FIV — {{patient.name}}
+FeLV antigen [pos / neg / pending]. FIV antibody [pos / neg / pending]. Not SNAP-alone [confirm / pending]. Kitten <6 mo [yes / not]. Vaccine history [FeLV / FIV / unknown].
+
+DDX:
+1. FeLV / FIV — **FeLV antigen, FIV antibody. Not SNAP-alone**
+2. Confirm a positive, especially if well / low-risk. Tears and saliva are not FeLV samples
+3. FeLV vaccine is not an antigen-positive. FIV vaccine antibodies can persist
+4. Kitten FIV-positive may be maternal. Printed 6-month retest stays on the page
+5. Cat can fire. Dog does not fire. Horse does not fire. Bare stomatitis / sick cat / SNAP do not fire
+
+Do not: harvest a SNAP cutoff. Harvest an interferon table. Euthanize on one SNAP. Send a kitten FIV-positive home as infected. Call FeLV vaccine a positive antigen test.
+Do next: Name FeLV antigen, FIV antibody. Not SNAP-alone. △ Plumb. Do not copy an interferon table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4826,6 +4843,14 @@ Return now for collapse, not eating, vomiting, or if drinking and urinating are 
 Give only the medicines we sent, as labeled. Do not start a thyroid pill from the cabinet. The methimazole, if prescribed, is not a cure.
 
 Return now for not eating, vomiting, facial itch, collapse, or if drinking and urinating change after treatment. {{location.phonenumber}}
+
+### `dc-felv`
+
+{{patient.name}} was tested for feline leukemia virus and/or feline immunodeficiency virus. One in-house SNAP is not the whole diagnosis. A positive test, especially in a kitten or a well cat, still needs confirmation.
+
+Give only the medicines we sent, as labeled. Do not start leftover steroids or immune drugs from the cabinet. Keep {{patient.Pronoun}} indoors until we know the true status.
+
+Return now for not eating, fever, pale gums, or if another cat in the house is newly sick. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

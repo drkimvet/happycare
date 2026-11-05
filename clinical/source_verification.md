@@ -3794,7 +3794,7 @@ Night rule: named HAC → **Canine hyperadrenocorticism. Not Cushing reflex.** �
 
 ## 301. Feline hyperthyroidism (Heseltine Merck 2024)
 
-No dedicated Plunkett hyperthyroidism chapter in the owned SA EM splits. Public Heseltine J. Hyperthyroidism in Animals. Merck Veterinary Manual. Full review May 2024. AAHA 2023 selected endocrinopathies named as further reading only. Packet 299 still owns named hypothyroidism. Packet 300 still owns named HAC. Packet 172 still owns hypertension / amlodipine. Packet 302 is FeLV / FIV, not another ataxia gene. Do not harvest a methimazole table as lobby law. Do not harvest an I-131 table as lobby law. Do not fire on bare weight loss / old cat / T4. Cats can fire. Dogs fire as carcinoma until proven otherwise. Skip horse.
+No dedicated Plunkett hyperthyroidism chapter in the owned SA EM splits. Public Heseltine J. Hyperthyroidism in Animals. Merck Veterinary Manual. Full review May 2024. AAHA 2023 selected endocrinopathies named as further reading only. Packet 299 still owns named hypothyroidism. Packet 300 still owns named HAC. Packet 172 still owns hypertension / amlodipine. Packet 302 is FeLV / FIV (not SNAP-alone). Packet 303 is AAHA vaccination. Do not harvest a methimazole table as lobby law. Do not harvest an I-131 table as lobby law. Do not fire on bare weight loss / old cat / T4. Cats can fire. Dogs fire as carcinoma until proven otherwise. Skip horse.
 
 Agree with Heseltine 2024: **feline hyperthyroidism** is usually bilateral adenoma / adenomatous hyperplasia. High T4 in a clinically affected cat confirms. A high T4 in a well cat is not same-day disease. fT4 is not a screening test. TSH is not sensitive. Radioiodine is the curative treatment of choice. Methimazole controls synthesis and is lifelong if used alone. PTU is not recommended in cats. Treatment can unmask CKD. Measure BP. Dog hyperthyroidism is thyroid carcinoma until proven otherwise. Printed methimazole mg and I-131 stay on the page (`△ Plumb`).
 
@@ -3818,3 +3818,30 @@ Night rule: named hyperthyroidism → **Feline hyperthyroidism. Not a wellness T
 - Attending: If the query is only “old cat, weight loss,” why does this gate stay dark?
 - Attending: Dog hyperthyroidism — fire or skip, and what loc?
 - Attending: Dual-named “hyperthyroidism, amlodipine” — which loc should win, and why?
+
+## 302. FeLV / FIV (St Denis Merck 2022; Whitbread kits 2026; AAFP 2020)
+
+No dedicated Plunkett FeLV/FIV chapter in the owned SA EM splits. Public St Denis KA. Feline Leukemia Virus Disease. Merck Veterinary Manual. Reviewed/revised Feb 2022. Whitbread TJ. Serologic Test Kits. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (FIV antibody / maternal antibody / vaccine-antibody lines). Little S, Levy J, Hartmann K, et al. 2020 AAFP Feline Retrovirus Testing and Management Guidelines. J Feline Med Surg. 2020;22(1):5-30. doi:10.1177/1098612X19895940 named only; no guideline dump. Packet 301 still owns named hyperthyroidism. FIP stays the FIP gate. Packet 303 is AAHA vaccination, not another ataxia gene. Do not harvest a SNAP cutoff as lobby law. Do not harvest an interferon table as lobby law. Do not fire on bare stomatitis / sick cat. Cats only. Skip dogs. Skip horse.
+
+Agree with St Denis 2022 / Whitbread 2026 / AAFP 2020: **FeLV is antigen (p27). FIV is antibody.** Do not euthanize on one SNAP. Confirm a positive. FeLV vaccine does not make the antigen test positive. FIV vaccine antibodies can persist. Kitten FIV-positive may be maternal antibody. Tears and saliva are not FeLV samples. Abortive / regressive / progressive FeLV is why one test is not a life sentence. Printed 30-day FeLV and 60-day FIV windows stay on the page. Printed zidovudine mg/kg and interferon lines stay on the page (`△ Plumb`).
+
+Night split: named FeLV / FIV is FeLV antigen, FIV antibody; not SNAP-alone. Bare stomatitis does not fire. Hyperthyroidism stays 301. FIP stays FIP. Horse does not fire. Dog does not fire. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a SNAP cutoff.
+- Do not harvest an interferon table.
+- Do not copy a zidovudine table.
+- Do not send a kitten FIV-positive home as infected.
+- Do not call FeLV vaccine a positive antigen test.
+
+Night rule: named FeLV / FIV → **FeLV antigen, FIV antibody. Not SNAP-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A well indoor cat is SNAP FeLV-positive. Do you euthanize tonight, and what is the next test?
+- NAVLE 2: Why can a kitten be FIV-antibody positive and still not be infected?
+- NAVLE 3: Dual-named “FIP, FeLV” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the SNAP is the diagnosis,” without inventing a cutoff?
+- Attending: If the query is only “stomatitis,” why does this gate stay dark?
+- Attending: Dog FeLV — fire or skip?
+- Attending: Dual-named “hyperthyroidism, FIV” — which loc should win, and why?

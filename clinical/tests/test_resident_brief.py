@@ -9314,6 +9314,61 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not a wellness t4", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_felv_is_antigen_not_snap_alone(self):
+        b = analyze("cat", "FeLV")
+        loc = b["localization"].lower()
+        self.assertIn("felv antigen", loc)
+        self.assertIn("fiv antibody", loc)
+        self.assertIn("not snap-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("snap cutoff", joined)
+        self.assertIn("interferon table", joined)
+        self.assertIn("kitten fiv-positive home as infected", joined)
+        self.assertIn("felv vaccine a positive antigen", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fiv_fires_felv_gate(self):
+        b = analyze("cat", "FIV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("felv antigen", loc)
+        self.assertIn("not snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_felv(self):
+        b = analyze("dog", "FeLV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("felv antigen", loc)
+        self.assertNotIn("not snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_felv(self):
+        b = analyze("horse", "FIV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("felv antigen", loc)
+        self.assertNotIn("not snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_stomatitis_is_not_felv(self):
+        b = analyze("cat", "stomatitis, sick cat")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("felv antigen", loc)
+        self.assertNotIn("not snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hyperthyroid_is_not_felv(self):
+        b = analyze("cat", "hyperthyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline hyperthyroidism", loc)
+        self.assertNotIn("felv antigen", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fip_is_not_felv(self):
+        b = analyze("cat", "FIP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("felv antigen", loc)
+        self.assertNotIn("not snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

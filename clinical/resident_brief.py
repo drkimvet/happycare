@@ -1877,6 +1877,17 @@ HYPERTHYROID_DX_RE = re.compile(
     r"\bi-?131\b",
     re.I,
 )
+# Do not use \bsnap\b (parvo). Do not use bare stomatitis,
+# lymphoma, or sick cat (FIP / uveitis). Not FIP. Not
+# hyperthyroidism (301). Do not harvest a SNAP cutoff or
+# interferon table. Cats only. Skip dogs. Skip horse.
+FELV_FIV_RE = re.compile(
+    r"\bfelv\b|"
+    r"\bfiv\b|"
+    r"\bfeline leukemia|"
+    r"\bfeline immunodeficiency",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6018,6 +6029,7 @@ def analyze(
     steal_hypothyroid = HYPOTHYROID_RE.search(text)
     steal_hac = HAC_RE.search(text)
     steal_hyperthyroid_dx = HYPERTHYROID_DX_RE.search(text)
+    steal_felv_fiv = FELV_FIV_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6121,6 +6133,7 @@ def analyze(
         or steal_hypothyroid
         or steal_hac
         or steal_hyperthyroid_dx
+        or steal_felv_fiv
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15553,6 +15566,47 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for hyperthyroidism."
+            )
+
+    felv_named = spec == "cat" and FELV_FIV_RE.search(text)
+    if felv_named:
+        felv_loc = "FeLV antigen, FIV antibody. Not SNAP-alone."
+        localization = f"{localization} Also {felv_loc}" if localization else felv_loc
+        hard_stops.append(
+            "Do not euthanize on one SNAP. Confirm a positive. "
+            "Do not harvest a SNAP cutoff."
+        )
+        do_not.append(
+            "Do not harvest a SNAP cutoff. Do not harvest an interferon table. "
+            "Do not test saliva or tears for FeLV."
+        )
+        do_not.append(
+            "Do not send a kitten FIV-positive home as infected. "
+            "Do not call FeLV vaccine a positive antigen test."
+        )
+        do_next.append(
+            "Name FeLV antigen, FIV antibody. Not SNAP-alone. "
+            "△ Plumb. Do not copy an interferon table."
+        )
+        sources.append(
+            "St Denis. Merck Veterinary Manual. Feline Leukemia Virus Disease. "
+            "Feb 2022: p27 antigen POC; confirm a positive; abortive/regressive/"
+            "progressive; FeLV vaccine is not an antigen-positive. Whitbread. "
+            "Merck serologic test kits. Aug 2026: FIV is antibody; kitten <6 mo "
+            "may be maternal; FIV vaccine antibodies can persist. AAFP 2020 "
+            "retrovirus guidelines named. △ interferon / zidovudine in Plumb."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a kitten FIV-positive home as infected."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FeLV/FIV."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FeLV/FIV."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

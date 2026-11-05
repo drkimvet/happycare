@@ -703,6 +703,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not cushing reflex", VERIF.lower())
         self.assertIn("feline hyperthyroidism", VERIF.lower())
         self.assertIn("not a wellness t4", VERIF.lower())
+        self.assertIn("felv antigen", VERIF.lower())
+        self.assertIn("not snap-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1159,6 +1161,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hac`", MACRO)
         self.assertIn("`ddx-hyperthyroid`", MACRO)
         self.assertIn("`dc-hyperthyroid`", MACRO)
+        self.assertIn("`ddx-felv`", MACRO)
+        self.assertIn("`dc-felv`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1297,6 +1301,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not cushing reflex", MACRO.lower())
         self.assertIn("feline hyperthyroidism", MACRO.lower())
         self.assertIn("not a wellness t4", MACRO.lower())
+        self.assertIn("felv antigen", MACRO.lower())
+        self.assertIn("not snap-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1797,6 +1803,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not cushing reflex",
             "feline hyperthyroidism",
             "not a wellness t4",
+            "felv antigen",
+            "not snap-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
