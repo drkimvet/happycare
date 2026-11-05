@@ -9191,6 +9191,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("sick euthyroid", joined)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hac_is_not_cushing_reflex(self):
+        b = analyze("dog", "hyperadrenocorticism")
+        loc = b["localization"].lower()
+        self.assertIn("canine hyperadrenocorticism", loc)
+        self.assertIn("not cushing reflex", loc)
+        self.assertNotIn("canine hypothyroidism", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("uccr table", joined)
+        self.assertIn("lddst table", joined)
+        self.assertIn("trilostane table", joined)
+        self.assertIn("panting poodle home as cushing", joined)
+        self.assertIn("8-hour cutoff", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_alp_is_not_hac(self):
+        b = analyze("dog", "high ALP, PU/PD, potbelly")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hyperadrenocorticism", loc)
+        self.assertNotIn("not cushing reflex", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cushing_reflex_is_not_hac(self):
+        b = analyze("dog", "TBI, Cushing reflex, hypertension, bradycardia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("cushing reflex", loc)
+        self.assertNotIn("canine hyperadrenocorticism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_hac(self):
+        b = analyze("horse", "hyperadrenocorticism")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hyperadrenocorticism", loc)
+        self.assertNotIn("not cushing reflex", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypothyroid_is_not_hac(self):
+        b = analyze("dog", "hypothyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hypothyroidism", loc)
+        self.assertNotIn("canine hyperadrenocorticism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_hac_is_uncommon(self):
+        b = analyze("cat", "hyperadrenocorticism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline hac", loc)
+        self.assertIn("not cushing reflex", loc)
+        self.assertNotIn("canine hyperadrenocorticism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_addison_is_not_hac(self):
+        b = analyze("dog", "Addison")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hyperadrenocorticism", loc)
+        self.assertNotIn("not cushing reflex", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_named_cushing_syndrome_still_fires(self):
+        b = analyze("dog", "Cushing syndrome")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hyperadrenocorticism", loc)
+        self.assertIn("not cushing reflex", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -316,6 +316,13 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine hyperadrenocorticism (Merck Van Vertloo Jul 2024; AAHA 2023; ACVIM Behrend 2013)
+
+- **Canine hyperadrenocorticism. Not Cushing reflex.** Hypertension plus bradycardia after head trauma is herniation, not this disease. Do not test a sick dog. Nonadrenal illness and hospital stress make LDDST and UCCR falsely positive.
+- Do **not** diagnose on ALP alone. An asymptomatic high ALP is not Cushing. UCCR is a rule-out (home urine); a high UCCR is not a rule-in. Printed laboratory cutoffs stay on the lab page.
+- LDDST is the screening test of choice when signs are present. The **8-hour cortisol** is the screen. Printed 4-hour / 8-hour times and PDH-escape patterns stay on the page — do not harvest an 8-hour cutoff or a 0.01-mg table (`△ Plumb`). ACTH stim is **not** first-line for spontaneous HAC; it **is** the test for iatrogenic HAC (exogenous steroid). Imaging is differentiation, not the diagnosis.
+- PDH is the usual dog form; ADH is the adrenal tumor. Do not start trilostane tonight on a crashing dog. Do not harvest a trilostane / mitotane table. Cats: uncommon; often diabetic with fragile skin. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine hypothyroidism (Merck Heseltine May 2024 / May 2025)
 
 - **Canine hypothyroidism. Not T4-alone.** Overdiagnosed. Primary (lymphocytic thyroiditis or idiopathic atrophy) is the usual dog disease. Printed T4-sensitivity / cholesterol / TSH-in-RI percents stay on the page — do not harvest them as lobby law.
@@ -467,6 +474,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - Merck: congenital cerebellar (Parsley, Mar 2026). Bandera's neonatal ataxia. Coton de Tulear. From birth. Never able to walk. Cerebellum anatomically normal. DNA test. Zeng JVIM 2011 GRM1 named only. No dedicated Plunkett Bandera chapter.
 - Merck: congenital spinal (Parsley, Mar 2026). Leukoencephalomyelopathy of Rottweilers. Later onset 2–3 years. No head tremor. Proprioception delayed. Bilateral symmetrical spinal demyelination. Minor Sci Rep 2018 NAPEPLD named only. No dedicated Plunkett LEM chapter.
 - Merck: congenital spinal (Parsley, Mar 2026). Hereditary ataxia. Parson / Jack Russell / Smooth Fox. KCNJ10. CAPN1 rare variant. Myokymia / seizures in some forms. Onset 2–6 months. Progressive; some stabilize. No dedicated Plunkett hereditary-ataxia chapter.
+- Van Vertloo. Merck Veterinary Manual. Cushing Syndrome (Hyperadrenocorticism) in Animals (Jul 2024). Canine hyperadrenocorticism. Not Cushing reflex. LDDST is the screen; 8-hour cortisol is the screen. ACTH stim is not first-line for spontaneous HAC. AAHA 2023 selected endocrinopathies: do not test nonadrenal illness; UCCR at home excludes. Behrend ACVIM 2013 JVIM: test only with clinical signs. Skip horse. △ trilostane in Plumb. No dedicated Plunkett HAC chapter.
 - Heseltine. Merck Veterinary Manual. Hypothyroidism in Animals (May 2024 / May 2025). Canine hypothyroidism. Not T4-alone. Primary lymphocytic thyroiditis / idiopathic atrophy. Low T4 alone is not the diagnosis. Greyhound T4 is lower. Adult cat disease is usually iatrogenic. Skip horse. △ levothyroxine in Plumb. No dedicated Plunkett hypothyroidism chapter.
 - Letko et al. Genes (Basel). 2019;10(5):362 (PMID 31083464 / PMC6562999). SCN8A missense. Not SNX14. Printed c.4898G>T and Gly1633Val stay on the page. Skip cats. Skip horse. Packet 297 still owns SNX14. Packet 219 still owns KCNJ10. Packet 296 still owns ATG4D. Dogs only. No dedicated Plunkett SCN8A chapter.
 - Fenn et al. BMC Genet. 2016;17:123 (PMID 27566131 / PMC5002145). SNX14 splice donor. Not ATG4D. Printed c.2653+1G>A and exon-26 splice donor stay on the page. Skip cats. Skip horse. Packet 296 still owns ATG4D. Packet 295 still owns SEL1L. Packet 213 still owns unnamed abiotrophy. Dogs only. No dedicated Plunkett SNX14 chapter.

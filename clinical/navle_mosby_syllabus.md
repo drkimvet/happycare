@@ -51,9 +51,9 @@ Closed gene chain is not on this list.
 
 | Next | Domain | Public source, not a Mosby dump | Status |
 | --- | --- | --- | --- |
-| 299 | Canine hypothyroidism (not T4-alone) | Heseltine, Merck *Hypothyroidism in Animals*, May 2024 / May 2025 | This packet |
-| 300 | Canine hyperadrenocorticism diagnosis traps (not the TBI Cushing reflex) | Merck HAC; do not harvest a UCCR / LDDST table | Next |
-| 301 | Feline hyperthyroidism (full diagnostic gate; azotemia/amlodipine already exists) | Merck hyperthyroidism | After 300 |
+| 299 | Canine hypothyroidism (not T4-alone) | Heseltine, Merck *Hypothyroidism in Animals*, May 2024 / May 2025 | Shipped |
+| 300 | Canine hyperadrenocorticism diagnosis traps (not the TBI Cushing reflex) | Van Vertloo Merck Jul 2024; AAHA 2023; Behrend ACVIM 2013. Do not harvest a UCCR / LDDST table | This packet |
+| 301 | Feline hyperthyroidism (full diagnostic gate; azotemia/amlodipine already exists) | Merck hyperthyroidism | Next |
 | 302 | FeLV / FIV | Merck / AAHA retrovirus | After 301 |
 | 303 | AAHA vaccination / core vs non-core | AAHA canine and feline vaccine guidelines | After 302 |
 

@@ -1849,6 +1849,22 @@ HYPOTHYROID_RE = re.compile(
     r"\blevothyroxine\b",
     re.I,
 )
+# Do not use \bcushing reflex\b (TBI). Do not use bare ALP,
+# PU/PD, potbelly, or panting (299 / Addison). Not
+# hypothyroidism (299). Do not harvest a UCCR / LDDST /
+# trilostane table. Dogs and cats. Skip horse.
+HAC_RE = re.compile(
+    r"\bhyperadrenocorticism\b|"
+    r"\bhypercortisolism\b|"
+    r"\bcushing(?:'s)?(?!\s+reflex)|"
+    r"\btrilostane\b|"
+    r"\bmitotane\b|"
+    r"\blddst\b|"
+    r"\bhddst\b|"
+    r"\buccr\b|"
+    r"\burine cortisol",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5988,6 +6004,7 @@ def analyze(
     steal_snx14 = SNX14_RE.search(text)
     steal_scn8a = SCN8A_RE.search(text)
     steal_hypothyroid = HYPOTHYROID_RE.search(text)
+    steal_hac = HAC_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6089,6 +6106,7 @@ def analyze(
         or steal_snx14
         or steal_scn8a
         or steal_hypothyroid
+        or steal_hac
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15409,6 +15427,59 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for hypothyroidism."
+            )
+
+    hac_named = spec in {"dog", "cat"} and HAC_RE.search(text)
+    if hac_named:
+        if spec == "cat":
+            hac_loc = "Feline HAC. Not Cushing reflex."
+        else:
+            hac_loc = "Canine hyperadrenocorticism. Not Cushing reflex."
+        localization = f"{localization} Also {hac_loc}" if localization else hac_loc
+        hard_stops.append(
+            "Do not test a sick dog for HAC. Do not diagnose on ALP alone."
+        )
+        do_not.append(
+            "Do not harvest a UCCR table. Do not harvest an LDDST table. "
+            "Do not copy a trilostane table."
+        )
+        if spec == "dog":
+            do_not.append(
+                "Do not send a panting Poodle home as Cushing on ALP alone. "
+                "Do not harvest an 8-hour cutoff. Do not harvest a 0.01-mg table."
+            )
+            do_next.append(
+                "Name canine hyperadrenocorticism. Not Cushing reflex. "
+                "△ Plumb. Do not copy a trilostane table."
+            )
+        else:
+            do_not.append(
+                "Feline HAC is uncommon and often sits with diabetes and fragile skin. "
+                "Do not harvest a cat dexamethasone table."
+            )
+            do_next.append(
+                "Name feline HAC. Not Cushing reflex. "
+                "△ Plumb. Do not copy a trilostane table."
+            )
+        sources.append(
+            "Van Vertloo. Merck Veterinary Manual. Cushing Syndrome "
+            "(Hyperadrenocorticism) in Animals. Jul 2024: LDDST is the screening "
+            "test of choice; 8-hour cortisol is the screen; ACTH stim is not "
+            "first-line for spontaneous HAC. AAHA 2023 selected endocrinopathies: "
+            "do not test nonadrenal illness; UCCR at home excludes. Behrend ACVIM "
+            "2013: test only with clinical signs. △ trilostane in Plumb."
+        )
+        if spec == "dog" and SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a panting Poodle home as Cushing on ALP alone."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for HAC."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for HAC."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

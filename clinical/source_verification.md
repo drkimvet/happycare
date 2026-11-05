@@ -3740,7 +3740,7 @@ Night rule: named SCN8A → **SCN8A missense. Not SNX14.** △ Plumb.
 
 ## 299. Canine hypothyroidism (Heseltine Merck 2024/2025)
 
-No dedicated Plunkett hypothyroidism chapter in the owned SA EM splits. Public Heseltine J. Hypothyroidism in Animals. Merck Veterinary Manual. Full review May 2024; last updated May 2025. Peer reviewed by Carnevale J. Gene leftovers 285–298 are closed. Packet 298 still owns named SCN8A. Packet 300 is canine hyperadrenocorticism diagnosis traps, not another ataxia gene. Do not harvest a 22-mcg levothyroxine table as lobby law. Do not harvest an 80% cholesterol table as lobby law. Do not fire on bare Golden / lethargy / alopecia / T4. Dogs can fire. Cats fire as iatrogenic. Skip horse.
+No dedicated Plunkett hypothyroidism chapter in the owned SA EM splits. Public Heseltine J. Hypothyroidism in Animals. Merck Veterinary Manual. Full review May 2024; last updated May 2025. Peer reviewed by Carnevale J. Gene leftovers 285–298 are closed. Packet 298 still owns named SCN8A. Packet 300 is canine hyperadrenocorticism (not Cushing reflex). Packet 301 is feline hyperthyroidism, not another ataxia gene. Do not harvest a 22-mcg levothyroxine table as lobby law. Do not harvest an 80% cholesterol table as lobby law. Do not fire on bare Golden / lethargy / alopecia / T4. Dogs can fire. Cats fire as iatrogenic. Skip horse.
 
 Agree with Heseltine 2024/2025: **canine hypothyroidism** is usually primary (lymphocytic thyroiditis or idiopathic atrophy). Hypothyroidism is overdiagnosed. Low total T4 alone has low specificity. Pair with fT4 (equilibrium dialysis) or TSH. Do not treat nonthyroidal illness / sick euthyroid. Greyhound T4 is lower. Adult cat disease is usually iatrogenic after hyperthyroid treatment. Printed levothyroxine mcg/kg stays on the page (`△ Plumb`).
 
@@ -3764,3 +3764,30 @@ Night rule: named hypothyroidism → **Canine hypothyroidism. Not T4-alone.** �
 - Attending: If the query is only “Golden Retriever,” why does this gate stay dark?
 - Attending: Cat hypothyroidism — fire or skip, and what loc?
 - Attending: Dual-named “hyperthyroidism, hypothyroidism” — which loc should win, and why?
+
+## 300. Canine hyperadrenocorticism (Van Vertloo Merck 2024; AAHA 2023; Behrend ACVIM 2013)
+
+No dedicated Plunkett HAC chapter in the owned SA EM splits. Public Van Vertloo L. Cushing Syndrome (Hyperadrenocorticism) in Animals. Merck Veterinary Manual. Full review Jul 2024. AAHA 2023 Selected Endocrinopathies of Dogs and Cats, diagnostic testing and monitoring (published 12 Apr 2023). Behrend EN, Kooistra HS, Nelson R, Reusch CE, Scott-Moncrieff JC. Diagnosis of spontaneous canine hyperadrenocorticism: 2012 ACVIM consensus statement (small animal). J Vet Intern Med. 2013;27(6):1292-1304. doi:10.1111/jvim.12192. Packet 299 still owns named hypothyroidism. Packet 298 still owns named SCN8A. Packet 301 is feline hyperthyroidism, not another ataxia gene. Do not harvest a UCCR table as lobby law. Do not harvest an LDDST table as lobby law. Do not harvest a 0.01-mg or 8-hour cutoff as lobby law. Do not fire on Cushing reflex (TBI). Do not fire on bare ALP / PU/PD / potbelly. Dogs can fire. Cats can fire (uncommon). Skip horse.
+
+Agree with Van Vertloo 2024 / AAHA 2023 / Behrend 2013: **canine hyperadrenocorticism** is usually PDH. Test only when clinical signs are present. Do not test a sick dog (nonadrenal illness / stress false positives). LDDST is the screening test of choice; the 8-hour cortisol is the screen. UCCR collected at home is a rule-out, not a rule-in. ACTH stim is not first-line for spontaneous HAC; it is the test for iatrogenic HAC. Imaging differentiates PDH vs ADH after the endocrine diagnosis. Printed dexamethasone mg/kg and laboratory cutoffs stay on the page (`△ Plumb`). Trilostane / mitotane stay in Plumb.
+
+Night split: named hyperadrenocorticism / Cushing syndrome is canine hyperadrenocorticism; not Cushing reflex. Bare ALP does not fire. Cushing reflex stays TBI. Horse does not fire. Named hypothyroidism stays 299. Dog can fire. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a UCCR table.
+- Do not harvest an LDDST table.
+- Do not copy a trilostane table.
+- Do not send a panting Poodle home as Cushing on ALP alone.
+- Do not harvest an 8-hour cutoff.
+
+Night rule: named HAC → **Canine hyperadrenocorticism. Not Cushing reflex.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: An asymptomatic dog has a high ALP. Is that Cushing tonight, and which test can exclude it?
+- NAVLE 2: Why is LDDST preferred over ACTH stim for spontaneous HAC, and when is ACTH stim the right test?
+- NAVLE 3: Dual-named “Cushing reflex, hyperadrenocorticism” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “start trilostane from the cabinet,” without inventing a mg/kg?
+- Attending: If the query is only “PU/PD,” why does this gate stay dark?
+- Attending: Cat HAC — fire or skip, and what loc?
+- Attending: Dual-named “hypothyroidism, Cushing syndrome” — which loc should win, and why?

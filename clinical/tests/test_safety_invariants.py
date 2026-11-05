@@ -699,6 +699,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not snx14", VERIF.lower())
         self.assertIn("canine hypothyroidism", VERIF.lower())
         self.assertIn("not t4-alone", VERIF.lower())
+        self.assertIn("canine hyperadrenocorticism", VERIF.lower())
+        self.assertIn("not cushing reflex", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1151,6 +1153,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-scn8a`", MACRO)
         self.assertIn("`ddx-hypothyroid`", MACRO)
         self.assertIn("`dc-hypothyroid`", MACRO)
+        self.assertIn("`ddx-hac`", MACRO)
+        self.assertIn("`dc-hac`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1285,6 +1289,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not snx14", MACRO.lower())
         self.assertIn("canine hypothyroidism", MACRO.lower())
         self.assertIn("not t4-alone", MACRO.lower())
+        self.assertIn("canine hyperadrenocorticism", MACRO.lower())
+        self.assertIn("not cushing reflex", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1781,6 +1787,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not snx14",
             "canine hypothyroidism",
             "not t4-alone",
+            "canine hyperadrenocorticism",
+            "not cushing reflex",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

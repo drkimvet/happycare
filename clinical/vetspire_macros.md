@@ -228,6 +228,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-snx14` | Assessment | Hungarian Vizsla SNX14 CCD |
 | `ddx-scn8a` | Assessment | Alpine Dachsbracke SCN8A ataxia |
 | `ddx-hypothyroid` | Assessment | Canine hypothyroidism / not T4-alone |
+| `ddx-hac` | Assessment | Canine HAC / not Cushing reflex |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -415,6 +416,7 @@ Suggested names are short so they show up after three letters.
 | `dc-snx14` | Discharge | After Hungarian Vizsla SNX14 talk |
 | `dc-scn8a` | Discharge | After Alpine Dachsbracke SCN8A talk |
 | `dc-hypothyroid` | Discharge | After hypothyroidism / T4 talk |
+| `dc-hac` | Discharge | After HAC / Cushing talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3245,6 +3247,21 @@ DDX:
 Do not: harvest a 22-mcg table. Harvest an 80% cholesterol table. Copy a T4-alone table. Send a fat Golden home as hypothyroid on T4 alone. Harvest a 20–40% TSH table.
 Do next: Name canine hypothyroidism. Not T4-alone. △ Plumb. Do not copy a levothyroxine table.
 
+### `ddx-hac`
+
+Hyperadrenocorticism — {{patient.name}}
+Canine hyperadrenocorticism [yes / not]. Not Cushing reflex [yes / not]. Sick / nonadrenal illness [yes / not]. Iatrogenic steroid [yes / not].
+
+DDX:
+1. Canine hyperadrenocorticism — **Canine hyperadrenocorticism. Not Cushing reflex**
+2. LDDST is the screen when signs are present; 8-hour cortisol is the screen
+3. UCCR at home excludes; a high UCCR is not a rule-in. ALP alone is not Cushing
+4. ACTH stim is for iatrogenic HAC, not first-line spontaneous disease
+5. Dog can fire. Cat can fire (uncommon; diabetes / fragile skin). Horse does not fire. Bare ALP / PU/PD / potbelly do not fire. Cushing reflex does not fire
+
+Do not: harvest a UCCR table. Harvest an LDDST table. Copy a trilostane table. Send a panting Poodle home as Cushing on ALP alone. Harvest an 8-hour cutoff.
+Do next: Name canine hyperadrenocorticism. Not Cushing reflex. △ Plumb. Do not copy a trilostane table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4776,6 +4793,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 Give only the medicines we sent, as labeled. Do not start a thyroid pill from the cabinet. Do not add leftover steroids.
 
 Return now for collapse, not eating, or if the skin or energy is getting worse instead of better. {{location.phonenumber}}
+
+### `dc-hac`
+
+{{patient.name}} was evaluated for Cushing syndrome (too much cortisol). A high ALP or a stressed hospital urine cortisol is not the diagnosis. We still need the right adrenal tests, done when {{patient.Pronoun}} is not sick from something else.
+
+Give only the medicines we sent, as labeled. Do not start a steroid or a Cushing pill from the cabinet.
+
+Return now for collapse, not eating, vomiting, or if drinking and urinating are getting worse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
