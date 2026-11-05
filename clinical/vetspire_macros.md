@@ -225,6 +225,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sptbn2` | Assessment | Beagle SPTBN2 NCCD |
 | `ddx-sel1l` | Assessment | Finnish Hound SEL1L ataxia |
 | `ddx-atg4d` | Assessment | Lagotto ATG4D vacuolar ataxia |
+| `ddx-snx14` | Assessment | Hungarian Vizsla SNX14 CCD |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -409,6 +410,7 @@ Suggested names are short so they show up after three letters.
 | `dc-sptbn2` | Discharge | After Beagle SPTBN2 NCCD talk |
 | `dc-sel1l` | Discharge | After Finnish Hound SEL1L talk |
 | `dc-atg4d` | Discharge | After Lagotto ATG4D talk |
+| `dc-snx14` | Discharge | After Hungarian Vizsla SNX14 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3194,6 +3196,21 @@ DDX:
 Do not: harvest a 23-month clock. Harvest a 2300-Lagotto table. Copy a 295 table. Send a Lagotto home as SEL1L. Call it 295-only.
 Do next: Name the ATG4D. Missense. Not SEL1L. △ Plumb. Do not copy a 295 table.
 
+### `ddx-snx14`
+
+SNX14 — {{patient.name}}
+SNX14 splice donor [yes / not]. Not ATG4D [yes / not].
+
+DDX:
+1. SNX14 — **SNX14 splice donor. Not ATG4D**
+2. Printed c.2653+1G>A / exon-26 splice donor stay on the page
+3. Packet 296 still owns ATG4D. Packet 295 still owns SEL1L. Packet 213 still owns unnamed abiotrophy
+4. Not 296-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Vizsla / cerebellar ataxia do not fire
+
+Do not: harvest a 3-month clock. Harvest a 133-Vizsla table. Copy a 296 table. Send a Vizsla home as ATG4D. Call it 296-only.
+Do next: Name the SNX14. Splice donor. Not ATG4D. △ Plumb. Do not copy a 296 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4697,6 +4714,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-atg4d`
 
 {{patient.name}} was evaluated for ATG4D (Lagotto vacuolar storage ataxia, not SEL1L). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-snx14`
+
+{{patient.name}} was evaluated for SNX14 (Vizsla CCD from an exon-26 splice donor, not ATG4D). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

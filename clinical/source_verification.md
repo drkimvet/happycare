@@ -3659,7 +3659,7 @@ Night rule: named SEL1L → **SEL1L missense. Not SPTBN2.** △ Plumb.
 
 ## 296. Lagotto ATG4D (Kyostila PLoS Genet 2015)
 
-No dedicated Plunkett ATG4D chapter in the owned SA EM splits. Public Kyostila K, Syrja P, Jagannathan V, et al. A missense change in the ATG4D gene links aberrant autophagy to a neurodegenerative vacuolar storage disease. PLoS Genet. 2015;11(4):e1005169. doi:10.1371/journal.pgen.1005169. PMID: 25875846. PMCID: PMC4398399. Packet 295 still owns named SEL1L. Packet 217 still owns Bandera / GRM1. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 297 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 23-month clock as lobby law. Do not harvest a 2300-Lagotto table as lobby law. Do not fire on bare Lagotto / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett ATG4D chapter in the owned SA EM splits. Public Kyostila K, Syrja P, Jagannathan V, et al. A missense change in the ATG4D gene links aberrant autophagy to a neurodegenerative vacuolar storage disease. PLoS Genet. 2015;11(4):e1005169. doi:10.1371/journal.pgen.1005169. PMID: 25875846. PMCID: PMC4398399. Packet 295 still owns named SEL1L. Packet 217 still owns Bandera / GRM1. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 297 owns named SNX14, not this dump. Do not harvest a 23-month clock as lobby law. Do not harvest a 2300-Lagotto table as lobby law. Do not fire on bare Lagotto / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Kyostila 2015: **ATG4D** missense (c.1288G>A; p.A430T) is **autosomal recessive** in Lagotto Romagnolo dogs with progressive cerebellar ataxia and neuronal cytoplasmic vacuolization. Printed missense, vacuolar storage, and autophagy line stay on the page. Do not harvest a zebrafish knockdown table as lobby law.
 
@@ -3683,3 +3683,30 @@ Night rule: named ATG4D → **ATG4D missense. Not SEL1L.** △ Plumb.
 - Attending: If the query is only “Lagotto,” why does this gate stay dark?
 - Attending: Cat ATG4D — fire or skip?
 - Attending: Dual-named “SEL1L, ATG4D” — which loc should win, and why?
+
+## 297. Hungarian Vizsla SNX14 (Fenn BMC Genet 2016)
+
+No dedicated Plunkett SNX14 chapter in the owned SA EM splits. Public Fenn J, Boursnell M, Hitti RJ, et al. Genome sequencing reveals a splice donor site mutation in the SNX14 gene associated with a novel cerebellar cortical degeneration in the Hungarian Vizsla dog breed. BMC Genet. 2016;17:123. doi:10.1186/s12863-016-0433-y. PMID: 27566131. PMCID: PMC5002145. Packet 296 still owns named ATG4D. Packet 295 still owns named SEL1L. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 298 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 133-Vizsla table as lobby law. Do not fire on bare Vizsla / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Fenn 2016: **SNX14** exon-26 **splice donor** (c.2653+1G>A; p.G885Dfs*16) is **autosomal recessive** in Hungarian Vizsla dogs with cerebellar cortical degeneration. Printed splice donor, lost SNX14 protein, and Purkinje-cell loss stay on the page. Do not harvest a human SCAR20 table as lobby law.
+
+Night split: named SNX14 is SNX14 splice donor; not ATG4D. Bare Vizsla does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named ATG4D stays 296. Named SEL1L stays 295. Named abiotrophy stays 213. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3-month clock.
+- Do not harvest a 133-Vizsla table.
+- Do not copy a 296 table.
+- Do not send a Vizsla home as ATG4D.
+- Do not call it 296-only.
+
+Night rule: named SNX14 → **SNX14 splice donor. Not ATG4D.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A three-month Vizsla has hypermetric ataxia and absent menace. Which gene split matters at night, and why is this not ATG4D?
+- NAVLE 2: The variant is printed as c.2653+1G>A. What stays on the page?
+- NAVLE 3: Dual-named “cerebellar abiotrophy, SNX14” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Lagotto ATG4D they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Vizsla,” why does this gate stay dark?
+- Attending: Cat SNX14 — fire or skip?
+- Attending: Dual-named “ATG4D, SNX14” — which loc should win, and why?

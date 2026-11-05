@@ -9012,6 +9012,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not sel1l", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_snx14_is_splice_donor_not_atg4d(self):
+        b = analyze("dog", "snx14")
+        loc = b["localization"].lower()
+        self.assertIn("snx14 splice donor", loc)
+        self.assertIn("not atg4d", loc)
+        self.assertNotIn("atg4d missense", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("3-month clock", joined)
+        self.assertIn("133-vizsla", joined)
+        self.assertIn("296 table", joined)
+        self.assertIn("vizsla home as atg4d", joined)
+        self.assertIn("296-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_vizsla_is_not_snx14(self):
+        b = analyze("dog", "hungarian vizsla")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("snx14 splice donor", loc)
+        self.assertNotIn("not atg4d", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cerebellar_ataxia_is_not_snx14(self):
+        b = analyze("dog", "cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("snx14 splice donor", loc)
+        self.assertNotIn("not atg4d", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_atg4d_is_not_snx14(self):
+        b = analyze("dog", "atg4d")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("atg4d missense", loc)
+        self.assertNotIn("snx14 splice donor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_snx14(self):
+        b = analyze("horse", "snx14")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("snx14 splice donor", loc)
+        self.assertNotIn("not atg4d", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_snx14(self):
+        b = analyze("cat", "snx14")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("snx14 splice donor", loc)
+        self.assertNotIn("not atg4d", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_snx14_still_fires(self):
+        b = analyze("dog", "SNX14")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("snx14 splice donor", loc)
+        self.assertIn("not atg4d", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -1821,6 +1821,14 @@ ATG4D_RE = re.compile(
     r"\batg4d\b",
     re.I,
 )
+# Do not use \bvizsla\b or bare CCD / cerebellar ataxia (213 /
+# 296). Not ATG4D (296). Not SEL1L (295). Do not harvest a
+# 3-month or 133-Vizsla table. Dogs only. Skip cats. Skip
+# horse.
+SNX14_RE = re.compile(
+    r"\bsnx14\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5957,6 +5965,7 @@ def analyze(
     steal_sptbn2 = SPTBN2_RE.search(text)
     steal_sel1l = SEL1L_RE.search(text)
     steal_atg4d = ATG4D_RE.search(text)
+    steal_snx14 = SNX14_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6055,6 +6064,7 @@ def analyze(
         or steal_sptbn2
         or steal_sel1l
         or steal_atg4d
+        or steal_snx14
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6390,7 +6400,8 @@ def analyze(
 
     chypo_named = spec in {"dog", "cat"} and CHYPO_RE.search(text)
     if chypo_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -6493,7 +6504,8 @@ def analyze(
 
     abiot_named = spec == "dog" and ABIOT_RE.search(text)
     if abiot_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -6772,7 +6784,8 @@ def analyze(
 
     hatax_named = spec == "dog" and HATAX_RE.search(text)
     if hatax_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -9242,7 +9255,8 @@ def analyze(
 
     mfe_named = spec == "dog" and MFE_RE.search(text)
     if mfe_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -9550,7 +9564,8 @@ def analyze(
 
     spong_named = spec in {"dog", "cat"} and SPONG_RE.search(text)
     if spong_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13069,7 +13084,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13213,7 +13229,8 @@ def analyze(
 
     cmm1_named = spec == "dog" and CMM1_RE.search(text)
     if cmm1_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13474,7 +13491,8 @@ def analyze(
 
     rab24_named = spec == "dog" and RAB24_RE.search(text)
     if rab24_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13605,7 +13623,8 @@ def analyze(
 
     ralgapa1_named = spec == "dog" and RALGAPA1_RE.search(text)
     if ralgapa1_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13735,7 +13754,8 @@ def analyze(
 
     sdca2_named = spec == "dog" and SDCA2_RE.search(text)
     if sdca2_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13860,7 +13880,8 @@ def analyze(
 
     selenop_named = spec == "dog" and SELENOP_RE.search(text)
     if selenop_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -13985,7 +14006,8 @@ def analyze(
 
     kcnip4_named = spec == "dog" and KCNIP4_RE.search(text)
     if kcnip4_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -14107,7 +14129,8 @@ def analyze(
 
     pnpla8_named = spec == "dog" and PNPLA8_RE.search(text)
     if pnpla8_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or ITPR1_RE.search(text)
@@ -14228,7 +14251,8 @@ def analyze(
 
     itpr1_named = spec == "dog" and ITPR1_RE.search(text)
     if itpr1_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
         or CPD_RE.search(text)
@@ -14348,7 +14372,8 @@ def analyze(
 
     sptbn2_named = spec == "dog" and SPTBN2_RE.search(text)
     if sptbn2_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
@@ -14468,7 +14493,8 @@ def analyze(
 
     sel1l_named = spec == "dog" and SEL1L_RE.search(text)
     if sel1l_named and not (
-        ATG4D_RE.search(text)
+        SNX14_RE.search(text)
+        or ATG4D_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
@@ -14586,7 +14612,8 @@ def analyze(
 
     atg4d_named = spec == "dog" and ATG4D_RE.search(text)
     if atg4d_named and not (
-        CPD_RE.search(text)
+        SNX14_RE.search(text)
+        or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
         or BCSN_RE.search(text)
@@ -14700,6 +14727,123 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for ATG4D.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for ATG4D.")
+
+    snx14_named = spec == "dog" and SNX14_RE.search(text)
+    if snx14_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        snx14_loc = (
+            "SNX14 splice donor. Not ATG4D."
+        )
+        localization = f"{localization} Also {snx14_loc}" if localization else snx14_loc
+        hard_stops.append(
+            "Do not harvest a 3-month clock as lobby law. "
+            "Do not harvest a 133-Vizsla table as lobby law. "
+            "Do not copy a 296 table as lobby law. "
+            "Do not send a Vizsla home as ATG4D. "
+            "Do not call it 296-only."
+        )
+        do_not.append(
+            "Autosomal recessive Hungarian Vizsla SNX14. "
+            "Printed c.2653+1G>A / exon-26 splice donor stay "
+            "on the page. Packet 296 still owns ATG4D. Packet "
+            "295 still owns SEL1L. Packet 213 still owns "
+            "unnamed abiotrophy. Skip horse. Not 296-only."
+        )
+        do_next.append(
+            "Name the SNX14. Splice donor. Not ATG4D. "
+            "△ Plumb. Do not copy a 296 table."
+        )
+        sources.append(
+            "Fenn et al. BMC Genet. 2016;17:123. "
+            "doi:10.1186/s12863-016-0433-y. PMID 27566131. "
+            "PMC5002145: Hungarian Vizsla SNX14 splice donor; "
+            "autosomal recessive CCD; distinct from ATG4D and "
+            "from SEL1L."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Vizsla home as ATG4D."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for SNX14.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for SNX14.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")
