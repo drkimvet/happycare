@@ -222,6 +222,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-kcnip4` | Assessment | Norwegian Buhund KCNIP4 ataxia |
 | `ddx-pnpla8` | Assessment | Australian Shepherd PNPLA8 ataxia |
 | `ddx-itpr1` | Assessment | Italian Spinone ITPR1 SCAIS |
+| `ddx-sptbn2` | Assessment | Beagle SPTBN2 NCCD |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -403,6 +404,7 @@ Suggested names are short so they show up after three letters.
 | `dc-kcnip4` | Discharge | After Norwegian Buhund KCNIP4 talk |
 | `dc-pnpla8` | Discharge | After Australian Shepherd PNPLA8 talk |
 | `dc-itpr1` | Discharge | After Italian Spinone ITPR1 talk |
+| `dc-sptbn2` | Discharge | After Beagle SPTBN2 NCCD talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3143,6 +3145,21 @@ DDX:
 Do not: harvest a 4-month clock. Harvest a 1-year euthanasia table. Copy a 292 table. Send a Spinone home as PNPLA8. Call it 292-only.
 Do next: Name the ITPR1. GAA expansion. Not PNPLA8. △ Plumb. Do not copy a 292 table.
 
+### `ddx-sptbn2`
+
+SPTBN2 — {{patient.name}}
+SPTBN2 8-bp deletion [yes / not]. Not ITPR1 [yes / not].
+
+DDX:
+1. SPTBN2 — **SPTBN2 8-bp deletion. Not ITPR1**
+2. Printed exon-29 8-bp deletion / β-III spectrin stay on the page
+3. Packet 293 still owns ITPR1. Packet 213 still owns unnamed abiotrophy. Packet 217 still owns Bandera / GRM1
+4. Not 293-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Beagle / cerebellar abiotrophy do not fire
+
+Do not: harvest a 4-week clock. Harvest a 68-fold table. Copy a 293 table. Send a Beagle home as ITPR1. Call it 293-only.
+Do next: Name the SPTBN2. 8-bp deletion. Not ITPR1. △ Plumb. Do not copy a 293 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4622,6 +4639,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-itpr1`
 
 {{patient.name}} was evaluated for ITPR1 (Spinone SCAIS from an intron-35 GAA expansion, not PNPLA8). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-sptbn2`
+
+{{patient.name}} was evaluated for SPTBN2 (Beagle NCCD from an 8-bp deletion, not ITPR1 SCAIS). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

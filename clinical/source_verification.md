@@ -3578,7 +3578,7 @@ Night rule: named PNPLA8 → **PNPLA8 frameshift. Not KCNIP4.** △ Plumb.
 
 ## 293. Italian Spinone ITPR1 / SCAIS (Forman Mamm Genome 2015)
 
-No dedicated Plunkett ITPR1 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Matiasek K, Platt S, Mellersh C. Spinocerebellar ataxia in the Italian Spinone dog is associated with an intronic GAA repeat expansion in ITPR1. Mamm Genome. 2015;26(1-2):108-117. doi:10.1007/s00335-014-9547-6. PMID: 25354648. PMCID: PMC4305091. Packet 292 still owns named PNPLA8. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 still owns named KCNIP4. Packet 294 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 4-month clock as lobby law. Do not harvest a 1-year euthanasia table as lobby law. Do not fire on bare Spinone / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett ITPR1 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Matiasek K, Platt S, Mellersh C. Spinocerebellar ataxia in the Italian Spinone dog is associated with an intronic GAA repeat expansion in ITPR1. Mamm Genome. 2015;26(1-2):108-117. doi:10.1007/s00335-014-9547-6. PMID: 25354648. PMCID: PMC4305091. Packet 292 still owns named PNPLA8. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 still owns named KCNIP4. Packet 294 owns named SPTBN2, not this dump. Do not harvest a 4-month clock as lobby law. Do not harvest a 1-year euthanasia table as lobby law. Do not fire on bare Spinone / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Forman 2015: **ITPR1** intron-35 **GAA repeat expansion** is **autosomal recessive** in Italian Spinone dogs with spinocerebellar ataxia (SCAIS). Progressive gait from about four months. Printed intron-35 expansion, reduced Purkinje ITPR1, and the SCAIS name stay on the page. Do not harvest a Friedreich / SCA15 table as lobby law. Human SCA15 is a different inheritance.
 
@@ -3602,3 +3602,30 @@ Night rule: named ITPR1 → **ITPR1 GAA expansion. Not PNPLA8.** △ Plumb.
 - Attending: If the query is only “Italian Spinone,” why does this gate stay dark?
 - Attending: Cat ITPR1 — fire or skip?
 - Attending: Dual-named “PNPLA8, ITPR1” — which loc should win, and why?
+
+## 294. Beagle SPTBN2 / NCCD (Forman BMC Genet 2012)
+
+No dedicated Plunkett SPTBN2 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Stewart J, Mellersh CS, Beltran E. Genome-wide mRNA sequencing of a single canine cerebellar cortical degeneration case leads to the identification of a disease associated SPTBN2 mutation. BMC Genet. 2012;13:55. doi:10.1186/1471-2156-13-55. PMID: 22781464. PMCID: PMC3413603. Packet 293 still owns named ITPR1 / SCAIS. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 295 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 4-week clock as lobby law. Do not harvest a 68-fold table as lobby law. Do not fire on bare Beagle / cerebellar abiotrophy. Dogs only. Skip cats. Skip horse.
+
+Agree with Forman 2012: **SPTBN2** exon-29 **8-bp deletion** (chr18:53,691,704_53,691,711del) is **autosomal recessive** in Beagle dogs with neonatal cerebellar cortical degeneration (NCCD). Printed 8-bp deletion, β-III spectrin loss, and the NCCD name stay on the page. Do not harvest a human SCA5 table as lobby law. Human SCA5 is a different inheritance.
+
+Night split: named SPTBN2 / NCCD is SPTBN2 8-bp deletion; not ITPR1. Bare Beagle does not fire. Bare cerebellar abiotrophy does not fire. Cat does not fire. Horse does not fire. Named ITPR1 stays 293. Named abiotrophy stays 213. Named Bandera / GRM1 stays 217. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 4-week clock.
+- Do not harvest a 68-fold table.
+- Do not copy a 293 table.
+- Do not send a Beagle home as ITPR1.
+- Do not call it 293-only.
+
+Night rule: named SPTBN2 → **SPTBN2 8-bp deletion. Not ITPR1.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A four-week Beagle cannot walk from the onset of ambulation. Which gene split matters at night, and why is this not ITPR1?
+- NAVLE 2: The variant is printed as an exon-29 8-bp deletion. What stays on the page?
+- NAVLE 3: Dual-named “cerebellar abiotrophy, SPTBN2” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the human SCA5 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Beagle,” why does this gate stay dark?
+- Attending: Cat SPTBN2 — fire or skip?
+- Attending: Dual-named “ITPR1, SPTBN2” — which loc should win, and why?
