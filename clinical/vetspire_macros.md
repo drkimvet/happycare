@@ -217,6 +217,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fam8a1` | Assessment | Russian Blue FAM8A1 / RBD |
 | `ddx-rab24` | Assessment | RAB24 cerebellar ataxia |
 | `ddx-ralgapa1` | Assessment | Belgian Shepherd RALGAPA1 ataxia |
+| `ddx-sdca2` | Assessment | Malinois SDCA2 / ATP1B2 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -393,6 +394,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fam8a1` | Discharge | After Russian Blue FAM8A1 / RBD talk |
 | `dc-rab24` | Discharge | After RAB24 cerebellar ataxia talk |
 | `dc-ralgapa1` | Discharge | After Belgian Shepherd RALGAPA1 talk |
+| `dc-sdca2` | Discharge | After Malinois SDCA2 / ATP1B2 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3058,6 +3060,21 @@ DDX:
 Do not: harvest a 6-week clock. Harvest a 5-week euthanasia clock. Harvest a 5% carrier table. Copy a 287 table. Send a Belgian home as RAB24. Call it 287-only.
 Do next: Name the RALGAPA1. Deletion. Not RAB24 missense. △ Plumb. Do not copy a 287 table.
 
+### `ddx-sdca2`
+
+SDCA2 — {{patient.name}}
+ATP1B2 SINE [yes / not]. Not RALGAPA1 [yes / not].
+
+DDX:
+1. SDCA2 — **SDCA2. ATP1B2 SINE. Not RALGAPA1**
+2. Printed 227-bp SINE / aberrant splicing stay on the page
+3. Packet 288 still owns RALGAPA1. Packet 255 still owns unnamed spongiform degeneration. Packet 219 still owns KCNJ10 / SDCA1
+4. Not 288-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Malinois / spongy degeneration / cerebellar ataxia do not fire
+
+Do not: harvest a 227-bp table. Harvest a 10.6 Mb interval. Copy a 288 table. Send a Malinois home as RALGAPA1. Call it 288-only.
+Do next: Name the SDCA2. ATP1B2 SINE. Not RALGAPA1. △ Plumb. Do not copy a 288 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4497,6 +4514,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-ralgapa1`
 
 {{patient.name}} was evaluated for RALGAPA1 (a Belgian Shepherd deletion ataxia, not RAB24 missense). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-sdca2`
+
+{{patient.name}} was evaluated for SDCA2 (an ATP1B2 SINE insertion in Malinois, not RALGAPA1). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

@@ -1754,6 +1754,16 @@ RALGAPA1_RE = re.compile(
     r"\bgarnl1\b",
     re.I,
 )
+# Do not use \bbelgian shepherd\b / \bmalinois\b or bare
+# spongy degeneration / cerebellar ataxia (255 / 288 / 287).
+# Not RALGAPA1 deletion (288). Not RAB24 missense (287).
+# Not KCNJ10 / SDCA1 (219). Do not harvest a 227-bp table.
+# Dogs only. Skip cats. Skip horse.
+SDCA2_RE = re.compile(
+    r"\bsdca2\b|"
+    r"\batp1b2\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5882,6 +5892,7 @@ def analyze(
     steal_fam8a1 = FAM8A1_RE.search(text)
     steal_rab24 = RAB24_RE.search(text)
     steal_ralgapa1 = RALGAPA1_RE.search(text)
+    steal_sdca2 = SDCA2_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -5972,6 +5983,7 @@ def analyze(
         or steal_fam8a1
         or steal_rab24
         or steal_ralgapa1
+        or steal_sdca2
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6307,7 +6319,8 @@ def analyze(
 
     chypo_named = spec in {"dog", "cat"} and CHYPO_RE.search(text)
     if chypo_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or RAB24_RE.search(text)
         or hydran_core
         or NME_RE.search(text)
@@ -6402,7 +6415,8 @@ def analyze(
 
     abiot_named = spec == "dog" and ABIOT_RE.search(text)
     if abiot_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or RAB24_RE.search(text)
         or NME_RE.search(text)
         or GME_RE.search(text)
@@ -6673,7 +6687,8 @@ def analyze(
 
     hatax_named = spec == "dog" and HATAX_RE.search(text)
     if hatax_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or RAB24_RE.search(text)
         or LEM_RE.search(text)
         or NAD_RE.search(text)
@@ -9135,7 +9150,8 @@ def analyze(
 
     mfe_named = spec == "dog" and MFE_RE.search(text)
     if mfe_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or RAB24_RE.search(text)
         or MSND_RE.search(text)
         or CHROM_RE.search(text)
@@ -9435,7 +9451,8 @@ def analyze(
 
     spong_named = spec in {"dog", "cat"} and SPONG_RE.search(text)
     if spong_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or SAXON_RE.search(text)
         or DALV_RE.search(text)
         or MFE_RE.search(text)
@@ -12946,7 +12963,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or RAB24_RE.search(text)
         or FAM8A1_RE.search(text)
         or CMM1_RE.search(text)
@@ -13082,7 +13100,8 @@ def analyze(
 
     cmm1_named = spec == "dog" and CMM1_RE.search(text)
     if cmm1_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or RAB24_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
@@ -13335,7 +13354,8 @@ def analyze(
 
     rab24_named = spec == "dog" and RAB24_RE.search(text)
     if rab24_named and not (
-        RALGAPA1_RE.search(text)
+        SDCA2_RE.search(text)
+        or RALGAPA1_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
@@ -13458,7 +13478,8 @@ def analyze(
 
     ralgapa1_named = spec == "dog" and RALGAPA1_RE.search(text)
     if ralgapa1_named and not (
-        CPD_RE.search(text)
+        SDCA2_RE.search(text)
+        or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
         or BCSN_RE.search(text)
@@ -13577,6 +13598,124 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for RALGAPA1.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for RALGAPA1.")
+
+    sdca2_named = spec == "dog" and SDCA2_RE.search(text)
+    if sdca2_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        sdca2_loc = (
+            "SDCA2. ATP1B2 SINE. Not RALGAPA1."
+        )
+        localization = f"{localization} Also {sdca2_loc}" if localization else sdca2_loc
+        hard_stops.append(
+            "Do not harvest a 227-bp table as lobby law. "
+            "Do not harvest a 10.6 Mb interval as lobby law. "
+            "Do not copy a 288 table as lobby law. "
+            "Do not send a Malinois home as RALGAPA1. "
+            "Do not call it 288-only."
+        )
+        do_not.append(
+            "Autosomal recessive Malinois SDCA2. Printed "
+            "ATP1B2 SINE insertion / aberrant splicing stay "
+            "on the page. Packet 288 still owns RALGAPA1. "
+            "Packet 255 still owns unnamed spongiform "
+            "degeneration. Packet 219 still owns KCNJ10 / "
+            "SDCA1. Skip horse. Not 288-only."
+        )
+        do_next.append(
+            "Name the SDCA2. ATP1B2 SINE. Not RALGAPA1. "
+            "△ Plumb. Do not copy a 288 table."
+        )
+        sources.append(
+            "Mauri et al. G3 (Bethesda). 2017;7(8):2729-2737. "
+            "doi:10.1534/g3.117.043018. PMID 28620085. "
+            "PMC5555477: Malinois ATP1B2 227-bp SINE; "
+            "autosomal recessive SDCA2; aberrant splicing; "
+            "distinct from RALGAPA1 and from KCNJ10 SDCA1."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Malinois home as RALGAPA1."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for SDCA2.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for SDCA2.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

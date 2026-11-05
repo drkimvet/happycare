@@ -8548,6 +8548,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not rab24 missense", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_sdca2_is_atp1b2_sine_not_ralgapa1(self):
+        b = analyze("dog", "sdca2")
+        loc = b["localization"].lower()
+        self.assertIn("sdca2", loc)
+        self.assertIn("atp1b2 sine", loc)
+        self.assertIn("not ralgapa1", loc)
+        self.assertNotIn("ralgapa1 deletion", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("227-bp table", joined)
+        self.assertIn("10.6 mb", joined)
+        self.assertIn("288 table", joined)
+        self.assertIn("malinois home as ralgapa1", joined)
+        self.assertIn("288-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_malinois_is_not_sdca2(self):
+        b = analyze("dog", "malinois")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atp1b2 sine", loc)
+        self.assertNotIn("not ralgapa1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_spongy_degeneration_is_not_sdca2(self):
+        b = analyze("dog", "spongy degeneration")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atp1b2 sine", loc)
+        self.assertNotIn("not ralgapa1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ralgapa1_is_not_sdca2(self):
+        b = analyze("dog", "ralgapa1")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("ralgapa1 deletion", loc)
+        self.assertNotIn("atp1b2 sine", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_sdca2(self):
+        b = analyze("horse", "sdca2")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atp1b2 sine", loc)
+        self.assertNotIn("not ralgapa1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_sdca2(self):
+        b = analyze("cat", "atp1b2")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atp1b2 sine", loc)
+        self.assertNotIn("not ralgapa1", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_atp1b2_still_fires(self):
+        b = analyze("dog", "atp1b2")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("sdca2", loc)
+        self.assertIn("atp1b2 sine", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -3442,7 +3442,7 @@ Night rule: named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** �
 
 ## 288. Belgian Shepherd RALGAPA1 / GARNL1 (Christen Genes 2023)
 
-No dedicated Plunkett RALGAPA1 chapter in the owned SA EM splits. Public Christen M, Zdora I, Leschnik M, et al. RALGAPA1 deletion in Belgian Shepherd dogs with cerebellar ataxia. Genes (Basel). 2023;14(8):1520. doi:10.3390/genes14081520. PMID: 37628572. PMCID: PMC10454311. Packet 287 still owns named RAB24 / Gly80Val. Packet 252 still owns named familial cerebellar ataxia / MFE. Packet 255 still owns named spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 289 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 6-week clock as lobby law. Do not harvest a 5-week euthanasia clock as lobby law. Do not harvest a 5% carrier table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett RALGAPA1 chapter in the owned SA EM splits. Public Christen M, Zdora I, Leschnik M, et al. RALGAPA1 deletion in Belgian Shepherd dogs with cerebellar ataxia. Genes (Basel). 2023;14(8):1520. doi:10.3390/genes14081520. PMID: 37628572. PMCID: PMC10454311. Packet 287 still owns named RAB24 / Gly80Val. Packet 252 still owns named familial cerebellar ataxia / MFE. Packet 255 still owns named spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 289 owns named SDCA2 / ATP1B2, not this dump. Do not harvest a 6-week clock as lobby law. Do not harvest a 5-week euthanasia clock as lobby law. Do not harvest a 5% carrier table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Christen 2023: **RALGAPA1** (also GARNL1) exon-35 ~4.8 kb deletion (XM_038544497.1:c.6080-2893_6944+1003del) is **autosomal recessive** in Belgian Shepherd dogs with cerebellar ataxia. Two littermates stabilized around six weeks and remained ataxic into adulthood. Three additional homozygotes from another litter were euthanized at five weeks for a severe phenotype. Histopathology showed cytoplasmic accumulation of granular material in Purkinje cells. Carrier frequency in a ~900-dog Belgian cohort stays on the page. Printed deletion, Purkinje granules, and stabilize-into-adulthood stay on the page.
 
@@ -3467,3 +3467,30 @@ Night rule: named RALGAPA1 / GARNL1 → **RALGAPA1 deletion. Not RAB24 missense.
 - Attending: If the query is only “Belgian Shepherd,” why does this gate stay dark?
 - Attending: Cat RALGAPA1 — fire or skip?
 - Attending: Dual-named “RAB24, RALGAPA1” — which loc should win, and why?
+
+## 289. Malinois SDCA2 / ATP1B2 (Mauri G3 2017)
+
+No dedicated Plunkett SDCA2 chapter in the owned SA EM splits. Public Mauri N, Kleiter M, Dietschi E, et al. A SINE insertion in ATP1B2 in Belgian Shepherd dogs affected by spongy degeneration with cerebellar ataxia (SDCA2). G3 (Bethesda). 2017;7(8):2729-2737. doi:10.1534/g3.117.043018. PMID: 28620085. PMCID: PMC5555477. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10 / SDCA1. Packet 287 still owns named RAB24. Packet 290 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 227-bp table as lobby law. Do not harvest a 10.6 Mb interval as lobby law. Do not fire on bare Malinois / Belgian Shepherd / spongy degeneration / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Mauri 2017: **SDCA2** in Malinois is an **autosomal recessive** 227-bp SINE insertion in **ATP1B2** (c.130_131insLT796559.1:g.50_276) that causes aberrant splicing and reduced ATP1B2 in the CNS. SDCA is genetically heterogeneous. This is not RALGAPA1 and not KCNJ10 SDCA1. Printed SINE, aberrant splicing, and genetic-test line stay on the page.
+
+Night split: named SDCA2 / ATP1B2 is ATP1B2 SINE; not RALGAPA1. Bare Malinois does not fire. Bare spongy degeneration stays 255. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named RALGAPA1 stays 288. Named KCNJ10 stays 219. Named RAB24 stays 287. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 227-bp table.
+- Do not harvest a 10.6 Mb interval.
+- Do not copy a 288 table.
+- Do not send a Malinois home as RALGAPA1.
+- Do not call it 288-only.
+
+Night rule: named SDCA2 / ATP1B2 → **SDCA2. ATP1B2 SINE. Not RALGAPA1.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A Malinois puppy has SDCA. Which gene split matters at night, and why is this not RALGAPA1?
+- NAVLE 2: The insertion is a SINE. What stays on the page, and what do you not harvest from 227 bp?
+- NAVLE 3: Dual-named “spongy degeneration, ATP1B2” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Belgian RALGAPA1 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Malinois,” why does this gate stay dark?
+- Attending: Cat ATP1B2 — fire or skip?
+- Attending: Dual-named “RALGAPA1, SDCA2” — which loc should win, and why?
