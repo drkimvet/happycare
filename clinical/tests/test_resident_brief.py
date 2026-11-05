@@ -9068,6 +9068,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not atg4d", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_scn8a_is_missense_not_snx14(self):
+        b = analyze("dog", "scn8a")
+        loc = b["localization"].lower()
+        self.assertIn("scn8a missense", loc)
+        self.assertIn("not snx14", loc)
+        self.assertNotIn("snx14 splice donor", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("3-week clock", joined)
+        self.assertIn("600-control", joined)
+        self.assertIn("297 table", joined)
+        self.assertIn("dachsbracke home as snx14", joined)
+        self.assertIn("297-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dachsbracke_is_not_scn8a(self):
+        b = analyze("dog", "alpine dachsbracke")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("scn8a missense", loc)
+        self.assertNotIn("not snx14", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_spinocerebellar_ataxia_is_not_scn8a(self):
+        b = analyze("dog", "spinocerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("scn8a missense", loc)
+        self.assertNotIn("not snx14", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_snx14_is_not_scn8a(self):
+        b = analyze("dog", "snx14")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("snx14 splice donor", loc)
+        self.assertNotIn("scn8a missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_scn8a(self):
+        b = analyze("horse", "scn8a")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("scn8a missense", loc)
+        self.assertNotIn("not snx14", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_scn8a(self):
+        b = analyze("cat", "scn8a")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("scn8a missense", loc)
+        self.assertNotIn("not snx14", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_scn8a_still_fires(self):
+        b = analyze("dog", "SCN8A")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("scn8a missense", loc)
+        self.assertIn("not snx14", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -691,6 +691,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not sel1l", VERIF.lower())
         self.assertIn("snx14 splice donor", VERIF.lower())
         self.assertIn("not atg4d", VERIF.lower())
+        self.assertIn("scn8a missense", VERIF.lower())
+        self.assertIn("not snx14", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1139,6 +1141,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-atg4d`", MACRO)
         self.assertIn("`ddx-snx14`", MACRO)
         self.assertIn("`dc-snx14`", MACRO)
+        self.assertIn("`ddx-scn8a`", MACRO)
+        self.assertIn("`dc-scn8a`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1269,6 +1273,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not sel1l", MACRO.lower())
         self.assertIn("snx14 splice donor", MACRO.lower())
         self.assertIn("not atg4d", MACRO.lower())
+        self.assertIn("scn8a missense", MACRO.lower())
+        self.assertIn("not snx14", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1761,6 +1767,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not sel1l",
             "snx14 splice donor",
             "not atg4d",
+            "scn8a missense",
+            "not snx14",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

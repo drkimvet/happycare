@@ -1829,6 +1829,14 @@ SNX14_RE = re.compile(
     r"\bsnx14\b",
     re.I,
 )
+# Do not use \bdachsbracke\b or \bdachshund\b or bare
+# spinocerebellar ataxia (219 / 297). Not SNX14 (297). Not
+# KCNJ10 (219). Do not harvest a 3-week or 600-control table.
+# Dogs only. Skip cats. Skip horse.
+SCN8A_RE = re.compile(
+    r"\bscn8a\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5966,6 +5974,7 @@ def analyze(
     steal_sel1l = SEL1L_RE.search(text)
     steal_atg4d = ATG4D_RE.search(text)
     steal_snx14 = SNX14_RE.search(text)
+    steal_scn8a = SCN8A_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6065,6 +6074,7 @@ def analyze(
         or steal_sel1l
         or steal_atg4d
         or steal_snx14
+        or steal_scn8a
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6400,7 +6410,8 @@ def analyze(
 
     chypo_named = spec in {"dog", "cat"} and CHYPO_RE.search(text)
     if chypo_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -6504,7 +6515,8 @@ def analyze(
 
     abiot_named = spec == "dog" and ABIOT_RE.search(text)
     if abiot_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -6784,7 +6796,8 @@ def analyze(
 
     hatax_named = spec == "dog" and HATAX_RE.search(text)
     if hatax_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -9255,7 +9268,8 @@ def analyze(
 
     mfe_named = spec == "dog" and MFE_RE.search(text)
     if mfe_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -9564,7 +9578,8 @@ def analyze(
 
     spong_named = spec in {"dog", "cat"} and SPONG_RE.search(text)
     if spong_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -13084,7 +13099,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -13229,7 +13245,8 @@ def analyze(
 
     cmm1_named = spec == "dog" and CMM1_RE.search(text)
     if cmm1_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -13491,7 +13508,8 @@ def analyze(
 
     rab24_named = spec == "dog" and RAB24_RE.search(text)
     if rab24_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -13623,7 +13641,8 @@ def analyze(
 
     ralgapa1_named = spec == "dog" and RALGAPA1_RE.search(text)
     if ralgapa1_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -13754,7 +13773,8 @@ def analyze(
 
     sdca2_named = spec == "dog" and SDCA2_RE.search(text)
     if sdca2_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -13880,7 +13900,8 @@ def analyze(
 
     selenop_named = spec == "dog" and SELENOP_RE.search(text)
     if selenop_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -14006,7 +14027,8 @@ def analyze(
 
     kcnip4_named = spec == "dog" and KCNIP4_RE.search(text)
     if kcnip4_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -14129,7 +14151,8 @@ def analyze(
 
     pnpla8_named = spec == "dog" and PNPLA8_RE.search(text)
     if pnpla8_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -14251,7 +14274,8 @@ def analyze(
 
     itpr1_named = spec == "dog" and ITPR1_RE.search(text)
     if itpr1_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or SPTBN2_RE.search(text)
@@ -14372,7 +14396,8 @@ def analyze(
 
     sptbn2_named = spec == "dog" and SPTBN2_RE.search(text)
     if sptbn2_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or SEL1L_RE.search(text)
         or CPD_RE.search(text)
@@ -14493,7 +14518,8 @@ def analyze(
 
     sel1l_named = spec == "dog" and SEL1L_RE.search(text)
     if sel1l_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or ATG4D_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
@@ -14612,7 +14638,8 @@ def analyze(
 
     atg4d_named = spec == "dog" and ATG4D_RE.search(text)
     if atg4d_named and not (
-        SNX14_RE.search(text)
+        SCN8A_RE.search(text)
+        or SNX14_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
@@ -14730,7 +14757,8 @@ def analyze(
 
     snx14_named = spec == "dog" and SNX14_RE.search(text)
     if snx14_named and not (
-        CPD_RE.search(text)
+        SCN8A_RE.search(text)
+        or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
         or BCSN_RE.search(text)
@@ -14844,6 +14872,123 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for SNX14.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for SNX14.")
+
+    scn8a_named = spec == "dog" and SCN8A_RE.search(text)
+    if scn8a_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        scn8a_loc = (
+            "SCN8A missense. Not SNX14."
+        )
+        localization = f"{localization} Also {scn8a_loc}" if localization else scn8a_loc
+        hard_stops.append(
+            "Do not harvest a 3-week clock as lobby law. "
+            "Do not harvest a 600-control table as lobby law. "
+            "Do not copy a 297 table as lobby law. "
+            "Do not send a Dachsbracke home as SNX14. "
+            "Do not call it 297-only."
+        )
+        do_not.append(
+            "Autosomal recessive Alpine Dachsbracke SCN8A. "
+            "Printed c.4898G>T / Gly1633Val stay on the page. "
+            "Packet 297 still owns SNX14. Packet 219 still "
+            "owns KCNJ10 / hereditary ataxia. Packet 296 still "
+            "owns ATG4D. Skip horse. Not 297-only."
+        )
+        do_next.append(
+            "Name the SCN8A. Missense. Not SNX14. "
+            "△ Plumb. Do not copy a 297 table."
+        )
+        sources.append(
+            "Letko et al. Genes (Basel). 2019;10(5):362. "
+            "doi:10.3390/genes10050362. PMID 31083464. "
+            "PMC6562999: Alpine Dachsbracke SCN8A missense; "
+            "autosomal recessive; distinct from SNX14 and "
+            "from KCNJ10."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Dachsbracke home as SNX14."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for SCN8A.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for SCN8A.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

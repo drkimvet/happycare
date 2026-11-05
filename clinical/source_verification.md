@@ -3686,7 +3686,7 @@ Night rule: named ATG4D → **ATG4D missense. Not SEL1L.** △ Plumb.
 
 ## 297. Hungarian Vizsla SNX14 (Fenn BMC Genet 2016)
 
-No dedicated Plunkett SNX14 chapter in the owned SA EM splits. Public Fenn J, Boursnell M, Hitti RJ, et al. Genome sequencing reveals a splice donor site mutation in the SNX14 gene associated with a novel cerebellar cortical degeneration in the Hungarian Vizsla dog breed. BMC Genet. 2016;17:123. doi:10.1186/s12863-016-0433-y. PMID: 27566131. PMCID: PMC5002145. Packet 296 still owns named ATG4D. Packet 295 still owns named SEL1L. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 298 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 133-Vizsla table as lobby law. Do not fire on bare Vizsla / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett SNX14 chapter in the owned SA EM splits. Public Fenn J, Boursnell M, Hitti RJ, et al. Genome sequencing reveals a splice donor site mutation in the SNX14 gene associated with a novel cerebellar cortical degeneration in the Hungarian Vizsla dog breed. BMC Genet. 2016;17:123. doi:10.1186/s12863-016-0433-y. PMID: 27566131. PMCID: PMC5002145. Packet 296 still owns named ATG4D. Packet 295 still owns named SEL1L. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 298 owns named SCN8A, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 133-Vizsla table as lobby law. Do not fire on bare Vizsla / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Fenn 2016: **SNX14** exon-26 **splice donor** (c.2653+1G>A; p.G885Dfs*16) is **autosomal recessive** in Hungarian Vizsla dogs with cerebellar cortical degeneration. Printed splice donor, lost SNX14 protein, and Purkinje-cell loss stay on the page. Do not harvest a human SCAR20 table as lobby law.
 
@@ -3710,3 +3710,30 @@ Night rule: named SNX14 → **SNX14 splice donor. Not ATG4D.** △ Plumb.
 - Attending: If the query is only “Vizsla,” why does this gate stay dark?
 - Attending: Cat SNX14 — fire or skip?
 - Attending: Dual-named “ATG4D, SNX14” — which loc should win, and why?
+
+## 298. Alpine Dachsbracke SCN8A (Letko Genes 2019)
+
+No dedicated Plunkett SCN8A chapter in the owned SA EM splits. Public Letko A, Dietschi E, Nieburg M, Jagannathan V, Gurtner C, Oevermann A, Drogemuller C. A missense variant in SCN8A in Alpine Dachsbracke dogs affected by spinocerebellar ataxia. Genes (Basel). 2019;10(5):362. doi:10.3390/genes10050362. PMID: 31083464. PMCID: PMC6562999. Packet 297 still owns named SNX14. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 296 still owns named ATG4D. Packet 299 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3-week clock as lobby law. Do not harvest a 600-control table as lobby law. Do not fire on bare Dachsbracke / dachshund / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Letko 2019: **SCN8A** missense (c.4898G>T; p.Gly1633Val) is **autosomal recessive** in Alpine Dachsbracke dogs with spinocerebellar ataxia, tremor, and loss of balance. Printed missense, Nav1.6 line, and spongy/axonal degeneration stay on the page. Do not harvest a jolting-mouse or human epilepsy table as lobby law.
+
+Night split: named SCN8A is SCN8A missense; not SNX14. Bare Dachsbracke does not fire. Bare spinocerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SNX14 stays 297. Named KCNJ10 / hereditary ataxia stays 219. Named ATG4D stays 296. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3-week clock.
+- Do not harvest a 600-control table.
+- Do not copy a 297 table.
+- Do not send a Dachsbracke home as SNX14.
+- Do not call it 297-only.
+
+Night rule: named SCN8A → **SCN8A missense. Not SNX14.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A three-week Alpine Dachsbracke has ataxia and loss of balance. Which gene split matters at night, and why is this not SNX14?
+- NAVLE 2: The variant is printed as c.4898G>T; p.Gly1633Val. What stays on the page?
+- NAVLE 3: Dual-named “spinocerebellar ataxia, SCN8A” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Vizsla SNX14 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Dachsbracke,” why does this gate stay dark?
+- Attending: Cat SCN8A — fire or skip?
+- Attending: Dual-named “SNX14, SCN8A” — which loc should win, and why?

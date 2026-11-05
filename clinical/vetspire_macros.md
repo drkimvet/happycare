@@ -226,6 +226,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sel1l` | Assessment | Finnish Hound SEL1L ataxia |
 | `ddx-atg4d` | Assessment | Lagotto ATG4D vacuolar ataxia |
 | `ddx-snx14` | Assessment | Hungarian Vizsla SNX14 CCD |
+| `ddx-scn8a` | Assessment | Alpine Dachsbracke SCN8A ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -411,6 +412,7 @@ Suggested names are short so they show up after three letters.
 | `dc-sel1l` | Discharge | After Finnish Hound SEL1L talk |
 | `dc-atg4d` | Discharge | After Lagotto ATG4D talk |
 | `dc-snx14` | Discharge | After Hungarian Vizsla SNX14 talk |
+| `dc-scn8a` | Discharge | After Alpine Dachsbracke SCN8A talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3211,6 +3213,21 @@ DDX:
 Do not: harvest a 3-month clock. Harvest a 133-Vizsla table. Copy a 296 table. Send a Vizsla home as ATG4D. Call it 296-only.
 Do next: Name the SNX14. Splice donor. Not ATG4D. △ Plumb. Do not copy a 296 table.
 
+### `ddx-scn8a`
+
+SCN8A — {{patient.name}}
+SCN8A missense [yes / not]. Not SNX14 [yes / not].
+
+DDX:
+1. SCN8A — **SCN8A missense. Not SNX14**
+2. Printed c.4898G>T / Gly1633Val stay on the page
+3. Packet 297 still owns SNX14. Packet 219 still owns KCNJ10 / hereditary ataxia. Packet 296 still owns ATG4D
+4. Not 297-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Dachsbracke / spinocerebellar ataxia do not fire
+
+Do not: harvest a 3-week clock. Harvest a 600-control table. Copy a 297 table. Send a Dachsbracke home as SNX14. Call it 297-only.
+Do next: Name the SCN8A. Missense. Not SNX14. △ Plumb. Do not copy a 297 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4722,6 +4739,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-snx14`
 
 {{patient.name}} was evaluated for SNX14 (Vizsla CCD from an exon-26 splice donor, not ATG4D). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-scn8a`
+
+{{patient.name}} was evaluated for SCN8A (Dachsbracke missense ataxia, not SNX14 CCD). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
