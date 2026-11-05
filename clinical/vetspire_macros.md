@@ -223,6 +223,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pnpla8` | Assessment | Australian Shepherd PNPLA8 ataxia |
 | `ddx-itpr1` | Assessment | Italian Spinone ITPR1 SCAIS |
 | `ddx-sptbn2` | Assessment | Beagle SPTBN2 NCCD |
+| `ddx-sel1l` | Assessment | Finnish Hound SEL1L ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -405,6 +406,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pnpla8` | Discharge | After Australian Shepherd PNPLA8 talk |
 | `dc-itpr1` | Discharge | After Italian Spinone ITPR1 talk |
 | `dc-sptbn2` | Discharge | After Beagle SPTBN2 NCCD talk |
+| `dc-sel1l` | Discharge | After Finnish Hound SEL1L talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3160,6 +3162,21 @@ DDX:
 Do not: harvest a 4-week clock. Harvest a 68-fold table. Copy a 293 table. Send a Beagle home as ITPR1. Call it 293-only.
 Do next: Name the SPTBN2. 8-bp deletion. Not ITPR1. △ Plumb. Do not copy a 293 table.
 
+### `ddx-sel1l`
+
+SEL1L — {{patient.name}}
+SEL1L missense [yes / not]. Not SPTBN2 [yes / not].
+
+DDX:
+1. SEL1L — **SEL1L missense. Not SPTBN2**
+2. Printed c.1972T>C / Ser658Pro stay on the page
+3. Packet 294 still owns SPTBN2. Packet 213 still owns unnamed abiotrophy. Packet 217 still owns Bandera / GRM1
+4. Not 294-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Finnish Hound / cerebellar ataxia do not fire
+
+Do not: harvest a 3-month clock. Harvest a 10% carrier table. Copy a 294 table. Send a Finnish Hound home as SPTBN2. Call it 294-only.
+Do next: Name the SEL1L. Missense. Not SPTBN2. △ Plumb. Do not copy a 294 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4647,6 +4664,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-sptbn2`
 
 {{patient.name}} was evaluated for SPTBN2 (Beagle NCCD from an 8-bp deletion, not ITPR1 SCAIS). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-sel1l`
+
+{{patient.name}} was evaluated for SEL1L (Finnish Hound missense ataxia, not SPTBN2 NCCD). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

@@ -3605,7 +3605,7 @@ Night rule: named ITPR1 → **ITPR1 GAA expansion. Not PNPLA8.** △ Plumb.
 
 ## 294. Beagle SPTBN2 / NCCD (Forman BMC Genet 2012)
 
-No dedicated Plunkett SPTBN2 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Stewart J, Mellersh CS, Beltran E. Genome-wide mRNA sequencing of a single canine cerebellar cortical degeneration case leads to the identification of a disease associated SPTBN2 mutation. BMC Genet. 2012;13:55. doi:10.1186/1471-2156-13-55. PMID: 22781464. PMCID: PMC3413603. Packet 293 still owns named ITPR1 / SCAIS. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 295 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 4-week clock as lobby law. Do not harvest a 68-fold table as lobby law. Do not fire on bare Beagle / cerebellar abiotrophy. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett SPTBN2 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Stewart J, Mellersh CS, Beltran E. Genome-wide mRNA sequencing of a single canine cerebellar cortical degeneration case leads to the identification of a disease associated SPTBN2 mutation. BMC Genet. 2012;13:55. doi:10.1186/1471-2156-13-55. PMID: 22781464. PMCID: PMC3413603. Packet 293 still owns named ITPR1 / SCAIS. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 295 owns named SEL1L, not this dump. Do not harvest a 4-week clock as lobby law. Do not harvest a 68-fold table as lobby law. Do not fire on bare Beagle / cerebellar abiotrophy. Dogs only. Skip cats. Skip horse.
 
 Agree with Forman 2012: **SPTBN2** exon-29 **8-bp deletion** (chr18:53,691,704_53,691,711del) is **autosomal recessive** in Beagle dogs with neonatal cerebellar cortical degeneration (NCCD). Printed 8-bp deletion, β-III spectrin loss, and the NCCD name stay on the page. Do not harvest a human SCA5 table as lobby law. Human SCA5 is a different inheritance.
 
@@ -3629,3 +3629,30 @@ Night rule: named SPTBN2 → **SPTBN2 8-bp deletion. Not ITPR1.** △ Plumb.
 - Attending: If the query is only “Beagle,” why does this gate stay dark?
 - Attending: Cat SPTBN2 — fire or skip?
 - Attending: Dual-named “ITPR1, SPTBN2” — which loc should win, and why?
+
+## 295. Finnish Hound SEL1L (Kyostila PLoS Genet 2012)
+
+No dedicated Plunkett SEL1L chapter in the owned SA EM splits. Public Kyostila K, Cizinauskas S, Seppala EH, et al. A SEL1L mutation links a canine progressive early-onset cerebellar ataxia to the endoplasmic reticulum-associated protein degradation (ERAD) machinery. PLoS Genet. 2012;8(6):e1002759. doi:10.1371/journal.pgen.1002759. PMID: 22719266. PMCID: PMC3375262. Packet 294 still owns named SPTBN2 / NCCD. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 296 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 10% carrier table as lobby law. Do not fire on bare Finnish Hound / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Kyostila 2012: **SEL1L** missense (c.1972T>C; p.Ser658Pro) is **autosomal recessive** in Finnish Hound dogs with early-onset progressive cerebellar ataxia. Printed missense, ERAD line, and Purkinje-cell loss stay on the page. Do not harvest an ER-stress gene table as lobby law.
+
+Night split: named SEL1L is SEL1L missense; not SPTBN2. Bare Finnish Hound does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SPTBN2 stays 294. Named abiotrophy stays 213. Named Bandera / GRM1 stays 217. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3-month clock.
+- Do not harvest a 10% carrier table.
+- Do not copy a 294 table.
+- Do not send a Finnish Hound home as SPTBN2.
+- Do not call it 294-only.
+
+Night rule: named SEL1L → **SEL1L missense. Not SPTBN2.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A three-month Finnish Hound has rapidly progressive cerebellar ataxia. Which gene split matters at night, and why is this not SPTBN2?
+- NAVLE 2: The variant is printed as c.1972T>C; p.Ser658Pro. What stays on the page?
+- NAVLE 3: Dual-named “cerebellar abiotrophy, SEL1L” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Beagle NCCD they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Finnish Hound,” why does this gate stay dark?
+- Attending: Cat SEL1L — fire or skip?
+- Attending: Dual-named “SPTBN2, SEL1L” — which loc should win, and why?
