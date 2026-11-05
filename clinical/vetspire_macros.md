@@ -221,6 +221,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-selenop` | Assessment | Belgian Shepherd SELENOP / CACA |
 | `ddx-kcnip4` | Assessment | Norwegian Buhund KCNIP4 ataxia |
 | `ddx-pnpla8` | Assessment | Australian Shepherd PNPLA8 ataxia |
+| `ddx-itpr1` | Assessment | Italian Spinone ITPR1 SCAIS |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -401,6 +402,7 @@ Suggested names are short so they show up after three letters.
 | `dc-selenop` | Discharge | After Belgian Shepherd SELENOP / CACA talk |
 | `dc-kcnip4` | Discharge | After Norwegian Buhund KCNIP4 talk |
 | `dc-pnpla8` | Discharge | After Australian Shepherd PNPLA8 talk |
+| `dc-itpr1` | Discharge | After Italian Spinone ITPR1 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3126,6 +3128,21 @@ DDX:
 Do not: harvest a 4.7% carrier table. Harvest an 85-Aussie table. Copy a 291 table. Send an Aussie home as KCNIP4. Call it 291-only.
 Do next: Name the PNPLA8. Frameshift. Not KCNIP4. △ Plumb. Do not copy a 291 table.
 
+### `ddx-itpr1`
+
+ITPR1 — {{patient.name}}
+ITPR1 GAA expansion [yes / not]. Not PNPLA8 [yes / not].
+
+DDX:
+1. ITPR1 — **ITPR1 GAA expansion. Not PNPLA8**
+2. Printed intron-35 GAA expansion stays on the page
+3. Packet 292 still owns PNPLA8. Packet 219 still owns KCNJ10 / hereditary ataxia. Packet 291 still owns KCNIP4
+4. Not 292-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Spinone / spinocerebellar ataxia do not fire
+
+Do not: harvest a 4-month clock. Harvest a 1-year euthanasia table. Copy a 292 table. Send a Spinone home as PNPLA8. Call it 292-only.
+Do next: Name the ITPR1. GAA expansion. Not PNPLA8. △ Plumb. Do not copy a 292 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4597,6 +4614,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-pnpla8`
 
 {{patient.name}} was evaluated for PNPLA8 (an Aussie frameshift ataxia, not KCNIP4). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-itpr1`
+
+{{patient.name}} was evaluated for ITPR1 (Spinone SCAIS from an intron-35 GAA expansion, not PNPLA8). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

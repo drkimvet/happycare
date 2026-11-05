@@ -1788,6 +1788,14 @@ PNPLA8_RE = re.compile(
     r"\bpnpla8\b",
     re.I,
 )
+# Do not use \bspinone\b or bare spinocerebellar ataxia (219 /
+# 252). Not PNPLA8 (292). Not KCNJ10 (219). Do not harvest a
+# 4-month or 1-year table. Dogs only. Skip cats. Skip horse.
+ITPR1_RE = re.compile(
+    r"\bitpr1\b|"
+    r"\bscais\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -5920,6 +5928,7 @@ def analyze(
     steal_selenop = SELENOP_RE.search(text)
     steal_kcnip4 = KCNIP4_RE.search(text)
     steal_pnpla8 = PNPLA8_RE.search(text)
+    steal_itpr1 = ITPR1_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6014,6 +6023,7 @@ def analyze(
         or steal_selenop
         or steal_kcnip4
         or steal_pnpla8
+        or steal_itpr1
     ):
         if spec == "cat":
             fuo_loc = (
@@ -6349,7 +6359,8 @@ def analyze(
 
     chypo_named = spec in {"dog", "cat"} and CHYPO_RE.search(text)
     if chypo_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -6448,7 +6459,8 @@ def analyze(
 
     abiot_named = spec == "dog" and ABIOT_RE.search(text)
     if abiot_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -6723,7 +6735,8 @@ def analyze(
 
     hatax_named = spec == "dog" and HATAX_RE.search(text)
     if hatax_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -9189,7 +9202,8 @@ def analyze(
 
     mfe_named = spec == "dog" and MFE_RE.search(text)
     if mfe_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -9493,7 +9507,8 @@ def analyze(
 
     spong_named = spec in {"dog", "cat"} and SPONG_RE.search(text)
     if spong_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -13008,7 +13023,8 @@ def analyze(
 
     pilose_named = spec in {"dog", "cat"} and PILOSE_RE.search(text)
     if pilose_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -13148,7 +13164,8 @@ def analyze(
 
     cmm1_named = spec == "dog" and CMM1_RE.search(text)
     if cmm1_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -13405,7 +13422,8 @@ def analyze(
 
     rab24_named = spec == "dog" and RAB24_RE.search(text)
     if rab24_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -13532,7 +13550,8 @@ def analyze(
 
     ralgapa1_named = spec == "dog" and RALGAPA1_RE.search(text)
     if ralgapa1_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or SDCA2_RE.search(text)
@@ -13658,7 +13677,8 @@ def analyze(
 
     sdca2_named = spec == "dog" and SDCA2_RE.search(text)
     if sdca2_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or SELENOP_RE.search(text)
         or CPD_RE.search(text)
@@ -13779,7 +13799,8 @@ def analyze(
 
     selenop_named = spec == "dog" and SELENOP_RE.search(text)
     if selenop_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or KCNIP4_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
@@ -13900,7 +13921,8 @@ def analyze(
 
     kcnip4_named = spec == "dog" and KCNIP4_RE.search(text)
     if kcnip4_named and not (
-        PNPLA8_RE.search(text)
+        ITPR1_RE.search(text)
+        or PNPLA8_RE.search(text)
         or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
@@ -14018,7 +14040,8 @@ def analyze(
 
     pnpla8_named = spec == "dog" and PNPLA8_RE.search(text)
     if pnpla8_named and not (
-        CPD_RE.search(text)
+        ITPR1_RE.search(text)
+        or CPD_RE.search(text)
         or BENGPN_RE.search(text)
         or PSN_RE.search(text)
         or BCSN_RE.search(text)
@@ -14132,6 +14155,123 @@ def analyze(
             hard_stops.append("Azotemic: still no DexSP, including for PNPLA8.")
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no NSAID, including for PNPLA8.")
+
+    itpr1_named = spec == "dog" and ITPR1_RE.search(text)
+    if itpr1_named and not (
+        CPD_RE.search(text)
+        or BENGPN_RE.search(text)
+        or PSN_RE.search(text)
+        or BCSN_RE.search(text)
+        or LHSN_RE.search(text)
+        or PHOX_RE.search(text)
+        or AMPN_RE.search(text)
+        or MLS_RE.search(text)
+        or HCHYLO_RE.search(text)
+        or TMHN_RE.search(text)
+        or LEON_RE.search(text)
+        or CMEGA_RE.search(text)
+        or CMYO_RE.search(text)
+        or CMG_RE.search(text)
+        or CONGLP_RE.search(text)
+        or DANDY_RE.search(text)
+        or PDYS_RE.search(text)
+        or POLY_RE.search(text)
+        or DEAF_RE.search(text)
+        or PEND_RE.search(text)
+        or LISS_RE.search(text)
+        or NEPO_RE.search(text)
+        or L2HGA_RE.search(text)
+        or AHE_RE.search(text)
+        or HQAM_RE.search(text)
+        or SAXON_RE.search(text)
+        or DALV_RE.search(text)
+        or MSND_RE.search(text)
+        or CHROM_RE.search(text)
+        or CMSD_RE.search(text)
+        or BMAN_RE.search(text)
+        or FUCO_RE.search(text)
+        or GAUCHER_RE.search(text)
+        or NPC_RE.search(text)
+        or LAFORA_RE.search(text)
+        or ML2_RE.search(text)
+        or GLYCO_RE.search(text)
+        or MPS_RE.search(text)
+        or CLN_RE.search(text)
+        or MANNO_RE.search(text)
+        or GANGLIO_RE.search(text)
+        or GLOBOID_RE.search(text)
+        or ALEX_RE.search(text)
+        or SARDS_RE.search(text)
+        or PDEM_RE.search(text)
+        or SMA_RE.search(text)
+        or APN_RE.search(text)
+        or PILO_RE.search(text)
+        or TETHER_RE.search(text)
+        or SPINA_BIF_RE.search(text)
+        or OTO_MEN_RE.search(text)
+        or MCE_RE.search(text)
+        or CAPHYP_RE.search(text)
+        or HEMIV_RE.search(text)
+        or ARACH_DIV_RE.search(text)
+        or AA_LUX_RE.search(text)
+        or DLSS_RE.search(text)
+        or WOBBLER_RE.search(text)
+        or COMS_RE.search(text)
+        or HYDRAN_RE.search(text)
+        or BOXER_AXON_RE.search(text)
+        or DEGEN_MYEL_RE.search(text)
+        or AFGHAN_MYEL_RE.search(text)
+        or LEM_RE.search(text)
+        or NAD_RE.search(text)
+        or BANDERA_RE.search(text)
+        or SHAKER_RE.search(text)
+        or HYPOMY_RE.search(text)
+        or NME_RE.search(text)
+        or GME_RE.search(text)
+        or SRMA_RE.search(text)
+        or PLE_RE.search(text)
+        or HYPHEMA_RE.search(text)
+        or KCS_RE.search(text)
+    ):
+        itpr1_loc = (
+            "ITPR1 GAA expansion. Not PNPLA8."
+        )
+        localization = f"{localization} Also {itpr1_loc}" if localization else itpr1_loc
+        hard_stops.append(
+            "Do not harvest a 4-month clock as lobby law. "
+            "Do not harvest a 1-year euthanasia table as lobby law. "
+            "Do not copy a 292 table as lobby law. "
+            "Do not send a Spinone home as PNPLA8. "
+            "Do not call it 292-only."
+        )
+        do_not.append(
+            "Autosomal recessive Italian Spinone ITPR1. "
+            "Printed intron-35 GAA expansion stays on the "
+            "page. Packet 292 still owns PNPLA8. Packet 219 "
+            "still owns KCNJ10 / hereditary ataxia. Packet "
+            "291 still owns KCNIP4. Skip horse. Not 292-only."
+        )
+        do_next.append(
+            "Name the ITPR1. GAA expansion. Not PNPLA8. "
+            "△ Plumb. Do not copy a 292 table."
+        )
+        sources.append(
+            "Forman et al. Mamm Genome. 2015;26(1-2):108-117. "
+            "doi:10.1007/s00335-014-9547-6. PMID 25354648. "
+            "PMC4305091: Italian Spinone ITPR1 intron-35 GAA "
+            "expansion; autosomal recessive SCAIS; distinct "
+            "from PNPLA8 and from KCNJ10."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a Spinone home as PNPLA8."
+            )
+        if DEX_RE.search(text) or re.search(r"\b(pred|prednisolone|prednisone)\b", text, re.I):
+            hard_stops.append("Do not harvest a pred table as lobby law.")
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no DexSP, including for ITPR1.")
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append("Azotemic: still no NSAID, including for ITPR1.")
 
     if spec == "dog" and MACADAMIA_RE.search(text):
         do_not.append("Do not treat macadamia as bromethalin.")

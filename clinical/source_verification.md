@@ -3551,7 +3551,7 @@ Night rule: named KCNIP4 → **KCNIP4 missense. Not SELENOP.** △ Plumb.
 
 ## 292. Australian Shepherd PNPLA8 (Abitbol Anim Genet 2022)
 
-No dedicated Plunkett PNPLA8 chapter in the owned SA EM splits. Public Abitbol M, Jagannathan V, Laurent N, et al. A PNPLA8 frameshift variant in Australian shepherd dogs with hereditary ataxia. Anim Genet. 2022;53(5):709-712. doi:10.1111/age.13245. PMID: 35864734. PMCID: PMC9545373. Packet 291 still owns named KCNIP4. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 290 still owns named SELENOP / CACA. Packet 293 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 4.7% carrier table as lobby law. Do not harvest an 85-Aussie table as lobby law. Do not fire on bare Australian Shepherd / hereditary ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett PNPLA8 chapter in the owned SA EM splits. Public Abitbol M, Jagannathan V, Laurent N, et al. A PNPLA8 frameshift variant in Australian shepherd dogs with hereditary ataxia. Anim Genet. 2022;53(5):709-712. doi:10.1111/age.13245. PMID: 35864734. PMCID: PMC9545373. Packet 291 still owns named KCNIP4. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 290 still owns named SELENOP / CACA. Packet 293 owns named ITPR1, not this dump. Do not harvest a 4.7% carrier table as lobby law. Do not harvest an 85-Aussie table as lobby law. Do not fire on bare Australian Shepherd / hereditary ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Abitbol 2022: **PNPLA8** frameshift (c.1169_1170dupTT; p.His391PhefsTer394) is **autosomal recessive** in Australian Shepherd dogs with young-adult hereditary ataxia. Progressive uncoordinated movement and spasticity. The truncated protein is predicted to lack the patatin catalytic domain. Printed dupTT, frameshift, and phospholipase line stay on the page. Do not harvest a Weaver-syndrome table as lobby law.
 
@@ -3575,3 +3575,30 @@ Night rule: named PNPLA8 → **PNPLA8 frameshift. Not KCNIP4.** △ Plumb.
 - Attending: If the query is only “Australian Shepherd,” why does this gate stay dark?
 - Attending: Cat PNPLA8 — fire or skip?
 - Attending: Dual-named “KCNIP4, PNPLA8” — which loc should win, and why?
+
+## 293. Italian Spinone ITPR1 / SCAIS (Forman Mamm Genome 2015)
+
+No dedicated Plunkett ITPR1 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Matiasek K, Platt S, Mellersh C. Spinocerebellar ataxia in the Italian Spinone dog is associated with an intronic GAA repeat expansion in ITPR1. Mamm Genome. 2015;26(1-2):108-117. doi:10.1007/s00335-014-9547-6. PMID: 25354648. PMCID: PMC4305091. Packet 292 still owns named PNPLA8. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 still owns named KCNIP4. Packet 294 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 4-month clock as lobby law. Do not harvest a 1-year euthanasia table as lobby law. Do not fire on bare Spinone / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Forman 2015: **ITPR1** intron-35 **GAA repeat expansion** is **autosomal recessive** in Italian Spinone dogs with spinocerebellar ataxia (SCAIS). Progressive gait from about four months. Printed intron-35 expansion, reduced Purkinje ITPR1, and the SCAIS name stay on the page. Do not harvest a Friedreich / SCA15 table as lobby law. Human SCA15 is a different inheritance.
+
+Night split: named ITPR1 / SCAIS is ITPR1 GAA expansion; not PNPLA8. Bare Spinone does not fire. Bare spinocerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named PNPLA8 stays 292. Named KCNJ10 / hereditary ataxia stays 219. Named KCNIP4 stays 291. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 4-month clock.
+- Do not harvest a 1-year euthanasia table.
+- Do not copy a 292 table.
+- Do not send a Spinone home as PNPLA8.
+- Do not call it 292-only.
+
+Night rule: named ITPR1 → **ITPR1 GAA expansion. Not PNPLA8.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A four-month Spinone has hypermetria and truncal ataxia. Which gene split matters at night, and why is this not PNPLA8?
+- NAVLE 2: The variant is printed as an intron-35 GAA expansion. What stays on the page?
+- NAVLE 3: Dual-named “spinocerebellar ataxia, ITPR1” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the human SCA15 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Italian Spinone,” why does this gate stay dark?
+- Attending: Cat ITPR1 — fire or skip?
+- Attending: Dual-named “PNPLA8, ITPR1” — which loc should win, and why?

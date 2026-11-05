@@ -8774,6 +8774,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not kcnip4", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_itpr1_is_gaa_expansion_not_pnpla8(self):
+        b = analyze("dog", "itpr1")
+        loc = b["localization"].lower()
+        self.assertIn("itpr1 gaa expansion", loc)
+        self.assertIn("not pnpla8", loc)
+        self.assertNotIn("pnpla8 frameshift", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("4-month clock", joined)
+        self.assertIn("1-year euthanasia", joined)
+        self.assertIn("292 table", joined)
+        self.assertIn("spinone home as pnpla8", joined)
+        self.assertIn("292-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_scais_is_itpr1(self):
+        b = analyze("dog", "scais")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("itpr1 gaa expansion", loc)
+        self.assertIn("not pnpla8", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_spinone_is_not_itpr1(self):
+        b = analyze("dog", "italian spinone")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("itpr1 gaa expansion", loc)
+        self.assertNotIn("not pnpla8", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_spinocerebellar_ataxia_is_not_itpr1(self):
+        b = analyze("dog", "spinocerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("itpr1 gaa expansion", loc)
+        self.assertNotIn("not pnpla8", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pnpla8_is_not_itpr1(self):
+        b = analyze("dog", "pnpla8")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pnpla8 frameshift", loc)
+        self.assertNotIn("itpr1 gaa expansion", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_itpr1(self):
+        b = analyze("horse", "itpr1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("itpr1 gaa expansion", loc)
+        self.assertNotIn("not pnpla8", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_itpr1(self):
+        b = analyze("cat", "itpr1")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("itpr1 gaa expansion", loc)
+        self.assertNotIn("not pnpla8", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_itpr1_still_fires(self):
+        b = analyze("dog", "ITPR1")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("itpr1 gaa expansion", loc)
+        self.assertIn("not pnpla8", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
