@@ -8662,6 +8662,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("caca", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_kcnip4_is_missense_not_selenop(self):
+        b = analyze("dog", "kcnip4")
+        loc = b["localization"].lower()
+        self.assertIn("kcnip4 missense", loc)
+        self.assertIn("not selenop", loc)
+        self.assertNotIn("selenop deletion", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("802-genome", joined)
+        self.assertIn("4-affected", joined)
+        self.assertIn("290 table", joined)
+        self.assertIn("buhund home as selenop", joined)
+        self.assertIn("290-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_buhund_is_not_kcnip4(self):
+        b = analyze("dog", "norwegian buhund")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("kcnip4 missense", loc)
+        self.assertNotIn("not selenop", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cerebellar_ataxia_is_not_kcnip4(self):
+        b = analyze("dog", "cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("kcnip4 missense", loc)
+        self.assertNotIn("not selenop", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_selenop_is_not_kcnip4(self):
+        b = analyze("dog", "selenop")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("selenop deletion", loc)
+        self.assertNotIn("kcnip4 missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_kcnip4(self):
+        b = analyze("horse", "kcnip4")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("kcnip4 missense", loc)
+        self.assertNotIn("not selenop", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_kcnip4(self):
+        b = analyze("cat", "kcnip4")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("kcnip4 missense", loc)
+        self.assertNotIn("not selenop", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_kcnip4_still_fires(self):
+        b = analyze("dog", "KCNIP4")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("kcnip4 missense", loc)
+        self.assertIn("not selenop", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

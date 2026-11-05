@@ -3497,7 +3497,7 @@ Night rule: named SDCA2 / ATP1B2 → **SDCA2. ATP1B2 SINE. Not RALGAPA1.** △ P
 
 ## 290. Belgian Shepherd SELENOP / CACA (Christen PLoS Genet 2021)
 
-No dedicated Plunkett SELENOP chapter in the owned SA EM splits. Public Christen M, Högler S, Kleiter M, et al. Deletion of the SELENOP gene leads to CNS atrophy with cerebellar ataxia in dogs. PLoS Genet. 2021;17(8):e1009716. doi:10.1371/journal.pgen.1009716. PMID: 34339417. PMCID: PMC8360551. Packet 289 still owns named SDCA2 / ATP1B2. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 2-week clock as lobby law. Do not harvest a 30% selenium table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia / selenium. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett SELENOP chapter in the owned SA EM splits. Public Christen M, Högler S, Kleiter M, et al. Deletion of the SELENOP gene leads to CNS atrophy with cerebellar ataxia in dogs. PLoS Genet. 2021;17(8):e1009716. doi:10.1371/journal.pgen.1009716. PMID: 34339417. PMCID: PMC8360551. Packet 289 still owns named SDCA2 / ATP1B2. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 owns named KCNIP4, not this dump. Do not harvest a 2-week clock as lobby law. Do not harvest a 30% selenium table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia / selenium. Dogs only. Skip cats. Skip horse.
 
 Agree with Christen 2021: **SELENOP** whole-gene deletion (Chr4:66,946,539_66,963,863del17,325) is **autosomal recessive** in Belgian Shepherd dogs with CNS atrophy and cerebellar ataxia (**CACA**). Onset about two weeks, intention tremor, variable severity. The deletion removes the selenoprotein P coding sequence required for selenium transport into the CNS. Printed whole-gene deletion, CNS atrophy, and the selenium-transport line stay on the page.
 
@@ -3521,3 +3521,30 @@ Night rule: named SELENOP → **SELENOP deletion. CACA. Not SDCA2.** △ Plumb.
 - Attending: If the query is only “Belgian Shepherd,” why does this gate stay dark?
 - Attending: Cat SELENOP — fire or skip?
 - Attending: Dual-named “RALGAPA1, SELENOP” — which loc should win, and why?
+
+## 291. Norwegian Buhund KCNIP4 (Jenkins PLoS Genet 2020)
+
+No dedicated Plunkett KCNIP4 chapter in the owned SA EM splits. Public Jenkins CA, Kalmar L, Matiasek K, et al. Characterisation of canine KCNIP4: A novel gene for cerebellar ataxia identified by whole-genome sequencing two affected Norwegian Buhund dogs. PLoS Genet. 2020;16(1):e1008527. doi:10.1371/journal.pgen.1008527. PMID: 31999692. PMCID: PMC7012447. Packet 290 still owns named SELENOP / CACA. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 287 still owns named RAB24. Packet 292 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest an 802-genome table as lobby law. Do not harvest a 4-affected count as lobby law. Do not fire on bare Buhund / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Jenkins 2020: **KCNIP4** missense (NC_006585.3:g.88890674T>C; tryptophan to arginine) is **autosomal recessive** in Norwegian Buhund dogs with progressive cerebellar ataxia. Only affected Buhunds were homozygous. The variant dramatically reduces KCNIP4 protein in cerebellum. Printed SNP, protein loss, and Kv4 accessory-subunit line stay on the page.
+
+Night split: named KCNIP4 is KCNIP4 missense; not SELENOP. Bare Buhund does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SELENOP stays 290. Named KCNJ10 / hereditary ataxia stays 219. Named RAB24 stays 287. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest an 802-genome table.
+- Do not harvest a 4-affected count.
+- Do not copy a 290 table.
+- Do not send a Buhund home as SELENOP.
+- Do not call it 290-only.
+
+Night rule: named KCNIP4 → **KCNIP4 missense. Not SELENOP.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Two Buhund siblings have progressive cerebellar ataxia. Which gene split matters at night, and why is this not SELENOP?
+- NAVLE 2: Western blot shows almost no KCNIP4 protein. What stays on the page?
+- NAVLE 3: Dual-named “hereditary ataxia, KCNIP4” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Jack Russell KCNJ10 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Buhund,” why does this gate stay dark?
+- Attending: Cat KCNIP4 — fire or skip?
+- Attending: Dual-named “SELENOP, KCNIP4” — which loc should win, and why?

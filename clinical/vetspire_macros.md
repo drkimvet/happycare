@@ -219,6 +219,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ralgapa1` | Assessment | Belgian Shepherd RALGAPA1 ataxia |
 | `ddx-sdca2` | Assessment | Malinois SDCA2 / ATP1B2 |
 | `ddx-selenop` | Assessment | Belgian Shepherd SELENOP / CACA |
+| `ddx-kcnip4` | Assessment | Norwegian Buhund KCNIP4 ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -397,6 +398,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ralgapa1` | Discharge | After Belgian Shepherd RALGAPA1 talk |
 | `dc-sdca2` | Discharge | After Malinois SDCA2 / ATP1B2 talk |
 | `dc-selenop` | Discharge | After Belgian Shepherd SELENOP / CACA talk |
+| `dc-kcnip4` | Discharge | After Norwegian Buhund KCNIP4 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3092,6 +3094,21 @@ DDX:
 Do not: harvest a 2-week clock. Harvest a 30% selenium table. Copy a 289 table. Send a Belgian home as SDCA2. Call it 289-only.
 Do next: Name the SELENOP. CACA. Not SDCA2. △ Plumb. Do not copy a 289 table.
 
+### `ddx-kcnip4`
+
+KCNIP4 — {{patient.name}}
+KCNIP4 missense [yes / not]. Not SELENOP [yes / not].
+
+DDX:
+1. KCNIP4 — **KCNIP4 missense. Not SELENOP**
+2. Printed g.88890674T>C / reduced protein stay on the page
+3. Packet 290 still owns SELENOP. Packet 219 still owns KCNJ10 / hereditary ataxia. Packet 287 still owns RAB24
+4. Not 290-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Buhund / cerebellar ataxia do not fire
+
+Do not: harvest an 802-genome table. Harvest a 4-affected count. Copy a 290 table. Send a Buhund home as SELENOP. Call it 290-only.
+Do next: Name the KCNIP4. Missense. Not SELENOP. △ Plumb. Do not copy a 290 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4547,6 +4564,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-selenop`
 
 {{patient.name}} was evaluated for SELENOP (CACA from a whole-gene deletion, not SDCA2). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-kcnip4`
+
+{{patient.name}} was evaluated for KCNIP4 (a Buhund missense ataxia, not SELENOP CACA). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 
