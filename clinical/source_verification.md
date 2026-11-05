@@ -3470,7 +3470,7 @@ Night rule: named RALGAPA1 / GARNL1 → **RALGAPA1 deletion. Not RAB24 missense.
 
 ## 289. Malinois SDCA2 / ATP1B2 (Mauri G3 2017)
 
-No dedicated Plunkett SDCA2 chapter in the owned SA EM splits. Public Mauri N, Kleiter M, Dietschi E, et al. A SINE insertion in ATP1B2 in Belgian Shepherd dogs affected by spongy degeneration with cerebellar ataxia (SDCA2). G3 (Bethesda). 2017;7(8):2729-2737. doi:10.1534/g3.117.043018. PMID: 28620085. PMCID: PMC5555477. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10 / SDCA1. Packet 287 still owns named RAB24. Packet 290 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 227-bp table as lobby law. Do not harvest a 10.6 Mb interval as lobby law. Do not fire on bare Malinois / Belgian Shepherd / spongy degeneration / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett SDCA2 chapter in the owned SA EM splits. Public Mauri N, Kleiter M, Dietschi E, et al. A SINE insertion in ATP1B2 in Belgian Shepherd dogs affected by spongy degeneration with cerebellar ataxia (SDCA2). G3 (Bethesda). 2017;7(8):2729-2737. doi:10.1534/g3.117.043018. PMID: 28620085. PMCID: PMC5555477. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10 / SDCA1. Packet 287 still owns named RAB24. Packet 290 owns named SELENOP / CACA, not this dump. Do not harvest a 227-bp table as lobby law. Do not harvest a 10.6 Mb interval as lobby law. Do not fire on bare Malinois / Belgian Shepherd / spongy degeneration / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Mauri 2017: **SDCA2** in Malinois is an **autosomal recessive** 227-bp SINE insertion in **ATP1B2** (c.130_131insLT796559.1:g.50_276) that causes aberrant splicing and reduced ATP1B2 in the CNS. SDCA is genetically heterogeneous. This is not RALGAPA1 and not KCNJ10 SDCA1. Printed SINE, aberrant splicing, and genetic-test line stay on the page.
 
@@ -3494,3 +3494,30 @@ Night rule: named SDCA2 / ATP1B2 → **SDCA2. ATP1B2 SINE. Not RALGAPA1.** △ P
 - Attending: If the query is only “Malinois,” why does this gate stay dark?
 - Attending: Cat ATP1B2 — fire or skip?
 - Attending: Dual-named “RALGAPA1, SDCA2” — which loc should win, and why?
+
+## 290. Belgian Shepherd SELENOP / CACA (Christen PLoS Genet 2021)
+
+No dedicated Plunkett SELENOP chapter in the owned SA EM splits. Public Christen M, Högler S, Kleiter M, et al. Deletion of the SELENOP gene leads to CNS atrophy with cerebellar ataxia in dogs. PLoS Genet. 2021;17(8):e1009716. doi:10.1371/journal.pgen.1009716. PMID: 34339417. PMCID: PMC8360551. Packet 289 still owns named SDCA2 / ATP1B2. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 2-week clock as lobby law. Do not harvest a 30% selenium table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia / selenium. Dogs only. Skip cats. Skip horse.
+
+Agree with Christen 2021: **SELENOP** whole-gene deletion (Chr4:66,946,539_66,963,863del17,325) is **autosomal recessive** in Belgian Shepherd dogs with CNS atrophy and cerebellar ataxia (**CACA**). Onset about two weeks, intention tremor, variable severity. The deletion removes the selenoprotein P coding sequence required for selenium transport into the CNS. Printed whole-gene deletion, CNS atrophy, and the selenium-transport line stay on the page.
+
+Night split: named SELENOP is SELENOP deletion; CACA; not SDCA2. Bare Belgian Shepherd does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SDCA2 stays 289. Named RALGAPA1 stays 288. Named spongiform stays 255. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 2-week clock.
+- Do not harvest a 30% selenium table.
+- Do not copy a 289 table.
+- Do not send a Belgian home as SDCA2.
+- Do not call it 289-only.
+
+Night rule: named SELENOP → **SELENOP deletion. CACA. Not SDCA2.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A two-week Belgian has intention tremor and ataxia. Which gene split matters at night, and why is this not SDCA2?
+- NAVLE 2: Blood selenium is printed at about 30% of a wild-type littermate. What stays on the page?
+- NAVLE 3: Dual-named “SDCA2, SELENOP” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Malinois SDCA they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Belgian Shepherd,” why does this gate stay dark?
+- Attending: Cat SELENOP — fire or skip?
+- Attending: Dual-named “RALGAPA1, SELENOP” — which loc should win, and why?

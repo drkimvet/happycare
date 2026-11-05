@@ -218,6 +218,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-rab24` | Assessment | RAB24 cerebellar ataxia |
 | `ddx-ralgapa1` | Assessment | Belgian Shepherd RALGAPA1 ataxia |
 | `ddx-sdca2` | Assessment | Malinois SDCA2 / ATP1B2 |
+| `ddx-selenop` | Assessment | Belgian Shepherd SELENOP / CACA |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -395,6 +396,7 @@ Suggested names are short so they show up after three letters.
 | `dc-rab24` | Discharge | After RAB24 cerebellar ataxia talk |
 | `dc-ralgapa1` | Discharge | After Belgian Shepherd RALGAPA1 talk |
 | `dc-sdca2` | Discharge | After Malinois SDCA2 / ATP1B2 talk |
+| `dc-selenop` | Discharge | After Belgian Shepherd SELENOP / CACA talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3075,6 +3077,21 @@ DDX:
 Do not: harvest a 227-bp table. Harvest a 10.6 Mb interval. Copy a 288 table. Send a Malinois home as RALGAPA1. Call it 288-only.
 Do next: Name the SDCA2. ATP1B2 SINE. Not RALGAPA1. △ Plumb. Do not copy a 288 table.
 
+### `ddx-selenop`
+
+SELENOP — {{patient.name}}
+SELENOP deletion [yes / not]. CACA [yes / not]. Not SDCA2 [yes / not].
+
+DDX:
+1. SELENOP — **SELENOP deletion. CACA. Not SDCA2**
+2. Printed whole-gene deletion / CNS atrophy stay on the page
+3. Packet 289 still owns SDCA2. Packet 288 still owns RALGAPA1. Packet 255 still owns unnamed spongiform degeneration
+4. Not 289-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Belgian Shepherd / cerebellar ataxia do not fire
+
+Do not: harvest a 2-week clock. Harvest a 30% selenium table. Copy a 289 table. Send a Belgian home as SDCA2. Call it 289-only.
+Do next: Name the SELENOP. CACA. Not SDCA2. △ Plumb. Do not copy a 289 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4522,6 +4539,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-sdca2`
 
 {{patient.name}} was evaluated for SDCA2 (an ATP1B2 SINE insertion in Malinois, not RALGAPA1). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-selenop`
+
+{{patient.name}} was evaluated for SELENOP (CACA from a whole-gene deletion, not SDCA2). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

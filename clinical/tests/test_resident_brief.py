@@ -8605,6 +8605,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("atp1b2 sine", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_selenop_is_caca_not_sdca2(self):
+        b = analyze("dog", "selenop")
+        loc = b["localization"].lower()
+        self.assertIn("selenop deletion", loc)
+        self.assertIn("caca", loc)
+        self.assertIn("not sdca2", loc)
+        self.assertNotIn("atp1b2 sine", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("2-week clock", joined)
+        self.assertIn("30% selenium", joined)
+        self.assertIn("289 table", joined)
+        self.assertIn("belgian home as sdca2", joined)
+        self.assertIn("289-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_belgian_shepherd_is_not_selenop(self):
+        b = analyze("dog", "belgian shepherd")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("selenop deletion", loc)
+        self.assertNotIn("not sdca2", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cerebellar_ataxia_is_not_selenop(self):
+        b = analyze("dog", "cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("selenop deletion", loc)
+        self.assertNotIn("not sdca2", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sdca2_is_not_selenop(self):
+        b = analyze("dog", "sdca2")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("atp1b2 sine", loc)
+        self.assertNotIn("selenop deletion", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_selenop(self):
+        b = analyze("horse", "selenop")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("selenop deletion", loc)
+        self.assertNotIn("not sdca2", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_selenop(self):
+        b = analyze("cat", "selenop")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("selenop deletion", loc)
+        self.assertNotIn("not sdca2", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_selenop_still_fires(self):
+        b = analyze("dog", "SELENOP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("selenop deletion", loc)
+        self.assertIn("caca", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
