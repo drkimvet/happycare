@@ -9255,6 +9255,65 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not cushing reflex", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_hyperthyroid_is_not_a_wellness_t4(self):
+        b = analyze("cat", "hyperthyroidism")
+        loc = b["localization"].lower()
+        self.assertIn("feline hyperthyroidism", loc)
+        self.assertIn("not a wellness t4", loc)
+        self.assertNotIn("canine hypothyroidism", loc)
+        self.assertNotIn("not t4-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("methimazole table", joined)
+        self.assertIn("i-131 table", joined)
+        self.assertIn("skinny yowling cat home as old", joined)
+        self.assertIn("ptu in cats", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_old_cat_is_not_hyperthyroid(self):
+        b = analyze("cat", "old cat, weight loss, vocalization")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline hyperthyroidism", loc)
+        self.assertNotIn("not a wellness t4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_hyperthyroid(self):
+        b = analyze("horse", "hyperthyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline hyperthyroidism", loc)
+        self.assertNotIn("not a wellness t4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_hyperthyroid_is_carcinoma(self):
+        b = analyze("dog", "hyperthyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine thyroid carcinoma", loc)
+        self.assertIn("not feline hypert", loc)
+        self.assertNotIn("feline hyperthyroidism", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypothyroid_is_not_hyperthyroid_dx(self):
+        b = analyze("dog", "hypothyroidism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hypothyroidism", loc)
+        self.assertNotIn("feline hyperthyroidism", loc)
+        self.assertNotIn("canine thyroid carcinoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hac_is_not_hyperthyroid(self):
+        b = analyze("dog", "hyperadrenocorticism")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hyperadrenocorticism", loc)
+        self.assertNotIn("feline hyperthyroidism", loc)
+        self.assertNotIn("canine thyroid carcinoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_methimazole_fires_hyperthyroid(self):
+        b = analyze("cat", "methimazole")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline hyperthyroidism", loc)
+        self.assertIn("not a wellness t4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

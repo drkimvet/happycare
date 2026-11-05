@@ -229,6 +229,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-scn8a` | Assessment | Alpine Dachsbracke SCN8A ataxia |
 | `ddx-hypothyroid` | Assessment | Canine hypothyroidism / not T4-alone |
 | `ddx-hac` | Assessment | Canine HAC / not Cushing reflex |
+| `ddx-hyperthyroid` | Assessment | Feline hyperthyroidism / not a wellness T4 |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -417,6 +418,7 @@ Suggested names are short so they show up after three letters.
 | `dc-scn8a` | Discharge | After Alpine Dachsbracke SCN8A talk |
 | `dc-hypothyroid` | Discharge | After hypothyroidism / T4 talk |
 | `dc-hac` | Discharge | After HAC / Cushing talk |
+| `dc-hyperthyroid` | Discharge | After hyperthyroid / methimazole talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3262,6 +3264,21 @@ DDX:
 Do not: harvest a UCCR table. Harvest an LDDST table. Copy a trilostane table. Send a panting Poodle home as Cushing on ALP alone. Harvest an 8-hour cutoff.
 Do next: Name canine hyperadrenocorticism. Not Cushing reflex. △ Plumb. Do not copy a trilostane table.
 
+### `ddx-hyperthyroid`
+
+Hyperthyroidism — {{patient.name}}
+Feline hyperthyroidism [yes / not]. Not a wellness T4 [yes / not]. Palpable nodule [yes / not]. CKD risk [yes / not]. Hypertension [yes / not].
+
+DDX:
+1. Feline hyperthyroidism — **Feline hyperthyroidism. Not a wellness T4**
+2. High T4 in a clinically affected cat confirms. fT4 is not a screening test
+3. Radioiodine is the curative conversation. Methimazole controls, does not cure
+4. Treatment can unmask CKD. Measure BP (packet 172)
+5. Cat can fire. Dog fires as carcinoma until proven otherwise. Horse does not fire. Bare weight loss / old cat / T4 do not fire
+
+Do not: harvest a methimazole table. Harvest an I-131 table. Use PTU in cats. Send a skinny yowling cat home as old. Treat a one-time high T4 in a well cat.
+Do next: Name feline hyperthyroidism. Not a wellness T4. △ Plumb. Do not copy a methimazole table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4801,6 +4818,14 @@ Return now for collapse, not eating, or if the skin or energy is getting worse i
 Give only the medicines we sent, as labeled. Do not start a steroid or a Cushing pill from the cabinet.
 
 Return now for collapse, not eating, vomiting, or if drinking and urinating are getting worse. {{location.phonenumber}}
+
+### `dc-hyperthyroid`
+
+{{patient.name}} was evaluated for hyperthyroidism (too much thyroid hormone). A single high T4 on a wellness panel is not the whole diagnosis. We still need signs, a recheck if needed, and a kidney and blood-pressure check before calling this lifelong.
+
+Give only the medicines we sent, as labeled. Do not start a thyroid pill from the cabinet. The methimazole, if prescribed, is not a cure.
+
+Return now for not eating, vomiting, facial itch, collapse, or if drinking and urinating change after treatment. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

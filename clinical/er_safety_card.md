@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline hyperthyroidism (Merck Heseltine May 2024)
+
+- **Feline hyperthyroidism. Not a wellness T4.** Older cat: weight loss with appetite, yowling, tachycardia, palpable nodule. A high T4 in a **clinically affected** cat confirms. A high T4 in a well cat is not same-day disease — recheck; printed 2-week recheck stays on the page. 5–10% of hyperthyroid cats have a T4 still in RI; high-normal T4 plus high fT4 can confirm. **fT4 is not a screening test.** TSH is not sensitive.
+- Radioiodine is the curative conversation. Methimazole controls synthesis and is lifelong if used alone (`△ Plumb`). Do **not** harvest a 1.25-mg or I-131 table. PTU is not for cats. Iodine-restricted diet only if they eat nothing else. Thyroidectomy: stabilize first; hypocalcemia after bilateral. Treatment can **unmask CKD**. Measure BP — hypertension is packet 172, not this dump.
+- Dog hyperthyroidism is **thyroid carcinoma until proven otherwise**, not the feline adenoma. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine hyperadrenocorticism (Merck Van Vertloo Jul 2024; AAHA 2023; ACVIM Behrend 2013)
 
 - **Canine hyperadrenocorticism. Not Cushing reflex.** Hypertension plus bradycardia after head trauma is herniation, not this disease. Do not test a sick dog. Nonadrenal illness and hospital stress make LDDST and UCCR falsely positive.
@@ -474,6 +480,7 @@ If imaging or palpation says one kidney is fluid-filled / non-functional and the
 - Merck: congenital cerebellar (Parsley, Mar 2026). Bandera's neonatal ataxia. Coton de Tulear. From birth. Never able to walk. Cerebellum anatomically normal. DNA test. Zeng JVIM 2011 GRM1 named only. No dedicated Plunkett Bandera chapter.
 - Merck: congenital spinal (Parsley, Mar 2026). Leukoencephalomyelopathy of Rottweilers. Later onset 2–3 years. No head tremor. Proprioception delayed. Bilateral symmetrical spinal demyelination. Minor Sci Rep 2018 NAPEPLD named only. No dedicated Plunkett LEM chapter.
 - Merck: congenital spinal (Parsley, Mar 2026). Hereditary ataxia. Parson / Jack Russell / Smooth Fox. KCNJ10. CAPN1 rare variant. Myokymia / seizures in some forms. Onset 2–6 months. Progressive; some stabilize. No dedicated Plunkett hereditary-ataxia chapter.
+- Heseltine. Merck Veterinary Manual. Hyperthyroidism in Animals (May 2024). Feline hyperthyroidism. Not a wellness T4. High T4 in a clinically affected cat confirms. fT4 is not a screening test. Radioiodine is the curative choice; methimazole controls. Treatment unmasks CKD. Dog hyperT is carcinoma until proven otherwise. Skip horse. △ methimazole / I-131 in Plumb. No dedicated Plunkett hyperthyroidism chapter.
 - Van Vertloo. Merck Veterinary Manual. Cushing Syndrome (Hyperadrenocorticism) in Animals (Jul 2024). Canine hyperadrenocorticism. Not Cushing reflex. LDDST is the screen; 8-hour cortisol is the screen. ACTH stim is not first-line for spontaneous HAC. AAHA 2023 selected endocrinopathies: do not test nonadrenal illness; UCCR at home excludes. Behrend ACVIM 2013 JVIM: test only with clinical signs. Skip horse. △ trilostane in Plumb. No dedicated Plunkett HAC chapter.
 - Heseltine. Merck Veterinary Manual. Hypothyroidism in Animals (May 2024 / May 2025). Canine hypothyroidism. Not T4-alone. Primary lymphocytic thyroiditis / idiopathic atrophy. Low T4 alone is not the diagnosis. Greyhound T4 is lower. Adult cat disease is usually iatrogenic. Skip horse. △ levothyroxine in Plumb. No dedicated Plunkett hypothyroidism chapter.
 - Letko et al. Genes (Basel). 2019;10(5):362 (PMID 31083464 / PMC6562999). SCN8A missense. Not SNX14. Printed c.4898G>T and Gly1633Val stay on the page. Skip cats. Skip horse. Packet 297 still owns SNX14. Packet 219 still owns KCNJ10. Packet 296 still owns ATG4D. Dogs only. No dedicated Plunkett SCN8A chapter.

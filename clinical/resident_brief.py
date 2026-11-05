@@ -1865,6 +1865,18 @@ HAC_RE = re.compile(
     r"\burine cortisol",
     re.I,
 )
+# Do not use \bt4\b, bare weight loss, or old cat (299 / 172).
+# Not hypothyroidism (299). Not HAC (300). Do not harvest a
+# methimazole or I-131 table. Dogs: carcinoma until proven
+# otherwise. Skip horse.
+HYPERTHYROID_DX_RE = re.compile(
+    r"\bhyperthyroid|"
+    r"\bmethimazole\b|"
+    r"\bcarbimazole\b|"
+    r"\bradioiodine\b|"
+    r"\bi-?131\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6005,6 +6017,7 @@ def analyze(
     steal_scn8a = SCN8A_RE.search(text)
     steal_hypothyroid = HYPOTHYROID_RE.search(text)
     steal_hac = HAC_RE.search(text)
+    steal_hyperthyroid_dx = HYPERTHYROID_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6107,6 +6120,7 @@ def analyze(
         or steal_scn8a
         or steal_hypothyroid
         or steal_hac
+        or steal_hyperthyroid_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15480,6 +15494,65 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for HAC."
+            )
+
+    hyperT_named = spec in {"dog", "cat"} and HYPERTHYROID_DX_RE.search(text)
+    if hyperT_named:
+        if spec == "dog":
+            hyperT_loc = (
+                "Canine thyroid carcinoma until proven otherwise. Not feline hyperT."
+            )
+        else:
+            hyperT_loc = "Feline hyperthyroidism. Not a wellness T4."
+        localization = (
+            f"{localization} Also {hyperT_loc}" if localization else hyperT_loc
+        )
+        hard_stops.append(
+            "Do not harvest a methimazole table. Do not harvest an I-131 table."
+        )
+        do_not.append(
+            "Do not copy a methimazole table. Do not harvest an I-131 table. "
+            "Do not use PTU in cats."
+        )
+        if spec == "cat":
+            do_not.append(
+                "Do not send a skinny yowling cat home as old. "
+                "Do not treat a one-time high T4 in a well cat. "
+                "Do not use fT4 as a screening test."
+            )
+            do_next.append(
+                "Name feline hyperthyroidism. Not a wellness T4. "
+                "△ Plumb. Do not copy a methimazole table. "
+                "Treatment can unmask CKD. Measure BP."
+            )
+        else:
+            do_not.append(
+                "Do not treat canine hyperthyroidism as the feline adenoma. "
+                "Do not harvest a methimazole table as a cure for the mass."
+            )
+            do_next.append(
+                "Name canine thyroid carcinoma until proven otherwise. "
+                "Not feline hyperT. △ Plumb. Do not copy a methimazole table."
+            )
+        sources.append(
+            "Heseltine. Merck Veterinary Manual. Hyperthyroidism in Animals. "
+            "May 2024: feline adenoma/adenomatous hyperplasia; high T4 in a "
+            "clinically affected cat confirms; fT4 is not a screening test; "
+            "radioiodine is the curative choice; methimazole controls, does not "
+            "cure; treatment unmasks CKD. Dog hyperT is carcinoma until proven "
+            "otherwise. △ methimazole / I-131 in Plumb."
+        )
+        if spec == "cat" and SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a skinny yowling cat home as old."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for hyperthyroidism."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for hyperthyroidism."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
