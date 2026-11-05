@@ -224,6 +224,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-itpr1` | Assessment | Italian Spinone ITPR1 SCAIS |
 | `ddx-sptbn2` | Assessment | Beagle SPTBN2 NCCD |
 | `ddx-sel1l` | Assessment | Finnish Hound SEL1L ataxia |
+| `ddx-atg4d` | Assessment | Lagotto ATG4D vacuolar ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -407,6 +408,7 @@ Suggested names are short so they show up after three letters.
 | `dc-itpr1` | Discharge | After Italian Spinone ITPR1 talk |
 | `dc-sptbn2` | Discharge | After Beagle SPTBN2 NCCD talk |
 | `dc-sel1l` | Discharge | After Finnish Hound SEL1L talk |
+| `dc-atg4d` | Discharge | After Lagotto ATG4D talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3177,6 +3179,21 @@ DDX:
 Do not: harvest a 3-month clock. Harvest a 10% carrier table. Copy a 294 table. Send a Finnish Hound home as SPTBN2. Call it 294-only.
 Do next: Name the SEL1L. Missense. Not SPTBN2. △ Plumb. Do not copy a 294 table.
 
+### `ddx-atg4d`
+
+ATG4D — {{patient.name}}
+ATG4D missense [yes / not]. Not SEL1L [yes / not].
+
+DDX:
+1. ATG4D — **ATG4D missense. Not SEL1L**
+2. Printed c.1288G>A / A430T stay on the page
+3. Packet 295 still owns SEL1L. Packet 217 still owns Bandera / GRM1. Packet 213 still owns unnamed abiotrophy
+4. Not 295-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Lagotto / cerebellar ataxia do not fire
+
+Do not: harvest a 23-month clock. Harvest a 2300-Lagotto table. Copy a 295 table. Send a Lagotto home as SEL1L. Call it 295-only.
+Do next: Name the ATG4D. Missense. Not SEL1L. △ Plumb. Do not copy a 295 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4672,6 +4689,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-sel1l`
 
 {{patient.name}} was evaluated for SEL1L (Finnish Hound missense ataxia, not SPTBN2 NCCD). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-atg4d`
+
+{{patient.name}} was evaluated for ATG4D (Lagotto vacuolar storage ataxia, not SEL1L). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

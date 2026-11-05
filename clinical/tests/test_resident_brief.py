@@ -8956,6 +8956,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not sptbn2", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_atg4d_is_missense_not_sel1l(self):
+        b = analyze("dog", "atg4d")
+        loc = b["localization"].lower()
+        self.assertIn("atg4d missense", loc)
+        self.assertIn("not sel1l", loc)
+        self.assertNotIn("sel1l missense", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("23-month clock", joined)
+        self.assertIn("2300-lagotto", joined)
+        self.assertIn("295 table", joined)
+        self.assertIn("lagotto home as sel1l", joined)
+        self.assertIn("295-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_lagotto_is_not_atg4d(self):
+        b = analyze("dog", "lagotto romagnolo")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atg4d missense", loc)
+        self.assertNotIn("not sel1l", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cerebellar_ataxia_is_not_atg4d(self):
+        b = analyze("dog", "cerebellar ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atg4d missense", loc)
+        self.assertNotIn("not sel1l", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sel1l_is_not_atg4d(self):
+        b = analyze("dog", "sel1l")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("sel1l missense", loc)
+        self.assertNotIn("atg4d missense", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_atg4d(self):
+        b = analyze("horse", "atg4d")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atg4d missense", loc)
+        self.assertNotIn("not sel1l", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_atg4d(self):
+        b = analyze("cat", "atg4d")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("atg4d missense", loc)
+        self.assertNotIn("not sel1l", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_atg4d_still_fires(self):
+        b = analyze("dog", "ATG4D")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("atg4d missense", loc)
+        self.assertIn("not sel1l", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

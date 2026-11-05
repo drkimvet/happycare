@@ -687,6 +687,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not itpr1", VERIF.lower())
         self.assertIn("sel1l missense", VERIF.lower())
         self.assertIn("not sptbn2", VERIF.lower())
+        self.assertIn("atg4d missense", VERIF.lower())
+        self.assertIn("not sel1l", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1131,6 +1133,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-sptbn2`", MACRO)
         self.assertIn("`ddx-sel1l`", MACRO)
         self.assertIn("`dc-sel1l`", MACRO)
+        self.assertIn("`ddx-atg4d`", MACRO)
+        self.assertIn("`dc-atg4d`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1257,6 +1261,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not itpr1", MACRO.lower())
         self.assertIn("sel1l missense", MACRO.lower())
         self.assertIn("not sptbn2", MACRO.lower())
+        self.assertIn("atg4d missense", MACRO.lower())
+        self.assertIn("not sel1l", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1745,6 +1751,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not itpr1",
             "sel1l missense",
             "not sptbn2",
+            "atg4d missense",
+            "not sel1l",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

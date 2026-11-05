@@ -3632,7 +3632,7 @@ Night rule: named SPTBN2 → **SPTBN2 8-bp deletion. Not ITPR1.** △ Plumb.
 
 ## 295. Finnish Hound SEL1L (Kyostila PLoS Genet 2012)
 
-No dedicated Plunkett SEL1L chapter in the owned SA EM splits. Public Kyostila K, Cizinauskas S, Seppala EH, et al. A SEL1L mutation links a canine progressive early-onset cerebellar ataxia to the endoplasmic reticulum-associated protein degradation (ERAD) machinery. PLoS Genet. 2012;8(6):e1002759. doi:10.1371/journal.pgen.1002759. PMID: 22719266. PMCID: PMC3375262. Packet 294 still owns named SPTBN2 / NCCD. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 296 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 10% carrier table as lobby law. Do not fire on bare Finnish Hound / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett SEL1L chapter in the owned SA EM splits. Public Kyostila K, Cizinauskas S, Seppala EH, et al. A SEL1L mutation links a canine progressive early-onset cerebellar ataxia to the endoplasmic reticulum-associated protein degradation (ERAD) machinery. PLoS Genet. 2012;8(6):e1002759. doi:10.1371/journal.pgen.1002759. PMID: 22719266. PMCID: PMC3375262. Packet 294 still owns named SPTBN2 / NCCD. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 296 owns named ATG4D, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 10% carrier table as lobby law. Do not fire on bare Finnish Hound / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Kyostila 2012: **SEL1L** missense (c.1972T>C; p.Ser658Pro) is **autosomal recessive** in Finnish Hound dogs with early-onset progressive cerebellar ataxia. Printed missense, ERAD line, and Purkinje-cell loss stay on the page. Do not harvest an ER-stress gene table as lobby law.
 
@@ -3656,3 +3656,30 @@ Night rule: named SEL1L → **SEL1L missense. Not SPTBN2.** △ Plumb.
 - Attending: If the query is only “Finnish Hound,” why does this gate stay dark?
 - Attending: Cat SEL1L — fire or skip?
 - Attending: Dual-named “SPTBN2, SEL1L” — which loc should win, and why?
+
+## 296. Lagotto ATG4D (Kyostila PLoS Genet 2015)
+
+No dedicated Plunkett ATG4D chapter in the owned SA EM splits. Public Kyostila K, Syrja P, Jagannathan V, et al. A missense change in the ATG4D gene links aberrant autophagy to a neurodegenerative vacuolar storage disease. PLoS Genet. 2015;11(4):e1005169. doi:10.1371/journal.pgen.1005169. PMID: 25875846. PMCID: PMC4398399. Packet 295 still owns named SEL1L. Packet 217 still owns Bandera / GRM1. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 297 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 23-month clock as lobby law. Do not harvest a 2300-Lagotto table as lobby law. Do not fire on bare Lagotto / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Kyostila 2015: **ATG4D** missense (c.1288G>A; p.A430T) is **autosomal recessive** in Lagotto Romagnolo dogs with progressive cerebellar ataxia and neuronal cytoplasmic vacuolization. Printed missense, vacuolar storage, and autophagy line stay on the page. Do not harvest a zebrafish knockdown table as lobby law.
+
+Night split: named ATG4D is ATG4D missense; not SEL1L. Bare Lagotto does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SEL1L stays 295. Named Bandera / GRM1 stays 217. Named abiotrophy stays 213. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 23-month clock.
+- Do not harvest a 2300-Lagotto table.
+- Do not copy a 295 table.
+- Do not send a Lagotto home as SEL1L.
+- Do not call it 295-only.
+
+Night rule: named ATG4D → **ATG4D missense. Not SEL1L.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A Lagotto has progressive cerebellar ataxia and neuronal vacuolization. Which gene split matters at night, and why is this not SEL1L?
+- NAVLE 2: The variant is printed as c.1288G>A; p.A430T. What stays on the page?
+- NAVLE 3: Dual-named “GRM1, ATG4D” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Finnish Hound SEL1L they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Lagotto,” why does this gate stay dark?
+- Attending: Cat ATG4D — fire or skip?
+- Attending: Dual-named “SEL1L, ATG4D” — which loc should win, and why?
