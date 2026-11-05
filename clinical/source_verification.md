@@ -3524,7 +3524,7 @@ Night rule: named SELENOP → **SELENOP deletion. CACA. Not SDCA2.** △ Plumb.
 
 ## 291. Norwegian Buhund KCNIP4 (Jenkins PLoS Genet 2020)
 
-No dedicated Plunkett KCNIP4 chapter in the owned SA EM splits. Public Jenkins CA, Kalmar L, Matiasek K, et al. Characterisation of canine KCNIP4: A novel gene for cerebellar ataxia identified by whole-genome sequencing two affected Norwegian Buhund dogs. PLoS Genet. 2020;16(1):e1008527. doi:10.1371/journal.pgen.1008527. PMID: 31999692. PMCID: PMC7012447. Packet 290 still owns named SELENOP / CACA. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 287 still owns named RAB24. Packet 292 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest an 802-genome table as lobby law. Do not harvest a 4-affected count as lobby law. Do not fire on bare Buhund / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+No dedicated Plunkett KCNIP4 chapter in the owned SA EM splits. Public Jenkins CA, Kalmar L, Matiasek K, et al. Characterisation of canine KCNIP4: A novel gene for cerebellar ataxia identified by whole-genome sequencing two affected Norwegian Buhund dogs. PLoS Genet. 2020;16(1):e1008527. doi:10.1371/journal.pgen.1008527. PMID: 31999692. PMCID: PMC7012447. Packet 290 still owns named SELENOP / CACA. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 287 still owns named RAB24. Packet 292 owns named PNPLA8, not this dump. Do not harvest an 802-genome table as lobby law. Do not harvest a 4-affected count as lobby law. Do not fire on bare Buhund / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
 
 Agree with Jenkins 2020: **KCNIP4** missense (NC_006585.3:g.88890674T>C; tryptophan to arginine) is **autosomal recessive** in Norwegian Buhund dogs with progressive cerebellar ataxia. Only affected Buhunds were homozygous. The variant dramatically reduces KCNIP4 protein in cerebellum. Printed SNP, protein loss, and Kv4 accessory-subunit line stay on the page.
 
@@ -3548,3 +3548,30 @@ Night rule: named KCNIP4 → **KCNIP4 missense. Not SELENOP.** △ Plumb.
 - Attending: If the query is only “Buhund,” why does this gate stay dark?
 - Attending: Cat KCNIP4 — fire or skip?
 - Attending: Dual-named “SELENOP, KCNIP4” — which loc should win, and why?
+
+## 292. Australian Shepherd PNPLA8 (Abitbol Anim Genet 2022)
+
+No dedicated Plunkett PNPLA8 chapter in the owned SA EM splits. Public Abitbol M, Jagannathan V, Laurent N, et al. A PNPLA8 frameshift variant in Australian shepherd dogs with hereditary ataxia. Anim Genet. 2022;53(5):709-712. doi:10.1111/age.13245. PMID: 35864734. PMCID: PMC9545373. Packet 291 still owns named KCNIP4. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 290 still owns named SELENOP / CACA. Packet 293 owns the next unused named leftover on a cited PubMed paper, not this dump. Do not harvest a 4.7% carrier table as lobby law. Do not harvest an 85-Aussie table as lobby law. Do not fire on bare Australian Shepherd / hereditary ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Abitbol 2022: **PNPLA8** frameshift (c.1169_1170dupTT; p.His391PhefsTer394) is **autosomal recessive** in Australian Shepherd dogs with young-adult hereditary ataxia. Progressive uncoordinated movement and spasticity. The truncated protein is predicted to lack the patatin catalytic domain. Printed dupTT, frameshift, and phospholipase line stay on the page. Do not harvest a Weaver-syndrome table as lobby law.
+
+Night split: named PNPLA8 is PNPLA8 frameshift; not KCNIP4. Bare Australian Shepherd does not fire. Bare hereditary ataxia does not fire. Cat does not fire. Horse does not fire. Named KCNIP4 stays 291. Named KCNJ10 / hereditary ataxia stays 219. Named SELENOP stays 290. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 4.7% carrier table.
+- Do not harvest an 85-Aussie table.
+- Do not copy a 291 table.
+- Do not send an Aussie home as KCNIP4.
+- Do not call it 291-only.
+
+Night rule: named PNPLA8 → **PNPLA8 frameshift. Not KCNIP4.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A young-adult Aussie has progressive ataxia and spasticity. Which gene split matters at night, and why is this not KCNIP4?
+- NAVLE 2: The variant is printed as c.1169_1170dupTT. What stays on the page?
+- NAVLE 3: Dual-named “hereditary ataxia, PNPLA8” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Buhund KCNIP4 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Australian Shepherd,” why does this gate stay dark?
+- Attending: Cat PNPLA8 — fire or skip?
+- Attending: Dual-named “KCNIP4, PNPLA8” — which loc should win, and why?

@@ -220,6 +220,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-sdca2` | Assessment | Malinois SDCA2 / ATP1B2 |
 | `ddx-selenop` | Assessment | Belgian Shepherd SELENOP / CACA |
 | `ddx-kcnip4` | Assessment | Norwegian Buhund KCNIP4 ataxia |
+| `ddx-pnpla8` | Assessment | Australian Shepherd PNPLA8 ataxia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -399,6 +400,7 @@ Suggested names are short so they show up after three letters.
 | `dc-sdca2` | Discharge | After Malinois SDCA2 / ATP1B2 talk |
 | `dc-selenop` | Discharge | After Belgian Shepherd SELENOP / CACA talk |
 | `dc-kcnip4` | Discharge | After Norwegian Buhund KCNIP4 talk |
+| `dc-pnpla8` | Discharge | After Australian Shepherd PNPLA8 talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3109,6 +3111,21 @@ DDX:
 Do not: harvest an 802-genome table. Harvest a 4-affected count. Copy a 290 table. Send a Buhund home as SELENOP. Call it 290-only.
 Do next: Name the KCNIP4. Missense. Not SELENOP. △ Plumb. Do not copy a 290 table.
 
+### `ddx-pnpla8`
+
+PNPLA8 — {{patient.name}}
+PNPLA8 frameshift [yes / not]. Not KCNIP4 [yes / not].
+
+DDX:
+1. PNPLA8 — **PNPLA8 frameshift. Not KCNIP4**
+2. Printed c.1169_1170dupTT / His391PhefsTer394 stay on the page
+3. Packet 291 still owns KCNIP4. Packet 219 still owns KCNJ10 / hereditary ataxia. Packet 290 still owns SELENOP
+4. Not 291-only
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare Australian Shepherd / hereditary ataxia do not fire
+
+Do not: harvest a 4.7% carrier table. Harvest an 85-Aussie table. Copy a 291 table. Send an Aussie home as KCNIP4. Call it 291-only.
+Do next: Name the PNPLA8. Frameshift. Not KCNIP4. △ Plumb. Do not copy a 291 table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4572,6 +4589,14 @@ Return now for worse weakness, or if you cannot keep them comfortable. {{locatio
 ### `dc-kcnip4`
 
 {{patient.name}} was evaluated for KCNIP4 (a Buhund missense ataxia, not SELENOP CACA). Comfort and safety are the plan.
+
+Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
+
+Return now for worse weakness, or if you cannot keep them comfortable. {{location.phonenumber}}
+
+### `dc-pnpla8`
+
+{{patient.name}} was evaluated for PNPLA8 (an Aussie frameshift ataxia, not KCNIP4). Comfort and safety are the plan.
 
 Give only the medicines we sent, as labeled. Do not start a steroid from the cabinet.
 

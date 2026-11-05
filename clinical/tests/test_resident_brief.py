@@ -8718,6 +8718,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not selenop", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_pnpla8_is_frameshift_not_kcnip4(self):
+        b = analyze("dog", "pnpla8")
+        loc = b["localization"].lower()
+        self.assertIn("pnpla8 frameshift", loc)
+        self.assertIn("not kcnip4", loc)
+        self.assertNotIn("kcnip4 missense", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("4.7% carrier", joined)
+        self.assertIn("85-aussie", joined)
+        self.assertIn("291 table", joined)
+        self.assertIn("aussie home as kcnip4", joined)
+        self.assertIn("291-only", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_australian_shepherd_is_not_pnpla8(self):
+        b = analyze("dog", "australian shepherd")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pnpla8 frameshift", loc)
+        self.assertNotIn("not kcnip4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hereditary_ataxia_is_not_pnpla8(self):
+        b = analyze("dog", "hereditary ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pnpla8 frameshift", loc)
+        self.assertNotIn("not kcnip4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kcnip4_is_not_pnpla8(self):
+        b = analyze("dog", "kcnip4")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("kcnip4 missense", loc)
+        self.assertNotIn("pnpla8 frameshift", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_pnpla8(self):
+        b = analyze("horse", "pnpla8")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pnpla8 frameshift", loc)
+        self.assertNotIn("not kcnip4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_pnpla8(self):
+        b = analyze("cat", "pnpla8")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("pnpla8 frameshift", loc)
+        self.assertNotIn("not kcnip4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_named_pnpla8_still_fires(self):
+        b = analyze("dog", "PNPLA8")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pnpla8 frameshift", loc)
+        self.assertIn("not kcnip4", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
