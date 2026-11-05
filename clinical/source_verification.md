@@ -3821,7 +3821,7 @@ Night rule: named hyperthyroidism → **Feline hyperthyroidism. Not a wellness T
 
 ## 302. FeLV / FIV (St Denis Merck 2022; Whitbread kits 2026; AAFP 2020)
 
-No dedicated Plunkett FeLV/FIV chapter in the owned SA EM splits. Public St Denis KA. Feline Leukemia Virus Disease. Merck Veterinary Manual. Reviewed/revised Feb 2022. Whitbread TJ. Serologic Test Kits. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (FIV antibody / maternal antibody / vaccine-antibody lines). Little S, Levy J, Hartmann K, et al. 2020 AAFP Feline Retrovirus Testing and Management Guidelines. J Feline Med Surg. 2020;22(1):5-30. doi:10.1177/1098612X19895940 named only; no guideline dump. Packet 301 still owns named hyperthyroidism. FIP stays the FIP gate. Packet 303 is AAHA vaccination, not another ataxia gene. Do not harvest a SNAP cutoff as lobby law. Do not harvest an interferon table as lobby law. Do not fire on bare stomatitis / sick cat. Cats only. Skip dogs. Skip horse.
+No dedicated Plunkett FeLV/FIV chapter in the owned SA EM splits. Public St Denis KA. Feline Leukemia Virus Disease. Merck Veterinary Manual. Reviewed/revised Feb 2022. Whitbread TJ. Serologic Test Kits. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (FIV antibody / maternal antibody / vaccine-antibody lines). Little S, Levy J, Hartmann K, et al. 2020 AAFP Feline Retrovirus Testing and Management Guidelines. J Feline Med Surg. 2020;22(1):5-30. doi:10.1177/1098612X19895940 named only; no guideline dump. Packet 301 still owns named hyperthyroidism. FIP stays the FIP gate. Packet 303 is AAHA core vs non-core vaccination (not a mL table). Do not harvest a SNAP cutoff as lobby law. Do not harvest an interferon table as lobby law. Do not fire on bare stomatitis / sick cat. Cats only. Skip dogs. Skip horse.
 
 Agree with St Denis 2022 / Whitbread 2026 / AAFP 2020: **FeLV is antigen (p27). FIV is antibody.** Do not euthanize on one SNAP. Confirm a positive. FeLV vaccine does not make the antigen test positive. FIV vaccine antibodies can persist. Kitten FIV-positive may be maternal antibody. Tears and saliva are not FeLV samples. Abortive / regressive / progressive FeLV is why one test is not a life sentence. Printed 30-day FeLV and 60-day FIV windows stay on the page. Printed zidovudine mg/kg and interferon lines stay on the page (`△ Plumb`).
 
@@ -3845,3 +3845,30 @@ Night rule: named FeLV / FIV → **FeLV antigen, FIV antibody. Not SNAP-alone.**
 - Attending: If the query is only “stomatitis,” why does this gate stay dark?
 - Attending: Dog FeLV — fire or skip?
 - Attending: Dual-named “hyperthyroidism, FIV” — which loc should win, and why?
+
+## 303. AAHA core vs non-core vaccines (AAHA canine 2022/2024; AAHA/AAFP feline 2020)
+
+No dedicated Plunkett vaccination-schedule chapter in the owned SA EM splits. Public 2022 AAHA Canine Vaccination Guidelines (Ellis et al. J Am Anim Hosp Assoc. 2022;58:1-19), **updated 2024** on the AAHA page to include leptospirosis as core for all dogs. Public 2020 AAHA/AAFP Feline Vaccination Guidelines (published 13 Aug 2020). Packet 302 still owns named FeLV/FIV testing. Anaphylaxis / vaccine reaction stays the anaphylaxis gate. Do not harvest a mL table as lobby law. Do not harvest a 3-year clock as lobby law. Do not harvest a distal-limb sarcoma map as lobby law. Do not fire on bare vaccine / unvaccinated / rabies-neuro. Dogs and cats. Skip horse.
+
+Agree with AAHA 2022/2024 and AAHA/AAFP 2020: **core vs non-core.** Dog core: distemper, adenovirus, parvovirus, +/- parainfluenza, Leptospira (2024), rabies. Dog lifestyle: Lyme, Bordetella, influenza, rattlesnake. Cat core: FHV-1, FCV, FPV, rabies, FeLV if younger than 1 year. Cat non-core: FeLV after 1 year, *Chlamydia*, *Bordetella*. Overdue / unknown: when in doubt, vaccinate, unless a specific medical reason not to. Printed 16-week last puppy core and 3-year adult core intervals stay on the page (`△ label`).
+
+Night split: named core / non-core / DA2PP / FVRCP / AAHA vaccin is AAHA core vs non-core; not a mL table. Bare vaccine does not fire. Vaccine reaction stays anaphylaxis. Named FeLV stays 302. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a mL table.
+- Do not harvest a 3-year clock.
+- Do not harvest a distal-limb map.
+- Do not copy the 2017 lepto-as-noncore line.
+- Do not send a 16-week puppy home without the last core.
+
+Night rule: named core vs non-core → **AAHA core vs non-core. Not a mL table.** △ label.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Which antigens are core for every dog after the 2024 AAHA update, and why is lepto no longer optional by default?
+- NAVLE 2: A 4-month-old kitten: which vaccines are core, and is FeLV still core at 2 years?
+- NAVLE 3: Dual-named “vaccine reaction, core vaccines” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “skip lepto, it is optional,” without inventing a mL?
+- Attending: If the query is only “unvaccinated puppy,” why does this gate stay dark?
+- Attending: Horse core vaccines — fire or skip?
+- Attending: Dual-named “FeLV, core vaccine” — which loc should win, and why?

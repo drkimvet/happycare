@@ -9369,6 +9369,59 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not snap-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_core_vaccine_is_not_a_ml_table(self):
+        b = analyze("dog", "core vaccines")
+        loc = b["localization"].lower()
+        self.assertIn("aaha core vs non-core", loc)
+        self.assertIn("not a ml table", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("ml table", joined)
+        self.assertIn("site-sarcoma table", joined)
+        self.assertIn("2017 lepto-as-noncore", joined)
+        self.assertIn("16-week puppy home without the last core", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fvrcp_fires_core_vaccine(self):
+        b = analyze("cat", "FVRCP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("aaha core vs non-core", loc)
+        self.assertIn("not a ml table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_da2pp_fires_core_vaccine(self):
+        b = analyze("dog", "DA2PP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("aaha core vs non-core", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_vaccine_reaction_is_not_core_vax(self):
+        b = analyze("dog", "anaphylaxis after vaccine, collapse, no hives")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("aaha core vs non-core", loc)
+        self.assertNotIn("not a ml table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_core_vax(self):
+        b = analyze("horse", "core vaccines")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("aaha core vs non-core", loc)
+        self.assertNotIn("not a ml table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_felv_is_not_core_vax(self):
+        b = analyze("cat", "FeLV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("felv antigen", loc)
+        self.assertNotIn("aaha core vs non-core", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_unvaccinated_puppy_is_not_core_vax(self):
+        b = analyze("dog", "unvaccinated puppy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("aaha core vs non-core", loc)
+        self.assertNotIn("not a ml table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

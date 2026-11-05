@@ -1888,6 +1888,22 @@ FELV_FIV_RE = re.compile(
     r"\bfeline immunodeficiency",
     re.I,
 )
+# Do not use \bvaccine\b (anaphylaxis / parvo unvaccinated).
+# Do not use \brabies\b (trigeminal DDX). Not FeLV SNAP (302).
+# Do not harvest a mL or site-sarcoma table. Dogs and cats.
+# Skip horse.
+VACCINE_CORE_RE = re.compile(
+    r"\bcore vaccin|"
+    r"\bnon[- ]?core vaccin|"
+    r"\bvaccination guidelines|"
+    r"\baaha vaccin|"
+    r"\bfvrcp\b|"
+    r"\bda2pp\b|"
+    r"\bdhpp\b|"
+    r"\binjection[- ]site sarcoma|"
+    r"\bvaccine sarcoma",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6030,6 +6046,7 @@ def analyze(
     steal_hac = HAC_RE.search(text)
     steal_hyperthyroid_dx = HYPERTHYROID_DX_RE.search(text)
     steal_felv_fiv = FELV_FIV_RE.search(text)
+    steal_vaccine_core = VACCINE_CORE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6134,6 +6151,7 @@ def analyze(
         or steal_hac
         or steal_hyperthyroid_dx
         or steal_felv_fiv
+        or steal_vaccine_core
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15607,6 +15625,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FeLV/FIV."
+            )
+
+    vax_named = spec in {"dog", "cat"} and VACCINE_CORE_RE.search(text)
+    if vax_named:
+        vax_loc = "AAHA core vs non-core. Not a mL table."
+        localization = f"{localization} Also {vax_loc}" if localization else vax_loc
+        hard_stops.append(
+            "Do not harvest a mL table. Do not harvest a site-sarcoma table."
+        )
+        do_not.append(
+            "Do not harvest a mL table. Do not harvest a 3-year clock. "
+            "Do not harvest a distal-limb map."
+        )
+        if spec == "dog":
+            do_not.append(
+                "Do not copy the 2017 lepto-as-noncore line. "
+                "Do not send a 16-week puppy home without the last core."
+            )
+            do_next.append(
+                "Name AAHA core vs non-core. Not a mL table. "
+                "△ Plumb / label. Do not copy a site-sarcoma table."
+            )
+        else:
+            do_not.append(
+                "Do not skip FeLV in the kitten series. "
+                "Do not harvest a sarcoma-limb map as lobby law."
+            )
+            do_next.append(
+                "Name AAHA core vs non-core. Not a mL table. "
+                "△ Plumb / label. Test before FeLV vaccine."
+            )
+        sources.append(
+            "AAHA 2022 Canine Vaccination Guidelines (updated 2024): core is "
+            "distemper, adenovirus, parvovirus, +/- parainfluenza, Leptospira, "
+            "rabies. Lifestyle: Lyme, Bordetella, influenza, rattlesnake. "
+            "AAHA/AAFP 2020 feline: FHV-1, FCV, FPV, rabies, FeLV if <1 year "
+            "are core. Do not harvest mL or injection-site tables."
+        )
+        if spec == "dog" and SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send a 16-week puppy home without the last core."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for vaccination."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for vaccination."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

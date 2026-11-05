@@ -231,6 +231,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hac` | Assessment | Canine HAC / not Cushing reflex |
 | `ddx-hyperthyroid` | Assessment | Feline hyperthyroidism / not a wellness T4 |
 | `ddx-felv` | Assessment | FeLV antigen / FIV antibody / not SNAP-alone |
+| `ddx-vax` | Assessment | AAHA core vs non-core vaccines |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -421,6 +422,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hac` | Discharge | After HAC / Cushing talk |
 | `dc-hyperthyroid` | Discharge | After hyperthyroid / methimazole talk |
 | `dc-felv` | Discharge | After FeLV / FIV SNAP talk |
+| `dc-vax` | Discharge | After core / non-core vaccine talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3296,6 +3298,21 @@ DDX:
 Do not: harvest a SNAP cutoff. Harvest an interferon table. Euthanize on one SNAP. Send a kitten FIV-positive home as infected. Call FeLV vaccine a positive antigen test.
 Do next: Name FeLV antigen, FIV antibody. Not SNAP-alone. △ Plumb. Do not copy an interferon table.
 
+### `ddx-vax`
+
+Vaccination — {{patient.name}}
+AAHA core vs non-core [yes / not]. Not a mL table [yes / not]. Lifestyle risk [yes / not]. Overdue / unknown [yes / not].
+
+DDX:
+1. Vaccination — **AAHA core vs non-core. Not a mL table**
+2. Dog 2024: distemper, adenovirus, parvovirus, +/- parainfluenza, Leptospira, rabies are core
+3. Cat 2020: FHV-1, FCV, FPV, rabies, FeLV if <1 year are core
+4. Non-core is lifestyle. Test before FeLV vaccine. Vaccine reaction is epinephrine
+5. Dog or cat can fire. Horse does not fire. Bare vaccine / unvaccinated / rabies-neuro do not fire
+
+Do not: harvest a mL table. Harvest a 3-year clock. Harvest a distal-limb map. Copy the 2017 lepto-as-noncore line. Send a 16-week puppy home without the last core.
+Do next: Name AAHA core vs non-core. Not a mL table. △ Plumb / label. Do not copy a site-sarcoma table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4851,6 +4868,14 @@ Return now for not eating, vomiting, facial itch, collapse, or if drinking and u
 Give only the medicines we sent, as labeled. Do not start leftover steroids or immune drugs from the cabinet. Keep {{patient.Pronoun}} indoors until we know the true status.
 
 Return now for not eating, fever, pale gums, or if another cat in the house is newly sick. {{location.phonenumber}}
+
+### `dc-vax`
+
+{{patient.name}} is due for vaccines based on what every dog or cat needs (core) plus what THIS patient needs from lifestyle (non-core). The milliliter on the bottle is not a homemade recipe.
+
+Give only the vaccines we discussed, as labeled. A little soreness at the site can happen. Facial swelling, hives, vomiting, or collapse after a vaccine is an emergency — come now.
+
+Return now for collapse, facial swelling, or trouble breathing after a vaccine. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
