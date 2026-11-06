@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline oral SCC (Merck Mulherin Nov 2024; AAHA 2026 oncology)
+
+- **Feline oral SCC. Not a loose-tooth extraction.** Named oral / lingual / gingival squamous cell carcinoma only. This is the usual cat oral malignancy. Locally invasive into bone. The owner often thinks it is a dental problem. Do **not** extract the tooth and send the jaw home. Do **not** harvest an MST table or a piroxicam table.
+- Radiograph the jaw. Biopsy. Sublingual and mandibular sites are classic in the cat. Dogs: SCC is second after melanoma; still not a loose-tooth extraction. Not oral melanoma (309). Not tartar.
+- Printed mandibulectomy / NSAID numbers stay on the page (`△ Plumb`). Skip horse. Bare tartar / loose tooth stay dark. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine oral melanoma (Merck Mulherin Nov 2024; AAHA 2026 oncology)
 
 - **Canine oral melanoma. Not a dental tartar.** Named oral / malignant / amelanotic melanoma only. Pigmented or amelanotic. Biopsy is the diagnosis. Aspirate the mandibular nodes even if they feel normal. Chest films before you cut. Do **not** harvest an MST table or an Oncept table.

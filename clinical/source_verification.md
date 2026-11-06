@@ -4021,7 +4021,7 @@ Night rule: named AGASACA → **Canine AGASACA. Not hyperCa-alone.** △ Plumb.
 
 ## 309. Canine oral melanoma (Mulherin Merck Nov 2024; AAHA 2026 oncology)
 
-No dedicated Plunkett oral-melanoma chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024. 2026 AAHA Oncology Guidelines named only; no MST / Oncept dump. Packet 308 still owns named AGASACA. Pulmonary mets still owns cannonball nodules and named OSA / HSA / mammary adenocarcinoma (oral melanoma left that regex so a mouth mass is not labeled pulmonary nodules). Do not harvest an MST table as lobby law. Do not harvest an Oncept table as lobby law. Do not fire on bare tartar / epulis / halitosis. Dogs and cats (rare). Skip horse.
+No dedicated Plunkett oral-melanoma chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024. 2026 AAHA Oncology Guidelines named only; no MST / Oncept dump. Packet 308 still owns named AGASACA. Packet 310 is feline oral SCC (not a loose-tooth extraction). Pulmonary mets still owns cannonball nodules and named OSA / HSA / mammary adenocarcinoma (oral melanoma left that regex so a mouth mass is not labeled pulmonary nodules). Do not harvest an MST table as lobby law. Do not harvest an Oncept table as lobby law. Do not fire on bare tartar / epulis / halitosis. Dogs and cats (rare). Skip horse.
 
 Agree with Mulherin 2024: **named oral melanoma is a malignant oral tumor, not a dental tartar.** Pigmented or amelanotic. Biopsy is the diagnosis. Aspirate mandibular nodes even if they feel normal. Chest before you cut. Amelanotic is not an epulis. The three common dog oral malignancies are melanoma, SCC, and fibrosarcoma. Cats: oral melanoma is rare. Printed 2 cm / mandibulectomy numbers stay on the page (`△ Plumb`).
 
@@ -4046,3 +4046,30 @@ Night rule: named oral melanoma → **Canine oral melanoma. Not a dental tartar.
 - Attending: If the query is only “tartar, halitosis,” why does this gate stay dark?
 - Attending: Horse oral melanoma — fire or skip?
 - Attending: Dual-named “oral melanoma, multiple pulmonary nodules” — which loc should win, and why?
+
+## 310. Feline oral SCC (Mulherin Merck Nov 2024; AAHA 2026 oncology)
+
+No dedicated Plunkett oral-SCC chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024 (SCC is the most common malignant oral tumor in cats; gingiva and underlying bone, tongue and sublingual; owner may perceive a dental issue). 2026 AAHA Oncology Guidelines named only; no MST / piroxicam dump. Packet 309 still owns named oral melanoma. HyperCa stays hyperCa (bare squamous cell carcinoma is not this loc). Do not harvest an MST table as lobby law. Do not harvest a piroxicam table as lobby law. Do not fire on bare tartar / loose tooth. Dogs and cats. Skip horse.
+
+Agree with Mulherin 2024: **named oral SCC is locally invasive squamous cell carcinoma of the mouth, not a loose-tooth extraction.** Radiograph the jaw. Biopsy. Do not extract the tooth and send the jaw home. Sublingual and mandibular sites are classic in the cat. Dogs: SCC is second after melanoma. Printed mandibulectomy / NSAID numbers stay on the page (`△ Plumb`).
+
+Night split: named oral / lingual / gingival SCC is feline oral SCC; not a loose-tooth extraction. Bare tartar / loose tooth do not fire. Named oral melanoma stays melanoma. Bare squamous cell carcinoma with hyperCa stays hyperCa. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not extract the tooth and send the jaw home.
+- Do not call a loose tooth dental-only.
+- Do not harvest a piroxicam table.
+- Do not call this oral melanoma.
+
+Night rule: named oral SCC → **Feline oral SCC. Not a loose-tooth extraction.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A cat with a loose mandibular canine: why is extraction not the plan until you radiograph and biopsy?
+- NAVLE 2: Sublingual mass in a cat: SCC or melanoma, and why?
+- NAVLE 3: Dual-named “oral SCC, oral melanoma” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a bad tooth, without inventing an MST?
+- Attending: If the query is only “tartar, loose tooth,” why does this gate stay dark?
+- Attending: Horse oral SCC — fire or skip?
+- Attending: Dual-named “hypercalcemia, squamous cell carcinoma” — which loc should win, and why?

@@ -9861,6 +9861,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine oral melanoma", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_oral_scc_is_not_a_loose_tooth_extraction(self):
+        b = analyze("cat", "oral squamous cell carcinoma")
+        loc = b["localization"].lower()
+        self.assertIn("feline oral scc", loc)
+        self.assertIn("not a loose-tooth extraction", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mst table", joined)
+        self.assertIn("extract the tooth and send the jaw home", joined)
+        self.assertIn("loose tooth dental-only", joined)
+        self.assertIn("piroxicam table", joined)
+        self.assertIn("call this oral melanoma", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_oral_scc_fires(self):
+        b = analyze("dog", "oral SCC")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine oral scc", loc)
+        self.assertIn("not a loose-tooth extraction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sublingual_scc_fires(self):
+        b = analyze("cat", "sublingual squamous cell carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline oral scc", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oral_melanoma_is_not_oral_scc(self):
+        b = analyze("dog", "oral melanoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine oral melanoma", loc)
+        self.assertNotIn("canine oral scc", loc)
+        self.assertNotIn("not a loose-tooth extraction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tartar_is_not_oral_scc(self):
+        b = analyze("cat", "tartar, loose tooth")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline oral scc", loc)
+        self.assertNotIn("not a loose-tooth extraction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hyperca_scc_is_not_oral_scc(self):
+        b = analyze("cat", "hypercalcemia, squamous cell carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline oral scc", loc)
+        self.assertNotIn("not a loose-tooth extraction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_oral_scc(self):
+        b = analyze("horse", "oral squamous cell carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline oral scc", loc)
+        self.assertNotIn("canine oral scc", loc)
+        self.assertNotIn("not a loose-tooth extraction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -1974,6 +1974,16 @@ ORAL_MM_RE = re.compile(
     r"\boncept\b",
     re.I,
 )
+# Named oral / lingual / gingival SCC only. Do not use \bscc\b (skin /
+# hyperCa tumor pair) or tartar / loose tooth. Do not harvest a piroxicam
+# or MST table. Not oral melanoma (309). Dogs and cats. Skip horse.
+ORAL_SCC_RE = re.compile(
+    r"\boral (squamous cell carcinoma|scc)\b|"
+    r"\b(lingual|sublingual|gingival) (squamous cell carcinoma|scc)\b|"
+    r"\bsquamous cell carcinoma.{0,40}(mouth|oral|tongue|gingiva|mandible|maxilla)|"
+    r"(mouth|oral|tongue|gingiva|mandible|maxilla).{0,40}squamous cell carcinoma",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6122,6 +6132,7 @@ def analyze(
     steal_mct = MCT_RE.search(text)
     steal_agasaca = AGASACA_RE.search(text)
     steal_oral_mm = ORAL_MM_RE.search(text)
+    steal_oral_scc = ORAL_SCC_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6233,6 +6244,7 @@ def analyze(
         or steal_mct
         or steal_agasaca
         or steal_oral_mm
+        or steal_oral_scc
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16034,6 +16046,46 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for oral melanoma."
+            )
+
+    oral_scc_named = spec in {"dog", "cat"} and ORAL_SCC_RE.search(text)
+    if oral_scc_named:
+        if spec == "cat":
+            scc_loc = "Feline oral SCC. Not a loose-tooth extraction."
+        else:
+            scc_loc = "Canine oral SCC. Not a loose-tooth extraction."
+        localization = f"{localization} Also {scc_loc}" if localization else scc_loc
+        hard_stops.append(
+            "Do not harvest an MST table. "
+            "Do not extract the tooth and send the jaw home."
+        )
+        do_not.append(
+            "Do not call a loose tooth dental-only. "
+            "Do not harvest a piroxicam table. "
+            "Do not call this oral melanoma."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline oral SCC. Not a loose-tooth extraction. "
+                "△ Plumb. Radiograph the jaw. Biopsy. Do not copy an MST table."
+            )
+        else:
+            do_next.append(
+                "Name canine oral SCC. Not a loose-tooth extraction. "
+                "△ Plumb. Radiograph the jaw. Biopsy. Do not copy an MST table."
+            )
+        sources.append(
+            "Mulherin Merck Oral Tumors Nov 2024: feline oral SCC is the "
+            "usual cat oral malignancy; locally invasive; biopsy. "
+            "AAHA 2026 oncology named only. Do not harvest MST or NSAID tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for oral SCC."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for oral SCC."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

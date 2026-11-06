@@ -238,6 +238,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mct` | Assessment | Canine MCT / not a grade table |
 | `ddx-agasaca` | Assessment | Canine AGASACA / not hyperCa-alone |
 | `ddx-melanoma` | Assessment | Canine oral melanoma / not a dental tartar |
+| `ddx-oralscc` | Assessment | Feline oral SCC / not a loose-tooth extraction |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -435,6 +436,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mct` | Discharge | After mast cell / FNA talk |
 | `dc-agasaca` | Discharge | After anal-sac carcinoma / hyperCa talk |
 | `dc-melanoma` | Discharge | After oral melanoma / node talk |
+| `dc-oralscc` | Discharge | After oral SCC / jaw talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3415,6 +3417,21 @@ DDX:
 Do not: harvest an MST table. Skip the nodes because they feel normal. Call amelanotic melanoma an epulis. Call tartar a pigmented mass. Harvest an Oncept table. Skip the chest film.
 Do next: Name canine oral melanoma. Not a dental tartar. △ Plumb. Biopsy. Aspirate the nodes even if they feel normal. Chest before you cut.
 
+### `ddx-oralscc`
+
+Oral squamous cell carcinoma — {{patient.name}}
+Feline oral SCC [yes / not]. Not a loose-tooth extraction [yes / not]. Jaw rads [yes / not]. Biopsy [yes / pending]. Sublingual / mandible [ ].
+
+DDX:
+1. Oral squamous cell carcinoma — **Feline oral SCC. Not a loose-tooth extraction**
+2. The usual cat oral malignancy. Locally invasive into bone. Owner often thinks dental
+3. Radiograph the jaw. Biopsy. Do not extract the tooth and send the jaw home
+4. Dog: SCC is second after melanoma. Not oral melanoma (309). Not tartar
+5. Dog or cat can fire. Horse does not fire. Bare tartar / loose tooth / hyperCa-SCC do not fire
+
+Do not: harvest an MST table. Extract the tooth and send the jaw home. Call a loose tooth dental-only. Harvest a piroxicam table. Call this oral melanoma.
+Do next: Name feline oral SCC. Not a loose-tooth extraction. △ Plumb. Radiograph the jaw. Biopsy. Do not copy an MST table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -5026,6 +5043,14 @@ Return now for not drinking, vomiting, straining without stool, collapse, or if 
 Give only the medicines we sent, as labeled. Soft food if chewing hurts. Do not start leftover chemotherapy or vaccine products from another pet.
 
 Return now for not eating, bleeding from the mouth, trouble breathing, or collapse. {{location.phonenumber}}
+
+### `dc-oralscc`
+
+{{patient.name}} has a tumor in the mouth, not just a loose tooth. Cats get this more than melanoma in the mouth. The jaw bone is often already involved. Pulling the tooth does not treat the tumor.
+
+Give only the medicines we sent, as labeled. Soft food. Do not start leftover pain pills from the cabinet. We still need jaw pictures and a biopsy as discussed.
+
+Return now for not eating, bleeding from the mouth, a swelling of the face, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
