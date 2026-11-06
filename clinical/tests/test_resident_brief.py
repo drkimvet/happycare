@@ -10084,6 +10084,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a fluids-only night", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_pancreatitis_is_not_a_snap_alone(self):
+        b = analyze("dog", "pancreatitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine pancreatitis", loc)
+        self.assertIn("not a snap-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("snap cutoff", joined)
+        self.assertIn("fluid table", joined)
+        self.assertIn("snap-alone", joined)
+        self.assertIn("diagnose on snap without signs", joined)
+        self.assertIn("antibiotics for uncomplicated", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_pancreatitis_stays_forman_not_canine_snap(self):
+        b = analyze("cat", "pancreatitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pancreatitis", loc)
+        self.assertNotIn("not a snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_vomiting_is_not_pancreatitis(self):
+        b = analyze("dog", "vomiting, diarrhea")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pancreatitis", loc)
+        self.assertNotIn("not a snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_snap_cpl_without_pancreatitis_is_not_this_loc(self):
+        b = analyze("dog", "SNAP cPL")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pancreatitis", loc)
+        self.assertNotIn("not a snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_epi_is_not_pancreatitis_snap(self):
+        b = analyze("dog", "exocrine pancreatic insufficiency")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pancreatitis", loc)
+        self.assertNotIn("not a snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
+        b = analyze("dog", "pancreatitis, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine pancreatitis", loc)
+        self.assertIn("not a snap-alone", loc)
+        self.assertNotIn("gallbladder mucocele", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_pancreatitis(self):
+        b = analyze("horse", "pancreatitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pancreatitis", loc)
+        self.assertNotIn("not a snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_hsa_is_not_pulmonary_nodules_alone(self):
         b = analyze("dog", "hemangiosarcoma")
         loc = (b["localization"] or "").lower()

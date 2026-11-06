@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine pancreatitis (Merck Steiner Sept 2025)
+
+- **Canine pancreatitis. Not a SNAP-alone.** Named pancreatitis only. Cluster: signs + imaging + pancreatic lipase. SNAP is a semiquantitative screen. Negative makes pancreatitis unlikely. Abnormal SNAP is not the diagnosis; quantitative PLI confirms and baselines. Do **not** harvest a SNAP cutoff. Do **not** harvest a fluid table. Do **not** start antibiotics for uncomplicated pancreatitis. Do **not** starve unless vomiting is uncontrolled despite antiemetic.
+- Cats stay Forman (cluster, opioid, do not withhold food). Packet 125 still owns gallbladder halo. Bare vomiting stay dark. SNAP cPL without the word pancreatitis stays dark.
+- Printed SNAP / Spec cPL / fluid / fuzapladib numbers stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline CKD (Merck Van Vertloo Oct 2026)
 
 - **Feline CKD. Not a fluids-only night.** Named CKD / chronic kidney / chronic renal disease only. Stage after they are stable and hydrated. BP. UPC. Look for obstruction or UTI. Do **not** harvest an IRIS creatinine table. Do **not** harvest a phosphorus binder table. Do **not** send named CKD home on SQ fluids alone. Not every azotemic patient needs SQ fluids.

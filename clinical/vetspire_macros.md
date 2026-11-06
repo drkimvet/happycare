@@ -252,12 +252,13 @@ Suggested names are short so they show up after three letters.
 | `ddx-imha` | Assessment | IMHA |
 | `ddx-tbi` | Assessment | Head trauma / TBI |
 | `ddx-uroabd` | Assessment | Uroabdomen |
-| `ddx-panc` | Assessment | Pancreatitis |
+| `ddx-panc` | Assessment | Canine pancreatitis / not a SNAP-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
 | `dc-return` | Discharge | Come-back triggers only |
 | `dc-gi` | Discharge | GI home care |
+| `dc-panc` | Discharge | After pancreatitis / SNAP talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3579,13 +3580,19 @@ Soft non-tense + unilateral renomegaly is the kidney/ureter until those pairs sa
 ### `ddx-panc`
 
 Pancreatitis — {{patient.name}}
-{{patient.species}}. Spec / SNAP fPL [negative / weak-equivocal / positive]  AUS cranial [ ]  eating [ ].
-Cluster diagnosis (Forman ACVIM): signs + imaging + fPLI. fPL is supportive, not pathognomonic. SNAP weak/equivocal = abnormal SNAP, not a diagnosis and not a negative. Do not invent the cutoff. Do not copy this SNAP onto a housemate.
-Do not withhold food. Hepatic lipidosis risk. Cat: Forman does not require a canine-style low-fat 3–5 day diet.
-Opioids are the primary analgesics (Forman). Buprenorphine is adequate for most cats. A one-time dose is analgesia, not a disease-modifier. Do not withhold for theoretical sphincter-of-Oddi spasm. Do not switch to an NSAID because SNAP was weak. Ileus is a watch if linear FB is still on the list.
-Gabapentin does not replace the opioid for an acute/overt bout. Forman: PO option / long-term chronic adjunct (tramadol too). △ Plumb. Read the bottle for xylitol. Not for the housemate.
-Antibiotics not routine if uncomplicated. No DexSP / NSAID as the pancreatitis plan.
-Sucralfate is coating, not pancreatitis therapy. △ Plumb for fluids / antiemetic / opioid.
+Canine pancreatitis [yes / not]. Not a SNAP-alone [yes / not]. SNAP [negative / abnormal]  Spec PLI [ ]  AUS cranial [ ]  eating [ ].
+
+DDX:
+1. Pancreatitis — **Canine pancreatitis. Not a SNAP-alone**
+2. Cluster: signs + imaging + pancreatic lipase. SNAP is a screen. Negative makes pancreatitis unlikely. Abnormal SNAP needs quantitative PLI
+3. Do not diagnose on SNAP without signs and imaging. Do not start antibiotics for uncomplicated pancreatitis
+4. Cats stay Forman: cluster, opioid, do not withhold food. Linear FB still on the list
+5. Dogs fire. Horse does not fire. Bare vomiting / SNAP without the word pancreatitis stay dark
+
+Do not: harvest a SNAP cutoff. Harvest a fluid table. Call this a SNAP-alone. Starve unless vomiting is uncontrolled despite antiemetic.
+Do next: Name canine pancreatitis. Not a SNAP-alone. △ Plumb. Cluster: signs plus imaging plus quantitative PLI if SNAP is abnormal. Do not copy a SNAP cutoff.
+
+Cat Forman extras: SNAP fPL weak/equivocal = abnormal SNAP, not a diagnosis and not a negative. Do not copy this SNAP onto a housemate. Do not withhold food (hepatic lipidosis). Opioids are the primary analgesics. Buprenorphine is adequate for most cats. Gabapentin does not replace the opioid for an acute bout. Sucralfate is coating, not pancreatitis therapy.
 
 ### `ddx-uti`
 
@@ -3640,6 +3647,14 @@ Cat: easy-to-digest = moist, highly digestible, small meals. Low fat is fine as 
 Call {{location.phonenumber}} if vomiting continues, there is black or bloody stool, {{patient.pronoun}} will not drink, becomes lethargic, or the belly becomes tight.
 
 Medications: as labeled only.
+
+### `dc-panc`
+
+{{patient.name}} was evaluated for pancreatitis. A SNAP test is not the whole diagnosis. We still use the history, the exam, and imaging, and a quantitative lipase if the SNAP was abnormal.
+
+Give only the medicines and the food we sent, as labeled. No leftover antibiotics or leftover DexSP from the cabinet unless we named them.
+
+Return now for repeated vomiting, a tight painful belly, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

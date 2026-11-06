@@ -2027,6 +2027,10 @@ CKD_DX_RE = re.compile(
     r"chronic renal (disease|failure|insufficien)",
     re.I,
 )
+# Named pancreatitis only. Do not use SNAP / cPL / fPL (Forman cluster).
+# Do not use pancreatic insufficiency (EPI). Do not harvest a SNAP
+# cutoff or fluid table. Dogs. Skip horse. Cats stay Forman.
+PANC_DX_RE = re.compile(r"\bpancreatitis\b", re.I)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6184,6 +6188,7 @@ def analyze(
     steal_mammary_ca = MAMMARY_CA_RE.search(text)
     steal_ibd_gi = IBD_GI_LYM_RE.search(text)
     steal_ckd_dx = CKD_DX_RE.search(text)
+    steal_panc_dx = PANC_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6301,6 +6306,7 @@ def analyze(
         or steal_mammary_ca
         or steal_ibd_gi
         or steal_ckd_dx
+        or steal_panc_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16343,6 +16349,41 @@ def analyze(
         if NSAID_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for CKD."
+            )
+
+    panc_named = spec == "dog" and PANC_DX_RE.search(text)
+    if panc_named:
+        panc_loc = "Canine pancreatitis. Not a SNAP-alone."
+        localization = f"{localization} Also {panc_loc}" if localization else panc_loc
+        hard_stops.append(
+            "Do not harvest a SNAP cutoff. "
+            "Do not harvest a fluid table. "
+            "SNAP is not the diagnosis."
+        )
+        do_not.append(
+            "Do not call this a SNAP-alone. "
+            "Do not diagnose on SNAP without signs and imaging. "
+            "Do not start antibiotics for uncomplicated pancreatitis. "
+            "Do not starve unless vomiting is uncontrolled despite antiemetic."
+        )
+        do_next.append(
+            "Name canine pancreatitis. Not a SNAP-alone. "
+            "△ Plumb. Cluster: signs plus imaging plus quantitative PLI "
+            "if SNAP is abnormal. Do not copy a SNAP cutoff."
+        )
+        sources.append(
+            "Steiner Merck pancreatitis Sept 2025: no test in isolation; "
+            "semiquantitative SNAP negative makes pancreatitis unlikely; "
+            "abnormal SNAP needs quantitative PLI; antimicrobials not routine. "
+            "Forman ACVIM 2021 still owns cats. Do not harvest SNAP or fluid tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for pancreatitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for pancreatitis."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

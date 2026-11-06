@@ -67,9 +67,10 @@ Closed gene chain is not on this list.
 | 312 | Canine hemangiosarcoma (not a wait-and-see hemoabdomen; not pulmonary-nodules-alone) | Center Merck hepatic neoplasia Aug 2023 / Jul 2026; Villalobos connective-tissue tumors Aug 2021; AAHA 2026 oncology. Named HSA left HIGH_MET. Do not harvest an MST or doxorubicin table. Do not use HSA letters (albumin) | Shipped |
 | 313 | Canine mammary carcinoma (not a cyst-and-home; not pulmonary-nodules-alone) | Sorenmo Merck dogs Mar/Apr 2024; Lopes Merck cats Sept 2024; AAHA 2026 oncology. Named mammary adenocarcinoma left HIGH_MET. Do not harvest an MST or OHE table | Shipped |
 | 314 | Feline IBD vs GI lymphoma (not a steroid-responsive diarrhea) | Collier Merck chronic enteropathies Aug 2025 / Jun 2026; Matsuyama Merck GI neoplasia Jan 2025; Marsilio ACVIM 2023 named only. Do not harvest a pred or chlorambucil table | Shipped |
-| 315 | Feline CKD (not a fluids-only night) | Van Vertloo Merck renal dysfunction Mar 2025 / Oct 2026; IRIS named only. Do not harvest an IRIS creatinine or phosphorus-binder table | This packet |
+| 315 | Feline CKD (not a fluids-only night) | Van Vertloo Merck renal dysfunction Mar 2025 / Oct 2026; IRIS named only. Do not harvest an IRIS creatinine or phosphorus-binder table | Shipped |
+| 316 | Canine pancreatitis (not a SNAP-alone) | Steiner Merck pancreatitis Sept 2025; Forman ACVIM 2021 still owns cats. Do not harvest a SNAP cutoff or fluid table | This packet |
 
-Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, canine AGASACA, canine oral melanoma, feline oral SCC, pathologic-fracture OSA (199), canine osteosarcoma HIGH_MET split (311), bare hemoabdomen (120), canine hemangiosarcoma (312), mastitis / septic dam, canine mammary carcinoma (313), PLE (178), feline IBD vs GI lymphoma (314), and the 285–298 gene leftovers.
+Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, canine AGASACA, canine oral melanoma, feline oral SCC, pathologic-fracture OSA (199), canine osteosarcoma HIGH_MET split (311), bare hemoabdomen (120), canine hemangiosarcoma (312), mastitis / septic dam, canine mammary carcinoma (313), PLE (178), feline IBD vs GI lymphoma (314), feline CKD (315), and the 285–298 gene leftovers.
 
 ## What Mosby is for, legally
 

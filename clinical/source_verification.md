@@ -4212,3 +4212,31 @@ Night rule: named CKD → **Feline CKD. Not a fluids-only night.** △ Plumb.
 - Attending: If the query is only “PU/PD,” why does this gate stay dark?
 - Attending: Horse CKD — fire or skip?
 - Attending: Dual-named “CKD, systemic hypertension” — which loc should win, and why?
+
+## 316. Canine pancreatitis (Steiner Merck Sept 2025)
+
+No dedicated Plunkett SNAP-cPL chapter in the owned SA EM splits. Public Steiner J. Pancreatitis in Dogs and Cats. Merck Veterinary Manual. Full review Sept 2025; last updated Sept 2025 (no test in isolation; diagnosis integrates clinical findings, imaging, and serum pancreatic lipase; in-clinic semiquantitative SNAP negative makes pancreatitis very unlikely; a positive SNAP needs quantitative PLI to confirm and baseline; antimicrobials are of questionable value and should not be used routinely; rest the pancreas only if vomiting is uncontrolled despite antiemetic; early enteral nutrition). Forman ACVIM 2021 still owns cats (cluster, opioid, do not withhold food). Do not harvest a SNAP cutoff as lobby law. Do not harvest a fluid table as lobby law. Do not harvest fuzapladib 0.4 mg/kg. Do not fire on bare vomiting. Do not fire on SNAP cPL without the word pancreatitis. Dogs. Skip horse. Cats stay Forman.
+
+Agree with Steiner 2025: **named pancreatitis is not a SNAP-alone.** Cluster: signs + imaging + lipase. Printed SNAP / Spec cPL / fluid numbers stay on the page (`△ Plumb`).
+
+Night split: named pancreatitis in a dog is canine pancreatitis; not a SNAP-alone. Bare vomiting stay dark. SNAP without pancreatitis stays dark. Horse does not fire. Cat pancreatitis stays Forman.
+
+Book/public traps:
+
+- Do not harvest a SNAP cutoff.
+- Do not harvest a fluid table.
+- Do not call this a SNAP-alone.
+- Do not diagnose on SNAP without signs and imaging.
+- Do not start antibiotics for uncomplicated pancreatitis.
+- Do not starve unless vomiting is uncontrolled despite antiemetic.
+
+Night rule: named pancreatitis → **Canine pancreatitis. Not a SNAP-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is an abnormal SNAP cPL not a pancreatitis diagnosis until you have signs and imaging?
+- NAVLE 2: Why is a negative SNAP useful if a positive SNAP is not the diagnosis?
+- NAVLE 3: Dual-named “pancreatitis, jaundice” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a SNAP-alone, without inventing a cutoff?
+- Attending: If the query is only “vomiting,” why does this gate stay dark?
+- Attending: Horse pancreatitis — fire or skip?
+- Attending: Cat “pancreatitis, SNAP fPL” — which loc should win, and why?

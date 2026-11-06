@@ -731,6 +731,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a steroid-responsive diarrhea", VERIF.lower())
         self.assertIn("feline ckd", VERIF.lower())
         self.assertIn("not a fluids-only night", VERIF.lower())
+        self.assertIn("canine pancreatitis", VERIF.lower())
+        self.assertIn("not a snap-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1213,6 +1215,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-ibd`", MACRO)
         self.assertIn("`ddx-ckd`", MACRO)
         self.assertIn("`dc-ckd`", MACRO)
+        self.assertIn("`ddx-panc`", MACRO)
+        self.assertIn("`dc-panc`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1379,6 +1383,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a steroid-responsive diarrhea", MACRO.lower())
         self.assertIn("feline ckd", MACRO.lower())
         self.assertIn("not a fluids-only night", MACRO.lower())
+        self.assertIn("canine pancreatitis", MACRO.lower())
+        self.assertIn("not a snap-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1908,6 +1914,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a steroid-responsive diarrhea",
             "feline ckd",
             "not a fluids-only night",
+            "canine pancreatitis",
+            "not a snap-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
