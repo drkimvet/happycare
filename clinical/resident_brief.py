@@ -1950,6 +1950,19 @@ MCT_RE = re.compile(
     r"\btigilanol",
     re.I,
 )
+# Named AGASACA / anal-sac carcinoma only. Do not use \banal sac\b
+# (impaction / abscess / scooting) or \bhypercalcemia\b (hyperCa gate).
+# Do not harvest an MST table. Dogs only. Skip cat. Skip horse.
+# Not hepatoid / castration-responsive perianal.
+AGASACA_RE = re.compile(
+    r"\bagasaca\b|"
+    r"\bapocrine gland adenocarcinoma|"
+    r"\bapocrine adenocarcinoma|"
+    r"\banal sac (adeno)?carcinoma|"
+    r"\banal[- ]gland (adeno)?carcinoma|"
+    r"\banal sac (tumor|neoplas)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6097,6 +6110,7 @@ def analyze(
     steal_diabetes_dx = DIABETES_DX_RE.search(text)
     steal_lymphoma_dx = LYMPHOMA_DX_RE.search(text)
     steal_mct = MCT_RE.search(text)
+    steal_agasaca = AGASACA_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6206,6 +6220,7 @@ def analyze(
         or steal_diabetes_dx
         or steal_lymphoma_dx
         or steal_mct
+        or steal_agasaca
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15929,6 +15944,41 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for MCT."
+            )
+
+    agasaca_named = spec == "dog" and AGASACA_RE.search(text)
+    if agasaca_named:
+        agasaca_loc = "Canine AGASACA. Not hyperCa-alone."
+        localization = (
+            f"{localization} Also {agasaca_loc}" if localization else agasaca_loc
+        )
+        hard_stops.append(
+            "Do not harvest an MST table. "
+            "Do not skip the rectal exam on a hyperCa dog."
+        )
+        do_not.append(
+            "Do not call scooting AGASACA. "
+            "Do not call a hepatoid adenoma AGASACA. "
+            "Do not castrate AGASACA as the plan. "
+            "Do not close calcium because you expressed the glands."
+        )
+        do_next.append(
+            "Name canine AGASACA. Not hyperCa-alone. △ Plumb. "
+            "Rectal the sacs. Measure iCa. Do not copy an MST table."
+        )
+        sources.append(
+            "Gallagher Merck Anal Sac Disease Aug 2025. "
+            "Villalobos Merck apocrine anal-sac tumors Aug 2021 / Jun 2026. "
+            "Ham Merck hypercalcemia Jun 2023: rectal the sacs. "
+            "AAHA 2026 oncology named only. Do not harvest MST tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for AGASACA."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for AGASACA."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

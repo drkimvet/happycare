@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine AGASACA (Merck Gallagher Aug 2025; Villalobos Jun 2026; Ham hyperCa Jun 2023)
+
+- **Canine AGASACA. Not hyperCa-alone.** Named AGASACA / anal-sac carcinoma only. A firm, nonexpressible anal sac is a tumor until you biopsy. HyperCa of malignancy is lymphoma or this list in the dog; rectal the sacs. Do **not** harvest an MST table.
+- Scooting / expressible impaction / abscess is anal-sac disease, not this loc. Hepatoid perianal adenoma is castration-responsive; AGASACA is not. Do not close calcium because you expressed the glands. Sublumbar nodes are the usual first mets.
+- Printed sacculectomy / MST / chemo numbers stay on the page (`△ Plumb`). Skip cat. Skip horse. Bare scooting stays dark. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine MCT (Merck Villalobos Aug 2021/Jun 2026; Whitbread cytology Aug 2026)
 
 - **Canine MCT. Not a grade table.** Named mast cell / MCT / mastocytoma only. FNA diagnoses tonight. Grade is histopath, not cytology. Do **not** harvest a Patnaik table, a Kiupel table, or a 3-cm margin table.

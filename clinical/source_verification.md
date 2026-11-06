@@ -3963,7 +3963,7 @@ Night rule: named lymphoma → **Canine lymphoma. Not a CHOP table.** △ Plumb.
 
 ## 307. Canine MCT (Villalobos Merck 2021/2026; Whitbread cytology 2026)
 
-No dedicated Plunkett MCT chapter in the owned SA EM splits. Public Villalobos AE. Lymphocytic, Histiocytic, and Related Cutaneous Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Cutaneous Mast Cell Tumors section). Whitbread TJ. Cytology. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (cytology cannot grade mast cell tumors; grading always requires histology). 2026 AAHA Oncology Guidelines named only; no Patnaik / margin dump. Packet 306 still owns named lymphoma. Mastitis stays the gland. Osteosarcoma stays OSA. Do not harvest a Patnaik table as lobby law. Do not harvest a 3-cm margin table as lobby law. Do not fire on bare skin mass / Boxer. Dogs and cats. Skip horse.
+No dedicated Plunkett MCT chapter in the owned SA EM splits. Public Villalobos AE. Lymphocytic, Histiocytic, and Related Cutaneous Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Cutaneous Mast Cell Tumors section). Whitbread TJ. Cytology. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (cytology cannot grade mast cell tumors; grading always requires histology). 2026 AAHA Oncology Guidelines named only; no Patnaik / margin dump. Packet 306 still owns named lymphoma. Packet 308 is canine AGASACA (not hyperCa-alone). Mastitis stays the gland. Osteosarcoma stays OSA. Do not harvest a Patnaik table as lobby law. Do not harvest a 3-cm margin table as lobby law. Do not fire on bare skin mass / Boxer. Dogs and cats. Skip horse.
 
 Agree with Villalobos 2021/2026 and Whitbread 2026: **named MCT is diagnosed on FNA and graded on histopath, not a grade table from the smear.** FNA before you cut so the margin is planned. Do not squeeze the mass. GI ulcer from histamine is the night medical list; do not add an NSAID. H1/H2 stay on the page (`△ Plumb`). Aspirate the draining node even if it feels normal. Cats: Patnaik is not predictive. Printed vinblastine / tigilanol / 3-cm numbers stay on the page.
 
@@ -3990,3 +3990,31 @@ Night rule: named MCT → **Canine MCT. Not a grade table.** △ Plumb.
 - Attending: If the query is only “skin mass, Boxer,” why does this gate stay dark?
 - Attending: Horse MCT — fire or skip?
 - Attending: Dual-named “MCT, lymphoma” — which loc should win, and why?
+
+## 308. Canine AGASACA (Gallagher Merck 2025; Villalobos 2021/2026; Ham hyperCa 2023)
+
+No dedicated Plunkett AGASACA chapter in the owned SA EM splits. Public Gallagher A. Anal Sac Disease in Dogs and Cats. Merck Veterinary Manual. Full review Aug 2025. Villalobos AE. Epidermal and Hair Follicle Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Apocrine Gland Tumors of Anal Sac Origin). Ham K. Hypercalcemia in Dogs and Cats. Merck Veterinary Manual. Reviewed/revised Jun 2023 (rectal examination with expression of the anal sacs to rule out AGASACA; HHM in dogs is lymphoma or AGASACA first). 2026 AAHA Oncology Guidelines named only; no MST dump. Packet 307 still owns named MCT. HyperCa stays the hyperCa gate. Lymphoma stays lymphoma. Do not harvest an MST table as lobby law. Do not fire on bare scooting / anal glands / abscess. Dogs only. Skip cat. Skip horse.
+
+Agree with Gallagher 2025 / Villalobos 2021/2026 / Ham 2023: **named AGASACA is an apocrine anal-sac carcinoma, not hyperCa-alone.** A firm, nonexpressible sac is a tumor until biopsy. Measure iCa. Scooting / impaction / abscess is the other anal-sac list. Hepatoid perianal adenoma is castration-responsive; AGASACA is not. Do not close calcium because you expressed the glands. Printed sacculectomy / MST numbers stay on the page (`△ Plumb`).
+
+Night split: named AGASACA / anal-sac carcinoma is canine AGASACA; not hyperCa-alone. Bare scooting does not fire. Named hyperCa alone stays hyperCa. Named lymphoma stays lymphoma. Cat does not fire. Horse does not fire. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not skip the rectal exam on a hyperCa dog.
+- Do not call scooting AGASACA.
+- Do not call a hepatoid adenoma AGASACA.
+- Do not castrate AGASACA as the plan.
+- Do not close calcium because you expressed the glands.
+
+Night rule: named AGASACA → **Canine AGASACA. Not hyperCa-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A hyperCa dog: why do you put a glove on before you start fluids?
+- NAVLE 2: Intact male with a perianal lump: AGASACA or hepatoid, and what does castration do?
+- NAVLE 3: Dual-named “AGASACA, hypercalcemia” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just anal glands,” without inventing an MST?
+- Attending: If the query is only “scooting, anal glands,” why does this gate stay dark?
+- Attending: Cat AGASACA — fire or skip?
+- Attending: Dual-named “lymphoma, AGASACA” — which loc should win, and why?

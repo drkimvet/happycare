@@ -59,9 +59,10 @@ Closed gene chain is not on this list.
 | 304 | Canine ITP (not Cavalier macrothrombocytopenia) | McQuinn Merck Platelet Disorders Feb 2025 / Mar 2026; ACVIM LeVine 2024. Do not harvest a 30k or vincristine table | Shipped |
 | 305 | Diabetes mellitus diagnosis traps (not a stress glucose, not DKA/HHS) | Buishand Merck May 2024 / May 2026; AAHA 2026 dog and cat diabetes guidelines. Do not harvest a U/kg or fructosamine table | Shipped |
 | 306 | Canine lymphoma (not a CHOP table) | Fan Merck Lymphoma in Dogs Sept 2023 / Apr 2025; AAHA 2026 oncology guidelines. Do not harvest a CHOP or MST table | Shipped |
-| 307 | Canine MCT (not a grade table) | Villalobos Merck cutaneous MCT Aug 2021 / Jun 2026; Whitbread Merck cytology Aug 2026. Do not harvest a Patnaik or 3-cm table | This packet |
+| 307 | Canine MCT (not a grade table) | Villalobos Merck cutaneous MCT Aug 2021 / Jun 2026; Whitbread Merck cytology Aug 2026. Do not harvest a Patnaik or 3-cm table | Shipped |
+| 308 | Canine AGASACA (not hyperCa-alone) | Gallagher Merck Anal Sac Disease Aug 2025; Villalobos Merck apocrine anal-sac Aug 2021 / Jun 2026; Ham Merck hyperCa Jun 2023. Do not harvest an MST table | This packet |
 
-Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, and the 285–298 gene leftovers.
+Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, and the 285–298 gene leftovers.
 
 ## What Mosby is for, legally
 

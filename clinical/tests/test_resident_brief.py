@@ -9722,6 +9722,75 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a grade table", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_agasaca_is_not_hyperca_alone(self):
+        b = analyze("dog", "AGASACA")
+        loc = b["localization"].lower()
+        self.assertIn("canine agasaca", loc)
+        self.assertIn("not hyperca-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mst table", joined)
+        self.assertIn("rectal exam on a hyperca dog", joined)
+        self.assertIn("scooting agasaca", joined)
+        self.assertIn("hepatoid adenoma agasaca", joined)
+        self.assertIn("castrate agasaca as the plan", joined)
+        self.assertIn("close calcium because you expressed", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_anal_sac_carcinoma_fires_agasaca(self):
+        b = analyze("dog", "anal sac carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine agasaca", loc)
+        self.assertIn("not hyperca-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_apocrine_adenocarcinoma_fires_agasaca(self):
+        b = analyze("dog", "apocrine gland adenocarcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine agasaca", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hypercalcemia_is_not_agasaca(self):
+        b = analyze("dog", "hypercalcemia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine agasaca", loc)
+        self.assertNotIn("not hyperca-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_scooting_anal_glands_is_not_agasaca(self):
+        b = analyze("dog", "scooting, anal glands")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine agasaca", loc)
+        self.assertNotIn("not hyperca-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_anal_sac_abscess_is_not_agasaca(self):
+        b = analyze("dog", "anal sac abscess")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine agasaca", loc)
+        self.assertNotIn("not hyperca-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_agasaca(self):
+        b = analyze("cat", "AGASACA")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine agasaca", loc)
+        self.assertNotIn("not hyperca-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_agasaca(self):
+        b = analyze("horse", "anal sac carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine agasaca", loc)
+        self.assertNotIn("not hyperca-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lymphoma_is_not_agasaca(self):
+        b = analyze("dog", "lymphoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine lymphoma", loc)
+        self.assertNotIn("canine agasaca", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

@@ -715,6 +715,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a chop table", VERIF.lower())
         self.assertIn("canine mct", VERIF.lower())
         self.assertIn("not a grade table", VERIF.lower())
+        self.assertIn("canine agasaca", VERIF.lower())
+        self.assertIn("not hyperca-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1183,6 +1185,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-lymphoma`", MACRO)
         self.assertIn("`ddx-mct`", MACRO)
         self.assertIn("`dc-mct`", MACRO)
+        self.assertIn("`ddx-agasaca`", MACRO)
+        self.assertIn("`dc-agasaca`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1333,6 +1337,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a chop table", MACRO.lower())
         self.assertIn("canine mct", MACRO.lower())
         self.assertIn("not a grade table", MACRO.lower())
+        self.assertIn("canine agasaca", MACRO.lower())
+        self.assertIn("not hyperca-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1845,6 +1851,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a chop table",
             "canine mct",
             "not a grade table",
+            "canine agasaca",
+            "not hyperca-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

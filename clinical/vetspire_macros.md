@@ -236,6 +236,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-diabetes` | Assessment | Canine diabetes / not a stress glucose |
 | `ddx-lymphoma` | Assessment | Canine lymphoma / not a CHOP table |
 | `ddx-mct` | Assessment | Canine MCT / not a grade table |
+| `ddx-agasaca` | Assessment | Canine AGASACA / not hyperCa-alone |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -431,6 +432,7 @@ Suggested names are short so they show up after three letters.
 | `dc-diabetes` | Discharge | After diabetes / fructosamine talk |
 | `dc-lymphoma` | Discharge | After lymphoma / node talk |
 | `dc-mct` | Discharge | After mast cell / FNA talk |
+| `dc-agasaca` | Discharge | After anal-sac carcinoma / hyperCa talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3381,6 +3383,21 @@ DDX:
 Do not: harvest a grade table. Harvest a 3-cm margin table. Grade MCT on cytology. Squeeze the mass as the night plan. Add an NSAID to a degranulating MCT. Harvest a Patnaik table. Harvest a vinblastine table.
 Do next: Name canine MCT. Not a grade table. △ Plumb. FNA tonight. Grade is histopath. Look for GI ulcer. Do not copy a margin table.
 
+### `ddx-agasaca`
+
+Anal sac adenocarcinoma — {{patient.name}}
+Canine AGASACA [yes / not]. Not hyperCa-alone [yes / not]. Rectal / sacs [done / not]. iCa [ ]. Sublumbar nodes [ ]. Hepatoid [not this list].
+
+DDX:
+1. Apocrine gland anal sac adenocarcinoma — **Canine AGASACA. Not hyperCa-alone**
+2. Firm nonexpressible sac is a tumor until biopsy. Scooting / abscess is the other list
+3. HyperCa of malignancy in the dog: lymphoma or this. Rectal the sacs
+4. Hepatoid adenoma is castration-responsive. AGASACA is not
+5. Dog can fire. Cat does not fire. Horse does not fire. Bare scooting / anal glands do not fire
+
+Do not: harvest an MST table. Skip the rectal exam on a hyperCa dog. Call scooting AGASACA. Call a hepatoid adenoma AGASACA. Castrate AGASACA as the plan. Close calcium because you expressed the glands.
+Do next: Name canine AGASACA. Not hyperCa-alone. △ Plumb. Rectal the sacs. Measure iCa. Do not copy an MST table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4976,6 +4993,14 @@ Return now for not eating, vomiting, trouble breathing, collapse, or if the node
 Give only the medicines we sent, as labeled. Do not squeeze or poke the lump. Do not start leftover pain pills from the cabinet. Black stool, vomiting, or collapse can mean a stomach ulcer — come now.
 
 Return now for vomiting, black stool, rapid growth of the lump, or collapse. {{location.phonenumber}}
+
+### `dc-agasaca`
+
+{{patient.name}} has a tumor of the anal sac, not just a gland that needed expressing. High blood calcium can come from this tumor. Scooting alone is not this diagnosis.
+
+Give only the medicines we sent, as labeled. Do not start leftover steroids from the cabinet. Plenty of water. We still need staging pictures and a calcium recheck as discussed.
+
+Return now for not drinking, vomiting, straining without stool, collapse, or if drinking and urinating much more than yesterday. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
