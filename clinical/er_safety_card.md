@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine ITP (Merck McQuinn Feb 2025/Mar 2026; ACVIM LeVine 2024)
+
+- **Canine ITP. Not Cavalier macrothrombocytopenia.** Named ITP / IMT / Evans only. Diagnosis is exclusion plus a verified smear, not a machine-low count. Primary means no trigger found. Secondary means look for vector-borne disease, a drug, or neoplasia before you call it primary. Do **not** harvest a 30k table or a vincristine table.
+- Cavalier (and some terrier) macrothrombocytopenia is a beta-1-tubulin giant-platelet count, usually without bleeding, and it is not immunosuppression. Mild thrombocytopenia is lepto / ehrlichia until the picture says otherwise. Petechiae are not fleas. Cats can get ITP; it is rare.
+- Vincristine is an emergency adjunct with steroids for a bleeding dog, not monotherapy and not a lymphoma leftover. Caution in MDR1 herding dogs. Do not start cyclosporine the same night as vincristine. Printed platelet cutoffs and vincristine mg/kg stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## AAHA core vs non-core vaccines (AAHA canine 2022/2024; AAHA/AAFP feline 2020)
 
 - **AAHA core vs non-core. Not a mL table.** Core is for every patient unless a specific medical reason not to vaccinate. Non-core is lifestyle, geography, and exposure, reassessed at least yearly. Overdue / unknown history: benefits usually outweigh risks — when in doubt, vaccinate. Do **not** harvest a mL table, a 3-year clock, or a distal-limb sarcoma map.

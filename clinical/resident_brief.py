@@ -1904,6 +1904,18 @@ VACCINE_CORE_RE = re.compile(
     r"\bvaccine sarcoma",
     re.I,
 )
+# Named ITP / IMT / Evans only. Do not use \bthrombocytopenia\b (lepto /
+# ehrlichia) or \bpetechiae\b (RMSF) or \bvincristine\b (lymphoma).
+# Do not harvest a 30k or vincristine table. Dogs and cats. Skip horse.
+# Not Cavalier macrothrombocytopenia. Not ITPR1 (\bitp\b is not ITPR1).
+ITP_RE = re.compile(
+    r"\bitp\b|"
+    r"\bimt\b|"
+    r"\bpitp\b|"
+    r"\bimmune(?:[- ]mediated)? thrombocytop|"
+    r"\bevans syndrome",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6047,6 +6059,7 @@ def analyze(
     steal_hyperthyroid_dx = HYPERTHYROID_DX_RE.search(text)
     steal_felv_fiv = FELV_FIV_RE.search(text)
     steal_vaccine_core = VACCINE_CORE_RE.search(text)
+    steal_itp = ITP_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6152,6 +6165,7 @@ def analyze(
         or steal_hyperthyroid_dx
         or steal_felv_fiv
         or steal_vaccine_core
+        or steal_itp
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15674,6 +15688,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for vaccination."
+            )
+
+    itp_named = spec in {"dog", "cat"} and ITP_RE.search(text)
+    if itp_named:
+        if spec == "cat":
+            itp_loc = "Feline ITP. Rare. Not a machine-low count."
+        else:
+            itp_loc = "Canine ITP. Not Cavalier macrothrombocytopenia."
+        localization = f"{localization} Also {itp_loc}" if localization else itp_loc
+        hard_stops.append(
+            "Do not harvest a 30k table. Do not harvest a vincristine table."
+        )
+        do_not.append(
+            "Do not call Cavalier macrothrombocytopenia ITP. "
+            "Do not call mild thrombocytopenia ITP. "
+            "Do not treat a machine-low count without a smear."
+        )
+        do_not.append(
+            "Do not vincristine an MDR1 herding dog as default. "
+            "Do not start cyclosporine the same night as vincristine. "
+            "Do not send petechiae home as fleas."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline ITP. Rare. Not a machine-low count. "
+                "△ Plumb. Look for a secondary trigger."
+            )
+        else:
+            do_next.append(
+                "Name canine ITP. Not Cavalier macrothrombocytopenia. "
+                "△ Plumb. Look for a secondary trigger. "
+                "Do not copy a vincristine table."
+            )
+        sources.append(
+            "McQuinn Merck Platelet Disorders Feb 2025 / Mar 2026. "
+            "ACVIM LeVine 2024 ITP treatment consensus. "
+            "Do not harvest vincristine or platelet-cutoff tables."
+        )
+        if SEND_HOME_RE.search(text):
+            hard_stops.append(
+                "Do not send petechiae home as fleas."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for ITP."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for ITP."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

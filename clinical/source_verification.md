@@ -3848,7 +3848,7 @@ Night rule: named FeLV / FIV → **FeLV antigen, FIV antibody. Not SNAP-alone.**
 
 ## 303. AAHA core vs non-core vaccines (AAHA canine 2022/2024; AAHA/AAFP feline 2020)
 
-No dedicated Plunkett vaccination-schedule chapter in the owned SA EM splits. Public 2022 AAHA Canine Vaccination Guidelines (Ellis et al. J Am Anim Hosp Assoc. 2022;58:1-19), **updated 2024** on the AAHA page to include leptospirosis as core for all dogs. Public 2020 AAHA/AAFP Feline Vaccination Guidelines (published 13 Aug 2020). Packet 302 still owns named FeLV/FIV testing. Anaphylaxis / vaccine reaction stays the anaphylaxis gate. Do not harvest a mL table as lobby law. Do not harvest a 3-year clock as lobby law. Do not harvest a distal-limb sarcoma map as lobby law. Do not fire on bare vaccine / unvaccinated / rabies-neuro. Dogs and cats. Skip horse.
+No dedicated Plunkett vaccination-schedule chapter in the owned SA EM splits. Public 2022 AAHA Canine Vaccination Guidelines (Ellis et al. J Am Anim Hosp Assoc. 2022;58:1-19), **updated 2024** on the AAHA page to include leptospirosis as core for all dogs. Public 2020 AAHA/AAFP Feline Vaccination Guidelines (published 13 Aug 2020). Packet 302 still owns named FeLV/FIV testing. Anaphylaxis / vaccine reaction stays the anaphylaxis gate. Packet 304 is canine ITP (not Cavalier macrothrombocytopenia). Do not harvest a mL table as lobby law. Do not harvest a 3-year clock as lobby law. Do not harvest a distal-limb sarcoma map as lobby law. Do not fire on bare vaccine / unvaccinated / rabies-neuro. Dogs and cats. Skip horse.
 
 Agree with AAHA 2022/2024 and AAHA/AAFP 2020: **core vs non-core.** Dog core: distemper, adenovirus, parvovirus, +/- parainfluenza, Leptospira (2024), rabies. Dog lifestyle: Lyme, Bordetella, influenza, rattlesnake. Cat core: FHV-1, FCV, FPV, rabies, FeLV if younger than 1 year. Cat non-core: FeLV after 1 year, *Chlamydia*, *Bordetella*. Overdue / unknown: when in doubt, vaccinate, unless a specific medical reason not to. Printed 16-week last puppy core and 3-year adult core intervals stay on the page (`△ label`).
 
@@ -3872,3 +3872,33 @@ Night rule: named core vs non-core → **AAHA core vs non-core. Not a mL table.*
 - Attending: If the query is only “unvaccinated puppy,” why does this gate stay dark?
 - Attending: Horse core vaccines — fire or skip?
 - Attending: Dual-named “FeLV, core vaccine” — which loc should win, and why?
+
+## 304. Canine ITP (McQuinn Merck 2025/2026; ACVIM LeVine 2024)
+
+No dedicated Plunkett ITP chapter in the owned SA EM splits. Public McQuinn E. Platelet Disorders in Animals. Merck Veterinary Manual. Full review Feb 2025; last updated Mar 2026. LeVine DN, Goggs R, Kohn B, et al. ACVIM consensus statement on the treatment of immune thrombocytopenia in dogs and cats. J Vet Intern Med. 2024;38(4):1982-2007. doi:10.1111/jvim.17079 named only; no consensus dump. Packet 303 still owns named AAHA core vs non-core. IMHA stays the IMHA gate. Lepto stays lepto. Ehrlichia / RMSF stays tick-rickettsial. Do not harvest a 30k table as lobby law. Do not harvest a vincristine table as lobby law. Do not fire on bare petechiae / Cavalier / thrombocytopenia. Dogs and cats. Skip horse.
+
+Agree with McQuinn 2025/2026 and LeVine 2024: **named ITP is immune destruction of platelets, not Cavalier macrothrombocytopenia.** Diagnosis is exclusion plus a verified smear. Primary means no trigger found. Secondary means vector-borne, drug, or neoplasia. Vincristine is an emergency adjunct with steroids for a bleeding dog, not monotherapy. Caution in MDR1 herding dogs. Delay cyclosporine after vincristine. Printed platelet cutoffs and vincristine mg/kg stay on the page (`△ Plumb`). Cats can get ITP; it is rare. Little evidence that vaccination causes ITP.
+
+Night split: named ITP / IMT / Evans is canine ITP; not Cavalier macrothrombocytopenia. Bare petechiae does not fire. Cavalier plus low platelets does not fire. Mild thrombocytopenia with lepto stays lepto. Fever plus thrombocytopenia with ehrlichia stays tick-rickettsial. Named IMHA alone stays IMHA. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a 30k table.
+- Do not harvest a vincristine table.
+- Do not call Cavalier macrothrombocytopenia ITP.
+- Do not call mild thrombocytopenia ITP.
+- Do not treat a machine-low count without a smear.
+- Do not vincristine an MDR1 herding dog as default.
+- Do not start cyclosporine the same night as vincristine.
+- Do not send petechiae home as fleas.
+
+Night rule: named ITP → **Canine ITP. Not Cavalier macrothrombocytopenia.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Cavalier with a low machine platelet count not treated as ITP tonight?
+- NAVLE 2: A bleeding dog named ITP: what is vincristine for, and what two things is it not?
+- NAVLE 3: Dual-named “ITP, ehrlichia” — which loc should win, and why?
+- Oral: How do you tell the owner this is not fleas, without inventing a 30k cutoff?
+- Attending: If the query is only “petechiae,” why does this gate stay dark?
+- Attending: Horse ITP — fire or skip?
+- Attending: Dual-named “IMHA, Evans syndrome” — which loc should win, and why?

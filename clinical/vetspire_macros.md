@@ -232,6 +232,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hyperthyroid` | Assessment | Feline hyperthyroidism / not a wellness T4 |
 | `ddx-felv` | Assessment | FeLV antigen / FIV antibody / not SNAP-alone |
 | `ddx-vax` | Assessment | AAHA core vs non-core vaccines |
+| `ddx-itp` | Assessment | Canine ITP / not Cavalier macrothrombocytopenia |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -423,6 +424,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hyperthyroid` | Discharge | After hyperthyroid / methimazole talk |
 | `dc-felv` | Discharge | After FeLV / FIV SNAP talk |
 | `dc-vax` | Discharge | After core / non-core vaccine talk |
+| `dc-itp` | Discharge | After ITP / petechiae talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3313,6 +3315,21 @@ DDX:
 Do not: harvest a mL table. Harvest a 3-year clock. Harvest a distal-limb map. Copy the 2017 lepto-as-noncore line. Send a 16-week puppy home without the last core.
 Do next: Name AAHA core vs non-core. Not a mL table. △ Plumb / label. Do not copy a site-sarcoma table.
 
+### `ddx-itp`
+
+Immune thrombocytopenia — {{patient.name}}
+Canine ITP [yes / not]. Not Cavalier macrothrombocytopenia [yes / not]. Smear verified [yes / not]. Secondary trigger [tick / drug / neoplasia / none found]. Bleeding [yes / not].
+
+DDX:
+1. Immune thrombocytopenia — **Canine ITP. Not Cavalier macrothrombocytopenia**
+2. Cavalier / terrier beta-1-tubulin macrothrombocytopenia is a count, not this list
+3. Secondary ITP: vector-borne, drug, neoplasia. Mild thrombocytopenia is still lepto / ehrlichia
+4. Evans is ITP plus IMHA. Vincristine is an adjunct with steroids, not a leftover
+5. Dog or cat can fire. Horse does not fire. Bare petechiae / Cavalier / thrombocytopenia do not fire
+
+Do not: harvest a 30k table. Harvest a vincristine table. Call Cavalier macrothrombocytopenia ITP. Call mild thrombocytopenia ITP. Treat a machine-low count without a smear. Vincristine an MDR1 herding dog as default. Start cyclosporine the same night as vincristine. Send petechiae home as fleas.
+Do next: Name canine ITP. Not Cavalier macrothrombocytopenia. △ Plumb. Look for a secondary trigger. Do not copy a vincristine table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4876,6 +4893,14 @@ Return now for not eating, fever, pale gums, or if another cat in the house is n
 Give only the vaccines we discussed, as labeled. A little soreness at the site can happen. Facial swelling, hives, vomiting, or collapse after a vaccine is an emergency — come now.
 
 Return now for collapse, facial swelling, or trouble breathing after a vaccine. {{location.phonenumber}}
+
+### `dc-itp`
+
+{{patient.name}} has a problem with platelets, the cells that help blood clot. A low number on the machine is not the whole diagnosis. Some breeds, including Cavalier King Charles Spaniels, can have large platelets and a low count without bleeding.
+
+Give only the medicines we sent, as labeled. Do not start leftover steroids or chemotherapy from the cabinet. Keep {{patient.Pronoun}} quiet. No rough play and no extra pain pills from home.
+
+Return now for new bruises, nosebleed, black stool, pale gums, collapse, or if the spots on the gums or skin are spreading. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

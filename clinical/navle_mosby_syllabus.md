@@ -55,9 +55,10 @@ Closed gene chain is not on this list.
 | 300 | Canine hyperadrenocorticism diagnosis traps (not the TBI Cushing reflex) | Van Vertloo Merck Jul 2024; AAHA 2023; Behrend ACVIM 2013. Do not harvest a UCCR / LDDST table | Shipped |
 | 301 | Feline hyperthyroidism (full diagnostic gate; azotemia/amlodipine already exists) | Heseltine Merck May 2024. Do not harvest a methimazole / I-131 table | Shipped |
 | 302 | FeLV / FIV | St Denis Merck Feb 2022; Whitbread serologic kits Aug 2026; AAFP 2020. Do not harvest a SNAP cutoff | Shipped |
-| 303 | AAHA vaccination / core vs non-core | AAHA canine 2022/2024; AAHA/AAFP feline 2020. Do not harvest a mL or site-sarcoma table | This packet |
+| 303 | AAHA vaccination / core vs non-core | AAHA canine 2022/2024; AAHA/AAFP feline 2020. Do not harvest a mL or site-sarcoma table | Shipped |
+| 304 | Canine ITP (not Cavalier macrothrombocytopenia) | McQuinn Merck Platelet Disorders Feb 2025 / Mar 2026; ACVIM LeVine 2024. Do not harvest a 30k or vincristine table | This packet |
 
-Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, and the 285–298 gene leftovers.
+Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, and the 285–298 gene leftovers.
 
 ## What Mosby is for, legally
 

@@ -9422,6 +9422,92 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a ml table", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_itp_is_not_cavalier_macrothrombocytopenia(self):
+        b = analyze("dog", "ITP")
+        loc = b["localization"].lower()
+        self.assertIn("canine itp", loc)
+        self.assertIn("not cavalier macrothrombocytopenia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("30k table", joined)
+        self.assertIn("vincristine table", joined)
+        self.assertIn("mild thrombocytopenia itp", joined)
+        self.assertIn("machine-low count without a smear", joined)
+        self.assertIn("mdr1 herding dog", joined)
+        self.assertIn("cyclosporine the same night", joined)
+        self.assertIn("petechiae home as fleas", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_immune_thrombocytopenia_fires_itp(self):
+        b = analyze("dog", "immune-mediated thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine itp", loc)
+        self.assertIn("not cavalier macrothrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_evans_fires_itp(self):
+        b = analyze("dog", "Evans syndrome")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine itp", loc)
+        self.assertIn("not cavalier macrothrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_itp_is_rare_not_machine_low(self):
+        b = analyze("cat", "ITP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline itp", loc)
+        self.assertIn("not a machine-low count", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_petechiae_is_not_itp(self):
+        b = analyze("dog", "petechiae, gingival bleeding")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine itp", loc)
+        self.assertNotIn("not cavalier macrothrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cavalier_low_platelets_is_not_itp(self):
+        b = analyze("dog", "Cavalier, low platelets")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine itp", loc)
+        self.assertNotIn("not cavalier macrothrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lepto_thrombocytopenia_is_not_itp(self):
+        b = analyze("dog", "lepto, jaundice, AKI, thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("leptospirosis", loc)
+        self.assertNotIn("canine itp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ehrlichia_is_not_itp(self):
+        b = analyze("dog", "ehrlichia, fever, thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("tick-borne", loc)
+        self.assertNotIn("canine itp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_imha_alone_is_not_itp(self):
+        b = analyze("dog", "IMHA, spherocytes")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine itp", loc)
+        self.assertNotIn("not cavalier macrothrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_itp(self):
+        b = analyze("horse", "ITP")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine itp", loc)
+        self.assertNotIn("feline itp", loc)
+        self.assertNotIn("not cavalier macrothrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_core_vax_is_not_itp(self):
+        b = analyze("dog", "core vaccines")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("aaha core vs non-core", loc)
+        self.assertNotIn("canine itp", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
