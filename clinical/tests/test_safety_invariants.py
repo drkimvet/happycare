@@ -721,6 +721,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a dental tartar", VERIF.lower())
         self.assertIn("feline oral scc", VERIF.lower())
         self.assertIn("not a loose-tooth extraction", VERIF.lower())
+        self.assertIn("not pulmonary-nodules-alone", VERIF.lower())
+        self.assertIn("not a splint-and-home", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1351,6 +1353,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a dental tartar", MACRO.lower())
         self.assertIn("feline oral scc", MACRO.lower())
         self.assertIn("not a loose-tooth extraction", MACRO.lower())
+        self.assertIn("not pulmonary-nodules-alone", MACRO.lower())
+        self.assertIn("not a splint-and-home", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1869,6 +1873,9 @@ class PublicCardInvariants(unittest.TestCase):
             "not a dental tartar",
             "feline oral scc",
             "not a loose-tooth extraction",
+            "canine osteosarcoma",
+            "not a splint-and-home",
+            "not pulmonary-nodules-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -127,7 +127,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-nmass` | Assessment | Nasal neoplasia / epistaxis mass |
 | `ddx-lmass` | Assessment | Primary lung tumor / incidental lung mass |
 | `ddx-pmet` | Assessment | Metastatic pulmonary nodules / staging chest |
-| `ddx-osa` | Assessment | Osteosarcoma / pathologic fracture |
+| `ddx-osa` | Assessment | Osteosarcoma / not pulmonary-nodules-alone |
 | `ddx-jtap` | Assessment | Septic arthritis / hot joint tap |
 | `ddx-impa` | Assessment | IMPA / multi-joint tap |
 | `ddx-ie` | Assessment | Infectious endocarditis / fever + new murmur |
@@ -239,6 +239,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-agasaca` | Assessment | Canine AGASACA / not hyperCa-alone |
 | `ddx-melanoma` | Assessment | Canine oral melanoma / not a dental tartar |
 | `ddx-oralscc` | Assessment | Feline oral SCC / not a loose-tooth extraction |
+| `ddx-osa` | Assessment | Canine osteosarcoma / not a splint-and-home |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -1758,14 +1759,14 @@ Osteosarcoma — {{patient.name}}
 Site [distal radius / proximal humerus / distal femur / proximal tibia / axial]. Pathologic fracture [Y/N]. Lysis [ ]. Chest [rads / CT / not yet]. Biopsy [Jamshidi / Michele / not yet].
 
 DDX:
-1. Osteosarcoma — **nontraumatic pathologic fracture, not a plate-and-home**
-2. Dogs: distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script
-3. Jamshidi / Michele confirms. Chest films before you amputate (198)
-4. Printed 1–2 / 4–6.5 / 9–12 months stay on the page. Named chemo stays on the page
-5. Not HO (197). Not IVDD knuckle (185). Not a hit-by-car radius without lysis
+1. Osteosarcoma — **Canine osteosarcoma. Not a splint-and-home. Not pulmonary-nodules-alone**
+2. Nontraumatic pathologic fracture, not a plate-and-home. Distal radius, proximal humerus, distal femur, proximal tibia
+3. Jamshidi / Michele confirms. Stage the chest before you cut. A bone mass is not cannonball nodules
+4. Printed 1–2 / 4–6.5 / 9–12 months stay on the page. Named chemo stays on the page. Cats: less aggressive
+5. Not HO (197). Not IVDD knuckle (185). Not a hit-by-car radius without lysis. Multiple nodules without a bone story stay mets
 
-Do not: plate a pathologic fracture as trauma. Harvest 1–2 months as lobby law. Amputate before a chest film. NSAID an azotemic patient for bone pain.
-Do next: film the bone. Biopsy. Thoracic films. Pain △ Plumb.
+Do not: plate a pathologic fracture as trauma. Splint a pathologic fracture and send it home. Harvest an MST table. Call a bone mass pulmonary nodules. Amputate before a chest film. NSAID an azotemic patient for bone pain.
+Do next: Name canine osteosarcoma. Not a splint-and-home. Not pulmonary-nodules-alone. △ Plumb. Film the bone. Biopsy. Chest before you cut.
 
 ### `ddx-jtap`
 
@@ -4158,7 +4159,7 @@ Return now for trouble breathing, collapse, not eating, or a new lame leg. {{loc
 
 ### `dc-osa`
 
-{{patient.name}} was evaluated for a bone tumor / a break through weak bone. This is not a sprain and not a plate-and-home fracture. Chest films come before amputation talk.
+{{patient.name}} was evaluated for a bone tumor / a break through weak bone. This is not a sprain, not a splint-and-home, and not a plate-and-home fracture. It is not pulmonary-nodules-alone. Chest films come before amputation talk.
 
 Give only the medicines we sent, as labeled. Keep {{patient.pronoun}} quiet and off the bad leg as discussed.
 

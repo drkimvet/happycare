@@ -2166,6 +2166,8 @@ HO_RE = re.compile(
 )
 # Bare "metastas" is every cancer. Bare "nodule" is skin. Need lung / named high-met primaries.
 # Bare "mammary" is mastitis. Bare "melanoma" is a skin spot. Not \bosa\b (too short).
+# Oral melanoma left HIGH_MET_RE (309). Osteosarcoma left HIGH_MET_RE (311);
+# chest-before-cut stays in the OSA loc so a bone mass is not labeled nodules.
 MET_LUNG_RE = re.compile(
     r"pulmonary metast|"
     r"lung metast|"
@@ -2180,7 +2182,6 @@ MULTI_PULM_RE = re.compile(
 )
 HIGH_MET_RE = re.compile(
     r"mammary adenocarcinoma|"
-    r"osteosarcoma|"
     r"hemangiosarcoma|"
     r"\bhsa\b",
     re.I,
@@ -5835,28 +5836,34 @@ def analyze(
         if spec == "cat":
             osa_loc = (
                 "Feline osteosarcoma. Less aggressive than the dog. "
-                "Not a plate-and-home."
+                "Not a plate-and-home. Not a splint-and-home. "
+                "Not pulmonary-nodules-alone. Stage the chest before you cut."
             )
         else:
             osa_loc = (
                 "Canine osteosarcoma. Nontraumatic pathologic fracture, "
-                "not a plate-and-home. Chest staging is 198."
+                "not a plate-and-home. Not a splint-and-home. "
+                "Not pulmonary-nodules-alone. Stage the chest before you cut."
             )
         localization = f"{localization} Also {osa_loc}" if localization else osa_loc
         hard_stops.append(
             "Do not plate a pathologic fracture as trauma. "
             "Do not harvest 1–2 months as lobby law. "
-            "Do not amputate before a chest film."
+            "Do not amputate before a chest film. "
+            "Do not call a bone mass pulmonary nodules."
         )
         do_not.append(
             "Printed 1–2 / 4–6.5 / 9–12 months and carboplatin / cisplatin / "
             "doxorubicin stay on the page. "
+            "Do not harvest an MST table. "
+            "Do not splint a pathologic fracture and send it home. "
             "Cats are not the dog script. "
             "Not hypertrophic osteopathy. Not IVDD knuckle."
         )
         do_next.append(
             "Film the bone. Jamshidi or Michele confirms. "
-            "Thoracic films are packet 198. Pain △ Plumb. "
+            "Stage the chest before you cut. Not pulmonary-nodules-alone. "
+            "Pain △ Plumb. "
             "Amputation is the local conversation after staging."
         )
         sources.append(
@@ -6133,6 +6140,7 @@ def analyze(
     steal_agasaca = AGASACA_RE.search(text)
     steal_oral_mm = ORAL_MM_RE.search(text)
     steal_oral_scc = ORAL_SCC_RE.search(text)
+    steal_osa = OSA_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6245,6 +6253,7 @@ def analyze(
         or steal_agasaca
         or steal_oral_mm
         or steal_oral_scc
+        or steal_osa
     ):
         if spec == "cat":
             fuo_loc = (

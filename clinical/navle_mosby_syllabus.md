@@ -62,9 +62,10 @@ Closed gene chain is not on this list.
 | 307 | Canine MCT (not a grade table) | Villalobos Merck cutaneous MCT Aug 2021 / Jun 2026; Whitbread Merck cytology Aug 2026. Do not harvest a Patnaik or 3-cm table | Shipped |
 | 308 | Canine AGASACA (not hyperCa-alone) | Gallagher Merck Anal Sac Disease Aug 2025; Villalobos Merck apocrine anal-sac Aug 2021 / Jun 2026; Ham Merck hyperCa Jun 2023. Do not harvest an MST table | Shipped |
 | 309 | Canine oral melanoma (not a dental tartar) | Mulherin Merck Oral Tumors Nov 2024; AAHA 2026 oncology. Do not harvest an MST or Oncept table | Shipped |
-| 310 | Feline oral SCC (not a loose-tooth extraction) | Mulherin Merck Oral Tumors Nov 2024; AAHA 2026 oncology. Do not harvest an MST or piroxicam table | This packet |
+| 310 | Feline oral SCC (not a loose-tooth extraction) | Mulherin Merck Oral Tumors Nov 2024; AAHA 2026 oncology. Do not harvest an MST or piroxicam table | Shipped |
+| 311 | Canine osteosarcoma (not a splint-and-home; not pulmonary-nodules-alone) | Chou Merck bone tumors Nov 2025; AAHA 2026 oncology. Named OSA left HIGH_MET so a bone mass is not labeled nodules. Do not harvest an MST or amputation table | This packet |
 
-Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, canine AGASACA, canine oral melanoma, and the 285–298 gene leftovers.
+Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, canine AGASACA, canine oral melanoma, feline oral SCC, pathologic-fracture OSA (199), and the 285–298 gene leftovers.
 
 ## What Mosby is for, legally
 

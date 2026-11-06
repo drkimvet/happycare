@@ -2808,7 +2808,10 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "osteosarcoma, amputate tonight")
         loc = b["localization"].lower()
         self.assertIn("stage the chest before you cut", loc)
-        self.assertIn("rads miss 3 mm", loc)
+        self.assertIn("canine osteosarcoma", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertNotIn("rads miss 3 mm", loc)
         joined = " ".join(b["hard_stops"]).lower()
         self.assertIn("before a chest film", joined)
         self.assertIsNone(b["mg_per_kg"])
@@ -2850,7 +2853,9 @@ class ResidentBriefTests(unittest.TestCase):
         )
         loc = b["localization"].lower()
         self.assertIn("nontraumatic pathologic fracture, not a plate-and-home", loc)
-        self.assertIn("chest staging is 198", loc)
+        self.assertIn("not a splint-and-home", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
+        self.assertIn("stage the chest before you cut", loc)
         self.assertNotIn("metastatic pulmonary nodules", loc)
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
         self.assertIn("plate a pathologic fracture", joined)
@@ -9858,7 +9863,66 @@ class ResidentBriefTests(unittest.TestCase):
         b = analyze("dog", "osteosarcoma, amputate tonight")
         loc = b["localization"].lower()
         self.assertIn("stage the chest before you cut", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
         self.assertNotIn("canine oral melanoma", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_osteosarcoma_is_not_pulmonary_nodules_alone(self):
+        b = analyze("dog", "osteosarcoma")
+        loc = b["localization"].lower()
+        self.assertIn("canine osteosarcoma", loc)
+        self.assertIn("not a splint-and-home", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mst table", joined)
+        self.assertIn("splint a pathologic fracture", joined)
+        self.assertIn("bone mass pulmonary nodules", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_osteosarcoma_is_not_pulmonary_nodules(self):
+        b = analyze("cat", "osteosarcoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline osteosarcoma", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mammary_adeno_still_stages_as_mets(self):
+        b = analyze("dog", "mammary adenocarcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("metastatic pulmonary nodules", loc)
+        self.assertNotIn("not a plate-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hsa_still_stages_as_mets(self):
+        b = analyze("dog", "hemangiosarcoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("metastatic pulmonary nodules", loc)
+        self.assertNotIn("not a plate-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_multiple_nodules_plus_osa_concatenates(self):
+        b = analyze("dog", "osteosarcoma, multiple pulmonary nodules")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine osteosarcoma", loc)
+        self.assertIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_lameness_is_not_osa(self):
+        b = analyze("dog", "lameness")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine osteosarcoma", loc)
+        self.assertNotIn("not pulmonary-nodules-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_osa(self):
+        b = analyze("horse", "osteosarcoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine osteosarcoma", loc)
+        self.assertNotIn("feline osteosarcoma", loc)
+        self.assertNotIn("not pulmonary-nodules-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_oral_scc_is_not_a_loose_tooth_extraction(self):

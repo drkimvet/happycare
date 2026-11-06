@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine osteosarcoma (Merck Chou Nov 2025; AAHA 2026 oncology)
+
+- **Canine osteosarcoma. Not a splint-and-home. Not pulmonary-nodules-alone.** Named osteosarcoma only. Nontraumatic pathologic fracture is still not a plate-and-home. Chest films before you amputate stay in this loc. Do **not** label a bone mass as metastatic pulmonary nodules. Do **not** harvest an MST or amputation table.
+- Jamshidi / Michele confirms. Distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script. Bare lameness / HBC radius stay dark. Multiple lung nodules without a bone story stay mets. Named HSA / mammary adenocarcinoma still stage as mets.
+- Printed 1–2 / 4–6.5 / 9–12 months stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline oral SCC (Merck Mulherin Nov 2024; AAHA 2026 oncology)
 
 - **Feline oral SCC. Not a loose-tooth extraction.** Named oral / lingual / gingival squamous cell carcinoma only. This is the usual cat oral malignancy. Locally invasive into bone. The owner often thinks it is a dental problem. Do **not** extract the tooth and send the jaw home. Do **not** harvest an MST table or a piroxicam table.
