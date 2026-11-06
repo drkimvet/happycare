@@ -1928,6 +1928,15 @@ DIABETES_DX_RE = re.compile(
     r"\binsulin[- ]dependent",
     re.I,
 )
+# Named lymphoma / lymphosarcoma only. Do not use \blymphadenopathy\b
+# (FUO / crypto) or \bvincristine\b (ITP) or \bchop\b as a bare fire.
+# Do not harvest a CHOP or prednisone table. Dogs and cats. Skip horse.
+# HyperCa still owns DexSP-before-PTH. FeLV still owns SNAP.
+LYMPHOMA_DX_RE = re.compile(
+    r"\blymphoma\b|"
+    r"\blymphosarcoma\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6073,6 +6082,7 @@ def analyze(
     steal_vaccine_core = VACCINE_CORE_RE.search(text)
     steal_itp = ITP_RE.search(text)
     steal_diabetes_dx = DIABETES_DX_RE.search(text)
+    steal_lymphoma_dx = LYMPHOMA_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6180,6 +6190,7 @@ def analyze(
         or steal_vaccine_core
         or steal_itp
         or steal_diabetes_dx
+        or steal_lymphoma_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15804,6 +15815,58 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for diabetes."
+            )
+
+    lymphoma_named = spec in {"dog", "cat"} and LYMPHOMA_DX_RE.search(text)
+    if lymphoma_named:
+        if spec == "cat":
+            lymphoma_loc = "Feline lymphoma. Not a CHOP table."
+        else:
+            lymphoma_loc = "Canine lymphoma. Not a CHOP table."
+        localization = (
+            f"{localization} Also {lymphoma_loc}" if localization else lymphoma_loc
+        )
+        hard_stops.append(
+            "Do not harvest a CHOP table. Do not harvest a prednisone table."
+        )
+        do_not.append(
+            "Do not start pred before tissue if you can still get a diagnosis. "
+            "Do not call a mixed reactive node lymphoma. "
+            "Do not CHOP a small-cell GI cat as large-cell."
+        )
+        if spec == "dog":
+            do_not.append(
+                "Do not harvest a WHO stage table. "
+                "Do not harvest an MST table."
+            )
+            do_next.append(
+                "Name canine lymphoma. Not a CHOP table. "
+                "△ Plumb. Cytology of a monomorphic node can diagnose tonight. "
+                "Small-cell still needs more than one smear. "
+                "Do not copy a CHOP table."
+            )
+        else:
+            do_not.append(
+                "Do not skip FeLV/FIV. "
+                "Do not treat a cat node smear as gospel."
+            )
+            do_next.append(
+                "Name feline lymphoma. Not a CHOP table. "
+                "△ Plumb. Test FeLV/FIV. Small-cell GI is not a crash CHOP. "
+                "Do not copy a CHOP table."
+            )
+        sources.append(
+            "Fan Merck Lymphoma in Dogs Sept 2023 / Apr 2025. "
+            "AAHA 2026 oncology guidelines named only. "
+            "Do not harvest CHOP or MST tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for lymphoma."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for lymphoma."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

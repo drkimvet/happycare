@@ -234,6 +234,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-vax` | Assessment | AAHA core vs non-core vaccines |
 | `ddx-itp` | Assessment | Canine ITP / not Cavalier macrothrombocytopenia |
 | `ddx-diabetes` | Assessment | Canine diabetes / not a stress glucose |
+| `ddx-lymphoma` | Assessment | Canine lymphoma / not a CHOP table |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -427,6 +428,7 @@ Suggested names are short so they show up after three letters.
 | `dc-vax` | Discharge | After core / non-core vaccine talk |
 | `dc-itp` | Discharge | After ITP / petechiae talk |
 | `dc-diabetes` | Discharge | After diabetes / fructosamine talk |
+| `dc-lymphoma` | Discharge | After lymphoma / node talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3347,6 +3349,21 @@ DDX:
 Do not: harvest a U/kg insulin table. Harvest a fructosamine cutoff. Diagnose diabetes on a stressed cat glucose. Diagnose on glucosuria alone. Call DKA a stable diabetic. Start oral glipizide as the dog default.
 Do next: Name canine diabetes. Not a stress glucose. △ Plumb. Confirm persistent hyperglycemia with glucosuria. Do not copy a U/kg table.
 
+### `ddx-lymphoma`
+
+Lymphoma — {{patient.name}}
+Canine lymphoma [yes / not]. Not a CHOP table [yes / not]. Cytology monomorphic [yes / mixed / pending]. Phenotype [B / T / unknown]. FeLV/FIV [cat / n/a]. HyperCa [yes / not].
+
+DDX:
+1. Lymphoma — **Canine lymphoma. Not a CHOP table**
+2. Reactive / mixed node is not lymphoma. Small-cell still needs biopsy or PARR
+3. HyperCa of malignancy is a second list. Do not DexSP before PTH/tissue
+4. Cat: test FeLV/FIV. GI small-cell is not a crash CHOP. Indolent / T-zone is not a crash CHOP
+5. Dog or cat can fire. Horse does not fire. Bare lymphadenopathy / Golden do not fire
+
+Do not: harvest a CHOP table. Harvest a prednisone table. Start pred before tissue if you can still get a diagnosis. Call a mixed reactive node lymphoma. CHOP a small-cell GI cat as large-cell. Harvest a WHO stage table. Harvest an MST table.
+Do next: Name canine lymphoma. Not a CHOP table. △ Plumb. Cytology of a monomorphic node can diagnose tonight. Do not copy a CHOP table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4926,6 +4943,14 @@ Return now for new bruises, nosebleed, black stool, pale gums, collapse, or if t
 Give only the insulin and diet we sent, as labeled. Do not change the dose from memory or from leftover bottles. Keep food on a schedule. Watch for weakness, shaking, or seizures after insulin — that is an emergency.
 
 Return now for not eating, vomiting, collapse, or if {{patient.Pronoun}} is drinking and urinating much more than yesterday. {{location.phonenumber}}
+
+### `dc-lymphoma`
+
+{{patient.name}} has a problem with lymphocytes, the white cells of the immune system. Enlarged lymph nodes are not the whole diagnosis. A needle sample can be enough when the cells all look the same; mixed or small cells still need more tissue.
+
+Give only the medicines we sent, as labeled. Do not start leftover prednisone from the cabinet before the diagnosis is locked. Chemotherapy numbers are not a homemade recipe.
+
+Return now for not eating, vomiting, trouble breathing, collapse, or if the nodes are growing fast. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

@@ -3905,7 +3905,7 @@ Night rule: named ITP → **Canine ITP. Not Cavalier macrothrombocytopenia.** �
 
 ## 305. Diabetes mellitus (Buishand Merck 2024/2026; AAHA 2026)
 
-No dedicated Plunkett stable-diabetes chapter in the owned SA EM splits (DKA/HHS already verified as packet 115). Public Buishand F. Diabetes Mellitus in Dogs and Cats. Merck Veterinary Manual. Full review May 2024; last updated May 2026. 2026 AAHA Diabetes Management Guidelines for Dogs and 2026 AAHA Diabetes Management Guidelines for Cats (diagnosis sections published 2026) named only; no guideline dump. Packet 304 still owns named ITP. DKA stays the DKA gate. HHS stays the HHS gate. Degenerative myelopathy stays `\bdm\b`-dark. Do not harvest a U/kg insulin table as lobby law. Do not harvest a fructosamine cutoff as lobby law. Do not fire on bare PU/PD / hyperglycemia / glucosuria. Dogs and cats. Skip horse.
+No dedicated Plunkett stable-diabetes chapter in the owned SA EM splits (DKA/HHS already verified as packet 115). Public Buishand F. Diabetes Mellitus in Dogs and Cats. Merck Veterinary Manual. Full review May 2024; last updated May 2026. 2026 AAHA Diabetes Management Guidelines for Dogs and 2026 AAHA Diabetes Management Guidelines for Cats (diagnosis sections published 2026) named only; no guideline dump. Packet 304 still owns named ITP. Packet 306 is canine lymphoma (not a CHOP table). DKA stays the DKA gate. HHS stays the HHS gate. Degenerative myelopathy stays `\bdm\b`-dark. Do not harvest a U/kg insulin table as lobby law. Do not harvest a fructosamine cutoff as lobby law. Do not fire on bare PU/PD / hyperglycemia / glucosuria. Dogs and cats. Skip horse.
 
 Agree with Buishand 2024/2026 and AAHA 2026: **named diabetes is persistent hyperglycemia with glucosuria, not a stress glucose.** Cat stress hyperglycemia is common; fructosamine or a home / non-stress glucose splits it. Fructosamine falls with hyperthyroidism and protein-losing disease. Dogs are insulin-dependent; oral glipizide is not the dog default. Cats can remit. Cataracts are dogs; plantigrade neuropathy is cats. Printed glucose cutoffs and insulin U/kg stay on the page (`△ Plumb`). DKA and HHS are decompensated, not this loc.
 
@@ -3931,3 +3931,32 @@ Night rule: named diabetes → **Canine diabetes. Not a stress glucose.** △ Pl
 - Attending: If the query is only “PU/PD,” why does this gate stay dark?
 - Attending: Horse diabetes — fire or skip?
 - Attending: Dual-named “degenerative myelopathy, DM” — which loc should win, and why?
+
+## 306. Canine lymphoma (Fan Merck 2023/2025; AAHA 2026 oncology)
+
+No dedicated Plunkett lymphoma chapter in the owned SA EM splits. Public Fan TM. Lymphoma in Dogs. Merck Veterinary Manual. Full review Sept 2023; last updated Apr 2025. 2026 AAHA Oncology Guidelines for Dogs and Cats (Section 1 overview of common cancers, published 2026) named only; no MST / CHOP dump. Packet 305 still owns named diabetes. HyperCa stays the hyperCa gate (DexSP-before-PTH). FeLV/FIV stays 302. Cryptococcus stays crypto (do not pred as lymphoma first). Nasal neoplasia stays nasal. Do not harvest a CHOP table as lobby law. Do not harvest an MST table as lobby law. Do not fire on bare lymphadenopathy / Golden. Dogs and cats. Skip horse.
+
+Agree with Fan 2023/2025 and AAHA 2026: **named lymphoma is a clonal lymphoid neoplasm, not a CHOP table.** Dog: generalized nonpainful lymphadenopathy is the usual picture; cytology of a monomorphic medium-to-large cell node can diagnose. Small-cell / mixed still needs biopsy or PARR. PARR is clonality, not phenotype. Flow is phenotype. Pred before tissue can hide the diagnosis. Cats: FeLV/FIV; GI small-cell is not a crash CHOP. Indolent / T-zone is not a crash CHOP. Printed CHOP / COP / doxorubicin / MST numbers stay on the page (`△ Plumb`). HyperCa of malignancy is a second list.
+
+Night split: named lymphoma / lymphosarcoma is canine lymphoma; not a CHOP table. Bare lymphadenopathy does not fire. Named FeLV stays 302. Named crypto stays crypto. Named hyperCa plus maybe-lymphoma concatenates. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a CHOP table.
+- Do not harvest a prednisone table.
+- Do not start pred before tissue if you can still get a diagnosis.
+- Do not call a mixed reactive node lymphoma.
+- Do not CHOP a small-cell GI cat as large-cell.
+- Do not harvest a WHO stage table.
+- Do not harvest an MST table.
+
+Night rule: named lymphoma → **Canine lymphoma. Not a CHOP table.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a mixed reactive node not started on CHOP tonight?
+- NAVLE 2: A cat with GI lymphoma: when is chlorambucil the conversation instead of crash CHOP?
+- NAVLE 3: Dual-named “lymphoma, hypercalcemia, DexSP” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just a swollen gland,” without inventing an MST?
+- Attending: If the query is only “lymphadenopathy, Golden,” why does this gate stay dark?
+- Attending: Horse lymphoma — fire or skip?
+- Attending: Dual-named “FeLV, lymphoma” — which loc should win, and why?

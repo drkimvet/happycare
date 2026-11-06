@@ -9588,6 +9588,81 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a stress glucose", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_lymphoma_is_not_a_chop_table(self):
+        b = analyze("dog", "lymphoma")
+        loc = b["localization"].lower()
+        self.assertIn("canine lymphoma", loc)
+        self.assertIn("not a chop table", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("chop table", joined)
+        self.assertIn("prednisone table", joined)
+        self.assertIn("mixed reactive node", joined)
+        self.assertIn("pred before tissue", joined)
+        self.assertIn("who stage table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lymphosarcoma_fires_lymphoma(self):
+        b = analyze("dog", "lymphosarcoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine lymphoma", loc)
+        self.assertIn("not a chop table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_lymphoma_is_not_chop(self):
+        b = analyze("cat", "lymphoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline lymphoma", loc)
+        self.assertIn("not a chop table", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("skip felv/fiv", joined)
+        self.assertIn("small-cell gi is not a crash chop", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_lymphadenopathy_is_not_lymphoma(self):
+        b = analyze("dog", "lymphadenopathy, Golden")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine lymphoma", loc)
+        self.assertNotIn("not a chop table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_diabetes_is_not_lymphoma(self):
+        b = analyze("dog", "diabetes mellitus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine diabetes", loc)
+        self.assertNotIn("canine lymphoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_felv_is_not_lymphoma(self):
+        b = analyze("cat", "FeLV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("felv antigen", loc)
+        self.assertNotIn("feline lymphoma", loc)
+        self.assertNotIn("not a chop table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_crypto_is_not_lymphoma(self):
+        b = analyze("cat", "Cryptococcus neoformans, nasal mass, prednisolone")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline cryptococcosis", loc)
+        self.assertNotIn("feline lymphoma", loc)
+        self.assertNotIn("not a chop table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_lymphoma(self):
+        b = analyze("horse", "lymphoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine lymphoma", loc)
+        self.assertNotIn("feline lymphoma", loc)
+        self.assertNotIn("not a chop table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_itp_is_not_lymphoma(self):
+        b = analyze("dog", "ITP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine itp", loc)
+        self.assertNotIn("canine lymphoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

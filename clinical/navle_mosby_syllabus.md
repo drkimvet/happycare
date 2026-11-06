@@ -57,9 +57,10 @@ Closed gene chain is not on this list.
 | 302 | FeLV / FIV | St Denis Merck Feb 2022; Whitbread serologic kits Aug 2026; AAFP 2020. Do not harvest a SNAP cutoff | Shipped |
 | 303 | AAHA vaccination / core vs non-core | AAHA canine 2022/2024; AAHA/AAFP feline 2020. Do not harvest a mL or site-sarcoma table | Shipped |
 | 304 | Canine ITP (not Cavalier macrothrombocytopenia) | McQuinn Merck Platelet Disorders Feb 2025 / Mar 2026; ACVIM LeVine 2024. Do not harvest a 30k or vincristine table | Shipped |
-| 305 | Diabetes mellitus diagnosis traps (not a stress glucose, not DKA/HHS) | Buishand Merck May 2024 / May 2026; AAHA 2026 dog and cat diabetes guidelines. Do not harvest a U/kg or fructosamine table | This packet |
+| 305 | Diabetes mellitus diagnosis traps (not a stress glucose, not DKA/HHS) | Buishand Merck May 2024 / May 2026; AAHA 2026 dog and cat diabetes guidelines. Do not harvest a U/kg or fructosamine table | Shipped |
+| 306 | Canine lymphoma (not a CHOP table) | Fan Merck Lymphoma in Dogs Sept 2023 / Apr 2025; AAHA 2026 oncology guidelines. Do not harvest a CHOP or MST table | This packet |
 
-Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, and the 285–298 gene leftovers.
+Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, and the 285–298 gene leftovers.
 
 ## What Mosby is for, legally
 

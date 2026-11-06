@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine lymphoma (Merck Fan Sept 2023/Apr 2025; AAHA 2026 oncology)
+
+- **Canine lymphoma. Not a CHOP table.** Named lymphoma / lymphosarcoma only. Multicentric nonpainful nodes are the usual dog picture. Cytology of a monomorphic medium-to-large cell node can diagnose tonight. Small-cell, mixed, or a cat node still needs more than one smear. Do **not** harvest a CHOP table, a prednisone table, or an MST table.
+- Do not start pred before tissue if you can still get a diagnosis. PARR is clonality, not phenotype. Flow is phenotype. HyperCa of malignancy still owns DexSP-before-PTH (hyperCa gate). Cats: test FeLV/FIV. GI small-cell is not a crash CHOP. Indolent / T-zone is not a crash CHOP.
+- Printed CHOP / COP / doxorubicin / MST numbers stay on the page (`△ Plumb`). Skip horse. Bare lymphadenopathy and Golden stay dark. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine diabetes (Merck Buishand May 2024/May 2026; AAHA 2026)
 
 - **Canine diabetes. Not a stress glucose.** Named diabetes / fructosamine only. Diagnosis is persistent hyperglycemia with glucosuria and the clinical picture, not one stressed cat glucose. Fructosamine (or a home / non-stress glucose) is how you split stress hyperglycemia in the cat. Do **not** harvest a U/kg insulin table or a fructosamine cutoff.
