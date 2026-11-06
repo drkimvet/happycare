@@ -3875,7 +3875,7 @@ Night rule: named core vs non-core → **AAHA core vs non-core. Not a mL table.*
 
 ## 304. Canine ITP (McQuinn Merck 2025/2026; ACVIM LeVine 2024)
 
-No dedicated Plunkett ITP chapter in the owned SA EM splits. Public McQuinn E. Platelet Disorders in Animals. Merck Veterinary Manual. Full review Feb 2025; last updated Mar 2026. LeVine DN, Goggs R, Kohn B, et al. ACVIM consensus statement on the treatment of immune thrombocytopenia in dogs and cats. J Vet Intern Med. 2024;38(4):1982-2007. doi:10.1111/jvim.17079 named only; no consensus dump. Packet 303 still owns named AAHA core vs non-core. IMHA stays the IMHA gate. Lepto stays lepto. Ehrlichia / RMSF stays tick-rickettsial. Do not harvest a 30k table as lobby law. Do not harvest a vincristine table as lobby law. Do not fire on bare petechiae / Cavalier / thrombocytopenia. Dogs and cats. Skip horse.
+No dedicated Plunkett ITP chapter in the owned SA EM splits. Public McQuinn E. Platelet Disorders in Animals. Merck Veterinary Manual. Full review Feb 2025; last updated Mar 2026. LeVine DN, Goggs R, Kohn B, et al. ACVIM consensus statement on the treatment of immune thrombocytopenia in dogs and cats. J Vet Intern Med. 2024;38(4):1982-2007. doi:10.1111/jvim.17079 named only; no consensus dump. Packet 303 still owns named AAHA core vs non-core. Packet 305 is diabetes mellitus (not a stress glucose; not DKA/HHS). IMHA stays the IMHA gate. Lepto stays lepto. Ehrlichia / RMSF stays tick-rickettsial. Do not harvest a 30k table as lobby law. Do not harvest a vincristine table as lobby law. Do not fire on bare petechiae / Cavalier / thrombocytopenia. Dogs and cats. Skip horse.
 
 Agree with McQuinn 2025/2026 and LeVine 2024: **named ITP is immune destruction of platelets, not Cavalier macrothrombocytopenia.** Diagnosis is exclusion plus a verified smear. Primary means no trigger found. Secondary means vector-borne, drug, or neoplasia. Vincristine is an emergency adjunct with steroids for a bleeding dog, not monotherapy. Caution in MDR1 herding dogs. Delay cyclosporine after vincristine. Printed platelet cutoffs and vincristine mg/kg stay on the page (`△ Plumb`). Cats can get ITP; it is rare. Little evidence that vaccination causes ITP.
 
@@ -3902,3 +3902,32 @@ Night rule: named ITP → **Canine ITP. Not Cavalier macrothrombocytopenia.** �
 - Attending: If the query is only “petechiae,” why does this gate stay dark?
 - Attending: Horse ITP — fire or skip?
 - Attending: Dual-named “IMHA, Evans syndrome” — which loc should win, and why?
+
+## 305. Diabetes mellitus (Buishand Merck 2024/2026; AAHA 2026)
+
+No dedicated Plunkett stable-diabetes chapter in the owned SA EM splits (DKA/HHS already verified as packet 115). Public Buishand F. Diabetes Mellitus in Dogs and Cats. Merck Veterinary Manual. Full review May 2024; last updated May 2026. 2026 AAHA Diabetes Management Guidelines for Dogs and 2026 AAHA Diabetes Management Guidelines for Cats (diagnosis sections published 2026) named only; no guideline dump. Packet 304 still owns named ITP. DKA stays the DKA gate. HHS stays the HHS gate. Degenerative myelopathy stays `\bdm\b`-dark. Do not harvest a U/kg insulin table as lobby law. Do not harvest a fructosamine cutoff as lobby law. Do not fire on bare PU/PD / hyperglycemia / glucosuria. Dogs and cats. Skip horse.
+
+Agree with Buishand 2024/2026 and AAHA 2026: **named diabetes is persistent hyperglycemia with glucosuria, not a stress glucose.** Cat stress hyperglycemia is common; fructosamine or a home / non-stress glucose splits it. Fructosamine falls with hyperthyroidism and protein-losing disease. Dogs are insulin-dependent; oral glipizide is not the dog default. Cats can remit. Cataracts are dogs; plantigrade neuropathy is cats. Printed glucose cutoffs and insulin U/kg stay on the page (`△ Plumb`). DKA and HHS are decompensated, not this loc.
+
+Night split: named diabetes / fructosamine is canine diabetes; not a stress glucose. Bare PU/PD does not fire. Bare hyperglycemia / glucosuria does not fire. Named DKA stays DKA. Named HHS stays HHS. Named degenerative myelopathy stays myelopathy. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a U/kg insulin table.
+- Do not harvest a fructosamine cutoff.
+- Do not diagnose diabetes on a stressed cat glucose.
+- Do not diagnose on glucosuria alone.
+- Do not call DKA a stable diabetic.
+- Do not start oral glipizide as the dog default.
+- Do not harvest a 200 mg/dL table.
+
+Night rule: named diabetes → **Canine diabetes. Not a stress glucose.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a stressed cat with a high in-hospital glucose not started on insulin tonight?
+- NAVLE 2: A dog with PU/PD, hyperglycemia, and glucosuria: what is the diagnosis, and why is glipizide not the default?
+- NAVLE 3: Dual-named “diabetes, DKA” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just stress,” without inventing a fructosamine cutoff?
+- Attending: If the query is only “PU/PD,” why does this gate stay dark?
+- Attending: Horse diabetes — fire or skip?
+- Attending: Dual-named “degenerative myelopathy, DM” — which loc should win, and why?

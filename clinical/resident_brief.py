@@ -1916,6 +1916,18 @@ ITP_RE = re.compile(
     r"\bevans syndrome",
     re.I,
 )
+# Named diabetes / fructosamine only. Do not use \bdm\b (degenerative
+# myelopathy). Do not use \bdiabetic keto (DKA). Do not use hyperglycemia /
+# glucosuria / PU/PD alone. Do not harvest a U/kg or fructosamine table.
+# Dogs and cats. Skip horse.
+DIABETES_DX_RE = re.compile(
+    r"\bdiabetes mellitus\b|"
+    r"\bdiabetes\b|"
+    r"\bdiabetic(?!\s+keto)|"
+    r"\bfructosamine\b|"
+    r"\binsulin[- ]dependent",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6060,6 +6072,7 @@ def analyze(
     steal_felv_fiv = FELV_FIV_RE.search(text)
     steal_vaccine_core = VACCINE_CORE_RE.search(text)
     steal_itp = ITP_RE.search(text)
+    steal_diabetes_dx = DIABETES_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6166,6 +6179,7 @@ def analyze(
         or steal_felv_fiv
         or steal_vaccine_core
         or steal_itp
+        or steal_diabetes_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15737,6 +15751,59 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for ITP."
+            )
+
+    diabetes_named = spec in {"dog", "cat"} and DIABETES_DX_RE.search(text)
+    if diabetes_named:
+        if spec == "cat":
+            diabetes_loc = "Feline diabetes. Not a stress glucose."
+        else:
+            diabetes_loc = "Canine diabetes. Not a stress glucose."
+        localization = (
+            f"{localization} Also {diabetes_loc}" if localization else diabetes_loc
+        )
+        hard_stops.append(
+            "Do not harvest a U/kg insulin table. "
+            "Do not harvest a fructosamine cutoff."
+        )
+        do_not.append(
+            "Do not diagnose diabetes on a stressed cat glucose. "
+            "Do not diagnose on glucosuria alone. "
+            "Do not call DKA a stable diabetic."
+        )
+        if spec == "dog":
+            do_not.append(
+                "Do not start oral glipizide as the dog default. "
+                "Do not harvest a 200 mg/dL table."
+            )
+            do_next.append(
+                "Name canine diabetes. Not a stress glucose. "
+                "△ Plumb. Confirm persistent hyperglycemia with glucosuria. "
+                "Do not copy a U/kg table."
+            )
+        else:
+            do_not.append(
+                "Do not treat a high in-hospital glucose as diabetes "
+                "without a home or fructosamine check. "
+                "Fructosamine falls with hyperthyroidism and protein-losing disease."
+            )
+            do_next.append(
+                "Name feline diabetes. Not a stress glucose. "
+                "△ Plumb. Confirm sustained hyperglycemia. "
+                "Do not copy a U/kg table."
+            )
+        sources.append(
+            "Buishand Merck Diabetes Mellitus May 2024 / May 2026. "
+            "AAHA 2026 diabetes guidelines (dogs and cats). "
+            "Do not harvest insulin U/kg or glucose-cutoff tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for diabetes."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for diabetes."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

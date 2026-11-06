@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine diabetes (Merck Buishand May 2024/May 2026; AAHA 2026)
+
+- **Canine diabetes. Not a stress glucose.** Named diabetes / fructosamine only. Diagnosis is persistent hyperglycemia with glucosuria and the clinical picture, not one stressed cat glucose. Fructosamine (or a home / non-stress glucose) is how you split stress hyperglycemia in the cat. Do **not** harvest a U/kg insulin table or a fructosamine cutoff.
+- Dogs are insulin-dependent; oral glipizide is not the dog default. Cats can go into remission. Fructosamine falls with hyperthyroidism and protein-losing disease. Cataracts are a dog conversation; plantigrade stance is a cat conversation. DKA and HHS stay the decompensated gates.
+- Look for a trigger (steroids, diestrus, pancreatitis, obesity). Printed glucose cutoffs and insulin U/kg stay on the page (`△ Plumb`). Skip horse. Bare PU/PD and bare hyperglycemia stay dark. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine ITP (Merck McQuinn Feb 2025/Mar 2026; ACVIM LeVine 2024)
 
 - **Canine ITP. Not Cavalier macrothrombocytopenia.** Named ITP / IMT / Evans only. Diagnosis is exclusion plus a verified smear, not a machine-low count. Primary means no trigger found. Secondary means look for vector-borne disease, a drug, or neoplasia before you call it primary. Do **not** harvest a 30k table or a vincristine table.

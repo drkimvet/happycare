@@ -9508,6 +9508,86 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine itp", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_diabetes_is_not_a_stress_glucose(self):
+        b = analyze("dog", "diabetes mellitus")
+        loc = b["localization"].lower()
+        self.assertIn("canine diabetes", loc)
+        self.assertIn("not a stress glucose", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("u/kg insulin table", joined)
+        self.assertIn("fructosamine cutoff", joined)
+        self.assertIn("glucosuria alone", joined)
+        self.assertIn("dka a stable diabetic", joined)
+        self.assertIn("glipizide as the dog default", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fructosamine_fires_diabetes(self):
+        b = analyze("cat", "fructosamine")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline diabetes", loc)
+        self.assertIn("not a stress glucose", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_diabetes_is_not_stress_glucose(self):
+        b = analyze("cat", "diabetes")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline diabetes", loc)
+        self.assertIn("not a stress glucose", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("high in-hospital glucose", joined)
+        self.assertIn("fructosamine falls with hyperthyroidism", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dka_is_not_stable_diabetes(self):
+        b = analyze("dog", "DKA, start insulin now, give bicarbonate")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("decompensated diabetes", loc)
+        self.assertNotIn("not a stress glucose", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hhs_is_not_stable_diabetes(self):
+        b = analyze("cat", "hyperosmolar HHS, no ketones")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("not a stress glucose", loc)
+        self.assertNotIn("feline diabetes", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pupd_is_not_diabetes(self):
+        b = analyze("dog", "PU/PD, weight loss")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine diabetes", loc)
+        self.assertNotIn("not a stress glucose", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hyperglycemia_is_not_diabetes(self):
+        b = analyze("cat", "hyperglycemia, glucosuria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline diabetes", loc)
+        self.assertNotIn("not a stress glucose", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_diabetes(self):
+        b = analyze("horse", "diabetes mellitus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine diabetes", loc)
+        self.assertNotIn("feline diabetes", loc)
+        self.assertNotIn("not a stress glucose", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_itp_is_not_diabetes(self):
+        b = analyze("dog", "ITP")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine itp", loc)
+        self.assertNotIn("canine diabetes", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_degenerative_myelopathy_is_not_diabetes(self):
+        b = analyze("dog", "degenerative myelopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine diabetes", loc)
+        self.assertNotIn("not a stress glucose", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

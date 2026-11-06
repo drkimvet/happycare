@@ -233,6 +233,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-felv` | Assessment | FeLV antigen / FIV antibody / not SNAP-alone |
 | `ddx-vax` | Assessment | AAHA core vs non-core vaccines |
 | `ddx-itp` | Assessment | Canine ITP / not Cavalier macrothrombocytopenia |
+| `ddx-diabetes` | Assessment | Canine diabetes / not a stress glucose |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -425,6 +426,7 @@ Suggested names are short so they show up after three letters.
 | `dc-felv` | Discharge | After FeLV / FIV SNAP talk |
 | `dc-vax` | Discharge | After core / non-core vaccine talk |
 | `dc-itp` | Discharge | After ITP / petechiae talk |
+| `dc-diabetes` | Discharge | After diabetes / fructosamine talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3330,6 +3332,21 @@ DDX:
 Do not: harvest a 30k table. Harvest a vincristine table. Call Cavalier macrothrombocytopenia ITP. Call mild thrombocytopenia ITP. Treat a machine-low count without a smear. Vincristine an MDR1 herding dog as default. Start cyclosporine the same night as vincristine. Send petechiae home as fleas.
 Do next: Name canine ITP. Not Cavalier macrothrombocytopenia. △ Plumb. Look for a secondary trigger. Do not copy a vincristine table.
 
+### `ddx-diabetes`
+
+Diabetes mellitus — {{patient.name}}
+Canine diabetes [yes / not]. Not a stress glucose [yes / not]. Glucosuria [yes / not]. Fructosamine / home glucose [yes / not / pending]. Ketones [none / DKA / HHS].
+
+DDX:
+1. Diabetes mellitus — **Canine diabetes. Not a stress glucose**
+2. Cat: stress hyperglycemia is not diabetes until fructosamine or a home glucose says it is
+3. Glucosuria alone is Fanconi / proximal tubule until hyperglycemia is persistent
+4. DKA and HHS are the decompensated gates. Dogs are insulin-dependent. Cats can remit
+5. Dog or cat can fire. Horse does not fire. Bare PU/PD / hyperglycemia / DM-as-myelopathy do not fire
+
+Do not: harvest a U/kg insulin table. Harvest a fructosamine cutoff. Diagnose diabetes on a stressed cat glucose. Diagnose on glucosuria alone. Call DKA a stable diabetic. Start oral glipizide as the dog default.
+Do next: Name canine diabetes. Not a stress glucose. △ Plumb. Confirm persistent hyperglycemia with glucosuria. Do not copy a U/kg table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4901,6 +4918,14 @@ Return now for collapse, facial swelling, or trouble breathing after a vaccine. 
 Give only the medicines we sent, as labeled. Do not start leftover steroids or chemotherapy from the cabinet. Keep {{patient.Pronoun}} quiet. No rough play and no extra pain pills from home.
 
 Return now for new bruises, nosebleed, black stool, pale gums, collapse, or if the spots on the gums or skin are spreading. {{location.phonenumber}}
+
+### `dc-diabetes`
+
+{{patient.name}} has diabetes mellitus. One high blood sugar in a stressed cat is not the whole diagnosis. We confirm with sugar in the urine plus a glucose that stays high, or a fructosamine.
+
+Give only the insulin and diet we sent, as labeled. Do not change the dose from memory or from leftover bottles. Keep food on a schedule. Watch for weakness, shaking, or seizures after insulin — that is an emergency.
+
+Return now for not eating, vomiting, collapse, or if {{patient.Pronoun}} is drinking and urinating much more than yesterday. {{location.phonenumber}}
 
 ### `dc-hyperca`
 
