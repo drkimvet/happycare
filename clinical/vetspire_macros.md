@@ -235,6 +235,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-itp` | Assessment | Canine ITP / not Cavalier macrothrombocytopenia |
 | `ddx-diabetes` | Assessment | Canine diabetes / not a stress glucose |
 | `ddx-lymphoma` | Assessment | Canine lymphoma / not a CHOP table |
+| `ddx-mct` | Assessment | Canine MCT / not a grade table |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -429,6 +430,7 @@ Suggested names are short so they show up after three letters.
 | `dc-itp` | Discharge | After ITP / petechiae talk |
 | `dc-diabetes` | Discharge | After diabetes / fructosamine talk |
 | `dc-lymphoma` | Discharge | After lymphoma / node talk |
+| `dc-mct` | Discharge | After mast cell / FNA talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3364,6 +3366,21 @@ DDX:
 Do not: harvest a CHOP table. Harvest a prednisone table. Start pred before tissue if you can still get a diagnosis. Call a mixed reactive node lymphoma. CHOP a small-cell GI cat as large-cell. Harvest a WHO stage table. Harvest an MST table.
 Do next: Name canine lymphoma. Not a CHOP table. △ Plumb. Cytology of a monomorphic node can diagnose tonight. Do not copy a CHOP table.
 
+### `ddx-mct`
+
+Mast cell tumor — {{patient.name}}
+Canine MCT [yes / not]. Not a grade table [yes / not]. FNA [yes / not]. Histopath grade [pending / low / high]. GI ulcer [yes / not]. Draining node [aspirated / not].
+
+DDX:
+1. Mast cell tumor — **Canine MCT. Not a grade table**
+2. Cytology diagnoses. Histopath grades. Do not grade on the smear
+3. GI ulcer from histamine. Do not add an NSAID. Do not squeeze the mass
+4. Cat: Patnaik is not the cat system. Mastitis is the gland, not this list
+5. Dog or cat can fire. Horse does not fire. Bare skin mass / Boxer do not fire
+
+Do not: harvest a grade table. Harvest a 3-cm margin table. Grade MCT on cytology. Squeeze the mass as the night plan. Add an NSAID to a degranulating MCT. Harvest a Patnaik table. Harvest a vinblastine table.
+Do next: Name canine MCT. Not a grade table. △ Plumb. FNA tonight. Grade is histopath. Look for GI ulcer. Do not copy a margin table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -4951,6 +4968,14 @@ Return now for not eating, vomiting, collapse, or if {{patient.Pronoun}} is drin
 Give only the medicines we sent, as labeled. Do not start leftover prednisone from the cabinet before the diagnosis is locked. Chemotherapy numbers are not a homemade recipe.
 
 Return now for not eating, vomiting, trouble breathing, collapse, or if the nodes are growing fast. {{location.phonenumber}}
+
+### `dc-mct`
+
+{{patient.name}} has a mast cell tumor, a lump made of allergy cells. A needle sample can name it tonight. The grade, which tells us how it is likely to behave, comes from the tissue under the microscope, not from the smear.
+
+Give only the medicines we sent, as labeled. Do not squeeze or poke the lump. Do not start leftover pain pills from the cabinet. Black stool, vomiting, or collapse can mean a stomach ulcer — come now.
+
+Return now for vomiting, black stool, rapid growth of the lump, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

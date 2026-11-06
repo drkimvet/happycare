@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine MCT (Merck Villalobos Aug 2021/Jun 2026; Whitbread cytology Aug 2026)
+
+- **Canine MCT. Not a grade table.** Named mast cell / MCT / mastocytoma only. FNA diagnoses tonight. Grade is histopath, not cytology. Do **not** harvest a Patnaik table, a Kiupel table, or a 3-cm margin table.
+- Do not squeeze the mass. Look for GI ulcer from histamine. Do not add an NSAID to a degranulating MCT. H1/H2 is the ulcer conversation (`△ Plumb`). Aspirate the draining node even if it feels normal. Cats: Patnaik is not the cat system.
+- Printed vinblastine / tigilanol / margin numbers stay on the page (`△ Plumb`). Skip horse. Bare skin mass and Boxer stay dark. Mastitis is the gland, not this list. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine lymphoma (Merck Fan Sept 2023/Apr 2025; AAHA 2026 oncology)
 
 - **Canine lymphoma. Not a CHOP table.** Named lymphoma / lymphosarcoma only. Multicentric nonpainful nodes are the usual dog picture. Cytology of a monomorphic medium-to-large cell node can diagnose tonight. Small-cell, mixed, or a cat node still needs more than one smear. Do **not** harvest a CHOP table, a prednisone table, or an MST table.

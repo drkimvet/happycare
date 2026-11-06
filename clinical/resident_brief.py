@@ -1937,6 +1937,19 @@ LYMPHOMA_DX_RE = re.compile(
     r"\blymphosarcoma\b",
     re.I,
 )
+# Named mast cell / MCT / mastocytoma only. Do not use \bmast\b (mastitis)
+# or \bskin mass\b or Boxer. Do not harvest a Patnaik / 3-cm table.
+# Cytology diagnoses; histopath grades (Whitbread Merck). Dogs and cats.
+# Skip horse.
+MCT_RE = re.compile(
+    r"\bmast cell|"
+    r"\bmct\b|"
+    r"\bmastocytoma|"
+    r"\bpatnaik|"
+    r"\bkiupel|"
+    r"\btigilanol",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6083,6 +6096,7 @@ def analyze(
     steal_itp = ITP_RE.search(text)
     steal_diabetes_dx = DIABETES_DX_RE.search(text)
     steal_lymphoma_dx = LYMPHOMA_DX_RE.search(text)
+    steal_mct = MCT_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6191,6 +6205,7 @@ def analyze(
         or steal_itp
         or steal_diabetes_dx
         or steal_lymphoma_dx
+        or steal_mct
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15867,6 +15882,53 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for lymphoma."
+            )
+
+    mct_named = spec in {"dog", "cat"} and MCT_RE.search(text)
+    if mct_named:
+        if spec == "cat":
+            mct_loc = "Feline MCT. Not a grade table."
+        else:
+            mct_loc = "Canine MCT. Not a grade table."
+        localization = f"{localization} Also {mct_loc}" if localization else mct_loc
+        hard_stops.append(
+            "Do not harvest a grade table. Do not harvest a 3-cm margin table."
+        )
+        do_not.append(
+            "Do not grade MCT on cytology. Do not squeeze the mass as the night plan. "
+            "Do not add an NSAID to a degranulating MCT."
+        )
+        if spec == "dog":
+            do_not.append(
+                "Do not harvest a Patnaik table. Do not harvest a vinblastine table."
+            )
+            do_next.append(
+                "Name canine MCT. Not a grade table. △ Plumb. "
+                "FNA tonight. Grade is histopath. Look for GI ulcer. "
+                "Do not copy a margin table."
+            )
+        else:
+            do_not.append(
+                "Do not call Patnaik the cat system. "
+                "Do not treat a cat MCT as a dog grade."
+            )
+            do_next.append(
+                "Name feline MCT. Not a grade table. △ Plumb. "
+                "FNA tonight. Grade is histopath. Look for GI ulcer. "
+                "Do not copy a margin table."
+            )
+        sources.append(
+            "Villalobos Merck cutaneous mast cell tumors Aug 2021 / Jun 2026. "
+            "Whitbread Merck cytology Aug 2026: cytology cannot grade MCT. "
+            "AAHA 2026 oncology named only. Do not harvest grade or margin tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for MCT."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for MCT."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

@@ -3934,7 +3934,7 @@ Night rule: named diabetes → **Canine diabetes. Not a stress glucose.** △ Pl
 
 ## 306. Canine lymphoma (Fan Merck 2023/2025; AAHA 2026 oncology)
 
-No dedicated Plunkett lymphoma chapter in the owned SA EM splits. Public Fan TM. Lymphoma in Dogs. Merck Veterinary Manual. Full review Sept 2023; last updated Apr 2025. 2026 AAHA Oncology Guidelines for Dogs and Cats (Section 1 overview of common cancers, published 2026) named only; no MST / CHOP dump. Packet 305 still owns named diabetes. HyperCa stays the hyperCa gate (DexSP-before-PTH). FeLV/FIV stays 302. Cryptococcus stays crypto (do not pred as lymphoma first). Nasal neoplasia stays nasal. Do not harvest a CHOP table as lobby law. Do not harvest an MST table as lobby law. Do not fire on bare lymphadenopathy / Golden. Dogs and cats. Skip horse.
+No dedicated Plunkett lymphoma chapter in the owned SA EM splits. Public Fan TM. Lymphoma in Dogs. Merck Veterinary Manual. Full review Sept 2023; last updated Apr 2025. 2026 AAHA Oncology Guidelines for Dogs and Cats (Section 1 overview of common cancers, published 2026) named only; no MST / CHOP dump. Packet 305 still owns named diabetes. Packet 307 is canine MCT (not a grade table). HyperCa stays the hyperCa gate (DexSP-before-PTH). FeLV/FIV stays 302. Cryptococcus stays crypto (do not pred as lymphoma first). Nasal neoplasia stays nasal. Do not harvest a CHOP table as lobby law. Do not harvest an MST table as lobby law. Do not fire on bare lymphadenopathy / Golden. Dogs and cats. Skip horse.
 
 Agree with Fan 2023/2025 and AAHA 2026: **named lymphoma is a clonal lymphoid neoplasm, not a CHOP table.** Dog: generalized nonpainful lymphadenopathy is the usual picture; cytology of a monomorphic medium-to-large cell node can diagnose. Small-cell / mixed still needs biopsy or PARR. PARR is clonality, not phenotype. Flow is phenotype. Pred before tissue can hide the diagnosis. Cats: FeLV/FIV; GI small-cell is not a crash CHOP. Indolent / T-zone is not a crash CHOP. Printed CHOP / COP / doxorubicin / MST numbers stay on the page (`△ Plumb`). HyperCa of malignancy is a second list.
 
@@ -3960,3 +3960,33 @@ Night rule: named lymphoma → **Canine lymphoma. Not a CHOP table.** △ Plumb.
 - Attending: If the query is only “lymphadenopathy, Golden,” why does this gate stay dark?
 - Attending: Horse lymphoma — fire or skip?
 - Attending: Dual-named “FeLV, lymphoma” — which loc should win, and why?
+
+## 307. Canine MCT (Villalobos Merck 2021/2026; Whitbread cytology 2026)
+
+No dedicated Plunkett MCT chapter in the owned SA EM splits. Public Villalobos AE. Lymphocytic, Histiocytic, and Related Cutaneous Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Cutaneous Mast Cell Tumors section). Whitbread TJ. Cytology. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (cytology cannot grade mast cell tumors; grading always requires histology). 2026 AAHA Oncology Guidelines named only; no Patnaik / margin dump. Packet 306 still owns named lymphoma. Mastitis stays the gland. Osteosarcoma stays OSA. Do not harvest a Patnaik table as lobby law. Do not harvest a 3-cm margin table as lobby law. Do not fire on bare skin mass / Boxer. Dogs and cats. Skip horse.
+
+Agree with Villalobos 2021/2026 and Whitbread 2026: **named MCT is diagnosed on FNA and graded on histopath, not a grade table from the smear.** FNA before you cut so the margin is planned. Do not squeeze the mass. GI ulcer from histamine is the night medical list; do not add an NSAID. H1/H2 stay on the page (`△ Plumb`). Aspirate the draining node even if it feels normal. Cats: Patnaik is not predictive. Printed vinblastine / tigilanol / 3-cm numbers stay on the page.
+
+Night split: named mast cell / MCT / mastocytoma is canine MCT; not a grade table. Bare skin mass does not fire. Named mastitis stays mastitis. Named lymphoma stays lymphoma. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a grade table.
+- Do not harvest a 3-cm margin table.
+- Do not grade MCT on cytology.
+- Do not squeeze the mass as the night plan.
+- Do not add an NSAID to a degranulating MCT.
+- Do not harvest a Patnaik table.
+- Do not harvest a vinblastine table.
+- Do not call Patnaik the cat system.
+
+Night rule: named MCT → **Canine MCT. Not a grade table.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is an FNA-positive MCT not given a Patnaik grade tonight?
+- NAVLE 2: A Boxer with a skin mass that waxes and wanes: what do you do before you cut, and why not an NSAID?
+- NAVLE 3: Dual-named “mast cell tumor, mastitis” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just a lipoma,” without inventing a 3-cm margin?
+- Attending: If the query is only “skin mass, Boxer,” why does this gate stay dark?
+- Attending: Horse MCT — fire or skip?
+- Attending: Dual-named “MCT, lymphoma” — which loc should win, and why?

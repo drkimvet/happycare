@@ -9663,6 +9663,65 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine lymphoma", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_mct_is_not_a_grade_table(self):
+        b = analyze("dog", "mast cell tumor")
+        loc = b["localization"].lower()
+        self.assertIn("canine mct", loc)
+        self.assertIn("not a grade table", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("grade table", joined)
+        self.assertIn("3-cm margin table", joined)
+        self.assertIn("grade mct on cytology", joined)
+        self.assertIn("squeeze the mass", joined)
+        self.assertIn("nsaid to a degranulating mct", joined)
+        self.assertIn("patnaik table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mct_acronym_fires(self):
+        b = analyze("dog", "MCT")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine mct", loc)
+        self.assertIn("not a grade table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_mct_is_not_a_grade_table(self):
+        b = analyze("cat", "mast cell tumor")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline mct", loc)
+        self.assertIn("not a grade table", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("patnaik the cat system", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_skin_mass_is_not_mct(self):
+        b = analyze("dog", "skin mass, Boxer")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mct", loc)
+        self.assertNotIn("not a grade table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mastitis_is_not_mct(self):
+        b = analyze("dog", "mastitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mct", loc)
+        self.assertNotIn("not a grade table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lymphoma_is_not_mct(self):
+        b = analyze("dog", "lymphoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine lymphoma", loc)
+        self.assertNotIn("canine mct", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_mct(self):
+        b = analyze("horse", "mast cell tumor")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mct", loc)
+        self.assertNotIn("feline mct", loc)
+        self.assertNotIn("not a grade table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",
