@@ -242,6 +242,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-osa` | Assessment | Canine osteosarcoma / not a splint-and-home |
 | `ddx-hsa` | Assessment | Canine hemangiosarcoma / not a wait-and-see hemoabdomen |
 | `ddx-mamca` | Assessment | Canine mammary carcinoma / not a cyst-and-home |
+| `ddx-ibd` | Assessment | Feline IBD vs GI lymphoma / not a steroid-responsive diarrhea |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -442,6 +443,7 @@ Suggested names are short so they show up after three letters.
 | `dc-oralscc` | Discharge | After oral SCC / jaw talk |
 | `dc-hsa` | Discharge | After hemangiosarcoma / bleed talk |
 | `dc-mamca` | Discharge | After mammary carcinoma / staging talk |
+| `dc-ibd` | Discharge | After IBD / GI-lymphoma talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3467,6 +3469,21 @@ DDX:
 Do not: harvest an MST table. Call FNA a benign rule-out. Call a mammary mass pulmonary nodules. Harvest an OHE table. Call inflammatory mammary carcinoma mastitis.
 Do next: Name canine mammary carcinoma. Not a cyst-and-home. △ Plumb. Histology. Stage the chest before you cut. Do not copy an MST table.
 
+### `ddx-ibd`
+
+IBD vs GI lymphoma — {{patient.name}}
+Feline IBD vs GI lymphoma [yes / not]. Not a steroid-responsive diarrhea [yes / not]. Diet trial [ ]. Deworm [ ]. Ileum biopsied [yes / not / pending]. PARR [ ].
+
+DDX:
+1. IBD vs GI lymphoma — **Feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea**
+2. Continuum in cats. Diet and deworm first if stable. Ileum if you biopsy. PARR is clonality
+3. Endoscopic mucosa can miss lymphoma. Small-cell GI is not a crash CHOP (306)
+4. Dogs: most chronic enteropathy is food-responsive. PLE is 178. Nodal lymphoma is 306
+5. Dog or cat can fire. Horse does not fire. Bare vomiting / diarrhea do not fire
+
+Do not: harvest a pred table. Harvest a chlorambucil table. Pred IBD first. Skip the ileum if you biopsy a cat. Treat endoscopic mucosa as a full-thickness rule-out.
+Do next: Name feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea. △ Plumb. Diet and deworm first if stable. Ileum if you biopsy. Do not copy a pred table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -5102,6 +5119,14 @@ Return now for collapse, pale gums, a swelling belly, trouble breathing, or not 
 Give only the medicines we sent, as labeled. Do not squeeze or lance the gland. This is not mastitis unless we said so.
 
 Return now for a hot painful gland, ulceration, trouble breathing, or not eating. {{location.phonenumber}}
+
+### `dc-ibd`
+
+{{patient.name}} has a chronic gut problem. This is not a steroid-first diarrhea. In cats we have to tell inflammatory bowel disease from a gut lymphoma. Diet and deworming come first if they are stable. A stomach biopsy is not enough; the ileum matters.
+
+Give only the medicines and the food we sent, as labeled. No extra leftover steroids from the cabinet.
+
+Return now for not eating, repeated vomiting, black stool, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

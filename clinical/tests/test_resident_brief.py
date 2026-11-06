@@ -9956,6 +9956,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("name the gland or the uterus", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_ibd_is_not_steroid_responsive_diarrhea(self):
+        b = analyze("cat", "IBD")
+        loc = b["localization"].lower()
+        self.assertIn("feline ibd vs gi lymphoma", loc)
+        self.assertIn("not a steroid-responsive diarrhea", loc)
+        self.assertNotIn("not a chop table", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pred table", joined)
+        self.assertIn("chlorambucil table", joined)
+        self.assertIn("pred ibd first", joined)
+        self.assertIn("skip the ileum", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_alimentary_lymphoma_concatenates_with_306(self):
+        b = analyze("cat", "alimentary lymphoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline ibd vs gi lymphoma", loc)
+        self.assertIn("not a steroid-responsive diarrhea", loc)
+        self.assertIn("feline lymphoma", loc)
+        self.assertIn("not a chop table", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_chronic_enteropathy_fires(self):
+        b = analyze("dog", "chronic enteropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine chronic enteropathy", loc)
+        self.assertIn("not a steroid-responsive diarrhea", loc)
+        self.assertNotIn("feline ibd vs gi lymphoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_lymphoma_is_not_ibd_vs_gi(self):
+        b = analyze("cat", "lymphoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline lymphoma", loc)
+        self.assertIn("not a chop table", loc)
+        self.assertNotIn("feline ibd vs gi lymphoma", loc)
+        self.assertNotIn("not a steroid-responsive diarrhea", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_vomiting_diarrhea_is_not_ibd(self):
+        b = analyze("cat", "vomiting, diarrhea")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline ibd vs gi lymphoma", loc)
+        self.assertNotIn("not a steroid-responsive diarrhea", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ple_is_not_ibd_vs_gi(self):
+        b = analyze("dog", "protein-losing enteropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("protein-losing enteropathy", loc)
+        self.assertNotIn("canine chronic enteropathy", loc)
+        self.assertNotIn("not a steroid-responsive diarrhea", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_ibd(self):
+        b = analyze("horse", "IBD")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline ibd vs gi lymphoma", loc)
+        self.assertNotIn("canine chronic enteropathy", loc)
+        self.assertNotIn("not a steroid-responsive diarrhea", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_hsa_is_not_pulmonary_nodules_alone(self):
         b = analyze("dog", "hemangiosarcoma")
         loc = (b["localization"] or "").lower()

@@ -4156,3 +4156,31 @@ Night rule: named mammary carcinoma → **Canine mammary carcinoma. Not a cyst-a
 - Attending: If the query is only “mammary tumor” or “mastitis,” why does this gate stay dark?
 - Attending: Horse mammary adenocarcinoma — fire or skip?
 - Attending: Dual-named “mammary carcinoma, multiple pulmonary nodules” — which loc should win, and why?
+
+## 314. Feline IBD vs GI lymphoma (Collier Merck Jun 2026; Matsuyama Jan 2025)
+
+No dedicated Plunkett IBD-vs-lymphoma chapter in the owned SA EM splits. Public Collier A. Chronic Enteropathies in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Jun 2026 (IBD vs alimentary lymphoma is a continuum in cats; diet first; ileal biopsies find lymphoma the duodenum misses; PARR monoclonality suggests small-cell lymphoma; printed pred / chlorambucil stay on the page). Matsuyama A. Gastrointestinal Neoplasia in Dogs and Cats. Merck Veterinary Manual. Full review Jan 2025 (endoscopic mucosa can misdiagnose feline gastric lymphoma as IBD vs full-thickness; ileal biopsies higher yield). Marsilio S et al. ACVIM consensus 2023 named only; no dump. Packet 306 still owns named nodal lymphoma (not a CHOP table). Packet 178 still owns PLE. Do not harvest a pred table as lobby law. Do not harvest a chlorambucil table as lobby law. Do not fire on bare vomiting / diarrhea. Dogs and cats. Skip horse.
+
+Agree with Collier 2026: **named IBD vs GI lymphoma is not a steroid-responsive diarrhea.** Diet and deworm first if stable. Ileum if you biopsy a cat. PARR is clonality. Endoscopic mucosa is not a full-thickness rule-out. Small-cell GI is not a crash CHOP. Printed 2 mg/kg pred / chlorambucil 2 mg stay on the page (`△ Plumb`).
+
+Night split: named IBD / alimentary / GI / small-cell lymphoma is feline IBD vs GI lymphoma; not a steroid-responsive diarrhea. Named lymphoma without GI words stays 306. PLE stays 178. Bare vomiting / diarrhea do not fire. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a pred table.
+- Do not harvest a chlorambucil table.
+- Do not pred IBD first.
+- Do not skip the ileum if you biopsy a cat.
+- Do not treat endoscopic mucosa as a full-thickness rule-out.
+- Do not CHOP a small-cell GI cat as large-cell.
+
+Night rule: named IBD / alimentary lymphoma → **Feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a 3-week vomiting cat not a pred-first IBD until you have diet, deworm, and (if biopsying) ileum?
+- NAVLE 2: Duodenal endoscopic biopsies call IBD; why is that not a lymphoma rule-out?
+- NAVLE 3: Dual-named “alimentary lymphoma, lymphoma” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a steroid diarrhea, without inventing a chlorambucil table?
+- Attending: If the query is only “vomiting, diarrhea,” why does this gate stay dark?
+- Attending: Horse IBD — fire or skip?
+- Attending: Dual-named “IBD, protein-losing enteropathy” — which loc should win, and why?

@@ -727,6 +727,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a wait-and-see hemoabdomen", VERIF.lower())
         self.assertIn("canine mammary carcinoma", VERIF.lower())
         self.assertIn("not a cyst-and-home", VERIF.lower())
+        self.assertIn("feline ibd vs gi lymphoma", VERIF.lower())
+        self.assertIn("not a steroid-responsive diarrhea", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1205,6 +1207,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-hsa`", MACRO)
         self.assertIn("`ddx-mamca`", MACRO)
         self.assertIn("`dc-mamca`", MACRO)
+        self.assertIn("`ddx-ibd`", MACRO)
+        self.assertIn("`dc-ibd`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1367,6 +1371,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a wait-and-see hemoabdomen", MACRO.lower())
         self.assertIn("canine mammary carcinoma", MACRO.lower())
         self.assertIn("not a cyst-and-home", MACRO.lower())
+        self.assertIn("feline ibd vs gi lymphoma", MACRO.lower())
+        self.assertIn("not a steroid-responsive diarrhea", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1892,6 +1898,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a wait-and-see hemoabdomen",
             "canine mammary carcinoma",
             "not a cyst-and-home",
+            "feline ibd vs gi lymphoma",
+            "not a steroid-responsive diarrhea",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

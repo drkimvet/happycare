@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline IBD vs GI lymphoma (Merck Collier Jun 2026; Matsuyama Jan 2025)
+
+- **Feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea.** Named IBD / alimentary / GI / small-cell lymphoma only. Diet and deworm first if stable. Ileum if you biopsy a cat. PARR is clonality, not a night diagnosis. Endoscopic mucosa can miss lymphoma. Do **not** harvest a pred or chlorambucil table. Do **not** pred IBD first.
+- Dogs: most chronic enteropathy is food-responsive; IBD is a histology word after diet fails. Packet 306 still owns nodal lymphoma. Packet 178 still owns PLE. Bare vomiting / diarrhea stay dark.
+- Printed pred / chlorambucil / 2-week diet numbers stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine mammary carcinoma (Merck Sorenmo Apr 2024; Lopes Sept 2024; AAHA 2026 oncology)
 
 - **Canine mammary carcinoma. Not a cyst-and-home. Not pulmonary-nodules-alone.** Named mammary carcinoma / adenocarcinoma / inflammatory mammary only. FNA may not distinguish benign from malignant. Regard as potentially malignant. Histology is the diagnosis. Stage the chest before you cut. Do **not** harvest an MST or OHE table. Do **not** call inflammatory mammary carcinoma mastitis.

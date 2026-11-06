@@ -2003,6 +2003,20 @@ MAMMARY_CA_RE = re.compile(
     r"inflammatory mammary",
     re.I,
 )
+# Named IBD / alimentary / GI / small-cell lymphoma only. Do not use
+# \blymphoma\b (306 nodal). Do not use \bdiarrhea\b or \bvomiting\b.
+# Do not harvest a pred or chlorambucil table. Dogs and cats. Skip horse.
+# Packet 178 still owns PLE. Packet 306 still owns named lymphoma.
+IBD_GI_LYM_RE = re.compile(
+    r"\bibd\b|"
+    r"inflammatory bowel|"
+    r"chronic enteropath|"
+    r"alimentary lymphoma|"
+    r"(?:gi|g\.i\.|gastrointestinal|intestinal|small[- ]cell) lymphoma|"
+    r"lymphoplasmacytic|"
+    r"lymphocytic[- ]plasmacytic",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6158,6 +6172,7 @@ def analyze(
     steal_osa = OSA_RE.search(text)
     steal_hsa_dx = HSA_DX_RE.search(text)
     steal_mammary_ca = MAMMARY_CA_RE.search(text)
+    steal_ibd_gi = IBD_GI_LYM_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6273,6 +6288,7 @@ def analyze(
         or steal_osa
         or steal_hsa_dx
         or steal_mammary_ca
+        or steal_ibd_gi
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16219,6 +16235,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for mammary carcinoma."
+            )
+
+    ibd_gi_named = spec in {"dog", "cat"} and IBD_GI_LYM_RE.search(text)
+    if ibd_gi_named:
+        if spec == "cat":
+            ibd_loc = (
+                "Feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea."
+            )
+        else:
+            ibd_loc = (
+                "Canine chronic enteropathy. Not a steroid-responsive diarrhea."
+            )
+        localization = f"{localization} Also {ibd_loc}" if localization else ibd_loc
+        hard_stops.append(
+            "Do not harvest a pred table. "
+            "Do not harvest a chlorambucil table. "
+            "Do not pred IBD first."
+        )
+        do_not.append(
+            "Do not call this steroid-responsive diarrhea. "
+            "Do not skip the ileum if you biopsy a cat. "
+            "Do not treat endoscopic mucosa as a full-thickness rule-out. "
+            "Do not CHOP a small-cell GI cat as large-cell."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea. "
+                "△ Plumb. Diet and deworm first if stable. Ileum if you biopsy. "
+                "PARR is clonality. Do not copy a pred table."
+            )
+        else:
+            do_next.append(
+                "Name canine chronic enteropathy. Not a steroid-responsive diarrhea. "
+                "△ Plumb. Diet first if stable. IBD is a histology word after "
+                "diet and deworm fail. Do not copy a pred table."
+            )
+        sources.append(
+            "Collier Merck chronic enteropathies Aug 2025 / Jun 2026: "
+            "IBD vs alimentary lymphoma is a continuum in cats; diet first; "
+            "ileal biopsies; PARR for suspected small-cell. "
+            "Matsuyama Merck GI neoplasia Jan 2025: endoscopic mucosa can "
+            "misdiagnose feline gastric lymphoma as IBD. "
+            "Marsilio ACVIM 2023 named only. Do not harvest pred or chlorambucil tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for IBD."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for IBD."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
