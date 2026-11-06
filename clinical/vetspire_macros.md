@@ -240,6 +240,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-melanoma` | Assessment | Canine oral melanoma / not a dental tartar |
 | `ddx-oralscc` | Assessment | Feline oral SCC / not a loose-tooth extraction |
 | `ddx-osa` | Assessment | Canine osteosarcoma / not a splint-and-home |
+| `ddx-hsa` | Assessment | Canine hemangiosarcoma / not a wait-and-see hemoabdomen |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -438,6 +439,7 @@ Suggested names are short so they show up after three letters.
 | `dc-agasaca` | Discharge | After anal-sac carcinoma / hyperCa talk |
 | `dc-melanoma` | Discharge | After oral melanoma / node talk |
 | `dc-oralscc` | Discharge | After oral SCC / jaw talk |
+| `dc-hsa` | Discharge | After hemangiosarcoma / bleed talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3433,6 +3435,21 @@ DDX:
 Do not: harvest an MST table. Extract the tooth and send the jaw home. Call a loose tooth dental-only. Harvest a piroxicam table. Call this oral melanoma.
 Do next: Name feline oral SCC. Not a loose-tooth extraction. △ Plumb. Radiograph the jaw. Biopsy. Do not copy an MST table.
 
+### `ddx-hsa`
+
+Hemangiosarcoma — {{patient.name}}
+Canine hemangiosarcoma [yes / not]. Not a wait-and-see hemoabdomen [yes / not]. FAST [ ]. Chest [rads / CT / not yet]. Site [spleen / liver / right atrium / dermal]. Bleed [hemoabdomen / tamponade / none].
+
+DDX:
+1. Hemangiosarcoma — **Canine hemangiosarcoma. Not a wait-and-see hemoabdomen. Not pulmonary-nodules-alone**
+2. Surgery is palliative to arrest hemorrhage. Splenectomy is the bleed conversation. Chest before you cut
+3. Bare hemoabdomen is still the PCV/TS pair (120). Tamponade stays tamponade. Dermal solar is the other list
+4. Do not use the letters HSA (human serum albumin). Not vitamin K unless rodenticide
+5. Dog or cat can fire. Horse does not fire. Bare collapse / pale gums do not fire
+
+Do not: harvest an MST table. Send named hemangiosarcoma home to wait. Call a splenic or cardiac mass pulmonary nodules. Harvest a doxorubicin table. Call dermal solar HSA the visceral crash.
+Do next: Name canine hemangiosarcoma. Not a wait-and-see hemoabdomen. △ Plumb. FAST. Stage the chest before you cut. Do not copy an MST table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -5052,6 +5069,14 @@ Return now for not eating, bleeding from the mouth, trouble breathing, or collap
 Give only the medicines we sent, as labeled. Soft food. Do not start leftover pain pills from the cabinet. We still need jaw pictures and a biopsy as discussed.
 
 Return now for not eating, bleeding from the mouth, a swelling of the face, or collapse. {{location.phonenumber}}
+
+### `dc-hsa`
+
+{{patient.name}} has a blood-vessel tumor. This is not a wait-and-see belly bleed and not lung spots alone. A ruptured spleen or a heart-base bleed can drop the blood pressure fast. Pulling the spleen tonight is a bleed conversation, not a cure promise.
+
+Give only the medicines we sent, as labeled. Quiet rest. Do not start leftover vitamin K from the cabinet unless we said rodenticide.
+
+Return now for collapse, pale gums, a swelling belly, trouble breathing, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

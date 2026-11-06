@@ -316,10 +316,16 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine hemangiosarcoma (Merck Center Jul 2026; Villalobos Aug 2021; AAHA 2026 oncology)
+
+- **Canine hemangiosarcoma. Not a wait-and-see hemoabdomen. Not pulmonary-nodules-alone.** Named hemangiosarcoma only. Do **not** use the letters HSA (human serum albumin). Bare hemoabdomen stays the PCV/TS pair (120). Tamponade stays tamponade. Dermal solar is the other list. Do **not** harvest an MST or doxorubicin table. Do **not** send named HSA home to wait.
+- Surgery is palliative to arrest hemorrhage (Center). FAST. Chest films before you cut stay in this loc. Splenectomy is the bleed conversation. Right atrium is a cardiac neoplasm. Not vitamin K unless the rodenticide family is anticoagulant.
+- Printed survival / doxorubicin numbers stay on the page (`△ Plumb`). Skip horse. Bare collapse / pale gums stay dark. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine osteosarcoma (Merck Chou Nov 2025; AAHA 2026 oncology)
 
 - **Canine osteosarcoma. Not a splint-and-home. Not pulmonary-nodules-alone.** Named osteosarcoma only. Nontraumatic pathologic fracture is still not a plate-and-home. Chest films before you amputate stay in this loc. Do **not** label a bone mass as metastatic pulmonary nodules. Do **not** harvest an MST or amputation table.
-- Jamshidi / Michele confirms. Distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script. Bare lameness / HBC radius stay dark. Multiple lung nodules without a bone story stay mets. Named HSA / mammary adenocarcinoma still stage as mets.
+- Jamshidi / Michele confirms. Distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script. Bare lameness / HBC radius stay dark. Multiple lung nodules without a bone story stay mets. Named mammary adenocarcinoma still stages as mets. Named hemangiosarcoma is 312.
 - Printed 1–2 / 4–6.5 / 9–12 months stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
 
 ## Feline oral SCC (Merck Mulherin Nov 2024; AAHA 2026 oncology)

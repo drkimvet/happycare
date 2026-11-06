@@ -9896,11 +9896,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a plate-and-home", loc)
         self.assertIsNone(b["mg_per_kg"])
 
-    def test_hsa_still_stages_as_mets(self):
+    def test_hsa_is_not_pulmonary_nodules_alone(self):
         b = analyze("dog", "hemangiosarcoma")
         loc = (b["localization"] or "").lower()
+        self.assertIn("canine hemangiosarcoma", loc)
+        self.assertIn("not a wait-and-see hemoabdomen", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mst table", joined)
+        self.assertIn("doxorubicin table", joined)
+        self.assertIn("send named hemangiosarcoma home to wait", joined)
+        self.assertIn("dermal solar", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_hemangiosarcoma_fires(self):
+        b = analyze("cat", "hemangiosarcoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline hemangiosarcoma", loc)
+        self.assertIn("not a wait-and-see hemoabdomen", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemoabdomen_alone_is_not_named_hsa(self):
+        b = analyze("dog", "hemoabdomen, give vitamin K, transfuse at PCV 20")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("pcv/ts", loc)
+        self.assertNotIn("canine hemangiosarcoma", loc)
+        self.assertNotIn("not a wait-and-see hemoabdomen", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hsa_abbreviation_is_not_hemangiosarcoma(self):
+        b = analyze("dog", "HSA, human serum albumin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hemangiosarcoma", loc)
+        self.assertNotIn("not a wait-and-see hemoabdomen", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_collapse_pale_gums_is_not_hsa(self):
+        b = analyze("dog", "collapse, pale gums")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hemangiosarcoma", loc)
+        self.assertNotIn("not a wait-and-see hemoabdomen", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_hsa(self):
+        b = analyze("horse", "hemangiosarcoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hemangiosarcoma", loc)
+        self.assertNotIn("feline hemangiosarcoma", loc)
+        self.assertNotIn("not a wait-and-see hemoabdomen", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hemoabdomen_plus_hsa_concatenates(self):
+        b = analyze("dog", "hemangiosarcoma, hemoabdomen")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hemangiosarcoma", loc)
+        self.assertIn("pcv/ts", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_multiple_nodules_plus_hsa_concatenates(self):
+        b = analyze("dog", "hemangiosarcoma, multiple pulmonary nodules")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine hemangiosarcoma", loc)
         self.assertIn("metastatic pulmonary nodules", loc)
-        self.assertNotIn("not a plate-and-home", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_multiple_nodules_plus_osa_concatenates(self):

@@ -1984,6 +1984,16 @@ ORAL_SCC_RE = re.compile(
     r"(mouth|oral|tongue|gingiva|mandible|maxilla).{0,40}squamous cell carcinoma",
     re.I,
 )
+# Named hemangiosarcoma only. Do not use \bhsa\b (human serum albumin).
+# Do not use \bspleen\b or bare collapse / pale gums. Packet 120 still
+# owns bare hemoabdomen. Dermal solar is the other list (Villalobos).
+# Do not harvest an MST or doxorubicin table. Dogs and cats. Skip horse.
+# Chest-before-cut stays in this loc; hemangiosarcoma left HIGH_MET_RE.
+HSA_DX_RE = re.compile(
+    r"\bhemangiosarcoma|"
+    r"\bhaemangiosarcoma",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -2166,8 +2176,9 @@ HO_RE = re.compile(
 )
 # Bare "metastas" is every cancer. Bare "nodule" is skin. Need lung / named high-met primaries.
 # Bare "mammary" is mastitis. Bare "melanoma" is a skin spot. Not \bosa\b (too short).
-# Oral melanoma left HIGH_MET_RE (309). Osteosarcoma left HIGH_MET_RE (311);
-# chest-before-cut stays in the OSA loc so a bone mass is not labeled nodules.
+# Oral melanoma left HIGH_MET_RE (309). Osteosarcoma left HIGH_MET_RE (311).
+# Hemangiosarcoma left HIGH_MET_RE (312); chest-before-cut stays in the HSA
+# loc so a splenic / cardiac mass is not labeled nodules.
 MET_LUNG_RE = re.compile(
     r"pulmonary metast|"
     r"lung metast|"
@@ -2181,9 +2192,7 @@ MULTI_PULM_RE = re.compile(
     re.I,
 )
 HIGH_MET_RE = re.compile(
-    r"mammary adenocarcinoma|"
-    r"hemangiosarcoma|"
-    r"\bhsa\b",
+    r"mammary adenocarcinoma",
     re.I,
 )
 # Not \bosa\b (too short). Bare "fracture" is every trauma. Bare "lameness" is 185.
@@ -6141,6 +6150,7 @@ def analyze(
     steal_oral_mm = ORAL_MM_RE.search(text)
     steal_oral_scc = ORAL_SCC_RE.search(text)
     steal_osa = OSA_RE.search(text)
+    steal_hsa_dx = HSA_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6254,6 +6264,7 @@ def analyze(
         or steal_oral_mm
         or steal_oral_scc
         or steal_osa
+        or steal_hsa_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16095,6 +16106,59 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for oral SCC."
+            )
+
+    hsa_named = spec in {"dog", "cat"} and HSA_DX_RE.search(text)
+    if hsa_named:
+        if spec == "cat":
+            hsa_loc = (
+                "Feline hemangiosarcoma. Not a wait-and-see hemoabdomen. "
+                "Not pulmonary-nodules-alone."
+            )
+        else:
+            hsa_loc = (
+                "Canine hemangiosarcoma. Not a wait-and-see hemoabdomen. "
+                "Not pulmonary-nodules-alone."
+            )
+        localization = f"{localization} Also {hsa_loc}" if localization else hsa_loc
+        hard_stops.append(
+            "Do not harvest an MST table. "
+            "Do not send named hemangiosarcoma home to wait. "
+            "Do not call a splenic or cardiac mass pulmonary nodules."
+        )
+        do_not.append(
+            "Do not harvest a doxorubicin table. "
+            "Do not call dermal solar HSA the visceral crash. "
+            "Do not give vitamin K as the HSA plan. "
+            "Do not call bare hemoabdomen this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline hemangiosarcoma. Not a wait-and-see hemoabdomen. "
+                "△ Plumb. FAST. Stage the chest before you cut. "
+                "Surgery is the bleed conversation. Do not copy an MST table."
+            )
+        else:
+            do_next.append(
+                "Name canine hemangiosarcoma. Not a wait-and-see hemoabdomen. "
+                "△ Plumb. FAST. Stage the chest before you cut. "
+                "Splenectomy is the bleed conversation. Do not copy an MST table."
+            )
+        sources.append(
+            "Center Merck hepatic neoplasia Aug 2023 / Jul 2026: "
+            "hepatic HSA surgery is palliative to arrest hemorrhage. "
+            "Villalobos Merck connective-tissue tumors Aug 2021: "
+            "dermal solar is the other list. "
+            "Merck pericardial disease: HSA is a cardiac neoplasm. "
+            "AAHA 2026 oncology named only. Do not harvest MST or doxorubicin tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for hemangiosarcoma."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for hemangiosarcoma."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
