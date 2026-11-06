@@ -9889,11 +9889,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("metastatic pulmonary nodules", loc)
         self.assertIsNone(b["mg_per_kg"])
 
-    def test_mammary_adeno_still_stages_as_mets(self):
+    def test_mammary_carcinoma_is_not_a_cyst_and_home(self):
         b = analyze("dog", "mammary adenocarcinoma")
         loc = (b["localization"] or "").lower()
+        self.assertIn("canine mammary carcinoma", loc)
+        self.assertIn("not a cyst-and-home", loc)
+        self.assertIn("not pulmonary-nodules-alone", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mst table", joined)
+        self.assertIn("ohe table", joined)
+        self.assertIn("fna a benign rule-out", joined)
+        self.assertIn("inflammatory mammary carcinoma mastitis", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_mammary_carcinoma_fires(self):
+        b = analyze("cat", "mammary carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline mammary carcinoma", loc)
+        self.assertIn("not a cyst-and-home", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_inflammatory_mammary_is_not_mastitis_alone(self):
+        b = analyze("dog", "inflammatory mammary carcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine mammary carcinoma", loc)
+        self.assertIn("not a cyst-and-home", loc)
+        self.assertNotIn("name the gland or the uterus", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mastitis_is_not_mammary_carcinoma(self):
+        b = analyze("dog", "mastitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("name the gland or the uterus", loc)
+        self.assertNotIn("canine mammary carcinoma", loc)
+        self.assertNotIn("not a cyst-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_mammary_tumor_is_not_carcinoma(self):
+        b = analyze("dog", "mammary tumor, mammary swelling")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mammary carcinoma", loc)
+        self.assertNotIn("not a cyst-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_mammary_carcinoma(self):
+        b = analyze("horse", "mammary adenocarcinoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mammary carcinoma", loc)
+        self.assertNotIn("feline mammary carcinoma", loc)
+        self.assertNotIn("not a cyst-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_multiple_nodules_plus_mammary_concatenates(self):
+        b = analyze("dog", "mammary carcinoma, multiple pulmonary nodules")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine mammary carcinoma", loc)
         self.assertIn("metastatic pulmonary nodules", loc)
-        self.assertNotIn("not a plate-and-home", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mastitis_plus_inflammatory_mammary_concatenates(self):
+        b = analyze("dog", "inflammatory mammary carcinoma, mastitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine mammary carcinoma", loc)
+        self.assertIn("name the gland or the uterus", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_hsa_is_not_pulmonary_nodules_alone(self):

@@ -241,6 +241,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-oralscc` | Assessment | Feline oral SCC / not a loose-tooth extraction |
 | `ddx-osa` | Assessment | Canine osteosarcoma / not a splint-and-home |
 | `ddx-hsa` | Assessment | Canine hemangiosarcoma / not a wait-and-see hemoabdomen |
+| `ddx-mamca` | Assessment | Canine mammary carcinoma / not a cyst-and-home |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -440,6 +441,7 @@ Suggested names are short so they show up after three letters.
 | `dc-melanoma` | Discharge | After oral melanoma / node talk |
 | `dc-oralscc` | Discharge | After oral SCC / jaw talk |
 | `dc-hsa` | Discharge | After hemangiosarcoma / bleed talk |
+| `dc-mamca` | Discharge | After mammary carcinoma / staging talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3450,6 +3452,21 @@ DDX:
 Do not: harvest an MST table. Send named hemangiosarcoma home to wait. Call a splenic or cardiac mass pulmonary nodules. Harvest a doxorubicin table. Call dermal solar HSA the visceral crash.
 Do next: Name canine hemangiosarcoma. Not a wait-and-see hemoabdomen. △ Plumb. FAST. Stage the chest before you cut. Do not copy an MST table.
 
+### `ddx-mamca`
+
+Mammary carcinoma — {{patient.name}}
+Canine mammary carcinoma [yes / not]. Not a cyst-and-home [yes / not]. Histology [ ]. Chest [rads / CT / not yet]. Inflammatory [yes / not]. Intact [Y/N].
+
+DDX:
+1. Mammary carcinoma — **Canine mammary carcinoma. Not a cyst-and-home. Not pulmonary-nodules-alone**
+2. FNA may not distinguish benign from malignant. Regard as potentially malignant. Histology. Stage the chest before you cut
+3. Dogs: about half malignant. Cats: most malignant. Inflammatory mammary is not mastitis
+4. Bare mastitis / mammary swelling stay the gland. Bare mammary tumor stays dark
+5. Dog or cat can fire. Horse does not fire
+
+Do not: harvest an MST table. Call FNA a benign rule-out. Call a mammary mass pulmonary nodules. Harvest an OHE table. Call inflammatory mammary carcinoma mastitis.
+Do next: Name canine mammary carcinoma. Not a cyst-and-home. △ Plumb. Histology. Stage the chest before you cut. Do not copy an MST table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -5077,6 +5094,14 @@ Return now for not eating, bleeding from the mouth, a swelling of the face, or c
 Give only the medicines we sent, as labeled. Quiet rest. Do not start leftover vitamin K from the cabinet unless we said rodenticide.
 
 Return now for collapse, pale gums, a swelling belly, trouble breathing, or not eating. {{location.phonenumber}}
+
+### `dc-mamca`
+
+{{patient.name}} has a mammary gland tumor, not a cyst to watch at home and not lung spots alone. A needle sample may not tell benign from malignant. We still need histology and chest pictures before surgery talk.
+
+Give only the medicines we sent, as labeled. Do not squeeze or lance the gland. This is not mastitis unless we said so.
+
+Return now for a hot painful gland, ulceration, trouble breathing, or not eating. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

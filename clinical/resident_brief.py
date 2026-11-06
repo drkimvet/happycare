@@ -1994,6 +1994,15 @@ HSA_DX_RE = re.compile(
     r"\bhaemangiosarcoma",
     re.I,
 )
+# Named mammary carcinoma / adenocarcinoma / inflammatory mammary only.
+# Do not use \bmammary\b (mastitis) or \bmammary tumor\b (half are benign
+# in dogs). Do not harvest an MST or OHE table. Dogs and cats. Skip horse.
+# Chest-before-cut stays in this loc; mammary adenocarcinoma left HIGH_MET_RE.
+MAMMARY_CA_RE = re.compile(
+    r"\bmammary (adeno)?carcinoma|"
+    r"inflammatory mammary",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -2177,8 +2186,8 @@ HO_RE = re.compile(
 # Bare "metastas" is every cancer. Bare "nodule" is skin. Need lung / named high-met primaries.
 # Bare "mammary" is mastitis. Bare "melanoma" is a skin spot. Not \bosa\b (too short).
 # Oral melanoma left HIGH_MET_RE (309). Osteosarcoma left HIGH_MET_RE (311).
-# Hemangiosarcoma left HIGH_MET_RE (312); chest-before-cut stays in the HSA
-# loc so a splenic / cardiac mass is not labeled nodules.
+# Hemangiosarcoma left HIGH_MET_RE (312). Mammary adenocarcinoma left
+# HIGH_MET_RE (313). Named primaries are empty; multiple nodules still fire.
 MET_LUNG_RE = re.compile(
     r"pulmonary metast|"
     r"lung metast|"
@@ -2191,10 +2200,7 @@ MULTI_PULM_RE = re.compile(
     r"multifocal (pulmonary |lung )(nodule|mass)",
     re.I,
 )
-HIGH_MET_RE = re.compile(
-    r"mammary adenocarcinoma",
-    re.I,
-)
+HIGH_MET_RE = re.compile(r"(?!)")  # 309–313 emptied the named primaries.
 # Not \bosa\b (too short). Bare "fracture" is every trauma. Bare "lameness" is 185.
 OSA_RE = re.compile(
     r"osteosarcoma",
@@ -6151,6 +6157,7 @@ def analyze(
     steal_oral_scc = ORAL_SCC_RE.search(text)
     steal_osa = OSA_RE.search(text)
     steal_hsa_dx = HSA_DX_RE.search(text)
+    steal_mammary_ca = MAMMARY_CA_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6265,6 +6272,7 @@ def analyze(
         or steal_oral_scc
         or steal_osa
         or steal_hsa_dx
+        or steal_mammary_ca
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16159,6 +16167,58 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for hemangiosarcoma."
+            )
+
+    mammary_ca_named = spec in {"dog", "cat"} and MAMMARY_CA_RE.search(text)
+    if mammary_ca_named:
+        if spec == "cat":
+            mam_loc = (
+                "Feline mammary carcinoma. Not a cyst-and-home. "
+                "Not pulmonary-nodules-alone."
+            )
+        else:
+            mam_loc = (
+                "Canine mammary carcinoma. Not a cyst-and-home. "
+                "Not pulmonary-nodules-alone."
+            )
+        localization = f"{localization} Also {mam_loc}" if localization else mam_loc
+        hard_stops.append(
+            "Do not harvest an MST table. "
+            "Do not call FNA a benign rule-out. "
+            "Do not call a mammary mass pulmonary nodules."
+        )
+        do_not.append(
+            "Do not harvest an OHE table. "
+            "Do not call inflammatory mammary carcinoma mastitis. "
+            "Do not harvest a 3-cm TNM table. "
+            "Do not call this a cyst-and-home."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline mammary carcinoma. Not a cyst-and-home. "
+                "△ Plumb. Histology. Stage the chest before you cut. "
+                "Most cat mammary tumors are malignant. Do not copy an MST table."
+            )
+        else:
+            do_next.append(
+                "Name canine mammary carcinoma. Not a cyst-and-home. "
+                "△ Plumb. Histology. Stage the chest before you cut. "
+                "Half of dog mammary tumors are malignant. Do not copy an MST table."
+            )
+        sources.append(
+            "Sorenmo Merck mammary tumors in dogs Mar 2024 / Apr 2024: "
+            "intact females; FNA may not distinguish benign vs malignant; "
+            "regard as potentially malignant; histology; stage before you cut. "
+            "Lopes Merck mammary tumors in cats Sept 2024: most are malignant. "
+            "AAHA 2026 oncology named only. Do not harvest MST or OHE tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for mammary carcinoma."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for mammary carcinoma."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

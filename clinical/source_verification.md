@@ -1777,7 +1777,7 @@ No dedicated Plunkett pulmonary-metastasis chapter in the owned SA EM splits. Sa
 
 Agree with Tonozzi: a localized tumor reaches the lungs by blood, lymph, or direct extension. The usual high-met primaries are **mammary adenocarcinoma, osteosarcoma, hemangiosarcoma, and oral melanoma**. Lungs may be the only met site — then hunt the occult primary or the old surgery. Pulmonary metastasis is late; **prognosis is poor**. Signs look like primary lung disease and scale with burden. Routine rads miss small lesions (printed ≤3 mm, present in a printed ≥40%) — those numbers stay on the page. **Thoracic CT sees what films miss.** **Chest films before you cut** a high-met-risk tumor. The major goal is preventing metastasis, not erasing cancer tonight. Slow or solitary mets can be a surgery conversation. Chemo / radiation for the rest. Overall prognosis once the lungs are involved is poor.
 
-Night split: multiple pulmonary nodules = mets until you look for a primary. Named osteosarcoma left this regex (311) so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in the OSA loc. Named oral melanoma left this regex (309). Named hemangiosarcoma left this regex (312) so a splenic or cardiac mass is not labeled pulmonary nodules. Mammary adenocarcinoma still stages here. A single incidental mass without a high-met primary is still 197. Clean-rad dyspnea is still 154. Hemoabdomen without lung words is still 120. Midtown cough-alone is not this.
+Night split: multiple pulmonary nodules = mets until you look for a primary. Named osteosarcoma left this regex (311) so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in the OSA loc. Named oral melanoma left this regex (309). Named hemangiosarcoma left this regex (312) so a splenic or cardiac mass is not labeled pulmonary nodules. Named mammary adenocarcinoma left this regex (313) so a gland mass is not labeled pulmonary nodules. A single incidental mass without a high-met primary is still 197. Clean-rad dyspnea is still 154. Hemoabdomen without lung words is still 120. Midtown cough-alone is not this.
 
 Book/public traps:
 
@@ -4021,7 +4021,7 @@ Night rule: named AGASACA → **Canine AGASACA. Not hyperCa-alone.** △ Plumb.
 
 ## 309. Canine oral melanoma (Mulherin Merck Nov 2024; AAHA 2026 oncology)
 
-No dedicated Plunkett oral-melanoma chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024. 2026 AAHA Oncology Guidelines named only; no MST / Oncept dump. Packet 308 still owns named AGASACA. Packet 310 is feline oral SCC (not a loose-tooth extraction). Packet 311 is named osteosarcoma leaving HIGH_MET. Pulmonary mets still owns cannonball nodules and named mammary adenocarcinoma (oral melanoma left that regex so a mouth mass is not labeled pulmonary nodules; hemangiosarcoma left in 312). Do not harvest an MST table as lobby law. Do not harvest an Oncept table as lobby law. Do not fire on bare tartar / epulis / halitosis. Dogs and cats (rare). Skip horse.
+No dedicated Plunkett oral-melanoma chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024. 2026 AAHA Oncology Guidelines named only; no MST / Oncept dump. Packet 308 still owns named AGASACA. Packet 310 is feline oral SCC (not a loose-tooth extraction). Packet 311 is named osteosarcoma leaving HIGH_MET. Pulmonary mets still owns cannonball nodules (oral melanoma left that regex so a mouth mass is not labeled pulmonary nodules; hemangiosarcoma left in 312; mammary adenocarcinoma left in 313). Do not harvest an MST table as lobby law. Do not harvest an Oncept table as lobby law. Do not fire on bare tartar / epulis / halitosis. Dogs and cats (rare). Skip horse.
 
 Agree with Mulherin 2024: **named oral melanoma is a malignant oral tumor, not a dental tartar.** Pigmented or amelanotic. Biopsy is the diagnosis. Aspirate mandibular nodes even if they feel normal. Chest before you cut. Amelanotic is not an epulis. The three common dog oral malignancies are melanoma, SCC, and fibrosarcoma. Cats: oral melanoma is rare. Printed 2 cm / mandibulectomy numbers stay on the page (`△ Plumb`).
 
@@ -4076,11 +4076,11 @@ Night rule: named oral SCC → **Feline oral SCC. Not a loose-tooth extraction.*
 
 ## 311. Canine osteosarcoma (Chou Merck Nov 2025; AAHA 2026 oncology)
 
-No dedicated Plunkett osteosarcoma chapter in the owned SA EM splits. Public Chou PY. Bone Tumors in Dogs and Cats. Merck Veterinary Manual. Full review Nov 2025 (osteosarcoma most common primary bone tumor; nontraumatic pathological bone fracture; Jamshidi / Michele confirms; thoracic radiography for mets). 2026 AAHA Oncology Guidelines named only; no MST / amputation dump. Packet 199 still owns the pathologic-fracture night split. Packet 198 still owns multiple nodules and named mammary adenocarcinoma. Packet 312 is named hemangiosarcoma leaving HIGH_MET. Packet 309 still owns named oral melanoma (also left HIGH_MET). Named osteosarcoma left HIGH_MET so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest an amputation table as lobby law. Do not fire on bare lameness / HBC radius. Dogs and cats. Skip horse.
+No dedicated Plunkett osteosarcoma chapter in the owned SA EM splits. Public Chou PY. Bone Tumors in Dogs and Cats. Merck Veterinary Manual. Full review Nov 2025 (osteosarcoma most common primary bone tumor; nontraumatic pathological bone fracture; Jamshidi / Michele confirms; thoracic radiography for mets). 2026 AAHA Oncology Guidelines named only; no MST / amputation dump. Packet 199 still owns the pathologic-fracture night split. Packet 198 still owns multiple nodules. Packet 313 is named mammary carcinoma leaving HIGH_MET. Packet 312 is named hemangiosarcoma leaving HIGH_MET. Packet 309 still owns named oral melanoma (also left HIGH_MET). Named osteosarcoma left HIGH_MET so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest an amputation table as lobby law. Do not fire on bare lameness / HBC radius. Dogs and cats. Skip horse.
 
 Agree with Chou 2025: **named osteosarcoma is a primary bone tumor, not a splint-and-home and not pulmonary-nodules-alone.** Radiograph the bone. Biopsy. Stage the chest before you amputate. Distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script. Printed 1–2 / 4–6.5 / 9–12 months stay on the page (`△ Plumb`).
 
-Night split: named osteosarcoma is canine osteosarcoma; not a splint-and-home; not pulmonary-nodules-alone. Pathologic fracture / lytic metaphysis still this loc. Multiple lung nodules without a bone story stay mets. Named mammary adenocarcinoma still mets. Named hemangiosarcoma is 312. Bare lameness does not fire. Horse does not fire. Dog or cat can fire.
+Night split: named osteosarcoma is canine osteosarcoma; not a splint-and-home; not pulmonary-nodules-alone. Pathologic fracture / lytic metaphysis still this loc. Multiple lung nodules without a bone story stay mets. Named mammary carcinoma is 313. Named hemangiosarcoma is 312. Bare lameness does not fire. Horse does not fire. Dog or cat can fire.
 
 Book/public traps:
 
@@ -4103,7 +4103,7 @@ Night rule: named osteosarcoma → **Canine osteosarcoma. Not a splint-and-home.
 
 ## 312. Canine hemangiosarcoma (Center Merck Jul 2026; Villalobos Aug 2021; AAHA 2026 oncology)
 
-No dedicated Plunkett hemangiosarcoma chapter in the owned SA EM splits. Public Center SA. Hepatic Neoplasia in Small Animals. Merck Veterinary Manual. Full review Aug 2023; last updated Jul 2026 (hepatic HSA: surgery is palliative to arrest hemorrhage; printed MST / doxorubicin protocols stay on the page). Villalobos AE. Connective Tissue Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021 (dermal solar angiosarcoma is the other list; Whippet / white-coat sun; not the visceral crash). Merck pericardial disease in dogs and cats: hemangiosarcoma is a common cardiac neoplasm; tamponade is still the drain, not Lasix. 2026 AAHA Oncology Guidelines named only; no MST / doxorubicin dump. Packet 120 still owns bare hemoabdomen (PCV/TS pair). Packet 198 still owns multiple nodules and named mammary adenocarcinoma. Packet 311 still owns named osteosarcoma. Named hemangiosarcoma left HIGH_MET so a splenic or cardiac mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest a doxorubicin table as lobby law. Do not fire on `\bhsa\b` (human serum albumin). Do not fire on bare collapse / pale gums / spleen. Dogs and cats. Skip horse.
+No dedicated Plunkett hemangiosarcoma chapter in the owned SA EM splits. Public Center SA. Hepatic Neoplasia in Small Animals. Merck Veterinary Manual. Full review Aug 2023; last updated Jul 2026 (hepatic HSA: surgery is palliative to arrest hemorrhage; printed MST / doxorubicin protocols stay on the page). Villalobos AE. Connective Tissue Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021 (dermal solar angiosarcoma is the other list; Whippet / white-coat sun; not the visceral crash). Merck pericardial disease in dogs and cats: hemangiosarcoma is a common cardiac neoplasm; tamponade is still the drain, not Lasix. 2026 AAHA Oncology Guidelines named only; no MST / doxorubicin dump. Packet 120 still owns bare hemoabdomen (PCV/TS pair). Packet 198 still owns multiple nodules. Packet 313 owns named mammary carcinoma. Packet 311 still owns named osteosarcoma. Named hemangiosarcoma left HIGH_MET so a splenic or cardiac mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest a doxorubicin table as lobby law. Do not fire on `\bhsa\b` (human serum albumin). Do not fire on bare collapse / pale gums / spleen. Dogs and cats. Skip horse.
 
 Agree with Center 2026: **named hemangiosarcoma can bleed; surgery is palliative to arrest hemorrhage, not a wait-and-see hemoabdomen and not pulmonary-nodules-alone.** FAST. Stage the chest before you cut. Splenectomy is the bleed conversation. Right atrium is a cardiac neoplasm. Dermal solar is the other list. Printed 68–136 / 145–250 day and doxorubicin numbers stay on the page (`△ Plumb`).
 
@@ -4128,3 +4128,31 @@ Night rule: named hemangiosarcoma → **Canine hemangiosarcoma. Not a wait-and-s
 - Attending: If the query is only “HSA” or “collapse, pale gums,” why does this gate stay dark?
 - Attending: Horse hemangiosarcoma — fire or skip?
 - Attending: Dual-named “hemangiosarcoma, tamponade” — which loc should win, and why?
+
+## 313. Canine mammary carcinoma (Sorenmo Merck Apr 2024; Lopes Sept 2024; AAHA 2026 oncology)
+
+No dedicated Plunkett mammary-carcinoma chapter in the owned SA EM splits. Public Sorenmo K. Mammary Tumors in Dogs. Merck Veterinary Manual. Full review Mar 2024; last updated Apr 2024 (most common neoplasia in intact females; about half malignant; FNA may not distinguish benign vs malignant; regard as potentially malignant; histology; stage before treatment; inflammatory carcinoma may be mistaken for mastitis). Lopes M. Mammary Tumors in Cats. Merck Veterinary Manual. Full review Sept 2024 (most feline mammary tumors are malignant; surgery TOC; stage before treatment). 2026 AAHA Oncology Guidelines named only; no MST / OHE dump. Packet 114 still owns mastitis / septic dam. Packet 198 still owns multiple nodules. Named mammary adenocarcinoma left HIGH_MET so a gland mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest an OHE table as lobby law. Do not fire on bare mastitis / mammary swelling / mammary tumor. Dogs and cats. Skip horse.
+
+Agree with Sorenmo 2024: **named mammary carcinoma is potentially malignant, not a cyst-and-home and not pulmonary-nodules-alone.** Histology. Stage the chest before you cut. Inflammatory mammary is not mastitis. Dogs: about half malignant. Cats: most malignant. Printed 50% / TNM / OHE-timing numbers stay on the page (`△ Plumb`).
+
+Night split: named mammary carcinoma / adenocarcinoma / inflammatory mammary is canine mammary carcinoma; not a cyst-and-home; not pulmonary-nodules-alone. Bare mastitis stays the gland. Bare mammary tumor does not fire. Multiple lung nodules without a mammary-carcinoma name stay mets. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not call FNA a benign rule-out.
+- Do not call a mammary mass pulmonary nodules.
+- Do not harvest an OHE table.
+- Do not call inflammatory mammary carcinoma mastitis.
+- Do not harvest a 3-cm TNM table.
+
+Night rule: named mammary carcinoma → **Canine mammary carcinoma. Not a cyst-and-home. Not pulmonary-nodules-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a needle sample not enough to send a mammary mass home as a cyst?
+- NAVLE 2: Why does naming mammary adenocarcinoma not mean the query is already pulmonary nodules?
+- NAVLE 3: Dual-named “inflammatory mammary carcinoma, mastitis” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a cyst, without inventing an MST or a spay clock?
+- Attending: If the query is only “mammary tumor” or “mastitis,” why does this gate stay dark?
+- Attending: Horse mammary adenocarcinoma — fire or skip?
+- Attending: Dual-named “mammary carcinoma, multiple pulmonary nodules” — which loc should win, and why?
