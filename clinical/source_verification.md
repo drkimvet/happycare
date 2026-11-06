@@ -4184,3 +4184,31 @@ Night rule: named IBD / alimentary lymphoma → **Feline IBD vs GI lymphoma. Not
 - Attending: If the query is only “vomiting, diarrhea,” why does this gate stay dark?
 - Attending: Horse IBD — fire or skip?
 - Attending: Dual-named “IBD, protein-losing enteropathy” — which loc should win, and why?
+
+## 315. Feline CKD (Van Vertloo Merck Oct 2026)
+
+No dedicated Plunkett CKD-staging chapter in the owned SA EM splits. Public Van Vertloo L. Renal Dysfunction in Dogs and Cats. Merck Veterinary Manual. Full review Mar 2025; last updated Oct 2026 (CKD is staged after diagnosis on a stable hydrated patient; creatinine plus SDMA on at least two occasions; then UPC and systolic BP substages; SDMA is more sensitive and less muscle-mass-dependent than creatinine; stage 1 is damage without azotemia; not every azotemic patient needs SQ fluids; hydration is canned food and water first, SQ later as needed). IRIS staging named only; no dump of the creatinine, SDMA, UPC, or binder tables. Packet 172 still owns HTN. Packet 177 still owns PLN. Packet 301 still owns hyperT unmasking CKD. Azotemic cat still no NSAID / no DexSP. Do not harvest an IRIS creatinine table as lobby law. Do not harvest a phosphorus binder table as lobby law. Do not fire on bare PU/PD. Do not fire on bare creatinine / iris (AKI frame). Dogs and cats. Skip horse.
+
+Agree with Van Vertloo 2026: **named CKD is not a fluids-only night.** Stage after they are stable. BP. UPC. Look for obstruction or UTI. Printed IRIS creatinine / SDMA / binder numbers stay on the page (`△ Plumb`).
+
+Night split: named CKD / chronic kidney / chronic renal disease is feline (or canine) CKD; not a fluids-only night. Bare PU/PD stay dark. Bare creatinine / iris stay the azotemic-cat gate. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an IRIS creatinine table.
+- Do not harvest a phosphorus binder table.
+- Do not call this a fluids-only night.
+- Do not stage on one dehydrated creatinine.
+- Do not skip BP and UPC.
+- Do not NSAID or DexSP an azotemic cat.
+
+Night rule: named CKD → **Feline CKD. Not a fluids-only night.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a crash creatinine not an IRIS stage until the cat is stable and hydrated on more than one sample?
+- NAVLE 2: Why is SQ fluids not the whole plan for named CKD?
+- NAVLE 3: Dual-named “CKD, hyperthyroidism” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a fluids-only night, without inventing an IRIS creatinine table?
+- Attending: If the query is only “PU/PD,” why does this gate stay dark?
+- Attending: Horse CKD — fire or skip?
+- Attending: Dual-named “CKD, systemic hypertension” — which loc should win, and why?

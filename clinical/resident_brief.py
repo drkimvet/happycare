@@ -2017,6 +2017,16 @@ IBD_GI_LYM_RE = re.compile(
     r"lymphocytic[- ]plasmacytic",
     re.I,
 )
+# Named CKD / chronic kidney / chronic renal disease only. Do not use
+# \biris\b (AKI frame) or \baki\b or PU/PD. Do not harvest an IRIS
+# creatinine or phosphorus-binder table. Dogs and cats. Skip horse.
+# Azotemic cat still no NSAID / no DexSP.
+CKD_DX_RE = re.compile(
+    r"\bckd\b|"
+    r"chronic kidney|"
+    r"chronic renal (disease|failure|insufficien)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6173,6 +6183,7 @@ def analyze(
     steal_hsa_dx = HSA_DX_RE.search(text)
     steal_mammary_ca = MAMMARY_CA_RE.search(text)
     steal_ibd_gi = IBD_GI_LYM_RE.search(text)
+    steal_ckd_dx = CKD_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6289,6 +6300,7 @@ def analyze(
         or steal_hsa_dx
         or steal_mammary_ca
         or steal_ibd_gi
+        or steal_ckd_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16286,6 +16298,51 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for IBD."
+            )
+
+    ckd_named = spec in {"dog", "cat"} and CKD_DX_RE.search(text)
+    if ckd_named:
+        if spec == "cat":
+            ckd_loc = "Feline CKD. Not a fluids-only night."
+        else:
+            ckd_loc = "Canine CKD. Not a fluids-only night."
+        localization = f"{localization} Also {ckd_loc}" if localization else ckd_loc
+        hard_stops.append(
+            "Do not harvest an IRIS creatinine table. "
+            "Do not harvest a phosphorus binder table. "
+            "Not every azotemic patient needs SQ fluids."
+        )
+        do_not.append(
+            "Do not call this a fluids-only night. "
+            "Do not stage on one dehydrated creatinine. "
+            "Do not skip BP and UPC. "
+            "Azotemic: still no NSAID, still no DexSP."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline CKD. Not a fluids-only night. "
+                "△ Plumb. Stage a stable, hydrated patient. BP. UPC. "
+                "Look for obstruction or UTI. Do not copy an IRIS creatinine table."
+            )
+        else:
+            do_next.append(
+                "Name canine CKD. Not a fluids-only night. "
+                "△ Plumb. Stage a stable, hydrated patient. BP. UPC. "
+                "Look for obstruction or UTI. Do not copy an IRIS creatinine table."
+            )
+        sources.append(
+            "Van Vertloo Merck renal dysfunction Mar 2025 / Oct 2026: "
+            "IRIS stages after diagnosis on a stable hydrated patient; "
+            "not every azotemic patient needs SQ fluids; BP and UPC substaging. "
+            "IRIS named only. Do not harvest creatinine or binder tables."
+        )
+        if DEX_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for CKD."
+            )
+        if NSAID_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for CKD."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

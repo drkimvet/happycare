@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline CKD (Merck Van Vertloo Oct 2026)
+
+- **Feline CKD. Not a fluids-only night.** Named CKD / chronic kidney / chronic renal disease only. Stage after they are stable and hydrated. BP. UPC. Look for obstruction or UTI. Do **not** harvest an IRIS creatinine table. Do **not** harvest a phosphorus binder table. Do **not** send named CKD home on SQ fluids alone. Not every azotemic patient needs SQ fluids.
+- Dogs: same night trap. Packet 172 still owns HTN. Packet 177 still owns PLN. Packet 301 still owns hyperT unmasking CKD. Bare PU/PD stay dark. Bare creatinine / iris stay the azotemic-cat NSAID/DexSP gate, not this loc.
+- Printed IRIS creatinine / SDMA / binder numbers stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline IBD vs GI lymphoma (Merck Collier Jun 2026; Matsuyama Jan 2025)
 
 - **Feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea.** Named IBD / alimentary / GI / small-cell lymphoma only. Diet and deworm first if stable. Ileum if you biopsy a cat. PARR is clonality, not a night diagnosis. Endoscopic mucosa can miss lymphoma. Do **not** harvest a pred or chlorambucil table. Do **not** pred IBD first.

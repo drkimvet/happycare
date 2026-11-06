@@ -243,6 +243,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hsa` | Assessment | Canine hemangiosarcoma / not a wait-and-see hemoabdomen |
 | `ddx-mamca` | Assessment | Canine mammary carcinoma / not a cyst-and-home |
 | `ddx-ibd` | Assessment | Feline IBD vs GI lymphoma / not a steroid-responsive diarrhea |
+| `ddx-ckd` | Assessment | Feline CKD / not a fluids-only night |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -444,6 +445,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hsa` | Discharge | After hemangiosarcoma / bleed talk |
 | `dc-mamca` | Discharge | After mammary carcinoma / staging talk |
 | `dc-ibd` | Discharge | After IBD / GI-lymphoma talk |
+| `dc-ckd` | Discharge | After CKD / staging talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3484,6 +3486,21 @@ DDX:
 Do not: harvest a pred table. Harvest a chlorambucil table. Pred IBD first. Skip the ileum if you biopsy a cat. Treat endoscopic mucosa as a full-thickness rule-out.
 Do next: Name feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea. △ Plumb. Diet and deworm first if stable. Ileum if you biopsy. Do not copy a pred table.
 
+### `ddx-ckd`
+
+CKD — {{patient.name}}
+Feline CKD [yes / not]. Not a fluids-only night [yes / not]. Stable / hydrated [yes / not]. Creatinine trend [ ]. SDMA [ ]. USG [ ]. UPC [ ]. BP [ ]. Imaging for obstruction [ ]. Urine culture [ ].
+
+DDX:
+1. CKD — **Feline CKD. Not a fluids-only night**
+2. Stage after they are stable and hydrated. BP. UPC. Not every azotemic patient needs SQ fluids
+3. Look for obstruction or UTI that decompensates. Packet 172 owns HTN. Packet 177 owns PLN. Packet 301 owns hyperT
+4. Bare PU/PD stay dark. Bare creatinine / iris stay the azotemic-cat NSAID/DexSP gate
+5. Dog or cat can fire. Horse does not fire
+
+Do not: harvest an IRIS creatinine table. Harvest a phosphorus binder table. Call this a fluids-only night. Stage on one dehydrated creatinine. Skip BP and UPC.
+Do next: Name feline CKD. Not a fluids-only night. △ Plumb. Stage a stable, hydrated patient. BP. UPC. Do not copy an IRIS creatinine table.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -5127,6 +5144,14 @@ Return now for a hot painful gland, ulceration, trouble breathing, or not eating
 Give only the medicines and the food we sent, as labeled. No extra leftover steroids from the cabinet.
 
 Return now for not eating, repeated vomiting, black stool, or collapse. {{location.phonenumber}}
+
+### `dc-ckd`
+
+{{patient.name}} has chronic kidney disease. This is not a fluids-only night. Staging waits until they are stable and hydrated. We still need blood pressure and a urine protein check, and we look for a blockage or a urine infection that can make this worse.
+
+Give only the medicines and the food we sent, as labeled. No leftover pain pills or leftover DexSP from the cabinet.
+
+Return now for not eating, repeated vomiting, no urine, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

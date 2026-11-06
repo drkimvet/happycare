@@ -10018,6 +10018,72 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a steroid-responsive diarrhea", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_ckd_is_not_a_fluids_only_night(self):
+        b = analyze("cat", "CKD")
+        loc = b["localization"].lower()
+        self.assertIn("feline ckd", loc)
+        self.assertIn("not a fluids-only night", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("iris creatinine table", joined)
+        self.assertIn("phosphorus binder table", joined)
+        self.assertIn("fluids-only night", joined)
+        self.assertIn("stage on one dehydrated creatinine", joined)
+        self.assertIn("skip bp and upc", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_chronic_kidney_fires(self):
+        b = analyze("dog", "chronic kidney disease")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine ckd", loc)
+        self.assertIn("not a fluids-only night", loc)
+        self.assertNotIn("feline ckd", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_iris_ckd_fires(self):
+        b = analyze("cat", "IRIS CKD")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline ckd", loc)
+        self.assertIn("not a fluids-only night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pupd_is_not_ckd(self):
+        b = analyze("cat", "PU/PD, weight loss")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline ckd", loc)
+        self.assertNotIn("not a fluids-only night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_creatinine_azotemia_is_not_ckd(self):
+        b = analyze("cat", "creatinine, azotemia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline ckd", loc)
+        self.assertNotIn("not a fluids-only night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hyperthyroid_plus_ckd_concatenates(self):
+        b = analyze("cat", "hyperthyroidism, CKD")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline hyperthyroidism", loc)
+        self.assertIn("feline ckd", loc)
+        self.assertIn("not a fluids-only night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ckd_plus_nsaid_still_holds(self):
+        b = analyze("cat", "CKD, meloxicam")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline ckd", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("still no nsaid", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_ckd(self):
+        b = analyze("horse", "CKD")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline ckd", loc)
+        self.assertNotIn("canine ckd", loc)
+        self.assertNotIn("not a fluids-only night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_hsa_is_not_pulmonary_nodules_alone(self):
         b = analyze("dog", "hemangiosarcoma")
         loc = (b["localization"] or "").lower()
