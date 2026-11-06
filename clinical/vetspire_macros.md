@@ -237,6 +237,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-lymphoma` | Assessment | Canine lymphoma / not a CHOP table |
 | `ddx-mct` | Assessment | Canine MCT / not a grade table |
 | `ddx-agasaca` | Assessment | Canine AGASACA / not hyperCa-alone |
+| `ddx-melanoma` | Assessment | Canine oral melanoma / not a dental tartar |
 | `ddx-hyperca` | Assessment | Feline hyperCa ± UTI |
 | `ddx-resp` | Assessment | Dyspnea / cat open-mouth |
 | `ddx-chf` | Assessment | CHF vs other shock |
@@ -433,6 +434,7 @@ Suggested names are short so they show up after three letters.
 | `dc-lymphoma` | Discharge | After lymphoma / node talk |
 | `dc-mct` | Discharge | After mast cell / FNA talk |
 | `dc-agasaca` | Discharge | After anal-sac carcinoma / hyperCa talk |
+| `dc-melanoma` | Discharge | After oral melanoma / node talk |
 | `dc-hyperca` | Discharge | HyperCa ± UTI two lists |
 | `dc-uti` | Discharge | Confirmed UTI / cystitis |
 | `dc-uo` | Discharge | Post-unblock / decline unblock |
@@ -3398,6 +3400,21 @@ DDX:
 Do not: harvest an MST table. Skip the rectal exam on a hyperCa dog. Call scooting AGASACA. Call a hepatoid adenoma AGASACA. Castrate AGASACA as the plan. Close calcium because you expressed the glands.
 Do next: Name canine AGASACA. Not hyperCa-alone. △ Plumb. Rectal the sacs. Measure iCa. Do not copy an MST table.
 
+### `ddx-melanoma`
+
+Oral melanoma — {{patient.name}}
+Canine oral melanoma [yes / not]. Not a dental tartar [yes / not]. Amelanotic [yes / not]. Nodes aspirated [yes / not / normal-sized]. Chest [rads / CT / not yet].
+
+DDX:
+1. Oral malignant melanoma — **Canine oral melanoma. Not a dental tartar**
+2. Amelanotic is not an epulis. Pigmented is not tartar. Biopsy is the diagnosis
+3. Aspirate mandibular nodes even if they feel normal. Chest before you cut
+4. Dog oral triad: melanoma, SCC, fibrosarcoma. Cat oral melanoma is rare
+5. Dog or cat can fire. Horse does not fire. Bare tartar / epulis / halitosis do not fire
+
+Do not: harvest an MST table. Skip the nodes because they feel normal. Call amelanotic melanoma an epulis. Call tartar a pigmented mass. Harvest an Oncept table. Skip the chest film.
+Do next: Name canine oral melanoma. Not a dental tartar. △ Plumb. Biopsy. Aspirate the nodes even if they feel normal. Chest before you cut.
+
 ### `ddx-hyperca`
 
 Hypercalcemia — {{patient.name}}
@@ -5001,6 +5018,14 @@ Return now for vomiting, black stool, rapid growth of the lump, or collapse. {{l
 Give only the medicines we sent, as labeled. Do not start leftover steroids from the cabinet. Plenty of water. We still need staging pictures and a calcium recheck as discussed.
 
 Return now for not drinking, vomiting, straining without stool, collapse, or if drinking and urinating much more than yesterday. {{location.phonenumber}}
+
+### `dc-melanoma`
+
+{{patient.name}} has a tumor in the mouth. Dark color does not prove it, and a pink mass can still be melanoma. Tartar is not this diagnosis. We still need a biopsy, a needle of the lymph nodes even if they feel normal, and chest pictures before any big surgery.
+
+Give only the medicines we sent, as labeled. Soft food if chewing hurts. Do not start leftover chemotherapy or vaccine products from another pet.
+
+Return now for not eating, bleeding from the mouth, trouble breathing, or collapse. {{location.phonenumber}}
 
 ### `dc-hyperca`
 

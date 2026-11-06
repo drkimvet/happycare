@@ -1963,6 +1963,17 @@ AGASACA_RE = re.compile(
     r"\banal sac (tumor|neoplas)",
     re.I,
 )
+# Named oral / malignant / amelanotic melanoma only. Do not use \bmelanoma\b
+# (haired-skin melanocytoma) or \bepulis\b or tartar. Do not harvest an
+# MST or Oncept table. Dogs and cats (rare). Skip horse.
+# Chest-before-cut stays in this loc; oral melanoma left HIGH_MET_RE.
+ORAL_MM_RE = re.compile(
+    r"\boral melanoma|"
+    r"\bmalignant melanoma|"
+    r"\bamelanotic melanoma|"
+    r"\boncept\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -2161,8 +2172,7 @@ HIGH_MET_RE = re.compile(
     r"mammary adenocarcinoma|"
     r"osteosarcoma|"
     r"hemangiosarcoma|"
-    r"\bhsa\b|"
-    r"oral melanoma",
+    r"\bhsa\b",
     re.I,
 )
 # Not \bosa\b (too short). Bare "fracture" is every trauma. Bare "lameness" is 185.
@@ -6111,6 +6121,7 @@ def analyze(
     steal_lymphoma_dx = LYMPHOMA_DX_RE.search(text)
     steal_mct = MCT_RE.search(text)
     steal_agasaca = AGASACA_RE.search(text)
+    steal_oral_mm = ORAL_MM_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6221,6 +6232,7 @@ def analyze(
         or steal_lymphoma_dx
         or steal_mct
         or steal_agasaca
+        or steal_oral_mm
     ):
         if spec == "cat":
             fuo_loc = (
@@ -15979,6 +15991,49 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for AGASACA."
+            )
+
+    oral_mm_named = spec in {"dog", "cat"} and ORAL_MM_RE.search(text)
+    if oral_mm_named:
+        if spec == "cat":
+            mm_loc = "Feline oral melanoma. Rare. Not a dental tartar."
+        else:
+            mm_loc = "Canine oral melanoma. Not a dental tartar."
+        localization = f"{localization} Also {mm_loc}" if localization else mm_loc
+        hard_stops.append(
+            "Do not harvest an MST table. "
+            "Do not skip the nodes because they feel normal."
+        )
+        do_not.append(
+            "Do not call amelanotic melanoma an epulis. "
+            "Do not call tartar a pigmented mass. "
+            "Do not harvest an Oncept table. "
+            "Do not skip the chest film."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline oral melanoma. Rare. Not a dental tartar. "
+                "△ Plumb. Biopsy. Aspirate the nodes even if they feel normal. "
+                "Chest before you cut."
+            )
+        else:
+            do_next.append(
+                "Name canine oral melanoma. Not a dental tartar. "
+                "△ Plumb. Biopsy. Aspirate the nodes even if they feel normal. "
+                "Chest before you cut."
+            )
+        sources.append(
+            "Mulherin Merck Oral Tumors Nov 2024. "
+            "AAHA 2026 oncology named only. "
+            "Do not harvest MST or Oncept tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for oral melanoma."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for oral melanoma."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

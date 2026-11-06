@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine oral melanoma (Merck Mulherin Nov 2024; AAHA 2026 oncology)
+
+- **Canine oral melanoma. Not a dental tartar.** Named oral / malignant / amelanotic melanoma only. Pigmented or amelanotic. Biopsy is the diagnosis. Aspirate the mandibular nodes even if they feel normal. Chest films before you cut. Do **not** harvest an MST table or an Oncept table.
+- Amelanotic is not an epulis. Tartar is not a pigmented mass. The three common dog oral malignancies are melanoma, SCC, and fibrosarcoma. Cats: oral melanoma is rare; feline oral SCC is the other list. Printed 2 cm / mandibulectomy numbers stay on the page (`△ Plumb`).
+- Skip horse. Bare tartar / epulis / halitosis stay dark. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine AGASACA (Merck Gallagher Aug 2025; Villalobos Jun 2026; Ham hyperCa Jun 2023)
 
 - **Canine AGASACA. Not hyperCa-alone.** Named AGASACA / anal-sac carcinoma only. A firm, nonexpressible anal sac is a tumor until you biopsy. HyperCa of malignancy is lymphoma or this list in the dog; rectal the sacs. Do **not** harvest an MST table.

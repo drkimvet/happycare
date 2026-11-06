@@ -9791,6 +9791,76 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine agasaca", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_oral_melanoma_is_not_a_dental_tartar(self):
+        b = analyze("dog", "oral melanoma")
+        loc = b["localization"].lower()
+        self.assertIn("canine oral melanoma", loc)
+        self.assertIn("not a dental tartar", loc)
+        self.assertNotIn("metastatic pulmonary nodules", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mst table", joined)
+        self.assertIn("nodes because they feel normal", joined)
+        self.assertIn("amelanotic melanoma an epulis", joined)
+        self.assertIn("oncept table", joined)
+        self.assertIn("skip the chest film", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_malignant_melanoma_fires_oral_mm(self):
+        b = analyze("dog", "malignant melanoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine oral melanoma", loc)
+        self.assertIn("not a dental tartar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amelanotic_melanoma_fires_oral_mm(self):
+        b = analyze("dog", "amelanotic melanoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine oral melanoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_oral_melanoma_is_rare(self):
+        b = analyze("cat", "oral melanoma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline oral melanoma", loc)
+        self.assertIn("not a dental tartar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tartar_is_not_oral_melanoma(self):
+        b = analyze("dog", "tartar, halitosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine oral melanoma", loc)
+        self.assertNotIn("not a dental tartar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_epulis_is_not_oral_melanoma(self):
+        b = analyze("dog", "epulis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine oral melanoma", loc)
+        self.assertNotIn("not a dental tartar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_oral_melanoma(self):
+        b = analyze("horse", "oral melanoma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine oral melanoma", loc)
+        self.assertNotIn("feline oral melanoma", loc)
+        self.assertNotIn("not a dental tartar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_agasaca_is_not_oral_melanoma(self):
+        b = analyze("dog", "AGASACA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine agasaca", loc)
+        self.assertNotIn("canine oral melanoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_osteosarcoma_still_stages_the_chest(self):
+        b = analyze("dog", "osteosarcoma, amputate tonight")
+        loc = b["localization"].lower()
+        self.assertIn("stage the chest before you cut", loc)
+        self.assertNotIn("canine oral melanoma", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_ph_amlodipine_is_the_other_list(self):
         b = analyze(
             "dog",

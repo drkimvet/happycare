@@ -3993,7 +3993,7 @@ Night rule: named MCT → **Canine MCT. Not a grade table.** △ Plumb.
 
 ## 308. Canine AGASACA (Gallagher Merck 2025; Villalobos 2021/2026; Ham hyperCa 2023)
 
-No dedicated Plunkett AGASACA chapter in the owned SA EM splits. Public Gallagher A. Anal Sac Disease in Dogs and Cats. Merck Veterinary Manual. Full review Aug 2025. Villalobos AE. Epidermal and Hair Follicle Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Apocrine Gland Tumors of Anal Sac Origin). Ham K. Hypercalcemia in Dogs and Cats. Merck Veterinary Manual. Reviewed/revised Jun 2023 (rectal examination with expression of the anal sacs to rule out AGASACA; HHM in dogs is lymphoma or AGASACA first). 2026 AAHA Oncology Guidelines named only; no MST dump. Packet 307 still owns named MCT. HyperCa stays the hyperCa gate. Lymphoma stays lymphoma. Do not harvest an MST table as lobby law. Do not fire on bare scooting / anal glands / abscess. Dogs only. Skip cat. Skip horse.
+No dedicated Plunkett AGASACA chapter in the owned SA EM splits. Public Gallagher A. Anal Sac Disease in Dogs and Cats. Merck Veterinary Manual. Full review Aug 2025. Villalobos AE. Epidermal and Hair Follicle Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Apocrine Gland Tumors of Anal Sac Origin). Ham K. Hypercalcemia in Dogs and Cats. Merck Veterinary Manual. Reviewed/revised Jun 2023 (rectal examination with expression of the anal sacs to rule out AGASACA; HHM in dogs is lymphoma or AGASACA first). 2026 AAHA Oncology Guidelines named only; no MST dump. Packet 307 still owns named MCT. Packet 309 is canine oral melanoma (not a dental tartar). HyperCa stays the hyperCa gate. Lymphoma stays lymphoma. Do not harvest an MST table as lobby law. Do not fire on bare scooting / anal glands / abscess. Dogs only. Skip cat. Skip horse.
 
 Agree with Gallagher 2025 / Villalobos 2021/2026 / Ham 2023: **named AGASACA is an apocrine anal-sac carcinoma, not hyperCa-alone.** A firm, nonexpressible sac is a tumor until biopsy. Measure iCa. Scooting / impaction / abscess is the other anal-sac list. Hepatoid perianal adenoma is castration-responsive; AGASACA is not. Do not close calcium because you expressed the glands. Printed sacculectomy / MST numbers stay on the page (`△ Plumb`).
 
@@ -4018,3 +4018,31 @@ Night rule: named AGASACA → **Canine AGASACA. Not hyperCa-alone.** △ Plumb.
 - Attending: If the query is only “scooting, anal glands,” why does this gate stay dark?
 - Attending: Cat AGASACA — fire or skip?
 - Attending: Dual-named “lymphoma, AGASACA” — which loc should win, and why?
+
+## 309. Canine oral melanoma (Mulherin Merck Nov 2024; AAHA 2026 oncology)
+
+No dedicated Plunkett oral-melanoma chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024. 2026 AAHA Oncology Guidelines named only; no MST / Oncept dump. Packet 308 still owns named AGASACA. Pulmonary mets still owns cannonball nodules and named OSA / HSA / mammary adenocarcinoma (oral melanoma left that regex so a mouth mass is not labeled pulmonary nodules). Do not harvest an MST table as lobby law. Do not harvest an Oncept table as lobby law. Do not fire on bare tartar / epulis / halitosis. Dogs and cats (rare). Skip horse.
+
+Agree with Mulherin 2024: **named oral melanoma is a malignant oral tumor, not a dental tartar.** Pigmented or amelanotic. Biopsy is the diagnosis. Aspirate mandibular nodes even if they feel normal. Chest before you cut. Amelanotic is not an epulis. The three common dog oral malignancies are melanoma, SCC, and fibrosarcoma. Cats: oral melanoma is rare. Printed 2 cm / mandibulectomy numbers stay on the page (`△ Plumb`).
+
+Night split: named oral / malignant / amelanotic melanoma is canine oral melanoma; not a dental tartar. Bare tartar does not fire. Named epulis does not fire. Named osteosarcoma still stages the chest. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not skip the nodes because they feel normal.
+- Do not call amelanotic melanoma an epulis.
+- Do not call tartar a pigmented mass.
+- Do not harvest an Oncept table.
+- Do not skip the chest film.
+
+Night rule: named oral melanoma → **Canine oral melanoma. Not a dental tartar.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a pink gingival mass still melanoma until the biopsy says otherwise?
+- NAVLE 2: Why do you needle a normal-sized mandibular node before mandibulectomy?
+- NAVLE 3: Dual-named “oral melanoma, osteosarcoma” — which loc should win, and why?
+- Oral: How do you tell the owner this is not tartar, without inventing an MST?
+- Attending: If the query is only “tartar, halitosis,” why does this gate stay dark?
+- Attending: Horse oral melanoma — fire or skip?
+- Attending: Dual-named “oral melanoma, multiple pulmonary nodules” — which loc should win, and why?
