@@ -4296,3 +4296,31 @@ Night rule: named tracheal collapse → **Canine tracheal collapse. Not a Lasix 
 - Attending: If the query is only “cough,” why does this gate stay dark?
 - Attending: Horse tracheal collapse — fire or skip?
 - Attending: Cat tracheal collapse — fire or skip, and why?
+
+## 319. Canine BOAS (ACVS; Tonozzi Merck May 2025)
+
+No dedicated Plunkett BOAS chapter in the owned SA EM splits. Public ACVS. Brachycephalic Syndrome (elongated soft palate, stenotic nares, everted laryngeal saccules; nares diagnosed awake; palate and saccules need anesthesia; surgery when it interferes with breathing; medical management does not correct anatomy; heat, excitement, and obesity worsen). Tonozzi C. Overview of Respiratory Diseases of Dogs and Cats. Merck Veterinary Manual. Full review Feb 2022; last updated May 2025 (stenotic nares, elongation of the soft palate, nasopharyngeal turbinates, and tracheal stenosis are congenital obstruction). Do not harvest a stenotic-nares grade table as lobby law. Do not harvest a sedative table as lobby law. Do not fire on bare stertor. Do not fire on bare pug / bulldog (dystocia list). Packet 134 still owns lar par. Packet 318 still owns tracheal collapse. Dogs and cats. Skip horse.
+
+Agree with ACVS: **named BOAS is not a wait-and-see stertor.** Oxygen. Cool. Surgery conversation. Printed acepromazine / nares-grade numbers stay on the page (`△ Plumb`).
+
+Night split: named BOAS / brachycephalic obstructive / elongated soft palate / stenotic nares is canine (or feline) BOAS; not a wait-and-see stertor. Bare stertor stay dark. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a stenotic-nares grade table.
+- Do not harvest a sedative table.
+- Do not call this a wait-and-see stertor.
+- Do not send named BOAS home as a cute snore.
+- Do not treat medical management as anatomy repair.
+- Do not throat-exam a crashing dog without an ET tube and a tracheostomy plan.
+
+Night rule: named BOAS → **Canine BOAS. Not a wait-and-see stertor.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a snoring bulldog not a wait-and-see stertor once BOAS is named?
+- NAVLE 2: Why can you see stenotic nares awake, but not the palate?
+- NAVLE 3: Dual-named “BOAS, tracheal collapse” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a cute snore, without inventing a nares-grade table?
+- Attending: If the query is only “stertor,” why does this gate stay dark?
+- Attending: Horse BOAS — fire or skip?
+- Attending: Dual-named “BOAS, heatstroke” — which loc should win, and why?

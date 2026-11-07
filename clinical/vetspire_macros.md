@@ -255,6 +255,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-panc` | Assessment | Canine pancreatitis / not a SNAP-alone |
 | `ddx-exocrine` | Assessment | Canine EPI / not a bland-diet |
 | `ddx-tcoll` | Assessment | Canine tracheal collapse / not a Lasix night |
+| `ddx-boas` | Assessment | Canine BOAS / not a wait-and-see stertor |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -263,6 +264,7 @@ Suggested names are short so they show up after three letters.
 | `dc-panc` | Discharge | After pancreatitis / SNAP talk |
 | `dc-exocrine` | Discharge | After EPI / enzyme talk |
 | `dc-tcoll` | Discharge | After tracheal collapse / cough talk |
+| `dc-boas` | Discharge | After BOAS / airway talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3628,6 +3630,21 @@ DDX:
 Do not: harvest a stent table. Harvest a cough-suppressant table. Call this a Lasix night. Lasix a honking Yorkie as CHF until pulmonary edema is the localization.
 Do next: Name canine tracheal collapse. Not a Lasix night. △ Plumb. Oxygen. Cool. Weight. Do not copy a stent or hydrocodone table.
 
+### `ddx-boas`
+
+BOAS — {{patient.name}}
+Canine BOAS [yes / not]. Not a wait-and-see stertor [yes / not]. Stenotic nares [ ]. Elongated palate [ ]. Everted saccules [ ]. Heat / obesity [ ]. Eating [ ].
+
+DDX:
+1. BOAS — **Canine BOAS. Not a wait-and-see stertor**
+2. Nares you can see awake. Palate and saccules need anesthesia. Medical care does not fix the anatomy
+3. Surgery when it interferes with breathing. Oxygen. Cool. Heat and obesity worsen
+4. Packet 134 owns lar par. Packet 318 owns tracheal collapse. Bare stertor stay dark
+5. Dog or cat can fire. Horse does not fire. Bare pug / bulldog stay the dystocia list
+
+Do not: harvest a stenotic-nares grade table. Harvest a sedative table. Call this a wait-and-see stertor. Send named BOAS home as a cute snore.
+Do next: Name canine BOAS. Not a wait-and-see stertor. △ Plumb. Oxygen. Cool. Surgery conversation. Do not copy a nares-grade table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3705,6 +3722,14 @@ Return now for not eating, black stool, bleeding from the mouth after enzymes, o
 Give only the medicines we sent, as labeled. No leftover water pills from the cabinet unless we named heart fluid.
 
 Return now for trouble breathing, blue gums, collapse, or a cough that will not stop. {{location.phonenumber}}
+
+### `dc-boas`
+
+{{patient.name}} has a short-nose airway problem (BOAS). This is not a cute snore to wait on. The nostrils and the soft palate can block air. Heat, excitement, and extra weight make it worse. Surgery is how the anatomy is fixed; medicines do not rebuild the nose.
+
+Give only the medicines we sent, as labeled. Keep them cool and calm. No leftover sedatives from the cabinet.
+
+Return now for trouble breathing, blue gums, collapse, or not being able to cool down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

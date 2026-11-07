@@ -70,9 +70,10 @@ Closed gene chain is not on this list.
 | 315 | Feline CKD (not a fluids-only night) | Van Vertloo Merck renal dysfunction Mar 2025 / Oct 2026; IRIS named only. Do not harvest an IRIS creatinine or phosphorus-binder table | Shipped |
 | 316 | Canine pancreatitis (not a SNAP-alone) | Steiner Merck pancreatitis Sept 2025; Forman ACVIM 2021 still owns cats. Do not harvest a SNAP cutoff or fluid table | Shipped |
 | 317 | Canine EPI (not a bland-diet) | Steiner Merck EPI Sept 2025. Named pancreatic insufficiency / TLI only. Do not use EPI letters (epinephrine). Do not harvest a TLI cutoff or enzyme table | Shipped |
-| 318 | Canine tracheal collapse (not a Lasix night) | Tonozzi Merck respiratory diseases Feb 2022 / May 2025; Kuehn owner page Sept 2024 named only. Do not harvest a stent or cough-suppressant table | This packet |
+| 318 | Canine tracheal collapse (not a Lasix night) | Tonozzi Merck respiratory diseases Feb 2022 / May 2025; Kuehn owner page Sept 2024 named only. Do not harvest a stent or cough-suppressant table | Shipped |
+| 319 | Brachycephalic airway (not a wait-and-see stertor) | ACVS Brachycephalic Syndrome; Tonozzi Merck Feb 2022 / May 2025. Named BOAS / elongated soft palate / stenotic nares only. Do not harvest a stenotic-nares grade or sedative table | This packet |
 
-Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, canine AGASACA, canine oral melanoma, feline oral SCC, pathologic-fracture OSA (199), canine osteosarcoma HIGH_MET split (311), bare hemoabdomen (120), canine hemangiosarcoma (312), mastitis / septic dam, canine mammary carcinoma (313), PLE (178), feline IBD vs GI lymphoma (314), feline CKD (315), canine pancreatitis (316), canine EPI (317), and the 285–298 gene leftovers.
+Already gated (do not reopen as if new): Addison, DKA / HHS, hypoglycemia, IMHA, leptospirosis, heartworm / caval, facial CN VII, AAHA core vaccines, canine ITP, diabetes mellitus, canine lymphoma, canine MCT, canine AGASACA, canine oral melanoma, feline oral SCC, pathologic-fracture OSA (199), canine osteosarcoma HIGH_MET split (311), bare hemoabdomen (120), canine hemangiosarcoma (312), mastitis / septic dam, canine mammary carcinoma (313), PLE (178), feline IBD vs GI lymphoma (314), feline CKD (315), canine pancreatitis (316), canine EPI (317), canine tracheal collapse (318), and the 285–298 gene leftovers.
 
 ## What Mosby is for, legally
 

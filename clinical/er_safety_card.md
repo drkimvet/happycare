@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine BOAS (ACVS; Merck Tonozzi May 2025)
+
+- **Canine BOAS. Not a wait-and-see stertor.** Named BOAS / brachycephalic obstructive / elongated soft palate / stenotic nares only. Palate, nares, and everted saccules. Nares you can see awake. Palate and saccules need anesthesia. Medical care does not fix the anatomy. Surgery when it interferes with breathing. Oxygen. Cool. Do **not** harvest a stenotic-nares grade table. Do **not** harvest a sedative table. Do **not** send named BOAS home as a cute snore.
+- Cats: Persian conformation can fire. Packet 134 still owns lar par. Packet 318 still owns tracheal collapse. Bare stertor stay dark. Bare pug / bulldog stay the dystocia list, not this loc.
+- Printed acepromazine / nares-grade / staphylectomy numbers stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine tracheal collapse (Merck Tonozzi May 2025)
 
 - **Canine tracheal collapse. Not a Lasix night.** Named tracheal collapse / collapsing trachea / tracheomalacia only. Toy and miniature dogs; Yorkies overrepresented. Extra-thoracic collapse is inspiratory; intra-thoracic is expiratory. Rads can miss dynamic collapse; fluoroscopy names the site. Weight, cool, less excitement. Medical first. Stent and rings are salvage and do not erase the cough. Do **not** harvest a stent table. Do **not** harvest a cough-suppressant table. Do **not** Lasix a honking Yorkie as CHF until pulmonary edema is the localization.

@@ -10248,6 +10248,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a lasix night", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_boas_is_not_a_wait_and_see_stertor(self):
+        b = analyze("dog", "BOAS")
+        loc = b["localization"].lower()
+        self.assertIn("canine boas", loc)
+        self.assertIn("not a wait-and-see stertor", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stenotic-nares grade table", joined)
+        self.assertIn("sedative table", joined)
+        self.assertIn("wait-and-see stertor", joined)
+        self.assertIn("cute snore", joined)
+        self.assertIn("anatomy repair", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_elongated_soft_palate_fires(self):
+        b = analyze("dog", "elongated soft palate")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine boas", loc)
+        self.assertIn("not a wait-and-see stertor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_stenotic_nares_fires(self):
+        b = analyze("dog", "stenotic nares")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine boas", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_brachycephalic_airway_fires(self):
+        b = analyze("dog", "brachycephalic airway")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine boas", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_stertor_is_not_boas(self):
+        b = analyze("dog", "stertor")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine boas", loc)
+        self.assertNotIn("not a wait-and-see stertor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pug_is_not_boas(self):
+        b = analyze("dog", "pug")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine boas", loc)
+        self.assertNotIn("not a wait-and-see stertor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boas_plus_collapse_concatenates(self):
+        b = analyze("dog", "BOAS, tracheal collapse")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine boas", loc)
+        self.assertIn("not a wait-and-see stertor", loc)
+        self.assertIn("canine tracheal collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_boas(self):
+        b = analyze("horse", "BOAS")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine boas", loc)
+        self.assertNotIn("feline boas", loc)
+        self.assertNotIn("not a wait-and-see stertor", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

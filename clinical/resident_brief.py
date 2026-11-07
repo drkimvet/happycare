@@ -2050,6 +2050,19 @@ TRACH_COLLAPSE_RE = re.compile(
     r"tracheomalacia",
     re.I,
 )
+# Named BOAS / brachycephalic obstructive / elongated soft palate /
+# stenotic nares only. Do not use \bbrachycephal\b alone (dystocia pug
+# list). Do not use \bstertor\b. Do not harvest a stenotic-nares grade
+# or sedative table. Dogs and cats. Skip horse. Lar par stays 134.
+# Collapse stays 318.
+BOAS_DX_RE = re.compile(
+    r"\bboas\b|"
+    r"brachycephalic (airway|obstruct|syndrome|respiratory)|"
+    r"elongated soft palate|"
+    r"stenotic nares|"
+    r"everted (laryngeal )?saccule",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6210,6 +6223,7 @@ def analyze(
     steal_panc_dx = PANC_DX_RE.search(text)
     steal_epi_dx = EPI_DX_RE.search(text)
     steal_trach_collapse = TRACH_COLLAPSE_RE.search(text)
+    steal_boas_dx = BOAS_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6330,6 +6344,7 @@ def analyze(
         or steal_panc_dx
         or steal_epi_dx
         or steal_trach_collapse
+        or steal_boas_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16492,6 +16507,61 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for tracheal collapse."
+            )
+
+    boas_named = spec in {"dog", "cat"} and BOAS_DX_RE.search(text)
+    if boas_named:
+        if spec == "cat":
+            boas_loc = "Feline BOAS. Not a wait-and-see stertor."
+        else:
+            boas_loc = "Canine BOAS. Not a wait-and-see stertor."
+        localization = f"{localization} Also {boas_loc}" if localization else boas_loc
+        hard_stops.append(
+            "Do not harvest a stenotic-nares grade table. "
+            "Do not harvest a sedative table. "
+            "Stertor is not a cute snore."
+        )
+        do_not.append(
+            "Do not call this a wait-and-see stertor. "
+            "Do not send named BOAS home as a cute snore. "
+            "Do not treat medical management as anatomy repair. "
+            "Do not throat-exam a crashing dog without an ET tube and a tracheostomy plan."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline BOAS. Not a wait-and-see stertor. "
+                "△ Plumb. Oxygen. Cool. Surgery conversation. "
+                "Do not copy a nares-grade table."
+            )
+        else:
+            do_next.append(
+                "Name canine BOAS. Not a wait-and-see stertor. "
+                "△ Plumb. Oxygen. Cool. Surgery conversation. "
+                "Do not copy a nares-grade table."
+            )
+        sources.append(
+            "ACVS Brachycephalic Syndrome: elongated soft palate, stenotic "
+            "nares, everted saccules; palate and saccules need anesthesia to "
+            "name; surgery when it interferes with breathing. "
+            "Tonozzi Merck respiratory diseases Feb 2022 / May 2025: "
+            "stenotic nares and elongated soft palate are congenital obstruction. "
+            "Do not harvest nares-grade or sedative tables."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append(
+                "Do not give furosemide for BOAS."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for BOAS."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for BOAS."
+            )
+        if HEAT_RE.search(text):
+            hard_stops.append(
+                "Heat plus BOAS is obstruction heat, not a default ice-water dunk."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
