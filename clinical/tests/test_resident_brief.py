@@ -10185,6 +10185,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a bland-diet", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_tracheal_collapse_is_not_a_lasix_night(self):
+        b = analyze("dog", "tracheal collapse")
+        loc = b["localization"].lower()
+        self.assertIn("canine tracheal collapse", loc)
+        self.assertIn("not a lasix night", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stent table", joined)
+        self.assertIn("cough-suppressant table", joined)
+        self.assertIn("lasix night", joined)
+        self.assertIn("honking yorkie as chf", joined)
+        self.assertIn("stent will stop the cough", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_collapsing_trachea_fires(self):
+        b = analyze("dog", "collapsing trachea")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tracheal collapse", loc)
+        self.assertIn("not a lasix night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tracheomalacia_fires(self):
+        b = analyze("dog", "tracheomalacia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tracheal collapse", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cough_is_not_tracheal_collapse(self):
+        b = analyze("dog", "cough")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tracheal collapse", loc)
+        self.assertNotIn("not a lasix night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_collapse_plus_lasix_without_chf_holds(self):
+        b = analyze("dog", "tracheal collapse, Lasix")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tracheal collapse", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"]).lower()
+        self.assertIn("furosemide for tracheal collapse", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tracheal_collapse_plus_chf_concatenates(self):
+        b = analyze("dog", "tracheal collapse, CHF")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tracheal collapse", loc)
+        self.assertIn("not a lasix night", loc)
+        self.assertTrue("chf" in loc or "cardiogenic" in loc or "pulmonary edema" in loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_tracheal_collapse(self):
+        b = analyze("cat", "tracheal collapse")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tracheal collapse", loc)
+        self.assertNotIn("not a lasix night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tracheal_collapse(self):
+        b = analyze("horse", "tracheal collapse")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tracheal collapse", loc)
+        self.assertNotIn("not a lasix night", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

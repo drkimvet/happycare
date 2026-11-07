@@ -254,6 +254,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-uroabd` | Assessment | Uroabdomen |
 | `ddx-panc` | Assessment | Canine pancreatitis / not a SNAP-alone |
 | `ddx-exocrine` | Assessment | Canine EPI / not a bland-diet |
+| `ddx-tcoll` | Assessment | Canine tracheal collapse / not a Lasix night |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -261,6 +262,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gi` | Discharge | GI home care |
 | `dc-panc` | Discharge | After pancreatitis / SNAP talk |
 | `dc-exocrine` | Discharge | After EPI / enzyme talk |
+| `dc-tcoll` | Discharge | After tracheal collapse / cough talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3611,6 +3613,21 @@ DDX:
 Do not: harvest a TLI cutoff. Harvest an enzyme table. Call this a bland-diet. Use fecal elastase as TLI.
 Do next: Name canine EPI. Not a bland-diet. △ Plumb. Serum TLI. Enzymes with food. Cobalamin. Do not copy a TLI cutoff.
 
+### `ddx-tcoll`
+
+Tracheal collapse — {{patient.name}}
+Canine tracheal collapse [yes / not]. Not a Lasix night [yes / not]. Extra- vs intra-thoracic [ ]. Rads [ ]. Fluoroscopy [ ]. Weight [ ]. Pulmonary edema [yes / not].
+
+DDX:
+1. Collapse — **Canine tracheal collapse. Not a Lasix night**
+2. Extra-thoracic is inspiratory. Intra-thoracic is expiratory. Rads can miss dynamic collapse. Fluoroscopy names the site
+3. Weight, cool, less excitement. Medical first. Stent and rings are salvage and do not erase the cough
+4. Packet 134 owns lar par. CHF owns pulmonary edema. Lasix waits for edema, not a honk
+5. Dogs fire. Cat and horse do not fire. Bare cough stay dark
+
+Do not: harvest a stent table. Harvest a cough-suppressant table. Call this a Lasix night. Lasix a honking Yorkie as CHF until pulmonary edema is the localization.
+Do next: Name canine tracheal collapse. Not a Lasix night. △ Plumb. Oxygen. Cool. Weight. Do not copy a stent or hydrocodone table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3680,6 +3697,14 @@ Return now for repeated vomiting, a tight painful belly, not eating, or collapse
 Give only the enzyme powder and the other medicines we sent, as labeled. Mix the powder into the food. No leftover enzymes from another pet.
 
 Return now for not eating, black stool, bleeding from the mouth after enzymes, or collapse. {{location.phonenumber}}
+
+### `dc-tcoll`
+
+{{patient.name}} has collapsing trachea. This is not a Lasix night. The cough is from a floppy windpipe, not automatically from heart fluid. Weight, staying cool, and staying calm matter. A stent does not promise the cough will stop.
+
+Give only the medicines we sent, as labeled. No leftover water pills from the cabinet unless we named heart fluid.
+
+Return now for trouble breathing, blue gums, collapse, or a cough that will not stop. {{location.phonenumber}}
 
 ### `dc-ahds`
 

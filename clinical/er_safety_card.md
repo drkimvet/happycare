@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine tracheal collapse (Merck Tonozzi May 2025)
+
+- **Canine tracheal collapse. Not a Lasix night.** Named tracheal collapse / collapsing trachea / tracheomalacia only. Toy and miniature dogs; Yorkies overrepresented. Extra-thoracic collapse is inspiratory; intra-thoracic is expiratory. Rads can miss dynamic collapse; fluoroscopy names the site. Weight, cool, less excitement. Medical first. Stent and rings are salvage and do not erase the cough. Do **not** harvest a stent table. Do **not** harvest a cough-suppressant table. Do **not** Lasix a honking Yorkie as CHF until pulmonary edema is the localization.
+- Cats: rare; this loc stays dark. Packet 134 still owns lar par. Packet CHF still owns pulmonary edema. Bare cough stay dark. Bare honk stays the HHS letter, not this loc.
+- Printed hydrocodone / stent / grade numbers stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine EPI (Merck Steiner Sept 2025)
 
 - **Canine EPI. Not a bland-diet.** Named pancreatic insufficiency / TLI only. Do **not** use the letters EPI (epinephrine). Serum TLI is the diagnosis. Powder enzymes with food. Cobalamin in most dogs and almost all cats. Do **not** harvest a TLI cutoff. Do **not** harvest an enzyme table. Do **not** send named EPI home on chicken and rice without enzymes. Low-fat is not the fat-assimilation plan.

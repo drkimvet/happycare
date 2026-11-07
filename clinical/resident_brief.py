@@ -2041,6 +2041,15 @@ EPI_DX_RE = re.compile(
     r"\btli\b",
     re.I,
 )
+# Named tracheal collapse / collapsing trachea / tracheomalacia only.
+# Do not use \bcough\b or \bhonk\b (HHS). Do not harvest a stent or
+# cough-suppressant table. Dogs. Skip cat. Skip horse. Lar par stays 134.
+TRACH_COLLAPSE_RE = re.compile(
+    r"tracheal collapse|"
+    r"collapsing trachea|"
+    r"tracheomalacia",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6200,6 +6209,7 @@ def analyze(
     steal_ckd_dx = CKD_DX_RE.search(text)
     steal_panc_dx = PANC_DX_RE.search(text)
     steal_epi_dx = EPI_DX_RE.search(text)
+    steal_trach_collapse = TRACH_COLLAPSE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6319,6 +6329,7 @@ def analyze(
         or steal_ckd_dx
         or steal_panc_dx
         or steal_epi_dx
+        or steal_trach_collapse
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16440,6 +16451,47 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for EPI."
+            )
+
+    trach_named = spec == "dog" and TRACH_COLLAPSE_RE.search(text)
+    if trach_named:
+        trach_loc = "Canine tracheal collapse. Not a Lasix night."
+        localization = f"{localization} Also {trach_loc}" if localization else trach_loc
+        hard_stops.append(
+            "Do not harvest a stent table. "
+            "Do not harvest a cough-suppressant table. "
+            "Lasix is not the collapse plan."
+        )
+        do_not.append(
+            "Do not call this a Lasix night. "
+            "Do not Lasix a honking Yorkie as CHF until pulmonary edema is the localization. "
+            "Do not promise a stent will stop the cough. "
+            "Do not skip weight, cool, and excitement control."
+        )
+        do_next.append(
+            "Name canine tracheal collapse. Not a Lasix night. "
+            "△ Plumb. Oxygen. Cool. Weight. Fluoroscopy if the rads are quiet. "
+            "Do not copy a stent or hydrocodone table."
+        )
+        sources.append(
+            "Tonozzi Merck respiratory diseases Feb 2022 / May 2025: "
+            "toy/miniature, honking cough; extra-thoracic inspiratory vs "
+            "intrathoracic expiratory; fluoroscopy for dynamic collapse; "
+            "medical first; stent/rings are salvage and do not erase signs. "
+            "Kuehn Merck owner tracheal collapse Sept 2024 named only. "
+            "Do not harvest stent or cough-suppressant tables."
+        )
+        if FUROSEMIDE_RE.search(text) and not CHF_RE.search(text):
+            hard_stops.append(
+                "Do not give furosemide for tracheal collapse."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for tracheal collapse."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for tracheal collapse."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

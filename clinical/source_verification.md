@@ -4268,3 +4268,31 @@ Night rule: named pancreatic insufficiency / TLI → **Canine EPI. Not a bland-d
 - Attending: If the query is only “diarrhea, weight loss,” why does this gate stay dark?
 - Attending: Horse pancreatic insufficiency — fire or skip?
 - Attending: “give epi” — fire or skip, and why?
+
+## 318. Canine tracheal collapse (Tonozzi Merck May 2025)
+
+No dedicated Plunkett tracheal-collapse chapter in the owned SA EM splits. Public Tonozzi C. Overview of Respiratory Diseases of Dogs and Cats. Merck Veterinary Manual. Full review Feb 2022; last updated May 2025 (toy and miniature dogs; Yorkies overrepresented; weakened cartilage with dorsoventral flattening; nonproductive honking cough; extra-thoracic collapse is inspiratory, intra-thoracic is expiratory; radiographs may show it; fluoroscopy names dynamic collapse; medical first with antitussives, antibiotics, corticosteroids, bronchodilators, weight, cool, less excitement; stent and external rings are salvage and do not erase signs). Kuehn N. Tracheal Collapse in Dogs. Merck owner page. Full review Jun 2018; last updated Sept 2024 named only. Lasix is CHF pulmonary edema, not the collapse plan. Do not harvest a stent table as lobby law. Do not harvest a cough-suppressant table as lobby law. Do not fire on bare cough. Do not fire on bare honk (HHS letter). Packet 134 still owns lar par. Dogs. Skip cat. Skip horse.
+
+Agree with Tonozzi 2025: **named tracheal collapse is not a Lasix night.** Cool. Weight. Fluoroscopy if the film is quiet. Printed hydrocodone / stent numbers stay on the page (`△ Plumb`).
+
+Night split: named tracheal collapse / collapsing trachea / tracheomalacia is canine tracheal collapse; not a Lasix night. Bare cough stay dark. Horse does not fire. Cat does not fire. Dual-named CHF concatenates.
+
+Book/public traps:
+
+- Do not harvest a stent table.
+- Do not harvest a cough-suppressant table.
+- Do not call this a Lasix night.
+- Do not Lasix a honking Yorkie as CHF until pulmonary edema is the localization.
+- Do not promise a stent will stop the cough.
+- Do not skip weight, cool, and excitement control.
+
+Night rule: named tracheal collapse → **Canine tracheal collapse. Not a Lasix night.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Yorkie honk not a furosemide bolus until you have pulmonary edema?
+- NAVLE 2: Why can a normal chest film miss tracheal collapse?
+- NAVLE 3: Dual-named “tracheal collapse, CHF” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a Lasix night, without inventing a hydrocodone table?
+- Attending: If the query is only “cough,” why does this gate stay dark?
+- Attending: Horse tracheal collapse — fire or skip?
+- Attending: Cat tracheal collapse — fire or skip, and why?
