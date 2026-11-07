@@ -10509,6 +10509,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline esophageal fb", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_esophageal_stricture_is_not_a_megaesophagus_alone(self):
+        b = analyze("dog", "esophageal stricture")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophageal stricture", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine megaesophagus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("balloon-dilation table", joined)
+        self.assertIn("barium table", joined)
+        self.assertIn("gagging", joined)
+        self.assertIn("balloon", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esophageal_stenosis_fires(self):
+        b = analyze("dog", "esophageal stenosis")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophageal stricture", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_esophageal_stricture_fires(self):
+        b = analyze("cat", "oesophageal stricture")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophageal stricture", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine esophageal stricture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esophageal_fb_plus_stricture_concatenates(self):
+        b = analyze("dog", "esophageal foreign body, esophageal stricture")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophageal fb", loc)
+        self.assertIn("canine esophageal stricture", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_stricture_is_not_esostr(self):
+        b = analyze("dog", "stricture")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine esophageal stricture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_urethral_stricture_is_not_esostr(self):
+        b = analyze("dog", "urethral stricture")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine esophageal stricture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_doxycycline_is_not_esostr(self):
+        b = analyze("cat", "doxycycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline esophageal stricture", loc)
+        self.assertNotIn("canine esophageal stricture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_esostr(self):
+        b = analyze("horse", "esophageal stricture")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine esophageal stricture", loc)
+        self.assertNotIn("feline esophageal stricture", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

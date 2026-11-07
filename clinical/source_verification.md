@@ -4408,3 +4408,31 @@ Night rule: named esophageal FB → **Canine esophageal FB. Not a megaesophagus-
 - Attending: If the query is only “foreign body,” why does this gate stay dark?
 - Attending: Horse esophageal FB — fire or skip?
 - Attending: Dual-named “linear foreign body, esophageal FB” — which loc should win, and why?
+
+## 323. Canine esophageal stricture (Defarges Merck May 2025)
+
+No dedicated Plunkett esophageal-stricture chapter in the owned SA EM splits. Public Defarges A. Esophageal Strictures in Small Animals (Esophageal Stenosis). Merck Veterinary Manual. Full review Oct 2022; last updated May 2025 (pathologic luminal narrowing after anesthesia, FB trauma, caustic ingestion, doxycycline or clindamycin, esophagitis, reflux, or tumor; most in the thorax; PRAA and extramural tumors can mimic; fluoro esophagram preferred; balloon catheter dilation most successful; bougienage less available; stents salvage with high complication; surgical resection less successful; treat the induced esophagitis; steroids/mitomycin controversial). Do not harvest a balloon-dilation table as lobby law. Do not harvest a barium table as lobby law. Do not harvest a B-tube twice-a-day inflation table as lobby law. Do not fire on bare regurgitation. Do not fire on bare stricture (urethral). Packet 322 still owns named esophageal FB. Packet 321 still owns PRAA. Packet 320 still owns named megaesophagus. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named esophageal stricture is not a megaesophagus-alone.** Fluoro. Balloon first. Printed balloon-mm / B-tube / stent / steroid numbers stay on the page (`△ Plumb`).
+
+Night split: named esophageal / oesophageal stricture or stenosis is canine (or feline) esophageal stricture; not a megaesophagus-alone. Bare regurgitation stay dark. Bare stricture stay urethral. Horse does not fire. Dog or cat can fire. Dual esophageal FB plus stricture concatenates 322 then 323.
+
+Book/public traps:
+
+- Do not harvest a balloon-dilation table.
+- Do not harvest a barium table.
+- Do not call this a megaesophagus-alone.
+- Do not send named esophageal stricture home as gagging.
+- Do not copy a B-tube inflation table.
+- Do not treat resection as first-line over ballooning.
+
+Night rule: named esophageal stricture → **Canine esophageal stricture. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a regurgitating dog with an esophageal stricture not a megaesophagus-alone?
+- NAVLE 2: Why is balloon first-line over cutting the esophagus out?
+- NAVLE 3: Dual-named “esophageal FB, esophageal stricture” — which loc should win, and why?
+- Oral: How do you tell the owner this is a scar, not a dilated esophagus, without inventing a balloon-mm table?
+- Attending: If the query is only “stricture,” why does this gate stay dark?
+- Attending: Horse esophageal stricture — fire or skip?
+- Attending: Dual-named “PRAA, esophageal stricture” — which loc should win, and why?

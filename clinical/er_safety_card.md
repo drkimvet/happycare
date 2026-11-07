@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine esophageal stricture (Merck Defarges May 2025)
+
+- **Canine esophageal stricture. Not a megaesophagus-alone.** Named esophageal / oesophageal stricture or stenosis only. Narrowing after anesthesia, FB, caustic, doxy/clinda, reflux, or tumor. Most in the thorax. Fluoro esophagram. Balloon first. Stents are salvage. Surgery is less successful. Treat the esophagitis. Do **not** harvest a balloon-dilation table. Do **not** harvest a barium table. Do **not** send named esophageal stricture home as gagging.
+- Cats: same named loc as feline esophageal stricture. Packet 322 still owns named esophageal FB. Packet 321 still owns PRAA (can mimic). Packet 320 still owns named megaesophagus. Bare regurgitation stay dark. Bare stricture stay urethral, not this loc. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine esophageal FB (Merck Defarges Sept 2024)
 
 - **Canine esophageal FB. Not a megaesophagus-alone.** Named esophageal / oesophageal foreign body or FB, or bone / fishhook / needle / rawhide in the esophagus. Lodge at the thoracic inlet, heart base, or caudal esophagus. Comes out tonight. Neck and chest films. Endoscopy first. Surgery if perforated or stuck. Stricture is the common late hit. Do **not** harvest a barium table. Do **not** harvest an endoscopic-retrieval table. Do **not** send named esophageal FB home as gagging.

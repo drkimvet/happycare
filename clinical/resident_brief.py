@@ -2091,6 +2091,15 @@ ESOFB_DX_RE = re.compile(
     r"esophag.{0,24}(bone|fishhook|fish hook|needle|rawhide)",
     re.I,
 )
+# Named esophageal / oesophageal stricture or stenosis only. Do not use
+# \bstricture\b (urethral). Do not use \bdoxy\b. Do not use \bmegaesophag
+# (320). Do not use esophageal FB (322). Do not harvest a balloon-dilation
+# or barium table. Dogs and cats. Skip horse. Packet 322 still owns FB.
+ESOSTR_DX_RE = re.compile(
+    r"esophag\w* (stricture|stenos)|"
+    r"oesophag\w* (stricture|stenos)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6255,6 +6264,7 @@ def analyze(
     steal_megaeso_dx = MEGAESO_DX_RE.search(text)
     steal_praa_dx = PRAA_DX_RE.search(text)
     steal_esofb_dx = ESOFB_DX_RE.search(text)
+    steal_esostr_dx = ESOSTR_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6379,6 +6389,7 @@ def analyze(
         or steal_megaeso_dx
         or steal_praa_dx
         or steal_esofb_dx
+        or steal_esostr_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16736,6 +16747,53 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for esophageal FB."
+            )
+
+    esostr_named = spec in {"dog", "cat"} and ESOSTR_DX_RE.search(text)
+    if esostr_named:
+        if spec == "cat":
+            esostr_loc = "Feline esophageal stricture. Not a megaesophagus-alone."
+        else:
+            esostr_loc = "Canine esophageal stricture. Not a megaesophagus-alone."
+        localization = f"{localization} Also {esostr_loc}" if localization else esostr_loc
+        hard_stops.append(
+            "Do not harvest a balloon-dilation table. "
+            "Do not harvest a barium table. "
+            "A narrowed lumen is not generalized megaesophagus."
+        )
+        do_not.append(
+            "Do not call this a megaesophagus-alone. "
+            "Do not send named esophageal stricture home as gagging. "
+            "Do not copy a B-tube inflation table. "
+            "Do not treat resection as first-line over ballooning."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline esophageal stricture. Not a megaesophagus-alone. "
+                "△ Plumb. Fluoro esophagram. Balloon conversation. "
+                "Do not copy a balloon-dilation table."
+            )
+        else:
+            do_next.append(
+                "Name canine esophageal stricture. Not a megaesophagus-alone. "
+                "△ Plumb. Fluoro esophagram. Balloon conversation. "
+                "Do not copy a balloon-dilation table."
+            )
+        sources.append(
+            "Defarges Merck esophageal strictures Oct 2022 / May 2025: "
+            "narrowing after anesthesia, FB, caustic, doxy/clinda, reflux, "
+            "or tumor; most in the thorax; fluoro esophagram; balloon first; "
+            "stents are salvage; surgery less successful; treat the esophagitis. "
+            "Packet 322 FB. Packet 321 PRAA can mimic. Packet 320 megaesophagus. "
+            "Do not harvest balloon-dilation or barium tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for esophageal stricture."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for esophageal stricture."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

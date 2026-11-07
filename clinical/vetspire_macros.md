@@ -259,6 +259,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-megaeso` | Assessment | Canine megaesophagus / not a pneumonia-alone |
 | `ddx-praa` | Assessment | Canine vascular ring / not a megaesophagus-alone |
 | `ddx-esofb` | Assessment | Canine esophageal FB / not a megaesophagus-alone |
+| `ddx-esostr` | Assessment | Canine esophageal stricture / not a megaesophagus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -271,6 +272,7 @@ Suggested names are short so they show up after three letters.
 | `dc-megaeso` | Discharge | After megaesophagus / feeding talk |
 | `dc-praa` | Discharge | After vascular ring / PRAA talk |
 | `dc-esofb` | Discharge | After esophageal FB / endoscopy talk |
+| `dc-esostr` | Discharge | After esophageal stricture / balloon talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3696,6 +3698,21 @@ DDX:
 Do not: harvest a barium table. Harvest an endoscopic-retrieval table. Call this a megaesophagus-alone. Pour barium if perforation is on the list.
 Do next: Name canine esophageal FB. Not a megaesophagus-alone. △ Plumb. Neck and chest films. Endoscopy conversation. Do not copy a retrieval table.
 
+### `ddx-esostr`
+
+Esophageal stricture — {{patient.name}}
+Canine esophageal stricture [yes / not]. Not a megaesophagus-alone [yes / not]. After FB / anesthesia / doxy [ ]. Fluoro esophagram [ ]. Balloon [ ]. Esophagitis [ ].
+
+DDX:
+1. Esophageal stricture — **Canine esophageal stricture. Not a megaesophagus-alone**
+2. Pathologic narrowing. Most in the thorax. PRAA and a mass can mimic
+3. Fluoro esophagram. Balloon first. Stents salvage. Surgery less successful. Treat the esophagitis
+4. Packet 322 owns named esophageal FB. Packet 321 owns PRAA. Packet 320 owns named megaesophagus
+5. Dog or cat can fire. Horse does not fire. Do not send this home as gagging
+
+Do not: harvest a balloon-dilation table. Harvest a barium table. Call this a megaesophagus-alone. Copy a B-tube inflation table.
+Do next: Name canine esophageal stricture. Not a megaesophagus-alone. △ Plumb. Fluoro esophagram. Balloon conversation. Do not copy a balloon-dilation table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3803,6 +3820,14 @@ Return now for trouble breathing, blue gums, fever, or food coming up from the m
 {{patient.name}} had something stuck in the esophagus (the tube from the mouth to the stomach). This is not ordinary megaesophagus and not a gagging night to wait on. It needed to come out.
 
 Give only the medicines we sent, as labeled. Soft food as we showed. Do not give leftover barium from the cabinet.
+
+Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
+
+### `dc-esostr`
+
+{{patient.name}} has a scar that narrowed the esophagus (stricture). Food cannot pass the tight ring. This is not ordinary megaesophagus and not a gagging night to wait on.
+
+Balloon stretching is how the ring is opened. Medicines do not cut the scar. Give only the medicines we sent, as labeled. Soft food as we showed.
 
 Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
 
