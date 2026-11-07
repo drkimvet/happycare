@@ -2105,6 +2105,11 @@ ESOSTR_DX_RE = re.compile(
 # esophageal stricture (323). Do not harvest a sucralfate or omeprazole
 # table. Dogs and cats. Skip horse. Packet 323 still owns stricture.
 ESOPHAGITIS_DX_RE = re.compile(r"\besophagitis\b|\boesophagitis\b", re.I)
+# Named cricopharyngeal achalasia / dysphagia / myectomy / myotomy only.
+# Do not use \bachalasia\b (LES is megaesophagus). Do not use \bdysphagia\b.
+# Do not use \bregurgit. Do not harvest a myectomy table. Dogs only.
+# Skip cat. Skip horse. Packet 320 still owns named megaesophagus.
+CRICOPH_DX_RE = re.compile(r"cricopharyn", re.I)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6271,6 +6276,7 @@ def analyze(
     steal_esofb_dx = ESOFB_DX_RE.search(text)
     steal_esostr_dx = ESOSTR_DX_RE.search(text)
     steal_esophagitis_dx = ESOPHAGITIS_DX_RE.search(text)
+    steal_cricoph_dx = CRICOPH_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6397,6 +6403,7 @@ def analyze(
         or steal_esofb_dx
         or steal_esostr_dx
         or steal_esophagitis_dx
+        or steal_cricoph_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16850,6 +16857,45 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for esophagitis."
+            )
+
+    cricoph_named = spec == "dog" and CRICOPH_DX_RE.search(text)
+    if cricoph_named:
+        cricoph_loc = "Canine cricopharyngeal achalasia. Not a megaesophagus-alone."
+        localization = f"{localization} Also {cricoph_loc}" if localization else cricoph_loc
+        hard_stops.append(
+            "Do not harvest a myectomy table. "
+            "Do not harvest a barium table. "
+            "UES failure to relax is not generalized megaesophagus."
+        )
+        do_not.append(
+            "Do not call this a megaesophagus-alone. "
+            "Do not send named cricopharyngeal achalasia home as weaning. "
+            "Do not copy a 65-percent surgery table. "
+            "Do not treat LES achalasia as this loc; that is megaesophagus."
+        )
+        do_next.append(
+            "Name canine cricopharyngeal achalasia. Not a megaesophagus-alone. "
+            "△ Plumb. Fluoro swallow. Myotomy/myectomy conversation. "
+            "Do not copy a myectomy table."
+        )
+        sources.append(
+            "Defarges Merck cricopharyngeal achalasia Oct 2022 / Sept 2024: "
+            "UES fails to relax; fluoro swallow; barium retained in the caudal "
+            "pharynx; myotomy or myectomy; 65% stays on the page. Williamson "
+            "Merck myopathies Feb 2026: young dogs, Spaniels overrepresented, "
+            "dysphagia is hallmark, nasal reflux, contrast fluoro, rule out "
+            "megaesophagus / MG / PRAA. Roberts Merck named only. Dogs only. "
+            "Packet 320 megaesophagus. Packet 163 MG. Packet 321 PRAA. "
+            "Do not harvest myectomy or barium tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cricopharyngeal achalasia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cricopharyngeal achalasia."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

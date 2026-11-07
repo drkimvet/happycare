@@ -261,6 +261,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-esofb` | Assessment | Canine esophageal FB / not a megaesophagus-alone |
 | `ddx-esostr` | Assessment | Canine esophageal stricture / not a megaesophagus-alone |
 | `ddx-esophagitis` | Assessment | Canine esophagitis / not a megaesophagus-alone |
+| `ddx-cricoph` | Assessment | Canine cricopharyngeal achalasia / not a megaesophagus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -275,6 +276,7 @@ Suggested names are short so they show up after three letters.
 | `dc-esofb` | Discharge | After esophageal FB / endoscopy talk |
 | `dc-esostr` | Discharge | After esophageal stricture / balloon talk |
 | `dc-esophagitis` | Discharge | After esophagitis / reflux talk |
+| `dc-cricoph` | Discharge | After cricopharyngeal / swallow talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3730,6 +3732,21 @@ DDX:
 Do not: harvest a sucralfate table. Harvest an omeprazole table. Call this a megaesophagus-alone. Copy a cisapride table.
 Do next: Name canine esophagitis. Not a megaesophagus-alone. △ Plumb. Endoscopy. Look for FB, reflux, and doxy. Do not copy a sucralfate table.
 
+### `ddx-cricoph`
+
+Cricopharyngeal achalasia — {{patient.name}}
+Canine cricopharyngeal achalasia [yes / not]. Not a megaesophagus-alone [yes / not]. Fluoro swallow [ ]. Nasal reflux [ ]. Aspiration [ ]. Myotomy / myectomy [ ].
+
+DDX:
+1. Cricopharyngeal achalasia — **Canine cricopharyngeal achalasia. Not a megaesophagus-alone**
+2. UES fails to relax. Dysphagia is the hallmark. Nasal reflux. Weaning Spaniel overrepresented
+3. Fluoro swallow. Barium retained in the caudal pharynx. Myotomy or myectomy. LES achalasia is megaesophagus
+4. Packet 320 owns named megaesophagus. Packet 163 owns MG. Packet 321 owns PRAA. Bare dysphagia stay dark
+5. Dogs fire. Cat does not fire. Horse does not fire. Do not send this home as weaning
+
+Do not: harvest a myectomy table. Harvest a barium table. Call this a megaesophagus-alone. Copy a 65-percent surgery table.
+Do next: Name canine cricopharyngeal achalasia. Not a megaesophagus-alone. △ Plumb. Fluoro swallow. Myotomy/myectomy conversation. Do not copy a myectomy table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3853,6 +3870,14 @@ Return now for trouble breathing, blue gums, fever, food coming up, or not being
 {{patient.name}} has an inflamed esophagus (esophagitis). Swallowing hurts. This is not ordinary megaesophagus and not a gagging night to wait on.
 
 Give only the medicines we sent, as labeled. Soft food, small meals, as we showed. Do not give leftover acid or coating medicines from the cabinet.
+
+Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
+
+### `dc-cricoph`
+
+{{patient.name}} has a swallowing-muscle problem (cricopharyngeal achalasia). The upper sphincter will not open. Food sits in the throat. This is not ordinary megaesophagus and not ordinary weaning.
+
+Surgery on that muscle is how the sphincter is opened. Medicines do not cut it. Give only the medicines we sent, as labeled. Feed as we showed.
 
 Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
 

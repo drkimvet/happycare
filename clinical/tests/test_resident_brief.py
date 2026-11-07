@@ -10626,6 +10626,64 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline esophagitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cricopharyngeal_is_not_a_megaesophagus_alone(self):
+        b = analyze("dog", "cricopharyngeal achalasia")
+        loc = b["localization"].lower()
+        self.assertIn("canine cricopharyngeal achalasia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine megaesophagus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("myectomy table", joined)
+        self.assertIn("barium table", joined)
+        self.assertIn("weaning", joined)
+        self.assertIn("fluoro", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cricopharyngeal_dysphagia_fires(self):
+        b = analyze("dog", "cricopharyngeal dysphagia")
+        loc = b["localization"].lower()
+        self.assertIn("canine cricopharyngeal achalasia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cricopharyngeal_myectomy_fires(self):
+        b = analyze("dog", "cricopharyngeal myectomy")
+        loc = b["localization"].lower()
+        self.assertIn("canine cricopharyngeal achalasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esophagitis_plus_cricoph_concatenates(self):
+        b = analyze("dog", "esophagitis, cricopharyngeal achalasia")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophagitis", loc)
+        self.assertIn("canine cricopharyngeal achalasia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dysphagia_is_not_cricoph(self):
+        b = analyze("dog", "dysphagia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cricopharyngeal achalasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_achalasia_is_not_cricoph(self):
+        b = analyze("dog", "achalasia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cricopharyngeal achalasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_is_not_cricoph(self):
+        b = analyze("cat", "cricopharyngeal achalasia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cricopharyngeal achalasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cricoph(self):
+        b = analyze("horse", "cricopharyngeal achalasia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cricopharyngeal achalasia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -4464,3 +4464,31 @@ Night rule: named esophagitis → **Canine esophagitis. Not a megaesophagus-alon
 - Attending: If the query is only “regurgitation,” why does this gate stay dark?
 - Attending: Horse esophagitis — fire or skip?
 - Attending: Dual-named “esophageal FB, esophagitis” — which loc should win, and why?
+
+## 325. Canine cricopharyngeal achalasia (Defarges Merck Sept 2024; Williamson Feb 2026)
+
+No dedicated Plunkett cricopharyngeal chapter in the owned SA EM splits. Public Defarges A. Cricopharyngeal Achalasia in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated Sept 2024 (inadequate UES relaxation; primarily congenital, occasionally adult dogs with neuromuscular disease; gagging and regurgitation; aspiration pneumonia common; fluoro swallow with contrast alone and mixed with food; barium retained in the caudal pharynx; myotomy or cricopharyngeal and thyropharyngeal myectomy; 65% stays on the page). Williamson B. Cricopharyngeal Achalasia in Dogs. Merck Veterinary Manual. Full review Feb 2026; last updated Feb 2026 (developmental myopathy of young dogs; Spaniels overrepresented; dysphagia is hallmark; nasal reflux; contrast fluoro; rule out megaesophagus, MG, vascular ring; myotomy or myectomy; onabotulinumtoxin A stays on the page). Roberts J. Congenital and Inherited Anomalies of the Esophagus in Animals. Merck Veterinary Manual. Nov 2022 / Sept 2024 named only (LES achalasia is megaesophagus, not a distinct entity). Do not harvest a myectomy table as lobby law. Do not harvest a barium table as lobby law. Do not harvest a 65% surgery table as lobby law. Do not fire on bare dysphagia. Do not fire on bare achalasia. Dogs only. Skip cat. Skip horse. Packet 320 still owns named megaesophagus. Packet 163 still owns MG. Packet 321 still owns PRAA.
+
+Agree with Defarges / Williamson: **named cricopharyngeal achalasia is not a megaesophagus-alone.** Fluoro swallow. Printed myectomy / 65% / botox numbers stay on the page (`△ Plumb`).
+
+Night split: named cricopharyngeal achalasia / dysphagia / myectomy / myotomy is canine cricopharyngeal achalasia; not a megaesophagus-alone. Bare dysphagia stay dark. Bare achalasia stay dark. Cat does not fire. Horse does not fire. Dual esophagitis plus cricopharyngeal concatenates 324 then 325.
+
+Book/public traps:
+
+- Do not harvest a myectomy table.
+- Do not harvest a barium table.
+- Do not call this a megaesophagus-alone.
+- Do not send named cricopharyngeal achalasia home as weaning.
+- Do not copy a 65-percent surgery table.
+- Do not treat LES achalasia as this loc; that is megaesophagus.
+
+Night rule: named cricopharyngeal → **Canine cricopharyngeal achalasia. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a weaning Spaniel with cricopharyngeal achalasia not a megaesophagus-alone?
+- NAVLE 2: Why does fluoro swallow beat a survey film here?
+- NAVLE 3: Dual-named “megaesophagus, cricopharyngeal achalasia” — which loc should win, and why?
+- Oral: How do you tell the owner the UES will not open, without inventing a myectomy table?
+- Attending: If the query is only “dysphagia,” why does this gate stay dark?
+- Attending: Cat cricopharyngeal achalasia — fire or skip, and why?
+- Attending: Dual-named “esophagitis, cricopharyngeal achalasia” — which loc should win, and why?
