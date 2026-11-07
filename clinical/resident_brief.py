@@ -2121,6 +2121,17 @@ HIATAL_DX_RE = re.compile(
     r"gastroesophageal hernia",
     re.I,
 )
+# Named PPDH / peritoneopericardial / pericardiodiaphragmatic hernia only.
+# Do not use \bhernia\b. Do not use hiatal hernia (326). Do not use
+# \bweimaraner\b. Do not harvest a mesh table. Dogs and cats. Skip horse.
+# Packet 326 still owns hiatal. Tamponade stays dark when this is named.
+PPDH_DX_RE = re.compile(
+    r"\bppdh\b|"
+    r"peritoneopericardial|"
+    r"pericardiodiaphragmatic|"
+    r"peritoneal.?pericardial (diaphragmatic )?hernia",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -4800,7 +4811,7 @@ def analyze(
         do_not.append("Do not run a potassium-supplemented bag as a shock bolus.")
         sources.append("AAHA fluid therapy 2024: never bolus fluids supplemented with KCl")
 
-    if spec in {"dog", "cat"} and TAMPONADE_RE.search(text):
+    if spec in {"dog", "cat"} and TAMPONADE_RE.search(text) and not PPDH_DX_RE.search(text):
         localization = (
             "Obstructive shock: pericardial filling. Looks like right-sided CHF. "
             "The pump cannot fill until the sac is drained."
@@ -6289,6 +6300,7 @@ def analyze(
     steal_esophagitis_dx = ESOPHAGITIS_DX_RE.search(text)
     steal_cricoph_dx = CRICOPH_DX_RE.search(text)
     steal_hiatal_dx = HIATAL_DX_RE.search(text)
+    steal_ppdh_dx = PPDH_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6417,6 +6429,7 @@ def analyze(
         or steal_esophagitis_dx
         or steal_cricoph_dx
         or steal_hiatal_dx
+        or steal_ppdh_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16957,6 +16970,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for hiatal hernia."
+            )
+
+    ppdh_named = spec in {"dog", "cat"} and PPDH_DX_RE.search(text)
+    if ppdh_named:
+        if spec == "cat":
+            ppdh_loc = "Feline PPDH. Not a hiatal-alone."
+        else:
+            ppdh_loc = "Canine PPDH. Not a hiatal-alone."
+        localization = f"{localization} Also {ppdh_loc}" if localization else ppdh_loc
+        hard_stops.append(
+            "Do not harvest a mesh table. "
+            "Do not tap named PPDH as tamponade. "
+            "Congenital communication is not a sliding hiatal hernia."
+        )
+        do_not.append(
+            "Do not call this a hiatal-alone. "
+            "Do not send named PPDH home as a globoid heart. "
+            "Do not copy a mesh table as lobby law. "
+            "Do not delay surgery when signs are present."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline PPDH. Not a hiatal-alone. "
+                "△ Plumb. Thoracic films. Incidental can watch. Signs: herniorrhaphy. "
+                "Do not copy a mesh table."
+            )
+        else:
+            do_next.append(
+                "Name canine PPDH. Not a hiatal-alone. "
+                "△ Plumb. Thoracic films. Incidental can watch. Signs: herniorrhaphy. "
+                "Do not copy a mesh table."
+            )
+        sources.append(
+            "Roberts Merck hernias Nov 2022 / Sept 2024: PPDH is failed septum "
+            "transversum; Weimaraners and DLH; contents in the pericardial sac; "
+            "tamponade, dyspnea, GI signs; incidental is common; look for other "
+            "congenital defects; signs get herniorrhaphy. McMichael Merck "
+            "diaphragmatic hernia May 2022 / Sept 2024: congenital PPDH often "
+            "incidental in cats; enlarged cardiac silhouette overlapping the "
+            "diaphragm; do not delay surgery when indicated. Packet 326 hiatal. "
+            "Do not harvest a mesh table. Do not tap as tamponade."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for PPDH."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for PPDH."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

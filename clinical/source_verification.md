@@ -4520,3 +4520,31 @@ Night rule: named hiatal hernia → **Canine hiatal hernia. Not a megaesophagus-
 - Attending: If the query is only “hernia,” why does this gate stay dark?
 - Attending: Horse hiatal hernia — fire or skip?
 - Attending: Dual-named “megaesophagus, hiatal hernia” — which loc should win, and why?
+
+## 327. Canine PPDH (Roberts Merck Sept 2024; McMichael Sept 2024)
+
+No dedicated Plunkett PPDH chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (peritoneopericardial hernia is failed septum transversum fusion; communication between abdomen and pericardial sac; Weimaraners and domestic long-haired cats; contents omentum, liver, gallbladder, or small intestine; tamponade, dyspnea, GI obstruction; often incidental; other congenital defects common; signs get herniorrhaphy, quiet cases are watched). McMichael M. Diaphragmatic Hernia in Animals. Merck Veterinary Manual. Full review May 2022; last updated Sept 2024 (congenital PPDH more common in cats; often incidental; enlarged cardiac silhouette overlapping the diaphragm; do not unduly delay surgery when indicated; do not tap as a default pericardial effusion). Do not harvest a mesh table as lobby law. Do not fire on bare hernia. Do not fire on bare diaphragmatic hernia (trauma). Packet 326 still owns hiatal. Dogs and cats. Skip horse.
+
+Agree with Roberts / McMichael: **named PPDH is not a hiatal-alone.** Films. Incidental can watch. Signs: herniorrhaphy. Printed mesh numbers stay on the page (`△ Plumb`).
+
+Night split: named PPDH / peritoneopericardial / pericardiodiaphragmatic hernia is canine (or feline) PPDH; not a hiatal-alone. Bare hernia stay umbilical/inguinal. Bare diaphragmatic hernia stay trauma. Horse does not fire. Dog or cat can fire. Dual hiatal plus PPDH concatenates 326 then 327. Named PPDH does not fire tamponade loc.
+
+Book/public traps:
+
+- Do not harvest a mesh table.
+- Do not tap named PPDH as tamponade.
+- Do not call this a hiatal-alone.
+- Do not send named PPDH home as a globoid heart.
+- Do not copy a mesh table as lobby law.
+- Do not delay surgery when signs are present.
+
+Night rule: named PPDH → **Canine PPDH. Not a hiatal-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Weimaraner with PPDH not a hiatal-alone?
+- NAVLE 2: Why do you not tap a globoid heart that is named PPDH?
+- NAVLE 3: Dual-named “hiatal hernia, PPDH” — which loc should win, and why?
+- Oral: How do you tell the owner this is a hole into the heart sac, without inventing a mesh table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse PPDH — fire or skip?
+- Attending: Dual-named “pericardial tamponade, PPDH” — which loc should win, and why?

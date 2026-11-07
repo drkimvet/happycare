@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine PPDH (Merck Roberts Sept 2024; McMichael Sept 2024)
+
+- **Canine PPDH. Not a hiatal-alone.** Named PPDH / peritoneopericardial / pericardiodiaphragmatic hernia only. Failed septum transversum. Abdominal contents in the pericardial sac. Weimaraners and DLH. Incidental is common. Signs: herniorrhaphy. Do **not** harvest a mesh table. Do **not** tap named PPDH as tamponade. Do **not** send named PPDH home as a globoid heart.
+- Cats: same named loc as feline PPDH. Packet 326 still owns hiatal. Bare hernia stay umbilical/inguinal. Bare diaphragmatic hernia stay trauma, not this loc. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine hiatal hernia (Merck Roberts Sept 2024)
 
 - **Canine hiatal hernia. Not a megaesophagus-alone.** Named hiatal hernia / hiatus hernia / gastroesophageal hernia only. Type I sliding is the common one. LES and fundus displace into the thorax. Intermittent, so films can miss. Treat the esophagitis. Surgery is hiatal plication, esophagopexy, and left gastropexy. Do **not** harvest a fundoplication table. Do **not** harvest a barium table. Do **not** send named hiatal hernia home as normal brachycephalic vomit.

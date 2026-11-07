@@ -263,6 +263,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-esophagitis` | Assessment | Canine esophagitis / not a megaesophagus-alone |
 | `ddx-cricoph` | Assessment | Canine cricopharyngeal achalasia / not a megaesophagus-alone |
 | `ddx-hiatal` | Assessment | Canine hiatal hernia / not a megaesophagus-alone |
+| `ddx-ppdh` | Assessment | Canine PPDH / not a hiatal-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -279,6 +280,7 @@ Suggested names are short so they show up after three letters.
 | `dc-esophagitis` | Discharge | After esophagitis / reflux talk |
 | `dc-cricoph` | Discharge | After cricopharyngeal / swallow talk |
 | `dc-hiatal` | Discharge | After hiatal hernia / reflux talk |
+| `dc-ppdh` | Discharge | After PPDH / hernia talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3764,6 +3766,21 @@ DDX:
 Do not: harvest a fundoplication table. Harvest a barium table. Call this a megaesophagus-alone. Treat a missed survey film as proof it is gone.
 Do next: Name canine hiatal hernia. Not a megaesophagus-alone. △ Plumb. Fluoro. Treat the esophagitis. Do not copy a fundoplication table.
 
+### `ddx-ppdh`
+
+PPDH — {{patient.name}}
+Canine PPDH [yes / not]. Not a hiatal-alone [yes / not]. Incidental vs signs [ ]. Thoracic films [ ]. Other congenital defects [ ]. Herniorrhaphy [ ].
+
+DDX:
+1. PPDH — **Canine PPDH. Not a hiatal-alone**
+2. Failed septum transversum. Abdominal contents in the pericardial sac. Weimaraners and DLH
+3. Incidental can watch. Signs: herniorrhaphy. Do not tap as tamponade
+4. Packet 326 owns hiatal. Bare hernia stay umbilical/inguinal. Bare diaphragmatic hernia stay trauma
+5. Dog or cat can fire. Horse does not fire. Do not send this home as a globoid heart
+
+Do not: harvest a mesh table. Tap named PPDH as tamponade. Call this a hiatal-alone. Delay surgery when signs are present.
+Do next: Name canine PPDH. Not a hiatal-alone. △ Plumb. Thoracic films. Incidental can watch. Signs: herniorrhaphy. Do not copy a mesh table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3905,6 +3922,14 @@ Return now for trouble breathing, blue gums, fever, food coming up, or not being
 Give only the medicines we sent, as labeled. Soft food, small meals, as we showed. Surgery may be needed if reflux and esophagitis do not settle.
 
 Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
+
+### `dc-ppdh`
+
+{{patient.name}} has a hole between the belly and the sac around the heart (PPDH). Organs can sit next to the heart. This is not a sliding hiatal hernia and not ordinary heart enlargement.
+
+If there were no signs, watching may be enough. If there were signs, surgery is how the hole is closed. Give only the medicines we sent, as labeled.
+
+Return now for trouble breathing, blue gums, collapse, or not being able to eat. {{location.phonenumber}}
 
 ### `dc-ahds`
 

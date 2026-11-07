@@ -10746,6 +10746,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline hiatal hernia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_ppdh_is_not_a_hiatal_alone(self):
+        b = analyze("dog", "PPDH")
+        loc = b["localization"].lower()
+        self.assertIn("canine ppdh", loc)
+        self.assertIn("not a hiatal-alone", loc)
+        self.assertNotIn("canine hiatal hernia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mesh table", joined)
+        self.assertIn("tamponade", joined)
+        self.assertIn("globoid heart", joined)
+        self.assertIn("herniorrhaphy", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_peritoneopericardial_fires(self):
+        b = analyze("dog", "peritoneopericardial hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine ppdh", loc)
+        self.assertIn("not a hiatal-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pericardiodiaphragmatic_is_not_tamponade_tap(self):
+        b = analyze("dog", "pericardiodiaphragmatic hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine ppdh", loc)
+        self.assertNotIn("obstructive shock", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not tap named ppdh as tamponade", joined)
+        self.assertNotIn("pericardiocentesis is the treatment", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_ppdh_fires(self):
+        b = analyze("cat", "PPDH")
+        loc = b["localization"].lower()
+        self.assertIn("feline ppdh", loc)
+        self.assertIn("not a hiatal-alone", loc)
+        self.assertNotIn("canine ppdh", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hiatal_plus_ppdh_concatenates(self):
+        b = analyze("dog", "hiatal hernia, PPDH")
+        loc = b["localization"].lower()
+        self.assertIn("canine hiatal hernia", loc)
+        self.assertIn("canine ppdh", loc)
+        self.assertIn("not a hiatal-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hernia_is_not_ppdh(self):
+        b = analyze("dog", "hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ppdh", loc)
+        self.assertNotIn("not a hiatal-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_diaphragmatic_hernia_is_not_ppdh(self):
+        b = analyze("dog", "diaphragmatic hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ppdh", loc)
+        self.assertNotIn("not a hiatal-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_ppdh(self):
+        b = analyze("horse", "PPDH")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ppdh", loc)
+        self.assertNotIn("feline ppdh", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
