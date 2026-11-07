@@ -2067,6 +2067,17 @@ BOAS_DX_RE = re.compile(
 # Do not harvest a barium or metoclopramide table. Dogs and cats.
 # Skip horse. Packet 271 still owns congenital. Packet 163 still owns MG.
 MEGAESO_DX_RE = re.compile(r"\bmegaesophag|\bmegaoesophag", re.I)
+# Named PRAA / persistent right aortic arch / vascular ring / double aortic
+# arch only. Do not use \bmegaesophag (320). Do not use \bregurgit.
+# Do not harvest a barium or ligation table. Dogs and cats. Skip horse.
+# Packet 320 still owns named megaesophagus. Packet 271 still owns congenital.
+PRAA_DX_RE = re.compile(
+    r"\bpraa\b|"
+    r"persistent right aortic arch|"
+    r"vascular ring|"
+    r"double aortic arch",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6229,6 +6240,7 @@ def analyze(
     steal_trach_collapse = TRACH_COLLAPSE_RE.search(text)
     steal_boas_dx = BOAS_DX_RE.search(text)
     steal_megaeso_dx = MEGAESO_DX_RE.search(text)
+    steal_praa_dx = PRAA_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6351,6 +6363,7 @@ def analyze(
         or steal_trach_collapse
         or steal_boas_dx
         or steal_megaeso_dx
+        or steal_praa_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16614,6 +16627,53 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for megaesophagus."
+            )
+
+    praa_named = spec in {"dog", "cat"} and PRAA_DX_RE.search(text)
+    if praa_named:
+        if spec == "cat":
+            praa_loc = "Feline vascular ring. Not a megaesophagus-alone."
+        else:
+            praa_loc = "Canine vascular ring. Not a megaesophagus-alone."
+        localization = f"{localization} Also {praa_loc}" if localization else praa_loc
+        hard_stops.append(
+            "Do not harvest a barium table. "
+            "Do not harvest a ligation table. "
+            "Focal heart-base compression is not generalized megaesophagus."
+        )
+        do_not.append(
+            "Do not call this a megaesophagus-alone. "
+            "Do not send named PRAA home as weaning. "
+            "Do not pour barium into a puppy that already aspirates. "
+            "Do not treat ligamentum transection as a motility-drug night."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline vascular ring. Not a megaesophagus-alone. "
+                "△ Plumb. Weaning regurg. Rightward trachea on DV/VD. CT before cut. "
+                "Do not copy a ligation table."
+            )
+        else:
+            do_next.append(
+                "Name canine vascular ring. Not a megaesophagus-alone. "
+                "△ Plumb. Weaning regurg. Rightward trachea on DV/VD. CT before cut. "
+                "Do not copy a ligation table."
+            )
+        sources.append(
+            "Tou Merck vascular malformations May 2025: PRAA is the common "
+            "ring; esophagus trapped at the heart base; regurgitation at weaning; "
+            "rightward tracheal deviation on DV/VD; transect the ligamentum; "
+            "CT before surgery. Roberts Merck esophageal anomalies Nov 2022 / "
+            "Sept 2024 named only. Packet 320 megaesophagus. Packet 271 congenital. "
+            "Do not harvest barium or ligation tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for vascular ring."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for vascular ring."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

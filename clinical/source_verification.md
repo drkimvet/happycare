@@ -4352,3 +4352,31 @@ Night rule: named megaesophagus → **Canine megaesophagus. Not a pneumonia-alon
 - Attending: If the query is only “regurgitation,” why does this gate stay dark?
 - Attending: Horse megaesophagus — fire or skip?
 - Attending: Dual-named “congenital megaesophagus” — which loc should win, and why?
+
+## 321. Canine vascular ring / PRAA (Tou Merck May 2025)
+
+No dedicated Plunkett PRAA chapter in the owned SA EM splits. Public Tou S. Vascular Malformations in Animals. Merck Veterinary Manual. Full review May 2025; last updated May 2025 (PRAA is the most common vascular ring in dogs, German Shepherd Dogs in particular, also reported in cattle, horses, and cats; esophagus and trachea trapped at the heart base by the persistent arch, ligamentum arteriosum, and heart base; esophageal dilation cranial to the heart base; regurgitation often at weaning; aspiration pneumonia common; rightward tracheal deviation on DV/VD is highly sensitive and specific; CT before surgery; transect the ligamentum arteriosum; PDA if present needs ligation and transection). Roberts J. Congenital and Inherited Anomalies of the Esophagus in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 named only (vascular ring entrapment vs congenital megaesophagus vs achalasia). Do not harvest a barium table as lobby law. Do not harvest a ligation table as lobby law. Do not harvest a 72% / 30% survival percent as lobby law. Do not fire on bare regurgitation. Do not fire on bare German Shepherd. Packet 320 still owns named megaesophagus. Packet 271 still owns congenital megaesophagus. Dogs and cats. Skip horse.
+
+Agree with Tou: **named PRAA is not a megaesophagus-alone.** Focal heart-base compression. CT before cut. Printed barium / ligation / survival numbers stay on the page (`△ Plumb`).
+
+Night split: named PRAA / persistent right aortic arch / vascular ring / double aortic arch is canine (or feline) vascular ring; not a megaesophagus-alone. Bare regurgitation stay dark. Horse does not fire. Dog or cat can fire. Dual megaesophagus plus PRAA concatenates 320 then 321.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest a ligation table.
+- Do not call this a megaesophagus-alone.
+- Do not send named PRAA home as weaning.
+- Do not pour barium into a puppy that already aspirates.
+- Do not treat ligamentum transection as a motility-drug night.
+
+Night rule: named PRAA → **Canine vascular ring. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a weaning GSD puppy with PRAA not a megaesophagus-alone?
+- NAVLE 2: Why does a rightward trachea on DV/VD matter before you cut?
+- NAVLE 3: Dual-named “megaesophagus, PRAA” — which loc should win, and why?
+- Oral: How do you tell the owner this is not weaning, without inventing a ligation table?
+- Attending: If the query is only “regurgitation,” why does this gate stay dark?
+- Attending: Horse PRAA — fire or skip?
+- Attending: Dual-named “congenital megaesophagus, vascular ring” — which loc should win, and why?

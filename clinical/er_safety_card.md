@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine vascular ring (Merck Tou May 2025)
+
+- **Canine vascular ring. Not a megaesophagus-alone.** Named PRAA / persistent right aortic arch / vascular ring / double aortic arch only. Esophagus trapped at the heart base. Weaning regurgitation. Rightward tracheal deviation on DV/VD. CT before surgery. Transect the ligamentum arteriosum; PDA if present is ligate-and-cut. Focal cranial-to-heart dilation is not generalized megaesophagus. Do **not** harvest a barium table. Do **not** harvest a ligation table. Do **not** send named PRAA home as weaning.
+- Cats: same named loc as feline vascular ring. Packet 320 still owns named megaesophagus. Packet 271 still owns congenital. Bare regurgitation stay dark. Bare German Shepherd stay dark. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine megaesophagus (Merck Defarges May 2025)
 
 - **Canine megaesophagus. Not a pneumonia-alone.** Named megaesophagus / megaoesophagus only. Thoracic films: air, fluid, or food in a dilated esophagus. Adult workup looks for MG, Addison, lead, and a vascular ring. Idiopathic function is not fixed by surgery or a motility drug. Upright feeding. Respiratory signs may hide the esophagus. Do **not** harvest a barium table. Do **not** harvest a metoclopramide table. Do **not** send named megaesophagus home as kennel cough.

@@ -257,6 +257,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tcoll` | Assessment | Canine tracheal collapse / not a Lasix night |
 | `ddx-boas` | Assessment | Canine BOAS / not a wait-and-see stertor |
 | `ddx-megaeso` | Assessment | Canine megaesophagus / not a pneumonia-alone |
+| `ddx-praa` | Assessment | Canine vascular ring / not a megaesophagus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -267,6 +268,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tcoll` | Discharge | After tracheal collapse / cough talk |
 | `dc-boas` | Discharge | After BOAS / airway talk |
 | `dc-megaeso` | Discharge | After megaesophagus / feeding talk |
+| `dc-praa` | Discharge | After vascular ring / PRAA talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3662,6 +3664,21 @@ DDX:
 Do not: harvest a barium table. Harvest a metoclopramide table. Call this a pneumonia-alone. Pour barium into a dog that already aspirates.
 Do next: Name canine megaesophagus. Not a pneumonia-alone. △ Plumb. Upright feeding. Look for MG and Addison. Do not copy a barium table.
 
+### `ddx-praa`
+
+Vascular ring — {{patient.name}}
+Canine vascular ring [yes / not]. Not a megaesophagus-alone [yes / not]. PRAA [ ]. Weaning regurg [ ]. Rightward trachea on DV/VD [ ]. CT before cut [ ].
+
+DDX:
+1. Vascular ring — **Canine vascular ring. Not a megaesophagus-alone**
+2. Esophagus trapped at the heart base. Focal cranial-to-heart dilation is not generalized megaesophagus
+3. Rightward tracheal deviation on DV/VD. CT before surgery. Transect the ligamentum. PDA if present is ligate-and-cut
+4. Packet 320 owns named megaesophagus. Packet 271 owns congenital. Bare regurgitation stay dark
+5. Dog or cat can fire. Horse does not fire. Do not send named PRAA home as weaning
+
+Do not: harvest a barium table. Harvest a ligation table. Call this a megaesophagus-alone. Pour barium into a puppy that already aspirates.
+Do next: Name canine vascular ring. Not a megaesophagus-alone. △ Plumb. Weaning regurg. Rightward trachea on DV/VD. CT before cut. Do not copy a ligation table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3753,6 +3770,14 @@ Return now for trouble breathing, blue gums, collapse, or not being able to cool
 {{patient.name}} has a dilated esophagus (megaesophagus). Food sits in the esophagus instead of moving to the stomach. Cough or pneumonia can hide the esophagus. This is not kennel cough.
 
 Feed upright, as we showed. Keep {{patient.pronoun}} upright after meals. Give only the medicines we sent, as labeled. Do not give leftover motility drugs from the cabinet. Do not give leftover barium.
+
+Return now for trouble breathing, blue gums, fever, or food coming up from the mouth. {{location.phonenumber}}
+
+### `dc-praa`
+
+{{patient.name}} has a vascular ring (often a persistent right aortic arch). A vessel wraps the esophagus at the heart. Food cannot pass. This is not ordinary megaesophagus and not ordinary weaning.
+
+Surgery is how the ring is opened. Feeding changes do not cut the ligamentum. Give only the medicines we sent, as labeled. Feed as we showed. Do not give leftover barium from the cabinet.
 
 Return now for trouble breathing, blue gums, fever, or food coming up from the mouth. {{location.phonenumber}}
 

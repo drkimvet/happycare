@@ -10379,6 +10379,73 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a pneumonia-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_vascular_ring_is_not_a_megaesophagus_alone(self):
+        b = analyze("dog", "PRAA")
+        loc = b["localization"].lower()
+        self.assertIn("canine vascular ring", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine megaesophagus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("barium table", joined)
+        self.assertIn("ligation table", joined)
+        self.assertIn("megaesophagus-alone", joined)
+        self.assertIn("weaning", joined)
+        self.assertIn("ligamentum", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_persistent_right_aortic_arch_fires(self):
+        b = analyze("dog", "persistent right aortic arch")
+        loc = b["localization"].lower()
+        self.assertIn("canine vascular ring", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_double_aortic_arch_fires(self):
+        b = analyze("dog", "double aortic arch")
+        loc = b["localization"].lower()
+        self.assertIn("canine vascular ring", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_vascular_ring_fires(self):
+        b = analyze("cat", "vascular ring")
+        loc = b["localization"].lower()
+        self.assertIn("feline vascular ring", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine vascular ring", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_megaesophagus_plus_praa_concatenates(self):
+        b = analyze("dog", "megaesophagus, PRAA")
+        loc = b["localization"].lower()
+        self.assertIn("canine megaesophagus", loc)
+        self.assertIn("not a pneumonia-alone", loc)
+        self.assertIn("canine vascular ring", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_regurgitation_is_not_praa(self):
+        b = analyze("dog", "regurgitation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine vascular ring", loc)
+        self.assertNotIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_german_shepherd_is_not_praa(self):
+        b = analyze("dog", "German Shepherd")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine vascular ring", loc)
+        self.assertNotIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_praa(self):
+        b = analyze("horse", "PRAA")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine vascular ring", loc)
+        self.assertNotIn("feline vascular ring", loc)
+        self.assertNotIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
