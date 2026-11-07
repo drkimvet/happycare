@@ -267,6 +267,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-dh` | Assessment | Canine traumatic DH / not a PPDH-alone |
 | `ddx-umbilical` | Assessment | Canine umbilical hernia / not a DH-alone |
 | `ddx-inguinal` | Assessment | Canine inguinal hernia / not an umbilical-alone |
+| `ddx-linfb` | Assessment | Canine linear FB / not an esophageal-FB-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -287,6 +288,7 @@ Suggested names are short so they show up after three letters.
 | `dc-dh` | Discharge | After traumatic DH / repair talk |
 | `dc-umbilical` | Discharge | After umbilical hernia / close talk |
 | `dc-inguinal` | Discharge | After inguinal hernia / close talk |
+| `dc-linfb` | Discharge | After linear FB / string talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3832,6 +3834,21 @@ DDX:
 Do not: harvest a mesh table. Harvest a laparoscopic ring table. Call this an umbilical-alone. Forget the uterus in a bitch.
 Do next: Name canine inguinal hernia. Not an umbilical-alone. △ Plumb. Palpate. Close. Strangulation is surgery tonight. Do not copy a mesh table.
 
+### `ddx-linfb`
+
+Linear FB — {{patient.name}}
+Canine linear FB [yes / not]. Not an esophageal-FB-alone [yes / not]. Tongue-base anchor [ ]. Cut not yank [ ]. Plication [ ]. Surgery [ ].
+
+DDX:
+1. Linear FB — **Canine linear FB. Not an esophageal-FB-alone**
+2. One end anchors at the tongue base or stomach. Peristalsis bunches bowel and saws the wall
+3. Never yank. Cut the anchor. Endoscopy is not the linear plan
+4. Packet 322 owns esophageal FB. Bare foreign body stay unnamed. Do not send this home as a hairball
+5. Dog or cat can fire. Horse does not fire. Do not copy an enterotomy table
+
+Do not: yank the visible string. Harvest an enterotomy table. Call this an esophageal-FB-alone. Use endoscopy as the linear plan.
+Do next: Name canine linear FB. Not an esophageal-FB-alone. △ Plumb. Tongue base. Cut the anchor. Imaging. Surgery. Do not copy an enterotomy table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4005,6 +4022,14 @@ Return now for a painful or stuck bulge, vomiting, or not being able to eat. {{l
 Most of these holes are closed so intestine cannot get trapped. If there was vomiting, surgery is tonight. Give only the medicines we sent, as labeled.
 
 Return now for a painful or stuck bulge, vomiting, or not being able to eat. {{location.phonenumber}}
+
+### `dc-linfb`
+
+{{patient.name}} swallowed a string, thread, or similar linear object. One end can catch under the tongue while the rest saws through the intestine. This is not an esophageal bone or hairball.
+
+Do not pull any string you can see. We look under the tongue, image, and often operate. Give only the medicines we sent, as labeled.
+
+Return now for vomiting, a painful belly, collapse, or string still visible. {{location.phonenumber}}
 
 ### `dc-ahds`
 

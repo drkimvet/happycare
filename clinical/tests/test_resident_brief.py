@@ -10999,6 +10999,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline inguinal hernia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_linear_fb_is_not_an_esophageal_fb_alone(self):
+        b = analyze("dog", "linear foreign body")
+        loc = b["localization"].lower()
+        self.assertIn("canine linear fb", loc)
+        self.assertIn("not an esophageal-fb-alone", loc)
+        self.assertNotIn("canine esophageal fb", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("yank", joined)
+        self.assertIn("enterotomy table", joined)
+        self.assertIn("hairball", joined)
+        self.assertIn("tongue", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_string_under_tongue_fires_linear_fb(self):
+        b = analyze("cat", "string under the tongue")
+        loc = b["localization"].lower()
+        self.assertIn("feline linear fb", loc)
+        self.assertIn("not an esophageal-fb-alone", loc)
+        self.assertNotIn("canine linear fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_linear_fb_alias_fires(self):
+        b = analyze("dog", "linear FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine linear fb", loc)
+        self.assertIn("not an esophageal-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esofb_plus_linear_concatenates(self):
+        b = analyze("dog", "esophageal foreign body, linear foreign body")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophageal fb", loc)
+        self.assertIn("canine linear fb", loc)
+        self.assertIn("not an esophageal-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_foreign_body_is_not_linear_fb(self):
+        b = analyze("dog", "foreign body")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine linear fb", loc)
+        self.assertNotIn("not an esophageal-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_string_alone_is_not_linear_fb(self):
+        b = analyze("cat", "string")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline linear fb", loc)
+        self.assertNotIn("not an esophageal-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_linear_fb(self):
+        b = analyze("horse", "linear foreign body")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine linear fb", loc)
+        self.assertNotIn("feline linear fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

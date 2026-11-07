@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine linear FB (Merck Winkler Aug 2025)
+
+- **Canine linear FB. Not an esophageal-FB-alone.** Named linear foreign body / linear FB / string under the tongue only. One end anchors at the tongue base or stomach. Peristalsis bunches bowel and saws the wall. Never yank. Cut the anchor. Plication on films. Endoscopy is not the linear plan. Do **not** harvest an enterotomy table. Do **not** harvest a 36–48 hour watch table. Do **not** send named linear FB home as a hairball.
+- Cats: same named loc as feline linear FB; cats are the typical linear patients. Packet 322 still owns esophageal FB. Bare foreign body stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine inguinal hernia (Merck Roberts Sept 2024)
 
 - **Canine inguinal hernia. Not an umbilical-alone.** Named inguinal hernia / scrotal hernia only. Quiet groin or scrotal bulge, or vomiting if bowel is strangulated. Bitches can herniate uterus. Palpate. Close. Strangulation is surgery tonight. Do **not** harvest a mesh table. Do **not** harvest a laparoscopic ring table. Do **not** send named inguinal hernia home as a lymph node.

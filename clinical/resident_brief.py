@@ -2159,6 +2159,15 @@ INGUIN_DX_RE = re.compile(
     r"scrotal hernia",
     re.I,
 )
+# Named linear foreign body / linear FB / string under the tongue only.
+# Do not use esophageal FB (322). Do not use \bforeign body\b alone.
+# Do not harvest an enterotomy table. Do not yank. Dogs and cats.
+# Skip horse. Packet 322 still owns esophageal FB.
+LINEAR_FB_DX_RE = re.compile(
+    r"linear (foreign body|\bfb\b)|"
+    r"string under (the )?tongue",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6331,6 +6340,7 @@ def analyze(
     steal_dh_dx = DH_DX_RE.search(text)
     steal_umbil_dx = UMBIL_DX_RE.search(text)
     steal_inguin_dx = INGUIN_DX_RE.search(text)
+    steal_linear_fb_dx = LINEAR_FB_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6463,6 +6473,7 @@ def analyze(
         or steal_dh_dx
         or steal_umbil_dx
         or steal_inguin_dx
+        or steal_linear_fb_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17197,6 +17208,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for inguinal hernia."
+            )
+
+    linear_fb_named = spec in {"dog", "cat"} and LINEAR_FB_DX_RE.search(text)
+    if linear_fb_named:
+        if spec == "cat":
+            linear_fb_loc = "Feline linear FB. Not an esophageal-FB-alone."
+        else:
+            linear_fb_loc = "Canine linear FB. Not an esophageal-FB-alone."
+        localization = (
+            f"{localization} Also {linear_fb_loc}" if localization else linear_fb_loc
+        )
+        hard_stops.append(
+            "Do not yank the visible string. Cut at the tongue-base anchor. "
+            "Do not harvest an enterotomy table. Endoscopy is not the linear plan."
+        )
+        do_not.append(
+            "Do not call this an esophageal-FB-alone. "
+            "Do not send named linear FB home as a hairball. "
+            "Do not copy an enterotomy table as lobby law. "
+            "Do not pull string anchored under the tongue."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline linear FB. Not an esophageal-FB-alone. "
+                "△ Plumb. Tongue base. Cut the anchor. Imaging. Surgery. "
+                "Do not copy an enterotomy table."
+            )
+        else:
+            do_next.append(
+                "Name canine linear FB. Not an esophageal-FB-alone. "
+                "△ Plumb. Tongue base. Cut the anchor. Imaging. Surgery. "
+                "Do not copy an enterotomy table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: cats more often ingest "
+            "linear FB (string, yarn, floss); one end anchors at the tongue "
+            "base or stomach; peristalsis bunches bowel and saws the wall; "
+            "never pull a visible string; cut the anchor; plication on films; "
+            "endoscopy is not for suspected linear FB; gastrotomy ± the fewest "
+            "enterotomies. Packet 322 esophageal FB. Do not harvest an "
+            "enterotomy or 36–48 hour watch table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for linear FB."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for linear FB."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

@@ -4629,3 +4629,30 @@ Night rule: named inguinal hernia → **Canine inguinal hernia. Not an umbilical
 - Attending: If the query is only “hernia,” why does this gate stay dark?
 - Attending: Horse inguinal hernia — fire or skip?
 - Attending: Dual-named “scrotal hernia” — same loc or a new packet?
+
+## 331. Canine linear FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett linear-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (cats more typically ingest linear FB such as string, yarn, dental floss; one end anchors at the tongue base or stomach; peristalsis bunches intestine and saws the wall; never pull a visible string; cut at the anchor; inspect the oral cavity; plication on films; endoscopy is not for suspected linear FB; gastrotomy ± the fewest enterotomies). Do not harvest an enterotomy table. Do not harvest a 36–48 hour watch table as lobby law. Do not fire on bare foreign body. Packet 322 still owns esophageal FB. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named linear FB is not an esophageal-FB-alone.** Tongue base. Cut the anchor. Printed enterotomy numbers stay on the page (`△ Plumb`).
+
+Night split: named linear foreign body / linear FB / string under the tongue is canine (or feline) linear FB; not an esophageal-FB-alone. Bare foreign body stay unnamed. Horse does not fire. Dog or cat can fire. Dual esophageal FB plus linear concatenates 322 then 331. Existing LINEAR_RE still warns yarn/floss/yank without requiring this loc.
+
+Book/public traps:
+
+- Do not yank the visible string.
+- Do not harvest an enterotomy table.
+- Do not call this an esophageal-FB-alone.
+- Do not send named linear FB home as a hairball.
+- Do not use endoscopy as the linear plan.
+
+Night rule: named linear FB → **Canine linear FB. Not an esophageal-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a cat with string under the tongue not an esophageal-FB-alone?
+- NAVLE 2: Why do you cut the anchor instead of pulling the string?
+- NAVLE 3: Dual-named “esophageal foreign body, linear foreign body” — which loc should win, and why?
+- Oral: How do you tell the owner not to pull the string, without inventing an enterotomy table?
+- Attending: If the query is only “foreign body,” why does this gate stay dark?
+- Attending: Horse linear FB — fire or skip?
+- Attending: Why is endoscopy not the linear plan?

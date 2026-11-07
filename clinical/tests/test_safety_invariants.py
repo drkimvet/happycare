@@ -756,6 +756,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a dh-alone", VERIF.lower())
         self.assertIn("canine inguinal hernia", VERIF.lower())
         self.assertIn("not an umbilical-alone", VERIF.lower())
+        self.assertIn("canine linear fb", VERIF.lower())
+        self.assertIn("not an esophageal-fb-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1268,6 +1270,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-umbilical`", MACRO)
         self.assertIn("`ddx-inguinal`", MACRO)
         self.assertIn("`dc-inguinal`", MACRO)
+        self.assertIn("`ddx-linfb`", MACRO)
+        self.assertIn("`dc-linfb`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1459,6 +1463,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a dh-alone", MACRO.lower())
         self.assertIn("canine inguinal hernia", MACRO.lower())
         self.assertIn("not an umbilical-alone", MACRO.lower())
+        self.assertIn("canine linear fb", MACRO.lower())
+        self.assertIn("not an esophageal-fb-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -2013,6 +2019,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a dh-alone",
             "canine inguinal hernia",
             "not an umbilical-alone",
+            "canine linear fb",
+            "not an esophageal-fb-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
