@@ -270,6 +270,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-linfb` | Assessment | Canine linear FB / not an esophageal-FB-alone |
 | `ddx-intuss` | Assessment | Canine intussusception / not a linear-FB-alone |
 | `ddx-mvolv` | Assessment | Canine mesenteric volvulus / not an intussusception-alone |
+| `ddx-pyloric` | Assessment | Canine pyloric stenosis / not a GDV-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -293,6 +294,7 @@ Suggested names are short so they show up after three letters.
 | `dc-linfb` | Discharge | After linear FB / string talk |
 | `dc-intuss` | Discharge | After intussusception / reduce talk |
 | `dc-mvolv` | Discharge | After mesenteric volvulus / explore talk |
+| `dc-pyloric` | Discharge | After pyloric stenosis / outflow talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3883,6 +3885,21 @@ DDX:
 Do not: harvest a mortality table. Call this an intussusception-alone. Send this home as ileus. Watch overnight like a gastric bloat.
 Do next: Name canine mesenteric volvulus. Not an intussusception-alone. △ Plumb. Fluids. Explore now. Do not copy a mortality table.
 
+### `ddx-pyloric`
+
+Pyloric stenosis — {{patient.name}}
+Canine pyloric stenosis [yes / not]. Not a GDV-alone [yes / not]. Congenital brachycephalic vs later small-breed [ ]. Vomit hours after meals [ ]. Contrast / endoscopy / biopsy [ ]. Surgery [ ].
+
+DDX:
+1. Pyloric stenosis — **Canine pyloric stenosis. Not a GDV-alone**
+2. Hypertrophied pyloric muscle. Congenital in Boxer / Boston / English Bulldog. Later in Lhasa / Shih Tzu / Maltese
+3. Contrast or endoscopy with biopsy. Surgery after esophagitis and dehydration are addressed
+4. Packet 319 owns BOAS. GDV stays gastric. Packet 333 owns mesenteric volvulus. Bare stenosis stay unnamed
+5. Dog or cat can fire. Horse does not fire. Do not copy a pyloroplasty table
+
+Do not: harvest a pyloroplasty table. Call this a GDV-alone. Send this home as food bloat. Skip esophagitis and dehydration before surgery.
+Do next: Name canine pyloric stenosis. Not a GDV-alone. △ Plumb. Contrast or endoscopy. Then surgery. Do not copy a pyloroplasty table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4080,6 +4097,14 @@ Return now for vomiting, a painful belly, collapse, or no stool. {{location.phon
 This is a crash-and-operate disease. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
 
 Return now for collapse, vomiting, a painful belly, or no stool. {{location.phonenumber}}
+
+### `dc-pyloric`
+
+{{patient.name}} has a thickened stomach exit (pyloric stenosis). Food sits in the stomach and comes up hours after a meal. This is not a stomach twist (GDV) and not ordinary food bloat.
+
+Surgery opens the outflow. Give only the medicines we sent, as labeled. Small meals as we showed.
+
+Return now for repeated vomiting, trouble breathing, collapse, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

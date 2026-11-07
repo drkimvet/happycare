@@ -4710,3 +4710,30 @@ Night rule: named mesenteric volvulus → **Canine mesenteric volvulus. Not an i
 - Attending: If the query is only “volvulus,” why does this gate stay dark?
 - Attending: Horse mesenteric volvulus — fire or skip?
 - Attending: Dual-named “GDV, mesenteric volvulus” — which loc should win, and why?
+
+## 334. Canine pyloric stenosis (Winkler Merck Aug 2025; Roberts Sept 2024)
+
+No dedicated Plunkett pyloric-stenosis chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (pyloric stenosis is intramural gastric outflow obstruction from hypertrophied pyloric muscle; congenital in brachycephalics; later in Lhasa Apsos, Shih Tzus, and Maltese; cause of the later form usually unknown). Roberts J. Congenital and Inherited Anomalies of the Stomach in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (Boxer, Boston Terrier, English Bulldog, and Siamese cats; vomit food several hours after a meal; poor weight gain, aspiration, dehydration; contrast imaging and endoscopy with biopsy to exclude neoplasia; surgery to relieve obstruction; treat esophagitis, acid-base, and dehydration first). Do not harvest a pyloroplasty or pyloromyotomy table as lobby law. Do not fire on BOAS, Boxer, Lhasa, or stenosis alone. Packet 319 still owns BOAS. GDV stays gastric. Packet 333 still owns mesenteric volvulus. Dogs and cats. Skip horse.
+
+Agree with Winkler / Roberts: **named pyloric stenosis is not a GDV-alone.** Contrast or endoscopy. Then surgery. Printed pyloroplasty numbers stay on the page (`△ Plumb`).
+
+Night split: named pyloric stenosis / pyloric hypertrophy / gastric outflow obstruction is canine (or feline) pyloric stenosis; not a GDV-alone. Bare stenosis stay unnamed. Horse does not fire. Dual GDV plus pyloric stenosis concatenates gastric then 334.
+
+Book/public traps:
+
+- Do not harvest a pyloroplasty table.
+- Do not call this a GDV-alone.
+- Do not send named pyloric stenosis home as food bloat.
+- Do not copy a pyloroplasty table as lobby law.
+- Do not skip esophagitis and dehydration before surgery.
+
+Night rule: named pyloric stenosis → **Canine pyloric stenosis. Not a GDV-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Boston Terrier puppy vomiting food hours after meals not a GDV-alone?
+- NAVLE 2: Why biopsy if you endoscope a pyloric outflow problem?
+- NAVLE 3: Dual-named “GDV, pyloric stenosis” — which loc should win, and why?
+- Oral: How do you tell the owner the stomach exit is too thick, without inventing a pyloroplasty table?
+- Attending: If the query is only “stenosis,” why does this gate stay dark?
+- Attending: Horse pyloric stenosis — fire or skip?
+- Attending: Dual-named “BOAS, pyloric stenosis” — which loc should win, and why?

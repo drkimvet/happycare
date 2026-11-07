@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine pyloric stenosis (Merck Winkler Aug 2025; Roberts Sept 2024)
+
+- **Canine pyloric stenosis. Not a GDV-alone.** Named pyloric stenosis / pyloric hypertrophy / gastric outflow obstruction only. Hypertrophied pyloric muscle. Congenital in brachycephalics (Boxer, Boston, English Bulldog). Later in Lhasa Apso, Shih Tzu, Maltese. Vomit food hours after a meal. Contrast or endoscopy with biopsy. Surgery after esophagitis and dehydration are addressed. Do **not** harvest a pyloroplasty table. Do **not** send named pyloric stenosis home as food bloat.
+- Cats: same named loc as feline pyloric stenosis; Siamese named. Packet 319 still owns BOAS. GDV stays gastric. Packet 333 still owns mesenteric volvulus. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine mesenteric volvulus (Merck Winkler Aug 2025)
 
 - **Canine mesenteric volvulus. Not an intussusception-alone.** Named mesenteric volvulus / intestinal volvulus / mesenteric torsion only. Not GDV. Shock and a painful belly. Films look like ileus, then progress fast. The entire small bowel may already be dead. Do **not** harvest a mortality table. Do **not** watch overnight like a gastric bloat. Do **not** send named mesenteric volvulus home as ileus.

@@ -2187,6 +2187,18 @@ MVOLV_DX_RE = re.compile(
     r"mesenteric torsion",
     re.I,
 )
+# Named pyloric stenosis / pyloric hypertrophy / gastric outflow
+# obstruction only. Do not use GDV / gastric volvulus. Do not use
+# mesenteric volvulus (333). Do not harvest a pyloroplasty table.
+# Dogs (brachycephalic congenital; Lhasa / Shih Tzu / Maltese later).
+# Siamese cats named. Skip horse. Packet 319 still owns BOAS.
+PYLORIC_DX_RE = re.compile(
+    r"pyloric stenosis|"
+    r"pyloric hypertrophy|"
+    r"pyloric muscular hypertrophy|"
+    r"gastric outflow obstruction",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6362,6 +6374,7 @@ def analyze(
     steal_linear_fb_dx = LINEAR_FB_DX_RE.search(text)
     steal_intuss_dx = INTUSS_DX_RE.search(text)
     steal_mvolv_dx = MVOLV_DX_RE.search(text)
+    steal_pyloric_dx = PYLORIC_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6497,6 +6510,7 @@ def analyze(
         or steal_linear_fb_dx
         or steal_intuss_dx
         or steal_mvolv_dx
+        or steal_pyloric_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17380,6 +17394,58 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for mesenteric volvulus."
+            )
+
+    pyloric_named = spec in {"dog", "cat"} and PYLORIC_DX_RE.search(text)
+    if pyloric_named:
+        if spec == "cat":
+            pyloric_loc = "Feline pyloric stenosis. Not a GDV-alone."
+        else:
+            pyloric_loc = "Canine pyloric stenosis. Not a GDV-alone."
+        localization = (
+            f"{localization} Also {pyloric_loc}" if localization else pyloric_loc
+        )
+        hard_stops.append(
+            "Do not harvest a pyloroplasty table. "
+            "This is delayed emptying, not a gastric twist. "
+            "Biopsy if endoscopy is used: exclude neoplasia."
+        )
+        do_not.append(
+            "Do not call this a GDV-alone. "
+            "Do not send named pyloric stenosis home as food bloat. "
+            "Do not copy a pyloroplasty table as lobby law. "
+            "Do not skip esophagitis and dehydration before surgery."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline pyloric stenosis. Not a GDV-alone. "
+                "△ Plumb. Contrast or endoscopy. Then surgery. "
+                "Do not copy a pyloroplasty table."
+            )
+        else:
+            do_next.append(
+                "Name canine pyloric stenosis. Not a GDV-alone. "
+                "△ Plumb. Contrast or endoscopy. Then surgery. "
+                "Do not copy a pyloroplasty table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: pyloric stenosis is "
+            "intramural gastric outflow obstruction from hypertrophied "
+            "pyloric muscle; congenital in brachycephalics; later in "
+            "Lhasa Apso, Shih Tzu, and Maltese. Roberts Merck congenital "
+            "stomach anomalies Nov 2022 / Sept 2024: Boxer, Boston, English "
+            "Bulldog, and Siamese; vomit food hours after a meal; contrast "
+            "and endoscopy with biopsy; surgery to relieve obstruction; "
+            "treat esophagitis and dehydration first. Packet 319 BOAS. "
+            "GDV stays gastric. Do not harvest a pyloroplasty table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for pyloric stenosis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for pyloric stenosis."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

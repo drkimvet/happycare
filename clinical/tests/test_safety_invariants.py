@@ -762,6 +762,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a linear-fb-alone", VERIF.lower())
         self.assertIn("canine mesenteric volvulus", VERIF.lower())
         self.assertIn("not an intussusception-alone", VERIF.lower())
+        self.assertIn("canine pyloric stenosis", VERIF.lower())
+        self.assertIn("not a gdv-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1280,6 +1282,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-intuss`", MACRO)
         self.assertIn("`ddx-mvolv`", MACRO)
         self.assertIn("`dc-mvolv`", MACRO)
+        self.assertIn("`ddx-pyloric`", MACRO)
+        self.assertIn("`dc-pyloric`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1477,6 +1481,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a linear-fb-alone", MACRO.lower())
         self.assertIn("canine mesenteric volvulus", MACRO.lower())
         self.assertIn("not an intussusception-alone", MACRO.lower())
+        self.assertIn("canine pyloric stenosis", MACRO.lower())
+        self.assertIn("not a gdv-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -2037,6 +2043,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a linear-fb-alone",
             "canine mesenteric volvulus",
             "not an intussusception-alone",
+            "canine pyloric stenosis",
+            "not a gdv-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

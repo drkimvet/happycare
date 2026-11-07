@@ -11184,6 +11184,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline mesenteric volvulus", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_pyloric_stenosis_is_not_a_gdv_alone(self):
+        b = analyze("dog", "pyloric stenosis")
+        loc = b["localization"].lower()
+        self.assertIn("canine pyloric stenosis", loc)
+        self.assertIn("not a gdv-alone", loc)
+        self.assertNotIn("gastric volvulus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("pyloroplasty table", joined)
+        self.assertIn("food bloat", joined)
+        self.assertIn("neoplasia", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pyloric_hypertrophy_fires(self):
+        b = analyze("dog", "pyloric hypertrophy")
+        loc = b["localization"].lower()
+        self.assertIn("canine pyloric stenosis", loc)
+        self.assertIn("not a gdv-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_outflow_obstruction_fires_pyloric(self):
+        b = analyze("dog", "gastric outflow obstruction")
+        loc = b["localization"].lower()
+        self.assertIn("canine pyloric stenosis", loc)
+        self.assertIn("not a gdv-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_pyloric_stenosis_fires(self):
+        b = analyze("cat", "pyloric stenosis")
+        loc = b["localization"].lower()
+        self.assertIn("feline pyloric stenosis", loc)
+        self.assertIn("not a gdv-alone", loc)
+        self.assertNotIn("canine pyloric stenosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gdv_plus_pyloric_concatenates(self):
+        b = analyze("dog", "GDV, pyloric stenosis")
+        loc = b["localization"].lower()
+        self.assertIn("gastric volvulus", loc)
+        self.assertIn("canine pyloric stenosis", loc)
+        self.assertIn("not a gdv-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gdv_is_not_pyloric_stenosis(self):
+        b = analyze("dog", "GDV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pyloric stenosis", loc)
+        self.assertNotIn("not a gdv-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_stenosis_alone_is_not_pyloric(self):
+        b = analyze("dog", "stenosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pyloric stenosis", loc)
+        self.assertNotIn("not a gdv-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_pyloric(self):
+        b = analyze("horse", "pyloric stenosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pyloric stenosis", loc)
+        self.assertNotIn("feline pyloric stenosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
