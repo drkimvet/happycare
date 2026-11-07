@@ -2031,6 +2031,16 @@ CKD_DX_RE = re.compile(
 # Do not use pancreatic insufficiency (EPI). Do not harvest a SNAP
 # cutoff or fluid table. Dogs. Skip horse. Cats stay Forman.
 PANC_DX_RE = re.compile(r"\bpancreatitis\b", re.I)
+# Named pancreatic insufficiency / TLI only. Do not use \bepi\b
+# (epinephrine). Do not harvest a TLI cutoff or enzyme table.
+# Dogs and cats. Skip horse. Packet 178 still owns PLE.
+# Packet 316 still owns named pancreatitis.
+EPI_DX_RE = re.compile(
+    r"exocrine pancreatic insufficien|"
+    r"pancreatic insufficien|"
+    r"\btli\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6189,6 +6199,7 @@ def analyze(
     steal_ibd_gi = IBD_GI_LYM_RE.search(text)
     steal_ckd_dx = CKD_DX_RE.search(text)
     steal_panc_dx = PANC_DX_RE.search(text)
+    steal_epi_dx = EPI_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6307,6 +6318,7 @@ def analyze(
         or steal_ibd_gi
         or steal_ckd_dx
         or steal_panc_dx
+        or steal_epi_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16384,6 +16396,50 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for pancreatitis."
+            )
+
+    epi_named = spec in {"dog", "cat"} and EPI_DX_RE.search(text)
+    if epi_named:
+        if spec == "cat":
+            epi_loc = "Feline EPI. Not a bland-diet."
+        else:
+            epi_loc = "Canine EPI. Not a bland-diet."
+        localization = f"{localization} Also {epi_loc}" if localization else epi_loc
+        hard_stops.append(
+            "Do not harvest a TLI cutoff. "
+            "Do not harvest an enzyme table. "
+            "Bland diet is not the treatment."
+        )
+        do_not.append(
+            "Do not call this a bland-diet. "
+            "Do not send named EPI home on chicken and rice without enzymes. "
+            "Do not use fecal elastase as TLI. "
+            "Do not pick a low-fat diet as the fat-assimilation plan."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline EPI. Not a bland-diet. "
+                "△ Plumb. Serum TLI. Enzymes with food. Cobalamin. "
+                "Do not copy a TLI cutoff."
+            )
+        else:
+            do_next.append(
+                "Name canine EPI. Not a bland-diet. "
+                "△ Plumb. Serum TLI. Enzymes with food. Cobalamin. "
+                "Do not copy a TLI cutoff."
+            )
+        sources.append(
+            "Steiner Merck EPI Sept 2025: TLI diagnoses; powder enzymes "
+            "with meals; cobalamin in most dogs and almost all cats; "
+            "low-fat is not recommended. Do not harvest TLI or enzyme tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for EPI."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for EPI."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

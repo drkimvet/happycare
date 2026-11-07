@@ -10121,8 +10121,68 @@ class ResidentBriefTests(unittest.TestCase):
     def test_epi_is_not_pancreatitis_snap(self):
         b = analyze("dog", "exocrine pancreatic insufficiency")
         loc = (b["localization"] or "").lower()
+        self.assertIn("canine epi", loc)
+        self.assertIn("not a bland-diet", loc)
         self.assertNotIn("canine pancreatitis", loc)
         self.assertNotIn("not a snap-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_canine_epi_is_not_a_bland_diet(self):
+        b = analyze("dog", "exocrine pancreatic insufficiency")
+        loc = b["localization"].lower()
+        self.assertIn("canine epi", loc)
+        self.assertIn("not a bland-diet", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("tli cutoff", joined)
+        self.assertIn("enzyme table", joined)
+        self.assertIn("bland-diet", joined)
+        self.assertIn("chicken and rice without enzymes", joined)
+        self.assertIn("fecal elastase", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tli_fires_epi(self):
+        b = analyze("dog", "TLI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine epi", loc)
+        self.assertIn("not a bland-diet", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_pancreatic_insufficiency_fires(self):
+        b = analyze("cat", "pancreatic insufficiency")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline epi", loc)
+        self.assertIn("not a bland-diet", loc)
+        self.assertNotIn("canine epi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_diarrhea_is_not_epi(self):
+        b = analyze("dog", "diarrhea, weight loss")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine epi", loc)
+        self.assertNotIn("not a bland-diet", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_give_epi_is_not_exocrine(self):
+        b = analyze("dog", "anaphylaxis, give epi")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine epi", loc)
+        self.assertNotIn("not a bland-diet", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ple_plus_tli_concatenates(self):
+        b = analyze("dog", "protein-losing enteropathy, TLI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("protein-losing enteropathy", loc)
+        self.assertIn("canine epi", loc)
+        self.assertIn("not a bland-diet", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_epi(self):
+        b = analyze("horse", "pancreatic insufficiency")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine epi", loc)
+        self.assertNotIn("feline epi", loc)
+        self.assertNotIn("not a bland-diet", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):

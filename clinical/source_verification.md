@@ -4240,3 +4240,31 @@ Night rule: named pancreatitis → **Canine pancreatitis. Not a SNAP-alone.** �
 - Attending: If the query is only “vomiting,” why does this gate stay dark?
 - Attending: Horse pancreatitis — fire or skip?
 - Attending: Cat “pancreatitis, SNAP fPL” — which loc should win, and why?
+
+## 317. Canine EPI (Steiner Merck Sept 2025)
+
+No dedicated Plunkett TLI chapter in the owned SA EM splits. Public Steiner J. Exocrine Pancreatic Insufficiency in Dogs and Cats. Merck Veterinary Manual. Full review Sept 2025; last updated Sept 2025 (weight loss and voluminous loose stool; dogs often polyphagic; serum TLI diagnoses; powder enzymes with meals beat tablets and enteric-coated; most dogs and almost all cats are cobalamin deficient; low-fat diets are not recommended because they further decrease fat assimilation; fecal elastase is less reliable than TLI). Do not harvest a TLI cutoff as lobby law. Do not harvest an enzyme teaspoon table as lobby law. Do not harvest a cobalamin mcg table. Do not use the letters EPI (epinephrine). Do not fire on bare diarrhea. Packet 178 still owns PLE. Packet 316 still owns named pancreatitis. Dogs and cats. Skip horse.
+
+Agree with Steiner 2025: **named EPI is not a bland-diet.** TLI. Enzymes with food. Cobalamin. Printed TLI / teaspoon / cobalamin numbers stay on the page (`△ Plumb`).
+
+Night split: named pancreatic insufficiency / TLI is canine (or feline) EPI; not a bland-diet. Bare diarrhea stay dark. Horse does not fire. Dog or cat can fire. Give-epi stays anaphylaxis.
+
+Book/public traps:
+
+- Do not harvest a TLI cutoff.
+- Do not harvest an enzyme table.
+- Do not call this a bland-diet.
+- Do not send named EPI home on chicken and rice without enzymes.
+- Do not use fecal elastase as TLI.
+- Do not pick a low-fat diet as the fat-assimilation plan.
+
+Night rule: named pancreatic insufficiency / TLI → **Canine EPI. Not a bland-diet.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is chicken-and-rice not the plan once TLI names EPI?
+- NAVLE 2: Why is fecal elastase not a TLI substitute?
+- NAVLE 3: Dual-named “PLE, TLI” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a bland-diet, without inventing a teaspoon table?
+- Attending: If the query is only “diarrhea, weight loss,” why does this gate stay dark?
+- Attending: Horse pancreatic insufficiency — fire or skip?
+- Attending: “give epi” — fire or skip, and why?

@@ -316,6 +316,12 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine EPI (Merck Steiner Sept 2025)
+
+- **Canine EPI. Not a bland-diet.** Named pancreatic insufficiency / TLI only. Do **not** use the letters EPI (epinephrine). Serum TLI is the diagnosis. Powder enzymes with food. Cobalamin in most dogs and almost all cats. Do **not** harvest a TLI cutoff. Do **not** harvest an enzyme table. Do **not** send named EPI home on chicken and rice without enzymes. Low-fat is not the fat-assimilation plan.
+- Cats: same night trap; chronic pancreatitis is the usual cause. Packet 178 still owns PLE. Packet 316 still owns named pancreatitis. Bare diarrhea stay dark. Fecal elastase is not TLI.
+- Printed TLI / teaspoon / cobalamin numbers stay on the page (`△ Plumb`). Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine pancreatitis (Merck Steiner Sept 2025)
 
 - **Canine pancreatitis. Not a SNAP-alone.** Named pancreatitis only. Cluster: signs + imaging + pancreatic lipase. SNAP is a semiquantitative screen. Negative makes pancreatitis unlikely. Abnormal SNAP is not the diagnosis; quantitative PLI confirms and baselines. Do **not** harvest a SNAP cutoff. Do **not** harvest a fluid table. Do **not** start antibiotics for uncomplicated pancreatitis. Do **not** starve unless vomiting is uncontrolled despite antiemetic.

@@ -253,12 +253,14 @@ Suggested names are short so they show up after three letters.
 | `ddx-tbi` | Assessment | Head trauma / TBI |
 | `ddx-uroabd` | Assessment | Uroabdomen |
 | `ddx-panc` | Assessment | Canine pancreatitis / not a SNAP-alone |
+| `ddx-exocrine` | Assessment | Canine EPI / not a bland-diet |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
 | `dc-return` | Discharge | Come-back triggers only |
 | `dc-gi` | Discharge | GI home care |
 | `dc-panc` | Discharge | After pancreatitis / SNAP talk |
+| `dc-exocrine` | Discharge | After EPI / enzyme talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3594,6 +3596,21 @@ Do next: Name canine pancreatitis. Not a SNAP-alone. △ Plumb. Cluster: signs p
 
 Cat Forman extras: SNAP fPL weak/equivocal = abnormal SNAP, not a diagnosis and not a negative. Do not copy this SNAP onto a housemate. Do not withhold food (hepatic lipidosis). Opioids are the primary analgesics. Buprenorphine is adequate for most cats. Gabapentin does not replace the opioid for an acute bout. Sucralfate is coating, not pancreatitis therapy.
 
+### `ddx-exocrine`
+
+EPI — {{patient.name}}
+Canine EPI [yes / not]. Not a bland-diet [yes / not]. TLI [ ]. Cobalamin [ ]. Folate [ ]. Eating [ ]. Stool volume [ ].
+
+DDX:
+1. EPI — **Canine EPI. Not a bland-diet**
+2. Serum TLI is the diagnosis. Powder enzymes with food. Cobalamin in most dogs and almost all cats
+3. Do not send named EPI home on chicken and rice without enzymes. Low-fat is not the fat-assimilation plan
+4. Packet 178 owns PLE. Packet 316 owns named pancreatitis. Fecal elastase is not TLI
+5. Dog or cat can fire. Horse does not fire. Bare diarrhea stay dark. Do not use the letters EPI (epinephrine)
+
+Do not: harvest a TLI cutoff. Harvest an enzyme table. Call this a bland-diet. Use fecal elastase as TLI.
+Do next: Name canine EPI. Not a bland-diet. △ Plumb. Serum TLI. Enzymes with food. Cobalamin. Do not copy a TLI cutoff.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3655,6 +3672,14 @@ Medications: as labeled only.
 Give only the medicines and the food we sent, as labeled. No leftover antibiotics or leftover DexSP from the cabinet unless we named them.
 
 Return now for repeated vomiting, a tight painful belly, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-exocrine`
+
+{{patient.name}} has exocrine pancreatic insufficiency. This is not a bland-diet problem. They need pancreatic enzymes with food, and we check B12. Chicken and rice without enzymes is not the treatment.
+
+Give only the enzyme powder and the other medicines we sent, as labeled. Mix the powder into the food. No leftover enzymes from another pet.
+
+Return now for not eating, black stool, bleeding from the mouth after enzymes, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
