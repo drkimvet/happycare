@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine intussusception (Merck Winkler Aug 2025)
+
+- **Canine intussusception. Not a linear-FB-alone.** Named intussusception / telescoping bowel / ileocecocolic intussusception only. Ileocecocolic is the common site. Parasites, parvo, FB, or idiopathic. Target rings on US. Reduce or resect. Endoscopy is not the plan. Do **not** harvest a barium table. Do **not** harvest a 36–48 hour watch table. Do **not** send named intussusception home as AHDS.
+- Cats: same named loc as feline intussusception. Packet 331 still owns linear FB. Bare foreign body stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine linear FB (Merck Winkler Aug 2025)
 
 - **Canine linear FB. Not an esophageal-FB-alone.** Named linear foreign body / linear FB / string under the tongue only. One end anchors at the tongue base or stomach. Peristalsis bunches bowel and saws the wall. Never yank. Cut the anchor. Plication on films. Endoscopy is not the linear plan. Do **not** harvest an enterotomy table. Do **not** harvest a 36–48 hour watch table. Do **not** send named linear FB home as a hairball.

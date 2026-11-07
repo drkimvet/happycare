@@ -11056,6 +11056,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline linear fb", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_intussusception_is_not_a_linear_fb_alone(self):
+        b = analyze("dog", "intussusception")
+        loc = b["localization"].lower()
+        self.assertIn("canine intussusception", loc)
+        self.assertIn("not a linear-fb-alone", loc)
+        self.assertNotIn("canine linear fb", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("barium table", joined)
+        self.assertIn("ahds", joined)
+        self.assertIn("parvo", joined)
+        self.assertIn("target us", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_telescoping_bowel_fires_intussusception(self):
+        b = analyze("dog", "telescoping bowel")
+        loc = b["localization"].lower()
+        self.assertIn("canine intussusception", loc)
+        self.assertIn("not a linear-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ileocecocolic_intussusception_fires(self):
+        b = analyze("dog", "ileocecocolic intussusception")
+        loc = b["localization"].lower()
+        self.assertIn("canine intussusception", loc)
+        self.assertIn("not a linear-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_intussusception_fires(self):
+        b = analyze("cat", "intussusception")
+        loc = b["localization"].lower()
+        self.assertIn("feline intussusception", loc)
+        self.assertIn("not a linear-fb-alone", loc)
+        self.assertNotIn("canine intussusception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_linear_fb_plus_intussusception_concatenates(self):
+        b = analyze("dog", "linear foreign body, intussusception")
+        loc = b["localization"].lower()
+        self.assertIn("canine linear fb", loc)
+        self.assertIn("canine intussusception", loc)
+        self.assertIn("not a linear-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_linear_fb_is_not_intussusception(self):
+        b = analyze("dog", "linear foreign body")
+        loc = b["localization"].lower()
+        self.assertIn("canine linear fb", loc)
+        self.assertNotIn("canine intussusception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_foreign_body_is_not_intussusception(self):
+        b = analyze("dog", "foreign body")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine intussusception", loc)
+        self.assertNotIn("not a linear-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_intussusception(self):
+        b = analyze("horse", "intussusception")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine intussusception", loc)
+        self.assertNotIn("feline intussusception", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

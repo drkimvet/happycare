@@ -2168,6 +2168,15 @@ LINEAR_FB_DX_RE = re.compile(
     r"string under (the )?tongue",
     re.I,
 )
+# Named intussusception / telescoping bowel / ileocecocolic intussusception
+# only. Do not use linear FB (331). Do not use \bforeign body\b. Do not
+# harvest a barium or 36–48 hour table. Dogs and cats. Skip horse.
+# Packet 331 still owns linear FB.
+INTUSS_DX_RE = re.compile(
+    r"intussuscept|"
+    r"telescop(?:e|ing) (?:bowel|intestin|gut)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6341,6 +6350,7 @@ def analyze(
     steal_umbil_dx = UMBIL_DX_RE.search(text)
     steal_inguin_dx = INGUIN_DX_RE.search(text)
     steal_linear_fb_dx = LINEAR_FB_DX_RE.search(text)
+    steal_intuss_dx = INTUSS_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6474,6 +6484,7 @@ def analyze(
         or steal_umbil_dx
         or steal_inguin_dx
         or steal_linear_fb_dx
+        or steal_intuss_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17257,6 +17268,56 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for linear FB."
+            )
+
+    intuss_named = spec in {"dog", "cat"} and INTUSS_DX_RE.search(text)
+    if intuss_named:
+        if spec == "cat":
+            intuss_loc = "Feline intussusception. Not a linear-FB-alone."
+        else:
+            intuss_loc = "Canine intussusception. Not a linear-FB-alone."
+        localization = (
+            f"{localization} Also {intuss_loc}" if localization else intuss_loc
+        )
+        hard_stops.append(
+            "Do not harvest a barium table. "
+            "Do not harvest a 36–48 hour watch table. "
+            "Endoscopy is not the intussusception plan."
+        )
+        do_not.append(
+            "Do not call this a linear-FB-alone. "
+            "Do not send named intussusception home as AHDS. "
+            "Do not copy a barium table as lobby law. "
+            "Do not skip parvo in a young dog."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline intussusception. Not a linear-FB-alone. "
+                "△ Plumb. Target US. Reduce or resect. "
+                "Do not copy a barium table."
+            )
+        else:
+            do_next.append(
+                "Name canine intussusception. Not a linear-FB-alone. "
+                "△ Plumb. Target US. Reduce or resect. "
+                "Do not copy a barium table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: intussusception is the "
+            "common extraluminal obstruction; ileocecocolic most often; "
+            "parasites, parvo, FB, or neoplasia can sit behind it, or it is "
+            "idiopathic; US target rings; exploratory over endoscopy; "
+            "manually reduce or resect and anastomose; gastroesophageal and "
+            "pylorogastric forms are acute and severe. Packet 331 linear FB. "
+            "Do not harvest a barium or 36–48 hour table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for intussusception."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for intussusception."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

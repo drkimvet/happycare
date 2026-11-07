@@ -4656,3 +4656,30 @@ Night rule: named linear FB → **Canine linear FB. Not an esophageal-FB-alone.*
 - Attending: If the query is only “foreign body,” why does this gate stay dark?
 - Attending: Horse linear FB — fire or skip?
 - Attending: Why is endoscopy not the linear plan?
+
+## 332. Canine intussusception (Winkler Merck Aug 2025)
+
+No dedicated Plunkett intussusception chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (intussusception is the common extraluminal obstruction: invaginated bowel enveloped by antegrade or retrograde bowel; secondary to parasites, parvo, FB, or neoplasia, or idiopathic; ileocecocolic most often; gastroesophageal and pylorogastric forms are uncommon, acute, and severe; GSD may be predisposed to gastroesophageal intussusception; US target rings; exploratory over endoscopy; manually reduce or resect and anastomose). Do not harvest a barium table. Do not harvest a 36–48 hour watch table. Do not harvest albumin or dehiscence-day tables. Do not fire on bare foreign body. Do not fire on parvo or German Shepherd alone. Packet 331 still owns linear FB. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named intussusception is not a linear-FB-alone.** Target US. Reduce or resect. Printed barium numbers stay on the page (`△ Plumb`).
+
+Night split: named intussusception / telescoping bowel / ileocecocolic intussusception is canine (or feline) intussusception; not a linear-FB-alone. Bare foreign body stay unnamed. Horse does not fire. Dog or cat can fire. Dual linear FB plus intussusception concatenates 331 then 332.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest a 36–48 hour watch table.
+- Do not call this a linear-FB-alone.
+- Do not send named intussusception home as AHDS.
+- Do not skip parvo in a young dog.
+
+Night rule: named intussusception → **Canine intussusception. Not a linear-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a puppy with ileocecocolic intussusception not a linear-FB-alone?
+- NAVLE 2: Why is a target lesion on US not proof you can skip surgery?
+- NAVLE 3: Dual-named “linear foreign body, intussusception” — which loc should win, and why?
+- Oral: How do you tell the owner bowel telescoped on itself, without inventing a barium table?
+- Attending: If the query is only “foreign body,” why does this gate stay dark?
+- Attending: Horse intussusception — fire or skip?
+- Attending: Dual-named “parvo, intussusception” — which loc should win, and why?

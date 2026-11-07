@@ -268,6 +268,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-umbilical` | Assessment | Canine umbilical hernia / not a DH-alone |
 | `ddx-inguinal` | Assessment | Canine inguinal hernia / not an umbilical-alone |
 | `ddx-linfb` | Assessment | Canine linear FB / not an esophageal-FB-alone |
+| `ddx-intuss` | Assessment | Canine intussusception / not a linear-FB-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -289,6 +290,7 @@ Suggested names are short so they show up after three letters.
 | `dc-umbilical` | Discharge | After umbilical hernia / close talk |
 | `dc-inguinal` | Discharge | After inguinal hernia / close talk |
 | `dc-linfb` | Discharge | After linear FB / string talk |
+| `dc-intuss` | Discharge | After intussusception / reduce talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3849,6 +3851,21 @@ DDX:
 Do not: yank the visible string. Harvest an enterotomy table. Call this an esophageal-FB-alone. Use endoscopy as the linear plan.
 Do next: Name canine linear FB. Not an esophageal-FB-alone. △ Plumb. Tongue base. Cut the anchor. Imaging. Surgery. Do not copy an enterotomy table.
 
+### `ddx-intuss`
+
+Intussusception — {{patient.name}}
+Canine intussusception [yes / not]. Not a linear-FB-alone [yes / not]. Ileocecocolic [ ]. Target US [ ]. Parvo / parasites / FB [ ]. Reduce vs resect [ ].
+
+DDX:
+1. Intussusception — **Canine intussusception. Not a linear-FB-alone**
+2. Ileocecocolic is the common site. Parasites, parvo, FB, or idiopathic. Target rings on US
+3. Reduce or resect. Endoscopy is not the plan
+4. Packet 331 owns linear FB. Bare foreign body stay unnamed. Do not send this home as AHDS
+5. Dog or cat can fire. Horse does not fire. Do not copy a barium table
+
+Do not: harvest a barium table. Harvest a 36–48 hour watch table. Call this a linear-FB-alone. Skip parvo in a young dog.
+Do next: Name canine intussusception. Not a linear-FB-alone. △ Plumb. Target US. Reduce or resect. Do not copy a barium table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4030,6 +4047,14 @@ Return now for a painful or stuck bulge, vomiting, or not being able to eat. {{l
 Do not pull any string you can see. We look under the tongue, image, and often operate. Give only the medicines we sent, as labeled.
 
 Return now for vomiting, a painful belly, collapse, or string still visible. {{location.phonenumber}}
+
+### `dc-intuss`
+
+{{patient.name}} had bowel telescope into itself (intussusception). This is not a string foreign body and not ordinary bloody diarrhea.
+
+Surgery is how we reduce it or cut the damaged segment. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
+
+Return now for vomiting, a painful belly, collapse, or no stool. {{location.phonenumber}}
 
 ### `dc-ahds`
 
