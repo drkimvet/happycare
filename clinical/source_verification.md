@@ -4324,3 +4324,31 @@ Night rule: named BOAS → **Canine BOAS. Not a wait-and-see stertor.** △ Plum
 - Attending: If the query is only “stertor,” why does this gate stay dark?
 - Attending: Horse BOAS — fire or skip?
 - Attending: Dual-named “BOAS, heatstroke” — which loc should win, and why?
+
+## 320. Canine megaesophagus (Defarges Merck May 2025)
+
+No dedicated Plunkett megaesophagus chapter in the owned SA EM splits. Public Defarges A. Dilatation of the Esophagus (Megaesophagus) in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated May 2025 (regurgitation is the cardinal sign; adult respiratory signs may predominate with little or no apparent regurgitation; thoracic radiographs show air, fluid, or food in a dilated esophagus; adult workup excludes MG, SLE, polymyositis, Addison, lead, thallium, dysautonomia, hypothyroidism, stricture, foreign body, neoplasia, and vascular ring; idiopathic esophageal function is not improved by surgery or drugs; gravity feeding 10–15 min; aspiration pneumonia is the usual killer). Do not harvest a barium table as lobby law. Do not harvest a metoclopramide table as lobby law. Do not fire on bare regurgitation. Packet 271 still owns congenital megaesophagus. Packet 163 still owns fulminant / acquired MG. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named megaesophagus is not a pneumonia-alone.** Upright feeding. Look for MG and Addison. Printed barium / metoclopramide / 10–15 min / survival numbers stay on the page (`△ Plumb`).
+
+Night split: named megaesophagus / megaoesophagus is canine (or feline) megaesophagus; not a pneumonia-alone. Bare regurgitation stay dark. Horse does not fire. Dog or cat can fire. Dual congenital megaesophagus concatenates 271 then 320. Dual MG plus megaesophagus concatenates 163 then 320.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest a metoclopramide table.
+- Do not call this a pneumonia-alone.
+- Do not send named megaesophagus home as kennel cough.
+- Do not pour barium into a dog that already aspirates.
+- Do not expect a motility drug to fix idiopathic megaesophagus.
+
+Night rule: named megaesophagus → **Canine megaesophagus. Not a pneumonia-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a coughing adult with megaesophagus not a pneumonia-alone?
+- NAVLE 2: Why does barium stay on the page when the dog already aspirates?
+- NAVLE 3: Dual-named “megaesophagus, myasthenia” — which loc should win, and why?
+- Oral: How do you tell the owner this is not kennel cough, without inventing a metoclopramide table?
+- Attending: If the query is only “regurgitation,” why does this gate stay dark?
+- Attending: Horse megaesophagus — fire or skip?
+- Attending: Dual-named “congenital megaesophagus” — which loc should win, and why?

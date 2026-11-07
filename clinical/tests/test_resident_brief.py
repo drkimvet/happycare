@@ -10310,6 +10310,75 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a wait-and-see stertor", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_megaesophagus_is_not_a_pneumonia_alone(self):
+        b = analyze("dog", "megaesophagus")
+        loc = b["localization"].lower()
+        self.assertIn("canine megaesophagus", loc)
+        self.assertIn("not a pneumonia-alone", loc)
+        self.assertNotIn("congenital megaesophagus", loc)
+        self.assertNotIn("regurgitation", loc)
+        self.assertNotIn("aspiration pneumonia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("barium table", joined)
+        self.assertIn("metoclopramide table", joined)
+        self.assertIn("pneumonia-alone", joined)
+        self.assertIn("kennel cough", joined)
+        self.assertIn("upright feeding", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_megaesophagus_fires(self):
+        b = analyze("cat", "megaesophagus")
+        loc = b["localization"].lower()
+        self.assertIn("feline megaesophagus", loc)
+        self.assertIn("not a pneumonia-alone", loc)
+        self.assertNotIn("canine megaesophagus", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_megaoesophagus_spelling_fires(self):
+        b = analyze("dog", "megaoesophagus")
+        loc = b["localization"].lower()
+        self.assertIn("canine megaesophagus", loc)
+        self.assertIn("not a pneumonia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_congenital_megaesophagus_concatenates_320(self):
+        b = analyze("dog", "congenital megaesophagus")
+        loc = b["localization"].lower()
+        self.assertIn("congenital megaesophagus", loc)
+        self.assertIn("canine megaesophagus", loc)
+        self.assertIn("not a pneumonia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mg_plus_megaesophagus_concatenates(self):
+        b = analyze("dog", "myasthenia gravis, megaesophagus")
+        loc = b["localization"].lower()
+        self.assertIn("myasthenia", loc)
+        self.assertIn("canine megaesophagus", loc)
+        self.assertIn("not a pneumonia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_regurgitation_is_not_megaeso(self):
+        b = analyze("dog", "regurgitation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine megaesophagus", loc)
+        self.assertNotIn("not a pneumonia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_aspiration_pneumonia_is_not_megaeso(self):
+        b = analyze("dog", "aspiration pneumonia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine megaesophagus", loc)
+        self.assertNotIn("not a pneumonia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_megaeso(self):
+        b = analyze("horse", "megaesophagus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine megaesophagus", loc)
+        self.assertNotIn("feline megaesophagus", loc)
+        self.assertNotIn("not a pneumonia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

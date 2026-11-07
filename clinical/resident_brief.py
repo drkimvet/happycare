@@ -2063,6 +2063,10 @@ BOAS_DX_RE = re.compile(
     r"everted (laryngeal )?saccule",
     re.I,
 )
+# Named megaesophagus / megaoesophagus only. Do not use \bregurgit.
+# Do not harvest a barium or metoclopramide table. Dogs and cats.
+# Skip horse. Packet 271 still owns congenital. Packet 163 still owns MG.
+MEGAESO_DX_RE = re.compile(r"\bmegaesophag|\bmegaoesophag", re.I)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6224,6 +6228,7 @@ def analyze(
     steal_epi_dx = EPI_DX_RE.search(text)
     steal_trach_collapse = TRACH_COLLAPSE_RE.search(text)
     steal_boas_dx = BOAS_DX_RE.search(text)
+    steal_megaeso_dx = MEGAESO_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6345,6 +6350,7 @@ def analyze(
         or steal_epi_dx
         or steal_trach_collapse
         or steal_boas_dx
+        or steal_megaeso_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16562,6 +16568,52 @@ def analyze(
         if HEAT_RE.search(text):
             hard_stops.append(
                 "Heat plus BOAS is obstruction heat, not a default ice-water dunk."
+            )
+
+    megaeso_named = spec in {"dog", "cat"} and MEGAESO_DX_RE.search(text)
+    if megaeso_named:
+        if spec == "cat":
+            megaeso_loc = "Feline megaesophagus. Not a pneumonia-alone."
+        else:
+            megaeso_loc = "Canine megaesophagus. Not a pneumonia-alone."
+        localization = f"{localization} Also {megaeso_loc}" if localization else megaeso_loc
+        hard_stops.append(
+            "Do not harvest a barium table. "
+            "Do not harvest a metoclopramide table. "
+            "Respiratory signs may hide the esophagus."
+        )
+        do_not.append(
+            "Do not call this a pneumonia-alone. "
+            "Do not send named megaesophagus home as kennel cough. "
+            "Do not pour barium into a dog that already aspirates. "
+            "Do not expect a motility drug to fix idiopathic megaesophagus."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline megaesophagus. Not a pneumonia-alone. "
+                "△ Plumb. Upright feeding. Look for MG and Addison. "
+                "Do not copy a barium table."
+            )
+        else:
+            do_next.append(
+                "Name canine megaesophagus. Not a pneumonia-alone. "
+                "△ Plumb. Upright feeding. Look for MG and Addison. "
+                "Do not copy a barium table."
+            )
+        sources.append(
+            "Defarges Merck esophageal dilatation Oct 2022 / May 2025: "
+            "regurgitation is cardinal; respiratory signs may predominate "
+            "with little regurgitation; idiopathic function is not fixed by "
+            "surgery or drugs; gravity feeding. Packet 271 congenital. "
+            "Packet 163 MG. Do not harvest barium or metoclopramide tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for megaesophagus."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for megaesophagus."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

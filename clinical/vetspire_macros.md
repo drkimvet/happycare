@@ -256,6 +256,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-exocrine` | Assessment | Canine EPI / not a bland-diet |
 | `ddx-tcoll` | Assessment | Canine tracheal collapse / not a Lasix night |
 | `ddx-boas` | Assessment | Canine BOAS / not a wait-and-see stertor |
+| `ddx-megaeso` | Assessment | Canine megaesophagus / not a pneumonia-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -265,6 +266,7 @@ Suggested names are short so they show up after three letters.
 | `dc-exocrine` | Discharge | After EPI / enzyme talk |
 | `dc-tcoll` | Discharge | After tracheal collapse / cough talk |
 | `dc-boas` | Discharge | After BOAS / airway talk |
+| `dc-megaeso` | Discharge | After megaesophagus / feeding talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3645,6 +3647,21 @@ DDX:
 Do not: harvest a stenotic-nares grade table. Harvest a sedative table. Call this a wait-and-see stertor. Send named BOAS home as a cute snore.
 Do next: Name canine BOAS. Not a wait-and-see stertor. △ Plumb. Oxygen. Cool. Surgery conversation. Do not copy a nares-grade table.
 
+### `ddx-megaeso`
+
+Megaesophagus — {{patient.name}}
+Canine megaesophagus [yes / not]. Not a pneumonia-alone [yes / not]. Thoracic films [ ]. MG / Addison [ ]. Upright feeding [ ]. Respiratory signs [ ].
+
+DDX:
+1. Megaesophagus — **Canine megaesophagus. Not a pneumonia-alone**
+2. Thoracic films: air, fluid, or food in a dilated esophagus. Adult workup looks for MG, Addison, lead, and a vascular ring
+3. Idiopathic function is not fixed by surgery or a motility drug. Upright feeding. Respiratory signs may hide the esophagus
+4. Packet 271 owns congenital. Packet 163 owns MG. Bare regurgitation stay dark
+5. Dog or cat can fire. Horse does not fire. Do not send this home as kennel cough
+
+Do not: harvest a barium table. Harvest a metoclopramide table. Call this a pneumonia-alone. Pour barium into a dog that already aspirates.
+Do next: Name canine megaesophagus. Not a pneumonia-alone. △ Plumb. Upright feeding. Look for MG and Addison. Do not copy a barium table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3730,6 +3747,14 @@ Return now for trouble breathing, blue gums, collapse, or a cough that will not 
 Give only the medicines we sent, as labeled. Keep them cool and calm. No leftover sedatives from the cabinet.
 
 Return now for trouble breathing, blue gums, collapse, or not being able to cool down. {{location.phonenumber}}
+
+### `dc-megaeso`
+
+{{patient.name}} has a dilated esophagus (megaesophagus). Food sits in the esophagus instead of moving to the stomach. Cough or pneumonia can hide the esophagus. This is not kennel cough.
+
+Feed upright, as we showed. Keep {{patient.pronoun}} upright after meals. Give only the medicines we sent, as labeled. Do not give leftover motility drugs from the cabinet. Do not give leftover barium.
+
+Return now for trouble breathing, blue gums, fever, or food coming up from the mouth. {{location.phonenumber}}
 
 ### `dc-ahds`
 

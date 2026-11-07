@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine megaesophagus (Merck Defarges May 2025)
+
+- **Canine megaesophagus. Not a pneumonia-alone.** Named megaesophagus / megaoesophagus only. Thoracic films: air, fluid, or food in a dilated esophagus. Adult workup looks for MG, Addison, lead, and a vascular ring. Idiopathic function is not fixed by surgery or a motility drug. Upright feeding. Respiratory signs may hide the esophagus. Do **not** harvest a barium table. Do **not** harvest a metoclopramide table. Do **not** send named megaesophagus home as kennel cough.
+- Cats: same named loc as feline megaesophagus. Packet 271 still owns congenital. Packet 163 still owns MG. Bare regurgitation stay dark. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine BOAS (ACVS; Merck Tonozzi May 2025)
 
 - **Canine BOAS. Not a wait-and-see stertor.** Named BOAS / brachycephalic obstructive / elongated soft palate / stenotic nares only. Palate, nares, and everted saccules. Nares you can see awake. Palate and saccules need anesthesia. Medical care does not fix the anatomy. Surgery when it interferes with breathing. Oxygen. Cool. Do **not** harvest a stenotic-nares grade table. Do **not** harvest a sedative table. Do **not** send named BOAS home as a cute snore.
