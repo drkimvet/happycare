@@ -2177,6 +2177,16 @@ INTUSS_DX_RE = re.compile(
     r"telescop(?:e|ing) (?:bowel|intestin|gut)",
     re.I,
 )
+# Named mesenteric volvulus / intestinal volvulus / mesenteric torsion only.
+# Do not use intussusception (332). Do not use GDV / gastric volvulus.
+# Do not use \bvolvulus\b alone. Do not harvest a mortality table.
+# Dogs and cats. Skip horse. Packet 332 still owns intussusception.
+MVOLV_DX_RE = re.compile(
+    r"mesenteric volvulus|"
+    r"intestinal volvulus|"
+    r"mesenteric torsion",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6351,6 +6361,7 @@ def analyze(
     steal_inguin_dx = INGUIN_DX_RE.search(text)
     steal_linear_fb_dx = LINEAR_FB_DX_RE.search(text)
     steal_intuss_dx = INTUSS_DX_RE.search(text)
+    steal_mvolv_dx = MVOLV_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6485,6 +6496,7 @@ def analyze(
         or steal_inguin_dx
         or steal_linear_fb_dx
         or steal_intuss_dx
+        or steal_mvolv_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17318,6 +17330,56 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for intussusception."
+            )
+
+    mvolv_named = spec in {"dog", "cat"} and MVOLV_DX_RE.search(text)
+    if mvolv_named:
+        if spec == "cat":
+            mvolv_loc = "Feline mesenteric volvulus. Not an intussusception-alone."
+        else:
+            mvolv_loc = "Canine mesenteric volvulus. Not an intussusception-alone."
+        localization = (
+            f"{localization} Also {mvolv_loc}" if localization else mvolv_loc
+        )
+        hard_stops.append(
+            "Do not harvest a mortality table. "
+            "This is not GDV. Serial films progress faster than ileus. "
+            "Shock now. Surgery now."
+        )
+        do_not.append(
+            "Do not call this an intussusception-alone. "
+            "Do not send named mesenteric volvulus home as ileus. "
+            "Do not copy a mortality table as lobby law. "
+            "Do not watch overnight like a gastric bloat."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline mesenteric volvulus. Not an intussusception-alone. "
+                "△ Plumb. Fluids. Explore now. "
+                "Do not copy a mortality table."
+            )
+        else:
+            do_next.append(
+                "Name canine mesenteric volvulus. Not an intussusception-alone. "
+                "△ Plumb. Fluids. Explore now. "
+                "Do not copy a mortality table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: mesenteric / intestinal "
+            "volvulus is extramural strangulation; hypovolemic shock and "
+            "abdominal pain; films show small-bowel distention with poor "
+            "detail and can look like ileus; serial films progress fast; "
+            "the entire small bowel may be dead even with rapid surgery. "
+            "Packet 332 intussusception. GDV stays gastric. Do not harvest "
+            "a mortality table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for mesenteric volvulus."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for mesenteric volvulus."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

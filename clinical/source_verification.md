@@ -4683,3 +4683,30 @@ Night rule: named intussusception → **Canine intussusception. Not a linear-FB-
 - Attending: If the query is only “foreign body,” why does this gate stay dark?
 - Attending: Horse intussusception — fire or skip?
 - Attending: Dual-named “parvo, intussusception” — which loc should win, and why?
+
+## 333. Canine mesenteric volvulus (Winkler Merck Aug 2025)
+
+No dedicated Plunkett mesenteric-volvulus chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (mesenteric / intestinal volvulus is extramural strangulation via torsion or a mesenteric rent; hypovolemic shock and abdominal pain; films show small-bowel distention with poor abdominal detail and can look like ileus; serial films progress fast; even with rapid surgery the entire small bowel may be irreversibly compromised). Do not harvest a mortality table as lobby law. Do not fire on GDV / gastric volvulus. Do not fire on \bvolvulus\b alone. Do not fire on German Shepherd alone. Packet 332 still owns intussusception. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named mesenteric volvulus is not an intussusception-alone.** Fluids. Explore now. Printed mortality numbers stay on the page (`△ Plumb`).
+
+Night split: named mesenteric volvulus / intestinal volvulus / mesenteric torsion is canine (or feline) mesenteric volvulus; not an intussusception-alone. Bare volvulus stay unnamed. GDV stays gastric. Horse does not fire. Dog or cat can fire. Dual intussusception plus mesenteric volvulus concatenates 332 then 333. Dual GDV plus mesenteric volvulus concatenates gastric then this loc.
+
+Book/public traps:
+
+- Do not harvest a mortality table.
+- Do not call this an intussusception-alone.
+- Do not send named mesenteric volvulus home as ileus.
+- Do not copy a mortality table as lobby law.
+- Do not watch overnight like a gastric bloat.
+
+Night rule: named mesenteric volvulus → **Canine mesenteric volvulus. Not an intussusception-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a German Shepherd with mesenteric volvulus not a GDV-alone and not an intussusception-alone?
+- NAVLE 2: Why can the first film look like ileus?
+- NAVLE 3: Dual-named “intussusception, mesenteric volvulus” — which loc should win, and why?
+- Oral: How do you tell the owner the whole small bowel may already be dead, without inventing a mortality table?
+- Attending: If the query is only “volvulus,” why does this gate stay dark?
+- Attending: Horse mesenteric volvulus — fire or skip?
+- Attending: Dual-named “GDV, mesenteric volvulus” — which loc should win, and why?

@@ -11120,6 +11120,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline intussusception", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_mesenteric_volvulus_is_not_an_intussusception_alone(self):
+        b = analyze("dog", "mesenteric volvulus")
+        loc = b["localization"].lower()
+        self.assertIn("canine mesenteric volvulus", loc)
+        self.assertIn("not an intussusception-alone", loc)
+        self.assertNotIn("canine intussusception", loc)
+        self.assertNotIn("gastric volvulus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mortality table", joined)
+        self.assertIn("ileus", joined)
+        self.assertIn("gdv", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_intestinal_volvulus_fires_mvolv(self):
+        b = analyze("dog", "intestinal volvulus")
+        loc = b["localization"].lower()
+        self.assertIn("canine mesenteric volvulus", loc)
+        self.assertIn("not an intussusception-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mesenteric_torsion_fires_mvolv(self):
+        b = analyze("dog", "mesenteric torsion")
+        loc = b["localization"].lower()
+        self.assertIn("canine mesenteric volvulus", loc)
+        self.assertIn("not an intussusception-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_mesenteric_volvulus_fires(self):
+        b = analyze("cat", "mesenteric volvulus")
+        loc = b["localization"].lower()
+        self.assertIn("feline mesenteric volvulus", loc)
+        self.assertIn("not an intussusception-alone", loc)
+        self.assertNotIn("canine mesenteric volvulus", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_intussusception_plus_mvolv_concatenates(self):
+        b = analyze("dog", "intussusception, mesenteric volvulus")
+        loc = b["localization"].lower()
+        self.assertIn("canine intussusception", loc)
+        self.assertIn("canine mesenteric volvulus", loc)
+        self.assertIn("not an intussusception-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gdv_is_not_mesenteric_volvulus(self):
+        b = analyze("dog", "GDV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mesenteric volvulus", loc)
+        self.assertNotIn("not an intussusception-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_volvulus_is_not_mvolv(self):
+        b = analyze("dog", "volvulus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mesenteric volvulus", loc)
+        self.assertNotIn("not an intussusception-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_mvolv(self):
+        b = analyze("horse", "mesenteric volvulus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine mesenteric volvulus", loc)
+        self.assertNotIn("feline mesenteric volvulus", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

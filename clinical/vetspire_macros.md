@@ -269,6 +269,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-inguinal` | Assessment | Canine inguinal hernia / not an umbilical-alone |
 | `ddx-linfb` | Assessment | Canine linear FB / not an esophageal-FB-alone |
 | `ddx-intuss` | Assessment | Canine intussusception / not a linear-FB-alone |
+| `ddx-mvolv` | Assessment | Canine mesenteric volvulus / not an intussusception-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -291,6 +292,7 @@ Suggested names are short so they show up after three letters.
 | `dc-inguinal` | Discharge | After inguinal hernia / close talk |
 | `dc-linfb` | Discharge | After linear FB / string talk |
 | `dc-intuss` | Discharge | After intussusception / reduce talk |
+| `dc-mvolv` | Discharge | After mesenteric volvulus / explore talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3866,6 +3868,21 @@ DDX:
 Do not: harvest a barium table. Harvest a 36–48 hour watch table. Call this a linear-FB-alone. Skip parvo in a young dog.
 Do next: Name canine intussusception. Not a linear-FB-alone. △ Plumb. Target US. Reduce or resect. Do not copy a barium table.
 
+### `ddx-mvolv`
+
+Mesenteric volvulus — {{patient.name}}
+Canine mesenteric volvulus [yes / not]. Not an intussusception-alone [yes / not]. Shock [ ]. Ileus vs rapid progression [ ]. GDV off the table [ ]. Explore now [ ].
+
+DDX:
+1. Mesenteric volvulus — **Canine mesenteric volvulus. Not an intussusception-alone**
+2. Not GDV. Shock and a painful belly. Films look like ileus, then progress fast
+3. The entire small bowel may already be dead. Fluids. Explore now
+4. Packet 332 owns intussusception. GDV stays gastric. Bare volvulus stay unnamed
+5. Dog or cat can fire. Horse does not fire. Do not copy a mortality table
+
+Do not: harvest a mortality table. Call this an intussusception-alone. Send this home as ileus. Watch overnight like a gastric bloat.
+Do next: Name canine mesenteric volvulus. Not an intussusception-alone. △ Plumb. Fluids. Explore now. Do not copy a mortality table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4055,6 +4072,14 @@ Return now for vomiting, a painful belly, collapse, or string still visible. {{l
 Surgery is how we reduce it or cut the damaged segment. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
 
 Return now for vomiting, a painful belly, collapse, or no stool. {{location.phonenumber}}
+
+### `dc-mvolv`
+
+{{patient.name}} had the small intestine twist on its blood supply (mesenteric volvulus). This is not a stomach twist (GDV) and not bowel telescoping on itself.
+
+This is a crash-and-operate disease. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
+
+Return now for collapse, vomiting, a painful belly, or no stool. {{location.phonenumber}}
 
 ### `dc-ahds`
 

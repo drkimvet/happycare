@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine mesenteric volvulus (Merck Winkler Aug 2025)
+
+- **Canine mesenteric volvulus. Not an intussusception-alone.** Named mesenteric volvulus / intestinal volvulus / mesenteric torsion only. Not GDV. Shock and a painful belly. Films look like ileus, then progress fast. The entire small bowel may already be dead. Do **not** harvest a mortality table. Do **not** watch overnight like a gastric bloat. Do **not** send named mesenteric volvulus home as ileus.
+- Cats: same named loc as feline mesenteric volvulus. Packet 332 still owns intussusception. GDV stays gastric. Bare volvulus stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine intussusception (Merck Winkler Aug 2025)
 
 - **Canine intussusception. Not a linear-FB-alone.** Named intussusception / telescoping bowel / ileocecocolic intussusception only. Ileocecocolic is the common site. Parasites, parvo, FB, or idiopathic. Target rings on US. Reduce or resect. Endoscopy is not the plan. Do **not** harvest a barium table. Do **not** harvest a 36–48 hour watch table. Do **not** send named intussusception home as AHDS.
