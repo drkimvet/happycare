@@ -10684,6 +10684,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("canine cricopharyngeal achalasia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_hiatal_hernia_is_not_a_megaesophagus_alone(self):
+        b = analyze("dog", "hiatal hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine hiatal hernia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine megaesophagus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("fundoplication table", joined)
+        self.assertIn("barium table", joined)
+        self.assertIn("brachycephalic vomit", joined)
+        self.assertIn("fluoro", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hiatus_hernia_spelling_fires(self):
+        b = analyze("dog", "hiatus hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine hiatal hernia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_hiatal_hernia_fires(self):
+        b = analyze("cat", "hiatal hernia")
+        loc = b["localization"].lower()
+        self.assertIn("feline hiatal hernia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine hiatal hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_megaesophagus_plus_hiatal_concatenates(self):
+        b = analyze("dog", "megaesophagus, hiatal hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine megaesophagus", loc)
+        self.assertIn("canine hiatal hernia", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_boas_plus_hiatal_concatenates(self):
+        b = analyze("dog", "BOAS, hiatal hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine boas", loc)
+        self.assertIn("canine hiatal hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hernia_is_not_hiatal(self):
+        b = analyze("dog", "hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hiatal hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_umbilical_hernia_is_not_hiatal(self):
+        b = analyze("dog", "umbilical hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hiatal hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_hiatal(self):
+        b = analyze("horse", "hiatal hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine hiatal hernia", loc)
+        self.assertNotIn("feline hiatal hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

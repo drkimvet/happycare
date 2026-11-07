@@ -2110,6 +2110,17 @@ ESOPHAGITIS_DX_RE = re.compile(r"\besophagitis\b|\boesophagitis\b", re.I)
 # Do not use \bregurgit. Do not harvest a myectomy table. Dogs only.
 # Skip cat. Skip horse. Packet 320 still owns named megaesophagus.
 CRICOPH_DX_RE = re.compile(r"cricopharyn", re.I)
+# Named hiatal / hiatus / gastroesophageal hernia only. Do not use
+# \bhernia\b (umbilical / inguinal / DH). Do not use \bmegaesophag (320).
+# Do not use \bregurgit. Do not harvest a fundoplication table.
+# Dogs and cats. Skip horse. Packet 320 still owns named megaesophagus.
+# Packet 319 still owns BOAS. Packet 324 still owns esophagitis.
+HIATAL_DX_RE = re.compile(
+    r"hiatal hernia|"
+    r"hiatus hernia|"
+    r"gastroesophageal hernia",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6277,6 +6288,7 @@ def analyze(
     steal_esostr_dx = ESOSTR_DX_RE.search(text)
     steal_esophagitis_dx = ESOPHAGITIS_DX_RE.search(text)
     steal_cricoph_dx = CRICOPH_DX_RE.search(text)
+    steal_hiatal_dx = HIATAL_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6404,6 +6416,7 @@ def analyze(
         or steal_esostr_dx
         or steal_esophagitis_dx
         or steal_cricoph_dx
+        or steal_hiatal_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16896,6 +16909,54 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cricopharyngeal achalasia."
+            )
+
+    hiatal_named = spec in {"dog", "cat"} and HIATAL_DX_RE.search(text)
+    if hiatal_named:
+        if spec == "cat":
+            hiatal_loc = "Feline hiatal hernia. Not a megaesophagus-alone."
+        else:
+            hiatal_loc = "Canine hiatal hernia. Not a megaesophagus-alone."
+        localization = f"{localization} Also {hiatal_loc}" if localization else hiatal_loc
+        hard_stops.append(
+            "Do not harvest a fundoplication table. "
+            "Do not harvest a barium table. "
+            "Sliding LES is not generalized megaesophagus."
+        )
+        do_not.append(
+            "Do not call this a megaesophagus-alone. "
+            "Do not send named hiatal hernia home as normal brachycephalic vomit. "
+            "Do not treat a missed survey film as proof it is gone. "
+            "Do not copy a plication table as lobby law."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline hiatal hernia. Not a megaesophagus-alone. "
+                "△ Plumb. Fluoro. Treat the esophagitis. "
+                "Do not copy a fundoplication table."
+            )
+        else:
+            do_next.append(
+                "Name canine hiatal hernia. Not a megaesophagus-alone. "
+                "△ Plumb. Fluoro. Treat the esophagitis. "
+                "Do not copy a fundoplication table."
+            )
+        sources.append(
+            "Roberts Merck hernias Nov 2022 / Sept 2024: Type I sliding is "
+            "the common small-animal hiatal hernia; LES and fundus displace "
+            "into the thorax; brachycephalic and Shar-Pei overrepresented; "
+            "intermittent so films can miss; treat esophagitis; surgery is "
+            "hiatal plication, esophagopexy, and left gastropexy. Packet 320 "
+            "megaesophagus. Packet 319 BOAS. Packet 324 esophagitis. "
+            "Do not harvest fundoplication or barium tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for hiatal hernia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for hiatal hernia."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

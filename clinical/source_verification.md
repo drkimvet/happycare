@@ -4492,3 +4492,31 @@ Night rule: named cricopharyngeal → **Canine cricopharyngeal achalasia. Not a 
 - Attending: If the query is only “dysphagia,” why does this gate stay dark?
 - Attending: Cat cricopharyngeal achalasia — fire or skip, and why?
 - Attending: Dual-named “esophagitis, cricopharyngeal achalasia” — which loc should win, and why?
+
+## 326. Canine hiatal hernia (Roberts Merck Sept 2024)
+
+No dedicated Plunkett hiatal-hernia chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (hiatal hernias occur through the esophageal hiatus; Type I sliding is the most common in small animals and is intermittent displacement of the LES and gastric fundus into the thorax; Type II is fundus only; brachycephalic breeds overrepresented, hereditary nature suspected in Shar-Pei; dysphagia, regurgitation, vomiting, ptyalism, and esophagitis from decreased LES function; radiographic or fluoroscopic diagnosis, intermittent so films can miss; medical treatment of esophagitis is required; surgery is hiatal plication, esophagopexy, and left-side gastropexy). Do not harvest a fundoplication table as lobby law. Do not harvest a barium table as lobby law. Do not fire on bare hernia (umbilical / inguinal). Do not fire on bare regurgitation. Packet 320 still owns named megaesophagus. Packet 319 still owns BOAS. Packet 324 still owns esophagitis. Dogs and cats. Skip horse.
+
+Agree with Roberts: **named hiatal hernia is not a megaesophagus-alone.** Fluoro. Treat the esophagitis. Printed plication / fundoplication numbers stay on the page (`△ Plumb`).
+
+Night split: named hiatal hernia / hiatus hernia / gastroesophageal hernia is canine (or feline) hiatal hernia; not a megaesophagus-alone. Bare hernia stay umbilical/inguinal. Horse does not fire. Dog or cat can fire. Dual megaesophagus plus hiatal hernia concatenates 320 then 326. Dual BOAS plus hiatal concatenates 319 then 326.
+
+Book/public traps:
+
+- Do not harvest a fundoplication table.
+- Do not harvest a barium table.
+- Do not call this a megaesophagus-alone.
+- Do not send named hiatal hernia home as normal brachycephalic vomit.
+- Do not treat a missed survey film as proof it is gone.
+- Do not copy a plication table as lobby law.
+
+Night rule: named hiatal hernia → **Canine hiatal hernia. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a regurgitating Shar-Pei with a hiatal hernia not a megaesophagus-alone?
+- NAVLE 2: Why can a normal chest film miss a Type I sliding hernia?
+- NAVLE 3: Dual-named “BOAS, hiatal hernia” — which loc should win, and why?
+- Oral: How do you tell the owner daily vomit is not normal for a short-nose dog, without inventing a fundoplication table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse hiatal hernia — fire or skip?
+- Attending: Dual-named “megaesophagus, hiatal hernia” — which loc should win, and why?

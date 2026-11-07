@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine hiatal hernia (Merck Roberts Sept 2024)
+
+- **Canine hiatal hernia. Not a megaesophagus-alone.** Named hiatal hernia / hiatus hernia / gastroesophageal hernia only. Type I sliding is the common one. LES and fundus displace into the thorax. Intermittent, so films can miss. Treat the esophagitis. Surgery is hiatal plication, esophagopexy, and left gastropexy. Do **not** harvest a fundoplication table. Do **not** harvest a barium table. Do **not** send named hiatal hernia home as normal brachycephalic vomit.
+- Cats: same named loc as feline hiatal hernia. Packet 320 still owns named megaesophagus. Packet 319 still owns BOAS. Packet 324 still owns esophagitis. Bare hernia stay umbilical/inguinal, not this loc. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine cricopharyngeal achalasia (Merck Defarges Sept 2024; Williamson Feb 2026)
 
 - **Canine cricopharyngeal achalasia. Not a megaesophagus-alone.** Named cricopharyngeal achalasia / dysphagia / myectomy / myotomy only. UES fails to relax. Dysphagia is the hallmark. Nasal reflux. Fluoro swallow. Myotomy or myectomy. LES achalasia is megaesophagus, not this loc. Do **not** harvest a myectomy table. Do **not** harvest a barium table. Do **not** send named cricopharyngeal achalasia home as weaning.

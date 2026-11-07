@@ -262,6 +262,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-esostr` | Assessment | Canine esophageal stricture / not a megaesophagus-alone |
 | `ddx-esophagitis` | Assessment | Canine esophagitis / not a megaesophagus-alone |
 | `ddx-cricoph` | Assessment | Canine cricopharyngeal achalasia / not a megaesophagus-alone |
+| `ddx-hiatal` | Assessment | Canine hiatal hernia / not a megaesophagus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -277,6 +278,7 @@ Suggested names are short so they show up after three letters.
 | `dc-esostr` | Discharge | After esophageal stricture / balloon talk |
 | `dc-esophagitis` | Discharge | After esophagitis / reflux talk |
 | `dc-cricoph` | Discharge | After cricopharyngeal / swallow talk |
+| `dc-hiatal` | Discharge | After hiatal hernia / reflux talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3747,6 +3749,21 @@ DDX:
 Do not: harvest a myectomy table. Harvest a barium table. Call this a megaesophagus-alone. Copy a 65-percent surgery table.
 Do next: Name canine cricopharyngeal achalasia. Not a megaesophagus-alone. △ Plumb. Fluoro swallow. Myotomy/myectomy conversation. Do not copy a myectomy table.
 
+### `ddx-hiatal`
+
+Hiatal hernia — {{patient.name}}
+Canine hiatal hernia [yes / not]. Not a megaesophagus-alone [yes / not]. Type I sliding [ ]. Fluoro [ ]. Esophagitis [ ]. BOAS [ ].
+
+DDX:
+1. Hiatal hernia — **Canine hiatal hernia. Not a megaesophagus-alone**
+2. Type I sliding: LES and fundus displace into the thorax. Intermittent, so films can miss
+3. Treat the esophagitis. Surgery is hiatal plication, esophagopexy, and left gastropexy
+4. Packet 320 owns named megaesophagus. Packet 319 owns BOAS. Packet 324 owns esophagitis. Bare hernia stay umbilical/inguinal
+5. Dog or cat can fire. Horse does not fire. Do not send this home as normal brachycephalic vomit
+
+Do not: harvest a fundoplication table. Harvest a barium table. Call this a megaesophagus-alone. Treat a missed survey film as proof it is gone.
+Do next: Name canine hiatal hernia. Not a megaesophagus-alone. △ Plumb. Fluoro. Treat the esophagitis. Do not copy a fundoplication table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3878,6 +3895,14 @@ Return now for trouble breathing, blue gums, fever, food coming up, or not being
 {{patient.name}} has a swallowing-muscle problem (cricopharyngeal achalasia). The upper sphincter will not open. Food sits in the throat. This is not ordinary megaesophagus and not ordinary weaning.
 
 Surgery on that muscle is how the sphincter is opened. Medicines do not cut it. Give only the medicines we sent, as labeled. Feed as we showed.
+
+Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
+
+### `dc-hiatal`
+
+{{patient.name}} has a hiatal hernia. Part of the stomach slides into the chest through the hole where the esophagus passes. This is not ordinary megaesophagus and not normal vomit for a short-nose dog.
+
+Give only the medicines we sent, as labeled. Soft food, small meals, as we showed. Surgery may be needed if reflux and esophagitis do not settle.
 
 Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
 

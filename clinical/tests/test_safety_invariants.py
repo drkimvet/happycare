@@ -747,6 +747,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("canine esophageal stricture", VERIF.lower())
         self.assertIn("canine esophagitis", VERIF.lower())
         self.assertIn("canine cricopharyngeal achalasia", VERIF.lower())
+        self.assertIn("canine hiatal hernia", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1249,6 +1250,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-esophagitis`", MACRO)
         self.assertIn("`ddx-cricoph`", MACRO)
         self.assertIn("`dc-cricoph`", MACRO)
+        self.assertIn("`ddx-hiatal`", MACRO)
+        self.assertIn("`dc-hiatal`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1431,6 +1434,7 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("canine esophageal stricture", MACRO.lower())
         self.assertIn("canine esophagitis", MACRO.lower())
         self.assertIn("canine cricopharyngeal achalasia", MACRO.lower())
+        self.assertIn("canine hiatal hernia", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -1976,6 +1980,7 @@ class PublicCardInvariants(unittest.TestCase):
             "canine esophageal stricture",
             "canine esophagitis",
             "canine cricopharyngeal achalasia",
+            "canine hiatal hernia",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
