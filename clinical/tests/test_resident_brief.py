@@ -10571,6 +10571,61 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline esophageal stricture", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_esophagitis_is_not_a_megaesophagus_alone(self):
+        b = analyze("dog", "esophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophagitis", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine megaesophagus", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("sucralfate table", joined)
+        self.assertIn("omeprazole table", joined)
+        self.assertIn("gagging", joined)
+        self.assertIn("endoscopy", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oesophagitis_spelling_fires(self):
+        b = analyze("dog", "oesophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophagitis", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_esophagitis_fires(self):
+        b = analyze("cat", "esophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophagitis", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertNotIn("canine esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_stricture_plus_esophagitis_concatenates(self):
+        b = analyze("dog", "esophageal stricture, esophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine esophageal stricture", loc)
+        self.assertIn("canine esophagitis", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_regurgitation_is_not_esophagitis(self):
+        b = analyze("dog", "regurgitation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_reflux_is_not_esophagitis(self):
+        b = analyze("dog", "gastroesophageal reflux")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_esophagitis(self):
+        b = analyze("horse", "esophagitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine esophagitis", loc)
+        self.assertNotIn("feline esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

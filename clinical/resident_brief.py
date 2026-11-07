@@ -2100,6 +2100,11 @@ ESOSTR_DX_RE = re.compile(
     r"oesophag\w* (stricture|stenos)",
     re.I,
 )
+# Named esophagitis / oesophagitis only. Do not use \bregurgit. Do not
+# use \bmegaesophag (320). Do not use esophageal FB (322). Do not use
+# esophageal stricture (323). Do not harvest a sucralfate or omeprazole
+# table. Dogs and cats. Skip horse. Packet 323 still owns stricture.
+ESOPHAGITIS_DX_RE = re.compile(r"\besophagitis\b|\boesophagitis\b", re.I)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6265,6 +6270,7 @@ def analyze(
     steal_praa_dx = PRAA_DX_RE.search(text)
     steal_esofb_dx = ESOFB_DX_RE.search(text)
     steal_esostr_dx = ESOSTR_DX_RE.search(text)
+    steal_esophagitis_dx = ESOPHAGITIS_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6390,6 +6396,7 @@ def analyze(
         or steal_praa_dx
         or steal_esofb_dx
         or steal_esostr_dx
+        or steal_esophagitis_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16794,6 +16801,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for esophageal stricture."
+            )
+
+    esophagitis_named = spec in {"dog", "cat"} and ESOPHAGITIS_DX_RE.search(text)
+    if esophagitis_named:
+        if spec == "cat":
+            esophagitis_loc = "Feline esophagitis. Not a megaesophagus-alone."
+        else:
+            esophagitis_loc = "Canine esophagitis. Not a megaesophagus-alone."
+        localization = (
+            f"{localization} Also {esophagitis_loc}" if localization else esophagitis_loc
+        )
+        hard_stops.append(
+            "Do not harvest a sucralfate table. "
+            "Do not harvest an omeprazole table. "
+            "Plain films do not diagnose named esophagitis."
+        )
+        do_not.append(
+            "Do not call this a megaesophagus-alone. "
+            "Do not send named esophagitis home as gagging. "
+            "Do not copy a cisapride table. "
+            "Do not treat steroids as a stricture-prevention law."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline esophagitis. Not a megaesophagus-alone. "
+                "△ Plumb. Endoscopy. Look for FB, reflux, and doxy. "
+                "Do not copy a sucralfate table."
+            )
+        else:
+            do_next.append(
+                "Name canine esophagitis. Not a megaesophagus-alone. "
+                "△ Plumb. Endoscopy. Look for FB, reflux, and doxy. "
+                "Do not copy a sucralfate table."
+            )
+        sources.append(
+            "Defarges Merck esophagitis Oct 2022 / Sept 2024: inflammation "
+            "from FB, reflux, doxy, caustic, neoplasia, Spirocerca; cats also "
+            "calicivirus; regurgitation is classic; endoscopy over plain films; "
+            "acid suppression and mucosal protection stay on the page. "
+            "Packet 323 stricture. Packet 322 FB. Packet 320 megaesophagus. "
+            "Do not harvest sucralfate or omeprazole tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for esophagitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for esophagitis."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

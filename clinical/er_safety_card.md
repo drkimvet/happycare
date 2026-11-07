@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine esophagitis (Merck Defarges Sept 2024)
+
+- **Canine esophagitis. Not a megaesophagus-alone.** Named esophagitis / oesophagitis only. FB, reflux after anesthesia, doxy, caustic, neoplasia, Spirocerca. Cats: also calicivirus. Endoscopy over plain films. Acid suppression and mucosal protection stay on the page. Do **not** harvest a sucralfate table. Do **not** harvest an omeprazole table. Do **not** send named esophagitis home as gagging.
+- Cats: same named loc as feline esophagitis. Packet 323 still owns named stricture. Packet 322 still owns named esophageal FB. Packet 320 still owns named megaesophagus. Bare regurgitation stay dark. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine esophageal stricture (Merck Defarges May 2025)
 
 - **Canine esophageal stricture. Not a megaesophagus-alone.** Named esophageal / oesophageal stricture or stenosis only. Narrowing after anesthesia, FB, caustic, doxy/clinda, reflux, or tumor. Most in the thorax. Fluoro esophagram. Balloon first. Stents are salvage. Surgery is less successful. Treat the esophagitis. Do **not** harvest a balloon-dilation table. Do **not** harvest a barium table. Do **not** send named esophageal stricture home as gagging.

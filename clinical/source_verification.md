@@ -4436,3 +4436,31 @@ Night rule: named esophageal stricture → **Canine esophageal stricture. Not a 
 - Attending: If the query is only “stricture,” why does this gate stay dark?
 - Attending: Horse esophageal stricture — fire or skip?
 - Attending: Dual-named “PRAA, esophageal stricture” — which loc should win, and why?
+
+## 324. Canine esophagitis (Defarges Merck Sept 2024)
+
+No dedicated Plunkett esophagitis chapter in the owned SA EM splits. Public Defarges A. Esophagitis in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated Sept 2024 (inflammation usually from FB, gastroesophageal reflux, and occasionally doxycycline; reflux after anesthesia, atropine/acepromazine, or vomiting; also caustic, neoplasia, Spirocerca; feeding tubes across the GE junction; feline calicivirus; regurgitation is classic; endoscopy over plain films; H2 or omeprazole, cisapride/metoclopramide, sucralfate slurry, small low-fat/low-fiber meals; G-tube for severe rest; steroids to prevent stricture are controversial). Do not harvest a sucralfate table as lobby law. Do not harvest an omeprazole table as lobby law. Do not harvest a cisapride table as lobby law. Do not fire on bare regurgitation. Packet 323 still owns named esophageal stricture. Packet 322 still owns named esophageal FB. Packet 320 still owns named megaesophagus. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named esophagitis is not a megaesophagus-alone.** Endoscopy. Printed sucralfate / omeprazole / cisapride numbers stay on the page (`△ Plumb`).
+
+Night split: named esophagitis / oesophagitis is canine (or feline) esophagitis; not a megaesophagus-alone. Bare regurgitation stay dark. Horse does not fire. Dog or cat can fire. Dual stricture plus esophagitis concatenates 323 then 324.
+
+Book/public traps:
+
+- Do not harvest a sucralfate table.
+- Do not harvest an omeprazole table.
+- Do not call this a megaesophagus-alone.
+- Do not send named esophagitis home as gagging.
+- Do not copy a cisapride table.
+- Do not treat steroids as a stricture-prevention law.
+
+Night rule: named esophagitis → **Canine esophagitis. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a regurgitating dog with esophagitis not a megaesophagus-alone?
+- NAVLE 2: Why do plain films fail named esophagitis?
+- NAVLE 3: Dual-named “esophageal stricture, esophagitis” — which loc should win, and why?
+- Oral: How do you tell the owner this is inflammation, not a dilated esophagus, without inventing a sucralfate table?
+- Attending: If the query is only “regurgitation,” why does this gate stay dark?
+- Attending: Horse esophagitis — fire or skip?
+- Attending: Dual-named “esophageal FB, esophagitis” — which loc should win, and why?

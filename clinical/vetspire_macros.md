@@ -260,6 +260,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-praa` | Assessment | Canine vascular ring / not a megaesophagus-alone |
 | `ddx-esofb` | Assessment | Canine esophageal FB / not a megaesophagus-alone |
 | `ddx-esostr` | Assessment | Canine esophageal stricture / not a megaesophagus-alone |
+| `ddx-esophagitis` | Assessment | Canine esophagitis / not a megaesophagus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -273,6 +274,7 @@ Suggested names are short so they show up after three letters.
 | `dc-praa` | Discharge | After vascular ring / PRAA talk |
 | `dc-esofb` | Discharge | After esophageal FB / endoscopy talk |
 | `dc-esostr` | Discharge | After esophageal stricture / balloon talk |
+| `dc-esophagitis` | Discharge | After esophagitis / reflux talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3713,6 +3715,21 @@ DDX:
 Do not: harvest a balloon-dilation table. Harvest a barium table. Call this a megaesophagus-alone. Copy a B-tube inflation table.
 Do next: Name canine esophageal stricture. Not a megaesophagus-alone. △ Plumb. Fluoro esophagram. Balloon conversation. Do not copy a balloon-dilation table.
 
+### `ddx-esophagitis`
+
+Esophagitis — {{patient.name}}
+Canine esophagitis [yes / not]. Not a megaesophagus-alone [yes / not]. FB / reflux / doxy [ ]. Endoscopy [ ]. Aspiration [ ]. Pain [ ].
+
+DDX:
+1. Esophagitis — **Canine esophagitis. Not a megaesophagus-alone**
+2. Inflammation from FB, reflux after anesthesia, doxy, caustic, neoplasia, or Spirocerca. Cats: also calicivirus
+3. Endoscopy over plain films. Acid suppression and mucosal protection stay on the page
+4. Packet 323 owns named stricture. Packet 322 owns named esophageal FB. Packet 320 owns named megaesophagus
+5. Dog or cat can fire. Horse does not fire. Do not send this home as gagging
+
+Do not: harvest a sucralfate table. Harvest an omeprazole table. Call this a megaesophagus-alone. Copy a cisapride table.
+Do next: Name canine esophagitis. Not a megaesophagus-alone. △ Plumb. Endoscopy. Look for FB, reflux, and doxy. Do not copy a sucralfate table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3828,6 +3845,14 @@ Return now for trouble breathing, blue gums, fever, food coming up, or not being
 {{patient.name}} has a scar that narrowed the esophagus (stricture). Food cannot pass the tight ring. This is not ordinary megaesophagus and not a gagging night to wait on.
 
 Balloon stretching is how the ring is opened. Medicines do not cut the scar. Give only the medicines we sent, as labeled. Soft food as we showed.
+
+Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
+
+### `dc-esophagitis`
+
+{{patient.name}} has an inflamed esophagus (esophagitis). Swallowing hurts. This is not ordinary megaesophagus and not a gagging night to wait on.
+
+Give only the medicines we sent, as labeled. Soft food, small meals, as we showed. Do not give leftover acid or coating medicines from the cabinet.
 
 Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
 
