@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine esophageal FB (Merck Defarges Sept 2024)
+
+- **Canine esophageal FB. Not a megaesophagus-alone.** Named esophageal / oesophageal foreign body or FB, or bone / fishhook / needle / rawhide in the esophagus. Lodge at the thoracic inlet, heart base, or caudal esophagus. Comes out tonight. Neck and chest films. Endoscopy first. Surgery if perforated or stuck. Stricture is the common late hit. Do **not** harvest a barium table. Do **not** harvest an endoscopic-retrieval table. Do **not** send named esophageal FB home as gagging.
+- Cats: same named loc as feline esophageal FB. Packet 320 still owns named megaesophagus. Packet 321 still owns PRAA. Linear string yank stays GI. Bare regurgitation stay dark. Bare foreign body stay GI/eye, not this loc. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine vascular ring (Merck Tou May 2025)
 
 - **Canine vascular ring. Not a megaesophagus-alone.** Named PRAA / persistent right aortic arch / vascular ring / double aortic arch only. Esophagus trapped at the heart base. Weaning regurgitation. Rightward tracheal deviation on DV/VD. CT before surgery. Transect the ligamentum arteriosum; PDA if present is ligate-and-cut. Focal cranial-to-heart dilation is not generalized megaesophagus. Do **not** harvest a barium table. Do **not** harvest a ligation table. Do **not** send named PRAA home as weaning.

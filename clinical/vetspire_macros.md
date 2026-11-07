@@ -258,6 +258,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-boas` | Assessment | Canine BOAS / not a wait-and-see stertor |
 | `ddx-megaeso` | Assessment | Canine megaesophagus / not a pneumonia-alone |
 | `ddx-praa` | Assessment | Canine vascular ring / not a megaesophagus-alone |
+| `ddx-esofb` | Assessment | Canine esophageal FB / not a megaesophagus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -269,6 +270,7 @@ Suggested names are short so they show up after three letters.
 | `dc-boas` | Discharge | After BOAS / airway talk |
 | `dc-megaeso` | Discharge | After megaesophagus / feeding talk |
 | `dc-praa` | Discharge | After vascular ring / PRAA talk |
+| `dc-esofb` | Discharge | After esophageal FB / endoscopy talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3679,6 +3681,21 @@ DDX:
 Do not: harvest a barium table. Harvest a ligation table. Call this a megaesophagus-alone. Pour barium into a puppy that already aspirates.
 Do next: Name canine vascular ring. Not a megaesophagus-alone. △ Plumb. Weaning regurg. Rightward trachea on DV/VD. CT before cut. Do not copy a ligation table.
 
+### `ddx-esofb`
+
+Esophageal FB — {{patient.name}}
+Canine esophageal FB [yes / not]. Not a megaesophagus-alone [yes / not]. Bone / fishhook / needle / rawhide [ ]. Thoracic inlet / heart base / caudal esophagus [ ]. Perforation [ ]. Endoscopy [ ].
+
+DDX:
+1. Esophageal FB — **Canine esophageal FB. Not a megaesophagus-alone**
+2. Lodge at the thoracic inlet, heart base, or caudal esophagus. Comes out tonight
+3. Neck and chest films. Endoscopy first. Surgery if perforated or stuck. Stricture is the common late hit
+4. Packet 320 owns named megaesophagus. Packet 321 owns PRAA. Linear string yank stays GI
+5. Dog or cat can fire. Horse does not fire. Do not send this home as gagging
+
+Do not: harvest a barium table. Harvest an endoscopic-retrieval table. Call this a megaesophagus-alone. Pour barium if perforation is on the list.
+Do next: Name canine esophageal FB. Not a megaesophagus-alone. △ Plumb. Neck and chest films. Endoscopy conversation. Do not copy a retrieval table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3780,6 +3797,14 @@ Return now for trouble breathing, blue gums, fever, or food coming up from the m
 Surgery is how the ring is opened. Feeding changes do not cut the ligamentum. Give only the medicines we sent, as labeled. Feed as we showed. Do not give leftover barium from the cabinet.
 
 Return now for trouble breathing, blue gums, fever, or food coming up from the mouth. {{location.phonenumber}}
+
+### `dc-esofb`
+
+{{patient.name}} had something stuck in the esophagus (the tube from the mouth to the stomach). This is not ordinary megaesophagus and not a gagging night to wait on. It needed to come out.
+
+Give only the medicines we sent, as labeled. Soft food as we showed. Do not give leftover barium from the cabinet.
+
+Return now for trouble breathing, blue gums, fever, food coming up, or not being able to swallow. {{location.phonenumber}}
 
 ### `dc-ahds`
 

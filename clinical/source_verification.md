@@ -4380,3 +4380,31 @@ Night rule: named PRAA → **Canine vascular ring. Not a megaesophagus-alone.** 
 - Attending: If the query is only “regurgitation,” why does this gate stay dark?
 - Attending: Horse PRAA — fire or skip?
 - Attending: Dual-named “congenital megaesophagus, vascular ring” — which loc should win, and why?
+
+## 322. Canine esophageal FB (Defarges Merck Sept 2024)
+
+No dedicated Plunkett esophageal-FB chapter in the owned SA EM splits. Public Defarges A. Esophageal Foreign Bodies in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated Sept 2024 (more common in dogs than cats; bones most common, also needles, fishhooks, wood, rawhide, dental chews; lodge at thoracic inlet, heart base, or caudal esophagus just cranial to the diaphragm; ptyalism, gagging, dysphagia, regurgitation, repeated swallows; remove immediately; most come out per os with a flexible endoscope; surgery if perforated or endoscopy fails; stricture is the most common complication; barium paste can wreck a later scope; iodinated contrast if perforation is suspected). Do not harvest a barium table as lobby law. Do not harvest an endoscopic-retrieval table as lobby law. Do not harvest a sucralfate / omeprazole table as lobby law. Do not fire on bare regurgitation. Do not fire on bare foreign body (GI / eye). Packet 320 still owns named megaesophagus. Packet 321 still owns PRAA. Linear string yank stays GI. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named esophageal FB is not a megaesophagus-alone.** Comes out tonight. Printed barium / Foley / forceps / 24-hour / sucralfate numbers stay on the page (`△ Plumb`).
+
+Night split: named esophageal / oesophageal foreign body or FB, or bone / fishhook / needle / rawhide in the esophagus is canine (or feline) esophageal FB; not a megaesophagus-alone. Bare regurgitation stay dark. Bare foreign body stay GI/eye. Horse does not fire. Dog or cat can fire. Dual megaesophagus plus esophageal FB concatenates 320 then 322.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest an endoscopic-retrieval table.
+- Do not call this a megaesophagus-alone.
+- Do not send named esophageal FB home as gagging.
+- Do not pour barium if perforation is on the list.
+- Do not yank this like a linear GI string.
+
+Night rule: named esophageal FB → **Canine esophageal FB. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a gagging dog with an esophageal bone not a megaesophagus-alone?
+- NAVLE 2: Why does barium stay on the page if you still need a scope tonight?
+- NAVLE 3: Dual-named “megaesophagus, esophageal FB” — which loc should win, and why?
+- Oral: How do you tell the owner this comes out tonight, without inventing a forceps table?
+- Attending: If the query is only “foreign body,” why does this gate stay dark?
+- Attending: Horse esophageal FB — fire or skip?
+- Attending: Dual-named “linear foreign body, esophageal FB” — which loc should win, and why?

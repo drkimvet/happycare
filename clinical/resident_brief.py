@@ -2078,6 +2078,19 @@ PRAA_DX_RE = re.compile(
     r"double aortic arch",
     re.I,
 )
+# Named esophageal / oesophageal foreign body or FB, or bone / fishhook /
+# needle / rawhide in the esophagus. Do not use \bfb\b alone (GI / eye).
+# Do not use \bmegaesophag (320). Do not use \bpraa (321). Do not use
+# \bregurgit. Do not harvest a barium or endoscopic-retrieval table.
+# Dogs and cats. Skip horse. Packet 320 still owns named megaesophagus.
+# Linear string yank stays GI.
+ESOFB_DX_RE = re.compile(
+    r"esophag\w* (foreign body|\bfb\b)|"
+    r"oesophag\w* (foreign body|\bfb\b)|"
+    r"(bone|fishhook|fish hook|needle|rawhide).{0,24}esophag|"
+    r"esophag.{0,24}(bone|fishhook|fish hook|needle|rawhide)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6241,6 +6254,7 @@ def analyze(
     steal_boas_dx = BOAS_DX_RE.search(text)
     steal_megaeso_dx = MEGAESO_DX_RE.search(text)
     steal_praa_dx = PRAA_DX_RE.search(text)
+    steal_esofb_dx = ESOFB_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6364,6 +6378,7 @@ def analyze(
         or steal_boas_dx
         or steal_megaeso_dx
         or steal_praa_dx
+        or steal_esofb_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -16674,6 +16689,53 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for vascular ring."
+            )
+
+    esofb_named = spec in {"dog", "cat"} and ESOFB_DX_RE.search(text)
+    if esofb_named:
+        if spec == "cat":
+            esofb_loc = "Feline esophageal FB. Not a megaesophagus-alone."
+        else:
+            esofb_loc = "Canine esophageal FB. Not a megaesophagus-alone."
+        localization = f"{localization} Also {esofb_loc}" if localization else esofb_loc
+        hard_stops.append(
+            "Do not harvest a barium table. "
+            "Do not harvest an endoscopic-retrieval table. "
+            "Named esophageal FB comes out tonight, not in the morning."
+        )
+        do_not.append(
+            "Do not call this a megaesophagus-alone. "
+            "Do not send named esophageal FB home as gagging. "
+            "Do not pour barium if perforation is on the list. "
+            "Do not yank this like a linear GI string."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline esophageal FB. Not a megaesophagus-alone. "
+                "△ Plumb. Neck and chest films. Endoscopy conversation. "
+                "Do not copy a retrieval table."
+            )
+        else:
+            do_next.append(
+                "Name canine esophageal FB. Not a megaesophagus-alone. "
+                "△ Plumb. Neck and chest films. Endoscopy conversation. "
+                "Do not copy a retrieval table."
+            )
+        sources.append(
+            "Defarges Merck esophageal foreign bodies Oct 2022 / Sept 2024: "
+            "bones most common; lodge at thoracic inlet, heart base, or "
+            "caudal esophagus; remove immediately; endoscopy first; surgery "
+            "if perforated or stuck; stricture is the common late hit. "
+            "Packet 320 megaesophagus. Packet 321 PRAA. Linear string stays GI. "
+            "Do not harvest barium or endoscopic-retrieval tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for esophageal FB."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for esophageal FB."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
