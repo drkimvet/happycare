@@ -266,6 +266,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ppdh` | Assessment | Canine PPDH / not a hiatal-alone |
 | `ddx-dh` | Assessment | Canine traumatic DH / not a PPDH-alone |
 | `ddx-umbilical` | Assessment | Canine umbilical hernia / not a DH-alone |
+| `ddx-inguinal` | Assessment | Canine inguinal hernia / not an umbilical-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -285,6 +286,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ppdh` | Discharge | After PPDH / hernia talk |
 | `dc-dh` | Discharge | After traumatic DH / repair talk |
 | `dc-umbilical` | Discharge | After umbilical hernia / close talk |
+| `dc-inguinal` | Discharge | After inguinal hernia / close talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3815,6 +3817,21 @@ DDX:
 Do not: harvest a mesh table. Call this a DH-alone. Ignore concurrent cryptorchidism. Copy a mesh table as lobby law.
 Do next: Name canine umbilical hernia. Not a DH-alone. △ Plumb. Palpate. Close most. Small ones at OHE. Do not copy a mesh table.
 
+### `ddx-inguinal`
+
+Inguinal hernia — {{patient.name}}
+Canine inguinal hernia [yes / not]. Not an umbilical-alone [yes / not]. Scrotal [ ]. Uterus in a bitch [ ]. Vomiting / strangulation [ ]. Close tonight [ ].
+
+DDX:
+1. Inguinal hernia — **Canine inguinal hernia. Not an umbilical-alone**
+2. Quiet groin or scrotal bulge, or vomiting if bowel is strangulated. Bitches can herniate uterus
+3. Palpate. Close. Strangulation is surgery tonight
+4. Packet 329 owns umbilical. Bare hernia stay unnamed. Do not send this home as a lymph node
+5. Dog or cat can fire. Horse does not fire. Do not copy a laparoscopic ring table
+
+Do not: harvest a mesh table. Harvest a laparoscopic ring table. Call this an umbilical-alone. Forget the uterus in a bitch.
+Do next: Name canine inguinal hernia. Not an umbilical-alone. △ Plumb. Palpate. Close. Strangulation is surgery tonight. Do not copy a mesh table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3978,6 +3995,14 @@ Return now for trouble breathing, blue gums, collapse, or a swollen belly. {{loc
 {{patient.name}} has a hole at the belly button (umbilical hernia). Fat or intestine can sit in the bulge. This is not a tear in the diaphragm and not the congenital hole into the heart sac.
 
 Most of these holes are closed so intestine cannot get trapped. Small ones are often closed at spay or neuter. Give only the medicines we sent, as labeled.
+
+Return now for a painful or stuck bulge, vomiting, or not being able to eat. {{location.phonenumber}}
+
+### `dc-inguinal`
+
+{{patient.name}} has a hole in the groin (inguinal hernia). Fat, intestine, or in a female the uterus can sit in the bulge. This is not a belly-button hernia.
+
+Most of these holes are closed so intestine cannot get trapped. If there was vomiting, surgery is tonight. Give only the medicines we sent, as labeled.
 
 Return now for a painful or stuck bulge, vomiting, or not being able to eat. {{location.phonenumber}}
 

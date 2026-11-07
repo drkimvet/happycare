@@ -4602,3 +4602,30 @@ Night rule: named umbilical hernia → **Canine umbilical hernia. Not a DH-alone
 - Attending: If the query is only “hernia,” why does this gate stay dark?
 - Attending: Horse umbilical hernia — fire or skip?
 - Attending: Dual-named “PPDH, umbilical hernia” — which loc should win, and why?
+
+## 330. Canine inguinal hernia (Roberts Merck Sept 2024)
+
+No dedicated Plunkett inguinal-hernia chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (inguinal and scrotal hernias are common in many dog breeds; hereditary suspected; bitches can herniate uterus; signs from nonpainful inguinal or scrotal swelling to vomiting if small intestine is strangulated). Horse laparoscopic ring closure, figure-eight bandage, and fertility tables stay on the large-animal page. Do not harvest a mesh table as lobby law. Do not fire on bare hernia. Do not fire on inguinal or scrotum alone. Packet 329 still owns umbilical. Dogs and cats. Skip horse.
+
+Agree with Roberts: **named inguinal hernia is not an umbilical-alone.** Palpate. Close. Strangulation is surgery tonight. Printed mesh numbers stay on the page (`△ Plumb`).
+
+Night split: named inguinal hernia / scrotal hernia is canine (or feline) inguinal hernia; not an umbilical-alone. Bare hernia stay unnamed. Horse does not fire. Dog or cat can fire. Dual umbilical plus inguinal concatenates 329 then 330.
+
+Book/public traps:
+
+- Do not harvest a mesh table.
+- Do not harvest a laparoscopic ring table.
+- Do not call this an umbilical-alone.
+- Do not send named inguinal hernia home as a lymph node.
+- Do not forget the uterus in a bitch.
+
+Night rule: named inguinal hernia → **Canine inguinal hernia. Not an umbilical-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a vomiting dog with an inguinal hernia not an umbilical-alone?
+- NAVLE 2: Why can a bitch’s inguinal hernia contain uterus?
+- NAVLE 3: Dual-named “umbilical hernia, inguinal hernia” — which loc should win, and why?
+- Oral: How do you tell the owner a groin bulge is not a lymph node, without inventing a mesh table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse inguinal hernia — fire or skip?
+- Attending: Dual-named “scrotal hernia” — same loc or a new packet?

@@ -2150,6 +2150,15 @@ DH_DX_RE = re.compile(
 # \bweimaraner\b. Do not harvest a mesh table. Dogs and cats.
 # Skip horse. Packet 328 still owns traumatic DH.
 UMBIL_DX_RE = re.compile(r"umbilical hernia", re.I)
+# Named inguinal hernia / scrotal hernia only. Do not use \bhernia\b.
+# Do not use umbilical hernia (329). Do not use \binguinal\b alone.
+# Do not harvest a mesh or laparoscopic table. Dogs and cats. Skip horse.
+# Packet 329 still owns umbilical.
+INGUIN_DX_RE = re.compile(
+    r"inguinal hernia|"
+    r"scrotal hernia",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6321,6 +6330,7 @@ def analyze(
     steal_ppdh_dx = PPDH_DX_RE.search(text)
     steal_dh_dx = DH_DX_RE.search(text)
     steal_umbil_dx = UMBIL_DX_RE.search(text)
+    steal_inguin_dx = INGUIN_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6452,6 +6462,7 @@ def analyze(
         or steal_ppdh_dx
         or steal_dh_dx
         or steal_umbil_dx
+        or steal_inguin_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17137,6 +17148,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for umbilical hernia."
+            )
+
+    inguin_named = spec in {"dog", "cat"} and INGUIN_DX_RE.search(text)
+    if inguin_named:
+        if spec == "cat":
+            inguin_loc = "Feline inguinal hernia. Not an umbilical-alone."
+        else:
+            inguin_loc = "Canine inguinal hernia. Not an umbilical-alone."
+        localization = (
+            f"{localization} Also {inguin_loc}" if localization else inguin_loc
+        )
+        hard_stops.append(
+            "Do not harvest a mesh table. "
+            "Do not harvest a laparoscopic ring table. "
+            "Vomiting means strangulated bowel until proven otherwise."
+        )
+        do_not.append(
+            "Do not call this an umbilical-alone. "
+            "Do not send named inguinal hernia home as a lymph node. "
+            "Do not copy a mesh table as lobby law. "
+            "Do not forget the uterus in a bitch."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline inguinal hernia. Not an umbilical-alone. "
+                "△ Plumb. Palpate. Close. Strangulation is surgery tonight. "
+                "Do not copy a mesh table."
+            )
+        else:
+            do_next.append(
+                "Name canine inguinal hernia. Not an umbilical-alone. "
+                "△ Plumb. Palpate. Close. Strangulation is surgery tonight. "
+                "Do not copy a mesh table."
+            )
+        sources.append(
+            "Roberts Merck hernias Nov 2022 / Sept 2024: inguinal and scrotal "
+            "hernias in many dog breeds; hereditary suspected; bitches can "
+            "herniate uterus; signs from a quiet groin bulge to vomiting if "
+            "small intestine is strangulated. Packet 329 umbilical. Do not "
+            "harvest a mesh or laparoscopic table. Skip horse laparoscopic "
+            "and figure-eight bandage tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for inguinal hernia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for inguinal hernia."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

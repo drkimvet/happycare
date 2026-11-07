@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine inguinal hernia (Merck Roberts Sept 2024)
+
+- **Canine inguinal hernia. Not an umbilical-alone.** Named inguinal hernia / scrotal hernia only. Quiet groin or scrotal bulge, or vomiting if bowel is strangulated. Bitches can herniate uterus. Palpate. Close. Strangulation is surgery tonight. Do **not** harvest a mesh table. Do **not** harvest a laparoscopic ring table. Do **not** send named inguinal hernia home as a lymph node.
+- Cats: same named loc as feline inguinal hernia. Packet 329 still owns umbilical. Bare hernia stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine umbilical hernia (Merck Roberts Sept 2024)
 
 - **Canine umbilical hernia. Not a DH-alone.** Named umbilical hernia only. Ring, sac, contents. Fat or omentum, or intestine. Weimaraners, Pekingese, Basenjis, Airedales. Cryptorchidism often concurrent. Palpate. Close most to lower incarceration risk. Small ones at OHE. Do **not** harvest a mesh table. Do **not** send named umbilical hernia home as a cosmetic navel.
