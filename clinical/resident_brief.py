@@ -2132,6 +2132,19 @@ PPDH_DX_RE = re.compile(
     r"peritoneal.?pericardial (diaphragmatic )?hernia",
     re.I,
 )
+# Named diaphragmatic hernia / traumatic DH / ruptured diaphragm only.
+# Do not use \bppdh (327). Do not use hiatal hernia (326). Do not use
+# \bhernia\b. Do not harvest a re-expansion table. Dogs and cats.
+# Skip horse. Packet 327 still owns PPDH. Lookbehind keeps
+# pericardiodiaphragmatic and peritoneopericardial diaphragmatic dark.
+DH_DX_RE = re.compile(
+    r"(?<!peritoneopericardial )(?<![A-Za-z])diaphragmatic hernia|"
+    r"\btraumatic dh\b|"
+    r"ruptured diaphragm|"
+    r"diaphragmatic rupture|"
+    r"rupture.{0,12}diaphragm",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6301,6 +6314,7 @@ def analyze(
     steal_cricoph_dx = CRICOPH_DX_RE.search(text)
     steal_hiatal_dx = HIATAL_DX_RE.search(text)
     steal_ppdh_dx = PPDH_DX_RE.search(text)
+    steal_dh_dx = DH_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6430,6 +6444,7 @@ def analyze(
         or steal_cricoph_dx
         or steal_hiatal_dx
         or steal_ppdh_dx
+        or steal_dh_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17019,6 +17034,53 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for PPDH."
+            )
+
+    dh_named = spec in {"dog", "cat"} and DH_DX_RE.search(text)
+    if dh_named:
+        if spec == "cat":
+            dh_loc = "Feline traumatic DH. Not a PPDH-alone."
+        else:
+            dh_loc = "Canine traumatic DH. Not a PPDH-alone."
+        localization = f"{localization} Also {dh_loc}" if localization else dh_loc
+        hard_stops.append(
+            "Do not harvest a re-expansion pulmonary edema table. "
+            "Stabilize first. Congenital PPDH is not this loc."
+        )
+        do_not.append(
+            "Do not call this a PPDH-alone. "
+            "Do not send named DH home as a bruise. "
+            "Do not copy a re-expansion table as lobby law. "
+            "Do not wait for films if the patient is crashing."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline traumatic DH. Not a PPDH-alone. "
+                "△ Plumb. Oxygen. Stabilize. Then repair. "
+                "Do not copy a re-expansion table."
+            )
+        else:
+            do_next.append(
+                "Name canine traumatic DH. Not a PPDH-alone. "
+                "△ Plumb. Oxygen. Stabilize. Then repair. "
+                "Do not copy a re-expansion table."
+            )
+        sources.append(
+            "McMichael Merck diaphragmatic hernia May 2022 / Sept 2024: "
+            "trauma more common in dogs; congenital more common in cats; "
+            "acute dyspnea; stomach in the thorax can bloat; films show "
+            "lost diaphragmatic contour and viscera in the chest; oxygen "
+            "and support first, then herniorrhaphy; re-expansion edema "
+            "is more likely after chronic repair. Packet 327 PPDH. "
+            "Packet 326 hiatal. Do not harvest a re-expansion table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for traumatic DH."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for traumatic DH."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

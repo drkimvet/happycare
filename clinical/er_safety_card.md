@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine traumatic DH (Merck McMichael Sept 2024)
+
+- **Canine traumatic DH. Not a PPDH-alone.** Named diaphragmatic hernia / traumatic DH / ruptured diaphragm only. Trauma more common in dogs. Acute dyspnea. Stomach in the thorax can bloat. Stabilize first: oxygen, then repair. Do **not** harvest a re-expansion pulmonary edema table. Do **not** wait for films if crashing. Do **not** send named DH home as a bruise.
+- Cats: same named loc as feline traumatic DH. Congenital more common in cats, but this loc is the traumatic tear, not PPDH. Packet 327 still owns PPDH. Packet 326 still owns hiatal. Bare hernia stay umbilical/inguinal. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine PPDH (Merck Roberts Sept 2024; McMichael Sept 2024)
 
 - **Canine PPDH. Not a hiatal-alone.** Named PPDH / peritoneopericardial / pericardiodiaphragmatic hernia only. Failed septum transversum. Abdominal contents in the pericardial sac. Weimaraners and DLH. Incidental is common. Signs: herniorrhaphy. Do **not** harvest a mesh table. Do **not** tap named PPDH as tamponade. Do **not** send named PPDH home as a globoid heart.

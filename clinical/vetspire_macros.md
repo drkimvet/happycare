@@ -264,6 +264,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cricoph` | Assessment | Canine cricopharyngeal achalasia / not a megaesophagus-alone |
 | `ddx-hiatal` | Assessment | Canine hiatal hernia / not a megaesophagus-alone |
 | `ddx-ppdh` | Assessment | Canine PPDH / not a hiatal-alone |
+| `ddx-dh` | Assessment | Canine traumatic DH / not a PPDH-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -281,6 +282,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cricoph` | Discharge | After cricopharyngeal / swallow talk |
 | `dc-hiatal` | Discharge | After hiatal hernia / reflux talk |
 | `dc-ppdh` | Discharge | After PPDH / hernia talk |
+| `dc-dh` | Discharge | After traumatic DH / repair talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3781,6 +3783,21 @@ DDX:
 Do not: harvest a mesh table. Tap named PPDH as tamponade. Call this a hiatal-alone. Delay surgery when signs are present.
 Do next: Name canine PPDH. Not a hiatal-alone. △ Plumb. Thoracic films. Incidental can watch. Signs: herniorrhaphy. Do not copy a mesh table.
 
+### `ddx-dh`
+
+Traumatic DH — {{patient.name}}
+Canine traumatic DH [yes / not]. Not a PPDH-alone [yes / not]. Hit-by-car / trauma [ ]. Stomach in the chest [ ]. Oxygen first [ ]. Repair [ ].
+
+DDX:
+1. Traumatic DH — **Canine traumatic DH. Not a PPDH-alone**
+2. Trauma more common in dogs. Acute dyspnea. Stomach in the thorax can bloat
+3. Stabilize first: oxygen, then repair. Do not wait for films if crashing
+4. Packet 327 owns PPDH. Packet 326 owns hiatal. Bare hernia stay umbilical/inguinal
+5. Dog or cat can fire. Horse does not fire. Do not send this home as a bruise
+
+Do not: harvest a re-expansion pulmonary edema table. Call this a PPDH-alone. Wait for films if crashing. Copy a re-expansion table as lobby law.
+Do next: Name canine traumatic DH. Not a PPDH-alone. △ Plumb. Oxygen. Stabilize. Then repair. Do not copy a re-expansion table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3930,6 +3947,14 @@ Return now for trouble breathing, blue gums, fever, food coming up, or not being
 If there were no signs, watching may be enough. If there were signs, surgery is how the hole is closed. Give only the medicines we sent, as labeled.
 
 Return now for trouble breathing, blue gums, collapse, or not being able to eat. {{location.phonenumber}}
+
+### `dc-dh`
+
+{{patient.name}} has a tear in the diaphragm. Belly organs moved into the chest. This is not the congenital hole into the heart sac (PPDH) and not a sliding hiatal hernia.
+
+Breathing support comes first. Surgery puts the organs back and closes the tear. Give only the medicines we sent, as labeled. Quiet rest as we showed.
+
+Return now for trouble breathing, blue gums, collapse, or a swollen belly. {{location.phonenumber}}
 
 ### `dc-ahds`
 

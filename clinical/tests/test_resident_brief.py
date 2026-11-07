@@ -10752,6 +10752,7 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("canine ppdh", loc)
         self.assertIn("not a hiatal-alone", loc)
         self.assertNotIn("canine hiatal hernia", loc)
+        self.assertNotIn("canine traumatic dh", loc)
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
         self.assertIn("mesh table", joined)
         self.assertIn("tamponade", joined)
@@ -10771,6 +10772,7 @@ class ResidentBriefTests(unittest.TestCase):
         loc = b["localization"].lower()
         self.assertIn("canine ppdh", loc)
         self.assertNotIn("obstructive shock", loc)
+        self.assertNotIn("canine traumatic dh", loc)
         joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
         self.assertIn("do not tap named ppdh as tamponade", joined)
         self.assertNotIn("pericardiocentesis is the treatment", joined)
@@ -10811,6 +10813,69 @@ class ResidentBriefTests(unittest.TestCase):
         loc = (b["localization"] or "").lower()
         self.assertNotIn("canine ppdh", loc)
         self.assertNotIn("feline ppdh", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_canine_traumatic_dh_is_not_a_ppdh_alone(self):
+        b = analyze("dog", "diaphragmatic hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine traumatic dh", loc)
+        self.assertIn("not a ppdh-alone", loc)
+        self.assertNotIn("canine ppdh", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("re-expansion", joined)
+        self.assertIn("bruise", joined)
+        self.assertIn("stabilize", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_traumatic_dh_alias_fires(self):
+        b = analyze("dog", "traumatic DH")
+        loc = b["localization"].lower()
+        self.assertIn("canine traumatic dh", loc)
+        self.assertIn("not a ppdh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ruptured_diaphragm_fires(self):
+        b = analyze("dog", "ruptured diaphragm")
+        loc = b["localization"].lower()
+        self.assertIn("canine traumatic dh", loc)
+        self.assertIn("not a ppdh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_traumatic_dh_fires(self):
+        b = analyze("cat", "diaphragmatic hernia")
+        loc = b["localization"].lower()
+        self.assertIn("feline traumatic dh", loc)
+        self.assertIn("not a ppdh-alone", loc)
+        self.assertNotIn("canine traumatic dh", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ppdh_plus_diaphragmatic_hernia_concatenates(self):
+        b = analyze("dog", "PPDH, diaphragmatic hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine ppdh", loc)
+        self.assertIn("canine traumatic dh", loc)
+        self.assertIn("not a ppdh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_peritoneopericardial_diaphragmatic_stays_ppdh(self):
+        b = analyze("dog", "peritoneopericardial diaphragmatic hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine ppdh", loc)
+        self.assertNotIn("canine traumatic dh", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hernia_is_not_traumatic_dh(self):
+        b = analyze("dog", "hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine traumatic dh", loc)
+        self.assertNotIn("not a ppdh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_traumatic_dh(self):
+        b = analyze("horse", "diaphragmatic hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine traumatic dh", loc)
+        self.assertNotIn("feline traumatic dh", loc)
         self.assertIsNone(b["mg_per_kg"])
 
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):

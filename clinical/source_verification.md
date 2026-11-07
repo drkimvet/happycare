@@ -4548,3 +4548,30 @@ Night rule: named PPDH → **Canine PPDH. Not a hiatal-alone.** △ Plumb.
 - Attending: If the query is only “hernia,” why does this gate stay dark?
 - Attending: Horse PPDH — fire or skip?
 - Attending: Dual-named “pericardial tamponade, PPDH” — which loc should win, and why?
+
+## 328. Canine traumatic DH (McMichael Merck Sept 2024)
+
+No dedicated Plunkett traumatic-DH chapter in the owned SA EM splits. Public McMichael M. Diaphragmatic Hernia in Animals. Merck Veterinary Manual. Full review May 2022; last updated Sept 2024 (trauma more common in dogs; congenital more common in cats; acute dyspnea; stomach in the thorax can bloat and crash; lost diaphragmatic contour and viscera in the chest on films; oxygen, analgesia, and support first; then replace viscera and repair; re-expansion pulmonary edema more likely after chronic repair). Do not harvest a re-expansion table as lobby law. Do not fire on PPDH compound names (327). Do not fire on hiatal (326). Do not fire on bare hernia. Dogs and cats. Skip horse.
+
+Agree with McMichael: **named traumatic DH is not a PPDH-alone.** Stabilize. Then repair. Printed re-expansion numbers stay on the page (`△ Plumb`).
+
+Night split: named diaphragmatic hernia / traumatic DH / ruptured diaphragm is canine (or feline) traumatic DH; not a PPDH-alone. Pericardiodiaphragmatic and peritoneopericardial diaphragmatic stay 327. Bare hernia stay umbilical/inguinal. Horse does not fire. Dog or cat can fire. Dual PPDH plus diaphragmatic hernia concatenates 327 then 328.
+
+Book/public traps:
+
+- Do not harvest a re-expansion pulmonary edema table.
+- Do not call this a PPDH-alone.
+- Do not send named DH home as a bruise.
+- Do not copy a re-expansion table as lobby law.
+- Do not wait for films if the patient is crashing.
+
+Night rule: named diaphragmatic hernia → **Canine traumatic DH. Not a PPDH-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a hit-by-car dog with a diaphragmatic hernia not a PPDH-alone?
+- NAVLE 2: Why do you stabilize before you open a chronic DH?
+- NAVLE 3: Dual-named “PPDH, diaphragmatic hernia” — which loc should win, and why?
+- Oral: How do you tell the owner the stomach is in the chest, without inventing a re-expansion table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse diaphragmatic hernia — fire or skip?
+- Attending: Why does “pericardiodiaphragmatic hernia” stay 327 and not this loc?
