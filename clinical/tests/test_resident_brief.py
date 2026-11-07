@@ -10878,6 +10878,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline traumatic dh", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_umbilical_hernia_is_not_a_dh_alone(self):
+        b = analyze("dog", "umbilical hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine umbilical hernia", loc)
+        self.assertIn("not a dh-alone", loc)
+        self.assertNotIn("canine traumatic dh", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("mesh table", joined)
+        self.assertIn("cosmetic navel", joined)
+        self.assertIn("cryptorchid", joined)
+        self.assertIn("incarceration", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_umbilical_hernia_fires(self):
+        b = analyze("cat", "umbilical hernia")
+        loc = b["localization"].lower()
+        self.assertIn("feline umbilical hernia", loc)
+        self.assertIn("not a dh-alone", loc)
+        self.assertNotIn("canine umbilical hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dh_plus_umbilical_concatenates(self):
+        b = analyze("dog", "diaphragmatic hernia, umbilical hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine traumatic dh", loc)
+        self.assertIn("canine umbilical hernia", loc)
+        self.assertIn("not a dh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ppdh_plus_umbilical_concatenates(self):
+        b = analyze("dog", "PPDH, umbilical hernia")
+        loc = b["localization"].lower()
+        self.assertIn("canine ppdh", loc)
+        self.assertIn("canine umbilical hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hernia_is_not_umbilical(self):
+        b = analyze("dog", "hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine umbilical hernia", loc)
+        self.assertNotIn("not a dh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_navel_alone_is_not_umbilical(self):
+        b = analyze("dog", "navel, umbilicus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine umbilical hernia", loc)
+        self.assertNotIn("not a dh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_inguinal_hernia_is_not_umbilical(self):
+        b = analyze("dog", "inguinal hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine umbilical hernia", loc)
+        self.assertNotIn("not a dh-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_umbilical(self):
+        b = analyze("horse", "umbilical hernia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine umbilical hernia", loc)
+        self.assertNotIn("feline umbilical hernia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

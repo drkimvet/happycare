@@ -265,6 +265,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-hiatal` | Assessment | Canine hiatal hernia / not a megaesophagus-alone |
 | `ddx-ppdh` | Assessment | Canine PPDH / not a hiatal-alone |
 | `ddx-dh` | Assessment | Canine traumatic DH / not a PPDH-alone |
+| `ddx-umbilical` | Assessment | Canine umbilical hernia / not a DH-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -283,6 +284,7 @@ Suggested names are short so they show up after three letters.
 | `dc-hiatal` | Discharge | After hiatal hernia / reflux talk |
 | `dc-ppdh` | Discharge | After PPDH / hernia talk |
 | `dc-dh` | Discharge | After traumatic DH / repair talk |
+| `dc-umbilical` | Discharge | After umbilical hernia / close talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3798,6 +3800,21 @@ DDX:
 Do not: harvest a re-expansion pulmonary edema table. Call this a PPDH-alone. Wait for films if crashing. Copy a re-expansion table as lobby law.
 Do next: Name canine traumatic DH. Not a PPDH-alone. △ Plumb. Oxygen. Stabilize. Then repair. Do not copy a re-expansion table.
 
+### `ddx-umbilical`
+
+Umbilical hernia — {{patient.name}}
+Canine umbilical hernia [yes / not]. Not a DH-alone [yes / not]. Reducible [ ]. Intestine vs fat [ ]. Cryptorchid [ ]. Close now vs at OHE [ ].
+
+DDX:
+1. Umbilical hernia — **Canine umbilical hernia. Not a DH-alone**
+2. Ring, sac, contents. Fat or omentum, or intestine. Weimaraners, Pekingese, Basenjis, Airedales
+3. Palpate. Close most to lower incarceration risk. Small ones at OHE
+4. Packet 328 owns traumatic DH. Packet 327 owns PPDH. Bare hernia stay inguinal until named
+5. Dog or cat can fire. Horse does not fire. Do not send this home as a cosmetic navel
+
+Do not: harvest a mesh table. Call this a DH-alone. Ignore concurrent cryptorchidism. Copy a mesh table as lobby law.
+Do next: Name canine umbilical hernia. Not a DH-alone. △ Plumb. Palpate. Close most. Small ones at OHE. Do not copy a mesh table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -3955,6 +3972,14 @@ Return now for trouble breathing, blue gums, collapse, or not being able to eat.
 Breathing support comes first. Surgery puts the organs back and closes the tear. Give only the medicines we sent, as labeled. Quiet rest as we showed.
 
 Return now for trouble breathing, blue gums, collapse, or a swollen belly. {{location.phonenumber}}
+
+### `dc-umbilical`
+
+{{patient.name}} has a hole at the belly button (umbilical hernia). Fat or intestine can sit in the bulge. This is not a tear in the diaphragm and not the congenital hole into the heart sac.
+
+Most of these holes are closed so intestine cannot get trapped. Small ones are often closed at spay or neuter. Give only the medicines we sent, as labeled.
+
+Return now for a painful or stuck bulge, vomiting, or not being able to eat. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -2145,6 +2145,11 @@ DH_DX_RE = re.compile(
     r"rupture.{0,12}diaphragm",
     re.I,
 )
+# Named umbilical hernia only. Do not use \bhernia\b. Do not use
+# diaphragmatic hernia (328). Do not use PPDH (327). Do not use
+# \bweimaraner\b. Do not harvest a mesh table. Dogs and cats.
+# Skip horse. Packet 328 still owns traumatic DH.
+UMBIL_DX_RE = re.compile(r"umbilical hernia", re.I)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6315,6 +6320,7 @@ def analyze(
     steal_hiatal_dx = HIATAL_DX_RE.search(text)
     steal_ppdh_dx = PPDH_DX_RE.search(text)
     steal_dh_dx = DH_DX_RE.search(text)
+    steal_umbil_dx = UMBIL_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6445,6 +6451,7 @@ def analyze(
         or steal_hiatal_dx
         or steal_ppdh_dx
         or steal_dh_dx
+        or steal_umbil_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17081,6 +17088,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for traumatic DH."
+            )
+
+    umbil_named = spec in {"dog", "cat"} and UMBIL_DX_RE.search(text)
+    if umbil_named:
+        if spec == "cat":
+            umbil_loc = "Feline umbilical hernia. Not a DH-alone."
+        else:
+            umbil_loc = "Canine umbilical hernia. Not a DH-alone."
+        localization = (
+            f"{localization} Also {umbil_loc}" if localization else umbil_loc
+        )
+        hard_stops.append(
+            "Do not harvest a mesh table. "
+            "Surgical closure lowers incarceration risk. "
+            "A navel bulge is not a diaphragmatic tear."
+        )
+        do_not.append(
+            "Do not call this a DH-alone. "
+            "Do not send named umbilical hernia home as a cosmetic navel. "
+            "Do not copy a mesh table as lobby law. "
+            "Do not ignore concurrent cryptorchidism."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline umbilical hernia. Not a DH-alone. "
+                "△ Plumb. Palpate. Close most. Small ones at OHE. "
+                "Do not copy a mesh table."
+            )
+        else:
+            do_next.append(
+                "Name canine umbilical hernia. Not a DH-alone. "
+                "△ Plumb. Palpate. Close most. Small ones at OHE. "
+                "Do not copy a mesh table."
+            )
+        sources.append(
+            "Roberts Merck hernias Nov 2022 / Sept 2024: true hernia has "
+            "ring, sac, contents; umbilical hernias hold fat, omentum, or "
+            "intestine; Weimaraners, Pekingese, Basenjis, Airedales; "
+            "cryptorchidism is concurrent in many dogs; palpation ± US; "
+            "close the body wall to lower incarceration risk. Packet 328 "
+            "traumatic DH. Packet 327 PPDH. Do not harvest a mesh table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for umbilical hernia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for umbilical hernia."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

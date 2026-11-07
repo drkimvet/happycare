@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine umbilical hernia (Merck Roberts Sept 2024)
+
+- **Canine umbilical hernia. Not a DH-alone.** Named umbilical hernia only. Ring, sac, contents. Fat or omentum, or intestine. Weimaraners, Pekingese, Basenjis, Airedales. Cryptorchidism often concurrent. Palpate. Close most to lower incarceration risk. Small ones at OHE. Do **not** harvest a mesh table. Do **not** send named umbilical hernia home as a cosmetic navel.
+- Cats: same named loc as feline umbilical hernia. Packet 328 still owns traumatic DH. Packet 327 still owns PPDH. Bare hernia stay inguinal until named. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine traumatic DH (Merck McMichael Sept 2024)
 
 - **Canine traumatic DH. Not a PPDH-alone.** Named diaphragmatic hernia / traumatic DH / ruptured diaphragm only. Trauma more common in dogs. Acute dyspnea. Stomach in the thorax can bloat. Stabilize first: oxygen, then repair. Do **not** harvest a re-expansion pulmonary edema table. Do **not** wait for films if crashing. Do **not** send named DH home as a bruise.

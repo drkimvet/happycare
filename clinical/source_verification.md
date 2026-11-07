@@ -4575,3 +4575,30 @@ Night rule: named diaphragmatic hernia → **Canine traumatic DH. Not a PPDH-alo
 - Attending: If the query is only “hernia,” why does this gate stay dark?
 - Attending: Horse diaphragmatic hernia — fire or skip?
 - Attending: Why does “pericardiodiaphragmatic hernia” stay 327 and not this loc?
+
+## 329. Canine umbilical hernia (Roberts Merck Sept 2024)
+
+No dedicated Plunkett umbilical-hernia chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (true hernia has ring, sac, contents; umbilical hernias hold fat, omentum, or intestinal loops; Weimaraners, Pekingese, Basenjis, Airedale Terriers; concurrent cryptorchidism in many dogs; hereditary suspected not proved; palpation ± US/rads; surgical closure of the body wall lowers incarceration risk). Owner Merck pages: small hernias are often closed at OHE/neuter. Do not harvest a mesh table as lobby law. Do not fire on bare hernia. Do not fire on navel or umbilicus alone. Packet 328 still owns traumatic DH. Packet 327 still owns PPDH. Dogs and cats. Skip horse.
+
+Agree with Roberts: **named umbilical hernia is not a DH-alone.** Palpate. Close most. Printed mesh numbers stay on the page (`△ Plumb`).
+
+Night split: named umbilical hernia is canine (or feline) umbilical hernia; not a DH-alone. Bare hernia stay inguinal until named. Horse does not fire. Dog or cat can fire. Dual DH plus umbilical concatenates 328 then 329.
+
+Book/public traps:
+
+- Do not harvest a mesh table.
+- Do not call this a DH-alone.
+- Do not send named umbilical hernia home as a cosmetic navel.
+- Do not copy a mesh table as lobby law.
+- Do not ignore concurrent cryptorchidism.
+
+Night rule: named umbilical hernia → **Canine umbilical hernia. Not a DH-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Weimaraner puppy with an umbilical hernia not a DH-alone?
+- NAVLE 2: Why close most umbilical hernias even if they reduce?
+- NAVLE 3: Dual-named “diaphragmatic hernia, umbilical hernia” — which loc should win, and why?
+- Oral: How do you tell the owner this navel bulge can trap intestine, without inventing a mesh table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse umbilical hernia — fire or skip?
+- Attending: Dual-named “PPDH, umbilical hernia” — which loc should win, and why?
