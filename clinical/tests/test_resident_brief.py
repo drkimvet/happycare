@@ -11373,6 +11373,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline gi perforation", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_gastritis_is_not_an_ulcer_alone(self):
+        b = analyze("dog", "gastritis")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertNotIn("canine gastric ulcer", loc)
+        self.assertNotIn("canine gi perforation", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("sucralfate", joined)
+        self.assertIn("helicobacter", joined)
+        self.assertIn("biopsy", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_helicobacter_gastritis_fires(self):
+        b = analyze("dog", "Helicobacter gastritis")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_inflammation_fires_gastritis(self):
+        b = analyze("dog", "gastric inflammation")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_gastritis_fires(self):
+        b = analyze("cat", "gastritis")
+        loc = b["localization"].lower()
+        self.assertIn("feline gastritis", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertNotIn("canine gastritis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastritis_plus_ulcer_concatenates(self):
+        b = analyze("dog", "gastritis, gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("canine gastritis", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_ulcer_is_not_gastritis(self):
+        b = analyze("dog", "gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertNotIn("canine gastritis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastroenteritis_is_not_gastritis(self):
+        b = analyze("dog", "gastroenteritis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gastritis", loc)
+        self.assertNotIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_gastritis(self):
+        b = analyze("horse", "gastritis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gastritis", loc)
+        self.assertNotIn("feline gastritis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

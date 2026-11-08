@@ -273,6 +273,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pyloric` | Assessment | Canine pyloric stenosis / not a GDV-alone |
 | `ddx-gulcer` | Assessment | Canine gastric ulcer / not an Addison-alone |
 | `ddx-giperf` | Assessment | Canine GI perforation / not an ulcer-alone |
+| `ddx-gastritis` | Assessment | Canine gastritis / not an ulcer-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -299,6 +300,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pyloric` | Discharge | After pyloric stenosis / outflow talk |
 | `dc-gulcer` | Discharge | After gastric ulcer / NSAID talk |
 | `dc-giperf` | Discharge | After GI perforation / explore talk |
+| `dc-gastritis` | Discharge | After gastritis / vomiting talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3934,6 +3936,21 @@ DDX:
 Do not: harvest a 60% mortality table. Call this an ulcer-alone. Send this home on acid suppression. Tap as the treatment.
 Do next: Name canine GI perforation. Not an ulcer-alone. △ Plumb. Fluids. Explore. Lavage. Do not copy a mortality table.
 
+### `ddx-gastritis`
+
+Gastritis — {{patient.name}}
+Canine gastritis [yes / not]. Not an ulcer-alone [yes / not]. Dietary indiscretion [ ]. Chronic / biopsy [ ]. Helicobacter with lesions [ ]. Ulcer / perforation [ ].
+
+DDX:
+1. Gastritis — **Canine gastritis. Not an ulcer-alone**
+2. Vomiting and cranial abdominal pain. Acute is often dietary indiscretion. Chronic needs biopsy. PPI is not routine unless ulcer is suspected
+3. Packet 335 owns ulcer. Packet 336 owns perforation. Helicobacter is common in healthy pets. Bare gastroenteritis stay unnamed
+4. Do not treat incidental Helicobacter as H. pylori ulcer law. Do not send this home as AHDS
+5. Dog or cat can fire. Horse does not fire. Do not copy a sucralfate table
+
+Do not: harvest a sucralfate table. Harvest an omeprazole table. Call this an ulcer-alone. Treat Helicobacter because the organism is found in healthy pets.
+Do next: Name canine gastritis. Not an ulcer-alone. △ Plumb. Supportive. Antiemetic. Biopsy for chronic. Do not copy a sucralfate table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4155,6 +4172,14 @@ Return now for black stool, vomiting blood, a painful belly, collapse, or not be
 Surgery is how the hole is found and closed. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
 
 Return now for collapse, a painful belly, fever, or vomiting. {{location.phonenumber}}
+
+### `dc-gastritis`
+
+{{patient.name}} has stomach inflammation (gastritis). This is not a stomach ulcer by itself and not a hole in the gut.
+
+Rest the stomach. Give only the medicines we sent, as labeled. Small meals as we showed. Helicobacter is common even in healthy pets, so we treat signs and lesions, not a lab finding alone.
+
+Return now for black stool, vomiting blood, a painful belly, collapse, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

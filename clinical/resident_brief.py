@@ -2226,6 +2226,17 @@ GIPERF_DX_RE = re.compile(
     r"(gut leak|gi leak|bowel leak).{0,32}septic peritonitis",
     re.I,
 )
+# Named gastritis / gastric inflammation / Helicobacter gastritis only.
+# Do not use gastric ulcer (335). Do not use GI perforation (336).
+# Do not use gastroenteritis. Do not harvest a sucralfate or omeprazole
+# table. Dogs and cats. Skip horse. Packet 335 still owns ulcer.
+GASTRITIS_DX_RE = re.compile(
+    r"\bgastritis\b|"
+    r"gastric inflammation|"
+    r"helicobacter[- ]associated gastritis|"
+    r"helicobacter gastritis",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6404,6 +6415,7 @@ def analyze(
     steal_pyloric_dx = PYLORIC_DX_RE.search(text)
     steal_gulcer_dx = GULCER_DX_RE.search(text)
     steal_giperf_dx = GIPERF_DX_RE.search(text)
+    steal_gastritis_dx = GASTRITIS_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6542,6 +6554,7 @@ def analyze(
         or steal_pyloric_dx
         or steal_gulcer_dx
         or steal_giperf_dx
+        or steal_gastritis_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17576,6 +17589,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for GI perforation."
+            )
+
+    gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
+    if gastritis_named:
+        if spec == "cat":
+            gastritis_loc = "Feline gastritis. Not an ulcer-alone."
+        else:
+            gastritis_loc = "Canine gastritis. Not an ulcer-alone."
+        localization = (
+            f"{localization} Also {gastritis_loc}" if localization else gastritis_loc
+        )
+        hard_stops.append(
+            "Do not harvest a sucralfate table. "
+            "Do not harvest an omeprazole table. "
+            "A PPI is not routine unless ulcer is suspected. "
+            "Do not treat incidental Helicobacter as H. pylori ulcer law."
+        )
+        do_not.append(
+            "Do not call this an ulcer-alone. "
+            "Do not send named gastritis home as AHDS. "
+            "Do not copy a sucralfate table as lobby law. "
+            "Do not treat Helicobacter because the organism is found in healthy pets."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline gastritis. Not an ulcer-alone. "
+                "△ Plumb. Supportive. Antiemetic. Biopsy for chronic. "
+                "Do not copy a sucralfate table."
+            )
+        else:
+            do_next.append(
+                "Name canine gastritis. Not an ulcer-alone. "
+                "△ Plumb. Supportive. Antiemetic. Biopsy for chronic. "
+                "Do not copy a sucralfate table."
+            )
+        sources.append(
+            "Blois Merck gastritis Jan 2025 / Aug 2025: vomiting and cranial "
+            "abdominal pain; acute is often dietary indiscretion; chronic "
+            "needs biopsy; a diet trial before invasive workup for chronic; "
+            "PPI is not routinely needed unless ulcer is suspected. "
+            "Helicobacter is common in healthy dogs and cats; treat only "
+            "with signs and gastric lesions. Packet 335 ulcer. Packet 336 "
+            "perforation. Do not harvest sucralfate or omeprazole tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for gastritis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for gastritis."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine gastritis (Merck Blois Aug 2025)
+
+- **Canine gastritis. Not an ulcer-alone.** Named gastritis / gastric inflammation / Helicobacter gastritis only. Vomiting and cranial abdominal pain. Acute is often dietary indiscretion; chronic needs biopsy. A PPI is not routine unless ulcer is suspected. Helicobacter is common in healthy pets; do **not** treat the organism alone. Do **not** harvest a sucralfate table. Do **not** harvest an omeprazole table. Do **not** send named gastritis home as AHDS.
+- Cats: same named loc as feline gastritis. Packet 335 still owns ulcer. Packet 336 still owns perforation. Bare gastroenteritis stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine GI perforation (Merck Blois Aug 2025)
 
 - **Canine GI perforation. Not an ulcer-alone.** Named GI perforation / perforated ulcer / septic peritonitis from a gut leak only. Pain, pallor, shock. Free gas or septic fluid. Surgery now. A PPI is not the perforation plan. Do **not** harvest a 60% mortality table. Do **not** send named GI perforation home on acid suppression. Do **not** tap as the treatment.

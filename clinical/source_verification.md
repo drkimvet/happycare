@@ -4791,3 +4791,30 @@ Night rule: named GI perforation → **Canine GI perforation. Not an ulcer-alone
 - Attending: If the query is only “gastric ulcer,” why does this gate stay dark?
 - Attending: Horse GI perforation — fire or skip?
 - Attending: Dual-named “bile peritonitis” — 179 or this loc, and why?
+
+## 337. Canine gastritis (Blois Merck Aug 2025)
+
+No dedicated Plunkett gastritis chapter in the owned SA EM splits. Public Blois S. Gastritis in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Aug 2025 (gastritis is inflammation of the gastric mucosa; vomiting and cranial abdominal pain; acute is often dietary indiscretion; definitive diagnosis needs gastroscopy and biopsy; PPI is not routinely needed unless ulcer is suspected). Helicobacter Infection in Small Animals, Blois, Jan 2025 (organisms are common in healthy dogs and cats; treat only with signs and gastric lesions; peptic ulceration is rarely associated). Do not harvest a sucralfate or omeprazole table as lobby law. Do not fire on gastric ulcer (335). Do not fire on GI perforation (336). Do not fire on gastroenteritis. Dogs and cats. Skip horse.
+
+Agree with Blois: **named gastritis is not an ulcer-alone.** Supportive. Antiemetic. Biopsy for chronic. Printed maropitant / omeprazole / pred numbers stay on the page (`△ Plumb`).
+
+Night split: named gastritis / gastric inflammation / Helicobacter gastritis is canine (or feline) gastritis; not an ulcer-alone. Bare Helicobacter stay unnamed. Horse does not fire. Dual gastritis plus gastric ulcer concatenates 335 then 337.
+
+Book/public traps:
+
+- Do not harvest a sucralfate table.
+- Do not harvest an omeprazole table.
+- Do not call this an ulcer-alone.
+- Do not send named gastritis home as AHDS.
+- Do not treat incidental Helicobacter as H. pylori ulcer law.
+
+Night rule: named gastritis → **Canine gastritis. Not an ulcer-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is vomiting gastritis not an ulcer-alone?
+- NAVLE 2: Why is a PPI not routine for gastritis?
+- NAVLE 3: Dual-named “gastritis, gastric ulcer” — which loc should win, and why?
+- Oral: How do you tell the owner Helicobacter is common in healthy pets, without inventing a triple-therapy table?
+- Attending: If the query is only “gastric ulcer,” why does this gate stay dark?
+- Attending: Horse gastritis — fire or skip?
+- Attending: Dual-named “gastroenteritis” — fire or stay dark, and why?
