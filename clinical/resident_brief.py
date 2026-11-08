@@ -2212,6 +2212,20 @@ GULCER_DX_RE = re.compile(
     r"\bgi ulcers?\b",
     re.I,
 )
+# Named GI perforation / perforated ulcer / septic peritonitis from a gut
+# leak only. Do not use gastric ulcer without perforation (335). Do not
+# use bile peritonitis. Do not use \bperforat without GI/ulcer. Do not
+# harvest a 60% mortality table. Dogs and cats. Skip horse.
+# Packet 335 still owns non-perforated ulcer. Sepsis stays sepsis.
+GIPERF_DX_RE = re.compile(
+    r"\bgi perforation|"
+    r"gastrointestinal perforation|"
+    r"perforated ulcer|"
+    r"perforat(?:ed|ing) (?:gastric|gi|gastrointestinal|duodenal) ulcer|"
+    r"septic peritonitis.{0,32}(gut leak|gi leak|bowel leak|intestinal leak)|"
+    r"(gut leak|gi leak|bowel leak).{0,32}septic peritonitis",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6389,6 +6403,7 @@ def analyze(
     steal_mvolv_dx = MVOLV_DX_RE.search(text)
     steal_pyloric_dx = PYLORIC_DX_RE.search(text)
     steal_gulcer_dx = GULCER_DX_RE.search(text)
+    steal_giperf_dx = GIPERF_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6526,6 +6541,7 @@ def analyze(
         or steal_mvolv_dx
         or steal_pyloric_dx
         or steal_gulcer_dx
+        or steal_giperf_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17512,6 +17528,54 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for gastric ulcer."
+            )
+
+    giperf_named = spec in {"dog", "cat"} and GIPERF_DX_RE.search(text)
+    if giperf_named:
+        if spec == "cat":
+            giperf_loc = "Feline GI perforation. Not an ulcer-alone."
+        else:
+            giperf_loc = "Canine GI perforation. Not an ulcer-alone."
+        localization = (
+            f"{localization} Also {giperf_loc}" if localization else giperf_loc
+        )
+        hard_stops.append(
+            "Do not harvest a 60% mortality table. "
+            "Surgery now. A PPI is not the perforation plan. "
+            "Free gas or septic fluid is the leak until proven otherwise."
+        )
+        do_not.append(
+            "Do not call this an ulcer-alone. "
+            "Do not send named GI perforation home on acid suppression. "
+            "Do not copy a mortality table as lobby law. "
+            "Do not tap as the treatment."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline GI perforation. Not an ulcer-alone. "
+                "△ Plumb. Fluids. Explore. Lavage. "
+                "Do not copy a mortality table."
+            )
+        else:
+            do_next.append(
+                "Name canine GI perforation. Not an ulcer-alone. "
+                "△ Plumb. Fluids. Explore. Lavage. "
+                "Do not copy a mortality table."
+            )
+        sources.append(
+            "Blois Merck GI ulcers Jan 2025 / Aug 2025: perforated ulcer is "
+            "pain, pallor, and shock; free gas or fluid on films or US; "
+            "endoscopy is not the hole; surgery treats perforation; "
+            "peritonitis is poorer than a closed ulcer. Packet 335 ulcer. "
+            "Bile peritonitis stays 179. Do not harvest a 60% mortality table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for GI perforation."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for GI perforation."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

@@ -4764,3 +4764,30 @@ Night rule: named gastric ulcer → **Canine gastric ulcer. Not an Addison-alone
 - Attending: If the query is only “ulcer,” why does this gate stay dark?
 - Attending: Horse gastric ulcer — fire or skip?
 - Attending: Dual-named “MCT, GI ulcer” — which loc should win, and why?
+
+## 336. Canine GI perforation (Blois Merck Aug 2025)
+
+No dedicated Plunkett GI-perforation chapter in the owned SA EM splits. Public Blois S. Gastrointestinal Ulcers in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Aug 2025 (severe ulceration or GI perforation: pain, weakness, pallor, and shock; sepsis if perforated; free peritoneal fluid and gas on radiographs or ultrasound; endoscopy is not the hole; surgery treats perforated ulcers; peritonitis is poorer than a closed ulcer). Do not harvest a 60% mortality table as lobby law. Do not fire on gastric ulcer without perforation (335). Do not fire on bile peritonitis (179). Do not fire on septic peritonitis without a gut-leak phrase (sepsis gate). Do not fire on \bperforat without GI/ulcer. Dogs and cats. Skip horse.
+
+Agree with Blois: **named GI perforation is not an ulcer-alone.** Fluids. Explore. Lavage. Printed mortality numbers stay on the page (`△ Plumb`).
+
+Night split: named GI perforation / perforated ulcer / septic peritonitis from a gut leak is canine (or feline) GI perforation; not an ulcer-alone. Bare perforation stay cornea. Horse does not fire. Dual gastric ulcer plus GI perforation concatenates 335 then 336.
+
+Book/public traps:
+
+- Do not harvest a 60% mortality table.
+- Do not call this an ulcer-alone.
+- Do not send named GI perforation home on acid suppression.
+- Do not copy a mortality table as lobby law.
+- Do not tap as the treatment.
+
+Night rule: named GI perforation → **Canine GI perforation. Not an ulcer-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a shocked dog with a perforated ulcer not an ulcer-alone?
+- NAVLE 2: Why is free gas on films not a PPI night?
+- NAVLE 3: Dual-named “gastric ulcer, GI perforation” — which loc should win, and why?
+- Oral: How do you tell the owner the gut leaked, without inventing a 60% table?
+- Attending: If the query is only “gastric ulcer,” why does this gate stay dark?
+- Attending: Horse GI perforation — fire or skip?
+- Attending: Dual-named “bile peritonitis” — 179 or this loc, and why?

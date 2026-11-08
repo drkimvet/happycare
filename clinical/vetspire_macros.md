@@ -272,6 +272,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-mvolv` | Assessment | Canine mesenteric volvulus / not an intussusception-alone |
 | `ddx-pyloric` | Assessment | Canine pyloric stenosis / not a GDV-alone |
 | `ddx-gulcer` | Assessment | Canine gastric ulcer / not an Addison-alone |
+| `ddx-giperf` | Assessment | Canine GI perforation / not an ulcer-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -297,6 +298,7 @@ Suggested names are short so they show up after three letters.
 | `dc-mvolv` | Discharge | After mesenteric volvulus / explore talk |
 | `dc-pyloric` | Discharge | After pyloric stenosis / outflow talk |
 | `dc-gulcer` | Discharge | After gastric ulcer / NSAID talk |
+| `dc-giperf` | Discharge | After GI perforation / explore talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3917,6 +3919,21 @@ DDX:
 Do not: harvest a sucralfate table. Harvest an omeprazole table. Call this an Addison-alone. Stack NSAID with a steroid.
 Do next: Name canine gastric ulcer. Not an Addison-alone. △ Plumb. Stop NSAID. Endoscopy. PPI over H2. Do not copy a sucralfate table.
 
+### `ddx-giperf`
+
+GI perforation — {{patient.name}}
+Canine GI perforation [yes / not]. Not an ulcer-alone [yes / not]. Free gas / septic fluid [ ]. Shock [ ]. Explore [ ]. NSAID / ulcer source [ ].
+
+DDX:
+1. GI perforation — **Canine GI perforation. Not an ulcer-alone**
+2. Pain, pallor, shock. Free gas or septic fluid. Surgery now. A PPI is not the perforation plan
+3. Packet 335 owns non-perforated ulcer. Bile peritonitis stays 179. Bare perforation stay cornea
+4. Do not tap as the treatment. Do not send this home on acid suppression
+5. Dog or cat can fire. Horse does not fire. Do not copy a 60% mortality table
+
+Do not: harvest a 60% mortality table. Call this an ulcer-alone. Send this home on acid suppression. Tap as the treatment.
+Do next: Name canine GI perforation. Not an ulcer-alone. △ Plumb. Fluids. Explore. Lavage. Do not copy a mortality table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4130,6 +4147,14 @@ Return now for repeated vomiting, trouble breathing, collapse, or not being able
 Stop any NSAID unless we restart it. Give only the medicines we sent, as labeled. Small meals as we showed.
 
 Return now for black stool, vomiting blood, a painful belly, collapse, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-giperf`
+
+{{patient.name}} had a hole in the gut (GI perforation). Stomach contents leaked into the belly. This is not a closed ulcer and not a gallbladder bile leak.
+
+Surgery is how the hole is found and closed. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
+
+Return now for collapse, a painful belly, fever, or vomiting. {{location.phonenumber}}
 
 ### `dc-ahds`
 

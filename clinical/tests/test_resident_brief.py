@@ -11310,6 +11310,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline gastric ulcer", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_gi_perforation_is_not_an_ulcer_alone(self):
+        b = analyze("dog", "GI perforation")
+        loc = b["localization"].lower()
+        self.assertIn("canine gi perforation", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertNotIn("canine gastric ulcer", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("60% mortality table", joined)
+        self.assertIn("acid suppression", joined)
+        self.assertIn("explore", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_perforated_ulcer_fires_giperf(self):
+        b = analyze("dog", "perforated ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gi perforation", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_septic_peritonitis_gut_leak_fires(self):
+        b = analyze("dog", "septic peritonitis from a gut leak")
+        loc = b["localization"].lower()
+        self.assertIn("canine gi perforation", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_gi_perforation_fires(self):
+        b = analyze("cat", "GI perforation")
+        loc = b["localization"].lower()
+        self.assertIn("feline gi perforation", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertNotIn("canine gi perforation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_ulcer_plus_perforation_concatenates(self):
+        b = analyze("dog", "gastric ulcer, GI perforation")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("canine gi perforation", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_ulcer_is_not_perforation(self):
+        b = analyze("dog", "gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertNotIn("canine gi perforation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_septic_peritonitis_alone_is_not_giperf(self):
+        b = analyze("dog", "septic peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gi perforation", loc)
+        self.assertNotIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_giperf(self):
+        b = analyze("horse", "GI perforation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gi perforation", loc)
+        self.assertNotIn("feline gi perforation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
