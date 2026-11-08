@@ -4845,3 +4845,30 @@ Night rule: named Helicobacter → **Canine Helicobacter infection. Not a gastri
 - Attending: If the query is only “gastritis,” why does this gate stay dark?
 - Attending: Horse Helicobacter — fire or skip?
 - Attending: Dual-named “H. felis” — fire or stay dark, and why?
+
+## 339. Canine gastric FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett gastric-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (intraluminal obstruction is commonly a foreign body; endoscopy utility is typically limited to gastric foreign bodies; endoscopy cannot assess distal to pylorus and is not for suspected linear FB; some small smooth objects may pass if the patient is stable; failure to pass within 36–48 hours, no movement, or deterioration → surgery; barium is not used if perforation is suspected). Do not harvest a 36–48 hour watch table as lobby law. Do not fire on linear FB (331). Do not fire on esophageal FB (322). Do not fire on bare foreign body. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named gastric FB is not a gastritis-alone.** Fluids. Films or US. Endoscopy if gastric. Printed 36–48 hour numbers stay on the page (`△ Plumb`).
+
+Night split: named gastric foreign body / gastric FB / stomach foreign body is canine (or feline) gastric FB; not a gastritis-alone. Linear FB stay 331. Esophageal FB stay 322. Horse does not fire. Dual gastritis plus gastric FB concatenates 337 then 339.
+
+Book/public traps:
+
+- Do not harvest a 36–48 hour watch table.
+- Do not call this a gastritis-alone.
+- Do not yank.
+- Do not push with a prokinetic.
+- Do not use barium if perforation is on the list.
+
+Night rule: named gastric FB → **Canine gastric FB. Not a gastritis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a stomach rock not a gastritis-alone?
+- NAVLE 2: Why is endoscopy not the linear-FB plan?
+- NAVLE 3: Dual-named “gastritis, gastric FB” — which loc should win, and why?
+- Oral: How do you tell the owner the object is still in the stomach, without inventing a 36–48 hour table?
+- Attending: If the query is only “linear FB,” why does this gate stay dark?
+- Attending: Horse gastric FB — fire or skip?
+- Attending: Dual-named “esophageal FB” — 322 or this loc, and why?

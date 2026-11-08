@@ -275,6 +275,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-giperf` | Assessment | Canine GI perforation / not an ulcer-alone |
 | `ddx-gastritis` | Assessment | Canine gastritis / not an ulcer-alone |
 | `ddx-helico` | Assessment | Canine Helicobacter / not a gastritis-alone |
+| `ddx-gastfb` | Assessment | Canine gastric FB / not a gastritis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -303,6 +304,7 @@ Suggested names are short so they show up after three letters.
 | `dc-giperf` | Discharge | After GI perforation / explore talk |
 | `dc-gastritis` | Discharge | After gastritis / vomiting talk |
 | `dc-helico` | Discharge | After Helicobacter / organism talk |
+| `dc-gastfb` | Discharge | After gastric FB / endoscopy talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3968,6 +3970,21 @@ DDX:
 Do not: harvest a triple-therapy table. Harvest an omeprazole table. Call this a gastritis-alone. Treat incidental Helicobacter as H. pylori ulcer law.
 Do next: Name canine Helicobacter infection. Not a gastritis-alone. △ Plumb. Cytology or biopsy. Treat signs and lesions. Do not copy a triple-therapy table.
 
+### `ddx-gastfb`
+
+Gastric FB — {{patient.name}}
+Canine gastric FB [yes / not]. Not a gastritis-alone [yes / not]. Endoscopy if gastric [ ]. Linear FB [ ]. Esophageal FB [ ]. Perforation / barium [ ].
+
+DDX:
+1. Gastric FB — **Canine gastric FB. Not a gastritis-alone**
+2. Endoscopy can retrieve a gastric object. Endoscopy is not the linear-FB plan. Fluids. Films or US
+3. Packet 331 owns linear FB. Packet 322 owns esophageal FB. Packet 337 owns gastritis. Bare foreign body stay unnamed
+4. Do not yank. Do not push with a prokinetic. Do not use barium if perforation is on the list
+5. Dog or cat can fire. Horse does not fire. Do not copy a 36–48 hour table
+
+Do not: harvest a 36–48 hour watch table. Call this a gastritis-alone. Yank. Push with a prokinetic.
+Do next: Name canine gastric FB. Not a gastritis-alone. △ Plumb. Fluids. Films or US. Endoscopy if gastric. Do not copy a 36–48 hour table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4205,6 +4222,14 @@ Return now for black stool, vomiting blood, a painful belly, collapse, or not be
 We treat signs and stomach lesions, not a lab finding alone. Give only the medicines we sent, as labeled. Wash hands after handling. Do not expect the organism to stay gone forever.
 
 Return now for repeated vomiting, black stool, vomiting blood, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-gastfb`
+
+{{patient.name}} had a foreign object in the stomach (gastric FB). This is not ordinary gastritis and not a string under the tongue.
+
+The object was removed or is being watched only if it is small, smooth, and {{patient.pronoun}} is stable. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
+
+Return now for repeated vomiting, a painful belly, collapse, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

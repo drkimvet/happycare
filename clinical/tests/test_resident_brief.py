@@ -11493,6 +11493,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline helicobacter", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_gastric_fb_is_not_a_gastritis_alone(self):
+        b = analyze("dog", "gastric foreign body")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric fb", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertNotIn("canine gastritis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("36–48", joined)
+        self.assertIn("endoscopy", joined)
+        self.assertIn("linear", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_stomach_fb_fires_gastfb(self):
+        b = analyze("dog", "stomach FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric fb", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_gastric_fb_fires(self):
+        b = analyze("cat", "gastric FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline gastric fb", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertNotIn("canine gastric fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastritis_plus_gastric_fb_concatenates(self):
+        b = analyze("dog", "gastritis, gastric FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertIn("canine gastric fb", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_linear_fb_is_not_gastric_fb(self):
+        b = analyze("dog", "linear FB")
+        loc = b["localization"].lower()
+        self.assertNotIn("canine gastric fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esophageal_fb_is_not_gastric_fb(self):
+        b = analyze("dog", "esophageal FB")
+        loc = b["localization"].lower()
+        self.assertNotIn("canine gastric fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastritis_is_not_gastric_fb(self):
+        b = analyze("dog", "gastritis")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertNotIn("canine gastric fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_gastric_fb(self):
+        b = analyze("horse", "gastric foreign body")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gastric fb", loc)
+        self.assertNotIn("feline gastric fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
