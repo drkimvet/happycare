@@ -2289,6 +2289,17 @@ TRICHO_DX_RE = re.compile(
     r"hair[- ]ball obstruction",
     re.I,
 )
+# Named megacolon / obstipation / intractable constipation only.
+# Do not use colonic FB (341). Do not use \bconstipation\b alone.
+# Do not harvest an enema or cisapride table. Dogs and cats.
+# Skip horse. Packet 341 still owns colonic FB.
+MEGACOL_DX_RE = re.compile(
+    r"\bmegacolon\b|"
+    r"\bobstipat|"
+    r"intractable constipation|"
+    r"idiopathic megacolon",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6473,6 +6484,7 @@ def analyze(
     steal_intfb_dx = INTFB_DX_RE.search(text)
     steal_colfb_dx = COLFB_DX_RE.search(text)
     steal_tricho_dx = TRICHO_DX_RE.search(text)
+    steal_megacol_dx = MEGACOL_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6617,6 +6629,7 @@ def analyze(
         or steal_intfb_dx
         or steal_colfb_dx
         or steal_tricho_dx
+        or steal_megacol_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17956,6 +17969,59 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for trichobezoar."
+            )
+
+    megacol_named = spec in {"dog", "cat"} and MEGACOL_DX_RE.search(text)
+    if megacol_named:
+        if spec == "cat":
+            megacol_loc = "Feline megacolon. Not a colonic-FB-alone."
+        else:
+            megacol_loc = "Canine megacolon. Not a colonic-FB-alone."
+        localization = (
+            f"{localization} Also {megacol_loc}" if localization else megacol_loc
+        )
+        hard_stops.append(
+            "Do not harvest an enema table. "
+            "Do not harvest a cisapride table. "
+            "Phosphate enemas are not for cats. "
+            "Oral mineral oil is an aspiration trap. "
+            "Long-standing megacolon is not a cisapride night."
+        )
+        do_not.append(
+            "Do not call this a colonic-FB-alone. "
+            "Do not send named megacolon home as constipation-alone. "
+            "Do not copy a phosphate-enema table as lobby law. "
+            "Do not give oral mineral oil."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline megacolon. Not a colonic-FB-alone. "
+                "△ Plumb. Hydrate. Deobstipate under anesthesia if needed. "
+                "Colectomy conversation if medical fails. "
+                "Do not copy an enema table."
+            )
+        else:
+            do_next.append(
+                "Name canine megacolon. Not a colonic-FB-alone. "
+                "△ Plumb. Hydrate. Deobstipate under anesthesia if needed. "
+                "Do not copy an enema table."
+            )
+        sources.append(
+            "Collier Merck constipation, obstipation, and megacolon Jun 2025: "
+            "obstipation cannot evacuate; megacolon is hypomotile dilated "
+            "colon; phosphate enemas are not for cats; oral mineral oil "
+            "risks aspiration; cisapride is unlikely to help long-standing "
+            "obstipation and megacolon; colectomy is the medical-failure "
+            "conversation. Packet 341 colonic FB. Packet 315 CKD. Do not "
+            "harvest an enema or cisapride table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for megacolon."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for megacolon."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

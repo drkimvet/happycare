@@ -4952,3 +4952,31 @@ Night rule: named trichobezoar → **Feline trichobezoar. Not a gastric-FB-alone
 - Attending: If the query is only “hairball,” why does this gate stay dark?
 - Attending: Horse trichobezoar — fire or skip?
 - Attending: Dual-named “gastric FB” — 339 or this loc, and why?
+
+## 343. Feline megacolon (Collier Merck Jun 2025)
+
+No dedicated Plunkett megacolon chapter in the owned SA EM splits. Public Collier A. Constipation, Obstipation, and Megacolon in Small Animals. Merck Veterinary Manual. Full review Jun 2025; last updated Jun 2025 (constipation is infrequent or difficult evacuation of dry hard feces; obstipation is intractable constipation with inability to evacuate; megacolon is hypomotility and dilation of the large intestine; phosphate-containing enemas must be avoided in cats; oral mineral oil risks aspiration; cisapride is not likely to improve long-standing obstipation and megacolon; colectomy if medical management fails). Do not harvest an enema or cisapride table as lobby law. Do not fire on colonic FB (341). Do not fire on \bconstipation\b alone. Dogs and cats. Skip horse.
+
+Agree with Collier: **named megacolon is not a colonic-FB-alone.** Hydrate. Deobstipate under anesthesia if needed. Printed enema mL/kg and cisapride numbers stay on the page (`△ Plumb`).
+
+Night split: named megacolon / obstipation / intractable constipation is feline (or canine) megacolon; not a colonic-FB-alone. Bare constipation stay unnamed. Colonic FB stay 341. Horse does not fire. Dual megacolon plus colonic FB concatenates 341 then 343.
+
+Book/public traps:
+
+- Do not harvest an enema table.
+- Do not harvest a cisapride table.
+- Do not call this a colonic-FB-alone.
+- Do not send named megacolon home as constipation-alone.
+- Do not give a phosphate enema to a cat.
+- Do not give oral mineral oil.
+
+Night rule: named megacolon → **Feline megacolon. Not a colonic-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is obstipation not a colonic-FB-alone?
+- NAVLE 2: Why is a phosphate enema not for a cat?
+- NAVLE 3: Dual-named “megacolon, colonic FB” — which loc should win, and why?
+- Oral: How do you tell the owner the colon is hypomotile, without inventing a cisapride table?
+- Attending: If the query is only “constipation,” why does this gate stay dark?
+- Attending: Horse megacolon — fire or skip?
+- Attending: Dual-named “obstipation” — fire or stay dark, and why?

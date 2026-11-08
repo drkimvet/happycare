@@ -279,6 +279,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-intfb` | Assessment | Canine intestinal FB / not a gastric-FB-alone |
 | `ddx-colfb` | Assessment | Canine colonic FB / not an intestinal-FB-alone |
 | `ddx-tricho` | Assessment | Feline trichobezoar / not a gastric-FB-alone |
+| `ddx-megacol` | Assessment | Feline megacolon / not a colonic-FB-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -311,6 +312,7 @@ Suggested names are short so they show up after three letters.
 | `dc-intfb` | Discharge | After intestinal FB / explore talk |
 | `dc-colfb` | Discharge | After colonic FB / endoscopy talk |
 | `dc-tricho` | Discharge | After trichobezoar / hairball talk |
+| `dc-megacol` | Discharge | After megacolon / obstipation talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4036,6 +4038,21 @@ DDX:
 Do not: harvest a laxative table. Harvest a mineral-oil table. Call this a gastric-FB-alone. Send this home on mineral oil.
 Do next: Name feline trichobezoar. Not a gastric-FB-alone. △ Plumb. Fluids. Films or US. Endoscopy or explore if it obstructs. Do not copy a laxative table.
 
+### `ddx-megacol`
+
+Megacolon — {{patient.name}}
+Feline megacolon [yes / not]. Not a colonic-FB-alone [yes / not]. Obstipation [ ]. Phosphate enema [ ]. Deobstipate under anesthesia [ ]. Colectomy talk [ ].
+
+DDX:
+1. Megacolon — **Feline megacolon. Not a colonic-FB-alone**
+2. Obstipation cannot evacuate. Megacolon is a hypomotile dilated colon. Hydrate. Phosphate enemas are not for cats
+3. Packet 341 owns colonic FB. Packet 315 owns CKD. Bare constipation stay unnamed. Long-standing megacolon is not a cisapride night
+4. Oral mineral oil is an aspiration trap. Colectomy conversation if medical fails
+5. Dog or cat can fire. Horse does not fire. Do not copy an enema table
+
+Do not: harvest an enema table. Harvest a cisapride table. Call this a colonic-FB-alone. Give a phosphate enema to a cat.
+Do next: Name feline megacolon. Not a colonic-FB-alone. △ Plumb. Hydrate. Deobstipate under anesthesia if needed. Do not copy an enema table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4305,6 +4322,14 @@ Return now for straining without stool, a painful belly, vomiting, or collapse. 
 If the mass was blocking the gut, we treated it as an obstruction. Brushing helps prevent the next one. Give only the medicines we sent, as labeled. Do not add mineral oil at home unless we wrote it.
 
 Return now for repeated vomiting, a painful belly, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-megacol`
+
+{{patient.name}} has a dilated, poorly moving colon (megacolon / obstipation). This is not ordinary constipation and not a colon foreign object by itself.
+
+Stool sat in the colon until it could not pass. Hydration and, if needed, removal under anesthesia are the night plan. Phosphate enemas are not used in cats. Give only the medicines we sent, as labeled. Water always available. Litter box always clean.
+
+Return now for straining without stool, vomiting, a painful belly, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

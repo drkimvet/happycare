@@ -11738,6 +11738,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline trichobezoar", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_megacolon_is_not_a_colonic_fb_alone(self):
+        b = analyze("cat", "megacolon")
+        loc = b["localization"].lower()
+        self.assertIn("feline megacolon", loc)
+        self.assertIn("not a colonic-fb-alone", loc)
+        self.assertNotIn("feline colonic fb", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("enema", joined)
+        self.assertIn("phosphate", joined)
+        self.assertIn("cisapride", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_obstipation_fires_megacol(self):
+        b = analyze("cat", "obstipation")
+        loc = b["localization"].lower()
+        self.assertIn("feline megacolon", loc)
+        self.assertIn("not a colonic-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_intractable_constipation_fires_megacol(self):
+        b = analyze("cat", "intractable constipation")
+        loc = b["localization"].lower()
+        self.assertIn("feline megacolon", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_canine_megacolon_fires(self):
+        b = analyze("dog", "megacolon")
+        loc = b["localization"].lower()
+        self.assertIn("canine megacolon", loc)
+        self.assertIn("not a colonic-fb-alone", loc)
+        self.assertNotIn("feline megacolon", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_megacolon_plus_colonic_fb_concatenates(self):
+        b = analyze("cat", "megacolon, colonic FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline megacolon", loc)
+        self.assertIn("feline colonic fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_colonic_fb_is_not_megacolon(self):
+        b = analyze("cat", "colonic FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline colonic fb", loc)
+        self.assertNotIn("feline megacolon", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_constipation_is_not_megacolon(self):
+        b = analyze("cat", "constipation")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline megacolon", loc)
+        self.assertNotIn("not a colonic-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_megacolon(self):
+        b = analyze("horse", "megacolon")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine megacolon", loc)
+        self.assertNotIn("feline megacolon", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

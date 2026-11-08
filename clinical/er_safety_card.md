@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline megacolon (Merck Collier Jun 2025)
+
+- **Feline megacolon. Not a colonic-FB-alone.** Named megacolon / obstipation / intractable constipation only. Obstipation cannot evacuate. Megacolon is a hypomotile dilated colon. Hydrate. Deobstipate under anesthesia if needed. Phosphate enemas are **not** for cats. Oral mineral oil is an aspiration trap. Long-standing megacolon is not a cisapride night. Colectomy conversation if medical fails. Do **not** harvest an enema table. Do **not** harvest a cisapride table. Do **not** send named megacolon home as constipation-alone.
+- Dogs: same named loc as canine megacolon. Packet 341 still owns colonic FB. Packet 315 still owns CKD. Bare constipation stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline trichobezoar (Merck Winkler Aug 2025)
 
 - **Feline trichobezoar. Not a gastric-FB-alone.** Named trichobezoar / hairball obstruction / hairball FB only. Cats can obstruct on a hairball. Repeated vomiting is not a hairball-alone. Fluids. Films or US. Endoscopy or explore if it obstructs. Do **not** harvest a laxative table. Do **not** harvest a mineral-oil table. Do **not** send named trichobezoar home on mineral oil. Do **not** skip films because it is only hair.
