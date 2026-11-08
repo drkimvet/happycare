@@ -2255,6 +2255,18 @@ GASTFB_DX_RE = re.compile(
     r"stomach (foreign body|\bfb\b)",
     re.I,
 )
+# Named intestinal foreign body / intestinal FB / small-bowel FB /
+# jejunal FB only. Do not use gastric FB (339). Do not use linear FB
+# (331). Do not use esophageal FB (322). Do not harvest a 36–48 hour
+# watch table. Dogs and cats. Skip horse. Packet 339 still owns gastric.
+INTFB_DX_RE = re.compile(
+    r"intestinal (foreign body|\bfb\b)|"
+    r"small[- ]bowel (foreign body|\bfb\b)|"
+    r"jejunal (foreign body|\bfb\b)|"
+    r"ileal (foreign body|\bfb\b)|"
+    r"duodenal (foreign body|\bfb\b)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6436,6 +6448,7 @@ def analyze(
     steal_gastritis_dx = GASTRITIS_DX_RE.search(text)
     steal_helico_dx = HELICO_DX_RE.search(text)
     steal_gastfb_dx = GASTFB_DX_RE.search(text)
+    steal_intfb_dx = INTFB_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6577,6 +6590,7 @@ def analyze(
         or steal_gastritis_dx
         or steal_helico_dx
         or steal_gastfb_dx
+        or steal_intfb_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17764,6 +17778,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for gastric FB."
+            )
+
+    intfb_named = spec in {"dog", "cat"} and INTFB_DX_RE.search(text)
+    if intfb_named:
+        if spec == "cat":
+            intfb_loc = "Feline intestinal FB. Not a gastric-FB-alone."
+        else:
+            intfb_loc = "Canine intestinal FB. Not a gastric-FB-alone."
+        localization = (
+            f"{localization} Also {intfb_loc}" if localization else intfb_loc
+        )
+        hard_stops.append(
+            "Do not harvest a 36–48 hour watch table. "
+            "Endoscopy is not the distal-bowel plan. "
+            "Explore if the object is past the pylorus. "
+            "Do not send named intestinal FB home as gastritis."
+        )
+        do_not.append(
+            "Do not call this a gastric-FB-alone. "
+            "Do not yank. Do not milk a linear string. "
+            "Do not copy a 36–48 hour table as lobby law. "
+            "Do not use barium if perforation is on the list."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline intestinal FB. Not a gastric-FB-alone. "
+                "△ Plumb. Fluids. Films or US. Explore. "
+                "Do not copy a 36–48 hour table."
+            )
+        else:
+            do_next.append(
+                "Name canine intestinal FB. Not a gastric-FB-alone. "
+                "△ Plumb. Fluids. Films or US. Explore. "
+                "Do not copy a 36–48 hour table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: a foreign body distal "
+            "to the pylorus needs explore, not endoscopy; inspect the "
+            "entire GI tract; resect ischemic bowel; some small smooth "
+            "objects may pass if the patient is stable; 36–48 h failure "
+            "to move stays on the page. Packet 339 gastric FB. Packet 331 "
+            "linear FB. Packet 322 esophageal FB. Do not harvest a 36–48 "
+            "hour table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for intestinal FB."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for intestinal FB."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

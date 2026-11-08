@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine intestinal FB (Merck Winkler Aug 2025)
+
+- **Canine intestinal FB. Not a gastric-FB-alone.** Named intestinal foreign body / intestinal FB / small-bowel FB / jejunal FB only. Endoscopy is not the distal-bowel plan. Explore if the object is past the pylorus. Fluids first. Films or US. Do **not** harvest a 36–48 hour watch table. Do **not** yank. Do **not** milk a linear string. Do **not** use barium if perforation is on the list. Do **not** send named intestinal FB home as gastritis.
+- Cats: same named loc as feline intestinal FB. Packet 339 still owns gastric FB. Packet 331 still owns linear FB. Packet 322 still owns esophageal FB. Bare foreign body stay unnamed. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine gastric FB (Merck Winkler Aug 2025)
 
 - **Canine gastric FB. Not a gastritis-alone.** Named gastric foreign body / gastric FB / stomach foreign body only. Endoscopy can retrieve a gastric object. Endoscopy is not the linear-FB plan. Fluids first. Films or US. Do **not** harvest a 36–48 hour watch table. Do **not** yank. Do **not** push with a prokinetic. Do **not** use barium if perforation is on the list. Do **not** send named gastric FB home as gastritis.

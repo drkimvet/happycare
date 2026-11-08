@@ -276,6 +276,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gastritis` | Assessment | Canine gastritis / not an ulcer-alone |
 | `ddx-helico` | Assessment | Canine Helicobacter / not a gastritis-alone |
 | `ddx-gastfb` | Assessment | Canine gastric FB / not a gastritis-alone |
+| `ddx-intfb` | Assessment | Canine intestinal FB / not a gastric-FB-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -305,6 +306,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gastritis` | Discharge | After gastritis / vomiting talk |
 | `dc-helico` | Discharge | After Helicobacter / organism talk |
 | `dc-gastfb` | Discharge | After gastric FB / endoscopy talk |
+| `dc-intfb` | Discharge | After intestinal FB / explore talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3985,6 +3987,21 @@ DDX:
 Do not: harvest a 36–48 hour watch table. Call this a gastritis-alone. Yank. Push with a prokinetic.
 Do next: Name canine gastric FB. Not a gastritis-alone. △ Plumb. Fluids. Films or US. Endoscopy if gastric. Do not copy a 36–48 hour table.
 
+### `ddx-intfb`
+
+Intestinal FB — {{patient.name}}
+Canine intestinal FB [yes / not]. Not a gastric-FB-alone [yes / not]. Past the pylorus [ ]. Explore [ ]. Linear FB [ ]. Perforation / barium [ ].
+
+DDX:
+1. Intestinal FB — **Canine intestinal FB. Not a gastric-FB-alone**
+2. Endoscopy is not the distal-bowel plan. Explore if the object is past the pylorus. Fluids. Films or US
+3. Packet 339 owns gastric FB. Packet 331 owns linear FB. Packet 322 owns esophageal FB. Bare foreign body stay unnamed
+4. Do not yank. Do not milk a linear string. Do not use barium if perforation is on the list
+5. Dog or cat can fire. Horse does not fire. Do not copy a 36–48 hour table
+
+Do not: harvest a 36–48 hour watch table. Call this a gastric-FB-alone. Yank. Milk a linear string.
+Do next: Name canine intestinal FB. Not a gastric-FB-alone. △ Plumb. Fluids. Films or US. Explore. Do not copy a 36–48 hour table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4230,6 +4247,14 @@ Return now for repeated vomiting, black stool, vomiting blood, or not being able
 The object was removed or is being watched only if it is small, smooth, and {{patient.pronoun}} is stable. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
 
 Return now for repeated vomiting, a painful belly, collapse, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-intfb`
+
+{{patient.name}} had a foreign object in the intestine (intestinal FB). This is not a stomach object that endoscopy can reach, and not a string under the tongue.
+
+Surgery is how an object past the pylorus is found and removed. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
+
+Return now for repeated vomiting, a painful belly, fever, collapse, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

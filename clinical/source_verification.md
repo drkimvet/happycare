@@ -4872,3 +4872,30 @@ Night rule: named gastric FB → **Canine gastric FB. Not a gastritis-alone.** �
 - Attending: If the query is only “linear FB,” why does this gate stay dark?
 - Attending: Horse gastric FB — fire or skip?
 - Attending: Dual-named “esophageal FB” — 322 or this loc, and why?
+
+## 340. Canine intestinal FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett intestinal-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (a foreign body distal to the pyloric region needs exploratory laparotomy; endoscopy cannot assess past pylorus; inspect the entire GI tract; resect ischemic bowel; some small smooth objects may pass if stable; 36–48 h failure to move or deterioration → surgery; barium is not used if perforation is suspected). Do not harvest a 36–48 hour watch table as lobby law. Do not fire on gastric FB (339). Do not fire on linear FB (331). Do not fire on esophageal FB (322). Do not fire on bare foreign body. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named intestinal FB is not a gastric-FB-alone.** Fluids. Films or US. Explore. Printed 36–48 hour numbers stay on the page (`△ Plumb`).
+
+Night split: named intestinal foreign body / intestinal FB / small-bowel FB / jejunal FB is canine (or feline) intestinal FB; not a gastric-FB-alone. Gastric FB stay 339. Linear FB stay 331. Horse does not fire. Dual gastric FB plus intestinal FB concatenates 339 then 340.
+
+Book/public traps:
+
+- Do not harvest a 36–48 hour watch table.
+- Do not call this a gastric-FB-alone.
+- Do not yank.
+- Do not milk a linear string.
+- Do not use barium if perforation is on the list.
+
+Night rule: named intestinal FB → **Canine intestinal FB. Not a gastric-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a jejunal corn cob not a gastric-FB-alone?
+- NAVLE 2: Why is endoscopy not the distal-bowel plan?
+- NAVLE 3: Dual-named “gastric FB, intestinal FB” — which loc should win, and why?
+- Oral: How do you tell the owner the object is past the pylorus, without inventing a 36–48 hour table?
+- Attending: If the query is only “gastric FB,” why does this gate stay dark?
+- Attending: Horse intestinal FB — fire or skip?
+- Attending: Dual-named “linear FB” — 331 or this loc, and why?
