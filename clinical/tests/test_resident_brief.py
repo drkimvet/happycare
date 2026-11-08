@@ -11615,6 +11615,68 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline intestinal fb", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_colonic_fb_is_not_an_intestinal_fb_alone(self):
+        b = analyze("dog", "colonic foreign body")
+        loc = b["localization"].lower()
+        self.assertIn("canine colonic fb", loc)
+        self.assertIn("not an intestinal-fb-alone", loc)
+        self.assertNotIn("canine intestinal fb", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("colotomy", joined)
+        self.assertIn("endoscopy", joined)
+        self.assertIn("incidental", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_rectal_fb_fires_colfb(self):
+        b = analyze("dog", "rectal FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine colonic fb", loc)
+        self.assertIn("not an intestinal-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_colon_fb_fires_colfb(self):
+        b = analyze("dog", "colon FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine colonic fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_colonic_fb_fires(self):
+        b = analyze("cat", "colonic FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline colonic fb", loc)
+        self.assertIn("not an intestinal-fb-alone", loc)
+        self.assertNotIn("canine colonic fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_intestinal_fb_plus_colonic_fb_concatenates(self):
+        b = analyze("dog", "intestinal FB, colonic FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine intestinal fb", loc)
+        self.assertIn("canine colonic fb", loc)
+        self.assertIn("not an intestinal-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_intestinal_fb_is_not_colonic_fb(self):
+        b = analyze("dog", "intestinal FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine intestinal fb", loc)
+        self.assertNotIn("canine colonic fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_fb_is_not_colonic_fb(self):
+        b = analyze("dog", "gastric FB")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric fb", loc)
+        self.assertNotIn("canine colonic fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_colonic_fb(self):
+        b = analyze("horse", "colonic foreign body")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine colonic fb", loc)
+        self.assertNotIn("feline colonic fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

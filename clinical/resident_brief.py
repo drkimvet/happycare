@@ -2267,6 +2267,17 @@ INTFB_DX_RE = re.compile(
     r"duodenal (foreign body|\bfb\b)",
     re.I,
 )
+# Named colonic foreign body / colonic FB / colon FB / rectal FB only.
+# Do not use intestinal FB (340). Do not use gastric FB (339). Do not
+# harvest a colotomy table. Dogs and cats. Skip horse.
+# Packet 340 still owns small-bowel FB.
+COLFB_DX_RE = re.compile(
+    r"colonic (foreign body|\bfb\b)|"
+    r"colon (foreign body|\bfb\b)|"
+    r"rectal (foreign body|\bfb\b)|"
+    r"colorectal (foreign body|\bfb\b)",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6449,6 +6460,7 @@ def analyze(
     steal_helico_dx = HELICO_DX_RE.search(text)
     steal_gastfb_dx = GASTFB_DX_RE.search(text)
     steal_intfb_dx = INTFB_DX_RE.search(text)
+    steal_colfb_dx = COLFB_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6591,6 +6603,7 @@ def analyze(
         or steal_helico_dx
         or steal_gastfb_dx
         or steal_intfb_dx
+        or steal_colfb_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17829,6 +17842,55 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for intestinal FB."
+            )
+
+    colfb_named = spec in {"dog", "cat"} and COLFB_DX_RE.search(text)
+    if colfb_named:
+        if spec == "cat":
+            colfb_loc = "Feline colonic FB. Not an intestinal-FB-alone."
+        else:
+            colfb_loc = "Canine colonic FB. Not an intestinal-FB-alone."
+        localization = (
+            f"{localization} Also {colfb_loc}" if localization else colfb_loc
+        )
+        hard_stops.append(
+            "Do not harvest a colotomy table. "
+            "Incidental colonic FB often does not need removal. "
+            "If it is causing signs, endoscopy is preferred over opening the colon."
+        )
+        do_not.append(
+            "Do not call this an intestinal-FB-alone. "
+            "Do not open the colon as the default. "
+            "Do not copy a colotomy table as lobby law. "
+            "Do not send named colonic FB home as constipation-alone."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline colonic FB. Not an intestinal-FB-alone. "
+                "△ Plumb. Fluids. Endoscopy if it is causing signs. "
+                "Do not copy a colotomy table."
+            )
+        else:
+            do_next.append(
+                "Name canine colonic FB. Not an intestinal-FB-alone. "
+                "△ Plumb. Fluids. Endoscopy if it is causing signs. "
+                "Do not copy a colotomy table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: colonic foreign bodies "
+            "are often incidental and usually do not require removal; if "
+            "they cause signs, endoscopic removal is preferred over "
+            "surgically opening the colon. Packet 340 intestinal FB. "
+            "Packet 339 gastric FB. Packet 331 linear FB. Do not harvest "
+            "a colotomy table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for colonic FB."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for colonic FB."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

@@ -277,6 +277,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-helico` | Assessment | Canine Helicobacter / not a gastritis-alone |
 | `ddx-gastfb` | Assessment | Canine gastric FB / not a gastritis-alone |
 | `ddx-intfb` | Assessment | Canine intestinal FB / not a gastric-FB-alone |
+| `ddx-colfb` | Assessment | Canine colonic FB / not an intestinal-FB-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -307,6 +308,7 @@ Suggested names are short so they show up after three letters.
 | `dc-helico` | Discharge | After Helicobacter / organism talk |
 | `dc-gastfb` | Discharge | After gastric FB / endoscopy talk |
 | `dc-intfb` | Discharge | After intestinal FB / explore talk |
+| `dc-colfb` | Discharge | After colonic FB / endoscopy talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4002,6 +4004,21 @@ DDX:
 Do not: harvest a 36–48 hour watch table. Call this a gastric-FB-alone. Yank. Milk a linear string.
 Do next: Name canine intestinal FB. Not a gastric-FB-alone. △ Plumb. Fluids. Films or US. Explore. Do not copy a 36–48 hour table.
 
+### `ddx-colfb`
+
+Colonic FB — {{patient.name}}
+Canine colonic FB [yes / not]. Not an intestinal-FB-alone [yes / not]. Incidental [ ]. Causing signs [ ]. Endoscopy over colotomy [ ]. Constipation [ ].
+
+DDX:
+1. Colonic FB — **Canine colonic FB. Not an intestinal-FB-alone**
+2. Often incidental. Usually does not need removal. If it is causing signs, endoscopy is preferred over opening the colon
+3. Packet 340 owns intestinal FB. Packet 339 owns gastric FB. Packet 331 owns linear FB. Bare foreign body stay unnamed
+4. Do not open the colon as the default. Do not send this home as constipation-alone
+5. Dog or cat can fire. Horse does not fire. Do not copy a colotomy table
+
+Do not: harvest a colotomy table. Call this an intestinal-FB-alone. Open the colon as the default. Send this home as constipation-alone.
+Do next: Name canine colonic FB. Not an intestinal-FB-alone. △ Plumb. Fluids. Endoscopy if it is causing signs. Do not copy a colotomy table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4255,6 +4272,14 @@ Return now for repeated vomiting, a painful belly, collapse, or not being able t
 Surgery is how an object past the pylorus is found and removed. Give only the medicines we sent, as labeled. Quiet rest. Small meals as we showed.
 
 Return now for repeated vomiting, a painful belly, fever, collapse, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-colfb`
+
+{{patient.name}} had a foreign object in the colon (colonic FB). This is not a small-bowel obstruction that needs an explore, and not ordinary constipation.
+
+Colon objects are often found by chance and may not need removal. If it was causing signs, endoscopy is preferred over opening the colon. Give only the medicines we sent, as labeled.
+
+Return now for straining without stool, a painful belly, vomiting, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

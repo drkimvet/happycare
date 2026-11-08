@@ -4899,3 +4899,29 @@ Night rule: named intestinal FB → **Canine intestinal FB. Not a gastric-FB-alo
 - Attending: If the query is only “gastric FB,” why does this gate stay dark?
 - Attending: Horse intestinal FB — fire or skip?
 - Attending: Dual-named “linear FB” — 331 or this loc, and why?
+
+## 341. Canine colonic FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett colonic-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (colonic foreign bodies are often incidental and usually do not require removal; if a colonic foreign body is causing clinical signs, endoscopic removal is preferred over surgically opening the colon; correct fluid, electrolyte, and acid-base disturbances before anesthesia if possible). Do not harvest a colotomy table as lobby law. Do not fire on intestinal FB (340). Do not fire on gastric FB (339). Do not fire on linear FB (331). Do not fire on bare foreign body. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named colonic FB is not an intestinal-FB-alone.** Endoscopy if it is causing signs. Printed colotomy recipes stay off the card (`△ Plumb`).
+
+Night split: named colonic foreign body / colonic FB / colon FB / rectal FB is canine (or feline) colonic FB; not an intestinal-FB-alone. Intestinal FB stay 340. Gastric FB stay 339. Horse does not fire. Dual intestinal FB plus colonic FB concatenates 340 then 341.
+
+Book/public traps:
+
+- Do not harvest a colotomy table.
+- Do not call this an intestinal-FB-alone.
+- Do not open the colon as the default.
+- Do not send named colonic FB home as constipation-alone.
+
+Night rule: named colonic FB → **Canine colonic FB. Not an intestinal-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a colon bone not an intestinal-FB-alone?
+- NAVLE 2: Why is opening the colon not the default?
+- NAVLE 3: Dual-named “intestinal FB, colonic FB” — which loc should win, and why?
+- Oral: How do you tell the owner an incidental colon object may not need surgery, without inventing a colotomy table?
+- Attending: If the query is only “intestinal FB,” why does this gate stay dark?
+- Attending: Horse colonic FB — fire or skip?
+- Attending: Dual-named “rectal FB” — fire or stay dark, and why?
