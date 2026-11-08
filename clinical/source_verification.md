@@ -4980,3 +4980,31 @@ Night rule: named megacolon → **Feline megacolon. Not a colonic-FB-alone.** �
 - Attending: If the query is only “constipation,” why does this gate stay dark?
 - Attending: Horse megacolon — fire or skip?
 - Attending: Dual-named “obstipation” — fire or stay dark, and why?
+
+## 344. Feline colitis (Collier Merck Jun 2025)
+
+No dedicated Plunkett colitis chapter in the owned SA EM splits. Public Collier A. Colitis in Small Animals. Merck Veterinary Manual. Full review Jun 2025; last updated Jun 2025 (colitis is inflammation of the colon; large-bowel diarrhea with mucus, hematochezia, tenesmus, and urgency; deworm even if feces are negative because whipworm shedding is intermittent; diet trial if stable before advanced diagnostics; sulfasalazine is not recommended in cats; antimicrobials are not routine for chronic diarrhea). Do not harvest a sulfasalazine or enema table as lobby law. Do not fire on megacolon (343). Do not fire on AHDS without colitis. Horse colitis stays equine. Dogs and cats. Skip horse.
+
+Agree with Collier: **named colitis is not a megacolon-alone.** Fecal. Diet trial if stable. Deworm. Printed sulfasalazine / metronidazole / tylosin numbers stay on the page (`△ Plumb`).
+
+Night split: named colitis / large-bowel diarrhea / large intestinal inflammation is feline (or canine) colitis; not a megacolon-alone. Bare diarrhea stay unnamed. Megacolon stay 343. Horse does not fire this loc. Dual colitis plus megacolon concatenates 343 then 344.
+
+Book/public traps:
+
+- Do not harvest a sulfasalazine table.
+- Do not harvest an enema table.
+- Do not call this a megacolon-alone.
+- Do not send named colitis home as AHDS.
+- Do not give sulfasalazine to a cat.
+- Do not skip Tritrichomonas in a cat.
+
+Night rule: named colitis → **Feline colitis. Not a megacolon-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is large-bowel diarrhea not a megacolon-alone?
+- NAVLE 2: Why is sulfasalazine not for a cat?
+- NAVLE 3: Dual-named “colitis, megacolon” — which loc should win, and why?
+- Oral: How do you tell the owner to deworm even if the fecal is negative, without inventing a fenbendazole table?
+- Attending: If the query is only “constipation,” why does this gate stay dark?
+- Attending: Horse colitis — this loc or equine isolate, and why?
+- Attending: Dual-named “AHDS” — AHDS or this loc, and why?

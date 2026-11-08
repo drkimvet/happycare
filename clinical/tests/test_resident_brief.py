@@ -11799,6 +11799,63 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline megacolon", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_colitis_is_not_a_megacolon_alone(self):
+        b = analyze("cat", "colitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline colitis", loc)
+        self.assertIn("not a megacolon-alone", loc)
+        self.assertNotIn("feline megacolon", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("sulfasalazine", joined)
+        self.assertIn("deworm", joined)
+        self.assertIn("tritrichomonas", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_large_bowel_diarrhea_fires_colitis(self):
+        b = analyze("dog", "large-bowel diarrhea")
+        loc = b["localization"].lower()
+        self.assertIn("canine colitis", loc)
+        self.assertIn("not a megacolon-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_canine_colitis_fires(self):
+        b = analyze("dog", "colitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine colitis", loc)
+        self.assertIn("not a megacolon-alone", loc)
+        self.assertNotIn("feline colitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_colitis_plus_megacolon_concatenates(self):
+        b = analyze("cat", "colitis, megacolon")
+        loc = b["localization"].lower()
+        self.assertIn("feline megacolon", loc)
+        self.assertIn("feline colitis", loc)
+        self.assertIn("not a megacolon-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_megacolon_is_not_colitis(self):
+        b = analyze("cat", "megacolon")
+        loc = b["localization"].lower()
+        self.assertIn("feline megacolon", loc)
+        self.assertNotIn("feline colitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ahds_alone_is_not_colitis_loc(self):
+        b = analyze("dog", "AHDS")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine colitis", loc)
+        self.assertNotIn("not a megacolon-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_colitis_is_not_sa_colitis(self):
+        b = analyze("horse", "colitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine colitis", loc)
+        self.assertNotIn("feline colitis", loc)
+        self.assertNotIn("not a megacolon-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

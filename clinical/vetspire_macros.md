@@ -280,6 +280,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-colfb` | Assessment | Canine colonic FB / not an intestinal-FB-alone |
 | `ddx-tricho` | Assessment | Feline trichobezoar / not a gastric-FB-alone |
 | `ddx-megacol` | Assessment | Feline megacolon / not a colonic-FB-alone |
+| `ddx-colitis` | Assessment | Feline colitis / not a megacolon-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -313,6 +314,7 @@ Suggested names are short so they show up after three letters.
 | `dc-colfb` | Discharge | After colonic FB / endoscopy talk |
 | `dc-tricho` | Discharge | After trichobezoar / hairball talk |
 | `dc-megacol` | Discharge | After megacolon / obstipation talk |
+| `dc-colitis` | Discharge | After colitis / large-bowel talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4053,6 +4055,21 @@ DDX:
 Do not: harvest an enema table. Harvest a cisapride table. Call this a colonic-FB-alone. Give a phosphate enema to a cat.
 Do next: Name feline megacolon. Not a colonic-FB-alone. △ Plumb. Hydrate. Deobstipate under anesthesia if needed. Do not copy an enema table.
 
+### `ddx-colitis`
+
+Colitis — {{patient.name}}
+Feline colitis [yes / not]. Not a megacolon-alone [yes / not]. Large-bowel diarrhea [ ]. Fecal / deworm [ ]. Tritrichomonas [ ]. Diet trial [ ]. AHDS [ ].
+
+DDX:
+1. Colitis — **Feline colitis. Not a megacolon-alone**
+2. Mucus, hematochezia, tenesmus, urgency. Deworm even if the fecal is negative. Diet trial if stable
+3. Packet 343 owns megacolon. AHDS stays AHDS. Horse colitis stays equine. Sulfasalazine is not for cats
+4. Do not shotgun antimicrobials onto every large-bowel night. Do not skip Tritrichomonas in a cat
+5. Dog or cat can fire. Horse does not fire this loc. Do not copy a sulfasalazine table
+
+Do not: harvest a sulfasalazine table. Harvest an enema table. Call this a megacolon-alone. Send this home as AHDS.
+Do next: Name feline colitis. Not a megacolon-alone. △ Plumb. Fecal. Diet trial if stable. Deworm. Do not copy a sulfasalazine table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4330,6 +4347,14 @@ Return now for repeated vomiting, a painful belly, not eating, or collapse. {{lo
 Stool sat in the colon until it could not pass. Hydration and, if needed, removal under anesthesia are the night plan. Phosphate enemas are not used in cats. Give only the medicines we sent, as labeled. Water always available. Litter box always clean.
 
 Return now for straining without stool, vomiting, a painful belly, or collapse. {{location.phonenumber}}
+
+### `dc-colitis`
+
+{{patient.name}} has large-bowel inflammation (colitis). This is not megacolon and not shocky bloody diarrhea (AHDS) by itself.
+
+Stool is often small, frequent, with mucus or fresh blood, and straining. Deworming can still be indicated even if one fecal was negative. Give only the medicines we sent, as labeled. The diet we named is the trial. Water always available.
+
+Return now for black stool, repeated vomiting, collapse, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

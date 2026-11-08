@@ -2300,6 +2300,17 @@ MEGACOL_DX_RE = re.compile(
     r"idiopathic megacolon",
     re.I,
 )
+# Named colitis / large-bowel diarrhea / large intestinal inflammation
+# only. Do not use megacolon (343). Do not use AHDS. Do not harvest a
+# sulfasalazine or enema table. Dogs and cats. Skip horse (COLITIS_RE).
+# Packet 343 still owns megacolon.
+COLITIS_DX_RE = re.compile(
+    r"\bcolitis\b|"
+    r"large[- ]bowel diarrhea|"
+    r"large intestinal inflammation|"
+    r"large[- ]bowel inflammation",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6485,6 +6496,7 @@ def analyze(
     steal_colfb_dx = COLFB_DX_RE.search(text)
     steal_tricho_dx = TRICHO_DX_RE.search(text)
     steal_megacol_dx = MEGACOL_DX_RE.search(text)
+    steal_colitis_dx = COLITIS_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6630,6 +6642,7 @@ def analyze(
         or steal_colfb_dx
         or steal_tricho_dx
         or steal_megacol_dx
+        or steal_colitis_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18022,6 +18035,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for megacolon."
+            )
+
+    colitis_named = spec in {"dog", "cat"} and COLITIS_DX_RE.search(text)
+    if colitis_named:
+        if spec == "cat":
+            colitis_loc = "Feline colitis. Not a megacolon-alone."
+        else:
+            colitis_loc = "Canine colitis. Not a megacolon-alone."
+        localization = (
+            f"{localization} Also {colitis_loc}" if localization else colitis_loc
+        )
+        hard_stops.append(
+            "Do not harvest a sulfasalazine table. "
+            "Do not harvest an enema table. "
+            "Sulfasalazine is not for cats. "
+            "Deworm even if the fecal is negative. "
+            "Do not send named colitis home as AHDS."
+        )
+        do_not.append(
+            "Do not call this a megacolon-alone. "
+            "Do not shotgun antimicrobials onto every large-bowel night. "
+            "Do not copy a sulfasalazine table as lobby law. "
+            "Do not skip Tritrichomonas in a cat."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline colitis. Not a megacolon-alone. "
+                "△ Plumb. Fecal. Diet trial if stable. Deworm. "
+                "Do not copy a sulfasalazine table."
+            )
+        else:
+            do_next.append(
+                "Name canine colitis. Not a megacolon-alone. "
+                "△ Plumb. Fecal. Diet trial if stable. Deworm whipworm. "
+                "Do not copy a sulfasalazine table."
+            )
+        sources.append(
+            "Collier Merck colitis Jun 2025: large-bowel diarrhea with mucus, "
+            "hematochezia, and tenesmus; deworm even if feces are negative; "
+            "diet trial before advanced diagnostics if stable; sulfasalazine "
+            "is not for cats; antimicrobials are not routine for chronic "
+            "diarrhea. Packet 343 megacolon. AHDS stays AHDS. Horse colitis "
+            "stays equine. Do not harvest a sulfasalazine or enema table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for colitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for colitis."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
