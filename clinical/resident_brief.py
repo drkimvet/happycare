@@ -2237,6 +2237,15 @@ GASTRITIS_DX_RE = re.compile(
     r"helicobacter gastritis",
     re.I,
 )
+# Named Helicobacter / H. felis / H. canis / H. heilmannii only.
+# Do not use gastritis without Helicobacter (337). Do not harvest a
+# triple-therapy or omeprazole table. Dogs and cats. Skip horse.
+# Packet 337 still owns gastritis without the organism.
+HELICO_DX_RE = re.compile(
+    r"\bhelicobacter\b|"
+    r"\bh\.?\s*(?:felis|canis|heilmannii|bizzozeronii|pylori)\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6416,6 +6425,7 @@ def analyze(
     steal_gulcer_dx = GULCER_DX_RE.search(text)
     steal_giperf_dx = GIPERF_DX_RE.search(text)
     steal_gastritis_dx = GASTRITIS_DX_RE.search(text)
+    steal_helico_dx = HELICO_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6555,6 +6565,7 @@ def analyze(
         or steal_gulcer_dx
         or steal_giperf_dx
         or steal_gastritis_dx
+        or steal_helico_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17640,6 +17651,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for gastritis."
+            )
+
+    helico_named = spec in {"dog", "cat"} and HELICO_DX_RE.search(text)
+    if helico_named:
+        if spec == "cat":
+            helico_loc = "Feline Helicobacter infection. Not a gastritis-alone."
+        else:
+            helico_loc = "Canine Helicobacter infection. Not a gastritis-alone."
+        localization = (
+            f"{localization} Also {helico_loc}" if localization else helico_loc
+        )
+        hard_stops.append(
+            "Do not harvest a triple-therapy table. "
+            "Do not harvest an omeprazole table. "
+            "Helicobacter is common in healthy dogs and cats. "
+            "Treat only with signs and gastric lesions."
+        )
+        do_not.append(
+            "Do not call this a gastritis-alone. "
+            "Do not treat incidental Helicobacter as H. pylori ulcer law. "
+            "Do not copy a 2–3 week antimicrobial table as lobby law. "
+            "Do not promise eradication."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline Helicobacter infection. Not a gastritis-alone. "
+                "△ Plumb. Cytology or biopsy. Treat signs and lesions. "
+                "Do not copy a triple-therapy table."
+            )
+        else:
+            do_next.append(
+                "Name canine Helicobacter infection. Not a gastritis-alone. "
+                "△ Plumb. Cytology or biopsy. Treat signs and lesions. "
+                "Do not copy a triple-therapy table."
+            )
+        sources.append(
+            "Blois Merck Helicobacter Jan 2025: organisms are common in "
+            "healthy and vomiting dogs and cats; a direct causative link "
+            "to gastritis is not established; peptic ulceration is rare; "
+            "diagnosis is cytology or histology; treat only with signs "
+            "and gastric lesions; eradication is often incomplete; "
+            "zoonotic risk is uncertain so recommend hygiene. Packet 337 "
+            "gastritis. Do not harvest triple-therapy or omeprazole tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for Helicobacter."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for Helicobacter."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

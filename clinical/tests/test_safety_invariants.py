@@ -769,6 +769,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("canine gi perforation", VERIF.lower())
         self.assertIn("not an ulcer-alone", VERIF.lower())
         self.assertIn("canine gastritis", VERIF.lower())
+        self.assertIn("canine helicobacter infection", VERIF.lower())
+        self.assertIn("not a gastritis-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1295,6 +1297,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-giperf`", MACRO)
         self.assertIn("`ddx-gastritis`", MACRO)
         self.assertIn("`dc-gastritis`", MACRO)
+        self.assertIn("`ddx-helico`", MACRO)
+        self.assertIn("`dc-helico`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1499,6 +1503,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("canine gi perforation", MACRO.lower())
         self.assertIn("not an ulcer-alone", MACRO.lower())
         self.assertIn("canine gastritis", MACRO.lower())
+        self.assertIn("canine helicobacter infection", MACRO.lower())
+        self.assertIn("not a gastritis-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -2066,6 +2072,8 @@ class PublicCardInvariants(unittest.TestCase):
             "canine gi perforation",
             "not an ulcer-alone",
             "canine gastritis",
+            "canine helicobacter infection",
+            "not a gastritis-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

@@ -11437,6 +11437,62 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline gastritis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_helicobacter_is_not_a_gastritis_alone(self):
+        b = analyze("dog", "Helicobacter")
+        loc = b["localization"].lower()
+        self.assertIn("canine helicobacter infection", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertNotIn("canine gastritis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("triple-therapy", joined)
+        self.assertIn("healthy", joined)
+        self.assertIn("biopsy", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_h_felis_fires_helico(self):
+        b = analyze("dog", "H. felis")
+        loc = b["localization"].lower()
+        self.assertIn("canine helicobacter infection", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_h_canis_fires_helico(self):
+        b = analyze("dog", "H. canis")
+        loc = b["localization"].lower()
+        self.assertIn("canine helicobacter infection", loc)
+        self.assertNotIn("brucell", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_helicobacter_fires(self):
+        b = analyze("cat", "Helicobacter")
+        loc = b["localization"].lower()
+        self.assertIn("feline helicobacter infection", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertNotIn("canine helicobacter", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_helicobacter_gastritis_concatenates(self):
+        b = analyze("dog", "Helicobacter gastritis")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertIn("canine helicobacter infection", loc)
+        self.assertIn("not a gastritis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastritis_is_not_helicobacter(self):
+        b = analyze("dog", "gastritis")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastritis", loc)
+        self.assertNotIn("canine helicobacter infection", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_helicobacter(self):
+        b = analyze("horse", "Helicobacter")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine helicobacter", loc)
+        self.assertNotIn("feline helicobacter", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -274,6 +274,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gulcer` | Assessment | Canine gastric ulcer / not an Addison-alone |
 | `ddx-giperf` | Assessment | Canine GI perforation / not an ulcer-alone |
 | `ddx-gastritis` | Assessment | Canine gastritis / not an ulcer-alone |
+| `ddx-helico` | Assessment | Canine Helicobacter / not a gastritis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -301,6 +302,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gulcer` | Discharge | After gastric ulcer / NSAID talk |
 | `dc-giperf` | Discharge | After GI perforation / explore talk |
 | `dc-gastritis` | Discharge | After gastritis / vomiting talk |
+| `dc-helico` | Discharge | After Helicobacter / organism talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3951,6 +3953,21 @@ DDX:
 Do not: harvest a sucralfate table. Harvest an omeprazole table. Call this an ulcer-alone. Treat Helicobacter because the organism is found in healthy pets.
 Do next: Name canine gastritis. Not an ulcer-alone. △ Plumb. Supportive. Antiemetic. Biopsy for chronic. Do not copy a sucralfate table.
 
+### `ddx-helico`
+
+Helicobacter — {{patient.name}}
+Canine Helicobacter infection [yes / not]. Not a gastritis-alone [yes / not]. Cytology / biopsy [ ]. Signs and gastric lesions [ ]. Incidental organism [ ]. Hygiene talk [ ].
+
+DDX:
+1. Helicobacter — **Canine Helicobacter infection. Not a gastritis-alone**
+2. Common in healthy dogs and cats. A direct causative gastritis link is not established. Peptic ulceration is rare
+3. Packet 337 owns gastritis without the organism. Treat only with signs and gastric lesions. Do not promise eradication
+4. Zoonotic risk is uncertain. Recommend hygiene. Do not copy a 2–3 week antimicrobial table
+5. Dog or cat can fire. Horse does not fire. Do not copy a triple-therapy table
+
+Do not: harvest a triple-therapy table. Harvest an omeprazole table. Call this a gastritis-alone. Treat incidental Helicobacter as H. pylori ulcer law.
+Do next: Name canine Helicobacter infection. Not a gastritis-alone. △ Plumb. Cytology or biopsy. Treat signs and lesions. Do not copy a triple-therapy table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4180,6 +4197,14 @@ Return now for collapse, a painful belly, fever, or vomiting. {{location.phonenu
 Rest the stomach. Give only the medicines we sent, as labeled. Small meals as we showed. Helicobacter is common even in healthy pets, so we treat signs and lesions, not a lab finding alone.
 
 Return now for black stool, vomiting blood, a painful belly, collapse, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-helico`
+
+{{patient.name}} has gastric Helicobacter. This organism is common even in healthy dogs and cats, so it is not gastritis by itself and not a human H. pylori ulcer story.
+
+We treat signs and stomach lesions, not a lab finding alone. Give only the medicines we sent, as labeled. Wash hands after handling. Do not expect the organism to stay gone forever.
+
+Return now for repeated vomiting, black stool, vomiting blood, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

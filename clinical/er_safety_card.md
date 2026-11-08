@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine Helicobacter infection (Merck Blois Jan 2025)
+
+- **Canine Helicobacter infection. Not a gastritis-alone.** Named Helicobacter / H. felis / H. canis / H. heilmannii only. Common in healthy dogs and cats. A direct causative gastritis link is not established. Peptic ulceration is rare. Cytology or biopsy. Treat only with signs and gastric lesions. Do **not** harvest a triple-therapy table. Do **not** harvest an omeprazole table. Do **not** promise eradication. Hygiene for uncertain zoonotic risk.
+- Cats: same named loc as feline Helicobacter infection. Packet 337 still owns gastritis without the organism. Bare gastritis stay 337. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine gastritis (Merck Blois Aug 2025)
 
 - **Canine gastritis. Not an ulcer-alone.** Named gastritis / gastric inflammation / Helicobacter gastritis only. Vomiting and cranial abdominal pain. Acute is often dietary indiscretion; chronic needs biopsy. A PPI is not routine unless ulcer is suspected. Helicobacter is common in healthy pets; do **not** treat the organism alone. Do **not** harvest a sucralfate table. Do **not** harvest an omeprazole table. Do **not** send named gastritis home as AHDS.

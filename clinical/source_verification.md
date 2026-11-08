@@ -4818,3 +4818,30 @@ Night rule: named gastritis → **Canine gastritis. Not an ulcer-alone.** △ Pl
 - Attending: If the query is only “gastric ulcer,” why does this gate stay dark?
 - Attending: Horse gastritis — fire or skip?
 - Attending: Dual-named “gastroenteritis” — fire or stay dark, and why?
+
+## 338. Canine Helicobacter infection (Blois Merck Jan 2025)
+
+No dedicated Plunkett Helicobacter chapter in the owned SA EM splits. Public Blois S. Helicobacter Infection in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Jan 2025 (Helicobacter spp are commonly isolated from healthy and vomiting dogs and cats; pathogenicity is not clearly established; peptic ulceration is rarely associated; diagnosis is cytology or histology of the stomach; treat only with signs and gastric lesions; eradication is often incomplete; zoonotic risk is uncertain; recommend hygiene). Do not harvest a triple-therapy or omeprazole table as lobby law. Do not fire on gastritis without Helicobacter (337). Dogs and cats. Skip horse.
+
+Agree with Blois: **named Helicobacter is not a gastritis-alone.** Cytology or biopsy. Treat signs and lesions. Printed amoxicillin / metronidazole / bismuth / omeprazole numbers stay on the page (`△ Plumb`).
+
+Night split: named Helicobacter / H. felis / H. canis / H. heilmannii is canine (or feline) Helicobacter infection; not a gastritis-alone. Bare gastritis stay 337. Horse does not fire. Dual Helicobacter plus gastritis concatenates 337 then 338.
+
+Book/public traps:
+
+- Do not harvest a triple-therapy table.
+- Do not harvest an omeprazole table.
+- Do not call this a gastritis-alone.
+- Do not treat incidental Helicobacter as H. pylori ulcer law.
+- Do not promise eradication.
+
+Night rule: named Helicobacter → **Canine Helicobacter infection. Not a gastritis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gastric Helicobacter not a gastritis-alone?
+- NAVLE 2: Why is a positive organism not automatic triple therapy?
+- NAVLE 3: Dual-named “Helicobacter gastritis” — which loc should win, and why?
+- Oral: How do you tell the owner the organism is common in healthy pets, without inventing a 2–3 week table?
+- Attending: If the query is only “gastritis,” why does this gate stay dark?
+- Attending: Horse Helicobacter — fire or skip?
+- Attending: Dual-named “H. felis” — fire or stay dark, and why?
