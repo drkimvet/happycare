@@ -271,6 +271,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-intuss` | Assessment | Canine intussusception / not a linear-FB-alone |
 | `ddx-mvolv` | Assessment | Canine mesenteric volvulus / not an intussusception-alone |
 | `ddx-pyloric` | Assessment | Canine pyloric stenosis / not a GDV-alone |
+| `ddx-gulcer` | Assessment | Canine gastric ulcer / not an Addison-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -295,6 +296,7 @@ Suggested names are short so they show up after three letters.
 | `dc-intuss` | Discharge | After intussusception / reduce talk |
 | `dc-mvolv` | Discharge | After mesenteric volvulus / explore talk |
 | `dc-pyloric` | Discharge | After pyloric stenosis / outflow talk |
+| `dc-gulcer` | Discharge | After gastric ulcer / NSAID talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -3900,6 +3902,21 @@ DDX:
 Do not: harvest a pyloroplasty table. Call this a GDV-alone. Send this home as food bloat. Skip esophagitis and dehydration before surgery.
 Do next: Name canine pyloric stenosis. Not a GDV-alone. △ Plumb. Contrast or endoscopy. Then surgery. Do not copy a pyloroplasty table.
 
+### `ddx-gulcer`
+
+Gastric ulcer — {{patient.name}}
+Canine gastric ulcer [yes / not]. Not an Addison-alone [yes / not]. NSAID [ ]. Liver / MCT / neoplasia [ ]. Endoscopy [ ]. PPI over H2 [ ]. Perforation [ ].
+
+DDX:
+1. Gastric ulcer — **Canine gastric ulcer. Not an Addison-alone**
+2. NSAID, neoplasia, and liver disease are the common dog causes. Addison is on the list, not the only list
+3. Stop the NSAID. Endoscopy is the gold standard. PPI over H2. Do not combine H2 with a PPI
+4. Packet 312 owns MCT. Addison stays Addison. Packet 334 owns pyloric stenosis. Bare ulcer stay cornea/mouth
+5. Dog or cat can fire. Horse does not fire. Do not copy a sucralfate table
+
+Do not: harvest a sucralfate table. Harvest an omeprazole table. Call this an Addison-alone. Stack NSAID with a steroid.
+Do next: Name canine gastric ulcer. Not an Addison-alone. △ Plumb. Stop NSAID. Endoscopy. PPI over H2. Do not copy a sucralfate table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4105,6 +4122,14 @@ Return now for collapse, vomiting, a painful belly, or no stool. {{location.phon
 Surgery opens the outflow. Give only the medicines we sent, as labeled. Small meals as we showed.
 
 Return now for repeated vomiting, trouble breathing, collapse, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-gulcer`
+
+{{patient.name}} has a stomach or intestinal ulcer. This is not ordinary bloody diarrhea and not Addison disease by itself, even though Addison can sit underneath.
+
+Stop any NSAID unless we restart it. Give only the medicines we sent, as labeled. Small meals as we showed.
+
+Return now for black stool, vomiting blood, a painful belly, collapse, or not being able to keep water down. {{location.phonenumber}}
 
 ### `dc-ahds`
 

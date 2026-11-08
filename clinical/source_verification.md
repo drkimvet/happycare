@@ -4737,3 +4737,30 @@ Night rule: named pyloric stenosis → **Canine pyloric stenosis. Not a GDV-alon
 - Attending: If the query is only “stenosis,” why does this gate stay dark?
 - Attending: Horse pyloric stenosis — fire or skip?
 - Attending: Dual-named “BOAS, pyloric stenosis” — which loc should win, and why?
+
+## 335. Canine gastric ulcer (Blois Merck Aug 2025)
+
+No dedicated Plunkett gastric-ulcer chapter in the owned SA EM splits. Public Blois S. Gastrointestinal Ulcers in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Aug 2025 (more common in dogs; NSAID, neoplasia, and hepatic disease are the common dog causes of gastroduodenal ulceration or perforation; COX-2 NSAIDs can still ulcerate; hypoadrenocorticism is on the list; NSAID plus corticosteroid is contraindicated; cats more often neoplasia or inflammatory disease; hematemesis and melena are variable; endoscopy is the gold standard; PPI over H2; do not combine H2 with PPI; sucralfate has no proven add-on to PPI; perforation is surgery). Do not harvest a sucralfate table. Do not harvest an omeprazole table. Do not harvest a 4–6 week or mortality table. Do not fire on \bulcer\b alone. Packet 312 still owns MCT. Addison stays Addison. Packet 334 still owns pyloric stenosis. Dogs and cats. Skip horse.
+
+Agree with Blois: **named gastric ulcer is not an Addison-alone.** Stop the NSAID. Endoscopy. Printed sucralfate / omeprazole numbers stay on the page (`△ Plumb`).
+
+Night split: named gastric ulcer / gastroduodenal ulcer / GI ulcer is canine (or feline) gastric ulcer; not an Addison-alone. Bare ulcer stay cornea/mouth. Horse does not fire. Dual Addison plus gastric ulcer concatenates Addison then 335.
+
+Book/public traps:
+
+- Do not harvest a sucralfate table.
+- Do not harvest an omeprazole table.
+- Do not call this an Addison-alone.
+- Do not send named gastric ulcer home as AHDS.
+- Do not combine an H2 blocker with a PPI.
+
+Night rule: named gastric ulcer → **Canine gastric ulcer. Not an Addison-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a dog with melena and a gastric ulcer not an Addison-alone?
+- NAVLE 2: Why do you not stack an H2 blocker on a PPI for named ulcer?
+- NAVLE 3: Dual-named “Addison, gastric ulcer” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the NSAID, without inventing an omeprazole table?
+- Attending: If the query is only “ulcer,” why does this gate stay dark?
+- Attending: Horse gastric ulcer — fire or skip?
+- Attending: Dual-named “MCT, GI ulcer” — which loc should win, and why?

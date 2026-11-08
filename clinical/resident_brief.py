@@ -2199,6 +2199,19 @@ PYLORIC_DX_RE = re.compile(
     r"gastric outflow obstruction",
     re.I,
 )
+# Named gastric ulcer / gastroduodenal ulcer / GI ulcer only.
+# Do not use Addison / hypoadrenocorticism. Do not use pyloric stenosis
+# (334). Do not use \bulcer\b alone (cornea / mouth). Do not harvest a
+# sucralfate or omeprazole table. Dogs and cats. Skip horse.
+# Packet 312 still owns MCT histamine ulcer talk. Addison stays Addison.
+GULCER_DX_RE = re.compile(
+    r"gastric ulcer|"
+    r"gastroduodenal ulcer|"
+    r"gastro[- ]duodenal ulcer|"
+    r"gastrointestinal ulcer|"
+    r"\bgi ulcers?\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6375,6 +6388,7 @@ def analyze(
     steal_intuss_dx = INTUSS_DX_RE.search(text)
     steal_mvolv_dx = MVOLV_DX_RE.search(text)
     steal_pyloric_dx = PYLORIC_DX_RE.search(text)
+    steal_gulcer_dx = GULCER_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6511,6 +6525,7 @@ def analyze(
         or steal_intuss_dx
         or steal_mvolv_dx
         or steal_pyloric_dx
+        or steal_gulcer_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17446,6 +17461,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for pyloric stenosis."
+            )
+
+    gulcer_named = spec in {"dog", "cat"} and GULCER_DX_RE.search(text)
+    if gulcer_named:
+        if spec == "cat":
+            gulcer_loc = "Feline gastric ulcer. Not an Addison-alone."
+        else:
+            gulcer_loc = "Canine gastric ulcer. Not an Addison-alone."
+        localization = (
+            f"{localization} Also {gulcer_loc}" if localization else gulcer_loc
+        )
+        hard_stops.append(
+            "Do not harvest a sucralfate table. "
+            "Do not harvest an omeprazole table. "
+            "Stop the NSAID. Do not stack NSAID with a steroid."
+        )
+        do_not.append(
+            "Do not call this an Addison-alone. "
+            "Do not send named gastric ulcer home as AHDS. "
+            "Do not copy a sucralfate table as lobby law. "
+            "Do not combine an H2 blocker with a PPI."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline gastric ulcer. Not an Addison-alone. "
+                "△ Plumb. Stop NSAID. Endoscopy. PPI over H2. "
+                "Do not copy a sucralfate table."
+            )
+        else:
+            do_next.append(
+                "Name canine gastric ulcer. Not an Addison-alone. "
+                "△ Plumb. Stop NSAID. Endoscopy. PPI over H2. "
+                "Do not copy a sucralfate table."
+            )
+        sources.append(
+            "Blois Merck GI ulcers Jan 2025 / Aug 2025: dogs more than cats; "
+            "NSAID, neoplasia, and liver disease are the common dog causes; "
+            "hypoadrenocorticism is on the list, not the only list; cats more "
+            "often neoplasia or inflammatory disease; hematemesis and melena "
+            "are variable; endoscopy is the gold standard; PPI over H2; do "
+            "not combine H2 with PPI; sucralfate has no proven add-on to PPI; "
+            "perforation is surgery. Packet 312 MCT. Addison stays Addison. "
+            "Do not harvest sucralfate or omeprazole tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for gastric ulcer."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for gastric ulcer."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

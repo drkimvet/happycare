@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine gastric ulcer (Merck Blois Aug 2025)
+
+- **Canine gastric ulcer. Not an Addison-alone.** Named gastric ulcer / gastroduodenal ulcer / GI ulcer only. NSAID, neoplasia, and liver disease are the common dog causes. Addison is on the list, not the only list. Endoscopy is the gold standard. Stop the NSAID. PPI over H2. Do **not** harvest a sucralfate table. Do **not** harvest an omeprazole table. Do **not** stack NSAID with a steroid. Do **not** send named gastric ulcer home as AHDS.
+- Cats: same named loc as feline gastric ulcer; neoplasia and inflammatory disease more than NSAID. Packet 312 still owns MCT. Addison stays Addison. Packet 334 still owns pyloric stenosis. Bare ulcer stay cornea/mouth. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine pyloric stenosis (Merck Winkler Aug 2025; Roberts Sept 2024)
 
 - **Canine pyloric stenosis. Not a GDV-alone.** Named pyloric stenosis / pyloric hypertrophy / gastric outflow obstruction only. Hypertrophied pyloric muscle. Congenital in brachycephalics (Boxer, Boston, English Bulldog). Later in Lhasa Apso, Shih Tzu, Maltese. Vomit food hours after a meal. Contrast or endoscopy with biopsy. Surgery after esophagitis and dehydration are addressed. Do **not** harvest a pyloroplasty table. Do **not** send named pyloric stenosis home as food bloat.

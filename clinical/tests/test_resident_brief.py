@@ -11247,6 +11247,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline pyloric stenosis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_gastric_ulcer_is_not_an_addison_alone(self):
+        b = analyze("dog", "gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("not an addison-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("sucralfate table", joined)
+        self.assertIn("omeprazole table", joined)
+        self.assertIn("nsaid", joined)
+        self.assertIn("ahds", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastroduodenal_ulcer_fires(self):
+        b = analyze("dog", "gastroduodenal ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("not an addison-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gi_ulcer_fires(self):
+        b = analyze("dog", "GI ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("not an addison-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_gastric_ulcer_fires(self):
+        b = analyze("cat", "gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("feline gastric ulcer", loc)
+        self.assertIn("not an addison-alone", loc)
+        self.assertNotIn("canine gastric ulcer", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_addison_plus_gastric_ulcer_concatenates(self):
+        b = analyze("dog", "Addison, gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("mineralocorticoid", loc)
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("not an addison-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_addison_is_not_gastric_ulcer(self):
+        b = analyze("dog", "Addison")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gastric ulcer", loc)
+        self.assertNotIn("not an addison-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_ulcer_is_not_gastric(self):
+        b = analyze("dog", "ulcer")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gastric ulcer", loc)
+        self.assertNotIn("not an addison-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_gastric_ulcer(self):
+        b = analyze("horse", "gastric ulcer")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine gastric ulcer", loc)
+        self.assertNotIn("feline gastric ulcer", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
