@@ -11677,6 +11677,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline colonic fb", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_trichobezoar_is_not_a_gastric_fb_alone(self):
+        b = analyze("cat", "trichobezoar")
+        loc = b["localization"].lower()
+        self.assertIn("feline trichobezoar", loc)
+        self.assertIn("not a gastric-fb-alone", loc)
+        self.assertNotIn("feline gastric fb", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("laxative", joined)
+        self.assertIn("mineral-oil", joined)
+        self.assertIn("obstruct", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hairball_obstruction_fires_tricho(self):
+        b = analyze("cat", "hairball obstruction")
+        loc = b["localization"].lower()
+        self.assertIn("feline trichobezoar", loc)
+        self.assertIn("not a gastric-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hairball_fb_fires_tricho(self):
+        b = analyze("cat", "hairball FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline trichobezoar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_canine_trichobezoar_fires(self):
+        b = analyze("dog", "trichobezoar")
+        loc = b["localization"].lower()
+        self.assertIn("canine trichobezoar", loc)
+        self.assertIn("not a gastric-fb-alone", loc)
+        self.assertNotIn("feline trichobezoar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_trichobezoar_plus_intestinal_fb_concatenates(self):
+        b = analyze("cat", "trichobezoar, intestinal FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline trichobezoar", loc)
+        self.assertIn("feline intestinal fb", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_fb_is_not_trichobezoar(self):
+        b = analyze("cat", "gastric FB")
+        loc = b["localization"].lower()
+        self.assertIn("feline gastric fb", loc)
+        self.assertNotIn("feline trichobezoar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hairball_is_not_trichobezoar(self):
+        b = analyze("cat", "hairball")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline trichobezoar", loc)
+        self.assertNotIn("not a gastric-fb-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_trichobezoar(self):
+        b = analyze("horse", "trichobezoar")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine trichobezoar", loc)
+        self.assertNotIn("feline trichobezoar", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

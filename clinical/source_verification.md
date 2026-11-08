@@ -4925,3 +4925,30 @@ Night rule: named colonic FB → **Canine colonic FB. Not an intestinal-FB-alone
 - Attending: If the query is only “intestinal FB,” why does this gate stay dark?
 - Attending: Horse colonic FB — fire or skip?
 - Attending: Dual-named “rectal FB” — fire or stay dark, and why?
+
+## 342. Feline trichobezoar (Winkler Merck Aug 2025)
+
+No dedicated Plunkett trichobezoar chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (cats can also develop intraluminal obstructions secondary to trichobezoars). Merck owner Vomiting in Cats (hair cannot be digested; a hairball / trichobezoar can irritate the stomach or block the digestive tract; longhaired breeds are at greater risk; repeated vomiting is not a hairball-alone; printed mineral-oil lines stay on the page). Do not harvest a laxative or mineral-oil table as lobby law. Do not fire on gastric FB (339). Do not fire on intestinal FB (340). Do not fire on linear FB (331). Do not fire on \bhairball\b alone. Dogs and cats. Skip horse.
+
+Agree with Winkler / Merck owner: **named trichobezoar is not a gastric-FB-alone.** Fluids. Films or US. Endoscopy or explore if it obstructs. Printed mineral-oil numbers stay on the page (`△ Plumb`).
+
+Night split: named trichobezoar / hairball obstruction / hairball FB is feline (or canine) trichobezoar; not a gastric-FB-alone. Bare hairball stay unnamed. Gastric FB stay 339. Horse does not fire. Dual trichobezoar plus intestinal FB concatenates 340 then 342.
+
+Book/public traps:
+
+- Do not harvest a laxative table.
+- Do not harvest a mineral-oil table.
+- Do not call this a gastric-FB-alone.
+- Do not send named trichobezoar home on mineral oil.
+- Do not skip films because it is only hair.
+
+Night rule: named trichobezoar → **Feline trichobezoar. Not a gastric-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is an obstructing hairball not a gastric-FB-alone?
+- NAVLE 2: Why is repeated vomiting not a mineral-oil night?
+- NAVLE 3: Dual-named “trichobezoar, intestinal FB” — which loc should win, and why?
+- Oral: How do you tell the owner a hairball can obstruct, without inventing a laxative table?
+- Attending: If the query is only “hairball,” why does this gate stay dark?
+- Attending: Horse trichobezoar — fire or skip?
+- Attending: Dual-named “gastric FB” — 339 or this loc, and why?

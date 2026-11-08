@@ -278,6 +278,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-gastfb` | Assessment | Canine gastric FB / not a gastritis-alone |
 | `ddx-intfb` | Assessment | Canine intestinal FB / not a gastric-FB-alone |
 | `ddx-colfb` | Assessment | Canine colonic FB / not an intestinal-FB-alone |
+| `ddx-tricho` | Assessment | Feline trichobezoar / not a gastric-FB-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -309,6 +310,7 @@ Suggested names are short so they show up after three letters.
 | `dc-gastfb` | Discharge | After gastric FB / endoscopy talk |
 | `dc-intfb` | Discharge | After intestinal FB / explore talk |
 | `dc-colfb` | Discharge | After colonic FB / endoscopy talk |
+| `dc-tricho` | Discharge | After trichobezoar / hairball talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4019,6 +4021,21 @@ DDX:
 Do not: harvest a colotomy table. Call this an intestinal-FB-alone. Open the colon as the default. Send this home as constipation-alone.
 Do next: Name canine colonic FB. Not an intestinal-FB-alone. △ Plumb. Fluids. Endoscopy if it is causing signs. Do not copy a colotomy table.
 
+### `ddx-tricho`
+
+Trichobezoar — {{patient.name}}
+Feline trichobezoar [yes / not]. Not a gastric-FB-alone [yes / not]. Obstructing [ ]. Repeated vomiting [ ]. Films / US [ ]. Endoscopy or explore [ ].
+
+DDX:
+1. Trichobezoar — **Feline trichobezoar. Not a gastric-FB-alone**
+2. Cats can obstruct on a hairball. Repeated vomiting is not a hairball-alone. Fluids. Films or US
+3. Packet 339 owns gastric FB. Packet 340 owns intestinal FB. Packet 331 owns linear FB. Bare hairball stay unnamed
+4. Do not send this home on mineral oil. Do not skip films because it is only hair
+5. Dog or cat can fire. Horse does not fire. Do not copy a laxative table
+
+Do not: harvest a laxative table. Harvest a mineral-oil table. Call this a gastric-FB-alone. Send this home on mineral oil.
+Do next: Name feline trichobezoar. Not a gastric-FB-alone. △ Plumb. Fluids. Films or US. Endoscopy or explore if it obstructs. Do not copy a laxative table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4280,6 +4297,14 @@ Return now for repeated vomiting, a painful belly, fever, collapse, or not being
 Colon objects are often found by chance and may not need removal. If it was causing signs, endoscopy is preferred over opening the colon. Give only the medicines we sent, as labeled.
 
 Return now for straining without stool, a painful belly, vomiting, or collapse. {{location.phonenumber}}
+
+### `dc-tricho`
+
+{{patient.name}} had a hairball mass (trichobezoar). Hair is not digestible. This is not ordinary hairball vomiting and not a stomach toy that we can always leave to pass.
+
+If the mass was blocking the gut, we treated it as an obstruction. Brushing helps prevent the next one. Give only the medicines we sent, as labeled. Do not add mineral oil at home unless we wrote it.
+
+Return now for repeated vomiting, a painful belly, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

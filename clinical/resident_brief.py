@@ -2278,6 +2278,17 @@ COLFB_DX_RE = re.compile(
     r"colorectal (foreign body|\bfb\b)",
     re.I,
 )
+# Named trichobezoar / hairball obstruction / hairball FB only.
+# Do not use gastric FB (339). Do not use intestinal FB (340). Do not
+# use \bhairball\b alone. Do not harvest a laxative or mineral-oil table.
+# Dogs and cats. Skip horse. Packet 339 still owns gastric FB.
+TRICHO_DX_RE = re.compile(
+    r"trichobezoar|"
+    r"hairball obstruction|"
+    r"hairball (foreign body|\bfb\b)|"
+    r"hair[- ]ball obstruction",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6461,6 +6472,7 @@ def analyze(
     steal_gastfb_dx = GASTFB_DX_RE.search(text)
     steal_intfb_dx = INTFB_DX_RE.search(text)
     steal_colfb_dx = COLFB_DX_RE.search(text)
+    steal_tricho_dx = TRICHO_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6604,6 +6616,7 @@ def analyze(
         or steal_gastfb_dx
         or steal_intfb_dx
         or steal_colfb_dx
+        or steal_tricho_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17891,6 +17904,58 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for colonic FB."
+            )
+
+    tricho_named = spec in {"dog", "cat"} and TRICHO_DX_RE.search(text)
+    if tricho_named:
+        if spec == "cat":
+            tricho_loc = "Feline trichobezoar. Not a gastric-FB-alone."
+        else:
+            tricho_loc = "Canine trichobezoar. Not a gastric-FB-alone."
+        localization = (
+            f"{localization} Also {tricho_loc}" if localization else tricho_loc
+        )
+        hard_stops.append(
+            "Do not harvest a laxative table. "
+            "Do not harvest a mineral-oil table. "
+            "An obstructing trichobezoar is still a GI obstruction. "
+            "Repeated vomiting is not a hairball-alone."
+        )
+        do_not.append(
+            "Do not call this a gastric-FB-alone. "
+            "Do not send named trichobezoar home on mineral oil. "
+            "Do not copy a hairball-treat table as lobby law. "
+            "Do not skip films because it is only hair."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline trichobezoar. Not a gastric-FB-alone. "
+                "△ Plumb. Fluids. Films or US. Endoscopy or explore if it obstructs. "
+                "Do not copy a laxative table."
+            )
+        else:
+            do_next.append(
+                "Name canine trichobezoar. Not a gastric-FB-alone. "
+                "△ Plumb. Fluids. Films or US. Endoscopy or explore if it obstructs. "
+                "Do not copy a laxative table."
+            )
+        sources.append(
+            "Winkler Merck GI obstruction Aug 2025: cats can develop "
+            "intraluminal obstruction from trichobezoars. Merck owner "
+            "vomiting-in-cats: hair cannot be digested; a hairball can "
+            "irritate the stomach or block the tract; longhaired cats are "
+            "at greater risk; repeated vomiting is not a hairball-alone. "
+            "Printed mineral-oil lines stay on the page. Packet 339 gastric "
+            "FB. Packet 340 intestinal FB. Packet 331 linear FB. Do not "
+            "harvest a laxative table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for trichobezoar."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for trichobezoar."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
