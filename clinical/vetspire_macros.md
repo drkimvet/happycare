@@ -282,6 +282,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-megacol` | Assessment | Feline megacolon / not a colonic-FB-alone |
 | `ddx-colitis` | Assessment | Feline colitis / not a megacolon-alone |
 | `ddx-tritrich` | Assessment | Feline tritrichomonas / not a colitis-alone |
+| `ddx-giardia` | Assessment | Feline giardia / not a tritrichomonas-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -317,6 +318,7 @@ Suggested names are short so they show up after three letters.
 | `dc-megacol` | Discharge | After megacolon / obstipation talk |
 | `dc-colitis` | Discharge | After colitis / large-bowel talk |
 | `dc-tritrich` | Discharge | After Tritrichomonas / PCR talk |
+| `dc-giardia` | Discharge | After Giardia / fecal talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4087,6 +4089,21 @@ DDX:
 Do not: harvest a ronidazole table. Call this a colitis-alone. Call this Giardia-alone. Treat a dry fecal smear as T. foetus.
 Do next: Name feline tritrichomonas. Not a colitis-alone. △ Plumb. Very fresh smear or PCR. Do not copy a ronidazole table.
 
+### `ddx-giardia`
+
+Giardia — {{patient.name}}
+Feline giardia [yes / not]. Not a tritrichomonas-alone [yes / not]. Several fecals / antigen [ ]. Fatty mucus stool [ ]. Tritrichomonas [ ]. AHDS [ ].
+
+DDX:
+1. Giardia — **Feline giardia. Not a tritrichomonas-alone**
+2. Small-intestine malabsorption. Pale, fatty, mucus stool. Watery diarrhea and blood are unusual. Cysts shed intermittently
+3. Packet 345 owns Tritrichomonas. Packet 344 owns colitis. Trophozoites are not trichomonads. Zoonotic transmission is relatively rare by assemblage
+4. Hygiene. Bathe. Do not send this home as AHDS
+5. Dog or cat can fire. Horse does not fire. Do not copy a fenbendazole table
+
+Do not: harvest a fenbendazole table. Harvest a metronidazole table. Call this a tritrichomonas-alone. Confuse trophozoites with trichomonads.
+Do next: Name feline giardia. Not a tritrichomonas-alone. △ Plumb. Several fecals or antigen. Hygiene. Bathe. Do not copy a fenbendazole table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4380,6 +4397,14 @@ Return now for black stool, repeated vomiting, collapse, or not being able to ke
 PCR is how we confirm the organism. A look at a dry smear is not enough. Give only the medicines we sent, as labeled. Keep the litter box clean. Do not add ronidazole at home unless we wrote it.
 
 Return now for worsening diarrhea, straining with blood, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-giardia`
+
+{{patient.name}} has Giardia, a small-intestine protozoa. This is not Tritrichomonas of the large bowel and not shocky bloody diarrhea.
+
+Stool is often pale, fatty, and mucusy. One fecal can miss it because cysts come and go. Give only the medicines we sent, as labeled. Pick up stool promptly. A bath helps remove cysts from the coat.
+
+Return now for watery or bloody diarrhea, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

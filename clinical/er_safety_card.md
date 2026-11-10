@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline giardia (Merck Robertson May 2026)
+
+- **Feline giardia. Not a tritrichomonas-alone.** Named Giardia / giardiasis / G. duodenalis only. Small-intestine malabsorption. Pale, fatty, mucus stool. Watery diarrhea and blood are unusual. Cysts shed intermittently: several fecals or antigen. Trophozoites are not trichomonads. Hygiene. Bathe. Do **not** harvest a fenbendazole table. Do **not** harvest a metronidazole table. Do **not** send named Giardia home as AHDS.
+- Dogs: same named loc as canine giardia. Packet 345 still owns Tritrichomonas. Packet 344 still owns colitis. Zoonotic transmission is relatively rare by assemblage. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline tritrichomonas (Merck Collier Jun 2025)
 
 - **Feline tritrichomonas. Not a colitis-alone.** Named Tritrichomonas / T. foetus / T. blagburni / tritrichomonas diarrhea only. Typically large-bowel diarrhea in cats. PCR is the diagnosis conversation. A fresh smear is not species-specific (Pentatrichomonas). Do **not** harvest a ronidazole table. Do **not** call this Giardia-alone. Do **not** send named Tritrichomonas home as diet-responsive colitis.

@@ -5035,3 +5035,30 @@ Night rule: named Tritrichomonas → **Feline tritrichomonas. Not a colitis-alon
 - Attending: If the query is only “colitis,” why does this gate stay dark?
 - Attending: Dog Tritrichomonas — fire or skip?
 - Attending: Dual-named cattle “T. foetus” — this loc or reproductive, and why?
+
+## 346. Feline giardia (Robertson Merck May 2026)
+
+No dedicated Plunkett giardia chapter in the owned SA EM splits. Public Robertson L. Giardiasis in Animals. Merck Veterinary Manual. Full review May 2026; last updated May 2026 (G. duodenalis; small intestine; pale fatty mucus stool; watery diarrhea and blood are unusual; cysts shed intermittently so several fecal examinations; antigen if cysts are missed; trophozoites are not trichomonads; fenbendazole is first-line where licensed; no drugs approved for cats in the US; zoonotic transmission is relatively rare by assemblage). Do not harvest a fenbendazole or metronidazole table as lobby law. Do not fire on Tritrichomonas (345). Do not fire on colitis without Giardia (344). Dogs and cats. Skip horse.
+
+Agree with Robertson: **named Giardia is not a tritrichomonas-alone.** Several fecals or antigen. Hygiene. Bathe. Printed fenbendazole / metronidazole numbers stay on the page (`△ Plumb`).
+
+Night split: named Giardia / giardiasis / G. duodenalis is feline (or canine) giardia; not a tritrichomonas-alone. Bare colitis stay 344. Tritrichomonas stay 345. Horse does not fire. Dual Giardia plus Tritrichomonas concatenates 345 then 346.
+
+Book/public traps:
+
+- Do not harvest a fenbendazole table.
+- Do not harvest a metronidazole table.
+- Do not call this a tritrichomonas-alone.
+- Do not confuse trophozoites with trichomonads.
+- Do not send named Giardia home as AHDS.
+
+Night rule: named Giardia → **Feline giardia. Not a tritrichomonas-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is fatty mucus diarrhea not a tritrichomonas-alone?
+- NAVLE 2: Why is one negative fecal not a rule-out?
+- NAVLE 3: Dual-named “Giardia, Tritrichomonas” — which loc should win, and why?
+- Oral: How do you tell the owner cysts shed on and off, without inventing a fenbendazole table?
+- Attending: If the query is only “colitis,” why does this gate stay dark?
+- Attending: Horse giardia — fire or skip?
+- Attending: Dual-named “Tritrichomonas” — 345 or this loc, and why?

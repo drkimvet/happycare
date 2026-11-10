@@ -11916,6 +11916,60 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline tritrichomonas", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_giardia_is_not_a_tritrichomonas_alone(self):
+        b = analyze("cat", "Giardia")
+        loc = b["localization"].lower()
+        self.assertIn("feline giardia", loc)
+        self.assertIn("not a tritrichomonas-alone", loc)
+        self.assertNotIn("feline tritrichomonas", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("fenbendazole", joined)
+        self.assertIn("intermittent", joined)
+        self.assertIn("antigen", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_giardiasis_fires_giardia(self):
+        b = analyze("dog", "giardiasis")
+        loc = b["localization"].lower()
+        self.assertIn("canine giardia", loc)
+        self.assertIn("not a tritrichomonas-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_g_duodenalis_fires_giardia(self):
+        b = analyze("cat", "G. duodenalis")
+        loc = b["localization"].lower()
+        self.assertIn("feline giardia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_giardia_plus_tritrichomonas_concatenates(self):
+        b = analyze("cat", "Giardia, Tritrichomonas")
+        loc = b["localization"].lower()
+        self.assertIn("feline tritrichomonas", loc)
+        self.assertIn("feline giardia", loc)
+        self.assertIn("not a tritrichomonas-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tritrichomonas_is_not_giardia(self):
+        b = analyze("cat", "Tritrichomonas")
+        loc = b["localization"].lower()
+        self.assertIn("feline tritrichomonas", loc)
+        self.assertNotIn("feline giardia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_colitis_is_not_giardia(self):
+        b = analyze("cat", "colitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline colitis", loc)
+        self.assertNotIn("feline giardia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_giardia(self):
+        b = analyze("horse", "Giardia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine giardia", loc)
+        self.assertNotIn("feline giardia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

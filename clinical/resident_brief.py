@@ -2321,6 +2321,16 @@ TRITRICH_DX_RE = re.compile(
     r"\bt\.?\s*blagburni\b",
     re.I,
 )
+# Named Giardia / giardiasis / G. duodenalis only. Do not use
+# Tritrichomonas (345). Do not use colitis without Giardia (344).
+# Do not harvest a fenbendazole or metronidazole table. Dogs and cats.
+# Skip horse. Packet 345 still owns Tritrichomonas.
+GIARDIA_DX_RE = re.compile(
+    r"\bgiardia|"
+    r"\bgiardiasis\b|"
+    r"\bg\.?\s*(?:duodenalis|intestinalis|lamblia)\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6508,6 +6518,7 @@ def analyze(
     steal_megacol_dx = MEGACOL_DX_RE.search(text)
     steal_colitis_dx = COLITIS_DX_RE.search(text)
     steal_tritrich_dx = TRITRICH_DX_RE.search(text)
+    steal_giardia_dx = GIARDIA_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6655,6 +6666,7 @@ def analyze(
         or steal_megacol_dx
         or steal_colitis_dx
         or steal_tritrich_dx
+        or steal_giardia_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18140,6 +18152,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for Tritrichomonas."
+            )
+
+    giardia_named = spec in {"dog", "cat"} and GIARDIA_DX_RE.search(text)
+    if giardia_named:
+        if spec == "cat":
+            giardia_loc = "Feline giardia. Not a tritrichomonas-alone."
+        else:
+            giardia_loc = "Canine giardia. Not a tritrichomonas-alone."
+        localization = (
+            f"{localization} Also {giardia_loc}" if localization else giardia_loc
+        )
+        hard_stops.append(
+            "Do not harvest a fenbendazole table. "
+            "Do not harvest a metronidazole table. "
+            "Cysts shed intermittently. Several fecals or antigen. "
+            "Do not treat a SNAP-alone as the night diagnosis."
+        )
+        do_not.append(
+            "Do not call this a tritrichomonas-alone. "
+            "Do not copy a fenbendazole table as lobby law. "
+            "Do not confuse trophozoites with trichomonads. "
+            "Do not send named Giardia home as AHDS."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline giardia. Not a tritrichomonas-alone. "
+                "△ Plumb. Several fecals or antigen. Hygiene. Bathe. "
+                "Do not copy a fenbendazole table."
+            )
+        else:
+            do_next.append(
+                "Name canine giardia. Not a tritrichomonas-alone. "
+                "△ Plumb. Several fecals or antigen. Hygiene. Bathe. "
+                "Do not copy a fenbendazole table."
+            )
+        sources.append(
+            "Robertson Merck giardiasis May 2026: G. duodenalis; small "
+            "intestine; pale fatty mucus stool; watery diarrhea and blood "
+            "are unusual; cysts shed intermittently so several fecals; "
+            "antigen if cysts are missed; trophozoites are not "
+            "trichomonads; zoonotic transmission is relatively rare by "
+            "assemblage. Packet 345 Tritrichomonas. Packet 344 colitis. "
+            "Do not harvest fenbendazole or metronidazole tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for Giardia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for Giardia."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):
