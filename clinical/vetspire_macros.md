@@ -281,6 +281,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tricho` | Assessment | Feline trichobezoar / not a gastric-FB-alone |
 | `ddx-megacol` | Assessment | Feline megacolon / not a colonic-FB-alone |
 | `ddx-colitis` | Assessment | Feline colitis / not a megacolon-alone |
+| `ddx-tritrich` | Assessment | Feline tritrichomonas / not a colitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -315,6 +316,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tricho` | Discharge | After trichobezoar / hairball talk |
 | `dc-megacol` | Discharge | After megacolon / obstipation talk |
 | `dc-colitis` | Discharge | After colitis / large-bowel talk |
+| `dc-tritrich` | Discharge | After Tritrichomonas / PCR talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4070,6 +4072,21 @@ DDX:
 Do not: harvest a sulfasalazine table. Harvest an enema table. Call this a megacolon-alone. Send this home as AHDS.
 Do next: Name feline colitis. Not a megacolon-alone. △ Plumb. Fecal. Diet trial if stable. Deworm. Do not copy a sulfasalazine table.
 
+### `ddx-tritrich`
+
+Tritrichomonas — {{patient.name}}
+Feline tritrichomonas [yes / not]. Not a colitis-alone [yes / not]. PCR [ ]. Fresh smear [ ]. Pentatrichomonas [ ]. Giardia [ ]. Ronidazole [ ].
+
+DDX:
+1. Tritrichomonas — **Feline tritrichomonas. Not a colitis-alone**
+2. Typically large-bowel diarrhea in cats. PCR is the diagnosis conversation. A fresh smear is not species-specific
+3. Packet 344 owns colitis without the organism. Cattle T. foetus stays reproductive. Do not call this Giardia-alone
+4. Do not send this home as diet-responsive colitis. Do not treat a dry fecal smear as T. foetus
+5. Cat can fire. Dog, horse, and cattle do not fire this loc. Do not copy a ronidazole table
+
+Do not: harvest a ronidazole table. Call this a colitis-alone. Call this Giardia-alone. Treat a dry fecal smear as T. foetus.
+Do next: Name feline tritrichomonas. Not a colitis-alone. △ Plumb. Very fresh smear or PCR. Do not copy a ronidazole table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4355,6 +4372,14 @@ Return now for straining without stool, vomiting, a painful belly, or collapse. 
 Stool is often small, frequent, with mucus or fresh blood, and straining. Deworming can still be indicated even if one fecal was negative. Give only the medicines we sent, as labeled. The diet we named is the trial. Water always available.
 
 Return now for black stool, repeated vomiting, collapse, or not being able to keep water down. {{location.phonenumber}}
+
+### `dc-tritrich`
+
+{{patient.name}} has Tritrichomonas, a protozoal cause of large-bowel diarrhea in cats. This is not ordinary colitis and not Giardia of the small intestine.
+
+PCR is how we confirm the organism. A look at a dry smear is not enough. Give only the medicines we sent, as labeled. Keep the litter box clean. Do not add ronidazole at home unless we wrote it.
+
+Return now for worsening diarrhea, straining with blood, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

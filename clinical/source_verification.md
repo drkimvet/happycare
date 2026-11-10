@@ -5008,3 +5008,30 @@ Night rule: named colitis → **Feline colitis. Not a megacolon-alone.** △ Plu
 - Attending: If the query is only “constipation,” why does this gate stay dark?
 - Attending: Horse colitis — this loc or equine isolate, and why?
 - Attending: Dual-named “AHDS” — AHDS or this loc, and why?
+
+## 345. Feline tritrichomonas (Collier Merck Jun 2025)
+
+No dedicated Plunkett tritrichomonas chapter in the owned SA EM splits. Public Collier A. Colitis in Small Animals. Merck Veterinary Manual. Full review Jun 2025 (test Tritrichomonas foetus in cats by PCR). Collier A. Malabsorption Syndromes in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (Tritrichomonas typically causes colitis in cats rather than malabsorption; PCR is best). Merck parasitology in veterinary practice (direct smear on very fresh feces within 20 minutes detects T. blagburni trophozoites but cannot split them from nonpathogenic Pentatrichomonas; culture then PCR confirms). Do not harvest a ronidazole table as lobby law. Do not fire on colitis without the organism (344). Cats only. Skip dog, horse, and cattle.
+
+Agree with Collier / parasitology: **named Tritrichomonas is not a colitis-alone.** PCR. Fresh smear is not species-specific. Printed ronidazole numbers stay off the card (`△ Plumb`).
+
+Night split: named Tritrichomonas / T. foetus / T. blagburni is feline tritrichomonas; not a colitis-alone. Bare colitis stay 344. Cattle T. foetus stay reproductive. Horse does not fire. Dual Tritrichomonas plus colitis concatenates 344 then 345.
+
+Book/public traps:
+
+- Do not harvest a ronidazole table.
+- Do not call this a colitis-alone.
+- Do not call this Giardia-alone.
+- Do not treat a dry fecal smear as T. foetus.
+- Do not send named Tritrichomonas home as diet-responsive colitis.
+
+Night rule: named Tritrichomonas → **Feline tritrichomonas. Not a colitis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is kitten large-bowel diarrhea with Tritrichomonas not a colitis-alone?
+- NAVLE 2: Why is a wet-mount trophozoite not enough to name T. foetus?
+- NAVLE 3: Dual-named “Tritrichomonas, colitis” — which loc should win, and why?
+- Oral: How do you tell the owner PCR is the conversation, without inventing a ronidazole table?
+- Attending: If the query is only “colitis,” why does this gate stay dark?
+- Attending: Dog Tritrichomonas — fire or skip?
+- Attending: Dual-named cattle “T. foetus” — this loc or reproductive, and why?

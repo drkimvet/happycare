@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline tritrichomonas (Merck Collier Jun 2025)
+
+- **Feline tritrichomonas. Not a colitis-alone.** Named Tritrichomonas / T. foetus / T. blagburni / tritrichomonas diarrhea only. Typically large-bowel diarrhea in cats. PCR is the diagnosis conversation. A fresh smear is not species-specific (Pentatrichomonas). Do **not** harvest a ronidazole table. Do **not** call this Giardia-alone. Do **not** send named Tritrichomonas home as diet-responsive colitis.
+- Cats only. Packet 344 still owns colitis without the organism. Cattle T. foetus stays reproductive. Skip dog and horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline colitis (Merck Collier Jun 2025)
 
 - **Feline colitis. Not a megacolon-alone.** Named colitis / large-bowel diarrhea / large intestinal inflammation only. Mucus, hematochezia, tenesmus, urgency. Deworm even if the fecal is negative. Diet trial if stable. Sulfasalazine is **not** for cats. Do **not** harvest a sulfasalazine table. Do **not** harvest an enema table. Do **not** shotgun antimicrobials onto every large-bowel night. Do **not** send named colitis home as AHDS. Tritrichomonas stays on the cat list.

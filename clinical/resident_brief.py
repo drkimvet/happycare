@@ -2311,6 +2311,16 @@ COLITIS_DX_RE = re.compile(
     r"large[- ]bowel inflammation",
     re.I,
 )
+# Named Tritrichomonas / T. foetus / T. blagburni / tritrichomonas
+# diarrhea only. Do not use colitis without the organism (344). Do not
+# harvest a ronidazole table. Cats. Skip dog, horse, cattle.
+# Packet 344 still owns colitis. Cattle T. foetus stays reproductive.
+TRITRICH_DX_RE = re.compile(
+    r"\btritrichomon|"
+    r"\bt\.?\s*foetus\b|"
+    r"\bt\.?\s*blagburni\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6497,6 +6507,7 @@ def analyze(
     steal_tricho_dx = TRICHO_DX_RE.search(text)
     steal_megacol_dx = MEGACOL_DX_RE.search(text)
     steal_colitis_dx = COLITIS_DX_RE.search(text)
+    steal_tritrich_dx = TRITRICH_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6643,6 +6654,7 @@ def analyze(
         or steal_tricho_dx
         or steal_megacol_dx
         or steal_colitis_dx
+        or steal_tritrich_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18086,6 +18098,48 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for colitis."
+            )
+
+    tritrich_named = spec == "cat" and TRITRICH_DX_RE.search(text)
+    if tritrich_named:
+        tritrich_loc = "Feline tritrichomonas. Not a colitis-alone."
+        localization = (
+            f"{localization} Also {tritrich_loc}" if localization else tritrich_loc
+        )
+        hard_stops.append(
+            "Do not harvest a ronidazole table. "
+            "PCR is the diagnosis conversation. "
+            "A fresh smear is not species-specific. "
+            "Do not call this Giardia-alone."
+        )
+        do_not.append(
+            "Do not call this a colitis-alone. "
+            "Do not copy a ronidazole table as lobby law. "
+            "Do not treat a dry fecal smear as T. foetus. "
+            "Do not send named Tritrichomonas home as diet-responsive colitis."
+        )
+        do_next.append(
+            "Name feline tritrichomonas. Not a colitis-alone. "
+            "△ Plumb. Very fresh smear or PCR. "
+            "Do not copy a ronidazole table."
+        )
+        sources.append(
+            "Collier Merck colitis Jun 2025: test Tritrichomonas foetus in "
+            "cats by PCR. Collier Merck malabsorption Aug 2025: "
+            "Tritrichomonas typically causes colitis in cats, not "
+            "malabsorption; PCR is best. Merck parasitology: T. blagburni "
+            "trophozoites on a smear within 20 minutes cannot be split "
+            "from Pentatrichomonas; culture then PCR confirms. Packet 344 "
+            "colitis. Cattle T. foetus stays reproductive. Do not harvest "
+            "a ronidazole table."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for Tritrichomonas."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for Tritrichomonas."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

@@ -11856,6 +11856,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a megacolon-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_tritrichomonas_is_not_a_colitis_alone(self):
+        b = analyze("cat", "Tritrichomonas")
+        loc = b["localization"].lower()
+        self.assertIn("feline tritrichomonas", loc)
+        self.assertIn("not a colitis-alone", loc)
+        self.assertNotIn("feline colitis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("ronidazole", joined)
+        self.assertIn("pcr", joined)
+        self.assertIn("giardia", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_t_foetus_fires_tritrich(self):
+        b = analyze("cat", "T. foetus")
+        loc = b["localization"].lower()
+        self.assertIn("feline tritrichomonas", loc)
+        self.assertIn("not a colitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_t_blagburni_fires_tritrich(self):
+        b = analyze("cat", "T. blagburni")
+        loc = b["localization"].lower()
+        self.assertIn("feline tritrichomonas", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tritrichomonas_plus_colitis_concatenates(self):
+        b = analyze("cat", "Tritrichomonas, colitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline colitis", loc)
+        self.assertIn("feline tritrichomonas", loc)
+        self.assertIn("not a colitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_colitis_is_not_tritrichomonas(self):
+        b = analyze("cat", "colitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline colitis", loc)
+        self.assertNotIn("feline tritrichomonas", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_is_not_tritrichomonas(self):
+        b = analyze("dog", "Tritrichomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline tritrichomonas", loc)
+        self.assertNotIn("not a colitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cattle_t_foetus_is_not_feline_tritrich(self):
+        b = analyze("cattle", "T. foetus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline tritrichomonas", loc)
+        self.assertNotIn("not a colitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tritrichomonas(self):
+        b = analyze("horse", "Tritrichomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline tritrichomonas", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
