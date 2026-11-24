@@ -5146,3 +5146,31 @@ Night rule: named metronidazole plus neuro signs → **Canine metronidazole neur
 - Attending: If the query is only “vestibular,” why does this gate stay dark?
 - Attending: Horse metronidazole — fire or skip?
 - Attending: Tetanus plus metronidazole — tetanus or this loc, and why?
+
+## 350. Canine NSAID-steroid stack (Edwards Merck May 2025 / Blois Aug 2025)
+
+No dedicated Plunkett NSAID-plus-steroid chapter in the owned SA EM splits (the ulcer split already says stop the NSAID and do not stack). Public Edwards S.H. Nonsteroidal Anti-inflammatory Drugs in Animals. Merck Veterinary Manual. Full review Nov 2021; last updated Sept 2024 (GI ulceration is the most common life-threatening NSAID adverse effect; renal toxicity from COX-1; COX-2-selective is not zero-ulcer). Edwards S.H. Corticosteroids in Animals. Full review Nov 2021; last updated May 2025 (glucocorticoids potentiate the ulcerogenic effects of NSAIDs). Blois S. Gastrointestinal Ulcers in Small Animals. Full review Jan 2025; last updated Aug 2025 (combining NSAID and corticosteroid therapies increases GI ulceration risk and is contraindicated). Do not harvest an NSAID, pred, sucralfate, or omeprazole table as lobby law. Do not fire on bare NSAID (azotemia gate). Do not fire on bare pred. Do not fire on named gastric ulcer without the stack (335). Do not fire on named perforation without the stack (336). Dogs and cats. Skip horse.
+
+Agree with Blois and Edwards: **named NSAID plus glucocorticoid is not an ulcer-alone.** Stop the stack. Printed PPI / sucralfate / NSAID / pred numbers stay on the page (`△ Plumb`).
+
+Night split: named NSAID (including aspirin) plus glucocorticoid / corticosteroid / pred / DexSP is canine (or feline) NSAID-steroid stack; not an ulcer-alone. Bare ulcer stays 335. Bare perforation stays 336. Bare NSAID stays the azotemia/NSAID gate. Bare pred stays dark. Horse does not fire. Dual gastric-ulcer plus carprofen plus prednisone concatenates 335 then 350.
+
+Book/public traps:
+
+- Do not harvest an NSAID table.
+- Do not harvest a pred table.
+- Do not harvest a sucralfate or omeprazole table as if the stack were allowed.
+- Do not call this an ulcer-alone.
+- Do not send the stack home as better analgesia.
+- Do not treat COX-2-selective as a license to stack.
+
+Night rule: named NSAID plus glucocorticoid → **Canine NSAID-steroid stack. Not an ulcer-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is carprofen plus prednisone not better analgesia?
+- NAVLE 2: Why does a named gastric ulcer without the stack stay 335, not this loc?
+- NAVLE 3: Dual-named “gastric ulcer, carprofen, prednisone” — which loc should win, and why?
+- Oral: How do you tell the owner you are stopping one of the two drugs, without inventing a sucralfate table?
+- Attending: If the query is only “carprofen,” why does this gate stay dark?
+- Attending: Horse phenylbutazone plus dex — this loc or skip, and why?
+- Attending: COX-2-selective plus pred — still this loc, and why?

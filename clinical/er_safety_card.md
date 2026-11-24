@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine NSAID-steroid stack (Merck Edwards May 2025 / Blois Aug 2025)
+
+- **Canine NSAID-steroid stack. Not an ulcer-alone.** Named NSAID (including aspirin) plus glucocorticoid / corticosteroid / pred / DexSP only. Combining them increases GI ulceration risk and is contraindicated. Glucocorticoids potentiate NSAID ulcers. COX-2-selective is not a license to stack. Kidney is on the same night. Stop the stack. Packet 335 still owns named gastric ulcer without the stack words. Packet 336 still owns named perforation. Do **not** harvest an NSAID table. Do **not** harvest a pred table. Do **not** harvest a sucralfate or omeprazole table as if the stack were allowed. Do **not** send the stack home as better analgesia. Bare NSAID stays the azotemia gate. Bare pred stays dark for this loc. Skip horse.
+- Cats: same named loc as feline NSAID-steroid stack. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine metronidazole neurotoxicity (Merck Mercer Sept 2025)
 
 - **Canine metronidazole neurotoxicity. Not a vestibular-alone.** Named metronidazole / metro / Flagyl plus ataxia, nystagmus, vestibular, tremor, seizure, convulsion, head tilt, rolling, or metro-tox only. High-dose metronidazole can cause canine neurotoxicity. Stop the drug. Supportive. Packet 137 still owns vestibular without the drug. Packet 346 still owns Giardia and does not harvest a metro table. Tetanus stays tetanus (metro is the antimicrobial, not this loc). Do **not** harvest a metronidazole mg/kg table. Do **not** harvest a diazepam table. Do **not** harvest oral diazepam for a cat (hepatic necrosis). Do **not** send named metronidazole neurotoxicity home as idiopathic geriatric vestibular. Bare metronidazole for Giardia / IBD / HE stays dark. Food-animal ELDU is prohibited. Skip horse.

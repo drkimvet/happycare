@@ -286,6 +286,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cryptosp` | Assessment | Feline cryptosporidium / not a giardia-alone |
 | `ddx-doxyeso` | Assessment | Feline doxycycline esophagitis / not a stricture-alone |
 | `ddx-metrotox` | Assessment | Canine metronidazole neurotoxicity / not a vestibular-alone |
+| `ddx-nsaidster` | Assessment | Canine NSAID-steroid stack / not an ulcer-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -325,6 +326,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cryptosp` | Discharge | After Cryptosporidium / fecal talk |
 | `dc-doxyeso` | Discharge | After doxycycline / esophagus talk |
 | `dc-metrotox` | Discharge | After metronidazole / neuro talk |
+| `dc-nsaidster` | Discharge | After NSAID / steroid stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4155,6 +4157,21 @@ DDX:
 Do not: harvest a metronidazole mg/kg table. Harvest a diazepam table. Harvest oral diazepam for a cat. Call this a vestibular-alone. Send named metronidazole neurotoxicity home as idiopathic geriatric vestibular.
 Do next: Name canine metronidazole neurotoxicity. Not a vestibular-alone. Stop the drug. Supportive. △ Plumb. Packet 137 still owns vestibular without the drug. Do not copy a metronidazole table.
 
+### `ddx-nsaidster`
+
+NSAID-steroid stack — {{patient.name}}
+Canine NSAID-steroid stack [yes / not]. Not an ulcer-alone [yes / not]. Stop the stack [ ]. Packet 335 ulcer [ ]. Packet 336 perforation [ ]. Azotemic [ ].
+
+DDX:
+1. NSAID plus glucocorticoid — **Canine NSAID-steroid stack. Not an ulcer-alone**
+2. Combining them increases GI ulceration risk and is contraindicated. Kidney is on the same night. Stop the stack
+3. Packet 335 owns named ulcer without the stack. Packet 336 owns named perforation. COX-2-selective is not a license to stack
+4. Do not send this home as better analgesia. Do not copy a sucralfate table as if the stack were allowed
+5. Dog or cat can fire. Horse does not fire. Bare NSAID or bare pred stays dark. Do not copy an NSAID table
+
+Do not: harvest an NSAID table. Harvest a pred table. Harvest a sucralfate or omeprazole table as if the stack were allowed. Call this an ulcer-alone. Send the stack home as better analgesia.
+Do next: Name canine NSAID-steroid stack. Not an ulcer-alone. Stop the stack. △ Plumb. Packet 335 still owns named ulcer. Packet 336 still owns named perforation. Do not copy an NSAID table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4480,6 +4497,14 @@ Return now for repeated regurgitation, refusing food, or coughing after eating. 
 We stopped that antibiotic. Give only the medicines we sent, as labeled. Keep {{patient.objectPronoun}} quiet and prevent falling.
 
 Return now for worsening ataxia, seizures, or inability to walk. {{location.phonenumber}}
+
+### `dc-nsaidster`
+
+{{patient.name}} was on both an NSAID pain medicine and a steroid. Those two together raise the risk of a stomach ulcer and can hurt the kidneys. This is not better pain control.
+
+We stopped the combination. Give only the medicines we sent, as labeled. Do not add leftover pain pills or leftover steroids from home.
+
+Return now for black stool, vomiting blood, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

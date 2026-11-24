@@ -12178,6 +12178,76 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline metronidazole neurotoxicity", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_nsaid_steroid_stack_is_not_an_ulcer_alone(self):
+        b = analyze("dog", "carprofen and prednisone")
+        loc = b["localization"].lower()
+        self.assertIn("canine nsaid-steroid stack", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertNotIn("canine gastric ulcer", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not stack", joined)
+        self.assertIn("nsaid table", joined)
+        self.assertIn("pred table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ulcer_plus_stack_concatenates(self):
+        b = analyze("dog", "gastric ulcer, carprofen, prednisone")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("canine nsaid-steroid stack", loc)
+        self.assertIn("not an addison-alone", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aspirin_prednisone_fires_stack(self):
+        b = analyze("dog", "aspirin and prednisone")
+        loc = b["localization"].lower()
+        self.assertIn("canine nsaid-steroid stack", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_nsaid_steroid_stack_fires(self):
+        b = analyze("cat", "meloxicam and dexamethasone")
+        loc = b["localization"].lower()
+        self.assertIn("feline nsaid-steroid stack", loc)
+        self.assertIn("not an ulcer-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_carprofen_is_not_stack(self):
+        b = analyze("dog", "carprofen")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine nsaid-steroid stack", loc)
+        self.assertNotIn("feline nsaid-steroid stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_prednisone_is_not_stack(self):
+        b = analyze("dog", "prednisone")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine nsaid-steroid stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gastric_ulcer_without_stack_is_not_nsaidster(self):
+        b = analyze("dog", "gastric ulcer")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertNotIn("canine nsaid-steroid stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cox2_selective_plus_pred_is_still_stack(self):
+        b = analyze("dog", "robenacoxib and prednisolone")
+        loc = b["localization"].lower()
+        self.assertIn("canine nsaid-steroid stack", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("cox-2-selective", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_nsaidster(self):
+        b = analyze("horse", "flunixin and dexamethasone")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine nsaid-steroid stack", loc)
+        self.assertNotIn("feline nsaid-steroid stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

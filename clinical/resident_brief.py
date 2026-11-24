@@ -39,6 +39,15 @@ NSAID_RE = re.compile(
     re.I,
 )
 DEX_RE = re.compile(r"\b(dexsp|dexamethasone|dexamethasone sp|azium)\b", re.I)
+# Named glucocorticoid / corticosteroid / pred / DexSP only. Do not use
+# \bsteroide? (steroid-responsive diarrhea, steroid drop). Packet 350
+# stacks this with NSAID_RE / ASPIRIN_RE. Do not harvest a pred table.
+GLUCOCORT_RE = re.compile(
+    r"\b(dexsp|dexamethasone|azium|"
+    r"pred(?:nisolone|nisone)?|"
+    r"glucocorticoid|corticosteroid)\b",
+    re.I,
+)
 CEFAZOLIN_CRI_RE = re.compile(r"\bcefazolin\b.*\bcri\b|\bcri\b.*\bcefazolin\b", re.I)
 DRAIN_RE = re.compile(r"\b(drain (the )?abdomen|abdominocentesis|peritoneal drain|tap the belly)\b", re.I)
 AZOTEMIA_RE = re.compile(r"\b(aki|azotem|creatinine|iris|hydroneph|pyoneph|ureter)\b", re.I)
@@ -6631,6 +6640,10 @@ def analyze(
         and METROTOX_SIGN_RE.search(text)
         and not TETANUS_RE.search(text)
     )
+    steal_nsaidster_dx = (
+        (NSAID_RE.search(text) or ASPIRIN_RE.search(text))
+        and GLUCOCORT_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6782,6 +6795,7 @@ def analyze(
         or steal_cryptosp_dx
         or steal_doxyeso_dx
         or steal_metrotox_dx
+        or steal_nsaidster_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17871,6 +17885,61 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for GI perforation."
+            )
+
+    nsaidster_named = (
+        spec in {"dog", "cat"}
+        and (NSAID_RE.search(text) or ASPIRIN_RE.search(text))
+        and GLUCOCORT_RE.search(text)
+    )
+    if nsaidster_named:
+        if spec == "cat":
+            nsaidster_loc = "Feline NSAID-steroid stack. Not an ulcer-alone."
+        else:
+            nsaidster_loc = "Canine NSAID-steroid stack. Not an ulcer-alone."
+        localization = (
+            f"{localization} Also {nsaidster_loc}" if localization else nsaidster_loc
+        )
+        hard_stops.append(
+            "Do not stack an NSAID with a glucocorticoid. "
+            "Do not harvest an NSAID table. "
+            "Do not harvest a pred table. "
+            "The stack is GI ulceration and kidney until proven otherwise."
+        )
+        do_not.append(
+            "Do not call this an ulcer-alone. "
+            "Do not send the stack home as better analgesia. "
+            "Do not copy a sucralfate or omeprazole table as if the stack were allowed. "
+            "Do not treat COX-2-selective as a license to stack."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline NSAID-steroid stack. Not an ulcer-alone. "
+                "Stop the stack. △ Plumb. Packet 335 still owns named ulcer. "
+                "Packet 336 still owns named perforation. "
+                "Do not copy an NSAID table."
+            )
+        else:
+            do_next.append(
+                "Name canine NSAID-steroid stack. Not an ulcer-alone. "
+                "Stop the stack. △ Plumb. Packet 335 still owns named ulcer. "
+                "Packet 336 still owns named perforation. "
+                "Do not copy an NSAID table."
+            )
+        sources.append(
+            "Edwards Merck NSAIDs Nov 2021 / Sept 2024: GI ulceration is the "
+            "most common life-threatening NSAID adverse effect; renal toxicity "
+            "from COX-1; COX-2-selective is not zero-ulcer. Edwards Merck "
+            "corticosteroids Nov 2021 / May 2025: glucocorticoids potentiate "
+            "the ulcerogenic effects of NSAIDs. Blois Merck GI ulcers Jan "
+            "2025 / Aug 2025: combining NSAID and corticosteroid therapies "
+            "increases GI ulceration risk and is contraindicated. Packet 335 "
+            "ulcer. Packet 336 perforation. Do not harvest NSAID, pred, "
+            "omeprazole, or sucralfate tables. Skip horse."
+        )
+        if AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, still no DexSP, including for the stack."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
