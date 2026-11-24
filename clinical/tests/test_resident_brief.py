@@ -11970,6 +11970,72 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline giardia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_cryptosporidium_is_not_a_giardia_alone(self):
+        b = analyze("cat", "Cryptosporidium")
+        loc = b["localization"].lower()
+        self.assertIn("feline cryptosporidium", loc)
+        self.assertIn("not a giardia-alone", loc)
+        self.assertNotIn("feline giardia", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("nitazoxanide", joined)
+        self.assertIn("acid-fast", joined)
+        self.assertIn("pcr", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cryptosporidiosis_fires_cryptosp(self):
+        b = analyze("dog", "cryptosporidiosis")
+        loc = b["localization"].lower()
+        self.assertIn("canine cryptosporidium", loc)
+        self.assertIn("not a giardia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_c_parvum_fires_cryptosp(self):
+        b = analyze("cat", "C. parvum")
+        loc = b["localization"].lower()
+        self.assertIn("feline cryptosporidium", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_c_felis_fires_cryptosp(self):
+        b = analyze("cat", "C. felis")
+        loc = b["localization"].lower()
+        self.assertIn("feline cryptosporidium", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cryptosp_plus_giardia_concatenates(self):
+        b = analyze("cat", "Giardia, Cryptosporidium")
+        loc = b["localization"].lower()
+        self.assertIn("feline giardia", loc)
+        self.assertIn("feline cryptosporidium", loc)
+        self.assertIn("not a giardia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_giardia_is_not_cryptosp(self):
+        b = analyze("cat", "Giardia")
+        loc = b["localization"].lower()
+        self.assertIn("feline giardia", loc)
+        self.assertNotIn("feline cryptosporidium", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cryptococcosis_is_not_cryptosp(self):
+        b = analyze("cat", "cryptococcosis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline cryptosporidium", loc)
+        self.assertIn("cryptococc", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_crypto_is_not_cryptosp(self):
+        b = analyze("cat", "crypto")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline cryptosporidium", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cryptosp(self):
+        b = analyze("horse", "Cryptosporidium")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cryptosporidium", loc)
+        self.assertNotIn("feline cryptosporidium", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

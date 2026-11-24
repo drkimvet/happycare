@@ -5062,3 +5062,31 @@ Night rule: named Giardia → **Feline giardia. Not a tritrichomonas-alone.** �
 - Attending: If the query is only “colitis,” why does this gate stay dark?
 - Attending: Horse giardia — fire or skip?
 - Attending: Dual-named “Tritrichomonas” — 345 or this loc, and why?
+
+## 347. Feline cryptosporidium (Witola Merck Nov 2025 / Sept 2026)
+
+No dedicated Plunkett cryptosporidium chapter in the owned SA EM splits. Public Witola W.H. Cryptosporidiosis in Animals. Merck Veterinary Manual. Full review Nov 2025; last updated Sept 2026 (acid-fast oocysts 4–6 mcm; fecal smear, flotation, ELISA, IFA, PCR; no fully effective drug; supportive fluids and electrolytes; zoonotic especially if immunocompromised). Collier Merck malabsorption: Cryptosporidium is a rare malabsorption cause; immunofluorescence. C. felis is the usual cat species; C. parvum is zoonotic. Do not harvest a nitazoxanide, azithromycin, paromomycin, tylosin, or calf halofuginone table as lobby law. Do not fire on Giardia (346). Do not fire on Tritrichomonas (345). Do not fire on bare crypto (cryptorchid / cryptococcosis). Dogs and cats. Skip horse.
+
+Agree with Witola: **named Cryptosporidium is not a giardia-alone.** Acid-fast or PCR. Fluids. Hygiene. Printed nitazoxanide / azithromycin / paromomycin / calf halofuginone numbers stay on the page (`△ Plumb`).
+
+Night split: named Cryptosporidium / cryptosporidiosis / C. parvum / C. felis is feline (or canine) cryptosporidium; not a giardia-alone. Bare Giardia stay 346. Tritrichomonas stay 345. Bare crypto stays cryptococcosis / cryptorchid. Horse does not fire. Dual Cryptosporidium plus Giardia concatenates 346 then 347.
+
+Book/public traps:
+
+- Do not harvest a nitazoxanide table.
+- Do not harvest an azithromycin table.
+- Do not harvest a paromomycin table.
+- Do not copy a calf halofuginone table onto a cat.
+- Do not call this a giardia-alone.
+- Do not send named Cryptosporidium home as AHDS.
+
+Night rule: named Cryptosporidium → **Feline cryptosporidium. Not a giardia-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is watery kitten diarrhea not a giardia-alone?
+- NAVLE 2: Why is a positive PCR not proof the diarrhea is from crypto?
+- NAVLE 3: Dual-named “Giardia, Cryptosporidium” — which loc should win, and why?
+- Oral: How do you tell the immunocompromised owner about zoonosis, without inventing a nitazoxanide table?
+- Attending: If the query is only “Giardia,” why does this gate stay dark?
+- Attending: Horse cryptosporidium — fire or skip?
+- Attending: Bare “crypto” — cryptococcosis, cryptorchid, or this loc, and why?

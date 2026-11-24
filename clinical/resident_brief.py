@@ -2331,6 +2331,16 @@ GIARDIA_DX_RE = re.compile(
     r"\bg\.?\s*(?:duodenalis|intestinalis|lamblia)\b",
     re.I,
 )
+# Named Cryptosporidium / cryptosporidiosis / C. parvum / C. felis
+# only. Do not use bare crypto (cryptorchid / cryptococcosis). Do not
+# use Giardia (346). Do not harvest a nitazoxanide / azithromycin /
+# paromomycin / tylosin / halofuginone table. Dogs and cats. Skip
+# horse. Packet 346 still owns Giardia. Packet 345 Tritrichomonas.
+CRYPTOSP_DX_RE = re.compile(
+    r"\bcryptosporid|"
+    r"\bc\.?\s*(?:parvum|felis|hominis)\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6519,6 +6529,7 @@ def analyze(
     steal_colitis_dx = COLITIS_DX_RE.search(text)
     steal_tritrich_dx = TRITRICH_DX_RE.search(text)
     steal_giardia_dx = GIARDIA_DX_RE.search(text)
+    steal_cryptosp_dx = CRYPTOSP_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6667,6 +6678,7 @@ def analyze(
         or steal_colitis_dx
         or steal_tritrich_dx
         or steal_giardia_dx
+        or steal_cryptosp_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18203,6 +18215,61 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for Giardia."
+            )
+
+    cryptosp_named = spec in {"dog", "cat"} and CRYPTOSP_DX_RE.search(text)
+    if cryptosp_named:
+        if spec == "cat":
+            cryptosp_loc = "Feline cryptosporidium. Not a giardia-alone."
+        else:
+            cryptosp_loc = "Canine cryptosporidium. Not a giardia-alone."
+        localization = (
+            f"{localization} Also {cryptosp_loc}" if localization else cryptosp_loc
+        )
+        hard_stops.append(
+            "Do not harvest a nitazoxanide table. "
+            "Do not harvest an azithromycin table. "
+            "Do not harvest a paromomycin table. "
+            "No fully effective drug. Supportive fluids. "
+            "Do not treat a SNAP-alone as the night diagnosis."
+        )
+        do_not.append(
+            "Do not call this a giardia-alone. "
+            "Do not copy a nitazoxanide table as lobby law. "
+            "Do not copy a calf halofuginone table onto a cat. "
+            "Do not send named Cryptosporidium home as AHDS."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cryptosporidium. Not a giardia-alone. "
+                "△ Plumb. Acid-fast smear or PCR. Fluids. Hygiene. "
+                "Do not copy a nitazoxanide table."
+            )
+        else:
+            do_next.append(
+                "Name canine cryptosporidium. Not a giardia-alone. "
+                "△ Plumb. Acid-fast smear or PCR. Fluids. Hygiene. "
+                "Do not copy a nitazoxanide table."
+            )
+        sources.append(
+            "Witola Merck cryptosporidiosis Nov 2025 / Sept 2026: "
+            "oocysts acid-fast 4–6 mcm; fecal smear, flotation, ELISA, "
+            "IFA, PCR; no fully effective drug; supportive fluids and "
+            "electrolytes; zoonotic especially if immunocompromised. "
+            "Collier Merck malabsorption: Cryptosporidium is a rare "
+            "malabsorption cause; immunofluorescence. C. felis is the "
+            "usual cat species; C. parvum is zoonotic. Packet 346 "
+            "Giardia. Packet 345 Tritrichomonas. Do not harvest "
+            "nitazoxanide, azithromycin, paromomycin, or calf "
+            "halofuginone tables."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for Cryptosporidium."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for Cryptosporidium."
             )
 
     if spec in {"dog", "cat"} and HYPOGLY_RE.search(text):

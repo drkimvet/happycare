@@ -283,6 +283,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-colitis` | Assessment | Feline colitis / not a megacolon-alone |
 | `ddx-tritrich` | Assessment | Feline tritrichomonas / not a colitis-alone |
 | `ddx-giardia` | Assessment | Feline giardia / not a tritrichomonas-alone |
+| `ddx-cryptosp` | Assessment | Feline cryptosporidium / not a giardia-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -319,6 +320,7 @@ Suggested names are short so they show up after three letters.
 | `dc-colitis` | Discharge | After colitis / large-bowel talk |
 | `dc-tritrich` | Discharge | After Tritrichomonas / PCR talk |
 | `dc-giardia` | Discharge | After Giardia / fecal talk |
+| `dc-cryptosp` | Discharge | After Cryptosporidium / fecal talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4104,6 +4106,21 @@ DDX:
 Do not: harvest a fenbendazole table. Harvest a metronidazole table. Call this a tritrichomonas-alone. Confuse trophozoites with trichomonads.
 Do next: Name feline giardia. Not a tritrichomonas-alone. △ Plumb. Several fecals or antigen. Hygiene. Bathe. Do not copy a fenbendazole table.
 
+### `ddx-cryptosp`
+
+Cryptosporidium — {{patient.name}}
+Feline cryptosporidium [yes / not]. Not a giardia-alone [yes / not]. Acid-fast / PCR [ ]. Fluids [ ]. Giardia [ ]. AHDS [ ].
+
+DDX:
+1. Cryptosporidium — **Feline cryptosporidium. Not a giardia-alone**
+2. Tiny acid-fast oocysts. A positive PCR is infection, not proof the diarrhea is from crypto. No fully effective drug
+3. Packet 346 owns Giardia. Packet 345 owns Tritrichomonas. Zoonotic especially if immunocompromised. Hygiene
+4. Supportive fluids and electrolytes. Do not send this home as AHDS
+5. Dog or cat can fire. Horse does not fire. Do not copy a nitazoxanide table
+
+Do not: harvest a nitazoxanide table. Harvest an azithromycin table. Harvest a paromomycin table. Copy a calf halofuginone table onto a cat. Call this a giardia-alone.
+Do next: Name feline cryptosporidium. Not a giardia-alone. △ Plumb. Acid-fast smear or PCR. Fluids. Hygiene. Do not copy a nitazoxanide table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4405,6 +4422,14 @@ Return now for worsening diarrhea, straining with blood, not eating, or collapse
 Stool is often pale, fatty, and mucusy. One fecal can miss it because cysts come and go. Give only the medicines we sent, as labeled. Pick up stool promptly. A bath helps remove cysts from the coat.
 
 Return now for watery or bloody diarrhea, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-cryptosp`
+
+{{patient.name}} has Cryptosporidium, a tiny intestinal protozoa. This is not Giardia and not shocky bloody diarrhea.
+
+No drug reliably clears it. Fluids and electrolytes are the treatment. Give only the medicines we sent, as labeled. Pick up stool promptly. People with weak immune systems should not handle the diarrhea.
+
+Return now for watery diarrhea, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
