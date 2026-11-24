@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone-cyclosporine stack (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus cyclosporine / ciclosporin / Atopica only. Mercer names raised cyclosporine concentrations with concurrent fluoroquinolones (human data on the veterinary page). Stop the stack. △ Plumb. Packet 352 still owns theophylline. Packet 351 still owns sucralfate chelation. Cyclophosphamide is not this loc. Cat enrofloxacin retina is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a cyclosporine mg/kg table. Do **not** send the stack home as Atopica plus a UTI antibiotic. Bare FQ stays dark. Bare cyclosporine stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone-cyclosporine stack. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone-theophylline stack (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone-theophylline stack. Not a chelation-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus theophylline / aminophylline only. Quinolones inhibit methylxanthine biotransformation. Theophylline is the clinically relevant object drug. Raised methylxanthines can cause CNS and cardiac toxicity. Stop the stack. Packet 351 still owns sucralfate chelation. Chocolate / theobromine toxin without named theophylline stays the toxin gate. Cat enrofloxacin retina is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a theophylline mg/kg table. Do **not** send the stack home as a cough-plus-antibiotic night. Bare FQ stays dark. Bare theophylline stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

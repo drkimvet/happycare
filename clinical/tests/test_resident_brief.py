@@ -12386,6 +12386,75 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline fluoroquinolone-theophylline stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_cyclosporine_is_not_a_theophylline_alone(self):
+        b = analyze("dog", "cyclosporine and enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertIn("not a theophylline-alone", loc)
+        self.assertNotIn("canine fluoroquinolone-theophylline stack", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not stack a fluoroquinolone with cyclosporine", joined)
+        self.assertIn("cyclosporine mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_atopica_baytril_fires_fqcyclo(self):
+        b = analyze("dog", "Atopica and Baytril")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertIn("not a theophylline-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqtheo_plus_cyclosporine_concatenates(self):
+        b = analyze("dog", "theophylline, cyclosporine, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-theophylline stack", loc)
+        self.assertIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertIn("not a chelation-alone", loc)
+        self.assertIn("not a theophylline-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_cyclosporine_fires(self):
+        b = analyze("cat", "cyclosporine and enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone-cyclosporine stack", loc)
+        self.assertIn("not a theophylline-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("retina", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cyclosporine_is_not_fqcyclo(self):
+        b = analyze("dog", "cyclosporine")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertNotIn("feline fluoroquinolone-cyclosporine stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_enrofloxacin_is_not_fqcyclo(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_theophylline_enro_is_not_fqcyclo(self):
+        b = analyze("dog", "theophylline and enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-theophylline stack", loc)
+        self.assertNotIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cyclophosphamide_enro_is_not_fqcyclo(self):
+        b = analyze("dog", "cyclophosphamide and enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqcyclo(self):
+        b = analyze("horse", "cyclosporine and enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-cyclosporine stack", loc)
+        self.assertNotIn("feline fluoroquinolone-cyclosporine stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

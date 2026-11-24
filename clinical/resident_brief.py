@@ -173,6 +173,15 @@ THEOPHYLLINE_RE = re.compile(r"\b(theophylline|aminophylline)\b", re.I)
 # use chocolate / theobromine / methylxanthine toxin (already gated).
 # Do not use sucralfate plus FQ (351). Do not harvest an FQ or
 # theophylline mg/kg table. Dogs and cats. Skip horse.
+CYCLOSPORINE_RE = re.compile(
+    r"\b(cyclosporine|ciclosporin|cyclosporin)\b|\batopica\b",
+    re.I,
+)
+# Packet 353: named FQ plus cyclosporine / Atopica only. Do not use
+# cyclophosphamide. Do not use sucralfate plus FQ (351). Do not use
+# theophylline plus FQ (352). Do not harvest an FQ or cyclosporine
+# mg/kg table. Dogs and cats. Skip horse. Mercer names the human
+# cyclosporine-concentration DDI on the quinolone page.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6655,6 +6664,7 @@ def analyze(
     )
     steal_fqsuc_dx = FQ_RE.search(text) and SUCRALFATE_RE.search(text)
     steal_fqtheo_dx = FQ_RE.search(text) and THEOPHYLLINE_RE.search(text)
+    steal_fqcyclo_dx = FQ_RE.search(text) and CYCLOSPORINE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6809,6 +6819,7 @@ def analyze(
         or steal_nsaidster_dx
         or steal_fqsuc_dx
         or steal_fqtheo_dx
+        or steal_fqcyclo_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18082,6 +18093,75 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ-theophylline."
+            )
+
+    fqcyclo_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and CYCLOSPORINE_RE.search(text)
+    )
+    if fqcyclo_named:
+        if spec == "cat":
+            fqcyclo_loc = (
+                "Feline fluoroquinolone-cyclosporine stack. "
+                "Not a theophylline-alone."
+            )
+        else:
+            fqcyclo_loc = (
+                "Canine fluoroquinolone-cyclosporine stack. "
+                "Not a theophylline-alone."
+            )
+        localization = (
+            f"{localization} Also {fqcyclo_loc}" if localization else fqcyclo_loc
+        )
+        hard_stops.append(
+            "Do not stack a fluoroquinolone with cyclosporine. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Do not harvest a cyclosporine mg/kg table. "
+            "Merck names raised cyclosporine concentrations with FQ."
+        )
+        do_not.append(
+            "Do not call this a theophylline-alone. "
+            "Do not send the stack home as Atopica plus a UTI antibiotic. "
+            "Do not copy a cyclosporine table as if the FQ did not matter. "
+            "Cyclophosphamide is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone-cyclosporine stack. "
+                "Not a theophylline-alone. Stop the stack. △ Plumb. "
+                "Packet 352 still owns theophylline. Packet 351 still "
+                "owns sucralfate chelation. Cat enrofloxacin retina is "
+                "a different loc. Do not copy a cyclosporine table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone-cyclosporine stack. "
+                "Not a theophylline-alone. Stop the stack. △ Plumb. "
+                "Packet 352 still owns theophylline. Packet 351 still "
+                "owns sucralfate chelation. Do not copy a cyclosporine table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: in people, "
+            "cyclosporine concentrations may be increased with concurrent "
+            "fluoroquinolones, leading to prolonged and potentially toxic "
+            "plasma concentrations. Named on the veterinary page; △ Plumb. "
+            "Packet 352 theophylline. Packet 351 sucralfate chelation. "
+            "Do not harvest FQ or cyclosporine mg/kg. Cat enro retina is "
+            "not this loc. Skip horse. Food-animal ELDU is prohibited for "
+            "fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ-cyclosporine."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ-cyclosporine."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

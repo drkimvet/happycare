@@ -5230,3 +5230,31 @@ Night rule: named FQ plus theophylline → **Canine fluoroquinolone-theophylline
 - Attending: If the query is only “theophylline,” why does this gate stay dark?
 - Attending: Horse enrofloxacin plus theophylline — fire or skip?
 - Attending: Aminophylline plus marbofloxacin — this loc or skip, and why?
+
+## 353. Canine fluoroquinolone-cyclosporine stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-cyclosporine chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (in people, cyclosporine concentrations may be increased via concurrent administration with fluoroquinolones, leading to prolonged and potentially toxic plasma concentrations). Named on the veterinary page. Do not harvest a fluoroquinolone or cyclosporine mg/kg table as lobby law. Do not fire on sucralfate plus FQ (351). Do not fire on theophylline plus FQ (352). Do not fire on cyclophosphamide. Do not fire on bare FQ. Do not fire on bare cyclosporine (ITP / GME / IMPA / keratitis). Cat enrofloxacin retina is a different loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus cyclosporine is not a theophylline-alone.** Stop the stack. Printed FQ and cyclosporine mg/kg stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus cyclosporine / ciclosporin / Atopica is canine (or feline) fluoroquinolone-cyclosporine stack; not a theophylline-alone. Bare FQ stays dark. Bare cyclosporine stays dark. Sucralfate plus FQ stays 351. Theophylline plus FQ stays 352. Dual theophylline plus cyclosporine plus FQ concatenates 352 then 353. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a cyclosporine mg/kg table.
+- Do not call this a theophylline-alone.
+- Do not send the stack home as Atopica plus a UTI antibiotic.
+- Do not copy a cyclosporine table as if the FQ did not matter.
+- Do not treat cyclophosphamide as this loc.
+
+Night rule: named FQ plus cyclosporine → **Canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus Atopica not a UTI-plus-allergy night?
+- NAVLE 2: Why does bare cyclosporine stay dark for this loc?
+- NAVLE 3: Dual-named “theophylline, cyclosporine, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner the antibiotic may raise the immune-suppressant, without inventing a cyclosporine table?
+- Attending: If the query is only “Atopica,” why does this gate stay dark?
+- Attending: Horse enrofloxacin plus cyclosporine — fire or skip?
+- Attending: Cyclophosphamide plus enrofloxacin — this loc or skip, and why?

@@ -289,6 +289,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-nsaidster` | Assessment | Canine NSAID-steroid stack / not an ulcer-alone |
 | `ddx-fqsuc` | Assessment | Canine fluoroquinolone chelation / not a sucralfate-alone |
 | `ddx-fqtheo` | Assessment | Canine fluoroquinolone-theophylline stack / not a chelation-alone |
+| `ddx-fqcyclo` | Assessment | Canine fluoroquinolone-cyclosporine stack / not a theophylline-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -331,6 +332,7 @@ Suggested names are short so they show up after three letters.
 | `dc-nsaidster` | Discharge | After NSAID / steroid stack talk |
 | `dc-fqsuc` | Discharge | After FQ / sucralfate stack talk |
 | `dc-fqtheo` | Discharge | After FQ / theophylline stack talk |
+| `dc-fqcyclo` | Discharge | After FQ / cyclosporine stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4206,6 +4208,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Harvest a theophylline mg/kg table. Call this a chelation-alone. Send the stack home as a cough-plus-antibiotic night.
 Do next: Name canine fluoroquinolone-theophylline stack. Not a chelation-alone. Stop the stack. △ Plumb. Packet 351 still owns sucralfate chelation. Do not copy a theophylline table.
 
+### `ddx-fqcyclo`
+
+Fluoroquinolone-cyclosporine — {{patient.name}}
+Canine fluoroquinolone-cyclosporine stack [yes / not]. Not a theophylline-alone [yes / not]. Stop the stack [ ]. Packet 352 theophylline [ ]. Packet 351 chelation [ ]. Cat retina [ ].
+
+DDX:
+1. Fluoroquinolone plus cyclosporine — **Canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone**
+2. Merck names raised cyclosporine concentrations with concurrent FQ. Stop the stack. △ Plumb
+3. Packet 352 owns theophylline. Packet 351 owns sucralfate chelation. Cyclophosphamide is not this loc
+4. Do not copy a cyclosporine table as if the FQ did not matter. Cat enrofloxacin retina is a different loc
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare cyclosporine stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Harvest a cyclosporine mg/kg table. Call this a theophylline-alone. Send the stack home as Atopica plus a UTI antibiotic.
+Do next: Name canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone. Stop the stack. △ Plumb. Packet 352 still owns theophylline. Do not copy a cyclosporine table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4555,6 +4572,14 @@ Return now for worsening fever, not eating, or collapse. {{location.phonenumber}
 We stopped the combination. Give only the medicines we sent, as labeled. Do not add leftover theophylline from home to the antibiotic.
 
 Return now for tremors, seizures, collapse, or a very fast heart rate. {{location.phonenumber}}
+
+### `dc-fqcyclo`
+
+{{patient.name}} was on both a fluoroquinolone antibiotic and cyclosporine. The antibiotic can raise the immune-suppressant level. This is not a simple UTI-plus-allergy plan.
+
+We stopped the combination. Give only the medicines we sent, as labeled. Do not add leftover Atopica from home to the antibiotic.
+
+Return now for vomiting, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

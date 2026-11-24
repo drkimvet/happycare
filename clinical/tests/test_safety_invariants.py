@@ -798,6 +798,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a sucralfate-alone", VERIF.lower())
         self.assertIn("canine fluoroquinolone-theophylline stack", VERIF.lower())
         self.assertIn("not a chelation-alone", VERIF.lower())
+        self.assertIn("canine fluoroquinolone-cyclosporine stack", VERIF.lower())
+        self.assertIn("not a theophylline-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1354,6 +1356,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-fqsuc`", MACRO)
         self.assertIn("`ddx-fqtheo`", MACRO)
         self.assertIn("`dc-fqtheo`", MACRO)
+        self.assertIn("`ddx-fqcyclo`", MACRO)
+        self.assertIn("`dc-fqcyclo`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1587,6 +1591,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a sucralfate-alone", MACRO.lower())
         self.assertIn("canine fluoroquinolone-theophylline stack", MACRO.lower())
         self.assertIn("not a chelation-alone", MACRO.lower())
+        self.assertIn("canine fluoroquinolone-cyclosporine stack", MACRO.lower())
+        self.assertIn("not a theophylline-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -2183,6 +2189,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a sucralfate-alone",
             "canine fluoroquinolone-theophylline stack",
             "not a chelation-alone",
+            "canine fluoroquinolone-cyclosporine stack",
+            "not a theophylline-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 
