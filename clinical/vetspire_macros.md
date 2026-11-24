@@ -294,6 +294,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqcart` | Assessment | Canine fluoroquinolone cartilage / not an adult UTI-alone |
 | `ddx-fqpreg` | Assessment | Canine fluoroquinolone pregnancy / not a pyometra-alone |
 | `ddx-prado` | Assessment | Canine pradofloxacin / not a Baytril-alone |
+| `ddx-fqgaba` | Assessment | Canine fluoroquinolone GABA / not a seizure-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -341,6 +342,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqcart` | Discharge | After FQ / growing-dog cartilage talk |
 | `dc-fqpreg` | Discharge | After FQ / pregnancy talk |
 | `dc-prado` | Discharge | After canine pradofloxacin talk |
+| `dc-fqgaba` | Discharge | After FQ / GABA seizure talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4291,6 +4293,21 @@ DDX:
 Do not: harvest a pradofloxacin mg/kg table. Call this a Baytril-alone. Send a dog home on pradofloxacin as if it were Baytril. Treat cat plus prado as this loc.
 Do next: Name canine pradofloxacin. Not a Baytril-alone. Stop the prado. △ Plumb. Packet 354 still owns cat enro retina. Do not copy a pradofloxacin table.
 
+### `ddx-fqgaba`
+
+Fluoroquinolone GABA — {{patient.name}}
+Canine fluoroquinolone GABA [yes / not]. Not a seizure-alone [yes / not]. Stop the FQ [ ]. Packet 116 seizure drugs [ ]. Packet 349 metro tox [ ]. Gabapentin [ ].
+
+DDX:
+1. Named FQ plus seizure — **Canine fluoroquinolone GABA. Not a seizure-alone**
+2. Mercer: quinolones antagonize GABA; convulsions at high doses. Stop the FQ. △ Plumb
+3. Packet 116 owns seizure drugs. Packet 349 owns metro tox. Packet 357 owns canine prado. Gabapentin is not this loc
+4. Do not copy an FQ table as if GABA did not matter. Do not send an FQ-seizure home as idiopathic epilepsy
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare seizure stays dark for this loc. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a seizure-alone. Send an FQ-seizure home as idiopathic epilepsy. Treat gabapentin as this loc.
+Do next: Name canine fluoroquinolone GABA. Not a seizure-alone. Stop the FQ. △ Plumb. Packet 116 still owns seizure drugs. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4680,6 +4697,14 @@ Return now for vaginal discharge, straining, collapse, or not eating. {{location
 We stopped the pradofloxacin. Give only the medicines we sent, as labeled. Do not add leftover pradofloxacin from home.
 
 Return now for pale gums, weakness, fainting, or a very fast or irregular heart rate. {{location.phonenumber}}
+
+### `dc-fqgaba`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and had a seizure. These antibiotics can lower the seizure threshold. This is not a simple epilepsy-and-home plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for another seizure, collapse, or not waking up. {{location.phonenumber}}
 
 ### `dc-ahds`
 

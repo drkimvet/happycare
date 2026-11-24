@@ -12719,6 +12719,80 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a baytril-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_gaba_is_not_a_seizure_alone(self):
+        b = analyze("dog", "seizure, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertNotIn("canine pradofloxacin", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send an fq-seizure home as idiopathic epilepsy", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_convulsion_baytril_fires_fqgaba(self):
+        b = analyze("dog", "convulsion, Baytril")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gaba_marbofloxacin_fires_fqgaba(self):
+        b = analyze("dog", "GABA, marbofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_prado_plus_seizure_concatenates(self):
+        b = analyze("dog", "pradofloxacin, seizure")
+        loc = b["localization"].lower()
+        self.assertIn("canine pradofloxacin", loc)
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("not a baytril-alone", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_enro_plus_seizure_concatenates(self):
+        b = analyze("cat", "seizure, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertIn("feline fluoroquinolone gaba", loc)
+        self.assertIn("not a sards-alone", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_metrotox_plus_fq_concatenates(self):
+        b = analyze("dog", "metronidazole, seizure, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine metronidazole neurotoxicity", loc)
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_seizure_is_not_fqgaba(self):
+        b = analyze("dog", "seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone gaba", loc)
+        self.assertNotIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gabapentin_enro_is_not_fqgaba(self):
+        b = analyze("dog", "gabapentin and enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone gaba", loc)
+        self.assertNotIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqgaba(self):
+        b = analyze("horse", "seizure, enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone gaba", loc)
+        self.assertNotIn("feline fluoroquinolone gaba", loc)
+        self.assertNotIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

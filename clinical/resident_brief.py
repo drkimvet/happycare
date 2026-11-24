@@ -209,6 +209,18 @@ PRADO_RE = re.compile(r"\bpradofloxacin\b", re.I)
 # shorthand. Do not use cat plus prado (354 is enro, not this). Do
 # not use Baytril as this loc. Do not harvest a pradofloxacin mg/kg
 # table. Skip horse. Mercer: not approved for dogs in the US.
+FQ_GABA_RE = re.compile(
+    r"\b(seizure|status epileptic|cluster seizure|ictal|postictal)\b|"
+    r"\bconvuls|"
+    r"neurotox|"
+    r"\bgaba\b",
+    re.I,
+)
+# Packet 358: named FQ plus seizure / convulsion / neurotox / GABA
+# only. Do not use gabapentin. Do not use bare FQ. Do not use bare
+# seizure (116). Do not use metro tox without FQ (349). Do not
+# harvest an FQ mg/kg table. Dogs and cats. Skip horse (rapid IV
+# enro neuro is a different loc). Mercer: GABA antagonism.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6702,6 +6714,11 @@ def analyze(
         and PREG_FQ_RE.search(text)
     )
     steal_prado_dx = spec == "dog" and PRADO_RE.search(text)
+    steal_fqgaba_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQ_GABA_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6861,6 +6878,7 @@ def analyze(
         or steal_fqcart_dx
         or steal_fqpreg_dx
         or steal_prado_dx
+        or steal_fqgaba_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18402,6 +18420,66 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for pradofloxacin."
+            )
+
+    fqgaba_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQ_GABA_RE.search(text)
+    )
+    if fqgaba_named:
+        if spec == "cat":
+            fqgaba_loc = "Feline fluoroquinolone GABA. Not a seizure-alone."
+        else:
+            fqgaba_loc = "Canine fluoroquinolone GABA. Not a seizure-alone."
+        localization = (
+            f"{localization} Also {fqgaba_loc}" if localization else fqgaba_loc
+        )
+        hard_stops.append(
+            "Do not send an FQ-seizure home as idiopathic epilepsy. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: quinolones antagonize GABA; convulsions at high doses."
+        )
+        do_not.append(
+            "Do not call this a seizure-alone. "
+            "Do not copy an FQ table as if GABA did not matter. "
+            "Packet 116 still owns seizure drugs. "
+            "Packet 349 still owns metronidazole neurotoxicity. "
+            "Gabapentin is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone GABA. Not a seizure-alone. "
+                "Stop the FQ. △ Plumb. Packet 116 still owns seizure drugs. "
+                "Packet 354 still owns cat enro retina. Packet 349 still "
+                "owns metro tox. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone GABA. Not a seizure-alone. "
+                "Stop the FQ. △ Plumb. Packet 116 still owns seizure drugs. "
+                "Packet 349 still owns metro tox. Packet 357 still owns "
+                "canine prado. Do not copy an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: quinolones tend "
+            "to be neurotoxic, and convulsions can occur at high doses due "
+            "to GABA receptor antagonism. Packet 116 seizure drugs. Packet "
+            "349 metro tox. Packet 357 canine prado. Do not harvest FQ "
+            "mg/kg. Skip horse; rapid IV enro neuro is a different loc. "
+            "Food-animal ELDU is prohibited for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ GABA."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ GABA."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

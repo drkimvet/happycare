@@ -5370,3 +5370,31 @@ Night rule: named pradofloxacin in a dog → **Canine pradofloxacin. Not a Baytr
 - Attending: If the query is only “enrofloxacin,” why does this gate stay dark?
 - Attending: Horse pradofloxacin — fire or skip?
 - Attending: Puppy plus pradofloxacin — which locs fire, and why?
+
+## 358. Canine fluoroquinolone GABA (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-GABA chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (quinolones tend to be neurotoxic, and convulsions can occur at high doses due to GABA receptor antagonism). Packet 116 still owns seizure drugs. Packet 349 still owns metronidazole neurotoxicity. Packet 357 still owns canine prado. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on gabapentin. Do not fire on bare FQ. Do not fire on bare seizure. Skip horse; rapid IV enro neuro is a different loc. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus seizure is not a seizure-alone.** Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus seizure / convulsion / neurotox / GABA is canine (or feline) fluoroquinolone GABA; not a seizure-alone. Bare FQ stays dark. Bare seizure stays 116. Gabapentin plus FQ stays dark. Dual metro plus FQ plus seizure concatenates 349 then 358. Dual prado plus seizure concatenates 357 then 358. Dual cat enro plus seizure concatenates 354 then 358. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a seizure-alone.
+- Do not send an FQ-seizure home as idiopathic epilepsy.
+- Do not copy an FQ table as if GABA did not matter.
+- Do not harvest packet 116 seizure-drug tables here.
+- Do not treat gabapentin as this loc.
+
+Night rule: named FQ plus seizure → **Canine fluoroquinolone GABA. Not a seizure-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus a seizure not an idiopathic-epilepsy night?
+- NAVLE 2: Why does gabapentin plus enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “metronidazole, seizure, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “seizure,” why does this gate stay dark?
+- Attending: Horse seizure plus enrofloxacin — fire or skip, and why?
+- Attending: Cat plus Baytril plus seizure — which locs fire, and why?
