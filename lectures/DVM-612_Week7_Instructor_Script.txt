@@ -3,7 +3,8 @@ Instructor: Dr. Yujin Kim, D.V.M., Ph.D., FFCP
 
 40 slides. 50 minutes. Week 7 of the public DVM 612 outline: suture patterns and surgical closure.
 Do not alter the Week 4 37-slide deck. Do not invent Fossum sizes, throw counts, or 2-0 nylon as a law.
-Week 8 owns materials, needles, and knots. Week 13 owns large-animal field patterns.
+Exam 2: tables are overviews. Match class of material to tissue. Week 8 still owns sizes, needles, and knots.
+Week 13 owns large-animal field patterns.
 Owner names stay off slides. MoMo and Willie stay off this hour.
 
 MODELS (zip 11577 homework, not a student slide):
@@ -16,7 +17,7 @@ Do not put a vendor quote on the student deck.
 FIGURES: original 3D teaching stills in lectures/assets/suture3d/. Not Fossum plates. Not WCVM photos.
 
 SLIDE 1. LONG ISLAND UNIVERSITY  ·  LEWYT COLLEGE OF VETERINARY MEDICINE
-    SPEAK: Welcome. This is Week 7 of the public DVM 612 outline: suture patterns and surgical closure. Fifty minutes. Forty slides. Do not dump a Fossum size table. Do not teach milligrams. Week 8 is materials and knots. If time is short, protect interrupted versus continuous, appose versus invert, simple interrupted, vertical mattress far-far near-near, Cushing versus Connell, and layered closure.
+    SPEAK: Welcome. Week 7: suture patterns and surgical closure. Fifty minutes. Forty slides. Exam 2 tables are overviews, not one right suture. Do not dump a Fossum size table. Do not teach milligrams. If time is short, protect interrupted versus continuous, appose versus invert, simple interrupted, vertical mattress far-far near-near, Cushing versus Connell, layered closure, and material class versus tissue.
 
 SLIDE 2. Learning objectives
     SPEAK: Read the five objectives. This hour is judgment plus names. The lab owns the hands. Do not write 3 to 5 millimeters on the board as a law.
@@ -25,7 +26,7 @@ SLIDE 3. This hour
     SPEAK: If discussion runs, cut the pattern-card extras. Keep the clock blocks.
 
 SLIDE 4. What this hour is not
-    SPEAK: Do not open a materials catalog. If they ask 2-0 nylon, say Week 8 and Fossum or the lab kit.
+    SPEAK: Do not open a size catalog. Exam 2 still asks class of material. If they ask 2-0 nylon, say Week 8 and Fossum or the lab kit.
 
 SLIDE 5. PART 1
     SPEAK: Short section card. Then Halsted.
@@ -61,7 +62,7 @@ SLIDE 15. Hands before the first bite
     SPEAK: One minute. Then patterns. No throw table.
 
 SLIDE 16. Ligature is not a skin pattern
-    SPEAK: One minute. LO 1. Then pattern cards.
+    SPEAK: Exam 2: ligation vs anastomosis. Vicryl Plus is not a license to braid contaminated tissue. Gut is historical. Silk is reactive. Nylon memory can hurt ligature knots. Confirm IFU in Week 8 / Fossum. No size table.
 
 SLIDE 17. PART 3
     SPEAK: Pattern cards. Keep moving.
@@ -70,13 +71,13 @@ SLIDE 18. Pattern map
     SPEAK: This is the map, not the recipe. Names only. Confirm construction in Fossum and in lab.
 
 SLIDE 19. Simple interrupted
-    SPEAK: WCVM: interrupted, appositional, normal tension. Minimal blood-supply hit unless overtightened. The figure is original 3D teaching art, not a Fossum plate.
+    SPEAK: Exam 2: simple interrupted is for normal tension, not excessive tension. WCVM: interrupted, appositional. Minimal blood-supply hit unless overtightened. Original 3D teaching art, not a Fossum plate.
 
 SLIDE 20. Simple continuous
     SPEAK: Exam trap: one knot failure opens the line. Original 3D figure.
 
 SLIDE 21. Cruciate
-    SPEAK: Students love this one. Make them leave it loose. Original 3D figure.
+    SPEAK: Exam 2: cruciate is not banned at any tension. It is not enough for excessive tension. Students love this one. Make them leave it loose. Original 3D figure.
 
 SLIDE 22. Horizontal mattress
     SPEAK: Merck: mattress transfers tension off the edge. WCVM: major ischemia if tight. Original 3D figure.
@@ -91,7 +92,7 @@ SLIDE 25. Ford interlocking
     SPEAK: Field and large-animal students will see this again in Week 13. Same three questions. Original 3D figure.
 
 SLIDE 26. Intradermal or subcuticular
-    SPEAK: Students will want this on every spay. Make them earn a quiet dermis first. Original 3D cutaway.
+    SPEAK: Exam 2: intradermal after the deep layers take the load. Students will want this on every spay. Make them earn a quiet dermis first. Original 3D cutaway.
 
 SLIDE 27. Lembert
     SPEAK: Do not invent a GI size table. Name layers: no mucosa. Original 3D viscus figure.
@@ -100,13 +101,13 @@ SLIDE 28. Cushing versus Connell
     SPEAK: This is the highest-yield viscus pair. Repeat the mnemonic once. Connell figure shows full-thickness bites into the lumen. Do not invent which organ prefers which.
 
 SLIDE 29. Purse-string and other named closures
-    SPEAK: Do not perform a purse-string demo with invented bite counts. Original 3D figure.
+    SPEAK: Exam 2: primary job is circumferential constriction, not automatic inversion. Do not invent bite counts. Original 3D figure.
 
 SLIDE 30. PART 4
     SPEAK: Closure block.
 
 SLIDE 31. Close in layers
-    SPEAK: Linea first in the abdomen. Do not invent bite counts or a 2-0 rule.
+    SPEAK: Exam 2: external rectus sheath is the holding layer. Separate peritoneum or internal sheath is usually unnecessary. Tendon and fascia need prolonged support; nylon is not the only tendon choice. Confirm IFU in Week 8. No size table.
 
 SLIDE 32. Skin, subcutis, hollow viscus
     SPEAK: Three columns. Then mistakes.
@@ -124,7 +125,7 @@ SLIDE 36. Species and setting
     SPEAK: No large-animal slide deck. One card. Nautilus/Makers research stays in the instructor script, not on the student slide.
 
 SLIDE 37. Quiz. Write the pattern
-    SPEAK: Do not advance until they write. Keys on the next slide.
+    SPEAK: Do not advance until they write. Keys on the next slide. Exam 2: tables are overviews.
 
 SLIDE 38. Quiz key
     SPEAK: Read the keys. Then references.

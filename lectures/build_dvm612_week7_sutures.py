@@ -4,7 +4,7 @@
 Lewyt College of Veterinary Medicine (LIU)
 Aligned to the public DVM 612 outline (Week 7) and course LOs 1, 3, 9.
 Required texts: Fossum 2018; Hendrickson & Baird 2013 (named only).
-Week 8 owns materials, needles, and knot tables. Week 13 owns field LA.
+Week 8 owns sizes, needles, and knot tables. Exam 2 still matches material class to tissue. Week 13 owns field LA.
 """
 
 from pathlib import Path
@@ -283,9 +283,9 @@ add_text(s, Inches(0.75), Inches(1.45), Inches(12), Inches(0.40), "DVM 612  ·  
 add_text(s, Inches(0.75), Inches(2.05), Inches(12), Inches(1.6), "Suture Patterns\nand Surgical Closure", size=36, bold=True, color=WHITE)
 add_text(s, Inches(0.75), Inches(3.85), Inches(12), Inches(0.50), "Dr. Yujin Kim, D.V.M., Ph.D., FFCP", size=24, bold=True, color=GOLD)
 add_text(s, Inches(0.75), Inches(4.40), Inches(12), Inches(0.40), "Lecture  |  40 slides  |  50 minutes", size=18, color=GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.00), Inches(12), Inches(0.90), "Pick the pattern after you name the tissue, the tension, and the blood supply. Then close in layers.", size=20, color=WHITE)
-add_text(s, Inches(0.75), Inches(6.05), Inches(12), Inches(0.70), "Required: Fossum 2018; Hendrickson & Baird 2013.\nWeek 8 owns materials, needles, and knot tables. Week 13 owns large-animal field patterns.", size=16, color=GOLD)
-notes(s, "Welcome. This is Week 7 of the public DVM 612 outline: suture patterns and surgical closure. Fifty minutes. Forty slides. Do not dump a Fossum size table. Do not teach milligrams. Week 8 is materials and knots. If time is short, protect interrupted versus continuous, appose versus invert, simple interrupted, vertical mattress far-far near-near, Cushing versus Connell, and layered closure.")
+add_text(s, Inches(0.75), Inches(5.00), Inches(12), Inches(0.90), "Pick the pattern after you name the tissue, the tension, and the blood supply. Match material class the same way.", size=20, color=WHITE)
+add_text(s, Inches(0.75), Inches(6.05), Inches(12), Inches(0.70), "Required: Fossum 2018; Hendrickson & Baird 2013.\nWeek 8 owns sizes, needles, and knot tables. Exam 2 still asks you to match class of material to tissue.", size=16, color=GOLD)
+notes(s, "Welcome. Week 7: suture patterns and surgical closure. Fifty minutes. Forty slides. Exam 2 tables are overviews, not one right suture. Do not dump a Fossum size table. Do not teach milligrams. If time is short, protect interrupted versus continuous, appose versus invert, simple interrupted, vertical mattress far-far near-near, Cushing versus Connell, layered closure, and material class versus tissue.")
 
 s = new_content("Learning objectives")
 add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(4.2), [
@@ -293,7 +293,7 @@ add_bullets(s, Inches(0.55), Inches(1.20), Inches(12.2), Inches(4.2), [
     "Choose a pattern after you name the tissue, the tension, and the blood supply (course LO 1, 3).",
     "Close skin, subcutis, and body wall as separate layers. Do not skip a layer because the skin looks closed.",
     "Spot the common mistakes: overtightening, one-knot continuous failure, inverting skin, crushing the needle tip (course LO 9).",
-    "Leave suture material, needle type, and throw counts for Week 8. Confirm sizes in Fossum or the lab protocol.",
+    "Match material class to tissue, healing window, contamination, and load. Week 8 still owns sizes, needles, and throw counts.",
 ], size=20, spacing=12)
 add_round(s, Inches(0.5), Inches(5.55), Inches(12.3), Inches(1.40), GOLD_LT)
 add_text(s, Inches(0.75), Inches(5.70), Inches(11.9), Inches(1.10), "Public DVM 612 outline, Week 7. Course texts are named. Bite-width millimeters printed on some teaching pages stay on those pages.", size=16, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
@@ -304,7 +304,7 @@ rows = [
     ("0–8 min", "Why the pattern matters", "Halsted. Three questions before you sew."),
     ("8–18 min", "How patterns are classified", "Interrupted vs continuous. Appose, invert, evert."),
     ("18–36 min", "The patterns you must name", "Skin, tension, hollow viscus, intradermal."),
-    ("36–46 min", "Layered closure", "Skin, subcutis, fascia or linea. Mistakes."),
+    ("36–46 min", "Layered closure", "Holding layer. Not Monocryl. Skin vs buried."),
     ("46–50 min", "Quiz and sources", "Two cases. Then questions."),
 ]
 add_rect(s, Inches(0.45), Inches(1.15), Inches(12.4), Inches(0.48), NAVY)
@@ -320,11 +320,11 @@ for i, (clk, block, protect) in enumerate(rows):
 notes(s, "If discussion runs, cut the pattern-card extras. Keep the clock blocks.")
 
 s = new_content("What this hour is not")
-card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(2.50), "Week 8", "Suture materials, needle point and curvature, and how many throws make a square knot. Do not invent a size or a throw table tonight.", accent=GOLD)
+card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(2.50), "Week 8", "Sizes, needle point, and throw counts live there. Exam 2 still asks you to match class of material to tissue. Do not invent a size table tonight.", accent=GOLD)
 card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(2.50), "Week 9", "Wound healing stages. Today you only need: apposition heals fastest, inversion of skin delays healing.", accent=GOLD)
 card(s, Inches(0.45), Inches(3.90), Inches(6.15), Inches(2.90), "Week 13", "Equine and large-animal field patterns. One sentence today: the same three questions still apply in the field.", accent=NAVY)
 card(s, Inches(6.80), Inches(3.90), Inches(6.05), Inches(2.90), "The lab", "Hands, models, then tissue. This lecture names the pattern. The lab proves you can place it.", accent=GREEN)
-notes(s, "Do not open a materials catalog. If they ask 2-0 nylon, say Week 8 and Fossum or the lab kit.")
+notes(s, "Do not open a size catalog. Exam 2 still asks class of material. If they ask 2-0 nylon, say Week 8 and Fossum or the lab kit.")
 
 s = new_section("Part 1", "Why the pattern matters", "Halsted still owns the closure.", "8 minutes")
 notes(s, "Short section card. Then Halsted.")
@@ -447,13 +447,13 @@ notes(s, "One minute. Then patterns. No throw table.")
 
 s = new_content("Ligature is not a skin pattern")
 add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(5.4), [
-    "Course LO 1 names secure ligation with suture patterns. They are different jobs.",
-    "A ligature occludes a vessel or a pedicle. A pattern closes a cut.",
-    "Circumferential and transfixing ligatures live in Fossum and in the spay/neuter weeks. Do not invent a throw table tonight.",
-    "If the pedicle bleeds at 02:00, that is a ligature failure, not a skin-pattern failure.",
-    "Week 11 and 12 will use this. Today you only have to stop calling every knot a closure.",
-], size=20, spacing=12)
-notes(s, "One minute. LO 1. Then pattern cards.")
+    "A ligature occludes a vessel or a pedicle. A pattern closes a cut. They are different jobs (course LO 1).",
+    "Pedicle ligation: synthetic absorbable is common (Vicryl, Vicryl Plus, Monocryl, PDS). Not one right brand.",
+    "Vicryl Plus is still a braid. Triclosan does not erase capillarity. Contaminated tissue still prefers absorbable monofilament.",
+    "Vascular anastomosis is not ligation. Long-term nonabsorbable monofilament (polypropylene) is the usual anastomosis class.",
+    "Do not invent a throw table. If the pedicle bleeds at 02:00, that is a ligature failure, not a skin-pattern failure.",
+], size=18, spacing=10)
+notes(s, "Exam 2: ligation vs anastomosis. Vicryl Plus is not a license to braid contaminated tissue. Gut is historical. Silk is reactive. Nylon memory can hurt ligature knots. Confirm IFU in Week 8 / Fossum. No size table.")
 
 s = new_section("Part 3", "Patterns you must name", "Skin, tension, hollow viscus, intradermal.", "18 minutes")
 notes(s, "Pattern cards. Keep moving.")
@@ -463,7 +463,7 @@ headers = ("Pattern", "Interrupted or continuous", "Edge", "Usual night use")
 rows = [
     ("Simple interrupted", "Interrupted", "Appositional", "Skin. Teaching default."),
     ("Simple continuous", "Continuous", "Appositional", "Long even layer. Seal."),
-    ("Cruciate", "Interrupted", "Appositional", "Skin. Some tension."),
+    ("Cruciate", "Interrupted", "Appositional", "Skin. Mild to moderate tension."),
     ("Horizontal mattress", "Interrupted", "Appose to evert", "Tension. Watch blood supply."),
     ("Vertical mattress", "Interrupted", "Everting", "Tension. Far-far, then near-near."),
     ("Ford interlocking", "Continuous", "Appositional", "Long skin or field line."),
@@ -487,8 +487,8 @@ notes(s, "This is the map, not the recipe. Names only. Confirm construction in F
 
 s = new_content("Simple interrupted")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_simple_interrupted.png")
-card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. The teaching default for skin.\n\nYou can change tension stitch by stitch. One failed stitch is not a dehiscence.\n\nNot a tension suture. If the edges gape, fix the tension.\n\nLeave room for swelling in dogs and cats.\n\nConfirm bite spacing in Fossum or the lab. Do not invent millimeters.", accent=GOLD)
-notes(s, "WCVM: interrupted, appositional, normal tension. Minimal blood-supply hit unless overtightened. The figure is original 3D teaching art, not a Fossum plate.")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. The teaching default for skin under normal or minimal tension.\n\nYou can change tension stitch by stitch. One failed stitch is not a dehiscence.\n\nDo not ask it to carry excessive tension alone. If the edges gape, undermine or reconstruct.\n\nLeave room for swelling in dogs and cats.\n\nConfirm bite spacing in Fossum or the lab. Do not invent millimeters.", accent=GOLD)
+notes(s, "Exam 2: simple interrupted is for normal tension, not excessive tension. WCVM: interrupted, appositional. Minimal blood-supply hit unless overtightened. Original 3D teaching art, not a Fossum plate.")
 
 s = new_content("Simple continuous")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_simple_continuous.png")
@@ -497,8 +497,8 @@ notes(s, "Exam trap: one knot failure opens the line. Original 3D figure.")
 
 s = new_content("Cruciate")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_cruciate.png")
-card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. A tension suture (WCVM).\n\nTwo simple interrupted bites share one knot, so the X sits over the incision.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.\n\nLeave the loop loose enough for swelling.\n\nUseful on some skin closures when you want fewer knots than a row of simples.", accent=GOLD)
-notes(s, "Students love this one. Make them leave it loose. Original 3D figure.")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. Two bites share one knot, so the X sits over the incision.\n\nHandles mild to moderate tension better than a simple interrupted. Not a standalone fix for excessive tension.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.\n\nLeave the loop loose enough for swelling.\n\nIf the edges still gape, undermine or reconstruct. Do not rely on the X alone.", accent=GOLD)
+notes(s, "Exam 2: cruciate is not banned at any tension. It is not enough for excessive tension. Students love this one. Make them leave it loose. Original 3D figure.")
 
 s = new_content("Horizontal mattress")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_horizontal_mattress.png")
@@ -524,9 +524,9 @@ notes(s, "Field and large-animal students will see this again in Week 13. Same t
 
 s = new_content("Intradermal or subcuticular")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_intradermal.png")
-card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "What it is", "Continuous. Appositional. Bites live in the dermis, as close to the surface as you can place them without exiting skin (WCVM).\n\nSuccessive bites backtrack. Buried knots at both ends.", accent=GOLD)
-card(s, Inches(6.30), Inches(4.05), Inches(6.55), Inches(2.75), "What it is not", "Not a substitute for a dead-space layer. Not a reason to skip an E-collar conversation.\n\nBurying the knot is a lab skill (WCVM Part 5). Week 8 owns the knot.", accent=NAVY)
-notes(s, "Students will want this on every spay. Make them earn a quiet dermis first. Original 3D cutaway.")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "What it is", "Continuous. Appositional. Bites live in the dermis, as close to the surface as you can place them without exiting skin (WCVM).\n\nSuccessive bites backtrack. Buried knots at both ends. Best after deeper layers already meet the edges.", accent=GOLD)
+card(s, Inches(6.30), Inches(4.05), Inches(6.55), Inches(2.75), "What it is not", "Not a way to pull a high-tension wound together. 'Diminishes tension' means it spreads mild surface force along the line.\n\nNot a substitute for a dead-space layer. Week 8 owns the buried knot.", accent=NAVY)
+notes(s, "Exam 2: intradermal after the deep layers take the load. Students will want this on every spay. Make them earn a quiet dermis first. Original 3D cutaway.")
 
 s = new_content("Lembert")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_lembert.png")
@@ -542,17 +542,17 @@ notes(s, "This is the highest-yield viscus pair. Repeat the mnemonic once. Conne
 
 s = new_content("Purse-string and other named closures")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_pursestring.png")
-card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "A purse-string is a circular continuous bite that cinches an opening. Name it. Confirm the organ and the material in Fossum or the lab.\n\nParker-Kerr and other oversew names live in the textbook. Do not fake a construction on the board.\n\nStaples and glue are hospital tools, not this hour’s pattern list.\n\nIf you cannot draw the path of the needle, you do not know the pattern yet.", accent=GOLD)
-notes(s, "Do not perform a purse-string demo with invented bite counts. Original 3D figure.")
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "A purse-string is a continuous circumferential bite that constricts a circular opening.\n\nEdges may invert or evert. Bite depth, spacing, and how hard you pull decide orientation. Inversion is common, not automatic.\n\nParker-Kerr and other oversew names live in the textbook. Do not fake a construction on the board.\n\nIf you cannot draw the path of the needle, you do not know the pattern yet.", accent=GOLD)
+notes(s, "Exam 2: primary job is circumferential constriction, not automatic inversion. Do not invent bite counts. Original 3D figure.")
 
 s = new_section("Part 4", "Layered closure", "Like tissue to like tissue. Then check the mistakes.", "10 minutes")
 notes(s, "Closure block.")
 
 s = new_content("Close in layers")
 layers = [
-    ("1. Body wall or linea", "Fascia holds the abdomen. Skin does not. A pretty skin line over a weak linea is a hernia waiting."),
-    ("2. Subcutis / dead space", "Bring fat to fat. Obliterate dead space. This is not the skin suture pulled harder."),
-    ("3. Skin or intradermal", "Appose. Leave room to swell. If the deeper layers are wrong, this layer cannot save the patient."),
+    ("1. Body wall or linea", "The external rectus sheath is the holding layer. Slowly absorbable or nonabsorbable monofilament (PDS, polypropylene, nylon). Not Monocryl."),
+    ("2. Subcutis / dead space", "Heals fast. Monocryl or Vicryl is usually enough. PDS is slowly absorbable: safe, not the most efficient routine choice."),
+    ("3. Skin or intradermal", "External: nonabsorbable monofilament. Buried intradermal: Monocryl or Vicryl Rapide. Absorption time is not useful tensile strength."),
 ]
 for i, (t, d) in enumerate(layers):
     y = Inches(1.20) + Inches(i * 1.80)
@@ -560,12 +560,12 @@ for i, (t, d) in enumerate(layers):
     add_rect(s, Inches(0.5), y, Inches(0.14), Inches(1.65), GOLD)
     add_text(s, Inches(0.90), y + Inches(0.18), Inches(11.6), Inches(0.45), t, size=22, bold=True, color=NAVY)
     add_text(s, Inches(0.90), y + Inches(0.70), Inches(11.6), Inches(0.75), d, size=18, color=SLATE)
-notes(s, "Linea first in the abdomen. Do not invent bite counts or a 2-0 rule.")
+notes(s, "Exam 2: external rectus sheath is the holding layer. Separate peritoneum or internal sheath is usually unnecessary. Tendon and fascia need prolonged support; nylon is not the only tendon choice. Confirm IFU in Week 8. No size table.")
 
 s = new_content("Skin, subcutis, hollow viscus")
-card(s, Inches(0.45), Inches(1.20), Inches(4.05), Inches(5.60), "Skin", "Default: appositional interrupted.\n\nCruciate if you want fewer knots.\n\nMattress only after you treat tension.\n\nIntradermal if the dermis is quiet and you can bury the knot.\n\nDo not invert.", accent=GOLD)
-card(s, Inches(4.65), Inches(1.20), Inches(4.05), Inches(5.60), "Subcutis", "Simple continuous is common for a long even layer.\n\nInterrupted if the space is irregular or dirty.\n\nThis layer is dead space, not cosmetics.", accent=NAVY)
-card(s, Inches(8.85), Inches(1.20), Inches(4.00), Inches(5.60), "Hollow viscus", "Appositional closures are used. Inverting closures are used. The organ and the lumen decide.\n\nCushing does not enter the lumen. Connell does.\n\nConfirm the stack in Fossum. Do not invent a two-layer law.", accent=GREEN)
+card(s, Inches(0.45), Inches(1.20), Inches(4.05), Inches(5.60), "Skin", "External: nonabsorbable monofilament until removal.\n\nBuried intradermal: Monocryl or Vicryl Rapide.\n\nCruciate for mild to moderate tension, fewer knots.\n\nDo not invert. Do not ask skin to hold fascia.", accent=GOLD)
+card(s, Inches(4.65), Inches(1.20), Inches(4.05), Inches(5.60), "Subcutis", "Simple continuous is common for a long even layer.\n\nInterrupted if the space is irregular or dirty.\n\nIntermediate absorbable is enough. PDS is slowly absorbable, not the routine SQ choice.", accent=NAVY)
+card(s, Inches(8.85), Inches(1.20), Inches(4.00), Inches(5.60), "Hollow viscus", "Rapid healing does not require a rapidly absorbable suture.\n\nPDS is a GI mainstay. Monocryl only in selected healthy tissue.\n\nCushing does not enter the lumen. Connell does.", accent=GREEN)
 notes(s, "Three columns. Then mistakes.")
 
 s = new_content("Common closure mistakes")
@@ -606,18 +606,18 @@ card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(5.60), "Other settings"
 notes(s, "No large-animal slide deck. One card. Nautilus/Makers research stays in the instructor script, not on the student slide.")
 
 s = new_content("Quiz. Write the pattern")
-card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(2.70), "Case A", "Canine ventral midline. Skin edges meet without a gap. The patient will swell. Which class of pattern do you start with on skin, and why?", accent=GOLD)
+card(s, Inches(0.45), Inches(1.20), Inches(6.15), Inches(2.70), "Case A", "Canine ventral midline. Skin edges meet. The patient will swell. Which class of pattern on skin, and which class of material for the external rectus sheath?", accent=GOLD)
 card(s, Inches(6.80), Inches(1.20), Inches(6.05), Inches(2.70), "Case B", "You need one stitch that takes deep load and then apposes the epidermis. Name the mattress and the bite order.", accent=NAVY)
-card(s, Inches(0.45), Inches(4.10), Inches(6.15), Inches(2.70), "Case C", "Parallel inverting bites on intestine. One pattern enters the lumen. Which name has the extra letter?", accent=GREEN)
-card(s, Inches(6.80), Inches(4.10), Inches(6.05), Inches(2.70), "Case D", "A continuous subcutis line looks perfect. The end knot slips in recovery. What failed, and why was interrupted safer on a teaching case?", accent=RED)
-notes(s, "Do not advance until they write. Keys on the next slide.")
+card(s, Inches(0.45), Inches(4.10), Inches(6.15), Inches(2.70), "Case C", "Parallel inverting bites on intestine. Stomach heals faster than tendon. Does that force a rapidly absorbable suture?", accent=GREEN)
+card(s, Inches(6.80), Inches(4.10), Inches(6.05), Inches(2.70), "Case D", "Contaminated tissue. A student picks Vicryl Plus because it is antibacterial. What is still true of a braid?", accent=RED)
+notes(s, "Do not advance until they write. Keys on the next slide. Exam 2: tables are overviews.")
 
 s = new_content("Quiz key")
 keys = [
-    "A. Interrupted, appositional skin. Swelling. One failed stitch does not open the line.",
+    "A. Interrupted, appositional skin. Holding layer: slowly absorbable or nonabsorbable monofilament. Not Monocryl.",
     "B. Vertical mattress. Far-far, then near-near (Merck). Everting is the cost.",
-    "C. Connell enters the lumen. Cushing does not (WCVM).",
-    "D. Continuous fails as a unit. The knot was the closure. Interrupted would have left the other stitches.",
+    "C. Connell enters the lumen. Cushing does not. Rapid GI healing does not force a rapidly absorbable suture.",
+    "D. Vicryl Plus is still a braid. Triclosan does not erase capillarity. Contaminated tissue prefers absorbable monofilament.",
 ]
 for i, t in enumerate(keys):
     y = Inches(1.20) + Inches(i * 1.35)
@@ -633,8 +633,8 @@ pearls = [
     "Interrupted fails as a stitch. Continuous fails as a line.",
     "Appose skin. Invert some hollow viscus. Do not invert skin.",
     "Far-far, then near-near. Connell enters the lumen. Cushing does not.",
-    "Close layers. Skin cannot hold a linea. A mattress cannot replace undermining.",
-    "Sizes, needles, and throws are Week 8. Confirm them in Fossum or the lab protocol.",
+    "Close layers. The external rectus sheath is the holding layer. Skin cannot hold a linea.",
+    "Match material to tissue, healing window, contamination, and load. Tables are overviews, not one right suture.",
 ]
 for i, t in enumerate(pearls):
     y = Inches(1.15) + Inches(i * 0.92)
@@ -650,7 +650,7 @@ add_rect(s, 0, 0, W, Inches(0.16), GOLD)
 add_rect(s, 0, 0, Inches(0.22), H, GOLD)
 add_text(s, Inches(0.55), Inches(0.26), Inches(12.2), Inches(0.28), "DVM 612  ·  PRINCIPLES OF SURGERY  ·  WEEK 7", size=14, bold=True, color=GOLD)
 add_text(s, Inches(0.55), Inches(0.52), Inches(12.2), Inches(0.48), "Questions", size=28, bold=True, color=WHITE)
-add_text(s, Inches(0.55), Inches(1.02), Inches(12.2), Inches(0.70), "What three questions do you ask before you sew?\nWhich mattress is far-far, then near-near?", size=16, color=GOLD_LT)
+add_text(s, Inches(0.55), Inches(1.02), Inches(12.2), Inches(0.70), "What three questions do you ask before you sew?\nWhich mattress is far-far, then near-near? What holds the abdomen?", size=16, color=GOLD_LT)
 add_text(s, Inches(0.55), Inches(1.78), Inches(12.2), Inches(0.32), "References  (course texts and public teaching pages used in this hour)", size=14, bold=True, color=GOLD)
 left_refs = (
     "1. Fossum TW. Small Animal Surgery. 5th ed. Elsevier; 2018. ISBN 978-0-323-44344-9. Named. No page dump. No invented size table.\n\n"
@@ -684,7 +684,8 @@ script_lines = [
     "",
     "40 slides. 50 minutes. Week 7 of the public DVM 612 outline: suture patterns and surgical closure.",
     "Do not alter the Week 4 37-slide deck. Do not invent Fossum sizes, throw counts, or 2-0 nylon as a law.",
-    "Week 8 owns materials, needles, and knots. Week 13 owns large-animal field patterns.",
+    "Exam 2: tables are overviews. Match class of material to tissue. Week 8 still owns sizes, needles, and knots.",
+    "Week 13 owns large-animal field patterns.",
     "Owner names stay off slides. MoMo and Willie stay off this hour.",
     "",
     "MODELS (zip 11577 homework, not a student slide):",
