@@ -12036,6 +12036,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cryptosporidium", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_doxycycline_esophagitis_is_not_a_stricture_alone(self):
+        b = analyze("cat", "dry pilling doxycycline")
+        loc = b["localization"].lower()
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertIn("not a stricture-alone", loc)
+        self.assertNotIn("feline esophageal stricture", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("dry-pill", joined)
+        self.assertIn("food or water", joined)
+        self.assertIn("doxycycline mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxy_esophageal_stricture_concatenates(self):
+        b = analyze("cat", "doxycycline esophageal stricture")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophageal stricture", loc)
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertIn("not a megaesophagus-alone", loc)
+        self.assertIn("not a stricture-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxy_esophagitis_concatenates(self):
+        b = analyze("cat", "doxycycline esophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophagitis", loc)
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertIn("not a stricture-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_canine_doxycycline_esophagitis_fires(self):
+        b = analyze("dog", "doxycycline esophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine doxycycline esophagitis", loc)
+        self.assertIn("not a stricture-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_doxycycline_is_not_doxyeso(self):
+        b = analyze("cat", "doxycycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline doxycycline esophagitis", loc)
+        self.assertNotIn("canine doxycycline esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esophageal_stricture_is_not_doxyeso(self):
+        b = analyze("cat", "esophageal stricture")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophageal stricture", loc)
+        self.assertNotIn("feline doxycycline esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_esophagitis_is_not_doxyeso(self):
+        b = analyze("cat", "esophagitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophagitis", loc)
+        self.assertNotIn("feline doxycycline esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_clindamycin_stricture_is_not_doxyeso(self):
+        b = analyze("cat", "clindamycin esophageal stricture")
+        loc = b["localization"].lower()
+        self.assertIn("feline esophageal stricture", loc)
+        self.assertNotIn("feline doxycycline esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_doxyeso(self):
+        b = analyze("horse", "doxycycline esophageal stricture")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine doxycycline esophagitis", loc)
+        self.assertNotIn("feline doxycycline esophagitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

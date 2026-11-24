@@ -2341,6 +2341,19 @@ CRYPTOSP_DX_RE = re.compile(
     r"\bc\.?\s*(?:parvum|felis|hominis)\b",
     re.I,
 )
+# Named doxycycline / doxy plus esophagus, stricture, or dry-pill only.
+# Do not use bare doxycycline (Lyme / Wolbachia / everyday antibiotic).
+# Do not use \besophagitis\b alone (324). Do not use esophageal stricture
+# alone (323). Do not harvest a 5–10 mg/kg or 5–6 mL table. Dogs and cats.
+# Skip horse (IV doxycycline collapse is not this loc). Packet 323 still
+# owns named stricture. Packet 324 still owns named esophagitis.
+DOXYESO_DX_RE = re.compile(
+    r"doxycyclin.{0,48}(esophag|oesophag|stricture|stenos|dry[\s-]?pill|dry[\s-]?capsule)|"
+    r"(esophag|oesophag|stricture|stenos|dry[\s-]?pill|dry[\s-]?capsule).{0,48}doxycyclin|"
+    r"\bdoxy\b.{0,32}(esophag|oesophag|stricture|stenos|dry[\s-]?pill)|"
+    r"(esophag|oesophag|stricture|stenos|dry[\s-]?pill).{0,32}\bdoxy\b",
+    re.I,
+)
 # Bare "otitis" / "head tilt" is 137. Bare "meningitis" is SRMA / GME / NME.
 # Not NME (207). Not GME (206). Not SRMA (205). Not polyp (167).
 OTO_MEN_RE = re.compile(
@@ -6530,6 +6543,7 @@ def analyze(
     steal_tritrich_dx = TRITRICH_DX_RE.search(text)
     steal_giardia_dx = GIARDIA_DX_RE.search(text)
     steal_cryptosp_dx = CRYPTOSP_DX_RE.search(text)
+    steal_doxyeso_dx = DOXYESO_DX_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6679,6 +6693,7 @@ def analyze(
         or steal_tritrich_dx
         or steal_giardia_dx
         or steal_cryptosp_dx
+        or steal_doxyeso_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17132,6 +17147,61 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for esophagitis."
+            )
+
+    doxyeso_named = spec in {"dog", "cat"} and DOXYESO_DX_RE.search(text)
+    if doxyeso_named:
+        if spec == "cat":
+            doxyeso_loc = "Feline doxycycline esophagitis. Not a stricture-alone."
+        else:
+            doxyeso_loc = "Canine doxycycline esophagitis. Not a stricture-alone."
+        localization = (
+            f"{localization} Also {doxyeso_loc}" if localization else doxyeso_loc
+        )
+        hard_stops.append(
+            "Do not harvest a doxycycline mg/kg table. "
+            "Do not harvest a liquid-chase milliliter table. "
+            "Follow solid doxycycline with food or water. "
+            "Dry-pilling a cat is esophageal injury."
+        )
+        do_not.append(
+            "Do not call this a stricture-alone. "
+            "Do not dry-pill a cat. "
+            "Do not send named doxycycline esophagitis home as gagging. "
+            "Do not copy a balloon table as if the drug did not matter."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline doxycycline esophagitis. Not a stricture-alone. "
+                "△ Plumb. Follow solid doxycycline with food or water. "
+                "Packet 323 still owns named stricture. "
+                "Do not copy a doxycycline table."
+            )
+        else:
+            do_next.append(
+                "Name canine doxycycline esophagitis. Not a stricture-alone. "
+                "△ Plumb. Follow solid doxycycline with food or water. "
+                "Packet 323 still owns named stricture. "
+                "Do not copy a doxycycline table."
+            )
+        sources.append(
+            "Mercer Merck tetracyclines Sept 2022 / Jun 2026: dry-pilling "
+            "doxycycline tablets or capsules associated with esophageal "
+            "erosion and strictures in cats; follow with food or liquid. "
+            "Printed 5–10 mg/kg and 5–6 mL stay on the page. Defarges Merck "
+            "esophageal strictures Oct 2022 / May 2025: doxycycline or "
+            "clindamycin among drug causes. Packet 323 stricture. Packet "
+            "324 esophagitis. Do not harvest doxycycline mg/kg. Do not "
+            "harvest a liquid-chase milliliter table. Horse IV doxycycline "
+            "collapse is not this loc. Clindamycin dry-pill is not this loc."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for doxycycline esophagitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for doxycycline esophagitis."
             )
 
     cricoph_named = spec == "dog" and CRICOPH_DX_RE.search(text)

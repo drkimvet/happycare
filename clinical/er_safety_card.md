@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline doxycycline esophagitis (Merck Mercer Jun 2026 / Defarges May 2025)
+
+- **Feline doxycycline esophagitis. Not a stricture-alone.** Named doxycycline / doxy plus esophagus, stricture, stenosis, or dry-pill only. Dry-pilling a tablet or capsule in a cat is esophageal erosion and can become a stricture. Follow solid doxycycline with food or water. Packet 323 still owns named esophageal stricture without the drug. Packet 324 still owns named esophagitis without the drug. Do **not** harvest a doxycycline mg/kg table. Do **not** harvest a liquid-chase milliliter table. Do **not** dry-pill a cat. Do **not** send named doxycycline esophagitis home as gagging. Do **not** copy a balloon table as if the drug did not matter. Bare doxycycline (Lyme / Wolbachia) stays dark. Clindamycin dry-pill is not this loc. Horse IV doxycycline collapse is not this loc.
+- Dogs: same named loc as canine doxycycline esophagitis. Skip horse. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline cryptosporidium (Merck Witola Nov 2025 / Sept 2026)
 
 - **Feline cryptosporidium. Not a giardia-alone.** Named Cryptosporidium / cryptosporidiosis / C. parvum / C. felis only. Tiny acid-fast oocysts (4–6 mcm). Acid-fast smear, flotation, IFA, or PCR. A positive test is infection, not proof the diarrhea is from crypto. No fully effective drug: supportive fluids and electrolytes. Hygiene. Immunocompromised people stay away from diarrheic young animals. Do **not** harvest a nitazoxanide table. Do **not** harvest an azithromycin table. Do **not** harvest a paromomycin table. Do **not** copy a calf halofuginone table onto a cat. Do **not** send named Cryptosporidium home as AHDS.

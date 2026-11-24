@@ -5090,3 +5090,31 @@ Night rule: named Cryptosporidium → **Feline cryptosporidium. Not a giardia-al
 - Attending: If the query is only “Giardia,” why does this gate stay dark?
 - Attending: Horse cryptosporidium — fire or skip?
 - Attending: Bare “crypto” — cryptococcosis, cryptorchid, or this loc, and why?
+
+## 348. Feline doxycycline esophagitis (Mercer Merck Jun 2026 / Defarges May 2025)
+
+No dedicated Plunkett doxycycline-esophagitis chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (dry-pilling of doxycycline in tablet or capsule form associated with esophageal erosion and strictures in cats; follow with food or liquid; printed 5–10 mg/kg and ~5–6 mL stay on the page). Defarges Merck esophageal strictures Oct 2022 / May 2025: exposure to certain drugs such as doxycycline or clindamycin. Do not harvest a doxycycline mg/kg table as lobby law. Do not harvest a 5–6 mL chase table as lobby law. Do not fire on bare doxycycline (Lyme / Wolbachia). Do not fire on named esophageal stricture without the drug (323). Do not fire on named esophagitis without the drug (324). Do not fire on clindamycin-alone. Horse IV doxycycline collapse/death is a different pharmacology trap, not this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named doxycycline plus esophagus or dry-pill is not a stricture-alone.** Follow solid forms with food or water. Printed 5–10 mg/kg and 5–6 mL stay on the page (`△ Plumb`).
+
+Night split: named doxycycline / doxy plus esophagus, stricture, stenosis, or dry-pill is feline (or canine) doxycycline esophagitis; not a stricture-alone. Bare esophageal stricture stays 323. Bare esophagitis stays 324. Bare doxycycline stays dark. Clindamycin stricture stays 323. Horse does not fire. Dual doxycycline plus esophageal stricture concatenates 323 then 348.
+
+Book/public traps:
+
+- Do not harvest a doxycycline mg/kg table.
+- Do not harvest a liquid-chase milliliter table.
+- Do not dry-pill a cat.
+- Do not call this a stricture-alone.
+- Do not send named doxycycline esophagitis home as gagging.
+- Do not copy a balloon table as if the drug did not matter.
+
+Night rule: named doxycycline plus esophagus or dry-pill → **Feline doxycycline esophagitis. Not a stricture-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is dry-pilling doxycycline in a cat not a gagging-alone?
+- NAVLE 2: Why does a named esophageal stricture without the drug stay 323, not this loc?
+- NAVLE 3: Dual-named “doxycycline, esophageal stricture” — which loc should win, and why?
+- Oral: How do you tell the owner to follow the tablet with water, without inventing a milliliter table?
+- Attending: If the query is only “doxycycline,” why does this gate stay dark?
+- Attending: Horse IV doxycycline — this loc or skip, and why?
+- Attending: Clindamycin esophageal stricture — 323 or this loc, and why?

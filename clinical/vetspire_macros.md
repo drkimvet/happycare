@@ -284,6 +284,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tritrich` | Assessment | Feline tritrichomonas / not a colitis-alone |
 | `ddx-giardia` | Assessment | Feline giardia / not a tritrichomonas-alone |
 | `ddx-cryptosp` | Assessment | Feline cryptosporidium / not a giardia-alone |
+| `ddx-doxyeso` | Assessment | Feline doxycycline esophagitis / not a stricture-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -321,6 +322,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tritrich` | Discharge | After Tritrichomonas / PCR talk |
 | `dc-giardia` | Discharge | After Giardia / fecal talk |
 | `dc-cryptosp` | Discharge | After Cryptosporidium / fecal talk |
+| `dc-doxyeso` | Discharge | After doxycycline / esophagus talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4121,6 +4123,21 @@ DDX:
 Do not: harvest a nitazoxanide table. Harvest an azithromycin table. Harvest a paromomycin table. Copy a calf halofuginone table onto a cat. Call this a giardia-alone.
 Do next: Name feline cryptosporidium. Not a giardia-alone. △ Plumb. Acid-fast smear or PCR. Fluids. Hygiene. Do not copy a nitazoxanide table.
 
+### `ddx-doxyeso`
+
+Doxycycline esophagus — {{patient.name}}
+Feline doxycycline esophagitis [yes / not]. Not a stricture-alone [yes / not]. Dry-pill [yes / not]. Follow with food or water [ ]. Packet 323 stricture [ ]. Packet 324 esophagitis [ ].
+
+DDX:
+1. Doxycycline esophagus — **Feline doxycycline esophagitis. Not a stricture-alone**
+2. Dry-pilling a tablet or capsule in a cat is esophageal erosion and can become a stricture. Follow solid doxycycline with food or water
+3. Packet 323 owns named stricture without the drug. Packet 324 owns named esophagitis without the drug. Bare doxycycline stays dark
+4. Do not copy a balloon table as if the drug did not matter. Do not send this home as gagging
+5. Dog or cat can fire. Horse does not fire. Clindamycin dry-pill is not this loc. Do not copy a doxycycline table
+
+Do not: harvest a doxycycline mg/kg table. Harvest a liquid-chase milliliter table. Dry-pill a cat. Call this a stricture-alone. Send named doxycycline esophagitis home as gagging.
+Do next: Name feline doxycycline esophagitis. Not a stricture-alone. △ Plumb. Follow solid doxycycline with food or water. Packet 323 still owns named stricture. Do not copy a doxycycline table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4430,6 +4447,14 @@ Return now for watery or bloody diarrhea, not eating, or collapse. {{location.ph
 No drug reliably clears it. Fluids and electrolytes are the treatment. Give only the medicines we sent, as labeled. Pick up stool promptly. People with weak immune systems should not handle the diarrhea.
 
 Return now for watery diarrhea, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-doxyeso`
+
+{{patient.name}} has esophageal injury from a doxycycline tablet given dry. This is not ordinary gagging and not megaesophagus.
+
+Give the next doses only as we showed: with food or a drink of water after the tablet. Do not push a dry pill down. Give only the medicines we sent, as labeled.
+
+Return now for repeated regurgitation, refusing food, or coughing after eating. {{location.phonenumber}}
 
 ### `dc-ahds`
 
