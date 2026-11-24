@@ -238,6 +238,19 @@ CIPROCOL_SIGN_RE = re.compile(
 # Do not use bare AHDS (131). Do not use colitis without the named
 # drugs (344). Do not harvest an FQ mg/kg table. Dogs and cats. Skip
 # horse. Mercer: potentially fatal antimicrobial-induced colitis.
+FQTENDON_SIGN_RE = re.compile(
+    r"\btendon|"
+    r"\btendin|"
+    r"\bachilles\b|"
+    r"\brupture\b",
+    re.I,
+)
+# Packet 360: named FQ plus tendon / tendinitis / tendinopathy /
+# Achilles / rupture only. Do not use bare FQ. Do not use bare CCL.
+# Do not use cipro colitis (359). Do not harvest an FQ mg/kg table.
+# Dogs and cats. Skip horse. Mercer: 2008 FDA black-box for seven
+# fluoroquinolones; human tendinitis and tendon rupture on the
+# veterinary page. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6741,6 +6754,11 @@ def analyze(
         and CIPRO_MOXI_RE.search(text)
         and CIPROCOL_SIGN_RE.search(text)
     )
+    steal_fqtend_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQTENDON_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6902,6 +6920,7 @@ def analyze(
         or steal_prado_dx
         or steal_fqgaba_dx
         or steal_ciprocol_dx
+        or steal_fqtend_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18563,6 +18582,73 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cipro colitis."
+            )
+
+    fqtend_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQTENDON_SIGN_RE.search(text)
+    )
+    if fqtend_named:
+        if spec == "cat":
+            fqtend_loc = (
+                "Feline fluoroquinolone tendinopathy. Not a CCL-alone."
+            )
+        else:
+            fqtend_loc = (
+                "Canine fluoroquinolone tendinopathy. Not a CCL-alone."
+            )
+        localization = (
+            f"{localization} Also {fqtend_loc}" if localization else fqtend_loc
+        )
+        hard_stops.append(
+            "Do not send FQ tendinopathy home as CCL. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: 2008 FDA black-box for seven fluoroquinolones; "
+            "tendinitis and tendon rupture. Human data on the veterinary "
+            "page, not a proven canine CCL equivalent."
+        )
+        do_not.append(
+            "Do not call this a CCL-alone. "
+            "Do not invent veterinary incidence as if the boxed warning "
+            "were a canine CCL paper. "
+            "Packet 359 still owns cipro colitis. "
+            "Packet 355 still owns growing-dog cartilage, the veterinary "
+            "musculoskeletal FQ fact. "
+            "Bare CCL without named FQ plus tendon language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone tendinopathy. Not a CCL-alone. "
+                "Stop the FQ. △ Plumb. Packet 354 still owns cat enro retina. "
+                "Packet 359 still owns cipro colitis. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone tendinopathy. Not a CCL-alone. "
+                "Stop the FQ. △ Plumb. Packet 359 still owns cipro colitis. "
+                "Packet 355 still owns growing-dog cartilage. Do not copy an "
+                "FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: in 2008 the FDA "
+            "added a black-box warning for seven fluoroquinolones that "
+            "increased the risk of tendinitis and tendon rupture. Human data "
+            "on the veterinary page. Packet 359 cipro colitis. Packet 355 "
+            "FQ cartilage. Do not harvest FQ mg/kg. Skip horse. Food-animal "
+            "ELDU is prohibited for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ tendinopathy."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ tendinopathy."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

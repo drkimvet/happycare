@@ -5426,3 +5426,31 @@ Night rule: named cipro / moxi plus colitis → **Canine ciprofloxacin colitis. 
 - Attending: If the query is only “ciprofloxacin,” why does this gate stay dark?
 - Attending: Horse colitis plus ciprofloxacin — fire or skip?
 - Attending: Cat plus cipro plus colitis — which locs fire, and why?
+
+## 360. Canine fluoroquinolone tendinopathy (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-tendinopathy chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (in 2008, the FDA added a black-box warning for seven fluoroquinolones that increased the risk of tendinitis and tendon rupture). Human data on the veterinary page. Packet 359 still owns cipro colitis. Packet 355 still owns growing-dog cartilage. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare CCL. Do not fire on FQ plus CCL without tendon / tendinitis / tendinopathy / Achilles / rupture. Do not fire 359 cipro colitis as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus tendon is not a CCL-alone.** The boxed warning is human data sitting on the veterinary page, not a claim that dogs rupture Achilles at the human rate. Growing-dog cartilage (355) remains the veterinary musculoskeletal FQ fact. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus tendon / tendinitis / tendinopathy / Achilles / rupture is canine (or feline) fluoroquinolone tendinopathy; not a CCL-alone. Bare FQ stays dark. Bare CCL stays dark. FQ plus CCL without tendon language stays dark. Dual cipro plus colitis plus tendon concatenates 359 then 360. Dual cipro plus colitis without tendon stays 359. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a CCL-alone.
+- Do not send FQ tendinopathy home as CCL.
+- Do not copy an FQ table as if the tendon did not matter.
+- Do not treat cipro colitis as this loc.
+- Do not treat growing-dog cartilage (355) as this loc.
+
+Night rule: named FQ plus tendon → **Canine fluoroquinolone tendinopathy. Not a CCL-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus Achilles pain not a CCL-and-home night?
+- NAVLE 2: Why does enrofloxacin plus CCL without tendon language stay dark for this loc?
+- NAVLE 3: Dual-named “ciprofloxacin, colitis, tendon” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “enrofloxacin,” why does this gate stay dark?
+- Attending: Horse tendinopathy plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus tendon — which locs fire, and why?

@@ -296,6 +296,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-prado` | Assessment | Canine pradofloxacin / not a Baytril-alone |
 | `ddx-fqgaba` | Assessment | Canine fluoroquinolone GABA / not a seizure-alone |
 | `ddx-ciprocol` | Assessment | Canine ciprofloxacin colitis / not an AHDS-alone |
+| `ddx-fqtend` | Assessment | Canine fluoroquinolone tendinopathy / not a CCL-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -345,6 +346,7 @@ Suggested names are short so they show up after three letters.
 | `dc-prado` | Discharge | After canine pradofloxacin talk |
 | `dc-fqgaba` | Discharge | After FQ / GABA seizure talk |
 | `dc-ciprocol` | Discharge | After cipro / colitis talk |
+| `dc-fqtend` | Discharge | After FQ / tendinopathy talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4325,6 +4327,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this an AHDS-alone. Send ciprofloxacin colitis home as mild AHDS. Treat enro plus AHDS as this loc.
 Do next: Name canine ciprofloxacin colitis. Not an AHDS-alone. Stop the cipro / moxi. △ Plumb. Packet 131 still owns AHDS. Do not copy an FQ table.
 
+### `ddx-fqtend`
+
+Fluoroquinolone tendinopathy — {{patient.name}}
+Canine fluoroquinolone tendinopathy [yes / not]. Not a CCL-alone [yes / not]. Stop the FQ [ ]. Packet 359 cipro colitis [ ]. Packet 355 cartilage [ ]. Bare CCL [ ].
+
+DDX:
+1. Named FQ plus tendon — **Canine fluoroquinolone tendinopathy. Not a CCL-alone**
+2. Mercer: 2008 FDA black-box for seven fluoroquinolones; tendinitis and tendon rupture. Human data on the veterinary page, not a proven canine CCL equivalent. Stop the FQ. △ Plumb
+3. Packet 355 owns growing-dog cartilage, the veterinary musculoskeletal FQ fact. Packet 359 owns cipro colitis. Bare CCL is not this loc
+4. Do not invent veterinary incidence. Do not send FQ tendinopathy home as CCL
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare CCL stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a CCL-alone. Send FQ tendinopathy home as CCL. Treat bare CCL as this loc.
+Do next: Name canine fluoroquinolone tendinopathy. Not a CCL-alone. Stop the FQ. △ Plumb. Packet 359 still owns cipro colitis. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4730,6 +4747,14 @@ Return now for another seizure, collapse, or not waking up. {{location.phonenumb
 We stopped that antibiotic. Give only the medicines we sent, as labeled. Do not add leftover ciprofloxacin from home.
 
 Return now for more bloody diarrhea, collapse, or a swollen belly. {{location.phonenumber}}
+
+### `dc-fqtend`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and has tendon pain or a suspected tendon injury. In people these antibiotics carry a boxed warning for tendinitis and tendon rupture. That warning is not the same as a canine CCL diagnosis. This is not a simple CCL-and-home plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home. Limit activity until we recheck.
+
+Return now for sudden lameness, a popping sensation, or a limb that will not bear weight. {{location.phonenumber}}
 
 ### `dc-ahds`
 
