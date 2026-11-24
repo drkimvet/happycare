@@ -12793,6 +12793,78 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a seizure-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cipro_colitis_is_not_an_ahds_alone(self):
+        b = analyze("dog", "ciprofloxacin, colitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine ciprofloxacin colitis", loc)
+        self.assertIn("not an ahds-alone", loc)
+        self.assertIn("canine colitis", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send ciprofloxacin colitis home as ahds", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_moxifloxacin_ahds_fires_ciprocol(self):
+        b = analyze("dog", "moxifloxacin, AHDS")
+        loc = b["localization"].lower()
+        self.assertIn("canine ciprofloxacin colitis", loc)
+        self.assertIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cipro_bloody_diarrhea_fires_ciprocol(self):
+        b = analyze("dog", "cipro, bloody diarrhea")
+        loc = b["localization"].lower()
+        self.assertIn("canine ciprofloxacin colitis", loc)
+        self.assertIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cipro_colitis_concatenates(self):
+        b = analyze("cat", "ciprofloxacin, colitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline ciprofloxacin colitis", loc)
+        self.assertIn("feline colitis", loc)
+        self.assertIn("not an ahds-alone", loc)
+        self.assertIn("not a megacolon-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqgaba_plus_ciprocol_concatenates(self):
+        b = analyze("dog", "seizure, ciprofloxacin, colitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("canine ciprofloxacin colitis", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_enro_ahds_is_not_ciprocol(self):
+        b = analyze("dog", "enrofloxacin, AHDS")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ciprofloxacin colitis", loc)
+        self.assertNotIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cipro_is_not_ciprocol(self):
+        b = analyze("dog", "ciprofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ciprofloxacin colitis", loc)
+        self.assertNotIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_ahds_is_not_ciprocol(self):
+        b = analyze("dog", "AHDS")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ciprofloxacin colitis", loc)
+        self.assertNotIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_ciprocol(self):
+        b = analyze("horse", "ciprofloxacin, colitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ciprofloxacin colitis", loc)
+        self.assertNotIn("feline ciprofloxacin colitis", loc)
+        self.assertNotIn("not an ahds-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -295,6 +295,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqpreg` | Assessment | Canine fluoroquinolone pregnancy / not a pyometra-alone |
 | `ddx-prado` | Assessment | Canine pradofloxacin / not a Baytril-alone |
 | `ddx-fqgaba` | Assessment | Canine fluoroquinolone GABA / not a seizure-alone |
+| `ddx-ciprocol` | Assessment | Canine ciprofloxacin colitis / not an AHDS-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -343,6 +344,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqpreg` | Discharge | After FQ / pregnancy talk |
 | `dc-prado` | Discharge | After canine pradofloxacin talk |
 | `dc-fqgaba` | Discharge | After FQ / GABA seizure talk |
+| `dc-ciprocol` | Discharge | After cipro / colitis talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4308,6 +4310,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this a seizure-alone. Send an FQ-seizure home as idiopathic epilepsy. Treat gabapentin as this loc.
 Do next: Name canine fluoroquinolone GABA. Not a seizure-alone. Stop the FQ. △ Plumb. Packet 116 still owns seizure drugs. Do not copy an FQ table.
 
+### `ddx-ciprocol`
+
+Ciprofloxacin colitis — {{patient.name}}
+Canine ciprofloxacin colitis [yes / not]. Not an AHDS-alone [yes / not]. Stop the cipro / moxi [ ]. Packet 131 AHDS [ ]. Packet 344 colitis [ ]. Enro [ ].
+
+DDX:
+1. Named ciprofloxacin / moxifloxacin plus colitis — **Canine ciprofloxacin colitis. Not an AHDS-alone**
+2. Mercer: potentially fatal antimicrobial-induced colitis. Stop the cipro / moxi. △ Plumb
+3. Packet 131 owns AHDS without the named drugs. Packet 344 owns colitis without cipro / moxi. Enro plus AHDS is not this loc
+4. Do not copy an FQ table as if the colon did not matter. Do not send this home as mild AHDS
+5. Dog or cat can fire. Horse does not fire. Bare cipro or bare AHDS stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this an AHDS-alone. Send ciprofloxacin colitis home as mild AHDS. Treat enro plus AHDS as this loc.
+Do next: Name canine ciprofloxacin colitis. Not an AHDS-alone. Stop the cipro / moxi. △ Plumb. Packet 131 still owns AHDS. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4705,6 +4722,14 @@ Return now for pale gums, weakness, fainting, or a very fast or irregular heart 
 We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
 
 Return now for another seizure, collapse, or not waking up. {{location.phonenumber}}
+
+### `dc-ciprocol`
+
+{{patient.name}} was on ciprofloxacin or moxifloxacin and developed colitis. These antibiotics can cause severe, even life-threatening, large-bowel inflammation. This is not a simple AHDS-and-home plan.
+
+We stopped that antibiotic. Give only the medicines we sent, as labeled. Do not add leftover ciprofloxacin from home.
+
+Return now for more bloody diarrhea, collapse, or a swollen belly. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -221,6 +221,23 @@ FQ_GABA_RE = re.compile(
 # seizure (116). Do not use metro tox without FQ (349). Do not
 # harvest an FQ mg/kg table. Dogs and cats. Skip horse (rapid IV
 # enro neuro is a different loc). Mercer: GABA antagonism.
+CIPRO_MOXI_RE = re.compile(r"\b(ciprofloxacin|moxifloxacin|cipro)\b", re.I)
+CIPROCOL_SIGN_RE = re.compile(
+    r"\bcolitis\b|"
+    r"\bahds\b|"
+    r"\bhge\b|"
+    r"hemorrhagic (diarrhea|gastro|enter)|"
+    r"haemorrhagic (diarrhea|gastro)|"
+    r"bloody diarrhea|"
+    r"\bhematochezia\b",
+    re.I,
+)
+# Packet 359: named ciprofloxacin / moxifloxacin plus colitis / AHDS /
+# bloody diarrhea / hemorrhagic diarrhea / hematochezia only. Do not
+# use AHDS_RE parvo. Do not use enro / Baytril. Do not use bare cipro.
+# Do not use bare AHDS (131). Do not use colitis without the named
+# drugs (344). Do not harvest an FQ mg/kg table. Dogs and cats. Skip
+# horse. Mercer: potentially fatal antimicrobial-induced colitis.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6719,6 +6736,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQ_GABA_RE.search(text)
     )
+    steal_ciprocol_dx = (
+        spec in {"dog", "cat"}
+        and CIPRO_MOXI_RE.search(text)
+        and CIPROCOL_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6879,6 +6901,7 @@ def analyze(
         or steal_fqpreg_dx
         or steal_prado_dx
         or steal_fqgaba_dx
+        or steal_ciprocol_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18480,6 +18503,66 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ GABA."
+            )
+
+    ciprocol_named = (
+        spec in {"dog", "cat"}
+        and CIPRO_MOXI_RE.search(text)
+        and CIPROCOL_SIGN_RE.search(text)
+    )
+    if ciprocol_named:
+        if spec == "cat":
+            ciprocol_loc = (
+                "Feline ciprofloxacin colitis. Not an AHDS-alone."
+            )
+        else:
+            ciprocol_loc = (
+                "Canine ciprofloxacin colitis. Not an AHDS-alone."
+            )
+        localization = (
+            f"{localization} Also {ciprocol_loc}" if localization else ciprocol_loc
+        )
+        hard_stops.append(
+            "Do not send ciprofloxacin colitis home as AHDS. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: cipro / moxi can cause fatal antimicrobial colitis."
+        )
+        do_not.append(
+            "Do not call this an AHDS-alone. "
+            "Do not copy an FQ table as if the colon did not matter. "
+            "Packet 131 still owns AHDS without the named drugs. "
+            "Packet 344 still owns colitis without cipro / moxi. "
+            "Enrofloxacin plus AHDS is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline ciprofloxacin colitis. Not an AHDS-alone. "
+                "Stop the cipro / moxi. △ Plumb. Packet 344 still owns "
+                "colitis. Packet 131 still owns AHDS. Do not copy an FQ "
+                "table."
+            )
+        else:
+            do_next.append(
+                "Name canine ciprofloxacin colitis. Not an AHDS-alone. "
+                "Stop the cipro / moxi. △ Plumb. Packet 131 still owns "
+                "AHDS. Packet 344 still owns colitis. Packet 358 still "
+                "owns FQ GABA. Do not copy an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: both "
+            "ciprofloxacin and moxifloxacin have been associated with "
+            "potentially fatal antimicrobial-induced colitis. Packet 131 "
+            "AHDS. Packet 344 colitis. Packet 358 FQ GABA. Do not harvest "
+            "FQ mg/kg. Skip horse. Food-animal ELDU is prohibited for "
+            "fluoroquinolones."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cipro colitis."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cipro colitis."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

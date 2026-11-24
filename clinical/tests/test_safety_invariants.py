@@ -810,6 +810,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a baytril-alone", VERIF.lower())
         self.assertIn("canine fluoroquinolone gaba", VERIF.lower())
         self.assertIn("not a seizure-alone", VERIF.lower())
+        self.assertIn("canine ciprofloxacin colitis", VERIF.lower())
+        self.assertIn("not an ahds-alone", VERIF.lower())
 
     def test_vetspire_macros_are_paste_ready_and_not_a_login(self):
         self.assertIn("do not login to vetspire", MACRO.lower())
@@ -1378,6 +1380,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-prado`", MACRO)
         self.assertIn("`ddx-fqgaba`", MACRO)
         self.assertIn("`dc-fqgaba`", MACRO)
+        self.assertIn("`ddx-ciprocol`", MACRO)
+        self.assertIn("`dc-ciprocol`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
@@ -1623,6 +1627,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("not a baytril-alone", MACRO.lower())
         self.assertIn("canine fluoroquinolone gaba", MACRO.lower())
         self.assertIn("not a seizure-alone", MACRO.lower())
+        self.assertIn("canine ciprofloxacin colitis", MACRO.lower())
+        self.assertIn("not an ahds-alone", MACRO.lower())
         self.assertIn("pain on ls extension", MACRO.lower())
         self.assertIn("image the ls junction", MACRO.lower())
         self.assertIn("two-engine gait", MACRO.lower())
@@ -2231,6 +2237,8 @@ class PublicCardInvariants(unittest.TestCase):
             "not a baytril-alone",
             "canine fluoroquinolone gaba",
             "not a seizure-alone",
+            "canine ciprofloxacin colitis",
+            "not an ahds-alone",
         ):
             self.assertIn(needle, CARD.lower(), msg=needle)
 

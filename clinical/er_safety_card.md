@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine ciprofloxacin colitis (Merck Mercer Jun 2026)
+
+- **Canine ciprofloxacin colitis. Not an AHDS-alone.** Named ciprofloxacin / cipro / moxifloxacin plus colitis / AHDS / HGE / bloody diarrhea / hemorrhagic diarrhea / hematochezia only. Mercer: both ciprofloxacin and moxifloxacin have been associated with potentially fatal antimicrobial-induced colitis. Stop the cipro / moxi. △ Plumb. Packet 131 still owns AHDS without the named drugs. Packet 344 still owns colitis without cipro / moxi. Packet 358 still owns FQ GABA. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send this home as mild AHDS. Enrofloxacin plus AHDS is not this loc. Bare cipro stays dark. Bare AHDS stays 131. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline ciprofloxacin colitis. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone GABA (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone GABA. Not a seizure-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus seizure / convulsion / neurotox / GABA only. Mercer: quinolones tend to be neurotoxic; convulsions can occur at high doses due to GABA receptor antagonism. Stop the FQ. △ Plumb. Packet 116 still owns seizure drugs. Packet 349 still owns metronidazole neurotoxicity. Packet 357 still owns canine prado. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send an FQ-seizure home as idiopathic epilepsy. Gabapentin is not this loc. Bare FQ stays dark. Bare seizure stays 116. Skip horse; rapid IV enro neuro is a different loc. Food-animal ELDU is prohibited for fluoroquinolones.

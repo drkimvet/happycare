@@ -5398,3 +5398,31 @@ Night rule: named FQ plus seizure → **Canine fluoroquinolone GABA. Not a seizu
 - Attending: If the query is only “seizure,” why does this gate stay dark?
 - Attending: Horse seizure plus enrofloxacin — fire or skip, and why?
 - Attending: Cat plus Baytril plus seizure — which locs fire, and why?
+
+## 359. Canine ciprofloxacin colitis (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett cipro-colitis chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (both ciprofloxacin and moxifloxacin have been associated with potentially fatal antimicrobial-induced colitis; vomiting and diarrhea may develop with fluoroquinolones). Packet 131 still owns AHDS without the named drugs. Packet 344 still owns colitis without cipro / moxi. Packet 358 still owns FQ GABA. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on enrofloxacin plus AHDS. Do not fire on bare cipro. Do not fire on bare AHDS. Do not fire on parvo without the named drugs. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named ciprofloxacin plus colitis is not an AHDS-alone.** Stop the cipro / moxi. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named ciprofloxacin / cipro / moxifloxacin plus colitis / AHDS / HGE / bloody diarrhea / hemorrhagic diarrhea / hematochezia is canine (or feline) ciprofloxacin colitis; not an AHDS-alone. Bare cipro stays dark. Bare AHDS stays 131. Bare colitis stays 344. Enro plus AHDS stays 131. Dual colitis plus cipro concatenates 359 then 344. Dual AHDS plus cipro concatenates 131 then 359. Dual seizure plus cipro plus colitis concatenates 358 then 359. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this an AHDS-alone.
+- Do not send ciprofloxacin colitis home as mild AHDS.
+- Do not copy an FQ table as if the colon did not matter.
+- Do not treat enrofloxacin plus AHDS as this loc.
+- Do not treat colitis without cipro / moxi as this loc.
+
+Night rule: named cipro / moxi plus colitis → **Canine ciprofloxacin colitis. Not an AHDS-alone.** Stop the cipro / moxi. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is ciprofloxacin plus bloody diarrhea not a mild-AHDS night?
+- NAVLE 2: Why does enrofloxacin plus AHDS stay dark for this loc?
+- NAVLE 3: Dual-named “colitis, ciprofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the cipro without inventing an FQ table?
+- Attending: If the query is only “ciprofloxacin,” why does this gate stay dark?
+- Attending: Horse colitis plus ciprofloxacin — fire or skip?
+- Attending: Cat plus cipro plus colitis — which locs fire, and why?
