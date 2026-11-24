@@ -196,6 +196,14 @@ GROWING_FQ_RE = re.compile(
 # young dog only. Do not use adult dog plus FQ. Do not use cat plus
 # enro (354). Do not harvest an FQ mg/kg table. Skip horse / foal as
 # its own loc. Mercer: cartilaginous erosions, permanent lameness.
+PREG_FQ_RE = re.compile(
+    r"\b(pregnant|pregnancy|gestation|embryonic)\b",
+    re.I,
+)
+# Packet 356: named FQ plus pregnant / pregnancy / gestation /
+# embryonic only. Do not use pyometra without named FQ. Do not use
+# growing-dog FQ (355). Do not harvest an FQ mg/kg table. Dogs and
+# cats. Skip horse. Mercer: embryonic loss and maternal toxicity.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6683,6 +6691,11 @@ def analyze(
     steal_fqcart_dx = (
         spec == "dog" and FQ_RE.search(text) and GROWING_FQ_RE.search(text)
     )
+    steal_fqpreg_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and PREG_FQ_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6840,6 +6853,7 @@ def analyze(
         or steal_fqcyclo_dx
         or steal_enroretina_dx
         or steal_fqcart_dx
+        or steal_fqpreg_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18279,6 +18293,68 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ cartilage."
+            )
+
+    fqpreg_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and PREG_FQ_RE.search(text)
+    )
+    if fqpreg_named:
+        if spec == "cat":
+            fqpreg_loc = (
+                "Feline fluoroquinolone pregnancy. Not a pyometra-alone."
+            )
+        else:
+            fqpreg_loc = (
+                "Canine fluoroquinolone pregnancy. Not a pyometra-alone."
+            )
+        localization = (
+            f"{localization} Also {fqpreg_loc}" if localization else fqpreg_loc
+        )
+        hard_stops.append(
+            "Do not send a pregnant patient home on a fluoroquinolone. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: embryonic loss and maternal toxicity."
+        )
+        do_not.append(
+            "Do not call this a pyometra-alone. "
+            "Do not copy an FQ table as if pregnancy did not matter. "
+            "Packet 355 cartilage is not this loc. "
+            "Pyometra without named FQ is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone pregnancy. Not a pyometra-alone. "
+                "Stop the FQ. △ Plumb. Packet 354 still owns cat enro retina. "
+                "Packet 355 still owns growing-dog cartilage. Do not copy an "
+                "FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone pregnancy. Not a pyometra-alone. "
+                "Stop the FQ. △ Plumb. Packet 355 still owns growing-dog "
+                "cartilage. Do not copy an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: administering "
+            "large doses of quinolones for any length of time during "
+            "pregnancy may result in embryonic loss and maternal toxicity. "
+            "Packet 355 FQ cartilage. Packet 354 cat enro retina. Do not "
+            "harvest FQ mg/kg. Skip horse. Food-animal ELDU is prohibited "
+            "for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ pregnancy."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ pregnancy."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

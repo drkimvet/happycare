@@ -292,6 +292,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqcyclo` | Assessment | Canine fluoroquinolone-cyclosporine stack / not a theophylline-alone |
 | `ddx-enroret` | Assessment | Feline enrofloxacin retina / not a SARDS-alone |
 | `ddx-fqcart` | Assessment | Canine fluoroquinolone cartilage / not an adult UTI-alone |
+| `ddx-fqpreg` | Assessment | Canine fluoroquinolone pregnancy / not a pyometra-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -337,6 +338,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqcyclo` | Discharge | After FQ / cyclosporine stack talk |
 | `dc-enroret` | Discharge | After feline enrofloxacin / retina talk |
 | `dc-fqcart` | Discharge | After FQ / growing-dog cartilage talk |
+| `dc-fqpreg` | Discharge | After FQ / pregnancy talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4257,6 +4259,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this an adult UTI-alone. Send a growing dog home on Baytril as a UTI antibiotic. Treat cat enro retina as this loc.
 Do next: Name canine fluoroquinolone cartilage. Not an adult UTI-alone. Stop the FQ. △ Plumb. Packet 354 still owns cat enro retina. Do not copy an FQ table.
 
+### `ddx-fqpreg`
+
+Fluoroquinolone pregnancy — {{patient.name}}
+Canine fluoroquinolone pregnancy [yes / not]. Not a pyometra-alone [yes / not]. Stop the FQ [ ]. Packet 355 cartilage [ ]. Packet 354 cat retina [ ]. Pyometra without FQ [ ].
+
+DDX:
+1. Named FQ in pregnancy — **Canine fluoroquinolone pregnancy. Not a pyometra-alone**
+2. Mercer: embryonic loss and maternal toxicity. Stop the FQ. △ Plumb
+3. Packet 355 owns growing-dog cartilage. Packet 354 owns cat enro retina. Pyometra without named FQ is not this loc
+4. Do not copy an FQ table as if pregnancy did not matter. Do not send a pregnant patient home on Baytril
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare pregnancy stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a pyometra-alone. Send a pregnant patient home on Baytril. Treat growing-dog cartilage as this loc.
+Do next: Name canine fluoroquinolone pregnancy. Not a pyometra-alone. Stop the FQ. △ Plumb. Packet 355 still owns growing-dog cartilage. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4630,6 +4647,14 @@ Return now for dilated pupils, bumping into things, or sudden blindness. {{locat
 We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
 
 Return now for lameness, joint swelling, or not wanting to walk. {{location.phonenumber}}
+
+### `dc-fqpreg`
+
+{{patient.name}} was on a fluoroquinolone antibiotic during pregnancy. These drugs can risk pregnancy loss and make the dam sick. This is not a simple pyometra-and-antibiotic plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for vaginal discharge, straining, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-ahds`
 

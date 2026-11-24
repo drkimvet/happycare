@@ -5314,3 +5314,31 @@ Night rule: named FQ plus growing dog → **Canine fluoroquinolone cartilage. No
 - Attending: If the query is only “puppy,” why does this gate stay dark?
 - Attending: Horse / foal enrofloxacin — fire or skip, and why?
 - Attending: Cat plus Baytril — this loc or 354, and why?
+
+## 356. Canine fluoroquinolone pregnancy (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-pregnancy chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (administering large doses of quinolones for any length of time during pregnancy may result in embryonic loss and maternal toxicity). Packet 355 still owns growing-dog cartilage. Packet 354 still owns cat enrofloxacin retina. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on pyometra without named FQ. Do not fire on bare FQ. Do not fire on bare pregnancy (eclampsia oral-calcium trap). Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone in pregnancy is not a pyometra-alone.** Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus pregnant / pregnancy / gestation / embryonic is canine (or feline) fluoroquinolone pregnancy; not a pyometra-alone. Bare FQ stays dark. Bare pregnancy stays dark. Pyometra without named FQ stays the pyo night. Dual puppy plus pregnant plus FQ concatenates 355 then 356. Dual cat enro plus pregnant concatenates 354 then 356. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a pyometra-alone.
+- Do not send a pregnant patient home on Baytril.
+- Do not copy an FQ table as if pregnancy did not matter.
+- Do not treat growing-dog cartilage as this loc.
+- Do not treat pyometra without named FQ as this loc.
+
+Night rule: named FQ plus pregnancy → **Canine fluoroquinolone pregnancy. Not a pyometra-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is pregnant plus Baytril not a pyometra-and-home night?
+- NAVLE 2: Why does pyometra without a named FQ stay dark for this loc?
+- NAVLE 3: Dual-named “puppy, pregnant, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “pregnancy,” why does this gate stay dark?
+- Attending: Horse pregnant plus enrofloxacin — fire or skip?
+- Attending: Cat plus pregnant plus Baytril — which locs fire, and why?

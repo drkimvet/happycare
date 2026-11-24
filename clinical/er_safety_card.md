@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone pregnancy (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone pregnancy. Not a pyometra-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus pregnant / pregnancy / gestation / embryonic only. Mercer: administering large doses of quinolones for any length of time during pregnancy may result in embryonic loss and maternal toxicity. Stop the FQ. △ Plumb. Packet 355 still owns growing-dog cartilage. Packet 354 still owns cat enrofloxacin retina. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send a pregnant patient home on Baytril. Bare FQ stays dark. Bare pregnancy stays dark. Pyometra without named FQ stays the pyo night. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone pregnancy. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone cartilage (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone cartilage. Not an adult UTI-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus growing / immature / puppy / juvenile / young dog only. Mercer: high prolonged dosages in growing dogs and foals have produced cartilaginous erosions leading to permanent lameness; avoid excessive use in immature animals. Stop the FQ. △ Plumb. Packet 354 still owns cat enrofloxacin retina. Packet 351 still owns sucralfate chelation. Foal cartilage is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send a growing dog home on Baytril as a UTI antibiotic. Adult dog plus FQ stays dark. Bare puppy stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

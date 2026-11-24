@@ -12584,6 +12584,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not an adult uti-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_pregnancy_is_not_a_pyometra_alone(self):
+        b = analyze("dog", "pregnant, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIn("not a pyometra-alone", loc)
+        self.assertNotIn("canine fluoroquinolone cartilage", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a pregnant patient home on a fluoroquinolone", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gestation_baytril_fires_fqpreg(self):
+        b = analyze("dog", "gestation, Baytril")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_embryonic_marbofloxacin_fires_fqpreg(self):
+        b = analyze("dog", "embryonic, marbofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqcart_plus_pregnancy_concatenates(self):
+        b = analyze("dog", "puppy, pregnant, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_pregnancy_concatenates_retina(self):
+        b = analyze("cat", "pregnant, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertIn("feline fluoroquinolone pregnancy", loc)
+        self.assertIn("not a sards-alone", loc)
+        self.assertIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pyometra_without_fq_is_not_fqpreg(self):
+        b = analyze("dog", "pyometra")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone pregnancy", loc)
+        self.assertNotIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pyometra_plus_enro_is_not_fqpreg(self):
+        b = analyze("dog", "pyometra, enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone pregnancy", loc)
+        self.assertNotIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pregnancy_is_not_fqpreg(self):
+        b = analyze("dog", "pregnancy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqpreg(self):
+        b = analyze("horse", "pregnant, enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone pregnancy", loc)
+        self.assertNotIn("feline fluoroquinolone pregnancy", loc)
+        self.assertNotIn("not a pyometra-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
