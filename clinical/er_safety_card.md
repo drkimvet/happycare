@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone-theophylline stack (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone-theophylline stack. Not a chelation-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus theophylline / aminophylline only. Quinolones inhibit methylxanthine biotransformation. Theophylline is the clinically relevant object drug. Raised methylxanthines can cause CNS and cardiac toxicity. Stop the stack. Packet 351 still owns sucralfate chelation. Chocolate / theobromine toxin without named theophylline stays the toxin gate. Cat enrofloxacin retina is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a theophylline mg/kg table. Do **not** send the stack home as a cough-plus-antibiotic night. Bare FQ stays dark. Bare theophylline stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone-theophylline stack. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone chelation (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone chelation. Not a sucralfate-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus sucralfate only. Sucralfate and other multivalent-cation drugs interfere with GI absorption of quinolones. The coating is not harmless on an FQ night. Stop the stack. Packet 335 still owns named gastric ulcer without the FQ. Packet 350 still owns NSAID-steroid. Theophylline plus FQ is a different DDI, not this loc. Cat enrofloxacin retina is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a 2-hour separation clock. Do **not** send the stack home as GI protection for the antibiotic. Bare FQ stays dark for this loc. Bare sucralfate stays 335-coating talk. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

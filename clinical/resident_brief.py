@@ -167,7 +167,12 @@ FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ci
 # Packet 351: named FQ plus sucralfate only. Do not use bare FQ (UTI /
 # retina). Do not use bare sucralfate (335). Do not harvest a 2-hour
 # clock or an FQ mg/kg table. Dogs and cats. Skip horse. Theophylline
-# plus FQ is a different DDI, not this loc. Cat enro retina is not this loc.
+# plus FQ is packet 352. Cat enro retina is not this loc.
+THEOPHYLLINE_RE = re.compile(r"\b(theophylline|aminophylline)\b", re.I)
+# Packet 352: named FQ plus theophylline / aminophylline only. Do not
+# use chocolate / theobromine / methylxanthine toxin (already gated).
+# Do not use sucralfate plus FQ (351). Do not harvest an FQ or
+# theophylline mg/kg table. Dogs and cats. Skip horse.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6649,6 +6654,7 @@ def analyze(
         and GLUCOCORT_RE.search(text)
     )
     steal_fqsuc_dx = FQ_RE.search(text) and SUCRALFATE_RE.search(text)
+    steal_fqtheo_dx = FQ_RE.search(text) and THEOPHYLLINE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6802,6 +6808,7 @@ def analyze(
         or steal_metrotox_dx
         or steal_nsaidster_dx
         or steal_fqsuc_dx
+        or steal_fqtheo_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18007,6 +18014,74 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for fluoroquinolone chelation."
+            )
+
+    fqtheo_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and THEOPHYLLINE_RE.search(text)
+    )
+    if fqtheo_named:
+        if spec == "cat":
+            fqtheo_loc = (
+                "Feline fluoroquinolone-theophylline stack. Not a chelation-alone."
+            )
+        else:
+            fqtheo_loc = (
+                "Canine fluoroquinolone-theophylline stack. Not a chelation-alone."
+            )
+        localization = (
+            f"{localization} Also {fqtheo_loc}" if localization else fqtheo_loc
+        )
+        hard_stops.append(
+            "Do not stack a fluoroquinolone with theophylline. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Do not harvest a theophylline mg/kg table. "
+            "Quinolones raise methylxanthine levels: CNS and cardiac toxicity."
+        )
+        do_not.append(
+            "Do not call this a chelation-alone. "
+            "Do not send the stack home as a cough-plus-antibiotic night. "
+            "Do not copy a theophylline table as if the FQ did not matter. "
+            "Chocolate / theobromine toxin without theophylline is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone-theophylline stack. "
+                "Not a chelation-alone. Stop the stack. △ Plumb. "
+                "Packet 351 still owns sucralfate chelation. "
+                "Cat enrofloxacin retina is a different loc. "
+                "Do not copy a theophylline table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone-theophylline stack. "
+                "Not a chelation-alone. Stop the stack. △ Plumb. "
+                "Packet 351 still owns sucralfate chelation. "
+                "Do not copy a theophylline table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: quinolones "
+            "inhibit biotransformation of methylxanthines; theophylline "
+            "is the most clinically relevant but also caffeine and "
+            "theobromine; increased serum methylxanthines can cause CNS "
+            "and cardiac toxicity. Packet 351 sucralfate chelation. "
+            "Chocolate toxin stays the methylxanthine toxin gate. Do not "
+            "harvest FQ or theophylline mg/kg. Cat enro retina is not "
+            "this loc. Skip horse. Food-animal ELDU is prohibited for "
+            "fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ-theophylline."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ-theophylline."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

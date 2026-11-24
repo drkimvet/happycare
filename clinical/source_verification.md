@@ -5202,3 +5202,31 @@ Night rule: named FQ plus sucralfate → **Canine fluoroquinolone chelation. Not
 - Attending: If the query is only “sucralfate,” why does this gate stay dark?
 - Attending: Horse enrofloxacin plus sucralfate — fire or skip?
 - Attending: Theophylline plus enrofloxacin — this loc or a later DDI, and why?
+
+## 352. Canine fluoroquinolone-theophylline stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-theophylline chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (quinolones inhibit biotransformation of methylxanthines; theophylline is the most clinically relevant but also caffeine and theobromine; increased serum methylxanthines can cause CNS and cardiac toxicity). Packet 351 still owns sucralfate chelation. Do not harvest a fluoroquinolone or theophylline mg/kg table as lobby law. Do not fire on sucralfate plus FQ (351). Do not fire on chocolate / theobromine / methylxanthine toxin without named theophylline. Do not fire on bare FQ. Do not fire on bare theophylline. Cat enrofloxacin retina is a different loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus theophylline is not a chelation-alone.** Stop the stack. Printed FQ and theophylline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus theophylline / aminophylline is canine (or feline) fluoroquinolone-theophylline stack; not a chelation-alone. Bare FQ stays dark. Bare theophylline stays dark. Sucralfate plus FQ stays 351. Chocolate toxin without named theophylline stays the toxin gate. Dual sucralfate plus theophylline plus FQ concatenates 351 then 352. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a theophylline mg/kg table.
+- Do not call this a chelation-alone.
+- Do not send the stack home as a cough-plus-antibiotic night.
+- Do not copy a theophylline table as if the FQ did not matter.
+- Do not treat chocolate toxin as this loc.
+
+Night rule: named FQ plus theophylline → **Canine fluoroquinolone-theophylline stack. Not a chelation-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus theophylline not a cough-plus-antibiotic night?
+- NAVLE 2: Why does chocolate plus enrofloxacin stay the toxin gate, not this loc?
+- NAVLE 3: Dual-named “sucralfate, theophylline, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner the antibiotic raises the airway drug, without inventing a theophylline table?
+- Attending: If the query is only “theophylline,” why does this gate stay dark?
+- Attending: Horse enrofloxacin plus theophylline — fire or skip?
+- Attending: Aminophylline plus marbofloxacin — this loc or skip, and why?
