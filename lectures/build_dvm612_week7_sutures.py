@@ -335,7 +335,7 @@ principles = [
     ("Meticulous hemostasis", "A hematoma is dead space you sewed shut."),
     ("Preserve blood supply", "Overtightening any pattern kills the edge."),
     ("Strict asepsis", "A glove poke contaminates the needle and the suture. Replace both."),
-    ("No tension", "Undermine or move tissue. Do not ask the skin suture to do a flap’s job."),
+    ("No excessive tension", "Normal tissue tension is expected. Excessive tension kills the edge. Undermine or reconstruct. Do not ask a pattern to replace a flap."),
     ("Accurate apposition", "Like tissue to like tissue. Skin to skin. Fascia to fascia."),
     ("Obliterate dead space", "A subcutaneous layer, a walk, or a drain with a pull plan. Not a tighter skin suture."),
 ]
@@ -356,7 +356,7 @@ notes(s, "Two minutes. Every principle has a closure action. Then the three ques
 s = new_content("Three questions before you sew")
 qs = [
     ("1. What tissue is this?", "Skin, subcutis, fascia, hollow viscus, or tendon. The pattern follows the tissue."),
-    ("2. What is the tension?", "If the edges gape, fix the tension first. Undermining beats a tighter mattress."),
+    ("2. What is the tension?", "Name the degree. Normal or minimal: simple interrupted. Mild to moderate: cruciate can share load. Excessive: undermine or reconstruct. No pattern is a flap."),
     ("3. Where is the blood supply?", "Vessels enter perpendicular to the incision. A strangulating pattern delays healing."),
 ]
 for i, (t, d) in enumerate(qs):
@@ -370,12 +370,12 @@ notes(s, "Board the three questions. They will hear them again on every pattern 
 s = new_content("Several patterns can be right")
 add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(3.6), [
     "More than one pattern can close the same incision (WCVM VSAC Lab 3).",
-    "Species, the patient, and the surgeon’s hands all change the choice.",
+    "More than one material class can be appropriate. Tables are overviews, not one right suture.",
     "Personal preference is allowed only among appropriate alternatives.",
-    "An appropriate alternative still has to answer the three questions.",
+    "An appropriate alternative still has to match tissue, healing window, contamination, and load.",
 ], size=20, spacing=14)
 add_round(s, Inches(0.5), Inches(5.15), Inches(12.3), Inches(1.75), GOLD_LT)
-add_text(s, Inches(0.75), Inches(5.35), Inches(11.9), Inches(1.40), "You do not win by naming the rarest pattern. You win by naming why this one is safe on this tissue tonight.", size=18, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
+add_text(s, Inches(0.75), Inches(5.35), Inches(11.9), Inches(1.40), "You do not win by naming the rarest pattern. You win by naming why this class of material and this pattern are safe on this tissue tonight.", size=18, color=NAVY, anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "Cite WCVM public lab: several patterns can be appropriate. Do not mock preference. Mock a pattern that inverts skin.")
 
 s = new_section("Part 2", "How patterns are classified", "Interrupted or continuous. Appose, invert, or evert.", "10 minutes")
@@ -421,9 +421,9 @@ notes(s, "Board: appose skin. Invert some viscus. Do not evert as a habit.")
 
 s = new_content("Tension is treated, not decorated")
 add_bullets(s, Inches(0.55), Inches(1.25), Inches(12.2), Inches(3.8), [
-    "If the suture will break or cut through, the tension is too high (WCVM).",
-    "Skin tolerates tension poorly. Undermine or move tissue before you pick a ‘tension pattern.’",
-    "Tension sutures belong where you cannot recruit more tissue: some fascia, tendon, or ligament closures.",
+    "If the suture will break or cut through, the tension is excessive (WCVM). That is a reconstructive problem, not a pattern problem.",
+    "Simple interrupted: normal or minimal. Cruciate: mild to moderate. Mattress: shares load off the edge. None of them replaces undermining.",
+    "A tension-relieving pattern is not banned at mild tension. It is not enough for excessive tension alone.",
     "A mattress on ischemic skin is not a reconstructive plan.",
 ], size=20, spacing=12)
 add_round(s, Inches(0.5), Inches(5.25), Inches(12.3), Inches(1.65), RED_LT)
@@ -461,11 +461,11 @@ notes(s, "Pattern cards. Keep moving.")
 s = new_content("Pattern map")
 headers = ("Pattern", "Interrupted or continuous", "Edge", "Usual night use")
 rows = [
-    ("Simple interrupted", "Interrupted", "Appositional", "Skin. Teaching default."),
+    ("Simple interrupted", "Interrupted", "Appositional", "Skin. Normal or minimal tension."),
     ("Simple continuous", "Continuous", "Appositional", "Long even layer. Seal."),
     ("Cruciate", "Interrupted", "Appositional", "Skin. Mild to moderate tension."),
-    ("Horizontal mattress", "Interrupted", "Appose to evert", "Tension. Watch blood supply."),
-    ("Vertical mattress", "Interrupted", "Everting", "Tension. Far-far, then near-near."),
+    ("Horizontal mattress", "Interrupted", "Appose to evert", "Shares load. Watch blood supply."),
+    ("Vertical mattress", "Interrupted", "Everting", "Shares load. Far-far, then near-near."),
     ("Ford interlocking", "Continuous", "Appositional", "Long skin or field line."),
     ("Intradermal", "Continuous", "Appositional", "Dermis. Buried knots."),
     ("Lembert", "Usually continuous", "Inverting", "Hollow viscus. Transverse bites."),
@@ -508,13 +508,13 @@ notes(s, "Merck: mattress transfers tension off the edge. WCVM: major ischemia i
 
 s = new_content("Vertical mattress")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_vertical_mattress.png")
-card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "Far-far, then near-near", "Interrupted. Everting. A tension suture (WCVM).\n\nMerck Professional: one wide-deep loop, then one narrow-shallow loop. Far-far, then near-near.\n\nAligns deep and superficial tissue in one stitch.", accent=GOLD)
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(2.70), "Far-far, then near-near", "Interrupted. Everting. Shares load off the edge. Not a standalone fix for excessive tension.\n\nMerck Professional: one wide-deep loop, then one narrow-shallow loop. Far-far, then near-near.\n\nAligns deep and superficial tissue in one stitch.", accent=GOLD)
 card(s, Inches(6.30), Inches(4.05), Inches(6.55), Inches(2.75), "Do not", "Do not place the near-near first. The shallow loop can cut the skin.\n\nDo not treat eversion as a cosmetic win on dog or cat skin.\n\nConfirm distances in Fossum or the lab. Do not invent millimeters.", accent=RED)
 notes(s, "Say far-far near-near twice. That is the exam phrase. Original 3D figure: surface bars on each side of the cut.")
 
 s = new_content("Near and far patterns")
 figure_panel(s, Inches(0.40), Inches(1.15), Inches(5.70), Inches(5.65), "suture3d_near_far.png")
-card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. A tension suture (WCVM).\n\nThe far bite takes the load. The near bite apposes the edge.\n\nThe name is the order of the bites: near-far-far-near, or far-near-near-far.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.\n\nStill fix the real tension first.", accent=GOLD)
+card(s, Inches(6.30), Inches(1.15), Inches(6.55), Inches(5.65), "What to say", "Interrupted. Appositional. The far bite takes the load. The near bite apposes the edge.\n\nShares load better than a simple interrupted. Not a standalone fix for excessive tension.\n\nThe name is the order of the bites: near-far-far-near, or far-near-near-far.\n\nLess blood-supply cost than a horizontal mattress, more than a simple interrupted.\n\nIf the edges still gape, undermine or reconstruct.", accent=GOLD)
 notes(s, "Do not spend five minutes on the order variants. Name the idea. Original 3D figure.")
 
 s = new_content("Ford interlocking")
@@ -629,7 +629,7 @@ notes(s, "Read the keys. Then references.")
 
 s = new_content("Key points")
 pearls = [
-    "Ask tissue, tension, and blood supply before you name a pattern.",
+    "One theory: match material and pattern to tissue, healing window, contamination, and load.",
     "Interrupted fails as a stitch. Continuous fails as a line.",
     "Appose skin. Invert some hollow viscus. Do not invert skin.",
     "Far-far, then near-near. Connell enters the lumen. Cushing does not.",
