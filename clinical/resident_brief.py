@@ -187,6 +187,15 @@ CYCLOSPORINE_RE = re.compile(
 # dog plus enro. Do not harvest an enrofloxacin mg/kg table. Packet
 # 147 still owns SARDS / sudden-blind. Skip horse. Mercer: enrofloxacin
 # probably should not be used in cats.
+GROWING_FQ_RE = re.compile(
+    r"\b(growing|immature|juvenile|puppy|puppies)\b|"
+    r"\byoung (dog|canine)s?\b",
+    re.I,
+)
+# Packet 355: named FQ plus growing / immature / puppy / juvenile /
+# young dog only. Do not use adult dog plus FQ. Do not use cat plus
+# enro (354). Do not harvest an FQ mg/kg table. Skip horse / foal as
+# its own loc. Mercer: cartilaginous erosions, permanent lameness.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6671,6 +6680,9 @@ def analyze(
     steal_fqtheo_dx = FQ_RE.search(text) and THEOPHYLLINE_RE.search(text)
     steal_fqcyclo_dx = FQ_RE.search(text) and CYCLOSPORINE_RE.search(text)
     steal_enroretina_dx = spec == "cat" and ENRO_RE.search(text)
+    steal_fqcart_dx = (
+        spec == "dog" and FQ_RE.search(text) and GROWING_FQ_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6827,6 +6839,7 @@ def analyze(
         or steal_fqtheo_dx
         or steal_fqcyclo_dx
         or steal_enroretina_dx
+        or steal_fqcart_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18220,6 +18233,52 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for enrofloxacin retina."
+            )
+
+    fqcart_named = (
+        spec == "dog" and FQ_RE.search(text) and GROWING_FQ_RE.search(text)
+    )
+    if fqcart_named:
+        fqcart_loc = (
+            "Canine fluoroquinolone cartilage. Not an adult UTI-alone."
+        )
+        localization = (
+            f"{localization} Also {fqcart_loc}" if localization else fqcart_loc
+        )
+        hard_stops.append(
+            "Do not send a growing dog home on a fluoroquinolone. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: cartilaginous erosions and permanent lameness."
+        )
+        do_not.append(
+            "Do not call this an adult UTI-alone. "
+            "Do not copy an FQ table as if the growth plates did not matter. "
+            "Cat enrofloxacin retina is not this loc. "
+            "Foal cartilage is a different loc."
+        )
+        do_next.append(
+            "Name canine fluoroquinolone cartilage. Not an adult UTI-alone. "
+            "Stop the FQ. △ Plumb. Packet 354 still owns cat enro retina. "
+            "Packet 351 still owns sucralfate chelation. Do not copy an "
+            "FQ table."
+        )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: high prolonged "
+            "dosages in growing dogs and foals have produced cartilaginous "
+            "erosions leading to permanent lameness; excessive use of "
+            "quinolones should be avoided in immature animals; mechanism "
+            "may be magnesium chelation in cartilage. Packet 354 cat enro "
+            "retina. Packet 351 sucralfate chelation. Do not harvest FQ "
+            "mg/kg. Skip horse / foal as its own loc. Food-animal ELDU is "
+            "prohibited for fluoroquinolones."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ cartilage."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ cartilage."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

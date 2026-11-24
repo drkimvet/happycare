@@ -291,6 +291,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqtheo` | Assessment | Canine fluoroquinolone-theophylline stack / not a chelation-alone |
 | `ddx-fqcyclo` | Assessment | Canine fluoroquinolone-cyclosporine stack / not a theophylline-alone |
 | `ddx-enroret` | Assessment | Feline enrofloxacin retina / not a SARDS-alone |
+| `ddx-fqcart` | Assessment | Canine fluoroquinolone cartilage / not an adult UTI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -335,6 +336,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqtheo` | Discharge | After FQ / theophylline stack talk |
 | `dc-fqcyclo` | Discharge | After FQ / cyclosporine stack talk |
 | `dc-enroret` | Discharge | After feline enrofloxacin / retina talk |
+| `dc-fqcart` | Discharge | After FQ / growing-dog cartilage talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4240,6 +4242,21 @@ DDX:
 Do not: harvest an enrofloxacin mg/kg table. Call this a SARDS-alone. Wait until the cat is blind. Send a cat home on Baytril as a UTI antibiotic.
 Do next: Name feline enrofloxacin retina. Not a SARDS-alone. Stop the Baytril. △ Plumb. Packet 147 still owns SARDS. Do not copy an enrofloxacin table.
 
+### `ddx-fqcart`
+
+Fluoroquinolone cartilage — {{patient.name}}
+Canine fluoroquinolone cartilage [yes / not]. Not an adult UTI-alone [yes / not]. Stop the FQ [ ]. Growing / puppy [ ]. Packet 354 cat retina [ ]. Packet 351 chelation [ ].
+
+DDX:
+1. Named FQ in a growing dog — **Canine fluoroquinolone cartilage. Not an adult UTI-alone**
+2. Mercer: cartilaginous erosions and permanent lameness. Stop the FQ. △ Plumb
+3. Packet 354 owns cat enro retina. Packet 351 owns sucralfate chelation. Foal cartilage is a different loc
+4. Do not copy an FQ table as if the growth plates did not matter. Do not send a puppy home on Baytril
+5. Dog only. Adult FQ stays dark. Horse does not fire. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this an adult UTI-alone. Send a growing dog home on Baytril as a UTI antibiotic. Treat cat enro retina as this loc.
+Do next: Name canine fluoroquinolone cartilage. Not an adult UTI-alone. Stop the FQ. △ Plumb. Packet 354 still owns cat enro retina. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4605,6 +4622,14 @@ Return now for vomiting, not eating, or collapse. {{location.phonenumber}}
 We stopped the Baytril. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
 
 Return now for dilated pupils, bumping into things, or sudden blindness. {{location.phonenumber}}
+
+### `dc-fqcart`
+
+{{patient.name}} was on a fluoroquinolone antibiotic while still growing. These drugs can damage growing cartilage and cause lasting lameness. This is not a simple puppy-UTI-and-home plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for lameness, joint swelling, or not wanting to walk. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone cartilage (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone cartilage. Not an adult UTI-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus growing / immature / puppy / juvenile / young dog only. Mercer: high prolonged dosages in growing dogs and foals have produced cartilaginous erosions leading to permanent lameness; avoid excessive use in immature animals. Stop the FQ. △ Plumb. Packet 354 still owns cat enrofloxacin retina. Packet 351 still owns sucralfate chelation. Foal cartilage is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send a growing dog home on Baytril as a UTI antibiotic. Adult dog plus FQ stays dark. Bare puppy stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Azotemic: still no NSAID, still no DexSP.
+
 ## Feline enrofloxacin retina (Merck Mercer Jun 2026)
 
 - **Feline enrofloxacin retina. Not a SARDS-alone.** Named enrofloxacin / Baytril in a cat only. Mercer: retinal degeneration may occur acutely in cats; risk greatest for enrofloxacin; enrofloxacin probably should not be used in cats; renal disease may increase this risk. Thomasy: enrofloxacin can cause acute retinal degeneration in cats. Stop the Baytril. △ Plumb. Packet 147 still owns SARDS / sudden-blind. Packet 353 still owns FQ-cyclosporine. Marbofloxacin / pradofloxacin / orbifloxacin are not this loc. Do **not** harvest an enrofloxacin mg/kg table. Do **not** wait until the cat is blind. Do **not** send a cat home on Baytril as a UTI antibiotic. Dog plus enro stays dark. Bare marbofloxacin stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

@@ -5286,3 +5286,31 @@ Night rule: named enrofloxacin in a cat → **Feline enrofloxacin retina. Not a 
 - Attending: If the query is only “marbofloxacin” in a cat, why does this gate stay dark?
 - Attending: Horse enrofloxacin — fire or skip?
 - Attending: Pradofloxacin in a cat — this loc or skip, and why?
+
+## 355. Canine fluoroquinolone cartilage (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-cartilage chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (because high prolonged dosages in growing dogs and foals have produced cartilaginous erosions leading to permanent lameness, excessive use of quinolones should be avoided in immature animals; the mechanism may be via the chelation of magnesium in cartilage). Packet 354 still owns cat enrofloxacin retina. Packet 351 still owns sucralfate chelation. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on adult dog plus FQ. Do not fire on bare puppy. Do not fire on cat plus enro (354). Skip horse / foal as its own loc. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone in a growing dog is not an adult UTI-alone.** Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus growing / immature / puppy / juvenile / young dog is canine fluoroquinolone cartilage; not an adult UTI-alone. Adult dog plus FQ stays dark. Bare puppy stays dark. Cat plus enro stays 354. Dual sucralfate plus puppy plus FQ concatenates 351 then 355. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this an adult UTI-alone.
+- Do not send a growing dog home on Baytril as a UTI antibiotic.
+- Do not copy an FQ table as if the growth plates did not matter.
+- Do not treat cat enrofloxacin retina as this loc.
+- Do not treat foal cartilage as this loc.
+
+Night rule: named FQ plus growing dog → **Canine fluoroquinolone cartilage. Not an adult UTI-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a puppy plus Baytril not an adult UTI-and-home night?
+- NAVLE 2: Why does adult dog plus enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “sucralfate, puppy, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “puppy,” why does this gate stay dark?
+- Attending: Horse / foal enrofloxacin — fire or skip, and why?
+- Attending: Cat plus Baytril — this loc or 354, and why?

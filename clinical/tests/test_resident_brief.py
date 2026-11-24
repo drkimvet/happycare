@@ -12516,6 +12516,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a sards-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_cartilage_is_not_an_adult_uti_alone(self):
+        b = analyze("dog", "puppy, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a growing dog home on a fluoroquinolone", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_growing_baytril_fires_fqcart(self):
+        b = analyze("dog", "growing, Baytril")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_juvenile_marbofloxacin_fires_fqcart(self):
+        b = analyze("dog", "juvenile, marbofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_young_dog_fluoroquinolone_fires_fqcart(self):
+        b = analyze("dog", "young dog, fluoroquinolone")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqsuc_plus_puppy_concatenates(self):
+        b = analyze("dog", "sucralfate, puppy, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone chelation", loc)
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("not a sucralfate-alone", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_adult_enro_is_not_fqcart(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone cartilage", loc)
+        self.assertNotIn("not an adult uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_puppy_is_not_fqcart(self):
+        b = analyze("dog", "puppy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone cartilage", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_enro_is_not_fqcart(self):
+        b = analyze("cat", "enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertNotIn("canine fluoroquinolone cartilage", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqcart(self):
+        b = analyze("horse", "growing, enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone cartilage", loc)
+        self.assertNotIn("not an adult uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
