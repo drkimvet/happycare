@@ -204,6 +204,11 @@ PREG_FQ_RE = re.compile(
 # embryonic only. Do not use pyometra without named FQ. Do not use
 # growing-dog FQ (355). Do not harvest an FQ mg/kg table. Dogs and
 # cats. Skip horse. Mercer: embryonic loss and maternal toxicity.
+PRADO_RE = re.compile(r"\bpradofloxacin\b", re.I)
+# Packet 357: named pradofloxacin in a dog only. Do not use Veraflox
+# shorthand. Do not use cat plus prado (354 is enro, not this). Do
+# not use Baytril as this loc. Do not harvest a pradofloxacin mg/kg
+# table. Skip horse. Mercer: not approved for dogs in the US.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6696,6 +6701,7 @@ def analyze(
         and FQ_RE.search(text)
         and PREG_FQ_RE.search(text)
     )
+    steal_prado_dx = spec == "dog" and PRADO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6854,6 +6860,7 @@ def analyze(
         or steal_enroretina_dx
         or steal_fqcart_dx
         or steal_fqpreg_dx
+        or steal_prado_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18355,6 +18362,46 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ pregnancy."
+            )
+
+    prado_named = spec == "dog" and PRADO_RE.search(text)
+    if prado_named:
+        prado_loc = "Canine pradofloxacin. Not a Baytril-alone."
+        localization = (
+            f"{localization} Also {prado_loc}" if localization else prado_loc
+        )
+        hard_stops.append(
+            "Do not send a dog home on pradofloxacin. "
+            "Do not harvest a pradofloxacin mg/kg table. "
+            "Mercer: not approved for dogs in the US."
+        )
+        do_not.append(
+            "Do not call this a Baytril-alone. "
+            "Do not copy a pradofloxacin table as if the US label did not matter. "
+            "Bone marrow suppression and arrhythmogenic potential stay on the page. "
+            "Cat plus pradofloxacin is not this loc."
+        )
+        do_next.append(
+            "Name canine pradofloxacin. Not a Baytril-alone. Stop the prado. "
+            "△ Plumb. Packet 354 still owns cat enro retina. Packet 356 "
+            "still owns FQ pregnancy. Do not copy a pradofloxacin table."
+        )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: pradofloxacin is "
+            "labeled for dogs in some countries but is not approved for dogs "
+            "in the US due to its adverse effects of bone marrow suppression "
+            "and arrhythmogenic potential. Packet 354 cat enro retina. "
+            "Packet 356 FQ pregnancy. Do not harvest pradofloxacin mg/kg. "
+            "Skip cat and horse. Food-animal ELDU is prohibited for "
+            "fluoroquinolones."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for pradofloxacin."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for pradofloxacin."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

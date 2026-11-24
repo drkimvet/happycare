@@ -5342,3 +5342,31 @@ Night rule: named FQ plus pregnancy → **Canine fluoroquinolone pregnancy. Not 
 - Attending: If the query is only “pregnancy,” why does this gate stay dark?
 - Attending: Horse pregnant plus enrofloxacin — fire or skip?
 - Attending: Cat plus pregnant plus Baytril — which locs fire, and why?
+
+## 357. Canine pradofloxacin (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett pradofloxacin-in-dogs chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (pradofloxacin is labeled for dogs in some countries but is not approved for dogs in the US due to its adverse effects of bone marrow suppression and arrhythmogenic potential; US table lists pradofloxacin for cats). Packet 354 still owns cat enrofloxacin retina. Packet 356 still owns FQ pregnancy. Do not harvest a pradofloxacin mg/kg table as lobby law. Do not fire on cat plus prado. Do not fire on Baytril as this loc. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named pradofloxacin in a dog is not a Baytril-alone.** Stop the prado. Printed pradofloxacin mg/kg stays on the page (`△ Plumb`).
+
+Night split: named pradofloxacin in a dog is canine pradofloxacin; not a Baytril-alone. Cat plus prado stays dark. Bare enrofloxacin stays dark for this loc. Dual pregnant plus prado concatenates 356 then 357. Dual puppy plus prado concatenates 355 then 357. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a pradofloxacin mg/kg table.
+- Do not call this a Baytril-alone.
+- Do not send a dog home on pradofloxacin as if it were Baytril.
+- Do not copy a pradofloxacin table as if the US label did not matter.
+- Do not treat cat plus prado as this loc.
+- Do not treat FQ pregnancy as this loc.
+
+Night rule: named pradofloxacin in a dog → **Canine pradofloxacin. Not a Baytril-alone.** Stop the prado. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is dog plus pradofloxacin not a Baytril-swap night?
+- NAVLE 2: Why does cat plus pradofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “pregnant, pradofloxacin” in a dog — which loc should win, and why?
+- Oral: How do you tell the owner this is not a US dog drug, without inventing a prado table?
+- Attending: If the query is only “enrofloxacin,” why does this gate stay dark?
+- Attending: Horse pradofloxacin — fire or skip?
+- Attending: Puppy plus pradofloxacin — which locs fire, and why?

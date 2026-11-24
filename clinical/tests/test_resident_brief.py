@@ -12655,6 +12655,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a pyometra-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_pradofloxacin_is_not_a_baytril_alone(self):
+        b = analyze("dog", "pradofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine pradofloxacin", loc)
+        self.assertIn("not a baytril-alone", loc)
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a dog home on pradofloxacin", joined)
+        self.assertIn("pradofloxacin mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqpreg_plus_prado_concatenates(self):
+        b = analyze("dog", "pregnant, pradofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIn("canine pradofloxacin", loc)
+        self.assertIn("not a pyometra-alone", loc)
+        self.assertIn("not a baytril-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqcart_plus_prado_concatenates(self):
+        b = analyze("dog", "puppy, pradofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone cartilage", loc)
+        self.assertIn("canine pradofloxacin", loc)
+        self.assertIn("not an adult uti-alone", loc)
+        self.assertIn("not a baytril-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_prado_is_not_canine_prado(self):
+        b = analyze("cat", "pradofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pradofloxacin", loc)
+        self.assertNotIn("not a baytril-alone", loc)
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_enro_is_not_prado(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pradofloxacin", loc)
+        self.assertNotIn("not a baytril-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_baytril_is_not_prado(self):
+        b = analyze("dog", "Baytril")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pradofloxacin", loc)
+        self.assertNotIn("not a baytril-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_marbofloxacin_is_not_prado(self):
+        b = analyze("dog", "marbofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pradofloxacin", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_prado(self):
+        b = analyze("horse", "pradofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine pradofloxacin", loc)
+        self.assertNotIn("not a baytril-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
