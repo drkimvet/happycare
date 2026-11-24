@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone photosensitivity (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone photosensitivity. Not a sunburn-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus photosensitivity / phototoxicity / sunburn / dermal reaction only. Mercer: dermal reactions and photosensitization have been described in people, but the occurrence seems low. That is **human data on the veterinary page**, not a proven canine sunburn equivalent. Stop the FQ. △ Plumb. Packet 360 still owns FQ tendinopathy. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** send this home as sunburn. Bare FQ stays dark. Bare sunburn stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone photosensitivity. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone tendinopathy (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone tendinopathy. Not a CCL-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus tendon / tendinitis / tendinopathy / Achilles / rupture only. Mercer: in 2008 the FDA added a black-box warning for seven fluoroquinolones that increased the risk of tendinitis and tendon rupture. That is **human data on the veterinary page**, not a proven canine CCL equivalent. Packet 355 (growing-dog cartilage) is the veterinary musculoskeletal FQ fact. Stop the FQ. △ Plumb. Packet 359 still owns cipro colitis. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** send this home as CCL. Bare FQ stays dark. Bare CCL stays dark. FQ plus CCL without tendon language stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

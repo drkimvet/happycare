@@ -12938,6 +12938,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a ccl-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_photosensitivity_is_not_a_sunburn_alone(self):
+        b = analyze("dog", "enrofloxacin, photosensitivity")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send fq photosensitivity home as sunburn", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertIn("human data", joined)
+        self.assertNotIn("canine fluoroquinolone tendinopathy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_sunburn_fires_fqphoto(self):
+        b = analyze("dog", "baytril, sunburn")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_phototox_concatenates(self):
+        b = analyze("cat", "marbofloxacin, phototoxicity")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone photosensitivity", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqtend_plus_fqphoto_concatenates(self):
+        b = analyze("dog", "enrofloxacin, tendinopathy, photosensitivity")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone tendinopathy", loc)
+        self.assertIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertIn("not a ccl-alone", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_tendon_is_not_fqphoto(self):
+        b = analyze("dog", "enrofloxacin, tendinopathy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone tendinopathy", loc)
+        self.assertNotIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fq_is_not_fqphoto(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sunburn_is_not_fqphoto(self):
+        b = analyze("dog", "sunburn")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqphoto(self):
+        b = analyze("horse", "enrofloxacin, photosensitivity")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("feline fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

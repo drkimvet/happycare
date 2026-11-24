@@ -297,6 +297,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqgaba` | Assessment | Canine fluoroquinolone GABA / not a seizure-alone |
 | `ddx-ciprocol` | Assessment | Canine ciprofloxacin colitis / not an AHDS-alone |
 | `ddx-fqtend` | Assessment | Canine fluoroquinolone tendinopathy / not a CCL-alone |
+| `ddx-fqphoto` | Assessment | Canine fluoroquinolone photosensitivity / not a sunburn-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -347,6 +348,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqgaba` | Discharge | After FQ / GABA seizure talk |
 | `dc-ciprocol` | Discharge | After cipro / colitis talk |
 | `dc-fqtend` | Discharge | After FQ / tendinopathy talk |
+| `dc-fqphoto` | Discharge | After FQ / photosensitivity talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4342,6 +4344,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this a CCL-alone. Send FQ tendinopathy home as CCL. Treat bare CCL as this loc.
 Do next: Name canine fluoroquinolone tendinopathy. Not a CCL-alone. Stop the FQ. △ Plumb. Packet 359 still owns cipro colitis. Do not copy an FQ table.
 
+### `ddx-fqphoto`
+
+Fluoroquinolone photosensitivity — {{patient.name}}
+Canine fluoroquinolone photosensitivity [yes / not]. Not a sunburn-alone [yes / not]. Stop the FQ [ ]. Packet 360 tendinopathy [ ]. Bare sunburn [ ].
+
+DDX:
+1. Named FQ plus photosensitivity — **Canine fluoroquinolone photosensitivity. Not a sunburn-alone**
+2. Mercer: dermal reactions and photosensitization in people; occurrence seems low. Human data on the veterinary page, not a proven canine sunburn equivalent. Stop the FQ. △ Plumb
+3. Packet 360 owns FQ tendinopathy. Bare sunburn is not this loc
+4. Do not invent veterinary incidence. Do not send FQ photosensitivity home as sunburn
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare sunburn stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a sunburn-alone. Send FQ photosensitivity home as sunburn. Treat bare sunburn as this loc.
+Do next: Name canine fluoroquinolone photosensitivity. Not a sunburn-alone. Stop the FQ. △ Plumb. Packet 360 still owns FQ tendinopathy. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4755,6 +4772,14 @@ Return now for more bloody diarrhea, collapse, or a swollen belly. {{location.ph
 We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home. Limit activity until we recheck.
 
 Return now for sudden lameness, a popping sensation, or a limb that will not bear weight. {{location.phonenumber}}
+
+### `dc-fqphoto`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and has a sun-related skin reaction. In people these antibiotics can cause photosensitivity, though it is uncommon. That warning is not the same as ordinary sunburn. This is not a simple sunburn-and-home plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home. Keep {{patient.objectPronoun}} out of direct sun until we recheck.
+
+Return now for spreading skin lesions, fever, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

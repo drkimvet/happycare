@@ -251,6 +251,19 @@ FQTENDON_SIGN_RE = re.compile(
 # Dogs and cats. Skip horse. Mercer: 2008 FDA black-box for seven
 # fluoroquinolones; human tendinitis and tendon rupture on the
 # veterinary page. △ Plumb.
+FQPHOTO_SIGN_RE = re.compile(
+    r"photosensit|"
+    r"phototox|"
+    r"\bsunburn|"
+    r"dermal reaction",
+    re.I,
+)
+# Packet 361: named FQ plus photosensitivity / phototoxicity /
+# sunburn / dermal reaction only. Do not use bare FQ. Do not use
+# bare sunburn. Do not use FQ tendinopathy (360). Do not harvest
+# an FQ mg/kg table. Dogs and cats. Skip horse. Mercer: dermal
+# reactions and photosensitization in people; occurrence seems
+# low. Human data on the veterinary page. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6759,6 +6772,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQTENDON_SIGN_RE.search(text)
     )
+    steal_fqphoto_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQPHOTO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6921,6 +6939,7 @@ def analyze(
         or steal_fqgaba_dx
         or steal_ciprocol_dx
         or steal_fqtend_dx
+        or steal_fqphoto_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18649,6 +18668,72 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ tendinopathy."
+            )
+
+    fqphoto_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQPHOTO_SIGN_RE.search(text)
+    )
+    if fqphoto_named:
+        if spec == "cat":
+            fqphoto_loc = (
+                "Feline fluoroquinolone photosensitivity. Not a sunburn-alone."
+            )
+        else:
+            fqphoto_loc = (
+                "Canine fluoroquinolone photosensitivity. Not a sunburn-alone."
+            )
+        localization = (
+            f"{localization} Also {fqphoto_loc}" if localization else fqphoto_loc
+        )
+        hard_stops.append(
+            "Do not send FQ photosensitivity home as sunburn. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: dermal reactions and photosensitization have been "
+            "described in people, but the occurrence seems low. Human "
+            "data on the veterinary page, not a proven canine sunburn "
+            "equivalent."
+        )
+        do_not.append(
+            "Do not call this a sunburn-alone. "
+            "Do not invent veterinary incidence as if the human dermal "
+            "line were a canine sunburn paper. "
+            "Packet 360 still owns FQ tendinopathy. "
+            "Bare sunburn without named FQ is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone photosensitivity. Not a "
+                "sunburn-alone. Stop the FQ. △ Plumb. Packet 354 still "
+                "owns cat enro retina. Packet 360 still owns FQ "
+                "tendinopathy. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone photosensitivity. Not a "
+                "sunburn-alone. Stop the FQ. △ Plumb. Packet 360 still "
+                "owns FQ tendinopathy. Do not copy an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: dermal "
+            "reactions and photosensitization have been described in "
+            "people, but the occurrence seems low. Human data on the "
+            "veterinary page. Packet 360 FQ tendinopathy. Do not harvest "
+            "FQ mg/kg. Skip horse. Food-animal ELDU is prohibited for "
+            "fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ photosensitivity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ photosensitivity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

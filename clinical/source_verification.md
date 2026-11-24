@@ -5454,3 +5454,31 @@ Night rule: named FQ plus tendon → **Canine fluoroquinolone tendinopathy. Not 
 - Attending: If the query is only “enrofloxacin,” why does this gate stay dark?
 - Attending: Horse tendinopathy plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus tendon — which locs fire, and why?
+
+## 361. Canine fluoroquinolone photosensitivity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-photosensitivity chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (dermal reactions and photosensitization have been described in people, but the occurrence seems low). Human data on the veterinary page. Packet 360 still owns FQ tendinopathy. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare sunburn. Do not fire 360 FQ tendinopathy as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus photosensitivity is not a sunburn-alone.** The dermal line is human data sitting on the veterinary page, not a claim that dogs sunburn at the human rate. Occurrence seems low. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus photosensitivity / phototoxicity / sunburn / dermal reaction is canine (or feline) fluoroquinolone photosensitivity; not a sunburn-alone. Bare FQ stays dark. Bare sunburn stays dark. Dual tendon plus photosensitivity concatenates 360 then 361. Dual FQ plus tendon without photo language stays 360. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a sunburn-alone.
+- Do not send FQ photosensitivity home as ordinary sunburn.
+- Do not invent veterinary incidence.
+- Do not treat FQ tendinopathy (360) as this loc.
+- Do not treat dermatitis without named photo language as this loc.
+
+Night rule: named FQ plus photosensitivity → **Canine fluoroquinolone photosensitivity. Not a sunburn-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus sunburn not a sunscreen-and-home night?
+- NAVLE 2: Why does enrofloxacin plus a tendon stay 360, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, tendinopathy, photosensitivity” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “sunburn,” why does this gate stay dark?
+- Attending: Horse photosensitivity plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus phototoxicity — which locs fire, and why?
