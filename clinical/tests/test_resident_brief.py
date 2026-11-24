@@ -12107,6 +12107,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline doxycycline esophagitis", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_metronidazole_neurotoxicity_is_not_a_vestibular_alone(self):
+        b = analyze("dog", "metronidazole ataxia")
+        loc = b["localization"].lower()
+        self.assertIn("canine metronidazole neurotoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertNotIn("peripheral vs central before home", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stop metronidazole", joined)
+        self.assertIn("diazepam table", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_metro_head_tilt_concatenates_137(self):
+        b = analyze("dog", "head tilt on metronidazole")
+        loc = b["localization"].lower()
+        self.assertIn("peripheral vs central before home", loc)
+        self.assertIn("canine metronidazole neurotoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("stop metronidazole", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_metro_tox_spelling_fires(self):
+        b = analyze("dog", "metro tox")
+        loc = b["localization"].lower()
+        self.assertIn("canine metronidazole neurotoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_metronidazole_neurotoxicity_fires(self):
+        b = analyze("cat", "metronidazole nystagmus")
+        loc = b["localization"].lower()
+        self.assertIn("feline metronidazole neurotoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_metronidazole_is_not_metrotox(self):
+        b = analyze("dog", "metronidazole")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine metronidazole neurotoxicity", loc)
+        self.assertNotIn("feline metronidazole neurotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_giardia_metronidazole_is_not_metrotox(self):
+        b = analyze("cat", "Giardia, metronidazole")
+        loc = b["localization"].lower()
+        self.assertIn("feline giardia", loc)
+        self.assertNotIn("feline metronidazole neurotoxicity", loc)
+        self.assertNotIn("canine metronidazole neurotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_vestibular_without_metro_is_not_metrotox(self):
+        b = analyze("dog", "head tilt and nystagmus")
+        loc = b["localization"].lower()
+        self.assertIn("peripheral vs central before home", loc)
+        self.assertNotIn("canine metronidazole neurotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetanus_metronidazole_is_not_metrotox(self):
+        b = analyze("dog", "tetanus, metronidazole")
+        loc = b["localization"].lower()
+        self.assertIn("tetanus", loc)
+        self.assertNotIn("canine metronidazole neurotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_metrotox(self):
+        b = analyze("horse", "metronidazole ataxia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine metronidazole neurotoxicity", loc)
+        self.assertNotIn("feline metronidazole neurotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

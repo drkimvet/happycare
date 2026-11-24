@@ -285,6 +285,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-giardia` | Assessment | Feline giardia / not a tritrichomonas-alone |
 | `ddx-cryptosp` | Assessment | Feline cryptosporidium / not a giardia-alone |
 | `ddx-doxyeso` | Assessment | Feline doxycycline esophagitis / not a stricture-alone |
+| `ddx-metrotox` | Assessment | Canine metronidazole neurotoxicity / not a vestibular-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -323,6 +324,7 @@ Suggested names are short so they show up after three letters.
 | `dc-giardia` | Discharge | After Giardia / fecal talk |
 | `dc-cryptosp` | Discharge | After Cryptosporidium / fecal talk |
 | `dc-doxyeso` | Discharge | After doxycycline / esophagus talk |
+| `dc-metrotox` | Discharge | After metronidazole / neuro talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4138,6 +4140,21 @@ DDX:
 Do not: harvest a doxycycline mg/kg table. Harvest a liquid-chase milliliter table. Dry-pill a cat. Call this a stricture-alone. Send named doxycycline esophagitis home as gagging.
 Do next: Name feline doxycycline esophagitis. Not a stricture-alone. △ Plumb. Follow solid doxycycline with food or water. Packet 323 still owns named stricture. Do not copy a doxycycline table.
 
+### `ddx-metrotox`
+
+Metronidazole neurotoxicity — {{patient.name}}
+Canine metronidazole neurotoxicity [yes / not]. Not a vestibular-alone [yes / not]. Stop metronidazole [ ]. Packet 137 vestibular [ ]. Giardia [ ]. Tetanus [ ].
+
+DDX:
+1. Metronidazole neurotoxicity — **Canine metronidazole neurotoxicity. Not a vestibular-alone**
+2. High-dose metronidazole can cause tremor, ataxia, nystagmus, or seizures. Stop the drug. Supportive
+3. Packet 137 owns vestibular without the drug and still stops metro if listed. Packet 346 owns Giardia. Tetanus stays tetanus
+4. Do not send this home as idiopathic geriatric vestibular. Do not copy a diazepam table
+5. Dog or cat can fire. Horse does not fire. Bare metronidazole stays dark. Do not copy a metronidazole table
+
+Do not: harvest a metronidazole mg/kg table. Harvest a diazepam table. Harvest oral diazepam for a cat. Call this a vestibular-alone. Send named metronidazole neurotoxicity home as idiopathic geriatric vestibular.
+Do next: Name canine metronidazole neurotoxicity. Not a vestibular-alone. Stop the drug. Supportive. △ Plumb. Packet 137 still owns vestibular without the drug. Do not copy a metronidazole table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4455,6 +4472,14 @@ Return now for watery diarrhea, not eating, or collapse. {{location.phonenumber}
 Give the next doses only as we showed: with food or a drink of water after the tablet. Do not push a dry pill down. Give only the medicines we sent, as labeled.
 
 Return now for repeated regurgitation, refusing food, or coughing after eating. {{location.phonenumber}}
+
+### `dc-metrotox`
+
+{{patient.name}} has neurologic signs from metronidazole. This is not ordinary old-dog vestibular disease and not a stroke.
+
+We stopped that antibiotic. Give only the medicines we sent, as labeled. Keep {{patient.objectPronoun}} quiet and prevent falling.
+
+Return now for worsening ataxia, seizures, or inability to walk. {{location.phonenumber}}
 
 ### `dc-ahds`
 

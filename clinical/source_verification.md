@@ -5118,3 +5118,31 @@ Night rule: named doxycycline plus esophagus or dry-pill → **Feline doxycyclin
 - Attending: If the query is only “doxycycline,” why does this gate stay dark?
 - Attending: Horse IV doxycycline — this loc or skip, and why?
 - Attending: Clindamycin esophageal stricture — 323 or this loc, and why?
+
+## 349. Canine metronidazole neurotoxicity (Mercer Merck Sept 2022 / Sept 2025)
+
+No dedicated Plunkett metronidazole-neurotoxicity chapter in the owned SA EM splits (the vestibular split already names metro as a central DDX). Public Mercer M.A. Nitroimidazoles Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Sept 2025 (high doses may induce canine neurotoxicity: tremors, muscle spasms, ataxia, convulsions; IV can cause CNS excitement; printed giardia 25 / IBD 10–15 / HE 7.5 mg/kg stay on the page; ELDU prohibited in food-producing animals). Packet 137 already stops metronidazole on a named vestibular night. This packet is the dedicated pharmacology loc. Do not harvest a metronidazole mg/kg table as lobby law. Do not harvest a diazepam table as lobby law. Do not harvest oral diazepam for a cat (hepatic necrosis is a different trap). Do not fire on bare metronidazole (Giardia / IBD / HE). Do not fire on tetanus plus metronidazole (metro is the antimicrobial). Do not fire on vestibular without the drug (137). Dogs and cats. Skip horse.
+
+Agree with Mercer: **named metronidazole plus neuro signs is not a vestibular-alone.** Stop the drug. Supportive. Printed 25 / 10–15 / 7.5 stay on the page (`△ Plumb`).
+
+Night split: named metronidazole / metro / Flagyl plus ataxia, nystagmus, vestibular, tremor, seizure, convulsion, head tilt, rolling, or metro-tox is canine (or feline) metronidazole neurotoxicity; not a vestibular-alone. Bare vestibular stays 137 (and still stops metro if listed). Bare metronidazole stays dark. Giardia plus metronidazole stays 346. Tetanus plus metronidazole stays tetanus. Horse does not fire. Dual head-tilt plus metronidazole concatenates 137 then 349.
+
+Book/public traps:
+
+- Do not harvest a metronidazole mg/kg table.
+- Do not harvest a diazepam table.
+- Do not harvest oral diazepam for a cat.
+- Do not call this a vestibular-alone.
+- Do not send named metronidazole neurotoxicity home as idiopathic geriatric vestibular.
+- Do not treat tetanus metronidazole as this loc.
+
+Night rule: named metronidazole plus neuro signs → **Canine metronidazole neurotoxicity. Not a vestibular-alone.** Stop the drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is ataxia on metronidazole not a vestibular-alone?
+- NAVLE 2: Why does “metronidazole for Giardia” stay dark for this loc?
+- NAVLE 3: Dual-named “head tilt, metronidazole” — which loc should win, and why?
+- Oral: How do you tell the owner you are stopping the antibiotic, without inventing a diazepam table?
+- Attending: If the query is only “vestibular,” why does this gate stay dark?
+- Attending: Horse metronidazole — fire or skip?
+- Attending: Tetanus plus metronidazole — tetanus or this loc, and why?

@@ -2731,6 +2731,25 @@ CONFIRMED_UTI_RE = re.compile(
     re.I,
 )
 METRONIDAZOLE_RE = re.compile(r"\b(metronidazole|\bmetro\b|flagyl)\b", re.I)
+# Named metronidazole / metro / Flagyl plus a neurotoxicity sign only.
+# Do not use bare metronidazole (Giardia / IBD / HE / tetanus tables).
+# Do not use \bspasm (tetanus). Do not harvest a 25 / 10–15 / 7.5 mg/kg
+# table. Do not harvest a diazepam table. Dogs and cats. Skip horse.
+# Packet 137 still owns vestibular without the drug. Packet 346 still
+# owns Giardia. Tetanus stays tetanus (metro is the antimicrobial).
+METROTOX_SIGN_RE = re.compile(
+    r"neurotox|"
+    r"metro[\s-]?tox|"
+    r"\bataxia\b|"
+    r"\bnystagmus\b|"
+    r"\bvestibular\b|"
+    r"\btremor|"
+    r"\bseizure|"
+    r"\bconvuls|"
+    r"head tilt|"
+    r"\brolling\b",
+    re.I,
+)
 VERTICAL_NYSTAG_RE = re.compile(r"\bvertical nystagmus\b", re.I)
 HORNER_FACE_RE = re.compile(
     r"\bhorner\b.{0,40}\b(facial|face|vii)\b|"
@@ -3120,6 +3139,69 @@ def analyze(
             )
         if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append("Azotemic: still no DexSP, including for vestibular signs.")
+
+    metrotox_named = (
+        spec in {"dog", "cat"}
+        and METRONIDAZOLE_RE.search(text)
+        and METROTOX_SIGN_RE.search(text)
+        and not TETANUS_RE.search(text)
+    )
+    if metrotox_named:
+        if spec == "cat":
+            metrotox_loc = (
+                "Feline metronidazole neurotoxicity. Not a vestibular-alone."
+            )
+        else:
+            metrotox_loc = (
+                "Canine metronidazole neurotoxicity. Not a vestibular-alone."
+            )
+        localization = (
+            f"{localization} Also {metrotox_loc}" if localization else metrotox_loc
+        )
+        hard_stops.append(
+            "Stop metronidazole. "
+            "Do not harvest a metronidazole mg/kg table. "
+            "Do not harvest a diazepam table. "
+            "Cats: do not harvest oral diazepam."
+        )
+        do_not.append(
+            "Do not call this a vestibular-alone. "
+            "Do not send named metronidazole neurotoxicity home as idiopathic geriatric vestibular. "
+            "Do not copy a benzodiazepine table as lobby law. "
+            "Do not harvest oral diazepam for a cat (hepatic necrosis)."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline metronidazole neurotoxicity. Not a vestibular-alone. "
+                "Stop the drug. Supportive. △ Plumb. "
+                "Packet 137 still owns vestibular without the drug. "
+                "Do not copy a metronidazole table."
+            )
+        else:
+            do_next.append(
+                "Name canine metronidazole neurotoxicity. Not a vestibular-alone. "
+                "Stop the drug. Supportive. △ Plumb. "
+                "Packet 137 still owns vestibular without the drug. "
+                "Do not copy a metronidazole table."
+            )
+        sources.append(
+            "Mercer Merck nitroimidazoles Sept 2022 / Sept 2025: high doses "
+            "may induce neurotoxicity in dogs (tremors, muscle spasms, "
+            "ataxia, convulsions); IV can cause CNS excitement. Printed "
+            "giardia / IBD / HE mg/kg stay on the page. ELDU prohibited in "
+            "food animals. Packet 137 vestibular. Packet 346 Giardia. "
+            "Tetanus stays tetanus. Do not harvest metronidazole mg/kg. "
+            "Do not harvest a diazepam table. Cats: oral diazepam is a "
+            "hepatic-necrosis conversation, not this dump."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for metronidazole neurotoxicity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for metronidazole neurotoxicity."
+            )
 
     if spec in {"dog", "cat"} and SNAKE_RE.search(text):
         snake_loc = (
@@ -6544,6 +6626,11 @@ def analyze(
     steal_giardia_dx = GIARDIA_DX_RE.search(text)
     steal_cryptosp_dx = CRYPTOSP_DX_RE.search(text)
     steal_doxyeso_dx = DOXYESO_DX_RE.search(text)
+    steal_metrotox_dx = (
+        METRONIDAZOLE_RE.search(text)
+        and METROTOX_SIGN_RE.search(text)
+        and not TETANUS_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6694,6 +6781,7 @@ def analyze(
         or steal_giardia_dx
         or steal_cryptosp_dx
         or steal_doxyeso_dx
+        or steal_metrotox_dx
     ):
         if spec == "cat":
             fuo_loc = (

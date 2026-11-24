@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine metronidazole neurotoxicity (Merck Mercer Sept 2025)
+
+- **Canine metronidazole neurotoxicity. Not a vestibular-alone.** Named metronidazole / metro / Flagyl plus ataxia, nystagmus, vestibular, tremor, seizure, convulsion, head tilt, rolling, or metro-tox only. High-dose metronidazole can cause canine neurotoxicity. Stop the drug. Supportive. Packet 137 still owns vestibular without the drug. Packet 346 still owns Giardia and does not harvest a metro table. Tetanus stays tetanus (metro is the antimicrobial, not this loc). Do **not** harvest a metronidazole mg/kg table. Do **not** harvest a diazepam table. Do **not** harvest oral diazepam for a cat (hepatic necrosis). Do **not** send named metronidazole neurotoxicity home as idiopathic geriatric vestibular. Bare metronidazole for Giardia / IBD / HE stays dark. Food-animal ELDU is prohibited. Skip horse.
+- Cats: same named loc as feline metronidazole neurotoxicity. Azotemic: still no NSAID, still no DexSP.
+
 ## Feline doxycycline esophagitis (Merck Mercer Jun 2026 / Defarges May 2025)
 
 - **Feline doxycycline esophagitis. Not a stricture-alone.** Named doxycycline / doxy plus esophagus, stricture, stenosis, or dry-pill only. Dry-pilling a tablet or capsule in a cat is esophageal erosion and can become a stricture. Follow solid doxycycline with food or water. Packet 323 still owns named esophageal stricture without the drug. Packet 324 still owns named esophagitis without the drug. Do **not** harvest a doxycycline mg/kg table. Do **not** harvest a liquid-chase milliliter table. Do **not** dry-pill a cat. Do **not** send named doxycycline esophagitis home as gagging. Do **not** copy a balloon table as if the drug did not matter. Bare doxycycline (Lyme / Wolbachia) stays dark. Clindamycin dry-pill is not this loc. Horse IV doxycycline collapse is not this loc.
