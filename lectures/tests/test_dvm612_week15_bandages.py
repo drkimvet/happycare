@@ -56,8 +56,8 @@ class TestWeek15BandageLecture(unittest.TestCase):
 
     def test_slide_count_and_footer(self):
         self.assertEqual(len(self.prs.slides), EXPECTED)
-        self.assertEqual(self.prs.slide_width, Inches(13.333))
-        self.assertEqual(self.prs.slide_height, Inches(7.5))
+        self.assertAlmostEqual(self.prs.slide_width, Inches(13.333), delta=Inches(0.05))
+        self.assertAlmostEqual(self.prs.slide_height, Inches(7.5), delta=Inches(0.05))
         self.assertIn(FOOTER, self.blob)
         self.assertIn("WEEK 15", self.blob)
 

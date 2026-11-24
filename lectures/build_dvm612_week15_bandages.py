@@ -7,6 +7,9 @@ Required text: Fossum 2018 (named only). Week 9 owns wound-healing stages.
 Merck Winkler Jul 2023 / Sept 2024 for bandage layers and drains.
 """
 
+import shutil
+import subprocess
+import tempfile
 from pathlib import Path
 
 from pptx import Presentation
@@ -561,6 +564,35 @@ if len(prs.slides) != EXPECTED_SLIDES:
 
 stamp_footers()
 prs.save(str(PPTX))
+
+
+def office_export(pptx_path: Path):
+    """Re-save through LibreOffice so PowerPoint, Keynote, and Hangul Office open the file."""
+    soffice = shutil.which("soffice") or shutil.which("libreoffice")
+    if not soffice:
+        print("soffice missing; shipping the python-pptx file")
+        return
+    out = Path(tempfile.mkdtemp(prefix="lo-week15-"))
+    subprocess.run(
+        [soffice, "--headless", "--convert-to", "ppt", "--outdir", str(out), str(pptx_path)],
+        check=True,
+    )
+    subprocess.run(
+        [soffice, "--headless", "--convert-to", "pdf", "--outdir", str(out), str(pptx_path)],
+        check=True,
+    )
+    ppt = out / f"{pptx_path.stem}.ppt"
+    subprocess.run(
+        [soffice, "--headless", "--convert-to", "pptx", "--outdir", str(out), str(ppt)],
+        check=True,
+    )
+    shutil.copy2(out / f"{pptx_path.stem}.pptx", pptx_path)
+    shutil.copy2(out / f"{pptx_path.stem}.pdf", pptx_path.with_suffix(".pdf"))
+    shutil.copy2(ppt, pptx_path.with_suffix(".ppt"))
+    print(f"Office export {pptx_path.with_suffix('.pdf')} {pptx_path.with_suffix('.ppt')}")
+
+
+office_export(PPTX)
 
 script_lines = [
     "DVM 612 Week 15 instructor script",
