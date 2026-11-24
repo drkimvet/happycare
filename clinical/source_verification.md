@@ -5174,3 +5174,31 @@ Night rule: named NSAID plus glucocorticoid → **Canine NSAID-steroid stack. No
 - Attending: If the query is only “carprofen,” why does this gate stay dark?
 - Attending: Horse phenylbutazone plus dex — this loc or skip, and why?
 - Attending: COX-2-selective plus pred — still this loc, and why?
+
+## 351. Canine fluoroquinolone chelation (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-sucralfate chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (antacids or other drugs containing multivalent cations and sucralfate interfere with GI absorption of quinolones; quinolones also inhibit methylxanthine biotransformation, theophylline being the most clinically relevant — that DDI is not this loc). Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not harvest a 2-hour or 6-hour separation clock as lobby law. Do not fire on bare FQ (UTI / retina). Do not fire on bare sucralfate (335 coating talk). Do not fire on theophylline plus FQ as this loc. Cat enrofloxacin retina is a different loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus sucralfate is not a sucralfate-alone.** Stop the stack. Printed FQ mg/kg and separation clocks stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus sucralfate is canine (or feline) fluoroquinolone chelation; not a sucralfate-alone. Bare FQ stays dark. Bare sucralfate stays 335. Theophylline plus FQ is a different DDI. Cat enro retina is a different loc. Horse does not fire. Dual gastric-ulcer plus enrofloxacin plus sucralfate concatenates 335 then 351.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a 2-hour separation clock.
+- Do not call this a sucralfate-alone.
+- Do not send the stack home as GI protection for the antibiotic.
+- Do not copy a sucralfate table as if the FQ still absorbs.
+- Do not treat theophylline plus FQ as this loc.
+
+Night rule: named FQ plus sucralfate → **Canine fluoroquinolone chelation. Not a sucralfate-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is sucralfate with Baytril not GI protection for the antibiotic?
+- NAVLE 2: Why does bare enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “gastric ulcer, enrofloxacin, sucralfate” — which loc should win, and why?
+- Oral: How do you tell the owner the coating binds the antibiotic, without inventing a 2-hour clock?
+- Attending: If the query is only “sucralfate,” why does this gate stay dark?
+- Attending: Horse enrofloxacin plus sucralfate — fire or skip?
+- Attending: Theophylline plus enrofloxacin — this loc or a later DDI, and why?

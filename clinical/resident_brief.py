@@ -164,6 +164,10 @@ URINE_CONTEXT_RE = re.compile(
     re.I,
 )
 FQ_RE = re.compile(r"\b(enrofloxacin|marbofloxacin|orbifloxacin|pradofloxacin|ciprofloxacin|baytril|fluoroquinolone)\b", re.I)
+# Packet 351: named FQ plus sucralfate only. Do not use bare FQ (UTI /
+# retina). Do not use bare sucralfate (335). Do not harvest a 2-hour
+# clock or an FQ mg/kg table. Dogs and cats. Skip horse. Theophylline
+# plus FQ is a different DDI, not this loc. Cat enro retina is not this loc.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6644,6 +6648,7 @@ def analyze(
         (NSAID_RE.search(text) or ASPIRIN_RE.search(text))
         and GLUCOCORT_RE.search(text)
     )
+    steal_fqsuc_dx = FQ_RE.search(text) and SUCRALFATE_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6796,6 +6801,7 @@ def analyze(
         or steal_doxyeso_dx
         or steal_metrotox_dx
         or steal_nsaidster_dx
+        or steal_fqsuc_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -17940,6 +17946,67 @@ def analyze(
         if AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, still no DexSP, including for the stack."
+            )
+
+    fqsuc_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and SUCRALFATE_RE.search(text)
+    )
+    if fqsuc_named:
+        if spec == "cat":
+            fqsuc_loc = "Feline fluoroquinolone chelation. Not a sucralfate-alone."
+        else:
+            fqsuc_loc = "Canine fluoroquinolone chelation. Not a sucralfate-alone."
+        localization = (
+            f"{localization} Also {fqsuc_loc}" if localization else fqsuc_loc
+        )
+        hard_stops.append(
+            "Do not stack oral fluoroquinolone with sucralfate. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Do not harvest a 2-hour separation clock. "
+            "Sucralfate is not harmless coating on an FQ night."
+        )
+        do_not.append(
+            "Do not call this a sucralfate-alone. "
+            "Do not send the stack home as GI protection for the antibiotic. "
+            "Do not copy a sucralfate table as if the FQ still absorbs. "
+            "Theophylline plus FQ is a different DDI, not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone chelation. Not a sucralfate-alone. "
+                "Stop the stack. △ Plumb. Packet 335 still owns named ulcer. "
+                "Cat enrofloxacin retina is a different loc. "
+                "Do not copy a sucralfate table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone chelation. Not a sucralfate-alone. "
+                "Stop the stack. △ Plumb. Packet 335 still owns named ulcer. "
+                "Do not copy a sucralfate table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: antacids or other "
+            "drugs containing multivalent cations and sucralfate interfere "
+            "with GI absorption of quinolones; quinolones also inhibit "
+            "methylxanthine biotransformation (theophylline) — that DDI is "
+            "not this loc. Packet 335 ulcer. Packet 350 NSAID-steroid. "
+            "Do not harvest FQ mg/kg. Do not harvest a 2-hour clock. "
+            "Cat enro retina is not this loc. Skip horse. Food-animal ELDU "
+            "is prohibited for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for fluoroquinolone chelation."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for fluoroquinolone chelation."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

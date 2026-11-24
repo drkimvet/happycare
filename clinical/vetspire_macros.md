@@ -287,6 +287,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-doxyeso` | Assessment | Feline doxycycline esophagitis / not a stricture-alone |
 | `ddx-metrotox` | Assessment | Canine metronidazole neurotoxicity / not a vestibular-alone |
 | `ddx-nsaidster` | Assessment | Canine NSAID-steroid stack / not an ulcer-alone |
+| `ddx-fqsuc` | Assessment | Canine fluoroquinolone chelation / not a sucralfate-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -327,6 +328,7 @@ Suggested names are short so they show up after three letters.
 | `dc-doxyeso` | Discharge | After doxycycline / esophagus talk |
 | `dc-metrotox` | Discharge | After metronidazole / neuro talk |
 | `dc-nsaidster` | Discharge | After NSAID / steroid stack talk |
+| `dc-fqsuc` | Discharge | After FQ / sucralfate stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4172,6 +4174,21 @@ DDX:
 Do not: harvest an NSAID table. Harvest a pred table. Harvest a sucralfate or omeprazole table as if the stack were allowed. Call this an ulcer-alone. Send the stack home as better analgesia.
 Do next: Name canine NSAID-steroid stack. Not an ulcer-alone. Stop the stack. △ Plumb. Packet 335 still owns named ulcer. Packet 336 still owns named perforation. Do not copy an NSAID table.
 
+### `ddx-fqsuc`
+
+Fluoroquinolone chelation — {{patient.name}}
+Canine fluoroquinolone chelation [yes / not]. Not a sucralfate-alone [yes / not]. Stop the stack [ ]. Packet 335 ulcer [ ]. Theophylline DDI [ ]. Cat retina [ ].
+
+DDX:
+1. Fluoroquinolone plus sucralfate — **Canine fluoroquinolone chelation. Not a sucralfate-alone**
+2. Sucralfate and other cation drugs bind oral FQ in the gut. The coating is not GI protection for the antibiotic. Stop the stack
+3. Packet 335 owns named ulcer without the FQ. Packet 350 owns NSAID-steroid. Theophylline plus FQ is a different DDI
+4. Do not copy a sucralfate table as if the FQ still absorbs. Cat enrofloxacin retina is a different loc
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare sucralfate stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Harvest a 2-hour separation clock. Call this a sucralfate-alone. Send the stack home as GI protection for the antibiotic.
+Do next: Name canine fluoroquinolone chelation. Not a sucralfate-alone. Stop the stack. △ Plumb. Packet 335 still owns named ulcer. Do not copy a sucralfate table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4505,6 +4522,14 @@ Return now for worsening ataxia, seizures, or inability to walk. {{location.phon
 We stopped the combination. Give only the medicines we sent, as labeled. Do not add leftover pain pills or leftover steroids from home.
 
 Return now for black stool, vomiting blood, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-fqsuc`
+
+{{patient.name}} was on both a fluoroquinolone antibiotic and sucralfate. The coating can bind the antibiotic in the stomach so less of it is absorbed. This is not extra stomach protection for the antibiotic.
+
+We stopped the combination. Give only the medicines we sent, as labeled. Do not add leftover coating tablets from home to the antibiotic.
+
+Return now for worsening fever, not eating, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

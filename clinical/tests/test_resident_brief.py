@@ -12248,6 +12248,75 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline nsaid-steroid stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fluoroquinolone_chelation_is_not_a_sucralfate_alone(self):
+        b = analyze("dog", "enrofloxacin and sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone chelation", loc)
+        self.assertIn("not a sucralfate-alone", loc)
+        self.assertNotIn("canine gastric ulcer", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not stack oral fluoroquinolone", joined)
+        self.assertIn("sucralfate", joined)
+        self.assertIn("2-hour", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_sucralfate_fires_fqsuc(self):
+        b = analyze("dog", "Baytril, sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone chelation", loc)
+        self.assertIn("not a sucralfate-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ulcer_plus_fqsuc_concatenates(self):
+        b = analyze("dog", "gastric ulcer, enrofloxacin, sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("canine gastric ulcer", loc)
+        self.assertIn("canine fluoroquinolone chelation", loc)
+        self.assertIn("not an addison-alone", loc)
+        self.assertIn("not a sucralfate-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fluoroquinolone_chelation_fires(self):
+        b = analyze("cat", "marbofloxacin and sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone chelation", loc)
+        self.assertIn("not a sucralfate-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_enrofloxacin_is_not_fqsuc(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone chelation", loc)
+        self.assertNotIn("feline fluoroquinolone chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sucralfate_is_not_fqsuc(self):
+        b = analyze("dog", "sucralfate")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_theophylline_enro_is_not_fqsuc(self):
+        b = analyze("dog", "theophylline and enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_enro_sucralfate_names_retina_as_other_loc(self):
+        b = analyze("cat", "enrofloxacin and sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone chelation", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("retina", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqsuc(self):
+        b = analyze("horse", "enrofloxacin and sucralfate")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone chelation", loc)
+        self.assertNotIn("feline fluoroquinolone chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

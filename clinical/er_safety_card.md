@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone chelation (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone chelation. Not a sucralfate-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus sucralfate only. Sucralfate and other multivalent-cation drugs interfere with GI absorption of quinolones. The coating is not harmless on an FQ night. Stop the stack. Packet 335 still owns named gastric ulcer without the FQ. Packet 350 still owns NSAID-steroid. Theophylline plus FQ is a different DDI, not this loc. Cat enrofloxacin retina is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a 2-hour separation clock. Do **not** send the stack home as GI protection for the antibiotic. Bare FQ stays dark for this loc. Bare sucralfate stays 335-coating talk. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone chelation. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine NSAID-steroid stack (Merck Edwards May 2025 / Blois Aug 2025)
 
 - **Canine NSAID-steroid stack. Not an ulcer-alone.** Named NSAID (including aspirin) plus glucocorticoid / corticosteroid / pred / DexSP only. Combining them increases GI ulceration risk and is contraindicated. Glucocorticoids potentiate NSAID ulcers. COX-2-selective is not a license to stack. Kidney is on the same night. Stop the stack. Packet 335 still owns named gastric ulcer without the stack words. Packet 336 still owns named perforation. Do **not** harvest an NSAID table. Do **not** harvest a pred table. Do **not** harvest a sucralfate or omeprazole table as if the stack were allowed. Do **not** send the stack home as better analgesia. Bare NSAID stays the azotemia gate. Bare pred stays dark for this loc. Skip horse.
