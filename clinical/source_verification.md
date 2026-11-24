@@ -5258,3 +5258,31 @@ Night rule: named FQ plus cyclosporine → **Canine fluoroquinolone-cyclosporine
 - Attending: If the query is only “Atopica,” why does this gate stay dark?
 - Attending: Horse enrofloxacin plus cyclosporine — fire or skip?
 - Attending: Cyclophosphamide plus enrofloxacin — this loc or skip, and why?
+
+## 354. Feline enrofloxacin retina (Mercer Merck Sept 2022 / Jun 2026; Thomasy)
+
+No dedicated Plunkett enrofloxacin-retina chapter in the owned SA EM splits (the sudden-blind split already hard-stops cat plus enrofloxacin). Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (retinal degeneration may occur acutely in cats, with the risk greatest for enrofloxacin; because these drugs are concentration dependent, enrofloxacin probably should not be used in cats; the presence of renal disease may increase this risk; pradofloxacin may be the least retinotoxic, followed by marbofloxacin and orbifloxacin). Public Thomasy S. Acute Vision Loss in Small Animals. Merck Veterinary Manual (enrofloxacin can cause acute retinal degeneration in cats). Packet 147 still owns SARDS / sudden-blind. Packet 353 still owns FQ-cyclosporine. Do not harvest an enrofloxacin mg/kg table as lobby law. Do not fire on dog plus enro. Do not fire on marbofloxacin / pradofloxacin / orbifloxacin without named enrofloxacin. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named enrofloxacin in a cat is not a SARDS-alone.** Stop the Baytril. Printed enrofloxacin mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / Baytril in a cat is feline enrofloxacin retina; not a SARDS-alone. Dog plus enro stays dark. Bare marbofloxacin stays dark. Bare pradofloxacin stays dark. Dual sudden-blind plus cat enro concatenates 147 then 354. Dual cyclosporine plus cat enro concatenates 353 then 354. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an enrofloxacin mg/kg table.
+- Do not call this a SARDS-alone.
+- Do not wait until the cat is blind.
+- Do not send a cat home on Baytril as a UTI antibiotic.
+- Do not copy an enrofloxacin table as if cats were dogs.
+- Do not treat marbofloxacin / pradofloxacin as this loc.
+
+Night rule: named enrofloxacin in a cat → **Feline enrofloxacin retina. Not a SARDS-alone.** Stop the Baytril. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cat plus Baytril not a UTI-and-home night?
+- NAVLE 2: Why does dog plus enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “sudden blindness, enrofloxacin” in a cat — which loc should win, and why?
+- Oral: How do you tell the owner to stop the Baytril without inventing an enrofloxacin table?
+- Attending: If the query is only “marbofloxacin” in a cat, why does this gate stay dark?
+- Attending: Horse enrofloxacin — fire or skip?
+- Attending: Pradofloxacin in a cat — this loc or skip, and why?

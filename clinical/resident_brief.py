@@ -182,6 +182,11 @@ CYCLOSPORINE_RE = re.compile(
 # theophylline plus FQ (352). Do not harvest an FQ or cyclosporine
 # mg/kg table. Dogs and cats. Skip horse. Mercer names the human
 # cyclosporine-concentration DDI on the quinolone page.
+# Packet 354: named enrofloxacin / Baytril in a cat only (ENRO_RE).
+# Do not use marbofloxacin / pradofloxacin / orbifloxacin. Do not use
+# dog plus enro. Do not harvest an enrofloxacin mg/kg table. Packet
+# 147 still owns SARDS / sudden-blind. Skip horse. Mercer: enrofloxacin
+# probably should not be used in cats.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6665,6 +6670,7 @@ def analyze(
     steal_fqsuc_dx = FQ_RE.search(text) and SUCRALFATE_RE.search(text)
     steal_fqtheo_dx = FQ_RE.search(text) and THEOPHYLLINE_RE.search(text)
     steal_fqcyclo_dx = FQ_RE.search(text) and CYCLOSPORINE_RE.search(text)
+    steal_enroretina_dx = spec == "cat" and ENRO_RE.search(text)
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6820,6 +6826,7 @@ def analyze(
         or steal_fqsuc_dx
         or steal_fqtheo_dx
         or steal_fqcyclo_dx
+        or steal_enroretina_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18162,6 +18169,57 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ-cyclosporine."
+            )
+
+    enroretina_named = spec == "cat" and ENRO_RE.search(text)
+    if enroretina_named:
+        enroretina_loc = "Feline enrofloxacin retina. Not a SARDS-alone."
+        localization = (
+            f"{localization} Also {enroretina_loc}"
+            if localization
+            else enroretina_loc
+        )
+        hard_stops.append(
+            "Do not send a cat home on enrofloxacin. "
+            "Do not harvest an enrofloxacin mg/kg table. "
+            "Mercer: enrofloxacin probably should not be used in cats."
+        )
+        do_not.append(
+            "Do not call this a SARDS-alone. "
+            "Do not wait until the cat is blind. "
+            "Do not copy an enrofloxacin table as if cats were dogs. "
+            "Marbofloxacin / pradofloxacin are not this loc."
+        )
+        do_next.append(
+            "Name feline enrofloxacin retina. Not a SARDS-alone. "
+            "Stop the Baytril. △ Plumb. Packet 147 still owns SARDS / "
+            "sudden-blind. Packet 353 still owns FQ-cyclosporine. "
+            "Do not copy an enrofloxacin table."
+        )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: retinal "
+            "degeneration may occur acutely in cats; risk greatest for "
+            "enrofloxacin; enrofloxacin probably should not be used in "
+            "cats; renal disease may increase this risk; pradofloxacin "
+            "may be the least retinotoxic, then marbofloxacin, then "
+            "orbifloxacin. Thomasy acute vision loss: enrofloxacin can "
+            "cause acute retinal degeneration in cats. Packet 147 SARDS. "
+            "Packet 353 FQ-cyclosporine. Do not harvest enrofloxacin "
+            "mg/kg. Skip dog and horse. Food-animal ELDU is prohibited "
+            "for fluoroquinolones."
+        )
+        if AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic cat: still no enrofloxacin. Renal disease "
+                "raises the retina risk."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for enrofloxacin retina."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for enrofloxacin retina."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

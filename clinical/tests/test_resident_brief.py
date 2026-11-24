@@ -12455,6 +12455,67 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline fluoroquinolone-cyclosporine stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_feline_enro_retina_is_not_a_sards_alone(self):
+        b = analyze("cat", "enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertIn("not a sards-alone", loc)
+        self.assertNotIn("canine fluoroquinolone-cyclosporine stack", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a cat home on enrofloxacin", joined)
+        self.assertIn("enrofloxacin mg/kg", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_fires_enroretina(self):
+        b = analyze("cat", "Baytril")
+        loc = b["localization"].lower()
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertIn("not a sards-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_sudden_blind_plus_cat_enro_concatenates(self):
+        b = analyze("cat", "sudden blindness, enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("do not call it sards without an erg", loc)
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertIn("not a sards-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqcyclo_plus_cat_enro_concatenates(self):
+        b = analyze("cat", "cyclosporine and enrofloxacin")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone-cyclosporine stack", loc)
+        self.assertIn("feline enrofloxacin retina", loc)
+        self.assertIn("not a theophylline-alone", loc)
+        self.assertIn("not a sards-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_dog_enro_is_not_enroretina(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        self.assertNotIn("not a sards-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_marbofloxacin_is_not_enroretina(self):
+        b = analyze("cat", "marbofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cat_pradofloxacin_is_not_enroretina(self):
+        b = analyze("cat", "pradofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_enroretina(self):
+        b = analyze("horse", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline enrofloxacin retina", loc)
+        self.assertNotIn("not a sards-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

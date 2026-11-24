@@ -290,6 +290,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqsuc` | Assessment | Canine fluoroquinolone chelation / not a sucralfate-alone |
 | `ddx-fqtheo` | Assessment | Canine fluoroquinolone-theophylline stack / not a chelation-alone |
 | `ddx-fqcyclo` | Assessment | Canine fluoroquinolone-cyclosporine stack / not a theophylline-alone |
+| `ddx-enroret` | Assessment | Feline enrofloxacin retina / not a SARDS-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -333,6 +334,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqsuc` | Discharge | After FQ / sucralfate stack talk |
 | `dc-fqtheo` | Discharge | After FQ / theophylline stack talk |
 | `dc-fqcyclo` | Discharge | After FQ / cyclosporine stack talk |
+| `dc-enroret` | Discharge | After feline enrofloxacin / retina talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4223,6 +4225,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Harvest a cyclosporine mg/kg table. Call this a theophylline-alone. Send the stack home as Atopica plus a UTI antibiotic.
 Do next: Name canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone. Stop the stack. △ Plumb. Packet 352 still owns theophylline. Do not copy a cyclosporine table.
 
+### `ddx-enroret`
+
+Enrofloxacin retina — {{patient.name}}
+Feline enrofloxacin retina [yes / not]. Not a SARDS-alone [yes / not]. Stop the Baytril [ ]. Packet 147 SARDS [ ]. Packet 353 FQ-cyclosporine [ ]. Marbo / prado [ ].
+
+DDX:
+1. Named enrofloxacin in a cat — **Feline enrofloxacin retina. Not a SARDS-alone**
+2. Mercer: enrofloxacin probably should not be used in cats. Acute retinal degeneration. Stop the Baytril. △ Plumb
+3. Packet 147 owns SARDS / sudden-blind. Packet 353 owns FQ-cyclosporine. Marbofloxacin / pradofloxacin are not this loc
+4. Do not copy an enrofloxacin table as if cats were dogs. Do not wait until the cat is blind
+5. Cat only. Dog plus enro stays dark. Horse does not fire. Do not copy an enrofloxacin table
+
+Do not: harvest an enrofloxacin mg/kg table. Call this a SARDS-alone. Wait until the cat is blind. Send a cat home on Baytril as a UTI antibiotic.
+Do next: Name feline enrofloxacin retina. Not a SARDS-alone. Stop the Baytril. △ Plumb. Packet 147 still owns SARDS. Do not copy an enrofloxacin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4580,6 +4597,14 @@ Return now for tremors, seizures, collapse, or a very fast heart rate. {{locatio
 We stopped the combination. Give only the medicines we sent, as labeled. Do not add leftover Atopica from home to the antibiotic.
 
 Return now for vomiting, not eating, or collapse. {{location.phonenumber}}
+
+### `dc-enroret`
+
+{{patient.name}} was on enrofloxacin (Baytril). In cats this antibiotic can damage the retina and cause sudden blindness. This is not a simple UTI-and-home plan.
+
+We stopped the Baytril. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for dilated pupils, bumping into things, or sudden blindness. {{location.phonenumber}}
 
 ### `dc-ahds`
 

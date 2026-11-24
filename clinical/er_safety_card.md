@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Feline enrofloxacin retina (Merck Mercer Jun 2026)
+
+- **Feline enrofloxacin retina. Not a SARDS-alone.** Named enrofloxacin / Baytril in a cat only. Mercer: retinal degeneration may occur acutely in cats; risk greatest for enrofloxacin; enrofloxacin probably should not be used in cats; renal disease may increase this risk. Thomasy: enrofloxacin can cause acute retinal degeneration in cats. Stop the Baytril. △ Plumb. Packet 147 still owns SARDS / sudden-blind. Packet 353 still owns FQ-cyclosporine. Marbofloxacin / pradofloxacin / orbifloxacin are not this loc. Do **not** harvest an enrofloxacin mg/kg table. Do **not** wait until the cat is blind. Do **not** send a cat home on Baytril as a UTI antibiotic. Dog plus enro stays dark. Bare marbofloxacin stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Azotemic cat: still no enrofloxacin, still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone-cyclosporine stack (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus cyclosporine / ciclosporin / Atopica only. Mercer names raised cyclosporine concentrations with concurrent fluoroquinolones (human data on the veterinary page). Stop the stack. △ Plumb. Packet 352 still owns theophylline. Packet 351 still owns sucralfate chelation. Cyclophosphamide is not this loc. Cat enrofloxacin retina is a different loc. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a cyclosporine mg/kg table. Do **not** send the stack home as Atopica plus a UTI antibiotic. Bare FQ stays dark. Bare cyclosporine stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
