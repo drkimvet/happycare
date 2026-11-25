@@ -425,6 +425,35 @@ AMINONSAID_SIGN_RE = re.compile(
 # NSAID mg/kg table. Dogs and cats. Skip horse. Mercer: risk
 # of nephrotoxicity rises with concurrent nephrotoxins.
 # △ Plumb.
+AMINOBETA_SIGN_RE = re.compile(
+    r"penicillin|"
+    r"ampicillin|"
+    r"amoxicillin|"
+    r"ticarcillin|"
+    r"carbenicillin|"
+    r"beta[- ]?lactam|"
+    r"\bβ-lactam",
+    re.I,
+)
+AMINOMIX_SIGN_RE = re.compile(
+    r"\bmix\b|"
+    r"\bmixing\b|"
+    r"mixed (?:in|with|together|into)|"
+    r"syringe|"
+    r"same line|"
+    r"admix|"
+    r"inactivat",
+    re.I,
+)
+# Packet 372: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus penicillin / ampicillin /
+# amoxicillin / ticarcillin / beta-lactam plus mix / syringe /
+# same line only. All three. Do not use \bmixed alone (mixed
+# breed). Do not use bare aminoglycoside. Do not use bare
+# penicillin. Do not use aminoglycoside-NSAID (371). Do not
+# harvest an aminoglycoside or penicillin mg/kg table. Dogs
+# and cats. Skip horse. Mercer: chemical inactivation in the
+# same syringe. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6988,6 +7017,12 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINONSAID_SIGN_RE.search(text)
     )
+    steal_aminobeta_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOBETA_SIGN_RE.search(text)
+        and AMINOMIX_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7161,6 +7196,7 @@ def analyze(
         or steal_aminonmb_dx
         or steal_aminoloop_dx
         or steal_aminonsaid_dx
+        or steal_aminobeta_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19653,6 +19689,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside-NSAID stack."
+            )
+
+    aminobeta_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOBETA_SIGN_RE.search(text)
+        and AMINOMIX_SIGN_RE.search(text)
+    )
+    if aminobeta_named:
+        if spec == "cat":
+            aminobeta_loc = (
+                "Feline aminoglycoside-beta-lactam syringe mix. "
+                "Not a sepsis-alone."
+            )
+        else:
+            aminobeta_loc = (
+                "Canine aminoglycoside-beta-lactam syringe mix. "
+                "Not a sepsis-alone."
+            )
+        localization = (
+            f"{localization} Also {aminobeta_loc}" if localization else aminobeta_loc
+        )
+        hard_stops.append(
+            "Do not mix an aminoglycoside with a beta-lactam in the "
+            "same syringe. "
+            "Do not send aminoglycoside plus beta-lactam mix home "
+            "as sepsis. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Mercer: chemical inactivation in the same syringe. "
+            "Give separately. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a sepsis-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 371 still owns the aminoglycoside-NSAID stack. "
+            "Bare penicillin without named aminoglycoside and mix "
+            "language is not this loc. "
+            "Gentamicin plus ampicillin without mix language is not "
+            "this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside-beta-lactam syringe mix. "
+                "Not a sepsis-alone. Do not mix in the same syringe. "
+                "Give separately. △ Plumb. Packet 371 still owns the "
+                "NSAID stack. Do not copy an aminoglycoside or "
+                "penicillin table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside-beta-lactam syringe mix. "
+                "Not a sepsis-alone. Do not mix in the same syringe. "
+                "Give separately. △ Plumb. Packet 371 still owns the "
+                "NSAID stack. Do not copy an aminoglycoside or "
+                "penicillin table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "do not mix aminoglycosides with beta-lactams in the "
+            "same syringe. Riff/Jackson Arch Intern Med 1972 PMID "
+            "5082469. Pickering AAC 1979 PMID 464591. Packet 371 "
+            "NSAID stack. Do not harvest aminoglycoside or "
+            "penicillin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside-beta-lactam mix."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside-beta-lactam mix."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

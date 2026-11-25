@@ -13665,6 +13665,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside-nsaid nephrotoxicity stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminobeta_is_not_a_sepsis_alone(self):
+        b = analyze("dog", "gentamicin, ampicillin, syringe")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not mix an aminoglycoside with a beta-lactam in the same syringe", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_ticarcillin_mix_fires_aminobeta(self):
+        b = analyze("dog", "amikacin, ticarcillin, mix")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_neomycin_amoxicillin_same_line_fires_aminobeta(self):
+        b = analyze("cat", "neomycin, amoxicillin, same line")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminonsaid_plus_aminobeta_concatenates(self):
+        b = analyze("dog", "gentamicin, carprofen, ampicillin, syringe")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminonsaid_is_not_aminobeta(self):
+        b = analyze("dog", "gentamicin, carprofen")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertNotIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gentamicin_ampicillin_without_mix_is_not_aminobeta(self):
+        b = analyze("dog", "gentamicin, ampicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertNotIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminobeta(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_penicillin_is_not_aminobeta(self):
+        b = analyze("dog", "ampicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminobeta(self):
+        b = analyze("horse", "gentamicin, ampicillin, syringe")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertNotIn("feline aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

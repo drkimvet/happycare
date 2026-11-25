@@ -308,6 +308,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminonmb` | Assessment | Canine aminoglycoside neuromuscular blockade / not a myasthenia-alone |
 | `ddx-aminoloop` | Assessment | Canine aminoglycoside-loop diuretic ototoxicity stack / not a vestibular-alone |
 | `ddx-aminonsaid` | Assessment | Canine aminoglycoside-NSAID nephrotoxicity stack / not an AKI-alone |
+| `ddx-aminobeta` | Assessment | Canine aminoglycoside-beta-lactam syringe mix / not a sepsis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -369,6 +370,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminonmb` | Discharge | After aminoglycoside / neuromuscular blockade talk |
 | `dc-aminoloop` | Discharge | After aminoglycoside / loop diuretic stack talk |
 | `dc-aminonsaid` | Discharge | After aminoglycoside / NSAID stack talk |
+| `dc-aminobeta` | Discharge | After aminoglycoside / beta-lactam syringe-mix talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4529,6 +4531,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Harvest an NSAID mg/kg table. Call this an AKI-alone. Send aminoglycoside plus NSAID home as AKI. Treat bare NSAID as this loc.
 Do next: Name canine aminoglycoside-NSAID nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 370 still owns the loop stack. Do not copy an aminoglycoside or NSAID table.
 
+### `ddx-aminobeta`
+
+Aminoglycoside-beta-lactam syringe mix — {{patient.name}}
+Canine aminoglycoside-beta-lactam syringe mix [yes / not]. Not a sepsis-alone [yes / not]. Do not mix in the same syringe [ ]. Give separately [ ]. Packet 371 NSAID [ ]. Bare penicillin [ ]. AG plus penicillin without mix language [ ].
+
+DDX:
+1. Named aminoglycoside plus named beta-lactam plus mix / syringe — **Canine aminoglycoside-beta-lactam syringe mix. Not a sepsis-alone**
+2. Mercer: chemical inactivation in the same syringe. Riff/Jackson 1972 PMID 5082469. Pickering AAC 1979 PMID 464591. Give separately. △ Plumb
+3. Packet 371 owns the NSAID stack. Bare penicillin is not this loc. Gentamicin plus ampicillin without mix language is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest a penicillin table. Do not send this home as a sepsis cocktail
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare penicillin stays dark. Do not copy an aminoglycoside or penicillin table
+
+Do not: harvest an aminoglycoside mg/kg table. Harvest a penicillin mg/kg table. Call this a sepsis-alone. Mix aminoglycoside with a beta-lactam in the same syringe. Treat bare penicillin as this loc.
+Do next: Name canine aminoglycoside-beta-lactam syringe mix. Not a sepsis-alone. Give separately. △ Plumb. Packet 371 still owns the NSAID stack. Do not copy an aminoglycoside or penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5030,6 +5047,14 @@ Return now for rolling, falling, sudden deafness, or collapse. {{location.phonen
 We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin or leftover carprofen from home.
 
 Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminobeta`
+
+{{patient.name}} was on an aminoglycoside antibiotic and a penicillin-class antibiotic. Those two medicines can cancel each other if they are mixed in the same syringe. That is not the same as treating a simple infection. This is not a simple sepsis-and-home cocktail.
+
+We do not mix those two in one syringe. Give only the medicines we sent, as labeled, and not in the same syringe. Do not add leftover gentamicin or leftover ampicillin from home into one syringe.
+
+Return now for fever, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-ahds`
 

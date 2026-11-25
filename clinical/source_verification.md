@@ -5785,3 +5785,31 @@ Night rule: named aminoglycoside plus named NSAID → **Canine aminoglycoside-NS
 - Attending: If the query is only “NSAID,” why does this gate stay dark?
 - Attending: Horse gentamicin plus Banamine — fire or skip?
 - Attending: Cat plus amikacin plus Onsior — which locs fire, and why?
+
+## 372. Canine aminoglycoside-beta-lactam syringe mix (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-beta-lactam-mix chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (do not mix aminoglycosides with beta-lactam antibiotics in the same syringe because of chemical inactivation). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Riff/Jackson *Arch Intern Med* 1972 PMID 5082469 (118 cites, RCR ~6.4; human classic gentamicin inactivation by carbenicillin; affiliation not in PubMed XML). Pickering/Gearhart *Antimicrob Agents Chemother* 1979 PMID 464591 (82 cites, RCR ~5.4, ASM SCI; time and concentration). Pickering/Rutherford *J Pharmacol Exp Ther* 1981 PMID 6453219 (56 cites). Human chemistry is not canine incidence. Do not overweight 2026 resistome papers or equine intrauterine mixes. Packet 371 still owns the aminoglycoside-NSAID stack. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a penicillin mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare penicillin. Do not fire on gentamicin plus ampicillin without mix / syringe / same-line language. Do not fire 371 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named beta-lactam plus mix language is not a sepsis-alone.** Give separately. Printed aminoglycoside and penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus penicillin / ampicillin / amoxicillin / ticarcillin / beta-lactam plus mix / syringe / same line is canine (or feline) aminoglycoside-beta-lactam syringe mix; not a sepsis-alone. Bare aminoglycoside stays dark. Bare penicillin stays dark. Dual carprofen plus ampicillin plus syringe concatenates 371 then 372. Dual gentamicin plus ampicillin without mix language stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a penicillin mg/kg table.
+- Do not call this a sepsis-alone.
+- Do not mix aminoglycoside with a beta-lactam in the same syringe.
+- Do not treat the NSAID stack (371) as this loc.
+- Do not treat penicillin without named aminoglycoside and mix language as this loc.
+
+Night rule: named aminoglycoside plus named beta-lactam plus mix language → **Canine aminoglycoside-beta-lactam syringe mix. Not a sepsis-alone.** Give separately. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus ampicillin in one syringe not a sepsis-and-home cocktail?
+- NAVLE 2: Why does gentamicin plus carprofen stay 371, not this loc?
+- NAVLE 3: Dual-named “gentamicin, ampicillin, syringe, carprofen” — which locs should fire, and why?
+- Oral: How do you tell the owner they are given separately without inventing a mg/kg table?
+- Attending: If the query is “gentamicin, ampicillin” with no mix language, why does this gate stay dark?
+- Attending: Horse gentamicin plus penicillin in one syringe — fire or skip?
+- Attending: Cat plus amikacin plus amoxicillin plus same line — which locs fire, and why?
