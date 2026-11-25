@@ -5482,3 +5482,31 @@ Night rule: named FQ plus photosensitivity → **Canine fluoroquinolone photosen
 - Attending: If the query is only “sunburn,” why does this gate stay dark?
 - Attending: Horse photosensitivity plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus phototoxicity — which locs fire, and why?
+
+## 362. Canine fluoroquinolone hemolytic anemia (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-hemolytic chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (hemolytic anemia has also occurred). Sparse data on the veterinary page. Packet 361 still owns FQ photosensitivity. Packet 126 still owns IMHA without named FQ. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare IMHA. Do not fire 361 FQ photosensitivity as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus hemolysis is not an IMHA-alone.** The hemolytic line is sparse data sitting on the veterinary page, not a claim that dogs have primary IMHA at a published FQ rate. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus hemolysis / hemolytic / IMHA / pigmenturia / hemoglobinuria is canine (or feline) fluoroquinolone hemolytic anemia; not an IMHA-alone. Bare FQ stays dark. Bare IMHA stays 126. Dual photosensitivity plus hemolysis concatenates 361 then 362. Dual FQ plus photosensitivity without hemolysis language stays 361. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this an IMHA-alone.
+- Do not send FQ hemolytic anemia home as primary IMHA.
+- Do not invent veterinary incidence.
+- Do not treat FQ photosensitivity (361) as this loc.
+- Do not treat IMHA without named FQ as this loc.
+
+Night rule: named FQ plus hemolysis → **Canine fluoroquinolone hemolytic anemia. Not an IMHA-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus IMHA not a steroid-and-home night?
+- NAVLE 2: Why does enrofloxacin plus photosensitivity stay 361, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, photosensitivity, hemolysis” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “IMHA,” why does this gate stay dark?
+- Attending: Horse hemolysis plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus hemoglobinuria — which locs fire, and why?

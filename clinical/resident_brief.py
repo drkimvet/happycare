@@ -264,6 +264,19 @@ FQPHOTO_SIGN_RE = re.compile(
 # an FQ mg/kg table. Dogs and cats. Skip horse. Mercer: dermal
 # reactions and photosensitization in people; occurrence seems
 # low. Human data on the veterinary page. △ Plumb.
+FQHEMA_SIGN_RE = re.compile(
+    r"(?<!non-)(?<!non)ha?emoly|"
+    r"\bimha\b|"
+    r"pigmenturia|"
+    r"hemoglobinuria",
+    re.I,
+)
+# Packet 362: named FQ plus hemolysis / hemolytic / IMHA /
+# pigmenturia / hemoglobinuria only. Do not use bare FQ. Do not
+# use bare IMHA. Do not use FQ photosensitivity (361). Do not
+# harvest an FQ mg/kg table. Do not use non-hemolytic (FNHTR).
+# Dogs and cats. Skip horse. Mercer: hemolytic anemia has also
+# occurred. Sparse data on the veterinary page. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6777,6 +6790,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQPHOTO_SIGN_RE.search(text)
     )
+    steal_fqhema_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQHEMA_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6940,6 +6958,7 @@ def analyze(
         or steal_ciprocol_dx
         or steal_fqtend_dx
         or steal_fqphoto_dx
+        or steal_fqhema_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18734,6 +18753,74 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ photosensitivity."
+            )
+
+    fqhema_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQHEMA_SIGN_RE.search(text)
+    )
+    if fqhema_named:
+        if spec == "cat":
+            fqhema_loc = (
+                "Feline fluoroquinolone hemolytic anemia. Not an IMHA-alone."
+            )
+        else:
+            fqhema_loc = (
+                "Canine fluoroquinolone hemolytic anemia. Not an IMHA-alone."
+            )
+        localization = (
+            f"{localization} Also {fqhema_loc}" if localization else fqhema_loc
+        )
+        hard_stops.append(
+            "Do not send FQ hemolytic anemia home as IMHA. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: hemolytic anemia has also occurred. Sparse "
+            "data on the veterinary page, not a proven primary-IMHA "
+            "equivalent. Stop the FQ. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an IMHA-alone. "
+            "Do not pred FQ hemolytic anemia as primary IMHA before "
+            "the drug is named. "
+            "Do not invent veterinary incidence as if the hemolytic "
+            "line were a canine IMHA paper. "
+            "Packet 361 still owns FQ photosensitivity. "
+            "Packet 126 still owns IMHA without named FQ. "
+            "Bare IMHA without named FQ is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone hemolytic anemia. Not an "
+                "IMHA-alone. Stop the FQ. △ Plumb. Packet 354 still "
+                "owns cat enro retina. Packet 361 still owns FQ "
+                "photosensitivity. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone hemolytic anemia. Not an "
+                "IMHA-alone. Stop the FQ. △ Plumb. Packet 361 still "
+                "owns FQ photosensitivity. Packet 126 still owns IMHA "
+                "without named FQ. Do not copy an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: hemolytic "
+            "anemia has also occurred. Sparse data on the veterinary "
+            "page. Packet 361 FQ photosensitivity. Packet 126 IMHA. "
+            "Do not harvest FQ mg/kg. Skip horse. Food-animal ELDU is "
+            "prohibited for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ hemolytic anemia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ hemolytic anemia."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

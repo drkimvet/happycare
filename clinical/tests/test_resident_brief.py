@@ -13003,6 +13003,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a sunburn-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_hemolysis_is_not_an_imha_alone(self):
+        b = analyze("dog", "enrofloxacin, hemolytic anemia")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertIn("not an imha-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send fq hemolytic anemia home as imha", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_imha_fires_fqhema(self):
+        b = analyze("dog", "baytril, IMHA")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_hemoglobinuria_fires_fqhema(self):
+        b = analyze("cat", "marbofloxacin, hemoglobinuria")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone hemolytic anemia", loc)
+        self.assertIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqphoto_plus_fqhema_concatenates(self):
+        b = analyze("dog", "enrofloxacin, photosensitivity, hemolysis")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        self.assertIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_photosensitivity_is_not_fqhema(self):
+        b = analyze("dog", "enrofloxacin, photosensitivity")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fq_is_not_fqhema(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_imha_is_not_fqhema(self):
+        b = analyze("dog", "IMHA")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqhema(self):
+        b = analyze("horse", "enrofloxacin, hemolytic anemia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("feline fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

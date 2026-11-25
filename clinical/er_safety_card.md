@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone hemolytic anemia (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone hemolytic anemia. Not an IMHA-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus hemolysis / hemolytic / IMHA / pigmenturia / hemoglobinuria only. Mercer: hemolytic anemia has also occurred. That is **sparse data on the veterinary page**, not a proven primary-IMHA equivalent. Stop the FQ. △ Plumb. Packet 361 still owns FQ photosensitivity. Packet 126 still owns IMHA without named FQ. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** pred this as primary IMHA. Bare FQ stays dark. Bare IMHA stays 126. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone hemolytic anemia. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone photosensitivity (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone photosensitivity. Not a sunburn-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus photosensitivity / phototoxicity / sunburn / dermal reaction only. Mercer: dermal reactions and photosensitization have been described in people, but the occurrence seems low. That is **human data on the veterinary page**, not a proven canine sunburn equivalent. Stop the FQ. △ Plumb. Packet 360 still owns FQ tendinopathy. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** send this home as sunburn. Bare FQ stays dark. Bare sunburn stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

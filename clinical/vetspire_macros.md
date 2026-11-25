@@ -298,6 +298,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-ciprocol` | Assessment | Canine ciprofloxacin colitis / not an AHDS-alone |
 | `ddx-fqtend` | Assessment | Canine fluoroquinolone tendinopathy / not a CCL-alone |
 | `ddx-fqphoto` | Assessment | Canine fluoroquinolone photosensitivity / not a sunburn-alone |
+| `ddx-fqhema` | Assessment | Canine fluoroquinolone hemolytic anemia / not an IMHA-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -349,6 +350,7 @@ Suggested names are short so they show up after three letters.
 | `dc-ciprocol` | Discharge | After cipro / colitis talk |
 | `dc-fqtend` | Discharge | After FQ / tendinopathy talk |
 | `dc-fqphoto` | Discharge | After FQ / photosensitivity talk |
+| `dc-fqhema` | Discharge | After FQ / hemolytic anemia talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4359,6 +4361,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this a sunburn-alone. Send FQ photosensitivity home as sunburn. Treat bare sunburn as this loc.
 Do next: Name canine fluoroquinolone photosensitivity. Not a sunburn-alone. Stop the FQ. △ Plumb. Packet 360 still owns FQ tendinopathy. Do not copy an FQ table.
 
+### `ddx-fqhema`
+
+Fluoroquinolone hemolytic anemia — {{patient.name}}
+Canine fluoroquinolone hemolytic anemia [yes / not]. Not an IMHA-alone [yes / not]. Stop the FQ [ ]. Packet 361 photosensitivity [ ]. Packet 126 IMHA without FQ [ ]. Bare IMHA [ ].
+
+DDX:
+1. Named FQ plus hemolysis — **Canine fluoroquinolone hemolytic anemia. Not an IMHA-alone**
+2. Mercer: hemolytic anemia has also occurred. Sparse data on the veterinary page, not a proven primary-IMHA equivalent. Stop the FQ. △ Plumb
+3. Packet 361 owns FQ photosensitivity. Packet 126 owns IMHA without named FQ. Bare IMHA is not this loc
+4. Do not invent veterinary incidence. Do not pred FQ hemolytic anemia as primary IMHA
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare IMHA stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this an IMHA-alone. Send FQ hemolytic anemia home as IMHA. Treat bare IMHA as this loc.
+Do next: Name canine fluoroquinolone hemolytic anemia. Not an IMHA-alone. Stop the FQ. △ Plumb. Packet 361 still owns FQ photosensitivity. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4780,6 +4797,14 @@ Return now for sudden lameness, a popping sensation, or a limb that will not bea
 We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home. Keep {{patient.objectPronoun}} out of direct sun until we recheck.
 
 Return now for spreading skin lesions, fever, or collapse. {{location.phonenumber}}
+
+### `dc-fqhema`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and has a hemolytic anemia. These antibiotics have been associated with hemolytic anemia. That warning is not the same as ordinary immune-mediated hemolytic anemia. This is not a simple steroid-and-home IMHA plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for pale gums, dark urine, collapse, or yellow skin or eyes. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -1386,6 +1386,8 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("`dc-fqtend`", MACRO)
         self.assertIn("`ddx-fqphoto`", MACRO)
         self.assertIn("`dc-fqphoto`", MACRO)
+        self.assertIn("`ddx-fqhema`", MACRO)
+        self.assertIn("`dc-fqhema`", MACRO)
         self.assertIn("do not flex the neck", MACRO.lower())
         self.assertIn("ventral fix", MACRO.lower())
         self.assertIn("mri or myelo", MACRO.lower())
