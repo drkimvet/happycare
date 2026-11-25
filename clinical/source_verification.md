@@ -5566,3 +5566,31 @@ Night rule: named FQ plus nitrofurantoin → **Canine fluoroquinolone-nitrofuran
 - Attending: If the query is only “UTI,” why does this gate stay dark?
 - Attending: Horse nitrofurantoin plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus nitrofurantoin — which locs fire, and why?
+
+## 365. Canine fluoroquinolone crystalluria (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-crystalluria chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (in concentrated acidic urine, some quinolones form needle-shaped crystals, although this apparently has not been reported with clinical use; urinalysis may reveal needle-shaped crystals; the clinical relevance of this finding is unclear). Packet 364 still owns FQ-nitrofurantoin. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare UTI. Do not fire on bare crystalluria. Do not fire 364 FQ-nitrofurantoin as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus needle crystals is not a UTI-alone.** Clinical relevance is unclear. Do not invent a stone night. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus crystalluria / needle-shaped crystal / needle crystal is canine (or feline) fluoroquinolone crystalluria; not a UTI-alone. Bare FQ stays dark. Bare UTI stays the UTI night. Bare crystalluria stays dark. Dual nitrofurantoin plus crystalluria concatenates 364 then 365. Dual FQ plus nitrofurantoin without crystal language stays 364. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a UTI-alone.
+- Do not send FQ crystalluria home as a UTI.
+- Do not invent veterinary stone incidence.
+- Do not treat FQ-nitrofurantoin (364) as this loc.
+- Do not treat CaOx crystals without needle / crystalluria language as this loc.
+
+Night rule: named FQ plus needle crystals → **Canine fluoroquinolone crystalluria. Not a UTI-alone.** Clinical relevance is unclear. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus needle crystals not a UTI-and-home night?
+- NAVLE 2: Why does enrofloxacin plus nitrofurantoin stay 364, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, nitrofurantoin, crystalluria” — which locs should fire, and why?
+- Oral: How do you tell the owner the crystals are not a proven stone night without inventing an FQ table?
+- Attending: If the query is only “crystalluria,” why does this gate stay dark?
+- Attending: Horse crystalluria plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus needle-shaped crystals — which locs fire, and why?

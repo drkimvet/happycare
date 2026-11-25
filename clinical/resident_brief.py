@@ -303,6 +303,19 @@ FQNITRO_SIGN_RE = re.compile(
 # as this loc. Dogs and cats. Skip horse. Mercer: nitrofurantoin
 # impairs the efficacy of quinolones if used concurrently for
 # urinary tract infections. △ Plumb.
+FQCRYST_SIGN_RE = re.compile(
+    r"crystallur|"
+    r"needle[- ]shaped crystal|"
+    r"needle crystal",
+    re.I,
+)
+# Packet 365: named FQ plus crystalluria / needle-shaped crystal
+# / needle crystal only. Do not use bare FQ. Do not use bare
+# UTI. Do not use bare crystalluria. Do not use FQ-nitrofurantoin
+# (364). Do not harvest an FQ mg/kg table. Do not use \bcrystal
+# (CaOx). Dogs and cats. Skip horse. Mercer: needle-shaped
+# crystals in concentrated acidic urine; not reported with
+# clinical use; clinical relevance unclear. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6831,6 +6844,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQNITRO_SIGN_RE.search(text)
     )
+    steal_fqcryst_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQCRYST_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6997,6 +7015,7 @@ def analyze(
         or steal_fqhema_dx
         or steal_fqmito_dx
         or steal_fqnitro_dx
+        or steal_fqcryst_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18995,6 +19014,76 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ-nitrofurantoin."
+            )
+
+    fqcryst_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQCRYST_SIGN_RE.search(text)
+    )
+    if fqcryst_named:
+        if spec == "cat":
+            fqcryst_loc = (
+                "Feline fluoroquinolone crystalluria. Not a UTI-alone."
+            )
+        else:
+            fqcryst_loc = (
+                "Canine fluoroquinolone crystalluria. Not a UTI-alone."
+            )
+        localization = (
+            f"{localization} Also {fqcryst_loc}" if localization else fqcryst_loc
+        )
+        hard_stops.append(
+            "Do not send FQ crystalluria home as a UTI. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: in concentrated acidic urine some quinolones "
+            "form needle-shaped crystals, although this apparently "
+            "has not been reported with clinical use. Urinalysis "
+            "may reveal needle-shaped crystals. Clinical relevance "
+            "is unclear. Do not invent a stone night. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a UTI-alone. "
+            "Do not treat needle crystals as calcium oxalate law. "
+            "Packet 364 still owns FQ-nitrofurantoin. "
+            "Bare crystalluria without named FQ is not this loc. "
+            "Bare UTI without needle-crystal language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone crystalluria. Not a "
+                "UTI-alone. Clinical relevance is unclear. △ Plumb. "
+                "Packet 354 still owns cat enro retina. Packet 364 "
+                "still owns FQ-nitrofurantoin. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone crystalluria. Not a "
+                "UTI-alone. Clinical relevance is unclear. △ Plumb. "
+                "Packet 364 still owns FQ-nitrofurantoin. Do not copy "
+                "an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: in "
+            "concentrated acidic urine some quinolones form "
+            "needle-shaped crystals, although this apparently has "
+            "not been reported with clinical use; urinalysis may "
+            "reveal needle-shaped crystals; clinical relevance is "
+            "unclear. Packet 364 FQ-nitrofurantoin. Do not harvest "
+            "FQ mg/kg. Skip horse. Food-animal ELDU is prohibited "
+            "for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ crystalluria."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ crystalluria."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

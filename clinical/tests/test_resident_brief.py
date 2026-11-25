@@ -13210,6 +13210,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a uti-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_crystalluria_is_not_a_uti_alone(self):
+        b = analyze("dog", "enrofloxacin, crystalluria")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIn("not a uti-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send fq crystalluria home as a uti", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_needle_crystals_fires_fqcryst(self):
+        b = analyze("dog", "baytril, needle-shaped crystals")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_needle_crystal_fires_fqcryst(self):
+        b = analyze("cat", "marbofloxacin, needle crystal")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone crystalluria", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqnitro_plus_fqcryst_concatenates(self):
+        b = analyze("dog", "enrofloxacin, nitrofurantoin, crystalluria")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_nitrofurantoin_is_not_fqcryst(self):
+        b = analyze("dog", "enrofloxacin, nitrofurantoin")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fq_is_not_fqcryst(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_uti_is_not_fqcryst(self):
+        b = analyze("dog", "UTI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_crystalluria_is_not_fqcryst(self):
+        b = analyze("dog", "crystalluria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqcryst(self):
+        b = analyze("horse", "enrofloxacin, crystalluria")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone crystalluria", loc)
+        self.assertNotIn("feline fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

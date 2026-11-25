@@ -301,6 +301,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqhema` | Assessment | Canine fluoroquinolone hemolytic anemia / not an IMHA-alone |
 | `ddx-fqmito` | Assessment | Canine fluoroquinolone mitotoxicity / not a neuropathy-alone |
 | `ddx-fqnitro` | Assessment | Canine fluoroquinolone-nitrofurantoin stack / not a UTI-alone |
+| `ddx-fqcryst` | Assessment | Canine fluoroquinolone crystalluria / not a UTI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -355,6 +356,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqhema` | Discharge | After FQ / hemolytic anemia talk |
 | `dc-fqmito` | Discharge | After FQ / mitotoxicity talk |
 | `dc-fqnitro` | Discharge | After FQ / nitrofurantoin stack talk |
+| `dc-fqcryst` | Discharge | After FQ / crystalluria talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4410,6 +4412,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Harvest a nitrofurantoin mg/kg table. Call this a UTI-alone. Send FQ plus nitrofurantoin home as a UTI. Treat bare UTI as this loc.
 Do next: Name canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone. Stop the stack. △ Plumb. Packet 363 still owns FQ mitotoxicity. Do not copy an FQ table.
 
+### `ddx-fqcryst`
+
+Fluoroquinolone crystalluria — {{patient.name}}
+Canine fluoroquinolone crystalluria [yes / not]. Not a UTI-alone [yes / not]. Needle-shaped crystals [ ]. Packet 364 nitrofurantoin [ ]. Bare crystalluria [ ]. Bare UTI [ ].
+
+DDX:
+1. Named FQ plus crystalluria — **Canine fluoroquinolone crystalluria. Not a UTI-alone**
+2. Mercer: needle-shaped crystals in concentrated acidic urine; not reported with clinical use; clinical relevance unclear. Do not invent a stone night. △ Plumb
+3. Packet 364 owns FQ-nitrofurantoin. Bare crystalluria is not this loc. Bare UTI is not this loc
+4. Do not harvest an FQ table. Do not send FQ crystalluria home as a UTI
+5. Dog or cat can fire. Horse does not fire. Bare FQ, bare UTI, or bare crystalluria stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a UTI-alone. Send FQ crystalluria home as a UTI. Treat bare crystalluria as this loc. Treat CaOx crystals without needle language as this loc.
+Do next: Name canine fluoroquinolone crystalluria. Not a UTI-alone. Clinical relevance is unclear. △ Plumb. Packet 364 still owns FQ-nitrofurantoin. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4853,6 +4870,14 @@ Return now for worsening weakness, collapse, or trouble breathing. {{location.ph
 {{patient.name}} was on a fluoroquinolone antibiotic and nitrofurantoin together. Nitrofurantoin can stop the fluoroquinolone from working if they are given at the same time for a urinary infection. This is not a simple UTI-and-home plan.
 
 We stopped that combination. Give only the medicines we sent, as labeled. Do not add leftover Baytril or leftover nitrofurantoin from home.
+
+Return now for straining, no urine, fever, or collapse. {{location.phonenumber}}
+
+### `dc-fqcryst`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and the urine showed needle-shaped crystals. These antibiotics can form needle crystals in concentrated acidic urine on the lab sheet. That finding has not been reported as a clinical stone problem, and it is not the same as an ordinary urinary tract infection. This is not a simple UTI-and-home plan.
+
+Give only the medicines we sent, as labeled. Do not add leftover Baytril from home. Offer water.
 
 Return now for straining, no urine, fever, or collapse. {{location.phonenumber}}
 

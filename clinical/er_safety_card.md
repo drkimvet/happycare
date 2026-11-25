@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone crystalluria (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone crystalluria. Not a UTI-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus crystalluria / needle-shaped crystal / needle crystal only. Mercer: in concentrated acidic urine some quinolones form needle-shaped crystals, although this apparently has **not been reported with clinical use**. Urinalysis may reveal needle-shaped crystals. Clinical relevance is **unclear**. Do not invent a stone night. △ Plumb. Packet 364 still owns FQ-nitrofurantoin. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send this home as a UTI. Bare FQ stays dark. Bare UTI stays the UTI night. Bare crystalluria stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone crystalluria. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone-nitrofurantoin stack (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus nitrofurantoin / nitrofuran / Macrobid / Macrodantin only. Mercer: nitrofurantoin **impairs the efficacy of quinolones** if used concurrently for urinary tract infections. Stop the stack. △ Plumb. Packet 363 still owns FQ mitotoxicity. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a nitrofurantoin mg/kg table. Do **not** send this home as a UTI. Bare FQ stays dark. Bare UTI stays the UTI night. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
