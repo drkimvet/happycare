@@ -5650,3 +5650,32 @@ Night rule: named aminoglycoside plus kidney language → **Canine aminoglycosid
 - Attending: If the query is only “AKI,” why does this gate stay dark?
 - Attending: Horse gentamicin plus AKI — fire or skip?
 - Attending: Cat plus amikacin plus azotemia — which locs fire, and why?
+
+## 368. Canine aminoglycoside ototoxicity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-ototoxicity chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (ototoxicity may manifest as auditory or vestibular dysfunction; binding or damage to mitochondria plays a prominent role; vestibular injury leads to nystagmus, incoordination, and loss of the righting reflex; the lesion is often irreversible; ototoxicity is not unusual in people, but relevance to veterinary patients is not clear; cats are particularly sensitive to the toxic vestibular effects; aminoglycosides should not be administered topically into the ear unless the tympanic membrane is intact; hearing impairment reflects permanent damage and loss of hair cells in the organ of Corti). Packet 367 still owns aminoglycoside nephrotoxicity. Packet 137 still owns vestibular without named aminoglycoside. Packet 349 still owns metronidazole neurotoxicity. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest NAC as an ototoxicity antidote (human line on the veterinary page). Do not fire on bare aminoglycoside. Do not fire on bare vestibular. Do not fire 367 aminoglycoside nephrotoxicity as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus oto language is not a vestibular-alone.** Veterinary relevance is not clear. Cats are particularly sensitive. Confirm the TM. Stop the aminoglycoside. Printed aminoglycoside mg/kg stays on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus ototox / vestibular / deaf / hearing / nystagmus is canine (or feline) aminoglycoside ototoxicity; not a vestibular-alone. Bare aminoglycoside stays dark. Bare vestibular stays 137. Dual AKI plus nystagmus concatenates 367 then 368. Dual gentamicin plus AKI without oto language stays 367. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not call this a vestibular-alone.
+- Do not send aminoglycoside ototoxicity home as idiopathic vestibular.
+- Do not invent veterinary incidence.
+- Do not harvest NAC as an ototoxicity antidote.
+- Do not treat aminoglycoside nephrotoxicity (367) as this loc.
+- Do not treat vestibular without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus oto language → **Canine aminoglycoside ototoxicity. Not a vestibular-alone.** Stop the aminoglycoside. Confirm the TM. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus nystagmus not an idiopathic-vestibular-and-home night?
+- NAVLE 2: Why does gentamicin plus AKI stay 367, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, nystagmus” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the aminoglycoside without inventing a mg/kg table?
+- Attending: If the query is only “vestibular,” why does this gate stay dark?
+- Attending: Horse gentamicin plus nystagmus — fire or skip?
+- Attending: Cat plus neomycin plus deafness — which locs fire, and why?

@@ -355,6 +355,23 @@ AMINOAKI_SIGN_RE = re.compile(
 # horse. Mercer: nephrotoxicity is of major concern; risk rises
 # with duration, dehydration, and concurrent nephrotoxins.
 # △ Plumb.
+AMINOOTO_SIGN_RE = re.compile(
+    r"ototox|"
+    r"vestibular|"
+    r"\bdeaf|"
+    r"hearing|"
+    r"nystagmus",
+    re.I,
+)
+# Packet 368: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus ototox / vestibular / deaf /
+# hearing / nystagmus only. Do not use bare aminoglycoside.
+# Do not use bare vestibular. Do not use aminoglycoside
+# nephrotoxicity (367). Do not harvest an aminoglycoside mg/kg
+# table. Do not use \bear alone. Dogs and cats. Skip horse.
+# Mercer: ototoxicity may be auditory or vestibular; relevance
+# to veterinary patients is not clear; cats are particularly
+# sensitive; TM must be intact for topical ear use. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6898,6 +6915,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOAKI_SIGN_RE.search(text)
     )
+    steal_aminooto_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOOTO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7067,6 +7089,7 @@ def analyze(
         or steal_fqcryst_dx
         or steal_fqlab_dx
         or steal_aminoaki_dx
+        or steal_aminooto_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19267,6 +19290,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside nephrotoxicity."
+            )
+
+    aminooto_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOOTO_SIGN_RE.search(text)
+    )
+    if aminooto_named:
+        if spec == "cat":
+            aminooto_loc = (
+                "Feline aminoglycoside ototoxicity. Not a vestibular-alone."
+            )
+        else:
+            aminooto_loc = (
+                "Canine aminoglycoside ototoxicity. Not a vestibular-alone."
+            )
+        localization = (
+            f"{localization} Also {aminooto_loc}" if localization else aminooto_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside ototoxicity home as vestibular. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer: ototoxicity may manifest as auditory or vestibular "
+            "dysfunction. Relevance to veterinary patients is not "
+            "clear. Cats are particularly sensitive to toxic vestibular "
+            "effects. Do not put aminoglycoside drops in an ear unless "
+            "the tympanic membrane is intact. Stop the aminoglycoside. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this a vestibular-alone. "
+            "Do not invent veterinary incidence as if the human oto "
+            "line were a canine deafness paper. "
+            "Do not harvest NAC as an ototoxicity antidote. "
+            "Packet 367 still owns aminoglycoside nephrotoxicity. "
+            "Packet 137 still owns vestibular without named "
+            "aminoglycoside. "
+            "Bare vestibular without named aminoglycoside is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside ototoxicity. Not a "
+                "vestibular-alone. Stop the aminoglycoside. Confirm "
+                "the TM before any ear drop. △ Plumb. Packet 367 still "
+                "owns aminoglycoside nephrotoxicity. Do not copy an "
+                "aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside ototoxicity. Not a "
+                "vestibular-alone. Stop the aminoglycoside. Confirm "
+                "the TM before any ear drop. △ Plumb. Packet 367 still "
+                "owns aminoglycoside nephrotoxicity. Do not copy an "
+                "aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "ototoxicity may manifest as auditory or vestibular "
+            "dysfunction; relevance to veterinary patients is not "
+            "clear; cats are particularly sensitive; do not administer "
+            "topically into the ear unless the tympanic membrane is "
+            "intact. Packet 367 aminoglycoside nephrotoxicity. Packet "
+            "137 vestibular. Do not harvest aminoglycoside mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside ototoxicity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside ototoxicity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

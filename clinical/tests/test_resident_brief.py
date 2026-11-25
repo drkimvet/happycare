@@ -13409,6 +13409,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not an aki-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminoglycoside_ototoxicity_is_not_a_vestibular_alone(self):
+        b = analyze("dog", "gentamicin, nystagmus")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send aminoglycoside ototoxicity home as vestibular", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_deafness_fires_aminooto(self):
+        b = analyze("dog", "amikacin, deafness")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_neomycin_hearing_fires_aminooto(self):
+        b = analyze("cat", "neomycin, hearing")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside ototoxicity", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_plus_aminooto_concatenates(self):
+        b = analyze("dog", "gentamicin, AKI, nystagmus")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_is_not_aminooto(self):
+        b = analyze("dog", "gentamicin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("canine aminoglycoside ototoxicity", loc)
+        self.assertNotIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminooto(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside ototoxicity", loc)
+        self.assertNotIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_vestibular_is_not_aminooto(self):
+        b = analyze("dog", "vestibular")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside ototoxicity", loc)
+        self.assertNotIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminooto(self):
+        b = analyze("horse", "gentamicin, nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside ototoxicity", loc)
+        self.assertNotIn("feline aminoglycoside ototoxicity", loc)
+        self.assertNotIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

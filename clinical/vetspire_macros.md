@@ -304,6 +304,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqcryst` | Assessment | Canine fluoroquinolone crystalluria / not a UTI-alone |
 | `ddx-fqlab` | Assessment | Canine fluoroquinolone laboratory interference / not a hepatitis-alone |
 | `ddx-aminoaki` | Assessment | Canine aminoglycoside nephrotoxicity / not an AKI-alone |
+| `ddx-aminooto` | Assessment | Canine aminoglycoside ototoxicity / not a vestibular-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -361,6 +362,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqcryst` | Discharge | After FQ / crystalluria talk |
 | `dc-fqlab` | Discharge | After FQ / laboratory interference talk |
 | `dc-aminoaki` | Discharge | After aminoglycoside / kidney talk |
+| `dc-aminooto` | Discharge | After aminoglycoside / ear-balance talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4461,6 +4463,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this an AKI-alone. Send aminoglycoside nephrotoxicity home as AKI. Treat bare AKI as this loc. Treat bare gentamicin as this loc.
 Do next: Name canine aminoglycoside nephrotoxicity. Not an AKI-alone. Stop the aminoglycoside. Hydrate. △ Plumb. Packet 366 still owns FQ laboratory interference. Do not copy an aminoglycoside table.
 
+### `ddx-aminooto`
+
+Aminoglycoside ototoxicity — {{patient.name}}
+Canine aminoglycoside ototoxicity [yes / not]. Not a vestibular-alone [yes / not]. Stop the aminoglycoside [ ]. TM intact before ear drop [ ]. Packet 367 kidney [ ]. Packet 137 vestibular without the drug [ ]. Bare vestibular [ ].
+
+DDX:
+1. Named aminoglycoside plus oto language — **Canine aminoglycoside ototoxicity. Not a vestibular-alone**
+2. Mercer: auditory or vestibular dysfunction; veterinary relevance not clear; cats particularly sensitive; TM must be intact for topical ear use. Stop the aminoglycoside. △ Plumb
+3. Packet 367 owns aminoglycoside nephrotoxicity. Packet 137 owns vestibular without named aminoglycoside. Bare vestibular is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest NAC as an ototoxicity antidote. Do not send this home as vestibular
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare vestibular stays dark. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this a vestibular-alone. Send aminoglycoside ototoxicity home as vestibular. Treat bare vestibular as this loc. Put aminoglycoside drops in an ear whose TM is not seen.
+Do next: Name canine aminoglycoside ototoxicity. Not a vestibular-alone. Stop the aminoglycoside. Confirm the TM. △ Plumb. Packet 367 still owns nephrotoxicity. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4930,6 +4947,14 @@ Return now for yellow skin or eyes, collapse, or not eating. {{location.phonenum
 We stopped the aminoglycoside. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin from home.
 
 Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminooto`
+
+{{patient.name}} was on an aminoglycoside antibiotic and has balance trouble or a hearing concern. These antibiotics can affect the inner ear in people; whether that happens at the same rate in pets is not clear. Cats can be more sensitive. That is not the same as ordinary old-dog vestibular disease. This is not a simple vestibular-and-home plan.
+
+We stopped the aminoglycoside. Give only the medicines we sent, as labeled. Do not put leftover gentamicin drops in the ear unless we have seen the eardrum.
+
+Return now for rolling, falling, sudden deafness, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

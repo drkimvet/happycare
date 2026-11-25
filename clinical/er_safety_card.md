@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine aminoglycoside ototoxicity (Merck Mercer Jun 2026)
+
+- **Canine aminoglycoside ototoxicity. Not a vestibular-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus ototox / vestibular / deaf / hearing / nystagmus only. Mercer: ototoxicity may be **auditory or vestibular**. Relevance to veterinary patients is **not clear**. Cats are particularly sensitive to toxic vestibular effects. Do **not** put aminoglycoside drops in an ear unless the **TM is intact**. Stop the aminoglycoside. △ Plumb. Packet 367 still owns aminoglycoside nephrotoxicity. Packet 137 still owns vestibular without the drug. Do **not** harvest an aminoglycoside mg/kg table. Do **not** harvest NAC as an ototoxicity antidote. Do **not** send this home as vestibular. Bare aminoglycoside stays dark. Bare vestibular stays 137. Skip horse.
+- Cats: same named loc as feline aminoglycoside ototoxicity. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine aminoglycoside nephrotoxicity (Merck Mercer Jun 2026)
 
 - **Canine aminoglycoside nephrotoxicity. Not an AKI-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus nephrotox / AKI / azotemia / creatinine only. Mercer: nephrotoxicity is of **major concern** and may result in renal failure due to acute tubular necrosis. Risk rises with **duration, dehydration, and concurrent nephrotoxins**. Stop the aminoglycoside. Hydrate. △ Plumb. Packet 366 still owns FQ laboratory interference. Do **not** harvest an aminoglycoside mg/kg table. Do **not** send this home as AKI. Bare aminoglycoside stays dark. Bare AKI stays the AKI night. Skip horse.
