@@ -5813,3 +5813,33 @@ Night rule: named aminoglycoside plus named beta-lactam plus mix language → **
 - Attending: If the query is “gentamicin, ampicillin” with no mix language, why does this gate stay dark?
 - Attending: Horse gentamicin plus penicillin in one syringe — fire or skip?
 - Attending: Cat plus amikacin plus amoxicillin plus same line — which locs fire, and why?
+
+## 373. Canine aminoglycoside-amphotericin nephrotoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-amphotericin chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (risk of nephrotoxicity rises with concurrent nephrotoxins; amphotericin B is a concurrent nephrotoxin). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Grauer *Vet Clin North Am Small Anim Pract* 1996 PMID 8911027 (10 cites, Colorado State CVM; names gentamicin, cisplatin, amphotericin, and NSAIDs among hospital-acquired ARF agents). Chan/Dear/Palm *J Vet Intern Med* 2023 PMID 37148178 (5 cites, UC Davis; amphotericin AKI in dogs with systemic mycosis — journal standing, not recency). Gerkens *J Pharmacol Exp Ther* 1983 PMID 6298404 (38 cites; experimental dog amphotericin nephrotoxicity — aminophylline recipe stays on that paper). Do not treat Legendre *JAVMA* 1984 PMID 6330013 blasto treatment as this loc (packet 191). Do not overweight NICU / rodent ampho papers. Packet 372 still owns the aminoglycoside-beta-lactam syringe mix. Packet 367 still owns aminoglycoside nephrotoxicity without named amphotericin. Packet 191 still owns blastomycosis. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest an amphotericin mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare amphotericin. Do not fire 372 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named amphotericin is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed aminoglycoside and amphotericin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus amphotericin / AmBisome / Fungizone is canine (or feline) aminoglycoside-amphotericin nephrotoxicity stack; not an AKI-alone. Bare aminoglycoside stays dark. Bare amphotericin stays dark. Dual AKI plus amphotericin concatenates 367 then 373. Dual ampicillin plus syringe plus amphotericin concatenates 372 then 373. Dual gentamicin plus AKI without amphotericin stays 367. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest an amphotericin mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside plus amphotericin home as AKI.
+- Do not treat the syringe mix (372) as this loc.
+- Do not treat aminoglycoside nephrotoxicity without named amphotericin (367) as this loc.
+- Do not treat blastomycosis (191) as this loc.
+- Do not treat amphotericin without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named amphotericin → **Canine aminoglycoside-amphotericin nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus amphotericin not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus ampicillin plus syringe stay 372, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, amphotericin” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “amphotericin,” why does this gate stay dark?
+- Attending: Horse gentamicin plus amphotericin — fire or skip?
+- Attending: Cat plus amikacin plus AmBisome — which locs fire, and why?

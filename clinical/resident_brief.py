@@ -454,6 +454,21 @@ AMINOMIX_SIGN_RE = re.compile(
 # harvest an aminoglycoside or penicillin mg/kg table. Dogs
 # and cats. Skip horse. Mercer: chemical inactivation in the
 # same syringe. △ Plumb.
+AMINOAMPHO_SIGN_RE = re.compile(
+    r"amphotericin|"
+    r"ambisome|"
+    r"fungizone",
+    re.I,
+)
+# Packet 373: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus amphotericin / AmBisome /
+# Fungizone only. Do not use bare aminoglycoside. Do not use
+# bare amphotericin. Do not use aminoglycoside-beta-lactam
+# syringe mix (372). Do not harvest an aminoglycoside or
+# amphotericin mg/kg table. Dogs and cats. Skip horse.
+# Mercer: risk of nephrotoxicity rises with concurrent
+# nephrotoxins; amphotericin B is a concurrent nephrotoxin.
+# △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7023,6 +7038,11 @@ def analyze(
         and AMINOBETA_SIGN_RE.search(text)
         and AMINOMIX_SIGN_RE.search(text)
     )
+    steal_aminoampho_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOAMPHO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7197,6 +7217,7 @@ def analyze(
         or steal_aminoloop_dx
         or steal_aminonsaid_dx
         or steal_aminobeta_dx
+        or steal_aminoampho_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19761,6 +19782,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside-beta-lactam mix."
+            )
+
+    aminoampho_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOAMPHO_SIGN_RE.search(text)
+    )
+    if aminoampho_named:
+        if spec == "cat":
+            aminoampho_loc = (
+                "Feline aminoglycoside-amphotericin nephrotoxicity "
+                "stack. Not an AKI-alone."
+            )
+        else:
+            aminoampho_loc = (
+                "Canine aminoglycoside-amphotericin nephrotoxicity "
+                "stack. Not an AKI-alone."
+            )
+        localization = (
+            f"{localization} Also {aminoampho_loc}" if localization else aminoampho_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside plus amphotericin home as AKI. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest an amphotericin mg/kg table. "
+            "Mercer: risk of nephrotoxicity rises with concurrent "
+            "nephrotoxins. Amphotericin B is a concurrent "
+            "nephrotoxin. Name the stack. Stop or unstack. Hydrate. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this an AKI-alone. "
+            "Do not copy an amphotericin recipe as lobby law. "
+            "Packet 372 still owns the aminoglycoside-beta-lactam "
+            "syringe mix. "
+            "Packet 367 still owns aminoglycoside nephrotoxicity "
+            "without named amphotericin. "
+            "Packet 191 still owns blastomycosis. "
+            "Bare amphotericin without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without named amphotericin is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside-amphotericin nephrotoxicity "
+                "stack. Not an AKI-alone. Stop or unstack. Hydrate. "
+                "△ Plumb. Packet 372 still owns the syringe mix. "
+                "Packet 191 still owns blastomycosis. Do not copy an "
+                "aminoglycoside or amphotericin table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside-amphotericin nephrotoxicity "
+                "stack. Not an AKI-alone. Stop or unstack. Hydrate. "
+                "△ Plumb. Packet 372 still owns the syringe mix. "
+                "Packet 191 still owns blastomycosis. Do not copy an "
+                "aminoglycoside or amphotericin table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "risk of nephrotoxicity rises with concurrent "
+            "nephrotoxins. Grauer VCNA 1996 PMID 8911027 (CSU). "
+            "Chan JVIM 2023 PMID 37148178 (UC Davis). Packet 372 "
+            "syringe mix. Packet 191 blastomycosis. Do not harvest "
+            "aminoglycoside or amphotericin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside-amphotericin stack."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside-amphotericin stack."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

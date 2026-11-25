@@ -309,6 +309,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminoloop` | Assessment | Canine aminoglycoside-loop diuretic ototoxicity stack / not a vestibular-alone |
 | `ddx-aminonsaid` | Assessment | Canine aminoglycoside-NSAID nephrotoxicity stack / not an AKI-alone |
 | `ddx-aminobeta` | Assessment | Canine aminoglycoside-beta-lactam syringe mix / not a sepsis-alone |
+| `ddx-aminoampho` | Assessment | Canine aminoglycoside-amphotericin nephrotoxicity stack / not an AKI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -371,6 +372,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminoloop` | Discharge | After aminoglycoside / loop diuretic stack talk |
 | `dc-aminonsaid` | Discharge | After aminoglycoside / NSAID stack talk |
 | `dc-aminobeta` | Discharge | After aminoglycoside / beta-lactam syringe-mix talk |
+| `dc-aminoampho` | Discharge | After aminoglycoside / amphotericin stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4546,6 +4548,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Harvest a penicillin mg/kg table. Call this a sepsis-alone. Mix aminoglycoside with a beta-lactam in the same syringe. Treat bare penicillin as this loc.
 Do next: Name canine aminoglycoside-beta-lactam syringe mix. Not a sepsis-alone. Give separately. △ Plumb. Packet 371 still owns the NSAID stack. Do not copy an aminoglycoside or penicillin table.
 
+### `ddx-aminoampho`
+
+Aminoglycoside-amphotericin stack — {{patient.name}}
+Canine aminoglycoside-amphotericin nephrotoxicity stack [yes / not]. Not an AKI-alone [yes / not]. Stop or unstack [ ]. Hydrate [ ]. Packet 372 syringe mix [ ]. Packet 367 kidney without amphotericin [ ]. Packet 191 blasto [ ]. Bare amphotericin [ ].
+
+DDX:
+1. Named aminoglycoside plus named amphotericin — **Canine aminoglycoside-amphotericin nephrotoxicity stack. Not an AKI-alone**
+2. Mercer: risk of nephrotoxicity rises with concurrent nephrotoxins. Amphotericin B is a concurrent nephrotoxin. Grauer VCNA 1996 PMID 8911027. Stop or unstack. Hydrate. △ Plumb
+3. Packet 372 owns the syringe mix. Packet 367 owns nephrotoxicity without named amphotericin. Packet 191 owns blastomycosis. Bare amphotericin is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest an amphotericin table. Do not send this home as AKI
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare amphotericin stays dark. Do not copy an aminoglycoside or amphotericin table
+
+Do not: harvest an aminoglycoside mg/kg table. Harvest an amphotericin mg/kg table. Call this an AKI-alone. Send aminoglycoside plus amphotericin home as AKI. Treat bare amphotericin as this loc.
+Do next: Name canine aminoglycoside-amphotericin nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 372 still owns the syringe mix. Do not copy an aminoglycoside or amphotericin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5055,6 +5072,14 @@ Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenu
 We do not mix those two in one syringe. Give only the medicines we sent, as labeled, and not in the same syringe. Do not add leftover gentamicin or leftover ampicillin from home into one syringe.
 
 Return now for fever, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-aminoampho`
+
+{{patient.name}} was on an aminoglycoside antibiotic and amphotericin. Used together, these medicines can raise the risk of kidney injury. That is not the same as ordinary kidney failure from another cause. This is not a simple AKI-and-home plan.
+
+We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin or leftover amphotericin from home.
+
+Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 

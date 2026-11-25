@@ -13733,6 +13733,69 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside-beta-lactam syringe mix", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminoampho_is_not_an_aki_alone(self):
+        b = analyze("dog", "gentamicin, amphotericin")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn(
+            "do not send aminoglycoside plus amphotericin home as aki",
+            joined,
+        )
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("amphotericin mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_ambisome_fires_aminoampho(self):
+        b = analyze("dog", "amikacin, AmBisome")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_fungizone_fires_aminoampho(self):
+        b = analyze("cat", "tobramycin, Fungizone")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_plus_aminoampho_concatenates(self):
+        b = analyze("dog", "gentamicin, AKI, amphotericin")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminobeta_is_not_aminoampho(self):
+        b = analyze("dog", "gentamicin, ampicillin, syringe")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertNotIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminoampho(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_amphotericin_is_not_aminoampho(self):
+        b = analyze("dog", "amphotericin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminoampho(self):
+        b = analyze("horse", "gentamicin, amphotericin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertNotIn("feline aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
