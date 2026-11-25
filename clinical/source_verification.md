@@ -5707,3 +5707,32 @@ Night rule: named aminoglycoside plus blockade language → **Canine aminoglycos
 - Attending: If the query is only “myasthenia,” why does this gate stay dark?
 - Attending: Horse gentamicin plus respiratory arrest — fire or skip?
 - Attending: Cat plus tobramycin plus respiratory arrest — which locs fire, and why?
+
+## 370. Canine aminoglycoside-loop diuretic ototoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-loop-diuretic chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (ototoxicity may be enhanced by concurrent loop diuretics such as furosemide). Packet 369 still owns aminoglycoside neuromuscular blockade. Packet 368 still owns aminoglycoside ototoxicity without a named loop. Packet 137 still owns vestibular without named aminoglycoside. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a furosemide mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare furosemide. Do not fire 369 aminoglycoside neuromuscular blockade as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named loop diuretic is not a vestibular-alone.** Name the stack. Stop or unstack. Printed aminoglycoside and furosemide mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus furosemide / loop diuretic / Lasix / torsemide is canine (or feline) aminoglycoside-loop diuretic ototoxicity stack; not a vestibular-alone. Bare aminoglycoside stays dark. Bare furosemide stays dark. Dual nystagmus plus furosemide concatenates 368 then 370. Dual neuromuscular blockade plus furosemide concatenates 369 then 370. Dual gentamicin plus nystagmus without a loop stays 368. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a furosemide mg/kg table.
+- Do not call this a vestibular-alone.
+- Do not send aminoglycoside plus loop diuretic home as idiopathic vestibular.
+- Do not treat aminoglycoside neuromuscular blockade (369) as this loc.
+- Do not treat aminoglycoside ototoxicity without a named loop (368) as this loc.
+- Do not treat furosemide without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named loop → **Canine aminoglycoside-loop diuretic ototoxicity stack. Not a vestibular-alone.** Stop or unstack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus furosemide not an idiopathic-vestibular-and-home night?
+- NAVLE 2: Why does gentamicin plus neuromuscular blockade stay 369, not this loc?
+- NAVLE 3: Dual-named “gentamicin, nystagmus, furosemide” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “furosemide,” why does this gate stay dark?
+- Attending: Horse gentamicin plus Lasix — fire or skip?
+- Attending: Cat plus amikacin plus loop diuretic — which locs fire, and why?

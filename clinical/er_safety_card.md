@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine aminoglycoside-loop diuretic ototoxicity stack (Merck Mercer Jun 2026)
+
+- **Canine aminoglycoside-loop diuretic ototoxicity stack. Not a vestibular-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus furosemide / loop diuretic / Lasix / torsemide only. Mercer: ototoxicity may be **enhanced by concurrent loop diuretics** such as furosemide. Name the stack. Stop or unstack. △ Plumb. Packet 369 still owns aminoglycoside neuromuscular blockade. Packet 368 still owns aminoglycoside ototoxicity without a named loop. Packet 137 still owns vestibular without the drug. Do **not** harvest an aminoglycoside mg/kg table. Do **not** harvest a furosemide mg/kg table. Do **not** send this home as vestibular. Bare aminoglycoside stays dark. Bare furosemide stays dark. Skip horse.
+- Cats: same named loc as feline aminoglycoside-loop diuretic ototoxicity stack. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine aminoglycoside neuromuscular blockade (Merck Mercer Jun 2026)
 
 - **Canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus neuromuscular / blockade / muscle weakness / respiratory arrest only. Mercer: all aminoglycosides at **high plasma concentrations** have been associated with **muscle weakness and respiratory arrest** attributable to neuromuscular blockade. More pronounced with other NM blockers and gas anesthetics. Antagonized by **calcium gluconate**. Stop the aminoglycoside. Support respiration. △ Plumb. Packet 368 still owns aminoglycoside ototoxicity. Packet 163 still owns fulminant myasthenia. Do **not** harvest an aminoglycoside mg/kg table. Do **not** harvest a calcium gluconate mg/kg table. Do **not** send this home as myasthenia. Bare aminoglycoside stays dark. Bare myasthenia stays 163. Skip horse.

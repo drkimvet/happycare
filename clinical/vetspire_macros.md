@@ -306,6 +306,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminoaki` | Assessment | Canine aminoglycoside nephrotoxicity / not an AKI-alone |
 | `ddx-aminooto` | Assessment | Canine aminoglycoside ototoxicity / not a vestibular-alone |
 | `ddx-aminonmb` | Assessment | Canine aminoglycoside neuromuscular blockade / not a myasthenia-alone |
+| `ddx-aminoloop` | Assessment | Canine aminoglycoside-loop diuretic ototoxicity stack / not a vestibular-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -365,6 +366,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminoaki` | Discharge | After aminoglycoside / kidney talk |
 | `dc-aminooto` | Discharge | After aminoglycoside / ear-balance talk |
 | `dc-aminonmb` | Discharge | After aminoglycoside / neuromuscular blockade talk |
+| `dc-aminoloop` | Discharge | After aminoglycoside / loop diuretic stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4495,6 +4497,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Harvest a calcium gluconate mg/kg table. Call this a myasthenia-alone. Send aminoglycoside neuromuscular blockade home as myasthenia. Treat bare myasthenia as this loc.
 Do next: Name canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone. Stop the aminoglycoside. Support respiration. Calcium gluconate △ Plumb. Packet 368 still owns ototoxicity. Do not copy an aminoglycoside or calcium table.
 
+### `ddx-aminoloop`
+
+Aminoglycoside-loop diuretic stack — {{patient.name}}
+Canine aminoglycoside-loop diuretic ototoxicity stack [yes / not]. Not a vestibular-alone [yes / not]. Stop or unstack [ ]. Packet 369 NMB [ ]. Packet 368 oto without the loop [ ]. Bare furosemide [ ]. Bare aminoglycoside [ ].
+
+DDX:
+1. Named aminoglycoside plus named loop — **Canine aminoglycoside-loop diuretic ototoxicity stack. Not a vestibular-alone**
+2. Mercer: ototoxicity may be enhanced by concurrent loop diuretics such as furosemide. Name the stack. Stop or unstack. △ Plumb
+3. Packet 369 owns aminoglycoside neuromuscular blockade. Packet 368 owns ototoxicity without a named loop. Bare furosemide is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest a furosemide table. Do not send this home as vestibular
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare furosemide stays dark. Do not copy an aminoglycoside or furosemide table
+
+Do not: harvest an aminoglycoside mg/kg table. Harvest a furosemide mg/kg table. Call this a vestibular-alone. Send aminoglycoside plus loop diuretic home as vestibular. Treat bare furosemide as this loc.
+Do next: Name canine aminoglycoside-loop diuretic ototoxicity stack. Not a vestibular-alone. Stop or unstack. △ Plumb. Packet 369 still owns neuromuscular blockade. Do not copy an aminoglycoside or furosemide table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4980,6 +4997,14 @@ Return now for rolling, falling, sudden deafness, or collapse. {{location.phonen
 We stopped the aminoglycoside. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home.
 
 Return now for weakness, trouble breathing, collapse, or not standing. {{location.phonenumber}}
+
+### `dc-aminoloop`
+
+{{patient.name}} was on an aminoglycoside antibiotic and a loop diuretic such as furosemide. Used together, these medicines can raise the risk of inner-ear injury. That is not the same as ordinary old-dog vestibular disease. This is not a simple vestibular-and-home plan.
+
+We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin or leftover furosemide from home.
+
+Return now for rolling, falling, sudden deafness, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

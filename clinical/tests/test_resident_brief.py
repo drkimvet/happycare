@@ -13541,6 +13541,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a myasthenia-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminoloop_is_not_a_vestibular_alone(self):
+        b = analyze("dog", "gentamicin, furosemide")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn(
+            "do not send aminoglycoside plus loop diuretic home as vestibular",
+            joined,
+        )
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("furosemide mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_lasix_fires_aminoloop(self):
+        b = analyze("dog", "amikacin, Lasix")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_neomycin_loop_diuretic_fires_aminoloop(self):
+        b = analyze("cat", "neomycin, loop diuretic")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminonmb_plus_aminoloop_concatenates(self):
+        b = analyze("dog", "gentamicin, neuromuscular blockade, furosemide")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIn("not a myasthenia-alone", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminonmb_is_not_aminoloop(self):
+        b = analyze("dog", "gentamicin, neuromuscular blockade")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertNotIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminoloop(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_furosemide_is_not_aminoloop(self):
+        b = analyze("dog", "furosemide")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminoloop(self):
+        b = analyze("horse", "gentamicin, furosemide")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertNotIn("feline aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

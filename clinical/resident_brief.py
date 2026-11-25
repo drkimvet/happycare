@@ -389,6 +389,22 @@ AMINONMB_SIGN_RE = re.compile(
 # Mercer: high plasma concentrations associated with muscle
 # weakness and respiratory arrest; more with NM blockers and
 # gas anesthetics; antagonized by calcium gluconate. △ Plumb.
+AMINOLOOP_SIGN_RE = re.compile(
+    r"furosemide|"
+    r"loop diuretic|"
+    r"\blasix\b|"
+    r"torsemide",
+    re.I,
+)
+# Packet 370: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus furosemide / loop diuretic /
+# Lasix / torsemide only. Do not use bare aminoglycoside.
+# Do not use bare furosemide. Do not use \bloop or \bdiuretic
+# alone. Do not use aminoglycoside neuromuscular blockade
+# (369). Do not harvest an aminoglycoside or furosemide mg/kg
+# table. Dogs and cats. Skip horse. Mercer: ototoxicity may
+# be enhanced by concurrent loop diuretics such as
+# furosemide. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6942,6 +6958,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINONMB_SIGN_RE.search(text)
     )
+    steal_aminoloop_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOLOOP_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7113,6 +7134,7 @@ def analyze(
         or steal_aminoaki_dx
         or steal_aminooto_dx
         or steal_aminonmb_dx
+        or steal_aminoloop_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19460,6 +19482,79 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside neuromuscular blockade."
+            )
+
+    aminoloop_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOLOOP_SIGN_RE.search(text)
+    )
+    if aminoloop_named:
+        if spec == "cat":
+            aminoloop_loc = (
+                "Feline aminoglycoside-loop diuretic ototoxicity "
+                "stack. Not a vestibular-alone."
+            )
+        else:
+            aminoloop_loc = (
+                "Canine aminoglycoside-loop diuretic ototoxicity "
+                "stack. Not a vestibular-alone."
+            )
+        localization = (
+            f"{localization} Also {aminoloop_loc}" if localization else aminoloop_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside plus loop diuretic home "
+            "as vestibular. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest a furosemide mg/kg table. "
+            "Mercer: ototoxicity may be enhanced by concurrent "
+            "loop diuretics such as furosemide. Name the stack. "
+            "Stop or unstack. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a vestibular-alone. "
+            "Do not copy a furosemide recipe as lobby law. "
+            "Packet 369 still owns aminoglycoside neuromuscular "
+            "blockade. "
+            "Packet 368 still owns aminoglycoside ototoxicity "
+            "without a named loop. "
+            "Bare furosemide without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without a named loop is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside-loop diuretic ototoxicity "
+                "stack. Not a vestibular-alone. Stop or unstack. "
+                "△ Plumb. Packet 369 still owns neuromuscular "
+                "blockade. Packet 368 still owns ototoxicity without "
+                "the loop. Do not copy an aminoglycoside or "
+                "furosemide table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside-loop diuretic ototoxicity "
+                "stack. Not a vestibular-alone. Stop or unstack. "
+                "△ Plumb. Packet 369 still owns neuromuscular "
+                "blockade. Packet 368 still owns ototoxicity without "
+                "the loop. Do not copy an aminoglycoside or "
+                "furosemide table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "ototoxicity may be enhanced by concurrent loop "
+            "diuretics such as furosemide. Packet 369 "
+            "aminoglycoside neuromuscular blockade. Packet 368 "
+            "aminoglycoside ototoxicity. Do not harvest "
+            "aminoglycoside or furosemide mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside-loop diuretic stack."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside-loop diuretic stack."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
