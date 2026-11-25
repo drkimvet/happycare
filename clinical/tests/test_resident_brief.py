@@ -13473,6 +13473,74 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a vestibular-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminoglycoside_nmb_is_not_a_myasthenia_alone(self):
+        b = analyze("dog", "gentamicin, neuromuscular blockade")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertIn("not a myasthenia-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn(
+            "do not send aminoglycoside neuromuscular blockade home as myasthenia",
+            joined,
+        )
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("calcium gluconate mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside ototoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_muscle_weakness_fires_aminonmb(self):
+        b = analyze("dog", "amikacin, muscle weakness")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_respiratory_arrest_fires_aminonmb(self):
+        b = analyze("cat", "tobramycin, respiratory arrest")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside neuromuscular blockade", loc)
+        self.assertIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminooto_plus_aminonmb_concatenates(self):
+        b = analyze("dog", "gentamicin, nystagmus, neuromuscular blockade")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertIn("not a vestibular-alone", loc)
+        self.assertIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminooto_is_not_aminonmb(self):
+        b = analyze("dog", "gentamicin, nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertNotIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertNotIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminonmb(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertNotIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_myasthenia_is_not_aminonmb(self):
+        b = analyze("dog", "myasthenia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertNotIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminonmb(self):
+        b = analyze("horse", "gentamicin, neuromuscular blockade")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside neuromuscular blockade", loc)
+        self.assertNotIn("feline aminoglycoside neuromuscular blockade", loc)
+        self.assertNotIn("not a myasthenia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

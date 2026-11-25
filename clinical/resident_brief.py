@@ -372,6 +372,23 @@ AMINOOTO_SIGN_RE = re.compile(
 # Mercer: ototoxicity may be auditory or vestibular; relevance
 # to veterinary patients is not clear; cats are particularly
 # sensitive; TM must be intact for topical ear use. △ Plumb.
+AMINONMB_SIGN_RE = re.compile(
+    r"neuromuscular|"
+    r"blockade|"
+    r"muscle weakness|"
+    r"respiratory arrest",
+    re.I,
+)
+# Packet 369: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus neuromuscular / blockade / muscle
+# weakness / respiratory arrest only. Do not use bare
+# aminoglycoside. Do not use bare myasthenia. Do not use
+# \bweak or \barrest alone. Do not use aminoglycoside
+# ototoxicity (368). Do not harvest an aminoglycoside or
+# calcium gluconate mg/kg table. Dogs and cats. Skip horse.
+# Mercer: high plasma concentrations associated with muscle
+# weakness and respiratory arrest; more with NM blockers and
+# gas anesthetics; antagonized by calcium gluconate. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6920,6 +6937,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOOTO_SIGN_RE.search(text)
     )
+    steal_aminonmb_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINONMB_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7090,6 +7112,7 @@ def analyze(
         or steal_fqlab_dx
         or steal_aminoaki_dx
         or steal_aminooto_dx
+        or steal_aminonmb_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19362,6 +19385,81 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside ototoxicity."
+            )
+
+    aminonmb_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINONMB_SIGN_RE.search(text)
+    )
+    if aminonmb_named:
+        if spec == "cat":
+            aminonmb_loc = (
+                "Feline aminoglycoside neuromuscular blockade. "
+                "Not a myasthenia-alone."
+            )
+        else:
+            aminonmb_loc = (
+                "Canine aminoglycoside neuromuscular blockade. "
+                "Not a myasthenia-alone."
+            )
+        localization = (
+            f"{localization} Also {aminonmb_loc}" if localization else aminonmb_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside neuromuscular blockade home "
+            "as myasthenia. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest a calcium gluconate mg/kg table. "
+            "Mercer: all aminoglycosides at high plasma concentrations "
+            "have been associated with muscle weakness and respiratory "
+            "arrest attributable to neuromuscular blockade. More "
+            "pronounced with other neuromuscular blockers and gas "
+            "anesthetics. Antagonized by calcium gluconate. Stop the "
+            "aminoglycoside. Support respiration. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a myasthenia-alone. "
+            "Do not copy a calcium gluconate recipe as lobby law. "
+            "Packet 368 still owns aminoglycoside ototoxicity. "
+            "Packet 163 still owns fulminant myasthenia. "
+            "Bare myasthenia without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without blockade language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside neuromuscular blockade. "
+                "Not a myasthenia-alone. Stop the aminoglycoside. "
+                "Support respiration. Calcium gluconate △ Plumb. "
+                "Packet 368 still owns aminoglycoside ototoxicity. "
+                "Do not copy an aminoglycoside or calcium table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside neuromuscular blockade. "
+                "Not a myasthenia-alone. Stop the aminoglycoside. "
+                "Support respiration. Calcium gluconate △ Plumb. "
+                "Packet 368 still owns aminoglycoside ototoxicity. "
+                "Do not copy an aminoglycoside or calcium table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "all aminoglycosides at high plasma concentrations have "
+            "been associated with muscle weakness and respiratory "
+            "arrest attributable to neuromuscular blockade; more "
+            "pronounced with other neuromuscular blockers and gas "
+            "anesthetics; antagonized by calcium gluconate. Packet "
+            "368 aminoglycoside ototoxicity. Packet 163 myasthenia. "
+            "Do not harvest aminoglycoside or calcium gluconate "
+            "mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside neuromuscular blockade."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside neuromuscular blockade."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

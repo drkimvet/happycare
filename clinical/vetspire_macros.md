@@ -305,6 +305,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqlab` | Assessment | Canine fluoroquinolone laboratory interference / not a hepatitis-alone |
 | `ddx-aminoaki` | Assessment | Canine aminoglycoside nephrotoxicity / not an AKI-alone |
 | `ddx-aminooto` | Assessment | Canine aminoglycoside ototoxicity / not a vestibular-alone |
+| `ddx-aminonmb` | Assessment | Canine aminoglycoside neuromuscular blockade / not a myasthenia-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -363,6 +364,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqlab` | Discharge | After FQ / laboratory interference talk |
 | `dc-aminoaki` | Discharge | After aminoglycoside / kidney talk |
 | `dc-aminooto` | Discharge | After aminoglycoside / ear-balance talk |
+| `dc-aminonmb` | Discharge | After aminoglycoside / neuromuscular blockade talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4478,6 +4480,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this a vestibular-alone. Send aminoglycoside ototoxicity home as vestibular. Treat bare vestibular as this loc. Put aminoglycoside drops in an ear whose TM is not seen.
 Do next: Name canine aminoglycoside ototoxicity. Not a vestibular-alone. Stop the aminoglycoside. Confirm the TM. △ Plumb. Packet 367 still owns nephrotoxicity. Do not copy an aminoglycoside table.
 
+### `ddx-aminonmb`
+
+Aminoglycoside neuromuscular blockade — {{patient.name}}
+Canine aminoglycoside neuromuscular blockade [yes / not]. Not a myasthenia-alone [yes / not]. Stop the aminoglycoside [ ]. Support respiration [ ]. Calcium gluconate △ Plumb [ ]. Packet 368 oto [ ]. Packet 163 myasthenia [ ]. Bare myasthenia [ ].
+
+DDX:
+1. Named aminoglycoside plus blockade language — **Canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone**
+2. Mercer: high plasma concentrations associated with muscle weakness and respiratory arrest; more with NM blockers and gas anesthetics; antagonized by calcium gluconate. Stop the aminoglycoside. Support respiration. △ Plumb
+3. Packet 368 owns aminoglycoside ototoxicity. Packet 163 owns fulminant myasthenia. Bare myasthenia is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest a calcium gluconate table. Do not send this home as myasthenia
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare myasthenia stays dark. Do not copy an aminoglycoside or calcium table
+
+Do not: harvest an aminoglycoside mg/kg table. Harvest a calcium gluconate mg/kg table. Call this a myasthenia-alone. Send aminoglycoside neuromuscular blockade home as myasthenia. Treat bare myasthenia as this loc.
+Do next: Name canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone. Stop the aminoglycoside. Support respiration. Calcium gluconate △ Plumb. Packet 368 still owns ototoxicity. Do not copy an aminoglycoside or calcium table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4955,6 +4972,14 @@ Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenu
 We stopped the aminoglycoside. Give only the medicines we sent, as labeled. Do not put leftover gentamicin drops in the ear unless we have seen the eardrum.
 
 Return now for rolling, falling, sudden deafness, or collapse. {{location.phonenumber}}
+
+### `dc-aminonmb`
+
+{{patient.name}} was on an aminoglycoside antibiotic and had muscle weakness or trouble breathing. These antibiotics can block the signal from nerve to muscle when the blood level is high, especially with anesthesia. That is not the same as myasthenia gravis. This is not a simple myasthenia-and-home plan.
+
+We stopped the aminoglycoside. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home.
+
+Return now for weakness, trouble breathing, collapse, or not standing. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -5679,3 +5679,31 @@ Night rule: named aminoglycoside plus oto language → **Canine aminoglycoside o
 - Attending: If the query is only “vestibular,” why does this gate stay dark?
 - Attending: Horse gentamicin plus nystagmus — fire or skip?
 - Attending: Cat plus neomycin plus deafness — which locs fire, and why?
+
+## 369. Canine aminoglycoside neuromuscular blockade (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-neuromuscular-blockade chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (all aminoglycosides at high plasma concentrations have been associated with muscle weakness and respiratory arrest attributable to neuromuscular blockade; more pronounced when given with other neuromuscular blocking agents or inhalant anesthetics; antagonized by calcium gluconate). Packet 368 still owns aminoglycoside ototoxicity. Packet 163 still owns fulminant myasthenia. Packet 162 still owns botulism. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a calcium gluconate mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare myasthenia. Do not fire 368 aminoglycoside ototoxicity as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus blockade language is not a myasthenia-alone.** Stop the aminoglycoside. Support respiration. Calcium gluconate stays on the page (`△ Plumb`). Printed aminoglycoside mg/kg stays on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus neuromuscular / blockade / muscle weakness / respiratory arrest is canine (or feline) aminoglycoside neuromuscular blockade; not a myasthenia-alone. Bare aminoglycoside stays dark. Bare myasthenia stays 163. Dual nystagmus plus neuromuscular blockade concatenates 368 then 369. Dual gentamicin plus nystagmus without blockade language stays 368. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a calcium gluconate mg/kg table.
+- Do not call this a myasthenia-alone.
+- Do not send aminoglycoside neuromuscular blockade home as myasthenia.
+- Do not treat aminoglycoside ototoxicity (368) as this loc.
+- Do not treat myasthenia without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus blockade language → **Canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone.** Stop the aminoglycoside. Support respiration. Calcium gluconate △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus muscle weakness not a myasthenia-and-home night?
+- NAVLE 2: Why does gentamicin plus nystagmus stay 368, not this loc?
+- NAVLE 3: Dual-named “gentamicin, nystagmus, neuromuscular blockade” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the aminoglycoside without inventing a mg/kg or calcium table?
+- Attending: If the query is only “myasthenia,” why does this gate stay dark?
+- Attending: Horse gentamicin plus respiratory arrest — fire or skip?
+- Attending: Cat plus tobramycin plus respiratory arrest — which locs fire, and why?

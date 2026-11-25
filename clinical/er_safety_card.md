@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine aminoglycoside neuromuscular blockade (Merck Mercer Jun 2026)
+
+- **Canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus neuromuscular / blockade / muscle weakness / respiratory arrest only. Mercer: all aminoglycosides at **high plasma concentrations** have been associated with **muscle weakness and respiratory arrest** attributable to neuromuscular blockade. More pronounced with other NM blockers and gas anesthetics. Antagonized by **calcium gluconate**. Stop the aminoglycoside. Support respiration. △ Plumb. Packet 368 still owns aminoglycoside ototoxicity. Packet 163 still owns fulminant myasthenia. Do **not** harvest an aminoglycoside mg/kg table. Do **not** harvest a calcium gluconate mg/kg table. Do **not** send this home as myasthenia. Bare aminoglycoside stays dark. Bare myasthenia stays 163. Skip horse.
+- Cats: same named loc as feline aminoglycoside neuromuscular blockade. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine aminoglycoside ototoxicity (Merck Mercer Jun 2026)
 
 - **Canine aminoglycoside ototoxicity. Not a vestibular-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus ototox / vestibular / deaf / hearing / nystagmus only. Mercer: ototoxicity may be **auditory or vestibular**. Relevance to veterinary patients is **not clear**. Cats are particularly sensitive to toxic vestibular effects. Do **not** put aminoglycoside drops in an ear unless the **TM is intact**. Stop the aminoglycoside. △ Plumb. Packet 367 still owns aminoglycoside nephrotoxicity. Packet 137 still owns vestibular without the drug. Do **not** harvest an aminoglycoside mg/kg table. Do **not** harvest NAC as an ototoxicity antidote. Do **not** send this home as vestibular. Bare aminoglycoside stays dark. Bare vestibular stays 137. Skip horse.
