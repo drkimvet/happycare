@@ -302,6 +302,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqmito` | Assessment | Canine fluoroquinolone mitotoxicity / not a neuropathy-alone |
 | `ddx-fqnitro` | Assessment | Canine fluoroquinolone-nitrofurantoin stack / not a UTI-alone |
 | `ddx-fqcryst` | Assessment | Canine fluoroquinolone crystalluria / not a UTI-alone |
+| `ddx-fqlab` | Assessment | Canine fluoroquinolone laboratory interference / not a hepatitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -357,6 +358,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqmito` | Discharge | After FQ / mitotoxicity talk |
 | `dc-fqnitro` | Discharge | After FQ / nitrofurantoin stack talk |
 | `dc-fqcryst` | Discharge | After FQ / crystalluria talk |
+| `dc-fqlab` | Discharge | After FQ / laboratory interference talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4427,6 +4429,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this a UTI-alone. Send FQ crystalluria home as a UTI. Treat bare crystalluria as this loc. Treat CaOx crystals without needle language as this loc.
 Do next: Name canine fluoroquinolone crystalluria. Not a UTI-alone. Clinical relevance is unclear. △ Plumb. Packet 364 still owns FQ-nitrofurantoin. Do not copy an FQ table.
 
+### `ddx-fqlab`
+
+Fluoroquinolone laboratory interference — {{patient.name}}
+Canine fluoroquinolone laboratory interference [yes / not]. Not a hepatitis-alone [yes / not]. AST / ALT / ALP / BUN / urine glucose [ ]. Packet 365 crystalluria [ ]. Bare hepatitis [ ]. Bare diabetes [ ].
+
+DDX:
+1. Named FQ plus lab shift — **Canine fluoroquinolone laboratory interference. Not a hepatitis-alone**
+2. Mercer: quinolones may increase AST, ALT, and ALP as well as BUN; urine glucose test results may be altered. Lab shift is not hepatitis and not diabetes. △ Plumb
+3. Packet 365 owns FQ crystalluria. Bare hepatitis is not this loc. Bare diabetes is not this loc
+4. Do not harvest an FQ table. Do not send FQ laboratory interference home as hepatitis
+5. Dog or cat can fire. Horse does not fire. Bare FQ, bare hepatitis, or bare diabetes stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a hepatitis-alone. Send FQ laboratory interference home as hepatitis. Treat bare hepatitis as this loc. Treat bare diabetes as this loc.
+Do next: Name canine fluoroquinolone laboratory interference. Not a hepatitis-alone. △ Plumb. Packet 365 still owns FQ crystalluria. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4880,6 +4897,14 @@ Return now for straining, no urine, fever, or collapse. {{location.phonenumber}}
 Give only the medicines we sent, as labeled. Do not add leftover Baytril from home. Offer water.
 
 Return now for straining, no urine, fever, or collapse. {{location.phonenumber}}
+
+### `dc-fqlab`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and a blood or urine test looked abnormal. These antibiotics can raise liver enzymes and BUN on the lab sheet, and they can change a urine glucose result. That lab shift is not the same as hepatitis, and it is not the same as diabetes. This is not a simple hepatitis-and-home plan.
+
+Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for yellow skin or eyes, collapse, or not eating. {{location.phonenumber}}
 
 ### `dc-ahds`
 

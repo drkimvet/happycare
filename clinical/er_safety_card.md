@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone laboratory interference (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone laboratory interference. Not a hepatitis-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus AST / ALT / ALP / BUN / urine glucose only. Mercer: quinolones may **increase AST, ALT, and ALP as well as BUN**. Urine glucose test results **may be altered**. Lab shift is not hepatitis and not diabetes. △ Plumb. Packet 365 still owns FQ crystalluria. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send this home as hepatitis. Bare FQ stays dark. Bare hepatitis stays dark. Bare diabetes stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone laboratory interference. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone crystalluria (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone crystalluria. Not a UTI-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus crystalluria / needle-shaped crystal / needle crystal only. Mercer: in concentrated acidic urine some quinolones form needle-shaped crystals, although this apparently has **not been reported with clinical use**. Urinalysis may reveal needle-shaped crystals. Clinical relevance is **unclear**. Do not invent a stone night. △ Plumb. Packet 364 still owns FQ-nitrofurantoin. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send this home as a UTI. Bare FQ stays dark. Bare UTI stays the UTI night. Bare crystalluria stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

@@ -5594,3 +5594,31 @@ Night rule: named FQ plus needle crystals → **Canine fluoroquinolone crystallu
 - Attending: If the query is only “crystalluria,” why does this gate stay dark?
 - Attending: Horse crystalluria plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus needle-shaped crystals — which locs fire, and why?
+
+## 366. Canine fluoroquinolone laboratory interference (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-laboratory chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (quinolones may increase activities of AST, ALT, and ALP as well as BUN concentration; urine glucose test results may be altered). Packet 365 still owns FQ crystalluria. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare hepatitis. Do not fire on bare diabetes. Do not fire 365 FQ crystalluria as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus AST / ALT / ALP / BUN / urine glucose is not a hepatitis-alone.** Lab shift is not hepatitis and not diabetes. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus AST / ALT / ALP / BUN / urine glucose is canine (or feline) fluoroquinolone laboratory interference; not a hepatitis-alone. Bare FQ stays dark. Bare hepatitis stays dark. Bare diabetes stays dark. Dual crystalluria plus AST concatenates 365 then 366. Dual FQ plus crystalluria without lab words stays 365. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a hepatitis-alone.
+- Do not send FQ laboratory interference home as hepatitis.
+- Do not call urine-glucose interference diabetes.
+- Do not treat FQ crystalluria (365) as this loc.
+- Do not treat hepatitis or diabetes without named lab words as this loc.
+
+Night rule: named FQ plus AST / ALT / ALP / BUN / urine glucose → **Canine fluoroquinolone laboratory interference. Not a hepatitis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus a high ALT not a hepatitis-and-home night?
+- NAVLE 2: Why does enrofloxacin plus crystalluria stay 365, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, crystalluria, AST” — which locs should fire, and why?
+- Oral: How do you tell the owner the lab shift is not hepatitis without inventing an FQ table?
+- Attending: If the query is only “hepatitis,” why does this gate stay dark?
+- Attending: Horse AST plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus urine glucose — which locs fire, and why?

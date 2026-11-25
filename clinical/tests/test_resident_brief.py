@@ -13274,6 +13274,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline fluoroquinolone crystalluria", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_lab_is_not_a_hepatitis_alone(self):
+        b = analyze("dog", "enrofloxacin, AST")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertIn("not a hepatitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send fq laboratory interference home as hepatitis", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_alt_fires_fqlab(self):
+        b = analyze("dog", "baytril, ALT")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_urine_glucose_fires_fqlab(self):
+        b = analyze("cat", "marbofloxacin, urine glucose")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone laboratory interference", loc)
+        self.assertIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqcryst_plus_fqlab_concatenates(self):
+        b = analyze("dog", "enrofloxacin, crystalluria, AST")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone crystalluria", loc)
+        self.assertIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_crystalluria_is_not_fqlab(self):
+        b = analyze("dog", "enrofloxacin, crystalluria")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone crystalluria", loc)
+        self.assertNotIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fq_is_not_fqlab(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hepatitis_is_not_fqlab(self):
+        b = analyze("dog", "hepatitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_diabetes_is_not_fqlab(self):
+        b = analyze("dog", "diabetes mellitus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqlab(self):
+        b = analyze("horse", "enrofloxacin, AST")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("feline fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("not a hepatitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
