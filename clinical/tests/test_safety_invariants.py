@@ -101,6 +101,18 @@ class PublicCardInvariants(unittest.TestCase):
         self.assertIn("vin", SKILL.lower())
         self.assertIn("do not impersonate", SKILL.lower())
 
+    def test_pubmed_is_named_and_numbers_are_not_mixed(self):
+        self.assertIn("ncbi pubmed", SKILL.lower())
+        self.assertIn("pmid", SKILL.lower())
+        self.assertIn("ncbi pubmed", VERIF.lower())
+        self.assertIn("pubmed number hygiene", VERIF.lower())
+        self.assertIn("human ≠ dog ≠ cat ≠ rodent ≠ horse", VERIF.lower())
+        self.assertIn("pmid 31523085", VERIF.lower())
+        self.assertIn("ncbi pubmed", NAVLE_SYLL.lower())
+        self.assertIn("pmid 31523085", CARD.lower())
+        self.assertNotIn("58.07", CARD)
+        self.assertNotIn("58.07", SKILL)
+
     def test_skill_does_not_steer_attending_to_instinct(self):
         self.assertIn("does not open instinct", SKILL.lower())
         self.assertIn("do not recommend opening it", SKILL.lower())

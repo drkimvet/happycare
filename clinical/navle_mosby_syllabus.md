@@ -10,9 +10,10 @@ Gene leftovers 285–298 are closed (attending 2026-11-05: 유전자는 그까�
 
 1. Pull the public ICVA blueprint (competencies + species weights). Do not reproduce the Species-and-Diagnoses PDF lists.
 2. Gate night-critical SA traps from **named public** Merck / AAHA / ACVIM pages into `er_safety_card.md` and `resident_brief.py`.
-3. If the attending later ferries a purchased Mosby / board-review PDF, run `python3 clinical/prep_legal_pdfs.py --in ~/Books --out textbooks` on the computer that holds the file. Summarize against a named public source in `source_verification.md`. Never dump a chapter or a Q-bank.
-4. Do not ask the attending to hand-split books on a phone.
-5. Midtown nights stay dog and cat. Equine / bovine / porcine weights are NAVLE-real; they are **not** new Midtown packets unless she names them.
+3. For pharmacology / DDI / toxic-adverse packets, search **NCBI PubMed** (species + drug + adverse effect). Cite PMID / year / species in `source_verification.md`. Do not mix a 2026 rodent paper with a canine case report. Do not harvest paper mg/kg onto the ER card (`△ Plumb`).
+4. If the attending later ferries a purchased Mosby / board-review PDF, run `python3 clinical/prep_legal_pdfs.py --in ~/Books --out textbooks` on the computer that holds the file. Summarize against a named public source in `source_verification.md`. Never dump a chapter or a Q-bank.
+5. Do not ask the attending to hand-split books on a phone.
+6. Midtown nights stay dog and cat. Equine / bovine / porcine weights are NAVLE-real; they are **not** new Midtown packets unless she names them.
 
 Legal PDF helper: `clinical/prep_legal_pdfs.py`. Five-Minute title list (Wiley only): `clinical/five_minute_syllabus.md`.
 
