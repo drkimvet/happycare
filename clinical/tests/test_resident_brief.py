@@ -13067,6 +13067,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not an imha-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_mitotoxicity_is_not_a_neuropathy_alone(self):
+        b = analyze("dog", "enrofloxacin, mitotoxicity")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertIn("not a neuropathy-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send fq mitotoxicity home as neuropathy", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_mitochondrial_fires_fqmito(self):
+        b = analyze("dog", "baytril, mitochondrial")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_mitotox_fires_fqmito(self):
+        b = analyze("cat", "marbofloxacin, mitotox")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone mitotoxicity", loc)
+        self.assertIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqhema_plus_fqmito_concatenates(self):
+        b = analyze("dog", "enrofloxacin, hemolysis, mitotoxicity")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertIn("not an imha-alone", loc)
+        self.assertIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_hemolysis_is_not_fqmito(self):
+        b = analyze("dog", "enrofloxacin, hemolytic anemia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fq_is_not_fqmito(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_neuropathy_is_not_fqmito(self):
+        b = analyze("dog", "neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_plus_neuropathy_without_mito_is_not_fqmito(self):
+        b = analyze("dog", "enrofloxacin, neuropathy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqmito(self):
+        b = analyze("horse", "enrofloxacin, mitotoxicity")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("feline fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("not a neuropathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

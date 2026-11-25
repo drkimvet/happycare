@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone mitotoxicity (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone mitotoxicity. Not a neuropathy-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus mitotox / mitochondrial / mitotoxicity only. Mercer: an emerging toxicity is mitotoxicity (damage to mitochondrial topoisomerase or other mitochondrial structures). Clinical impact and relevance to veterinary medicine are **not known**. That is **sparse data on the veterinary page**, not a proven canine neuropathy equivalent. Stop the FQ. △ Plumb. Packet 362 still owns FQ hemolytic anemia. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** send this home as neuropathy. Bare FQ stays dark. Bare neuropathy stays dark. FQ plus neuropathy without mito language stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone mitotoxicity. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone hemolytic anemia (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone hemolytic anemia. Not an IMHA-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus hemolysis / hemolytic / IMHA / pigmenturia / hemoglobinuria only. Mercer: hemolytic anemia has also occurred. That is **sparse data on the veterinary page**, not a proven primary-IMHA equivalent. Stop the FQ. △ Plumb. Packet 361 still owns FQ photosensitivity. Packet 126 still owns IMHA without named FQ. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** pred this as primary IMHA. Bare FQ stays dark. Bare IMHA stays 126. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

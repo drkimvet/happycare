@@ -277,6 +277,18 @@ FQHEMA_SIGN_RE = re.compile(
 # harvest an FQ mg/kg table. Do not use non-hemolytic (FNHTR).
 # Dogs and cats. Skip horse. Mercer: hemolytic anemia has also
 # occurred. Sparse data on the veterinary page. △ Plumb.
+FQMITO_SIGN_RE = re.compile(
+    r"mitotox|"
+    r"mitochondr",
+    re.I,
+)
+# Packet 363: named FQ plus mitotox / mitochondrial /
+# mitotoxicity only. Do not use bare FQ. Do not use bare
+# neuropathy. Do not use FQ hemolytic anemia (362). Do not
+# harvest an FQ mg/kg table. Do not use neuropath without mito
+# language. Dogs and cats. Skip horse. Mercer: emerging
+# mitotoxicity; clinical impact and veterinary relevance are
+# not known. Sparse data on the veterinary page. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6795,6 +6807,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQHEMA_SIGN_RE.search(text)
     )
+    steal_fqmito_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQMITO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6959,6 +6976,7 @@ def analyze(
         or steal_fqtend_dx
         or steal_fqphoto_dx
         or steal_fqhema_dx
+        or steal_fqmito_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18821,6 +18839,77 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ hemolytic anemia."
+            )
+
+    fqmito_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQMITO_SIGN_RE.search(text)
+    )
+    if fqmito_named:
+        if spec == "cat":
+            fqmito_loc = (
+                "Feline fluoroquinolone mitotoxicity. Not a neuropathy-alone."
+            )
+        else:
+            fqmito_loc = (
+                "Canine fluoroquinolone mitotoxicity. Not a neuropathy-alone."
+            )
+        localization = (
+            f"{localization} Also {fqmito_loc}" if localization else fqmito_loc
+        )
+        hard_stops.append(
+            "Do not send FQ mitotoxicity home as neuropathy. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Mercer: an emerging toxicity is mitotoxicity "
+            "(damage to mitochondrial topoisomerase or other "
+            "mitochondrial structures). Clinical impact and "
+            "relevance to veterinary medicine are not known. "
+            "Sparse data on the veterinary page, not a proven "
+            "canine neuropathy equivalent. Stop the FQ. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a neuropathy-alone. "
+            "Do not invent veterinary incidence as if the mito "
+            "line were a canine neuropathy paper. "
+            "Packet 362 still owns FQ hemolytic anemia. "
+            "Bare neuropathy without named FQ plus mito language "
+            "is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone mitotoxicity. Not a "
+                "neuropathy-alone. Stop the FQ. △ Plumb. Packet 354 "
+                "still owns cat enro retina. Packet 362 still owns "
+                "FQ hemolytic anemia. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone mitotoxicity. Not a "
+                "neuropathy-alone. Stop the FQ. △ Plumb. Packet 362 "
+                "still owns FQ hemolytic anemia. Do not copy an FQ "
+                "table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: an "
+            "emerging toxicity associated with fluoroquinolones is "
+            "mitotoxicity; clinical impact and relevance to "
+            "veterinary medicine are not known. Sparse data on the "
+            "veterinary page. Packet 362 FQ hemolytic anemia. Do "
+            "not harvest FQ mg/kg. Skip horse. Food-animal ELDU is "
+            "prohibited for fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ mitotoxicity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ mitotoxicity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

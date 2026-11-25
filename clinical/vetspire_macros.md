@@ -299,6 +299,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqtend` | Assessment | Canine fluoroquinolone tendinopathy / not a CCL-alone |
 | `ddx-fqphoto` | Assessment | Canine fluoroquinolone photosensitivity / not a sunburn-alone |
 | `ddx-fqhema` | Assessment | Canine fluoroquinolone hemolytic anemia / not an IMHA-alone |
+| `ddx-fqmito` | Assessment | Canine fluoroquinolone mitotoxicity / not a neuropathy-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -351,6 +352,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqtend` | Discharge | After FQ / tendinopathy talk |
 | `dc-fqphoto` | Discharge | After FQ / photosensitivity talk |
 | `dc-fqhema` | Discharge | After FQ / hemolytic anemia talk |
+| `dc-fqmito` | Discharge | After FQ / mitotoxicity talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4376,6 +4378,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this an IMHA-alone. Send FQ hemolytic anemia home as IMHA. Treat bare IMHA as this loc.
 Do next: Name canine fluoroquinolone hemolytic anemia. Not an IMHA-alone. Stop the FQ. △ Plumb. Packet 361 still owns FQ photosensitivity. Do not copy an FQ table.
 
+### `ddx-fqmito`
+
+Fluoroquinolone mitotoxicity — {{patient.name}}
+Canine fluoroquinolone mitotoxicity [yes / not]. Not a neuropathy-alone [yes / not]. Stop the FQ [ ]. Packet 362 hemolytic anemia [ ]. Bare neuropathy [ ].
+
+DDX:
+1. Named FQ plus mitotoxicity — **Canine fluoroquinolone mitotoxicity. Not a neuropathy-alone**
+2. Mercer: emerging mitotoxicity; clinical impact and relevance to veterinary medicine are not known. Sparse data on the veterinary page, not a proven canine neuropathy equivalent. Stop the FQ. △ Plumb
+3. Packet 362 owns FQ hemolytic anemia. Bare neuropathy is not this loc. FQ plus neuropathy without mito language is not this loc
+4. Do not invent veterinary incidence. Do not send FQ mitotoxicity home as neuropathy
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare neuropathy stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Call this a neuropathy-alone. Send FQ mitotoxicity home as neuropathy. Treat bare neuropathy as this loc.
+Do next: Name canine fluoroquinolone mitotoxicity. Not a neuropathy-alone. Stop the FQ. △ Plumb. Packet 362 still owns FQ hemolytic anemia. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4805,6 +4822,14 @@ Return now for spreading skin lesions, fever, or collapse. {{location.phonenumbe
 We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
 
 Return now for pale gums, dark urine, collapse, or yellow skin or eyes. {{location.phonenumber}}
+
+### `dc-fqmito`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and has a suspected mitochondrial toxicity. These antibiotics have an emerging mitochondrial toxicity in the literature; whether that applies to pets is not known. That warning is not the same as ordinary neuropathy. This is not a simple neuropathy-and-home plan.
+
+We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
+
+Return now for worsening weakness, collapse, or trouble breathing. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -5510,3 +5510,31 @@ Night rule: named FQ plus hemolysis → **Canine fluoroquinolone hemolytic anemi
 - Attending: If the query is only “IMHA,” why does this gate stay dark?
 - Attending: Horse hemolysis plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus hemoglobinuria — which locs fire, and why?
+
+## 363. Canine fluoroquinolone mitotoxicity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-mitotoxicity chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (an emerging toxicity associated with fluoroquinolones is mitotoxicity, i.e. damage to mitochondrial topoisomerase or other mitochondrial structures; mitochondrial effects may not emerge until some time after fluoroquinolone treatment is instituted; although the entirety of the clinical impact of this toxicity is not known, nor is its relevance to veterinary medicine, adverse events ranging from neurological to musculoskeletal to cardiovascular may ultimately be attributed to this effect). Sparse data on the veterinary page. Packet 362 still owns FQ hemolytic anemia. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare neuropathy. Do not fire on FQ plus neuropathy without mito / mitochondrial / mitotoxicity language. Do not fire 362 FQ hemolytic anemia as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus mitotoxicity is not a neuropathy-alone.** The mito line is sparse data sitting on the veterinary page, not a claim that dogs have FQ neuropathy at a published rate. Clinical impact and veterinary relevance are not known. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus mitotox / mitochondrial / mitotoxicity is canine (or feline) fluoroquinolone mitotoxicity; not a neuropathy-alone. Bare FQ stays dark. Bare neuropathy stays dark. FQ plus neuropathy without mito language stays dark. Dual hemolysis plus mitotoxicity concatenates 362 then 363. Dual FQ plus hemolysis without mito language stays 362. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a neuropathy-alone.
+- Do not send FQ mitotoxicity home as ordinary neuropathy.
+- Do not invent veterinary incidence.
+- Do not treat FQ hemolytic anemia (362) as this loc.
+- Do not treat neuropathy without named mito language as this loc.
+
+Night rule: named FQ plus mitotoxicity → **Canine fluoroquinolone mitotoxicity. Not a neuropathy-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus mitochondrial toxicity not a neuropathy-and-home night?
+- NAVLE 2: Why does enrofloxacin plus hemolysis stay 362, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, hemolysis, mitotoxicity” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “neuropathy,” why does this gate stay dark?
+- Attending: Horse mitotoxicity plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus mitochondrial — which locs fire, and why?
