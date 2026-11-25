@@ -332,6 +332,29 @@ FQLAB_SIGN_RE = re.compile(
 # \bhepat. Dogs and cats. Skip horse. Mercer: quinolones may
 # increase AST, ALT, and ALP as well as BUN; urine glucose
 # test results may be altered. △ Plumb.
+AMINOGLY_RE = re.compile(
+    r"aminoglycoside|"
+    r"gentamicin|"
+    r"amikacin|"
+    r"tobramycin|"
+    r"neomycin",
+    re.I,
+)
+AMINOAKI_SIGN_RE = re.compile(
+    r"nephrotox|"
+    r"\baki\b|"
+    r"azotem|"
+    r"creatinine",
+    re.I,
+)
+# Packet 367: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus nephrotox / AKI / azotemia /
+# creatinine only. Do not use bare aminoglycoside. Do not use
+# bare AKI. Do not use FQ laboratory interference (366). Do not
+# harvest an aminoglycoside mg/kg table. Dogs and cats. Skip
+# horse. Mercer: nephrotoxicity is of major concern; risk rises
+# with duration, dehydration, and concurrent nephrotoxins.
+# △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6870,6 +6893,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQLAB_SIGN_RE.search(text)
     )
+    steal_aminoaki_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOAKI_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7038,6 +7066,7 @@ def analyze(
         or steal_fqnitro_dx
         or steal_fqcryst_dx
         or steal_fqlab_dx
+        or steal_aminoaki_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19174,6 +19203,70 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ laboratory interference."
+            )
+
+    aminoaki_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOAKI_SIGN_RE.search(text)
+    )
+    if aminoaki_named:
+        if spec == "cat":
+            aminoaki_loc = (
+                "Feline aminoglycoside nephrotoxicity. Not an AKI-alone."
+            )
+        else:
+            aminoaki_loc = (
+                "Canine aminoglycoside nephrotoxicity. Not an AKI-alone."
+            )
+        localization = (
+            f"{localization} Also {aminoaki_loc}" if localization else aminoaki_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside nephrotoxicity home as AKI. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer: nephrotoxicity is of major concern and may "
+            "result in renal failure due to acute tubular necrosis. "
+            "Risk rises with duration, dehydration, and concurrent "
+            "nephrotoxins. Stop the aminoglycoside. Hydrate. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an AKI-alone. "
+            "Do not copy an aminoglycoside table as lobby law. "
+            "Packet 366 still owns FQ laboratory interference. "
+            "Bare AKI without named aminoglycoside is not this loc. "
+            "Bare gentamicin without kidney language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside nephrotoxicity. Not an "
+                "AKI-alone. Stop the aminoglycoside. Hydrate. △ Plumb. "
+                "Packet 366 still owns FQ laboratory interference. "
+                "Do not copy an aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside nephrotoxicity. Not an "
+                "AKI-alone. Stop the aminoglycoside. Hydrate. △ Plumb. "
+                "Packet 366 still owns FQ laboratory interference. "
+                "Do not copy an aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "ototoxicity, neuromuscular blockade, and nephrotoxicity "
+            "are the most frequently reported adverse effects; "
+            "nephrotoxicity is of major concern. Risk rises with "
+            "duration, dehydration, and concurrent nephrotoxins. "
+            "Packet 366 FQ laboratory interference. Do not harvest "
+            "aminoglycoside mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside nephrotoxicity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside nephrotoxicity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

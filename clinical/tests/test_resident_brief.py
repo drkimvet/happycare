@@ -13345,6 +13345,70 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a hepatitis-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminoglycoside_nephrotoxicity_is_not_an_aki_alone(self):
+        b = analyze("dog", "gentamicin, AKI")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("not an aki-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send aminoglycoside nephrotoxicity home as aki", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_creatinine_fires_aminoaki(self):
+        b = analyze("dog", "amikacin, creatinine")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_azotemia_fires_aminoaki(self):
+        b = analyze("cat", "tobramycin, azotemia")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside nephrotoxicity", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqlab_plus_aminoaki_concatenates(self):
+        b = analyze("dog", "enrofloxacin, AST, gentamicin, AKI")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("not a hepatitis-alone", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_lab_is_not_aminoaki(self):
+        b = analyze("dog", "enrofloxacin, AST")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone laboratory interference", loc)
+        self.assertNotIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminoaki(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_aki_is_not_aminoaki(self):
+        b = analyze("dog", "AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminoaki(self):
+        b = analyze("horse", "gentamicin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("feline aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

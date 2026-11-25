@@ -5622,3 +5622,31 @@ Night rule: named FQ plus AST / ALT / ALP / BUN / urine glucose → **Canine flu
 - Attending: If the query is only “hepatitis,” why does this gate stay dark?
 - Attending: Horse AST plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus urine glucose — which locs fire, and why?
+
+## 367. Canine aminoglycoside nephrotoxicity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-nephrotoxicity chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (ototoxicity, neuromuscular blockade, and nephrotoxicity are the most frequently reported adverse effects; nephrotoxicity is of major concern and may result in renal failure due to acute tubular necrosis; risk rises with duration, dehydration, hypovolemia, and concurrent nephrotoxins). Packet 366 still owns FQ laboratory interference. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a once-daily clock as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare AKI. Do not fire 366 FQ laboratory interference as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus kidney language is not an AKI-alone.** Stop the aminoglycoside. Hydrate. Printed aminoglycoside mg/kg stays on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus nephrotox / AKI / azotemia / creatinine is canine (or feline) aminoglycoside nephrotoxicity; not an AKI-alone. Bare aminoglycoside stays dark. Bare AKI stays the AKI night. Dual FQ plus AST plus gentamicin plus AKI concatenates 366 then 367. Dual FQ plus AST without aminoglycoside stays 366. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside nephrotoxicity home as AKI.
+- Do not copy a once-daily recipe as lobby law.
+- Do not treat FQ laboratory interference (366) as this loc.
+- Do not treat AKI without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus kidney language → **Canine aminoglycoside nephrotoxicity. Not an AKI-alone.** Stop the aminoglycoside. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus rising creatinine not an AKI-and-home night?
+- NAVLE 2: Why does enrofloxacin plus AST stay 366, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, AST, gentamicin, AKI” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the aminoglycoside without inventing a mg/kg table?
+- Attending: If the query is only “AKI,” why does this gate stay dark?
+- Attending: Horse gentamicin plus AKI — fire or skip?
+- Attending: Cat plus amikacin plus azotemia — which locs fire, and why?

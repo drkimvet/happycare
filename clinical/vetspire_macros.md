@@ -303,6 +303,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqnitro` | Assessment | Canine fluoroquinolone-nitrofurantoin stack / not a UTI-alone |
 | `ddx-fqcryst` | Assessment | Canine fluoroquinolone crystalluria / not a UTI-alone |
 | `ddx-fqlab` | Assessment | Canine fluoroquinolone laboratory interference / not a hepatitis-alone |
+| `ddx-aminoaki` | Assessment | Canine aminoglycoside nephrotoxicity / not an AKI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -359,6 +360,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqnitro` | Discharge | After FQ / nitrofurantoin stack talk |
 | `dc-fqcryst` | Discharge | After FQ / crystalluria talk |
 | `dc-fqlab` | Discharge | After FQ / laboratory interference talk |
+| `dc-aminoaki` | Discharge | After aminoglycoside / kidney talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4444,6 +4446,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this a hepatitis-alone. Send FQ laboratory interference home as hepatitis. Treat bare hepatitis as this loc. Treat bare diabetes as this loc.
 Do next: Name canine fluoroquinolone laboratory interference. Not a hepatitis-alone. △ Plumb. Packet 365 still owns FQ crystalluria. Do not copy an FQ table.
 
+### `ddx-aminoaki`
+
+Aminoglycoside nephrotoxicity — {{patient.name}}
+Canine aminoglycoside nephrotoxicity [yes / not]. Not an AKI-alone [yes / not]. Stop the aminoglycoside [ ]. Hydrate [ ]. Packet 366 FQ lab [ ]. Bare AKI [ ]. Bare gentamicin [ ].
+
+DDX:
+1. Named aminoglycoside plus kidney — **Canine aminoglycoside nephrotoxicity. Not an AKI-alone**
+2. Mercer: nephrotoxicity is of major concern and may result in renal failure due to acute tubular necrosis. Risk rises with duration, dehydration, and concurrent nephrotoxins. Stop the aminoglycoside. Hydrate. △ Plumb
+3. Packet 366 owns FQ laboratory interference. Bare AKI is not this loc. Bare gentamicin is not this loc
+4. Do not harvest an aminoglycoside table. Do not send aminoglycoside nephrotoxicity home as AKI
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare AKI stays dark. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this an AKI-alone. Send aminoglycoside nephrotoxicity home as AKI. Treat bare AKI as this loc. Treat bare gentamicin as this loc.
+Do next: Name canine aminoglycoside nephrotoxicity. Not an AKI-alone. Stop the aminoglycoside. Hydrate. △ Plumb. Packet 366 still owns FQ laboratory interference. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4905,6 +4922,14 @@ Return now for straining, no urine, fever, or collapse. {{location.phonenumber}}
 Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
 
 Return now for yellow skin or eyes, collapse, or not eating. {{location.phonenumber}}
+
+### `dc-aminoaki`
+
+{{patient.name}} was on an aminoglycoside antibiotic and the kidneys were at risk. These antibiotics can injure the kidney tubules, especially if {{patient.objectPronoun}} is dehydrated or on other kidney-toxic medicines. That is not the same as ordinary kidney failure from another cause. This is not a simple AKI-and-home plan.
+
+We stopped the aminoglycoside. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin from home.
+
+Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 

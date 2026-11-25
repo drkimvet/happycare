@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine aminoglycoside nephrotoxicity (Merck Mercer Jun 2026)
+
+- **Canine aminoglycoside nephrotoxicity. Not an AKI-alone.** Named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus nephrotox / AKI / azotemia / creatinine only. Mercer: nephrotoxicity is of **major concern** and may result in renal failure due to acute tubular necrosis. Risk rises with **duration, dehydration, and concurrent nephrotoxins**. Stop the aminoglycoside. Hydrate. △ Plumb. Packet 366 still owns FQ laboratory interference. Do **not** harvest an aminoglycoside mg/kg table. Do **not** send this home as AKI. Bare aminoglycoside stays dark. Bare AKI stays the AKI night. Skip horse.
+- Cats: same named loc as feline aminoglycoside nephrotoxicity. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone laboratory interference (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone laboratory interference. Not a hepatitis-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus AST / ALT / ALP / BUN / urine glucose only. Mercer: quinolones may **increase AST, ALT, and ALP as well as BUN**. Urine glucose test results **may be altered**. Lab shift is not hepatitis and not diabetes. △ Plumb. Packet 365 still owns FQ crystalluria. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** send this home as hepatitis. Bare FQ stays dark. Bare hepatitis stays dark. Bare diabetes stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
