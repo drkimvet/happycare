@@ -5755,3 +5755,33 @@ Night rule: named aminoglycoside plus named loop → **Canine aminoglycoside-loo
 - Attending: If the query is only “furosemide,” why does this gate stay dark?
 - Attending: Horse gentamicin plus Lasix — fire or skip?
 - Attending: Cat plus amikacin plus loop diuretic — which locs fire, and why?
+
+## 371. Canine aminoglycoside-NSAID nephrotoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-NSAID chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (risk of nephrotoxicity rises with concurrent nephrotoxins; NSAIDs are concurrent nephrotoxins). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Grauer *Vet Clin North Am Small Anim Pract* 1996 PMID 8911027 (10 cites, Colorado State CVM; names gentamicin and NSAIDs among hospital-acquired ARF agents). Lomas/Grauer *J Am Anim Hosp Assoc* 2015 PMID 25955147 (29 cites, Kansas State CVM; NSAID renal ADE in dogs). Brown *J Am Vet Med Assoc* 1985 PMID 3988600 (32 cites, RCR ~2.6; canine gentamicin ARF series). McNeil *Nephron* 1983 PMID 6341862 (15 cites; dog prostaglandin / gentamicin mechanism — printed 4 mg/kg stays on that paper). Do not overweight Kai *J Toxicol Sci* 2013 PMID 23535405 (41 cites, Daiichi Sankyo; experimental 25/50 mg/kg is a harvest trap). Do not overweight rodent curcumin papers despite high cites. Packet 370 still owns the aminoglycoside-loop diuretic stack. Packet 367 still owns aminoglycoside nephrotoxicity without a named NSAID. Packet 350 still owns NSAID-steroid. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest an NSAID mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare NSAID. Do not fire 370 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named NSAID is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed aminoglycoside and NSAID mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus NSAID / carprofen / meloxicam / robenacoxib / deracoxib / Rimadyl / Metacam / Onsior is canine (or feline) aminoglycoside-NSAID nephrotoxicity stack; not an AKI-alone. Bare aminoglycoside stays dark. Bare NSAID stays dark. Dual AKI plus carprofen concatenates 367 then 371. Dual furosemide plus carprofen concatenates 370 then 371. Dual gentamicin plus AKI without an NSAID stays 367. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest an NSAID mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside plus NSAID home as AKI.
+- Do not treat the loop-diuretic stack (370) as this loc.
+- Do not treat aminoglycoside nephrotoxicity without a named NSAID (367) as this loc.
+- Do not treat NSAID-steroid (350) as this loc.
+- Do not treat NSAID without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named NSAID → **Canine aminoglycoside-NSAID nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus carprofen not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus furosemide stay 370, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, carprofen” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “NSAID,” why does this gate stay dark?
+- Attending: Horse gentamicin plus Banamine — fire or skip?
+- Attending: Cat plus amikacin plus Onsior — which locs fire, and why?

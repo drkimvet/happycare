@@ -405,6 +405,26 @@ AMINOLOOP_SIGN_RE = re.compile(
 # table. Dogs and cats. Skip horse. Mercer: ototoxicity may
 # be enhanced by concurrent loop diuretics such as
 # furosemide. △ Plumb.
+AMINONSAID_SIGN_RE = re.compile(
+    r"\bnsaid\b|"
+    r"carprofen|"
+    r"meloxicam|"
+    r"robenacoxib|"
+    r"deracoxib|"
+    r"rimadyl|"
+    r"metacam|"
+    r"onsior",
+    re.I,
+)
+# Packet 371: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus NSAID / carprofen / meloxicam /
+# robenacoxib / deracoxib / Rimadyl / Metacam / Onsior only.
+# Do not use bare aminoglycoside. Do not use bare NSAID.
+# Do not use \bcoxib alone. Do not use aminoglycoside-loop
+# diuretic stack (370). Do not harvest an aminoglycoside or
+# NSAID mg/kg table. Dogs and cats. Skip horse. Mercer: risk
+# of nephrotoxicity rises with concurrent nephrotoxins.
+# △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6963,6 +6983,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOLOOP_SIGN_RE.search(text)
     )
+    steal_aminonsaid_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINONSAID_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7135,6 +7160,7 @@ def analyze(
         or steal_aminooto_dx
         or steal_aminonmb_dx
         or steal_aminoloop_dx
+        or steal_aminonsaid_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19555,6 +19581,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside-loop diuretic stack."
+            )
+
+    aminonsaid_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINONSAID_SIGN_RE.search(text)
+    )
+    if aminonsaid_named:
+        if spec == "cat":
+            aminonsaid_loc = (
+                "Feline aminoglycoside-NSAID nephrotoxicity stack. "
+                "Not an AKI-alone."
+            )
+        else:
+            aminonsaid_loc = (
+                "Canine aminoglycoside-NSAID nephrotoxicity stack. "
+                "Not an AKI-alone."
+            )
+        localization = (
+            f"{localization} Also {aminonsaid_loc}" if localization else aminonsaid_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside plus NSAID home as AKI. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest an NSAID mg/kg table. "
+            "Mercer: risk of nephrotoxicity rises with concurrent "
+            "nephrotoxins. NSAIDs are concurrent nephrotoxins. "
+            "Name the stack. Stop or unstack. Hydrate. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an AKI-alone. "
+            "Do not copy an NSAID recipe as lobby law. "
+            "Packet 370 still owns the aminoglycoside-loop diuretic "
+            "stack. "
+            "Packet 367 still owns aminoglycoside nephrotoxicity "
+            "without a named NSAID. "
+            "Packet 350 still owns NSAID-steroid. "
+            "Bare NSAID without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without a named NSAID is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside-NSAID nephrotoxicity "
+                "stack. Not an AKI-alone. Stop or unstack. Hydrate. "
+                "△ Plumb. Packet 370 still owns the loop stack. "
+                "Packet 367 still owns nephrotoxicity without the "
+                "NSAID. Do not copy an aminoglycoside or NSAID table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside-NSAID nephrotoxicity "
+                "stack. Not an AKI-alone. Stop or unstack. Hydrate. "
+                "△ Plumb. Packet 370 still owns the loop stack. "
+                "Packet 367 still owns nephrotoxicity without the "
+                "NSAID. Do not copy an aminoglycoside or NSAID table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "risk of nephrotoxicity rises with concurrent "
+            "nephrotoxins. Grauer VCNA 1996 PMID 8911027 (CSU). "
+            "Lomas/Grauer JAAHA 2015 PMID 25955147 (KSU). Brown "
+            "JAVMA 1985 PMID 3988600. Packet 370 loop stack. "
+            "Packet 367 aminoglycoside nephrotoxicity. Do not "
+            "harvest aminoglycoside or NSAID mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside-NSAID stack."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside-NSAID stack."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

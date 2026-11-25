@@ -307,6 +307,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminooto` | Assessment | Canine aminoglycoside ototoxicity / not a vestibular-alone |
 | `ddx-aminonmb` | Assessment | Canine aminoglycoside neuromuscular blockade / not a myasthenia-alone |
 | `ddx-aminoloop` | Assessment | Canine aminoglycoside-loop diuretic ototoxicity stack / not a vestibular-alone |
+| `ddx-aminonsaid` | Assessment | Canine aminoglycoside-NSAID nephrotoxicity stack / not an AKI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -367,6 +368,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminooto` | Discharge | After aminoglycoside / ear-balance talk |
 | `dc-aminonmb` | Discharge | After aminoglycoside / neuromuscular blockade talk |
 | `dc-aminoloop` | Discharge | After aminoglycoside / loop diuretic stack talk |
+| `dc-aminonsaid` | Discharge | After aminoglycoside / NSAID stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4512,6 +4514,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Harvest a furosemide mg/kg table. Call this a vestibular-alone. Send aminoglycoside plus loop diuretic home as vestibular. Treat bare furosemide as this loc.
 Do next: Name canine aminoglycoside-loop diuretic ototoxicity stack. Not a vestibular-alone. Stop or unstack. △ Plumb. Packet 369 still owns neuromuscular blockade. Do not copy an aminoglycoside or furosemide table.
 
+### `ddx-aminonsaid`
+
+Aminoglycoside-NSAID stack — {{patient.name}}
+Canine aminoglycoside-NSAID nephrotoxicity stack [yes / not]. Not an AKI-alone [yes / not]. Stop or unstack [ ]. Hydrate [ ]. Packet 370 loop [ ]. Packet 367 kidney without NSAID [ ]. Packet 350 NSAID-steroid [ ]. Bare NSAID [ ].
+
+DDX:
+1. Named aminoglycoside plus named NSAID — **Canine aminoglycoside-NSAID nephrotoxicity stack. Not an AKI-alone**
+2. Mercer: risk of nephrotoxicity rises with concurrent nephrotoxins. NSAIDs are concurrent nephrotoxins. Grauer VCNA 1996 PMID 8911027. Stop or unstack. Hydrate. △ Plumb
+3. Packet 370 owns the loop-diuretic stack. Packet 367 owns nephrotoxicity without a named NSAID. Packet 350 owns NSAID-steroid. Bare NSAID is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest an NSAID table. Do not send this home as AKI
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare NSAID stays dark. Do not copy an aminoglycoside or NSAID table
+
+Do not: harvest an aminoglycoside mg/kg table. Harvest an NSAID mg/kg table. Call this an AKI-alone. Send aminoglycoside plus NSAID home as AKI. Treat bare NSAID as this loc.
+Do next: Name canine aminoglycoside-NSAID nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 370 still owns the loop stack. Do not copy an aminoglycoside or NSAID table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5005,6 +5022,14 @@ Return now for weakness, trouble breathing, collapse, or not standing. {{locatio
 We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin or leftover furosemide from home.
 
 Return now for rolling, falling, sudden deafness, or collapse. {{location.phonenumber}}
+
+### `dc-aminonsaid`
+
+{{patient.name}} was on an aminoglycoside antibiotic and an NSAID pain medicine. Used together, these medicines can raise the risk of kidney injury. That is not the same as ordinary kidney failure from another cause. This is not a simple AKI-and-home plan.
+
+We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin or leftover carprofen from home.
+
+Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 

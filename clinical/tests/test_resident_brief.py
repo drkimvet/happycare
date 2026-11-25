@@ -13605,6 +13605,66 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside-loop diuretic ototoxicity stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminonsaid_is_not_an_aki_alone(self):
+        b = analyze("dog", "gentamicin, carprofen")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send aminoglycoside plus nsaid home as aki", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("nsaid mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_rimadyl_fires_aminonsaid(self):
+        b = analyze("dog", "amikacin, Rimadyl")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_onsior_fires_aminonsaid(self):
+        b = analyze("cat", "tobramycin, Onsior")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_plus_aminonsaid_concatenates(self):
+        b = analyze("dog", "gentamicin, AKI, carprofen")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoloop_is_not_aminonsaid(self):
+        b = analyze("dog", "gentamicin, furosemide")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-loop diuretic ototoxicity stack", loc)
+        self.assertNotIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminonsaid(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_nsaid_is_not_aminonsaid(self):
+        b = analyze("dog", "carprofen")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminonsaid(self):
+        b = analyze("horse", "gentamicin, carprofen")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertNotIn("feline aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
