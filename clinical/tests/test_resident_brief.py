@@ -13138,6 +13138,78 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("not a neuropathy-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_fq_nitrofurantoin_is_not_a_uti_alone(self):
+        b = analyze("dog", "enrofloxacin, nitrofurantoin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertIn("not a uti-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send fq plus nitrofurantoin home as a uti", joined)
+        self.assertIn("fluoroquinolone mg/kg", joined)
+        self.assertIn("nitrofurantoin mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_baytril_macrobid_fires_fqnitro(self):
+        b = analyze("dog", "baytril, Macrobid")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_fq_macrodantin_fires_fqnitro(self):
+        b = analyze("cat", "marbofloxacin, Macrodantin")
+        loc = b["localization"].lower()
+        self.assertIn("feline fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqmito_plus_fqnitro_concatenates(self):
+        b = analyze("dog", "enrofloxacin, mitotoxicity, nitrofurantoin")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertIn("not a neuropathy-alone", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_mitotoxicity_is_not_fqnitro(self):
+        b = analyze("dog", "enrofloxacin, mitotoxicity")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone mitotoxicity", loc)
+        self.assertNotIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_fq_is_not_fqnitro(self):
+        b = analyze("dog", "enrofloxacin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_uti_is_not_fqnitro(self):
+        b = analyze("dog", "UTI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fq_plus_uti_without_nitrofuran_is_not_fqnitro(self):
+        b = analyze("dog", "enrofloxacin, UTI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_fqnitro(self):
+        b = analyze("horse", "enrofloxacin, nitrofurantoin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("feline fluoroquinolone-nitrofurantoin stack", loc)
+        self.assertNotIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -316,6 +316,11 @@ UR VetCare Midtown nights are dog and cat. Do not study new equine/bovine packet
 - HHS is the other decompensated diabetic: very high glucose/osmolality, little/no ketones. Do not treat it as DKA and do not dump hypotonic fluid into a chronic hypernatremia.
 - △ every insulin CRI and K-supplement number in Plumb or the hospital protocol.
 
+## Canine fluoroquinolone-nitrofurantoin stack (Merck Mercer Jun 2026)
+
+- **Canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus nitrofurantoin / nitrofuran / Macrobid / Macrodantin only. Mercer: nitrofurantoin **impairs the efficacy of quinolones** if used concurrently for urinary tract infections. Stop the stack. △ Plumb. Packet 363 still owns FQ mitotoxicity. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** harvest a nitrofurantoin mg/kg table. Do **not** send this home as a UTI. Bare FQ stays dark. Bare UTI stays the UTI night. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+- Cats: same named loc as feline fluoroquinolone-nitrofurantoin stack. Azotemic: still no NSAID, still no DexSP.
+
 ## Canine fluoroquinolone mitotoxicity (Merck Mercer Jun 2026)
 
 - **Canine fluoroquinolone mitotoxicity. Not a neuropathy-alone.** Named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus mitotox / mitochondrial / mitotoxicity only. Mercer: an emerging toxicity is mitotoxicity (damage to mitochondrial topoisomerase or other mitochondrial structures). Clinical impact and relevance to veterinary medicine are **not known**. That is **sparse data on the veterinary page**, not a proven canine neuropathy equivalent. Stop the FQ. △ Plumb. Packet 362 still owns FQ hemolytic anemia. Do **not** harvest a fluoroquinolone mg/kg table. Do **not** invent veterinary incidence. Do **not** send this home as neuropathy. Bare FQ stays dark. Bare neuropathy stays dark. FQ plus neuropathy without mito language stays dark. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.

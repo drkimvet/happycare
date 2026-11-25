@@ -5538,3 +5538,31 @@ Night rule: named FQ plus mitotoxicity → **Canine fluoroquinolone mitotoxicity
 - Attending: If the query is only “neuropathy,” why does this gate stay dark?
 - Attending: Horse mitotoxicity plus enrofloxacin — fire or skip?
 - Attending: Cat plus Baytril plus mitochondrial — which locs fire, and why?
+
+## 364. Canine fluoroquinolone-nitrofurantoin stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-nitrofurantoin chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (nitrofurantoin impairs the efficacy of quinolones if used concurrently for urinary tract infections). Packet 363 still owns FQ mitotoxicity. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not harvest a nitrofurantoin mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare UTI. Do not fire 363 FQ mitotoxicity as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus nitrofurantoin is not a UTI-alone.** Stop the stack. Printed FQ and nitrofurantoin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus nitrofurantoin / nitrofuran / Macrobid / Macrodantin is canine (or feline) fluoroquinolone-nitrofurantoin stack; not a UTI-alone. Bare FQ stays dark. Bare UTI stays the UTI night. Dual mitotoxicity plus nitrofurantoin concatenates 363 then 364. Dual FQ plus mitotoxicity without nitrofurantoin stays 363. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a nitrofurantoin mg/kg table.
+- Do not call this a UTI-alone.
+- Do not send FQ plus nitrofurantoin home as a UTI.
+- Do not treat FQ mitotoxicity (363) as this loc.
+- Do not treat UTI without named nitrofurantoin as this loc.
+
+Night rule: named FQ plus nitrofurantoin → **Canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus Macrobid not a UTI-and-home night?
+- NAVLE 2: Why does enrofloxacin plus mitotoxicity stay 363, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, mitotoxicity, nitrofurantoin” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the stack without inventing an FQ table?
+- Attending: If the query is only “UTI,” why does this gate stay dark?
+- Attending: Horse nitrofurantoin plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus nitrofurantoin — which locs fire, and why?

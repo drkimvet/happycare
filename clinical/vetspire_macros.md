@@ -300,6 +300,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-fqphoto` | Assessment | Canine fluoroquinolone photosensitivity / not a sunburn-alone |
 | `ddx-fqhema` | Assessment | Canine fluoroquinolone hemolytic anemia / not an IMHA-alone |
 | `ddx-fqmito` | Assessment | Canine fluoroquinolone mitotoxicity / not a neuropathy-alone |
+| `ddx-fqnitro` | Assessment | Canine fluoroquinolone-nitrofurantoin stack / not a UTI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -353,6 +354,7 @@ Suggested names are short so they show up after three letters.
 | `dc-fqphoto` | Discharge | After FQ / photosensitivity talk |
 | `dc-fqhema` | Discharge | After FQ / hemolytic anemia talk |
 | `dc-fqmito` | Discharge | After FQ / mitotoxicity talk |
+| `dc-fqnitro` | Discharge | After FQ / nitrofurantoin stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4393,6 +4395,21 @@ DDX:
 Do not: harvest a fluoroquinolone mg/kg table. Call this a neuropathy-alone. Send FQ mitotoxicity home as neuropathy. Treat bare neuropathy as this loc.
 Do next: Name canine fluoroquinolone mitotoxicity. Not a neuropathy-alone. Stop the FQ. △ Plumb. Packet 362 still owns FQ hemolytic anemia. Do not copy an FQ table.
 
+### `ddx-fqnitro`
+
+Fluoroquinolone-nitrofurantoin stack — {{patient.name}}
+Canine fluoroquinolone-nitrofurantoin stack [yes / not]. Not a UTI-alone [yes / not]. Stop the stack [ ]. Packet 363 mitotoxicity [ ]. Bare UTI [ ].
+
+DDX:
+1. Named FQ plus nitrofurantoin — **Canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone**
+2. Mercer: nitrofurantoin impairs the efficacy of quinolones if used concurrently for urinary tract infections. Stop the stack. △ Plumb
+3. Packet 363 owns FQ mitotoxicity. Bare UTI is not this loc
+4. Do not harvest an FQ or nitrofurantoin table. Do not send FQ plus nitrofurantoin home as a UTI
+5. Dog or cat can fire. Horse does not fire. Bare FQ or bare UTI stays dark. Do not copy an FQ table
+
+Do not: harvest a fluoroquinolone mg/kg table. Harvest a nitrofurantoin mg/kg table. Call this a UTI-alone. Send FQ plus nitrofurantoin home as a UTI. Treat bare UTI as this loc.
+Do next: Name canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone. Stop the stack. △ Plumb. Packet 363 still owns FQ mitotoxicity. Do not copy an FQ table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -4830,6 +4847,14 @@ Return now for pale gums, dark urine, collapse, or yellow skin or eyes. {{locati
 We stopped the fluoroquinolone. Give only the medicines we sent, as labeled. Do not add leftover Baytril from home.
 
 Return now for worsening weakness, collapse, or trouble breathing. {{location.phonenumber}}
+
+### `dc-fqnitro`
+
+{{patient.name}} was on a fluoroquinolone antibiotic and nitrofurantoin together. Nitrofurantoin can stop the fluoroquinolone from working if they are given at the same time for a urinary infection. This is not a simple UTI-and-home plan.
+
+We stopped that combination. Give only the medicines we sent, as labeled. Do not add leftover Baytril or leftover nitrofurantoin from home.
+
+Return now for straining, no urine, fever, or collapse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

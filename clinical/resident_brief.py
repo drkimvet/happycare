@@ -289,6 +289,20 @@ FQMITO_SIGN_RE = re.compile(
 # language. Dogs and cats. Skip horse. Mercer: emerging
 # mitotoxicity; clinical impact and veterinary relevance are
 # not known. Sparse data on the veterinary page. △ Plumb.
+FQNITRO_SIGN_RE = re.compile(
+    r"nitrofurantoin|"
+    r"\bnitrofurans?\b|"
+    r"macrobid|"
+    r"macrodantin",
+    re.I,
+)
+# Packet 364: named FQ plus nitrofurantoin / nitrofuran /
+# Macrobid / Macrodantin only. Do not use bare FQ. Do not use
+# bare UTI. Do not use FQ mitotoxicity (363). Do not harvest
+# an FQ or nitrofurantoin mg/kg table. Do not use nitrofurazone
+# as this loc. Dogs and cats. Skip horse. Mercer: nitrofurantoin
+# impairs the efficacy of quinolones if used concurrently for
+# urinary tract infections. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -6812,6 +6826,11 @@ def analyze(
         and FQ_RE.search(text)
         and FQMITO_SIGN_RE.search(text)
     )
+    steal_fqnitro_dx = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQNITRO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -6977,6 +6996,7 @@ def analyze(
         or steal_fqphoto_dx
         or steal_fqhema_dx
         or steal_fqmito_dx
+        or steal_fqnitro_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -18910,6 +18930,71 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for FQ mitotoxicity."
+            )
+
+    fqnitro_named = (
+        spec in {"dog", "cat"}
+        and FQ_RE.search(text)
+        and FQNITRO_SIGN_RE.search(text)
+    )
+    if fqnitro_named:
+        if spec == "cat":
+            fqnitro_loc = (
+                "Feline fluoroquinolone-nitrofurantoin stack. Not a UTI-alone."
+            )
+        else:
+            fqnitro_loc = (
+                "Canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone."
+            )
+        localization = (
+            f"{localization} Also {fqnitro_loc}" if localization else fqnitro_loc
+        )
+        hard_stops.append(
+            "Do not send FQ plus nitrofurantoin home as a UTI. "
+            "Do not harvest a fluoroquinolone mg/kg table. "
+            "Do not harvest a nitrofurantoin mg/kg table. "
+            "Mercer: nitrofurantoin impairs the efficacy of "
+            "quinolones if used concurrently for urinary tract "
+            "infections. Stop the stack. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a UTI-alone. "
+            "Do not stack FQ with nitrofurantoin for a UTI. "
+            "Packet 363 still owns FQ mitotoxicity. "
+            "Bare UTI without named nitrofurantoin is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline fluoroquinolone-nitrofurantoin stack. "
+                "Not a UTI-alone. Stop the stack. △ Plumb. Packet 354 "
+                "still owns cat enro retina. Packet 363 still owns "
+                "FQ mitotoxicity. Do not copy an FQ table."
+            )
+        else:
+            do_next.append(
+                "Name canine fluoroquinolone-nitrofurantoin stack. "
+                "Not a UTI-alone. Stop the stack. △ Plumb. Packet 363 "
+                "still owns FQ mitotoxicity. Do not copy an FQ table."
+            )
+        sources.append(
+            "Mercer Merck quinolones Sept 2022 / Jun 2026: "
+            "nitrofurantoin impairs the efficacy of quinolones if "
+            "used concurrently for urinary tract infections. Packet "
+            "363 FQ mitotoxicity. Do not harvest FQ or nitrofurantoin "
+            "mg/kg. Skip horse. Food-animal ELDU is prohibited for "
+            "fluoroquinolones."
+        )
+        if spec == "cat" and ENRO_RE.search(text):
+            do_not.append(
+                "Cat + enrofloxacin: retina is a different loc, not this dump."
+            )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for FQ-nitrofurantoin."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for FQ-nitrofurantoin."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
