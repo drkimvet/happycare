@@ -14625,6 +14625,91 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline tetracycline hepatotoxicity", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_penhyper_is_not_an_allergy_alone(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertIn("not an allergy-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("epinephrine is the crash drug", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ampicillin_hives_fires_penhyper(self):
+        b = analyze("dog", "ampicillin, hives")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertIn("not an allergy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cloxacillin_urticaria_fires_penhyper(self):
+        b = analyze("cat", "cloxacillin, urticaria")
+        loc = b["localization"].lower()
+        self.assertIn("feline penicillin hypersensitivity", loc)
+        self.assertIn("not an allergy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_vaccine_anaphylaxis_concatenates_with_penhyper(self):
+        b = analyze("dog", "amoxicillin, vaccine reaction, anaphylaxis")
+        loc = b["localization"].lower()
+        self.assertIn("distributive shock", loc)
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_vaccine_anaphylaxis_without_penicillin_is_not_penhyper(self):
+        b = analyze("dog", "anaphylaxis after vaccine, collapse, no hives")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("distributive shock", loc)
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminobeta_is_not_penhyper(self):
+        b = analyze("dog", "gentamicin, ampicillin, same syringe")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-beta-lactam syringe mix", loc)
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrahep_is_not_penhyper(self):
+        b = analyze("dog", "tetracycline, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tetracycline hepatotoxicity", loc)
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_penicillin_is_not_penhyper(self):
+        b = analyze("dog", "penicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_allergy_is_not_penhyper(self):
+        b = analyze("dog", "allergy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penicillin_plus_allergy_is_not_penhyper(self):
+        b = analyze("dog", "penicillin, allergy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hymenoptera_without_penicillin_is_not_penhyper(self):
+        b = analyze("dog", "hymenoptera, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("distributive shock", loc)
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_penhyper(self):
+        b = analyze("horse", "penicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("feline penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

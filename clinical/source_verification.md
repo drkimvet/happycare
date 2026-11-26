@@ -6175,3 +6175,33 @@ Night rule: named tetracycline plus hepatotox / jaundice / icterus / liver injur
 - Attending: If the query is only “jaundice,” why does this gate stay dark?
 - Attending: Horse oxytetracycline plus icterus — fire or skip?
 - Attending: Cat plus doxycycline plus liver injury — which locs fire, and why?
+
+## 385. Canine penicillin hypersensitivity (Mercer Merck penicillins)
+
+No dedicated Plunkett penicillin-hypersensitivity chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (hypersensitivity reactions including anaphylaxis can occur). Idsoe *Bull World Health Organ* 1968 PMID 5302296 (441 cites; nature and extent of penicillin side-reactions with particular reference to fatalities from anaphylactic shock; human chemistry). Ndiritu *J Am Vet Med Assoc* 1977 PMID 893217 (22 cites, UC Davis VMTH; hospital adverse-drug-reaction series including anaphylaxis). Davis *J Am Vet Med Assoc* 1984 PMID 6511567 (10 cites; hypersensitivity reactions induced by antimicrobial drugs; MESH penicillins). Quantz *J Vet Emerg Crit Care* 2009 PMID 20017759 (52 cites; canine anaphylaxis ALT / gallbladder wall — the existing crash anaphylaxis loc, not this named-penicillin loc). Fuchter *JVECC* 2026 PMID 41582857 is recency, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Idsoe. Species-fit veterinary hospital series is Ndiritu UC Davis. Do not overweight Fuchter 2026 as quality. Human chemistry is not canine incidence. Existing anaphylaxis loc still owns vaccine / hymenoptera without named penicillin. Packet 384 still owns tetracycline hepatotoxicity. Packet 372 still owns aminoglycoside-beta-lactam mix. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest an epinephrine mg/kg table. Do not fire on bare penicillin. Do not fire on bare allergy. Dogs and cats. Skip horse.
+
+Agree with Mercer / Idsoe: **named penicillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema is not an allergy-alone.** Stop the drug. Epinephrine is the crash drug. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named penicillin / amoxicillin / ampicillin / cloxacillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema is canine (or feline) penicillin hypersensitivity; not an allergy-alone. Bare penicillin stays dark. Bare allergy stays dark. Dual vaccine anaphylaxis plus amoxicillin concatenates the existing anaphylaxis loc then 385. Dual gentamicin plus amoxicillin plus same line stays 372. Dual tetracycline plus jaundice stays 384. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest an epinephrine mg/kg table.
+- Do not call this an allergy-alone.
+- Do not send penicillin home after named anaphylaxis.
+- Do not treat vaccine or hymenoptera without named penicillin as this loc.
+- Do not treat tetracycline hepatotoxicity (384) as this loc.
+- Do not treat aminoglycoside-beta-lactam mix (372) as this loc.
+- Do not treat allergy without named penicillin as this loc.
+
+Night rule: named penicillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema → **Canine penicillin hypersensitivity. Not an allergy-alone.** Stop the drug. Epinephrine is the crash drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is amoxicillin plus anaphylaxis not an allergy-and-home night?
+- NAVLE 2: Why does vaccine anaphylaxis without named penicillin stay the existing anaphylaxis loc, not this loc?
+- NAVLE 3: Dual-named “amoxicillin, anaphylaxis” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover amoxicillin without inventing a mg/kg table?
+- Attending: If the query is only “allergy,” why does this gate stay dark?
+- Attending: Horse penicillin plus hives — fire or skip?
+- Attending: Cat plus ampicillin plus urticaria — which locs fire, and why?

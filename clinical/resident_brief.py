@@ -681,6 +681,31 @@ TETRAHEP_SIGN_RE = re.compile(
 # Dogs and cats. Skip horse. Mercer: tetracyclines can be
 # hepatotoxic, historically with high-dose IV tetracycline.
 # △ Plumb.
+PENHYPER_RE = re.compile(
+    r"\bpenicillins?\b|"
+    r"amoxicillin|"
+    r"ampicillin|"
+    r"cloxacillin",
+    re.I,
+)
+PENHYPER_SIGN_RE = re.compile(
+    r"anaphylax|"
+    r"hypersensitiv|"
+    r"\bhives\b|"
+    r"urticaria|"
+    r"angioedema",
+    re.I,
+)
+# Packet 385: named penicillin / amoxicillin / ampicillin /
+# cloxacillin plus anaphylax / hypersensitivity / hives /
+# urticaria / angioedema only. Do not use \ballerg (bare
+# allergy). Do not use cephalexin. Do not use vaccine /
+# hymenoptera without named penicillin (existing anaphylaxis
+# loc). Do not use tetracycline hepatotoxicity (384). Do not
+# use aminoglycoside-beta-lactam mix (372). Do not harvest a
+# penicillin mg/kg table. Do not harvest epinephrine mg/kg.
+# Dogs and cats. Skip horse. Mercer: hypersensitivity
+# reactions including anaphylaxis can occur. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7322,6 +7347,11 @@ def analyze(
         and TETRATEETH_RE.search(text)
         and TETRAHEP_SIGN_RE.search(text)
     )
+    steal_penhyper_dx = (
+        spec in {"dog", "cat"}
+        and PENHYPER_RE.search(text)
+        and PENHYPER_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7508,6 +7538,7 @@ def analyze(
         or steal_tetrachel_dx
         or steal_tetraphoto_dx
         or steal_tetrahep_dx
+        or steal_penhyper_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20938,6 +20969,79 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for tetracycline hepatotoxicity."
+            )
+
+    penhyper_named = (
+        spec in {"dog", "cat"}
+        and PENHYPER_RE.search(text)
+        and PENHYPER_SIGN_RE.search(text)
+    )
+    if penhyper_named:
+        if spec == "cat":
+            penhyper_loc = (
+                "Feline penicillin hypersensitivity. Not an allergy-alone."
+            )
+        else:
+            penhyper_loc = (
+                "Canine penicillin hypersensitivity. Not an allergy-alone."
+            )
+        localization = (
+            f"{localization} Also {penhyper_loc}"
+            if localization
+            else penhyper_loc
+        )
+        hard_stops.append(
+            "Do not send penicillin home after named anaphylaxis. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Do not harvest an epinephrine mg/kg table. "
+            "Mercer: hypersensitivity reactions including anaphylaxis "
+            "can occur. Stop the drug. Epinephrine is the crash drug. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this an allergy-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 384 still owns tetracycline hepatotoxicity. "
+            "Packet 372 still owns aminoglycoside-beta-lactam mix. "
+            "Vaccine or hymenoptera without named penicillin stays "
+            "the existing anaphylaxis loc. "
+            "Bare allergy without named penicillin is not this loc. "
+            "Bare penicillin without anaphylax / hypersensitivity / "
+            "hives / urticaria / angioedema language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline penicillin hypersensitivity. Not an "
+                "allergy-alone. Stop the drug. Epinephrine is the "
+                "crash drug. △ Plumb. Vaccine / sting without named "
+                "penicillin stays the existing anaphylaxis loc. Do "
+                "not copy a penicillin table."
+            )
+        else:
+            do_next.append(
+                "Name canine penicillin hypersensitivity. Not an "
+                "allergy-alone. Stop the drug. Epinephrine is the "
+                "crash drug. △ Plumb. Vaccine / sting without named "
+                "penicillin stays the existing anaphylaxis loc. Do "
+                "not copy a penicillin table."
+            )
+        sources.append(
+            "Mercer Merck penicillins: hypersensitivity reactions "
+            "including anaphylaxis can occur. Idsoe Bull World "
+            "Health Organ 1968 PMID 5302296. Ndiritu JAVMA 1977 "
+            "PMID 893217 (UC Davis). Davis JAVMA 1984 PMID 6511567. "
+            "Quantz JVECC 2009 is the crash anaphylaxis loc, not "
+            "this named-penicillin loc. Fuchter 2026 is recency, "
+            "not this loc. Human chemistry is not canine incidence. "
+            "Do not harvest penicillin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for penicillin hypersensitivity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for penicillin hypersensitivity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

@@ -321,6 +321,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tetrachel` | Assessment | Canine tetracycline cation chelation / not a dairy-alone |
 | `ddx-tetraphoto` | Assessment | Canine tetracycline photosensitivity / not a sunburn-alone |
 | `ddx-tetrahep` | Assessment | Canine tetracycline hepatotoxicity / not an icterus-alone |
+| `ddx-penhyper` | Assessment | Canine penicillin hypersensitivity / not an allergy-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -395,6 +396,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tetrachel` | Discharge | After tetracycline / cation-chelation talk |
 | `dc-tetraphoto` | Discharge | After tetracycline / photosensitivity talk |
 | `dc-tetrahep` | Discharge | After tetracycline / hepatotoxicity talk |
+| `dc-penhyper` | Discharge | After penicillin / hypersensitivity talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4750,6 +4752,21 @@ DDX:
 Do not: harvest a tetracycline mg/kg table. Call this an icterus-alone. Send tetracycline as the jaundice plan. Treat 383 or 181 without the drug as this loc.
 Do next: Name canine tetracycline hepatotoxicity. Not an icterus-alone. Stop the drug. △ Plumb. Packet 383 still owns photosensitivity. Do not copy a tetracycline table.
 
+### `ddx-penhyper`
+
+Penicillin hypersensitivity — {{patient.name}}
+Canine penicillin hypersensitivity [yes / not]. Not an allergy-alone [yes / not]. Stop the drug [ ]. Epinephrine crash [ ]. Vaccine / sting without penicillin [ ]. Packet 384 tetrahep [ ]. Packet 372 mix [ ]. Bare allergy [ ].
+
+DDX:
+1. Named penicillin / amoxicillin / ampicillin / cloxacillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema — **Canine penicillin hypersensitivity. Not an allergy-alone**
+2. Mercer / Idsoe Bull WHO 1968 PMID 5302296: hypersensitivity reactions including anaphylaxis can occur. Stop the drug. Epinephrine is the crash drug. △ Plumb
+3. Vaccine or hymenoptera without named penicillin stays the existing anaphylaxis loc. Packet 384 owns tetracycline hepatotoxicity. Packet 372 owns aminoglycoside mix. Bare allergy is not this loc
+4. Do not harvest a penicillin table. Do not harvest an epinephrine table. Quantz JVECC 2009 is the crash loc, not this named-penicillin loc
+5. Dog or cat can fire. Horse does not fire. Bare penicillin or bare allergy stays dark. Do not copy a penicillin table
+
+Do not: harvest a penicillin mg/kg table. Call this an allergy-alone. Send penicillin home after named anaphylaxis. Treat vaccine or hymenoptera without named penicillin as this loc.
+Do next: Name canine penicillin hypersensitivity. Not an allergy-alone. Stop the drug. Epinephrine is the crash drug. △ Plumb. Vaccine / sting without named penicillin stays the existing anaphylaxis loc. Do not copy a penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5355,6 +5372,14 @@ Return now if the skin is worse, if {{patient.pronoun}} will not eat, or if the 
 We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover tetracycline or doxycycline from home.
 
 Return now for deeper yellow gums, not eating, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-penhyper`
+
+{{patient.name}} had a serious reaction to a penicillin-class antibiotic. That family of antibiotics can cause sudden hives, swelling, or shock. Using leftover amoxicillin after that reaction is not the same as treating a simple allergy. This is not a simple allergy-and-home plan.
+
+We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover amoxicillin or penicillin from home.
+
+Return now for collapse, facial swelling, trouble breathing, or if the hives come back. {{location.phonenumber}}
 
 ### `dc-ahds`
 
