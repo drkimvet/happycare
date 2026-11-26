@@ -622,6 +622,28 @@ TETRATEETH_SIGN_RE = re.compile(
 # tetracycline mg/kg table. Dogs and cats. Skip horse.
 # Mercer: bind calcium; discolor developing teeth and bones;
 # avoid in pregnancy and young animals. △ Plumb.
+TETRACHEL_SIGN_RE = re.compile(
+    r"dairy|"
+    r"\bmilk\b|"
+    r"calcium|"
+    r"\biron\b|"
+    r"antacid|"
+    r"sucralfate|"
+    r"chelat",
+    re.I,
+)
+# Packet 382: named tetracycline / oxytetracycline /
+# chlortetracycline / doxycycline plus dairy / milk /
+# calcium / iron / antacid / sucralfate / chelat only.
+# Reuse TETRATEETH_RE for the family including doxy. Do not
+# use bare tetracycline. Do not use bare dairy. Do not use
+# FQ chelation (351). Do not use tetracycline teeth (381).
+# Do not use Fanconi (380). Do not use doxycycline
+# esophagitis (348). Do not harvest a tetracycline mg/kg
+# table. Do not harvest Neuvonen µg/mL. Do not harvest a
+# 2-hour clock. Dogs and cats. Skip horse. Mercer: oral
+# tetracyclines chelate divalent and trivalent cations and
+# absorption falls. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7248,6 +7270,11 @@ def analyze(
         and TETRATEETH_RE.search(text)
         and TETRATEETH_SIGN_RE.search(text)
     )
+    steal_tetrachel_dx = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRACHEL_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7431,6 +7458,7 @@ def analyze(
         or steal_aminotm_dx
         or steal_tetrafan_dx
         or steal_tetrateeth_dx
+        or steal_tetrachel_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20651,6 +20679,77 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for tetracycline teeth."
+            )
+
+    tetrachel_named = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRACHEL_SIGN_RE.search(text)
+    )
+    if tetrachel_named:
+        if spec == "cat":
+            tetrachel_loc = (
+                "Feline tetracycline cation chelation. Not a dairy-alone."
+            )
+        else:
+            tetrachel_loc = (
+                "Canine tetracycline cation chelation. Not a dairy-alone."
+            )
+        localization = (
+            f"{localization} Also {tetrachel_loc}"
+            if localization
+            else tetrachel_loc
+        )
+        hard_stops.append(
+            "Do not stack oral tetracycline with dairy, calcium, iron, "
+            "antacid, or sucralfate. "
+            "Do not harvest a tetracycline mg/kg table. "
+            "Do not harvest a 2-hour clock. "
+            "Mercer: oral tetracyclines chelate cations and absorption "
+            "falls. Separate the stack. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a dairy-alone. "
+            "Do not copy a tetracycline recipe as lobby law. "
+            "Packet 351 still owns fluoroquinolone chelation. "
+            "Packet 381 still owns tetracycline teeth. "
+            "Packet 380 still owns expired tetracycline Fanconi. "
+            "Packet 348 still owns doxycycline esophagitis. "
+            "Bare dairy without named tetracycline is not this loc. "
+            "Bare tetracycline without dairy / milk / calcium / iron / "
+            "antacid / sucralfate / chelation language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline tetracycline cation chelation. Not a "
+                "dairy-alone. Separate the stack. △ Plumb. Packet 351 "
+                "still owns FQ chelation. Packet 381 still owns teeth. "
+                "Do not copy a tetracycline table."
+            )
+        else:
+            do_next.append(
+                "Name canine tetracycline cation chelation. Not a "
+                "dairy-alone. Separate the stack. △ Plumb. Packet 351 "
+                "still owns FQ chelation. Packet 381 still owns teeth. "
+                "Do not copy a tetracycline table."
+            )
+        sources.append(
+            "Mercer Merck tetracyclines: oral tetracyclines chelate "
+            "divalent and trivalent cations and absorption falls. "
+            "Neuvonen Drugs 1976 PMID 946598. Neuvonen BMJ 1970 "
+            "PMID 5483323. KuKanich JVPT 2015 PMID 25233871 "
+            "(Kansas State; dogs). KuKanich 2014 is minocycline, "
+            "not this loc. Printed µg/mL and 2-hour clocks stay on "
+            "those papers. Human chemistry is not canine incidence. "
+            "Do not harvest tetracycline mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for tetracycline chelation."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for tetracycline chelation."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

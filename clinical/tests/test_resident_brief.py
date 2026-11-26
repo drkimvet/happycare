@@ -14391,6 +14391,87 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline tetracycline tooth discoloration", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_tetrachel_is_not_a_dairy_alone(self):
+        b = analyze("dog", "doxycycline, dairy")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline cation chelation", loc)
+        self.assertIn("not a dairy-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("chelate", joined)
+        self.assertIn("tetracycline mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone chelation", loc)
+        self.assertNotIn("canine tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxycycline_sucralfate_fires_tetrachel(self):
+        b = analyze("dog", "doxycycline, sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline cation chelation", loc)
+        self.assertIn("not a dairy-alone", loc)
+        self.assertNotIn("canine fluoroquinolone chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_doxy_iron_fires_tetrachel(self):
+        b = analyze("cat", "doxy, iron")
+        loc = b["localization"].lower()
+        self.assertIn("feline tetracycline cation chelation", loc)
+        self.assertIn("not a dairy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oxytetracycline_milk_fires_tetrachel(self):
+        b = analyze("dog", "oxytetracycline, milk")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline cation chelation", loc)
+        self.assertIn("not a dairy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrateeth_plus_tetrachel_concatenates(self):
+        b = analyze("dog", "doxycycline, puppy, milk")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline tooth discoloration", loc)
+        self.assertIn("canine tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxyeso_plus_tetrachel_concatenates(self):
+        b = analyze("cat", "doxycycline esophagitis, sucralfate")
+        loc = b["localization"].lower()
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertIn("feline tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqsuc_is_not_tetrachel(self):
+        b = analyze("dog", "enrofloxacin, sucralfate")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone chelation", loc)
+        self.assertNotIn("canine tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrateeth_without_dairy_is_not_tetrachel(self):
+        b = analyze("dog", "tetracycline, teeth")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tetracycline tooth discoloration", loc)
+        self.assertNotIn("canine tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tetracycline_is_not_tetrachel(self):
+        b = analyze("dog", "tetracycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_dairy_is_not_tetrachel(self):
+        b = analyze("dog", "dairy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tetrachel(self):
+        b = analyze("horse", "doxycycline, dairy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline cation chelation", loc)
+        self.assertNotIn("feline tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

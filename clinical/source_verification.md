@@ -6082,3 +6082,35 @@ Night rule: named tetracycline plus teeth / enamel / pregnancy / young / puppy /
 - Attending: If the query is only “teeth,” why does this gate stay dark?
 - Attending: Horse oxytetracycline plus pregnancy — fire or skip?
 - Attending: Cat plus doxycycline plus kitten — which locs fire, and why?
+
+## 382. Canine tetracycline cation chelation (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-chelation chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (oral tetracyclines chelate divalent and trivalent cations — calcium, iron, magnesium, aluminum, sucralfate, dairy — and absorption falls). Neuvonen *Drugs* 1976 PMID 946598 (175 cites; tetracycline-metal complexes poorly absorbed; printed 0.5–1.5 µg/mL stays on that paper; no PubMed affiliation on this 1976 record). Neuvonen *Br Med J* 1970 PMID 5483323 (137 cites; iron impairs tetracycline / oxytetracycline / doxycycline absorption in people). KuKanich *J Vet Pharmacol Ther* 2015 PMID 25233871 (12 cites, Kansas State CVM; sucralfate vs oral doxycycline in dogs; printed 2-hour delay stays on that paper). KuKanich *J Vet Pharmacol Ther* 2014 PMID 24611544 is minocycline plus sucralfate in dogs, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Neuvonen. Species-fit veterinary work is KuKanich Kansas State dogs. Do not overweight 2015 recency over Neuvonen citation standing. Human chemistry is not canine incidence. Packet 351 still owns fluoroquinolone chelation. Packet 381 still owns tetracycline teeth. Packet 380 still owns expired tetracycline Fanconi. Packet 348 still owns doxycycline esophagitis. Do not harvest a tetracycline mg/kg table as lobby law. Do not harvest Neuvonen µg/mL. Do not harvest a 2-hour clock. Do not fire on bare tetracycline. Do not fire on bare dairy. Dogs and cats. Skip horse.
+
+Agree with Mercer / Neuvonen / KuKanich: **named tetracycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelation is not a dairy-alone.** Separate the stack. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelat is canine (or feline) tetracycline cation chelation; not a dairy-alone. Bare tetracycline stays dark. Bare dairy stays dark. Dual puppy plus dairy concatenates 381 then 382. Dual doxycycline esophagitis plus sucralfate concatenates 348 then 382. Dual enrofloxacin plus sucralfate stays 351. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not harvest Neuvonen µg/mL.
+- Do not harvest a 2-hour clock.
+- Do not call this a dairy-alone.
+- Do not stack oral tetracycline with dairy, calcium, iron, antacid, or sucralfate.
+- Do not treat fluoroquinolone chelation (351) as this loc.
+- Do not treat tetracycline teeth (381) as this loc.
+- Do not treat expired tetracycline Fanconi (380) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat dairy without named tetracycline as this loc.
+
+Night rule: named tetracycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelat → **Canine tetracycline cation chelation. Not a dairy-alone.** Separate the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline plus sucralfate not a dairy-and-home night?
+- NAVLE 2: Why does enrofloxacin plus sucralfate stay 351, not this loc?
+- NAVLE 3: Dual-named “doxycycline, puppy, milk” — which locs should fire, and why?
+- Oral: How do you tell the owner to separate leftover doxycycline from a calcium chew without inventing a mg/kg table?
+- Attending: If the query is only “dairy,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus milk — fire or skip?
+- Attending: Cat plus doxycycline plus iron — which locs fire, and why?

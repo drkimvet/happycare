@@ -318,6 +318,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminotm` | Assessment | Canine topical aminoglycoside with ruptured TM / not an otitis-alone |
 | `ddx-tetrafan` | Assessment | Canine expired tetracycline Fanconi / not an AKI-alone |
 | `ddx-tetrateeth` | Assessment | Canine tetracycline tooth discoloration / not a dental-alone |
+| `ddx-tetrachel` | Assessment | Canine tetracycline cation chelation / not a dairy-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -389,6 +390,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminotm` | Discharge | After topical aminoglycoside / open-TM talk |
 | `dc-tetrafan` | Discharge | After expired tetracycline / Fanconi talk |
 | `dc-tetrateeth` | Discharge | After tetracycline / teeth-pregnancy talk |
+| `dc-tetrachel` | Discharge | After tetracycline / cation-chelation talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4699,6 +4701,21 @@ DDX:
 Do not: harvest a tetracycline mg/kg table. Call this a dental-alone. Send tetracycline to a young or pregnant patient as the dental plan. Treat 380 or 348 as this loc.
 Do next: Name canine tetracycline tooth discoloration. Not a dental-alone. Stop the drug in the puppy or pregnant bitch. △ Plumb. Packet 380 still owns Fanconi. Do not copy a tetracycline table.
 
+### `ddx-tetrachel`
+
+Tetracycline cation chelation — {{patient.name}}
+Canine tetracycline cation chelation [yes / not]. Not a dairy-alone [yes / not]. Separate the stack [ ]. Packet 351 FQ chelation [ ]. Packet 381 teeth [ ]. Packet 380 Fanconi [ ]. Packet 348 doxycycline esophagus [ ]. Bare dairy [ ].
+
+DDX:
+1. Named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelat — **Canine tetracycline cation chelation. Not a dairy-alone**
+2. Mercer / Neuvonen Drugs 1976 PMID 946598 / KuKanich JVPT 2015 PMID 25233871: oral tetracyclines chelate cations and absorption falls. Separate the stack. △ Plumb
+3. Packet 351 owns FQ chelation. Packet 381 owns tetracycline teeth. Packet 380 owns Fanconi. Packet 348 owns doxycycline esophagitis. Bare dairy is not this loc
+4. Do not harvest a tetracycline table. Do not harvest Neuvonen µg/mL. Do not harvest a 2-hour clock
+5. Dog or cat can fire. Horse does not fire. Bare tetracycline or bare dairy stays dark. Minocycline sucralfate stays KuKanich 2014, not this loc. Do not copy a tetracycline table
+
+Do not: harvest a tetracycline mg/kg table. Call this a dairy-alone. Stack oral tetracycline with dairy, calcium, iron, antacid, or sucralfate. Treat 351 or 381 as this loc.
+Do next: Name canine tetracycline cation chelation. Not a dairy-alone. Separate the stack. △ Plumb. Packet 351 still owns FQ chelation. Do not copy a tetracycline table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5280,6 +5297,14 @@ Return now for not drinking, no urine, collapse, or if {{patient.pronoun}} is wo
 We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover doxycycline or tetracycline from home.
 
 Return now for not eating, vomiting after a pill, or if the gums or teeth look worse. {{location.phonenumber}}
+
+### `dc-tetrachel`
+
+{{patient.name}} was on a tetracycline antibiotic around dairy, calcium, iron, an antacid, or sucralfate. That family of antibiotics binds those minerals in the gut, so much less of the antibiotic is absorbed. Using it with milk or a coating tablet is not the same as treating the infection. This is not a simple dairy-and-home plan.
+
+We named the coverage gap and separated the medicines. Give only the medicines we sent, as labeled. Do not give leftover doxycycline with milk, a calcium chew, or sucralfate from home.
+
+Return now for fever, not eating, or if the infection looks worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
