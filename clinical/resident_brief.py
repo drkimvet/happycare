@@ -484,6 +484,24 @@ AMINOCIS_SIGN_RE = re.compile(
 # aminoglycoside or cisplatin mg/kg table. Dogs and cats.
 # Skip horse. Mercer / Grauer: cisplatin is a concurrent
 # nephrotoxin. △ Plumb.
+AMINOANAER_SIGN_RE = re.compile(
+    r"\banaerobes\b|"
+    r"anaerobic (coverage|infection|bacteria|spectrum|organism|pathogen)|"
+    r"bacteroides|"
+    r"clostridium(?!\s+tetani)|"
+    r"(?<!infectious )peritonitis",
+    re.I,
+)
+# Packet 375: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus anaerobes / Bacteroides /
+# Clostridium / peritonitis only. Do not use bare anaerobic
+# (iCa / culture). Do not use feline infectious peritonitis.
+# Do not use Clostridium tetani. Do not use bare
+# aminoglycoside. Do not use bare peritonitis. Do not use
+# aminoglycoside-cisplatin (374). Do not harvest an
+# aminoglycoside mg/kg table. Dogs and cats. Skip horse.
+# Mercer / Dow: aminoglycosides are not active against
+# anaerobes. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7063,6 +7081,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOCIS_SIGN_RE.search(text)
     )
+    steal_aminoanaer_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOANAER_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7239,6 +7262,7 @@ def analyze(
         or steal_aminobeta_dx
         or steal_aminoampho_dx
         or steal_aminocis_dx
+        or steal_aminoanaer_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19948,6 +19972,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside-cisplatin stack."
+            )
+
+    aminoanaer_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOANAER_SIGN_RE.search(text)
+    )
+    if aminoanaer_named:
+        if spec == "cat":
+            aminoanaer_loc = (
+                "Feline aminoglycoside anaerobic coverage gap. "
+                "Not a peritonitis-alone."
+            )
+        else:
+            aminoanaer_loc = (
+                "Canine aminoglycoside anaerobic coverage gap. "
+                "Not a peritonitis-alone."
+            )
+        localization = (
+            f"{localization} Also {aminoanaer_loc}" if localization else aminoanaer_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside as the only antimicrobial "
+            "for anaerobes or peritonitis. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer / Dow: aminoglycosides are not active against "
+            "anaerobes. Cover anaerobes. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a peritonitis-alone. "
+            "Do not copy an aminoglycoside recipe as lobby law. "
+            "Packet 374 still owns the aminoglycoside-cisplatin "
+            "stack. "
+            "Packet 336 still owns GI perforation without named "
+            "aminoglycoside. "
+            "Packet 179 still owns bile peritonitis without named "
+            "aminoglycoside. "
+            "Packet 204 still owns feline infectious peritonitis. "
+            "Bare peritonitis without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without named anaerobes or peritonitis "
+            "is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside anaerobic coverage gap. "
+                "Not a peritonitis-alone. Cover anaerobes. △ Plumb. "
+                "Packet 374 still owns cisplatin. Packet 204 still "
+                "owns FIP. Do not copy an aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside anaerobic coverage gap. "
+                "Not a peritonitis-alone. Cover anaerobes. △ Plumb. "
+                "Packet 374 still owns cisplatin. Packet 336 still "
+                "owns GI perforation. Do not copy an aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "aminoglycosides are not active against anaerobes. "
+            "Dow VCNA 1988 PMID 3064389 (CSU). "
+            "Jang JAVMA 1997 PMID 9170087 (UC Davis). "
+            "Dow JAVMA 1986 PMID 2876976 (CSU). "
+            "Wagner JVIM 2007 is bile culture, not this loc. "
+            "Do not harvest aminoglycoside mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside anaerobic gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside anaerobic gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

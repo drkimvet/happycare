@@ -5873,3 +5873,33 @@ Night rule: named aminoglycoside plus named cisplatin → **Canine aminoglycosid
 - Attending: If the query is only “cisplatin,” why does this gate stay dark?
 - Attending: Horse gentamicin plus cisplatin — fire or skip?
 - Attending: Cat plus amikacin plus Platinol — which locs fire, and why?
+
+## 375. Canine aminoglycoside anaerobic coverage gap (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-anaerobe chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (aminoglycosides are not active against anaerobes). Dow *Vet Clin North Am Small Anim Pract* 1988 PMID 3064389 (9 cites, Colorado State CVM; aminoglycosides and sulfonamides are ineffective against anaerobic infection, including *Bacteroides*). Jang *J Am Vet Med Assoc* 1997 PMID 9170087 (35 cites, UC Davis VMTH; anaerobic isolates from dogs and cats, including abdominal cavity; *Bacteroides* among the common obligate anaerobes). Dow *J Am Vet Med Assoc* 1986 PMID 2876976 (29 cites, Colorado State CVM; anaerobic infections in dogs and cats; *Bacteroides* / *Fusobacterium*; abdominal infections; failure to start an effective antibiotic raised recurrence). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Dow VCNA 1988 even with fewer cites. Jang JAVMA 1997 and Dow JAVMA 1986 carry the citation weight and named CVM labs. Do not overweight Wagner *J Vet Intern Med* 2007 PMID 17552445 (75 cites, Wisconsin; bile/hepatobiliary culture). Do not overweight Lanz *J Am Anim Hosp Assoc* 2001 PMID 11204482 (71 cites, VA-MD; surgery without drainage). Do not overweight Gerding *Antimicrob Agents Chemother* 1976 PMID 1008543 (27 cites; experimental ascitic penetrance of gentamicin is not anaerobic coverage). Packet 374 still owns the aminoglycoside-cisplatin stack. Packet 336 still owns GI perforation. Packet 179 still owns bile peritonitis. Packet 204 still owns feline infectious peritonitis. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare peritonitis. Do not fire 374 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Dow: **named aminoglycoside plus named anaerobes or peritonitis is not a peritonitis-alone.** Cover anaerobes. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus anaerobes / Bacteroides / Clostridium / peritonitis is canine (or feline) aminoglycoside anaerobic coverage gap; not a peritonitis-alone. Bare aminoglycoside stays dark. Bare peritonitis stays 336 / 179 / sepsis as those packets already fire. Dual GI-perforation plus gentamicin concatenates 336 then 375. Dual bile peritonitis plus gentamicin concatenates 179 then 375. Dual gentamicin plus cisplatin stays 374. Feline infectious peritonitis plus gentamicin stays 204, not this loc. *Clostridium tetani* stays tetanus. iCa anaerobic stays lab, not this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not call this a peritonitis-alone.
+- Do not send aminoglycoside as the only antimicrobial for anaerobes or peritonitis.
+- Do not treat the cisplatin stack (374) as this loc.
+- Do not treat GI perforation without named aminoglycoside (336) as this loc.
+- Do not treat bile peritonitis without named aminoglycoside (179) as this loc.
+- Do not treat feline infectious peritonitis (204) as this loc.
+- Do not treat peritonitis without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named anaerobes / peritonitis → **Canine aminoglycoside anaerobic coverage gap. Not a peritonitis-alone.** Cover anaerobes. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus peritonitis not a peritonitis-and-home night?
+- NAVLE 2: Why does gentamicin plus cisplatin stay 374, not this loc?
+- NAVLE 3: Dual-named “septic peritonitis from a gut leak, gentamicin” — which locs should fire, and why?
+- Oral: How do you tell the owner the antibiotic family missed the anaerobes without inventing a mg/kg table?
+- Attending: If the query is only “peritonitis,” why does this gate stay dark?
+- Attending: Horse gentamicin plus peritonitis — fire or skip?
+- Attending: Cat plus amikacin plus Bacteroides — which locs fire, and why?

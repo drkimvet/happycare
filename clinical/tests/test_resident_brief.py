@@ -13862,6 +13862,84 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside-cisplatin nephrotoxicity stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminoanaer_is_not_a_peritonitis_alone(self):
+        b = analyze("dog", "gentamicin, peritonitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("not active against anaerobes", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_bacteroides_fires_aminoanaer(self):
+        b = analyze("dog", "amikacin, Bacteroides")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_anaerobes_fires_aminoanaer(self):
+        b = analyze("cat", "tobramycin, anaerobes")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_giperf_plus_aminoanaer_concatenates(self):
+        b = analyze("dog", "septic peritonitis from a gut leak, gentamicin")
+        loc = b["localization"].lower()
+        self.assertIn("canine gi perforation", loc)
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminocis_is_not_aminoanaer(self):
+        b = analyze("dog", "gentamicin, cisplatin")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminoanaer(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_peritonitis_is_not_aminoanaer(self):
+        b = analyze("dog", "peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fip_plus_gentamicin_is_not_aminoanaer(self):
+        b = analyze("cat", "feline infectious peritonitis, gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline aminoglycoside anaerobic coverage gap", loc)
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ica_anaerobic_is_not_aminoanaer(self):
+        b = analyze("dog", "gentamicin, iCa anaerobic")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_clostridium_tetani_is_not_aminoanaer(self):
+        b = analyze("dog", "gentamicin, Clostridium tetani")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminoanaer(self):
+        b = analyze("horse", "gentamicin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertNotIn("feline aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

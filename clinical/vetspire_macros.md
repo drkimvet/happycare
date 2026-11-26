@@ -311,6 +311,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminobeta` | Assessment | Canine aminoglycoside-beta-lactam syringe mix / not a sepsis-alone |
 | `ddx-aminoampho` | Assessment | Canine aminoglycoside-amphotericin nephrotoxicity stack / not an AKI-alone |
 | `ddx-aminocis` | Assessment | Canine aminoglycoside-cisplatin nephrotoxicity stack / not an AKI-alone |
+| `ddx-aminoanaer` | Assessment | Canine aminoglycoside anaerobic coverage gap / not a peritonitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -375,6 +376,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminobeta` | Discharge | After aminoglycoside / beta-lactam syringe-mix talk |
 | `dc-aminoampho` | Discharge | After aminoglycoside / amphotericin stack talk |
 | `dc-aminocis` | Discharge | After aminoglycoside / cisplatin stack talk |
+| `dc-aminoanaer` | Discharge | After aminoglycoside / anaerobic coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4580,6 +4582,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Harvest a cisplatin mg/kg table. Call this an AKI-alone. Send aminoglycoside plus cisplatin home as AKI. Treat bare cisplatin as this loc.
 Do next: Name canine aminoglycoside-cisplatin nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 373 still owns the amphotericin stack. Do not copy an aminoglycoside or cisplatin table.
 
+### `ddx-aminoanaer`
+
+Aminoglycoside anaerobic gap — {{patient.name}}
+Canine aminoglycoside anaerobic coverage gap [yes / not]. Not a peritonitis-alone [yes / not]. Cover anaerobes [ ]. Packet 374 cisplatin [ ]. Packet 336 GI perforation [ ]. Packet 179 bile peritonitis [ ]. Packet 204 FIP [ ]. Bare peritonitis [ ].
+
+DDX:
+1. Named aminoglycoside plus named anaerobes / Bacteroides / Clostridium / peritonitis — **Canine aminoglycoside anaerobic coverage gap. Not a peritonitis-alone**
+2. Mercer / Dow VCNA 1988 PMID 3064389: aminoglycosides are not active against anaerobes. Cover anaerobes. △ Plumb
+3. Packet 374 owns the cisplatin stack. Packet 336 owns GI perforation. Packet 179 owns bile peritonitis. Packet 204 owns FIP. Bare peritonitis is not this loc
+4. Do not harvest an aminoglycoside table. Do not send aminoglycoside as the only antimicrobial for a mixed anaerobic night
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare peritonitis stays dark. FIP stays dark. *Clostridium tetani* stays tetanus. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this a peritonitis-alone. Send aminoglycoside as the only antimicrobial for anaerobes. Treat FIP or tetanus as this loc.
+Do next: Name canine aminoglycoside anaerobic coverage gap. Not a peritonitis-alone. Cover anaerobes. △ Plumb. Packet 374 still owns cisplatin. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5105,6 +5122,14 @@ Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenu
 We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin or leftover cisplatin from home.
 
 Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminoanaer`
+
+{{patient.name}} was on an aminoglycoside antibiotic for a belly or mixed infection. That family of antibiotics does not treat bacteria that live without air. Using it alone is not the same as treating peritonitis. This is not a simple peritonitis-and-home plan.
+
+We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home as the only antibiotic.
+
+Return now for a painful or swollen belly, vomiting, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 
