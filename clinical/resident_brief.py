@@ -555,6 +555,28 @@ AMINOENTER_SIGN_RE = re.compile(
 # Do not harvest an aminoglycoside mg/kg table. Do not harvest
 # HE neomycin 15. Dogs and cats. Skip horse. Mercer: poorly
 # absorbed from the GI tract. △ Plumb.
+AMINOTM_SIGN_RE = re.compile(
+    r"tympanic|"
+    r"eardrum|"
+    r"ear[- ]?drum|"
+    r"\btm\b.{0,32}(ruptur|perforat|tear|not intact|open)|"
+    r"(ruptur|perforat|tear|not intact).{0,32}\btm\b|"
+    r"topical.{0,20}ear|"
+    r"ear.{0,20}topical|"
+    r"otic (drop|drops)|"
+    r"ear drops",
+    re.I,
+)
+# Packet 379: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus tympanic / eardrum / TM rupture /
+# topical ear only. Do not use \bear alone. Do not use bare
+# otitis. Do not use bare aminoglycoside. Do not use
+# aminoglycoside ototoxicity without TM/topical (368). Do not
+# use vestibular without the drug (137). Do not use oral-gut
+# (378). Do not harvest an aminoglycoside mg/kg table. Do not
+# harvest Strain 3 mg/ml. Dogs and cats. Skip horse. Mercer:
+# do not administer topically into the ear unless the TM is
+# intact. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7166,6 +7188,11 @@ def analyze(
             )
         )
     )
+    steal_aminotm_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOTM_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7346,6 +7373,7 @@ def analyze(
         or steal_aminocsf_dx
         or steal_aminopus_dx
         or steal_aminooral_dx
+        or steal_aminotm_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20352,6 +20380,77 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside oral-gut gap."
+            )
+
+    aminotm_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOTM_SIGN_RE.search(text)
+    )
+    if aminotm_named:
+        if spec == "cat":
+            aminotm_loc = (
+                "Feline topical aminoglycoside with ruptured TM. "
+                "Not an otitis-alone."
+            )
+        else:
+            aminotm_loc = (
+                "Canine topical aminoglycoside with ruptured TM. "
+                "Not an otitis-alone."
+            )
+        localization = (
+            f"{localization} Also {aminotm_loc}" if localization else aminotm_loc
+        )
+        hard_stops.append(
+            "Do not put aminoglycoside drops in an ear unless the "
+            "tympanic membrane is intact. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer: do not administer topically into the ear unless "
+            "the TM is intact. Stop the drop. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an otitis-alone. "
+            "Do not copy an aminoglycoside otic recipe as lobby law. "
+            "Packet 368 still owns aminoglycoside ototoxicity "
+            "without TM or topical language. "
+            "Packet 137 still owns vestibular without named "
+            "aminoglycoside. "
+            "Packet 378 still owns oral-gut absorption. "
+            "Bare otitis without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without TM or topical-ear language "
+            "is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline topical aminoglycoside with ruptured TM. "
+                "Not an otitis-alone. Stop the drop. Look at the TM. "
+                "△ Plumb. Packet 368 still owns ototoxicity. Packet "
+                "137 still owns vestibular. Do not copy an "
+                "aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine topical aminoglycoside with ruptured TM. "
+                "Not an otitis-alone. Stop the drop. Look at the TM. "
+                "△ Plumb. Packet 368 still owns ototoxicity. Packet "
+                "137 still owns vestibular. Do not copy an "
+                "aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "do not administer topically into the ear unless the "
+            "TM is intact. Strain AJVR 1995 PMID 7785834 (LSU). "
+            "Oishi VCNA 2012 PMID 23122180 (Michigan Kresge). "
+            "Smith 1979 round-window cats is not this loc. "
+            "Do not harvest aminoglycoside mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for topical aminoglycoside TM gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for topical aminoglycoside TM gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

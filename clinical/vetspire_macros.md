@@ -315,6 +315,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminocsf` | Assessment | Canine aminoglycoside poor CSF penetration / not a meningitis-alone |
 | `ddx-aminopus` | Assessment | Canine aminoglycoside reduced activity in abscess / not an abscess-alone |
 | `ddx-aminooral` | Assessment | Canine aminoglycoside poor oral absorption / not a diarrhea-alone |
+| `ddx-aminotm` | Assessment | Canine topical aminoglycoside with ruptured TM / not an otitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -383,6 +384,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminocsf` | Discharge | After aminoglycoside / CSF penetration-gap talk |
 | `dc-aminopus` | Discharge | After aminoglycoside / abscess-pus gap talk |
 | `dc-aminooral` | Discharge | After aminoglycoside / oral-gut absorption talk |
+| `dc-aminotm` | Discharge | After topical aminoglycoside / open-TM talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4648,6 +4650,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this a diarrhea-alone. Send oral aminoglycoside as systemic coverage. Treat parenteral aminoglycoside plus diarrhea as this loc.
 Do next: Name canine aminoglycoside poor oral absorption. Not a diarrhea-alone. Oral neomycin is gut-only. △ Plumb. Packet 377 still owns abscess. Do not copy an aminoglycoside table.
 
+### `ddx-aminotm`
+
+Topical aminoglycoside open TM — {{patient.name}}
+Canine topical aminoglycoside with ruptured TM [yes / not]. Not an otitis-alone [yes / not]. Stop the drop [ ]. Look at the TM [ ]. Packet 368 oto without TM [ ]. Packet 137 vestibular [ ]. Packet 378 oral-gut [ ]. Bare otitis [ ].
+
+DDX:
+1. Named aminoglycoside plus tympanic / eardrum / TM rupture / topical ear — **Canine topical aminoglycoside with ruptured TM. Not an otitis-alone**
+2. Mercer / Strain AJVR 1995 PMID 7785834: do not put aminoglycoside drops in an ear unless the TM is intact. Stop the drop. △ Plumb
+3. Packet 368 owns ototoxicity without TM/topical language. Packet 137 owns vestibular without named aminoglycoside. Packet 378 owns oral-gut. Bare otitis is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest Strain mg/mL. Do not copy an otic recipe
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare otitis stays dark. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this an otitis-alone. Put aminoglycoside drops in an ear with an open TM. Treat 368 or 137 without TM/topical language as this loc.
+Do next: Name canine topical aminoglycoside with ruptured TM. Not an otitis-alone. Stop the drop. Look at the TM. △ Plumb. Packet 368 still owns ototoxicity. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5205,6 +5222,14 @@ Return now for a painful swelling, fever, collapse, or not drinking. {{location.
 We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover neomycin from home as a whole-body antibiotic.
 
 Return now for bloody diarrhea, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminotm`
+
+{{patient.name}} was on an aminoglycoside ear drop. That family of antibiotics can damage hearing and balance if the eardrum is not intact. Using the drop without seeing the eardrum is not the same as treating a simple ear infection. This is not a simple otitis-and-home plan.
+
+We named the coverage gap and stopped the drop. Give only the medicines we sent, as labeled. Do not add leftover gentamicin or neomycin ear drops from home.
+
+Return now for a head tilt, circling, deafness, or if the ear is more painful. {{location.phonenumber}}
 
 ### `dc-ahds`
 

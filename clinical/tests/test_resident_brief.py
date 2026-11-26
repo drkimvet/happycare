@@ -14160,6 +14160,71 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside poor oral absorption", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminotm_is_not_an_otitis_alone(self):
+        b = analyze("dog", "gentamicin, topical ear")
+        loc = b["localization"].lower()
+        self.assertIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIn("not an otitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("tympanic membrane is intact", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_ruptured_tm_fires_aminotm(self):
+        b = analyze("dog", "amikacin, ruptured TM")
+        loc = b["localization"].lower()
+        self.assertIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIn("not an otitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_neomycin_eardrum_fires_aminotm(self):
+        b = analyze("cat", "neomycin, eardrum")
+        loc = b["localization"].lower()
+        self.assertIn("feline topical aminoglycoside with ruptured tm", loc)
+        self.assertIn("not an otitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminooto_plus_aminotm_concatenates(self):
+        b = analyze("dog", "gentamicin, nystagmus, ruptured TM")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminooto_without_tm_is_not_aminotm(self):
+        b = analyze("dog", "gentamicin, nystagmus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside ototoxicity", loc)
+        self.assertNotIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminooral_is_not_aminotm(self):
+        b = analyze("dog", "neomycin, oral")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertNotIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminotm(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_otitis_is_not_aminotm(self):
+        b = analyze("dog", "otitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminotm(self):
+        b = analyze("horse", "gentamicin, topical ear")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertNotIn("feline topical aminoglycoside with ruptured tm", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -5993,3 +5993,33 @@ Night rule: oral neomycin or oral aminoglycoside plus diarrhea → **Canine amin
 - Attending: If the query is only “diarrhea,” why does this gate stay dark?
 - Attending: Horse neomycin plus oral — fire or skip?
 - Attending: Cat plus tobramycin plus PO plus enteritis — which locs fire, and why?
+
+## 379. Canine topical aminoglycoside with ruptured TM (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett topical-aminoglycoside-TM chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (aminoglycosides should not be administered topically into the ear unless the tympanic membrane is intact). Strain *Am J Vet Res* 1995 PMID 7785834 (26 cites, Louisiana State CVM; gentamicin otic in dogs with intact TM and after myringotomy; printed 3 mg/ml and drop counts stay on that paper). Oishi *Vet Clin North Am Small Anim Pract* 2012 PMID 23122180 (19 cites, University of Michigan Kresge; dogs and cats oto review, including topical risk). Smith *Otolaryngol Head Neck Surg* 1979 PMID 530709 (68 cites; experimental cat round-window perilymph — human ENT chemistry, not this Midtown loc). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Mercer plus Strain LSU AJVR. Oishi carries journal standing. Do not overweight Smith 68 cites as canine otic incidence. Do not overweight 2024 otic-product papers. Packet 368 still owns aminoglycoside ototoxicity without TM or topical language. Packet 137 still owns vestibular without named aminoglycoside. Packet 378 still owns oral-gut absorption. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest Strain mg/ml as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare otitis. Do not fire 368 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Strain: **named aminoglycoside plus named TM rupture or topical ear is not an otitis-alone.** Stop the drop. Look at the TM. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus tympanic / eardrum / TM rupture / topical ear is canine (or feline) topical aminoglycoside with ruptured TM; not an otitis-alone. Bare aminoglycoside stays dark. Bare otitis stays 137. Dual nystagmus plus ruptured TM concatenates 368 then 379. Dual gentamicin plus nystagmus without TM/topical stays 368. Dual neomycin plus oral stays 378. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Strain mg/ml.
+- Do not call this an otitis-alone.
+- Do not put aminoglycoside drops in an ear unless the TM is intact.
+- Do not treat ototoxicity without TM/topical (368) as this loc.
+- Do not treat vestibular without named aminoglycoside (137) as this loc.
+- Do not treat oral-gut absorption (378) as this loc.
+- Do not treat otitis without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus TM rupture or topical ear → **Canine topical aminoglycoside with ruptured TM. Not an otitis-alone.** Stop the drop. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin ear drops plus a ruptured TM not an otitis-and-home night?
+- NAVLE 2: Why does gentamicin plus nystagmus without TM language stay 368, not this loc?
+- NAVLE 3: Dual-named “gentamicin, nystagmus, ruptured TM” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the drop without inventing a mg/kg table?
+- Attending: If the query is only “otitis,” why does this gate stay dark?
+- Attending: Horse gentamicin plus topical ear — fire or skip?
+- Attending: Cat plus neomycin plus eardrum — which locs fire, and why?
