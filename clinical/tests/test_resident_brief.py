@@ -14011,6 +14011,78 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside poor csf penetration", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminopus_is_not_an_abscess_alone(self):
+        b = analyze("dog", "gentamicin, abscess")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIn("not an abscess-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("purulent", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_pus_fires_aminopus(self):
+        b = analyze("dog", "amikacin, pus")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIn("not an abscess-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_low_ph_fires_aminopus(self):
+        b = analyze("cat", "tobramycin, low pH")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside reduced activity in abscess", loc)
+        self.assertIn("not an abscess-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_orbital_plus_aminopus_concatenates(self):
+        b = analyze("dog", "orbital abscess, gentamicin")
+        loc = b["localization"].lower()
+        self.assertIn("orbital cellulitis", loc)
+        self.assertIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIn("not an abscess-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminocsf_is_not_aminopus(self):
+        b = analyze("dog", "gentamicin, meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoanaer_is_not_aminopus(self):
+        b = analyze("dog", "gentamicin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mucopurulent_eye_is_not_aminopus(self):
+        b = analyze("dog", "gentamicin, mucopurulent ocular discharge")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminopus(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_abscess_is_not_aminopus(self):
+        b = analyze("dog", "abscess")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminopus(self):
+        b = analyze("horse", "gentamicin, abscess")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertNotIn("feline aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

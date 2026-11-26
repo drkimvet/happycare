@@ -5933,3 +5933,33 @@ Night rule: named aminoglycoside plus named meningitis / CSF → **Canine aminog
 - Attending: If the query is only “meningitis,” why does this gate stay dark?
 - Attending: Horse gentamicin plus meningitis — fire or skip?
 - Attending: Cat plus amikacin plus CSF — which locs fire, and why?
+
+## 377. Canine aminoglycoside reduced activity in abscess (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-pus chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (activity is reduced in anaerobic, acidic, or purulent environments). Bryant *Antimicrob Agents Chemother* 1974 PMID 4375433 (95 cites, ASM SCI; pus binds and inactivates gentamicin; printed µg/mL stays on that paper). Vaudaux *J Infect Dis* 1980 PMID 7441018 (60 cites; gentamicin inactivation in purulent exudates via cell lysis / DNA binding; affiliation not in PubMed XML). Bryant *J Infect Dis* 1992 PMID 1552196 (31 cites, Oregon Health Sciences; aminoglycoside activity suppressed by low pH and hypoxia). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit plus citation weight is Bryant AAC 1974 and Vaudaux JID 1980. Bryant 1992 carries the named-institution pH/hypoxia paper. Human chemistry is not canine abscess incidence. Do not overweight horse wound/antimicrobial papers or 2026 resistome titles. Packet 376 still owns poor CSF penetration. Packet 375 still owns the anaerobic coverage gap. Packet 159 still owns orbital abscess. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest Bryant µg/mL as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare abscess. Do not fire 376 or 375 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Bryant: **named aminoglycoside plus named abscess or pus is not an abscess-alone.** Drain. Do not send aminoglycoside as the pus plan. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus abscess / pus / purulent / low pH is canine (or feline) aminoglycoside reduced activity in abscess; not an abscess-alone. Bare aminoglycoside stays dark. Bare abscess stays 159 / anal-sac as those packets already fire. Dual orbital abscess plus gentamicin concatenates 159 then 377. Dual gentamicin plus meningitis stays 376. Dual gentamicin plus peritonitis stays 375. Mucopurulent ocular discharge plus gentamicin stays KCS, not this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Bryant µg/mL.
+- Do not call this an abscess-alone.
+- Do not send aminoglycoside as the only plan for pus or abscess.
+- Do not treat poor CSF penetration (376) as this loc.
+- Do not treat the anaerobic gap (375) as this loc.
+- Do not treat orbital abscess without named aminoglycoside (159) as this loc.
+- Do not treat abscess without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named abscess / pus → **Canine aminoglycoside reduced activity in abscess. Not an abscess-alone.** Drain. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus abscess not an abscess-and-home night?
+- NAVLE 2: Why does gentamicin plus meningitis stay 376, not this loc?
+- NAVLE 3: Dual-named “orbital abscess, gentamicin” — which locs should fire, and why?
+- Oral: How do you tell the owner the antibiotic family failed in pus without inventing a mg/kg table?
+- Attending: If the query is only “abscess,” why does this gate stay dark?
+- Attending: Horse gentamicin plus abscess — fire or skip?
+- Attending: Cat plus amikacin plus pus — which locs fire, and why?

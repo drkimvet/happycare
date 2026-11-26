@@ -519,6 +519,22 @@ AMINOCSF_SIGN_RE = re.compile(
 # harvest an aminoglycoside mg/kg table. Do not harvest
 # Goitein µg/mL. Dogs and cats. Skip horse. Mercer: limited
 # distribution into CSF. △ Plumb.
+AMINOPUS_SIGN_RE = re.compile(
+    r"\babscess|"
+    r"\bpus\b|"
+    r"(?<!muco)purulent|"
+    r"low[ -]?ph",
+    re.I,
+)
+# Packet 377: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus abscess / pus / purulent /
+# low pH only. Do not use mucopurulent (KCS / eye). Do not
+# use bare aminoglycoside. Do not use bare abscess. Do not
+# use aminoglycoside poor CSF (376). Do not use
+# aminoglycoside anaerobic coverage (375). Do not harvest
+# an aminoglycoside mg/kg table. Do not harvest Bryant µg/mL.
+# Dogs and cats. Skip horse. Mercer: activity is reduced in
+# anaerobic, acidic, or purulent environments. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7108,6 +7124,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOCSF_SIGN_RE.search(text)
     )
+    steal_aminopus_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOPUS_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7286,6 +7307,7 @@ def analyze(
         or steal_aminocis_dx
         or steal_aminoanaer_dx
         or steal_aminocsf_dx
+        or steal_aminopus_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20139,6 +20161,77 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside CSF gap."
+            )
+
+    aminopus_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOPUS_SIGN_RE.search(text)
+    )
+    if aminopus_named:
+        if spec == "cat":
+            aminopus_loc = (
+                "Feline aminoglycoside reduced activity in abscess. "
+                "Not an abscess-alone."
+            )
+        else:
+            aminopus_loc = (
+                "Canine aminoglycoside reduced activity in abscess. "
+                "Not an abscess-alone."
+            )
+        localization = (
+            f"{localization} Also {aminopus_loc}" if localization else aminopus_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside as the only plan for pus "
+            "or abscess. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer / Bryant: activity is reduced in anaerobic, "
+            "acidic, or purulent environments. Drain. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an abscess-alone. "
+            "Do not copy an aminoglycoside recipe as lobby law. "
+            "Packet 376 still owns poor CSF penetration. "
+            "Packet 375 still owns the anaerobic coverage gap. "
+            "Packet 159 still owns orbital abscess without named "
+            "aminoglycoside. "
+            "Bare abscess without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without named abscess or pus "
+            "is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside reduced activity in abscess. "
+                "Not an abscess-alone. Drain. Do not send aminoglycoside "
+                "as the pus plan. △ Plumb. Packet 376 still owns CSF. "
+                "Packet 375 still owns anaerobes. Do not copy an "
+                "aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside reduced activity in abscess. "
+                "Not an abscess-alone. Drain. Do not send aminoglycoside "
+                "as the pus plan. △ Plumb. Packet 376 still owns CSF. "
+                "Packet 159 still owns orbital abscess. Do not copy an "
+                "aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "activity is reduced in anaerobic, acidic, or purulent "
+            "environments. Bryant AAC 1974 PMID 4375433. "
+            "Vaudaux J Infect Dis 1980 PMID 7441018. "
+            "Bryant J Infect Dis 1992 PMID 1552196 (Oregon). "
+            "Human chemistry is not canine incidence. "
+            "Do not harvest aminoglycoside mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside abscess gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside abscess gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

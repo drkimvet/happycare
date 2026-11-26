@@ -313,6 +313,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminocis` | Assessment | Canine aminoglycoside-cisplatin nephrotoxicity stack / not an AKI-alone |
 | `ddx-aminoanaer` | Assessment | Canine aminoglycoside anaerobic coverage gap / not a peritonitis-alone |
 | `ddx-aminocsf` | Assessment | Canine aminoglycoside poor CSF penetration / not a meningitis-alone |
+| `ddx-aminopus` | Assessment | Canine aminoglycoside reduced activity in abscess / not an abscess-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -379,6 +380,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminocis` | Discharge | After aminoglycoside / cisplatin stack talk |
 | `dc-aminoanaer` | Discharge | After aminoglycoside / anaerobic coverage-gap talk |
 | `dc-aminocsf` | Discharge | After aminoglycoside / CSF penetration-gap talk |
+| `dc-aminopus` | Discharge | After aminoglycoside / abscess-pus gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4614,6 +4616,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this a meningitis-alone. Send parenteral aminoglycoside as the meningitis plan. Treat SRMA or otogenic meningitis without named aminoglycoside as this loc.
 Do next: Name canine aminoglycoside poor CSF penetration. Not a meningitis-alone. Do not send parenteral aminoglycoside as the CSF plan. △ Plumb. Packet 375 still owns the anaerobic gap. Do not copy an aminoglycoside table.
 
+### `ddx-aminopus`
+
+Aminoglycoside abscess gap — {{patient.name}}
+Canine aminoglycoside reduced activity in abscess [yes / not]. Not an abscess-alone [yes / not]. Drain [ ]. Packet 376 CSF [ ]. Packet 375 anaerobic [ ]. Packet 159 orbital [ ]. Bare abscess [ ].
+
+DDX:
+1. Named aminoglycoside plus named abscess / pus / purulent / low pH — **Canine aminoglycoside reduced activity in abscess. Not an abscess-alone**
+2. Mercer / Bryant AAC 1974 PMID 4375433: activity is reduced in anaerobic, acidic, or purulent environments. Drain. Do not send aminoglycoside as the pus plan. △ Plumb
+3. Packet 376 owns poor CSF penetration. Packet 375 owns the anaerobic gap. Packet 159 owns orbital abscess. Bare abscess is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest Bryant µg/mL. Human chemistry is not canine incidence
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare abscess stays dark. Mucopurulent eye stays KCS. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this an abscess-alone. Send aminoglycoside as the only pus plan. Treat orbital abscess without named aminoglycoside as this loc.
+Do next: Name canine aminoglycoside reduced activity in abscess. Not an abscess-alone. Drain. △ Plumb. Packet 376 still owns CSF. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5155,6 +5172,14 @@ Return now for a painful or swollen belly, vomiting, collapse, or not drinking. 
 We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home as the brain antibiotic.
 
 Return now for a stiff neck, dullness, seizure, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminopus`
+
+{{patient.name}} was on an aminoglycoside antibiotic around an abscess or pus pocket. That family of antibiotics works poorly in pus, in acid, and where there is little air. Using it as the only abscess plan is not the same as draining the pocket. This is not a simple abscess-and-home plan.
+
+We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home as the abscess antibiotic.
+
+Return now for a painful swelling, fever, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 
