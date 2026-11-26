@@ -13796,6 +13796,72 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside-amphotericin nephrotoxicity stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminocis_is_not_an_aki_alone(self):
+        b = analyze("dog", "gentamicin, cisplatin")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send aminoglycoside plus cisplatin home as aki", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("cisplatin mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_platinol_fires_aminocis(self):
+        b = analyze("dog", "amikacin, Platinol")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_cisplatinum_fires_aminocis(self):
+        b = analyze("cat", "tobramycin, cis-platinum")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_plus_aminocis_concatenates(self):
+        b = analyze("dog", "gentamicin, AKI, cisplatin")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoampho_is_not_aminocis(self):
+        b = analyze("dog", "gentamicin, amphotericin")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-amphotericin nephrotoxicity stack", loc)
+        self.assertNotIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminocis(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cisplatin_is_not_aminocis(self):
+        b = analyze("dog", "cisplatin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_carboplatin_is_not_aminocis(self):
+        b = analyze("dog", "gentamicin, carboplatin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminocis(self):
+        b = analyze("horse", "gentamicin, cisplatin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertNotIn("feline aminoglycoside-cisplatin nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

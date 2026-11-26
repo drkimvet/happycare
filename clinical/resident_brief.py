@@ -469,6 +469,21 @@ AMINOAMPHO_SIGN_RE = re.compile(
 # Mercer: risk of nephrotoxicity rises with concurrent
 # nephrotoxins; amphotericin B is a concurrent nephrotoxin.
 # △ Plumb.
+AMINOCIS_SIGN_RE = re.compile(
+    r"cisplatin|"
+    r"cis-platinum|"
+    r"cis platinum|"
+    r"platinol",
+    re.I,
+)
+# Packet 374: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus cisplatin / cis-platinum /
+# Platinol only. Do not use \bplatin (carboplatin). Do not
+# use bare aminoglycoside. Do not use bare cisplatin. Do not
+# use aminoglycoside-amphotericin (373). Do not harvest an
+# aminoglycoside or cisplatin mg/kg table. Dogs and cats.
+# Skip horse. Mercer / Grauer: cisplatin is a concurrent
+# nephrotoxin. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7043,6 +7058,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOAMPHO_SIGN_RE.search(text)
     )
+    steal_aminocis_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOCIS_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7218,6 +7238,7 @@ def analyze(
         or steal_aminonsaid_dx
         or steal_aminobeta_dx
         or steal_aminoampho_dx
+        or steal_aminocis_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -19854,6 +19875,79 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside-amphotericin stack."
+            )
+
+    aminocis_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOCIS_SIGN_RE.search(text)
+    )
+    if aminocis_named:
+        if spec == "cat":
+            aminocis_loc = (
+                "Feline aminoglycoside-cisplatin nephrotoxicity "
+                "stack. Not an AKI-alone."
+            )
+        else:
+            aminocis_loc = (
+                "Canine aminoglycoside-cisplatin nephrotoxicity "
+                "stack. Not an AKI-alone."
+            )
+        localization = (
+            f"{localization} Also {aminocis_loc}" if localization else aminocis_loc
+        )
+        hard_stops.append(
+            "Do not send aminoglycoside plus cisplatin home as AKI. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest a cisplatin mg/kg table. "
+            "Mercer: risk of nephrotoxicity rises with concurrent "
+            "nephrotoxins. Cisplatin is a concurrent nephrotoxin. "
+            "Name the stack. Stop or unstack. Hydrate. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an AKI-alone. "
+            "Do not copy a cisplatin recipe as lobby law. "
+            "Packet 373 still owns the aminoglycoside-amphotericin "
+            "stack. "
+            "Packet 367 still owns aminoglycoside nephrotoxicity "
+            "without named cisplatin. "
+            "Packet 199 still owns osteosarcoma chemo without "
+            "named aminoglycoside. "
+            "Bare cisplatin without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without named cisplatin is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside-cisplatin nephrotoxicity "
+                "stack. Not an AKI-alone. Stop or unstack. Hydrate. "
+                "△ Plumb. Packet 373 still owns the amphotericin "
+                "stack. Packet 199 still owns OSA chemo. Do not copy "
+                "an aminoglycoside or cisplatin table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside-cisplatin nephrotoxicity "
+                "stack. Not an AKI-alone. Stop or unstack. Hydrate. "
+                "△ Plumb. Packet 373 still owns the amphotericin "
+                "stack. Packet 199 still owns OSA chemo. Do not copy "
+                "an aminoglycoside or cisplatin table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "risk of nephrotoxicity rises with concurrent "
+            "nephrotoxins. Grauer VCNA 1996 PMID 8911027 (CSU). "
+            "Knapp JVIM 2013 PMID 23205923 is cisplatin TCC, not "
+            "this stack. Packet 373 amphotericin. Packet 199 OSA. "
+            "Do not harvest aminoglycoside or cisplatin mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside-cisplatin stack."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside-cisplatin stack."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

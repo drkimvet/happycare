@@ -5843,3 +5843,33 @@ Night rule: named aminoglycoside plus named amphotericin → **Canine aminoglyco
 - Attending: If the query is only “amphotericin,” why does this gate stay dark?
 - Attending: Horse gentamicin plus amphotericin — fire or skip?
 - Attending: Cat plus amikacin plus AmBisome — which locs fire, and why?
+
+## 374. Canine aminoglycoside-cisplatin nephrotoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-cisplatin chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (risk of nephrotoxicity rises with concurrent nephrotoxins). Grauer *Vet Clin North Am Small Anim Pract* 1996 PMID 8911027 (10 cites, Colorado State CVM; names gentamicin, cisplatin, amphotericin, and NSAIDs among hospital-acquired ARF agents). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Grauer CSU is the stack-naming paper. Knapp *J Vet Intern Med* 2013 PMID 23205923 (57 cites, Purdue; cisplatin vs firocoxib TCC) is cisplatin renal-adjacent chemo, not this AG stack. Chun/Knapp *JAVMA* 1996 PMID 8899023 (43 cites, Purdue; cisplatin TCC). Do not overweight Kidney Int platinum-OCT papers or J&J biomarker work. Packet 373 still owns the aminoglycoside-amphotericin stack. Packet 367 still owns aminoglycoside nephrotoxicity without named cisplatin. Packet 199 still owns osteosarcoma chemo without named aminoglycoside. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a cisplatin mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare cisplatin. Do not fire 373 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Grauer: **named aminoglycoside plus named cisplatin is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed aminoglycoside and cisplatin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus cisplatin / cis-platinum / Platinol is canine (or feline) aminoglycoside-cisplatin nephrotoxicity stack; not an AKI-alone. Bare aminoglycoside stays dark. Bare cisplatin stays 199 if OSA is named, otherwise dark for this loc. Dual AKI plus cisplatin concatenates 367 then 374. Dual amphotericin plus cisplatin concatenates 373 then 374. Dual gentamicin plus amphotericin without cisplatin stays 373. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a cisplatin mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside plus cisplatin home as AKI.
+- Do not treat the amphotericin stack (373) as this loc.
+- Do not treat aminoglycoside nephrotoxicity without named cisplatin (367) as this loc.
+- Do not treat osteosarcoma chemo without named aminoglycoside (199) as this loc.
+- Do not treat cisplatin without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named cisplatin → **Canine aminoglycoside-cisplatin nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus cisplatin not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus amphotericin stay 373, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, cisplatin” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “cisplatin,” why does this gate stay dark?
+- Attending: Horse gentamicin plus cisplatin — fire or skip?
+- Attending: Cat plus amikacin plus Platinol — which locs fire, and why?

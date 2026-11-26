@@ -310,6 +310,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminonsaid` | Assessment | Canine aminoglycoside-NSAID nephrotoxicity stack / not an AKI-alone |
 | `ddx-aminobeta` | Assessment | Canine aminoglycoside-beta-lactam syringe mix / not a sepsis-alone |
 | `ddx-aminoampho` | Assessment | Canine aminoglycoside-amphotericin nephrotoxicity stack / not an AKI-alone |
+| `ddx-aminocis` | Assessment | Canine aminoglycoside-cisplatin nephrotoxicity stack / not an AKI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -373,6 +374,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminonsaid` | Discharge | After aminoglycoside / NSAID stack talk |
 | `dc-aminobeta` | Discharge | After aminoglycoside / beta-lactam syringe-mix talk |
 | `dc-aminoampho` | Discharge | After aminoglycoside / amphotericin stack talk |
+| `dc-aminocis` | Discharge | After aminoglycoside / cisplatin stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4563,6 +4565,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Harvest an amphotericin mg/kg table. Call this an AKI-alone. Send aminoglycoside plus amphotericin home as AKI. Treat bare amphotericin as this loc.
 Do next: Name canine aminoglycoside-amphotericin nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 372 still owns the syringe mix. Do not copy an aminoglycoside or amphotericin table.
 
+### `ddx-aminocis`
+
+Aminoglycoside-cisplatin stack — {{patient.name}}
+Canine aminoglycoside-cisplatin nephrotoxicity stack [yes / not]. Not an AKI-alone [yes / not]. Stop or unstack [ ]. Hydrate [ ]. Packet 373 amphotericin [ ]. Packet 367 kidney without cisplatin [ ]. Packet 199 OSA chemo [ ]. Bare cisplatin [ ].
+
+DDX:
+1. Named aminoglycoside plus named cisplatin — **Canine aminoglycoside-cisplatin nephrotoxicity stack. Not an AKI-alone**
+2. Mercer / Grauer VCNA 1996 PMID 8911027: cisplatin is a concurrent nephrotoxin. Stop or unstack. Hydrate. △ Plumb
+3. Packet 373 owns the amphotericin stack. Packet 367 owns nephrotoxicity without named cisplatin. Packet 199 owns OSA chemo without named aminoglycoside. Bare cisplatin is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest a cisplatin table. Do not send this home as AKI
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare cisplatin stays dark. Do not copy an aminoglycoside or cisplatin table
+
+Do not: harvest an aminoglycoside mg/kg table. Harvest a cisplatin mg/kg table. Call this an AKI-alone. Send aminoglycoside plus cisplatin home as AKI. Treat bare cisplatin as this loc.
+Do next: Name canine aminoglycoside-cisplatin nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 373 still owns the amphotericin stack. Do not copy an aminoglycoside or cisplatin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5078,6 +5095,14 @@ Return now for fever, collapse, or not eating. {{location.phonenumber}}
 {{patient.name}} was on an aminoglycoside antibiotic and amphotericin. Used together, these medicines can raise the risk of kidney injury. That is not the same as ordinary kidney failure from another cause. This is not a simple AKI-and-home plan.
 
 We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin or leftover amphotericin from home.
+
+Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminocis`
+
+{{patient.name}} was on an aminoglycoside antibiotic and cisplatin. Used together, these medicines can raise the risk of kidney injury. That is not the same as ordinary kidney failure from another cause. This is not a simple AKI-and-home plan.
+
+We named the stack and changed the medicines. Give only the medicines we sent, as labeled. Keep water available. Do not add leftover gentamicin or leftover cisplatin from home.
 
 Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenumber}}
 
