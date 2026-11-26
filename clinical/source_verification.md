@@ -5903,3 +5903,33 @@ Night rule: named aminoglycoside plus named anaerobes / peritonitis → **Canine
 - Attending: If the query is only “peritonitis,” why does this gate stay dark?
 - Attending: Horse gentamicin plus peritonitis — fire or skip?
 - Attending: Cat plus amikacin plus Bacteroides — which locs fire, and why?
+
+## 376. Canine aminoglycoside poor CSF penetration (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-CSF chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (limited distribution into CSF). Goitein *Chemotherapy* 1975 PMID 1157573 (21 cites; dogs; parenteral gentamicin penetrates CSF poorly even at the height of experimental meningitis; printed µg/mL and CSF:serum ratios stay on that paper). Riviere *Chemotherapy* 1981 PMID 7261687 (4 cites; beagle ventricular cannula; printed 10 mg/kg stays on that paper). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit plus citation weight is Goitein 1975 in dogs. Riviere is supporting cannula work, not a lobby dose. Do not overweight Dow *J Vet Intern Med* 1988 PMID 3230556 (34 cites, Colorado State; CNS anaerobic infection — packet 375 if anaerobes are named). Do not overweight rodent / doxorubicin blood-brain papers or G-CSF. Packet 375 still owns the aminoglycoside anaerobic coverage gap. Packet 208 still owns otogenic meningitis. Packet 205 still owns SRMA. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest Goitein µg/mL as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare meningitis. Do not fire 375 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Goitein: **named aminoglycoside plus named meningitis or CSF is not a meningitis-alone.** Do not send parenteral aminoglycoside as the CSF plan. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus meningitis / encephalitis / CSF / blood-brain is canine (or feline) aminoglycoside poor CSF penetration; not a meningitis-alone. Bare aminoglycoside stays dark. Bare meningitis stays 208 / 205 / 206 as those packets already fire. Dual otogenic meningitis plus gentamicin concatenates 208 then 376. Dual SRMA spelled as meningitis plus gentamicin concatenates 205 then 376. Bare SRMA plus gentamicin without meningitis / CSF words stays 205, not this loc. Dual gentamicin plus peritonitis stays 375. G-CSF stays dark. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Goitein µg/mL.
+- Do not call this a meningitis-alone.
+- Do not send parenteral aminoglycoside as the meningitis plan.
+- Do not treat the anaerobic gap (375) as this loc.
+- Do not treat otogenic meningitis without named aminoglycoside (208) as this loc.
+- Do not treat SRMA without named aminoglycoside (205) as this loc.
+- Do not treat meningitis without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named meningitis / CSF → **Canine aminoglycoside poor CSF penetration. Not a meningitis-alone.** Do not send parenteral aminoglycoside as the CSF plan. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus meningitis not a meningitis-and-home night?
+- NAVLE 2: Why does gentamicin plus peritonitis stay 375, not this loc?
+- NAVLE 3: Dual-named “otogenic meningitis, gentamicin” — which locs should fire, and why?
+- Oral: How do you tell the owner the antibiotic family missed the spinal fluid without inventing a mg/kg table?
+- Attending: If the query is only “meningitis,” why does this gate stay dark?
+- Attending: Horse gentamicin plus meningitis — fire or skip?
+- Attending: Cat plus amikacin plus CSF — which locs fire, and why?

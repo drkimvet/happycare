@@ -312,6 +312,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminoampho` | Assessment | Canine aminoglycoside-amphotericin nephrotoxicity stack / not an AKI-alone |
 | `ddx-aminocis` | Assessment | Canine aminoglycoside-cisplatin nephrotoxicity stack / not an AKI-alone |
 | `ddx-aminoanaer` | Assessment | Canine aminoglycoside anaerobic coverage gap / not a peritonitis-alone |
+| `ddx-aminocsf` | Assessment | Canine aminoglycoside poor CSF penetration / not a meningitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -377,6 +378,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminoampho` | Discharge | After aminoglycoside / amphotericin stack talk |
 | `dc-aminocis` | Discharge | After aminoglycoside / cisplatin stack talk |
 | `dc-aminoanaer` | Discharge | After aminoglycoside / anaerobic coverage-gap talk |
+| `dc-aminocsf` | Discharge | After aminoglycoside / CSF penetration-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4597,6 +4599,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this a peritonitis-alone. Send aminoglycoside as the only antimicrobial for anaerobes. Treat FIP or tetanus as this loc.
 Do next: Name canine aminoglycoside anaerobic coverage gap. Not a peritonitis-alone. Cover anaerobes. △ Plumb. Packet 374 still owns cisplatin. Do not copy an aminoglycoside table.
 
+### `ddx-aminocsf`
+
+Aminoglycoside CSF gap — {{patient.name}}
+Canine aminoglycoside poor CSF penetration [yes / not]. Not a meningitis-alone [yes / not]. Parenteral aminoglycoside is not the CSF plan [ ]. Packet 375 anaerobic [ ]. Packet 208 otogenic [ ]. Packet 205 SRMA [ ]. Bare meningitis [ ].
+
+DDX:
+1. Named aminoglycoside plus named meningitis / encephalitis / CSF / blood-brain — **Canine aminoglycoside poor CSF penetration. Not a meningitis-alone**
+2. Mercer / Goitein Chemotherapy 1975 PMID 1157573: limited CSF distribution even with inflammation. Do not send parenteral aminoglycoside as the meningitis plan. △ Plumb
+3. Packet 375 owns the anaerobic gap. Packet 208 owns otogenic meningitis. Packet 205 owns SRMA. Bare meningitis is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest Goitein µg/mL. Do not copy a Riviere cannula recipe
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare meningitis stays dark. G-CSF stays dark. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this a meningitis-alone. Send parenteral aminoglycoside as the meningitis plan. Treat SRMA or otogenic meningitis without named aminoglycoside as this loc.
+Do next: Name canine aminoglycoside poor CSF penetration. Not a meningitis-alone. Do not send parenteral aminoglycoside as the CSF plan. △ Plumb. Packet 375 still owns the anaerobic gap. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5130,6 +5147,14 @@ Return now for no urine, vomiting, collapse, or not drinking. {{location.phonenu
 We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home as the only antibiotic.
 
 Return now for a painful or swollen belly, vomiting, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminocsf`
+
+{{patient.name}} was on an aminoglycoside antibiotic around a brain or spinal-fluid infection. That family of antibiotics does not reach spinal fluid well, even when the lining of the brain is inflamed. Using it as the meningitis plan is not the same as treating meningitis. This is not a simple meningitis-and-home plan.
+
+We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home as the brain antibiotic.
+
+Return now for a stiff neck, dullness, seizure, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 

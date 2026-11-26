@@ -502,6 +502,23 @@ AMINOANAER_SIGN_RE = re.compile(
 # aminoglycoside mg/kg table. Dogs and cats. Skip horse.
 # Mercer / Dow: aminoglycosides are not active against
 # anaerobes. △ Plumb.
+AMINOCSF_SIGN_RE = re.compile(
+    r"meningitis|"
+    r"encephalitis|"
+    r"cerebrospinal|"
+    r"blood[ -]?brain|"
+    r"(?<!g-)\bcsf\b",
+    re.I,
+)
+# Packet 376: named aminoglycoside / gentamicin / amikacin /
+# tobramycin / neomycin plus meningitis / encephalitis /
+# CSF / blood-brain only. Do not use G-CSF. Do not use bare
+# aminoglycoside. Do not use bare meningitis. Do not steal
+# otogenic meningitis or SRMA without named aminoglycoside.
+# Do not use aminoglycoside anaerobic coverage (375). Do not
+# harvest an aminoglycoside mg/kg table. Do not harvest
+# Goitein µg/mL. Dogs and cats. Skip horse. Mercer: limited
+# distribution into CSF. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7086,6 +7103,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOANAER_SIGN_RE.search(text)
     )
+    steal_aminocsf_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOCSF_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7263,6 +7285,7 @@ def analyze(
         or steal_aminoampho_dx
         or steal_aminocis_dx
         or steal_aminoanaer_dx
+        or steal_aminocsf_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20044,6 +20067,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside anaerobic gap."
+            )
+
+    aminocsf_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and AMINOCSF_SIGN_RE.search(text)
+    )
+    if aminocsf_named:
+        if spec == "cat":
+            aminocsf_loc = (
+                "Feline aminoglycoside poor CSF penetration. "
+                "Not a meningitis-alone."
+            )
+        else:
+            aminocsf_loc = (
+                "Canine aminoglycoside poor CSF penetration. "
+                "Not a meningitis-alone."
+            )
+        localization = (
+            f"{localization} Also {aminocsf_loc}" if localization else aminocsf_loc
+        )
+        hard_stops.append(
+            "Do not send parenteral aminoglycoside as the meningitis "
+            "plan. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer / Goitein: aminoglycosides have limited "
+            "distribution into CSF even with inflammation. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a meningitis-alone. "
+            "Do not copy an aminoglycoside recipe as lobby law. "
+            "Packet 375 still owns the aminoglycoside anaerobic "
+            "coverage gap. "
+            "Packet 208 still owns otogenic meningitis without named "
+            "aminoglycoside. "
+            "Packet 205 still owns SRMA without named aminoglycoside. "
+            "Bare meningitis without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without named meningitis or CSF "
+            "is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside poor CSF penetration. "
+                "Not a meningitis-alone. Do not send parenteral "
+                "aminoglycoside as the CSF plan. △ Plumb. Packet 375 "
+                "still owns the anaerobic gap. Packet 208 still owns "
+                "otogenic meningitis. Do not copy an aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside poor CSF penetration. "
+                "Not a meningitis-alone. Do not send parenteral "
+                "aminoglycoside as the CSF plan. △ Plumb. Packet 375 "
+                "still owns the anaerobic gap. Packet 205 still owns "
+                "SRMA. Do not copy an aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "limited distribution into CSF. "
+            "Goitein Chemotherapy 1975 PMID 1157573 (dogs). "
+            "Riviere Chemotherapy 1981 PMID 7261687 is beagle CSF "
+            "cannula, not a lobby dose. "
+            "Dow JVIM 1988 is CNS anaerobes, not this loc. "
+            "Do not harvest aminoglycoside mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside CSF gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside CSF gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

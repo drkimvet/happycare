@@ -13940,6 +13940,77 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside anaerobic coverage gap", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminocsf_is_not_a_meningitis_alone(self):
+        b = analyze("dog", "gentamicin, meningitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("limited", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_amikacin_csf_fires_aminocsf(self):
+        b = analyze("dog", "amikacin, CSF")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_encephalitis_fires_aminocsf(self):
+        b = analyze("cat", "tobramycin, encephalitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_otogenic_plus_aminocsf_concatenates(self):
+        b = analyze("dog", "otogenic meningitis, gentamicin")
+        loc = b["localization"].lower()
+        self.assertIn("otogenic meningitis", loc)
+        self.assertIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoanaer_is_not_aminocsf(self):
+        b = analyze("dog", "gentamicin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_without_meningitis_word_is_not_aminocsf(self):
+        b = analyze("dog", "SRMA, gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_gentamicin_is_not_aminocsf(self):
+        b = analyze("dog", "gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_meningitis_is_not_aminocsf(self):
+        b = analyze("dog", "meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gcsf_is_not_aminocsf(self):
+        b = analyze("dog", "gentamicin, G-CSF")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminocsf(self):
+        b = analyze("horse", "gentamicin, meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertNotIn("feline aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
