@@ -14083,6 +14083,83 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline aminoglycoside reduced activity in abscess", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_aminooral_is_not_a_diarrhea_alone(self):
+        b = analyze("dog", "neomycin, oral")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("poorly absorbed", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_neomycin_diarrhea_fires_aminooral(self):
+        b = analyze("dog", "neomycin, diarrhea")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gentamicin_oral_diarrhea_fires_aminooral(self):
+        b = analyze("dog", "gentamicin, oral, diarrhea")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_tobramycin_po_enteritis_fires_aminooral(self):
+        b = analyze("cat", "tobramycin, PO, enteritis")
+        loc = b["localization"].lower()
+        self.assertIn("feline aminoglycoside poor oral absorption", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ahds_plus_neomycin_concatenates(self):
+        b = analyze("dog", "bloody diarrhea, neomycin")
+        loc = b["localization"].lower()
+        self.assertIn("ahds", loc)
+        self.assertIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gentamicin_diarrhea_without_oral_is_not_aminooral(self):
+        b = analyze("dog", "gentamicin, diarrhea")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminopus_is_not_aminooral(self):
+        b = analyze("dog", "gentamicin, abscess")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside reduced activity in abscess", loc)
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oral_melanoma_is_not_aminooral(self):
+        b = analyze("dog", "oral melanoma, gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_neomycin_is_not_aminooral(self):
+        b = analyze("dog", "neomycin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_diarrhea_is_not_aminooral(self):
+        b = analyze("dog", "diarrhea")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_aminooral(self):
+        b = analyze("horse", "neomycin, oral")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine aminoglycoside poor oral absorption", loc)
+        self.assertNotIn("feline aminoglycoside poor oral absorption", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

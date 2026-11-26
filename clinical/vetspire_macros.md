@@ -314,6 +314,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminoanaer` | Assessment | Canine aminoglycoside anaerobic coverage gap / not a peritonitis-alone |
 | `ddx-aminocsf` | Assessment | Canine aminoglycoside poor CSF penetration / not a meningitis-alone |
 | `ddx-aminopus` | Assessment | Canine aminoglycoside reduced activity in abscess / not an abscess-alone |
+| `ddx-aminooral` | Assessment | Canine aminoglycoside poor oral absorption / not a diarrhea-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -381,6 +382,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminoanaer` | Discharge | After aminoglycoside / anaerobic coverage-gap talk |
 | `dc-aminocsf` | Discharge | After aminoglycoside / CSF penetration-gap talk |
 | `dc-aminopus` | Discharge | After aminoglycoside / abscess-pus gap talk |
+| `dc-aminooral` | Discharge | After aminoglycoside / oral-gut absorption talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4631,6 +4633,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this an abscess-alone. Send aminoglycoside as the only pus plan. Treat orbital abscess without named aminoglycoside as this loc.
 Do next: Name canine aminoglycoside reduced activity in abscess. Not an abscess-alone. Drain. △ Plumb. Packet 376 still owns CSF. Do not copy an aminoglycoside table.
 
+### `ddx-aminooral`
+
+Aminoglycoside oral-gut gap — {{patient.name}}
+Canine aminoglycoside poor oral absorption [yes / not]. Not a diarrhea-alone [yes / not]. Oral neomycin is gut-only [ ]. Packet 377 abscess [ ]. Packet 375 anaerobic [ ]. Packet 139 HE [ ]. Bare diarrhea [ ].
+
+DDX:
+1. Neomycin plus oral / PO / diarrhea / enteritis, or named aminoglycoside plus oral / PO plus diarrhea / enteritis — **Canine aminoglycoside poor oral absorption. Not a diarrhea-alone**
+2. Mercer: poorly absorbed from the GI tract. Oral neomycin is gut-only. Do not send oral aminoglycoside as systemic coverage. △ Plumb
+3. Packet 377 owns abscess. Packet 375 owns anaerobes. Packet 139 owns HE. Parenteral aminoglycoside plus diarrhea without oral/PO is not this loc
+4. Do not harvest an aminoglycoside table. Do not harvest HE neomycin 15. Do not copy a Labrasol oral gentamicin recipe
+5. Dog or cat can fire. Horse does not fire. Bare aminoglycoside or bare diarrhea stays dark. Oral melanoma stays dark. Do not copy an aminoglycoside table
+
+Do not: harvest an aminoglycoside mg/kg table. Call this a diarrhea-alone. Send oral aminoglycoside as systemic coverage. Treat parenteral aminoglycoside plus diarrhea as this loc.
+Do next: Name canine aminoglycoside poor oral absorption. Not a diarrhea-alone. Oral neomycin is gut-only. △ Plumb. Packet 377 still owns abscess. Do not copy an aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5180,6 +5197,14 @@ Return now for a stiff neck, dullness, seizure, collapse, or not drinking. {{loc
 We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover gentamicin from home as the abscess antibiotic.
 
 Return now for a painful swelling, fever, collapse, or not drinking. {{location.phonenumber}}
+
+### `dc-aminooral`
+
+{{patient.name}} was on an aminoglycoside antibiotic by mouth around diarrhea. That family of antibiotics is barely absorbed from the gut. Oral neomycin stays in the intestine; it is not a whole-body antibiotic. Using it as the diarrhea plan is not the same as treating a systemic infection. This is not a simple diarrhea-and-home plan.
+
+We named the coverage gap and changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover neomycin from home as a whole-body antibiotic.
+
+Return now for bloody diarrhea, collapse, or not drinking. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -5963,3 +5963,33 @@ Night rule: named aminoglycoside plus named abscess / pus → **Canine aminoglyc
 - Attending: If the query is only “abscess,” why does this gate stay dark?
 - Attending: Horse gentamicin plus abscess — fire or skip?
 - Attending: Cat plus amikacin plus pus — which locs fire, and why?
+
+## 378. Canine aminoglycoside poor oral absorption / neomycin gut-only (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett oral-aminoglycoside chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (aminoglycosides are poorly absorbed from the GI tract). Prasad *Int J Pharm* 2003 PMID 14643972 (30 cites, Kyoto Pharmaceutical University; beagle oral gentamicin has very poor intestinal permeability / low oral bioavailability; Labrasol / Eudragit capsule recipe stays on that paper). Ito *J Control Release* 2005 PMID 15908031 (70 cites, same Kyoto lab; oral solid gentamicin formulation challenge — not this loc). Hill *Br Vet J* 1973 PMID 4733758 (1 cite; oral neomycin in the dog — 0-cite-adjacent, not the weight). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Mercer. Prasad 2003 names poor oral bioavailability in the dog; do not overweight Ito 70 cites as a lobby oral-gentamicin recipe. Kyoto pharmacokinetics is not a named CVM. Packet 377 still owns the abscess gap. Packet 375 still owns the anaerobic coverage gap. Packet 139 still owns HE (printed neomycin 15 mg/kg stays on that page). Do not harvest an aminoglycoside mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare diarrhea. Do not fire parenteral aminoglycoside plus diarrhea without oral/PO. Do not fire 377 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **oral neomycin is gut-only, not a diarrhea-alone.** Do not send oral aminoglycoside as systemic coverage. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: neomycin plus oral / PO / diarrhea / enteritis, or named aminoglycoside plus oral / PO plus diarrhea / enteritis, is canine (or feline) aminoglycoside poor oral absorption; not a diarrhea-alone. Bare aminoglycoside stays dark. Bare diarrhea stays AHDS / colitis / giardia as those packets already fire. Dual bloody diarrhea plus neomycin concatenates AHDS then 378. Dual gentamicin plus abscess stays 377. Dual gentamicin plus diarrhea without oral/PO stays dark for this loc. Oral melanoma plus gentamicin stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest HE neomycin 15.
+- Do not copy a Labrasol oral gentamicin recipe.
+- Do not call this a diarrhea-alone.
+- Do not send oral aminoglycoside as systemic coverage.
+- Do not treat the abscess gap (377) as this loc.
+- Do not treat the anaerobic gap (375) as this loc.
+- Do not treat parenteral aminoglycoside plus diarrhea without oral/PO as this loc.
+
+Night rule: oral neomycin or oral aminoglycoside plus diarrhea → **Canine aminoglycoside poor oral absorption. Not a diarrhea-alone.** Gut-only. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is oral neomycin plus diarrhea not a diarrhea-and-home night?
+- NAVLE 2: Why does gentamicin plus diarrhea without oral/PO stay dark for this loc?
+- NAVLE 3: Dual-named “bloody diarrhea, neomycin” — which locs should fire, and why?
+- Oral: How do you tell the owner the gut antibiotic is not a whole-body antibiotic without inventing a mg/kg table?
+- Attending: If the query is only “diarrhea,” why does this gate stay dark?
+- Attending: Horse neomycin plus oral — fire or skip?
+- Attending: Cat plus tobramycin plus PO plus enteritis — which locs fire, and why?

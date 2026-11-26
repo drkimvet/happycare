@@ -535,6 +535,26 @@ AMINOPUS_SIGN_RE = re.compile(
 # an aminoglycoside mg/kg table. Do not harvest Bryant µg/mL.
 # Dogs and cats. Skip horse. Mercer: activity is reduced in
 # anaerobic, acidic, or purulent environments. △ Plumb.
+NEOMYCIN_RE = re.compile(r"neomycin", re.I)
+AMINOORAL_SIGN_RE = re.compile(
+    r"\boral(?! melanoma)\b|"
+    r"\bp\.o\.?\b|"
+    r"\bpo\b",
+    re.I,
+)
+AMINOENTER_SIGN_RE = re.compile(
+    r"diarrhea|diarrhoea|enteritis|gut[- ]only",
+    re.I,
+)
+# Packet 378: neomycin plus oral / PO / diarrhea / enteritis,
+# or named aminoglycoside plus oral / PO plus diarrhea /
+# enteritis. Prototype is oral neomycin gut-only. Do not use
+# gentamicin plus diarrhea without oral/PO (AHDS). Do not use
+# oral melanoma. Do not use bare aminoglycoside. Do not use
+# bare diarrhea. Do not use aminoglycoside abscess (377).
+# Do not harvest an aminoglycoside mg/kg table. Do not harvest
+# HE neomycin 15. Dogs and cats. Skip horse. Mercer: poorly
+# absorbed from the GI tract. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7129,6 +7149,23 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOPUS_SIGN_RE.search(text)
     )
+    steal_aminooral_dx = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and (
+            (
+                NEOMYCIN_RE.search(text)
+                and (
+                    AMINOORAL_SIGN_RE.search(text)
+                    or AMINOENTER_SIGN_RE.search(text)
+                )
+            )
+            or (
+                AMINOORAL_SIGN_RE.search(text)
+                and AMINOENTER_SIGN_RE.search(text)
+            )
+        )
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7308,6 +7345,7 @@ def analyze(
         or steal_aminoanaer_dx
         or steal_aminocsf_dx
         or steal_aminopus_dx
+        or steal_aminooral_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20232,6 +20270,88 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for aminoglycoside abscess gap."
+            )
+
+    aminooral_named = (
+        spec in {"dog", "cat"}
+        and AMINOGLY_RE.search(text)
+        and (
+            (
+                NEOMYCIN_RE.search(text)
+                and (
+                    AMINOORAL_SIGN_RE.search(text)
+                    or AMINOENTER_SIGN_RE.search(text)
+                )
+            )
+            or (
+                AMINOORAL_SIGN_RE.search(text)
+                and AMINOENTER_SIGN_RE.search(text)
+            )
+        )
+    )
+    if aminooral_named:
+        if spec == "cat":
+            aminooral_loc = (
+                "Feline aminoglycoside poor oral absorption. "
+                "Not a diarrhea-alone."
+            )
+        else:
+            aminooral_loc = (
+                "Canine aminoglycoside poor oral absorption. "
+                "Not a diarrhea-alone."
+            )
+        localization = (
+            f"{localization} Also {aminooral_loc}" if localization else aminooral_loc
+        )
+        hard_stops.append(
+            "Do not send oral aminoglycoside as systemic coverage. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Mercer: aminoglycosides are poorly absorbed from the "
+            "GI tract. Neomycin oral is gut-only. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a diarrhea-alone. "
+            "Do not copy an aminoglycoside recipe as lobby law. "
+            "Do not copy a Labrasol oral gentamicin recipe. "
+            "Packet 377 still owns the abscess gap. "
+            "Packet 375 still owns the anaerobic coverage gap. "
+            "Packet 139 still owns HE without this oral-gut trap. "
+            "Bare diarrhea without named aminoglycoside is not this loc. "
+            "Bare aminoglycoside without oral or diarrhea language "
+            "is not this loc. "
+            "Parenteral aminoglycoside plus diarrhea without oral/PO "
+            "is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline aminoglycoside poor oral absorption. "
+                "Not a diarrhea-alone. Oral neomycin is gut-only. "
+                "△ Plumb. Packet 377 still owns abscess. Do not copy "
+                "an aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine aminoglycoside poor oral absorption. "
+                "Not a diarrhea-alone. Oral neomycin is gut-only. "
+                "△ Plumb. Packet 377 still owns abscess. Do not copy "
+                "an aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck aminoglycosides Sept 2022 / Jun 2026: "
+            "poorly absorbed from the GI tract. "
+            "Prasad Int J Pharm 2003 PMID 14643972 (beagle; poor "
+            "oral bioavailability — Labrasol recipe stays on that "
+            "paper). Ito J Control Release 2005 is a formulation "
+            "challenge, not this loc. "
+            "Do not harvest aminoglycoside mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for aminoglycoside oral-gut gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for aminoglycoside oral-gut gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
