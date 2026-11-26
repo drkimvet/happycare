@@ -316,6 +316,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminopus` | Assessment | Canine aminoglycoside reduced activity in abscess / not an abscess-alone |
 | `ddx-aminooral` | Assessment | Canine aminoglycoside poor oral absorption / not a diarrhea-alone |
 | `ddx-aminotm` | Assessment | Canine topical aminoglycoside with ruptured TM / not an otitis-alone |
+| `ddx-tetrafan` | Assessment | Canine expired tetracycline Fanconi / not an AKI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -385,6 +386,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminopus` | Discharge | After aminoglycoside / abscess-pus gap talk |
 | `dc-aminooral` | Discharge | After aminoglycoside / oral-gut absorption talk |
 | `dc-aminotm` | Discharge | After topical aminoglycoside / open-TM talk |
+| `dc-tetrafan` | Discharge | After expired tetracycline / Fanconi talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4665,6 +4667,21 @@ DDX:
 Do not: harvest an aminoglycoside mg/kg table. Call this an otitis-alone. Put aminoglycoside drops in an ear with an open TM. Treat 368 or 137 without TM/topical language as this loc.
 Do next: Name canine topical aminoglycoside with ruptured TM. Not an otitis-alone. Stop the drop. Look at the TM. △ Plumb. Packet 368 still owns ototoxicity. Do not copy an aminoglycoside table.
 
+### `ddx-tetrafan`
+
+Expired tetracycline Fanconi — {{patient.name}}
+Canine expired tetracycline Fanconi [yes / not]. Not an AKI-alone [yes / not]. Stop the outdated drug [ ]. Packet 367 aminoglycoside AKI [ ]. Packet 348 doxycycline esophagus [ ]. Packet 379 open TM [ ]. Chicken-jerky Fanconi [ ]. Bare AKI [ ].
+
+DDX:
+1. Named tetracycline / oxytetracycline / chlortetracycline plus Fanconi / glucosuria / expired / outdated — **Canine expired tetracycline Fanconi. Not an AKI-alone**
+2. Mercer / Gross Ann Intern Med 1963 PMID 13950771: outdated tetracyclines can cause a Fanconi-like syndrome. Stop the outdated drug. △ Plumb
+3. Packet 367 owns aminoglycoside nephrotoxicity. Packet 348 owns doxycycline esophagitis. Packet 379 owns topical aminoglycoside open TM. Chicken-jerky Fanconi without named tetracycline is not this loc
+4. Do not harvest a tetracycline table. Human chemistry is not canine incidence
+5. Dog or cat can fire. Horse does not fire. Bare tetracycline or bare AKI stays dark. Doxycycline stays 348. Do not copy a tetracycline table
+
+Do not: harvest a tetracycline mg/kg table. Call this an AKI-alone. Send outdated tetracycline as the kidney plan. Treat 367 or 348 as this loc.
+Do next: Name canine expired tetracycline Fanconi. Not an AKI-alone. Stop the outdated drug. △ Plumb. Packet 367 still owns aminoglycoside AKI. Do not copy a tetracycline table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5230,6 +5247,14 @@ Return now for bloody diarrhea, collapse, or not drinking. {{location.phonenumbe
 We named the coverage gap and stopped the drop. Give only the medicines we sent, as labeled. Do not add leftover gentamicin or neomycin ear drops from home.
 
 Return now for a head tilt, circling, deafness, or if the ear is more painful. {{location.phonenumber}}
+
+### `dc-tetrafan`
+
+{{patient.name}} was given an outdated tetracycline antibiotic. That old family of antibiotics can damage the kidney tubules and spill sugar into the urine even when the blood sugar is normal. Using leftover expired tetracycline is not the same as treating a simple kidney night. This is not a simple AKI-and-home plan.
+
+We named the coverage gap and stopped the outdated medicine. Give only the medicines we sent, as labeled. Do not add leftover tetracycline from home.
+
+Return now for not drinking, no urine, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

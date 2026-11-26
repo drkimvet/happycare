@@ -14225,6 +14225,85 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline topical aminoglycoside with ruptured tm", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_tetrafan_is_not_an_aki_alone(self):
+        b = analyze("dog", "tetracycline, Fanconi")
+        loc = b["localization"].lower()
+        self.assertIn("canine expired tetracycline fanconi", loc)
+        self.assertIn("not an aki-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("outdated", joined)
+        self.assertIn("tetracycline mg/kg", joined)
+        self.assertNotIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertNotIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oxytetracycline_glucosuria_fires_tetrafan(self):
+        b = analyze("dog", "oxytetracycline, glucosuria")
+        loc = b["localization"].lower()
+        self.assertIn("canine expired tetracycline fanconi", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_chlortetracycline_outdated_fires_tetrafan(self):
+        b = analyze("cat", "chlortetracycline, outdated")
+        loc = b["localization"].lower()
+        self.assertIn("feline expired tetracycline fanconi", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_plus_tetrafan_concatenates(self):
+        b = analyze("dog", "gentamicin, AKI, expired tetracycline")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxyeso_is_not_tetrafan(self):
+        b = analyze("cat", "doxycycline esophagitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertNotIn("feline expired tetracycline fanconi", loc)
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxycycline_fanconi_is_not_tetrafan(self):
+        b = analyze("dog", "doxycycline, Fanconi")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminotm_is_not_tetrafan(self):
+        b = analyze("dog", "gentamicin, topical ear")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine topical aminoglycoside with ruptured tm", loc)
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_chicken_jerky_fanconi_is_not_tetrafan(self):
+        b = analyze("dog", "chicken jerky, Fanconi")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tetracycline_is_not_tetrafan(self):
+        b = analyze("dog", "tetracycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_aki_is_not_tetrafan(self):
+        b = analyze("dog", "AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tetrafan(self):
+        b = analyze("horse", "tetracycline, Fanconi")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertNotIn("feline expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

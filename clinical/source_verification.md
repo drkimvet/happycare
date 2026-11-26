@@ -6023,3 +6023,33 @@ Night rule: named aminoglycoside plus TM rupture or topical ear → **Canine top
 - Attending: If the query is only “otitis,” why does this gate stay dark?
 - Attending: Horse gentamicin plus topical ear — fire or skip?
 - Attending: Cat plus neomycin plus eardrum — which locs fire, and why?
+
+## 380. Canine expired tetracycline Fanconi (Mercer Merck tetracyclines)
+
+No dedicated Plunkett expired-tetracycline-Fanconi chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (outdated tetracyclines can cause a Fanconi-like syndrome). Gross *Ann Intern Med* 1963 PMID 13950771 (121 cites; outdated tetracycline Fanconi in people; no PubMed affiliation on this 1963 record). Benitz *Proc Soc Exp Biol Med* 1964 PMID 14166612 (75 cites; tetracycline degradation products; MESH includes dogs; no PubMed affiliation). Cleveland *J Pediatr* 1965 PMID 14258922 (30 cites; human pediatric Fanconi after degraded tetracycline — not this loc). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Gross. Species-fit experimental work is Benitz MESH dogs. Do not overweight Cleveland as canine incidence. Human chemistry is not canine incidence. Packet 348 still owns doxycycline esophagitis (`tetracycline` does not match `doxycycline`). Packet 367 still owns aminoglycoside nephrotoxicity. Packet 379 still owns topical aminoglycoside open TM. Chicken-jerky Fanconi without named tetracycline stays the jerky list, not this loc. Do not harvest a tetracycline mg/kg table as lobby law. Do not fire on bare tetracycline. Do not fire on bare AKI. Dogs and cats. Skip horse.
+
+Agree with Mercer / Gross: **named tetracycline plus Fanconi / glucosuria / expired / outdated is not an AKI-alone.** Stop the outdated drug. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline plus Fanconi / glucosuria / expired / outdated is canine (or feline) expired tetracycline Fanconi; not an AKI-alone. Bare tetracycline stays dark. Bare AKI stays dark. Dual gentamicin plus AKI plus expired tetracycline concatenates 367 then 380. Dual doxycycline plus esophagitis stays 348. Dual chicken jerky plus Fanconi without tetracycline stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send outdated tetracycline as the kidney plan.
+- Do not treat aminoglycoside nephrotoxicity (367) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat topical aminoglycoside open TM (379) as this loc.
+- Do not treat chicken-jerky Fanconi without named tetracycline as this loc.
+- Do not treat AKI without named tetracycline as this loc.
+
+Night rule: named tetracycline plus Fanconi / glucosuria / expired / outdated → **Canine expired tetracycline Fanconi. Not an AKI-alone.** Stop the outdated drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is expired tetracycline plus glucosuria not an AKI-and-home night?
+- NAVLE 2: Why does doxycycline plus esophagitis stay 348, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, expired tetracycline” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover tetracycline without inventing a mg/kg table?
+- Attending: If the query is only “AKI,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus Fanconi — fire or skip?
+- Attending: Cat plus chlortetracycline plus outdated — which locs fire, and why?

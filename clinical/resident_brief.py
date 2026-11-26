@@ -577,6 +577,24 @@ AMINOTM_SIGN_RE = re.compile(
 # harvest Strain 3 mg/ml. Dogs and cats. Skip horse. Mercer:
 # do not administer topically into the ear unless the TM is
 # intact. △ Plumb.
+TETRA_RE = re.compile(r"tetracycline", re.I)
+TETRAFAN_SIGN_RE = re.compile(
+    r"fanconi|"
+    r"glucosuria|"
+    r"glycosuria|"
+    r"expired|"
+    r"outdated",
+    re.I,
+)
+# Packet 380: named tetracycline / oxytetracycline /
+# chlortetracycline plus Fanconi / glucosuria / expired /
+# outdated only. tetracycline matches oxy- and chlor-; it
+# does not match doxycycline (348). Do not use bare
+# tetracycline. Do not use bare AKI. Do not use aminoglycoside
+# nephrotoxicity (367). Do not use topical aminoglycoside TM
+# (379). Do not harvest a tetracycline mg/kg table. Dogs and
+# cats. Skip horse. Mercer: outdated tetracyclines can cause
+# a Fanconi-like syndrome. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7193,6 +7211,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOTM_SIGN_RE.search(text)
     )
+    steal_tetrafan_dx = (
+        spec in {"dog", "cat"}
+        and TETRA_RE.search(text)
+        and TETRAFAN_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7374,6 +7397,7 @@ def analyze(
         or steal_aminopus_dx
         or steal_aminooral_dx
         or steal_aminotm_dx
+        or steal_tetrafan_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20451,6 +20475,75 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for topical aminoglycoside TM gap."
+            )
+
+    tetrafan_named = (
+        spec in {"dog", "cat"}
+        and TETRA_RE.search(text)
+        and TETRAFAN_SIGN_RE.search(text)
+    )
+    if tetrafan_named:
+        if spec == "cat":
+            tetrafan_loc = (
+                "Feline expired tetracycline Fanconi. Not an AKI-alone."
+            )
+        else:
+            tetrafan_loc = (
+                "Canine expired tetracycline Fanconi. Not an AKI-alone."
+            )
+        localization = (
+            f"{localization} Also {tetrafan_loc}" if localization else tetrafan_loc
+        )
+        hard_stops.append(
+            "Do not send outdated tetracycline as the kidney plan. "
+            "Do not harvest a tetracycline mg/kg table. "
+            "Mercer: outdated tetracyclines can cause a Fanconi-like "
+            "syndrome. Stop the outdated drug. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an AKI-alone. "
+            "Do not copy a tetracycline recipe as lobby law. "
+            "Packet 367 still owns aminoglycoside nephrotoxicity. "
+            "Packet 348 still owns doxycycline esophagitis. "
+            "Packet 379 still owns topical aminoglycoside open TM. "
+            "Chicken-jerky Fanconi without named tetracycline is not "
+            "this loc. "
+            "Bare AKI without named tetracycline is not this loc. "
+            "Bare tetracycline without Fanconi / glucosuria / expired "
+            "/ outdated language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline expired tetracycline Fanconi. Not an "
+                "AKI-alone. Stop the outdated drug. △ Plumb. Packet "
+                "367 still owns aminoglycoside AKI. Packet 348 still "
+                "owns doxycycline esophagus. Do not copy a "
+                "tetracycline table."
+            )
+        else:
+            do_next.append(
+                "Name canine expired tetracycline Fanconi. Not an "
+                "AKI-alone. Stop the outdated drug. △ Plumb. Packet "
+                "367 still owns aminoglycoside AKI. Packet 348 still "
+                "owns doxycycline esophagus. Do not copy a "
+                "tetracycline table."
+            )
+        sources.append(
+            "Mercer Merck tetracyclines: outdated tetracyclines can "
+            "cause a Fanconi-like syndrome. Gross Ann Intern Med "
+            "1963 PMID 13950771. Benitz Proc Soc Exp Biol Med 1964 "
+            "PMID 14166612 (MESH dogs). Cleveland J Pediatr 1965 is "
+            "human pediatric, not this loc. Human chemistry is not "
+            "canine incidence. Do not harvest tetracycline mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for expired tetracycline Fanconi."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for expired tetracycline Fanconi."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
