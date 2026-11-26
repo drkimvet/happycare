@@ -319,6 +319,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tetrafan` | Assessment | Canine expired tetracycline Fanconi / not an AKI-alone |
 | `ddx-tetrateeth` | Assessment | Canine tetracycline tooth discoloration / not a dental-alone |
 | `ddx-tetrachel` | Assessment | Canine tetracycline cation chelation / not a dairy-alone |
+| `ddx-tetraphoto` | Assessment | Canine tetracycline photosensitivity / not a sunburn-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -391,6 +392,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tetrafan` | Discharge | After expired tetracycline / Fanconi talk |
 | `dc-tetrateeth` | Discharge | After tetracycline / teeth-pregnancy talk |
 | `dc-tetrachel` | Discharge | After tetracycline / cation-chelation talk |
+| `dc-tetraphoto` | Discharge | After tetracycline / photosensitivity talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4716,6 +4718,21 @@ DDX:
 Do not: harvest a tetracycline mg/kg table. Call this a dairy-alone. Stack oral tetracycline with dairy, calcium, iron, antacid, or sucralfate. Treat 351 or 381 as this loc.
 Do next: Name canine tetracycline cation chelation. Not a dairy-alone. Separate the stack. △ Plumb. Packet 351 still owns FQ chelation. Do not copy a tetracycline table.
 
+### `ddx-tetraphoto`
+
+Tetracycline photosensitivity — {{patient.name}}
+Canine tetracycline photosensitivity [yes / not]. Not a sunburn-alone [yes / not]. Stop the drug [ ]. Shade [ ]. Packet 361 FQ photo [ ]. Packet 382 chelation [ ]. Packet 381 teeth [ ]. Packet 348 doxycycline esophagus [ ]. Bare sunburn [ ].
+
+DDX:
+1. Named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus photosensitiv / phototoxic / sunburn / sunlight — **Canine tetracycline photosensitivity. Not a sunburn-alone**
+2. Mercer / Frost Arch Dermatol 1972 PMID 5026677: tetracyclines can cause photosensitivity. Stop the drug. Shade. △ Plumb
+3. Packet 361 owns FQ photosensitivity. Packet 382 owns chelation. Packet 381 owns teeth. Packet 348 owns doxycycline esophagitis. Bare sunburn is not this loc
+4. Do not harvest a tetracycline table. Lewis 2023 three dogs is 1 cite, not this loc. Human chemistry is not canine incidence
+5. Dog or cat can fire. Horse does not fire. Bare tetracycline or bare sunburn stays dark. Do not copy a tetracycline table
+
+Do not: harvest a tetracycline mg/kg table. Call this a sunburn-alone. Send tetracycline photosensitivity home as ordinary sunburn. Treat 361 or 382 as this loc.
+Do next: Name canine tetracycline photosensitivity. Not a sunburn-alone. Stop the drug. Shade. △ Plumb. Packet 361 still owns FQ photosensitivity. Do not copy a tetracycline table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5305,6 +5322,14 @@ Return now for not eating, vomiting after a pill, or if the gums or teeth look w
 We named the coverage gap and separated the medicines. Give only the medicines we sent, as labeled. Do not give leftover doxycycline with milk, a calcium chew, or sucralfate from home.
 
 Return now for fever, not eating, or if the infection looks worse. {{location.phonenumber}}
+
+### `dc-tetraphoto`
+
+{{patient.name}} was on a tetracycline antibiotic and the skin reacted in the sun. That family of antibiotics can make sun-exposed skin burn more easily. Using leftover doxycycline on a sunny walk is not the same as a simple sunburn. This is not a simple sunburn-and-home plan.
+
+We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Keep {{patient.objectPronoun}} in the shade until we say otherwise. Do not add leftover doxycycline from home.
+
+Return now if the skin is worse, if {{patient.pronoun}} will not eat, or if the burn looks infected. {{location.phonenumber}}
 
 ### `dc-ahds`
 

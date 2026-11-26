@@ -14472,6 +14472,79 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline tetracycline cation chelation", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_tetraphoto_is_not_a_sunburn_alone(self):
+        b = analyze("dog", "doxycycline, photosensitivity")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline photosensitivity", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("photosensitivity", joined)
+        self.assertIn("tetracycline mg/kg", joined)
+        self.assertNotIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("canine tetracycline cation chelation", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oxytetracycline_sunburn_fires_tetraphoto(self):
+        b = analyze("dog", "oxytetracycline, sunburn")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline photosensitivity", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_doxy_sunlight_fires_tetraphoto(self):
+        b = analyze("cat", "doxy, sunlight")
+        loc = b["localization"].lower()
+        self.assertIn("feline tetracycline photosensitivity", loc)
+        self.assertIn("not a sunburn-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrachel_plus_tetraphoto_concatenates(self):
+        b = analyze("dog", "doxycycline, dairy, sunlight")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline cation chelation", loc)
+        self.assertIn("canine tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxyeso_plus_tetraphoto_concatenates(self):
+        b = analyze("cat", "doxycycline esophagitis, sunburn")
+        loc = b["localization"].lower()
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertIn("feline tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqphoto_is_not_tetraphoto(self):
+        b = analyze("dog", "enrofloxacin, photosensitivity")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone photosensitivity", loc)
+        self.assertNotIn("canine tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrachel_without_sun_is_not_tetraphoto(self):
+        b = analyze("dog", "doxycycline, dairy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tetracycline cation chelation", loc)
+        self.assertNotIn("canine tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tetracycline_is_not_tetraphoto(self):
+        b = analyze("dog", "tetracycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sunburn_is_not_tetraphoto(self):
+        b = analyze("dog", "sunburn")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tetraphoto(self):
+        b = analyze("horse", "doxycycline, photosensitivity")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline photosensitivity", loc)
+        self.assertNotIn("feline tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

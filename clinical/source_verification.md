@@ -6114,3 +6114,33 @@ Night rule: named tetracycline plus dairy / milk / calcium / iron / antacid / su
 - Attending: If the query is only “dairy,” why does this gate stay dark?
 - Attending: Horse oxytetracycline plus milk — fire or skip?
 - Attending: Cat plus doxycycline plus iron — which locs fire, and why?
+
+## 383. Canine tetracycline photosensitivity (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-photosensitivity chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (tetracyclines can cause photosensitivity). Frost *Arch Dermatol* 1972 PMID 5026677 (88 cites; phototoxic potential of minocycline and doxycycline in people; minocycline recipe stays on that paper). Orentreich *Arch Dermatol* 1961 PMID 13731132 (79 cites; photosensitivity and photo-onycholysis after demethylchlortetracycline). Blank *Arch Dermatol* 1968 PMID 4965106 (51 cites; photosensitivity studies with demethylchlortetracycline and doxycycline). Lewis *Vet Dermatol* 2023 PMID 36794534 (1 cite, Institute of Veterinary Specialists, Gainesville; putative doxycycline phototoxicity in three dogs — recency is not quality). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Frost / Orentreich / Blank *Arch Dermatol*. Do not overweight Lewis 1 cite as canine incidence. Human chemistry is not canine incidence. Packet 361 still owns fluoroquinolone photosensitivity. Packet 382 still owns tetracycline cation chelation. Packet 381 still owns tetracycline teeth. Packet 348 still owns doxycycline esophagitis. Do not harvest a tetracycline mg/kg table as lobby law. Do not fire on bare tetracycline. Do not fire on bare sunburn. Dogs and cats. Skip horse.
+
+Agree with Mercer / Frost: **named tetracycline plus photosensitivity / phototoxic / sunburn / sunlight is not a sunburn-alone.** Stop the drug. Shade. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus photosensitiv / phototoxic / sunburn / sunlight is canine (or feline) tetracycline photosensitivity; not a sunburn-alone. Bare tetracycline stays dark. Bare sunburn stays dark. Dual dairy plus sunlight concatenates 382 then 383. Dual doxycycline esophagitis plus sunburn concatenates 348 then 383. Dual enrofloxacin plus photosensitivity stays 361. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not call this a sunburn-alone.
+- Do not send tetracycline photosensitivity home as ordinary sunburn.
+- Do not treat fluoroquinolone photosensitivity (361) as this loc.
+- Do not treat tetracycline cation chelation (382) as this loc.
+- Do not treat tetracycline teeth (381) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat sunburn without named tetracycline as this loc.
+
+Night rule: named tetracycline plus photosensitivity / phototoxic / sunburn / sunlight → **Canine tetracycline photosensitivity. Not a sunburn-alone.** Stop the drug. Shade. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline plus sunburn not a sunburn-and-home night?
+- NAVLE 2: Why does enrofloxacin plus photosensitivity stay 361, not this loc?
+- NAVLE 3: Dual-named “doxycycline, dairy, sunlight” — which locs should fire, and why?
+- Oral: How do you tell the owner to shade and stop leftover doxycycline without inventing a mg/kg table?
+- Attending: If the query is only “sunburn,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus sunlight — fire or skip?
+- Attending: Cat plus doxycycline plus phototoxic — which locs fire, and why?

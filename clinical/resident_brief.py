@@ -644,6 +644,24 @@ TETRACHEL_SIGN_RE = re.compile(
 # 2-hour clock. Dogs and cats. Skip horse. Mercer: oral
 # tetracyclines chelate divalent and trivalent cations and
 # absorption falls. △ Plumb.
+TETRAPHOTO_SIGN_RE = re.compile(
+    r"photosensit|"
+    r"phototox|"
+    r"\bsunburn|"
+    r"sunlight",
+    re.I,
+)
+# Packet 383: named tetracycline / oxytetracycline /
+# chlortetracycline / doxycycline plus photosensitiv /
+# phototoxic / sunburn / sunlight only. Reuse TETRATEETH_RE
+# for the family including doxy. Do not use dermal reaction
+# (361 FQ). Do not use bare tetracycline. Do not use bare
+# sunburn. Do not use FQ photosensitivity (361). Do not use
+# tetracycline chelation (382). Do not use tetracycline
+# teeth (381). Do not use doxycycline esophagitis (348).
+# Do not harvest a tetracycline mg/kg table. Dogs and cats.
+# Skip horse. Mercer: tetracyclines can cause
+# photosensitivity. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7275,6 +7293,11 @@ def analyze(
         and TETRATEETH_RE.search(text)
         and TETRACHEL_SIGN_RE.search(text)
     )
+    steal_tetraphoto_dx = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRAPHOTO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7459,6 +7482,7 @@ def analyze(
         or steal_tetrafan_dx
         or steal_tetrateeth_dx
         or steal_tetrachel_dx
+        or steal_tetraphoto_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20750,6 +20774,75 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for tetracycline chelation."
+            )
+
+    tetraphoto_named = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRAPHOTO_SIGN_RE.search(text)
+    )
+    if tetraphoto_named:
+        if spec == "cat":
+            tetraphoto_loc = (
+                "Feline tetracycline photosensitivity. Not a sunburn-alone."
+            )
+        else:
+            tetraphoto_loc = (
+                "Canine tetracycline photosensitivity. Not a sunburn-alone."
+            )
+        localization = (
+            f"{localization} Also {tetraphoto_loc}"
+            if localization
+            else tetraphoto_loc
+        )
+        hard_stops.append(
+            "Do not send tetracycline photosensitivity home as "
+            "sunburn. "
+            "Do not harvest a tetracycline mg/kg table. "
+            "Mercer: tetracyclines can cause photosensitivity. "
+            "Stop the drug. Shade. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a sunburn-alone. "
+            "Do not copy a tetracycline recipe as lobby law. "
+            "Packet 361 still owns fluoroquinolone photosensitivity. "
+            "Packet 382 still owns tetracycline cation chelation. "
+            "Packet 381 still owns tetracycline teeth. "
+            "Packet 348 still owns doxycycline esophagitis. "
+            "Bare sunburn without named tetracycline is not this loc. "
+            "Bare tetracycline without photosensitivity / phototoxic / "
+            "sunburn / sunlight language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline tetracycline photosensitivity. Not a "
+                "sunburn-alone. Stop the drug. Shade. △ Plumb. Packet "
+                "361 still owns FQ photosensitivity. Packet 382 still "
+                "owns chelation. Do not copy a tetracycline table."
+            )
+        else:
+            do_next.append(
+                "Name canine tetracycline photosensitivity. Not a "
+                "sunburn-alone. Stop the drug. Shade. △ Plumb. Packet "
+                "361 still owns FQ photosensitivity. Packet 382 still "
+                "owns chelation. Do not copy a tetracycline table."
+            )
+        sources.append(
+            "Mercer Merck tetracyclines: tetracyclines can cause "
+            "photosensitivity. Frost Arch Dermatol 1972 PMID "
+            "5026677. Orentreich Arch Dermatol 1961 PMID 13731132. "
+            "Blank Arch Dermatol 1968 PMID 4965106. Lewis Vet "
+            "Dermatol 2023 is three dogs, 1 cite — recency is not "
+            "this loc. Human chemistry is not canine incidence. "
+            "Do not harvest tetracycline mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for tetracycline photosensitivity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for tetracycline photosensitivity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
