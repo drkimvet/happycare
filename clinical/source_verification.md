@@ -6053,3 +6053,32 @@ Night rule: named tetracycline plus Fanconi / glucosuria / expired / outdated �
 - Attending: If the query is only “AKI,” why does this gate stay dark?
 - Attending: Horse oxytetracycline plus Fanconi — fire or skip?
 - Attending: Cat plus chlortetracycline plus outdated — which locs fire, and why?
+
+## 381. Canine tetracycline tooth discoloration (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-teeth chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (tetracyclines bind calcium and can discolor developing teeth and bones; avoid in pregnancy and in young animals). Owen *Arch Oral Biol* 1963 PMID 14081610 (52 cites; tetracyclines in young dogs, localization in teeth; MESH dogs; no PubMed affiliation on this 1963 record). Bennett *J Dent Res* 1965 PMID 14321414 (12 cites; incorporation in developing dog enamel and dentin; MESH dogs / tooth discoloration; no PubMed affiliation). Bevelander *Adv Oral Biol* 1964 PMID 14247276 (26 cites; mineralization and growth — chick/rat chemistry, not this loc). Sae-Lim *Endod Dent Traumatol* 1998 PMID 9863422 (53 cites; systemic tetracycline on replanted dog teeth — endodontic research, not this loc). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Mercer plus Owen MESH dogs. Bennett carries developing-enamel species fit. Do not overweight Sae-Lim 53 cites as this discoloration trap. Do not overweight Bevelander as canine incidence. Human chemistry is not canine incidence. Packet 380 still owns expired tetracycline Fanconi. Packet 348 still owns doxycycline esophagitis. Packet 356 still owns fluoroquinolone pregnancy. Do not harvest a tetracycline mg/kg table as lobby law. Do not fire on bare tetracycline. Do not fire on bare dental. Dogs and cats. Skip horse.
+
+Agree with Mercer / Owen: **named tetracycline plus teeth / enamel / pregnancy / young / puppy / kitten is not a dental-alone.** Stop the drug. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus teeth / tooth discoloration / enamel / pregnancy / young / puppy / kitten is canine (or feline) tetracycline tooth discoloration; not a dental-alone. Bare tetracycline stays dark. Bare dental stays dark. Dual Fanconi plus puppy concatenates 380 then 381. Dual doxycycline esophagitis plus kitten concatenates 348 then 381. Dual enrofloxacin plus pregnancy stays 356. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not call this a dental-alone.
+- Do not send tetracycline to a young or pregnant patient as the dental plan.
+- Do not treat expired tetracycline Fanconi (380) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat fluoroquinolone pregnancy (356) as this loc.
+- Do not treat dental without named tetracycline as this loc.
+
+Night rule: named tetracycline plus teeth / enamel / pregnancy / young / puppy / kitten → **Canine tetracycline tooth discoloration. Not a dental-alone.** Stop the drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline in a puppy not a dental-and-home night?
+- NAVLE 2: Why does doxycycline plus esophagitis without young/pregnancy language stay 348, not this loc?
+- NAVLE 3: Dual-named “tetracycline, Fanconi, puppy” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover doxycycline without inventing a mg/kg table?
+- Attending: If the query is only “teeth,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus pregnancy — fire or skip?
+- Attending: Cat plus doxycycline plus kitten — which locs fire, and why?

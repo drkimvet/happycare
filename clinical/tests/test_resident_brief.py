@@ -14304,6 +14304,93 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline expired tetracycline fanconi", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_tetrateeth_is_not_a_dental_alone(self):
+        b = analyze("dog", "tetracycline, teeth")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline tooth discoloration", loc)
+        self.assertIn("not a dental-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("bind calcium", joined)
+        self.assertIn("tetracycline mg/kg", joined)
+        self.assertNotIn("canine expired tetracycline fanconi", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxycycline_puppy_fires_tetrateeth(self):
+        b = analyze("dog", "doxycycline, puppy")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline tooth discoloration", loc)
+        self.assertIn("not a dental-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_doxy_kitten_fires_tetrateeth(self):
+        b = analyze("cat", "doxy, kitten")
+        loc = b["localization"].lower()
+        self.assertIn("feline tetracycline tooth discoloration", loc)
+        self.assertIn("not a dental-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_oxytetracycline_pregnancy_fires_tetrateeth(self):
+        b = analyze("dog", "oxytetracycline, pregnancy")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline tooth discoloration", loc)
+        self.assertIn("not a dental-alone", loc)
+        self.assertNotIn("canine fluoroquinolone pregnancy", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrafan_plus_tetrateeth_concatenates(self):
+        b = analyze("dog", "tetracycline, Fanconi, puppy")
+        loc = b["localization"].lower()
+        self.assertIn("canine expired tetracycline fanconi", loc)
+        self.assertIn("canine tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxyeso_plus_tetrateeth_concatenates(self):
+        b = analyze("cat", "doxycycline esophagitis, kitten")
+        loc = b["localization"].lower()
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertIn("feline tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxyeso_without_young_is_not_tetrateeth(self):
+        b = analyze("cat", "doxycycline esophagitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline doxycycline esophagitis", loc)
+        self.assertNotIn("feline tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetrafan_without_teeth_is_not_tetrateeth(self):
+        b = analyze("dog", "tetracycline, Fanconi")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine expired tetracycline fanconi", loc)
+        self.assertNotIn("canine tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqpreg_is_not_tetrateeth(self):
+        b = analyze("dog", "enrofloxacin, pregnancy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone pregnancy", loc)
+        self.assertNotIn("canine tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tetracycline_is_not_tetrateeth(self):
+        b = analyze("dog", "tetracycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_teeth_is_not_tetrateeth(self):
+        b = analyze("dog", "teeth")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tetrateeth(self):
+        b = analyze("horse", "tetracycline, teeth")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline tooth discoloration", loc)
+        self.assertNotIn("feline tetracycline tooth discoloration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

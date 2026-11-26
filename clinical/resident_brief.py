@@ -595,6 +595,33 @@ TETRAFAN_SIGN_RE = re.compile(
 # (379). Do not harvest a tetracycline mg/kg table. Dogs and
 # cats. Skip horse. Mercer: outdated tetracyclines can cause
 # a Fanconi-like syndrome. △ Plumb.
+TETRATEETH_RE = re.compile(
+    r"tetracycline|"
+    r"doxycycline|"
+    r"\bdoxy\b",
+    re.I,
+)
+TETRATEETH_SIGN_RE = re.compile(
+    r"\bteeth\b|"
+    r"\btooth|"
+    r"discolor|"
+    r"enamel|"
+    r"pregnan|"
+    r"\byoung\b|"
+    r"\bpuppy|"
+    r"\bkitten",
+    re.I,
+)
+# Packet 381: named tetracycline / oxytetracycline /
+# chlortetracycline / doxycycline plus teeth / tooth /
+# enamel / pregnancy / young / puppy / kitten only.
+# tetracycline matches oxy- and chlor-. Do not use bare
+# tetracycline. Do not use bare dental. Do not use expired
+# Fanconi (380). Do not use doxycycline esophagitis (348).
+# Do not use FQ pregnancy (356). Do not harvest a
+# tetracycline mg/kg table. Dogs and cats. Skip horse.
+# Mercer: bind calcium; discolor developing teeth and bones;
+# avoid in pregnancy and young animals. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7216,6 +7243,11 @@ def analyze(
         and TETRA_RE.search(text)
         and TETRAFAN_SIGN_RE.search(text)
     )
+    steal_tetrateeth_dx = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRATEETH_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7398,6 +7430,7 @@ def analyze(
         or steal_aminooral_dx
         or steal_aminotm_dx
         or steal_tetrafan_dx
+        or steal_tetrateeth_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20544,6 +20577,80 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for expired tetracycline Fanconi."
+            )
+
+    tetrateeth_named = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRATEETH_SIGN_RE.search(text)
+    )
+    if tetrateeth_named:
+        if spec == "cat":
+            tetrateeth_loc = (
+                "Feline tetracycline tooth discoloration. "
+                "Not a dental-alone."
+            )
+        else:
+            tetrateeth_loc = (
+                "Canine tetracycline tooth discoloration. "
+                "Not a dental-alone."
+            )
+        localization = (
+            f"{localization} Also {tetrateeth_loc}"
+            if localization
+            else tetrateeth_loc
+        )
+        hard_stops.append(
+            "Do not send tetracycline to a young or pregnant patient "
+            "as the dental plan. "
+            "Do not harvest a tetracycline mg/kg table. "
+            "Mercer: tetracyclines bind calcium and can discolor "
+            "developing teeth and bones. Stop the drug. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a dental-alone. "
+            "Do not copy a tetracycline recipe as lobby law. "
+            "Packet 380 still owns expired tetracycline Fanconi. "
+            "Packet 348 still owns doxycycline esophagitis. "
+            "Packet 356 still owns fluoroquinolone pregnancy. "
+            "Bare dental without named tetracycline is not this loc. "
+            "Bare tetracycline without teeth / enamel / pregnancy / "
+            "young / puppy / kitten language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline tetracycline tooth discoloration. Not a "
+                "dental-alone. Stop the drug in the kitten or queen. "
+                "△ Plumb. Packet 380 still owns Fanconi. Packet 348 "
+                "still owns doxycycline esophagus. Do not copy a "
+                "tetracycline table."
+            )
+        else:
+            do_next.append(
+                "Name canine tetracycline tooth discoloration. Not a "
+                "dental-alone. Stop the drug in the puppy or pregnant "
+                "bitch. △ Plumb. Packet 380 still owns Fanconi. "
+                "Packet 348 still owns doxycycline esophagus. Do not "
+                "copy a tetracycline table."
+            )
+        sources.append(
+            "Mercer Merck tetracyclines: bind calcium; discolor "
+            "developing teeth and bones; avoid in pregnancy and "
+            "young animals. Owen Arch Oral Biol 1963 PMID 14081610 "
+            "(MESH dogs). Bennett J Dent Res 1965 PMID 14321414 "
+            "(MESH dogs, tooth discoloration). Bevelander 1964 is "
+            "mineralization chemistry, not this loc. Sae-Lim "
+            "replanted-tooth papers are not this loc. Human "
+            "chemistry is not canine incidence. Do not harvest "
+            "tetracycline mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for tetracycline teeth."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for tetracycline teeth."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

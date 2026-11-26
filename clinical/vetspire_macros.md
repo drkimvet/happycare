@@ -317,6 +317,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-aminooral` | Assessment | Canine aminoglycoside poor oral absorption / not a diarrhea-alone |
 | `ddx-aminotm` | Assessment | Canine topical aminoglycoside with ruptured TM / not an otitis-alone |
 | `ddx-tetrafan` | Assessment | Canine expired tetracycline Fanconi / not an AKI-alone |
+| `ddx-tetrateeth` | Assessment | Canine tetracycline tooth discoloration / not a dental-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -387,6 +388,7 @@ Suggested names are short so they show up after three letters.
 | `dc-aminooral` | Discharge | After aminoglycoside / oral-gut absorption talk |
 | `dc-aminotm` | Discharge | After topical aminoglycoside / open-TM talk |
 | `dc-tetrafan` | Discharge | After expired tetracycline / Fanconi talk |
+| `dc-tetrateeth` | Discharge | After tetracycline / teeth-pregnancy talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4682,6 +4684,21 @@ DDX:
 Do not: harvest a tetracycline mg/kg table. Call this an AKI-alone. Send outdated tetracycline as the kidney plan. Treat 367 or 348 as this loc.
 Do next: Name canine expired tetracycline Fanconi. Not an AKI-alone. Stop the outdated drug. △ Plumb. Packet 367 still owns aminoglycoside AKI. Do not copy a tetracycline table.
 
+### `ddx-tetrateeth`
+
+Tetracycline teeth / pregnancy — {{patient.name}}
+Canine tetracycline tooth discoloration [yes / not]. Not a dental-alone [yes / not]. Stop the drug in the puppy or pregnant bitch [ ]. Packet 380 Fanconi [ ]. Packet 348 doxycycline esophagus [ ]. Packet 356 FQ pregnancy [ ]. Bare dental [ ].
+
+DDX:
+1. Named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus teeth / enamel / pregnancy / young / puppy / kitten — **Canine tetracycline tooth discoloration. Not a dental-alone**
+2. Mercer / Owen Arch Oral Biol 1963 PMID 14081610: tetracyclines bind calcium and can discolor developing teeth and bones. Stop the drug. △ Plumb
+3. Packet 380 owns expired tetracycline Fanconi. Packet 348 owns doxycycline esophagitis. Packet 356 owns FQ pregnancy. Bare dental is not this loc
+4. Do not harvest a tetracycline table. Bevelander chemistry and Sae-Lim replant papers are not this loc
+5. Dog or cat can fire. Horse does not fire. Bare tetracycline or bare dental stays dark. Do not copy a tetracycline table
+
+Do not: harvest a tetracycline mg/kg table. Call this a dental-alone. Send tetracycline to a young or pregnant patient as the dental plan. Treat 380 or 348 as this loc.
+Do next: Name canine tetracycline tooth discoloration. Not a dental-alone. Stop the drug in the puppy or pregnant bitch. △ Plumb. Packet 380 still owns Fanconi. Do not copy a tetracycline table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5255,6 +5272,14 @@ Return now for a head tilt, circling, deafness, or if the ear is more painful. {
 We named the coverage gap and stopped the outdated medicine. Give only the medicines we sent, as labeled. Do not add leftover tetracycline from home.
 
 Return now for not drinking, no urine, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-tetrateeth`
+
+{{patient.name}} was on a tetracycline antibiotic around a young animal or a pregnancy. That family of antibiotics binds calcium and can stain developing teeth and bone. Using it as the dental or pregnancy plan is not the same as treating a simple tooth night. This is not a simple dental-and-home plan.
+
+We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover doxycycline or tetracycline from home.
+
+Return now for not eating, vomiting after a pill, or if the gums or teeth look worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
