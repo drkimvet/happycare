@@ -6144,3 +6144,34 @@ Night rule: named tetracycline plus photosensitivity / phototoxic / sunburn / su
 - Attending: If the query is only “sunburn,” why does this gate stay dark?
 - Attending: Horse oxytetracycline plus sunlight — fire or skip?
 - Attending: Cat plus doxycycline plus phototoxic — which locs fire, and why?
+
+## 384. Canine tetracycline hepatotoxicity (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-hepatotoxicity chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (tetracyclines can be hepatotoxic, historically with high-dose IV tetracycline). Schultz *N Engl J Med* 1963 PMID 14059734 (235 cites; fatal liver disease after high-dose IV tetracycline in people; printed IV doses stay on that paper; no PubMed affiliation on this 1963 record). Kunelis *Am J Med* 1965 PMID 14266828 (192 cites; fatty liver of pregnancy related to tetracycline therapy). Whalley *JAMA* 1964 PMID 14160508 (143 cites; tetracycline toxicity in pregnancy with liver and pancreatic dysfunction). Riely *Semin Liver Dis* 1987 PMID 3296215 is acute fatty liver of pregnancy, not this loc. Reinhart *Vet Clin North Am* 2025 PMID 40280782 is recency, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Schultz / Kunelis / Whalley. Do not overweight 2025 VCNA DILI as quality. Human chemistry is not canine incidence. Packet 383 still owns tetracycline photosensitivity. Packet 382 still owns tetracycline cation chelation. Packet 348 still owns doxycycline esophagitis. Packet 181 still owns feline hepatic lipidosis without named tetracycline. Do not harvest a tetracycline mg/kg table as lobby law. Do not harvest Schultz IV doses. Do not fire on bare tetracycline. Do not fire on bare jaundice. Dogs and cats. Skip horse.
+
+Agree with Mercer / Schultz: **named tetracycline plus hepatotox / jaundice / icterus / liver injury is not an icterus-alone.** Stop the drug. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus hepatotox / jaundice / icterus / liver injury is canine (or feline) tetracycline hepatotoxicity; not an icterus-alone. Bare tetracycline stays dark. Bare jaundice stays dark. Dual photosensitivity plus jaundice concatenates 383 then 384. Dual doxycycline esophagitis plus icterus concatenates 348 then 384. Dual hepatic lipidosis plus doxycycline plus jaundice concatenates 181 then 384. Dual pancreatitis plus jaundice without tetracycline stays 316. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not harvest Schultz IV doses.
+- Do not call this an icterus-alone.
+- Do not send tetracycline as the jaundice plan.
+- Do not treat tetracycline photosensitivity (383) as this loc.
+- Do not treat tetracycline cation chelation (382) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat feline hepatic lipidosis without named tetracycline (181) as this loc.
+- Do not treat jaundice without named tetracycline as this loc.
+
+Night rule: named tetracycline plus hepatotox / jaundice / icterus / liver injury → **Canine tetracycline hepatotoxicity. Not an icterus-alone.** Stop the drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline plus jaundice not an icterus-and-home night?
+- NAVLE 2: Why does cat hepatic lipidosis without named tetracycline stay 181, not this loc?
+- NAVLE 3: Dual-named “doxycycline, photosensitivity, jaundice” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover tetracycline without inventing a mg/kg table?
+- Attending: If the query is only “jaundice,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus icterus — fire or skip?
+- Attending: Cat plus doxycycline plus liver injury — which locs fire, and why?

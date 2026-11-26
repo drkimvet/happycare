@@ -14545,6 +14545,86 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline tetracycline photosensitivity", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_tetrahep_is_not_an_icterus_alone(self):
+        b = analyze("dog", "tetracycline, jaundice")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIn("not an icterus-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("hepatotoxic", joined)
+        self.assertIn("tetracycline mg/kg", joined)
+        self.assertNotIn("canine tetracycline photosensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_doxycycline_liver_injury_fires_tetrahep(self):
+        b = analyze("dog", "doxycycline, liver injury")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIn("not an icterus-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_doxy_icterus_fires_tetrahep(self):
+        b = analyze("cat", "doxy, icterus")
+        loc = b["localization"].lower()
+        self.assertIn("feline tetracycline hepatotoxicity", loc)
+        self.assertIn("not an icterus-alone", loc)
+        self.assertNotIn("feline hepatic lipidosis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetraphoto_plus_tetrahep_concatenates(self):
+        b = analyze("dog", "doxycycline, photosensitivity, jaundice")
+        loc = b["localization"].lower()
+        self.assertIn("canine tetracycline photosensitivity", loc)
+        self.assertIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lipidosis_plus_tetrahep_concatenates(self):
+        b = analyze("cat", "hepatic lipidosis, doxycycline, jaundice")
+        loc = b["localization"].lower()
+        self.assertIn("feline hepatic lipidosis", loc)
+        self.assertIn("feline tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_tetraphoto_without_jaundice_is_not_tetrahep(self):
+        b = analyze("dog", "doxycycline, photosensitivity")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine tetracycline photosensitivity", loc)
+        self.assertNotIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_lipidosis_without_tetra_is_not_tetrahep(self):
+        b = analyze("cat", "hepatic lipidosis, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline hepatic lipidosis", loc)
+        self.assertNotIn("feline tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pancreatitis_jaundice_is_not_tetrahep(self):
+        b = analyze("dog", "pancreatitis, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine pancreatitis", loc)
+        self.assertNotIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_tetracycline_is_not_tetrahep(self):
+        b = analyze("dog", "tetracycline")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_jaundice_is_not_tetrahep(self):
+        b = analyze("dog", "jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_tetrahep(self):
+        b = analyze("horse", "tetracycline, jaundice")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine tetracycline hepatotoxicity", loc)
+        self.assertNotIn("feline tetracycline hepatotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

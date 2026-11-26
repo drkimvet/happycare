@@ -320,6 +320,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tetrateeth` | Assessment | Canine tetracycline tooth discoloration / not a dental-alone |
 | `ddx-tetrachel` | Assessment | Canine tetracycline cation chelation / not a dairy-alone |
 | `ddx-tetraphoto` | Assessment | Canine tetracycline photosensitivity / not a sunburn-alone |
+| `ddx-tetrahep` | Assessment | Canine tetracycline hepatotoxicity / not an icterus-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -393,6 +394,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tetrateeth` | Discharge | After tetracycline / teeth-pregnancy talk |
 | `dc-tetrachel` | Discharge | After tetracycline / cation-chelation talk |
 | `dc-tetraphoto` | Discharge | After tetracycline / photosensitivity talk |
+| `dc-tetrahep` | Discharge | After tetracycline / hepatotoxicity talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4733,6 +4735,21 @@ DDX:
 Do not: harvest a tetracycline mg/kg table. Call this a sunburn-alone. Send tetracycline photosensitivity home as ordinary sunburn. Treat 361 or 382 as this loc.
 Do next: Name canine tetracycline photosensitivity. Not a sunburn-alone. Stop the drug. Shade. △ Plumb. Packet 361 still owns FQ photosensitivity. Do not copy a tetracycline table.
 
+### `ddx-tetrahep`
+
+Tetracycline hepatotoxicity — {{patient.name}}
+Canine tetracycline hepatotoxicity [yes / not]. Not an icterus-alone [yes / not]. Stop the drug [ ]. Packet 383 photo [ ]. Packet 382 chelation [ ]. Packet 348 doxycycline esophagus [ ]. Packet 181 lipidosis without the drug [ ]. Bare jaundice [ ].
+
+DDX:
+1. Named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus hepatotox / jaundice / icterus / liver injury — **Canine tetracycline hepatotoxicity. Not an icterus-alone**
+2. Mercer / Schultz NEJM 1963 PMID 14059734: tetracyclines can be hepatotoxic, historically with high-dose IV tetracycline. Stop the drug. △ Plumb
+3. Packet 383 owns photosensitivity. Packet 382 owns chelation. Packet 348 owns doxycycline esophagitis. Packet 181 owns feline hepatic lipidosis without named tetracycline. Bare jaundice is not this loc
+4. Do not harvest a tetracycline table. Do not harvest Schultz IV doses. Riely 1987 is AFLP, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare tetracycline or bare jaundice stays dark. Do not copy a tetracycline table
+
+Do not: harvest a tetracycline mg/kg table. Call this an icterus-alone. Send tetracycline as the jaundice plan. Treat 383 or 181 without the drug as this loc.
+Do next: Name canine tetracycline hepatotoxicity. Not an icterus-alone. Stop the drug. △ Plumb. Packet 383 still owns photosensitivity. Do not copy a tetracycline table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5330,6 +5347,14 @@ Return now for fever, not eating, or if the infection looks worse. {{location.ph
 We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Keep {{patient.objectPronoun}} in the shade until we say otherwise. Do not add leftover doxycycline from home.
 
 Return now if the skin is worse, if {{patient.pronoun}} will not eat, or if the burn looks infected. {{location.phonenumber}}
+
+### `dc-tetrahep`
+
+{{patient.name}} was on a tetracycline antibiotic around yellow gums or liver injury. That family of antibiotics can damage the liver, especially older high-dose IV forms. Using leftover doxycycline as the jaundice plan is not the same as treating a simple yellow-gum night. This is not a simple icterus-and-home plan.
+
+We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover tetracycline or doxycycline from home.
+
+Return now for deeper yellow gums, not eating, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

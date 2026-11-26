@@ -662,6 +662,25 @@ TETRAPHOTO_SIGN_RE = re.compile(
 # Do not harvest a tetracycline mg/kg table. Dogs and cats.
 # Skip horse. Mercer: tetracyclines can cause
 # photosensitivity. △ Plumb.
+TETRAHEP_SIGN_RE = re.compile(
+    r"hepatotox|"
+    r"jaundice|"
+    r"icterus|"
+    r"liver injury",
+    re.I,
+)
+# Packet 384: named tetracycline / oxytetracycline /
+# chlortetracycline / doxycycline plus hepatotox / jaundice /
+# icterus / liver injury only. Reuse TETRATEETH_RE for the
+# family including doxy. Do not use bare tetracycline. Do not
+# use bare jaundice. Do not use tetracycline photosensitivity
+# (383). Do not use tetracycline chelation (382). Do not use
+# doxycycline esophagitis (348). Do not use feline hepatic
+# lipidosis without the drug (181). Do not harvest a
+# tetracycline mg/kg table. Do not harvest Schultz IV doses.
+# Dogs and cats. Skip horse. Mercer: tetracyclines can be
+# hepatotoxic, historically with high-dose IV tetracycline.
+# △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7298,6 +7317,11 @@ def analyze(
         and TETRATEETH_RE.search(text)
         and TETRAPHOTO_SIGN_RE.search(text)
     )
+    steal_tetrahep_dx = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRAHEP_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7483,6 +7507,7 @@ def analyze(
         or steal_tetrateeth_dx
         or steal_tetrachel_dx
         or steal_tetraphoto_dx
+        or steal_tetrahep_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -20843,6 +20868,76 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for tetracycline photosensitivity."
+            )
+
+    tetrahep_named = (
+        spec in {"dog", "cat"}
+        and TETRATEETH_RE.search(text)
+        and TETRAHEP_SIGN_RE.search(text)
+    )
+    if tetrahep_named:
+        if spec == "cat":
+            tetrahep_loc = (
+                "Feline tetracycline hepatotoxicity. Not an icterus-alone."
+            )
+        else:
+            tetrahep_loc = (
+                "Canine tetracycline hepatotoxicity. Not an icterus-alone."
+            )
+        localization = (
+            f"{localization} Also {tetrahep_loc}"
+            if localization
+            else tetrahep_loc
+        )
+        hard_stops.append(
+            "Do not send tetracycline as the jaundice plan. "
+            "Do not harvest a tetracycline mg/kg table. "
+            "Mercer: tetracyclines can be hepatotoxic, historically "
+            "with high-dose IV tetracycline. Stop the drug. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an icterus-alone. "
+            "Do not copy a tetracycline recipe as lobby law. "
+            "Packet 383 still owns tetracycline photosensitivity. "
+            "Packet 382 still owns tetracycline cation chelation. "
+            "Packet 348 still owns doxycycline esophagitis. "
+            "Packet 181 still owns feline hepatic lipidosis without "
+            "named tetracycline. "
+            "Bare jaundice without named tetracycline is not this loc. "
+            "Bare tetracycline without hepatotox / jaundice / icterus / "
+            "liver injury language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline tetracycline hepatotoxicity. Not an "
+                "icterus-alone. Stop the drug. △ Plumb. Packet 181 "
+                "still owns lipidosis without the drug. Packet 383 "
+                "still owns photosensitivity. Do not copy a "
+                "tetracycline table."
+            )
+        else:
+            do_next.append(
+                "Name canine tetracycline hepatotoxicity. Not an "
+                "icterus-alone. Stop the drug. △ Plumb. Packet 383 "
+                "still owns photosensitivity. Packet 382 still owns "
+                "chelation. Do not copy a tetracycline table."
+            )
+        sources.append(
+            "Mercer Merck tetracyclines: tetracyclines can be "
+            "hepatotoxic, historically with high-dose IV tetracycline. "
+            "Schultz NEJM 1963 PMID 14059734. Kunelis Am J Med 1965 "
+            "PMID 14266828. Whalley JAMA 1964 PMID 14160508. Riely "
+            "1987 is AFLP, not this loc. Human chemistry is not "
+            "canine incidence. Do not harvest tetracycline mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for tetracycline hepatotoxicity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for tetracycline hepatotoxicity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
