@@ -15513,6 +15513,90 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin-associated c. difficile", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehneg_is_not_a_sepsis_alone(self):
+        b = analyze("dog", "cephalexin, Pseudomonas")
+        loc = b["localization"].lower()
+        self.assertIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalexin as the pseudomonas plan", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_gram_neg_fires_cehneg(self):
+        b = analyze("dog", "cefazolin, gram-negative")
+        loc = b["localization"].lower()
+        self.assertIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cephalexin_gram_neg_fires_cehneg(self):
+        b = analyze("cat", "cephalexin, gram neg")
+        loc = b["localization"].lower()
+        self.assertIn("feline first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pengneg_concatenates_with_cehneg(self):
+        b = analyze("dog", "amoxicillin, Pseudomonas, cephalexin")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pengneg_is_not_cehneg(self):
+        b = analyze("dog", "amoxicillin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcdiff_is_not_cehneg(self):
+        b = analyze("dog", "cephalexin, C. difficile")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehneut_is_not_cehneg(self):
+        b = analyze("dog", "cephalexin, neutropenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefpodoxime_pseudomonas_is_not_cehneg(self):
+        b = analyze("dog", "cefpodoxime, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehneg(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sepsis_is_not_cehneg(self):
+        b = analyze("dog", "sepsis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_plus_sepsis_is_not_cehneg(self):
+        b = analyze("dog", "cephalexin, sepsis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehneg(self):
+        b = analyze("horse", "cephalexin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertNotIn("feline first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

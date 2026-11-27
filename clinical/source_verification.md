@@ -6506,3 +6506,34 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus C. diffi
 - Attending: If the query is only “diarrhea,” why does this gate stay dark?
 - Attending: Horse cefazolin plus C. difficile — fire or skip?
 - Attending: Cat plus cefovecin plus superinfection — which locs fire, and why?
+
+## 396. Canine first-generation cephalosporin gram-negative coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett first-generation-cephalosporin-Pseudomonas chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (first-generation cephalosporins have limited activity against Pseudomonas). Wick *Appl Microbiol* 1967 PMID 4383049 (96 cites; loc-fit cephalexin in vitro spectrum; printed MIC stay on that paper). Griffith *Postgrad Med J* 1983 PMID 6364086 (21 cites; pharmacology of cephalexin). Klein *Adv Ther* 1995 PMID 10150326 (16 cites, Winthrop-University Hospital; generation differences among cephalosporins). Neu *Antimicrob Agents Chemother* 1974 PMID 15828189 is cefamandole (second-generation), not this loc. Richards *Drugs* 1984 PMID 6329638 is ceftriaxone (third-generation), not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Wick. Do not overweight Neu 1974 or Richards 1984 as quality for this SA first-generation loc. Human chemistry is not canine incidence. Packet 395 still owns cephalosporin-associated C. difficile. Packet 390 still owns penicillin gram-negative coverage. Packet 394 still owns cephalosporin-associated neutropenia. Cefpodoxime / cefovecin is not this loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Wick MIC. Do not fire on bare cephalexin. Do not fire on bare sepsis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Wick: **named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg is not a sepsis-alone.** Cover the gram-negative. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg is canine (or feline) first-generation cephalosporin gram-negative coverage gap; not a sepsis-alone. Bare cephalexin stays dark. Bare sepsis stays dark. Dual amoxicillin plus Pseudomonas stays 390. Dual cephalexin plus C. difficile stays 395. Dual cephalexin plus neutropenia stays 394. Dual cefpodoxime plus Pseudomonas stays dark for this loc. Dual amoxicillin plus Pseudomonas plus cephalexin concatenates 390 then 396. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Wick MIC.
+- Do not call this a sepsis-alone.
+- Do not send cephalexin as the Pseudomonas plan.
+- Do not treat penicillin gram-negative coverage (390) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat cephalosporin-associated neutropenia (394) as this loc.
+- Do not treat cefpodoxime / cefovecin plus Pseudomonas as this loc.
+- Do not treat sepsis without named cephalexin / cefazolin plus Pseudomonas / gram-negative as this loc.
+
+Night rule: named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg → **Canine first-generation cephalosporin gram-negative coverage gap. Not a sepsis-alone.** Cover the gram-negative. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus Pseudomonas not a sepsis-and-home night?
+- NAVLE 2: Why does amoxicillin plus Pseudomonas stay 390, not this loc?
+- NAVLE 3: Dual-named “cephalexin, amoxicillin, Pseudomonas” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the Pseudomonas plan without inventing a mg/kg table?
+- Attending: If the query is only “sepsis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus Pseudomonas — fire or skip?
+- Attending: Cat plus cephalexin plus gram-negative — which locs fire, and why?

@@ -332,6 +332,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehitp` | Assessment | Canine cephalosporin-associated thrombocytopenia / not an ITP-alone |
 | `ddx-cehneut` | Assessment | Canine cephalosporin-associated neutropenia / not a sepsis-alone |
 | `ddx-cehcdiff` | Assessment | Canine cephalosporin-associated C. difficile / not a diarrhea-alone |
+| `ddx-cehneg` | Assessment | Canine first-generation cephalosporin gram-negative coverage gap / not a sepsis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -417,6 +418,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehitp` | Discharge | After cephalosporin-associated thrombocytopenia talk |
 | `dc-cehneut` | Discharge | After cephalosporin-associated neutropenia talk |
 | `dc-cehcdiff` | Discharge | After cephalosporin-associated C. difficile talk |
+| `dc-cehneg` | Discharge | After first-generation cephalosporin / gram-negative coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4937,6 +4939,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a diarrhea-alone. Send leftover cephalexin as the diarrhea plan. Treat 394 or 359 as this loc.
 Do next: Name canine cephalosporin-associated C. difficile. Not a diarrhea-alone. Stop the cephalosporin. △ Plumb. Packet 359 still owns ciprofloxacin colitis. Do not copy a cephalosporin table.
 
+### `ddx-cehneg`
+
+First-generation cephalosporin gram-negative coverage gap — {{patient.name}}
+Canine first-generation cephalosporin gram-negative coverage gap [yes / not]. Not a sepsis-alone [yes / not]. Cover the gram-negative [ ]. Packet 395 cehcdiff [ ]. Packet 390 pengneg [ ]. Packet 394 cehneut [ ]. Bare sepsis [ ].
+
+DDX:
+1. Named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg — **Canine first-generation cephalosporin gram-negative coverage gap. Not a sepsis-alone**
+2. Mercer / Wick Appl Microbiol 1967 PMID 4383049: first-generation cephalosporins have limited activity against Pseudomonas. Cover the gram-negative. △ Plumb
+3. Packet 395 owns cephalosporin-associated C. difficile. Packet 390 owns penicillin gram-negative coverage. Packet 394 owns cephalosporin-associated neutropenia. Bare sepsis is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest Wick MIC. Neu 1974 is cefamandole, not this loc. Cefpodoxime / cefovecin is not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare sepsis stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a sepsis-alone. Send cephalexin as the Pseudomonas plan. Treat 390 or 395 as this loc.
+Do next: Name canine first-generation cephalosporin gram-negative coverage gap. Not a sepsis-alone. Cover the gram-negative. △ Plumb. Packet 390 still owns penicillin gram-negative coverage. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5630,6 +5647,14 @@ Return now for fever, collapse, or if {{patient.pronoun}} is worse. {{location.p
 We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
 
 Return now for watery diarrhea, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehneg`
+
+{{patient.name}} was on a first-generation cephalosporin around a gram-negative or Pseudomonas infection. That generation of cephalosporins often does not cover those organisms. Using leftover cephalexin as the sepsis plan is not the same as treating a simple infection. This is not a simple sepsis-and-home plan.
+
+We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefazolin from home.
+
+Return now for fever, collapse, or if the infection looks worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

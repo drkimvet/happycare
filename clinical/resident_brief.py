@@ -943,6 +943,26 @@ CEPHCDIFF_SIGN_RE = re.compile(
 # metronidazole or vancomycin table. Dogs and cats. Skip
 # horse. Mercer: superinfection including Clostridioides
 # difficile can follow cephalosporin exposure. △ Plumb.
+CEPHNEG_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin",
+    re.I,
+)
+CEPHNEG_SIGN_RE = re.compile(
+    r"pseudomonas|"
+    r"gram[- ]?neg",
+    re.I,
+)
+# Packet 396: named cephalexin / cefazolin plus Pseudomonas
+# / gram-negative / gram neg only. Do not use cefpodoxime
+# / cefovecin (not first-generation). Do not use
+# penicillin gram-negative coverage (390). Do not use
+# cephalosporin-associated C. difficile (395). Do not use
+# cephalosporin-associated neutropenia (394). Do not use
+# \bsepsis (bare sepsis). Do not harvest a cephalosporin
+# mg/kg table. Do not harvest Wick MIC. Dogs and cats.
+# Skip horse. Mercer: first-generation cephalosporins
+# have limited activity against Pseudomonas. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7639,6 +7659,11 @@ def analyze(
         and CEPHCDIFF_RE.search(text)
         and CEPHCDIFF_SIGN_RE.search(text)
     )
+    steal_cehneg_dx = (
+        spec in {"dog", "cat"}
+        and CEPHNEG_RE.search(text)
+        and CEPHNEG_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7836,6 +7861,7 @@ def analyze(
         or steal_cehitp_dx
         or steal_cehneut_dx
         or steal_cehcdiff_dx
+        or steal_cehneg_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22118,6 +22144,85 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin-associated C. difficile."
+            )
+
+    cehneg_named = (
+        spec in {"dog", "cat"}
+        and CEPHNEG_RE.search(text)
+        and CEPHNEG_SIGN_RE.search(text)
+    )
+    if cehneg_named:
+        if spec == "cat":
+            cehneg_loc = (
+                "Feline first-generation cephalosporin gram-negative "
+                "coverage gap. Not a sepsis-alone."
+            )
+        else:
+            cehneg_loc = (
+                "Canine first-generation cephalosporin gram-negative "
+                "coverage gap. Not a sepsis-alone."
+            )
+        localization = (
+            f"{localization} Also {cehneg_loc}"
+            if localization
+            else cehneg_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin as the Pseudomonas plan. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest Wick MIC. "
+            "Mercer: first-generation cephalosporins have "
+            "limited activity against Pseudomonas. Cover the "
+            "gram-negative. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a sepsis-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 395 still owns cephalosporin-associated "
+            "C. difficile. Packet 390 still owns penicillin "
+            "gram-negative coverage. Packet 394 still owns "
+            "cephalosporin-associated neutropenia. "
+            "Bare sepsis without named cephalexin / cefazolin "
+            "plus Pseudomonas / gram-negative language is not "
+            "this loc. "
+            "Bare cephalexin without Pseudomonas / gram-negative "
+            "/ gram neg language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline first-generation cephalosporin "
+                "gram-negative coverage gap. Not a sepsis-alone. "
+                "Cover the gram-negative. △ Plumb. Packet 390 still "
+                "owns penicillin gram-negative coverage. Do not "
+                "copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine first-generation cephalosporin "
+                "gram-negative coverage gap. Not a sepsis-alone. "
+                "Cover the gram-negative. △ Plumb. Packet 390 still "
+                "owns penicillin gram-negative coverage. Packet 395 "
+                "still owns C. difficile. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: first-generation "
+            "cephalosporins have limited activity against "
+            "Pseudomonas. Wick Appl Microbiol 1967 PMID 4383049. "
+            "Griffith Postgrad Med J 1983 PMID 6364086. Klein Adv "
+            "Ther 1995 PMID 10150326. Neu 1974 is cefamandole, not "
+            "this loc. Richards 1984 is ceftriaxone, not this loc. "
+            "Wick MIC stay on that paper. Human chemistry is not "
+            "canine incidence. Do not harvest cephalosporin mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for first-generation cephalosporin gram-negative coverage gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for first-generation cephalosporin gram-negative coverage gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
