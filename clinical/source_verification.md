@@ -6385,3 +6385,33 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus penicill
 - Attending: If the query is only “allergy,” why does this gate stay dark?
 - Attending: Horse cefazolin plus penicillin allergy — fire or skip?
 - Attending: Cat plus cefovecin plus hypersensitivity — which locs fire, and why?
+
+## 392. Canine cephalosporin-associated IMHA (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-IMHA chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (immune-mediated hemolytic anemia can follow cephalosporin exposure). Bloom *Am J Hematol* 1988 PMID 3394717 (31 cites, Smith Kline and French Laboratories, King of Prussia; species-fit canine cephalosporin-induced immune cytopenia after cefazedone / cefonicid, with erythrocyte-, neutrophil-, and platelet-associated IgG — printed tox-study methods stay on that paper). Garratty *Hematology Am Soc Hematol Educ Program* 2009 PMID 20008184 (162 cites, American Red Cross Southern California; human DIIHA, currently cefotetan / ceftriaxone / piperacillin). Garratty *Am J Med* 1975 PMID 1090160 (118 cites; classic drug-induced immune hemolytic anemia). Arndt *Semin Hematol* 2005 PMID 16041663 (85 cites; changing spectrum of DIIHA). PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bloom. Do not overweight Garratty 2009 as quality for this SA cephalexin loc. Human chemistry is not canine incidence. Packet 391 still owns cephalosporin penicillin cross-reactivity. Packet 385 still owns penicillin hypersensitivity. Packet 362 still owns FQ hemolytic anemia. Packet 126 still owns IMHA without named cephalosporin. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Bloom IgG methods. Do not fire on bare cephalexin. Do not fire on bare IMHA. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bloom: **named cephalosporin plus IMHA / hemolysis / spherocyte is not an IMHA-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus IMHA / hemolysis / spherocyte is canine (or feline) cephalosporin-associated IMHA; not an IMHA-alone. Bare cephalexin stays dark. Bare IMHA stays 126. Dual cephalexin plus penicillin allergy stays 391. Dual enrofloxacin plus IMHA stays 362. Dual amoxicillin plus anaphylaxis stays 385. Dual IMHA plus named cephalexin concatenates the existing IMHA loc then 392. Dual cephalexin plus penicillin allergy plus IMHA concatenates 391 then 392. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Bloom IgG methods.
+- Do not call this an IMHA-alone.
+- Do not pred cephalosporin hemolysis as primary IMHA before the drug is named.
+- Do not treat cephalosporin penicillin cross-reactivity (391) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat FQ hemolytic anemia (362) as this loc.
+- Do not treat IMHA without named cephalosporin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus IMHA / hemolysis / spherocyte → **Canine cephalosporin-associated IMHA. Not an IMHA-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus IMHA not an IMHA-and-home night?
+- NAVLE 2: Why does enrofloxacin plus IMHA stay 362, not this loc?
+- NAVLE 3: Dual-named “cephalexin, penicillin allergy, IMHA” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the IMHA plan without inventing a mg/kg table?
+- Attending: If the query is only “IMHA,” why does this gate stay dark?
+- Attending: Horse cefazolin plus hemolysis — fire or skip?
+- Attending: Cat plus cefovecin plus spherocyte — which locs fire, and why?

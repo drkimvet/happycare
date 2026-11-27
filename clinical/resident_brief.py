@@ -846,6 +846,29 @@ CEPHCROSS_SIGN_RE = re.compile(
 # table. Do not harvest an epinephrine mg/kg table. Dogs
 # and cats. Skip horse. Mercer: hypersensitivity and
 # cross-reactivity with penicillins can occur. △ Plumb.
+CEPHIMHA_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEPHIMHA_SIGN_RE = re.compile(
+    r"\bimha\b|"
+    r"hemolys|"
+    r"spherocyte",
+    re.I,
+)
+# Packet 392: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus IMHA / hemolysis / spherocyte only. Do
+# not use bare anemia. Do not use cephalosporin penicillin
+# cross-reactivity (391). Do not use penicillin
+# hypersensitivity (385). Do not use FQ hemolytic anemia
+# (362). Existing IMHA loc still owns IMHA without named
+# cephalosporin. Do not harvest a cephalosporin mg/kg
+# table. Do not harvest Bloom IgG methods. Dogs and cats.
+# Skip horse. Mercer: immune-mediated hemolytic anemia can
+# follow cephalosporin exposure. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7522,6 +7545,11 @@ def analyze(
         and CEPHCROSS_RE.search(text)
         and CEPHCROSS_SIGN_RE.search(text)
     )
+    steal_cehimha_dx = (
+        spec in {"dog", "cat"}
+        and CEPHIMHA_RE.search(text)
+        and CEPHIMHA_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7715,6 +7743,7 @@ def analyze(
         or steal_napeniv_dx
         or steal_pengneg_dx
         or steal_cephcross_dx
+        or steal_cehimha_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21672,6 +21701,87 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin penicillin cross-reactivity."
+            )
+
+    cehimha_named = (
+        spec in {"dog", "cat"}
+        and CEPHIMHA_RE.search(text)
+        and CEPHIMHA_SIGN_RE.search(text)
+    )
+    if cehimha_named:
+        if spec == "cat":
+            cehimha_loc = (
+                "Feline cephalosporin-associated IMHA. Not an IMHA-alone."
+            )
+        else:
+            cehimha_loc = (
+                "Canine cephalosporin-associated IMHA. Not an IMHA-alone."
+            )
+        localization = (
+            f"{localization} Also {cehimha_loc}"
+            if localization
+            else cehimha_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin-associated IMHA home as "
+            "primary IMHA. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest Bloom IgG methods. "
+            "Mercer: immune-mediated hemolytic anemia can follow "
+            "cephalosporin exposure. Stop the cephalosporin. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this an IMHA-alone. "
+            "Do not pred cephalosporin hemolysis as primary IMHA "
+            "before the drug is named. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 391 still owns cephalosporin penicillin "
+            "cross-reactivity. Packet 385 still owns penicillin "
+            "hypersensitivity. Packet 362 still owns FQ hemolytic "
+            "anemia. "
+            "Packet 126 still owns IMHA without named "
+            "cephalosporin. "
+            "Bare IMHA without named cephalosporin is not this "
+            "loc. "
+            "Bare cephalexin without IMHA / hemolysis / "
+            "spherocyte language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin-associated IMHA. Not an "
+                "IMHA-alone. Stop the cephalosporin. △ Plumb. Cats: "
+                "spherocytes are not a feline IMHA criterion. "
+                "Packet 391 still owns cephalosporin penicillin "
+                "cross-reactivity. Do not copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin-associated IMHA. Not an "
+                "IMHA-alone. Stop the cephalosporin. △ Plumb. "
+                "Packet 126 still owns IMHA without named "
+                "cephalosporin. Packet 391 still owns cephalosporin "
+                "penicillin cross-reactivity. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: immune-mediated hemolytic "
+            "anemia can follow cephalosporin exposure. Bloom Am J "
+            "Hematol 1988 PMID 3394717 (Smith Kline and French). "
+            "Garratty Hematology Am Soc Hematol Educ Program 2009 "
+            "PMID 20008184. Garratty Am J Med 1975 PMID 1090160. "
+            "Arndt Semin Hematol 2005 PMID 16041663. Garratty 2009 "
+            "is human DIIHA (cefotetan / ceftriaxone), not this loc. "
+            "Human chemistry is not canine incidence. Do not "
+            "harvest cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin-associated IMHA."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin-associated IMHA."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

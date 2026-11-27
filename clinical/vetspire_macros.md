@@ -328,6 +328,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-napeniv` | Assessment | Canine sodium penicillin too-fast IV / not a hypernatremia-alone |
 | `ddx-pengneg` | Assessment | Canine penicillin gram-negative coverage gap / not a sepsis-alone |
 | `ddx-cephcross` | Assessment | Canine cephalosporin penicillin cross-reactivity / not an allergy-alone |
+| `ddx-cehimha` | Assessment | Canine cephalosporin-associated IMHA / not an IMHA-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -409,6 +410,7 @@ Suggested names are short so they show up after three letters.
 | `dc-napeniv` | Discharge | After sodium penicillin / too-fast IV talk |
 | `dc-pengneg` | Discharge | After penicillin / gram-negative coverage-gap talk |
 | `dc-cephcross` | Discharge | After cephalosporin / penicillin cross-reactivity talk |
+| `dc-cehimha` | Discharge | After cephalosporin-associated IMHA talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4869,6 +4871,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this an allergy-alone. Send cephalexin after a named penicillin allergy. Treat 385 or 390 as this loc.
 Do next: Name canine cephalosporin penicillin cross-reactivity. Not an allergy-alone. Stop the cephalosporin. △ Plumb. Packet 385 still owns penicillin hypersensitivity without a named cephalosporin. Do not copy a cephalosporin table.
 
+### `ddx-cehimha`
+
+Cephalosporin-associated IMHA — {{patient.name}}
+Canine cephalosporin-associated IMHA [yes / not]. Not an IMHA-alone [yes / not]. Stop the cephalosporin [ ]. Packet 391 cephcross [ ]. Packet 126 IMHA without ceph [ ]. Packet 362 FQ hema [ ]. Bare IMHA [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus IMHA / hemolysis / spherocyte — **Canine cephalosporin-associated IMHA. Not an IMHA-alone**
+2. Mercer / Bloom Am J Hematol 1988 PMID 3394717: immune-mediated hemolytic anemia can follow cephalosporin exposure. Stop the cephalosporin. △ Plumb
+3. Packet 391 owns cephalosporin penicillin cross-reactivity. Packet 126 owns IMHA without named cephalosporin. Packet 362 owns FQ hemolytic anemia. Bare IMHA is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest Bloom IgG methods. Garratty 2009 is human DIIHA, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare IMHA stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this an IMHA-alone. Pred this as primary IMHA before the drug is named. Treat 391 or 362 as this loc.
+Do next: Name canine cephalosporin-associated IMHA. Not an IMHA-alone. Stop the cephalosporin. △ Plumb. Packet 126 still owns IMHA without named cephalosporin. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5530,6 +5547,14 @@ Return now for fever, collapse, or if the infection looks worse. {{location.phon
 We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
 
 Return now for hives, facial swelling, collapse, or trouble breathing. {{location.phonenumber}}
+
+### `dc-cehimha`
+
+{{patient.name}} had hemolysis or immune-mediated anemia around a cephalosporin. That family of antibiotics can trigger immune destruction of red cells. Using leftover cephalexin as the IMHA plan is not the same as treating a simple IMHA night. This is not a simple IMHA-and-home plan.
+
+We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
+
+Return now for pale gums, collapse, dark urine, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

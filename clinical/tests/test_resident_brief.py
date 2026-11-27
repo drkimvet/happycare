@@ -15185,6 +15185,86 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin penicillin cross-reactivity", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehimha_is_not_an_imha_alone(self):
+        b = analyze("dog", "cephalexin, IMHA")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated imha", loc)
+        self.assertIn("not an imha-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalexin-associated imha home as primary imha", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_hemolysis_fires_cehimha(self):
+        b = analyze("dog", "cefazolin, hemolysis")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated imha", loc)
+        self.assertIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_spherocyte_fires_cehimha(self):
+        b = analyze("cat", "cefovecin, spherocyte")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin-associated imha", loc)
+        self.assertIn("not an imha-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_imha_concatenates_with_cehimha(self):
+        b = analyze("dog", "cephalexin, IMHA")
+        loc = b["localization"].lower()
+        self.assertIn("intravascular or extravascular hemolysis", loc)
+        self.assertIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephcross_concatenates_with_cehimha(self):
+        b = analyze("dog", "cephalexin, penicillin allergy, IMHA")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephcross_is_not_cehimha(self):
+        b = analyze("dog", "cephalexin, penicillin allergy")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqhema_is_not_cehimha(self):
+        b = analyze("dog", "enrofloxacin, IMHA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone hemolytic anemia", loc)
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_is_not_cehimha(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehimha(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_imha_is_not_cehimha(self):
+        b = analyze("dog", "IMHA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("intravascular or extravascular hemolysis", loc)
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehimha(self):
+        b = analyze("horse", "cephalexin, IMHA")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertNotIn("feline cephalosporin-associated imha", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
