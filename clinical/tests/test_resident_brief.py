@@ -14710,6 +14710,84 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline penicillin hypersensitivity", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_procaineiv_is_not_a_seizure_alone(self):
+        b = analyze("dog", "procaine penicillin, IV")
+        loc = b["localization"].lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertIn("not a seizure-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not give procaine penicillin iv", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_procaine_penicillin_seizure_concatenates(self):
+        b = analyze("dog", "procaine penicillin, seizure")
+        loc = b["localization"].lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("status is >5 min", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_procaine_ataxia_fires_procaineiv(self):
+        b = analyze("cat", "procaine penicillin, ataxia")
+        loc = b["localization"].lower()
+        self.assertIn("feline procaine penicillin iv cns", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_concatenates_with_procaineiv(self):
+        b = analyze("dog", "procaine penicillin, IV, anaphylaxis")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_is_not_procaineiv(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_seizure_without_procaine_is_not_procaineiv(self):
+        b = analyze("dog", "seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_metro_neuro_is_not_procaineiv(self):
+        b = analyze("dog", "metronidazole, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine metronidazole neurotoxicity", loc)
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_procaine_penicillin_is_not_procaineiv(self):
+        b = analyze("dog", "procaine penicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_seizure_is_not_procaineiv(self):
+        b = analyze("dog", "seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penicillin_iv_without_procaine_is_not_procaineiv(self):
+        b = analyze("dog", "penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_procaineiv(self):
+        b = analyze("horse", "procaine penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertNotIn("feline procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

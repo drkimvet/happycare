@@ -322,6 +322,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tetraphoto` | Assessment | Canine tetracycline photosensitivity / not a sunburn-alone |
 | `ddx-tetrahep` | Assessment | Canine tetracycline hepatotoxicity / not an icterus-alone |
 | `ddx-penhyper` | Assessment | Canine penicillin hypersensitivity / not an allergy-alone |
+| `ddx-procaineiv` | Assessment | Canine procaine penicillin IV CNS / not a seizure-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -397,6 +398,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tetraphoto` | Discharge | After tetracycline / photosensitivity talk |
 | `dc-tetrahep` | Discharge | After tetracycline / hepatotoxicity talk |
 | `dc-penhyper` | Discharge | After penicillin / hypersensitivity talk |
+| `dc-procaineiv` | Discharge | After procaine penicillin / IV CNS talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4767,6 +4769,21 @@ DDX:
 Do not: harvest a penicillin mg/kg table. Call this an allergy-alone. Send penicillin home after named anaphylaxis. Treat vaccine or hymenoptera without named penicillin as this loc.
 Do next: Name canine penicillin hypersensitivity. Not an allergy-alone. Stop the drug. Epinephrine is the crash drug. △ Plumb. Vaccine / sting without named penicillin stays the existing anaphylaxis loc. Do not copy a penicillin table.
 
+### `ddx-procaineiv`
+
+Procaine penicillin IV CNS — {{patient.name}}
+Canine procaine penicillin IV CNS [yes / not]. Not a seizure-alone [yes / not]. Stop the drug [ ]. Packet 385 hypersensitivity [ ]. Packet 349 metro [ ]. Idiopathic epilepsy without procaine [ ]. Bare seizure [ ].
+
+DDX:
+1. Named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia — **Canine procaine penicillin IV CNS. Not a seizure-alone**
+2. Mercer / Downham Sex Transm Dis 1978 PMID 417409: inadvertent IV procaine penicillin can cause CNS excitement. Stop the drug. Supportive. △ Plumb
+3. Packet 385 owns penicillin hypersensitivity. Packet 349 owns metronidazole neurotoxicity. Idiopathic epilepsy without named procaine stays the existing seizure loc. Bare seizure is not this loc
+4. Do not harvest a penicillin table. Do not harvest Downham units. Kaplan JAVMA 2011 is species-fit, 4 cites — recency is not this loc
+5. Dog or cat can fire. Horse does not fire. Bare procaine penicillin or bare seizure stays dark. Do not copy a penicillin table
+
+Do not: harvest a penicillin mg/kg table. Call this a seizure-alone. Give procaine penicillin IV. Treat 385 or idiopathic epilepsy without named procaine as this loc.
+Do next: Name canine procaine penicillin IV CNS. Not a seizure-alone. Stop the drug. Supportive. △ Plumb. Seizure without named procaine stays the existing seizure loc. Do not copy a penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5380,6 +5397,14 @@ Return now for deeper yellow gums, not eating, collapse, or if {{patient.pronoun
 We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover amoxicillin or penicillin from home.
 
 Return now for collapse, facial swelling, trouble breathing, or if the hives come back. {{location.phonenumber}}
+
+### `dc-procaineiv`
+
+{{patient.name}} had a reaction after procaine penicillin around a vein or a seizure. That depot penicillin is not for the vein and can cause sudden excitement or seizures if it goes intravenous. Using leftover procaine penicillin as the seizure plan is not the same as treating a simple seizure. This is not a simple seizure-and-home plan.
+
+We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover procaine penicillin from home.
+
+Return now for another seizure, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

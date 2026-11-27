@@ -706,6 +706,29 @@ PENHYPER_SIGN_RE = re.compile(
 # penicillin mg/kg table. Do not harvest epinephrine mg/kg.
 # Dogs and cats. Skip horse. Mercer: hypersensitivity
 # reactions including anaphylaxis can occur. △ Plumb.
+PROCAINEPEN_RE = re.compile(
+    r"procaine.{0,20}penicillin|"
+    r"penicillin.{0,20}procaine",
+    re.I,
+)
+PROCAINEIV_SIGN_RE = re.compile(
+    r"\bintravenous\b|"
+    r"\biv\b|"
+    r"seizure|"
+    r"excitement|"
+    r"ataxia",
+    re.I,
+)
+# Packet 386: named procaine penicillin plus IV /
+# intravenous / seizure / excitement / ataxia only.
+# Do not use bare penicillin. Do not use bare seizure.
+# Do not use penicillin hypersensitivity (385). Do not
+# use metronidazole neurotoxicity (349). Do not use
+# idiopathic epilepsy without named procaine. Do not
+# harvest a penicillin mg/kg table. Do not harvest
+# Downham units. Dogs and cats. Skip horse. Mercer:
+# inadvertent IV procaine penicillin can cause CNS
+# excitement. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7352,6 +7375,11 @@ def analyze(
         and PENHYPER_RE.search(text)
         and PENHYPER_SIGN_RE.search(text)
     )
+    steal_procaineiv_dx = (
+        spec in {"dog", "cat"}
+        and PROCAINEPEN_RE.search(text)
+        and PROCAINEIV_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7539,6 +7567,7 @@ def analyze(
         or steal_tetraphoto_dx
         or steal_tetrahep_dx
         or steal_penhyper_dx
+        or steal_procaineiv_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21042,6 +21071,78 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for penicillin hypersensitivity."
+            )
+
+    procaineiv_named = (
+        spec in {"dog", "cat"}
+        and PROCAINEPEN_RE.search(text)
+        and PROCAINEIV_SIGN_RE.search(text)
+    )
+    if procaineiv_named:
+        if spec == "cat":
+            procaineiv_loc = (
+                "Feline procaine penicillin IV CNS. Not a seizure-alone."
+            )
+        else:
+            procaineiv_loc = (
+                "Canine procaine penicillin IV CNS. Not a seizure-alone."
+            )
+        localization = (
+            f"{localization} Also {procaineiv_loc}"
+            if localization
+            else procaineiv_loc
+        )
+        hard_stops.append(
+            "Do not give procaine penicillin IV. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Do not harvest Downham units. "
+            "Mercer: inadvertent IV procaine penicillin can cause "
+            "CNS excitement. Stop the drug. Supportive. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a seizure-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 385 still owns penicillin hypersensitivity. "
+            "Packet 349 still owns metronidazole neurotoxicity. "
+            "Idiopathic epilepsy without named procaine stays "
+            "the existing seizure loc. "
+            "Bare seizure without named procaine penicillin is "
+            "not this loc. "
+            "Bare procaine penicillin without IV / intravenous / "
+            "seizure / excitement / ataxia language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline procaine penicillin IV CNS. Not a "
+                "seizure-alone. Stop the drug. Supportive. △ Plumb. "
+                "Seizure without named procaine stays the existing "
+                "seizure loc. Do not copy a penicillin table."
+            )
+        else:
+            do_next.append(
+                "Name canine procaine penicillin IV CNS. Not a "
+                "seizure-alone. Stop the drug. Supportive. △ Plumb. "
+                "Seizure without named procaine stays the existing "
+                "seizure loc. Do not copy a penicillin table."
+            )
+        sources.append(
+            "Mercer Merck penicillins: inadvertent IV procaine "
+            "penicillin can cause CNS excitement. Downham Sex "
+            "Transm Dis 1978 PMID 417409. Hoigne Schweiz Med "
+            "Wochenschr 1964 PMID 14231827. Kaplan JAVMA 2011 "
+            "PMID 21320022 is species-fit UMN CVM, 4 cites — "
+            "recency is not this loc. Nielsen 1988 and Olsén "
+            "2007 are horses, not this loc. Human chemistry is "
+            "not canine incidence. Do not harvest penicillin "
+            "mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for procaine penicillin IV CNS."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for procaine penicillin IV CNS."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

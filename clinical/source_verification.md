@@ -6205,3 +6205,33 @@ Night rule: named penicillin plus anaphylax / hypersensitivity / hives / urticar
 - Attending: If the query is only “allergy,” why does this gate stay dark?
 - Attending: Horse penicillin plus hives — fire or skip?
 - Attending: Cat plus ampicillin plus urticaria — which locs fire, and why?
+
+## 386. Canine procaine penicillin IV CNS (Mercer Merck penicillins)
+
+No dedicated Plunkett procaine-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (inadvertent IV procaine penicillin can cause CNS excitement). Downham *Sex Transm Dis* 1978 PMID 417409 (19 cites; systemic toxic reactions to procaine penicillin G including grand mal seizures; printed 4,800,000-unit gonorrhea doses stay on that paper). Hoigne *Schweiz Med Wochenschr* 1964 PMID 14231827 (14 cites; combined anaphylactic and embolic-toxic reaction after accidental intravascular procaine penicillin). Kaplan *J Am Vet Med Assoc* 2011 PMID 21320022 (4 cites, University of Minnesota CVM; two dogs and a cat after inadvertent IV penicillin G procaine-benzathine — species-fit, recency is not this loc). Nielsen *Aust Vet J* 1988 PMID 3415617 and Olsén *J Vet Pharmacol Ther* 2007 PMID 17472651 are horses, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Downham / Hoigne. Do not overweight Kaplan 2011 as quality. Human chemistry is not canine incidence. Packet 385 still owns penicillin hypersensitivity. Packet 349 still owns metronidazole neurotoxicity. Existing seizure loc still owns idiopathic epilepsy without named procaine. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Downham units. Do not fire on bare procaine penicillin. Do not fire on bare seizure. Dogs and cats. Skip horse.
+
+Agree with Mercer / Downham: **named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia is not a seizure-alone.** Stop the drug. Supportive. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia is canine (or feline) procaine penicillin IV CNS; not a seizure-alone. Bare procaine penicillin stays dark. Bare seizure stays dark. Dual seizure plus named procaine concatenates the existing seizure loc then 386. Dual amoxicillin plus anaphylaxis stays 385. Dual metronidazole plus seizure stays 349. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Downham units.
+- Do not call this a seizure-alone.
+- Do not give procaine penicillin IV.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat metronidazole neurotoxicity (349) as this loc.
+- Do not treat idiopathic epilepsy without named procaine as this loc.
+- Do not treat seizure without named procaine penicillin as this loc.
+
+Night rule: named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia → **Canine procaine penicillin IV CNS. Not a seizure-alone.** Stop the drug. Supportive. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is procaine penicillin plus IV not a seizure-and-home night?
+- NAVLE 2: Why does idiopathic epilepsy without named procaine stay the existing seizure loc, not this loc?
+- NAVLE 3: Dual-named “procaine penicillin, seizure” — which locs should fire, and why?
+- Oral: How do you tell the owner that depot penicillin is not for the vein without inventing a mg/kg table?
+- Attending: If the query is only “seizure,” why does this gate stay dark?
+- Attending: Horse procaine penicillin plus IV — fire or skip?
+- Attending: Cat plus procaine penicillin plus ataxia — which locs fire, and why?
