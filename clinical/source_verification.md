@@ -6355,3 +6355,33 @@ Night rule: named penicillin plus Pseudomonas / gram-negative / gram neg → **C
 - Attending: If the query is only “sepsis,” why does this gate stay dark?
 - Attending: Horse penicillin plus Pseudomonas — fire or skip?
 - Attending: Cat plus ampicillin plus gram-negative — which locs fire, and why?
+
+## 391. Canine cephalosporin penicillin cross-reactivity (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-penicillin-cross-reactivity chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (hypersensitivity and cross-reactivity with penicillins can occur). Campagna *J Emerg Med* 2012 PMID 21742459 (176 cites, University of Maryland School of Medicine; literature review of cephalosporins in penicillin-allergic patients). Romano *Ann Intern Med* 2004 PMID 15238366 (141 cites, Università Cattolica del Sacro Cuore, Rome; prospective cross-reactivity and tolerability of cephalosporins after documented penicillin hypersensitivity). Blumenthal *Clin Infect Dis* 2018 PMID 29361015 (391 cites, Massachusetts General Hospital / Harvard; reported penicillin allergy changes surgical prophylaxis and SSI risk). Zagursky *J Allergy Clin Immunol Pract* 2018 PMID 29017833 (160 cites, Rochester General; side-chain chemistry of β-lactam cross-reactivity). Shenoy *JAMA* 2019 PMID 30644987 is a penicillin-allergy review (648 cites, Harvard), not this named-cephalosporin loc. Pichichero *J Pediatr* 1998 is pediatric skin-test chemistry, not this loc. Rosser *J Am Anim Hosp Assoc* 1997 is GSD pyoderma, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Campagna / Romano. Do not overweight Shenoy 2019 as quality for this SA cephalosporin loc. Human chemistry is not canine incidence. Packet 390 still owns penicillin gram-negative coverage. Packet 385 still owns penicillin hypersensitivity without a named cephalosporin. Vaccine or hymenoptera without named cephalosporin stays the existing anaphylaxis loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest an epinephrine mg/kg table. Do not fire on bare cephalexin. Do not fire on bare allergy. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Campagna: **named cephalosporin plus penicillin allergy / cross-react / hypersensitivity is not an allergy-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus penicillin allergy / cross-react / hypersensitivity is canine (or feline) cephalosporin penicillin cross-reactivity; not an allergy-alone. Bare cephalexin stays dark. Bare allergy stays dark. Dual amoxicillin plus anaphylaxis stays 385. Dual amoxicillin plus Pseudomonas stays 390. Dual vaccine anaphylaxis without named cephalosporin stays the existing anaphylaxis loc. Dual amoxicillin plus hypersensitivity plus cephalexin concatenates 385 then 391. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest an epinephrine mg/kg table.
+- Do not call this an allergy-alone.
+- Do not send cephalexin after a named penicillin allergy.
+- Do not treat penicillin hypersensitivity without a named cephalosporin (385) as this loc.
+- Do not treat penicillin gram-negative coverage (390) as this loc.
+- Do not treat vaccine or hymenoptera without named cephalosporin as this loc.
+- Do not treat allergy without named cephalosporin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus penicillin allergy / cross-react / hypersensitivity → **Canine cephalosporin penicillin cross-reactivity. Not an allergy-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus penicillin allergy not an allergy-and-home night?
+- NAVLE 2: Why does amoxicillin plus anaphylaxis stay 385, not this loc?
+- NAVLE 3: Dual-named “cephalexin, amoxicillin, hypersensitivity” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the penicillin-allergy plan without inventing a mg/kg table?
+- Attending: If the query is only “allergy,” why does this gate stay dark?
+- Attending: Horse cefazolin plus penicillin allergy — fire or skip?
+- Attending: Cat plus cefovecin plus hypersensitivity — which locs fire, and why?

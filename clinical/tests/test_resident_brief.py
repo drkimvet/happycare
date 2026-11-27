@@ -15100,6 +15100,91 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline penicillin gram-negative coverage gap", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cephcross_is_not_an_allergy_alone(self):
+        b = analyze("dog", "cephalexin, penicillin allergy")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIn("not an allergy-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalexin after a named penicillin allergy", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine penicillin hypersensitivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_cross_react_fires_cephcross(self):
+        b = analyze("dog", "cefazolin, cross-reactivity")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIn("not an allergy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_hypersensitivity_fires_cephcross(self):
+        b = analyze("cat", "cefovecin, hypersensitivity")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin penicillin cross-reactivity", loc)
+        self.assertIn("not an allergy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_concatenates_with_cephcross(self):
+        b = analyze("dog", "cephalexin, amoxicillin, hypersensitivity")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_is_not_cephcross(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pengneg_is_not_cephcross(self):
+        b = analyze("dog", "amoxicillin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_vaccine_anaphylaxis_without_cephalosporin_is_not_cephcross(self):
+        b = analyze("dog", "anaphylaxis after vaccine, collapse, no hives")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("distributive shock", loc)
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cephcross(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_allergy_is_not_cephcross(self):
+        b = analyze("dog", "allergy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_plus_allergy_is_not_cephcross(self):
+        b = analyze("dog", "cephalexin, allergy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hymenoptera_without_cephalosporin_is_not_cephcross(self):
+        b = analyze("dog", "hymenoptera, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("distributive shock", loc)
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cephcross(self):
+        b = analyze("horse", "cephalexin, penicillin allergy")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin penicillin cross-reactivity", loc)
+        self.assertNotIn("feline cephalosporin penicillin cross-reactivity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

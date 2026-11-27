@@ -821,6 +821,31 @@ PENGNEG_SIGN_RE = re.compile(
 # Dogs and cats. Skip horse. Mercer: penicillins have
 # limited activity against many gram-negative organisms
 # including Pseudomonas. △ Plumb.
+CEPHCROSS_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEPHCROSS_SIGN_RE = re.compile(
+    r"penicillin.{0,24}allerg|"
+    r"allerg.{0,24}penicillin|"
+    r"cross[- ]?react|"
+    r"hypersensitiv",
+    re.I,
+)
+# Packet 391: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus penicillin allergy / cross-react /
+# hypersensitivity only. Do not use \ballerg (bare
+# allergy). Do not use amoxicillin anaphylaxis without
+# named cephalosporin (385). Do not use vaccine /
+# hymenoptera without named cephalosporin (existing
+# anaphylaxis loc). Do not use penicillin gram-negative
+# coverage (390). Do not harvest a cephalosporin mg/kg
+# table. Do not harvest an epinephrine mg/kg table. Dogs
+# and cats. Skip horse. Mercer: hypersensitivity and
+# cross-reactivity with penicillins can occur. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7492,6 +7517,11 @@ def analyze(
         and PENGNEG_RE.search(text)
         and PENGNEG_SIGN_RE.search(text)
     )
+    steal_cephcross_dx = (
+        spec in {"dog", "cat"}
+        and CEPHCROSS_RE.search(text)
+        and CEPHCROSS_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7684,6 +7714,7 @@ def analyze(
         or steal_benzathineiv_dx
         or steal_napeniv_dx
         or steal_pengneg_dx
+        or steal_cephcross_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21557,6 +21588,90 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for penicillin gram-negative coverage gap."
+            )
+
+    cephcross_named = (
+        spec in {"dog", "cat"}
+        and CEPHCROSS_RE.search(text)
+        and CEPHCROSS_SIGN_RE.search(text)
+    )
+    if cephcross_named:
+        if spec == "cat":
+            cephcross_loc = (
+                "Feline cephalosporin penicillin cross-reactivity. "
+                "Not an allergy-alone."
+            )
+        else:
+            cephcross_loc = (
+                "Canine cephalosporin penicillin cross-reactivity. "
+                "Not an allergy-alone."
+            )
+        localization = (
+            f"{localization} Also {cephcross_loc}"
+            if localization
+            else cephcross_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin after a named penicillin "
+            "allergy. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest an epinephrine mg/kg table. "
+            "Mercer: hypersensitivity and cross-reactivity with "
+            "penicillins can occur. Stop the cephalosporin. "
+            "Epinephrine is the crash drug if this is anaphylaxis. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this an allergy-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 390 still owns penicillin gram-negative "
+            "coverage. Packet 385 still owns penicillin "
+            "hypersensitivity without a named cephalosporin. "
+            "Vaccine or hymenoptera without named cephalosporin "
+            "stays the existing anaphylaxis loc. "
+            "Bare allergy without named cephalosporin is not this "
+            "loc. "
+            "Bare cephalexin without penicillin allergy / "
+            "cross-react / hypersensitivity language is not this "
+            "loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin penicillin "
+                "cross-reactivity. Not an allergy-alone. Stop the "
+                "cephalosporin. △ Plumb. Packet 385 still owns "
+                "penicillin hypersensitivity without a named "
+                "cephalosporin. Do not copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin penicillin "
+                "cross-reactivity. Not an allergy-alone. Stop the "
+                "cephalosporin. △ Plumb. Packet 385 still owns "
+                "penicillin hypersensitivity without a named "
+                "cephalosporin. Do not copy a cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: hypersensitivity and "
+            "cross-reactivity with penicillins can occur. "
+            "Campagna J Emerg Med 2012 PMID 21742459 (University "
+            "of Maryland). Romano Ann Intern Med 2004 PMID "
+            "15238366. Blumenthal Clin Infect Dis 2018 PMID "
+            "29361015 (Massachusetts General Hospital). "
+            "Zagursky J Allergy Clin Immunol Pract 2018 PMID "
+            "29017833. Shenoy JAMA 2019 is a penicillin-allergy "
+            "review, not this loc. Rosser 1997 is GSD pyoderma, "
+            "not this loc. Human chemistry is not canine "
+            "incidence. Do not harvest cephalosporin mg/kg. Skip "
+            "horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin penicillin cross-reactivity."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin penicillin cross-reactivity."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

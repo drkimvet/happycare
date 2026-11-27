@@ -327,6 +327,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-benziv` | Assessment | Canine benzathine penicillin never IV / not an IM-alone |
 | `ddx-napeniv` | Assessment | Canine sodium penicillin too-fast IV / not a hypernatremia-alone |
 | `ddx-pengneg` | Assessment | Canine penicillin gram-negative coverage gap / not a sepsis-alone |
+| `ddx-cephcross` | Assessment | Canine cephalosporin penicillin cross-reactivity / not an allergy-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -407,6 +408,7 @@ Suggested names are short so they show up after three letters.
 | `dc-benziv` | Discharge | After benzathine penicillin / never-IV talk |
 | `dc-napeniv` | Discharge | After sodium penicillin / too-fast IV talk |
 | `dc-pengneg` | Discharge | After penicillin / gram-negative coverage-gap talk |
+| `dc-cephcross` | Discharge | After cephalosporin / penicillin cross-reactivity talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4852,6 +4854,21 @@ DDX:
 Do not: harvest a penicillin mg/kg table. Call this a sepsis-alone. Send penicillin as the Pseudomonas plan. Treat 375 or 385 as this loc.
 Do next: Name canine penicillin gram-negative coverage gap. Not a sepsis-alone. Cover the gram-negative. △ Plumb. Packet 375 still owns aminoglycoside anaerobes. Do not copy a penicillin table.
 
+### `ddx-cephcross`
+
+Cephalosporin penicillin cross-reactivity — {{patient.name}}
+Canine cephalosporin penicillin cross-reactivity [yes / not]. Not an allergy-alone [yes / not]. Stop the cephalosporin [ ]. Packet 390 pengneg [ ]. Packet 385 penhyper [ ]. Vaccine / sting [ ]. Bare allergy [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus penicillin allergy / cross-react / hypersensitivity — **Canine cephalosporin penicillin cross-reactivity. Not an allergy-alone**
+2. Mercer / Campagna J Emerg Med 2012 PMID 21742459: hypersensitivity and cross-reactivity with penicillins can occur. Stop the cephalosporin. Epinephrine is the crash drug if this is anaphylaxis. △ Plumb
+3. Packet 390 owns penicillin gram-negative coverage. Packet 385 owns penicillin hypersensitivity without a named cephalosporin. Vaccine or hymenoptera without named cephalosporin stays the existing anaphylaxis loc
+4. Do not harvest a cephalosporin table. Do not harvest an epinephrine table. Shenoy JAMA 2019 is a penicillin-allergy review, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare allergy stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this an allergy-alone. Send cephalexin after a named penicillin allergy. Treat 385 or 390 as this loc.
+Do next: Name canine cephalosporin penicillin cross-reactivity. Not an allergy-alone. Stop the cephalosporin. △ Plumb. Packet 385 still owns penicillin hypersensitivity without a named cephalosporin. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5505,6 +5522,14 @@ Return now for collapse, extreme thirst, or if {{patient.pronoun}} is worse. {{l
 We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover amoxicillin or penicillin from home.
 
 Return now for fever, collapse, or if the infection looks worse. {{location.phonenumber}}
+
+### `dc-cephcross`
+
+{{patient.name}} had a reaction after a cephalosporin around a penicillin allergy or cross-reactivity concern. That family can cross-react with penicillins. Using leftover cephalexin as the allergy plan is not the same as treating a simple allergy night. This is not a simple allergy-and-home plan.
+
+We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
+
+Return now for hives, facial swelling, collapse, or trouble breathing. {{location.phonenumber}}
 
 ### `dc-ahds`
 
