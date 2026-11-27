@@ -329,6 +329,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-pengneg` | Assessment | Canine penicillin gram-negative coverage gap / not a sepsis-alone |
 | `ddx-cephcross` | Assessment | Canine cephalosporin penicillin cross-reactivity / not an allergy-alone |
 | `ddx-cehimha` | Assessment | Canine cephalosporin-associated IMHA / not an IMHA-alone |
+| `ddx-cehitp` | Assessment | Canine cephalosporin-associated thrombocytopenia / not an ITP-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -411,6 +412,7 @@ Suggested names are short so they show up after three letters.
 | `dc-pengneg` | Discharge | After penicillin / gram-negative coverage-gap talk |
 | `dc-cephcross` | Discharge | After cephalosporin / penicillin cross-reactivity talk |
 | `dc-cehimha` | Discharge | After cephalosporin-associated IMHA talk |
+| `dc-cehitp` | Discharge | After cephalosporin-associated thrombocytopenia talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4886,6 +4888,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this an IMHA-alone. Pred this as primary IMHA before the drug is named. Treat 391 or 362 as this loc.
 Do next: Name canine cephalosporin-associated IMHA. Not an IMHA-alone. Stop the cephalosporin. △ Plumb. Packet 126 still owns IMHA without named cephalosporin. Do not copy a cephalosporin table.
 
+### `ddx-cehitp`
+
+Cephalosporin-associated thrombocytopenia — {{patient.name}}
+Canine cephalosporin-associated thrombocytopenia [yes / not]. Not an ITP-alone [yes / not]. Stop the cephalosporin [ ]. Packet 392 cehimha [ ]. Packet 304 ITP without ceph [ ]. Packet 391 cephcross [ ]. Bare ITP [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus ITP / thrombocytopenia / platelet — **Canine cephalosporin-associated thrombocytopenia. Not an ITP-alone**
+2. Mercer / Bloom Am J Hematol 1988 PMID 3394717: immune thrombocytopenia can follow cephalosporin exposure. Stop the cephalosporin. △ Plumb
+3. Packet 392 owns cephalosporin-associated IMHA. Packet 304 owns ITP without named cephalosporin. Packet 391 owns cephalosporin penicillin cross-reactivity. Bare ITP is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest a 30k or vincristine table. Do not harvest Bloom IgG methods. Grossjohann 2004 is human ceftriaxone DITP, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare ITP stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this an ITP-alone. Pred this as primary ITP before the drug is named. Treat 392 or 304 as this loc.
+Do next: Name canine cephalosporin-associated thrombocytopenia. Not an ITP-alone. Stop the cephalosporin. △ Plumb. Packet 304 still owns ITP without named cephalosporin. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5555,6 +5572,14 @@ Return now for hives, facial swelling, collapse, or trouble breathing. {{locatio
 We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
 
 Return now for pale gums, collapse, dark urine, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehitp`
+
+{{patient.name}} had a low platelet count or immune thrombocytopenia around a cephalosporin. That family of antibiotics can trigger immune destruction of platelets. Using leftover cephalexin as the ITP plan is not the same as treating a simple ITP night. This is not a simple ITP-and-home plan.
+
+We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
+
+Return now for bruising, nosebleed, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

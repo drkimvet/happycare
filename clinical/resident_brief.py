@@ -869,6 +869,31 @@ CEPHIMHA_SIGN_RE = re.compile(
 # table. Do not harvest Bloom IgG methods. Dogs and cats.
 # Skip horse. Mercer: immune-mediated hemolytic anemia can
 # follow cephalosporin exposure. △ Plumb.
+CEPHITP_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEPHITP_SIGN_RE = re.compile(
+    r"\bitp\b|"
+    r"thrombocytop|"
+    r"\bplatelet",
+    re.I,
+)
+# Packet 393: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus ITP / thrombocytopenia / platelet only.
+# Do not use \bpetechiae (RMSF). Do not use Cavalier
+# without named cephalosporin (304). Do not use
+# cephalosporin-associated IMHA (392). Do not use
+# cephalosporin penicillin cross-reactivity (391). Existing
+# ITP loc still owns ITP without named cephalosporin. Do
+# not harvest a cephalosporin mg/kg table. Do not harvest
+# a 30k or vincristine table. Do not harvest Bloom IgG
+# methods. Dogs and cats. Skip horse. Mercer / Bloom:
+# immune thrombocytopenia can follow cephalosporin
+# exposure. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7550,6 +7575,11 @@ def analyze(
         and CEPHIMHA_RE.search(text)
         and CEPHIMHA_SIGN_RE.search(text)
     )
+    steal_cehitp_dx = (
+        spec in {"dog", "cat"}
+        and CEPHITP_RE.search(text)
+        and CEPHITP_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7744,6 +7774,7 @@ def analyze(
         or steal_pengneg_dx
         or steal_cephcross_dx
         or steal_cehimha_dx
+        or steal_cehitp_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21782,6 +21813,87 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin-associated IMHA."
+            )
+
+    cehitp_named = (
+        spec in {"dog", "cat"}
+        and CEPHITP_RE.search(text)
+        and CEPHITP_SIGN_RE.search(text)
+    )
+    if cehitp_named:
+        if spec == "cat":
+            cehitp_loc = (
+                "Feline cephalosporin-associated thrombocytopenia. "
+                "Not an ITP-alone."
+            )
+        else:
+            cehitp_loc = (
+                "Canine cephalosporin-associated thrombocytopenia. "
+                "Not an ITP-alone."
+            )
+        localization = (
+            f"{localization} Also {cehitp_loc}"
+            if localization
+            else cehitp_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin-associated thrombocytopenia "
+            "home as primary ITP. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest a 30k or vincristine table. "
+            "Do not harvest Bloom IgG methods. "
+            "Mercer / Bloom: immune thrombocytopenia can follow "
+            "cephalosporin exposure. Stop the cephalosporin. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this an ITP-alone. "
+            "Do not pred cephalosporin thrombocytopenia as "
+            "primary ITP before the drug is named. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 392 still owns cephalosporin-associated IMHA. "
+            "Packet 391 still owns cephalosporin penicillin "
+            "cross-reactivity. Packet 304 still owns ITP without "
+            "named cephalosporin. "
+            "Bare ITP without named cephalosporin is not this loc. "
+            "Bare cephalexin without ITP / thrombocytopenia / "
+            "platelet language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin-associated "
+                "thrombocytopenia. Not an ITP-alone. Stop the "
+                "cephalosporin. △ Plumb. Packet 304 still owns ITP "
+                "without named cephalosporin. Do not copy a "
+                "cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin-associated "
+                "thrombocytopenia. Not an ITP-alone. Stop the "
+                "cephalosporin. △ Plumb. Packet 304 still owns ITP "
+                "without named cephalosporin. Packet 392 still owns "
+                "cephalosporin-associated IMHA. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins / Bloom Am J Hematol 1988 "
+            "PMID 3394717 (Smith Kline and French): immune "
+            "thrombocytopenia can follow cephalosporin exposure. "
+            "Deldar Vet Pathol 1988 PMID 3394212 (University of "
+            "Pennsylvania). Grossjohann Transfusion 2004 PMID "
+            "15225244 is human ceftriaxone DITP, not this loc. "
+            "Kagoyama 2026 is recency, not this loc. Human "
+            "chemistry is not canine incidence. Do not harvest "
+            "cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin-associated thrombocytopenia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin-associated thrombocytopenia."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

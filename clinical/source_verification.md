@@ -6415,3 +6415,33 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus IMHA / h
 - Attending: If the query is only “IMHA,” why does this gate stay dark?
 - Attending: Horse cefazolin plus hemolysis — fire or skip?
 - Attending: Cat plus cefovecin plus spherocyte — which locs fire, and why?
+
+## 393. Canine cephalosporin-associated thrombocytopenia (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-thrombocytopenia chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (immune cytopenias, including thrombocytopenia, can follow cephalosporin exposure). Bloom *Am J Hematol* 1988 PMID 3394717 (31 cites, Smith Kline and French Laboratories, King of Prussia; species-fit canine cephalosporin-induced immune cytopenia with platelet-associated IgG after cefazedone / cefonicid — printed tox-study methods stay on that paper). Deldar *Vet Pathol* 1988 PMID 3394212 (18 cites, University of Pennsylvania School of Veterinary Medicine; canine bone-marrow ultrastructure after cephalosporin). Grossjohann *Transfusion* 2004 PMID 15225244 (41 cites, Greifswald) is human ceftriaxone DITP plus hemolysis, not this SA cephalexin loc. Kagoyama *J Dermatol* 2026 PMID 41958049 is recency (0 cites), not this loc. Chong *Platelets* 1991 is generic DITP chemistry, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bloom. Do not overweight Grossjohann 2004 as quality for this SA loc. Human chemistry is not canine incidence. Packet 392 still owns cephalosporin-associated IMHA. Packet 391 still owns cephalosporin penicillin cross-reactivity. Packet 304 still owns ITP without named cephalosporin. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a 30k or vincristine table. Do not harvest Bloom IgG methods. Do not fire on bare cephalexin. Do not fire on bare ITP. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bloom: **named cephalosporin plus ITP / thrombocytopenia / platelet is not an ITP-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus ITP / thrombocytopenia / platelet is canine (or feline) cephalosporin-associated thrombocytopenia; not an ITP-alone. Bare cephalexin stays dark. Bare ITP stays 304. Dual cephalexin plus IMHA stays 392. Dual cephalexin plus penicillin allergy stays 391. Dual ITP plus named cephalexin concatenates 304 then 393. Dual cephalexin plus IMHA plus thrombocytopenia concatenates 392 then 393. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a 30k or vincristine table.
+- Do not harvest Bloom IgG methods.
+- Do not call this an ITP-alone.
+- Do not pred cephalosporin thrombocytopenia as primary ITP before the drug is named.
+- Do not treat cephalosporin-associated IMHA (392) as this loc.
+- Do not treat cephalosporin penicillin cross-reactivity (391) as this loc.
+- Do not treat ITP without named cephalosporin (304) as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus ITP / thrombocytopenia / platelet → **Canine cephalosporin-associated thrombocytopenia. Not an ITP-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus thrombocytopenia not an ITP-and-home night?
+- NAVLE 2: Why does cephalexin plus IMHA stay 392, not this loc?
+- NAVLE 3: Dual-named “cephalexin, ITP” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the ITP plan without inventing a mg/kg table?
+- Attending: If the query is only “ITP,” why does this gate stay dark?
+- Attending: Horse cefazolin plus thrombocytopenia — fire or skip?
+- Attending: Cat plus cefovecin plus platelet — which locs fire, and why?
