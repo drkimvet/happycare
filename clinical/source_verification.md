@@ -6265,3 +6265,33 @@ Night rule: named potassium penicillin plus too-fast / rapid IV / hyperkalemia /
 - Attending: If the query is only “arrest,” why does this gate stay dark?
 - Attending: Horse potassium penicillin plus too-fast IV — fire or skip?
 - Attending: Cat plus penicillin K plus hyperkalemia — which locs fire, and why?
+
+## 388. Canine benzathine penicillin never IV (Mercer Merck penicillins)
+
+No dedicated Plunkett benzathine-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (benzathine penicillin is for IM use only and must not be given IV). Weir *Clin Pediatr* 1988 PMID 3276426 (11 cites; intravascular injuries from intramuscular penicillin including benzathine; aspiration of blood is a fail-safe that fails with opaque depot). Levetan *S Afr Med J* 1988 PMID 3187826 (2 cites; inadvertent intravenous administration of a long-acting depot penicillin; MESH penicillin G benzathine). Kaplan *J Am Vet Med Assoc* 2011 PMID 21320022 (4 cites, University of Minnesota CVM; two dogs and a cat after inadvertent IV penicillin G procaine-benzathine — species-fit, recency is not this loc; packet 386 still owns the procaine-CNS split). Greene *Arch Intern Med* 1980 PMID 7396623 is neurosyphilis failure of IM benzathine needing aqueous IV penicillin, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Weir / Levetan. Do not overweight Greene 1980 as quality for this never-IV loc. Human chemistry is not canine incidence. Packet 387 still owns potassium penicillin too-fast IV. Packet 386 still owns procaine penicillin IV CNS. Packet 385 still owns penicillin hypersensitivity. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Greene neurosyphilis units. Do not fire on bare benzathine penicillin. Do not fire on bare IM. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Weir: **named benzathine penicillin plus IV / intravenous / vein is not an IM-alone.** Stop the IV. IM only. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named benzathine penicillin plus IV / intravenous / vein is canine (or feline) benzathine penicillin never IV; not an IM-alone. Bare benzathine penicillin stays dark. Bare IM stays dark. Dual procaine-benzathine plus IV concatenates 386 then 388. Dual potassium penicillin plus too-fast IV stays 387. Dual amoxicillin plus anaphylaxis stays 385. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Greene neurosyphilis units.
+- Do not call this an IM-alone.
+- Do not give benzathine penicillin IV.
+- Do not treat potassium penicillin too-fast IV (387) as this loc.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat IM without named benzathine penicillin as this loc.
+
+Night rule: named benzathine penicillin plus IV / intravenous / vein → **Canine benzathine penicillin never IV. Not an IM-alone.** Stop the IV. IM only. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is benzathine penicillin plus IV not an IM-and-home night?
+- NAVLE 2: Why does potassium penicillin plus too-fast IV stay 387, not this loc?
+- NAVLE 3: Dual-named “procaine penicillin G benzathine, IV” — which locs should fire, and why?
+- Oral: How do you tell the owner that depot penicillin is muscle-only without inventing a mg/kg table?
+- Attending: If the query is only “IM,” why does this gate stay dark?
+- Attending: Horse benzathine penicillin plus IV — fire or skip?
+- Attending: Cat plus benzathine penicillin plus vein — which locs fire, and why?

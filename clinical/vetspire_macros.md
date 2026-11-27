@@ -324,6 +324,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-penhyper` | Assessment | Canine penicillin hypersensitivity / not an allergy-alone |
 | `ddx-procaineiv` | Assessment | Canine procaine penicillin IV CNS / not a seizure-alone |
 | `ddx-kpeniv` | Assessment | Canine potassium penicillin too-fast IV / not an arrest-alone |
+| `ddx-benziv` | Assessment | Canine benzathine penicillin never IV / not an IM-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -401,6 +402,7 @@ Suggested names are short so they show up after three letters.
 | `dc-penhyper` | Discharge | After penicillin / hypersensitivity talk |
 | `dc-procaineiv` | Discharge | After procaine penicillin / IV CNS talk |
 | `dc-kpeniv` | Discharge | After potassium penicillin / too-fast IV talk |
+| `dc-benziv` | Discharge | After benzathine penicillin / never-IV talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4801,6 +4803,21 @@ DDX:
 Do not: harvest a penicillin mg/kg table. Call this an arrest-alone. Bolus potassium penicillin. Treat 386 or CPA without named potassium penicillin as this loc.
 Do next: Name canine potassium penicillin too-fast IV. Not an arrest-alone. Slow the line or stop. △ Plumb. Arrest without named potassium penicillin stays the existing RECOVER loc. Do not copy a penicillin table.
 
+### `ddx-benziv`
+
+Benzathine penicillin never IV — {{patient.name}}
+Canine benzathine penicillin never IV [yes / not]. Not an IM-alone [yes / not]. Stop the IV [ ]. Packet 387 K penicillin [ ]. Packet 386 procaine IV [ ]. Packet 385 hypersensitivity [ ]. Bare IM [ ].
+
+DDX:
+1. Named benzathine penicillin plus IV / intravenous / vein — **Canine benzathine penicillin never IV. Not an IM-alone**
+2. Mercer / Weir Clin Pediatr 1988 PMID 3276426: benzathine penicillin is for IM use only and must not be given IV. Stop the IV. △ Plumb
+3. Packet 387 owns potassium penicillin too-fast IV. Packet 386 owns procaine penicillin IV CNS. Packet 385 owns penicillin hypersensitivity. Bare IM is not this loc
+4. Do not harvest a penicillin table. Do not harvest Greene neurosyphilis units. Greene 1980 is neurosyphilis failure of IM benzathine, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare benzathine penicillin or bare IM stays dark. Do not copy a penicillin table
+
+Do not: harvest a penicillin mg/kg table. Call this an IM-alone. Give benzathine penicillin IV. Treat 387 or 386 as this loc.
+Do next: Name canine benzathine penicillin never IV. Not an IM-alone. Stop the IV. IM only. △ Plumb. Packet 386 still owns procaine IV CNS. Do not copy a penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5430,6 +5447,14 @@ Return now for another seizure, collapse, or if {{patient.pronoun}} is worse. {{
 We named the coverage gap and slowed or stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover potassium penicillin from home.
 
 Return now for collapse, a weak pulse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-benziv`
+
+{{patient.name}} had a reaction after benzathine penicillin around a vein. That depot penicillin is for muscle only and must not go in a vein. Using leftover benzathine penicillin as an intravenous plan is not the same as a simple IM shot. This is not a simple IM-and-home plan.
+
+We named the coverage gap and stopped the intravenous medicine. Give only the medicines we sent, as labeled. Do not add leftover benzathine penicillin from home.
+
+Return now for collapse, trouble breathing, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

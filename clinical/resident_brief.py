@@ -755,6 +755,27 @@ KPENIV_SIGN_RE = re.compile(
 # mEq. Dogs and cats. Skip horse. Mercer: potassium
 # penicillin given too rapidly IV can cause cardiac
 # arrest. △ Plumb.
+BENZATHINEPEN_RE = re.compile(
+    r"benzathine.{0,20}penicillin|"
+    r"penicillin.{0,20}benzathine",
+    re.I,
+)
+BENZATHINEIV_SIGN_RE = re.compile(
+    r"\bintravenous\b|"
+    r"\biv\b|"
+    r"\bvein\b",
+    re.I,
+)
+# Packet 388: named benzathine penicillin plus IV /
+# intravenous / vein only. Do not use bare benzathine.
+# Do not use bare IM (that is the route). Do not use
+# potassium penicillin too-fast IV (387). Do not use
+# procaine penicillin IV CNS (386). Do not use penicillin
+# hypersensitivity (385). Do not harvest a penicillin
+# mg/kg table. Do not harvest Greene neurosyphilis
+# million-unit tables. Dogs and cats. Skip horse.
+# Mercer: benzathine penicillin is for IM use only and
+# must not be given IV. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7411,6 +7432,11 @@ def analyze(
         and KPEN_RE.search(text)
         and KPENIV_SIGN_RE.search(text)
     )
+    steal_benzathineiv_dx = (
+        spec in {"dog", "cat"}
+        and BENZATHINEPEN_RE.search(text)
+        and BENZATHINEIV_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7600,6 +7626,7 @@ def analyze(
         or steal_penhyper_dx
         or steal_procaineiv_dx
         or steal_kpeniv_dx
+        or steal_benzathineiv_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21248,6 +21275,79 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for potassium penicillin too-fast IV."
+            )
+
+    benzathineiv_named = (
+        spec in {"dog", "cat"}
+        and BENZATHINEPEN_RE.search(text)
+        and BENZATHINEIV_SIGN_RE.search(text)
+    )
+    if benzathineiv_named:
+        if spec == "cat":
+            benzathineiv_loc = (
+                "Feline benzathine penicillin never IV. Not an IM-alone."
+            )
+        else:
+            benzathineiv_loc = (
+                "Canine benzathine penicillin never IV. Not an IM-alone."
+            )
+        localization = (
+            f"{localization} Also {benzathineiv_loc}"
+            if localization
+            else benzathineiv_loc
+        )
+        hard_stops.append(
+            "Do not give benzathine penicillin IV. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Do not harvest Greene neurosyphilis units. "
+            "Mercer: benzathine penicillin is for IM use only "
+            "and must not be given IV. Stop the IV. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an IM-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 387 still owns potassium penicillin too-fast "
+            "IV. Packet 386 still owns procaine penicillin IV CNS. "
+            "Packet 385 still owns penicillin hypersensitivity. "
+            "Greene 1980 is neurosyphilis failure of IM benzathine, "
+            "not this loc. "
+            "Bare IM without named benzathine penicillin is not "
+            "this loc. "
+            "Bare benzathine penicillin without IV / intravenous / "
+            "vein language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline benzathine penicillin never IV. Not "
+                "an IM-alone. Stop the IV. IM only. △ Plumb. "
+                "Packet 386 still owns procaine IV CNS. Do not "
+                "copy a penicillin table."
+            )
+        else:
+            do_next.append(
+                "Name canine benzathine penicillin never IV. Not "
+                "an IM-alone. Stop the IV. IM only. △ Plumb. "
+                "Packet 386 still owns procaine IV CNS. Do not "
+                "copy a penicillin table."
+            )
+        sources.append(
+            "Mercer Merck penicillins: benzathine penicillin is "
+            "for IM use only and must not be given IV. Weir Clin "
+            "Pediatr 1988 PMID 3276426. Levetan S Afr Med J 1988 "
+            "PMID 3187826. Kaplan JAVMA 2011 PMID 21320022 is "
+            "species-fit UMN CVM, 4 cites — recency is not this "
+            "loc. Greene 1980 is neurosyphilis failure of IM "
+            "benzathine, not this loc. Human chemistry is not "
+            "canine incidence. Do not harvest penicillin mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for benzathine penicillin never IV."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for benzathine penicillin never IV."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

@@ -14865,6 +14865,84 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline potassium penicillin too-fast iv", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_benziv_is_not_an_im_alone(self):
+        b = analyze("dog", "benzathine penicillin, IV")
+        loc = b["localization"].lower()
+        self.assertIn("canine benzathine penicillin never iv", loc)
+        self.assertIn("not an im-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not give benzathine penicillin iv", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_benzathine_vein_fires_benziv(self):
+        b = analyze("dog", "benzathine penicillin, vein")
+        loc = b["localization"].lower()
+        self.assertIn("canine benzathine penicillin never iv", loc)
+        self.assertIn("not an im-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_benzathine_intravenous_fires_benziv(self):
+        b = analyze("cat", "benzathine penicillin, intravenous")
+        loc = b["localization"].lower()
+        self.assertIn("feline benzathine penicillin never iv", loc)
+        self.assertIn("not an im-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_procaine_benzathine_iv_concatenates(self):
+        b = analyze("dog", "procaine penicillin G benzathine, IV")
+        loc = b["localization"].lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kpeniv_is_not_benziv(self):
+        b = analyze("dog", "potassium penicillin, too-fast IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine potassium penicillin too-fast iv", loc)
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_procaineiv_without_benzathine_is_not_benziv(self):
+        b = analyze("dog", "procaine penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_is_not_benziv(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_benzathine_penicillin_is_not_benziv(self):
+        b = analyze("dog", "benzathine penicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_benzathine_im_is_not_benziv(self):
+        b = analyze("dog", "benzathine penicillin, IM")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_im_is_not_benziv(self):
+        b = analyze("dog", "IM")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_benziv(self):
+        b = analyze("horse", "benzathine penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine benzathine penicillin never iv", loc)
+        self.assertNotIn("feline benzathine penicillin never iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
