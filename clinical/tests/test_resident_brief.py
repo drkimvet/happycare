@@ -15431,6 +15431,88 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin-associated neutropenia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehcdiff_is_not_a_diarrhea_alone(self):
+        b = analyze("dog", "cephalexin, C. difficile")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn(
+            "do not send cephalexin-associated c. difficile home as diarrhea",
+            joined,
+        )
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertIn("metronidazole", joined)
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_clostridioides_fires_cehcdiff(self):
+        b = analyze("dog", "cefazolin, Clostridioides")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_superinfection_fires_cehcdiff(self):
+        b = analyze("cat", "cefovecin, superinfection")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin-associated c. difficile", loc)
+        self.assertIn("not a diarrhea-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_colitis_concatenates_with_cehcdiff(self):
+        b = analyze("dog", "cephalexin, C. difficile, colitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIn("canine colitis", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehneut_is_not_cehcdiff(self):
+        b = analyze("dog", "cephalexin, neutropenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertNotIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ciprocol_is_not_cehcdiff(self):
+        b = analyze("dog", "ciprofloxacin, colitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine ciprofloxacin colitis", loc)
+        self.assertNotIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_colitis_is_not_cehcdiff(self):
+        b = analyze("cat", "colitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("feline colitis", loc)
+        self.assertNotIn("feline cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehcdiff(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_diarrhea_is_not_cehcdiff(self):
+        b = analyze("dog", "diarrhea")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_plus_diarrhea_is_not_cehcdiff(self):
+        b = analyze("dog", "cephalexin, diarrhea")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehcdiff(self):
+        b = analyze("horse", "cephalexin, C. difficile")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertNotIn("feline cephalosporin-associated c. difficile", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

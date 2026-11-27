@@ -331,6 +331,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehimha` | Assessment | Canine cephalosporin-associated IMHA / not an IMHA-alone |
 | `ddx-cehitp` | Assessment | Canine cephalosporin-associated thrombocytopenia / not an ITP-alone |
 | `ddx-cehneut` | Assessment | Canine cephalosporin-associated neutropenia / not a sepsis-alone |
+| `ddx-cehcdiff` | Assessment | Canine cephalosporin-associated C. difficile / not a diarrhea-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -415,6 +416,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehimha` | Discharge | After cephalosporin-associated IMHA talk |
 | `dc-cehitp` | Discharge | After cephalosporin-associated thrombocytopenia talk |
 | `dc-cehneut` | Discharge | After cephalosporin-associated neutropenia talk |
+| `dc-cehcdiff` | Discharge | After cephalosporin-associated C. difficile talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4920,6 +4922,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a sepsis-alone. Send leftover cephalexin as the neutropenia plan. Treat 393 or 390 as this loc.
 Do next: Name canine cephalosporin-associated neutropenia. Not a sepsis-alone. Stop the cephalosporin. △ Plumb. Packet 393 still owns cephalosporin thrombocytopenia. Do not copy a cephalosporin table.
 
+### `ddx-cehcdiff`
+
+Cephalosporin-associated C. difficile — {{patient.name}}
+Canine cephalosporin-associated C. difficile [yes / not]. Not a diarrhea-alone [yes / not]. Stop the cephalosporin [ ]. Packet 394 cehneut [ ]. Packet 359 ciprocol [ ]. Packet 344 colitis [ ]. Bare diarrhea [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus C. difficile / Clostridioides / superinfection — **Canine cephalosporin-associated C. difficile. Not a diarrhea-alone**
+2. Mercer / Bartlett JAMA 1979 PMID 501864: superinfection including Clostridioides difficile can follow cephalosporin exposure. Stop the cephalosporin. △ Plumb
+3. Packet 394 owns cephalosporin-associated neutropenia. Packet 359 owns ciprofloxacin colitis. Packet 344 owns feline colitis without a named cephalosporin. Bare diarrhea is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest a metronidazole or vancomycin table. Bartlett NEJM 2002 is antibiotic-associated diarrhea, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare diarrhea stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a diarrhea-alone. Send leftover cephalexin as the diarrhea plan. Treat 394 or 359 as this loc.
+Do next: Name canine cephalosporin-associated C. difficile. Not a diarrhea-alone. Stop the cephalosporin. △ Plumb. Packet 359 still owns ciprofloxacin colitis. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5605,6 +5622,14 @@ Return now for bruising, nosebleed, collapse, or if {{patient.pronoun}} is worse
 We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
 
 Return now for fever, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehcdiff`
+
+{{patient.name}} had diarrhea around a cephalosporin and a Clostridioides difficile or superinfection concern. That family of antibiotics can let that organism overgrow. Using leftover cephalexin as the diarrhea plan is not the same as treating a simple upset stomach. This is not a simple diarrhea-and-home plan.
+
+We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
+
+Return now for watery diarrhea, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

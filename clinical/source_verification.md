@@ -6476,3 +6476,33 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus neutrope
 - Attending: If the query is only “sepsis,” why does this gate stay dark?
 - Attending: Horse cefazolin plus agranulocytosis — fire or skip?
 - Attending: Cat plus cefovecin plus neutrophil — which locs fire, and why?
+
+## 395. Canine cephalosporin-associated C. difficile (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-C.-difficile chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (superinfection including Clostridioides difficile can follow cephalosporin exposure). Bartlett *JAMA* 1979 PMID 501864 (49 cites; loc-fit cephalosporin-associated pseudomembranous colitis due to *C. difficile*; Johns Hopkins lineage). Bartlett *Johns Hopkins Med J* 1981 PMID 7253364 (126 cites; antimicrobial agents implicated in *C. difficile* toxin-associated diarrhea). Bartlett *N Engl J Med* 2002 PMID 11821511 (800 cites, Johns Hopkins) is a general antibiotic-associated diarrhea review, not this named-cephalosporin loc. Kaleko *Anaerobe* 2016 PMID 27262694 is recency and a SYN-004 oral beta-lactamase product in dogs, not this loc. Connelly 2019 / 2020 are recency and the same product line, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bartlett 1979. Do not overweight Bartlett 2002 or Kaleko 2016 as quality for this SA cephalexin loc. Human chemistry is not canine incidence. Packet 394 still owns cephalosporin-associated neutropenia. Packet 359 still owns ciprofloxacin colitis. Packet 344 still owns feline colitis without a named cephalosporin. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a metronidazole or vancomycin table. Do not fire on bare cephalexin. Do not fire on bare diarrhea. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bartlett 1979: **named cephalosporin plus C. difficile / Clostridioides / superinfection is not a diarrhea-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus C. difficile / Clostridioides / superinfection is canine (or feline) cephalosporin-associated C. difficile; not a diarrhea-alone. Bare cephalexin stays dark. Bare diarrhea stays dark. Dual cephalexin plus neutropenia stays 394. Dual ciprofloxacin plus colitis stays 359. Dual cat plus colitis without named C. difficile stays 344. Dual cephalexin plus C. difficile plus colitis concatenates 395 then 344. Dual ciprofloxacin plus colitis plus cephalexin plus C. difficile concatenates 359 then 395. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a metronidazole or vancomycin table.
+- Do not call this a diarrhea-alone.
+- Do not send leftover cephalexin as the diarrhea plan.
+- Do not treat cephalosporin-associated neutropenia (394) as this loc.
+- Do not treat ciprofloxacin colitis (359) as this loc.
+- Do not treat feline colitis without a named cephalosporin (344) as this loc.
+- Do not treat diarrhea without named cephalosporin plus C. difficile as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus C. difficile / Clostridioides / superinfection → **Canine cephalosporin-associated C. difficile. Not a diarrhea-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus C. difficile not a diarrhea-and-home night?
+- NAVLE 2: Why does ciprofloxacin plus colitis stay 359, not this loc?
+- NAVLE 3: Dual-named “cephalexin, C. difficile, colitis” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the diarrhea plan without inventing a mg/kg table?
+- Attending: If the query is only “diarrhea,” why does this gate stay dark?
+- Attending: Horse cefazolin plus C. difficile — fire or skip?
+- Attending: Cat plus cefovecin plus superinfection — which locs fire, and why?

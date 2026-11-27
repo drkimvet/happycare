@@ -918,6 +918,31 @@ CEPHNEUT_SIGN_RE = re.compile(
 # harvest Bloom IgG methods. Dogs and cats. Skip horse.
 # Mercer / Bloom: immune neutropenia can follow
 # cephalosporin exposure. △ Plumb.
+CEPHCDIFF_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEPHCDIFF_SIGN_RE = re.compile(
+    r"c\.?\s*diff|"
+    r"clostridioides|"
+    r"clostridium\s+difficile|"
+    r"superinfect",
+    re.I,
+)
+# Packet 395: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus C. difficile / Clostridioides /
+# superinfection only. Do not use \bdiarrhea (bare
+# diarrhea). Do not use \bcolitis without C. difficile
+# (344). Do not use ciprofloxacin colitis (359). Do not
+# use cephalosporin-associated neutropenia (394). Do not
+# use \bclostridium without difficile (375). Do not
+# harvest a cephalosporin mg/kg table. Do not harvest a
+# metronidazole or vancomycin table. Dogs and cats. Skip
+# horse. Mercer: superinfection including Clostridioides
+# difficile can follow cephalosporin exposure. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7609,6 +7634,11 @@ def analyze(
         and CEPHNEUT_RE.search(text)
         and CEPHNEUT_SIGN_RE.search(text)
     )
+    steal_cehcdiff_dx = (
+        spec in {"dog", "cat"}
+        and CEPHCDIFF_RE.search(text)
+        and CEPHCDIFF_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7805,6 +7835,7 @@ def analyze(
         or steal_cehimha_dx
         or steal_cehitp_dx
         or steal_cehneut_dx
+        or steal_cehcdiff_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22007,6 +22038,86 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin-associated neutropenia."
+            )
+
+    cehcdiff_named = (
+        spec in {"dog", "cat"}
+        and CEPHCDIFF_RE.search(text)
+        and CEPHCDIFF_SIGN_RE.search(text)
+    )
+    if cehcdiff_named:
+        if spec == "cat":
+            cehcdiff_loc = (
+                "Feline cephalosporin-associated C. difficile. "
+                "Not a diarrhea-alone."
+            )
+        else:
+            cehcdiff_loc = (
+                "Canine cephalosporin-associated C. difficile. "
+                "Not a diarrhea-alone."
+            )
+        localization = (
+            f"{localization} Also {cehcdiff_loc}"
+            if localization
+            else cehcdiff_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin-associated C. difficile home "
+            "as diarrhea. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest a metronidazole or vancomycin table. "
+            "Mercer: superinfection including Clostridioides "
+            "difficile can follow cephalosporin exposure. Stop "
+            "the cephalosporin. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a diarrhea-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 394 still owns cephalosporin-associated "
+            "neutropenia. Packet 359 still owns ciprofloxacin "
+            "colitis. Packet 344 still owns feline colitis "
+            "without a named cephalosporin. "
+            "Bare diarrhea without named cephalosporin plus "
+            "C. difficile / Clostridioides / superinfection "
+            "language is not this loc. "
+            "Bare cephalexin without C. difficile / "
+            "Clostridioides / superinfection language is not "
+            "this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin-associated C. "
+                "difficile. Not a diarrhea-alone. Stop the "
+                "cephalosporin. △ Plumb. Packet 344 still owns "
+                "feline colitis. Do not copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin-associated C. "
+                "difficile. Not a diarrhea-alone. Stop the "
+                "cephalosporin. △ Plumb. Packet 359 still owns "
+                "ciprofloxacin colitis. Packet 394 still owns "
+                "cephalosporin neutropenia. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: superinfection including "
+            "Clostridioides difficile can follow cephalosporin "
+            "exposure. Bartlett JAMA 1979 PMID 501864. Bartlett "
+            "Johns Hopkins Med J 1981 PMID 7253364. Bartlett N "
+            "Engl J Med 2002 is antibiotic-associated diarrhea, "
+            "not this loc. Kaleko 2016 is recency and a SYN-004 "
+            "product, not this loc. Human chemistry is not canine "
+            "incidence. Do not harvest cephalosporin mg/kg. Skip "
+            "horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin-associated C. difficile."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin-associated C. difficile."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
