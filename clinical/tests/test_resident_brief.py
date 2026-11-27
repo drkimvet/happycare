@@ -14943,6 +14943,85 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline benzathine penicillin never iv", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_napeniv_is_not_a_hypernatremia_alone(self):
+        b = analyze("dog", "sodium penicillin, too-fast IV")
+        loc = b["localization"].lower()
+        self.assertIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIn("not a hypernatremia-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not bolus sodium penicillin", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_napen_hypernatremia_fires_napeniv(self):
+        b = analyze("dog", "sodium penicillin, hypernatremia")
+        loc = b["localization"].lower()
+        self.assertIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIn("not a hypernatremia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_penicillin_na_hypernatremia_fires_napeniv(self):
+        b = analyze("cat", "penicillin Na, hypernatremia")
+        loc = b["localization"].lower()
+        self.assertIn("feline sodium penicillin too-fast iv", loc)
+        self.assertIn("not a hypernatremia-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_hhs_concatenates_with_napeniv(self):
+        b = analyze("dog", "sodium penicillin, hypernatremia, HHS")
+        loc = b["localization"].lower()
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIn("hhs is not dka", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kpeniv_is_not_napeniv(self):
+        b = analyze("dog", "potassium penicillin, too-fast IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine potassium penicillin too-fast iv", loc)
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_benziv_is_not_napeniv(self):
+        b = analyze("dog", "benzathine penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine benzathine penicillin never iv", loc)
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_procaineiv_is_not_napeniv(self):
+        b = analyze("dog", "procaine penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_napen_iv_without_too_fast_is_not_napeniv(self):
+        b = analyze("dog", "sodium penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sodium_penicillin_is_not_napeniv(self):
+        b = analyze("dog", "sodium penicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_hypernatremia_is_not_napeniv(self):
+        b = analyze("dog", "hypernatremia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_napeniv(self):
+        b = analyze("horse", "sodium penicillin, too-fast IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine sodium penicillin too-fast iv", loc)
+        self.assertNotIn("feline sodium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

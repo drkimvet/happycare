@@ -776,6 +776,30 @@ BENZATHINEIV_SIGN_RE = re.compile(
 # million-unit tables. Dogs and cats. Skip horse.
 # Mercer: benzathine penicillin is for IM use only and
 # must not be given IV. △ Plumb.
+NAPEN_RE = re.compile(
+    r"sodium\s+penicillin|"
+    r"penicillin\s+(?:g\s+)?sodium|"
+    r"\bpenicillin\s*na\b|"
+    r"\bna\s+penicillin\b",
+    re.I,
+)
+NAPENIV_SIGN_RE = re.compile(
+    r"too[- ]?fast|"
+    r"rapid.{0,12}(?:\biv\b|intravenous)|"
+    r"(?:\biv\b|intravenous).{0,12}rapid|"
+    r"hypernatrem",
+    re.I,
+)
+# Packet 389: named sodium penicillin / penicillin Na /
+# Na penicillin plus too-fast / rapid IV / hypernatremia
+# only. Do not use bare IV (slow IV is the route). Do not
+# use bare penicillin. Do not use bare hypernatremia.
+# Do not use potassium penicillin too-fast IV (387). Do
+# not use benzathine penicillin never IV (388). Do not
+# harvest a penicillin mg/kg table. Do not harvest
+# Brunner mega units. Dogs and cats. Skip horse. Mercer:
+# sodium penicillin given too rapidly IV can cause
+# hypernatremia. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7437,6 +7461,11 @@ def analyze(
         and BENZATHINEPEN_RE.search(text)
         and BENZATHINEIV_SIGN_RE.search(text)
     )
+    steal_napeniv_dx = (
+        spec in {"dog", "cat"}
+        and NAPEN_RE.search(text)
+        and NAPENIV_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7627,6 +7656,7 @@ def analyze(
         or steal_procaineiv_dx
         or steal_kpeniv_dx
         or steal_benzathineiv_dx
+        or steal_napeniv_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21348,6 +21378,83 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for benzathine penicillin never IV."
+            )
+
+    napeniv_named = (
+        spec in {"dog", "cat"}
+        and NAPEN_RE.search(text)
+        and NAPENIV_SIGN_RE.search(text)
+    )
+    if napeniv_named:
+        if spec == "cat":
+            napeniv_loc = (
+                "Feline sodium penicillin too-fast IV. Not a hypernatremia-alone."
+            )
+        else:
+            napeniv_loc = (
+                "Canine sodium penicillin too-fast IV. Not a hypernatremia-alone."
+            )
+        localization = (
+            f"{localization} Also {napeniv_loc}"
+            if localization
+            else napeniv_loc
+        )
+        hard_stops.append(
+            "Do not bolus sodium penicillin. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Do not harvest Brunner mega units. "
+            "Mercer: sodium penicillin given too rapidly IV "
+            "can cause hypernatremia. Slow the line or stop. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this a hypernatremia-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 388 still owns benzathine penicillin never "
+            "IV. Packet 387 still owns potassium penicillin "
+            "too-fast IV. Packet 386 still owns procaine "
+            "penicillin IV CNS. "
+            "HHS without named sodium penicillin stays the "
+            "existing HHS loc. "
+            "Bare hypernatremia without named sodium penicillin "
+            "is not this loc. "
+            "Bare sodium penicillin without too-fast / rapid IV "
+            "/ hypernatremia language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline sodium penicillin too-fast IV. Not "
+                "a hypernatremia-alone. Slow the line or stop. "
+                "△ Plumb. Packet 387 still owns potassium "
+                "penicillin too-fast IV. Do not copy a penicillin "
+                "table."
+            )
+        else:
+            do_next.append(
+                "Name canine sodium penicillin too-fast IV. Not "
+                "a hypernatremia-alone. Slow the line or stop. "
+                "△ Plumb. Packet 387 still owns potassium "
+                "penicillin too-fast IV. Do not copy a penicillin "
+                "table."
+            )
+        sources.append(
+            "Mercer Merck penicillins: sodium penicillin given "
+            "too rapidly IV can cause hypernatremia. Brunner "
+            "Br Med J 1968 PMID 5722316. Weaver Can Med Assoc J "
+            "1980 PMID 7363244. Hubbell Vet Surg 1987 is horse "
+            "CV after IV sodium penicillin, not this loc. "
+            "Henderson 2025 is recency and horse, not this loc. "
+            "Emmett 1977 is anion-gap chemistry, not this loc. "
+            "Human chemistry is not canine incidence. Do not "
+            "harvest penicillin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for sodium penicillin too-fast IV."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for sodium penicillin too-fast IV."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

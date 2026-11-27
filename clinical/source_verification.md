@@ -6295,3 +6295,33 @@ Night rule: named benzathine penicillin plus IV / intravenous / vein → **Canin
 - Attending: If the query is only “IM,” why does this gate stay dark?
 - Attending: Horse benzathine penicillin plus IV — fire or skip?
 - Attending: Cat plus benzathine penicillin plus vein — which locs fire, and why?
+
+## 389. Canine sodium penicillin too-fast IV (Mercer Merck penicillins)
+
+No dedicated Plunkett sodium-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (sodium penicillin given too rapidly IV can cause hypernatremia). Brunner *Br Med J* 1968 PMID 5722316 (88 cites; hypokalaemia, metabolic alkalosis, and hypernatraemia after massive sodium penicillin G; printed 100 mega-unit endocarditis doses stay on that paper). Weaver *Can Med Assoc J* 1980 PMID 7363244 (1 cite; MESH hypernatremia / penicillin G). Hubbell *Vet Surg* 1987 PMID 3507151 is horse cardiovascular effects after IV sodium penicillin (Ohio State CVM), not this loc. Henderson *Vet Anaesth Analg* 2025 PMID 39863515 is recency and horse blood-pressure after rapid vs slow IV sodium penicillin, not this loc. Emmett *Medicine (Baltimore)* 1977 PMID 401925 is anion-gap chemistry, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Brunner. Do not overweight Hubbell or Henderson as quality for this SA hypernatremia loc. Human chemistry is not canine incidence. Packet 388 still owns benzathine penicillin never IV. Packet 387 still owns potassium penicillin too-fast IV. Packet 386 still owns procaine penicillin IV CNS. HHS without named sodium penicillin stays the existing HHS loc. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Brunner mega units. Do not fire on bare sodium penicillin. Do not fire on bare hypernatremia. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Brunner: **named sodium penicillin plus too-fast / rapid IV / hypernatremia is not a hypernatremia-alone.** Slow the line or stop. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named sodium penicillin / penicillin Na / Na penicillin plus too-fast / rapid IV / hypernatremia is canine (or feline) sodium penicillin too-fast IV; not a hypernatremia-alone. Bare sodium penicillin stays dark. Bare hypernatremia stays dark. Dual potassium penicillin plus too-fast IV stays 387. Dual benzathine penicillin plus IV stays 388. Dual HHS plus named sodium penicillin concatenates HHS then 389. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Brunner mega units.
+- Do not call this a hypernatremia-alone.
+- Do not bolus sodium penicillin.
+- Do not treat potassium penicillin too-fast IV (387) as this loc.
+- Do not treat benzathine penicillin never IV (388) as this loc.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat hypernatremia without named sodium penicillin as this loc.
+
+Night rule: named sodium penicillin plus too-fast / rapid IV / hypernatremia → **Canine sodium penicillin too-fast IV. Not a hypernatremia-alone.** Slow the line or stop. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is sodium penicillin plus too-fast IV not a hypernatremia-and-home night?
+- NAVLE 2: Why does potassium penicillin plus too-fast IV stay 387, not this loc?
+- NAVLE 3: Dual-named “sodium penicillin, hypernatremia, HHS” — which locs should fire, and why?
+- Oral: How do you tell the owner that the sodium salt is not a bolus without inventing a mg/kg table?
+- Attending: If the query is only “hypernatremia,” why does this gate stay dark?
+- Attending: Horse sodium penicillin plus too-fast IV — fire or skip?
+- Attending: Cat plus penicillin Na plus hypernatremia — which locs fire, and why?

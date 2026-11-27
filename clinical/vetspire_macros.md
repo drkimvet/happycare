@@ -325,6 +325,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-procaineiv` | Assessment | Canine procaine penicillin IV CNS / not a seizure-alone |
 | `ddx-kpeniv` | Assessment | Canine potassium penicillin too-fast IV / not an arrest-alone |
 | `ddx-benziv` | Assessment | Canine benzathine penicillin never IV / not an IM-alone |
+| `ddx-napeniv` | Assessment | Canine sodium penicillin too-fast IV / not a hypernatremia-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -403,6 +404,7 @@ Suggested names are short so they show up after three letters.
 | `dc-procaineiv` | Discharge | After procaine penicillin / IV CNS talk |
 | `dc-kpeniv` | Discharge | After potassium penicillin / too-fast IV talk |
 | `dc-benziv` | Discharge | After benzathine penicillin / never-IV talk |
+| `dc-napeniv` | Discharge | After sodium penicillin / too-fast IV talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4818,6 +4820,21 @@ DDX:
 Do not: harvest a penicillin mg/kg table. Call this an IM-alone. Give benzathine penicillin IV. Treat 387 or 386 as this loc.
 Do next: Name canine benzathine penicillin never IV. Not an IM-alone. Stop the IV. IM only. △ Plumb. Packet 386 still owns procaine IV CNS. Do not copy a penicillin table.
 
+### `ddx-napeniv`
+
+Sodium penicillin too-fast IV — {{patient.name}}
+Canine sodium penicillin too-fast IV [yes / not]. Not a hypernatremia-alone [yes / not]. Slow the line [ ]. Packet 388 benzathine [ ]. Packet 387 K penicillin [ ]. Packet 386 procaine IV [ ]. Bare hypernatremia [ ].
+
+DDX:
+1. Named sodium penicillin / penicillin Na / Na penicillin plus too-fast / rapid IV / hypernatremia — **Canine sodium penicillin too-fast IV. Not a hypernatremia-alone**
+2. Mercer / Brunner BMJ 1968 PMID 5722316: sodium penicillin given too rapidly IV can cause hypernatremia. Slow the line or stop. △ Plumb
+3. Packet 388 owns benzathine never IV. Packet 387 owns potassium penicillin too-fast IV. Packet 386 owns procaine IV CNS. Bare hypernatremia is not this loc
+4. Do not harvest a penicillin table. Do not harvest Brunner mega units. Hubbell 1987 is horse CV, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare sodium penicillin or bare hypernatremia stays dark. Do not copy a penicillin table
+
+Do not: harvest a penicillin mg/kg table. Call this a hypernatremia-alone. Bolus sodium penicillin. Treat 387 or 388 as this loc.
+Do next: Name canine sodium penicillin too-fast IV. Not a hypernatremia-alone. Slow the line or stop. △ Plumb. Packet 387 still owns potassium penicillin too-fast IV. Do not copy a penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5455,6 +5472,14 @@ Return now for collapse, a weak pulse, or if {{patient.pronoun}} is worse. {{loc
 We named the coverage gap and stopped the intravenous medicine. Give only the medicines we sent, as labeled. Do not add leftover benzathine penicillin from home.
 
 Return now for collapse, trouble breathing, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-napeniv`
+
+{{patient.name}} had a reaction after sodium penicillin around a fast intravenous line or high blood sodium. That salt of penicillin carries sodium, so pushing it too fast can raise sodium. Using leftover sodium penicillin as the salt plan is not the same as treating a simple high-sodium night. This is not a simple hypernatremia-and-home plan.
+
+We named the coverage gap and slowed or stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover sodium penicillin from home.
+
+Return now for collapse, extreme thirst, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
