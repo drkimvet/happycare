@@ -323,6 +323,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-tetrahep` | Assessment | Canine tetracycline hepatotoxicity / not an icterus-alone |
 | `ddx-penhyper` | Assessment | Canine penicillin hypersensitivity / not an allergy-alone |
 | `ddx-procaineiv` | Assessment | Canine procaine penicillin IV CNS / not a seizure-alone |
+| `ddx-kpeniv` | Assessment | Canine potassium penicillin too-fast IV / not an arrest-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -399,6 +400,7 @@ Suggested names are short so they show up after three letters.
 | `dc-tetrahep` | Discharge | After tetracycline / hepatotoxicity talk |
 | `dc-penhyper` | Discharge | After penicillin / hypersensitivity talk |
 | `dc-procaineiv` | Discharge | After procaine penicillin / IV CNS talk |
+| `dc-kpeniv` | Discharge | After potassium penicillin / too-fast IV talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4784,6 +4786,21 @@ DDX:
 Do not: harvest a penicillin mg/kg table. Call this a seizure-alone. Give procaine penicillin IV. Treat 385 or idiopathic epilepsy without named procaine as this loc.
 Do next: Name canine procaine penicillin IV CNS. Not a seizure-alone. Stop the drug. Supportive. △ Plumb. Seizure without named procaine stays the existing seizure loc. Do not copy a penicillin table.
 
+### `ddx-kpeniv`
+
+Potassium penicillin too-fast IV — {{patient.name}}
+Canine potassium penicillin too-fast IV [yes / not]. Not an arrest-alone [yes / not]. Slow the line [ ]. Packet 386 procaine IV [ ]. Packet 385 hypersensitivity [ ]. CPA without K penicillin [ ]. Bare arrest [ ].
+
+DDX:
+1. Named potassium penicillin / penicillin K / K penicillin plus too-fast / rapid IV / hyperkalemia / arrest — **Canine potassium penicillin too-fast IV. Not an arrest-alone**
+2. Mercer Merck / Mercer Chest 1973 PMID 4749385: potassium penicillin given too rapidly IV can cause cardiac arrest. Slow the line or stop. △ Plumb
+3. Packet 386 owns procaine penicillin IV CNS. Packet 385 owns penicillin hypersensitivity. CPA without named potassium penicillin stays the existing RECOVER loc. Bare arrest is not this loc
+4. Do not harvest a penicillin table. Do not harvest Mercer Chest mEq. Stumpf 1987 is generic penicillin arrest, not this potassium-salt loc
+5. Dog or cat can fire. Horse does not fire. Bare potassium penicillin or bare arrest stays dark. Do not copy a penicillin table
+
+Do not: harvest a penicillin mg/kg table. Call this an arrest-alone. Bolus potassium penicillin. Treat 386 or CPA without named potassium penicillin as this loc.
+Do next: Name canine potassium penicillin too-fast IV. Not an arrest-alone. Slow the line or stop. △ Plumb. Arrest without named potassium penicillin stays the existing RECOVER loc. Do not copy a penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5405,6 +5422,14 @@ Return now for collapse, facial swelling, trouble breathing, or if the hives com
 We named the coverage gap and stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover procaine penicillin from home.
 
 Return now for another seizure, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-kpeniv`
+
+{{patient.name}} had a reaction after potassium penicillin around a fast intravenous line or an arrest. That salt of penicillin carries potassium, so pushing it too fast can stop the heart. Using leftover potassium penicillin as the crash-cart plan is not the same as treating a simple arrest. This is not a simple arrest-and-home plan.
+
+We named the coverage gap and slowed or stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover potassium penicillin from home.
+
+Return now for collapse, a weak pulse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

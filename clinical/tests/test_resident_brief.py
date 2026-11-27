@@ -14788,6 +14788,83 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline procaine penicillin iv cns", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_kpeniv_is_not_an_arrest_alone(self):
+        b = analyze("dog", "potassium penicillin, too-fast IV")
+        loc = b["localization"].lower()
+        self.assertIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIn("not an arrest-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not bolus potassium penicillin", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kpen_arrest_concatenates_recover(self):
+        b = analyze("dog", "potassium penicillin, arrest")
+        loc = b["localization"].lower()
+        self.assertIn("canine potassium penicillin too-fast iv", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("2-minute cycles", joined)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_penicillin_k_hyperkalemia_fires_kpeniv(self):
+        b = analyze("cat", "penicillin K, hyperkalemia")
+        loc = b["localization"].lower()
+        self.assertIn("feline potassium penicillin too-fast iv", loc)
+        self.assertIn("not an arrest-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_procaineiv_is_not_kpeniv(self):
+        b = analyze("dog", "procaine penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_is_not_kpeniv(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cpr_without_kpen_is_not_kpeniv(self):
+        b = analyze("dog", "arrest, cpr")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kpen_iv_without_too_fast_is_not_kpeniv(self):
+        b = analyze("dog", "potassium penicillin, IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_potassium_penicillin_is_not_kpeniv(self):
+        b = analyze("dog", "potassium penicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_arrest_is_not_kpeniv(self):
+        b = analyze("dog", "arrest")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penicillin_arrest_without_potassium_is_not_kpeniv(self):
+        b = analyze("dog", "penicillin, arrest")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_kpeniv(self):
+        b = analyze("horse", "potassium penicillin, too-fast IV")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine potassium penicillin too-fast iv", loc)
+        self.assertNotIn("feline potassium penicillin too-fast iv", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -6235,3 +6235,33 @@ Night rule: named procaine penicillin plus IV / intravenous / seizure / exciteme
 - Attending: If the query is only “seizure,” why does this gate stay dark?
 - Attending: Horse procaine penicillin plus IV — fire or skip?
 - Attending: Cat plus procaine penicillin plus ataxia — which locs fire, and why?
+
+## 387. Canine potassium penicillin too-fast IV (Mercer Merck penicillins)
+
+No dedicated Plunkett potassium-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (potassium penicillin given too rapidly IV can cause cardiac arrest). Mercer *Chest* 1973 PMID 4749385 (21 cites; cardiac arrest due to hyperkalemia following intravenous penicillin; C.W. Mercer / Logic — human chemistry, not the Merck author). *Anesth Analg* 1969 PMID 5812559 (3 cites; cardiac asystole following intravenous aqueous potassium penicillin). Stumpf *Drug Intell Clin Pharm* 1987 PMID 3569031 is generic penicillin arrest, not this potassium-salt loc. Roussel *Am J Vet Res* 2003 PMID 14620770 is horse large-intestine motility after KPEN, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Mercer Chest / Anesth Analg 1969. Do not overweight Roussel as quality for this SA loc. Human chemistry is not canine incidence. Packet 386 still owns procaine penicillin IV CNS. Packet 385 still owns penicillin hypersensitivity. Existing CPA loc still owns arrest without named potassium penicillin. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Mercer Chest mEq. Do not fire on bare potassium penicillin. Do not fire on bare arrest. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Mercer Chest: **named potassium penicillin plus too-fast / rapid IV / hyperkalemia / arrest is not an arrest-alone.** Slow the line or stop. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named potassium penicillin / penicillin K / K penicillin plus too-fast / rapid IV / hyperkalemia / arrest is canine (or feline) potassium penicillin too-fast IV; not an arrest-alone. Bare potassium penicillin stays dark. Bare arrest stays dark. Dual arrest plus named potassium penicillin concatenates the existing RECOVER loc then 387. Dual procaine penicillin plus IV stays 386. Dual amoxicillin plus anaphylaxis stays 385. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Mercer Chest mEq.
+- Do not call this an arrest-alone.
+- Do not bolus potassium penicillin.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat CPA without named potassium penicillin as this loc.
+- Do not treat arrest without named potassium penicillin as this loc.
+
+Night rule: named potassium penicillin plus too-fast / rapid IV / hyperkalemia / arrest → **Canine potassium penicillin too-fast IV. Not an arrest-alone.** Slow the line or stop. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is potassium penicillin plus too-fast IV not an arrest-and-home night?
+- NAVLE 2: Why does CPA without named potassium penicillin stay the existing RECOVER loc, not this loc?
+- NAVLE 3: Dual-named “potassium penicillin, arrest” — which locs should fire, and why?
+- Oral: How do you tell the owner that the potassium salt is not a bolus without inventing a mg/kg table?
+- Attending: If the query is only “arrest,” why does this gate stay dark?
+- Attending: Horse potassium penicillin plus too-fast IV — fire or skip?
+- Attending: Cat plus penicillin K plus hyperkalemia — which locs fire, and why?

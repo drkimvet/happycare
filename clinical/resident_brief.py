@@ -729,6 +729,32 @@ PROCAINEIV_SIGN_RE = re.compile(
 # Downham units. Dogs and cats. Skip horse. Mercer:
 # inadvertent IV procaine penicillin can cause CNS
 # excitement. △ Plumb.
+KPEN_RE = re.compile(
+    r"potassium\s+penicillin|"
+    r"penicillin\s+(?:g\s+)?potassium|"
+    r"\bpenicillin\s*k\b|"
+    r"\bk\s+penicillin\b",
+    re.I,
+)
+KPENIV_SIGN_RE = re.compile(
+    r"too[- ]?fast|"
+    r"rapid.{0,12}(?:\biv\b|intravenous)|"
+    r"(?:\biv\b|intravenous).{0,12}rapid|"
+    r"hyperkalem|"
+    r"\barrest\b|"
+    r"asystole",
+    re.I,
+)
+# Packet 387: named potassium penicillin / penicillin K /
+# K penicillin plus too-fast / rapid IV / hyperkalemia /
+# arrest only. Do not use bare IV (slow IV is the route).
+# Do not use bare penicillin. Do not use bare arrest.
+# Do not use procaine penicillin IV CNS (386). Do not
+# use penicillin hypersensitivity (385). Do not harvest
+# a penicillin mg/kg table. Do not harvest Mercer Chest
+# mEq. Dogs and cats. Skip horse. Mercer: potassium
+# penicillin given too rapidly IV can cause cardiac
+# arrest. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7380,6 +7406,11 @@ def analyze(
         and PROCAINEPEN_RE.search(text)
         and PROCAINEIV_SIGN_RE.search(text)
     )
+    steal_kpeniv_dx = (
+        spec in {"dog", "cat"}
+        and KPEN_RE.search(text)
+        and KPENIV_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7568,6 +7599,7 @@ def analyze(
         or steal_tetrahep_dx
         or steal_penhyper_dx
         or steal_procaineiv_dx
+        or steal_kpeniv_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21143,6 +21175,79 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for procaine penicillin IV CNS."
+            )
+
+    kpeniv_named = (
+        spec in {"dog", "cat"}
+        and KPEN_RE.search(text)
+        and KPENIV_SIGN_RE.search(text)
+    )
+    if kpeniv_named:
+        if spec == "cat":
+            kpeniv_loc = (
+                "Feline potassium penicillin too-fast IV. Not an arrest-alone."
+            )
+        else:
+            kpeniv_loc = (
+                "Canine potassium penicillin too-fast IV. Not an arrest-alone."
+            )
+        localization = (
+            f"{localization} Also {kpeniv_loc}"
+            if localization
+            else kpeniv_loc
+        )
+        hard_stops.append(
+            "Do not bolus potassium penicillin. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Do not harvest Mercer Chest mEq. "
+            "Mercer: potassium penicillin given too rapidly IV "
+            "can cause cardiac arrest. Slow the line or stop. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this an arrest-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 386 still owns procaine penicillin IV CNS. "
+            "Packet 385 still owns penicillin hypersensitivity. "
+            "CPA without named potassium penicillin stays the "
+            "existing RECOVER loc. "
+            "Bare arrest without named potassium penicillin is "
+            "not this loc. "
+            "Bare potassium penicillin without too-fast / rapid "
+            "IV / hyperkalemia / arrest language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline potassium penicillin too-fast IV. "
+                "Not an arrest-alone. Slow the line or stop. "
+                "△ Plumb. Arrest without named potassium penicillin "
+                "stays the existing RECOVER loc. Do not copy a "
+                "penicillin table."
+            )
+        else:
+            do_next.append(
+                "Name canine potassium penicillin too-fast IV. "
+                "Not an arrest-alone. Slow the line or stop. "
+                "△ Plumb. Arrest without named potassium penicillin "
+                "stays the existing RECOVER loc. Do not copy a "
+                "penicillin table."
+            )
+        sources.append(
+            "Mercer Merck penicillins: potassium penicillin given "
+            "too rapidly IV can cause cardiac arrest. Mercer Chest "
+            "1973 PMID 4749385. Anesth Analg 1969 PMID 5812559. "
+            "Stumpf 1987 is generic penicillin arrest, not this "
+            "potassium-salt loc. Roussel AJVR 2003 is horse GI "
+            "motility, not this loc. Human chemistry is not canine "
+            "incidence. Do not harvest penicillin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for potassium penicillin too-fast IV."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for potassium penicillin too-fast IV."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
