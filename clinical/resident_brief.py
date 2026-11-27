@@ -963,6 +963,26 @@ CEPHNEG_SIGN_RE = re.compile(
 # mg/kg table. Do not harvest Wick MIC. Dogs and cats.
 # Skip horse. Mercer: first-generation cephalosporins
 # have limited activity against Pseudomonas. △ Plumb.
+CEPHAG_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+# Packet 397: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus gentamicin / amikacin / tobramycin /
+# aminoglycoside plus azotemia / AKI / nephrotox only.
+# Reuse AMINOGLY_RE and AMINOAKI_SIGN_RE. Do not use
+# aminoglycoside nephrotoxicity without a named
+# cephalosporin (367). Do not use aminoglycoside-NSAID
+# (371). Do not use first-generation cephalosporin
+# gram-negative coverage (396). Do not use
+# cephalosporin-associated C. difficile (395). Do not
+# harvest a cephalosporin or aminoglycoside mg/kg table.
+# Do not harvest Luft combination mg/kg. Dogs and cats.
+# Skip horse. Mercer: concurrent cephalosporin plus
+# aminoglycoside can stack nephrotoxicity. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7664,6 +7684,12 @@ def analyze(
         and CEPHNEG_RE.search(text)
         and CEPHNEG_SIGN_RE.search(text)
     )
+    steal_cehag_dx = (
+        spec in {"dog", "cat"}
+        and CEPHAG_RE.search(text)
+        and AMINOGLY_RE.search(text)
+        and AMINOAKI_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7862,6 +7888,7 @@ def analyze(
         or steal_cehneut_dx
         or steal_cehcdiff_dx
         or steal_cehneg_dx
+        or steal_cehag_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22223,6 +22250,98 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for first-generation cephalosporin gram-negative coverage gap."
+            )
+
+    cehag_named = (
+        spec in {"dog", "cat"}
+        and CEPHAG_RE.search(text)
+        and AMINOGLY_RE.search(text)
+        and AMINOAKI_SIGN_RE.search(text)
+    )
+    if cehag_named:
+        if spec == "cat":
+            cehag_loc = (
+                "Feline cephalosporin-aminoglycoside nephrotoxicity "
+                "stack. Not an AKI-alone."
+            )
+        else:
+            cehag_loc = (
+                "Canine cephalosporin-aminoglycoside nephrotoxicity "
+                "stack. Not an AKI-alone."
+            )
+        localization = (
+            f"{localization} Also {cehag_loc}"
+            if localization
+            else cehag_loc
+        )
+        hard_stops.append(
+            "Do not send cephalosporin plus aminoglycoside home "
+            "as AKI. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest an aminoglycoside mg/kg table. "
+            "Do not harvest Luft combination mg/kg. "
+            "Mercer: concurrent cephalosporin plus aminoglycoside "
+            "can stack nephrotoxicity. Name the stack. Stop or "
+            "unstack. Hydrate. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an AKI-alone. "
+            "Do not copy a cephalosporin or aminoglycoside recipe "
+            "as lobby law. "
+            "Packet 367 still owns aminoglycoside nephrotoxicity "
+            "without a named cephalosporin. "
+            "Packet 371 still owns aminoglycoside-NSAID "
+            "nephrotoxicity stack. "
+            "Packet 396 still owns first-generation cephalosporin "
+            "gram-negative coverage. "
+            "Packet 395 still owns cephalosporin-associated "
+            "C. difficile. "
+            "Bare AKI without named cephalosporin plus "
+            "aminoglycoside is not this loc. "
+            "Bare cephalexin without named aminoglycoside plus "
+            "azotemia / AKI / nephrotox language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin-aminoglycoside "
+                "nephrotoxicity stack. Not an AKI-alone. Stop or "
+                "unstack. Hydrate. △ Plumb. Packet 367 still owns "
+                "aminoglycoside nephrotoxicity without the "
+                "cephalosporin. Do not copy a cephalosporin or "
+                "aminoglycoside table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin-aminoglycoside "
+                "nephrotoxicity stack. Not an AKI-alone. Stop or "
+                "unstack. Hydrate. △ Plumb. Packet 367 still owns "
+                "aminoglycoside nephrotoxicity without the "
+                "cephalosporin. Packet 371 still owns the NSAID "
+                "stack. Do not copy a cephalosporin or "
+                "aminoglycoside table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: concurrent cephalosporin "
+            "plus aminoglycoside can stack nephrotoxicity. Luft "
+            "Antimicrob Agents Chemother 1976 PMID 949179. "
+            "Cabanillas Arch Intern Med 1975 PMID 1130930. Barza "
+            "J Infect Dis 1978 PMID 650005 is cephalosporin "
+            "nephrotoxicity overview, not this loc. Kaloyanides "
+            "1980 is aminoglycoside nephrotoxicity, not this loc. "
+            "Tune is cephaloridine transport, not this loc. "
+            "Dellinger 1976 and Bloch 1979 are rat-protection "
+            "papers, not this loc. Luft combination mg/kg stay on "
+            "that paper. Human chemistry is not canine incidence. "
+            "Do not harvest cephalosporin or aminoglycoside mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin-aminoglycoside nephrotoxicity stack."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin-aminoglycoside nephrotoxicity stack."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

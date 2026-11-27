@@ -15597,6 +15597,98 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline first-generation cephalosporin gram-negative coverage gap", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehag_is_not_an_aki_alone(self):
+        b = analyze("dog", "cephalexin, gentamicin, AKI")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalosporin plus aminoglycoside home as aki", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertIn("aminoglycoside mg/kg", joined)
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_amikacin_azotemia_fires_cehag(self):
+        b = analyze("dog", "cefazolin, amikacin, azotemia")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_tobramycin_nephrotox_fires_cehag(self):
+        b = analyze("cat", "cefovecin, tobramycin, nephrotox")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIn("not an aki-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_concatenates_with_cehag(self):
+        b = analyze("dog", "cefpodoxime, gentamicin, AKI")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoaki_is_not_cehag(self):
+        b = analyze("dog", "gentamicin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside nephrotoxicity", loc)
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminonsaid_is_not_cehag(self):
+        b = analyze("dog", "gentamicin, carprofen")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside-nsaid nephrotoxicity stack", loc)
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehneg_is_not_cehag(self):
+        b = analyze("dog", "cephalexin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcdiff_is_not_cehag(self):
+        b = analyze("dog", "cephalexin, C. difficile")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_gentamicin_without_aki_is_not_cehag(self):
+        b = analyze("dog", "cephalexin, gentamicin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_aki_without_aminoglycoside_is_not_cehag(self):
+        b = analyze("dog", "cephalexin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehag(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_aki_is_not_cehag(self):
+        b = analyze("dog", "AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehag(self):
+        b = analyze("horse", "cephalexin, gentamicin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertNotIn("feline cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

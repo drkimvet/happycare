@@ -6537,3 +6537,35 @@ Night rule: named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram
 - Attending: If the query is only “sepsis,” why does this gate stay dark?
 - Attending: Horse cefazolin plus Pseudomonas — fire or skip?
 - Attending: Cat plus cephalexin plus gram-negative — which locs fire, and why?
+
+## 397. Canine cephalosporin-aminoglycoside nephrotoxicity stack (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-aminoglycoside-stack chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (concurrent cephalosporin plus aminoglycoside can stack nephrotoxicity). Luft *Antimicrob Agents Chemother* 1976 PMID 949179 (56 cites; loc-fit cephalosporin-gentamicin combinations including cefazolin in rats; printed combination mg/kg stay on that paper; affiliation not in PubMed XML). Cabanillas *Arch Intern Med* 1975 PMID 1130930 (40 cites; loc-fit human acute tubular necrosis on combined cephalothin-gentamicin). Barza *J Infect Dis* 1978 PMID 650005 (78 cites) is a cephalosporin nephrotoxicity overview (cephaloridine / cephalothin), not this aminoglycoside-stack loc. Kaloyanides *Kidney Int* 1980 PMID 7463954 (314 cites) is aminoglycoside nephrotoxicity, not this loc (packet 367). Tune *J Infect Dis* 1975 PMID 1159324 / *Pediatr Nephrol* 1997 PMID 9438663 (Stanford) is cephaloridine tubular transport, not this loc. Dellinger *Antimicrob Agents Chemother* 1976 PMID 1259391 and Bloch *Antimicrob Agents Chemother* 1979 PMID 426505 are rat-protection papers, not this loc. Yilmaz *Vet Hum Toxicol* 1999 PMID 10434375 is recency, 2 cites, and cefazolin vs gentamicin comparison, not this combination stack. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Luft. Do not overweight Kaloyanides as quality for this SA combination loc. Do not overweight Dellinger / Bloch protection as lobby law that the stack is safe. Human / rat chemistry is not canine incidence. Packet 367 still owns aminoglycoside nephrotoxicity without a named cephalosporin. Packet 371 still owns aminoglycoside-NSAID. Packet 396 still owns first-generation cephalosporin gram-negative coverage. Packet 395 still owns cephalosporin-associated C. difficile. Do not harvest a cephalosporin or aminoglycoside mg/kg table as lobby law. Do not harvest Luft combination mg/kg. Do not fire on bare cephalexin. Do not fire on bare AKI. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Luft: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed cephalosporin and aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox is canine (or feline) cephalosporin-aminoglycoside nephrotoxicity stack; not an AKI-alone. Bare cephalexin stays dark. Bare AKI stays dark. Dual gentamicin plus AKI without a named cephalosporin stays 367. Dual gentamicin plus carprofen stays 371. Dual cephalexin plus Pseudomonas stays 396. Dual cephalexin plus C. difficile stays 395. Dual cephalexin plus gentamicin without kidney language stays dark for this loc. Dual cephalexin plus gentamicin plus AKI concatenates 367 then 397. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Luft combination mg/kg.
+- Do not call this an AKI-alone.
+- Do not send leftover cephalexin plus gentamicin as the AKI plan.
+- Do not treat aminoglycoside nephrotoxicity without a named cephalosporin (367) as this loc.
+- Do not treat aminoglycoside-NSAID (371) as this loc.
+- Do not treat first-generation cephalosporin gram-negative coverage (396) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat AKI without named cephalosporin plus aminoglycoside as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox → **Canine cephalosporin-aminoglycoside nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus gentamicin plus AKI not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus AKI stay 367, not this loc?
+- NAVLE 3: Dual-named “cephalexin, gentamicin, AKI” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin plus gentamicin is not the AKI plan without inventing a mg/kg table?
+- Attending: If the query is only “AKI,” why does this gate stay dark?
+- Attending: Horse cefazolin plus gentamicin plus AKI — fire or skip?
+- Attending: Cat plus cefovecin plus tobramycin plus nephrotox — which locs fire, and why?

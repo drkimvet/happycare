@@ -333,6 +333,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehneut` | Assessment | Canine cephalosporin-associated neutropenia / not a sepsis-alone |
 | `ddx-cehcdiff` | Assessment | Canine cephalosporin-associated C. difficile / not a diarrhea-alone |
 | `ddx-cehneg` | Assessment | Canine first-generation cephalosporin gram-negative coverage gap / not a sepsis-alone |
+| `ddx-cehag` | Assessment | Canine cephalosporin-aminoglycoside nephrotoxicity stack / not an AKI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -419,6 +420,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehneut` | Discharge | After cephalosporin-associated neutropenia talk |
 | `dc-cehcdiff` | Discharge | After cephalosporin-associated C. difficile talk |
 | `dc-cehneg` | Discharge | After first-generation cephalosporin / gram-negative coverage-gap talk |
+| `dc-cehag` | Discharge | After cephalosporin-aminoglycoside nephrotoxicity-stack talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4954,6 +4956,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a sepsis-alone. Send cephalexin as the Pseudomonas plan. Treat 390 or 395 as this loc.
 Do next: Name canine first-generation cephalosporin gram-negative coverage gap. Not a sepsis-alone. Cover the gram-negative. △ Plumb. Packet 390 still owns penicillin gram-negative coverage. Do not copy a cephalosporin table.
 
+### `ddx-cehag`
+
+Cephalosporin-aminoglycoside nephrotoxicity stack — {{patient.name}}
+Canine cephalosporin-aminoglycoside nephrotoxicity stack [yes / not]. Not an AKI-alone [yes / not]. Stop or unstack. Hydrate [ ]. Packet 367 aminoaki [ ]. Packet 371 aminonsaid [ ]. Packet 396 cehneg [ ]. Bare AKI [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox — **Canine cephalosporin-aminoglycoside nephrotoxicity stack. Not an AKI-alone**
+2. Mercer / Luft Antimicrob Agents Chemother 1976 PMID 949179: concurrent cephalosporin plus aminoglycoside can stack nephrotoxicity. Stop or unstack. Hydrate. △ Plumb
+3. Packet 367 owns aminoglycoside nephrotoxicity without a named cephalosporin. Packet 371 owns aminoglycoside-NSAID. Packet 396 owns first-generation cephalosporin gram-negative coverage. Bare AKI is not this loc
+4. Do not harvest a cephalosporin or aminoglycoside table. Do not harvest Luft combination mg/kg. Kaloyanides 1980 is 367, not this loc. Dellinger 1976 is rat-protection, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare AKI stays dark. Dual gentamicin plus AKI concatenates 367 then this loc. Do not copy a table
+
+Do not: harvest a cephalosporin or aminoglycoside mg/kg table. Call this an AKI-alone. Send leftover cephalexin plus gentamicin as the AKI plan. Treat 367 or 371 as this loc.
+Do next: Name canine cephalosporin-aminoglycoside nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 367 still owns aminoglycoside nephrotoxicity without the cephalosporin. Do not copy a cephalosporin or aminoglycoside table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5655,6 +5672,14 @@ Return now for watery diarrhea, collapse, or if {{patient.pronoun}} is worse. {{
 We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefazolin from home.
 
 Return now for fever, collapse, or if the infection looks worse. {{location.phonenumber}}
+
+### `dc-cehag`
+
+{{patient.name}} was on a cephalosporin and an aminoglycoside around kidney injury. Those two families together can stack kidney risk. Using leftover cephalexin plus gentamicin as the AKI plan is not the same as treating a simple kidney night. This is not a simple AKI-and-home plan.
+
+We named the stack and stopped or changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, gentamicin, or amikacin from home. Keep water available.
+
+Return now for no urine, vomiting, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
