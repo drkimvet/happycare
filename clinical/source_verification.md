@@ -6325,3 +6325,33 @@ Night rule: named sodium penicillin plus too-fast / rapid IV / hypernatremia →
 - Attending: If the query is only “hypernatremia,” why does this gate stay dark?
 - Attending: Horse sodium penicillin plus too-fast IV — fire or skip?
 - Attending: Cat plus penicillin Na plus hypernatremia — which locs fire, and why?
+
+## 390. Canine penicillin gram-negative coverage gap (Mercer Merck penicillins)
+
+No dedicated Plunkett penicillin-gram-negative-coverage chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (penicillins have limited activity against many gram-negative organisms including Pseudomonas). Li *Antimicrob Agents Chemother* 1994 PMID 7986004 (228 cites, University of California Berkeley; efflux as a contributing factor to intrinsic beta-lactam resistance in *P. aeruginosa*; Livermore coauthor). Livermore *J Med Microbiol* 1995 PMID 7562993 (101 cites, London Hospital Medical College; mechanisms of beta-lactam resistance among UK *P. aeruginosa*). Livermore *J Med Microbiol* 1984 PMID 6327987 (86 cites; mechanisms of beta-lactam resistance in British *P. aeruginosa*; printed carbenicillin MIC stay on that paper). Neu *Rev Infect Dis* 1983 PMID 6342103 is empiric-therapy chemistry, not this loc’s weight leader. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Li / Livermore. Do not overweight Neu 1983 as the named-Pseudomonas loc. Human chemistry is not canine incidence. Packet 375 still owns aminoglycoside anaerobic coverage. Packet 389 still owns sodium penicillin too-fast IV. Packet 385 still owns penicillin hypersensitivity. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Williams MIC. Do not fire on bare penicillin. Do not fire on bare sepsis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Li: **named penicillin plus Pseudomonas / gram-negative / gram neg is not a sepsis-alone.** Cover the gram-negative. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named penicillin / amoxicillin / ampicillin plus Pseudomonas / gram-negative / gram neg is canine (or feline) penicillin gram-negative coverage gap; not a sepsis-alone. Bare penicillin stays dark. Bare sepsis stays dark. Dual gentamicin plus Bacteroides stays 375. Dual amoxicillin plus anaphylaxis stays 385. Dual sodium penicillin plus too-fast IV stays 389. Dual gentamicin plus Bacteroides plus ampicillin plus Pseudomonas concatenates 375 then 390. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Williams MIC.
+- Do not call this a sepsis-alone.
+- Do not send penicillin as the Pseudomonas plan.
+- Do not treat aminoglycoside anaerobic coverage (375) as this loc.
+- Do not treat sodium penicillin too-fast IV (389) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat sepsis without named penicillin plus Pseudomonas / gram-negative as this loc.
+
+Night rule: named penicillin plus Pseudomonas / gram-negative / gram neg → **Canine penicillin gram-negative coverage gap. Not a sepsis-alone.** Cover the gram-negative. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is amoxicillin plus Pseudomonas not a sepsis-and-home night?
+- NAVLE 2: Why does gentamicin plus Bacteroides stay 375, not this loc?
+- NAVLE 3: Dual-named “ampicillin, Pseudomonas, gentamicin, Bacteroides” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover amoxicillin is not the Pseudomonas plan without inventing a mg/kg table?
+- Attending: If the query is only “sepsis,” why does this gate stay dark?
+- Attending: Horse penicillin plus Pseudomonas — fire or skip?
+- Attending: Cat plus ampicillin plus gram-negative — which locs fire, and why?

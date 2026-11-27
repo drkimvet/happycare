@@ -800,6 +800,27 @@ NAPENIV_SIGN_RE = re.compile(
 # Brunner mega units. Dogs and cats. Skip horse. Mercer:
 # sodium penicillin given too rapidly IV can cause
 # hypernatremia. △ Plumb.
+PENGNEG_RE = re.compile(
+    r"\bpenicillins?\b|"
+    r"amoxicillin|"
+    r"ampicillin",
+    re.I,
+)
+PENGNEG_SIGN_RE = re.compile(
+    r"pseudomonas|"
+    r"gram[- ]?neg",
+    re.I,
+)
+# Packet 390: named penicillin / amoxicillin / ampicillin
+# plus Pseudomonas / gram-negative / gram neg only. Do
+# not use \bsepsis (bare sepsis). Do not use cloxacillin.
+# Do not use aminoglycoside anaerobic coverage (375). Do
+# not use penicillin hypersensitivity (385). Do not use
+# sodium penicillin too-fast IV (389). Do not harvest a
+# penicillin mg/kg table. Do not harvest Williams MIC.
+# Dogs and cats. Skip horse. Mercer: penicillins have
+# limited activity against many gram-negative organisms
+# including Pseudomonas. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7466,6 +7487,11 @@ def analyze(
         and NAPEN_RE.search(text)
         and NAPENIV_SIGN_RE.search(text)
     )
+    steal_pengneg_dx = (
+        spec in {"dog", "cat"}
+        and PENGNEG_RE.search(text)
+        and PENGNEG_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7657,6 +7683,7 @@ def analyze(
         or steal_kpeniv_dx
         or steal_benzathineiv_dx
         or steal_napeniv_dx
+        or steal_pengneg_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21455,6 +21482,81 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for sodium penicillin too-fast IV."
+            )
+
+    pengneg_named = (
+        spec in {"dog", "cat"}
+        and PENGNEG_RE.search(text)
+        and PENGNEG_SIGN_RE.search(text)
+    )
+    if pengneg_named:
+        if spec == "cat":
+            pengneg_loc = (
+                "Feline penicillin gram-negative coverage gap. Not a sepsis-alone."
+            )
+        else:
+            pengneg_loc = (
+                "Canine penicillin gram-negative coverage gap. Not a sepsis-alone."
+            )
+        localization = (
+            f"{localization} Also {pengneg_loc}"
+            if localization
+            else pengneg_loc
+        )
+        hard_stops.append(
+            "Do not send penicillin as the Pseudomonas plan. "
+            "Do not harvest a penicillin mg/kg table. "
+            "Do not harvest Williams MIC. "
+            "Mercer: penicillins have limited activity against "
+            "many gram-negative organisms including Pseudomonas. "
+            "Cover the gram-negative. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a sepsis-alone. "
+            "Do not copy a penicillin recipe as lobby law. "
+            "Packet 375 still owns aminoglycoside anaerobic "
+            "coverage. Packet 389 still owns sodium penicillin "
+            "too-fast IV. Packet 385 still owns penicillin "
+            "hypersensitivity. "
+            "Bare sepsis without named penicillin plus "
+            "Pseudomonas / gram-negative language is not this "
+            "loc. "
+            "Bare penicillin without Pseudomonas / gram-negative "
+            "/ gram neg language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline penicillin gram-negative coverage "
+                "gap. Not a sepsis-alone. Cover the gram-negative. "
+                "△ Plumb. Packet 375 still owns aminoglycoside "
+                "anaerobes. Do not copy a penicillin table."
+            )
+        else:
+            do_next.append(
+                "Name canine penicillin gram-negative coverage "
+                "gap. Not a sepsis-alone. Cover the gram-negative. "
+                "△ Plumb. Packet 375 still owns aminoglycoside "
+                "anaerobes. Do not copy a penicillin table."
+            )
+        sources.append(
+            "Mercer Merck penicillins: penicillins have limited "
+            "activity against many gram-negative organisms "
+            "including Pseudomonas. Li Antimicrob Agents "
+            "Chemother 1994 PMID 7986004 (UC Berkeley). "
+            "Livermore J Med Microbiol 1995 PMID 7562993. "
+            "Livermore J Med Microbiol 1984 PMID 6327987. "
+            "Neu Rev Infect Dis 1983 PMID 6342103. Williams "
+            "MIC stay on that paper. Human chemistry is not "
+            "canine incidence. Do not harvest penicillin mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for penicillin gram-negative coverage gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for penicillin gram-negative coverage gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

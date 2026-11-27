@@ -326,6 +326,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-kpeniv` | Assessment | Canine potassium penicillin too-fast IV / not an arrest-alone |
 | `ddx-benziv` | Assessment | Canine benzathine penicillin never IV / not an IM-alone |
 | `ddx-napeniv` | Assessment | Canine sodium penicillin too-fast IV / not a hypernatremia-alone |
+| `ddx-pengneg` | Assessment | Canine penicillin gram-negative coverage gap / not a sepsis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -405,6 +406,7 @@ Suggested names are short so they show up after three letters.
 | `dc-kpeniv` | Discharge | After potassium penicillin / too-fast IV talk |
 | `dc-benziv` | Discharge | After benzathine penicillin / never-IV talk |
 | `dc-napeniv` | Discharge | After sodium penicillin / too-fast IV talk |
+| `dc-pengneg` | Discharge | After penicillin / gram-negative coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4835,6 +4837,21 @@ DDX:
 Do not: harvest a penicillin mg/kg table. Call this a hypernatremia-alone. Bolus sodium penicillin. Treat 387 or 388 as this loc.
 Do next: Name canine sodium penicillin too-fast IV. Not a hypernatremia-alone. Slow the line or stop. △ Plumb. Packet 387 still owns potassium penicillin too-fast IV. Do not copy a penicillin table.
 
+### `ddx-pengneg`
+
+Penicillin gram-negative coverage gap — {{patient.name}}
+Canine penicillin gram-negative coverage gap [yes / not]. Not a sepsis-alone [yes / not]. Cover the gram-negative [ ]. Packet 375 aminoanaer [ ]. Packet 389 Na penicillin [ ]. Packet 385 hypersensitivity [ ]. Bare sepsis [ ].
+
+DDX:
+1. Named penicillin / amoxicillin / ampicillin plus Pseudomonas / gram-negative / gram neg — **Canine penicillin gram-negative coverage gap. Not a sepsis-alone**
+2. Mercer / Li AAC 1994 PMID 7986004: penicillins have limited activity against many gram-negative organisms including Pseudomonas. Cover the gram-negative. △ Plumb
+3. Packet 375 owns aminoglycoside anaerobic coverage. Packet 389 owns sodium penicillin too-fast IV. Packet 385 owns penicillin hypersensitivity. Bare sepsis is not this loc
+4. Do not harvest a penicillin table. Do not harvest Williams MIC. Neu 1983 is empiric-therapy chemistry, not this loc’s weight leader
+5. Dog or cat can fire. Horse does not fire. Bare penicillin or bare sepsis stays dark. Do not copy a penicillin table
+
+Do not: harvest a penicillin mg/kg table. Call this a sepsis-alone. Send penicillin as the Pseudomonas plan. Treat 375 or 385 as this loc.
+Do next: Name canine penicillin gram-negative coverage gap. Not a sepsis-alone. Cover the gram-negative. △ Plumb. Packet 375 still owns aminoglycoside anaerobes. Do not copy a penicillin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5480,6 +5497,14 @@ Return now for collapse, trouble breathing, or if {{patient.pronoun}} is worse. 
 We named the coverage gap and slowed or stopped the medicine. Give only the medicines we sent, as labeled. Do not add leftover sodium penicillin from home.
 
 Return now for collapse, extreme thirst, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-pengneg`
+
+{{patient.name}} was on a penicillin-class antibiotic around a gram-negative or Pseudomonas infection. That family of antibiotics often does not cover those organisms. Using leftover amoxicillin as the sepsis plan is not the same as treating a simple infection. This is not a simple sepsis-and-home plan.
+
+We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover amoxicillin or penicillin from home.
+
+Return now for fever, collapse, or if the infection looks worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

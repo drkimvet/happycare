@@ -15022,6 +15022,84 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline sodium penicillin too-fast iv", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_pengneg_is_not_a_sepsis_alone(self):
+        b = analyze("dog", "amoxicillin, Pseudomonas")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send penicillin as the pseudomonas plan", joined)
+        self.assertIn("penicillin mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ampicillin_gram_neg_fires_pengneg(self):
+        b = analyze("dog", "ampicillin, gram-negative")
+        loc = b["localization"].lower()
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_penicillin_gram_neg_fires_pengneg(self):
+        b = analyze("cat", "penicillin, gram neg")
+        loc = b["localization"].lower()
+        self.assertIn("feline penicillin gram-negative coverage gap", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoanaer_concatenates_with_pengneg(self):
+        b = analyze("dog", "gentamicin, Bacteroides, ampicillin, Pseudomonas")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoanaer_is_not_pengneg(self):
+        b = analyze("dog", "gentamicin, Bacteroides")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penhyper_is_not_pengneg(self):
+        b = analyze("dog", "amoxicillin, anaphylaxis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin hypersensitivity", loc)
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_napeniv_is_not_pengneg(self):
+        b = analyze("dog", "sodium penicillin, too-fast IV")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine sodium penicillin too-fast iv", loc)
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_penicillin_is_not_pengneg(self):
+        b = analyze("dog", "penicillin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sepsis_is_not_pengneg(self):
+        b = analyze("dog", "sepsis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_penicillin_plus_sepsis_is_not_pengneg(self):
+        b = analyze("dog", "penicillin, sepsis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_pengneg(self):
+        b = analyze("horse", "penicillin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertNotIn("feline penicillin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
