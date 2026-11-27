@@ -15349,6 +15349,88 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin-associated thrombocytopenia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehneut_is_not_a_sepsis_alone(self):
+        b = analyze("dog", "cephalexin, neutropenia")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn(
+            "do not send cephalexin-associated neutropenia home as sepsis",
+            joined,
+        )
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertIn("g-csf", joined)
+        self.assertNotIn("canine cephalosporin-associated thrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_agranulocytosis_fires_cehneut(self):
+        b = analyze("dog", "cefazolin, agranulocytosis")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_neutrophil_fires_cehneut(self):
+        b = analyze("cat", "cefovecin, neutrophil")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin-associated neutropenia", loc)
+        self.assertIn("not a sepsis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehitp_concatenates_with_cehneut(self):
+        b = analyze("dog", "cephalexin, thrombocytopenia, neutropenia")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated thrombocytopenia", loc)
+        self.assertIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehitp_is_not_cehneut(self):
+        b = analyze("dog", "cephalexin, thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated thrombocytopenia", loc)
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehimha_is_not_cehneut(self):
+        b = analyze("dog", "cephalexin, IMHA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated imha", loc)
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_pengneg_is_not_cehneut(self):
+        b = analyze("dog", "amoxicillin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine penicillin gram-negative coverage gap", loc)
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehneut(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sepsis_is_not_cehneut(self):
+        b = analyze("dog", "sepsis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_plus_sepsis_is_not_cehneut(self):
+        b = analyze("dog", "cephalexin, sepsis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehneut(self):
+        b = analyze("horse", "cephalexin, neutropenia")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated neutropenia", loc)
+        self.assertNotIn("feline cephalosporin-associated neutropenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

@@ -330,6 +330,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cephcross` | Assessment | Canine cephalosporin penicillin cross-reactivity / not an allergy-alone |
 | `ddx-cehimha` | Assessment | Canine cephalosporin-associated IMHA / not an IMHA-alone |
 | `ddx-cehitp` | Assessment | Canine cephalosporin-associated thrombocytopenia / not an ITP-alone |
+| `ddx-cehneut` | Assessment | Canine cephalosporin-associated neutropenia / not a sepsis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -413,6 +414,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cephcross` | Discharge | After cephalosporin / penicillin cross-reactivity talk |
 | `dc-cehimha` | Discharge | After cephalosporin-associated IMHA talk |
 | `dc-cehitp` | Discharge | After cephalosporin-associated thrombocytopenia talk |
+| `dc-cehneut` | Discharge | After cephalosporin-associated neutropenia talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4903,6 +4905,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this an ITP-alone. Pred this as primary ITP before the drug is named. Treat 392 or 304 as this loc.
 Do next: Name canine cephalosporin-associated thrombocytopenia. Not an ITP-alone. Stop the cephalosporin. △ Plumb. Packet 304 still owns ITP without named cephalosporin. Do not copy a cephalosporin table.
 
+### `ddx-cehneut`
+
+Cephalosporin-associated neutropenia — {{patient.name}}
+Canine cephalosporin-associated neutropenia [yes / not]. Not a sepsis-alone [yes / not]. Stop the cephalosporin [ ]. Packet 393 cehitp [ ]. Packet 392 cehimha [ ]. Packet 390 pengneg [ ]. Bare sepsis [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus neutropenia / neutrophil / agranulocytosis — **Canine cephalosporin-associated neutropenia. Not a sepsis-alone**
+2. Mercer / Bloom Am J Hematol 1988 PMID 3394717: immune neutropenia can follow cephalosporin exposure. Stop the cephalosporin. △ Plumb
+3. Packet 393 owns cephalosporin-associated thrombocytopenia. Packet 392 owns cephalosporin-associated IMHA. Packet 390 owns penicillin gram-negative coverage. Bare sepsis is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest a G-CSF table. Do not harvest Bloom IgG methods. Atkinson 1966 is cephaloridine, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare sepsis stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a sepsis-alone. Send leftover cephalexin as the neutropenia plan. Treat 393 or 390 as this loc.
+Do next: Name canine cephalosporin-associated neutropenia. Not a sepsis-alone. Stop the cephalosporin. △ Plumb. Packet 393 still owns cephalosporin thrombocytopenia. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5580,6 +5597,14 @@ Return now for pale gums, collapse, dark urine, or if {{patient.pronoun}} is wor
 We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
 
 Return now for bruising, nosebleed, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehneut`
+
+{{patient.name}} had a low neutrophil count or agranulocytosis around a cephalosporin. That family of antibiotics can trigger immune destruction of neutrophils. Using leftover cephalexin as the sepsis plan is not the same as treating a simple infection. This is not a simple sepsis-and-home plan.
+
+We named the coverage gap and stopped the cephalosporin. Give only the medicines we sent, as labeled. Do not add leftover cephalexin or cefpodoxime from home.
+
+Return now for fever, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

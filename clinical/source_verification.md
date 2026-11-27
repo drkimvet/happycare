@@ -6445,3 +6445,34 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus ITP / th
 - Attending: If the query is only “ITP,” why does this gate stay dark?
 - Attending: Horse cefazolin plus thrombocytopenia — fire or skip?
 - Attending: Cat plus cefovecin plus platelet — which locs fire, and why?
+
+## 394. Canine cephalosporin-associated neutropenia (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-neutropenia chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (immune cytopenias, including neutropenia, can follow cephalosporin exposure). Bloom *Am J Hematol* 1988 PMID 3394717 (31 cites, Smith Kline and French Laboratories, King of Prussia; species-fit canine cephalosporin-induced immune cytopenia with neutrophil-associated IgG after cefazedone / cefonicid — printed tox-study methods stay on that paper). Deldar *Fundam Appl Toxicol* 1988 PMID 3220216 (10 cites, University of Pennsylvania; CFU-E and CFU-GM colony-forming capacity after cephalosporin). Deldar *Vet Pathol* 1988 PMID 3394212 (18 cites, UPenn marrow ultrastructure). Atkinson *Toxicol Appl Pharmacol* 1966 PMID 5961559 is cephaloridine subacute toxicity across species, not this loc. Bamberger *Antimicrob Agents Chemother* 2002 PMID 12183241 is neutrophils affecting cefazolin activity in an abscess, not this loc. Foong *Clin Infect Dis* 2019 PMID 30590400 is recency and human cefepime OPAT neutropenia, not this loc. Lanevschi *J Vet Intern Med* 1999 is idiopathic neutropenia in a Rottweiler, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bloom. Do not overweight Atkinson 1966 or Foong 2019 as quality for this SA loc. Human chemistry is not canine incidence. Packet 393 still owns cephalosporin-associated thrombocytopenia. Packet 392 still owns cephalosporin-associated IMHA. Packet 390 still owns penicillin gram-negative coverage. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a G-CSF table. Do not harvest Bloom IgG methods. Do not fire on bare cephalexin. Do not fire on bare sepsis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bloom: **named cephalosporin plus neutropenia / neutrophil / agranulocytosis is not a sepsis-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus neutropenia / neutrophil / agranulocytosis is canine (or feline) cephalosporin-associated neutropenia; not a sepsis-alone. Bare cephalexin stays dark. Bare sepsis stays dark. Dual cephalexin plus thrombocytopenia stays 393. Dual cephalexin plus IMHA stays 392. Dual amoxicillin plus Pseudomonas stays 390. Dual cephalexin plus thrombocytopenia plus neutropenia concatenates 393 then 394. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a G-CSF table.
+- Do not harvest Bloom IgG methods.
+- Do not call this a sepsis-alone.
+- Do not send leftover cephalexin as the neutropenia plan.
+- Do not treat cephalosporin-associated thrombocytopenia (393) as this loc.
+- Do not treat cephalosporin-associated IMHA (392) as this loc.
+- Do not treat penicillin gram-negative coverage (390) as this loc.
+- Do not treat sepsis without named cephalosporin plus neutropenia as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus neutropenia / neutrophil / agranulocytosis → **Canine cephalosporin-associated neutropenia. Not a sepsis-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus neutropenia not a sepsis-and-home night?
+- NAVLE 2: Why does cephalexin plus thrombocytopenia stay 393, not this loc?
+- NAVLE 3: Dual-named “cephalexin, thrombocytopenia, neutropenia” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the neutropenia plan without inventing a mg/kg table?
+- Attending: If the query is only “sepsis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus agranulocytosis — fire or skip?
+- Attending: Cat plus cefovecin plus neutrophil — which locs fire, and why?

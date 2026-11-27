@@ -894,6 +894,30 @@ CEPHITP_SIGN_RE = re.compile(
 # methods. Dogs and cats. Skip horse. Mercer / Bloom:
 # immune thrombocytopenia can follow cephalosporin
 # exposure. △ Plumb.
+CEPHNEUT_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEPHNEUT_SIGN_RE = re.compile(
+    r"neutropenia|"
+    r"neutrophil|"
+    r"agranulocytos",
+    re.I,
+)
+# Packet 394: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus neutropenia / neutrophil / agranulocytosis
+# only. Do not use \bsepsis (bare sepsis). Do not use
+# leukopenia. Do not use cephalosporin-associated
+# thrombocytopenia (393). Do not use cephalosporin-
+# associated IMHA (392). Do not use penicillin gram-
+# negative coverage (390). Do not harvest a cephalosporin
+# mg/kg table. Do not harvest a G-CSF table. Do not
+# harvest Bloom IgG methods. Dogs and cats. Skip horse.
+# Mercer / Bloom: immune neutropenia can follow
+# cephalosporin exposure. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7580,6 +7604,11 @@ def analyze(
         and CEPHITP_RE.search(text)
         and CEPHITP_SIGN_RE.search(text)
     )
+    steal_cehneut_dx = (
+        spec in {"dog", "cat"}
+        and CEPHNEUT_RE.search(text)
+        and CEPHNEUT_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7775,6 +7804,7 @@ def analyze(
         or steal_cephcross_dx
         or steal_cehimha_dx
         or steal_cehitp_dx
+        or steal_cehneut_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -21894,6 +21924,89 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin-associated thrombocytopenia."
+            )
+
+    cehneut_named = (
+        spec in {"dog", "cat"}
+        and CEPHNEUT_RE.search(text)
+        and CEPHNEUT_SIGN_RE.search(text)
+    )
+    if cehneut_named:
+        if spec == "cat":
+            cehneut_loc = (
+                "Feline cephalosporin-associated neutropenia. "
+                "Not a sepsis-alone."
+            )
+        else:
+            cehneut_loc = (
+                "Canine cephalosporin-associated neutropenia. "
+                "Not a sepsis-alone."
+            )
+        localization = (
+            f"{localization} Also {cehneut_loc}"
+            if localization
+            else cehneut_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin-associated neutropenia home "
+            "as sepsis. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest a G-CSF table. "
+            "Do not harvest Bloom IgG methods. "
+            "Mercer / Bloom: immune neutropenia can follow "
+            "cephalosporin exposure. Stop the cephalosporin. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this a sepsis-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 393 still owns cephalosporin-associated "
+            "thrombocytopenia. Packet 392 still owns "
+            "cephalosporin-associated IMHA. Packet 390 still "
+            "owns penicillin gram-negative coverage. "
+            "Bare sepsis without named cephalosporin plus "
+            "neutropenia / neutrophil / agranulocytosis language "
+            "is not this loc. "
+            "Bare cephalexin without neutropenia / neutrophil / "
+            "agranulocytosis language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin-associated neutropenia. "
+                "Not a sepsis-alone. Stop the cephalosporin. "
+                "△ Plumb. Packet 393 still owns cephalosporin "
+                "thrombocytopenia. Do not copy a cephalosporin "
+                "table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin-associated neutropenia. "
+                "Not a sepsis-alone. Stop the cephalosporin. "
+                "△ Plumb. Packet 393 still owns cephalosporin "
+                "thrombocytopenia. Packet 390 still owns penicillin "
+                "gram-negative coverage. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins / Bloom Am J Hematol 1988 "
+            "PMID 3394717 (Smith Kline and French): immune "
+            "neutropenia can follow cephalosporin exposure. "
+            "Deldar Fundam Appl Toxicol 1988 PMID 3220216 "
+            "(University of Pennsylvania). Deldar Vet Pathol 1988 "
+            "PMID 3394212. Atkinson 1966 is cephaloridine, not "
+            "this loc. Bamberger 2002 is neutrophils affecting "
+            "cefazolin, not this loc. Foong 2019 is recency and "
+            "human cefepime, not this loc. Human chemistry is not "
+            "canine incidence. Do not harvest cephalosporin mg/kg. "
+            "Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin-associated neutropenia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin-associated neutropenia."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
