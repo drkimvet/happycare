@@ -1131,6 +1131,33 @@ CEHMTT_SIGN_RE = re.compile(
 # a cephalosporin mg/kg table. Do not harvest a vitamin K
 # mg/kg table. Dogs and cats. Skip horse. Lipsky: NMTT
 # side chain can cause hypoprothrombinemia. △ Plumb.
+CEHDIS_RE = re.compile(
+    r"cefotetan|"
+    r"cefoperazone|"
+    r"cefamandole|"
+    r"n[ -]?methyl[ -]?thio[ -]?tetrazol|"
+    r"methylthiotetrazol|"
+    r"\bnmtt\b|"
+    r"\bmtt\b",
+    re.I,
+)
+CEHDIS_SIGN_RE = re.compile(
+    r"disulfiram|"
+    r"\balcohol\b|"
+    r"\bethanol\b|"
+    r"acetaldehyde",
+    re.I,
+)
+# Packet 404: named cefotetan / cefoperazone / cefamandole /
+# NMTT / MTT plus disulfiram / alcohol / ethanol /
+# acetaldehyde only. Do not fire cephalexin / cefazolin /
+# cefpodoxime / cefovecin (no MTT side chain). Do not use
+# MTT hypoprothrombinemia (403). Do not use
+# cephalosporin-associated seizures (402). Do not use
+# Lipsky AAC 1984 bleeding as this loc. Do not harvest a
+# cephalosporin mg/kg table. Dogs and cats. Skip horse.
+# Kline: cefotetan can cause a disulfiram-type reaction.
+# △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7868,6 +7895,11 @@ def analyze(
         and CEHMTT_RE.search(text)
         and CEHMTT_SIGN_RE.search(text)
     )
+    steal_cehdis_dx = (
+        spec in {"dog", "cat"}
+        and CEHDIS_RE.search(text)
+        and CEHDIS_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -8073,6 +8105,7 @@ def analyze(
         or steal_cehcsf_dx
         or steal_cehsz_dx
         or steal_cehmtt_dx
+        or steal_cehdis_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -23045,6 +23078,89 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin MTT-side-chain hypoprothrombinemia."
+            )
+
+    cehdis_named = (
+        spec in {"dog", "cat"}
+        and CEHDIS_RE.search(text)
+        and CEHDIS_SIGN_RE.search(text)
+    )
+    if cehdis_named:
+        if spec == "cat":
+            cehdis_loc = (
+                "Feline cephalosporin MTT disulfiram-like "
+                "reaction. Not an intoxication-alone."
+            )
+        else:
+            cehdis_loc = (
+                "Canine cephalosporin MTT disulfiram-like "
+                "reaction. Not an intoxication-alone."
+            )
+        localization = (
+            f"{localization} Also {cehdis_loc}"
+            if localization
+            else cehdis_loc
+        )
+        hard_stops.append(
+            "Do not send MTT-cephalosporin plus alcohol home "
+            "as a simple intoxication. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Kline: cefotetan can cause a disulfiram-type "
+            "reaction. Stop the MTT drug. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this an intoxication-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 403 still owns MTT hypoprothrombinemia / "
+            "bleeding. "
+            "Packet 402 still owns cephalosporin-associated "
+            "seizures. "
+            "Lipsky AAC 1984 is the bleeding loc, not this loc. "
+            "Cephalexin / cefazolin / cefpodoxime / cefovecin "
+            "have no MTT side chain and are not this loc. "
+            "Bare alcohol without named cefotetan / "
+            "cefoperazone / cefamandole / NMTT / MTT is not "
+            "this loc. "
+            "Bare cefotetan without disulfiram / alcohol / "
+            "ethanol / acetaldehyde language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin MTT disulfiram-like "
+                "reaction. Not an intoxication-alone. Stop the "
+                "MTT drug. △ Plumb. Packet 403 still owns MTT "
+                "bleeding. Do not copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin MTT disulfiram-like "
+                "reaction. Not an intoxication-alone. Stop the "
+                "MTT drug. △ Plumb. Packet 403 still owns MTT "
+                "bleeding. Do not copy a cephalosporin table."
+            )
+        sources.append(
+            "Kline Antimicrob Agents Chemother 1987 PMID "
+            "3479045. Kitson Alcohol Clin Exp Res 1986 PMID "
+            "3008585. Lipsky Biochem Pharmacol 1989 PMID "
+            "2930578 is MTT-thiol aldehyde dehydrogenase, not "
+            "the 1984 bleeding loc. Kitson Alcohol 1987 PMID "
+            "3593530 is a review, adjacent. Norrby Drugs 1987 "
+            "PMID 3319495 is broader cephalosporin side effects, "
+            "not this loc. Fekety Am J Med 1990 is third-"
+            "generation safety, not this loc. Mergenhagen 2020 "
+            "is recency, not this loc. Matsubara / Shimada are "
+            "rodent alcohol-metabolizing papers, not canine "
+            "incidence. Cefonicid papers are not this named-"
+            "drug list. Human chemistry is not canine incidence. "
+            "Do not harvest cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin MTT disulfiram-like reaction."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin MTT disulfiram-like reaction."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

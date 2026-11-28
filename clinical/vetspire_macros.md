@@ -340,6 +340,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehcsf` | Assessment | Canine cephalosporin poor CSF penetration / not a meningitis-alone |
 | `ddx-cehsz` | Assessment | Canine cephalosporin-associated seizures / not a seizure-alone |
 | `ddx-cehmtt` | Assessment | Canine cephalosporin MTT-side-chain hypoprothrombinemia / not a coagulopathy-alone |
+| `ddx-cehdis` | Assessment | Canine cephalosporin MTT disulfiram-like reaction / not an intoxication-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -433,6 +434,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehcsf` | Discharge | After cephalosporin / CSF coverage-gap talk |
 | `dc-cehsz` | Discharge | After cephalosporin / seizure talk |
 | `dc-cehmtt` | Discharge | After MTT-cephalosporin / bleeding talk |
+| `dc-cehdis` | Discharge | After MTT-cephalosporin / alcohol talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -5073,6 +5075,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Harvest a vitamin K mg/kg table. Call this a coagulopathy-alone. Treat leftover cephalexin as this loc. Treat 392 or 393 as this loc.
 Do next: Name canine cephalosporin MTT-side-chain hypoprothrombinemia. Not a coagulopathy-alone. Stop the MTT drug. △ Plumb. Packet 392 still owns IMHA. Do not copy a cephalosporin or vitamin K table.
 
+### `ddx-cehdis`
+
+Cephalosporin MTT disulfiram-like reaction — {{patient.name}}
+Canine cephalosporin MTT disulfiram-like reaction [yes / not]. Not an intoxication-alone [yes / not]. Stop the MTT drug [ ]. Packet 403 cehmtt [ ]. Packet 402 cehsz [ ]. Cephalexin is not this loc [ ]. Bare alcohol [ ].
+
+DDX:
+1. Named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde — **Canine cephalosporin MTT disulfiram-like reaction. Not an intoxication-alone**
+2. Kline Antimicrob Agents Chemother 1987 PMID 3479045: cefotetan can cause a disulfiram-type reaction. Stop the MTT drug. △ Plumb
+3. Packet 403 owns MTT hypoprothrombinemia / bleeding. Packet 402 owns cephalosporin seizures. Lipsky AAC 1984 is the bleeding loc, not this loc. Cephalexin / cefazolin / cefpodoxime / cefovecin have no MTT side chain and are not this loc. Bare alcohol is not this loc
+4. Do not harvest a cephalosporin table. Kitson 1986 is MTT-aldehyde dehydrogenase. Norrby 1987 is broader side effects, not this loc. Mergenhagen 2020 is recency, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cefotetan or bare alcohol stays dark. Dual cefotetan plus bleeding stays 403. Dual cefotetan plus bleeding plus alcohol concatenates 403 then this loc. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this an intoxication-alone. Treat leftover cephalexin as this loc. Treat 403 or Lipsky AAC 1984 as this loc.
+Do next: Name canine cephalosporin MTT disulfiram-like reaction. Not an intoxication-alone. Stop the MTT drug. △ Plumb. Packet 403 still owns MTT bleeding. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5830,6 +5847,14 @@ Return now for another seizure, collapse, or if {{patient.pronoun}} is worse. {{
 We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cefotetan, cefoperazone, or cefamandole from home.
 
 Return now for new bleeding, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehdis`
+
+{{patient.name}} had a reaction around a cephalosporin that carries an MTT side chain (cefotetan, cefoperazone, or cefamandole) and alcohol. That side chain can block alcohol breakdown the way disulfiram does, so leftover cefotetan plus a drink is not a simple intoxication. Leftover cephalexin is not this problem. This is not a simple intoxication-and-home plan.
+
+We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cefotetan, cefoperazone, or cefamandole from home.
+
+Return now for vomiting, collapse, flushing, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

@@ -6767,3 +6767,36 @@ Night rule: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleed
 - Attending: If the query is only “bleeding,” why does this gate stay dark?
 - Attending: Horse cefotetan plus hypoprothrombinemia — fire or skip?
 - Attending: Cat plus cefamandole plus vitamin K — which locs fire, and why?
+
+## 404. Canine cephalosporin MTT disulfiram-like reaction (Kline AAC 1987)
+
+No dedicated Plunkett MTT-disulfiram chapter in the owned SA EM splits. Kline *Antimicrob Agents Chemother* 1987 PMID 3479045 (11 cites, School of Allied Health, Medical College of Ohio, Toledo; loc-fit: cefotetan-induced disulfiram-type reactions and hypoprothrombinemia). Kitson *Alcohol Clin Exp Res* 1986 PMID 3008585 (15 cites; loc-fit: 5,5'-dithiobis(1-methyltetrazole) on cytoplasmic aldehyde dehydrogenase and implications for cephalosporin-alcohol reactions; affiliation not in PubMed XML). Lipsky *Biochem Pharmacol* 1989 PMID 2930578 (4 cites, Department of Medicine, Johns Hopkins University School of Medicine) is 1-methyltetrazole-5-thiol inhibition of aldehyde dehydrogenase after microsomal activation — this loc's enzyme chemistry, not Lipsky *Antimicrob Agents Chemother* 1984 hypoprothrombinemia. Kitson *Alcohol* 1987 PMID 3593530 (13 cites) is a cephalosporin-and-alcohol-metabolism review, adjacent. Norrby *Drugs* 1987 PMID 3319495 (90 cites, Department of Infectious Diseases, University of Umeå) is broader cephalosporin side effects, not this loc. Fekety *Am J Med* 1990 PMID 2183609 (53 cites, University of Michigan) is parenteral third-generation safety, not this loc. Mergenhagen *Antimicrob Agents Chemother* 2020 PMID 31871085 (31 cites, VA Western New York) is recency alcohol-antibiotic review, not this loc. Matsubara *Jpn J Pharmacol* 1987 PMID 2893854 (Shionogi Osaka) and Shimada *Jpn J Pharmacol* 1987 PMID 3444121 (Jikei) are rodent alcohol-metabolizing papers, not canine incidence. Cefonicid papers (Portolani *Recenti Prog Med* 1990 PMID 2236827; McMahon *J Antimicrob Chemother* 1987 PMID 3440774) are not this named-drug list. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Kline AAC 1987 plus Kitson 1986, with Lipsky 1989 as the ALDH mechanism paper. Do not overweight Norrby 1987, Fekety 1990, or Mergenhagen 2020 as this SA MTT-disulfiram loc. Human chemistry is not canine incidence. Packet 403 still owns MTT hypoprothrombinemia / bleeding. Packet 402 still owns cephalosporin-associated seizures. Lipsky AAC 1984 is the bleeding loc, not this loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not fire on bare cefotetan. Do not fire on bare alcohol. Do not fire cephalexin / cefazolin / cefpodoxime / cefovecin. Dogs and cats. Skip horse.
+
+Agree with Kline / Kitson: **named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde is not an intoxication-alone.** Cephalexin is not this loc. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde is canine (or feline) cephalosporin MTT disulfiram-like reaction; not an intoxication-alone. Bare cefotetan stays dark. Bare alcohol stays dark. Dual cefotetan plus bleeding stays 403. Dual cefotetan plus bleeding plus alcohol concatenates 403 then 404. Dual cephalexin plus alcohol stays dark for this loc. Dual cefazolin plus seizure stays 402. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not call this an intoxication-alone.
+- Do not send MTT-cephalosporin plus alcohol home as a simple intoxication.
+- Do not treat cephalexin / cefazolin / cefpodoxime / cefovecin plus alcohol as this loc.
+- Do not treat MTT hypoprothrombinemia without alcohol language (403) as this loc.
+- Do not treat cephalosporin-associated seizures (402) as this loc.
+- Do not treat Lipsky AAC 1984 bleeding as this loc.
+- Do not treat Norrby 1987 broader side effects as this loc.
+- Do not treat Mergenhagen 2020 recency as this loc.
+- Do not treat rodent Matsubara / Shimada chemistry as canine incidence.
+- Do not treat alcohol without named cefotetan / cefoperazone / cefamandole / NMTT / MTT as this loc.
+
+Night rule: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde → **Canine cephalosporin MTT disulfiram-like reaction. Not an intoxication-alone.** Stop the MTT drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefotetan plus alcohol not an intoxication-and-home night?
+- NAVLE 2: Why does cephalexin plus alcohol stay dark for this loc?
+- NAVLE 3: Dual-named “cefotetan, bleeding, alcohol” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cefotetan plus a drink is not a simple intoxication without inventing a mg/kg table?
+- Attending: If the query is only “alcohol,” why does this gate stay dark?
+- Attending: Horse cefotetan plus ethanol — fire or skip?
+- Attending: Cat plus cefamandole plus disulfiram — which locs fire, and why?

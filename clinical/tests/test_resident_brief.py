@@ -16222,6 +16222,85 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin mtt-side-chain hypoprothrombinemia", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehdis_is_not_an_intoxication_alone(self):
+        b = analyze("dog", "cefotetan, alcohol")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIn("not an intoxication-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send mtt-cephalosporin plus alcohol home as a simple intoxication", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefoperazone_ethanol_fires_cehdis(self):
+        b = analyze("dog", "cefoperazone, ethanol")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIn("not an intoxication-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefamandole_disulfiram_fires_cehdis(self):
+        b = analyze("cat", "cefamandole, disulfiram")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIn("not an intoxication-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nmtt_acetaldehyde_fires_cehdis(self):
+        b = analyze("dog", "NMTT, acetaldehyde")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIn("not an intoxication-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehmtt_concatenates_with_cehdis(self):
+        b = analyze("dog", "cefotetan, bleeding, alcohol")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehmtt_is_not_cehdis(self):
+        b = analyze("dog", "cefotetan, bleeding")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertNotIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_alcohol_is_not_cehdis(self):
+        b = analyze("dog", "cephalexin, alcohol")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehsz_is_not_cehdis(self):
+        b = analyze("dog", "cefazolin, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated seizures", loc)
+        self.assertNotIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cefotetan_is_not_cehdis(self):
+        b = analyze("dog", "cefotetan")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_alcohol_is_not_cehdis(self):
+        b = analyze("dog", "alcohol")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehdis(self):
+        b = analyze("horse", "cefotetan, alcohol")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertNotIn("feline cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
