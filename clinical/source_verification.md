@@ -1,0 +1,6835 @@
+# Book vs public verification
+
+Legal sources only: user-supplied Plunkett 3e splits (2013) plus public Merck / ASPCA / Cornell / IRIS / AAHA plus public NCBI PubMed (PMID). No third-party book mirrors. No chapter dump. No invented mg/kg.
+
+Neither a 2013 emergency book nor Instinct replaces a veterinary license.
+
+## Method
+
+1. Read the attending's legal split (summarize, do not commit PDF text).
+2. Check the same fact on a named public page dated after the book when possible.
+3. Keep the night gate if both agree, or if the public source is newer and safer.
+4. Flag the book when it is silent, outdated, or internally inconsistent.
+5. For pharmacology / DDI / toxic-adverse packets, search **NCBI PubMed** (species + drug + adverse effect). Weight the paper by **citation count, journal standing, and author institution**, not by pub date. Cite PMID / year / species / journal / iCite citations / affiliation. Abstracts plus PMID are enough. Do not login to Clarivate / Web of Science / Scopus. Do not pirate a paywalled PDF. Do not invent an Impact Factor from memory.
+
+## PubMed weight (attending 2026-11-25)
+
+PubMed is how this resident looks at papers **without mixing their numbers**. Recency is a date stamp, not a quality score.
+
+Weight, in order:
+
+1. **Citations.** Public NIH iCite `citation_count` and RCR. Date-stamp the pull. A 0-cite case report does not outrank a cited review.
+2. **Journal.** Prefer MEDLINE / SCI / SCIE journals with established standing (JAVMA, AJVR, JVIM, JVECC, *Antimicrob Agents Chemother*, *Vet Clin North Am*). A new rodent paper in a low-tier tox title is not the night gate. Do not harvest a JCR Impact Factor onto the ER card.
+3. **Institution.** Read PubMed `Affiliation`. Prefer named CVM / university labs (Michigan Kresge, UC Davis, Texas A&M, Penn, Florida). Affiliation is not a substitute for citations.
+4. **Species.** Human ≠ dog ≠ cat ≠ rodent ≠ horse. Still required. Horse AJVR is not a Midtown loc.
+
+Do not:
+
+- Sort-by-date as if newest were best.
+- Treat one case report as veterinary incidence (Mercer still wins when relevance is not clear).
+- Harvest paper mg/kg, µg/mL, session counts, or clocks onto the ER card. △ Plumb.
+- Login to Clarivate / VIN / paywalled full text.
+
+Lily/sago **narrative** pages are not in the splits. Appendix cards plus public Merck/ASPCA are enough for the night lily gates. Missing chapters are **dropped**, not a work item.
+
+## Verified keep
+
+| Topic | Book (Plunkett 3e, summarize) | Public check | Night rule |
+| --- | --- | --- | --- |
+| True lily | Appendix: *Lilium*, principle unknown, renal failure in cats | Merck houseplants: cats, AKI, pollen/vase water | Cat + true lily = AKI. Do not wait. |
+| Peace / calla lily | Appendix: *Zantedeschia*, insoluble Ca oxalate, oral irritation | Same oxalate family as *Spathiphyllum* / *Philodendron* | Not a feline AKI lily. Do not run the true-lily protocol. |
+| Lily-of-the-valley | Appendix: *Convallaria*, cardioactive glycosides | Cardiac-glycoside plant, not *Lilium* | Arrhythmia plant. Not feline lily AKI. |
+| Sago / cycad | Appendix: cycasin / azoxyglycosides, GI + CNS; seeds matter | Merck: cycasin + BMAA, dogs, hepatic necrosis 48–72 h | Hepatic. No specific antidote. |
+| Grapes / raisins | Chapter: principle **unknown**, idiosyncratic, dog AKI, APCC says no safe amount | Merck **Sept 2024** (Hayes / Brutlag): tartaric acid proposed; tamarind and cream of tartar; *Ribes* currants not *Vitis* | Treat dog Vitis/tamarind/cream of tartar as AKI risk. Book mechanism is outdated. |
+| Macadamia | Chapter: dogs, weakness, hyperthermia, unknown principle; check chocolate/xylitol coating | Merck: dogs only, usually self-limiting | Do not treat as bromethalin. Still look for a second toxin in the cookie. |
+| Hops | Appendix: dogs, hyperthermia, seizures, death; principle unknown | Merck supplements: malignant hyperthermia picture; dantrolene conversation; **do not use NSAIDs/dipyrone to drop that fever** | Cool + support. Not a simple antipyretic case. |
+| Allium | Appendix cards for onion/garlic | Merck: Heinz-body hemolysis, **delayed days**, cats more sensitive, garlic 3–5× onion. Heinz/metHb may start within 24 h; hemolysis typically 3–5 days. Secondary pigment nephropathy only after hemolysis. | Do not clear as “fine tonight.” Recheck PCV. **Not lily.** Do not treat garlic as AKI-within-hours. |
+| Feline pancreatitis | Acute-abdomen headings only; no Forman-level fPL chapter in the owned splits | Forman ACVIM 2021: cluster diagnosis (signs + AUS + fPLI); SNAP normal makes pancreatitis less likely; **abnormal includes the equivocal range**; **opioids are the primary analgesics; buprenorphine adequate for most cats**; gabapentin/tramadol are PO options and **long-term chronic** adjuncts, not the acute substitute; do not withhold food (hepatic lipidosis); antibiotics not routine; evidence that dietary fat is deleterious in cats is not available | Do not invent the fPL cutoff. Weak SNAP ≠ diagnosis and ≠ negative. One-time opioid ≠ disease-modifier and ≠ Oddi reason to skip analgesia. Gabapentin ≠ tonight's opioid. Do not starve. Do not copy a canine low-fat 3–5 day prescription. Sucralfate is coating, not pancreatitis therapy. Do not copy the SNAP onto a housemate. |
+| Ivermectin / MDR1 | Chapter: GABA, collie-type idiosyncratic CNS | Merck: ABCB1 / P-gp; herding breeds | Ask breed. Do not use chelonian ivermectin (book exotic appendix + standard exotic teaching). |
+| Hamster oral beta-lactam | Exotic appendix: dysbiosis risk | Merck exotic GI | Hard stop. Already gated. |
+
+## Book traps (do not copy)
+
+- **Zn3P2 “phosgene”** in an earlier split: chemistry is **phosphine (PH3)**. Already gated.
+- **Grape toxic principle unknown** (2013) is superseded by tartaric-acid papers (Wegenast 2022; Merck 2024).
+- **Ivermectin heartworm line in the 3e typeset** lists monthly preventative as **mg/kg**. Standard preventative units are **µg/kg**. Treat that line as a unit trap. `△ Plumb`. Do not generate either number here.
+- Exotic appendix ivermectin tables mix µg and mg in places. Do not harvest those tables.
+
+## Coverage of the legal Plunkett 3e splits (SA emergency only)
+
+The 46 MB whole-book file never arrived. Study the SA EM splits we have. Night rules come from the verified gates, not from harvesting 2013 tables. Missing chapters are dropped.
+
+| Split | What was studied | Status |
+| --- | --- | --- |
+| p01–100 | Fluids, shock types, BLS/ALS headings | Read for traps. **Do not use the 2013 crash cart.** Night CPA is Pardo/RECOVER 2024. Night fluids are AAHA 2024. |
+| p101–200 | Heart/ATE, airway, trauma, heatstroke | Heatstroke / FATE already gated. Book still cites high-dose epinephrine in the 2013 CPR reading list. |
+| p201–300 | Skin, anemia, DIC, acute abdomen start | Skimmed headings. No new night gate. |
+| p301–440 | GDV, obstruction, DKA, ARF, pyometra, electrolytes | GDV/pyometra/ARF already gated vs Merck. |
+| p441–540 | Seizure/eye, then APAP through arsenic/aspirin | APAP family already gated. |
+| p541–640 | Baclofen → mushrooms, including grapes, EG, chocolate, ivermectin, macadamia | Grapes outdated; ivermectin µg trap. **No dedicated lily, sago, xylitol, permethrin, or Zn3P2 chapter in this file.** |
+| p641-plus / chunk-78751 | Starts ~p740: hamster → turtle exotic cards | Same as the exotic appendix-adjacent chunk. **Printed ~641–739 is a gap.** |
+| Appendices | Plant cards (Easter lily, calla, Convallaria, sago/false sago, etc.) | Cards only. Index points lily/sago **prose** to ~618–620; those pages are not in the splits. |
+| chunk-2786 | 15-page duplicate fragment | Duplicate; not a missing chapter. |
+
+## Dropped (not a work item)
+
+Lily/sago prose, xylitol / permethrin / Zn3P2 **chapters**, and printed ~641–739 (includes snakebite ~637–647). Do not ask the attending to send them. Do not hand-split on a phone. Study snakebite from Merck Gwaltney-Brant only. Appendix antivenin 1–5 vials stay on the page. SA EM study continues from the splits already on disk (shock/fluids, heart/ATE, GDV, DKA/HHS, Addison, seizures, the toxin chapters we have).
+
+## 112. RECOVER / Pardo 2024 CPA (JVECC)
+
+High-dose epinephrine withdrawn. Atropine once, early, if vagal. 100–120 compressions/min, 2-min cycles, bag-mask > mouth-to-snout. Dogs and cats only. Confirm numbers on the hospital crash-cart chart; do not generate them here.
+
+## 113. Equine acute colitis / Salmonella / Potomac horse fever / laminitis (Merck)
+
+Public Merck salmonellosis: isolate or barrier first; treatment of the severe form is IV fluids and electrolytes; adult antimicrobials are controversial and do **not** appear to shorten colitis or decrease shedding (they may be a bacteremia/neutropenia conversation). Do not invent a L/day fluid recipe or a shotgun penicillin–gentamicin–metronidazole cocktail from memory.
+
+Public Merck PHF (*Neorickettsia risticii*): river/creek pasture, late spring–fall; clinically can look like Salmonella; oxytetracycline is the named antimicrobial if that story is on the table; **ice the feet immediately** — laminitis in 20–30% and often severe. △ the oxytetracycline number in Plumb. Do not print it here.
+
+Polymyxin B is an endotoxin-bind conversation, not if the horse is already azotemic. NSAID for endotoxin: minimum effective dose; hold if kidneys are down. This is medical colitis, not large-colon volvulus. Do not copy the SA RECOVER cart.
+
+## 114. Canine Addisonian crisis (Plunkett 3e vs Merck Jul 2024)
+
+Legal split chapter “Hypoadrenocorticism (Addisonian crisis)” (p301–440 file) vs Merck Addison disease (Van Vertloo, Jul 2024). No chapter dump. No harvested mg/kg.
+
+Agree: young/middle-aged dog, waxing-waning GI, collapse, relative bradycardia, hyperK, hypoNa, prerenal azotemia, ACTH stim confirms, fluids first, prognosis good if treated.
+
+Book traps:
+
+- Cortisol cutoff printed as **mg/dL**. Merck/labs use **µg/dL (mcg/dL)**. Same ivermectin-class unit trap. Do not copy the number.
+- Book default 0.9% NaCl at a printed hourly rate. Current public teaching: balanced crystalloid, reassess; do not rapidly correct chronic severe hyponatremia (myelinolysis).
+- Book: finish ACTH before any glucocorticoid. Merck: DexSP does **not** interfere with the assay and can go if the dog cannot wait. Prednisolone/hydrocortisone **do** cross-react.
+- Book harvestable DOCP/Dex/insulin tables stay in the book. △ Plumb. Insulin for hyperK only after glucose is known.
+
+Atypical Addison (glucocorticoid only, normal electrolytes) is in Merck and easy to miss if you require hyperK.
+
+## 115. DKA / HHS (Plunkett 3e vs Merck + AAHA 2026 feline DKA)
+
+Legal split chapters in the p301–440 file. No chapter dump. No harvested insulin CRI.
+
+Agree: fluids before insulin if the patient is a volume wreck; look for UTI/pancreatitis/steroids; urine strips miss BHB; watch K and phosphorus once insulin starts; HHS is the other decompensated diabetic (very high glucose/osmolality, little ketone).
+
+Book traps:
+
+- Printed 40–60 mL/kg/h until rehydrated. Night fluids are AAHA-style: reassess, not a round number. AAHA 2026 feline DKA: correct dehydration over hours, balanced crystalloid.
+- Insulin tables stay in the book. △ Plumb / hospital protocol. Do not start insulin if potassium is already low.
+- Bicarbonate is not the default for the gap. Fluids + insulin close most acidosis.
+- 2013 “Cerenia not labeled in cats” is a label-era line, not a 2026 night fact. Do not resurrect it.
+
+## 116. Canine/feline seizure emergency (Plunkett 3e vs ACVIM 2024 + Merck)
+
+Legal split “Canine seizures” in the p441–540 file. No chapter dump. No harvested benzo/PB tables.
+
+Agree: oxygen if cyanotic, cool if hot, glucose on the minimum database, stop the seizure, then a maintenance drug.
+
+Book traps:
+
+- Status defined as **30 minutes**. Current Merck/ACVIM: **>5 minutes** or two or more without recovery. Treat now.
+- Second-line pentobarbital table and printed diazepam/PB mg/kg stay in the book. Night first line is a benzodiazepine; ACVIM prefers midazolam IV/IN. △ crash-cart / Plumb.
+- Oral diazepam as discharge/maintenance is a 2013 leftover. Merck: not dog maintenance. Cats: oral diazepam → idiosyncratic hepatic necrosis.
+- Phenobarbital range printed as “g/mL” (missing µ). Unit trap. △ the lab.
+
+## 117. GI obstruction / vinyl-plastic wrapper (Plunkett obstruction headings vs Merck)
+
+Legal split p301–440 has obstruction/GDV headings. No chapter dump. No harvested surgical timing tables.
+
+Agree with public Merck GI obstruction: plastic is a non-digestible foreign body; obstruction may be partial or complete; linear material (string/yarn/floss; a plastic **strip** can act the same) anchors at the tongue or stomach and can saw the mesenteric border. Cats more often linear; dogs more often discrete objects.
+
+Night rules:
+
+- Vinyl / “vynyl” / wrapper / packaging = **GI FB**, not a vinyl-chloride toxidrome from a jerky bag.
+- Do not charcoal plastic. Do not clear on a normal radiograph (plastic is often radiolucent). Tongue base. Rads + AUS. Endoscopy if still gastric.
+- Do not yank a strip. Do not push with a prokinetic.
+- Beef jerky is a **label** problem: onion/garlic → delayed Heinz; sugar-free → xylitol/glucose in the dog. One-time beef jerky is not the historical chronic chicken-jerky Fanconi story.
+- Days of a tense cranial abdomen plus tonight's jerky/wrapper are two localizations until imaging says one.
+
+## 118. Shock type: cardiogenic vs hypovolemic (Plunkett p01–100 / p101–200 vs AAHA 2024)
+
+Legal splits name shock types and print furosemide / hypertonic-saline / “shock bolus” tables. No chapter dump. **Do not harvest those numbers.** Night fluids are AAHA 2024.
+
+Agree: shock is inadequate oxygen delivery. Types: hypovolemic, cardiogenic, distributive, obstructive. Cats often skip the hyperdynamic phase.
+
+Book traps:
+
+- Printed shock-dose and furosemide mg/kg tables stay in the book. △ Plumb / the AAHA table / hospital protocol.
+- Hypertonic saline “over 10 minutes in shock” is a 2013 recipe, not a CHF plan.
+- Cat shock is often **bradycardia + hypothermia + hypotension**. Waiting for tachycardia is a dog template.
+
+Night rules:
+
+- Name the type before you bolus.
+- CHF / cardiogenic: do not default a hypovolemic shock bolus. AAHA: fluids often avoided; hypotension in CHF is an inotrope conversation. Furosemide is the edema drug; △ Plumb.
+- Hypovolemic: bolus ≠ overnight drip. Reassess. Never bolus a KCl bag.
+- Hemoabdomen: PCV/TS pair abdomen vs peripheral. Four rodenticide families. Blood product, not vitamin K by default.
+
+## 119. Feline urethral obstruction / uroabdomen (Plunkett FLUTD–UO vs Merck)
+
+Legal split p301–440: FLUTD (not obstructed) vs obstructed male cat vs uroabdomen. No chapter dump. No harvested catheter or calcium-gluconate tables.
+
+Agree: straining male cat is UO until the bladder is empty; hyperK can kill before the catheter; free abdominal fluid is not a diagnosis.
+
+Book traps:
+
+- Printed unblock / massage / fluid-rate recipes stay in the book. Night: ECG and potassium first. △ Plumb / hospital for the catheter sedation and the hyperK drugs. Calcium gluconate is cardioprotection — it does not lower K.
+- Uroabdomen: the split already says pair fluid and serum creatinine and potassium. Do not invent the ratio here. Do not therapeutic-tap as the treatment without that pair.
+- 2013 FLUTD “7–14 days” and diet-magnesium lines are not ISCAID. Young cats with irritative signs: empiric antibiotic is rarely indicated.
+
+Night rules:
+
+- Do not send home as constipation.
+- DexSP is not the unblock. Hold NSAID if azotemic / unknown kidney.
+- After patency: post-obstructive diuresis — UOP in mL/kg/hr, not a wet pad.
+- Uroabdomen: stabilize, divert, then find the leak. Soft non-tense + unilateral renomegaly is still the kidney/ureter, not a drainable belly.
+
+## 120. Pericardial effusion / tamponade (Plunkett p101–200 vs Merck)
+
+Legal split prints a pericardiocentesis recipe (ICS, catheter French size, clot-in-red-top). No chapter dump. **Do not harvest that step list.**
+
+Agree: tamponade is inadequate filling because the sac is full. It looks like right-sided CHF (ascites, jugulars, muffled heart). Electrical alternans / globoid heart are hints. Echo/FAST confirms. Dogs: right-atrial hemangiosarcoma or idiopathic. Cats: lymphoma, FIP, or CHF effusion.
+
+Book/public traps:
+
+- 2013 “IV fluids if in shock” is not a license to run a hypovolemic shock bolus. This is obstructive shock.
+- Merck: **diuretics are contraindicated in acute tamponade**. Do not Lasix this as CHF.
+- Medical therapy does not empty the sac. Pericardiocentesis is the decompression. Hospital protocol for the tap. ECG on. Closed system so you do not make a pneumothorax.
+
+Night rule: muffled + weak + big belly veins → name tamponade before furosemide.
+
+## 121. Pneumothorax / tension pneumothorax (Plunkett p101–200 vs Merck triage)
+
+Legal split prints open-needle conversion, rib-space taps, and chest-tube French sizes. No chapter dump. **Do not harvest those recipes.**
+
+Agree: air in the pleural space collapses the lung. Tension physiology is obstructive shock (barrel chest, no sounds, crash). Merck triage: catastrophic pleural space — routine tap may be inadequate; drain air/fluid without waiting for a film if they are dying. TFAST: absent **glide sign** suggests pneumothorax (practice required; absence is not 100%).
+
+Book traps:
+
+- 2013 “18-gauge needle to convert to open pneumothorax” and “9th–11th rib” tables stay in the book. Night: oxygen, hospital thoracocentesis protocol, tube if it refills.
+- Do not Lasix a quiet-chest dyspneic patient as CHF.
+- Small occult air in a comfortable patient may be watched. Distress or tension is not a watch.
+
+Night rule: quiet chest + crash → needle the pleural space by protocol before radiology.
+
+## 122. Pleural effusion / pyothorax (Plunkett p101–200 vs Merck)
+
+Legal split lists transudate / nonseptic exudate / pyothorax / chyle / hemothorax and then prints sedation mg/kg and tube sizes. No chapter dump. **Do not harvest those numbers.**
+
+Agree: quiet chest + distress → pleural space until you tap. Radiographs are not therapy. Save fluid (EDTA + sterile red-top). Cytology plus aerobic and anaerobic culture. Cat DDX: CHF, pyothorax, FIP, lymphoma, chyle. Pyothorax is septic pleural disease — one tap and home is not the plan.
+
+Book traps:
+
+- Printed butorphanol/fentanyl and French-size tables stay in the book. △ Plumb / hospital tube protocol.
+- “Open-chest CPR for any pleural space disease” is a 2013 line. Night CPA is Pardo/RECOVER unless the hospital says otherwise.
+- “Tap 2–3 times before a tube, unless pyothorax” is a heading, not a license to skip drainage of pus.
+
+Night rule: muffled lungs in a cat → oxygen, tap, look at the fluid, then decide CHF vs pus vs chyle vs blood.
+
+## 123. Hemoabdomen / transfusion (Plunkett hemoperitoneum vs Merck transfusions)
+
+Legal split prints wrap, DPL, peritoneal saline counterpressure, and mL/kg of FFP/pRBC/whole blood, plus PCV <20% as a trigger. No chapter dump. **Do not harvest those numbers.**
+
+Agree: trauma, ruptured mass (spleen/liver), GDV tear, anticoagulant rodenticide, slipped ligature. Hypovolemic shock. FAST. Pair PCV/TS. Non-clotting hemorrhagic fluid. Clotting sample = wrong stick. Negative tap does not rule out retroperitoneal bleed. Distension is a late sign.
+
+Book/public traps:
+
+- Printed product volumes and PCV cutoffs stay in the book. Transfuse for clinical oxygen-carrying failure and a falling trend, not a memorized PCV. △ hospital blood bank / Plumb is not the blood bank — Merck transfusion pages. **Cats must be typed. No universal donor.**
+- Abdominal wrap and intraperitoneal saline are 2013 maneuvers, not a substitute for surgery if they are still crashing.
+- Vitamin K is not the hemoabdomen drug unless the block is anticoagulant.
+
+Night rule: pale + free abdominal blood → pair the PCVs, name the family of bleed, talk blood products, do not wait for a round belly.
+
+## 124. Same-household siblings / two discharges (Forman vs Merck allium)
+
+No chapter dump. No PHI. Two cats can share a bag of seasoned jerky and still be two localizations.
+
+Agree with named public sources:
+
+- Merck garlic/onion: delayed Heinz / metHb; hemolysis typically days. Not lily. Not a few-hour nephrotoxin. No license here to print a “typical toxic threshold” for a powder-seasoned stick.
+- Forman ACVIM 2021: do not withhold food in the cat (hepatic lipidosis). Fat is not the feline pancreatitis lever. fPL is supportive.
+
+Night rules:
+
+- Same household is not the same localization. Two patients = two encounters = two discharges (`dc-gi` vs `dc-toxin`).
+- Do not paste the cranial-abdomen / low-fat / sucralfate / 12-hour NPO sheet onto the exposure-only sibling.
+- Do not paste leftover dentistry or heart paragraphs onto a toxin sheet.
+- Do not write “below the typical toxic threshold” unless APCC/Plumb named a number for THIS product and THIS weight.
+- Sucralfate mL stays △ Plumb. Coating is not the allium antidote.
+
+## 125. Anaphylaxis / vaccine-sting collapse (Plunkett p01–100 vs Merck Jan 2024)
+
+Legal split “Anaphylactic shock and acute allergic reactions.” No chapter dump. **Do not harvest the printed epinephrine µg, 90 mL/kg, hetastarch, DexSP, or diphenhydramine tables.**
+
+Agree with Merck hypersensitivity (Tizard, Jan 2024 / May 2025): type I, seconds to minutes, epinephrine first, fluids for shock, corticosteroids if needed. **Dog shock organ is the liver** (hepatic-vein constriction, portal hypertension, GI signs). Most other species (including the cat) lead with the **lung**. Hives / facial edema are milder type I and can be absent in crashing dogs.
+
+Book/public traps:
+
+- Printed shock-dose / hetastarch / epi 1:10 000 mL and µg lines stay in the book. Night fluids are AAHA-style. △ crash-cart / Plumb for epinephrine. RECOVER high-dose epi is a CPA algorithm, not anaphylaxis.
+- Diphenhydramine and DexSP are not the first syringe for shock. Azotemic cat: still no DexSP.
+- Do not wait for hives. Book already says a shocked patient may have **no facial swelling or urticaria**.
+- Gallbladder halo / wall edema + ALT can support canine anaphylaxis (Quantz 2009 JVECC). **Not pathognomonic** — pericardial effusion and right-sided heart failure also thicken the gallbladder wall. FAST the heart.
+- Do not copy a DexSP-first “anaphylaxis hemoabdomen” recipe from a lecture PDF. If there is abdominal fluid, pair PCV/TS.
+
+Night rule: collapsing dog after a vaccine or sting, with or without hives → name distributive shock, reach for epinephrine, look at the gallbladder **and** the heart.
+
+## 126. IMHA (Plunkett p201–300 vs ACVIM 2019 diagnosis + treatment)
+
+Legal split canine/feline anemia headings. No chapter dump. **Do not harvest printed PCV bands, platelet/hpf math, pred/azathioprine/cyclophosphamide, or transfusion mL/kg.**
+
+Agree with ACVIM 2019 Garden (diagnosis) and Swann (canine treatment) and Merck regenerative anemias: anemia is not IMHA until markers of immune destruction **and** hemolysis. SAT: 1 drop blood + 4 drops saline; persistent clumps, not rouleaux. DAT before immunosuppression if possible. Spherocytes are a **dog** criterion; feline RBCs lack consistent central pallor. ~30% of dogs are non-regenerative at presentation. Hemolysis holds TS; hemorrhage drops it. Spun PCV if agglutination. Transfuse for oxygen-carrying failure, not a memorized PCV. Cats: type-specific blood. Dogs: thrombosis (especially PTE) is a leading killer — thromboprophylaxis is the conversation, △ Plumb.
+
+Book/public traps:
+
+- Printed PCV <18% “severe” and reticulocyte recipes stay in the book. ACVIM treatment panel had **no agreed numerical PCV trigger** (2/8 members used <12%; the rest did not).
+- Oxidative spherocyte-lookalikes: zinc, acetaminophen, allium Heinz/eccentrocytes. Do not start prednisolone for garlic.
+- 2013 immunosuppressant tables stay in the book. Azotemic cat: still no DexSP.
+
+Night rule: pale + icterus → smear + saline 4:1 + infectious screen before you reach for a steroid.
+
+## 127. TBI / head trauma (Plunkett p301–440 vs public trauma teaching)
+
+Legal split “Head trauma.” No chapter dump. **Do not harvest printed mannitol g/kg, hypertonic 4 mL/kg, 30% board elevation, or ketamine tables.**
+
+Agree: ABC and perfusion first. Cerebral perfusion is MAP minus ICP. Book: **corticosteroids are contraindicated** in head trauma (matches Brain Trauma Foundation / CRASH: steroids increase death). Cushing reflex (hypertension + bradycardia) is late, dangerous ICP. Glucose on the minimum database (Merck trauma). Elevate the head, do not compress the jugulars. Avoid hypotonic fluid. Osmotic therapy is mannitol or hypertonic saline — HTS is the dry-patient conversation because mannitol diureses.
+
+Book traps:
+
+- Printed mannitol/HTS/furosemide-for-ICH lines stay in the book. Night: △ hospital / Plumb. Do not Lasix ICP. Do not mannitol a hypovolemic wreck.
+- Nasal oxygen can make them sneeze (ICP). Book flag, not a recipe.
+- Fixed-pupil prognosis table is a 2013 heading, not a night cutoff.
+
+Night rule: hit-by-car + dull + high BP + slow heart → not Lasix, not DexSP. Oxygen, volume, glucose, head up, then an osmotic drug from the hospital protocol.
+
+## 128. GDV deepening (Plunkett p201–300 vs Merck)
+
+Legal split “Gastric dilatation and volvulus.” No chapter dump. **Do not harvest OG-tube diameters, trocar rib spaces, lidocaine tables, or lactate cutoffs as euthanasia numbers.**
+
+Agree with Merck: right lateral (+ DV, not VD — aspiration). Classic reverse C / Popeye / double-bubble (pylorus dorsal-cranial, soft-tissue shelf). Stabilize, decompress, surgery, **gastropexy**. Pexy prevents volvulus recurrence, not all dilation. Hyperlactatemia is common from hypotension; Merck associates >6 mmol/L with necrosis risk — still not a veto; serial decline after resuscitation is the better conversation.
+
+Book traps:
+
+- Printed orogastric “largest-diameter tube” and trocar step lists stay in the book. Night: hospital protocol. Do not linger on a tube while they die.
+- Food bloat vs GDV is a **film**, not a guess. Any breed can GDV; deep-chested dogs are over-represented; cats are rare.
+- Post-op ventricular arrhythmias are delayed. △ lidocaine in Plumb. Do not harvest the 2013 antiarrhythmic table.
+
+Night rule: nonproductive retch + tympanic cranial abdomen → right lateral, fluids, decompress, surgery tonight. Not apomorphine. Not “trocar and see you Monday.”
+
+## 129. Sepsis / SIRS / septic shock (Plunkett p01–100 vs Sharp JVECC 2023 + 2025 consensus + Merck)
+
+Legal split shock / SIRS headings. No chapter dump. **Do not harvest printed SIRS 2/4–3/4 tables, HR/RR/temp/WBC bands, 90 mL/kg shock doses, hetastarch, or vasopressor µg lines.**
+
+Agree with Sharp et al. JVECC 2023 (*Defining sepsis in small animals*) and the 2025 veterinary consensus (PubMed: *Sepsis in Dogs and Cats—Consensus Definition and Clinical Criteria*): sepsis is a **life-threatening dysregulated host response to infection that produces organ dysfunction**. Infection plus SIRS is the older construct; SIRS criteria are nonspecific. Identification of organ dysfunction is required to call it sepsis. Septic shock is the subset with profound circulatory / cellular / metabolic failure — do not invent the human Sepsis-3 MAP/lactate pair as a night number.
+
+Merck (bacterial infections / septic shock, owner-facing): sepsis is an emergency; start antimicrobials immediately; waiting decreases survival; surgery is sometimes the source-control step. Merck initial triage: **high-dose corticosteroids are not recommended** in septic, hypovolemic, or cardiogenic shock (no mortality benefit; more morbidity). CIRCI / Addison is a different, deficiency conversation.
+
+Book/public traps:
+
+- Printed 2013 SIRS checkbox and shock-dose / colloid recipes stay in the book. Night fluids are AAHA-style. Never bolus a KCl bag.
+- Do not invent a lactate or MAP as diagnosis or euthanasia. Serial perfusion after resuscitation is the conversation.
+- Fever is not required. Cats may be hypothermic and bradycardic.
+- Antibiotics do not replace OHE, a septic-abdomen explore, or a chest tube (pyometra / GI leak / pyothorax already gated).
+- Do not send feverish or hypothermic collapse home as “just GI.”
+- DexSP is not the first syringe. Azotemic cat: still no DexSP.
+
+Night rule: suspected infection + organ dysfunction / shock → name distributive shock, find the pocket, first antimicrobial tonight, source-control conversation. Not a SIRS math problem.
+
+## 130. Cat respiratory distress / asthma vs CHF vs pleural (Plunkett p101–200 vs Merck)
+
+Legal split airway / heart headings. No chapter dump. **Do not harvest printed oxygen-cage recipes, albuterol puff counts, terbutaline mg/kg, DexSP bands, or the Merck triage epinephrine-for-asthma line.**
+
+Agree with Merck emergency evaluation: open-mouth breathing and cyanosis mean severe hypoxemia; oxygen first; radiographs after the cat is stable enough to hold still. Merck respiratory signs: inspiratory stertor/stridor localizes **cranial to the thoracic inlet**; labored expiration localizes **caudal** (bronchitis / asthma / pulmonary edema). Merck owner asthma: cough, wheeze, episodic distress; corticosteroids are the disease-modifying conversation; avoid smoke/aerosols; **new chronic cough in an older cat is often pneumonia, not new-onset asthma.**
+
+Book/public traps:
+
+- Merck inhalation and triage pages print puff counts, DexSP mg/kg, and even epinephrine for “life-threatening asthma.” Those numbers stay on the page. Night: △ crash-cart / Plumb. Do not copy them. Do not use RECOVER high-dose epi as an asthma protocol.
+- Lasix is a CHF-edema conversation, not a dyspnea protocol. Quiet chest is pleural until tapped (already gated). Tamponade is not Lasix (already gated).
+- DexSP is not the first syringe until the space is bronchial **and** the cat is not azotemic.
+- Albuterol / terbutaline is rescue for bronchoconstriction, not chronic monotherapy, and not for pleural fluid or left-sided failure.
+- Do not wrestle a compensating cat for a VD film.
+- Do not send open-mouth breathing home as “anxiety” or “just a hairball.”
+
+Night rule: cat open-mouth → oxygen, hands off, **name the space before the syringe** (upper / bronchial / pleural / CHF / anemia / ATE / anaphylaxis), then one syringe that matches that space.
+
+## 131. AHDS / “HGE” / canine parvovirus (Plunkett p201–300 vs Merck)
+
+Legal split acute-abdomen / infectious GI headings. No chapter dump. **Do not harvest printed PCV bands, neutrophil cutoffs, ampicillin mg/kg, or 2013 fluid recipes.**
+
+Agree with Merck AHDS: acute vomiting plus hemorrhagic diarrhea; diagnosis is clinical plus hemoconcentration; **IV fluids are the mainstay**; parenteral antimicrobials are **not recommended in mild to moderate cases** and are a sepsis / neutropenia / failing-despite-fluids conversation. Neutropenia should raise parvovirus or sepsis, not “just HGE.”
+
+Agree with Merck parvo: young or unvaccinated dogs; fecal antigen (or PCR); **about 25% have non-hemorrhagic diarrhea** — do not skip the test because the stool is brown. Treatment is supportive (fluids, antiemetic, antimicrobials when the gut barrier and marrow are down, nutrition). Isolate. Survival is a hospital-intensity conversation, not a “send home on metronidazole” conversation.
+
+Book/public traps:
+
+- Printed PCV “hemoconcentration” numbers and ampicillin tables stay on the page. Night: △ Plumb. Do not invent a PCV or WBC cutoff.
+- Bloody diarrhea is a **syndrome**. Addison, anticoagulant rodenticide, ulcer, FB/intussusception, and pancreatitis stay on the list.
+- Do not shotgun antibiotics onto every “HGE.” That is not the mild AHDS plan.
+- Do not NPO a puppy for 12 hours. Parvo needs nutrition once vomiting is addressed.
+- Same household is not the same localization. Do not copy `dc-gi` onto a parvo isolation sheet.
+
+Night rule: dog + bloody diarrhea → fluids, parvo test if young/unvax or neutropenic, isolate if positive, antibiotics only if the sepsis picture is real. Not “colitis to go.”
+
+## 132. Eclampsia / puerperal tetany (Plunkett electrolyte / repro headings vs Merck)
+
+Legal split electrolyte or reproduction headings if present. No chapter dump. **Do not harvest printed calcium gluconate mL/kg, total-calcium mg/dL cutoffs, or oral elemental-calcium tables.**
+
+Agree with Merck eclampsia: progressive tremor, ataxia, then seizures; most often small-breed bitches at peak lactation 2–3 weeks after whelping, large litters; can happen any breed, any time in lactation, rarely late gestation; uncommon in queens; may precipitate dystocia. Diagnosis is signalment plus signs; a calcium number confirms. Treatment is slow IV calcium gluconate. **Oral calcium during pregnancy may predispose**, it does not prevent. Feed a balanced pregnancy/lactation diet. Recurrence with later litters is expected; warn the owner.
+
+Book/public traps:
+
+- Printed calcium gluconate mL/kg and total-Ca mg/dL cutoffs stay on the Merck page. Night: △ crash-cart / Plumb. Do not invent the cutoff. Do not wait for the printer on classic tetany.
+- Calcium chloride is not for subcutaneous use (Merck).
+- Fast IV calcium: bradycardia / arrhythmia. ECG. Stop or slow.
+- Glucose now. Hypoglycemia can sit on the same bitch.
+- Do not treat as idiopathic epilepsy or skip the nursing history.
+- Tetany fever is muscle work, not a default ice-water heatstroke protocol.
+- Interrupt nursing tonight. Milk replacer. Do not harvest a wean-hour table as a night law.
+
+Night rule: nursing small-breed + tetany → calcium gluconate slow IV, ECG, glucose, pull the pups. Not keppra-and-home. Not prenatal Tums next time.
+
+## 133. Dystocia (Plunkett repro headings vs Merck)
+
+Legal split whelping / dystocia headings if present. No chapter dump. **Do not harvest oxytocin IU, “three doses,” calcium mL/kg, fetal-HR cutoffs, or hour-between-pups tables.**
+
+Agree with Merck: uterine inertia is the most common canine cause (primary or secondary). Oxytocin increases contraction **frequency** and **must not** be used in obstructive dystocia (can separate the placenta). Dark green or malodorous discharge **before** whelping/queening can mean placental separation. Calcium increases contraction **strength**; ECG if IV. Brachycephalic breeds (bulldog, pug, Boston, Chihuahua; Persian/Siamese cats) are over-represented.
+
+Book/public traps:
+
+- Printed oxytocin units and calcium mL/kg stay on the page. Night: △ Plumb / hospital. Cornell and Merck labor pages do **not** agree on a single hour-between-pups law. Do not invent one. Green before the first fetus is enough to come in.
+- Two Merck pages disagree on SQ calcium gluconate (labor page allows SC; dystocia page: not SC/IM, necrosis). Night crisis: slow IV, ECG. Not calcium chloride SQ.
+- Do not send a bottle of oxytocin home with the breeder.
+- Do not yank a stuck fetus. C-section is not a failure; it is the obstruction / distress / failed-medical conversation.
+
+Night rule: stuck labor → obstruction vs inertia before any oxytocin. Green before baby one is placental separation, not a color to watch at home.
+
+## 134. Laryngeal paralysis / GOLPP (Plunkett p101–200 vs Merck + ACVS + Cornell)
+
+Legal split “Laryngeal paralysis” (printed ~124–125). No chapter dump. **Do not harvest printed acepromazine, butorphanol, propofol, DexSP, doxapram, or SpO2 tables.**
+
+Agree with Merck (Kemp, review Feb 2022 / update Apr 2025): common in older large-breed dogs (Labrador, Irish Setter, Great Dane); rare in cats; voice change, stridor, collapse; diagnosis needs laryngoscopy under light anesthesia; **radiographs are not diagnostic**; tranquilization and corticosteroids are temporary in mild cases; **severe obstruction may require tracheotomy**; definitive therapy is surgical (arytenoid lateralization / tie-back among options).
+
+Agree with ACVS: crisis care is oxygen, external cooling, sedation, possibly intubation. Tie-back is the usual surgery conversation. Aspiration of regurgitated contents is a major postoperative (and medical) risk.
+
+Agree with Cornell GOLPP: lar par is often the first sign of a generalized neuropathy; esophagus is often affected early → aspiration pneumonia; hindlimb weakness comes later. Heat, stress, and exercise can turn a chronic noisy pant into tonight’s crash.
+
+Book/public traps:
+
+- Printed ace / butorphanol / propofol / DexSP / doxapram 1 mg/kg and “SpO2 greater than 95%” lines stay in the 2013 book. Night: △ crash-cart / Plumb. Do not copy them. Do not use RECOVER high-dose epi as an airway protocol.
+- Diuretics are usually not beneficial and may be detrimental (book). Do not Lasix a paralyzed larynx as CHF.
+- Albuterol is not therapy for a larynx that will not abduct.
+- Do not send old-dog inspiratory stridor home as kennel cough.
+- Hyperthermia is obstruction work plus failed panting — tepid cool + airflow, not ice-water as the default (same heatstroke gate).
+- Do not wrestle for a film. Thoracic radiographs wait until they can hold still, then look for aspiration / noncardiogenic edema — they do not diagnose the larynx.
+- Do not stick a tongue depressor in a crashing noisy dog without an ET tube and a tracheostomy plan ready. Light-anesthesia laryngoscopy is a diagnosis, not a hallway look.
+- Fluids with caution: upper-airway obstruction can make pulmonary edema. Never bolus a KCl bag.
+- Azotemic: still no DexSP, even if someone wants a steroid for laryngeal edema.
+- Cats are uncommon. Still name the space before the syringe.
+- GOLPP is not “just getting old.” Tonight is the airway. Hindlimbs and megaesophagus are the later conversation, not a reason to skip oxygen.
+
+Night rule: old Labrador + inspiratory stridor → oxygen, cool, △ sedation. Not Lasix. Not kennel cough. Tube ready. Tie-back is surgery, not a discharge inhaler.
+
+## 135. Toy / neonatal hypoglycemia (Plunkett p301–440 vs Merck)
+
+Legal split “Hypoglycemia” (printed ~334–335). No chapter dump. **Do not harvest printed 25%/50% dextrose mL/kg, 60 or 90 mg/dL cutoffs, AIGR, pentobarbital CRI, or neonate mL/100 g tables.**
+
+Agree with Merck puppy hypoglycemia (Parsley / Carney, congenital cerebral page, Mar 2026): idiopathic syndrome in **toy breeds in the first 6 months**; relative hepatic immaturity / glycogenolysis; frequent commercial puppy meals; usually resolves with maturity. Merck neonate management: neonates lack glucose reserves; even brief fasting can drop glucose; hypoglycemia also from endotoxemia, sepsis, PSS, glycogen-storage disease. Merck liver page: juvenile hypoglycemia DDX includes malnutrition, parasites, transient toy-breed fasting, and portosystemic shunts.
+
+Agree with public emergency teaching: glucose now. If they can swallow, feed. Collapsed: do **not** force large volumes of syrup into the mouth (aspiration) — a small gum rub or parenteral dextrose. Warm. They go home when they eat and hold a glucose, not when the first number looks prettier.
+
+Book/public traps:
+
+- Printed “pour ½–2 teaspoons of honey/Karo on buccal mucosa” stays in the 2013 book. For a collapsed/seizing puppy that is an aspiration trap. Night: gum rub if they can protect the airway, else IV/IO △ Plumb.
+- Printed 2–20 mL of 25% (1 mL/kg), dilute to 10% if <16 weeks, 5% drip 10–20 mL/kg q6–8h, maintain ≥90 mg/dL, and AIGR >30 insulinoma math stay in the book. Night: △ crash-cart / Plumb. Do not invent a cutoff. Sample sitting on cells drops glucose (~7 mg/dL/h in the book) — spin it; do not chase an artifact.
+- 50% dextrose undiluted in a tiny peripheral vein is a phlebitis/slough conversation. Dilute. Catheter.
+- Insulinoma rebound is the **older** dog. An 8-week Yorkie is missed meals / sepsis / PSS / parvo / xylitol until proven otherwise, not a β-cell tumor.
+- Do not treat as idiopathic epilepsy. Keppra does not raise glucose.
+- Do not NPO a toy puppy “to rest the gut.” Frequent meals are the disease-modifying plan once they can swallow (Merck).
+- Do not send home still not eating. Recurrence until they hit a real body weight is expected.
+- Book pentobarbital CRI for refractory hypoglycemic seizures is a 2013 leftover. Night: airway and the existing status gates. △ Plumb.
+- Xylitol still glucose first, charcoal does not bind (already gated). Do not mix NAC families.
+
+Night rule: tiny puppy + dull/tremor/seizure → stick a glucose, warm, feed or parenteral dextrose. Not keppra-and-home. Not an insulinoma puppy.
+
+## 136. Transfusion reaction (Plunkett p01–100 / p201–300 vs Merck Blois)
+
+Legal split transfusion / IMHA headings. No chapter dump. **Do not harvest printed 5–10 or 20–80 mL/kg/h rates, PCV formulas, 0.25 mL/kg test-dose, or the book’s two diphenhydramine numbers (0.5 vs 2 mg/kg).**
+
+Agree with Merck transfusions (Blois, full review Nov 2024 / update Mar 2026): type DEA 1 in dogs and AB in cats before RBC products. Dedicated line, blood filter, no calcium fluids in the same line, finish a unit in 4 hours. Fever is common; FNHTR is a diagnosis of exclusion after you look for hemolysis. AHTR: stop, support; PCV that did not rise, new pigment, ghosts/spherocytes. TACO is the usual respiratory reaction — stop, do not add volume; diuretic conversation. Cat allergic signs are often respiratory. Anaphylaxis: epinephrine, not antihistamine-first. Dogs: major crossmatch >4 days after any prior transfusion. Cats: after >2 days, and naturally occurring non-AB antibodies (Mik/FEA) make a first-unit crossmatch the conversation. Type B queens + type A/AB kittens: neonatal isoerythrolysis; do not nurse those kittens the first 24 hours. Xenotransfusion (dog blood to a cat) is last-ditch with AHTR risk, not a night default.
+
+Agree with AVHTM TRACS 2021 (named, not dumped): stop and assess; type-matched blood. Do not copy their monitoring-minute tables as night law.
+
+Book/public traps:
+
+- Printed epi 0.01–0.02 and diphenhydramine 0.5 vs 2 mg/kg stay in the 2013 book — the book disagrees with itself. Night: anaphylaxis is still epinephrine first (already gated). △ crash-cart / Plumb. Do not harvest either diphen number.
+- Printed 22 mL/kg whole blood, 11 mL/kg pRBC, 5–10 mL/kg/h, 20–80 mL/kg/h, and Oxyglobin recipes stay in the book. Oxyglobin is not on the shelf. Night: hospital blood bank. Do not invent a PCV trigger.
+- Do not call fever “just FNHTR” without checking pigment and the bag.
+- Do not restart the same unit.
+- Do not give type A blood to a type B cat “because we are out of B.” First-unit hemolysis can be fatal.
+- Do not mix LRS / calcium fluids in the blood line.
+- Do not treat TACO with another bolus. Do not Lasix AHTR as if it were CHF.
+- Azotemic cat: still no DexSP.
+
+Night rule: fever or pigment or new dyspnea on a bag → **stop the bag first**, then name hemolysis vs overload vs allergy vs dirty unit. Cats have no universal donor.
+
+## 137. Vestibular / otitis interna (Plunkett p441–540 vs Merck)
+
+Legal split “Vestibular disorders” (printed ~431–432). No chapter dump. **Do not harvest printed meclizine mg, dimenhydrinate mg/kg, diphenhydramine, maropitant 8 mg/kg, or diazepam-by-weight-band tables.**
+
+Agree with Merck otitis media/interna (Hoff, Dec 2025 / Apr 2026): otitis **media** → Horner, facial palsy, KCS, pain opening the mouth — it does **not** by itself cause a neurological head tilt. Otitis **interna** → ipsilateral head tilt, horizontal/rotary nystagmus (fast phase away), nausea; mentation stays normal unless it has extended into the brain. Look at both ears. Do not put ototoxic drops in a middle ear you cannot see.
+
+Agree with the 2013 localization table in spirit: peripheral vs central. Vertical nystagmus, changing positional nystagmus, CP deficits, other cranial nerves besides VII, or dull mentation push central (MUO, infarct, metro, FIP, tumor). Book: corticosteroids are **contraindicated** in geriatric idiopathic vestibular; antibiotics do not treat idiopathic. Geriatric dogs often improve over 2–3 weeks.
+
+Merck nitroimidazoles: high-dose metronidazole can cause canine neurotoxicity (tremor, ataxia, convulsions). Night: **stop metronidazole**. Do not harvest a mg/kg cutoff from the 2013 list or from later papers. △ Plumb if a benzodiazepine is the hospital metro-tox conversation.
+
+Book/public traps:
+
+- Printed antihistamine / Cerenia / diazepam numbers stay in the book. Night antiemetic △ Plumb. Do not copy maropitant 8 mg/kg from this chapter as if it were a vestibular law.
+- Do not DexSP or mannitol a rolling old dog as “stroke.” That is not the idiopathic plan and not the TBI plan either.
+- Do not send dull + vertical nystagmus home as “just old.”
+- Do not put chlorhexidine or aminoglycoside in an ear whose TM you have not seen (book: saline until TM confirmed; avoid oily meds).
+- Horner + facial + tilt is the bulla/inner ear until imaging says otherwise, not default idiopathic (literature: idiopathic usually lacks Horner).
+- Do not flush a middle ear in a crashing, unintubated rolling dog in the lobby (aspiration via the auditory tube — Merck).
+- Hypothyroid neuropathy can look peripheral (Merck). Congenital vestibular is a puppy/breed story, not tonight’s 12-year-old.
+- Cats get idiopathic vestibular too. Polyps sit on the feline list.
+
+Night rule: head tilt → name peripheral vs central before home. Not a steroid stroke. Stop metronidazole if it is on the list.
+
+## 138. Snakebite / pit viper / coral (Merck only; Plunkett dropped)
+
+Plunkett snakebite printed ~637–647 sits in the dropped 641–739 gap. **Do not ask for it. Do not harvest appendix Antivenin crotalidae 1–5 vials.** Night study is public Merck snakebites in animals (Gwaltney-Brant, Jan 2022 / Sept 2024) only.
+
+Agree with Merck: first-aid myths harm — **do not ice, cut, suck, or tourniquet**, and do not use electric shock. Keep the animal quiet, limit activity, come now. Do not chase or capture the snake. Pit vipers (crotalids: rattlesnake, copperhead, cottonmouth): local swelling and necrosis, coagulopathy, echinocytes; **mark the swelling edge**. Coral / elapid: little local swelling, neurologic, **ventilate**; US coral antivenom is not manufactured. **Antivenom is the specific** — △ hospital stock. Dry bites exist; do not send a spreading limb home on that word. NSAIDs are not recommended. Steroids are not the antivenom. Antibiotics are not routine without necrosis. Fasciotomy is not the default. A rattlesnake vaccine does not replace antivenom. Antivenom anaphylaxis is still epinephrine first. Midtown geography: copperhead / timber rattlesnake are regional; coral is not the NYC default.
+
+Book/public traps:
+
+- Appendix 1–5 vials stay on the page. Do not copy them as tonight’s dose.
+- Merck printed epinephrine mL, heparin U/kg, diphenhydramine mg, and hetastarch leaky-vessel lines stay on the page. Night: △ crash-cart / Plumb / hospital stock. Do not harvest.
+- Do not ice, cut, suck, or tourniquet. Do not chase the snake.
+- Do not NSAID a swollen limb “for pain.”
+- DexSP is not the antivenom. Azotemic: still no DexSP.
+- Do not send a spreading limb home as a dry bite.
+- Do not treat coral as a local-swelling pit-viper story. Ventilate.
+- Do not open a compartment because a limb is tight. Fasciotomy is not the default.
+- Vaccine ≠ antivenom.
+
+Night rule: snakebite → quiet, come now. Do not ice, cut, suck, or tourniquet. Antivenom is the specific △ hospital. Not DexSP. Not an NSAID.
+
+## 139. Hepatic encephalopathy / fulminant hepatic failure (Plunkett p301–440 vs Merck Center)
+
+Legal split “Acute hepatic failure” / “Hepatic encephalopathy” (printed ~293–301). No chapter dump. **Do not harvest printed lactulose 0.5 mL/kg or 20 mL/kg 3:7 enemas, neomycin 15 mg/kg, metro 7.5–15, book NAC 50 mg/kg, 25% dextrose boluses, protein g/kg, or SAMe/silymarin/UDCA/colchicine tables.**
+
+Agree with Merck HE (Center, full review Aug 2023 / update Sept 2024) and FHF (update Jul 2026): HE is a neurobehavioral syndrome from liver failure or portosystemic shunting. **Ammonia is not the diagnosis** — blood and brain ammonia are often discordant; a normal ammonia does not rule HE out. Type A = acute / FHF (edema, herniation risk). Type B = shunt; congenital PSS is **not** liver failure. Type C = cirrhosis. Glucose now: neuroglycopenia looks like HE. Lactulose is first-line if they can swallow; titrate to soft pudding stools. **Do not give benzodiazepines for hepatic encephalopathy** (GABA); Merck names levetiracetam. Alfaxalone also off. Oral lactulose / metro in a somnolent patient is an aspiration trap. Crystalloids, not colloids. Avoid LRS if lactate is not clearing. Protein restriction only if overt HE or ammonium biurate crystals; otherwise do not restrict and do not starve. Routine plasma for a long PT is not supported (balanced hemostasis). Glucocorticoids precipitate HE. Merck: hypothermia, barbiturate coma, HTS, and flumazenil infusions are not recommended. Neomycin is not recommended (oto/renal).
+
+Book/public traps:
+
+- Printed book NAC **50 mg/kg q6h** is not the APAP 140/70 family and not a reason to invent a fourth blend. Night hepatic-failure NAC is family 3 — △ Plumb.
+- Printed 20 mL/kg 3:7 lactulose, 50–200 mL, neomycin 15 mg/kg, and povidone-iodine enemas stay on the page. Night enema △ hospital. Do not copy peritoneal-iodine thinking into the rectum as a recipe.
+- Book metro 10–15 mg/kg exceeds the Merck HE restrict-or-neurotoxicity line. Night: do not harvest. High-dose metro still gets stopped (already gated).
+- Ammonia-tolerance testing can induce HE. Not a night test.
+- Default Hill’s l/d / “low protein tonight” is the 2013 leftover. Merck: restrict only if overt HE or biurate crystals.
+- Do not pour lactulose into a somnolent mouth.
+- Do not midazolam an HE seizure because the status card said benzo-first.
+- Injectable thiamine: Merck HE flags vasovagal collapse. Glucose now if they are hypoglycemic; do not wait for a thiamine vial. △ Plumb.
+- Stored blood generates ammonia. Fresh if you must transfuse.
+- Azotemic: still no DexSP.
+
+Night rule: head press + jaundice → glucose now. Ammonia is not the diagnosis. No benzos. No DexSP. Do not pour lactulose into a somnolent.
+
+## 140. Traumatic proptosis (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Proptosed globe” (printed ~451–453). No chapter dump. **Do not harvest printed 3-hour cutoff, flunixin 0.5–1 mg/kg, 2-0/3-0 suture, or “avoid stents” as night law.**
+
+Agree with Merck proptosis (Thomasy, Jul 2024): sudden anterior displacement with eyelids trapped behind the equator. Lubricate the exposed cornea now. Replacement is a lateral canthotomy plus temporary tarsorrhaphy under general anesthesia, or globe removal if the eye is destroyed. Prognosis depends on pupil, duration of exposure, other globe/orbit damage, breed, and systemic trauma. **About 25% of dogs recover vision; the prognosis for vision in cats is grave.** Complications: optic-nerve blindness, ulcer, enophthalmos, KCS, lateral strabismus (medial rectus). Premature suture removal → lagophthalmos and progressive ulcer.
+
+Agree with public salvage teaching (Gilger-era / Clinician’s Brief / Today’s Veterinary Practice summaries of Gilger 1995 JAVMA): prefer replace-and-tarsorrhaphy if the globe is intact; primary enucleation if rupture, three or more extraocular muscles avulsed, optic-nerve avulsion, or the owner cannot do aftercare. Cosmetic salvage ≠ vision. A second surgery may still be needed.
+
+Book/public traps:
+
+- Printed “better if <3 hours” stays in the book. Duration matters; it is not a send-home or veto number. Do not harvest a 3-hour law.
+- Printed flunixin once, dogs only, not with steroids — NSAID on a trauma patient. Night: not the eye plan. △ Plumb. Hold if azotemic.
+- Book: try manual reduction of a partial proptosis **without sedation**. Night: do not wrestle a painful globe in the lobby. Lubricate. Anesthesia for replace.
+- Book “avoid stents” vs Merck stents / 5-0 silk. Do not harvest the suture argument. Hospital / ophtho.
+- Book “unless dangling, do not remove.” Night: rupture / three-plus muscles / avulsed nerve is an enucleation conversation tonight, not a dangling-only rule.
+- Merck “systemic corticosteroids after replacement.” Night: △ Plumb. Not DexSP-first for the HBC. Azotemic: still no DexSP. No steroid drop on an ulcer.
+- Do not send a dry globe home. Do not put chlorhexidine in the eye.
+- Do not promise vision. Cat vision is grave even if the globe stays.
+- Hamster “ocular proptosis” in the exotic appendix is dropped with 641–739. Midtown is dog and cat.
+- Aspirin is contraindicated in the book hyphema section next door — do not NSAID the eye.
+
+Night rule: eye out → lubricate now. Replacement or enucleation tonight. Do not send a dry globe home.
+
+## 141. Fading neonate / newborn resuscitation (Plunkett p301–440 vs Merck + RECOVER newborn)
+
+Legal split “Fading neonatal syndromes” plus C-section newborn bullets (printed ~404–407). No chapter dump. **Do not harvest printed 80–100 mL/kg/day, 40–45 / 25–30 mL/kg boluses, 1–2 drops doxapram or naloxone, 12.5% dextrose, 100–140 mg/dL, or 0.0002 mg/g epinephrine.**
+
+Agree with Merck neonate management (Davidson, Dec 2022 / Aug 2025): first 21 days; mortality highest week 1. ABC in a warm room. **Do not swing** to clear the airway. Rub and dry. Doxapram is **not recommended** for hypoventilation hypoxia. Atropine is **not advised** — neonatal bradycardia is myocardial hypoxemia, not vagal. Warm before tube-feeding (ileus / aspiration). Heating pads burn. Glucose stores are tiny (already gated). Sepsis: failure to suckle, crying, abdominal pain, extremity necrosis; look at umbilicus and dam. Type B queen / NI already gated.
+
+Agree with RECOVER newborn resuscitation (JVECC; consensus guidelines, DOI 10.1111/vec.70013): recommend against swinging; recommend against routine doxapram; suggest against atropine; PPV for the nonvigorous bradycardic newborn; chest compressions if very severe bradycardia persists after PPV. **Newborn CPR is not the adult RECOVER cart.** Do not use a specific Apgar cutoff to start resuscitation.
+
+Book/public traps:
+
+- Printed 1–2 drops doxapram under the tongue is a 2013 leftover. Night: not routine. PPV first.
+- Printed 80–100 mL/kg/day and shock boluses stay in the book. Night: △ hospital / Plumb. Weigh them.
+- Book prefers LRS because “neonates use lactate as fuel.” Adult FHF page says avoid LRS if lactate is stuck. Night: do not harvest a fluid brand as law.
+- Merck 0.0002 mg/g epinephrine is a **unit trap** next to RECOVER’s printed IV/IO range. Do not copy either number. △ newborn crash-cart.
+- Merck “100% oxygen for all” vs RECOVER “room air first” — name the conflict. △ hospital algorithm.
+- Do not copy adult 30:2 / atropine-once onto a newborn.
+- Do not tube-feed a cold neonate. Do not pour formula into a collapsed mouth.
+- Persistent crying is illness, not “just a noisy litter.” Do not send a cold, not-nursing neonate home as small of the litter.
+- Book necropsy-as-most-useful-test is for the litter later, not a reason to skip glucose and heat tonight.
+- Avoid enrofloxacin / aminoglycoside in the neonate (book). Do not harvest the ceftiofur reconstitution recipe.
+- Azotemic dam: still no DexSP.
+
+Night rule: fading / just-born → warm before you feed. Do not swing. Atropine is not for neonatal bradycardia. Fading is not a diagnosis.
+
+## 142. Mastitis / metritis / septic dam (Plunkett p301–440 vs Merck Scully)
+
+Legal split “Mastitis” (printed ~407–408); metritis sits next to pyometra in the same file. No chapter dump. **Do not harvest printed 10–14 day tails, 1% povidone-iodine flush, cephalexin 15–30, amox-clav 14, PGF2α 0.1–0.25, or oxytocin IU.**
+
+Agree with Merck mastitis (Scully, Jul 2023 / Jul 2026): postpartum (or galactorrhea) bitch; E. coli / Staph / Strep; milk may look normal — culture it. Acute: fever, firm painful warm glands, anorexia, less interest in pups. Abscess / gangrene / rupture spreads and becomes sepsis; debridement then. Pups can use nonaffected teats; milk replacer if she will not allow. DDX includes inflammatory mammary carcinoma (dog) and feline mammary hyperplasia.
+
+Agree with Merck metritis (same author/date): postpartum uterine infection, not diestrus pyometra. Distinguish lochia (should settle by ~3 weeks) and SIPS (not systemically sick) from fetid increasing discharge. Culture cytology. Fluids if systemic. Evacuation with oxytocin / PGF is a hospital conversation — do not harvest IU.
+
+Agree with Merck periparturient: mastitis and metritis can coexist via hematogenous spread (usually E. coli). Cabbage leaf / warm compress is adjunct, not the septic plan.
+
+Book/public traps:
+
+- Printed 1% povidone-iodine flush of an abscessed gland stays in 2013. Not peritoneal lavage, and not tonight’s recipe. Hospital debridement protocol.
+- Printed 10–14 days past inflammation stays in the book. Night duration △ culture / Plumb.
+- Do not send a septic dam home as sore milk.
+- Do not wean the whole litter because one gland is sore.
+- Do not cabbage-only a crashing bitch.
+- Do not DexSP a septic postpartum dam. Azotemic: still no DexSP, still no NSAID.
+- Do not collapse postpartum metritis into the pyometra OHE script, or collapse pyometra into “just metritis.”
+- Do not use the dystocia oxytocin-stop as a reason to skip imaging a retained fetus. Stuck labor is already gated; this is a different clock.
+- Look at the neonates. Fading is not a diagnosis (already gated).
+
+Night rule: postpartum fever → name the gland or the uterus. Gangrene is surgery tonight. Do not send a septic dam home as sore milk.
+
+## 143. Acute glaucoma (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Acute glaucoma” (printed ~453–455). No chapter dump. **Do not harvest printed 15–25 / >30 / 25–40 / >40 / 45–70 mmHg bands, oral CAI 5–10 or 2–10 mg/kg, mannitol 1–2 g/kg, glycerin mL/kg, prednisone 0.5, or “acute <2 days / chronic >5 days.”**
+
+Agree with Merck acute glaucoma (Thomasy, Jul 2024): emergency. Pain, episcleral injection, diffuse corneal edema, mydriasis, vision loss. Measure IOP (applanation or rebound) if the globe is intact. Primary (angle collapse — cocker, basset, chow, shar-pei, samoyed, husky) vs secondary (uveitis, lens luxation, intraocular tumor). Cats: often anterior uveitis; primary is uncommon. Dogs: latanoprost + mannitol + CAI is the printed short-term cluster — **check the lens before latanoprost**. Blind tonight: return of vision is guarded. Intravitreal gentamicin is contraindicated in cats. The other eye needs a look (and later prophylaxis if primary is confirmed — do not start that steroid drop tonight on an unstained cornea).
+
+Book/public traps:
+
+- Printed mmHg ladders stay in the book. Night: hospital tonometer. Do not invent a cutoff.
+- Printed oral methazolamide / dichlorphenamide “avoid in cats” and the mg/kg lines stay in 2013. Topical CAI △ Plumb. Cats can become hypokalemic.
+- Printed prednisone 0.5 with the acute cocktail is not tonight’s default. Fluorescein first. Azotemic: still no DexSP.
+- Do not atropine.
+- Do not send home as conjunctivitis.
+- Do not latanoprost a lens luxation or a uveitic cat as the dog default.
+- Do not harvest mannitol / glycerin. Mannitol while dry or azotemic is already gated.
+- Do not inject gentamicin into a cat eye to “kill the ciliary body.”
+- Buphthalmos is not an acute salvage. Comfort / enucleation conversation.
+- Timolol in an asthmatic cat is a book stop. △ Plumb.
+
+Night rule: red painful cloudy eye → measure IOP now. Do not send home as conjunctivitis. Check the lens before latanoprost.
+
+## 144. Feline hypercalcemia + confirmed UTI (Merck + ISCAID 2019)
+
+No Plunkett hyperCa chapter in the owned SA EM splits. Public Merck hypercalcemia in dogs and cats plus ISCAID 2019. No chapter dump. **Do not harvest printed iCa mmol/L bands, bisphosphonate recipes, or a fluid-rate table.**
+
+Agree with Merck: hypercalcemia in cats is most often idiopathic (diagnosis of exclusion). Tumor pair in cats is lymphoma + squamous cell carcinoma. PTHrP can be the humoral driver, but **a negative PTHrP does not rule out malignancy**. High ionized plus high total calcium is not an albumin artifact. Work-up is iCa, PTH panel, urinalysis, thorax/abdomen imaging for neoplasia and urolithiasis (CaOx sits on the list). Glucocorticoids before that work-up can hide lymphoma.
+
+Agree with ISCAID 2019: confirmed bacterial cystitis is infection, not FIC. Sporadic lower-tract disease is 3–5 days, not a 14-day habit. Reserve FQ and 3rd-gen cephalosporins. Fever, lumbar pain, or azotemia is a pyelo conversation, not the 3–5 day script.
+
+Lab / preanalytical (this hospital’s iCa comment, not a Merck harvest): anaerobic transfer; air exposure lowers iCa; **frozen or cold SST can raise iCa**. Repeat on a proper sample before you chase a number.
+
+Book/public traps:
+
+- Do not close calcium because a UTI was confirmed. Two problem lists.
+- Do not DexSP for maybe-lymphoma before PTH/tissue.
+- Do not treat a frozen-SST iCa as gospel.
+- Do not write 14-day / FQ-first for sporadic cystitis.
+- Do not invent a Merck mmol/L cutoff. The report names its own reference.
+- Do not harvest a bisphosphonate or saline-diuresis table. △ Plumb / hospital.
+- Azotemic: still no DexSP, still no NSAID.
+
+Night rule: confirmed UTI is infection, not FIC. UTI does not close calcium. Image for CaOx. Do not DexSP before PTH/tissue.
+
+## 145. Anterior uveitis / lens luxation (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Anterior uveitis” plus lens-luxation headings next to glaucoma (printed ~448–449). No chapter dump. **Do not harvest printed atropine 1% q2–3h, topical pred q2–3h, carprofen 4, meloxicam 0.2, flunixin, aspirin 10–15, azathioprine 2.2, cyclophosphamide 50 mg/m², phenylephrine 10%, or Merck mannitol 1–2 g/kg.**
+
+Agree with Merck anterior uveitis (Thomasy, Jul 2024): blepharospasm, ciliary flush, corneal edema, **miosis**, aqueous flare, fibrin, hypopyon, hyphema. **IOP is typically low**; normal or high means drainage is blocked (secondary glaucoma). Fluorescein always. Bilateral suggests systemic disease. Treat cause plus anti-inflammatory plus mydriatic.
+
+Agree with Merck lens dislocation (Thomasy, Jul 2024): primary in middle-aged terriers / Shar-Pei (ADAMTS17). Cats: **chronic anterior uveitis** is the usual cause. Anterior luxation → often high IOP, corneal edema, pain. Immediate referral: lens out if visual, globe out if blind. **Prostaglandin analogs are contraindicated** (miosis traps vitreous). Do not measure IOP on top of the lens. Posterior luxation is monitored, not the same night ICLE. Prognosis guarded (secondary glaucoma, retinal detachment).
+
+Book/public traps:
+
+- Book atropine “only on the hypotonic eye” agrees with night: do not atropine if IOP is high.
+- Printed NSAID / aspirin / flunixin tables stay in 2013. Azotemic: still no NSAID, still no DexSP.
+- Printed tropicamide / phenylephrine / epinephrine “on the glaucomatous eye” stay in 2013. Night: measure IOP and look at the lens first.
+- Do not send uveitis home as conjunctivitis.
+- Do not DexSP-only a cat (FeLV / FIV / FIP / toxo / crypto stay on the list).
+- Do not latanoprost an anterior luxation.
+- Do not harvest Merck mannitol 1–2 g/kg. Not if dry or azotemic.
+- Do not treat posterior luxation as tonight’s lens extraction.
+
+Night rule: red miotic eye → measure IOP. Uveitis is usually low. Anterior lens → no latanoprost; refer tonight.
+
+## 146. Hyphema / corneal laceration (Plunkett p441–540 vs Merck Hamor + Thomasy)
+
+Legal split “Hyphema” (printed ~450–451) plus “Corneal foreign bodies” (~447). No chapter dump. **Do not harvest printed pilocarpine 1%, epinephrine 1–2%, atropine 1%, tPA 25 g, dexamethasone q4–8h, 2 liters of lavage, or Merck 7–0 to 9–0 / historical 2 mm lens-capsule cutoffs.**
+
+Agree with Merck anterior uvea (Hamor, Feb 2023 / Aug 2026): hyphema is hemorrhage in the AC — a **sign**. Causes include uveitis, trauma, neoplasia, retinal tear, hypertension, coagulopathy, platelets, hyperviscosity, congenital anomalies, glaucoma. Acute traumatic hyphema often clots; recurrent/chronic is guarded (secondary glaucoma / phthisis). **No drugs have been proved to resolve hyphema.** Intracameral TPA can dissolve fibrin <10–14 days but **potentiates bleeding if the cause is still open**.
+
+Agree with Merck penetrating injuries / corneal lacerations (Thomasy, Jul 2024): cat claw is a common full-thickness laceration. **Look at the lens.** Fluorescein + Seidel. Iris/lens/sclera involvement worsens prognosis. Quiet + E-collar. Historical lens-capsule >2 mm “must extract tonight” is outdated — medical management can work; **still offer referral**. Cats: traumatic lens-induced sarcoma conversation. Blind + retinal detachment → enucleation conversation.
+
+Book/public traps:
+
+- Book **aspirin is contraindicated**. Night: aspirin off; NSAID can worsen the bleed.
+- Book tPA **25 g** is a unit trap (µg conversation). Not the night default.
+- Book pilocarpine “to drain the angle” vs epinephrine then atropine — do not harvest. Measure IOP first.
+- Do not send hyphema home as a red eye. Stain, IOP, BP, platelets.
+- Do not yank a deep or intraocular FB in the lobby.
+- Do not send a leaking globe home.
+- Do not steroid a stain-positive cornea.
+- Do not harvest 7–0 / 9–0 as a Midtown recipe.
+- Azotemic: still no DexSP, still no NSAID.
+
+Night rule: hyphema is a sign, not a diagnosis. Cat-claw cornea → look at the lens; Seidel the leak. Do not send a leaking globe home.
+
+## 147. Sudden vision loss / SARDS / retinal detachment (Plunkett p441–540 vs Merck Thomasy)
+
+Legal split “Sudden blindness” (printed ~456–457). No chapter dump. **Do not harvest printed prednisolone 1.0 mg/kg q12h for optic neuritis / SARD.**
+
+Agree with Merck acute vision loss (Thomasy, Jul 2024): three spaces — opaque media, retinal dysfunction, optic pathway. History: **ivermectin** (retinal or central, dogs and cats); **enrofloxacin** (acute retinal degeneration in cats). Menace, dazzle, palpebral, PLR. Fundus to look for diffuse RD. If the retina looks normal and they are blind → ERG. Flat ERG = SARDS. Normal ERG = optic pathway → neuro.
+
+Agree with Merck SARDS (Thomasy, Aug 2024): middle-aged/older dogs; dachshund, mini schnauzer, pug, Brittany; SF overrepresented; PU/PD/PP, weight gain. Dilated poorly responsive pupils, fundus relatively normal at first. Color pupillometry: red PLR absent, blue remains. **No effective treatment has been reported.**
+
+Agree with Merck retinal detachment (Thomasy, Jul 2024): uni- or bilateral. Hypertension (cats), mycosis, lens surgery, Shih Tzu / CEA, trauma. BP, ophthalmoscopy, B-scan, ERG. Exudative detachments can improve when the cause is treated. Do not harvest laser / silicone-oil recipes.
+
+Book/public traps:
+
+- Book pred 1.0 for “SARD and optic neuritis” is a 2013 leftover. Night: Merck says no effective SARDS treatment. Do not DexSP a hypertensive or azotemic patient as the blindness plan.
+- Do not call it SARDS at the desk without an ERG.
+- Do not skip BP. Hypertensive RD is not SARDS.
+- Do not skip the enrofloxacin (cat) or ivermectin history.
+- Book DDX (pituitary, lead, crypto, distemper, GME) stays as a list, not a night shotgun.
+- Printed 456–457 is short. Gates come from Merck.
+
+Night rule: sudden blind → name the space. BP now. Do not call it SARDS without an ERG. Do not pred a hypertensive cat.
+
+## 148. Eyelid laceration (Merck Thomasy; no dedicated Plunkett chapter)
+
+No lid-laceration heading in the owned SA EM splits (proptosis lid-margin sutures sit next door). Public Merck eyelid lacerations. No chapter dump. **Do not harvest printed 3–0 to 6–0 absorbable, 3–0 to 6–0 silk, or 5–0 polyglactin.**
+
+Agree with Merck (Thomasy, Jul 2024): repair as soon as possible. Margin cuts need precise apposition or the lid notches and cannot blink. Two-layer in all species: deep tarsus/orbicularis (horizontal mattress), **figure-of-eight at the eyelid margin**, then interrupted skin. Skin sutures out 7–10 days. E-collar. Temporary tarsorrhaphy if swelling kills the blink. Topical plus systemic antimicrobial; NSAID △ Plumb / kidneys.
+
+Book/public traps:
+
+- Printed suture sizes stay on the Merck page. Night: hospital suture cart.
+- Do not glue-and-home a margin cut.
+- Do not leave a knot on the conjunctiva rubbing the cornea.
+- Do not put chlorhexidine in the eye (already gated with proptosis).
+- Do not skip fluorescein — fight/HBC often hits the globe too.
+- Azotemic: still no NSAID, still no DexSP.
+- Look at the medial canthus / punctum and the rest of the head. Do not invent a canaliculus-stent recipe.
+
+Night rule: lid-margin cut → repair tonight. Figure-of-eight at the margin. Stain the cornea. Do not glue-and-home.
+
+## 149. Chemical ocular burn / alkali (Merck Gwaltney-Brant; Plunkett chemical keratitis ~445–446)
+
+Legal split has chemical keratitis (printed ~445–446). Public Merck corrosive toxicoses (Gwaltney-Brant, Mar 2025). No chapter dump. **Do not harvest book 2 liters, boric-acid neutralize, or acetylcysteine tables. Do not harvest Merck diazepam mg/kg, disk-battery 20 mL, or pH > 11 as a night cutoff.**
+
+Agree with Merck: acids = immediate coagulative necrosis; pain often limits exposure. Alkali = penetrating liquefactive necrosis; deeper; **burns from alkaline agents can take up to 12 hours** to become fully apparent. Eyes: flush with water or 0.9% saline for a **minimum of 20 minutes**, then fluorescein. **Do not chemically neutralize** an acid with weak alkali (or alkali with weak acid) — exothermic reaction can add a thermal burn. No emesis if ingested. Charcoal is ineffective and can impede mucosal healing. Flip lids / flush fornices / third eyelid — retained product keeps burning. Book and Merck agree: no topical corticosteroids on chemical keratitis. E-collar. Do not send home still burning.
+
+Book/public traps:
+
+- Book “2 liters” of irrigating saline stays on the page. Night: Merck time (minimum of 20 minutes), not a harvested liter count.
+- Book boric acid ophthalmic ointment “to help neutralize weak alkaline compounds” is a trap. Merck: do not neutralize.
+- Book acetylcysteine if stromal stays on the page — △ Plumb, not a night table.
+- Book atropine if uveitis/ulcer — △ Plumb; already gated if IOP is high.
+- Merck cationic-detergent diazepam mg/kg and disk-battery tap-water 20 mL stay on the page.
+- Do not invent a conjunctival pH-strip cutoff as the stop rule; Merck names time, then stain.
+- Ingested corrosive is a different list (dilute, no emesis). Tonight’s ocular gate is lavage now.
+
+Night rule: alkali / chemical eye → lavage now. Do not neutralize. Fluorescein after. No steroid drop. Do not send home still burning.
+
+## 150. Melting ulcer / descemetocele (Merck Thomasy + Hamor; Plunkett acute ulcerative keratitis ~444–446)
+
+Legal split has acute ulcerative keratitis (printed ~444–446), same pages as chemical keratitis. Public Merck deep stromal / descemetocele / iris prolapse (Thomasy, Jul 2024) and cornea (Hamor, Feb 2023 / Jul 2026). No chapter dump. **Do not harvest serum or acetylcysteine q-hours, atropine 1% q6–8h, l-lysine 500, interferon 30 IU, or a homemade 40% cat band.**
+
+Agree with Merck: infected ulcers show stromal loss, malacia, or cellular infiltrate. **Cytology and culture** (aerobic bacterial and fungal) tonight. Interim medical: topical broad-spectrum antimicrobial, serum, mydriatic, systemic NSAID △ Plumb / kidneys. Melting = microbe and tissue proteinases digesting stroma. Descemetocele and iris prolapse need **immediate surgical support** of a fragile globe. Merck pearl: ulcers with at least 50% stromal loss should be assessed by an ophthalmologist. Hamor: melting that involves >50% of the cornea merits specialist surgery. Brachycephalic and KCS dogs are vulnerable. STT + fluorescein; depth with magnification; Seidel if leak. Find lids / FB / dry eye or it will not heal.
+
+Book/public traps:
+
+- Book “acetylcysteine or fresh serum” and Merck serum q-hours stay on the page — serum is named; the schedule is △ hospital / Plumb, not a night table.
+- Book atropine q6–8h, topical NSAID list, Muro 128, and systemic enrofloxacin / ciprofloxacin stay on the page. Cat + enrofloxacin is already a retina gate.
+- Book neomycin-polymyxin-bacitracin “dogs only” / fatal anaphylaxis in cats — do not put BNP in a cat.
+- Book third-eyelid flap as “corneal support” is not a descemetocele-and-home plan. Night: refer for a graft conversation.
+- Grid / diamond burr / keratotomy is the indolent superficial conversation (Hamor). **Do not grid a melt.** Keratotomy is not recommended in cats.
+- Do not invent a 40% feline stromal-loss cutoff. Merck names 50% as the ophthalmologist conversation.
+- Do not tonometry on a paper-thin / descemetocele cornea.
+- Corticosteroids should be avoided (book agrees).
+- Do not send a melting eye home.
+
+Night rule: melting ulcer / descemetocele → refer tonight. Cytology and culture. Do not steroid. Do not grid a melt. Do not send a melting eye home.
+
+## 151. SA anesthesia / monitoring (AAHA 2020 Grubb / Sager; attending-supplied official PDF)
+
+Attending uploaded the official 2020 AAHA Anesthesia and Monitoring Guidelines (JAAHA; DOI 10.5326/JAAHA-MS-7055). Public twin: aaha.org/anesthesia. No chapter dump. Do not commit the PDF. **Do not harvest printed mg/kg figures (alfaxalone, locals, gabapentin), flow mL/kg/min, MAP/ETCO2/cm H2O bands, circuit kg cutoffs, BG / K / pH / °F boxes, or death-rate percents.**
+
+Agree: there are no safe agents, only safe anesthetists. Anesthesia is a continuum from home to home. **Recovery is still anesthesia** — most deaths cluster early after the procedure. Dedicated anesthetist. Checklist. Document the PE. Age is not a disease. Confirm intubation with an ETCO2 tracing. Disconnect before turning (tracheal tear). Hands-on plus machine. Name hypotension before a bolus. Hold ACE-I the morning of. Do not give the full insulin to a fasted patient. Abbreviated fast (GER); diabetic / neonate especially. Brachycephalic airway risk is highest around recovery. Toy / cat: hypothermia, precise volume. Greyhound: prolonged recovery / hyperK. ABCB1: reduce acepromazine △ Plumb. Lean weight. IV catheter almost always. Heavy sedation is not automatically safer than a short controlled GA in the old or sick.
+
+Book/public traps:
+
+- The paper cites **2013** AAHA/AAFP fluids. Night fluids are **AAHA 2024**.
+- Grain-free-diet → echo for DCM is a 2020 leftover. Not a night gospel.
+- Printed ASA 1–5 and “ASA ≥3 raises death odds” are a framework, not a homemade cutoff to invent. The lecture patient stays ASA-only.
+- Printed BG / K / pH / temperature boxes stay on the page.
+- Printed local-block and premed figures stay on the page — △ Plumb.
+- Do not oxygen-flush a non-rebreathing circuit. Closed pop-off is barotrauma.
+- Do not leave recovery unmonitored. Capnograph until extubation; SpO2 in recovery.
+
+Night rule: recovery is still anesthesia. Dedicated anesthetist. Confirm the tube with ETCO2. Name the hypotension. Do not oxygen-flush a non-rebreathing.
+
+## 152. Indolent / Boxer ulcer / SCCED (Merck Hamor; no dedicated Plunkett chapter)
+
+No indolent / SCCED heading in the owned SA EM splits. Public Merck cornea (Hamor, Feb 2023 / Jul 2026). No chapter dump. **Do not harvest a diamond-burr success percent, antiviral mg, or a contact-lens brand recipe.**
+
+Agree with Merck: in dogs, superficial nonhealing ulcers are indolent corneal ulcers / recurrent erosions. Basement-membrane / poor epithelial attachment. Superficial only unless secondarily infected. Often a **loose epithelial lip**. Middle-aged to older dogs; Boxer over-represented. Slow to vascularize. Will not close on topical antimicrobial alone. Initial treatment: dry cotton-tipped debridement, then diamond burr or grid keratotomy. Soft contact lens aids comfort. Multiple keratotomies may be needed. **Keratotomies are not recommended in cats as they may predispose to corneal sequestration.** Cats/horses with slow recurrent superficial ulcers: herpesvirus is on the list.
+
+Book/public traps:
+
+- No Plunkett SCCED chapter — do not ask for one.
+- Do not call a melting or deep stromal ulcer a Boxer ulcer. That is packet 150.
+- **Do not grid a cat.** Sequestrum risk.
+- Do not skip STT / lids / FB / ectopic cilia and name it SCCED.
+- Do not put a steroid on a stain-positive cornea.
+- Antibiotic drops alone are not the plan.
+- Do not invent an antiviral table for the cat.
+
+Night rule: loose epithelial lip → indolent candidate. Not a melt. Dogs: CTA then burr/grid △ hospital. Do not grid a cat.
+
+## 153. Feline corneal sequestrum (Merck Hamor; no dedicated Plunkett chapter)
+
+No sequestrum heading in the owned SA EM splits (only platelet “sequestration”). Public Merck cornea (Hamor, Feb 2023 / Jul 2026). No chapter dump. **Do not harvest a keratectomy recipe or an antiviral table.**
+
+Agree with Merck: sequestration appears unique to the cat. All breeds; more often Siamese and Persian. Starts as a small dark anterior-stromal spot under intact epithelium (rose bengal; fluorescein may be faint). Becomes a larger brown-to-black plaque of necrotic stroma, often not epithelialized. Pain is variable. Superficial plaques may extrude spontaneously — uncommon. Treatment is superficial keratectomy of the entire sequestrum. Depth can be hard to judge when the plaque is dense; a corneal and/or conjunctival graft may be needed.
+
+Book/public traps:
+
+- No Plunkett sequestrum chapter — do not ask for one.
+- **Do not pick or peel it** in the lobby.
+- **Do not grid a cat** to “help it slough.”
+- Do not send a painful or deep plaque home as “it will slough.”
+- Do not invent an antiviral or keratectomy table.
+- A dog with a brown cornea is not this disease until you name something else (pigment, foreign body, melanoma).
+
+Night rule: cat + brown/black corneal plaque → sequestrum. Do not pick or grid. Keratectomy conversation. Depth may be hidden.
+
+## 154. Feline herpes keratitis / dendritic ulcer (Merck Gelatt owner + Hamor; Plunkett names antivirals only)
+
+No dedicated FHV / dendritic heading in the owned SA EM splits. Public Merck owner page (Gelatt, Jul 2018 / Sep 2024) and Merck cornea / conjunctiva (Hamor). Plunkett ulcerative keratitis ~444–446 names viral-keratitis drops and l-lysine 500 — **traps only**. No chapter dump. **Do not harvest famciclovir, cidofovir, idoxuridine, vidarabine, trifluorothymidine, or l-lysine milligram tables.**
+
+Agree with Merck owner: FHV-1 (feline rhinotracheitis) is common; most cats become latently infected. Causes conjunctivitis, keratitis, and corneal ulcers. Long-term disease can scar, cause KCS, or contribute to sequestrum. Respiratory signs plus keratitis are **suggestive**. Classic **dendritic ulcers confirm**. Laboratory tests on conjunctiva/cornea exist; they are not required to start tonight’s plan. Corticosteroids can reactivate latent virus. Vaccine is core; it reduces shedding/signs, it does not prevent infection.
+
+Agree with literature used only as a night teaching frame (not a dump): dendrites are nearly pathognomonic; they can coalesce into a **geographic** (map-like) ulcer; that is still FHV, not a new diagnosis. Hamor: in cats (and horses), herpesvirus is a frequent cause of ulcerative keratitis; slow recurrent superficial ulcers in cats put herpes on the list. **Keratotomies are not recommended in cats.**
+
+Book/public traps:
+
+- Printed book idoxuridine / vidarabine / trifluorothymidine and **l-lysine 500** stay on the 2013 page.
+- Merck conjunctiva prints cidofovir / trifluridine / famciclovir / l-lysine — △ Plumb. Do not copy those numbers onto the card.
+- **No steroid** on a stain-positive or FHV ulcer.
+- **Do not grid a cat.**
+- PCR tonight is not a requirement.
+- A melting or descemetocele FHV eye is still packet 150. Do not send it home as “just herpes.”
+- Lids / STT / FB still. Dendritic does not excuse a hidden mechanical cause.
+
+Night rule: cat + dendritic / geographic ulcer → FHV. No steroid. Do not grid. E-collar. Antiviral △ Plumb. Lids/STT/FB still.
+
+## 155. Feline eosinophilic keratitis (Merck Whelan tear stimulants; no dedicated Plunkett chapter)
+
+No FEK / proliferative keratoconjunctivitis heading in the owned SA EM splits. Public Merck tear-stimulant / immunosuppressant page (Whelan, Oct 2021 / Nov 2025) names eosinophilic keratitis as a cyclosporine ± dexamethasone indication. Merck antiviral page: valacyclovir is contraindicated in cats. No chapter dump. **Do not harvest CSA 1–2%, tacrolimus 0.02–0.03%, dexamethasone 0.1%, famciclovir milligrams, or a megestrol table.**
+
+Agree with the named public page: eosinophilic keratitis is an immune-surface disease that sits with pannus / immune keratitis on the cyclosporine list. Night diagnosis is **not** “it looks pink.” Cytology of the plaque (eosinophils) is the confirm. Teaching frame only (Dean JFMS 2013; Nasisse AJVR 1998; Glaze & Gelatt): pink-to-white raised vascular plaques, often limbal, cornea ± conjunctiva; FHV DNA is frequently recovered and the role is unsettled; immunomodulation treats the plaques; steroids can reactivate FHV.
+
+Book/public traps:
+
+- No Plunkett FEK chapter — do not ask for one.
+- Printed Merck CSA / tacrolimus / dex percents stay on the page.
+- **Stain first.** A stain-positive cornea is still packet 154 — no topical steroid tonight.
+- **Valacyclovir is contraindicated in cats.**
+- Megestrol acetate is not the night default.
+- **Do not grid a cat.**
+- Lip eosinophilic / rodent ulcer is the skin complex, not this eye. Cytology confirms FEK.
+- A brown/black plaque is sequestrum (packet 153), not FEK.
+- Do not send home as conjunctivitis.
+
+Night rule: cat + pink/white raised corneal plaques → cytology. Stain first. No steroid on an ulcer. FHV stays on the list.
+
+## 156. KCS emergency / melting from no tears (Merck Hamor nasolacrimal; no dedicated Plunkett chapter)
+
+No dedicated KCS heading in the owned SA EM splits (named only as a metabolic cause of ulcerative keratitis ~444). Public Merck nasolacrimal / lacrimal apparatus (Hamor, Feb 2023 / Jul 2026), physical examination of the eye, and ocular diagnostic tests. Tear-stimulant page (Whelan) already cited in 155. No chapter dump. **Do not harvest CSA 0.2–2%, tacrolimus 0.02%, pilocarpine-in-food drops, STT ≥ 2 mm, or cherry-eye excision percents.**
+
+Agree with Merck: quantitative KCS is aqueous-tear deficiency, usually bilateral and idiopathic in dogs. Autoimmune dacryoadenitis destroys **both** the lacrimal and nictitans glands. Less often: distemper, systemic sulfonamide, heredity, trauma. Cats: uncommon; chronic FHV-1 scarring. Complete lack of tears is acutely painful. Sticky mucopurulent discharge, dull/lusterless cornea, vascularization, pigment, ulcer. **STT before any drops or cleaning.** Fluorescein. If no ulcer, an antimicrobial-steroid combo can be considered — **not** if the cornea is open. Lacrimogenics often raise tears; canine KCS is usually lifetime treatment. Neurogenic KCS: unilateral plus a dry ipsilateral nostril; oral/food pilocarpine is a hospital conversation, not a harvested drop count. Qualitative KCS: aqueous STT can be normal; rapid breakup / rose bengal / lissamine green. Cherry-eye gland is a major tear gland — **replace, do not excise.** Melting or descemetocele on a dry eye is still packet 150.
+
+Book/public traps:
+
+- No Plunkett KCS chapter — do not ask for one.
+- Printed Merck CSA / tacrolimus / pimecrolimus / pilocarpine / STT ≥ 2 mm stay on the page.
+- **Dermatologic tacrolimus or pimecrolimus is not for the eye.**
+- **STT after drops is a spoiled strip.**
+- Atropine dries tears (already on the melt page).
+- Do not send a sticky red eye home as conjunctivitis.
+- Do not put a steroid combo on an ulcerated or melting KCS cornea.
+- Do not invent a mm/min cutoff.
+- Do not excise the nictitans gland.
+- Sulfa history sits on the list.
+
+Night rule: sticky red / dry lusterless eye → STT before drops. Stain. No steroid on an ulcer. If melting, refer tonight.
+
+## 157. Cherry eye / nictitans gland prolapse (Merck Hamor nasolacrimal; no dedicated Plunkett chapter)
+
+No cherry-eye heading in the owned SA EM splits. Public Merck nasolacrimal / lacrimal apparatus (Hamor, Feb 2023 / Jul 2026) and the dog-owner nasal/tear-duct page. No chapter dump. **Do not harvest pocket/suture recipes or the printed 30–40% / ~20% later-KCS percents.**
+
+Agree with Merck: hypertrophy, inflammation, and prolapse of the nictitans gland is common in young dogs and certain breeds (Beagle, Boston Terrier, Bulldog, Cocker Spaniel, Lhasa Apso, Pekingese). The red glandular mass protrudes between the globe and the leading margin of the third eyelid. Swelling may recede for short periods; the gland often stays out. **Because it is a major tear gland, it should be preserved.** Replace and anchor (orbital rim / periorbital fascia / nictitans cartilage) or cover with conjunctiva (envelope / pocket). Partial or complete excision should be avoided. Complete excision predisposes to later KCS; even successful replacement still needs tear monitoring. Surgical replacement is recommended when the condition persists or recurs.
+
+Book/public traps:
+
+- No Plunkett cherry-eye chapter — do not ask for one.
+- Printed Merck later-KCS percents and suture/pocket steps stay on the page.
+- **Do not excise it** in the lobby or as “a tumor.”
+- Do not send a dry or ulcerated exposed gland home as “it will go back.”
+- Lubricate if exposed. Stain. STT. Look at the other eye.
+- Whole third eyelid up without a gland mass is Horner / Haw’s / tetanus / sedation — not this surgery.
+- Cat cherry eye is uncommon; still do not excise.
+
+Night rule: young dog + red mass at the third eyelid → cherry eye. Replace, do not excise. Lubricate. Check the other eye.
+
+## 158. Dacryocystitis / nasolacrimal obstruction (Merck Hamor nasolacrimal; no dedicated Plunkett SA chapter)
+
+No dog/cat dacryocystitis heading in the owned SA EM splits. Public Merck nasolacrimal / lacrimal apparatus (Hamor, Feb 2023 / Jul 2026) and physical examination of the eye (Jones test). Rabbit NLD-flush lines sit in dropped printed 641–739 / exotic chunk — **not a work item and not a dog recipe.** No chapter dump. **Do not harvest 2–0 nylon, tubing brands, or “flush every 3–7 days.”**
+
+Agree with Merck: dacryocystitis is inflammation of the lacrimal sac, usually from obstruction of the sac or proximal duct by debris, a foreign body, or a mass. Acute cases: medial lower eyelid swollen and painful. Exudate can reflux from the lower punctum and/or the nasal punctum. Epiphora and secondary conjunctivitis that will not clear. Dogs may develop a draining fistula in or below the medial lower eyelid. **Can be confused with carnassial tooth infection — look at the tooth.** Flush to re-establish patency; if flush fails, contrast imaging. Topical antimicrobial; systemic antimicrobial / anti-inflammatory △ hospital / Plumb. A new drainage path (conjunctivorhinostomy) is for an irreversibly destroyed duct, not tonight’s lobby procedure. Imperforate puncta are uncommon in young dogs.
+
+Book/public traps:
+
+- No Plunkett SA dacryocystitis chapter — do not ask for one.
+- Rabbit flush-every-3–7-days stays in the dropped exotic split.
+- Printed 2–0 nylon / polyethylene tubing stay on the Merck page.
+- **Do not send home as conjunctivitis.**
+- Do not skip the carnassial tooth.
+- Do not flush a melting or open globe.
+- Jones test: fluorescein at the nostril means the system is open — not a harvested “few seconds” law.
+- Horse dacryocystitis exists on the same page; Midtown is still SA only.
+
+Night rule: medial canthus swell / epiphora / refractory conjunctivitis → dacryocystitis until flushed. Check the tooth.
+
+## 159. Orbital cellulitis / retrobulbar abscess (Merck Hamor orbit; no dedicated Plunkett SA chapter)
+
+No orbital-cellulitis heading in the owned SA EM splits. Public Merck orbit (Hamor, Feb 2023 / Jul 2026). Rabbit retrobulbar lines sit in dropped 641–739 — not a work item. No chapter dump. **Do not harvest a behind-the-molar drain recipe, a 4–8 week antibiotic table, or a tarsorrhaphy suture size.**
+
+Agree with Merck: orbital cellulitis is acute pain on opening the mouth, eyelid swelling, unilateral nictitans prolapse, exophthalmos, and conjunctivitis. Lagophthalmos can ulcer the cornea. Tooth-root abscesses may erode into the orbit. Grass awns and zygomatic sialadenitis sit on the list. Orbital hemorrhage and neoplasia can mimic cellulitis but **usually do not hurt when the mouth opens**. Acute medical plan: systemic broad-spectrum antimicrobial and systemic anti-inflammatory △ Plumb / kidneys. Swelling behind the last molar → drainage indicated. Lubricate; warm compress; temporary tarsorrhaphy if exposure keratitis. Relapse → image the teeth, sinuses, and nasal cavity.
+
+Book/public traps:
+
+- No Plunkett SA orbital-cellulitis chapter — do not ask for one.
+- This is **exophthalmos**, not proptosis (packet 140: lids trapped behind the globe).
+- Do not send home as conjunctivitis.
+- Do not skip the last molar and the tooth roots.
+- Do not drain in the lobby without a hospital protocol / culture.
+- Painless chronic exophthalmos is the neoplasia conversation, not a 14-day Convenia default.
+- Do not harvest 4–8 week or UF-lecture antibiotic schedules.
+- Azotemic: still no DexSP, still no NSAID.
+
+Night rule: pain opening the mouth + unilateral exophthalmos → orbit. Lubricate. Look behind the last molar. Not conjunctivitis. Not proptosis.
+
+## 160. Masticatory muscle myositis (Merck Williamson Feb 2026; no dedicated Plunkett chapter)
+
+No MMM heading in the owned SA EM splits. Public Merck masticatory myositis in dogs and cats (Williamson, Feb 2026). Trismus in the book is the tetanus page, not this disease. No chapter dump. **Do not harvest printed prednisone 2 mg/kg or 2M titer cutoffs (1:100 / 1:500).**
+
+Agree with Merck: immune-mediated attack on type II M fibers in temporalis, masseter, and pterygoid. Limbs spared. Young adult large-breed dogs; cats rare but reported (canine ELISA can be positive). Acute: swollen masticatory muscles, cannot open the jaw, occasional exophthalmos or fever. Chronic: atrophy, anorexia, weight loss, still trismus. Diagnosis is type II M antibody on serum — highly sensitive and specific. CK may be up. Biopsy of temporalis (not frontalis) if the titer is negative and you still believe it. **Do not pry the jaw open under anesthesia** — iatrogenic fracture. Soft gruel; feeding tube if they cannot eat. Immunosuppression △ Plumb. Relapses are common; long-term prognosis is often favorable if treated before fibrosis.
+
+Book/public traps:
+
+- No Plunkett MMM chapter — do not ask for one.
+- Printed Merck prednisone 2 mg/kg stays on the page.
+- **Draw 2M antibody before steroids** when you can (false-negative risk).
+- **Do not pry the jaw.**
+- Do not send home as picky.
+- Unilateral painful exophthalmos + last-molar swell is packet 159.
+- Risus sardonicus / sawhorse / generalized spasm is tetanus.
+- Polymyositis involves the limbs and is 2M-negative.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot open the jaw, limbs normal → MMM until 2M. Do not pry. Feed. Draw blood before the steroid. Assay detail is packet 165.
+
+## 161. Tetanus (Merck Goodrich Sept 2026; Plunkett tetanus headings ~427–431 as traps)
+
+Plunkett has a dedicated tetanus chapter (index 427–431; also in the 301–440 / 441–540 splits). Public Merck tetanus in animals (Goodrich, Sept 2026). No chapter dump. **Do not harvest equine ATS 500–1000 IU, human TIG 500–1000 IU, horse PPG U/kg, or metronidazole mg/kg.**
+
+Agree with Merck: *Clostridium tetani* in a wound (often a deep puncture; the wound may already be healed) releases tetanospasmin. Dogs and cats are relatively more resistant than horses, but they get localized tetanus (stiff wounded limb) that can generalize. Young large-breed dogs are the common SA picture. Generalized: lockjaw, risus (partially open mouth, lips drawn back), sawhorse, third-eyelid spasm, hyperesthesia; noise / light / touch trigger spasms. **Consciousness is not affected.** Diagnosis is clinical. Keep them quiet and dark. Search and debride the wound. Antimicrobials of choice on the page are penicillin and metronidazole — numbers stay there. Antitoxin binds free toxin only; it does not reverse toxin already in neurons. Muscle relaxants / sedatives / analgesics △ Plumb. Recovery, if they live, is weeks. Survivors do not have natural immunity — toxoid later. Cats can get tetanus.
+
+Book/public traps:
+
+- Printed 2013 ATS / TIG 500–1000 IU stays on the book page.
+- Printed horse PPG / metro mg/kg stays on the Merck page.
+- Distemper myoclonus can be mistaken for tetanus (book DDX) — not a night steroid.
+- Isolated jaw + temporalis swell + limbs normal is packet 160, not this.
+- **Do not pry the jaw.**
+- Do not send home as just lockjaw.
+- Relative resistance is not immunity.
+- Azotemic: still no DexSP as a shotgun.
+- Strychnine stays on the minutes-after-bait list; do not invent a strychnine table tonight.
+
+Night rule: wound + risus / sawhorse / third-eyelid spasm → tetanus. Quiet / dark. Find the wound. Do not pry. Antitoxin △ Plumb.
+
+## 162. Tick paralysis vs botulism (Merck Cope Oct 2023 / Sept 2024; Merck Goodrich Sept 2026; Plunkett ~425–427 as traps)
+
+Plunkett indexes botulism 425–426 and tick paralysis 426–427 (also garbage intoxication 538–542). Public Merck tick paralysis (Cope) and botulism (Goodrich, Sept 2026). No chapter dump. **Do not harvest TAS 0.1–1 mL/kg, acepromazine 0.03, type C 10 000 units, type A/B/C/E tables, or horse 30,000 / 70,000 IU.**
+
+Agree with Merck: both are **flaccid** neuromuscular disease. Consciousness is spared. Sensation is usually spared. This is the opposite of packet 161 tetanus (spastic).
+
+Tick paralysis is an ascending symmetrical motor paralysis from salivary neurotoxin. North America: *Dermacentor variabilis* and *D. andersoni*. Australia: *Ixodes holocyclus* is much more severe; **tick antitoxin serum is not commercially available in the US.** Search the entire coat — ears, toes, mouth, anus, collar, prepuce/vulva. A crater counts if the tick already dropped. Except holocyclus, removal usually improves within 24 hours and recovers within 72 hours. Holocyclus can keep worsening about a day after removal. Death is respiratory. Midtown: Dermacentor if travel/season; holocyclus is not the NYC default.
+
+Botulism is usually preformed toxin in carrion or spoiled food. It blocks acetylcholine release at the neuromuscular junction. Dogs are susceptible but reports are few; cats seem relatively resistant. Chewing, swallowing, vision, then progressive paresis. Death is respiratory or cardiac paralysis. Antitoxin works only on circulating unbound toxin △ Plumb. Aminoglycosides, procaine penicillin, and tetracyclines can worsen neuromuscular weakness (Merck). Diagnosis is clinical plus rule-out; toxin assay is hard.
+
+Book/public traps:
+
+- Printed TAS mL/kg stays on the Australian/Merck page — not a US night product.
+- Printed type C 10 000 units and A/B/C/E antitoxin lists stay on the 2013 page.
+- Printed horse botulinum IU stays on the Merck page.
+- Physostigmine / neostigmine book lines stay on the page.
+- Do not treat flaccid as tetanus.
+- Do not send home as just tired or just arthritis.
+- Coral / APN / fulminant MG stay on the DDX — do not invent those tables tonight.
+- Azotemic: still no DexSP.
+
+Night rule: ascending flaccid LMN → search the coat, ask about carrion, watch the chest. Not tetanus.
+
+## 163. Acute polyradiculoneuritis vs fulminant myasthenia (Merck Thomas May 2021 / Mar 2025; Plunkett ~423–425 as traps)
+
+Plunkett indexes polyradiculoneuritis / Coonhound 423–424 and myasthenia 424–425. Public Merck inflammatory peripheral nerve / NMJ (Thomas). No chapter dump. **Do not harvest Tensilon 0.1–0.2 mg/kg, 0.25–0.5 mg/cat, pyridostigmine 1–3 mg/kg, neostigmine 0.04, or AChR nmol/L cutoffs.**
+
+Agree with Merck: both sit on the remaining flaccid-LMN list after packet 162. **Search the coat first.** Consciousness is spared.
+
+APN (acute idiopathic polyradiculoneuritis) hits ventral roots. Dogs common; cats rare. Raccoon bite/scratch 7–14 days (Coonhound). Vaccine 1–2 weeks. Raw chicken / *Campylobacter*. Short pelvic stride → 1–2 days flaccid tetra; face and larynx can weaken. **Tail, bladder, mentation, and appetite usually remain.** Pain is intact; some are hyperesthetic. Atrophy shows in 10–14 days. **There is no effective treatment other than supportive care, and corticosteroids are not helpful.** Improve by ~3 weeks; recover 2–6 months. Relapse if they keep meeting raccoons. Puppy bunny-hop + pelvic extensor rigidity is protozoal PRN (*Neospora* / *Toxoplasma*), not this.
+
+Fulminant MG is the least common acquired form: acute flaccid paralysis plus megaesophagus, then respiratory paralysis, usually fatal. Generalized MG may rest-improve; megaesophagus is common. Focal MG is face / pharynx / esophagus without limb weakness. AChR antibody is definitive. Edrophonium can make generalized weakness look better — printed mg/kg stays on the page. Book: focal and fulminant often fail that test. Anticholinesterase △ Plumb. Upright feeding. Aspiration pneumonia kills about half of megaesophagus dogs on that page.
+
+Book/public traps:
+
+- Printed Tensilon 0.1–0.2 / 0.25–0.5 mg/cat stays on the 2013 page.
+- Printed pyridostigmine / neostigmine mg/kg stays on the Merck page.
+- Do not DexSP APN. Steroids are not helpful there.
+- Do not skip the coat search and name APN.
+- Do not send regurg home as just GI if the limbs are going.
+- Do not harvest AChR nmol/L cutoffs.
+- Congenital MG is a young terrier conversation, not tonight’s fulminant adult. Packet 269 owns named congenital myasthenia.
+- Chronic CIDP / steroid-responsive waxing disease is not the 48-hour flaccid crash.
+- Azotemic: still no DexSP.
+
+Night rule: coat clear + raccoon / raw chicken / post-vax flaccid → APN, no steroid. Flaccid + megaesophagus → MG. Watch the chest.
+
+## 164. Trigeminal neuritis / dropped jaw (Merck Thomas May 2021 / Mar 2025; no dedicated Plunkett chapter)
+
+No dedicated trigeminal-neuritis heading in the owned SA EM splits. Public Merck inflammatory peripheral nerve / NMJ (Thomas) — same page as packet 163. Plunkett names trigeminal neuropathy only on a rabies / CN DDX line (~201–300 split). No chapter dump. **Do not harvest a steroid table.**
+
+Agree with Merck: idiopathic trigeminal neuropathy is **common in dogs and uncommon in cats**. Acute flaccid jaw paralysis. **They cannot close the mouth** and have difficulty eating and drinking. Horner syndrome, facial paresis, and decreased facial sensation are also possible. Cause unknown. Histopathology is bilateral nonsuppurative inflammation and demyelination in the motor branches of CN V. **Usually recover spontaneously within 3–4 weeks.** Fluid therapy and nutritional support may be necessary.
+
+This is the opposite of packet 160 (cannot **open**, temporalis / 2M) and of packet 161 (spastic lockjaw). Do not force the jaw shut or open.
+
+Book/public traps:
+
+- No dedicated Plunkett trigeminal chapter — do not ask for one.
+- Printed steroid mg/kg on other nerve pages stay there. Powell JAAHA 2002 (29 dogs): corticosteroids did not change the course; lymphoma / *Neospora* were rare necropsy diagnoses — not a night steroid table.
+- **Do not send home as picky.**
+- **Do not pry the jaw.**
+- Trauma → TMJ luxation / mandibular fracture first.
+- Unvaccinated / endemic / other neuro → rabies stays on the list (book DDX names trigeminal neuropathy next to rabies). Do not invent a rabies table.
+- Isolated Horner + facial without a dropped jaw is still the ear (packet vestibular), not this.
+- Cats uncommon; do not default a cat dropped jaw to “it will be fine in three weeks” without imaging if other neuro is present.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot close / dropped jaw → trigeminal. Feed. Fluids. Not MMM. Not picky.
+
+## 165. 2M antibody ELISA (UCSD CNL / Shelton; Merck Williamson Feb 2026)
+
+The assay exists. Public Merck masticatory myositis (Williamson) plus the UCSD Comparative Neuromuscular Laboratory pages (Shelton FAQ; November 2016 2M case). No chapter dump. **Do not harvest printed titer cutoffs (1:100 / 1:500 / 1:1000 / 1:4000), printed 1–2 mL / 500 µL, printed 1 mg/lb, or printed prednisone 2 mg/kg.**
+
+Agree with Merck: diagnosis is type II M antibodies, usually on **serum**. The test is highly sensitive and specific. Cats are rare; a canine ELISA can still be positive. CK may be up in acute disease and normal when chronic. Temporalis biopsy can show necrosis / phagocytosis and is the fibrosis / prognosis conversation — not a lobby pry.
+
+Agree with CNL / Shelton: the ELISA detects circulating autoantibodies against type 2M fibers, which exist only in muscles supplied by the mandibular branch of CN V. Those antibodies are **not** found in polymyositis, dystrophy, or denervating disease. **Draw serum before corticosteroids or other immunosuppression.** If you must treat tonight, freeze or refrigerate that pre-steroid tube and ship later. Steroids therapeutically lower the titer and can make it negative or borderline — that is not a rule-out. End-stage fibrosis with 2M-fiber loss can also be negative; then biopsy **temporalis, not frontalis**. A positive titer confirms MMM. The titer does **not** give prognosis or response to therapy (the drug lowers the number). Follow jaw range of motion and pain. Extra steroid atrophy is not “the disease got worse.” Not STAT. Printed turnaround / dollar / tube-volume lines stay on the lab page.
+
+Book/public traps:
+
+- Printed 1:100 borderline / 1:500–1:4000 positive stay on the CNL page.
+- Printed Merck prednisone 2 mg/kg and CNL 1 mg/lb stay on those pages.
+- Printed 1–2 mL serum / 500 µL minimum stay on the lab page.
+- Do not send whole blood.
+- Do not follow serial titers for remission.
+- Do not call a post-steroid negative “not MMM.”
+- Do not biopsy the frontalis and call it temporalis.
+- Do not send home pending as picky.
+- Dropped jaw / cannot close is still packet 164, not this assay.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot open → draw serum for 2M first. Freeze if you treat. Positive confirms. Negative after steroids or in a fibrotic head is a biopsy, not a rule-out.
+
+## 166. Idiopathic facial paralysis / cannot blink (Merck Thomas Jun 2026 / Sept 2026; Thomas degenerative May 2021 / May 2025)
+
+No dedicated facial-paralysis heading in the owned SA EM splits (named as an otitis complication and on CN-exam lines). Public Merck facial paralysis in animals (Thomas, Jun 2026 / Sept 2026) and idiopathic facial paralysis on the degenerative peripheral-nerve page (Thomas, May 2021 / May 2025). Owner facial-paralysis page agrees. No chapter dump. **Do not harvest a steroid table, a 6–8 week hypothyroid clock as a night law, or Cocker as a diagnosis.** Horse guttural-pouch / THO lines stay on that page — Midtown is SA.
+
+Agree with Merck: facial paralysis is inability to move the muscles of facial expression because of a lesion of the motor facial nerve (CN VII). **The most consistent sign is an inability to blink.** Palpebral reflex and menace are lost; they retract the globe and the third eyelid comes up passively. That is **not Horner.** Sensation of the face is CN V and stays intact in isolated VII. Acute: ipsilateral ear hangs, lip hangs, drool / food falls from that corner. Isolated facial with no other deficits localizes to the peripheral nerve. Ipsilateral head tilt / vestibular and/or ipsilateral Horner (ptosis, miosis, enophthalmos) with normal mentation and limbs localizes to the **middle or inner ear**, where VII and the parasympathetics travel (packet 137). Brainstem: other CN, mentation, ipsilateral limb or proprioceptive deficits. A lesion proximal to the stylomastoid foramen can take the parasympathetic fibers to the lacrimal and nasal glands → **neurogenic KCS and/or a dry ipsilateral nostril** (xeromycteria). **STT in every facial paralysis.** Lubricate. Stain.
+
+Otitis media is a common cause in dogs and cats. Look in the ear before you say idiopathic. Cat: nasopharyngeal polyp extending into the bulla is on the list. Dog: hypothyroidism can hit cranial nerves, including VII — printed 6–8 week improvement after thyroid hormone stays on the page; do not invent a T4 cutoff. Trauma / TECA. Middle-ear masses (ceruminous adenocarcinoma, cholesteatoma; cat SCC). Idiopathic facial neuritis is **common in dogs, uncommon in cats** (table). Middle-aged to older dogs; sudden unilateral or less often bilateral facial paralysis with no other signs. May resemble human Bell palsy. Degenerative page: Cocker Spaniel, Pembroke Welsh Corgi, Boxer, English Setter, domestic long-haired cat over-represented; histopathology is axonal degeneration **without inflammation**; no specific treatment; artificial tears; partial improvement in a few weeks is possible, persistent dysfunction is common. Full facial page: partial or complete improvement over weeks to months; the contralateral side can later be affected. Chronic contracture can lift the lip and look like “it got better.” Isolated facial paralysis is rarely debilitating if the cornea is protected.
+
+Book/public traps:
+
+- No dedicated Plunkett facial-paralysis chapter — do not ask for one.
+- Printed hypothyroid 6–8 week recovery stays on the Merck page.
+- Printed Cocker / Corgi / Boxer lists are risk, not a diagnosis.
+- **Horner can blink.** Miosis / ptosis / enophthalmos is sympathetic, not VII.
+- **Horner + facial ± tilt is the ear** until imaging, not default idiopathic (packet 137).
+- Cannot close the jaw is packet 164. Cannot open is packet 160.
+- Do not send home as conjunctivitis or “just a droopy face.”
+- Do not skip STT / stain / lubrication.
+- Do not harvest a steroid table for idiopathic VII.
+- Do not put chlorhex or aminoglycoside drops in an ear whose TM you have not seen.
+- Horse THO / guttural pouch is not a Midtown default.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: cannot blink → CN VII. Lubricate now. STT. Stain. Look in the ear. Horner can blink. Horner + facial is the ear.
+
+## 167. Feline nasopharyngeal / aural inflammatory polyp (Merck Pieper Jul 2025; Hoff otitis media Dec 2025 / Apr 2026)
+
+No dedicated Plunkett polyp chapter in the owned SA EM splits (named on feline vestibular / otitis lines). Public Merck inflammatory polyps in cats (Pieper, Jul 2025) and otitis media/interna (Hoff). Owner nasopharyngeal-polyp page (Gotthelf, Aug 2018 / Feb 2026) agrees they are benign and recur if the stalk stays. No chapter dump. **Do not harvest a traction-vs-VBO steroid table, a 15–50% recurrence as a night percent law, or a 30–45 day topical-steroid recipe.**
+
+Agree with Merck Pieper: inflammatory polyps (aural / nasopharyngeal / oropharyngeal) arise from the mucosal lining of the **tympanic bulla**, the pharyngeal mucosa, or the auditory tube. They are **benign, not neoplastic**. Cause is not settled — genetic, congenital, and infectious have been proposed. Chronic URI or bacterial otitis media have been thought to contribute; a clear link to *Mycoplasma*, *Bartonella*, *Chlamydophila felis*, FCV, or FHV-1 has **not** been shown, and FCV / FHV-1 have **not** been identified in polyp tissue. No relationship with retrovirus status. They grow into the external canal, middle ear, nose, or nasopharynx depending on the stalk.
+
+Cats common; dogs rare. Age predilection: **juveniles or young adults, 3 months to 5 years**. No sex or breed predilection. Smooth, pink, fleshy, pedunculated. Some middle-ear polyps are subclinical until they extend.
+
+Two rooms: **aural** (head shaking, otorrhea, Horner, head tilt, ataxia, nystagmus, circling, facial nerve paralysis) versus **nasopharyngeal** (nasal discharge, stertor, sneezing, dysphagia, dyspnea). Look at **both ears and the nasopharynx**. Retract the soft palate rostrally. Flush / suction discharge if you cannot see the mass. Sedation or anesthesia may be required. The tympanic membrane can still be intact if the polyp has not come out the canal. Bulla radiographs can show opacities. CT / MRI if the mass sits in the bulla and you cannot see it. Definitive diagnosis is histology.
+
+Agree with Hoff: cats with otitis media frequently have respiratory disease and/or inflammatory polyps; the feline tympanic cavity is divided by a septum, which makes treatment harder. Horner + facial ± tilt is still the bulla (packet 137 / 166), not default idiopathic VII.
+
+Treatment is **removal**. Traction avulsion is a reasonable first-line if the polyp is in the canal or under the soft palate. Incomplete stalk → rapid regrowth; Merck prints **15–50%** recurrence after traction alone — that range stays on the page. Some surgeons call **ventral bulla osteotomy** the treatment of choice; VBO may be the only approach if chronic otitis has stenosed the horizontal canal. Printed topical steroids in the bulla for 30–45 days “seem to slow” regrowth — do not harvest a drug or a mg/kg. Systemic antimicrobials follow culture of bulla material — △ Plumb. Cholesteatoma is the dog destructive middle-ear cyst, rare in cats (separate Merck page) — not this young-cat pink stalk.
+
+Book/public traps:
+
+- No dedicated Plunkett polyp chapter — do not ask for one.
+- Printed 15–50% traction recurrence and 30–45 day bulla steroid stay on the Merck page.
+- Do not send a young cat with stertor home as just URI / just a cold.
+- Do not treat chronic otorrhea as otitis externa only without looking under the palate and at the bulla.
+- Do not call it cancer tonight — histology confirms; it is inflammatory and benign.
+- Do not put chlorhex or aminoglycoside drops in an ear whose TM you have not seen (packet 137).
+- Do not invent that traction always cures, or that every polyp needs VBO tonight.
+- Do not harvest FHV / FCV / FeLV as the cause.
+- Dog inflammatory aural masses are uncommon; do not run the cat script as a dog default.
+- Isolated facial paralysis without looking in the ear is still packet 166.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: young cat + stertor or chronic ear + Horner / facial / tilt → **polyp until you look**. Both ears. Retract the soft palate. Not just URI.
+
+## 168. Isolated Horner (Merck Thomas neuro exam Oct 2023 / Sept 2024; monoplegia Jul 2026; plexus trauma May 2021 / Feb 2025; Hoff media; phenylephrine diagnostic line)
+
+No dedicated Plunkett Horner chapter in the owned SA EM splits (named on vestibular / otitis / facial lines). Public Merck neurologic examination (Thomas, Oct 2023 / Sept 2024), monoplegia (Thomas, Jul 2026), peripheral-nerve trauma (Thomas, May 2021 / Feb 2025), otitis media (Hoff), and the ocular phenylephrine diagnostic sentence. No chapter dump. **Do not harvest a first- / second- / third-order table, a phenylephrine minute clock, or 2.5% / 10% as a night drop recipe.**
+
+Agree with Merck: Horner is loss of sympathetic innervation to the eye. The set is **miosis, ptosis, enophthalmos, and elevation of the third eyelid**. They can still blink. Cannot blink is CN VII (packet 166), not this. The passive third eyelid of facial paralysis is globe retraction, not Horner.
+
+Small-pupil DDX first (neuro exam): uveitis, painful cornea / ulcer, parasympathomimetic drugs, then Horner. **Stain before you lock Horner.** Anisocoria: decide which pupil is wrong — big one constricts to light? small one dilates in the dark? A **big** pupil with vision is iris atrophy / atropine / dysautonomia / CN III, not Horner.
+
+Isolated Horner (no tilt, no facial, limbs normal) is still **look in both ears**. Otitis media causes Horner (Hoff). Horner + facial ± tilt is the middle / inner ear (packets 137 / 166), not default idiopathic VII. Cat: polyp stays on the list (packet 167).
+
+Horner + a dead ipsilateral thoracic limb and lost cutaneous trunci is **T1–T2 / brachial plexus** until proven otherwise (monoplegia; complete plexus avulsion). Do not call that idiopathic Horner. C1–C5 or C6–T2 myelopathy can carry ipsilateral Horner with the matching limb signs (neuro exam). Horse facial/neck sweating and cattle muzzle anhidrosis stay on those pages — Midtown is SA.
+
+Merck names phenylephrine (printed 2.5% and 10%) as a diagnostic agonist that can mimic the missing transmitter in **third-order** Horner; frequent use can raise heart rate and blood pressure. That sentence is not a lobby drop table. Do not invent hydroxyamphetamine minutes or a 1st/2nd/3rd-order cookbook.
+
+Book/public traps:
+
+- No dedicated Plunkett Horner chapter — do not ask for one.
+- Printed phenylephrine 2.5% / 10% and any minute clocks stay on the Merck page.
+- Do not harvest a first- / second- / third-order table as night law.
+- **Horner can blink.** Cannot blink is packet 166.
+- Do not call the small pupil CN III.
+- Do not skip stain / uveitis / ulcer.
+- Do not skip the ear because the face and the tilt are normal.
+- Do not call plexus avulsion “just Horner.”
+- Do not send home as conjunctivitis or just a small pupil.
+- Do not DexSP a Horner as a stroke.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: small pupil + ptosis + third eyelid, **they blink** → Horner. Stain. Look in the ear. Look at the ipsilateral thoracic limb and cutaneous trunci.
+
+## 169. Anisocoria — the big pupil (Merck Thomas neuro exam Oct 2023 / Sept 2024; Hamor anterior uvea Feb 2023 / Aug 2026; Hahn dysautonomia Apr 2024 / Jul 2026)
+
+No dedicated Plunkett anisocoria chapter in the owned SA EM splits. Public Merck neurologic examination (Thomas), anterior uvea (Hamor), canine and feline dysautonomia (Hahn, Apr 2024 / Jul 2026). Glaucoma already owns the red painful cloudy mydriatic eye (packet 143). No chapter dump. **Do not harvest dilute pilocarpine 0.05–0.1%, a 45–60 minute clock, STT < 5 mm, or a bethanechol / metoclopramide table.**
+
+Agree with Merck neuro exam: first decide **which pupil is wrong**. Does the big one constrict to light? Does the small one dilate in the dark? **Big pupil + intact vision** = iris atrophy, parasympatholytic drugs (atropine), dysautonomia, or a lesion of the oculomotor nerve (CN III) or its brainstem nucleus. **Big pupil + no vision + no PLR** = retina / optic nerve / chiasm / tract, not a default CN III. Blindness with **normal** pupils is forebrain / radiation / cortex. CN III also moves the globe (with IV and VI); brainstem CN III comes with other CN, mentation, or ipsilateral limbs — not a lonely pupil.
+
+Agree with Hamor: iris atrophy is common in **older dogs** (pupillary margin or stroma). Scalloped margin, sluggish PLR, photophobia; stromal holes can displace the pupil. **Vision is not affected.** This is not a CN III crash.
+
+Agree with Hahn: dysautonomia is **multisystem**, not a single-eye lobby Horner. Dogs: vomiting, diarrhea, low anal tone, dysuria, mydriasis, third eyelid; often younger / rural / Midwest in the US reports; **prognosis grave**; no effective treatment. Cats (Key-Gaskell): megaesophagus, ileus, bladder, mydriasis, third eyelid, dry eyes; younger cats over-represented; supportive only. Both: bilateral mydriasis with **vision intact** and poor PLR is the ocular pattern. Printed dilute pilocarpine (0.05–0.1%) and STT < 5 mm stay on those pages. FeLV can cause anisocoria plus incontinence — it is not the full dysautonomia picture.
+
+Red, painful, cloudy, mydriatic = **measure IOP** (glaucoma packet). STT before drops. Stain. Do not dilate a high-IOP eye. Small pupil + ptosis is packet 168, not this.
+
+Book/public traps:
+
+- No dedicated Plunkett anisocoria chapter — do not ask for one.
+- Printed pilocarpine 0.05–0.1%, 45–60 minutes, STT < 5, bethanechol mg/cat, and metoclopramide mg/kg stay on the Hahn pages.
+- Do not call the big pupil Horner.
+- Do not call old-dog iris atrophy a CN III emergency.
+- Do not call a blind dilated eye “just atropine” without the fundus / PLR story.
+- Do not send home as conjunctivitis or just a funny pupil.
+- Do not DexSP a big pupil as a stroke.
+- Midtown is not Midwest rural dysautonomia-default — still name the syndrome if the whole autonomic picture is there.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: anisocoria → **name which pupil is wrong**. Big + sees = atrophy / atropine / dysautonomia / CN III. Big + blind + no PLR = retina / optic nerve. Red painful cloudy = IOP tonight. Small + ptosis = Horner.
+
+## 170. Dilated fixed pupil + sudden blindness / optic neuritis (Merck Hamor optic nerve Feb 2023 / Jul 2026; Thomasy acute vision loss Jul 2024)
+
+Packet 147 already owns the SARDS / RD / BP night rule. This packet is the **PLR pathway**. Do not re-dump SARDS. No chapter dump. **Do not harvest book pred 1.0 for optic neuritis.**
+
+Agree with Merck neuro exam / packet 169: **blind + dilated + no PLR** localizes to retina, optic nerve, chiasm, or optic tract. **Blind + normal pupils** is forebrain / radiation / cortex — not this. A big pupil that still sees is iris atrophy / atropine / dysautonomia / CN III (169), not optic neuritis.
+
+Agree with Hamor (optic nerve, Feb 2023 / Jul 2026): optic neuritis is the most frequent optic-nerve disease. **Bilateral optic neuritis → acute blindness and dilated, fixed pupils.** If the disc is involved it is raised, edematous, blurred, with peripapillary hemorrhage. **If only the retrobulbar nerve is hit, the disc looks normal.** The most common cause is **meningoencephalitis** — physical exam, MRI, and CSF are usually needed. Other causes: viral, mycotic, protozoan, parasitic, trauma, reticulosis, toxins. Specific treatment is aimed at the cause; Merck says systemic corticosteroids are important to limit nerve damage — that is **not** a lobby DexSP table and **not** book pred 1.0. Hypertensive or azotemic: still no DexSP as the blindness plan (147).
+
+Papilledema (raised disc from high ICP) usually **spares vision and PLR** unless atrophy follows — do not call every swollen disc “neuritis.” Optic atrophy after glaucoma / trauma / end-stage retina: disc small and dark, no PLR, no vision, no treatment. Hypoplasia is a neonate / Mini Poodle / in-utero infection story, not tonight’s adult crash.
+
+Thomasy acute vision loss still applies: name the space; ivermectin; cat enrofloxacin; fundus or B-scan; if the retina looks normal and they are blind → ERG (147). Flat ERG = retina (including SARDS). Normal ERG = optic pathway → neuro. Do not call it SARDS at the desk.
+
+Book/public traps:
+
+- Book pred 1.0 for “SARD and optic neuritis” stays in 2013.
+- Do not DexSP a hypertensive or azotemic patient as the blindness plan.
+- Do not skip BP. Hypertensive RD is not neuritis.
+- Do not call a normal-looking disc “not optic nerve” — retrobulbar neuritis is allowed.
+- Do not call papilledema blindness.
+- Do not call cortex blindness this disease (pupils are normal).
+- Do not invent a chiasm visual-field table.
+- Horse / calf vitamin A papilledema stays on those pages.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: sudden blind + dilated + fixed → **retina or optic nerve until the fundus and ERG split them**. Disc can look normal. BP now. Not cortex. Not a pred table.
+
+## 171. Cortical / post-geniculate blindness (Merck Thomas neuro exam Oct 2023 / Sept 2024; Charalambous epilepsy Oct 2025)
+
+Packets 147 / 170 own SARDS and dilated-fixed optic neuritis. This packet is **blind with normal pupils**. No chapter dump. **Do not harvest a benzo / PB table. Do not invent how many hours post-ictal blindness lasts.**
+
+Agree with Merck neuro exam: **blindness with normal pupils** localizes to the **forebrain, optic radiation, or occipital cortex**. Dilated unresponsive pupils are retina / optic nerve / chiasm / tract (170), not this. Unilateral forebrain: circling **usually toward** the lesion; **contralateral** visual-field loss with **normal PLRs**; decreased conscious pain on the contralateral body and face is allowed. Seizures and abnormal behavior also point to the forebrain.
+
+Agree with Merck epilepsy (Charalambous, Oct 2025): the postictal period is the recovery phase. Owners often count it as the seizure. Idiopathic-epilepsy exams are typically unremarkable **except** postictal deficits — proprioceptive mistakes, **blindness**, or odd behavior. That blindness is allowed and is not SARDS until it stays and the pupils / fundus say so. Status / cluster drugs stay on packet 116.
+
+Ivermectin can still be central (147). Glucose if they just seized. Do not DexSP “stroke blindness.” Do not send a just-seized blind dog home as SARDS.
+
+Book/public traps:
+
+- Do not call it SARDS or optic neuritis when the pupils and PLR are normal.
+- Do not invent a post-ictal hour clock.
+- Do not harvest packet 116 drug tables here.
+- Do not DexSP cortical blindness as a stroke.
+- Do not skip glucose after a seizure.
+- Unilateral: opposite visual field, circle toward the lesion — do not flip those.
+- Azotemic: still no DexSP as a shotgun.
+
+Night rule: blind + **normal pupils** → cortex / radiation / forebrain. If they just seized, call it post-ictal first and watch. Dilated and fixed is the other list.
+
+## 172. Acute systemic hypertension (Merck Kittleson Jan 2023 / Jun 2025; IRIS BP table; renal dysfunction page; ACVIM 2018 named only)
+
+No dedicated Plunkett hypertension chapter in the owned SA EM splits. Public Merck systemic and pulmonary hypertension (Kittleson), the IRIS arterial-pressure substage table, and renal-dysfunction hypertension paragraphs. ACVIM 2018 consensus is **named** on the Merck cardiovascular page — do not dump it. Packet 147 still owns SARDS / RD recipes. **Do not harvest amlodipine mg/kg, 0.625 mg/cat, sildenafil 1–3, or IRIS 140 / 160 / 180 as a lobby cutoff law.**
+
+Agree with Kittleson: essential (primary) hypertension is **extremely rare** in dogs and cats. Almost all is secondary. Dogs: renal disease first; also hyperadrenocorticism, diabetes, pheochromocytoma. Cats: **renal disease and hyperthyroidism**. Measure BP when they have a disease that causes hypertension **or** a problem that could be hypertension (acute blindness / detached retina). It is **not** a wellness screening tool. Stress raises the number. Printed “>180 if calm is likely real; >200 is strong evidence” stays on the page. IRIS substages (<140 / 140–159 / 160–179 / ≥180) stay on the table. Document target-organ damage when you can; a single high cuff **plus** TOD is enough to treat (renal page).
+
+TOD: eyes, kidneys, CNS, heart. **Acute blindness is the most common clinical sign.** Hypertensive cats very often have retinal hemorrhage, detachment, tortuosity, or edema. Do not call that SARDS (147). Do not DexSP it.
+
+Cat antihypertensive that actually works: **amlodipine, telmisartan, or both**. ACEI, diltiazem, atenolol, and **furosemide are generally ineffective** for feline systemic hypertension (Kittleson). Dog: Kittleson names amlodipine and hydralazine as the consistently effective pair; the renal page starts dogs on ACEI / telmisartan and adds amlodipine. Night: name the pages, **△ Plumb / hospital**, do not invent a first-line cookbook. Hydralazine plus amlodipine is a cautious refractory-dog conversation, not a lobby stack. Phenoxybenzamine is the pheo conversation.
+
+Pulmonary hypertension is the other list (heartworm, PTE, left-heart). Printed sildenafil / tadalafil mg/kg stay on that page. Cushing reflex (hypertension + bradycardia) is late herniation (127), not a reason to start amlodipine.
+
+Book/public traps:
+
+- Printed IRIS mmHg bands, Kittleson 180 / 200, and all vasodilator mg/kg stay on those pages.
+- Do not harvest amlodipine or sildenafil numbers.
+- Do not Lasix systemic hypertension.
+- Do not DexSP a hypertensive cat as the blindness plan.
+- Do not treat one bouncing-cat cuff with no TOD as gospel.
+- Do not screen a healthy pet “because humans do.”
+- Do not call essential hypertension the default.
+- Do not mix this with pulmonary hypertension or the TBI Cushing reflex.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: sudden blind / hyphema / CKD / hyperT → **BP now**. If TOD is there, treat the pressure and the cause. Cat: amlodipine / telmisartan conversation. Not Lasix. Not SARDS. △ Plumb.
+
+## 173. Pulmonary hypertension (Merck Kittleson Jan 2023 / Jun 2025; ACVIM 2019 PH named only)
+
+Same public Merck page as packet 172. This is **the other list**. No dedicated Plunkett pulmonary-hypertension chapter in the owned SA EM splits. **Do not harvest sildenafil 1–3, tadalafil 1, a TR m/s cutoff, or a reverse-PDA PCV number.** ACVIM 2019 canine PH consensus is **named** only — do not dump the six groups.
+
+Agree with Kittleson: pulmonary hypertension is high pressure in the **pulmonary arterial** circulation. Increased flow (VSD / PDA) or increased resistance (arterial-wall hypertrophy, PTE, vasoconstriction), or both. **Primary pulmonary hypertension is rare in any species other than humans.** Dogs: most often **heartworm, PTE, severe hypoxemia from primary lung disease, and left-heart failure.**
+
+Severe PH looks like **right-heart failure** (ascites, exercise intolerance) and **episodic collapse or syncope**, usually after exercise or excitement. Jugular distension / pulsation is allowed. Direct PA pressure is rarely done. Night test is Doppler echo from a **tricuspid or pulmonary regurgitant jet**. Echo may show systolic septal flattening, RV dilation or wall thickening, RA enlargement. Do not invent a velocity cutoff.
+
+Treatment depends on the cause. Heartworm: successful adulticide often drops the pressure and can resolve right-heart failure — **not a lobby kill tonight.** Reverse (R-to-L) PDA can live years if polycythemia is controlled; the printed years sentence stays on the page, not a PCV cookbook. Sildenafil is the most effective printed drug to lower PAP and improve signs in dogs; Merck warrants it primarily when they have signs, most commonly syncope and right-heart failure. It may stop syncope and make ascites easier to control. Tadalafil has limited printed experience. **Those mg/kg stay on the page. △ Plumb.** Pimobendan decreases PAP when PH is secondary to left-heart failure. Treating the cause is the long-term plan; Merck says that identification and treatment are rare.
+
+Not systemic HTN (172). Not amlodipine. Not the TBI Cushing reflex. Lasix is not the pulmonary-artery drug (left-heart edema / ascites is the other conversation). Do not call syncope a seizure. Heartworm preventative written as mg/kg is still the 2013 unit trap.
+
+Book/public traps:
+
+- Printed sildenafil 1–3 / tadalafil 1 stay on the Merck page.
+- Do not invent a TR-velocity or PA mmHg lobby cutoff.
+- Do not dump ACVIM group 1–6.
+- Do not start adulticide or a reverse-PDA phlebotomy table in the lobby.
+- Do not Lasix pulmonary arterial pressure.
+- Do not start amlodipine for this list.
+- Do not call primary PH the default.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: syncope after exercise + ascites / jugulars → **echo, not a seizure cocktail.** Name HW / PTE / lung / left-heart. Sildenafil conversation only if the signs are this disease. △ Plumb. Not Lasix. Not amlodipine.
+
+## 174. Caval syndrome / heartworm crisis (Merck Ames Apr 2025 / Aug 2026; AHS named only)
+
+No dedicated Plunkett caval-syndrome chapter in the owned SA EM splits. Public Merck heartworm (Ames). Packet 173 still owns PH / sildenafil. The 2013 preventative **mg/kg** line is still a unit trap (µg). **Do not harvest doxycycline 10, melarsomine 2.5, pred 0.5, sildenafil 1–2, needle sizes, or the 2–3 mm venotomy as a lobby recipe.**
+
+Agree with Ames: caval syndrome is worms moving **retrograde into the right atrium and venae cavae** after severe pulmonary hypertension and a failing right ventricle, or after a massive simultaneous maturation. Venous return is obstructed; RV stroke volume falls. Young naive dogs can declare the year after a heavy mosquito season; older dogs from chronic infection, PH, and R-CHF. Intracardiac worms are more likely in small dogs.
+
+The picture is **backward failure (R-CHF) plus forward failure (pale, long CRT, poor pulses) plus intravascular hemolysis**. Pigmenturia is **hemoglobinuria** — worms shear RBCs. Weakness, collapse, dyspnea. Right-sided systolic murmur from a wrecked tricuspid apparatus is allowed. Class IV on the Merck table is hemoglobinuria, anemia, low-output failure.
+
+Night test is echo / POC US: worm cuticles are **hyperechoic parallel lines that look like long bright equal signs** in the RA / TV. Antigen. Do not call it IMHA. Do not send the dark urine home as a UTI.
+
+Agree with Ames: **removing the worms from the RA and tricuspid orifice is typically necessary to save the dog.** Right jugular, left lateral. Printed 2–3 mm venotomy stays on the page. Sedation plus local may be enough if they are that sick; otherwise GA △ hospital. Fluoro or echo to steer. **Excessive traction lacerates worms and dumps antigen — anaphylaxis.** After several empty passes or a lighter echo burden, close and keep stabilizing. Doxy and a preventative can start in hospital. Melarsomine follows AHS **after** failure / PH are controlled — **not a lobby kill tonight.**
+
+Cats: more resistant; adults often 1–3; Ag often negative. HARD mimics asthma. Death of even one worm can shock or kill. **Melarsomine is not recommended in cats** (severe pulmonary inflammation and death). Supportive / doxy / extract conversation, not a dog 3-dose script.
+
+Book/public traps:
+
+- Printed doxy 10 / 7.5 / 5, melarsomine 2.5, pred 0.5, sildenafil 1–2, 6–8 week crate, and 2–3 mm stay on those pages.
+- Do not harvest a preventative as mg/kg.
+- Do not yank the worms.
+- Do not start adulticide in the crashing RA-worm dog.
+- Do not call hemoglobinuria a UTI or IMHA.
+- Do not run the dog caval script on a coughing cat.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: HW + dark urine + pale / collapse → **echo now, extract conversation, not melarsomine.** Not a seizure. Not IMHA. Cat: no melarsomine.
+
+## 175. Feline HARD / cat heartworm (Merck Ames Apr 2025 / Aug 2026; AHS named only)
+
+Same public Merck heartworm page as packet 174. This is **the cat list**. No dedicated Plunkett feline-HARD chapter in the owned SA EM splits. **Do not harvest doxycycline 10 / 7.5 / 5, the 5–6 mL water chase, a steroid taper, or the 1.6× ninth-rib artery rule.** Packet 174 still owns dog caval extraction. Packet 130 still owns naming the space.
+
+Agree with Ames: cats are more resistant than dogs; most immature worms die before adulthood. Adult burden is often **1–3**. Adults that mature usually live **2–4 years** — that range stays on the page, not a countdown. Indoor cats still get it. FeLV / FIV are **not** predisposing. Circulating microfilariae are uncommon.
+
+**HARD** is the inflammatory lung hit when immature worms arrive in the pulmonary arteries, printed at about **3–4 months** after infection. It looks like asthma or bronchitis: cough, wheeze, episodic distress. Vomiting is on the cat sign list. A second dangerous moment is **death of an adult** — even one worm can make acute respiratory distress and shock (PTE or anaphylactoid) and can kill tonight.
+
+Antigen is often negative (aborted infection, or too few adults). Antibody can be positive from exposure only. **A negative antibody does not rule out** current or past infection (Merck: tests lack sensitivity). Echo if they crash or you need to see a worm.
+
+Melarsomine is **not recommended in cats** (severe pulmonary inflammation and death). Most are managed conservatively. Start a macrocyclic lactone to stop new infection — generally safe even with adults, because cats are usually amicrofilaremic. Slow-kill doxy + moxidectin / ivermectin is named; printed mg/kg stay on the page. △ Plumb. Chase tablets with water (esophageal injury). Steroids may quiet the asthma-like signs and **will not prevent** the ARDS-like crash when an adult dies. Acute crash: oxygen and injectable steroid conversation, not a lobby table. Albuterol is for bronchial reactivity, not pleural fluid (130). Extract via the jugular only if echo sees worms in the RA / RV / cava — laceration still means anaphylaxis.
+
+Book/public traps:
+
+- Printed doxy 10 / 7.5 / 5, 5–6 mL chase, 3–4 months, 2–4 years, and 1.6× rib stay on the page.
+- Do not run a dog 3-dose melarsomine script.
+- Do not call it just asthma.
+- Do not treat a negative Ag or Ab as a rule-out.
+- Do not skip preventative because the cat is indoor.
+- Do not harvest ferret 50% mortality onto the cat.
+- Azotemic: still no NSAID, still no DexSP as a shotgun.
+
+Night rule: coughing / crashing cat + HW on the list → **oxygen, name the space, not just asthma, no melarsomine.** Ag/Ab both can lie. Echo if they crash.
+
+## 176. Acute pulmonary thromboembolism (Merck Tonozzi Feb 2022 / Aug 2025; thrombosis page; CURATIVE named only)
+
+No dedicated Plunkett PTE chapter in the owned SA EM splits. Public Merck respiratory PTE (Tonozzi) and the thrombosis/embolism page. Packet 173 still owns sildenafil numbers. Packet 174 / 175 still own caval / HARD. FATE / ATE is the **leg** list. **Do not harvest UFH 250 / 150, enoxaparin 0.8 / 0.25, dalteparin units, rivaroxaban 1–2, butorphanol 0.4, or PaO2 < 80 as lobby law.**
+
+Agree with Tonozzi: PTE is occlusion of pulmonary vessels by an embolus from the veins or a thrombus that forms in the pulmonary arteries. Incidence unknown. Hypercoagulable disease sits underneath. Dog risk list includes IMHA, PLN / PLE, Cushing, heartworm, necrotizing pancreatitis, sepsis, neoplasia, endocarditis, cardiomyopathy, trauma, surgery. Cat **leading** pair: **cardiomyopathy and neoplasia.** Also named: FIP, hepatic disease, steroids, central venous catheters.
+
+Signs are nonspecific: tachypnea, louder lungs, cough, tachycardia, syncope, cyanosis, sudden death. They can look like the underlying disease. Hemoptysis is more the heartworm-artery page. HW-associated PTE is often **in the weeks after adulticide**, or spontaneous worm death, or in-situ thrombosis from endothelial damage.
+
+Diagnosis is suspicion plus a risk disease plus ruling out other respiratory failure. **There is no small-animal gold standard.** Rads can be normal (printed 9–27% dogs / 9% cats stay on the page). Rads that look too good for how hard they are breathing raise suspicion. Hypoxemia is common; a **normal blood gas does not exclude PTE.** Echo may show PH / a strained right heart; a **normal echo does not exclude PTE.** CT angio is the people gold standard.
+
+Night: oxygen. Name the shock before a bolus (CHF still exists). Anxiety sedation △ Plumb. PPV if they cannot oxygenate. Goals: stop the clot from growing and stop the next one. Antithrombotic conversation △ Plumb / hospital / **CURATIVE named only.** **Warfarin is not recommended** in dogs or cats. Do not promise tPA. Do not Lasix this as CHF. Do not DexSP the dyspnea — steroids are on the risk list. Do not call cold pulseless legs this disease.
+
+Book/public traps:
+
+- Printed heparin / LMWH / rivaroxaban / butorphanol / PaO2 bands stay on the page.
+- Do not invent a D-dimer cutoff.
+- Do not treat normal rads as a rule-out.
+- Do not mix this with FATE.
+- Do not dump a sildenafil cookbook (173).
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: risk disease + sudden dyspnea + rads too quiet → **PTE on the list. Oxygen. Cause. Not Lasix. Not tPA. Not the legs.** △ Plumb.
+
+## 177. Protein-losing nephropathy / nephrotic crisis (Merck Van Vertloo Mar 2025; thrombosis AT page; IRIS 2013 GN named only)
+
+No dedicated Plunkett PLN chapter in the owned SA EM splits. Public Merck glomerular disease (Van Vertloo). Packet 176 still owns the heparin / tPA dump. Packet 172 still owns the cuff. **Do not harvest clopidogrel 1–4, aspirin 1–5, ACEI 0.5–2, telmisartan 1–3, mycophenolate 10–15, or UPC < 0.5 as lobby law.**
+
+Agree with Van Vertloo: the hallmark is **proteinuria**. Dogs common; cats much less. GBM leak → albumin loss, lean-mass wasting, edema; the protein also wounds the tubule → concentrating loss and azotemic CKD. Persistent renal proteinuria means the sediment is not explaining it (no hematuria / pyuria / bacteriuria as the whole story). Printed **UPC > 2 suggests, but is not definitive for, a glomerular origin** — that sentence stays on the page.
+
+**Nephrotic syndrome** is the tetrad: severe proteinuria + hypoalbuminemia + hypercholesterolemia + third-space fluid. Poor prognosis when paired with severe azotemia. BP now — hypertension is common even without azotemia. Uncommon glomerulotubular imbalance: USG looks too high for the azotemia. Look for an infectious, inflammatory, or neoplastic trigger; treating a found trigger can change the outcome. Biopsy needs EM + IF at a nephropathologist. **Do not biopsy untreated hypertension or a coagulopathy.**
+
+Dogs with substantial proteinuria are at risk for clots and should get an antithrombotic conversation. Optimal protocol unknown; printed clopidogrel / aspirin stay on the page. △ Plumb. The thrombosis page: antithrombin is lost with albumin (similar size); heparin needs AT, so plasma may have to come first. Do not invent an albumin cutoff that says who will clot.
+
+Night: do not Lasix the edema as CHF. Do not DexSP as the shotgun — immunosuppression is ICGN / biopsy, not a lobby pred. RAAS blockade (ACEI or telmisartan) is the proteinuria conversation after they are stable enough to watch K, BP, and creatinine. Shar-Pei / many Abyssinians: medullary amyloid can be **non-proteinuric** CKD — do not force this script. Familial breed list stays on the page.
+
+Book/public traps:
+
+- Printed UPC 2 / 0.5, ACEI / telmisartan / clopidogrel / immunosuppressant mg/kg stay on the page.
+- Do not harvest a heparin table here (176).
+- Do not tap every effusion as the plan.
+- Do not call hypoalbuminemia “just liver” without a urine protein.
+- Do not call edema “just heart” without a urine protein.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: low albumin + edema / clot / hypertension → **look at the urine tonight.** Quiet sediment, then UPC. BP now. Clot conversation. Not Lasix. Not a pred dump. △ Plumb.
+
+## 178. Protein-losing enteropathy / gut hypoalbuminemia (Merck Collier Aug 2025 / Jun 2026)
+
+No dedicated Plunkett PLE chapter in the owned SA EM splits. Public Merck chronic enteropathies (Collier). Packet 177 still owns the urine / UPC / high-cholesterol tetrad. Packet 114 still owns Addison. Packet 176 still owns the heparin dump. **Do not harvest fenbendazole 50, cobalamin 20–25 / 250 mcg, cyclosporine 5–10, or a 70% diet-response percent as lobby law.**
+
+Agree with Collier: PLE is a fifth type of chronic enteropathy and is usually more guarded. Weight loss, vomiting, diarrhea, ascites, and limb edema are allowed. **GI signs can be minimal.** PTE is uncommon and can still happen. Hypoproteinemia is intake, malabsorption, or gut loss. **Hypocholesterolemia and hypocalcemia** are the malabsorption pair — that is the opposite of nephrotic high cholesterol. Folate / cobalamin can be low. TLI so you do not miss EPI. Soft Coated Wheaten: PLE and PLN can sit together. Yorkie ultra-low-fat diet success is printed; MST numbers stay on the page.
+
+Night split: liver vs kidney vs gut. Urine protein (177). A liver function test. Baseline cortisol if the leukogram is not stressed. Fecal; printed fenbendazole empirical line stays on the page. If they are **debilitated or hypoproteinemic, skip the long diet / antibiotic trial** and work them up. Stable food-responsive dogs get a diet trial; PLE still prioritizes **low-fat** (hypoallergenic allowed). Do not Lasix the ascites as CHF. Do not send a low-albumin “just diarrhea” home.
+
+Imaging: hyperechoic mucosal striations often travel with mucosal inflammation and PLE. Wall-thickness millimeters are **no major diagnostic value** (Merck). Endoscopy vs full-thickness: severe hypoproteinemia and urgent steroids compromise wound healing — most go endoscopic unless another organ needs a piece. Cat: ileum more often shows lymphoma than duodenum. PARR if histology is arguing lymphoma. Do not harvest “ten biopsies” as a lobby count.
+
+Book/public traps:
+
+- Printed fenbendazole 50, cobalamin mcg, cyclosporine 5–10, CCECAI < 8, and MST months stay on the page.
+- Do not harvest a heparin table here.
+- Do not call high cholesterol this disease.
+- Do not skip the urine because the stool is loose.
+- Do not full-thickness a wet, steroid-bound belly as default.
+- Azotemic: still no NSAID, still no DexSP as a shotgun.
+
+Night rule: low albumin + **low cholesterol or diarrhea** → **gut list, still check the urine.** Low-fat conversation. Not Lasix. Not a three-week trial if they are crashing. △ Plumb.
+
+## 179. Gallbladder mucocele / extrahepatic biliary obstruction / bile peritonitis (Merck Center Aug 2023 / Sept 2024 / Jul 2026)
+
+No dedicated Plunkett mucocele chapter in the owned SA EM splits. Public Merck hepatic pages (Center). Packet 125 still owns gallbladder **halo** (anaphylaxis / right heart). Packet 139 still owns HE / FHF. Packet 129 still owns the septic-abdomen dump. **Do not harvest ursodiol 15–25, SAMe 20–40, erythromycin 0.5–1, vitamin K 0.5–1.5, a 25% ejection-fraction, a 50% pancreatitis-surgery death line, or an antibiotic week-clock as lobby law.**
+
+Agree with Center: canine GBM is tenacious mucin-laden bile that can fill cystic / hepatic / common ducts. It can **obstruct** or **rupture** (ischemic necrosis → bile peritonitis). Shetland Sheepdog / Miniature Schnauzer / Cocker over-represented; endocrinopathy and hyperlipidemia sit underneath. Cats have fewer gallbladder mucus glands — **GBM is uncommon in cats**; cholecystitis / EHBO / triaditis is the feline list. A mature GBM has a highly recognizable ultrasound pattern; immobile sludge that does not empty after a meal is the motility conversation. Clinicians say kiwi / stellate — that is this list, **not halo**.
+
+Night split: sick + immobile / mature GB + jaundice or a cranial belly → **surgical conversation tonight**, not ursodiol and home. **Do not do transhepatic cholecystocentesis if GBM is suspected.** Cholecystectomy is the Merck treatment of choice once there are signs of inflammation, obstruction, or rupture. Cholecystotomy without taking the gallbladder is not advised (recurs; occult wall necrosis). Medical hydrocholeresis is only the conversation if there is **no leak and no obstruction** at diagnosis; rare resolve; any progression is surgery. Rupture / bile peritonitis: tap near the biliary tree to look for bilirubin crystals / bacteria — **tap is not the treatment.** Surgery + lavage. Early signs can be vague; a free-moving mucocele can sit in the belly.
+
+EHBO is many things (pancreatitis, stone, mucocele, mass). Bilirubin can rise within hours. Vitamin K deficiency is the bleeding conversation — cats earlier than dogs; printed 0.5–1.5 stays on the page. **Pancreatitis EHBO: most dogs recede over weeks; extrahepatic biliary surgery in those dogs may carry a high death risk (Merck names 50% — stay on page). Do not percutaneous-tap the GB as the default (bile peritonitis).** Do not needle-biopsy a dilated tree as the decompression. Do not invent a bile-acid cutoff in an already jaundiced dog. Do not start a high-fat diet tonight.
+
+Book/public traps:
+
+- Printed ursodiol / SAMe / erythromycin / vitamin K / 4–8 week antibiotic clocks stay on the page.
+- Do not harvest a cholecystectomy technique.
+- Do not call halo a mucocele.
+- Do not send a sick jaundiced kiwi home as hepatitis.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: immobile / mature GB + sick or yellow → **surgeon tonight, not a choleretic to-go.** Halo is the other list. Cat: not the dog kiwi script. △ Plumb.
+
+## 180. Feline neutrophilic cholangitis / triaditis (Merck Center Aug 2023 / Sept 2024)
+
+No dedicated Plunkett CCHS chapter in the owned SA EM splits. Public Merck feline cholangitis / cholangiohepatitis syndrome (Center). Packet 179 still owns dog mucocele / EHBO / “do not tap a kiwi.” Packet 124 still owns fPL / opioid. Packet 139 still owns HE. **Do not harvest enro / metro / ampicillin tables, an 8–12 week clock, pred 2–4, metro 7.5, SAMe 40–50, chlorambucil 2 mg/cat, methotrexate 0.4, or NAC 140/70 as a cholangitis drip. NAC 140/70 stays the APAP family.**
+
+Agree with Center: CCHS is the most common acquired inflammatory liver disease in cats (more than dogs). Cat bile and pancreatic ducts share anatomy. **Suppurative / neutrophilic** = the night cat: illness often **< 5 days**, fever, dull, dry, not eating, vomit, variable jaundice, cranial pain. Left shift / toxic neutrophils. ALT/AST often up more than ALP/GGT; **some have no cholestatic enzymes.** Ultrasound can be **normal.** Sternal LN can be inflammation or lymphoma. Bile / imprint cytology often shows bacteria; culture can be negative if already on antibiotics or anaerobes were skipped. Common names: *E. coli*, *Streptococcus*, *Clostridium*, *Bacteroides*, *Actinomyces*.
+
+**Triaditis** = CCHS plus pancreatitis plus IBD (kidneys / chronic interstitial nephritis also sit on the Merck list). Concurrent **hepatic lipidosis** confuses the first look — **do not starve.** Feed a feline maximum-calorie conversation. Do not NPO 12 hours.
+
+Night split: febrile yellow cat ≠ DexSP. Neutrophilic needs **antimicrobials that cover anaerobes and gram-negative enterics** △ Plumb / hospital / culture — not a pred dump. Pred / chlorambucil / methotrexate are the **lymphocytic / destructive** conversation **after** biopsy, not tonight’s syringe. Small-cell lymphoma can wear a lymphocytic mask — **not a lobby CHOP.** Ursodiol / SAMe numbers stay on the page; **ursodiol is not recommended in destructive cholangitis.** Vitamin K if they bleed — overdose hemolyzes; numbers stay on the page. EHBDO / cholecystitis still 179. Do not percutaneous-decompress a dilated tree as the default.
+
+Book/public traps:
+
+- Printed antibiotic weeks, pred mg/kg, chlorambucil / methotrexate / NAC 140 stay on the page.
+- Do not call it the dog kiwi script.
+- Do not treat a left-shift febrile cat as immune cholangitis.
+- Do not skip food.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: febrile / yellow / painful cat + cholangitis or triaditis → **antibiotics and food tonight, not pred, not a mucocele tap.** △ Plumb.
+
+## 181. Feline hepatic lipidosis (Merck Center Aug 2023 / Jun 2025)
+
+No dedicated Plunkett FHL chapter in the owned SA EM splits. Public Merck feline hepatic lipidosis (Center). Packet 180 still owns febrile neutrophilic CCHS. Packet 139 still owns HE. Packet 124 still owns “do not starve the pancreas.” **Do not harvest RER formulas, NE/E-tube French sizes, phosphate mmol/kg/h, magnesium mEq, B12 mcg, vitamin K 0.5–1.5, NAC 140/70, SAMe 20–40, L-carnitine / taurine 250–500, or a 75–80% survival percent as lobby law. NAC 140/70 stays the APAP family.**
+
+Agree with Center: FHL is the most common acquired and potentially lethal feline liver disease. A primary disease or stress that stops food sets it in an overconditioned cat. “Idiopathic” is **< 10%** after you looked. It is **not necroinflammatory** — canaliculi are squeezed by fat. ALP is often markedly up; **GGT stays modest unless CCHS / pancreatitis / ducts sit underneath** (that fold-GGT is the 180 look). Neck ventroflexion is **K / phosphorus / thiamine**, not default HE. Ammonium biurate is not the picture. Bleeding is vitamin K from canalicular squeeze, not synthetic failure. Aspirate **after** vitamin K; biopsy is not required to diagnose HL (> 80% of hepatocytes lipid). Do not cysto before vitamin K.
+
+Night split: **fluids and electrolytes before the first meal.** 0.9% NaCl is the Merck fluid of choice; **do not hang dextrose** (it blocks using the fat). Dose fluids on **ideal / lean weight**, not the fat cat. Then food — high-calorie feline protein, not l/d. Tube is **not** the first critical action. If they turn away, take the food out (aversion). Appetite stimulants do not rescue severe HL; benzos are off. **Refeeding: potassium, phosphate, and thiamine before you feed.** **Do not give ursodiol in HL.** Glucocorticoids can start HL. Repeat propofol is a Heinz-body conversation. Find why they stopped eating.
+
+Book/public traps:
+
+- Printed RER / tube / electrolyte / NAC / vitamin K / carnitine tables stay on the page.
+- Do not treat ventroflexion as HE.
+- Do not call every yellow cat CCHS — look at the fever / GGT / left shift (180).
+- Do not starve. Do not NPO 12 hours.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: fat yellow cat that stopped eating → **K / phos / thiamine, then food. Not pred. Not ursodiol. Not a tube-first cookbook.** △ Plumb.
+
+## 182. Canine leptospirosis / acute liver-kidney (Merck Lunn Feb 2022 / Jul 2026; ACVIM 2023 Sykes named only)
+
+No dedicated Plunkett lepto chapter in the owned SA EM splits. Public Merck leptospirosis in dogs (Lunn). Packet 119 still owns UO / UOP. Packet 126 still owns IMHA. Packet 139 still owns HE. Packet 181 is the cat fat-liver list. **Do not harvest doxycycline 5 mg/kg, a 2-week clock, a MAT 1:800, or an isolation-ward recipe as lobby law.**
+
+Agree with Lunn: any age, breed, sex, or lifestyle — **not just the outdoor intact male.** AKI is the usual night picture; liver can sit with it or alone. Glucosuria with **normal blood glucose**. Mild-moderate thrombocytopenia — usually not low enough for spontaneous bleed. Pulmonary hemorrhage is common in people and less common in dogs, but cough / dyspnea / caudodorsal rads are allowed. MAT does **not** name the infecting serovar. Start antimicrobials **before** the confirmatory tests come back. Doxycycline covers the blood phase **and** the renal carrier; a penicillin first is allowed if they cannot take doxy — **still finish with doxy** or the kidney keeps shedding. Acute + convalescent MAT plus PCR (blood early, urine later). SNAP / WITNESS can light up after a vaccine. Four-serovar vaccine; the old every-6-month line is not justified. Vaccinated dogs can still get it — other lists become more likely (ACVIM 2023 named only).
+
+**Zoonosis tonight.** Barrier. Urine and blood. Designated pee spot you can disinfect. Merck: **not an isolation ward.** Owners: gloves for urine, wash hands, call their physician if they are worried. Cats can shed and are usually milder — not the dog script.
+
+Night split: dog AKI + jaundice + low-ish platelets or sugar-in-urine-with-normal-glucose → **lepto until the tests say otherwise.** Do not send home as just GI. Do not call mild thrombocytopenia IMHA. Do not Lasix the lung as CHF. Azotemic: still no NSAID, still no DexSP. UOP in mL/kg/hr.
+
+Book/public traps:
+
+- Printed doxy 5 / 14-day / MAT tables stay on the page.
+- Do not treat a single MAT as the serovar or as a rule-out.
+- Do not skip doxy after a penicillin start.
+- Do not isolate-and-forget fluids.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: sick dog, kidney ± liver ± zoonosis → **barrier and start treatment tonight, not a titer-and-home.** △ Plumb.
+
+## 183. Canine ehrlichiosis / anaplasmosis / RMSF (Merck Palerme Sept 2025 / Jun 2026)
+
+No dedicated Plunkett rickettsial chapter in the owned SA EM splits. Public Merck rickettsial pages (Palerme): ehrlichiosis, anaplasmosis, Rocky Mountain spotted fever. Packet 182 still owns lepto (urine zoonosis, AKI + jaundice). Packet 126 still owns IMHA. **Do not harvest doxycycline 5 / 10, a 28-day clock, minocycline 5–10, or enrofloxacin 3 as lobby law.**
+
+Agree with Palerme: fever + thrombocytopenia is the night cluster. **4Dx / SNAP antibody is exposure, not tonight’s diagnosis** — can be negative in the first week. Treat suspected **RMSF before the titer** (delay raises death). Response is often fast. Morulae in neutrophils = *A. phagocytophilum* **or** *E. ewingii* (cannot split on the smear). Platelet morulae = *A. platys*. Monocyte morulae = *E. canis*. PCR speciates. Chronic *E. canis*: German Shepherd over-represented; hyperglobulin / pancytopenia can linger — not a wellness 4Dx-and-doxy.
+
+**RMSF** is vasculitis: petechiae, face/scrotal edema, uveitis, neuro (ataxia, vestibular, seizure). Dog is a **sentinel**, not a urine-shedder. Tick required — **not lepto barrier**. Chloramphenicol is not the plan. Cats rarely get RMSF.
+
+**Anaplasma**: often milder; *A. phagocytophilum* = Northeast / Midwest *Ixodes* (Midtown geography). Transfusion can move it. Direct dog-to-human does not.
+
+Night split: fever + low platelets ± tick ≠ automatically lepto. Look at the kidney/bilirubin (182) vs the smear / 4Dx / neuro / petechiae (this list). Do not doxy a well 4Dx-positive dog as the night default. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed doxy 5 / 10 / 28-day / enro 3 stay on the page.
+- Do not read one SNAP as active infection.
+- Do not wait for serology if RMSF is the picture.
+- Do not use chloramphenicol.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: fever + thrombocytopenia + tick story → **smear, start doxy conversation, not a 4Dx-and-home.** RMSF: treat now. △ Plumb.
+
+## 184. Canine Lyme nephritis / borreliosis (Merck Labato May 2026 / Jun 2026; ACVIM 2018 Littman named only)
+
+No dedicated Plunkett Lyme chapter in the owned SA EM splits. Public Merck Lyme borreliosis (Labato). Packet 177 still owns the urine / UPC / nephrotic tetrad. Packet 182 still owns lepto (urine zoonosis, AKI + jaundice). Packet 183 still owns fever + low platelets / RMSF. **Do not harvest doxycycline 10, amoxicillin 20, mycophenolate 5–10, gabapentin 10–20 / 8, or a 4-week / 30-day clock as lobby law.** Skip horse neuroborreliosis as its own packet.
+
+Agree with Labato: **most seropositive dogs have no clinical signs.** A C6 / SNAP positive is **exposure**, not tonight’s diagnosis — low positive predictive value; not vaccinal. Whole-cell ELISA / IFA / Western blot are **no longer recommended**. Common dog picture: intermittent **shifting lameness**, fever, dull, lymphadenopathy ± swollen joints. *Ixodes scapularis* in the Northeast (Midtown). Attachment ≥ 24 hours; usually 36–48 hours. Not urine / saliva / semen / bite. Animals are **not reservoirs**; they can carry unattached ticks onto people. Cats: similar if they get it, uncommon.
+
+**Lyme nephropathy** is attributed to *B. burgdorferi*; **a causal relationship has yet to be established.** Severe protein-losing nephropathy, uremia, hyperphosphatemia, edema, clots. Immune-complex glomerulus is the thought. Can look acute because the secondary signs (ascites, hypertension, thromboembolism) crash. Incidence of this chronic form is extremely low. Retriever over-representation is Littman JVECC 2013 named only. ACVIM 2018 named only (proteinuria uncommon among seropositive dogs; most Lyme-nephritis dogs have no arthritis history).
+
+Night split: well Lyme+ ≠ treat. Shifting lameness + fever ≠ pred-first polyarthritis and ≠ a harvested 4-week doxy. Proteinuric / azotemic Lyme+ is still **177 tonight** — not doxy-and-home, not proven cause-and-effect. Low platelets stay 183. Yellow + AKI stays 182. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed doxy 10 / amoxicillin 20 / mycophenolate 5–10 / gabapentin 10–20 and the 4-week line stay on the page.
+- Do not treat a healthy seropositive dog as the night default.
+- Do not read one C6 as the cause of the PLN.
+- Do not use whole-cell ELISA / IFA / Western blot as the night test.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: Lyme+ and sick → **name the room (joint vs kidney).** Kidney = urine and 177, not a doxy-and-home. Well SNAP = exposure. △ Plumb.
+
+## 185. Senior gait / IVDD night (Merck Barnes May 2026; Thomas Oct 2021 / Apr 2025; Epstein OA Oct 2024 / Aug 2025)
+
+No dedicated Plunkett IVDD chapter in the owned SA EM splits. User-supplied WVC 2026 Learning Hub gait / “old age is not a diagnosis” sessions are **named only — do not dump the notes.** Equine and food-animal WVC catalogs are dropped (Midtown is SA). Packet 134 still owns lar par / GOLPP. Packet 137 still owns vestibular. Packet 184 still owns Lyme shifting lameness. **Do not harvest prednisone 0.5, EPA 50–100, recovery percents, a 2–3 week rest clock, or FGF4 / SOD1 as lobby law.**
+
+Agree with Barnes: **lameness is pain or musculoskeletal dysfunction. It does not typically cause ataxia.** Ataxia, bad proprioception, or abnormal spinal reflexes = look at the nervous system. Agree with Thomas: chondrodystrophoid dogs (Dachshund / Frenchie) extrude young and hard; large-breed protrusion is slower. **Deep pain is a behavioral response** (bark / head turn) after pinching bone — not withdrawal, not skin pinch. Radiographs are not definitive (MRI / CT / myelography). NSAID or analgesic **without cage rest is contraindicated** (they walk more → more extrusion). Steroids do **not** improve neurologic recovery. Lost deep pain → surgeon tonight, not a pain-pill-and-home. Progressive myelomalacia printed 5–10% stays on the page. Cat disk signs are rare.
+
+Named degenerative myelopathy / SOD1 is packet 221, not this dump. Contrast only (Thomas): usually > 8 years, **nonpainful** pelvic ataxia; proprioceptive deficits early — that is not orthopedic. Skip horse DM / EMND.
+
+Epstein OA: common, under-recognized in cats; slowing / stiff after rest is the OA room if there is **no ataxia**. Azotemic: still no NSAID. Intra-articular steroid is not the night default. Printed NSAID / frunevetmab / gabapentin lines stay on the page.
+
+Night split: owner “just old / slowing down” is a finding, not a diagnosis. Short stride, no ataxia = pain / OA list. Knuckling / crossing / hopping deficit = spinal. Voice / stridor = 134. Head tilt = 137. Acute overnight DISHA is not CCDS. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed pred 0.5 / rest weeks / recovery percents stay on the page.
+- Do not send knuckling home as arthritis.
+- Do not NSAID a walking disc without rest.
+- Do not call spondylosis the cause (often incidental).
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: name **lameness vs ataxia** before the NSAID. Non-ambulatory or lost deep pain → **surgeon tonight.** Old age is not a diagnosis. △ Plumb.
+
+## 186. Canine babesiosis (Merck Carter / Rolls Mar 2022 / Jul 2026; CAPC 2019 named only)
+
+No dedicated Plunkett babesia chapter in the owned SA EM splits. Public Merck blood-parasite page is cattle-heavy — use the dog/cat sentences plus CAPC named only. Packet 126 still owns IMHA. Packet 136 still owns the transfusion cutoff. Packet 183 still owns fever + low platelets. Skip bovine / equine piroplasm as its own packet. **Do not harvest imidocarb 6.6, cattle 1.2 / 3.5, atovaquone 13.3, azithromycin 10, or a 10 / 14-day clock as lobby law.**
+
+Agree with Merck: intraerythrocytic protozoa; fever + intravascular hemolysis → anemia, hemoglobinuria, jaundice. **Smear first.** PCR if the smear is quiet or you need the species. *B. vogeli* (*Rhipicephalus* / brown dog tick) is the US large form. *B. gibsoni* is small; **not readily treated with ordinary babesiacides.** *B. felis* (southern Africa) does not respond to those drugs; CAPC: domestic-cat infection not reported in the US.
+
+CAPC named only: large vs small chooses the drug family (imidocarb vs atovaquone + azithromycin). Imidocarb is **not IV**. *B. gibsoni* travels with dog fights / pit-bull–type / transfusion / dirty needles, not just a tick. Healthy spleen-intact US adults are often quiet. Tick usually 24–48 hours.
+
+Night split: pale + fever + dark urine ≠ pred-first IMHA until the smear is seen. Hemoglobinuria is hemolysis, not a UTI and not caval unless the heartworm list sits with it. Allium / zinc stay oxidative (126). Yellow + AKI without hemolysis is still 182. Low platelets without piroplasms stay 183. Transfuse for oxygen failure, not a memorized PCV. People: *B. microti* / *B. divergens* from ticks or transfusion — **not dog urine.** Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed imidocarb / atovaquone / azithromycin / cattle diminazene numbers stay on those pages.
+- Do not pred a piroplasm as primary IMHA.
+- Do not give imidocarb IV.
+- Do not treat *B. gibsoni* as a large-Babesia imidocarb cure.
+- Azotemic: still no NSAID, still no DexSP.
+
+Night rule: fever + hemolysis + tick / fight / transfusion → **smear tonight, not a steroid-first IMHA.** Species before the drug. △ Plumb.
+
+## 187. Feline cytauxzoonosis (Merck Tarigo Mar 2022 / Jul 2026)
+
+No dedicated Plunkett cytauxzoon chapter in the owned SA EM splits. Public Merck cytauxzoonosis in cats (Tarigo). Packet 126 still owns IMHA. Packet 186 still owns canine babesia. Packet 181 still owns lipidosis jaundice. **Do not harvest atovaquone 15, azithromycin 10, heparin 100–200, imidocarb 3.5, or a 64% / 10-day clock as lobby law.** Dog is not this host.
+
+Agree with Tarigo: *C. felis*, lone-star tick (*A. americanum*); *D. variabilis* is a weaker experimental vector. South-central / southeastern US (Missouri through the Carolinas; anecdotally Ohio / Alabama). **Bobcat is the reservoir.** Domestic cats were called dead-end; survivors exist and can stay parasitemic. Not cat-to-cat, not oral, vertical uncommon. Tick as early as 36–48 hours. April–September is the season, climate can stretch it.
+
+**Schizonts in macrophages occlude vessels** (LN / spleen / liver / lung / marrow) → ischemia, DIC, death. Piroplasms in RBCs come later and are “innocuous”; 1–4% typical. Fever to 41 °C; dull / not eating; jaundice; big nodes / liver / spleen; dyspnea. Untreated: death 2–3 days after the fever peak. In extremis they are hypothermic and vocal.
+
+Night diagnosis: smear — piroplasms may be **late** (1–3 days before death). Schizonts at the feathered edge or on **LN / spleen / liver FNA** come first. Do not call them platelet clumps. Exclude *Mycoplasma*, Howell-Jolly, stain. PCR if the smear is quiet. Leukopenia + toxic neutrophils + thrombocytopenia; anemia later. Hyperbilirubin / low albumin.
+
+Treatment conversation: **atovaquone + azithromycin**, not imidocarb as the plan (less success). Heparin / fluids / tube / oxygen / transfusion as needed. **NSAID off if azotemic or dry.** Quiet cage. Printed 15 / 10 / 100–200 stay on the page. Atovaquone–proguanil is the dog-GI product, not this. Survivors can be reservoirs — not blood donors. Indoor is still the best prevention; topical alone has failed.
+
+Night split: febrile jaundiced cat ≠ lipidosis (181) and ≠ neutrophilic cholangitis (180) until the smear / travel / wooded-tick story is named. Not pred-first IMHA. Not canine babesia imidocarb. Midtown geography is not the endemic belt — ask travel / outdoor / south. Azotemic: still no NSAID, still no DexSP.
+
+Book/public traps:
+
+- Printed atovaquone 15 / azithromycin 10 / heparin 100–200 stay on the page.
+- Do not wait for RBC piroplasms.
+- Do not imidocarb this as babesia.
+- Do not pred as IMHA.
+- Azotemic or dry: still no NSAID.
+
+Night rule: sick outdoor / traveled cat, high fever, yellow, crash → **smear and FNA tonight, start the A+A conversation, not a steroid.** △ Plumb.
+
+## 188. Feline hemoplasma / *Mycoplasma haemofelis* (Merck Foley Mar 2022 / Jul 2026)
+
+No dedicated Plunkett hemoplasma chapter in the owned SA EM splits. Public Merck hemotropic mycoplasma (Foley). Packet 126 still owns IMHA. Packet 187 still owns cytauxzoon schizonts. Packet 186 still owns canine babesia. Skip pig / cattle / camelid as their own packets. **Do not harvest doxycycline 10, a 2-week clock, or a pradofloxacin / marbofloxacin table as lobby law.**
+
+Agree with Foley: wall-less bacteria **on the red cell**, not inside like *Babesia* / *Cytauxzoon* piroplasms. *M. haemofelis* (old large *Haemobartonella felis* / Ohio) can crash an **immunocompetent** cat — feline infectious anemia. *Candidatus M. haemominutum* is the common worldwide form and is **not clearly disease in a healthy cat**. *Candidatus M. turicensis* has **never been seen on a smear**. FeLV / FIV / stress sit underneath the Candidatus pair. Dog *M. haemocanis* is usually quiet unless the spleen is gone.
+
+Blood / dirty needles / fighting (DNA in saliva / claws) / arthropods / rare vertical. Hemolysis is immune and **extravascular**; Coombs often positive in acute *M. haemofelis* — that is **not** a reason to pred-first. Smear: cyclic; can vanish in 2 hours; EDTA age drops them off the cell. Visible in **< 50%** of acute *M. haemofelis*. PCR on blood or spleen is the test. Do not treat a well PCR-positive cat — no regimen clears every carrier. Donors: PCR.
+
+Doxycycline is the night conversation; **water after the tablet** (stricture). Prado / marbo are the alternatives. Printed 10 / 2 weeks stay on the page. Glucocorticoids only if antimicrobials fail or primary IMHA is still the other list. Transfuse for oxygen; the new cells can get infected. One third of untreated acute cats may die. Recrudescence when stressed.
+
+Night split: regenerative hemolysis in a cat ≠ cytauxzoon (187: schizonts, A+A, south/woods) and ≠ pred-first IMHA (126). Howell-Jolly / stain ≠ the organism. Azotemic: still no NSAID, still no DexSP as the shotgun.
+
+Book/public traps:
+
+- Printed doxy 10 / 2 weeks stay on the page.
+- Do not treat a well PCR-positive cat.
+- Do not wait on a smear as the only test.
+- Do not pred before the antimicrobial conversation.
+- Do not call *Candidatus* haemominutum the crash in a healthy cat.
+
+Night rule: pale febrile cat, regenerative hemolysis → **PCR + smear tonight, doxy conversation with water, not a steroid-first IMHA.** △ Plumb.
+
+## 189. Feline Bartonella / cat-scratch (Merck Gentry Apr 2026; Kittleson Jan 2023 / May 2025)
+
+No dedicated Plunkett Bartonella chapter in the owned SA EM splits. Public Merck fleas (Gentry) plus infectious endocarditis (Kittleson). CDC veterinary bartonellosis and ABCD feline bartonellosis named only — no note dump. Packet 188 still owns hemoplasma / FIA. Packet 184 still owns Lyme shifting lameness. Packet 126 still owns IMHA. Skip cattle mastitis / large-animal IE as their own packets. **Do not harvest azithromycin, doxycycline, ampicillin-plus-gentamicin, or a 1–2 / 6–8 week clock as lobby law.**
+
+Agree with Gentry: *Bartonella henselae* lives in the flea. Humans get cat-scratch disease when **flea fecal pellets contact a scratch or bite**, not because the claw is magic. Cats are **generally subclinically affected**; they can develop a self-limiting febrile illness. Dogs are more likely to be clinical: fever, lymphadenitis, endocarditis.
+
+Agree with Kittleson: *Bartonella* is a recognized cause of **aortic-valve infectious endocarditis** in dogs. Fever is usually there. A murmur is present in most cases. Shifting-leg lameness can show — that is still **echo tonight, not a Lyme-first script** (184 owns well Lyme+ / putative nephropathy). Blood cultures should be drawn and **can be negative**; **echocardiography is the diagnostic test of choice**. The valve is hyperechoic, thickened, often vegetative. IE is rare in cats. Aortic-valve destruction can make heart failure intractable; that prognosis stays grave on the page. Printed 1–2 week parenteral / 6–8 week oral / amp+gent (or enro / cephalothin+gent) stay on the page. Routine dental prophylaxis is not warranted for myxomatous mitral disease.
+
+CDC / ABCD (named only): treat the **sick** pet; eradication is not established; do not treat a well seropositive or PCR-positive cat as default. No vaccine. Flea control is the public-health move. Indoor helps. Never permethrin on a cat. Owner scratch plus a swollen node is **their physician**, not a lobby human-medicine script.
+
+Night split: well cat Bartonella+ ≠ a long antibiotic. Dog fever + new murmur / culture-negative aortic vegetation ≠ Lyme doxy-and-home. Regenerative hemolysis is still 188, not this. Pred is not the FUO first move.
+
+Book/public traps:
+
+- Printed azithromycin / amp+gent / 1–2 week parenteral / 6–8 week oral stay on the page.
+- Do not treat a well Bartonella-positive cat.
+- Do not send culture-negative endocarditis home as just Lyme.
+- Do not pred Bartonella as FUO first.
+- Do not tell the owner they catch this from a titer.
+
+Night rule: well cat PCR+ / sero+ → **flea control, not a long antibiotic.** Dog fever + new murmur or culture-negative aortic vegetation → **echo tonight, Bartonella on the list.** △ Plumb.
+
+## 190. Canine brucellosis / discospondylitis (Merck Burns Mar 2024 / May 2026; Thomas Oct 2021 / Aug 2025)
+
+No dedicated Plunkett *Brucella canis* or discospondylitis chapter in the owned SA EM splits. Public Merck brucellosis in dogs (Burns) plus spinal inflammatory / infectious (Thomas). CDC veterinary brucellosis and USDA 2015 kennel best-practices named only — no note dump. Packet 185 still owns IVDD / lost deep pain. Packet 189 still owns Bartonella IE. Packet 184 still owns Lyme shifting lameness. Packet 183 still owns rickettsial myelitis on the same Thomas page. Skip horse / ruminant / pig disco and bovine *B. abortus* as their own packets. **Do not harvest doxycycline, a 12–16 week disco clock, a 2–3 month Brucella clock, or amox-clav as lobby law.**
+
+Agree with Burns: *B. canis* is intracellular and **zoonotic**. Dogs are the preferred host. Other *Brucella* spp can come from livestock. Venereal plus aborted tissue / vaginal fluid; also urine, semen, milk, fomites, kennel aerosol. Target organs are testis, epididymis, prostate, uterus, placenta. Late-term abortion (printed 45–55 days) is classic but abortion can be any stage. Neutered dogs can stay quiet for years, then uveitis or **discospondylitis**. **Fever is not a hallmark** in the dog. Infection is **considered to be permanent**. No regimen is known to clear it for certain. Euthanasia is often the conversation because of zoonosis. If declined: neuter, antimicrobials, lifelong monitoring, isolation. Printed 2–3 months / tetracycline or FQ plus an aminoglycoside stay on the page. *B. canis* is not nationally reportable in the US; many states still report it. *B. suis* / *abortus* / *melitensis* are reportable in all US states. Gold standard is isolation or PCR. Serology (RSAT / 2ME-RSAT / TAT / AGID / ELISA) is screening and can lag. Culture has biosafety risk — PPE.
+
+Agree with Thomas: discospondylitis is the disk plus the adjacent vertebral bodies (not IVDD extrusion). Hematogenous. Large-breed dogs. Cats are rare and usually an adjacent wound. Staph is the common isolate. *B. canis* is on that list. **Spinal pain is the most consistent sign**; fever is less common. Early rads: end-plate destruction and disk-space collapse. Blood and urine cultures. **Affected dogs should be tested for brucellosis.** Signs often ease within 5 days of the right drug — keep going; printed 12–16 weeks / amox-clav-if-no-growth stay on the page. Lost deep pain / knuckling without a disco word is still 185. Plant-awn lumbar osteomyelitis stays named, not a Midtown default.
+
+Night split: dog late abortion / orchitis / epididymitis ≠ “just infertility.” Disco back pain ≠ NSAID-and-home as old IVDD. Bartonella murmur is still 189. Lyme lameness is still 184. Rickettsial doxy 5 / chloramphenicol 30 on the same Thomas page stay with 183.
+
+Book/public traps:
+
+- Printed 12–16 weeks / 2–3 months / amox-clav / tetracycline-plus-aminoglycoside stay on the page.
+- Do not treat Brucella as a doxy-and-clear.
+- Do not send discospondylitis home as just IVDD.
+- Do not skip the Brucella test on a disco dog.
+- Do not tell the owner this is a urine-shedder like lepto (182) — it is still zoonotic via fluids and products of abortion.
+
+Night rule: dog late abortion, orchitis, or discospondylitis → **Brucella test + barrier tonight, not a doxy-and-home.** △ Plumb.
+
+## 191. Canine blastomycosis / Midtown travel fungus (Merck Gull Apr 2023 / Jul 2026)
+
+No dedicated Plunkett blastomycosis chapter in the owned SA EM splits. Public Merck blastomycosis in animals (Gull). MiraVista treatment sheets named only — no dose dump. Packet 190 still owns Brucella / disco. Packet 185 still owns IVDD. Packet 176 still owns HARD. Packet 150 still owns melting-ulcer fungal culture. Packet 143 still owns IOP. Skip horse as its own packet. Cattle / sheep / pigs are not reported susceptible. **Do not harvest itraconazole 5, a 3-month clock, or amphotericin as lobby law.**
+
+Agree with Gull: dimorphic *Blastomyces* in moist decaying soil. Inhaled conidia, then yeast. **Midtown is not the river-basin default** — ask travel / hunting / waterway (Mississippi, Missouri, Tennessee, Ohio rivers; Great Lakes; St. Lawrence; Pacific Northwest). Most dogs live within a printed 400 m of a waterway — that number stays on the page. Humans can get blastomycosis; **they do not acquire infection from animals.** Both get it from the environment. Needle-stick after aspirating a drain can give staff a primary cutaneous infection — PPE.
+
+Young adult large-breed / hunting dogs. Harsh lungs; pulmonary signs in a printed 85%. Draining cutaneous nodules plus respiratory disease is the night picture. Planum, face, nail beds. Ocular 30–50% (uveitis, glaucoma, detach) — 143 still owns the pressure. Bone / paronychia about one quarter. CNS uncommon in dogs, more in cats. Cats are uncommon; large abscesses possible. Hypoxemia is a poor-prognosis mark.
+
+Diagnosis: thick-walled yeasts with **broad-based budding** on impression / FNA / fluid. Urine antigen is sensitive and can cross-react with *Histoplasma*. AGID antibody is neither sensitive nor specific. Printed itraconazole 5 / minimum 3 months / ~70% clinical cure / ~20% recurrence stay on the page. Fluconazole is less effective. Fulminant / hypoxemic: amphotericin conversation. Short anti-inflammatory steroids only if they worsen after starting antifungals — **not pred-first IMHA or uveitis-first.** Serial urine antigen; two negatives 3–4 weeks apart stay on the page.
+
+Night split: Midtown cough alone ≠ blasto. Disco back pain is still 190. Bartonella murmur is still 189. Draining tract without travel / yeast is not a default fungus.
+
+Book/public traps:
+
+- Printed itraconazole 5 / 3 months / 70% / 20% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not tell the owner they catch this from the dog.
+- Do not pred blastomycosis as IMHA or uveitis-first.
+- Do not send draining tracts plus travel cough home as just pneumonia.
+
+Night rule: travel dog, draining nodule, harsh lungs → **cytology tonight for broad-based budding, not a steroid.** △ Plumb.
+
+## 192. Feline cryptococcosis / nasal-CNS fungus (Merck Gull Apr 2023 / Aug 2026)
+
+No dedicated Plunkett cryptococcosis chapter in the owned SA EM splits. Public Merck cryptococcosis in animals (Gull). ABCD feline cryptococcosis named only — no note dump. Packet 191 still owns blasto / broad-based budding. Packet 167 still owns inflammatory polyp. Packet 154 still owns FHV. Packet 116 still owns seizure drugs. Packet 147 still owns SARDS. Skip bovine mastitis and horse nasal-mass crypto as their own packets. **Do not harvest fluconazole 10, itraconazole 5–10, or an amphotericin table as lobby law.**
+
+Agree with Gull: *C. neoformans* / *C. gattii*, worldwide in soil and **bird (especially pigeon) feces**. Inhalation or wound. Encapsulated yeast in tissue. **Cats are the usual patient**; often stays in the nose. Sneeze; chronic uni- or bilateral discharge (sero / mucopurulent / blood); polyp-like mass in the nostril; **firm swelling over the bridge of the nose**. Skin papules / nodules that can ulcerate. CNS: dull, personality change, seizure, circle, paresis, blind. Eye: dilated fixed pupils, exudative detach, chorioretinitis, optic neuritis. Dogs: more than half disseminated — CNS / eye first, nose is not why they present. Midtown can see this (pigeon); it is **not a river-basin travel fungus** (191).
+
+Cytology tonight: 5–10 mcm ovoid yeast, **narrow-based budding**, capsule. Gram is useful; India ink silhouettes; Wright can shrink the capsule. Capsular antigen in serum / urine / CSF; POC assay exists. Localized nasal disease can still need cytology — do not wait on a titer alone. Culture if the volume is there.
+
+Printed fluconazole 10 q12 / itraconazole 5–10 stay on the page. Disseminated dogs: add amphotericin. Flucytosine resistance if used alone; **do not use flucytosine in dogs** (toxic epidermal necrolysis). Voriconazole is usually not tolerated. Treat until **at least two antigen tests are negative** (months to years). Short glucocorticoids only for CNS deterioration in the first days of antifungal treatment — **not pred-first lymphoma, IBD, or uveitis.** Monitor liver enzymes.
+
+Night split: roman-nose cat ≠ just URI / just polyp (167) until you look at the smear. Dilated-fixed with a nasal mass ≠ 147 SARDS. Seizure is still 116 for the drug. Broad-based budding is still 191. FeLV / FIV sit underneath if they fail.
+
+Book/public traps:
+
+- Printed fluconazole 10 / itraconazole 5–10 stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not use flucytosine in dogs.
+- Do not pred cryptococcosis as lymphoma or IBD first.
+- Do not send a roman-nose cat home as just a cold.
+
+Night rule: cat, bridge-of-nose swelling or chronic nasal mass → **smear tonight for a capsule and narrow-based budding, not a steroid.** △ Plumb.
+
+## 193. Canine histoplasmosis / GI-respiratory fungus (Merck Gull Apr 2023 / Jul 2026)
+
+No dedicated Plunkett histoplasmosis chapter in the owned SA EM splits. Public Merck histoplasmosis in animals (Gull). Packet 191 still owns blasto / broad-based budding. Packet 192 still owns crypto / capsule / roman nose. Packet 178 still owns PLE. Skip large-animal as its own packet. **Do not harvest itraconazole 10, ketoconazole 10–15, a 6-month clock, or a 10–40% relapse table as lobby law.**
+
+Agree with Gull: dimorphic *H. capsulatum* in soil with **bird and bat feces**. **Noncontagious.** Highly endemic Mississippi and Ohio River valleys. **Midtown is not the river-valley default** — ask travel / caves / roosts. Inhaled microconidia; lungs and thoracic nodes first. Dogs: hepatomegaly, ascites, diarrhea more common. Cats: tachypnea and skin more common. Both: weight loss, fever, pale, nodes, eye, meningitis, weeping skin nodules.
+
+Diagnosis: **tiny yeasts inside macrophages** (1–4 mcm, thin wall, clear halo; narrow-based budding may be seen). FNA / exfoliative cytology. Disseminated: organisms in monocytes or neutrophils on a routine blood smear. Cat: bone marrow can win. Culture is **hazardous** — warn the lab. Urine antigen is the most sensitive ELISA substrate and **cross-reacts with Blastomyces**. POC antigen is less sensitive. Use the lab ELISA to watch treatment.
+
+Printed itraconazole 10 / fluconazole also effective / keto 10–15 for 4–6 months stay on the page. Severe: amphotericin conversation. Minimum 6 months; many need > 12. Stop on signs plus urine antigen, not a calendar. Relapse 10–40% stays on the page.
+
+Night split: Midtown diarrhea alone ≠ histo. River-valley dog, chronic diarrhea + fever ≠ pred-first IBD / PLE (178). Broad-based draining + harsh lungs is still 191. Roman-nose capsule is still 192. People get it from the environment, not from the dog.
+
+Book/public traps:
+
+- Printed itraconazole 10 / keto 10–15 / 6 months / 10–40% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not culture without warning the lab.
+- Do not pred histo as IBD or IMHA first.
+- Do not send river-valley diarrhea home as just IBD.
+
+Night rule: travel dog, chronic diarrhea or interstitial lung, fever → **look inside the macrophages tonight, not a steroid.** △ Plumb.
+
+## 194. Canine coccidioidomycosis / valley fever (Merck Gull Apr 2023 / Aug 2026)
+
+No dedicated Plunkett coccidioidomycosis chapter in the owned SA EM splits. Public Merck coccidioidomycosis / valley fever (Gull). Packet 191 still owns blasto. Packet 193 still owns histo. Packet 192 still owns crypto. Packet 176 still owns HARD / heartworm — **do not use bare *immitis*** as a cocci token. Skip horse abortion / llama / ruminant as their own packets. **Do not harvest fluconazole 5–10, itraconazole 10, or a 6–12 month clock as lobby law.**
+
+Agree with Gull: dustborne, **noncontagious**. *C. immitis* / *C. posadasii* arthrospores on dust after rain-then-drought. Endemic arid Southwest US, Mexico, Central / South America. **Midtown is not the desert default** — ask Arizona / Sonoran / dust-storm travel. Dogs are the usual clinical species. Primarily respiratory (cough, fever, tachypnea). Dissemination in a printed ~20% — brain, eye, skin, bone, joints. CNS: seizure first. Cats: draining skin / SQ masses more than lungs. Spherules 20–200 mcm with endospores — large, not a macrophage speck (193) and not broad-based budding (191). Aspirates often miss them. Serology (AGID / EIA / LFA) can be positive in well dogs from exposure. Antigen is largely insensitive except some CSF. Culture is **BSL-3 / dangerously infective** — do not plate it in the lobby.
+
+Printed fluconazole 5–10 / itraconazole 10 / 6–12 months stay on the page. Itra may be the bone conversation. **Compounded bulk itraconazole is not bioavailable.** Compounded azoles may not contain a therapeutic dose. Amphotericin if they fail or cannot take an azole (nephrotoxic). Short disease can be self-limiting; chronic respiratory / CNS / multi-system needs long treatment.
+
+Night split: Midtown cough alone ≠ valley fever. Ohio-river diarrhea is still 193. Wisconsin drain + cough is still 191. Roman-nose capsule is still 192. Heartworm *D. immitis* is still 176.
+
+Book/public traps:
+
+- Printed fluconazole 5–10 / itraconazole 10 / 6–12 months stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not culture outside a BSL-3 lab.
+- Do not treat a well seropositive desert dog as default.
+- Do not send Southwest cough / seizure home as just kennel cough or idiopathic epilepsy.
+
+Night rule: Southwest travel dog, chronic cough or new seizure → **spherule / serology conversation tonight, not a steroid.** △ Plumb.
+
+## 195. Canine nasal aspergillosis / destructive rhinitis (Merck Gull Apr 2023 / Jul 2026)
+
+No dedicated Plunkett nasal-aspergillosis chapter in the owned SA EM splits. Public Merck aspergillosis in animals (Gull) plus rhinitis / sinusitis (mycotic rhinosinusitis named only for the intact-cribriform caveat). Packet 192 still owns crypto / roman nose. Packet 194 still owns valley fever. Packet 190 still owns Brucella disco. Skip poultry / cattle abortion / horse guttural pouch as their own packets. **Do not harvest clotrimazole 0.5 g, a 1-hour soak, enilconazole 10, or an 80% success table as lobby law.**
+
+Agree with Gull: *Aspergillus* is ubiquitous. **Culture alone is not a diagnosis** — healthy noses grow it. Dogs: localized nasal / sinus disease, mainly dolichocephalic. Starts caudal ventral maxilloturbinate. **Nasal pain, ulceration and depigmentation of the nares**, sneeze / reverse sneeze, sanguinopurulent discharge, epistaxis. Turbinate destruction (radiolucent nose). Frontal / maxillary osteomyelitis in a printed 80%. Cribriform can open into the CNS. Diagnosis = fungal plaques on rhinoscopy plus hyphae in the lesion (narrow, hyaline, septate, branching) or imaging. Serology is unreliable (false negatives). Disseminated invasive disease is a different list: middle-aged female German Shepherd, often *A. terreus*, kidneys / vertebrae / disco — 190 still owns Brucella testing on disco. Cats: rare; sino-orbital *A. felis* can be aggressive (exophthalmos, palate ulcer) and is not a dog clotrimazole-soak script.
+
+Treatment of choice for the nose: **debride, then topical**. Clotrimazole in PEG is first-line (nares or frontal tubes). Printed 0.5 g each side / 1 hour / ~80% stay on the page. Enilconazole 10 via implanted tubes stays on the page. Systemic azoles are the other conversation, not the lobby default. Merck rhinitis page: topical clotrimazole / enilconazole infusion is based on an **intact cribriform on CT** before you soak. Systemic therapy is not recommended unless there are systemic signs, which are rare.
+
+Night split: depigmented nares + epistaxis ≠ just a cold and ≠ crypto roman-nose (192). Arizona cough is still 194. Culture-positive nose without plaques / destruction is colonization. Do not soak a cribriform-open skull.
+
+Book/public traps:
+
+- Printed clotrimazole 0.5 g / 1 hour / 80% / enilconazole 10 stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not diagnose on culture alone.
+- Do not soak before you know the cribriform is intact.
+- Do not send depigmented-nares epistaxis home as just a cold.
+
+Night rule: dolichocephalic dog, depigmented nares, chronic epistaxis → **CT + plaques tonight, not a culture-and-home.** △ Plumb.
+
+## 196. Canine nasal neoplasia / epistaxis mass (Merck Tonozzi Feb 2022 / Sept 2024)
+
+No dedicated Plunkett nasal-tumor chapter in the owned SA EM splits. Public Merck neoplasia of the respiratory system in dogs and cats (Tonozzi). Packet 195 still owns aspergillus / depigmented nares. Packet 192 still owns crypto / roman nose. Coagulopathy stays on the epistaxis list. Skip larynx / trachea and primary lung tumors as their own packets. **Do not harvest radiation fractions, cisplatin, or an 8–20 month survival table as lobby law.**
+
+Agree with Tonozzi: tumors of the nose and paranasal sinuses are 1%–2% of all canine or feline tumors. Dogs twice cats; males more than females. Mean age 9.5–10 years in dogs, 12 years in cats. Dogs: nearly all malignant; slightly more than 60% carcinomas, adenocarcinoma most common; ethmoturbinates are the predilection site; dolicho / meso more than brachy. Cats: at least 90% malignant; lymphoma then carcinoma. Locally invasive, late mets (nodes, lungs, brain). Survival of untreated animals is 3–5 months after diagnosis — that number stays on the page.
+
+Chronic nasal discharge is the most common sign; uni then bilateral. Epistaxis, sneeze, stertor. Facial and oral deformity from bone / soft-tissue destruction. Retrobulbar extension → exophthalmos and exposure keratitis. Late CNS if the cranial vault opens. CT is vastly superior to plain radiographs. Definitive diagnosis is biopsy (CT-guided blind or rhinoscopic). Hydropulsion can yield tissue and open the airway. Radiation therapy is the treatment of choice for canine nasal adenocarcinoma.
+
+Night split: facial deformity plus epistaxis is a mass until proven, not just a cold and not a culture-and-home. Depigmented nares still 195. Roman-nose cat still 192. Bare epistaxis without a mass or deformity is still coagulopathy / hypertension / foreign body until you look.
+
+Book/public traps:
+
+- Printed 3–5 months untreated and radiation-fraction / cisplatin tables stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not diagnose a mass on culture alone.
+- Do not send facial-deformity epistaxis home as just a cold.
+- Coagulopathy stays on the epistaxis list.
+
+Night rule: older dog or cat, facial deformity plus epistaxis → **CT plus biopsy tonight, not a cold-and-home.** △ Plumb.
+
+## 197. Canine primary lung tumor / incidental lung mass (Merck Tonozzi Feb 2022 / Sept 2024)
+
+No dedicated Plunkett primary-lung-tumor chapter in the owned SA EM splits. Same public Merck neoplasia of the respiratory system page (Tonozzi). Packet 196 still owns the nose. Packet 154 still owns PTE (normal rads do not rule PTE out). Packet 176 still owns HARD / HW. Metastatic lung (mammary / osteosarcoma / HSA / oral melanoma) is the other list on this page — not its own packet tonight. Skip larynx / trachea as their own packet. **Do not harvest 120 days / 12 months / 2 months or a chemo table as lobby law.**
+
+Agree with Tonozzi: primary lung tumors are rare. Mean age 10–12 years in dogs, 12 years in cats. No consistent breed or sex predilection. Usually from terminal bronchioles and alveoli. Adenocarcinoma and alveolar carcinoma are the usual malignancies. A second coincidental tumor can make primary vs metastatic hard. Intrapulmonary airway spread in a printed ~50% of canine adenocarcinoma — that percent stays on the page. Dogs: most common room is a chronic nonproductive cough; **25% have no tumor-related signs.** **One-third or more are found incidentally** on films for something else, or at necropsy. Acute distress = burden, mets, or pleural fluid. Hypertrophic osteopathy is a chest disease (unusual in cats). Cats: **cough is rare**; 20%–40% present as lethargy / anorexia / weight loss — those percents stay on the page. Dogs may be a single mass, many nodules, a diffuse pattern, or lobar consolidation. Cats more often diffuse or lobar, with pleural fluid more often than dogs. Auscultation can be normal. Tentative on rads after you exclude look-alikes. **Definitive diagnosis requires biopsy.**
+
+Treatment of choice if operable after staging: **lobectomy**. Inoperable or metastatic disease is a chemo conversation, not a lobby default. Printed overall median 120 days after surgery, 12 months if operable without nodes, 2 months if nodes or multiple tumors — stay on the page. Recurrence / metastasis is a common cause of death.
+
+Night split: incidental lung mass is still a mass, not “just old” and not “just pneumonia.” Midtown cough alone is not this. Facial-deformity epistaxis is still 196. Normal-rad dyspnea is still 154. Arizona / river-basin travel fungus stays 194 / 191 / 193. Do not Lasix a mass as CHF.
+
+Book/public traps:
+
+- Printed 120 days / 12 months / 2 months / 25% / one-third / 50% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not send an incidental lung mass home as just old.
+- Do not call hypertrophic osteopathy a primary bone night without looking at the chest.
+- Do not skip staging before you promise a lobectomy.
+
+Night rule: older dog, incidental lung mass or hypertrophic osteopathy → **the chest is the disease tonight, not a dental add-on.** △ Plumb.
+
+## 198. Metastatic pulmonary nodules / staging chest (Merck Tonozzi Feb 2022 / Sept 2024)
+
+No dedicated Plunkett pulmonary-metastasis chapter in the owned SA EM splits. Same public Merck neoplasia of the respiratory system page (Tonozzi), metastatic-lung section. Packet 197 still owns the incidental primary / hypertrophic osteopathy. Packet 196 still owns the nose. Packet 154 still owns PTE (normal rads do not rule PTE out). Packet 120 still owns hemoabdomen without lung words. Skip larynx / trachea as their own packet. **Do not harvest ≤3 mm / ≥40% or a chemo table as lobby law.**
+
+Agree with Tonozzi: a localized tumor reaches the lungs by blood, lymph, or direct extension. The usual high-met primaries are **mammary adenocarcinoma, osteosarcoma, hemangiosarcoma, and oral melanoma**. Lungs may be the only met site — then hunt the occult primary or the old surgery. Pulmonary metastasis is late; **prognosis is poor**. Signs look like primary lung disease and scale with burden. Routine rads miss small lesions (printed ≤3 mm, present in a printed ≥40%) — those numbers stay on the page. **Thoracic CT sees what films miss.** **Chest films before you cut** a high-met-risk tumor. The major goal is preventing metastasis, not erasing cancer tonight. Slow or solitary mets can be a surgery conversation. Chemo / radiation for the rest. Overall prognosis once the lungs are involved is poor.
+
+Night split: multiple pulmonary nodules = mets until you look for a primary. Named osteosarcoma left this regex (311) so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in the OSA loc. Named oral melanoma left this regex (309). Named hemangiosarcoma left this regex (312) so a splenic or cardiac mass is not labeled pulmonary nodules. Named mammary adenocarcinoma left this regex (313) so a gland mass is not labeled pulmonary nodules. A single incidental mass without a high-met primary is still 197. Clean-rad dyspnea is still 154. Hemoabdomen without lung words is still 120. Midtown cough-alone is not this.
+
+Book/public traps:
+
+- Printed ≤3 mm / ≥40% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not amputate, mastectomy, or splenectomy a high-met primary before a chest film.
+- Do not send multiple lung nodules home as just old or just pneumonia.
+- Do not call cannonball nodules a primary-lung incidental.
+
+Night rule: high-met primary or multiple lung nodules → **stage the chest before you cut.** △ Plumb.
+
+## 199. Canine osteosarcoma / pathologic fracture (Merck Chou Nov 2025)
+
+No dedicated Plunkett osteosarcoma chapter in the owned SA EM splits. Public Merck bone tumors in dogs and cats (Chou). Packet 311 owns named OSA leaving HIGH_MET so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Packet 198 still owns multiple nodules and named mammary adenocarcinoma. Packet 312 owns named hemangiosarcoma. Packet 197 still owns hypertrophic osteopathy. Packet 185 still owns knuckle / IVDD. Skip equine bone tumors as their own packet. **Do not harvest 1–2 / 4–6.5 / 9–12 months, or carboplatin / cisplatin / doxorubicin, as lobby law.**
+
+Agree with Chou: incidence is markedly lower in cats than dogs. Dogs: distal radius, proximal humerus, distal femur, or proximal tibia. Cats: evenly appendicular and axial. Osteosarcoma is the most common primary bone tumor — over 80% of bone tumors in dogs, over 50% in cats. Also chondrosarcoma, fibrosarcoma, hemangiosarcoma. Signs: lameness, bone swelling, and an **acute, nontraumatic pathological bone fracture**. Radiographs: osteolysis, proliferation, soft-tissue swelling. Thoracic radiographs to look for mets — that film is 198. **Bone biopsy (Michele trephine or Jamshidi) is imperative to confirm.** Treatment: amputation, chemotherapy (carboplatin / cisplatin / doxorubicin named only), sometimes radiation. Palliation: NSAIDs, opioids, or radiation — △ Plumb / kidneys. Untreated dogs: printed 1–2 months from pain or fractures. Amputation alone: printed 4–6.5 months. Amputation plus chemotherapy: printed 9–12 months. Mandible / scapula printed ~18 months; limbs ~11; spine / skull ~6 — stay on the page. Most dogs die of pulmonary metastasis. High ALP, proximal humerus, and young age are negative indicators. **Feline osteosarcoma is much less aggressive**; amputation median survival printed 2–4 years. Chondrosarcoma is the second most common primary bone tumor in dogs and is slower to metastasize.
+
+Night split: nontraumatic fracture through a lytic metaphysis is a tumor, not a plate-and-home and not a splint-and-home. Named osteosarcoma is not pulmonary-nodules-alone; stage the chest before you cut in this loc. Multiple lung nodules without a bone story stay 198. HO is 197. Knuckle / IVDD is 185. A hit-by-car radius without lysis is trauma. Cats are not the dog MST script.
+
+Book/public traps:
+
+- Printed 1–2 / 4–6.5 / 9–12 months and named chemo drugs stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not plate a pathologic fracture as trauma.
+- Do not amputate before a chest film (198).
+- Do not NSAID an azotemic patient for bone pain.
+
+Night rule: dog, nontraumatic pathologic fracture or lytic distal radius → **tumor until the biopsy, not a plate-and-home.** △ Plumb.
+
+## 200. Septic arthritis / hot joint tap (Merck Lafuente Dec 2025)
+
+No dedicated Plunkett septic-arthritis chapter in the owned SA EM splits. Public Merck septic arthritis in dogs and cats (Lafuente). Packet 199 still owns the lytic metaphysis / pathologic fracture. Packet 185 still owns knuckle / IVDD. Packet 184 still owns Lyme shifting lameness. Packet 183 still owns RMSF / ehrlichia. Skip equine joint infection as its own packet. **Do not harvest amoxicillin–clavulanic acid 22 mg/kg, q8–12 h, or a 6-week table as lobby law.**
+
+Agree with Lafuente: infectious arthritis is most often bacterial — staphylococci, streptococci, coliforms. Routes: hematogenous, direct inoculation (including surgery), or extension from adjacent tissue. Degenerated joints are more permeable. Other named agents (blasto / cocci / RMSF / ehrlichia / borrelia / mycoplasma / leishmania) stay on their own packets. Signs: lameness, swelling, joint pain, and sometimes fever / malaise / anorexia / stiffness — not all are required. Early rads: effusion and soft-tissue swelling. Arthrocentesis: more WBCs, especially neutrophils (printed > 3,000/mcL). Bacteria might be visible. Fluid can be grossly purulent. Culture can confirm, **but culture can be negative in up to 50%**. Serology is for the nonbacterial list.
+
+Treatment: antimicrobials for printed 4–6 weeks (generally 6) plus analgesics. Printed amox-clav 22 mg/kg PO every 8–12 hours for 6 weeks stays on the page. Cephalosporins are named. Severe: IV antimicrobials and opioids in hospital. Lavage / debridement is not necessary in most cases. Early treatment matters because the joint can be destroyed.
+
+Night split: a hot swollen joint is a tap tonight, not a sprain-and-home and not pred-first. Culture-negative is not a rule-out. Lytic metaphysis / pathologic fracture is still 199. Knuckle is still 185. Lyme shifting without a hot joint is still 184. Azotemic: still no NSAID.
+
+Book/public traps:
+
+- Printed 22 mg/kg / 6 weeks / 3,000/mcL / 50% stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not send a hot joint home as a sprain.
+- Do not treat on culture-negative as “not septic.”
+- Do not lavage every joint as the default.
+
+Night rule: hot swollen joint, lame → **tap tonight, then start. Culture-negative does not rule it out.** △ Plumb.
+
+## 201. Immune-mediated polyarthritis / multi-joint tap (Merck Lafuente Dec 2025)
+
+No dedicated Plunkett IMPA chapter in the owned SA EM splits. Public Merck immune-mediated polyarthritis in dogs and cats (Lafuente). Packet 200 still owns the single hot joint / septic tap. Packet 184 still owns Lyme shifting without IMPA words. Packet 183 still owns the tick panel. Packet 189 still owns Bartonella IE if the murmur is the room. Skip equine IMPA as its own packet. **Do not harvest prednisolone / azathioprine / cyclosporine / leflunomide / cyclophosphamide as lobby law.**
+
+Agree with Lafuente: IMPA is noninfectious synovitis from immune-complex deposition. Usually **multiple joints, often symmetrical**. Type I idiopathic (most common). Type II reactive (remote infection — UTI, respiratory, infective endocarditis). Type III GI / IBD. Type IV neoplasia. Dogs more than cats. Dogs: fever, lethargy, anorexia, **shifting lameness**; carpi and tarsi hurt and can swell. Diagnosis is synovial fluid. **Tap at least three joints.** Increased nucleated cells, **predominantly nondegenerate neutrophils**, decreased viscosity. Cytology plus culture to exclude septic arthritis. Nonerosive vs erosive on films. Hunt the secondary cause: CBC / chem / UA, chest and abdomen, tick panel. If tick exposure or endemic travel, doxycycline can start until serology — that doxy is still 183 / 184, not a harvested 5 / 10. Immunosuppression is corticosteroids first; aza / cyclosporine / leflunomide named for refractory. Relapse happens.
+
+Cats: less common. **In cats, polyarthritis is more likely to be infectious than immune mediated.** Secondary list: FIP, FeLV, FIV, toxoplasma, chronic infection. FeLV / FIV / coronavirus / Toxoplasma sit underneath. FCPP (proliferative young vs deforming older male) stays named, not a dog script. Erosive IMPA in a cat with FeLV is a poor-prognosis conversation.
+
+Night split: many joints / shifting / fever → tap at least three tonight, then culture, then steroids. One hot joint is still 200. Lyme shifting without IMPA / multi-joint words is still 184. Do not pred-first before the taps. Azotemic: still no DexSP as a shotgun.
+
+Book/public traps:
+
+- Printed steroid / aza / cyclosporine / leflunomide / cyclophosphamide tables stay on the page.
+- Do not harvest those as lobby law.
+- Do not pred-first before three taps and a culture.
+- Do not call a single hot joint IMPA.
+- Do not treat a cat as a small dog — infection first.
+
+Night rule: fever plus shifting lameness plus more than one joint → **three taps tonight, not a steroid.** △ Plumb.
+
+## 202. Infectious endocarditis / fever plus new murmur (Merck Kittleson Jan 2023 / May 2025)
+
+No dedicated Plunkett endocarditis chapter in the owned SA EM splits. Public Merck infectious endocarditis in dogs and cats (Kittleson). Packet 189 still owns Bartonella / culture-negative aortic valve. Packet 201 still owns IMPA type II once you have many joints. Packet 184 still owns Lyme shifting without a murmur. Skip cattle mastitis IE as its own packet. **Do not harvest amp+gent, 1–2 weeks parenteral, or 6–8 weeks oral as lobby law.**
+
+Agree with Kittleson: infection usually sits on AV or aortic valves. SAS can predispose; a normal valve can still get it. Rare in cats. Dogs: middle-aged large-breed males more often. Emboli go to organs and limbs — neuro / GI / urine / joints can be the room. **Fever is usually there** (intermittent or continuous). Shifting lameness, weight loss, lethargy. Mitral or aortic destruction → left-sided failure (edema, tachypnea, cough). Tricuspid is rare (ascites / jugular pulses). **A murmur is present in most cases.** Isolates: Streptococcus, Staphylococcus, Klebsiella, E. coli; Bartonella is the culture-neg aortic list (189). CBC: neutrophilic leukocytosis and anemia of chronic disease. Blood cultures plus sensitivity; if blood is negative, urine can grow the organism. **Blood cultures may be negative even with bacterial lesions. Echocardiography is the diagnostic test of choice** — hyperechoic, thickened, often vegetative. Treat failure (furosemide / ACE / pimobendan named only) and sterilize the valve. Aortic destruction can make failure intractable — that prognosis stays grave on the page. Printed 1–2 week parenteral then 6–8 week oral stay on the page. **Routine dental prophylaxis is not warranted for myxomatous mitral disease.** SAS: prophylaxis when a procedure will shower bacteria.
+
+Night split: fever plus a new or diastolic murmur is echo tonight, not “just a fever” and not Lasix-as-MMVD. Culture-negative aortic valve is still 189. Many joints without a murmur stay 201. Lyme shifting without a murmur stays 184. Do not pred FUO.
+
+Book/public traps:
+
+- Printed 1–2 / 6–8 weeks and amp+gent / enro / cephalothin+gent stay on the page.
+- Do not harvest those numbers as lobby law.
+- Do not send fever plus a new murmur home as just a fever.
+- Do not dental-prophy every MMVD dog “for IE.”
+- Do not skip echo because the blood culture is pending.
+
+Night rule: large-breed dog, fever plus a new murmur → **blood cultures and echo tonight, not a steroid.** △ Plumb.
+
+## 203. Fever of unknown origin / do not pred first (Merck Lunn Aug 2022 / Sept 2024)
+
+No dedicated Plunkett FUO chapter in the owned SA EM splits. Public Merck fever of unknown origin in animals (Lunn). Packet 202 still owns fever plus a new murmur / named IE. Packet 201 still owns named IMPA / multi-joint. Packet 200 still owns the hot joint. Packet 189 still owns Bartonella / culture-negative aortic valve. Skip farm / horse as their own packet. Do not harvest pred 2 mg/kg, NSAID tables, or the human 2–3 week definition as lobby law.
+
+Agree with Lunn: fever of unknown origin is persistent fever that does not resolve spontaneously or with empirical antimicrobials, cause not from history / PE / initial tests. True fever is a regulated set-point (typical 39.5–41.1°C / 103–106°F). Heatstroke is unregulated — do not ice true fever. External cooling not recommended for true fever (water baths work against the set-point). Dogs: noninfectious inflammatory (including IMPA) common. Cats: infectious more likely; FIP the most common named series. Staged work-up. Blood culture is recommended in all unexplained fever. Urine culture always, regardless of sediment. Dogs: arthrocentesis of multiple joints even if they feel normal (201 owns named IMPA). Echo if murmur is 202. ANA / RF alone do not diagnose SLE / RA. Trial steroids only after work-up; if referring, do not start.
+
+Night split: named FUO / unexplained / persistent / recurrent fever is a staged work-up, not a steroid and not ice. Fever plus a new murmur stays 202. Many joints stay 201. A hot joint stays 200. Culture-negative aortic / Bartonella stays 189. Bare fever or fever plus DexSP without FUO words does not fire this gate.
+
+Book/public traps:
+
+- Do not harvest pred 2 / NSAID tables / the human 2–3 week definition.
+- Do not ice true fever.
+- Do not start trial steroids if referring.
+- ANA / RF alone do not diagnose.
+
+Night rule: named FUO → do not pred first; fever is not heatstroke to ice. △ Plumb.
+
+## 204. Feline infectious peritonitis / FIP fever (Merck Roman Jan 2024 / Apr 2026)
+
+No dedicated Plunkett FIP chapter in the owned SA EM splits. Public Merck feline infectious peritonitis (Roman). Packet 203 still owns unnamed feline FUO (FIP stays on that list). Packet 201 still owns named IMPA. Packet 202 still owns fever plus a new murmur. Uveitis without FIP words stays the uveitis gate. Pyothorax without FIP words stays pleural. Skip cheetah / wild Felidae as their own packet. Do not harvest GS-441524 15 mg/kg, remdesivir 10–20, GC376 15, molnupiravir 12.8–14.6, pred 2–4, or the 84-day / 12-week clock as lobby law. AAFP/EveryCat 2022 and ABCD named only — no guideline dump.
+
+Agree with Roman: FIP is a severe immune-mediated coronaviral disease of cats. Most FCoV is enteric and stays quiet or mild GI. A small fraction mutate to FIPV inside the cat; FIPV is not the fecal-oral shedder. Young (< 2 years) and geriatric, multicat, recent stress, intact males, some purebreds. Effusion is the most typical sign, not always there — wet / dry overlap. Fluctuating fever that does not respond to antimicrobials is common. There is no single antemortem test. A titer is not a diagnosis (most cats have been exposed; some FIP cats are seronegative). Effusion tests beat blood: yellow to straw, sticky, high protein, A:G printed < 0.4 stay on the page. Rivalta negative makes FIP very unlikely; positive is not specific. Definitive historically is FCoV antigen in macrophages. Antivirals (GS-441524 / remdesivir) exist and are not licensed everywhere. Printed 15 / 84 days / 12 weeks stay on the page. Drain chest if dyspneic; do not drain the belly just because it is there (it reaccumulates). Vaccine is not generally recommended (AAHA/AAFP 2020 named). Not a zoonosis as the night default.
+
+Night split: named FIP / wet / dry / FIPV is tap-the-effusion, not a titer and not pred-as-the-antiviral. Unnamed feline FUO stays 203. Pyothorax without FIP words stays pleural. Cat uveitis without FIP words stays uveitis (FIP already sits on that list). Dog “FIP” does not fire. Bare coronavirus diarrhea does not fire.
+
+Book/public traps:
+
+- Do not harvest GS-441524 15 / 84 days / remdesivir / GC376 / molnupiravir as lobby law.
+- Do not treat a coronavirus titer as FIP.
+- Do not pred FIP first as the antiviral.
+- Do not drain the belly just because it is there.
+- Do not invent a compounding recipe.
+
+Night rule: young cat, fever plus sticky yellow effusion → **tap it; a titer is not a diagnosis.** △ Plumb.
+
+## 205. Steroid-responsive meningitis-arteritis / SRMA neck-pain fever (Merck Parsley Mar 2026; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett SRMA chapter in the owned SA EM splits. Public Merck breed-associated aseptic meningitis (Parsley) plus meningitis / encephalitis (Callanan). Packet 185 still owns named IVDD / knuckle. Packet 190 still owns disco / Brucella. Packet 201 still owns named IMPA. Packet 203 still owns unnamed FUO. Packet 204 still owns named FIP. Skip farm bacterial meningitis / foal navel-ill as their own packet. Do not harvest pred 2 mg/kg or a 6–8 month clock as lobby law. GME / MUO is the next room, not this dump.
+
+Agree with Parsley / Callanan: breed-associated aseptic meningitis (steroid-responsive meningitis-arteritis) in young dogs — Beagles, Bernese Mountain Dogs, Boxers, German Shorthaired Pointers, and sporadically others. Callanan also names necrotizing vasculitis in Beagles / BMD / GSHP / Nova Scotia Duck Tolling Retrievers. Main signs: neck pain, fever, and dramatic CSF pleocytosis. Usual meningitis picture: fever, hyperesthesia, neck rigidity, painful paraspinal spasms — can be mistaken for IVDD or polyarthritis. CSF is the most reliable test; without it, neck pain plus fever is easy to misdiagnose. Steroid-responsive suppurative meningitis: marked neutrophilic pleocytosis; protein printed 100 mg/dL stays on the page. Infectious causes of meningitis should be ruled out before immunosuppression. Glucocorticoids are usually contraindicated in infectious meningitis. Prognosis guarded to favorable if acute and treated promptly. Taper slowly over 6–8 months. Rapid tapering can result in relapse.
+
+Night split: named SRMA / beagle pain / aseptic meningitis is CSF tonight, not a disc and not pred-first until infection is off. Bare neck pain plus fever without those words does not fire. Named IVDD stays 185. Named disco stays 190. Named IMPA stays 201. Unnamed FUO stays 203. Cat FIP stays 204.
+
+Book/public traps:
+
+- Do not harvest pred 2 / 6–8 months as lobby law.
+- Do not pred infectious meningitis.
+- Do not skip CSF.
+- Do not send neck pain plus fever home as a disc.
+- Rapid tapering can result in relapse.
+
+Night rule: young large-breed dog, neck pain plus fever → **CSF tonight, not a disc.** △ Plumb.
+
+## 206. Granulomatous meningoencephalomyelitis / GME MUO (Merck Thomas Oct 2021 / Aug 2025; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett GME chapter in the owned SA EM splits. Public Merck inflammatory spinal (Thomas) plus meningitis / encephalitis (Callanan). Packet 205 still owns named SRMA. Packet 204 still owns named FIP. Packet 203 still owns unnamed FUO. Packet 185 still owns named IVDD. Packet 190 still owns disco. Packet 183 still owns rickettsial myelitis on the same Thomas page. Skip goat CAE / horse EHV-1 as their own packets. Do not harvest cytarabine, cyclosporine, procarbazine, or a pred table as lobby law. Pug / Maltese / Yorkshire necrotizing encephalitis is named on Callanan, not this dump.
+
+Agree with Thomas / Callanan: GME is an inflammatory CNS disease of dogs worldwide. Cause unknown; a virus is suspected and not proven. Adult dogs of any breed; female small-breed dogs, especially Poodles, may be predisposed. Callanan: young to middle-aged; no clear familial basis. Disseminated (inflammatory reticulosis) vs focal (neoplastic reticulosis) — focal can look like a mass. Cervical pain and tetraparesis are the most common spinal signs. Often acute; focal form can progress over months. CSF: increased protein and pleocytosis, mononuclear or neutrophils. MRI / CT: single or multiple enhancing masses. Tentative diagnosis = signs + imaging + CSF + exclusion. Dogs often improve with immunosuppressive corticosteroids plus named immunomodulators (cytarabine / cyclosporine / procarbazine stay on the page). Relapse is possible; many become refractory. Distinguishing granulomatous infection (fungus / protozoa) from GME is often difficult. Radiation is named on Callanan. Some older “neoplastic reticulosis / malignant GME” cases are now histiocytic sarcoma or lymphoma (neoplasia page named only).
+
+Night split: named GME / MUO is MRI and CSF, not a disc and not pred-first until infection and fungus are off. Named SRMA stays 205. Bare poodle seizure does not fire. Unnamed FUO stays 203. Cat FIP stays 204.
+
+Book/public traps:
+
+- Do not harvest cytarabine / cyclosporine / procarbazine as lobby law.
+- Do not pred infectious or fungal meningoencephalitis as GME.
+- Do not call an enhancing mass a tumor until MUO is on the list.
+- Relapse is possible; many become refractory.
+- Do not send a small-breed multifocal brain home as a disc.
+
+Night rule: small-breed dog, multifocal brain or neck → **MRI and CSF; relapse is on the page.** △ Plumb.
+
+## 207. Necrotizing meningoencephalitis / Pug NME (Merck Parsley Mar 2026; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett NME chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley) plus meningitis / encephalitis (Callanan). Packet 206 still owns named GME / MUO. Packet 205 still owns named SRMA. Packet 204 still owns named FIP. Packet 116 still owns seizure drugs. Packet 139 still owns HE. Hydrocephalus on the same Parsley page is the next room, not this dump. Skip Greyhound meningoencephalitis / Pointer pyogranulomatous as their own packets. Do not harvest a pred table or hydrocephalus omeprazole as lobby law.
+
+Agree with Parsley: necrotizing meningoencephalitis (also known as pug encephalitis) is ultimately fatal and might have a familial basis. Association with dog leukocyte antigen II loci in Pugs, Maltese, and Chihuahuas, plus ILR7 and FBXW7 mutations, stays on the page. Affected Pugs show behavioral changes, seizures, and CSF pleocytosis. A similar nonsuppurative necrotizing encephalitis is reported in Yorkshire Terriers, Chihuahuas, and Maltese. Callanan: young adult Pug / Maltese / Yorkshire Terrier lesions carry significant necrosis. Necrotizing encephalitides typically cause a mild increase in CSF mononuclear cells and protein — not the SRMA neutrophil dump. MRI and CSF still belong tonight. Stop the seizure first (116). Infection and fungus stay off before you call it immune.
+
+Night split: named NME / pug encephalitis / NLE is fatal necrosis, not GME-only and not idiopathic epilepsy. Bare pug plus seizure does not fire. Named GME / MUO stays 206. Named SRMA stays 205. Yorkie HE without NME words stays 139.
+
+Book/public traps:
+
+- Do not harvest a pred table as lobby law.
+- Do not send pug encephalitis home as idiopathic epilepsy.
+- Do not treat NME as GME-only.
+- Do not skip MRI and CSF.
+- Ultimately fatal stays on the page — do not promise a GME-style remission.
+
+Night rule: Pug / toy breed, named NME → **fatal necrosis, not idiopathic epilepsy.** △ Plumb.
+
+## 208. Otogenic bacterial meningitis / ear-to-brain (Merck Hoff Dec 2025 / Apr 2026; Callanan Mar 2021 / Mar 2025)
+
+No dedicated Plunkett otogenic-meningitis chapter in the owned SA EM splits. Public Merck otitis media and interna (Hoff) plus meningitis / encephalitis (Callanan). Packet 137 still owns peripheral vestibular / named otitis interna without brain-extension words. Packet 167 still owns named polyp. Packet 207 still owns named NME. Packet 206 still owns named GME. Packet 205 still owns named SRMA. Skip cattle *Mycoplasma bovis* / horse THO as their own packets. Do not harvest a middle-ear antimicrobial table, a 3–6 week clock, or a myringotomy recipe as lobby law.
+
+Agree with Hoff: otitis media does not cause a neurological head tilt. Otitis interna is ipsilateral tilt, horizontal or rotary nystagmus, nausea — and **by itself does not cause altered mentation**. Extension of infection from the inner ear to the brain leads to meningitis, meningoencephalitis, or abscesses. Animals with media or interna are usually alert, nonfebrile, and eating. Animals with meningitis or meningoencephalitis are usually lethargic, febrile, and inappetent. Look in both ears. CT / MRI. CSF. Culture the middle ear, not just the canal. Do not put ototoxic drops in a middle ear you cannot see. Callanan: bacteria reach the CNS by direct extension, including otitis media or interna. Steroids are not the SRMA script when the ear is the source.
+
+Night split: named otogenic / ear-to-brain / otitis-plus-meningitis is brain tonight, not just a tilt. Bare head tilt or bare otitis media does not fire. Named polyp stays 167. Named NME / GME / SRMA stay theirs.
+
+Book/public traps:
+
+- Do not send a dull febrile ear home as just a tilt.
+- Do not pred otogenic meningitis as SRMA.
+- Do not harvest a middle-ear drug table or 3–6 week clock.
+- Do not put ototoxic drops in a middle ear you cannot see.
+- Otitis interna does not cause altered mentation.
+
+Night rule: dull + febrile + an ear → **ear-to-brain tonight, not just a tilt.** △ Plumb.
+
+## 209. Hydrocephalus / dome-head puppy (Merck Parsley Mar 2026)
+
+No dedicated Plunkett hydrocephalus chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley). Packet 207 still owns named NME. Packet 206 still owns named GME. Packet 208 still owns named otogenic. Packet 139 still owns HE / shunt. Packet 116 still owns seizure drugs. Hydranencephaly / FPV kitten on the same page is the next room, not this dump. Skip large-animal hydrocephalus / calf vitamin A. Skip lissencephaly, pendular nystagmus, congenital deafness, and Standard Poodle neonatal encephalopathy as their own packets. Do not harvest omeprazole 1–10, acetazolamide 10, or pred 0.5–1 as lobby law.
+
+Agree with Parsley: hydrocephalus is an increase in CSF volume. It can look like hydranencephaly; in hydrocephalus the ventricles retain a complete ependymal lining. When born alive, affected animals often have a characteristic dome-shaped head. They might also have decreased appetite, seizures, lethargy, and altered mental status. Most common in dogs, particularly toy and brachycephalic breeds. Communicating (nonobstructive) vs noncommunicating (obstructive). Known obstructive causes: atresia of the mesencephalic aqueduct, perinatal encephalitis, or adhesions from intraventricular hemorrhage at birth. Signs usually indicate cerebral dysfunction and often progress; some animals remain subclinical. Fontanelles are often patent. Ventrolateral strabismus / setting-sun stays on the page. Imaging: ultrasonography through the fontanelle, CT, or MRI. CSF analysis should show encephalitis. Printed omeprazole / acetazolamide / pred stay on the page, or surgery to shunt CSF into the peritoneum. Parsley idiopathic-epilepsy line: diagnosis depends on eliminating structural brain abnormalities such as hydrocephalus.
+
+Night split: named hydrocephalus / dome-head / setting-sun is a structural puppy tonight, not idiopathic epilepsy. Bare pug or Chihuahua seizure does not fire. Named NME stays 207. Named GME stays 206. Named oto stays 208. Yorkie HE without hydro words stays 139.
+
+Book/public traps:
+
+- Do not send a dome-head seizuring puppy home as idiopathic epilepsy.
+- Do not harvest omeprazole / acetazolamide / pred as lobby law.
+- Do not treat hydrocephalus as NME-only.
+- Do not skip ultrasound through the fontanelle.
+- Printed 1–10 / 10 / 0.5–1 stay on the page.
+
+Night rule: dome-head puppy + neuro → **not idiopathic epilepsy; ultrasound through the fontanelle.** △ Plumb.
+
+## 210. Hydranencephaly / FPV kitten (Merck Parsley Mar 2026)
+
+No dedicated Plunkett hydranencephaly chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley). Packet 209 still owns named hydrocephalus / dome-head. Packet 207 still owns named NME. Packet 206 still owns named GME. Packet 139 still owns HE / head-press without hydran words. Cerebellar hypoplasia as its own night is the next room, not this dump. Skip large-animal hydranencephaly. Skip lissencephaly, pendular nystagmus, and Standard Poodle neonatal encephalopathy. Do not harvest an FPV vaccine table as lobby law.
+
+Agree with Parsley: hydranencephaly is a marked loss of cerebral cortical tissue (primarily the neocortex) within a cranial vault of **normal conformation**. The cavity communicates with the ventricular system, has an **incomplete ependymal lining**, and is filled with CSF. It develops from destruction of developing neural tissue and is sometimes accompanied by cerebellar hypoplasia and arthrogryposis. In small animals it has been described mainly in kittens after in utero exposure to feline panleukopenia virus (feline parvovirus); it has been reported sporadically in dogs without an identifiable viral infection. Brainstem malformations and cerebellar hypoplasia can occur concomitantly. Clinical signs: lethargy, propulsive circling, head pressing, and blindness.
+
+Night split: named hydranencephaly or in-utero FPV / panleuk is a normal-skull cortical-loss kitten, not dome-head hydrocephalus and not a GI parvo dump. Bare panleukopenia diarrhea does not fire. Bare head pressing stays 139. Named hydrocephalus stays 209. Named cerebellar hypoplasia without hydranencephaly words stays 211. Named NME stays 207.
+
+Book/public traps:
+
+- Do not treat hydranencephaly as dome-head hydrocephalus.
+- Do not send a circling blind kitten home as just cerebellar hypoplasia.
+- Do not harvest an FPV vaccine table.
+- Incomplete ependyma, not the complete lining of hydrocephalus.
+- Normal cranial vault, not a dome.
+
+Night rule: FPV kitten, normal skull, circling / blind → **hydranencephaly tonight, not hydrocephalus.** △ Plumb.
+
+## 211. Cerebellar hypoplasia / FPV wobble kitten (Merck Parsley Mar 2026 cerebellar; panleukopenia page)
+
+No dedicated Plunkett cerebellar-hypoplasia chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley) plus feline panleukopenia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 139 still owns HE / head-press without CH words. Chiari-like / COMS on the same cerebellar page is the next room, not this dump. Packet 267 owns named Dandy-Walker / VLDLR Eurasier. Skip lissencephaly, large-animal BVD, and cerebellar abiotrophy as their own packets. Do not harvest an FPV vaccine table or a COMS gabapentin / omeprazole table as lobby law.
+
+Agree with Parsley: cerebellar hypoplasia occurs in kittens after in utero infection with feline panleukopenia virus. The condition is **nonprogressive**, and affected cats can be **suitable pets**. Unlike cerebellar abiotrophy, it is not degenerative. Antemortem diagnosis by MRI. Concomitant hydrocephalus or hydranencephaly can also occur. Also reported in Chow Chows. Clinical signs are typical of a cerebellar disorder: tremors, ataxia, and hypermetria; occasionally head tilt and circling. The vermis can be partially or completely absent. Pearl: hypoplasia is present from birth / first ambulation and nonprogressive; abiotrophy animals are born normal. Panleukopenia page: perinatal infection may destroy rapidly dividing cerebellar or retinal cells, leading to cerebellar hypoplasia, incoordination, and tremors that persist throughout life.
+
+Night split: named cerebellar hypoplasia / FPV wobble / wobble kitten is a nonprogressive birth wobble, not abiotrophy and not hydran-only. Named hydranencephaly stays 210. Bare tremor does not fire. Bare GI panleuk does not fire.
+
+Book/public traps:
+
+- Do not treat a wobble kitten as progressive abiotrophy.
+- Do not harvest an FPV vaccine table.
+- Do not skip MRI if hydrocephalus or hydranencephaly might sit alongside.
+- Nonprogressive and present from birth.
+- Suitable pets stays on the page — do not euthanize a wobble as hopeless tonight.
+
+Night rule: FPV wobble from birth → **nonprogressive, not abiotrophy.** △ Plumb.
+
+## 212. Chiari-like / COMS Cavalier (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett COMS chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 210 still owns named hydranencephaly. Packet 209 still owns named hydrocephalus / dome-head. Packet 185 still owns named IVDD / knuckle. Cerebellar abiotrophy on the same page is the next room, not this dump. Packet 267 owns named Dandy-Walker / VLDLR Eurasier. Do not harvest gabapentin 10, pregabalin 5 / 13–19, or omeprazole 0.7 as lobby law.
+
+Agree with Parsley: caudal occipital malformation syndrome (COMS, or Chiari-like malformation) and subsequent syringohydromyelia is commonly reported in Cavalier King Charles Spaniels, American Brussels Griffons, and less commonly other small-breed dogs. Comparable to human Chiari type I. Congenital malformation of the occipital bone → crowded caudal fossa and cerebellar herniation at the foramen magnum. Disrupted CSF flow accumulates in the dorsal cord (syringomyelia), central canal (hydromyelia), or both (syringohydromyelia). Printed 25–70% of Cavaliers with MRI-identifiable caudal occipital malformation are subclinical, increasing with age. The malformation is present at birth; clinical signs often appear later. Common signs: paresthesias (face rubbing, **phantom scratching** of the back of the head), ataxia, and weakness from the syrinx. Diagnosis: MRI of the brain **and the entire spinal cord**, because syringohydromyelia can appear anywhere and is not necessarily continuous. Medical management is often not curative. Printed gabapentin / pregabalin / omeprazole stay on the page. Caudal occipital craniectomy is preferred as definitive treatment; printed 25–47% recurrence stays on the page.
+
+Night split: named COMS / Chiari / syrinx / phantom scratch is a cord-fluid night, not a skin allergy and not a disc. Bare Cavalier does not fire. Bare scratch does not fire. Named CH stays 211. Named hydro stays 209. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not treat phantom scratch as a skin allergy.
+- Do not harvest gabapentin / pregabalin / omeprazole as lobby law.
+- Do not MRI only the brain.
+- Medical management is often not curative.
+- Printed 10 / 5 / 0.7 and 25–47% stay on the page.
+
+Night rule: Cavalier, phantom scratch → **syrinx tonight; MRI the whole cord.** △ Plumb.
+
+## 213. Cerebellar abiotrophy / born normal then progressive (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett cerebellar-abiotrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS / Chiari. Packet 185 still owns named IVDD. Congenital hypomyelination / shaking puppy on the same page is the next room, not this dump. Skip neuraxonal dystrophy and Bandera's as their own packets. Packet 267 owns named Dandy-Walker. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: unlike cerebellar hypoplasia, cerebellar abiotrophy in dogs is most often an inherited degenerative disease. Signs may appear at first ambulation (Samoyed / Beagle), at 4–16 weeks (Kelpie / rough-coated collie / Border Collie / Kerry Blue), or in young or mature adults (Brittany / OES / Gordon Setter). Named autosomal recessive mutations (Vizsla SNX14, Finnish Hound SEL1L) stay on the page. Signs: progressive cerebellar ataxia, intention tremor, hypermetria, and possible loss of menace from the cerebellum. Postural reactions remain normal, as with any pure cerebellar disease. Mode of onset distinguishes it from hypoplasia: hypoplasia is present from birth / first ambulation and nonprogressive; abiotrophy animals are **born normal** and then develop signs. Gross lesions can look similar; histopathology shows degeneration, not failed development. Pearl: hypoplasia is nonprogressive and present from birth; abiotrophy animals are born normal.
+
+Night split: named cerebellar abiotrophy / cerebellar atrophy is progressive after a normal start, not FPV wobble. Named CH stays 211. Named COMS stays 212. Bare intention tremor does not fire. Cat does not fire.
+
+Book/public traps:
+
+- Do not treat progressive cerebellar signs as FPV wobble.
+- Do not harvest a pred table.
+- Do not call a lost menace cortical until the cerebellum is named.
+- Born normal, then progressive.
+- Postural reactions stay normal.
+
+Night rule: normal at birth, then progressive cerebellar signs → **abiotrophy tonight, not hypoplasia.** △ Plumb.
+
+## 214. Congenital hypomyelination / shaking puppy (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett hypomyelination chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley). Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 212 still owns named COMS. Packet 215 owns named white shaker / IGTS. Skip neuraxonal dystrophy and Bandera's. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: congenital hypomyelination is a familial or inherited disorder in Springer Spaniels, Chow Chows, Weimaraners (FNIP2 mutation named), and Bernese Mountain Dogs. Clinical signs (generalized tremor) usually develop at approximately **2–8 weeks**. Rare in cats. In Chow Chows, Weimaraners, and Bernese Mountain Dogs the disorder is often termed **dysmyelination** because whole-body tremor usually resolves spontaneously with time. MRI can confirm. Key point on the same page: CH is present at birth; hypomyelination develops within weeks; Chiari-like signs may come years later.
+
+Night split: named hypomyelination / dysmyelination / shaking puppy is a 2–8 week whole-body tremor, not progressive abiotrophy and not adult white-shaker. Bare tremor does not fire. Bare “shaker” / white shaker does not fire. Named abiotrophy stays 213 unless hypomyelin words are also present. Named CH stays 211. Named COMS stays 212.
+
+Book/public traps:
+
+- Do not treat a shaking puppy as progressive abiotrophy.
+- Do not harvest a pred table.
+- Do not call it adult white-shaker syndrome.
+- Some breeds resolve (dysmyelination).
+- MRI confirms.
+
+Night rule: 2–8 week shaking puppy → **hypomyelination tonight; some resolve.** △ Plumb.
+
+## 215. Idiopathic generalized tremor / white shaker (Frontiers Vet Sci 2024 Carlson / Ives)
+
+No dedicated Plunkett white-shaker chapter in the owned SA EM splits. Merck has **no dedicated IGTS / white-shaker page**. Public named source: Carlson / Ives et al., Front. Vet. Sci. 20 Sept 2024, doi:10.3389/fvets.2024.1453698. Merck Coates myelin (Jul 2023 / Sept 2024) is contrast only: shaking pup / hypomyelin stays 214; tremor absent during sleep is myelin language, not this dump. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 116 still owns seizure drugs. Packet 216 owns named neuraxonal dystrophy / Rottweiler VPS11. Do not harvest a pred table as lobby law.
+
+Agree with Carlson / Ives: idiopathic generalized tremor syndrome (IGTS) is an acute-onset full-body tremor, sometimes with vestibulo-cerebellar signs, that is corticosteroid-responsive. Also called idiopathic cerebellitis / corticosteroid-responsive tremor syndrome / little white shaker / steroid-responsive tremors. Initially small <15 kg white dogs (Maltese, Westie, Bichon), but other colors and sizes since — little-white-shaker is a misnomer. Young; most <5 years; most <15 kg. Fine whole-body tremor worsening with anxiety/excitement; cerebellar ataxia / hypermetria / wide-based stance ± vestibular, decreased menace, opsoclonus, paresis, mild hyperthermia, seizures. Presumptive diagnosis = signalment + signs + neuro exam + **exclusion of other whole-body tremor causes**. **MRI usually normal**. CSF pleocytosis in a limited number (~40% this series; 13/33). Good outcome but relapsing and persistent mild signs described. Immune-mediated suspected. Printed prednisolone **1 / 2 / 4 mg/kg/day** and diazepam **0.63** stay on the page — do not harvest as lobby law.
+
+Night split: named white shaker / IGTS / idiopathic generalized tremor / idiopathic cerebellitis / corticosteroid-responsive tremor is exclusion first, not pred-first. MRI is often normal. Bare tremor does not fire. Bare “shaker” does not fire. Named shaking puppy / hypomyelin stays 214. Named NME stays 207. Named GME stays 206. Cat generalized tremor is permethrin first, not this dump. Glucose still tonight when tremor words fire HYPOGLY.
+
+Book/public traps:
+
+- Do not pred a tremor until glucose, toxin, and infection are off.
+- Do not harvest pred 1 / 2 / 4 or diazepam 0.63 as lobby law.
+- Do not call a 2–8 week shaking puppy white-shaker.
+- Little-white-shaker is a misnomer (other colors/sizes).
+- MRI is usually normal. CSF can be normal. Relapses described.
+
+Night rule: named white shaker / IGTS → **exclusion first, not pred-first. MRI is often normal.** △ Plumb.
+
+## 216. Neuraxonal dystrophy / Rottweiler VPS11 (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett neuraxonal-dystrophy chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026) plus spinal LEM contrast on the same author's spinal page. Lucot / Bannasch G3 2018 VPS11 named only (doi:10.1534/g3.118.200376). Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 217 owns named Bandera's / Coton. Rottweiler leukoencephalomyelopathy is contrast, not this dump. Skip horse / sheep / vitamin-E NAD. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: neuraxonal dystrophy is described in dogs and cats; primarily Rottweilers (autosomal recessive **VPS11**) and Papillons (**PLA2G6**). In Rottweilers, onset is **3–24 months** and the disorder progresses slowly over several years. Clinical signs: cerebellar dysfunction and dysmetria in all four limbs, **with preservation of normal conscious proprioception**, which should distinguish this disorder from **leukoencephalomyelopathy** and from advanced motor neuron disease in the same breed. Collies in Australia and New Zealand develop similar signs at **2–4 months**. Early onset also in Papillons and Chihuahuas, and in cats (autosomal recessive in domestic tricolored cats). Axonal spheroids, often in specific regions of the brain and spinal cord, are the characteristic pathological finding.
+
+Spinal-page contrast (do not steal as 216): leukoencephalomyelopathy of Rottweilers has a later onset than NAD, usually **2–3 years**. No head tremor. Proprioception is delayed. Co-occurrence of histopath features has been reported. Genetic test named through UC Davis VGL stays on that page.
+
+Night split: named neuraxonal / neuroaxonal / VPS11 / PLA2G6 is proprioception-stays, not LEM. Bare Rottweiler / bare ataxia does not fire. Bare “NAD” does not fire. Named white shaker stays 215. Named shaking puppy stays 214. Named abiotrophy stays 213. Named CH stays 211. Named LEM without NAD words does not fire.
+
+Book/public traps:
+
+- Do not pred as white-shaker.
+- Do not harvest a pred table.
+- Do not call delayed proprioception neuraxonal dystrophy (that is LEM).
+- Do not treat horse / sheep NAD as this dump.
+- Axonal spheroids are the path finding, not a lobby stain.
+
+Night rule: named neuraxonal dystrophy → **Rottweiler VPS11. Proprioception stays. Not LEM.** △ Plumb.
+
+## 217. Bandera's neonatal ataxia / Coton de Tulear (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett Bandera chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Zeng et al. JVIM 2011 GRM1 named only. Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 215 still owns named white shaker / IGTS. Packet 214 still owns named hypomyelination / shaking puppy. Packet 213 still owns named cerebellar abiotrophy. Packet 211 still owns named cerebellar hypoplasia. Packet 218 owns named Rottweiler leukoencephalomyelopathy. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: Bandera's neonatal ataxia (Bandera's syndrome) is an autosomal recessive cerebellar ataxia in the **Coton de Tulear**. It manifests as cerebellar ataxia **from the time of birth**. The disorder is **nonprogressive**; however, affected animals are **never able to walk**. The cerebellum is **anatomically normal**, and clinical signs result from a mutation that affects neurotransmitter function. A DNA test is available. Zeng 2011: GRM1 retrotransposon insert stays on that page.
+
+Night split: named Bandera / BNAt / Coton de Tulear / GRM1 is from birth, never walks, cerebellum looks normal. Bare “Coton” does not fire. Bare neonatal ataxia does not fire. Named NAD stays 216. Named white shaker stays 215. Named shaking puppy stays 214. Named abiotrophy stays 213 (born normal, then progressive — these never walk). Named CH stays 211 (FPV wobble; suitable pets; cerebellum is small). Cat does not fire.
+
+Book/public traps:
+
+- Do not treat as FPV wobble (cerebellum looks normal).
+- Do not treat as abiotrophy (they are not born normal then progressive).
+- Do not harvest a pred table.
+- Do not send home as they will learn to walk.
+
+Night rule: named Bandera's / Coton de Tulear → **from birth, never walks. Cerebellum looks normal.** △ Plumb.
+
+## 218. Rottweiler leukoencephalomyelopathy (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett LEM chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Minor et al. Sci Rep 2018 NAPEPLD named only (doi:10.1038/s41598-018-23938-7). Packet 216 still owns named neuraxonal dystrophy / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker / IGTS. Packet 185 still owns named IVDD. Packet 219 owns named hereditary ataxia / Jack Russell KCNJ10. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: leukoencephalomyelopathy of Rottweilers has a **later onset than neuraxonal dystrophy, usually at approximately 2–3 years**. A similar basis is suggested because animals occasionally show histopathological features of both (co-occurrence reported in Rottweilers and Chihuahuas). A genetic test is available through UC Davis VGL. In LEM there is **no head tremor**, and **proprioception is delayed**. Bilaterally symmetrical areas of spinal cord demyelination are the predominant necropsy findings. Minor 2018: Rottweiler / Great Dane **NAPEPLD** stays on that page.
+
+Night split: named leukoencephalomyelopathy / LEMP / NAPEPLD is delayed proprioception, no head tremor, not NAD. Bare Rottweiler does not fire. Bare “LEM” does not fire. Named NAD stays 216 (proprioception stays). Named Bandera stays 217. Named white shaker stays 215. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not pred as NAD or white-shaker.
+- Do not harvest a pred table.
+- Do not call preserved proprioception LEM (that is NAD).
+- Do not send home as a disc.
+
+Night rule: named Rottweiler LEM → **delayed proprioception, no head tremor. Not NAD.** △ Plumb.
+
+## 219. Hereditary ataxia / Jack Russell KCNJ10 (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett hereditary-ataxia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD / VPS11. Packet 217 still owns named Bandera's / Coton. Packet 215 still owns named white shaker. Packet 185 still owns named IVDD. Packet 220 owns named Afghan hound myelopathy. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: hereditary ataxia is reported in **Parson Russell, Jack Russell, and Smooth Fox Terriers**. In general these are **spinocerebellar ataxia**. One form has an autosomal recessive **KCNJ10** mutation; **CAPN1** is a rare variant on the page. Predominant signs are cerebellar (cerebellar ataxia, intention tremor, hypermetria). Some forms include **myokymia** (verminous muscle movement) and/or seizures. Onset about **2–6 months**; some forms **6–12 months**. Necropsy: spinal cord demyelination. Ataxia is progressive; in some cases signs stabilize but do not regress, and some affected animals live a relatively normal life despite the gait.
+
+Night split: named hereditary ataxia / spinocerebellar ataxia / KCNJ10 / CAPN1 / myokymia is this list, not a disc. Bare Jack Russell / bare ataxia does not fire. Named LEM stays 218. Named NAD stays 216. Named Bandera stays 217. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not send home as a disc.
+- Do not harvest a pred table.
+- Do not treat myokymia as a skin twitch.
+- Do not call it LEM (Rottweiler, delayed CP, no head tremor).
+
+Night rule: named hereditary ataxia / KCNJ10 → **myokymia is this list. Not a disc.** △ Plumb.
+
+## 220. Afghan hound myelopathy (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett Afghan-myelopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 216 still owns named NAD. Packet 185 still owns named IVDD. Packet 221 owns named degenerative myelopathy / SOD1. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: Afghan Hound myelopathy is an inherited disorder that causes **both demyelination and necrosis** of the spinal cord. **Paraparesis develops during the first year of life and progresses to paraplegia within 1 week.** The thoracic limbs become involved over the next **1–2 weeks**. A similar condition occurs in young **Kooikerhondje** dogs, signs beginning at **3–12 months**. **The prognosis is poor in both breeds.**
+
+Night split: named Afghan myelopathy / Kooikerhondje is paraplegia-within-a-week, poor prognosis. Bare Afghan / bare myelopathy does not fire. Named hereditary ataxia stays 219. Named LEM stays 218. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not send home as a disc to rest.
+- Do not harvest a pred table.
+- Do not treat as KCNJ10 myokymia.
+- Do not call it slow DM of an old GSD.
+
+Night rule: named Afghan myelopathy → **paraplegia within a week. Forelimbs next. Poor prognosis.** △ Plumb.
+
+## 221. Degenerative myelopathy / SOD1 (Merck Thomas Oct 2021 / Apr 2025; Parsley Mar 2026 spinal)
+
+No dedicated Plunkett degenerative-myelopathy chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 218 still owns named Rottweiler LEM. Packet 185 still owns named IVDD. Packet 222 owns named progressive axonopathy of Boxer dogs. Do not harvest a pred table as lobby law. Skip horse EDM / EMND. Skip wobbler pred 0.5 and DLSS methylpred 1 as lobby law.
+
+Agree with Thomas: also called chronic degenerative radiculomyelopathy. Slowly progressive, noninflammatory axon and myelin degeneration, white matter, worst thoracic. GSD / Pembroke Corgi / Boxer / Rhodesian Ridgeback / Chesapeake; many other breeds. SOD1 mutation, autosomal recessive incomplete penetrance; similar to familial ALS. Usually **>8 years**; insidious **nonpainful** pelvic ataxia and weakness. Reflexes normal or exaggerated; advanced flaccid tetraparesis / hyporeflexia (LMN). Early confused with orthopedic; **proprioceptive deficits are an early feature and are not evident in orthopedic disease**. MRI / myelography plus CSF are essential to exclude compressive and inflammatory disease. DNA test OFA; homozygous at risk; heterozygotes low risk. **There is no specific treatment and no evidence that glucocorticoids, other drugs, or supplements alter the course.** Most dogs are euthanized for disability within **1–3 years** — printed clock stays on the page. Agree with Parsley: **painless, slowly progressive**; SOD1 associated with increased risk; miR26b named only; **physical therapy slows the progression**; **there is no treatment**.
+
+Night split: named degenerative myelopathy / SOD1 / miR26b / chronic degenerative radiculomyelopathy is painless and slow; SOD1 is risk, not proof. Bare “DM” does not fire (diabetes). Bare GSD / bare ataxia does not fire. Named Afghan myelopathy stays 220. Named hereditary ataxia stays 219. Named LEM stays 218. Named IVDD stays 185. Cat does not fire. Skip horse.
+
+Book/public traps:
+
+- Do not send home as arthritis or old age.
+- Do not harvest a pred table.
+- Do not treat SOD1 as tonight's proof.
+- Do not harvest the 1–3 year clock as lobby law.
+- Do not call it Afghan myelopathy of a young hound.
+
+Night rule: named degenerative myelopathy / SOD1 → **painless and slow. SOD1 is risk, not proof.** △ Plumb.
+
+## 222. Progressive axonopathy of Boxer dogs (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett Boxer-axonopathy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 221 still owns named degenerative myelopathy / SOD1. Packet 220 still owns named Afghan hound myelopathy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 216 still owns named NAD / VPS11. Packet 205 still owns named SRMA. Packet 223 owns named wobbler / caudal cervical spondylomyelopathy. Do not harvest a pred table as lobby law.
+
+Agree with Parsley: progressive axonopathy of Boxers is an **autosomal recessive** disorder that causes **patellar hyporeflexia**, **severe dysmetria**, **loss of proprioception**, and **spastic paresis** at the age of **1–7 months**. Axonal spheroids are widespread in both the **central and the peripheral nervous systems** on necropsy. Although this condition causes loss of the patellar reflex, in general the clinical signs are **more suggestive of spinal cord disease than of peripheral neuropathy**. **There is no treatment**; however, affected dogs **can live relatively comfortably for a considerable amount of time**.
+
+Night split: named progressive axonopathy / Boxer axonopathy is 1–7 months, lost proprioception, can live comfortably. Bare Boxer does not fire. Named DM stays 221 (old, painless, SOD1). Named NAD stays 216 (proprioception stays). Named Afghan stays 220. Named SRMA stays 205 (neck pain + fever). Cat does not fire.
+
+Book/public traps:
+
+- Do not send home as a neuropathy-only.
+- Do not harvest a pred table.
+- Do not call it old-Boxer DM.
+- Do not call preserved proprioception this list (that is NAD).
+
+Night rule: named Boxer progressive axonopathy → **1–7 months. Lost proprioception. Can live comfortably.** △ Plumb.
+
+## 223. Wobbler / caudal cervical spondylomyelopathy (Merck Thomas Oct 2021 / Apr 2025; Parsley Mar 2026 spinal)
+
+No dedicated Plunkett wobbler chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025) plus congenital spinal (Parsley, Mar 2026). Packet 222 still owns named progressive axonopathy of Boxer dogs. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 205 still owns named SRMA. Packet 224 owns named DLSS / degenerative lumbosacral stenosis. Do not harvest pred 0.5 as lobby law. Skip horse wobbler.
+
+Agree with Thomas: cervical spondylomyelopathy, also called cervical vertebral malformation-malarticulation and **wobbler syndrome**. Two dog forms: **disk-associated wobbler (DAWS)** in middle-aged large-breeds, especially Doberman (typical onset **7 years**), ventral compression from caudal cervical disks; **bony-associated** in young giant-breeds (Great Dane / Mastiff / Rottweiler, months to **4 years**), articular process / pedicle proliferation, usually C4–C7. Mild cases: **two-engine gait** (long pelvic stride, short thoracic stride). Severe: paresis or paralysis of all limbs. **Neck pain is variable.** **Survey radiographs cannot confirm** a diagnosis; they help exclude diskospondylitis and bony neoplasia. Definitive diagnosis requires **myelography, CT, or MRI**. Printed pred 0.5 / ~50% medical improve / ~80% do well with surgery stay on the page. Agree with Parsley: caudal cervical spondylomyelopathy; heritable mention in Borzoi / Basset / Doberman / Great Dane; neck often flexed ventrally; disk-associated older vs facet-associated younger giant; distinct from calcium phosphate deposition in Great Dane puppies.
+
+Night split: named wobbler / cervical spondylomyelopathy / two-engine gait is MRI, not survey films. Bare Doberman / bare Great Dane / bare neck pain does not fire. Named IVDD stays 185. Named boxax stays 222. Named DM stays 221. Named SRMA stays 205. Cat does not fire. Skip horse.
+
+Book/public traps:
+
+- Do not harvest pred 0.5 as lobby law.
+- Do not confirm on survey films.
+- Do not send a tetraparetic neck home as a pull.
+- Do not call dachshund TL IVDD this list.
+- Do not call 1–7 month Boxer axonopathy this list.
+
+Night rule: named wobbler / CSM → **two-engine gait. MRI, not survey films.** △ Plumb.
+
+## 224. DLSS / degenerative lumbosacral stenosis (Merck Thomas Oct 2021 / Apr 2025)
+
+No dedicated Plunkett DLSS chapter in the owned SA EM splits. Public Merck degenerative spinal (Thomas, Oct 2021 / Apr 2025). Packet 223 still owns named wobbler / CSM. Packet 221 still owns named DM / SOD1. Packet 185 still owns named IVDD. Packet 222 still owns named Boxer axonopathy. Packet 225 owns named atlantoaxial subluxation. Do not harvest methylpred 1 as lobby law.
+
+Agree with Thomas: narrowing of the lumbosacral canal or foramina compresses the **cauda equina** or nerve roots. Most common in large-breed dogs, especially **German Shepherd Dogs**; **rare in cats**. From degeneration and protrusion of the **L7–S1** disk, ligamentum flavum hypertrophy, or rarely LS subluxation. GSD with **congenital transitional vertebrae** are at increased risk. Onset typically **3–7 years**: pelvic limb difficulty or lameness, tail weakness, incontinence. **Pain on palpation or extension of the lumbosacral joint is the most consistent finding.** May have proprioceptive deficits, muscle atrophy, or a weak pelvic flexor. Plain radiographs may show degeneration; **definitive diagnosis requires MRI, CT, or epidurography**. Mild pain-only may improve with **4–6 weeks of rest**. Printed epidural methylprednisolone acetate **1 mg/kg on day 1, 14, and 42** (~80% if pain and minimal deficits) stays on the page. Surgery if pain is refractory or there are neurologic deficits (dorsal laminectomy ± diskectomy; foramenotomy or stabilization in some). Printed **70–95%** improve with surgery; **preexisting urinary incontinence may not resolve**.
+
+Night split: named DLSS / degenerative lumbosacral stenosis / cauda equina compression / LS extension is pain on LS extension; image the LS junction. Bare GSD does not fire. Named wobbler stays 223. Named DM stays 221. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest methylpred 1 as lobby law.
+- Do not confirm on plain films.
+- Do not send incontinence home as just arthritis.
+- Do not call a wobbler neck this list.
+- Do not call painless old-GSD DM this list.
+
+Night rule: named DLSS → **pain on LS extension. Image the LS junction.** △ Plumb.
+
+## 225. Atlantoaxial subluxation (Merck Parsley Mar 2026 spinal; Malek Mar 2025 musculoskeletal)
+
+No dedicated Plunkett atlantoaxial chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026) plus musculoskeletal congenital (Malek, Mar 2025). Packet 224 still owns named DLSS. Packet 223 still owns named wobbler / CSM. Packet 205 still owns named SRMA. Packet 226 owns named arachnoid diverticulum. Do not harvest a surgery table as lobby law. Do not flex the neck.
+
+Agree with Parsley: atlantoaxial subluxation is instability or increased mobility between **C1 (atlas) and C2 (axis)**. Most common as a congenital disorder in **young toy or miniature** dogs; occasionally congenital in large breeds including Rottweilers and Doberman Pinschers. Signs usually within the **first few years**: acute or slowly progressive **neck pain** or gait dysfunction from ataxia to tetraplegia. Radiographic confirmation (absent / aplastic dens; caudal dorsal displacement of C2 vs C1) should be followed by **stabilization using ventral fixation**. **The prognosis is guarded.** Agree with Malek: congenital form more common than acquired. Yorkie / Chihuahua / Pomeranian frequently; **large-breed dogs and cats as well**. Aplastic or hypoplastic dens, or absence / laxity of transverse or alar ligaments. Mild cases may wait for a traumatic event. Neurologic localization is **C1–C5**. Work-up often radiographs and CT. Surgery typically **ventral approach**. Prognosis depends on malformation severity, concurrent cord injury, and technique (dorsal vs ventral, implants) — printed implant table stays on that page.
+
+Night split: named atlantoaxial / AA lux / C1–C2 lux / aplastic dens is do not flex the neck; ventral fix; guarded. Bare Yorkie / bare neck pain does not fire. Named wobbler stays 223. Named DLSS stays 224. Named SRMA stays 205. Cat can fire.
+
+Book/public traps:
+
+- Do not flex the neck.
+- Do not harvest a surgery / implant table.
+- Do not send a tetraparetic toy neck home as a pull.
+- Do not call a Doberman wobbler this list.
+- Do not call LS pain this list.
+
+Night rule: named atlantoaxial → **do not flex the neck. Ventral fix. Guarded.** △ Plumb.
+
+## 226. Arachnoid diverticulum (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett arachnoid-diverticulum chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 209 still owns named hydrocephalus. Packet 185 still owns named IVDD. Packet 227 owns named hemivertebra / congenital vertebral malformation. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: arachnoid diverticuli (also called arachnoid cysts, arachnoid pseudocysts, meningeal cysts, leptomeningeal cysts, subarachnoid cysts) cause CSF accumulations and focal myelopathy in **young dogs**. Cause unknown; some congenital. Progressive ataxia and weakness. Diagnosis: myelography and/or MRI. Prognosis might be favorable after surgical excision; **recurrence is possible**.
+
+Night split: named arachnoid diverticulum / arachnoid cyst / meningeal cyst is MRI or myelo; recurrence possible. Bare young-dog ataxia does not fire. Named AA stays 225. Named wobbler stays 223. Named COMS stays 212. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send progressive young-dog ataxia home as a disc.
+- Do not call it a syrinx or COMS.
+- Do not call AA lux this list.
+- Do not call wobbler this list.
+
+Night rule: named arachnoid diverticulum → **MRI or myelo. Recurrence possible.** △ Plumb.
+
+## 227. Hemivertebra / congenital vertebral malformation (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett hemivertebra chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 223 still owns named wobbler / CSM. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Packet 228 owns named caudal articular hypoplasia. Do not harvest a surgery table as lobby law. Do not harvest 80 percent as lobby law.
+
+Agree with Parsley: congenital vertebral malformations in dogs include **hemivertebrae** (shortened or misshapen vertebrae), **block (fused) vertebrae**, and **butterfly vertebrae** (sagittal cleft). Hemivertebrae are most common in **screw-tailed** dog breeds and are inherited in German Shorthaired Pointers. Printed **80 percent** of neurologically normal Pugs, French Bulldogs, and English Bulldogs have vertebral malformations — that number stays on the page. The likelihood that these malformations will be clinically important is **greater in Pugs than in French Bulldogs**. Decompressive surgery can be successful; often surgery needs to be combined with spinal stabilization. Plain radiography or CT can help for vertebral malformations.
+
+Night split: named hemivertebra / block vertebra / butterfly vertebra / congenital vertebral malformation is often incidental; Pug more than Frenchie. Bare Pug / Frenchie / screw-tail does not fire. Named arachnoid stays 226. Named AA stays 225. Named wobbler stays 223. Named COMS stays 212. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest 80 percent.
+- Do not send a compressive screw-tail home as incidental.
+- Do not call arachnoid this list.
+- Do not call AA lux this list.
+
+Night rule: named hemivertebra → **often incidental. Pug more than Frenchie.** △ Plumb.
+
+## 228. Caudal articular hypoplasia (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett caudal-articular-hypoplasia chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 227 still owns named hemivertebra. Packet 226 still owns named arachnoid diverticulum. Packet 225 still owns named atlantoaxial. Packet 212 still owns named COMS / syrinx. Packet 185 still owns named IVDD. Packet 229 owns named multiple cartilaginous exostosis. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: **caudal articular hypoplasia** is reported in **Pugs, French Bulldogs, and English Bulldogs** and can cause **spinal instability**. Surgical stabilization might be beneficial; however, **often multiple vertebrae are affected**.
+
+Night split: named caudal articular hypoplasia / articular process hypoplasia is instability; often multiple vertebrae. Bare Pug / Frenchie does not fire. Named hemivertebra stays 227. Named arachnoid stays 226. Named AA stays 225. Named COMS stays 212. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send Pug facet instability home as incidental hemivertebra.
+- Do not call hemivertebra this list.
+- Do not call arachnoid this list.
+- Do not call AA lux this list.
+
+Night rule: named caudal articular hypoplasia → **instability. Often multiple vertebrae.** △ Plumb.
+
+## 229. Multiple cartilaginous exostosis (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett cartilaginous-exostosis chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 228 still owns named caudal articular hypoplasia. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 225 still owns named atlantoaxial. Packet 185 still owns named IVDD. Packet 230 owns named spinal dysraphism / myelodysplasia. Do not harvest a surgery table as lobby law. Transitional vertebrae stay with 224.
+
+Agree with Parsley: **multiple cartilaginous exostosis** occurs most commonly in **German Shepherd Dogs**. It is a **benign** proliferation of cartilage or bone that can affect the **ribs, long bones, or vertebrae**. It might have a familial basis. Treatment is **surgical removal**; however, **recurrence or occurrence at additional sites is common**.
+
+Night split: named cartilaginous exostosis / multiple cartilaginous is benign; recurrence common. Bare GSD does not fire. Named caudal articular stays 228. Named hemivertebra stays 227. Named DLSS stays 224. Named AA stays 225. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a vertebral mass home as incidental OA.
+- Do not call DLSS this list.
+- Do not call hemivertebra this list.
+- Do not call caudal articular this list.
+
+Night rule: named cartilaginous exostosis → **benign. Recurrence common.** △ Plumb.
+
+## 230. Spinal dysraphism / myelodysplasia (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett spinal-dysraphism chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 214 still owns named hypomyelination / shaking puppy. Packet 185 still owns named IVDD. Packet 231 owns named spina bifida. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: **spinal dysraphism** (also known as **myelodysplasia**) includes anomalies of the skin, vertebrae, and spinal cord secondary to faulty neural-tube closure. The term is generally used for **neural tissues rather than vertebrae**; where vertebral malformations occur, the condition is generally **spina bifida**. Inherited in **Weimaraners**; similar malformations in other breeds. Signs by **4–6 weeks**: paraparesis and a **symmetrical bunny-hopping** gait in the pelvic limbs. **Bilateral flexor reflex**: pinching one paw flexes both pelvic limbs. Scoliosis or abnormal hair streams on the dorsal neck. Diagnosis: clinical signs and myelography or MRI. **There is no treatment**; neurological deficits **usually do not progress**.
+
+Night split: named spinal dysraphism / myelodysplasia / bilateral flexor is bunny-hop by 4–6 weeks; usually nonprogressive. Bare Weimaraner / bare bunny-hop does not fire. Named hypomyelin stays 214. Named MCE stays 229. Named hemivertebra stays 227. Named IVDD stays 185. Cat does not fire. Packet 231 owns named spina bifida.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a 5-week bunny-hop home as hip dysplasia.
+- Do not call it spina bifida-only.
+- Do not call hypomyelin this list.
+- Do not call MCE this list.
+
+Night rule: named spinal dysraphism → **bunny-hop by 4–6 weeks. Usually nonprogressive.** △ Plumb.
+
+## 231. Spina bifida (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett spina-bifida chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 230 still owns named spinal dysraphism / myelodysplasia. Packet 229 still owns named cartilaginous exostosis. Packet 227 still owns named hemivertebra. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Packet 232 owns named occult tethered cord. Do not harvest a surgery table as lobby law.
+
+Agree with Parsley: **spina bifida** is failure of the **vertebral arch to fuse**; it affects **dogs and cats**. **Occulta**: bones only, no clinical signs. **Manifesta**: spinal cord also involved. Meningomyeloceles can occur, as can tethered cord syndrome. Most likely signs in dogs: **LMN pelvic limbs** and **urinary or fecal incontinence**. Prognosis is **poor** with substantial neurologic deficits. **Screw-tail** breeds most commonly affected. Can accompany **sacrocaudal dysgenesis**. In **Manx cats**, sacrocaudal dysgenesis is inherited as an **autosomal dominant** trait (printed inheritance stays on the page).
+
+Night split: named spina bifida / meningomyelocele / sacrocaudal dysgenesis is occulta silent; manifesta LMN incontinent. Bare screw-tail / bare Manx / bare incontinence does not fire. Named dysraphism stays 230. Named hemivertebra stays 227. Named DLSS stays 224. Named IVDD stays 185. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send incontinence home as house-training.
+- Do not call it dysraphism-only.
+- Do not call hemivertebra this list.
+- Do not harvest a Manx inheritance table.
+
+Night rule: named spina bifida → **occulta silent. Manifesta LMN incontinent.** △ Plumb.
+
+## 232. Tethered cord syndrome (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett tethered-cord chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 231 still owns named spina bifida. Packet 230 still owns named spinal dysraphism. Packet 224 still owns named DLSS. Packet 185 still owns named IVDD. Packet 233 owns named pilonidal / dermoid sinus. Do not harvest a surgery table as lobby law. Do not harvest 64 percent as lobby law.
+
+Agree with Parsley: **tethered cord syndrome** in the **absence of another congenital malformation such as spina bifida** has been identified in **dogs**. A **tight filum terminale** prevents normal movement of the spinal cord. Diagnosis is **dynamic MRI**. Currently underrecognized. Median age at diagnosis is **13 months**; some begin showing signs as early as **8 weeks**. Occult tethered signs: **low back pain**, intermittent lameness or **skipping gait**, anxiety, and **urinary incontinence**. Treatment is **detethering** by transecting the intradural or extradural filum terminale. Printed **64 percent** long-term success stays on the page.
+
+Night split: named tethered cord / tight filum / filum terminale is dynamic MRI; median 13 months. Bare skipping gait / bare incontinence does not fire. Named spina bifida stays 231. Named dysraphism stays 230. Named DLSS stays 224. Named IVDD stays 185. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest 64 percent.
+- Do not send skipping gait home as a sprain.
+- Do not call it spina bifida-only.
+- Do not call DLSS this list.
+
+Night rule: named tethered cord → **dynamic MRI. Median 13 months.** △ Plumb.
+
+## 233. Pilonidal / dermoid sinus (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett pilonidal-sinus chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 232 still owns named tethered cord. Packet 231 still owns named spina bifida. Packet 208 still owns named otogenic meningitis. Packet 205 still owns named SRMA. Packet 234 owns named spinal muscular atrophy. Packet 235 owns named Mini Poodle demyelination. Do not harvest a surgery table as lobby law. Do not harvest a 15–30 mg/kg table as lobby law.
+
+Agree with Parsley: **pilonidal sinus** (also called **dermoid sinus**, dermoid cyst) appears to result from faulty neurulation and is inherited (**autosomal recessive**) in **Rhodesian Ridgebacks**; it can occur in other dog breeds as well. **Dogs and cats.** The sinus is **lined by skin** and can communicate with the **subarachnoid space**, causing **meningitis or myelitis**. Treatment is **surgical excision to the dura**, plus long-term antimicrobials if bacterial meningitis (culture-guided; CSF culture often negative; BBB-penetrating bactericidal preferred). Printed TMS 15–30 / enro 10 / amox-clav 11–20 and the 3-month / 4–8 week clocks stay on the page.
+
+Night split: named pilonidal / dermoid sinus is excise to dura; can seed meningitis. Bare Ridgeback / bare sinus does not fire. Named tethered stays 232. Named spina bifida stays 231. Named oto stays 208. Named SRMA stays 205. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 15–30 mg/kg table.
+- Do not send a Ridgeback dorsal sinus home as a skin tag.
+- Do not call it oto meningitis.
+- Do not call it tethered cord-only.
+
+Night rule: named dermoid sinus → **excise to dura. Can seed meningitis.** △ Plumb.
+
+## 234. Spinal muscular atrophy (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett spinal-muscular-atrophy chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 233 still owns named dermoid sinus. Packet 221 still owns named DM. Packet 235 owns named Mini Poodle demyelination. Packet 236 owns named fibrinoid leukodystrophy / Alexander disease. Do not harvest a surgery table as lobby law. Do not use `\bsma\b`. Do not fire on bare Brittany.
+
+Agree with Parsley: **spinal muscular atrophy** is an inherited LMN disease of **Brittany Spaniels** with **early** (by 1 month), **intermediate** (by 4–6 months), and **delayed** (>1 year) forms. **Rottweilers:** an early form is called **motor neuron disease**. **Swedish Lapland** dogs 5–7 weeks; **Stockard paralysis** (Great Dane × Bloodhound or Saint Bernard) 11–14 weeks; **English Pointers** ~5 months; other puppies Doberman / Briquet Griffon Vendeen; a **focal thoracic-limb** form in GSD. Main sign: paraparesis or tetraparesis with **neurogenic muscle atrophy**. Severe generalized LMN **closely resembles peripheral neuropathy**. **Motor-neuron loss** on necropsy. **There is no treatment.**
+
+Night split: named spinal muscular atrophy / motor neuron disease / Stockard paralysis is looks like a neuropathy; no treatment. Bare Brittany / bare Rottweiler / bare GSD does not fire. Named APN stays 204. Named Boxer axonopathy stays 222. Named dermoid stays 233. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a flaccid puppy home as tired.
+- Do not call it APN-only.
+- Do not call it Boxer axonopathy-only.
+- Do not call it dermoid-only.
+
+Night rule: named spinal muscular atrophy → **looks like a neuropathy. No treatment.** △ Plumb.
+
+## 235. Demyelination of Miniature Poodles (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett Mini-Poodle-demyelination chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 234 still owns named SMA. Packet 204 still owns named APN / coonhound. Packet 222 still owns named Boxer axonopathy. Packet 220 still owns named Afghan myelopathy. Packet 236 owns named fibrinoid leukodystrophy / Alexander disease. Globoid cell leukodystrophy / Krabbe is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare demyelination.
+
+Agree with Parsley: **demyelination of Miniature Poodles** is presumed to be an **inherited** disorder involving **primarily the spinal cord**. This **rare** condition causes **paraparesis at 2–4 months** that **rapidly progresses to tetraplegia**. **There is no treatment.**
+
+Night split: named Mini Poodle demyelination is 2–4 months; rapidly to tetraplegia. Bare Poodle / bare demyelination does not fire. Named SMA stays 234. Named APN stays 204. Named Boxer axonopathy stays 222. Named Afghan stays 220. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a 3-month Poodle home as a disc.
+- Do not call it SMA-only.
+- Do not call it Afghan myelopathy-only.
+- Do not call it APN-only.
+
+Night rule: named Mini Poodle demyelination → **2–4 months. Rapidly to tetraplegia.** △ Plumb.
+
+## 236. Fibrinoid leukodystrophy / Alexander disease (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett fibrinoid-leukodystrophy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 235 still owns named Mini Poodle demyelination. Packet 234 still owns named SMA. Packet 218 still owns named LEM. Packet 220 still owns named Afghan myelopathy. Packet 237 owns named globoid cell leukodystrophy / Krabbe. Gangliosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Poodle. Do not fire on bare Labrador. Do not put GFAP in the regex.
+
+Agree with Parsley: **fibrinoid leukodystrophy** (**Alexander disease**) is an inherited disease affecting the **brain and spinal cord**, described in **Labrador Retrievers, Scottish Terriers, Miniature Poodles, Bernese Mountain Dogs, and French Bulldogs**. Onset **2 months to 4 years**. Progressive ataxia and tetraparesis, **with personality changes**. **Rosenthal fibers** around blood vessels of the CNS; astrocyte function. **Prognosis is poor.** Most mutations associated with **GFAP** stay on the page.
+
+Night split: named fibrinoid / Alexander disease / Rosenthal fibers is personality changes; Rosenthal fibers. Bare Poodle / bare Labrador / bare Frenchie does not fire. Named Mini Poodle demyelination stays 235. Named SMA stays 234. Named LEM stays 218. Cat does not fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send personality change home as behavior.
+- Do not call it Mini-Poodle-demyelination-only.
+- Do not call it SMA-only.
+- Do not harvest GFAP as lobby law.
+
+Night rule: named fibrinoid leukodystrophy → **personality changes. Rosenthal fibers.** △ Plumb.
+
+## 237. Globoid cell leukodystrophy / Krabbe (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett globoid-cell chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck myelin disorders names lipid-laden macrophages and GALC. Packet 236 still owns named Alexander / fibrinoid. Packet 235 still owns named Mini Poodle demyelination. Packet 218 still owns named LEM. Packet 238 owns named gangliosidosis. Alpha-mannosidosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bkrabbe\b` or `\bgloboid\b` (globoid heart is tamponade). Do not fire on bare Cairn / bare terrier / bare Poodle. Do not put GALC in the regex.
+
+Agree with Parsley: **globoid cell leukodystrophy** (**Krabbe disease**) is inherited; loss of **galactosylceramide beta-galactosidase**. Mainly **Cairn Terriers and West Highland White Terriers**, plus other dogs and cats. Signs are **variable and multifocal**: **ascending paralysis** alone or with **cerebellar** disturbance. Printed **2–3 month** death clock stays on the page. CSF protein can be increased. Large globoid cells perivascular in white matter of cord and brain. Genetic testing. Printed AAV gene-therapy line stays on the page. Merck myelin: lipid-laden macrophages; **GALC** stays on the table. Skip sheep.
+
+Night split: named globoid cell / Krabbe disease is ascending or cerebellar; dogs and cats. Bare Cairn / bare terrier / bare Poodle / globoid heart does not fire. Named Alexander stays 236. Named Mini Poodle demyelination stays 235. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 2–3 month death clock.
+- Do not send a Cairn puppy home as a disc.
+- Do not call it Alexander-only.
+- Do not treat globoid heart as this list.
+
+Night rule: named globoid cell → **ascending or cerebellar. Dogs and cats.** △ Plumb.
+
+## 238. Gangliosidosis GM1 / GM2 (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett gangliosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 237 still owns named globoid / Krabbe. Packet 236 still owns named Alexander. Packet 211 still owns named cerebellar hypoplasia / FPV wobble. Packet 239 owns named alpha-mannosidosis. Ceroid lipofuscinosis is the next room, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Siamese. Do not put GLB1 / HEXA / HEXB in the regex.
+
+Agree with Parsley: **GM1 gangliosidosis** (**Derry disease**) is fatal and progressive; **GLB1** stays on the page. Primarily cats, especially **Asian breeds** (Siamese, Korat, and others named on the page); also Beagles, Portuguese Water Dogs, English Springer Spaniels, Alaskan Huskies, and Shiba Inus. **Cerebellar** signs predominate; **corneal clouding** can develop. Genetic testing. Printed AAV line stays on the page. **GM2 gangliosidosis** (**Sandhoff**, **Tay-Sachs**) is reported in GSHP, Japanese Spaniel, Shiba, Japanese Chin, mixed-breed cats, and Korat. Printed **6-month** onset and later ataxia/dementia stay on the page. Kittens: ataxia, hypermetria, head tremor, corneal opacity at about **3 months** stay on the page. **HEXA / HEXB** stay on the page.
+
+Night split: named gangliosidosis / GM1 / GM2 / Derry / Sandhoff / Tay-Sachs is cerebellar; corneal clouding. Bare Siamese / bare Korat / bare Beagle does not fire. Named globoid stays 237. Named Alexander stays 236. Named CH stays 211. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 3-month or 6-month clock.
+- Do not send a Siamese wobble home as FPV.
+- Do not call it Krabbe-only.
+- Do not harvest AAV as lobby law.
+
+Night rule: named gangliosidosis → **cerebellar. Corneal clouding.** △ Plumb.
+
+## 239. Alpha-mannosidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Merck storage table names Persian and domestic cats. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 211 still owns named CH / FPV wobble. Packet 240 owns named neuronal ceroid lipofuscinosis / NCL / Batten, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Persian. Do not fire on dogs (alpha page is cats). Skip cattle and guinea pigs. Beta-mannosidosis one-dog / MANBA stays on the page.
+
+Agree with Parsley: **alpha-mannosidosis** has been reported mainly in **cats** and cattle, less commonly in guinea pigs. Clinical signs include **retinal and skeletal abnormalities**, as well as neurological deficits. **Cerebellar signs** are the most consistent feature of otherwise variable neuro deficits. Printed adenoviral intrathecal gene-therapy line stays on the page. Merck storage table: mannosidosis in **Persian and domestic cats**.
+
+Night split: named alpha-mannosidosis / mannosidosis (not beta) is cerebellar; retina and skeleton. Bare Persian does not fire. Dog does not fire. Named gangliosidosis stays 238. Named globoid stays 237. Named CH stays 211. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest adenoviral gene therapy.
+- Do not send a Persian wobble home as FPV.
+- Do not call it ganglio-only.
+- Do not treat the one-dog beta page as this list.
+
+Night rule: named alpha-mannosidosis → **cerebellar. Retina and skeleton.** △ Plumb.
+
+## 240. Ceroid lipofuscinosis / NCL / Batten (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett ceroid-lipofuscinosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026) Less Common Storage Disorders plus the storage tables. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Packet 237 still owns named globoid. Packet 147 still owns SARDS / RD. Packet 241 owns named mucopolysaccharidosis, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bncl\b` or `\bbatten\b`. Do not fire on bare Setter / Cocker / Border Collie / Siamese / Chihuahua. Skip large-animal NCL.
+
+Agree with Parsley: **neuronal ceroid lipofuscinosis** (Batten disease) is AR. English Setters, Tibetan Terriers, Australian Cattle Dogs, Border Collies, American Bulldogs, AmStaff, Mini Schnauzers, Cocker Spaniels, longhaired Chihuahuas, many other dogs, **Siamese cats**. Storage table also Dachshunds, Salukis, domestic cats. Signs: **behavioral changes, aggression, and central blindness**; some ataxia / hypermetria / tremors / seizures. **Late-onset**, typically 12–24 months stay on the page; some earlier/later; progress slowly over several years. CLN5 / CLN7 / CLN8 / MFSD8 / PPT1 stay on the page. Fatal. No treatment yet; gene therapy being investigated stays on the page.
+
+Night split: named ceroid lipofuscinosis / neuronal ceroid / Batten disease is behavior and central blindness; late-onset. Bare Setter / Cocker does not fire. Named manno stays 239. Named ganglio stays 238. Named SARDS stays 147. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 12–24 month clock.
+- Do not send behavior and central blindness home as SARDS.
+- Do not call it manno-only.
+- Do not treat large-animal NCL as this list.
+
+Night rule: named ceroid lipofuscinosis → **behavior and central blindness. Late-onset.** △ Plumb.
+
+## 241. Mucopolysaccharidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett mucopolysaccharidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 240 still owns named NCL / Batten. Packet 239 still owns named alpha-mannosidosis. Packet 238 still owns named gangliosidosis. Packet 242 owns named glycogenosis, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bmps\b`. Do not fire on bare Plott. Skip large animal.
+
+Agree with Parsley: **mucopolysaccharidosis** is primarily a disorder of **cats**, but some subtypes affect dogs. Associated with **flattening of the face**, corneal clouding, and **multiple bone dysplasias**. Plott Hounds can also be affected. Types I, II, III, VI, and VII. MPS VI / ARSB: progressive paraparesis from focal bony protrusions into the vertebral canal stays on the page. MPS VII / GUSB: failed initiation of secondary ossification centers stays on the page; skeletal changes nonprogressive after **9 months** stay on the page; decompressive surgery can improve neurological deficits stays on the page. Genetic test available. Enzyme replacement or adenoviral- and retroviral-based gene therapy might benefit some types stays on the page.
+
+Night split: named mucopolysaccharidosis / MPS type is flattening of the face; bone dysplasia. Bare Plott does not fire. Named NCL stays 240. Named ganglio stays 238 (corneal clouding). Named manno stays 239. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 9-month clock.
+- Do not send a flattened face home as FPV.
+- Do not call it ganglio-only.
+- Do not treat large-animal MPS as this list.
+
+Night rule: named mucopolysaccharidosis → **flattening of the face. Bone dysplasia.** △ Plumb.
+
+## 242. Glycogenosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett glycogenosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 241 still owns named mucopolysaccharidosis. Packet 240 still owns named NCL. Packet 234 still owns named SMA. Packet 243 owns named mucolipidosis II, not this dump. Lafora is a later glycogen-clump room, not this dump. Do not harvest a surgery table as lobby law. Do not use `\bglycogen\b`. Do not fire on bare GSD / Springer / Forest. Skip large animal.
+
+Agree with Parsley: **glycogenosis** (types II, III, IV, VII) is **not well described**. Glycogen storage diseases can cause **muscle weakness and exercise intolerance** in **young** dogs and cats. Examples: type II Lapland dogs; type III German Shepherd Dogs and Akitas; type IV Norwegian Forest Cats (autosomal recessive); type VII English Springer Spaniels. Clinical signs generally include generalized myopathy, weakness, exercise intolerance, muscle tremors, or dysphagia.
+
+Night split: named glycogenosis / glycogen storage is weakness and exercise intolerance. Bare GSD / Springer / Forest does not fire. Bare glycogen does not fire. Named MPS stays 241. Named NCL stays 240. Named SMA stays 234. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a weak puppy home as tired.
+- Do not call it MPS-only.
+- Do not call it SMA-only.
+- Do not treat Lafora as this list.
+- Do not treat large-animal glycogenosis as this list.
+
+Night rule: named glycogenosis → **weakness and exercise intolerance.** △ Plumb.
+
+## 243. Mucolipidosis II (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett mucolipidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 241 still owns named mucopolysaccharidosis. Packet 211 still owns named CH / FPV wobble. Packet 244 owns named Lafora, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month clock. Do not fire on bare DSH. Cats only. Skip dogs.
+
+Agree with Parsley: **mucolipidosis II** is AR in **domestic shorthair cats** and generally causes **skeletal malformations**. Signs from birth: **dull mentation, failure to thrive, facial dysmorphia, and ataxia**. Printed radiographic metaphyseal flaring, radial bowing, joint laxity, and vertebral fusion stay on the page. Printed retinal degeneration and blindness by **4 months** stay on the page.
+
+Night split: named mucolipidosis is facial dysmorphia; dull from birth. Bare DSH does not fire. Dog does not fire. Named MPS stays 241 (flattening of the face / bone dysplasia). Named glyco stays 242. Named CH stays 211. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4-month clock.
+- Do not send a dull kitten home as FPV.
+- Do not call it MPS-only.
+- Do not invent I-cell as a night name (not on this page).
+
+Night rule: named mucolipidosis II → **facial dysmorphia. Dull from birth.** △ Plumb.
+
+## 244. Lafora (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Lafora chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 242 still owns named glycogenosis. Packet 243 still owns named mucolipidosis II. Packet 116 still owns seizure-drug numbers. Packet 240 still owns named NCL. Packet 245 owns named Niemann-Pick, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a seizure table. Do not fire on bare Dachshund / Beagle / Poodle / Chihuahua. Dogs only. Skip cats.
+
+Agree with Parsley: **Lafora disease** (Lafora bodies = insoluble glycogen clumps in neurons) occurs most commonly in **miniature wirehaired Dachshunds**; also Basset Hounds, Beagles, Poodles, Chihuahuas, and mixed-breed dogs. **NHLRC1** stays on the page. Genetic testing. Signs: **myoclonic seizures that begin late in life**; visual or auditory triggers allowed. Other clinical examination findings are not commonly reported.
+
+Night split: named Lafora is myoclonic seizures; late in life. Bare Dachshund / Beagle / Poodle / Chihuahua does not fire. Cat does not fire. Named glyco stays 242. Named ml2 stays 243. Named NCL stays 240. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a seizure table.
+- Do not send late myoclonus home as geriatric.
+- Do not call it glyco-only.
+- Do not treat 116 numbers as this list.
+
+Night rule: named Lafora → **myoclonic seizures. Late in life.** △ Plumb.
+
+## 245. Niemann-Pick (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Niemann-Pick chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 238 still owns named gangliosidosis. Packet 244 still owns named Lafora. Packet 211 still owns named CH / FPV wobble. Packet 246 owns named glucocerebrosidosis / Gaucher, not this dump. Do not harvest a surgery table as lobby law. Do not harvest cyclodextrin. Do not use `\bnpc\b` or NPC2 in the regex. Do not fire on a bare cat. Cats only. Skip dogs.
+
+Agree with Parsley: **Niemann-Pick disease** is inherited in **cats** (NPC2 stays on the page). **Cerebellar dysfunction** with **abdominal enlargement due to hepatosplenomegaly**. Six subtypes; types A and C severe cerebellar-like; type A variant neuropathic — stay on the page. Printed intrathecal 2-hydroxylpropyl-beta-cyclodextrin for type C1 might stabilize — stays on the page.
+
+Night split: named Niemann-Pick is cerebellar; hepatosplenomegaly. Bare cat does not fire. Dog does not fire. Named ganglio stays 238. Named CH stays 211. Named Lafora stays 244. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest cyclodextrin.
+- Do not send a cerebellar kitten home as FPV.
+- Do not call it ganglio-only.
+- Do not put NPC2 in the regex.
+
+Night rule: named Niemann-Pick → **cerebellar. Hepatosplenomegaly.** △ Plumb.
+
+## 246. Glucocerebrosidosis / Gaucher (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett glucocerebrosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 245 still owns named Niemann-Pick. Packet 238 still owns named gangliosidosis. Packet 211 still owns named CH / FPV wobble. Packet 247 owns named fucosidosis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4–6 month clock. Do not use `\bgaucher\b`. Do not fire on bare Silky / terrier. Dogs only. Skip cats.
+
+Agree with Parsley: **glucocerebrosidosis** (Gaucher disease) is a **rare** disorder of **Australian Silky Terriers** that produces **multifocal** signs, with **cerebellar ataxia, tremors, and hyperactivity** predominating. Printed age of onset **4–6 months** stays on the page.
+
+Night split: named glucocerebrosidosis / Gaucher disease is cerebellar; hyperactivity. Bare Silky / terrier does not fire. Cat does not fire. Named NPC stays 245. Named ganglio stays 238. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4–6 month clock.
+- Do not send a Silky wobble home as a disc.
+- Do not call it ganglio-only.
+- Do not use `\bgaucher\b`.
+
+Night rule: named glucocerebrosidosis → **cerebellar. Hyperactivity.** △ Plumb.
+
+## 247. Fucosidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett fucosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 246 still owns named glucocerebrosidosis / Gaucher. Packet 236 still owns named Alexander / personality changes. Packet 116 still owns seizure-drug numbers. Packet 248 owns named beta-mannosidosis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest BMT. Do not harvest a 6-month or 24-month clock. Do not fire on bare Springer. Dogs only. Skip cats.
+
+Agree with Parsley: **fucosidosis of English Springer Spaniels** has been reported in Australia, New Zealand, the UK, and North America. Signs: **ataxia, personality change, dysphonia, dysphagia, hearing or visual deficits, and seizures**. Printed progressive clock from **6 months to >24 months** stays on the page. Fatal. Lymphocyte cytoplasmic vacuolation and DNA testing stay on the page. Printed BMT (impractical) and intracisternal enzyme infusion being investigated stay on the page.
+
+Night split: named fucosidosis is personality change; dysphonia. Bare Springer does not fire. Cat does not fire. Named Gaucher stays 246. Named Alexander stays 236. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest BMT.
+- Do not harvest a 6-month or 24-month clock.
+- Do not send a Springer home as behavior.
+- Do not call it Gaucher-only.
+- Do not call it Alexander-only.
+
+Night rule: named fucosidosis → **personality change. Dysphonia.** △ Plumb.
+
+## 248. Beta-mannosidosis (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett beta-mannosidosis chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 239 still owns named alpha-mannosidosis. Packet 247 still owns named fucosidosis. Packet 234 still owns named SMA. Packet 204 still owns named APN. Packet 249 owns named canine multiple system degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest MANBA. Do not fire on bare mannosidosis. Do not fire on bare neuropathy. Dogs only. Skip cats. Skip goats and cattle.
+
+Agree with Parsley: **beta-mannosidosis** is more commonly identified in goats and cattle, as well as in humans, than in small animals. **One dog** has been reported with **central and peripheral neuropathy**. Age of onset unknown; the case was found as a stray at approximately 1 year. A duplication mutation in the MANBA gene stays on the page.
+
+Night split: named beta-mannosidosis is central and peripheral neuropathy. Bare mannosidosis does not fire. Bare neuropathy does not fire. Cat does not fire. Named alpha-mannosidosis stays 239. Named fucosidosis stays 247. Named SMA stays 234. Named APN stays 204. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest MANBA.
+- Do not send a neuropathy home as APN.
+- Do not call it manno-only.
+- Do not call it SMA-only.
+
+Night rule: named beta-mannosidosis → **central and peripheral neuropathy.** △ Plumb.
+
+## 249. Canine multiple system degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett canine-multiple-system-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 248 still owns named beta-mannosidosis. Packet 239 still owns named alpha-mannosidosis. Packet 211 still owns named CH / FPV wobble. Packet 213 still owns named cerebellar abiotrophy. Packet 250 owns named chromatolytic neuronal degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 4-month or 12–18 month clock. Do not fire on bare Kerry / bare Crested. Dogs only. Skip cats.
+
+Agree with Parsley: **canine multiple system degeneration** has been identified in **Kerry Blue Terriers and Chinese Crested dogs**. Signs reflect **cerebellar and brainstem** dysfunction, including ataxia, dysmetria, and festination (a quick, shuffling, short-stepped gait). AR. Printed age of onset approximately **4 months**, severe by **12–18 months**, stays on the page. No treatment.
+
+Night split: named canine multiple system degeneration is cerebellar and brainstem. Bare Kerry does not fire. Bare Crested does not fire. Cat does not fire. Named beta-mannosidosis stays 248. Named alpha-mannosidosis stays 239. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4-month or 12–18 month clock.
+- Do not send a Kerry wobble home as CH.
+- Do not call it manno-only.
+- Do not call it bman-only.
+
+Night rule: named canine multiple system degeneration → **cerebellar and brainstem.** △ Plumb.
+
+## 250. Chromatolytic neuronal degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett chromatolytic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 249 still owns named canine multiple system degeneration. Packet 211 still owns named CH / FPV wobble. Packet 234 still owns named SMA. Packet 237 still owns named globoid / Cairn. Packet 251 owns named multisystemic neuronal degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cairn / bare terrier. Dogs only. Skip cats.
+
+Agree with Parsley: **multisystemic chromatolytic neuronal degeneration in Cairn Terriers** causes paraparesis in young puppies that progresses rapidly to produce **cerebellar** involvement with bouts of **cataplectic collapse**. Degeneration of neurons is widespread in the brain, spinal cord, and sensory ganglia. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named chromatolytic neuronal degeneration is cerebellar; cataplectic collapse. Bare Cairn does not fire. Cat does not fire. Named CMSD stays 249. Named CH stays 211. Named SMA stays 234. Named globoid stays 237. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not send a Cairn wobble home as CH.
+- Do not call it cmsd-only.
+- Do not call it SMA-only.
+
+Night rule: named chromatolytic neuronal degeneration → **cerebellar. Cataplectic collapse.** △ Plumb.
+
+## 251. Multisystemic neuronal degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett multisystemic-neuronal-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 250 still owns named chromatolytic neuronal degeneration. Packet 249 still owns named canine multiple system degeneration. Packet 240 still owns named NCL. Packet 211 still owns named CH / FPV wobble. Packet 252 owns named familial cerebellar ataxia / mitochondrial fission encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Cocker / bare Poodle. Dogs only. Skip cats.
+
+Agree with Parsley: **multisystemic neuronal degeneration** has been reported in **red-haired Cocker Spaniels** and causes **abnormal behavior and cerebellar signs**. Neuronal changes occur in various brainstem nuclei. A similar Mini Poodle 3–4 week rolling / cannot stand or right / opisthotonos / intention tremor / no menace condition stays on the page. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named multisystemic neuronal degeneration is abnormal behavior; cerebellar. Bare Cocker does not fire. Bare Poodle does not fire. Cat does not fire. Named chromatolytic stays 250. Named CMSD stays 249. Named NCL stays 240. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not send a Cocker wobble home as NCL.
+- Do not call it chrom-only.
+- Do not call it cmsd-only.
+
+Night rule: named multisystemic neuronal degeneration → **abnormal behavior. Cerebellar.** △ Plumb.
+
+## 252. Familial cerebellar ataxia / mitochondrial fission encephalopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett familial-cerebellar-ataxia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 251 still owns named multisystemic neuronal degeneration. Packet 209 still owns named hydrocephalus. Packet 211 still owns named CH / FPV wobble. Packet 219 still owns named hereditary ataxia. Packet 253 owns named Dalmatian leukodystrophy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Bullmastiff. Do not fire on bare hydrocephalus. Dogs only. Skip cats.
+
+Agree with Parsley: **familial cerebellar ataxia with hydrocephalus in Bullmastiffs (mitochondrial fission encephalopathy)** has AR inheritance and results in **blindness**, abnormal behavior, and **cerebellar signs**. Bilaterally symmetrical spongiform lesions and astrogliosis in the deep cerebellar nuclei stay on the page. Some reported cases also show abnormal myelin. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named familial cerebellar ataxia is blindness; cerebellar. Bare Bullmastiff does not fire. Bare hydrocephalus does not fire. Cat does not fire. Named MSND stays 251. Named hydro stays 209. Named CH stays 211. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not send a Bullmastiff home as hydro-only.
+- Do not call it msnd-only.
+- Do not call it CH-only.
+
+Night rule: named familial cerebellar ataxia → **blindness. Cerebellar.** △ Plumb.
+
+## 253. Dalmatian leukodystrophy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Dalmatian-leukodystrophy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 252 still owns named familial cerebellar ataxia / mitochondrial fission encephalopathy. Packet 209 still owns named hydrocephalus. Packet 240 still owns named NCL. Packet 236 still owns named Alexander / fibrinoid leukodystrophy. Packet 254 owns named central axonopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 3–6 month clock. Do not harvest euthanasia. Do not fire on bare Dalmatian. Do not use bare leukodystrophy. Dogs only. Skip cats.
+
+Agree with Parsley: **hereditary cavitating leukodystrophy in Dalmatians** is a very rare inherited condition that causes **visual deficits** with progressive ataxia and tetraparesis at 3–6 months. Dilatation of ventricles, **cavitation of cerebral white matter**, and widespread loss of myelin stay on the page. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named Dalmatian leukodystrophy is visual deficits; white-matter cavitation. Bare Dalmatian does not fire. Cat does not fire. Named MFE stays 252. Named hydro stays 209. Named NCL stays 240. Named Alexander stays 236. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 3–6 month clock.
+- Do not harvest euthanasia.
+- Do not send a Dalmatian home as hydro-only.
+- Do not call it mfe-only.
+- Do not call it NCL-only.
+
+Night rule: named Dalmatian leukodystrophy → **visual deficits. White-matter cavitation.** △ Plumb.
+
+## 254. Central axonopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett central-axonopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 253 still owns named Dalmatian leukodystrophy. Packet 216 still owns named NAD. Packet 236 still owns named Alexander. Packet 222 still owns named Boxer axonopathy. Packet 255 owns named spongiform degeneration, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 10–12 week clock. Do not fire on bare Scottish Terrier. Do not use bare axonopath. Dogs only. Skip cats.
+
+Agree with Parsley: **central axonopathy in Scottish Terriers** causes **tremors**, ataxia, and paraparesis. It shows similarities to neuraxonal dystrophies. Diffuse white matter degeneration in the brain and spinal cord stays on the page. Printed age of onset **10–12 weeks**, signs progressive, stays on the page. No treatment.
+
+Night split: named central axonopathy is tremors; progressive. Bare Scottish Terrier does not fire. Cat does not fire. Named DALV stays 253. Named NAD stays 216. Named Alexander stays 236. Named Boxer axonopathy stays 222. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 10–12 week clock.
+- Do not send a Scottish Terrier home as NAD-only.
+- Do not call it dalv-only.
+- Do not call it Alexander-only.
+
+Night rule: named central axonopathy → **tremors. Progressive.** △ Plumb.
+
+## 255. Spongiform degeneration (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett spongiform-degeneration chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 254 still owns named central axonopathy. Packet 215 still owns named white shaker. Packet 211 still owns named CH / FPV wobble. Packet 236 still owns named Alexander. Packet 256 owns named hereditary quadriplegia and amblyopia, not this dump. Do not harvest a surgery table as lobby law. Do not fire on bare Labrador / Sheltie / Silky / Cocker / Rottweiler. Dog or cat.
+
+Agree with Parsley: **spongiform degenerative conditions** have been described in **young dogs and cats** and are often associated with **ataxia/hypermetria**, **head tremors**, intermittent contractures, postural abnormalities, and behavioral changes. Named breeds and Egyptian Mau / Burmese stay on the page. Spongy degeneration of white or gray matter stays on the page. Printed mutation in Australian Cattle Dogs / Shetland Sheepdogs / Belgian Shepherds stays on the page. Printed poor prognosis stays on the page.
+
+Night split: named spongiform degeneration is ataxia; head tremor. Bare breed does not fire. Named SAXON stays 254. Named shaker stays 215. Named CH stays 211. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not send a young wobble home as CH.
+- Do not call it saxon-only.
+- Do not call it shaker-only.
+
+Night rule: named spongiform degeneration → **ataxia. Head tremor.** △ Plumb.
+
+## 256. Hereditary quadriplegia and amblyopia (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett hereditary-quadriplegia chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 255 still owns named spongiform degeneration. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Packet 257 owns named Alaskan Husky encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest euthanasia. Do not fire on bare Setter. Do not fire on bare swimmer. Dogs only. Skip cats.
+
+Agree with Parsley: **hereditary quadriplegia and amblyopia in Irish Setters** is AR, homozygous lethal. Signs: **head tremor, visual impairment, nystagmus, inability to stand, and seizures beginning at birth**. Animals are called **swimmers**. Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named hereditary quadriplegia is amblyopia; swimmers. Bare Setter does not fire. Cat does not fire. Named spongiform stays 255. Named NCL stays 240. Named MFE stays 252. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest euthanasia.
+- Do not copy a 116 table.
+- Do not send a Setter home as NCL.
+- Do not call it spong-only.
+
+Night rule: named hereditary quadriplegia → **amblyopia. Swimmers.** △ Plumb.
+
+## 257. Alaskan Husky encephalopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett Alaskan-Husky-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 252 still owns named familial cerebellar ataxia. Packet 116 still owns seizure-drug numbers. Packet 258 owns named degenerative encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest thiamine. Do not harvest a 7-month or 2.5-year clock. Do not fire on bare Husky / bare Yorkie. Dogs only. Skip cats.
+
+Agree with Parsley: **Alaskan Husky encephalopathy (Leigh-like syndrome)** is AR, caused by a mutation in a thiamine transporter gene (SLC19A3). Printed onset **7 months to 2.5 years** stays on the page. Signs: **acute-onset ataxia**, seizures, behavior abnormalities, **blindness**, facial hypalgesia, and difficulty eating. Bilaterally symmetrical lesions stay on the page. Printed no treatment, typically euthanasia or death, stays on the page. A similar Yorkshire Terrier disease without a named mutation stays on the page.
+
+Night split: named Alaskan Husky encephalopathy is acute ataxia; blindness. Bare Husky does not fire. Cat does not fire. Named HQAM stays 256. Named NCL stays 240. Named MFE stays 252. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 7-month or 2.5-year clock.
+- Do not harvest thiamine.
+- Do not copy a 116 table.
+- Do not send a Husky home as NCL.
+- Do not call it hqam-only.
+
+Night rule: named Alaskan Husky encephalopathy → **acute ataxia. Blindness.** △ Plumb.
+
+## 258. Degenerative encephalopathy (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett degenerative-encephalopathy chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 257 still owns named Alaskan Husky encephalopathy. Packet 256 still owns named hereditary quadriplegia. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. Packet 259 owns named L-2-hydroxyglutaric aciduria, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an AED table. Do not harvest a 2-month or 5-year clock. Do not fire on bare Toller. Dogs only. Skip cats.
+
+Agree with Parsley: **degenerative encephalopathy of Nova Scotia Duck Tolling Retrievers** is AR and results in neurological dysfunction and a **REM sleep disorder**. Printed onset **2 months to 5 years** stays on the page. Caudate nuclei primarily affected, with axonal dystrophy in the brainstem and spinal cord, stay on the page. Additional signs: **anxiety** and obsessive-compulsive tendencies, ataxia, tetraparesis, and mild hypermetria stay on the page. Printed guarded prognosis, supportive care and antiepileptic medications might help, and a genetic test stay on the page.
+
+Night split: named degenerative encephalopathy is REM sleep disorder; anxiety. Bare Toller does not fire. Cat does not fire. Named AHE stays 257. Named HQAM stays 256. Named NCL stays 240. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 2-month or 5-year clock.
+- Do not harvest an AED table.
+- Do not copy a 116 table.
+- Do not send a Toller home as AHE.
+- Do not call it ahe-only.
+
+Night rule: named degenerative encephalopathy → **REM sleep disorder. Anxiety.** △ Plumb.
+
+## 259. L-2-hydroxyglutaric aciduria (Merck Parsley Mar 2026 generalized)
+
+No dedicated Plunkett L-2-hydroxyglutaric-aciduria chapter in the owned SA EM splits. Public Merck congenital generalized (Parsley, Mar 2026). Packet 258 still owns named degenerative encephalopathy. Packet 257 still owns named Alaskan Husky encephalopathy. Packet 240 still owns named NCL. Packet 116 still owns seizure-drug numbers. Packet 260 owns named neonatal encephalopathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest L2HGDH. Do not harvest an 8-month clock. Do not fire on bare Yorkie / Staffie / WHWT. Dogs only. Skip cats.
+
+Agree with Parsley: **L-2-hydroxyglutaric aciduria** is an inherited metabolic disease of dogs caused by a mutation in the L2HGDH gene (printed gene stays on the page). Diagnosis is supported by increased L-2-hydroxyglutaric acid in the urine on organic acid screens (stays on the page). Signs: seizures, ataxia, **aggression**, and **hyperactivity**. Printed onset **approximately 8 months** stays on the page. Bilaterally symmetrical gray-matter lesions in the thalamus, cerebral cortex, and cerebellum stay on the page. Yorkshire Terriers, Staffordshire Bull Terriers, and West Highland White Terriers are known to be affected; a mutation has not been described in West Highland White Terriers (stays on the page). Printed no treatment, typically euthanasia or death, stays on the page.
+
+Night split: named L-2-hydroxyglutaric aciduria is aggression; hyperactivity. Bare Yorkie / Staffie / WHWT do not fire. Cat does not fire. Named DEEN stays 258. Named AHE stays 257. Named NCL stays 240. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest an 8-month clock.
+- Do not harvest L2HGDH.
+- Do not copy a 116 table.
+- Do not send a Yorkie home as AHE.
+- Do not call it deen-only.
+
+Night rule: named L-2-hydroxyglutaric aciduria → **aggression. Hyperactivity.** △ Plumb.
+
+## 260. Neonatal encephalopathy (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett neonatal-encephalopathy chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 259 still owns named L-2-hydroxyglutaric aciduria. Packet 207 still owns named NME. Packet 209 still owns named hydrocephalus. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Packet 261 owns named lissencephaly, not this dump. Do not harvest a surgery table as lobby law. Do not harvest ATF2. Do not harvest a 4–5 week clock. Do not fire on bare Poodle. Dogs only. Skip cats.
+
+Agree with Parsley: **neonatal encephalopathy in Standard Poodles** is an inherited genetic disorder caused by a mutation in the ATF2 gene (printed gene stays on the page). Affected dogs appear **stunted** and **weak from birth** and begin having seizures at the age of 4–5 weeks (printed clock stays on the page). Printed fatal. Printed genetic test available for diagnosis in Standard Poodles stays on the page.
+
+Night split: named neonatal encephalopathy is stunted; weak from birth. Bare Poodle does not fire. Cat does not fire. Named L2HGA stays 259. Named NME stays 207. Named hydro stays 209. General IE stays 202. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 4–5 week clock.
+- Do not harvest ATF2.
+- Do not copy a 116 table.
+- Do not send a Poodle home as IE.
+- Do not call it l2hga-only.
+
+Night rule: named neonatal encephalopathy → **stunted. Weak from birth.** △ Plumb.
+
+## 261. Lissencephaly (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett lissencephaly chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 210 still owns named hydranencephaly. Packet 211 still owns named cerebellar hypoplasia. Packet 207 still owns named NME. Packet 116 still owns seizure-drug numbers. Packet 262 owns named pendular nystagmus, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Lhasa / Pekingese / Kelpie. Dog or cat.
+
+Agree with Parsley: **lissencephaly** is an absence of or decrease in cerebral gyri. Rare. Lhasa Apsos, Pekingese, and Australian Kelpies stay on the page. Association with cerebellar hypoplasia in Irish Setters, Wire Fox Terriers, and Samoyeds stays on the page. Korat cats with microencephaly stay on the page. Signs: **mild behavioral abnormalities** and seizures (printed seizure line stays on the page).
+
+Night split: named lissencephaly is mild behavior; smooth gyri. Bare Lhasa does not fire. Cat can fire. Named NEPO stays 260. Named hydro stays 209. Named hydran stays 210. Named CH stays 211. Named NME stays 207. Seizure crash-cart stays 116. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a hydro table.
+- Do not copy a 116 table.
+- Do not send a Lhasa home as IE.
+- Do not call it nepo-only.
+
+Night rule: named lissencephaly → **mild behavior. Smooth gyri.** △ Plumb.
+
+## 262. Pendular nystagmus (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett pendular-nystagmus chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 261 still owns named lissencephaly. Packet 208 still owns named otogenic. Packet 137 still owns bare nystagmus / vestibular. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Packet 263 owns named congenital deafness, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a vestibular table. Do not fire on bare Siamese / Himalayan / Persian. Do not fire on bare nystagmus. Cats only. Skip dogs.
+
+Agree with Parsley: **pendular nystagmus** occurs in various Asian breeds of cats (Siamese, Himalayan, Persian). Compared with pathological nystagmus, there is **no fast or slow phase**, and the arcs are similar to the pendulum movement of a clock (stays on the page). Caused by a congenital abnormality in the **visual pathway**. **No other neurological signs.** Nonprogressive. **Of no clinical importance.**
+
+Night split: named pendular nystagmus is visual pathway; no clinical importance. Bare Siamese does not fire. Bare nystagmus does not fire. Dog does not fire. Named LISS stays 261. Named oto stays 208. Bare nystagmus / vestibular stays 137. Seizure crash-cart stays 116. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a vestibular table.
+- Do not copy a 116 table.
+- Do not send a Siamese home as oto.
+- Do not call it liss-only.
+
+Night rule: named pendular nystagmus → **visual pathway. No clinical importance.** △ Plumb.
+
+## 263. Congenital deafness (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett congenital-deafness chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 262 still owns named pendular nystagmus. Packet 261 still owns named lissencephaly. Packet 253 still owns named Dalmatian leukodystrophy. Packet 116 still owns seizure-drug numbers. Packet 264 owns named polymicrogyria, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a BAER table. Do not fire on bare Dalmatian. Do not fire on bare deaf. Dog or cat.
+
+Agree with Parsley: **congenital deafness** is associated primarily with Dalmatians; also recorded in Doberman Pinscher, Puli, Blue Heeler, Australian Shepherd, English Setter, Boston Terrier, and Old English Sheepdog (stays on the page). **Pigment-associated** in Dalmatians; not pigment-associated in Doberman Pinschers and Pulis (stays on the page). Linked to **blue eye color in white cats** (stays on the page). **BAER** is a useful diagnostic test used primarily to identify carriers in a litter (stays on the page).
+
+Night split: named congenital deafness is pigment-associated; BAER. Bare Dalmatian does not fire. Bare deaf does not fire. Named PEND stays 262. Named DALV stays 253. Named LISS stays 261. Seizure crash-cart stays 116. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a BAER table.
+- Do not copy a 116 table.
+- Do not send a Dalmatian home as DALV.
+- Do not call it pend-only.
+
+Night rule: named congenital deafness → **pigment-associated. BAER.** △ Plumb.
+
+## 264. Polymicrogyria (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett polymicrogyria chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 263 still owns named congenital deafness. Packet 261 still owns named lissencephaly. Packet 260 still owns named neonatal encephalopathy. Packet 209 still owns named hydrocephalus. Packet 116 still owns seizure-drug numbers. Packet 265 owns named paroxysmal dyskinesia, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not fire on bare Poodle. Do not fire on bare gyri. Dogs only. Skip cats.
+
+Agree with Parsley: **polymicrogyria** is an inherited disease identified in Standard Poodles that results in focal areas of the brain having **smaller and more numerous gyri** than normal. Most common signs are **visual disturbances**; ataxia, behavior problems, and asymmetrical lateral ventricle dilatation (ventriculomegaly) or hydrocephalus stay on the page. Signs are attributable to the portion of the brain affected by the abnormal gyri.
+
+Night split: named polymicrogyria is visual disturbances; extra gyri. Bare Poodle does not fire. Cat does not fire. Named DEAF stays 263. Named LISS stays 261. Named NEPO stays 260. Named hydro stays 209. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a hydro table.
+- Do not copy a 116 table.
+- Do not send a Poodle home as NEPO.
+- Do not call it liss-only.
+
+Night rule: named polymicrogyria → **visual disturbances. Extra gyri.** △ Plumb.
+
+## 265. Paroxysmal dyskinesia (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett paroxysmal-dyskinesia chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 264 still owns named polymicrogyria. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. Packet 135 already owns puppy hypoglycemia on this page. Packet 266 owns named narcolepsy, not this dump. Do not harvest a surgery table as lobby law. Do not copy a 116 table. Do not fire on bare Cavalier / Wheaten / Border Terrier. Dogs only. Skip cats.
+
+Agree with Parsley: **paroxysmal dyskinesia** is a movement disorder identified in several dog breeds, including the Soft Coated Wheaten Terrier (PIGN), the Cavalier King Charles Spaniel (episodic falling; BCAN), the Border Terrier (Spike's disease), and the Chinook (printed genes stay on the page). Episodes of involuntary movement include hyper- or hypotonicity or dysmetria. It can resemble partial or generalized seizures except that **conscious awareness is maintained** and **no autonomic signs** occur (printed seizure-lookalike line stays on the page). Episodes can last minutes to hours and occur rarely or many times daily (printed clock stays on the page).
+
+Night split: named paroxysmal dyskinesia is conscious; no autonomic signs. Bare Cavalier does not fire. Cat does not fire. Named POLY stays 264. General IE stays 202. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not copy a 116 table.
+- Do not send a Cavalier home as IE.
+- Do not call it poly-only.
+
+Night rule: named paroxysmal dyskinesia → **conscious. No autonomic signs.** △ Plumb.
+
+## 266. Narcolepsy and cataplexy (Merck Parsley Mar 2026 cerebral)
+
+No dedicated Plunkett narcolepsy chapter in the owned SA EM splits. Public Merck congenital cerebral (Parsley, Mar 2026). Packet 135 already owns puppy hypoglycemia from this same page — do not double-gate glucose. Packet 265 still owns named paroxysmal dyskinesia. Packet 250 still owns named chromatolytic / cataplectic collapse. Packet 202 still owns general IE. Packet 116 still owns seizure-drug numbers. The cerebral leftover list on this page is now used. Packet 267 owns named Dandy-Walker / vermis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest physostigmine or imipramine. Do not fire on bare Doberman / Labrador / Dachshund. Do not fire on bare collapse / syncope. Dog or cat.
+
+Agree with Parsley: **narcolepsy** is a disorder of sleep-wake control (excessive sleepiness or sudden paroxysmal attacks of **flaccid paralysis with conservation of consciousness**). AR in Doberman Pinschers, Labrador Retrievers, and Dachshunds; described in other breeds; **rare in cats**. A mutation in the hypocretin (orexin) receptor 2 (**Hcrtr2**) gene has been identified in Dobermans (printed gene stays on the page). Attacks are often stimulated by **excitement** and sometimes accompanied by **cataplexy**. Must be differentiated from syncope. Printed physostigmine and imipramine stay on the page.
+
+Night split: named narcolepsy is conserved consciousness; excitement. Bare Doberman does not fire. Bare collapse does not fire. Named PDYS stays 265. Named CHROM stays 250. Puppy hypoglycemia stays 135. Seizure crash-cart stays 116. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a physostigmine table.
+- Do not harvest an imipramine table.
+- Do not copy a 116 table.
+- Do not send a Doberman home as IE.
+- Do not call it pdys-only.
+
+Night rule: named narcolepsy → **conserved consciousness. Excitement.** △ Plumb.
+
+## 267. Dandy-Walker / vermis (Merck Parsley Mar 2026 cerebellar)
+
+No dedicated Plunkett Dandy-Walker chapter in the owned SA EM splits. Public Merck congenital cerebellar (Parsley, Mar 2026). Packet 211 still owns named cerebellar hypoplasia. Packet 209 still owns named hydrocephalus / dome-head. Packet 212 still owns named COMS / Chiari. Packet 266 still owns named narcolepsy. Packet 116 still owns seizure-drug numbers. The cerebellar leftover that was skipped from 211–213 is this dump. Packet 268 owns named congenital laryngeal paralysis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a hydro table. Do not harvest a COMS gabapentin table. Do not fire on bare Eurasier / Toy Fox Terrier. Do not put VLDLR in the regex. Dogs only. Skip cats.
+
+Agree with Parsley: selective hypoplasia of the cerebellar vermis combined with hydrocephalus and **cystlike dilatation of the fourth ventricle** has been termed **Dandy-Walker syndrome**, which might have a familial basis. An autosomal recessive deletion mutation in the very low density lipoprotein receptor (**VLDLR**) gene in Eurasier dogs has been identified (printed gene stays on the page). Toy Fox Terriers are predisposed to the Dandy-Walker form. Printed tremor / ataxia / hypermetria and occasional head tilt / circling stay on the cerebellar-hypoplasia lines of the same page.
+
+Night split: named Dandy-Walker is vermis hypoplasia; fourth ventricle. Bare Eurasier does not fire. Cat does not fire. Named CH stays 211. Named hydro stays 209. Named COMS stays 212. Named narcolepsy stays 266. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a hydro table.
+- Do not harvest a COMS gabapentin table.
+- Do not copy a 116 table.
+- Do not send a Eurasier home as CH.
+- Do not call it ch-only.
+
+Night rule: named Dandy-Walker → **vermis hypoplasia. Fourth ventricle.** △ Plumb.
+
+## 268. Congenital laryngeal paralysis (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-laryngeal-paralysis chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 134 still owns named GOLPP / old large-breed laryngeal paralysis. Packet 267 still owns named Dandy-Walker. Packet 269 owns named congenital myasthenia gravis, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a tie-back table. Do not fire on bare laryngeal paralysis / inspiratory stridor. Do not fire on bare Bouvier / Husky / Rottweiler. Dogs only. Skip cats.
+
+Agree with Parsley: **congenital laryngeal paralysis** occurs in Bouvier des Flandres (autosomal dominant) and in Siberian Huskies, Rottweilers, and Bull Terriers **< 1 year old** (printed clock stays on the page). It results in exercise intolerance and inspiratory dyspnea. Diagnosis is confirmed by visualization on laryngoscopy. Congenital laryngeal paralysis with diffuse peripheral neuropathy occurs in Dalmatians, Rottweilers, and Pyrenean mountain dogs (Great Pyrenees); AR suspected (printed line stays on the page). Prognosis untreated is guarded to poor. Printed surgical unilateral cricoarytenoid lateralization stays on the page.
+
+Night split: named congenital laryngeal paralysis is a young dog, not GOLPP. Bare laryngeal paralysis stays 134. Bare stridor stays 134. Cat does not fire. Named Dandy-Walker stays 267. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a tie-back table.
+- Do not copy a 134 table.
+- Do not send a Bouvier home as GOLPP.
+- Do not call it golpp-only.
+
+Night rule: named congenital laryngeal paralysis → **young dog, not GOLPP.** △ Plumb.
+
+## 269. Congenital myasthenia gravis (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-myasthenia chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 163 still owns fulminant / acquired MG. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 270 owns named congenital myoclonus of Labrador Retrievers, not this dump. Do not harvest a surgery table as lobby law. Do not harvest pyridostigmine or Tensilon. Do not fire on bare myasthenia / megaesophagus / weakness / Labrador. Do not put CHRNE / CHAT / COLQ in the regex. Dog or cat.
+
+Agree with Parsley: **congenital myasthenia gravis** (autosomal recessive) has been described in Parson Russell Terrier, Smooth Fox Terrier, smooth miniature Dachshund, English Springer Spaniel, Labrador Retriever, Golden Retriever, Sphynx cat, and Devon Rex cat. It is due to a deficiency or dysfunction of the acetylcholine receptor, and **no circulating antireceptor antibody** is evident in the more common acquired form. Printed CHRNE / CHAT / COLQ stay on the page. Clinical signs usually start at **5–10 weeks in dogs** and **10–16 weeks in cats** (printed clocks stay on the page). The characteristic finding is **exercise-induced weakness**, often associated with megaesophagus. Prognosis is more guarded than acquired MG. Cats also show weakness, ventroflexion of the head and neck, and difficulty swallowing. Printed Old Danish Pointing presynaptic, postsynaptic-may-respond, pyridostigmine, and Labrador anticholinergic-worsen stay on the page.
+
+Night split: named congenital myasthenia is exercise-induced weakness; no circulating antibody. Bare myasthenia stays 163. Bare megaesophagus does not fire. Bare Labrador does not fire. Named congenital LP stays 268. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a pyridostigmine table.
+- Do not harvest a Tensilon table.
+- Do not copy a 163 table.
+- Do not send a Labrador home as acquired MG.
+- Do not call it fulminant-only.
+
+Night rule: named congenital myasthenia → **exercise-induced weakness. No circulating antibody.** △ Plumb.
+
+## 270. Congenital myoclonus of Labrador Retrievers (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-myoclonus chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 269 still owns named congenital myasthenia. Packet 244 still owns named Lafora. Packet 163 still owns fulminant / acquired MG. Packet 116 still owns seizure-drug numbers. Packet 271 owns named congenital megaesophagus, not this dump. Do not harvest a surgery table as lobby law. Do not harvest diazepam or clonazepam. Do not fire on bare Labrador / bare myoclonus / bare hypertonicity. Dogs only. Skip cats.
+
+Agree with Parsley: **congenital myoclonus of Labrador Retrievers** (familial reflex myoclonus) causes **stimulus-induced muscle spasms/hypertonicity** from an early age. Puppies might be unable to walk or even maintain a sternal position because of extensor rigidity that is triggered with movement. **At rest, muscles are relaxed.** The neurological examination is normal, but stimulus from performing parts of the examination (eg, reflexes) results in generalized stiffness. Printed diazepam and clonazepam have not been effective stay on the page. The prognosis is very poor.
+
+Night split: named congenital myoclonus is stimulus-induced hypertonicity; relaxed at rest. Bare Labrador does not fire. Bare myoclonus does not fire. Cat does not fire. Named CMG stays 269. Named Lafora stays 244. Seizure crash-cart stays 116. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a diazepam table.
+- Do not harvest a clonazepam table.
+- Do not copy a 116 table.
+- Do not send a Labrador home as Lafora.
+- Do not call it lafora-only.
+
+Night rule: named congenital myoclonus → **stimulus-induced hypertonicity. Relaxed at rest.** △ Plumb.
+
+## 271. Congenital megaesophagus (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett congenital-megaesophagus chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 269 still owns named congenital myasthenia. Packet 163 still owns fulminant / acquired MG. Packet 270 still owns named congenital myoclonus. Packet 134 still owns GOLPP. Packet 272 owns named Leonberger polyneuropathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest sildenafil. Do not fire on bare megaesophagus / regurgitation / Wire Fox / Schnauzer / Siamese. Dog or cat.
+
+Agree with Parsley: **congenital megaesophagus** is inherited in Wire Fox Terriers and Miniature Schnauzers and possibly also in German Shepherd Dogs, Great Danes, Irish Setters, Newfoundlands, Chinese Shar-Pei, Greyhounds, and Siamese cats. Clinical signs include **regurgitation** and **aspiration pneumonia**. Printed sildenafil oral suspension stays on the page. The prognosis is guarded.
+
+Night split: named congenital megaesophagus is regurgitation; aspiration pneumonia. Bare megaesophagus does not fire. Bare regurgitation does not fire. Named CMG stays 269. Named fulminant MG stays 163. Named congenital myoclonus stays 270. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a sildenafil table.
+- Do not copy a 163 table.
+- Do not send a Schnauzer home as acquired MG.
+- Do not call it 163-only.
+
+Night rule: named congenital megaesophagus → **regurgitation. Aspiration pneumonia.** △ Plumb.
+
+## 272. Inherited polyneuropathy of Leonberger dogs (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Leonberger-polyneuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 271 still owns named congenital megaesophagus. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 163 still owns fulminant / acquired MG. Packet 273 owns named hypertrophic neuropathy of Tibetan Mastiffs, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1–9 year clock. Do not fire on bare Leonberger / polyneuropathy / high-stepping / dyspnea. Dogs only. Skip cats.
+
+Agree with Parsley: **inherited polyneuropathy of Leonberger dogs** is a **distal neuropathy**, with an age at onset of 1–9 years (printed clock stays on the page). Clinical signs include weakness, exercise intolerance, change in bark, and dyspnea. A **high-stepping gait**, representative of sensory dysfunction, is often present. No treatment for this disease is currently available. Pedigree analysis suggests X-linked inheritance. Printed genetic testing through UC San Diego's Comparative Neuromuscular Laboratory stays on the page.
+
+Night split: named Leonberger polyneuropathy is distal neuropathy; high-stepping gait. Bare Leonberger does not fire. Bare polyneuropathy does not fire. Cat does not fire. Named congenital megaesophagus stays 271. Named congenital LP stays 268. Named GOLPP stays 134. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 1–9 year clock.
+- Do not copy a 268 table.
+- Do not send a Leonberger home as GOLPP.
+- Do not call it golpp-only.
+
+Night rule: named Leonberger polyneuropathy → **distal neuropathy. High-stepping gait.** △ Plumb.
+
+## 273. Hypertrophic neuropathy of Tibetan Mastiffs (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett hypertrophic-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 272 still owns named Leonberger polyneuropathy. Packet 271 still owns named congenital megaesophagus. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 274 owns named hereditary hyperchylomicronemia neuropathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 7.5–10 week clock. Do not fire on bare Tibetan Mastiff / hypertrophic / hypotonia / hyporeflexia. Dogs only. Skip cats.
+
+Agree with Parsley: **hypertrophic neuropathy of Tibetan Mastiffs** is an autosomal recessive disease recognized in the US, Switzerland, and Australia (printed geography stays on the page). The age of onset is **7.5–10 weeks** (printed clock stays on the page). Clinical signs include rapidly progressive paresis and **muscle hypotonia**. **Hyporeflexia is marked, but sensory function is preserved.** Demyelination and remyelination are evident on nerve biopsy (printed line stays on the page). The disease can stabilize, and some puppies might regain the ability to walk, but they remain weak. There is no treatment, and the prognosis is guarded.
+
+Night split: named hypertrophic neuropathy is hypotonia; sensory preserved. Bare Tibetan Mastiff does not fire. Bare hypotonia does not fire. Cat does not fire. Named Leonberger stays 272. Named congenital megaesophagus stays 271. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 7.5–10 week clock.
+- Do not copy a 272 table.
+- Do not send a Mastiff home as Leonberger.
+- Do not call it leon-only.
+
+Night rule: named hypertrophic neuropathy → **hypotonia. Sensory preserved.** △ Plumb.
+
+## 274. Neuropathy of hereditary hyperchylomicronemia in cats (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett hyperchylomicronemia chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 273 still owns named hypertrophic neuropathy. Packet 272 still owns named Leonberger polyneuropathy. Packet 178 still owns PLE. Packet 275 owns named Musladin-Lueke syndrome, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an 8-month clock. Do not harvest a homemade low-fat recipe. Do not fire on bare hyperlipidemia / low-fat / triglyceride / cat. Cats only. Skip dogs.
+
+Agree with Parsley: **neuropathy of hereditary hyperchylomicronemia** (hyperlipidemia) is a suspected autosomal recessive disorder that causes generalized peripheral neuropathy in cats. Affected cats show decreased lipoprotein lipase activity. Serum cholesterol and triglyceride concentrations are typically increased. Clinical signs do not develop until the age of at least **8 months** (printed clock stays on the page). Hyperlipidemia results in the deposition of lipid granules within nerves. Evidence suggests that the clinical signs can be controlled by a **low-fat diet**. Blood samples from affected cats have the appearance of **cream of tomato soup**.
+
+Night split: named hyperchylomicronemia is cream of tomato soup; low-fat diet. Bare hyperlipidemia does not fire. Bare low-fat does not fire. Dog does not fire. Named TMHN stays 273. Named PLE stays 178. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest an 8-month clock.
+- Do not harvest a low-fat recipe.
+- Do not copy a 273 table.
+- Do not send a cat home as PLE.
+- Do not call it ple-only.
+
+Night rule: named hyperchylomicronemia → **cream of tomato soup. Low-fat diet.** △ Plumb.
+
+## 275. Musladin-Lueke syndrome in Beagles (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Musladin-Lueke chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 274 still owns named hyperchylomicronemia. Packet 273 still owns named hypertrophic neuropathy. Packet 116 still owns seizures. Packet 276 owns named Alaskan Malamute polyneuropathy, not this dump. Do not harvest a surgery table as lobby law. Do not harvest ADAMTSL2. Do not harvest a seizure table. Do not fire on bare Beagle / tiptoe / seizure. Dogs only. Skip cats.
+
+Agree with Parsley: **Musladin-Lueke syndrome (MLS)** is an autosomal recessive connective-tissue disorder in Beagles that affects muscles, bone, heart, and skin. It is caused by a mutation in the **ADAMTSL2** gene (named gene stays on the page, not in the regex). Clinical signs most prominently reflect muscle fibrosis and contractures. The resulting posture is walking on **tiptoes**. The abnormal posture is present shortly after birth. Other signs include **thickened cartilage of the ear** and **wide-set eyes**. Seizures can occur concurrently; it is not yet known whether they are related to the primary disorder (printed seizures stay on the page; packet 116 still owns the seizure-drug table). There is no treatment. The human counterpart (geleophysic dysplasia) is progressive and frequently fatal; in dogs the disease appears to stabilize.
+
+Night split: named Musladin-Lueke is tiptoe posture; thickened ear cartilage. Bare Beagle does not fire. Bare tiptoe does not fire. Cat does not fire. Named HCHYLO stays 274. Named TMHN stays 273. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest ADAMTSL2.
+- Do not harvest a seizure table.
+- Do not copy a 274 table.
+- Do not send a Beagle home as hyperchylomicronemia.
+- Do not call it 274-only.
+
+Night rule: named Musladin-Lueke → **tiptoe posture. Thickened ear cartilage.** △ Plumb.
+
+## 276. Alaskan Malamute polyneuropathy (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Alaskan-Malamute-polyneuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 275 still owns named Musladin-Lueke. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP. Packet 277 owns named primary hyperoxaluria, not this dump. Do not harvest a surgery table as lobby law. Do not harvest NDRG1. Do not harvest a 10–18 month clock. Do not fire on bare Malamute / polyneuropathy / laryngeal paralysis. Dogs only. Skip cats.
+
+Agree with Parsley: **Alaskan Malamute polyneuropathy** affects **10- to 18-month-old** dogs of this breed (printed clock stays on the page) and is caused by a mutation in the **NDRG1** gene (named gene stays on the page, not in the regex). Clinical signs include laryngeal paralysis, exercise intolerance, decreased postural reactions, paraparesis progressing to tetraparesis, hyporeflexia, and muscle atrophy. Electromyography shows diffuse fibrillation potentials and positive sharp waves (printed EMG stays on the page). On nerve biopsy, there is **axonal necrosis with demyelination**. There is no effective treatment, but clinical signs stabilize in some dogs. In most affected dogs, progressive disability leads to euthanasia.
+
+Night split: named Alaskan Malamute polyneuropathy is axonal necrosis; muscle atrophy. Bare Malamute does not fire. Bare polyneuropathy does not fire. Cat does not fire. Named MLS stays 275. Named LEON stays 272. Named CONGLP stays 268. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest NDRG1.
+- Do not harvest a 10–18 month clock.
+- Do not copy a 275 table.
+- Do not send a Malamute home as Musladin-Lueke.
+- Do not call it 275-only.
+
+Night rule: named Alaskan Malamute polyneuropathy → **axonal necrosis. Muscle atrophy.** △ Plumb.
+
+## 277. Primary hyperoxaluria (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett primary-hyperoxaluria chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 276 still owns named Alaskan Malamute polyneuropathy. Packet 275 still owns named Musladin-Lueke. Packet 242 still owns glycogenosis. Packet 278 owns named sensory neuropathy in longhaired Dachshunds, not this dump. Do not harvest a surgery table as lobby law. Do not harvest AGXT / GRHPR. Do not harvest a 5–9 month or 3–4 week clock. Do not fire on bare plantigrade / oxalate / Coton / Tibetan Spaniel / cat. Dog or cat. Dogs have no printed neurologic signs.
+
+Agree with Parsley: **primary hyperoxaluria** (l-glyceric aciduria) is a rare, inherited (autosomal recessive) neurofilament disorder of domestic shorthair cats and Coton de Tulear and Tibetan Spaniel dogs. Neurological signs have not been reported in dogs; in cats, clinical signs include renal disease and weakness due to peripheral neuropathy. Signs develop at **5–9 months** in cats and **3–4 weeks** in dogs (printed clocks stay on the page). A **plantigrade stance** is the most prominent sign, and spinal reflexes are sometimes decreased. Urine contains increased **oxalate** and **l-glycerate**. Genetic mutations in the **AGXT** and **GRHPR** genes have been identified in the Coton de Tulear (named genes stay on the page, not in the regex). There is no treatment.
+
+Night split: named primary hyperoxaluria is plantigrade stance; oxalate in urine. Bare plantigrade does not fire. Bare oxalate does not fire. Named AMPN stays 276. Named MLS stays 275. Named glycogenosis stays 242. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest AGXT.
+- Do not harvest a 5–9 month clock.
+- Do not harvest a 3–4 week clock.
+- Do not copy a 276 table.
+- Do not send a plantigrade patient home as glycogenosis.
+- Do not call it 276-only.
+
+Night rule: named primary hyperoxaluria → **plantigrade stance. Oxalate in urine.** △ Plumb.
+
+## 278. Sensory neuropathy in longhaired Dachshunds (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett longhaired-Dachshund-sensory-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 277 still owns named primary hyperoxaluria. Packet 244 still owns Lafora. IVDD still owns dachshund TL. Packet 279 owns named sensory neuropathy in Border Collies, not this dump. Do not harvest a surgery table as lobby law. Do not harvest an 8–12 week clock. Do not fire on bare Dachshund / ataxia / self-mutilation / sensory. Dogs only. Skip cats.
+
+Agree with Parsley: **sensory neuropathy in longhaired Dachshunds** (probably autosomal recessive) causes **pelvic limb ataxia** at the age of **8–12 weeks** (printed clock stays on the page). Urinary and GI function might also be disturbed. Proprioception, spinal reflexes, and pain sensation are depressed, and **self-mutilation** can occur. There is a loss of myelinated fibers in sensory nerves and in selected areas of the spinal cord (printed histology stays on the page). There is no treatment; however, affected dogs can have a relatively normal quality of life, provided that self-mutilation does not occur.
+
+Night split: named longhaired Dachshund sensory neuropathy is pelvic limb ataxia; self-mutilation. Bare Dachshund does not fire. Bare self-mutilation does not fire. Cat does not fire. Named PHOX stays 277. Named Lafora stays 244. Named IVDD stays IVDD. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest an 8–12 week clock.
+- Do not copy a 277 table.
+- Do not send a Dachshund home as IVDD.
+- Do not call it 277-only.
+
+Night rule: named longhaired Dachshund sensory neuropathy → **pelvic limb ataxia. Self-mutilation.** △ Plumb.
+
+## 279. Sensory neuropathy in Border Collies (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Border-Collie-sensory-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 278 still owns named longhaired Dachshund sensory neuropathy. Packet 219 still owns hereditary ataxia. Packet 277 still owns primary hyperoxaluria. Packet 280 owns named sensory neuropathy in Pointers, not this dump. Do not harvest a surgery table as lobby law. Do not harvest FAM134B. Do not harvest a 5–7 month clock. Do not fire on bare Border Collie / ataxia / proprioception / sensory. Dogs only. Skip cats.
+
+Agree with Parsley: **sensory neuropathy in Border Collies** is an autosomal recessive disease that manifests as ataxia, **lack of proprioception**, and abnormal sensory testing. The age of onset is usually **5–7 months** (printed clock stays on the page), and the disorder progresses **relentlessly**. Euthanasia is the common end point. Disruption of the **FAM134B** gene has been identified (named gene stays on the page, not in the regex).
+
+Night split: named Border Collie sensory neuropathy is lack of proprioception; relentless. Bare Border Collie does not fire. Bare ataxia does not fire. Cat does not fire. Named LHSN stays 278. Named HATAX stays 219. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest FAM134B.
+- Do not harvest a 5–7 month clock.
+- Do not copy a 278 table.
+- Do not send a Border Collie home as hereditary ataxia.
+- Do not call it 278-only.
+
+Night rule: named Border Collie sensory neuropathy → **lack of proprioception. Relentless.** △ Plumb.
+
+## 280. Sensory neuropathy in Pointers (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Pointer-sensory-neuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 279 still owns named Border Collie sensory neuropathy. Packet 278 still owns named longhaired Dachshund sensory neuropathy. Packet 281 owns named polyneuropathy of Bengal cats, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a <6 month clock. Do not fire on bare Pointer / self-mutilation / digit / sensory. Dogs only. Skip cats.
+
+Agree with Parsley: **sensory neuropathy in Pointers** occurs in English Pointers (autosomal recessive) in the US and in Shorthaired Pointers in Europe. **Self-mutilation of the digits** is the main clinical sign, and the age of onset is **< 6 months** (printed clock stays on the page). Pain perception is **absent in the pelvic limbs** and depressed in the thoracic limbs. There is neuronal loss in dorsal root ganglia (printed histology stays on the page). There is no treatment, and the prognosis is poor.
+
+Night split: named Pointer sensory neuropathy is digit self-mutilation; pelvic pain absent. Bare Pointer does not fire. Bare self-mutilation does not fire. Cat does not fire. Named BCSN stays 279. Named LHSN stays 278. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a <6 month clock.
+- Do not copy a 279 table.
+- Do not send a Pointer home as longhaired Dachshund.
+- Do not call it 279-only.
+
+Night rule: named Pointer sensory neuropathy → **digit self-mutilation. Pelvic pain absent.** △ Plumb.
+
+## 281. Polyneuropathy of Bengal cats (Merck Parsley Mar 2026 neuromuscular)
+
+No dedicated Plunkett Bengal-polyneuropathy chapter in the owned SA EM splits. Public Merck congenital neuromuscular (Parsley, Mar 2026). Packet 280 still owns named Pointer sensory neuropathy. Packet 277 still owns named primary hyperoxaluria. Packet 279 still owns named Border Collie sensory neuropathy. Packet 282 owns named calcium phosphate deposition in Great Danes, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 3–44 month clock. Do not fire on bare Bengal / plantigrade / polyneuropathy / paresis. Cats only. Skip dogs.
+
+Agree with Parsley: **polyneuropathy of Bengal cats** is a **chronic, relapsing** polyneuropathy that results in weakness from **demyelination**. The age of onset ranges from **3 to 44 months** (printed clock stays on the page). Clinical signs include paresis, plantigrade stance, exercise intolerance, and stiff or stilted gait. Signs affect predominantly the pelvic limbs but can progress to tetraparesis. Muscle atrophy, weight loss, and stunted growth might occur. There is no specific treatment. Remyelination and recovery can occur; residual deficits often remain, and relapses are possible.
+
+Night split: named Bengal polyneuropathy is relapsing; demyelination. Bare Bengal does not fire. Bare plantigrade does not fire. Dog does not fire. Named PSN stays 280. Named PHOX stays 277. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 3–44 month clock.
+- Do not copy a 280 table.
+- Do not send a Bengal home as hyperoxaluria.
+- Do not call it 280-only.
+
+Night rule: named Bengal polyneuropathy → **relapsing. Demyelination.** △ Plumb.
+
+## 282. Calcium phosphate deposition in Great Danes (Merck Parsley Mar 2026 spinal)
+
+No dedicated Plunkett calcium-phosphate-Great-Dane chapter in the owned SA EM splits. Public Merck congenital spinal (Parsley, Mar 2026). Packet 223 still owns named wobbler / CSM. Packet 281 still owns named Bengal polyneuropathy. Packet 283 owns named LPPN3 / CNTNAP1, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1–2 month clock. Do not fire on bare Great Dane / calcium / C7 / mineralization. Dogs only. Skip cats.
+
+Agree with Parsley: **calcium phosphate deposition in Great Danes** causes mineralization of soft tissues and bone deformity, with **dorsal displacement of C7**. The resultant **compressive myelopathy** occurs in puppies **1–2 months old** (printed clock stays on the page). This condition is **distinct from caudal cervical spondylomyelopathy**.
+
+Night split: named calcium phosphate is C7 dorsal displacement; not wobbler. Bare Great Dane does not fire. Bare C7 does not fire. Cat does not fire. Named wobbler stays 223. Named BENGPN stays 281. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 1–2 month clock.
+- Do not copy a 281 table.
+- Do not send a Great Dane home as wobbler.
+- Do not call it wobbler-only.
+
+Night rule: named calcium phosphate → **C7 dorsal displacement. Not wobbler.** △ Plumb.
+
+## 283. LPPN3 / CNTNAP1 in young Great Danes (Shelton JVIM 2025)
+
+No dedicated Plunkett LPPN3 chapter in the owned SA EM splits. Public Shelton et al. J Vet Intern Med. 2025 Jul-Aug;39(4):e70185. doi: 10.1111/jvim.70185. PMID: 40622077. PMCID: PMC12231043. Packet 282 still owns named calcium phosphate / C7. Packet 272 still owns named Leonberger polyneuropathy. Packet 268 still owns named congenital laryngeal paralysis. Packet 134 still owns GOLPP / old large-breed lar par. Packet 284 owns named experimental pilocarpine / temporal lobe model, not this dump. Packet 285 owns named CMM1 / EFNB3, not this dump. Do not harvest a surgery table as lobby law. Do not harvest a 1.5–1.8 year clock. Do not harvest pred 30 mg or gabapentin 200 mg. Do not fire on bare Great Dane / laryngeal paralysis / polyneuropathy / stridor. Dogs only. Skip cats.
+
+Agree with Shelton 2025: a **homozygous missense CNTNAP1** variant (p.G937E; **LPPN3**) is confirmed in **young Great Dane** dogs with **laryngeal paralysis and polyneuropathy**. Exam, electrodiagnostics, and muscle/nerve biopsy were **lower motor neuron** with **axonal degeneration** and **large nerve fiber loss**. **Test for LPPN3 even if laryngeal paralysis is not noted** at diagnosis. Printed 1.5–1.8 year onset range, ~6 month progression to euthanasia, and the height/onset table stay on the page. Leonberger / Saint Bernard / Labrador LPPN variants stay on the page.
+
+Night split: named LPPN3 is CNTNAP1; not calcium phosphate. Bare Great Dane does not fire. Bare laryngeal paralysis stays 134. Bare stridor stays 134. Cat does not fire. Named CPD stays 282. Named LEON stays 272. Named CONGLP stays 268. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a surgery table.
+- Do not harvest a 1.5–1.8 year clock.
+- Do not copy a 282 table.
+- Do not send a Great Dane home as calcium phosphate.
+- Do not call it 134-only.
+
+Night rule: named laryngeal paralysis polyneuropathy / LPPN3 → **CNTNAP1. Not calcium phosphate.** △ Plumb.
+
+## 284. Experimental pilocarpine / temporal lobe model (Francisco Front Neurosci 2018)
+
+No dedicated Plunkett experimental-pilocarpine chapter in the owned SA EM splits. Public Francisco EDS, Guedes RCA. Front Neurosci. 2018;12:897. doi: 10.3389/fnins.2018.00897. PMID: 30559645. PMCID: PMC6287009. Packet 169 still owns named anisocoria / dilute diagnostic drops. Packet 146 still owns named hyphema. Packet 156 still owns named KCS-in-food. Packet 116 still owns unnamed cluster / status. Packet 233 still owns named pilonidal / dermoid sinus. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 285 owns named CMM1 / EFNB3, not this dump. Do not harvest a convulsing-dose table as lobby law. Do not harvest a sub-convulsing table as lobby law. Do not harvest printed 300–380 or 45. Do not fire on bare pilocarpine / bare status. Dog or cat. Skip horse.
+
+Agree with Francisco 2018: pilocarpine is a **muscarinic cholinergic agonist**. A **single intraperitoneal** printed 300–380 reproduces **temporal lobe epilepsy** in rats. Chronic printed 45 is **sub-convulsing** and does not produce behavioral epilepsy in that series. Printed CSD / anxiety-like / glycemia stay on the page. Picmonic, ScienceDirect-topics, Drugs.com, and human Alzheimer JAMA are not night sources.
+
+Night split: named experimental pilocarpine is a rodent temporal lobe model, not a night drug. Bare pilocarpine does not fire. Bare status stays 116. Anisocoria plus pilocarpine stays 169. Named hyphema stays 146. Named KCS stays 156. Named pilonidal stays 233. Named LPPN stays 283. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a convulsing-dose table.
+- Do not harvest a sub-convulsing table.
+- Do not copy a 116 table.
+- Do not send a research model home as 169.
+- Do not call it 116-only.
+
+Night rule: named experimental pilocarpine / pilocarpine model → **Temporal lobe model. Not diagnostic drops.** △ Plumb.
+
+## 285. Weimaraner CMM1 / EFNB3 (Schwarz Mov Disord 2025)
+
+No dedicated Plunkett CMM1 chapter in the owned SA EM splits. Public Schwarz C, Bartenschlager F, Kershaw O, et al. EFNB3 frameshift variant in Weimaraner dogs with a condition resembling a congenital mirror movement disorder. Mov Disord. 2025;40(9):1883-1891. doi:10.1002/mds.30243. PMID: 40401490. PMCID: PMC12485594. Packet 230 still owns named spinal dysraphism / myelodysplasia / NKX2-8 bunny-hop. Packet 284 still owns named experimental pilocarpine. Packet 283 still owns named LPPN3 / CNTNAP1. Packet 286 owns named FAM8A1 / RBD, not this dump. Do not harvest a 3–4 week clock as lobby law. Do not harvest an 8-week euthanasia clock as lobby law. Do not fire on bare Weimaraner / bunny-hop / saltatorial. Dogs only. Skip cats. Skip horse.
+
+Agree with Schwarz 2025: **CMM1** in Weimaraner dogs is an **autosomal recessive** **EFNB3** 2-bp duplication (XM_038536724.1:c.643_644dup) predicted to cause **p.(Ala216Valfs*79)**. Three of 11 puppies had synchronized saltatorial locomotion, pelvic limbs worse than thoracic, onset about 3 to 4 weeks, normal mentation, and were euthanized at 8 weeks. Postmortem histology of brain and cord was normal. They were wild-type at **NKX2-8**; this is **not** Weimaraner spinal dysraphism / BHS1. Printed variant, 3 of 11, saltatorial gait, and 8-week clock stay on the page.
+
+Night split: named CMM1 / EFNB3 / congenital mirror movement is EFNB3 frameshift; not NKX2-8 dysraphism. Bare Weimaraner does not fire. Bare bunny-hop does not fire. Cat does not fire. Horse does not fire. Named dysraphism stays 230. Named PILOSE stays 284. Named LPPN stays 283. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3–4 week clock.
+- Do not harvest an 8-week euthanasia clock.
+- Do not copy a 230 table.
+- Do not send a Weimaraner home as NKX2-8 dysraphism.
+- Do not call it 230-only.
+
+Night rule: named congenital mirror movement / CMM1 / EFNB3 → **EFNB3 frameshift. Not NKX2-8 dysraphism.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A 4-week Weimaraner bunny-hops. Mentation is normal. Which gene split matters at night, and what does wild-type NKX2-8 tell you?
+- NAVLE 2: Three of eleven Weimaraner littermates hop synchronously. Inheritance on the printed page is what, and what do you not promise from histology?
+- NAVLE 3: You are asked to copy a 3–4 week clock into a standing order. What stays on the page?
+- Oral: How do you tell the owner CMM1 is not “the Weimaraner spinal dysraphism they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Weimaraner,” why does this gate stay dark?
+- Attending: Horse CMM1 — fire or skip?
+- Attending: Dual-named “spinal dysraphism, EFNB3” — which loc should win, and why?
+
+## 286. Russian Blue FAM8A1 / RBD (Stee Anim Genet 2025)
+
+No dedicated Plunkett FAM8A1 chapter in the owned SA EM splits. Public Stee K, Van Poucke M, Huguet JA, et al. A FAM8A1 frameshift variant is associated with REM sleep behavior disorder, urinary retention, and mydriasis in Russian Blue cats. Anim Genet. 2025;56(3):e70013. doi:10.1111/age.70013. PMID: 40266280. Packet 258 still owns named degenerative encephalopathy / Toller REM. Packet 169 still owns named anisocoria / Key-Gaskell / dilute diagnostic drops. Packet 266 still owns named narcolepsy / cataplexy. Packet 116 still owns unnamed cluster / status. Packet 287 owns named RAB24 cerebellar ataxia, not this dump. Do not harvest a 23-bp table as lobby law. Do not harvest a 1.5% allele-frequency table as lobby law. Do not fire on bare Russian Blue / rem sleep / mydriasis / urinary retention. Cats only. Skip dogs. Skip horse.
+
+Agree with Stee 2025: **FAM8A1** in Russian Blue cats is an **autosomal recessive** 23-bp deletion (NC_058372.1:g.11622168_11622190del) predicted to cause **XM_019831563.3:c.485_507del p.(Gln162Profs*115)**. Five young adult cats from two related families had progressively worsening RBD episodes frequently associated with urinary loss. Three also had urinary retention with overflow incontinence between episodes. Three had a large bladder. Two had bilateral mydriasis with absent PLRs. Further examinations were unremarkable. Treatment attempts were unsatisfactory. Four cats were euthanized. Brain histopathology did not reveal abnormalities. The variant segregated recessively, showed an allele frequency of 1.5% in West-European Russian Blue cats (N=68), and was absent from 276 cats of 32 other breeds including Nebelung. The variant isoform is predicted to affect ERAD assembly. Printed variant, RBD-with-retention picture, mydriasis/PLR, and genetic-test line stay on the page.
+
+Night split: named FAM8A1 / RBD / rem sleep behavior is FAM8A1 frameshift; RBD with retention; not Toller DEEN. Bare Russian Blue does not fire. Bare rem sleep does not fire. Bare mydriasis does not fire. Dog does not fire. Horse does not fire. Named DEEN stays 258. Named Key-Gaskell / anisocoria stays 169. Named narcolepsy stays 266. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a 23-bp table.
+- Do not harvest a 1.5% allele-frequency table.
+- Do not copy a 258 table.
+- Do not send a Russian Blue home as Key-Gaskell.
+- Do not call it 258-only.
+
+Night rule: named FAM8A1 / RBD / rem sleep behavior → **FAM8A1 frameshift. RBD with retention. Not Toller DEEN.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A young adult Russian Blue acts out dreams and then dribbles urine. Which gene split matters at night, and why is this not Toller DEEN?
+- NAVLE 2: The same cat has a large bladder and bilateral mydriasis with absent PLRs. What stays on the page, and what do you not send home as Key-Gaskell?
+- NAVLE 3: You are asked to copy a 1.5% allele frequency into a standing order. What stays on the page?
+- Oral: How do you tell the owner this is not “the Key-Gaskell they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Russian Blue,” why does this gate stay dark?
+- Attending: Dog FAM8A1 — fire or skip?
+- Attending: Dual-named “narcolepsy, FAM8A1” in a cat — which loc should win, and why?
+
+## 287. RAB24 cerebellar ataxia (Schwarz Genes 2025)
+
+No dedicated Plunkett RAB24 chapter in the owned SA EM splits. Public Schwarz C, Wennemuth J, Guevar J, Dörn F, Jagannathan V, Leeb T. RAB24 missense variant in dogs with cerebellar ataxia. Genes (Basel). 2025;16(8):934. doi:10.3390/genes16080934. PMID: 40869982. PMCID: PMC12385749. Packet 252 still owns named familial cerebellar ataxia / mitochondrial fission encephalopathy. Packet 213 still owns named cerebellar abiotrophy. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 211 still owns named cerebellar hypoplasia. Packet 288 owns named RALGAPA1 / GARNL1, not this dump. Do not harvest a 5-month clock as lobby law. Do not harvest a 1576-genome table as lobby law. Do not fire on bare cerebellar ataxia / hypermetria / Gordon Setter / OES / American Bulldog. Dogs only. Skip cats. Skip horse.
+
+Agree with Schwarz 2025: **RAB24** p.(Gly80Val) (XM_038534663.1:c.239G>T) is an **autosomal recessive** missense in two 5-month-old random-bred (American Bulldog × Old English Bulldog) siblings with progressive cerebellar ataxia, hypermetria, intention tremor, and absent menace. MRI showed generalized brain atrophy, reduced cortical demarcation, hypoplastic corpus callosum, and cerebellar folia thinning. CSF was non-inflammatory. Both dogs were alive with impaired coordination. A previously reported RAB24 missense in Gordon Setters and Old English Sheepdogs stays on the page (printed Glu38Pro / Gln38Pro). Printed Gly80Val, MRI atrophy, and the Gordon Setter / OES line stay on the page.
+
+Night split: named RAB24 / Gly80Val is RAB24 missense; not MFE blindness. Bare cerebellar ataxia does not fire. Bare Gordon Setter does not fire. Cat does not fire. Horse does not fire. Named MFE stays 252. Named abiotrophy stays 213. Named hereditary ataxia stays 219. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 5-month clock.
+- Do not harvest a 1576-genome table.
+- Do not copy a 252 table.
+- Do not send a bulldog-cross home as MFE.
+- Do not call it 252-only.
+
+Night rule: named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Two 5-month bulldog-cross littermates hop with hypermetria and no menace. Which gene split matters at night, and why is this not Bullmastiff MFE?
+- NAVLE 2: MRI shows a thin corpus callosum and folia thinning. What stays on the page, and what do you not harvest from 1576 genomes?
+- NAVLE 3: An owner Googled Gordon Setter RAB24. What stays on the page, and what does this gate not fire on if they only said “Gordon Setter”?
+- Oral: How do you tell the owner this is not “the familial cerebellar ataxia they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “cerebellar ataxia,” why does this gate stay dark?
+- Attending: Cat RAB24 — fire or skip?
+- Attending: Dual-named “familial cerebellar ataxia, RAB24” — which loc should win, and why?
+
+가채점 (rotate 1; cited vs Plunkett vs Plumb vs VIN-off vs instinct-compare):
+- Cited (Schwarz Genes 2025 PMID 40869982 / PMC12385749): named RAB24 / Gly80Val → **RAB24 missense. Not MFE blindness.** Printed c.239G>T / p.(Gly80Val), MRI atrophy, and the Gordon Setter / OES RAB24 missense stay on the page. Dual-named “familial cerebellar ataxia, RAB24” later-wins this loc. Bare cerebellar ataxia / Gordon Setter stay dark. Cat skip. Horse skip.
+- Plunkett: no dedicated RAB24 chapter in the owned SA EM splits. Do not harvest a 2013 ataxia table. Packet 252 still owns named familial cerebellar ataxia / MFE. Packet 213 still owns abiotrophy. Packet 219 still owns hereditary ataxia.
+- Plumb: not a night drug. Do not invent mg/kg. △ Plumb stays on the night rule because there is no monograph to dump.
+- VIN-off: do not login to VIN. Do not harvest a VIN cerebellar-ataxia table as lobby law.
+- Instinct-compare: Instinct Attending does not replace a license. Fluent “familial cerebellar ataxia” on a named RAB24 query is a miss. Do not send a bulldog-cross home as MFE. Do not copy a 252 table.
+
+## 288. Belgian Shepherd RALGAPA1 / GARNL1 (Christen Genes 2023)
+
+No dedicated Plunkett RALGAPA1 chapter in the owned SA EM splits. Public Christen M, Zdora I, Leschnik M, et al. RALGAPA1 deletion in Belgian Shepherd dogs with cerebellar ataxia. Genes (Basel). 2023;14(8):1520. doi:10.3390/genes14081520. PMID: 37628572. PMCID: PMC10454311. Packet 287 still owns named RAB24 / Gly80Val. Packet 252 still owns named familial cerebellar ataxia / MFE. Packet 255 still owns named spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 289 owns named SDCA2 / ATP1B2, not this dump. Do not harvest a 6-week clock as lobby law. Do not harvest a 5-week euthanasia clock as lobby law. Do not harvest a 5% carrier table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Christen 2023: **RALGAPA1** (also GARNL1) exon-35 ~4.8 kb deletion (XM_038544497.1:c.6080-2893_6944+1003del) is **autosomal recessive** in Belgian Shepherd dogs with cerebellar ataxia. Two littermates stabilized around six weeks and remained ataxic into adulthood. Three additional homozygotes from another litter were euthanized at five weeks for a severe phenotype. Histopathology showed cytoplasmic accumulation of granular material in Purkinje cells. Carrier frequency in a ~900-dog Belgian cohort stays on the page. Printed deletion, Purkinje granules, and stabilize-into-adulthood stay on the page.
+
+Night split: named RALGAPA1 / GARNL1 is RALGAPA1 deletion; not RAB24 missense. Bare Belgian Shepherd does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named RAB24 stays 287. Named MFE stays 252. Named spongiform stays 255. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 6-week clock.
+- Do not harvest a 5-week euthanasia clock.
+- Do not harvest a 5% carrier table.
+- Do not copy a 287 table.
+- Do not send a Belgian home as RAB24.
+- Do not call it 287-only.
+
+Night rule: named RALGAPA1 / GARNL1 → **RALGAPA1 deletion. Not RAB24 missense.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A Belgian puppy is ataxic at six weeks then plateaus. Which gene split matters at night, and why is this not RAB24?
+- NAVLE 2: Purkinje cells hold cytoplasmic granules. What stays on the page, and what do you not harvest from a 5% carrier table?
+- NAVLE 3: Dual-named “spongy degeneration, RALGAPA1” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Belgian SDCA they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Belgian Shepherd,” why does this gate stay dark?
+- Attending: Cat RALGAPA1 — fire or skip?
+- Attending: Dual-named “RAB24, RALGAPA1” — which loc should win, and why?
+
+## 289. Malinois SDCA2 / ATP1B2 (Mauri G3 2017)
+
+No dedicated Plunkett SDCA2 chapter in the owned SA EM splits. Public Mauri N, Kleiter M, Dietschi E, et al. A SINE insertion in ATP1B2 in Belgian Shepherd dogs affected by spongy degeneration with cerebellar ataxia (SDCA2). G3 (Bethesda). 2017;7(8):2729-2737. doi:10.1534/g3.117.043018. PMID: 28620085. PMCID: PMC5555477. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10 / SDCA1. Packet 287 still owns named RAB24. Packet 290 owns named SELENOP / CACA, not this dump. Do not harvest a 227-bp table as lobby law. Do not harvest a 10.6 Mb interval as lobby law. Do not fire on bare Malinois / Belgian Shepherd / spongy degeneration / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Mauri 2017: **SDCA2** in Malinois is an **autosomal recessive** 227-bp SINE insertion in **ATP1B2** (c.130_131insLT796559.1:g.50_276) that causes aberrant splicing and reduced ATP1B2 in the CNS. SDCA is genetically heterogeneous. This is not RALGAPA1 and not KCNJ10 SDCA1. Printed SINE, aberrant splicing, and genetic-test line stay on the page.
+
+Night split: named SDCA2 / ATP1B2 is ATP1B2 SINE; not RALGAPA1. Bare Malinois does not fire. Bare spongy degeneration stays 255. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named RALGAPA1 stays 288. Named KCNJ10 stays 219. Named RAB24 stays 287. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 227-bp table.
+- Do not harvest a 10.6 Mb interval.
+- Do not copy a 288 table.
+- Do not send a Malinois home as RALGAPA1.
+- Do not call it 288-only.
+
+Night rule: named SDCA2 / ATP1B2 → **SDCA2. ATP1B2 SINE. Not RALGAPA1.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A Malinois puppy has SDCA. Which gene split matters at night, and why is this not RALGAPA1?
+- NAVLE 2: The insertion is a SINE. What stays on the page, and what do you not harvest from 227 bp?
+- NAVLE 3: Dual-named “spongy degeneration, ATP1B2” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Belgian RALGAPA1 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Malinois,” why does this gate stay dark?
+- Attending: Cat ATP1B2 — fire or skip?
+- Attending: Dual-named “RALGAPA1, SDCA2” — which loc should win, and why?
+
+## 290. Belgian Shepherd SELENOP / CACA (Christen PLoS Genet 2021)
+
+No dedicated Plunkett SELENOP chapter in the owned SA EM splits. Public Christen M, Högler S, Kleiter M, et al. Deletion of the SELENOP gene leads to CNS atrophy with cerebellar ataxia in dogs. PLoS Genet. 2021;17(8):e1009716. doi:10.1371/journal.pgen.1009716. PMID: 34339417. PMCID: PMC8360551. Packet 289 still owns named SDCA2 / ATP1B2. Packet 288 still owns named RALGAPA1 / GARNL1. Packet 255 still owns unnamed spongiform / spongy degeneration. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 owns named KCNIP4, not this dump. Do not harvest a 2-week clock as lobby law. Do not harvest a 30% selenium table as lobby law. Do not fire on bare Belgian Shepherd / cerebellar ataxia / selenium. Dogs only. Skip cats. Skip horse.
+
+Agree with Christen 2021: **SELENOP** whole-gene deletion (Chr4:66,946,539_66,963,863del17,325) is **autosomal recessive** in Belgian Shepherd dogs with CNS atrophy and cerebellar ataxia (**CACA**). Onset about two weeks, intention tremor, variable severity. The deletion removes the selenoprotein P coding sequence required for selenium transport into the CNS. Printed whole-gene deletion, CNS atrophy, and the selenium-transport line stay on the page.
+
+Night split: named SELENOP is SELENOP deletion; CACA; not SDCA2. Bare Belgian Shepherd does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SDCA2 stays 289. Named RALGAPA1 stays 288. Named spongiform stays 255. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 2-week clock.
+- Do not harvest a 30% selenium table.
+- Do not copy a 289 table.
+- Do not send a Belgian home as SDCA2.
+- Do not call it 289-only.
+
+Night rule: named SELENOP → **SELENOP deletion. CACA. Not SDCA2.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A two-week Belgian has intention tremor and ataxia. Which gene split matters at night, and why is this not SDCA2?
+- NAVLE 2: Blood selenium is printed at about 30% of a wild-type littermate. What stays on the page?
+- NAVLE 3: Dual-named “SDCA2, SELENOP” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Malinois SDCA they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Belgian Shepherd,” why does this gate stay dark?
+- Attending: Cat SELENOP — fire or skip?
+- Attending: Dual-named “RALGAPA1, SELENOP” — which loc should win, and why?
+
+## 291. Norwegian Buhund KCNIP4 (Jenkins PLoS Genet 2020)
+
+No dedicated Plunkett KCNIP4 chapter in the owned SA EM splits. Public Jenkins CA, Kalmar L, Matiasek K, et al. Characterisation of canine KCNIP4: A novel gene for cerebellar ataxia identified by whole-genome sequencing two affected Norwegian Buhund dogs. PLoS Genet. 2020;16(1):e1008527. doi:10.1371/journal.pgen.1008527. PMID: 31999692. PMCID: PMC7012447. Packet 290 still owns named SELENOP / CACA. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 287 still owns named RAB24. Packet 292 owns named PNPLA8, not this dump. Do not harvest an 802-genome table as lobby law. Do not harvest a 4-affected count as lobby law. Do not fire on bare Buhund / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Jenkins 2020: **KCNIP4** missense (NC_006585.3:g.88890674T>C; tryptophan to arginine) is **autosomal recessive** in Norwegian Buhund dogs with progressive cerebellar ataxia. Only affected Buhunds were homozygous. The variant dramatically reduces KCNIP4 protein in cerebellum. Printed SNP, protein loss, and Kv4 accessory-subunit line stay on the page.
+
+Night split: named KCNIP4 is KCNIP4 missense; not SELENOP. Bare Buhund does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SELENOP stays 290. Named KCNJ10 / hereditary ataxia stays 219. Named RAB24 stays 287. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest an 802-genome table.
+- Do not harvest a 4-affected count.
+- Do not copy a 290 table.
+- Do not send a Buhund home as SELENOP.
+- Do not call it 290-only.
+
+Night rule: named KCNIP4 → **KCNIP4 missense. Not SELENOP.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Two Buhund siblings have progressive cerebellar ataxia. Which gene split matters at night, and why is this not SELENOP?
+- NAVLE 2: Western blot shows almost no KCNIP4 protein. What stays on the page?
+- NAVLE 3: Dual-named “hereditary ataxia, KCNIP4” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Jack Russell KCNJ10 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Buhund,” why does this gate stay dark?
+- Attending: Cat KCNIP4 — fire or skip?
+- Attending: Dual-named “SELENOP, KCNIP4” — which loc should win, and why?
+
+## 292. Australian Shepherd PNPLA8 (Abitbol Anim Genet 2022)
+
+No dedicated Plunkett PNPLA8 chapter in the owned SA EM splits. Public Abitbol M, Jagannathan V, Laurent N, et al. A PNPLA8 frameshift variant in Australian shepherd dogs with hereditary ataxia. Anim Genet. 2022;53(5):709-712. doi:10.1111/age.13245. PMID: 35864734. PMCID: PMC9545373. Packet 291 still owns named KCNIP4. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 290 still owns named SELENOP / CACA. Packet 293 owns named ITPR1, not this dump. Do not harvest a 4.7% carrier table as lobby law. Do not harvest an 85-Aussie table as lobby law. Do not fire on bare Australian Shepherd / hereditary ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Abitbol 2022: **PNPLA8** frameshift (c.1169_1170dupTT; p.His391PhefsTer394) is **autosomal recessive** in Australian Shepherd dogs with young-adult hereditary ataxia. Progressive uncoordinated movement and spasticity. The truncated protein is predicted to lack the patatin catalytic domain. Printed dupTT, frameshift, and phospholipase line stay on the page. Do not harvest a Weaver-syndrome table as lobby law.
+
+Night split: named PNPLA8 is PNPLA8 frameshift; not KCNIP4. Bare Australian Shepherd does not fire. Bare hereditary ataxia does not fire. Cat does not fire. Horse does not fire. Named KCNIP4 stays 291. Named KCNJ10 / hereditary ataxia stays 219. Named SELENOP stays 290. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 4.7% carrier table.
+- Do not harvest an 85-Aussie table.
+- Do not copy a 291 table.
+- Do not send an Aussie home as KCNIP4.
+- Do not call it 291-only.
+
+Night rule: named PNPLA8 → **PNPLA8 frameshift. Not KCNIP4.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A young-adult Aussie has progressive ataxia and spasticity. Which gene split matters at night, and why is this not KCNIP4?
+- NAVLE 2: The variant is printed as c.1169_1170dupTT. What stays on the page?
+- NAVLE 3: Dual-named “hereditary ataxia, PNPLA8” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Buhund KCNIP4 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Australian Shepherd,” why does this gate stay dark?
+- Attending: Cat PNPLA8 — fire or skip?
+- Attending: Dual-named “KCNIP4, PNPLA8” — which loc should win, and why?
+
+## 293. Italian Spinone ITPR1 / SCAIS (Forman Mamm Genome 2015)
+
+No dedicated Plunkett ITPR1 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Matiasek K, Platt S, Mellersh C. Spinocerebellar ataxia in the Italian Spinone dog is associated with an intronic GAA repeat expansion in ITPR1. Mamm Genome. 2015;26(1-2):108-117. doi:10.1007/s00335-014-9547-6. PMID: 25354648. PMCID: PMC4305091. Packet 292 still owns named PNPLA8. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 291 still owns named KCNIP4. Packet 294 owns named SPTBN2, not this dump. Do not harvest a 4-month clock as lobby law. Do not harvest a 1-year euthanasia table as lobby law. Do not fire on bare Spinone / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Forman 2015: **ITPR1** intron-35 **GAA repeat expansion** is **autosomal recessive** in Italian Spinone dogs with spinocerebellar ataxia (SCAIS). Progressive gait from about four months. Printed intron-35 expansion, reduced Purkinje ITPR1, and the SCAIS name stay on the page. Do not harvest a Friedreich / SCA15 table as lobby law. Human SCA15 is a different inheritance.
+
+Night split: named ITPR1 / SCAIS is ITPR1 GAA expansion; not PNPLA8. Bare Spinone does not fire. Bare spinocerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named PNPLA8 stays 292. Named KCNJ10 / hereditary ataxia stays 219. Named KCNIP4 stays 291. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 4-month clock.
+- Do not harvest a 1-year euthanasia table.
+- Do not copy a 292 table.
+- Do not send a Spinone home as PNPLA8.
+- Do not call it 292-only.
+
+Night rule: named ITPR1 → **ITPR1 GAA expansion. Not PNPLA8.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A four-month Spinone has hypermetria and truncal ataxia. Which gene split matters at night, and why is this not PNPLA8?
+- NAVLE 2: The variant is printed as an intron-35 GAA expansion. What stays on the page?
+- NAVLE 3: Dual-named “spinocerebellar ataxia, ITPR1” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the human SCA15 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Italian Spinone,” why does this gate stay dark?
+- Attending: Cat ITPR1 — fire or skip?
+- Attending: Dual-named “PNPLA8, ITPR1” — which loc should win, and why?
+
+## 294. Beagle SPTBN2 / NCCD (Forman BMC Genet 2012)
+
+No dedicated Plunkett SPTBN2 chapter in the owned SA EM splits. Public Forman OP, De Risio L, Stewart J, Mellersh CS, Beltran E. Genome-wide mRNA sequencing of a single canine cerebellar cortical degeneration case leads to the identification of a disease associated SPTBN2 mutation. BMC Genet. 2012;13:55. doi:10.1186/1471-2156-13-55. PMID: 22781464. PMCID: PMC3413603. Packet 293 still owns named ITPR1 / SCAIS. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 295 owns named SEL1L, not this dump. Do not harvest a 4-week clock as lobby law. Do not harvest a 68-fold table as lobby law. Do not fire on bare Beagle / cerebellar abiotrophy. Dogs only. Skip cats. Skip horse.
+
+Agree with Forman 2012: **SPTBN2** exon-29 **8-bp deletion** (chr18:53,691,704_53,691,711del) is **autosomal recessive** in Beagle dogs with neonatal cerebellar cortical degeneration (NCCD). Printed 8-bp deletion, β-III spectrin loss, and the NCCD name stay on the page. Do not harvest a human SCA5 table as lobby law. Human SCA5 is a different inheritance.
+
+Night split: named SPTBN2 / NCCD is SPTBN2 8-bp deletion; not ITPR1. Bare Beagle does not fire. Bare cerebellar abiotrophy does not fire. Cat does not fire. Horse does not fire. Named ITPR1 stays 293. Named abiotrophy stays 213. Named Bandera / GRM1 stays 217. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 4-week clock.
+- Do not harvest a 68-fold table.
+- Do not copy a 293 table.
+- Do not send a Beagle home as ITPR1.
+- Do not call it 293-only.
+
+Night rule: named SPTBN2 → **SPTBN2 8-bp deletion. Not ITPR1.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A four-week Beagle cannot walk from the onset of ambulation. Which gene split matters at night, and why is this not ITPR1?
+- NAVLE 2: The variant is printed as an exon-29 8-bp deletion. What stays on the page?
+- NAVLE 3: Dual-named “cerebellar abiotrophy, SPTBN2” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the human SCA5 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Beagle,” why does this gate stay dark?
+- Attending: Cat SPTBN2 — fire or skip?
+- Attending: Dual-named “ITPR1, SPTBN2” — which loc should win, and why?
+
+## 295. Finnish Hound SEL1L (Kyostila PLoS Genet 2012)
+
+No dedicated Plunkett SEL1L chapter in the owned SA EM splits. Public Kyostila K, Cizinauskas S, Seppala EH, et al. A SEL1L mutation links a canine progressive early-onset cerebellar ataxia to the endoplasmic reticulum-associated protein degradation (ERAD) machinery. PLoS Genet. 2012;8(6):e1002759. doi:10.1371/journal.pgen.1002759. PMID: 22719266. PMCID: PMC3375262. Packet 294 still owns named SPTBN2 / NCCD. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 217 still owns Bandera / GRM1. Packet 296 owns named ATG4D, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 10% carrier table as lobby law. Do not fire on bare Finnish Hound / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Kyostila 2012: **SEL1L** missense (c.1972T>C; p.Ser658Pro) is **autosomal recessive** in Finnish Hound dogs with early-onset progressive cerebellar ataxia. Printed missense, ERAD line, and Purkinje-cell loss stay on the page. Do not harvest an ER-stress gene table as lobby law.
+
+Night split: named SEL1L is SEL1L missense; not SPTBN2. Bare Finnish Hound does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SPTBN2 stays 294. Named abiotrophy stays 213. Named Bandera / GRM1 stays 217. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3-month clock.
+- Do not harvest a 10% carrier table.
+- Do not copy a 294 table.
+- Do not send a Finnish Hound home as SPTBN2.
+- Do not call it 294-only.
+
+Night rule: named SEL1L → **SEL1L missense. Not SPTBN2.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A three-month Finnish Hound has rapidly progressive cerebellar ataxia. Which gene split matters at night, and why is this not SPTBN2?
+- NAVLE 2: The variant is printed as c.1972T>C; p.Ser658Pro. What stays on the page?
+- NAVLE 3: Dual-named “cerebellar abiotrophy, SEL1L” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Beagle NCCD they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Finnish Hound,” why does this gate stay dark?
+- Attending: Cat SEL1L — fire or skip?
+- Attending: Dual-named “SPTBN2, SEL1L” — which loc should win, and why?
+
+## 296. Lagotto ATG4D (Kyostila PLoS Genet 2015)
+
+No dedicated Plunkett ATG4D chapter in the owned SA EM splits. Public Kyostila K, Syrja P, Jagannathan V, et al. A missense change in the ATG4D gene links aberrant autophagy to a neurodegenerative vacuolar storage disease. PLoS Genet. 2015;11(4):e1005169. doi:10.1371/journal.pgen.1005169. PMID: 25875846. PMCID: PMC4398399. Packet 295 still owns named SEL1L. Packet 217 still owns Bandera / GRM1. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 297 owns named SNX14, not this dump. Do not harvest a 23-month clock as lobby law. Do not harvest a 2300-Lagotto table as lobby law. Do not fire on bare Lagotto / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Kyostila 2015: **ATG4D** missense (c.1288G>A; p.A430T) is **autosomal recessive** in Lagotto Romagnolo dogs with progressive cerebellar ataxia and neuronal cytoplasmic vacuolization. Printed missense, vacuolar storage, and autophagy line stay on the page. Do not harvest a zebrafish knockdown table as lobby law.
+
+Night split: named ATG4D is ATG4D missense; not SEL1L. Bare Lagotto does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SEL1L stays 295. Named Bandera / GRM1 stays 217. Named abiotrophy stays 213. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 23-month clock.
+- Do not harvest a 2300-Lagotto table.
+- Do not copy a 295 table.
+- Do not send a Lagotto home as SEL1L.
+- Do not call it 295-only.
+
+Night rule: named ATG4D → **ATG4D missense. Not SEL1L.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A Lagotto has progressive cerebellar ataxia and neuronal vacuolization. Which gene split matters at night, and why is this not SEL1L?
+- NAVLE 2: The variant is printed as c.1288G>A; p.A430T. What stays on the page?
+- NAVLE 3: Dual-named “GRM1, ATG4D” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Finnish Hound SEL1L they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Lagotto,” why does this gate stay dark?
+- Attending: Cat ATG4D — fire or skip?
+- Attending: Dual-named “SEL1L, ATG4D” — which loc should win, and why?
+
+## 297. Hungarian Vizsla SNX14 (Fenn BMC Genet 2016)
+
+No dedicated Plunkett SNX14 chapter in the owned SA EM splits. Public Fenn J, Boursnell M, Hitti RJ, et al. Genome sequencing reveals a splice donor site mutation in the SNX14 gene associated with a novel cerebellar cortical degeneration in the Hungarian Vizsla dog breed. BMC Genet. 2016;17:123. doi:10.1186/s12863-016-0433-y. PMID: 27566131. PMCID: PMC5002145. Packet 296 still owns named ATG4D. Packet 295 still owns named SEL1L. Packet 213 still owns unnamed cerebellar abiotrophy. Packet 298 owns named SCN8A, not this dump. Do not harvest a 3-month clock as lobby law. Do not harvest a 133-Vizsla table as lobby law. Do not fire on bare Vizsla / cerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Fenn 2016: **SNX14** exon-26 **splice donor** (c.2653+1G>A; p.G885Dfs*16) is **autosomal recessive** in Hungarian Vizsla dogs with cerebellar cortical degeneration. Printed splice donor, lost SNX14 protein, and Purkinje-cell loss stay on the page. Do not harvest a human SCAR20 table as lobby law.
+
+Night split: named SNX14 is SNX14 splice donor; not ATG4D. Bare Vizsla does not fire. Bare cerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named ATG4D stays 296. Named SEL1L stays 295. Named abiotrophy stays 213. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3-month clock.
+- Do not harvest a 133-Vizsla table.
+- Do not copy a 296 table.
+- Do not send a Vizsla home as ATG4D.
+- Do not call it 296-only.
+
+Night rule: named SNX14 → **SNX14 splice donor. Not ATG4D.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A three-month Vizsla has hypermetric ataxia and absent menace. Which gene split matters at night, and why is this not ATG4D?
+- NAVLE 2: The variant is printed as c.2653+1G>A. What stays on the page?
+- NAVLE 3: Dual-named “cerebellar abiotrophy, SNX14” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Lagotto ATG4D they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Vizsla,” why does this gate stay dark?
+- Attending: Cat SNX14 — fire or skip?
+- Attending: Dual-named “ATG4D, SNX14” — which loc should win, and why?
+
+## 298. Alpine Dachsbracke SCN8A (Letko Genes 2019)
+
+No dedicated Plunkett SCN8A chapter in the owned SA EM splits. Public Letko A, Dietschi E, Nieburg M, Jagannathan V, Gurtner C, Oevermann A, Drogemuller C. A missense variant in SCN8A in Alpine Dachsbracke dogs affected by spinocerebellar ataxia. Genes (Basel). 2019;10(5):362. doi:10.3390/genes10050362. PMID: 31083464. PMCID: PMC6562999. Packet 297 still owns named SNX14. Packet 219 still owns named hereditary ataxia / KCNJ10. Packet 296 still owns named ATG4D. Gene leftovers 285–298 are closed. Packet 299 is Mosby/NAVLE canine hypothyroidism, not another ataxia gene. Do not harvest a 3-week clock as lobby law. Do not harvest a 600-control table as lobby law. Do not fire on bare Dachsbracke / dachshund / spinocerebellar ataxia. Dogs only. Skip cats. Skip horse.
+
+Agree with Letko 2019: **SCN8A** missense (c.4898G>T; p.Gly1633Val) is **autosomal recessive** in Alpine Dachsbracke dogs with spinocerebellar ataxia, tremor, and loss of balance. Printed missense, Nav1.6 line, and spongy/axonal degeneration stay on the page. Do not harvest a jolting-mouse or human epilepsy table as lobby law.
+
+Night split: named SCN8A is SCN8A missense; not SNX14. Bare Dachsbracke does not fire. Bare spinocerebellar ataxia does not fire. Cat does not fire. Horse does not fire. Named SNX14 stays 297. Named KCNJ10 / hereditary ataxia stays 219. Named ATG4D stays 296. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest a 3-week clock.
+- Do not harvest a 600-control table.
+- Do not copy a 297 table.
+- Do not send a Dachsbracke home as SNX14.
+- Do not call it 297-only.
+
+Night rule: named SCN8A → **SCN8A missense. Not SNX14.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A three-week Alpine Dachsbracke has ataxia and loss of balance. Which gene split matters at night, and why is this not SNX14?
+- NAVLE 2: The variant is printed as c.4898G>T; p.Gly1633Val. What stays on the page?
+- NAVLE 3: Dual-named “spinocerebellar ataxia, SCN8A” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the Vizsla SNX14 they Googled,” without inventing a receptor assay?
+- Attending: If the query is only “Dachsbracke,” why does this gate stay dark?
+- Attending: Cat SCN8A — fire or skip?
+- Attending: Dual-named “SNX14, SCN8A” — which loc should win, and why?
+
+## 299. Canine hypothyroidism (Heseltine Merck 2024/2025)
+
+No dedicated Plunkett hypothyroidism chapter in the owned SA EM splits. Public Heseltine J. Hypothyroidism in Animals. Merck Veterinary Manual. Full review May 2024; last updated May 2025. Peer reviewed by Carnevale J. Gene leftovers 285–298 are closed. Packet 298 still owns named SCN8A. Packet 300 is canine hyperadrenocorticism (not Cushing reflex). Packet 301 is feline hyperthyroidism (not a wellness T4). Packet 302 is FeLV / FIV. Do not harvest a 22-mcg levothyroxine table as lobby law. Do not harvest an 80% cholesterol table as lobby law. Do not fire on bare Golden / lethargy / alopecia / T4. Dogs can fire. Cats fire as iatrogenic. Skip horse.
+
+Agree with Heseltine 2024/2025: **canine hypothyroidism** is usually primary (lymphocytic thyroiditis or idiopathic atrophy). Hypothyroidism is overdiagnosed. Low total T4 alone has low specificity. Pair with fT4 (equilibrium dialysis) or TSH. Do not treat nonthyroidal illness / sick euthyroid. Greyhound T4 is lower. Adult cat disease is usually iatrogenic after hyperthyroid treatment. Printed levothyroxine mcg/kg stays on the page (`△ Plumb`).
+
+Night split: named hypothyroidism is canine hypothyroidism; not T4-alone. Bare Golden does not fire. Bare lethargy does not fire. Hyperthyroid does not fire. Horse does not fire. Named SCN8A stays 298. Dog can fire. Cat can fire as iatrogenic.
+
+Book/public traps:
+
+- Do not harvest a 22-mcg table.
+- Do not harvest an 80% cholesterol table.
+- Do not copy a T4-alone table.
+- Do not send a fat Golden home as hypothyroid on T4 alone.
+- Do not harvest a 20–40% TSH table.
+
+Night rule: named hypothyroidism → **Canine hypothyroidism. Not T4-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A fat Golden Retriever has a low T4 during gastroenteritis. Is that hypothyroidism tonight, and why not?
+- NAVLE 2: Why is TSH never read alone, and what stays on the page about dogs whose TSH stays in RI?
+- NAVLE 3: Dual-named “hypothyroidism, SCN8A” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just start thyroxine from the cabinet,” without inventing a mcg/kg?
+- Attending: If the query is only “Golden Retriever,” why does this gate stay dark?
+- Attending: Cat hypothyroidism — fire or skip, and what loc?
+- Attending: Dual-named “hyperthyroidism, hypothyroidism” — which loc should win, and why?
+
+## 300. Canine hyperadrenocorticism (Van Vertloo Merck 2024; AAHA 2023; Behrend ACVIM 2013)
+
+No dedicated Plunkett HAC chapter in the owned SA EM splits. Public Van Vertloo L. Cushing Syndrome (Hyperadrenocorticism) in Animals. Merck Veterinary Manual. Full review Jul 2024. AAHA 2023 Selected Endocrinopathies of Dogs and Cats, diagnostic testing and monitoring (published 12 Apr 2023). Behrend EN, Kooistra HS, Nelson R, Reusch CE, Scott-Moncrieff JC. Diagnosis of spontaneous canine hyperadrenocorticism: 2012 ACVIM consensus statement (small animal). J Vet Intern Med. 2013;27(6):1292-1304. doi:10.1111/jvim.12192. Packet 299 still owns named hypothyroidism. Packet 298 still owns named SCN8A. Packet 301 is feline hyperthyroidism (not a wellness T4). Packet 302 is FeLV / FIV, not another ataxia gene. Do not harvest a UCCR table as lobby law. Do not harvest an LDDST table as lobby law. Do not harvest a 0.01-mg or 8-hour cutoff as lobby law. Do not fire on Cushing reflex (TBI). Do not fire on bare ALP / PU/PD / potbelly. Dogs can fire. Cats can fire (uncommon). Skip horse.
+
+Agree with Van Vertloo 2024 / AAHA 2023 / Behrend 2013: **canine hyperadrenocorticism** is usually PDH. Test only when clinical signs are present. Do not test a sick dog (nonadrenal illness / stress false positives). LDDST is the screening test of choice; the 8-hour cortisol is the screen. UCCR collected at home is a rule-out, not a rule-in. ACTH stim is not first-line for spontaneous HAC; it is the test for iatrogenic HAC. Imaging differentiates PDH vs ADH after the endocrine diagnosis. Printed dexamethasone mg/kg and laboratory cutoffs stay on the page (`△ Plumb`). Trilostane / mitotane stay in Plumb.
+
+Night split: named hyperadrenocorticism / Cushing syndrome is canine hyperadrenocorticism; not Cushing reflex. Bare ALP does not fire. Cushing reflex stays TBI. Horse does not fire. Named hypothyroidism stays 299. Dog can fire. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a UCCR table.
+- Do not harvest an LDDST table.
+- Do not copy a trilostane table.
+- Do not send a panting Poodle home as Cushing on ALP alone.
+- Do not harvest an 8-hour cutoff.
+
+Night rule: named HAC → **Canine hyperadrenocorticism. Not Cushing reflex.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: An asymptomatic dog has a high ALP. Is that Cushing tonight, and which test can exclude it?
+- NAVLE 2: Why is LDDST preferred over ACTH stim for spontaneous HAC, and when is ACTH stim the right test?
+- NAVLE 3: Dual-named “Cushing reflex, hyperadrenocorticism” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “start trilostane from the cabinet,” without inventing a mg/kg?
+- Attending: If the query is only “PU/PD,” why does this gate stay dark?
+- Attending: Cat HAC — fire or skip, and what loc?
+- Attending: Dual-named “hypothyroidism, Cushing syndrome” — which loc should win, and why?
+
+## 301. Feline hyperthyroidism (Heseltine Merck 2024)
+
+No dedicated Plunkett hyperthyroidism chapter in the owned SA EM splits. Public Heseltine J. Hyperthyroidism in Animals. Merck Veterinary Manual. Full review May 2024. AAHA 2023 selected endocrinopathies named as further reading only. Packet 299 still owns named hypothyroidism. Packet 300 still owns named HAC. Packet 172 still owns hypertension / amlodipine. Packet 302 is FeLV / FIV (not SNAP-alone). Packet 303 is AAHA vaccination. Do not harvest a methimazole table as lobby law. Do not harvest an I-131 table as lobby law. Do not fire on bare weight loss / old cat / T4. Cats can fire. Dogs fire as carcinoma until proven otherwise. Skip horse.
+
+Agree with Heseltine 2024: **feline hyperthyroidism** is usually bilateral adenoma / adenomatous hyperplasia. High T4 in a clinically affected cat confirms. A high T4 in a well cat is not same-day disease. fT4 is not a screening test. TSH is not sensitive. Radioiodine is the curative treatment of choice. Methimazole controls synthesis and is lifelong if used alone. PTU is not recommended in cats. Treatment can unmask CKD. Measure BP. Dog hyperthyroidism is thyroid carcinoma until proven otherwise. Printed methimazole mg and I-131 stay on the page (`△ Plumb`).
+
+Night split: named hyperthyroidism is feline hyperthyroidism; not a wellness T4. Bare weight loss does not fire. Hypothyroidism stays 299. HAC stays 300. Hypertension stays 172. Horse does not fire. Cat can fire. Dog can fire as carcinoma.
+
+Book/public traps:
+
+- Do not harvest a methimazole table.
+- Do not harvest an I-131 table.
+- Do not copy a PTU table.
+- Do not send a skinny yowling cat home as old.
+- Do not treat a one-time high T4 in a well cat.
+
+Night rule: named hyperthyroidism → **Feline hyperthyroidism. Not a wellness T4.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A well 12-year-old cat has a high T4 on a wellness panel. Is that hyperthyroidism tonight, and why not?
+- NAVLE 2: Why is radioiodine the curative conversation, and what does methimazole actually do?
+- NAVLE 3: Dual-named “hyperthyroidism, hypothyroidism” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “start methimazole from the cabinet,” without inventing a mg?
+- Attending: If the query is only “old cat, weight loss,” why does this gate stay dark?
+- Attending: Dog hyperthyroidism — fire or skip, and what loc?
+- Attending: Dual-named “hyperthyroidism, amlodipine” — which loc should win, and why?
+
+## 302. FeLV / FIV (St Denis Merck 2022; Whitbread kits 2026; AAFP 2020)
+
+No dedicated Plunkett FeLV/FIV chapter in the owned SA EM splits. Public St Denis KA. Feline Leukemia Virus Disease. Merck Veterinary Manual. Reviewed/revised Feb 2022. Whitbread TJ. Serologic Test Kits. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (FIV antibody / maternal antibody / vaccine-antibody lines). Little S, Levy J, Hartmann K, et al. 2020 AAFP Feline Retrovirus Testing and Management Guidelines. J Feline Med Surg. 2020;22(1):5-30. doi:10.1177/1098612X19895940 named only; no guideline dump. Packet 301 still owns named hyperthyroidism. FIP stays the FIP gate. Packet 303 is AAHA core vs non-core vaccination (not a mL table). Do not harvest a SNAP cutoff as lobby law. Do not harvest an interferon table as lobby law. Do not fire on bare stomatitis / sick cat. Cats only. Skip dogs. Skip horse.
+
+Agree with St Denis 2022 / Whitbread 2026 / AAFP 2020: **FeLV is antigen (p27). FIV is antibody.** Do not euthanize on one SNAP. Confirm a positive. FeLV vaccine does not make the antigen test positive. FIV vaccine antibodies can persist. Kitten FIV-positive may be maternal antibody. Tears and saliva are not FeLV samples. Abortive / regressive / progressive FeLV is why one test is not a life sentence. Printed 30-day FeLV and 60-day FIV windows stay on the page. Printed zidovudine mg/kg and interferon lines stay on the page (`△ Plumb`).
+
+Night split: named FeLV / FIV is FeLV antigen, FIV antibody; not SNAP-alone. Bare stomatitis does not fire. Hyperthyroidism stays 301. FIP stays FIP. Horse does not fire. Dog does not fire. Cat can fire.
+
+Book/public traps:
+
+- Do not harvest a SNAP cutoff.
+- Do not harvest an interferon table.
+- Do not copy a zidovudine table.
+- Do not send a kitten FIV-positive home as infected.
+- Do not call FeLV vaccine a positive antigen test.
+
+Night rule: named FeLV / FIV → **FeLV antigen, FIV antibody. Not SNAP-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A well indoor cat is SNAP FeLV-positive. Do you euthanize tonight, and what is the next test?
+- NAVLE 2: Why can a kitten be FIV-antibody positive and still not be infected?
+- NAVLE 3: Dual-named “FIP, FeLV” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “the SNAP is the diagnosis,” without inventing a cutoff?
+- Attending: If the query is only “stomatitis,” why does this gate stay dark?
+- Attending: Dog FeLV — fire or skip?
+- Attending: Dual-named “hyperthyroidism, FIV” — which loc should win, and why?
+
+## 303. AAHA core vs non-core vaccines (AAHA canine 2022/2024; AAHA/AAFP feline 2020)
+
+No dedicated Plunkett vaccination-schedule chapter in the owned SA EM splits. Public 2022 AAHA Canine Vaccination Guidelines (Ellis et al. J Am Anim Hosp Assoc. 2022;58:1-19), **updated 2024** on the AAHA page to include leptospirosis as core for all dogs. Public 2020 AAHA/AAFP Feline Vaccination Guidelines (published 13 Aug 2020). Packet 302 still owns named FeLV/FIV testing. Anaphylaxis / vaccine reaction stays the anaphylaxis gate. Packet 304 is canine ITP (not Cavalier macrothrombocytopenia). Do not harvest a mL table as lobby law. Do not harvest a 3-year clock as lobby law. Do not harvest a distal-limb sarcoma map as lobby law. Do not fire on bare vaccine / unvaccinated / rabies-neuro. Dogs and cats. Skip horse.
+
+Agree with AAHA 2022/2024 and AAHA/AAFP 2020: **core vs non-core.** Dog core: distemper, adenovirus, parvovirus, +/- parainfluenza, Leptospira (2024), rabies. Dog lifestyle: Lyme, Bordetella, influenza, rattlesnake. Cat core: FHV-1, FCV, FPV, rabies, FeLV if younger than 1 year. Cat non-core: FeLV after 1 year, *Chlamydia*, *Bordetella*. Overdue / unknown: when in doubt, vaccinate, unless a specific medical reason not to. Printed 16-week last puppy core and 3-year adult core intervals stay on the page (`△ label`).
+
+Night split: named core / non-core / DA2PP / FVRCP / AAHA vaccin is AAHA core vs non-core; not a mL table. Bare vaccine does not fire. Vaccine reaction stays anaphylaxis. Named FeLV stays 302. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a mL table.
+- Do not harvest a 3-year clock.
+- Do not harvest a distal-limb map.
+- Do not copy the 2017 lepto-as-noncore line.
+- Do not send a 16-week puppy home without the last core.
+
+Night rule: named core vs non-core → **AAHA core vs non-core. Not a mL table.** △ label.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Which antigens are core for every dog after the 2024 AAHA update, and why is lepto no longer optional by default?
+- NAVLE 2: A 4-month-old kitten: which vaccines are core, and is FeLV still core at 2 years?
+- NAVLE 3: Dual-named “vaccine reaction, core vaccines” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “skip lepto, it is optional,” without inventing a mL?
+- Attending: If the query is only “unvaccinated puppy,” why does this gate stay dark?
+- Attending: Horse core vaccines — fire or skip?
+- Attending: Dual-named “FeLV, core vaccine” — which loc should win, and why?
+
+## 304. Canine ITP (McQuinn Merck 2025/2026; ACVIM LeVine 2024)
+
+No dedicated Plunkett ITP chapter in the owned SA EM splits. Public McQuinn E. Platelet Disorders in Animals. Merck Veterinary Manual. Full review Feb 2025; last updated Mar 2026. LeVine DN, Goggs R, Kohn B, et al. ACVIM consensus statement on the treatment of immune thrombocytopenia in dogs and cats. J Vet Intern Med. 2024;38(4):1982-2007. doi:10.1111/jvim.17079 named only; no consensus dump. Packet 303 still owns named AAHA core vs non-core. Packet 305 is diabetes mellitus (not a stress glucose; not DKA/HHS). IMHA stays the IMHA gate. Lepto stays lepto. Ehrlichia / RMSF stays tick-rickettsial. Do not harvest a 30k table as lobby law. Do not harvest a vincristine table as lobby law. Do not fire on bare petechiae / Cavalier / thrombocytopenia. Dogs and cats. Skip horse.
+
+Agree with McQuinn 2025/2026 and LeVine 2024: **named ITP is immune destruction of platelets, not Cavalier macrothrombocytopenia.** Diagnosis is exclusion plus a verified smear. Primary means no trigger found. Secondary means vector-borne, drug, or neoplasia. Vincristine is an emergency adjunct with steroids for a bleeding dog, not monotherapy. Caution in MDR1 herding dogs. Delay cyclosporine after vincristine. Printed platelet cutoffs and vincristine mg/kg stay on the page (`△ Plumb`). Cats can get ITP; it is rare. Little evidence that vaccination causes ITP.
+
+Night split: named ITP / IMT / Evans is canine ITP; not Cavalier macrothrombocytopenia. Bare petechiae does not fire. Cavalier plus low platelets does not fire. Mild thrombocytopenia with lepto stays lepto. Fever plus thrombocytopenia with ehrlichia stays tick-rickettsial. Named IMHA alone stays IMHA. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a 30k table.
+- Do not harvest a vincristine table.
+- Do not call Cavalier macrothrombocytopenia ITP.
+- Do not call mild thrombocytopenia ITP.
+- Do not treat a machine-low count without a smear.
+- Do not vincristine an MDR1 herding dog as default.
+- Do not start cyclosporine the same night as vincristine.
+- Do not send petechiae home as fleas.
+
+Night rule: named ITP → **Canine ITP. Not Cavalier macrothrombocytopenia.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Cavalier with a low machine platelet count not treated as ITP tonight?
+- NAVLE 2: A bleeding dog named ITP: what is vincristine for, and what two things is it not?
+- NAVLE 3: Dual-named “ITP, ehrlichia” — which loc should win, and why?
+- Oral: How do you tell the owner this is not fleas, without inventing a 30k cutoff?
+- Attending: If the query is only “petechiae,” why does this gate stay dark?
+- Attending: Horse ITP — fire or skip?
+- Attending: Dual-named “IMHA, Evans syndrome” — which loc should win, and why?
+
+## 305. Diabetes mellitus (Buishand Merck 2024/2026; AAHA 2026)
+
+No dedicated Plunkett stable-diabetes chapter in the owned SA EM splits (DKA/HHS already verified as packet 115). Public Buishand F. Diabetes Mellitus in Dogs and Cats. Merck Veterinary Manual. Full review May 2024; last updated May 2026. 2026 AAHA Diabetes Management Guidelines for Dogs and 2026 AAHA Diabetes Management Guidelines for Cats (diagnosis sections published 2026) named only; no guideline dump. Packet 304 still owns named ITP. Packet 306 is canine lymphoma (not a CHOP table). DKA stays the DKA gate. HHS stays the HHS gate. Degenerative myelopathy stays `\bdm\b`-dark. Do not harvest a U/kg insulin table as lobby law. Do not harvest a fructosamine cutoff as lobby law. Do not fire on bare PU/PD / hyperglycemia / glucosuria. Dogs and cats. Skip horse.
+
+Agree with Buishand 2024/2026 and AAHA 2026: **named diabetes is persistent hyperglycemia with glucosuria, not a stress glucose.** Cat stress hyperglycemia is common; fructosamine or a home / non-stress glucose splits it. Fructosamine falls with hyperthyroidism and protein-losing disease. Dogs are insulin-dependent; oral glipizide is not the dog default. Cats can remit. Cataracts are dogs; plantigrade neuropathy is cats. Printed glucose cutoffs and insulin U/kg stay on the page (`△ Plumb`). DKA and HHS are decompensated, not this loc.
+
+Night split: named diabetes / fructosamine is canine diabetes; not a stress glucose. Bare PU/PD does not fire. Bare hyperglycemia / glucosuria does not fire. Named DKA stays DKA. Named HHS stays HHS. Named degenerative myelopathy stays myelopathy. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a U/kg insulin table.
+- Do not harvest a fructosamine cutoff.
+- Do not diagnose diabetes on a stressed cat glucose.
+- Do not diagnose on glucosuria alone.
+- Do not call DKA a stable diabetic.
+- Do not start oral glipizide as the dog default.
+- Do not harvest a 200 mg/dL table.
+
+Night rule: named diabetes → **Canine diabetes. Not a stress glucose.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a stressed cat with a high in-hospital glucose not started on insulin tonight?
+- NAVLE 2: A dog with PU/PD, hyperglycemia, and glucosuria: what is the diagnosis, and why is glipizide not the default?
+- NAVLE 3: Dual-named “diabetes, DKA” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just stress,” without inventing a fructosamine cutoff?
+- Attending: If the query is only “PU/PD,” why does this gate stay dark?
+- Attending: Horse diabetes — fire or skip?
+- Attending: Dual-named “degenerative myelopathy, DM” — which loc should win, and why?
+
+## 306. Canine lymphoma (Fan Merck 2023/2025; AAHA 2026 oncology)
+
+No dedicated Plunkett lymphoma chapter in the owned SA EM splits. Public Fan TM. Lymphoma in Dogs. Merck Veterinary Manual. Full review Sept 2023; last updated Apr 2025. 2026 AAHA Oncology Guidelines for Dogs and Cats (Section 1 overview of common cancers, published 2026) named only; no MST / CHOP dump. Packet 305 still owns named diabetes. Packet 307 is canine MCT (not a grade table). HyperCa stays the hyperCa gate (DexSP-before-PTH). FeLV/FIV stays 302. Cryptococcus stays crypto (do not pred as lymphoma first). Nasal neoplasia stays nasal. Do not harvest a CHOP table as lobby law. Do not harvest an MST table as lobby law. Do not fire on bare lymphadenopathy / Golden. Dogs and cats. Skip horse.
+
+Agree with Fan 2023/2025 and AAHA 2026: **named lymphoma is a clonal lymphoid neoplasm, not a CHOP table.** Dog: generalized nonpainful lymphadenopathy is the usual picture; cytology of a monomorphic medium-to-large cell node can diagnose. Small-cell / mixed still needs biopsy or PARR. PARR is clonality, not phenotype. Flow is phenotype. Pred before tissue can hide the diagnosis. Cats: FeLV/FIV; GI small-cell is not a crash CHOP. Indolent / T-zone is not a crash CHOP. Printed CHOP / COP / doxorubicin / MST numbers stay on the page (`△ Plumb`). HyperCa of malignancy is a second list.
+
+Night split: named lymphoma / lymphosarcoma is canine lymphoma; not a CHOP table. Bare lymphadenopathy does not fire. Named FeLV stays 302. Named crypto stays crypto. Named hyperCa plus maybe-lymphoma concatenates. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a CHOP table.
+- Do not harvest a prednisone table.
+- Do not start pred before tissue if you can still get a diagnosis.
+- Do not call a mixed reactive node lymphoma.
+- Do not CHOP a small-cell GI cat as large-cell.
+- Do not harvest a WHO stage table.
+- Do not harvest an MST table.
+
+Night rule: named lymphoma → **Canine lymphoma. Not a CHOP table.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a mixed reactive node not started on CHOP tonight?
+- NAVLE 2: A cat with GI lymphoma: when is chlorambucil the conversation instead of crash CHOP?
+- NAVLE 3: Dual-named “lymphoma, hypercalcemia, DexSP” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just a swollen gland,” without inventing an MST?
+- Attending: If the query is only “lymphadenopathy, Golden,” why does this gate stay dark?
+- Attending: Horse lymphoma — fire or skip?
+- Attending: Dual-named “FeLV, lymphoma” — which loc should win, and why?
+
+## 307. Canine MCT (Villalobos Merck 2021/2026; Whitbread cytology 2026)
+
+No dedicated Plunkett MCT chapter in the owned SA EM splits. Public Villalobos AE. Lymphocytic, Histiocytic, and Related Cutaneous Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Cutaneous Mast Cell Tumors section). Whitbread TJ. Cytology. Merck Veterinary Manual. Full review Jun 2015; last updated Aug 2026 (cytology cannot grade mast cell tumors; grading always requires histology). 2026 AAHA Oncology Guidelines named only; no Patnaik / margin dump. Packet 306 still owns named lymphoma. Packet 308 is canine AGASACA (not hyperCa-alone). Mastitis stays the gland. Osteosarcoma stays OSA. Do not harvest a Patnaik table as lobby law. Do not harvest a 3-cm margin table as lobby law. Do not fire on bare skin mass / Boxer. Dogs and cats. Skip horse.
+
+Agree with Villalobos 2021/2026 and Whitbread 2026: **named MCT is diagnosed on FNA and graded on histopath, not a grade table from the smear.** FNA before you cut so the margin is planned. Do not squeeze the mass. GI ulcer from histamine is the night medical list; do not add an NSAID. H1/H2 stay on the page (`△ Plumb`). Aspirate the draining node even if it feels normal. Cats: Patnaik is not predictive. Printed vinblastine / tigilanol / 3-cm numbers stay on the page.
+
+Night split: named mast cell / MCT / mastocytoma is canine MCT; not a grade table. Bare skin mass does not fire. Named mastitis stays mastitis. Named lymphoma stays lymphoma. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a grade table.
+- Do not harvest a 3-cm margin table.
+- Do not grade MCT on cytology.
+- Do not squeeze the mass as the night plan.
+- Do not add an NSAID to a degranulating MCT.
+- Do not harvest a Patnaik table.
+- Do not harvest a vinblastine table.
+- Do not call Patnaik the cat system.
+
+Night rule: named MCT → **Canine MCT. Not a grade table.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is an FNA-positive MCT not given a Patnaik grade tonight?
+- NAVLE 2: A Boxer with a skin mass that waxes and wanes: what do you do before you cut, and why not an NSAID?
+- NAVLE 3: Dual-named “mast cell tumor, mastitis” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just a lipoma,” without inventing a 3-cm margin?
+- Attending: If the query is only “skin mass, Boxer,” why does this gate stay dark?
+- Attending: Horse MCT — fire or skip?
+- Attending: Dual-named “MCT, lymphoma” — which loc should win, and why?
+
+## 308. Canine AGASACA (Gallagher Merck 2025; Villalobos 2021/2026; Ham hyperCa 2023)
+
+No dedicated Plunkett AGASACA chapter in the owned SA EM splits. Public Gallagher A. Anal Sac Disease in Dogs and Cats. Merck Veterinary Manual. Full review Aug 2025. Villalobos AE. Epidermal and Hair Follicle Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021; last updated Jun 2026 (Apocrine Gland Tumors of Anal Sac Origin). Ham K. Hypercalcemia in Dogs and Cats. Merck Veterinary Manual. Reviewed/revised Jun 2023 (rectal examination with expression of the anal sacs to rule out AGASACA; HHM in dogs is lymphoma or AGASACA first). 2026 AAHA Oncology Guidelines named only; no MST dump. Packet 307 still owns named MCT. Packet 309 is canine oral melanoma (not a dental tartar). HyperCa stays the hyperCa gate. Lymphoma stays lymphoma. Do not harvest an MST table as lobby law. Do not fire on bare scooting / anal glands / abscess. Dogs only. Skip cat. Skip horse.
+
+Agree with Gallagher 2025 / Villalobos 2021/2026 / Ham 2023: **named AGASACA is an apocrine anal-sac carcinoma, not hyperCa-alone.** A firm, nonexpressible sac is a tumor until biopsy. Measure iCa. Scooting / impaction / abscess is the other anal-sac list. Hepatoid perianal adenoma is castration-responsive; AGASACA is not. Do not close calcium because you expressed the glands. Printed sacculectomy / MST numbers stay on the page (`△ Plumb`).
+
+Night split: named AGASACA / anal-sac carcinoma is canine AGASACA; not hyperCa-alone. Bare scooting does not fire. Named hyperCa alone stays hyperCa. Named lymphoma stays lymphoma. Cat does not fire. Horse does not fire. Dog can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not skip the rectal exam on a hyperCa dog.
+- Do not call scooting AGASACA.
+- Do not call a hepatoid adenoma AGASACA.
+- Do not castrate AGASACA as the plan.
+- Do not close calcium because you expressed the glands.
+
+Night rule: named AGASACA → **Canine AGASACA. Not hyperCa-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A hyperCa dog: why do you put a glove on before you start fluids?
+- NAVLE 2: Intact male with a perianal lump: AGASACA or hepatoid, and what does castration do?
+- NAVLE 3: Dual-named “AGASACA, hypercalcemia” — which loc should win, and why?
+- Oral: How do you tell the owner this is not “just anal glands,” without inventing an MST?
+- Attending: If the query is only “scooting, anal glands,” why does this gate stay dark?
+- Attending: Cat AGASACA — fire or skip?
+- Attending: Dual-named “lymphoma, AGASACA” — which loc should win, and why?
+
+## 309. Canine oral melanoma (Mulherin Merck Nov 2024; AAHA 2026 oncology)
+
+No dedicated Plunkett oral-melanoma chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024. 2026 AAHA Oncology Guidelines named only; no MST / Oncept dump. Packet 308 still owns named AGASACA. Packet 310 is feline oral SCC (not a loose-tooth extraction). Packet 311 is named osteosarcoma leaving HIGH_MET. Pulmonary mets still owns cannonball nodules (oral melanoma left that regex so a mouth mass is not labeled pulmonary nodules; hemangiosarcoma left in 312; mammary adenocarcinoma left in 313). Do not harvest an MST table as lobby law. Do not harvest an Oncept table as lobby law. Do not fire on bare tartar / epulis / halitosis. Dogs and cats (rare). Skip horse.
+
+Agree with Mulherin 2024: **named oral melanoma is a malignant oral tumor, not a dental tartar.** Pigmented or amelanotic. Biopsy is the diagnosis. Aspirate mandibular nodes even if they feel normal. Chest before you cut. Amelanotic is not an epulis. The three common dog oral malignancies are melanoma, SCC, and fibrosarcoma. Cats: oral melanoma is rare. Printed 2 cm / mandibulectomy numbers stay on the page (`△ Plumb`).
+
+Night split: named oral / malignant / amelanotic melanoma is canine oral melanoma; not a dental tartar. Bare tartar does not fire. Named epulis does not fire. Named osteosarcoma still stages the chest. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not skip the nodes because they feel normal.
+- Do not call amelanotic melanoma an epulis.
+- Do not call tartar a pigmented mass.
+- Do not harvest an Oncept table.
+- Do not skip the chest film.
+
+Night rule: named oral melanoma → **Canine oral melanoma. Not a dental tartar.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a pink gingival mass still melanoma until the biopsy says otherwise?
+- NAVLE 2: Why do you needle a normal-sized mandibular node before mandibulectomy?
+- NAVLE 3: Dual-named “oral melanoma, osteosarcoma” — which loc should win, and why?
+- Oral: How do you tell the owner this is not tartar, without inventing an MST?
+- Attending: If the query is only “tartar, halitosis,” why does this gate stay dark?
+- Attending: Horse oral melanoma — fire or skip?
+- Attending: Dual-named “oral melanoma, multiple pulmonary nodules” — which loc should win, and why?
+
+## 310. Feline oral SCC (Mulherin Merck Nov 2024; AAHA 2026 oncology)
+
+No dedicated Plunkett oral-SCC chapter in the owned SA EM splits. Public Mulherin BL. Oral Tumors in Small Animals. Merck Veterinary Manual. Full review Nov 2024 (SCC is the most common malignant oral tumor in cats; gingiva and underlying bone, tongue and sublingual; owner may perceive a dental issue). 2026 AAHA Oncology Guidelines named only; no MST / piroxicam dump. Packet 309 still owns named oral melanoma. HyperCa stays hyperCa (bare squamous cell carcinoma is not this loc). Do not harvest an MST table as lobby law. Do not harvest a piroxicam table as lobby law. Do not fire on bare tartar / loose tooth. Dogs and cats. Skip horse.
+
+Agree with Mulherin 2024: **named oral SCC is locally invasive squamous cell carcinoma of the mouth, not a loose-tooth extraction.** Radiograph the jaw. Biopsy. Do not extract the tooth and send the jaw home. Sublingual and mandibular sites are classic in the cat. Dogs: SCC is second after melanoma. Printed mandibulectomy / NSAID numbers stay on the page (`△ Plumb`).
+
+Night split: named oral / lingual / gingival SCC is feline oral SCC; not a loose-tooth extraction. Bare tartar / loose tooth do not fire. Named oral melanoma stays melanoma. Bare squamous cell carcinoma with hyperCa stays hyperCa. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not extract the tooth and send the jaw home.
+- Do not call a loose tooth dental-only.
+- Do not harvest a piroxicam table.
+- Do not call this oral melanoma.
+
+Night rule: named oral SCC → **Feline oral SCC. Not a loose-tooth extraction.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: A cat with a loose mandibular canine: why is extraction not the plan until you radiograph and biopsy?
+- NAVLE 2: Sublingual mass in a cat: SCC or melanoma, and why?
+- NAVLE 3: Dual-named “oral SCC, oral melanoma” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a bad tooth, without inventing an MST?
+- Attending: If the query is only “tartar, loose tooth,” why does this gate stay dark?
+- Attending: Horse oral SCC — fire or skip?
+- Attending: Dual-named “hypercalcemia, squamous cell carcinoma” — which loc should win, and why?
+
+## 311. Canine osteosarcoma (Chou Merck Nov 2025; AAHA 2026 oncology)
+
+No dedicated Plunkett osteosarcoma chapter in the owned SA EM splits. Public Chou PY. Bone Tumors in Dogs and Cats. Merck Veterinary Manual. Full review Nov 2025 (osteosarcoma most common primary bone tumor; nontraumatic pathological bone fracture; Jamshidi / Michele confirms; thoracic radiography for mets). 2026 AAHA Oncology Guidelines named only; no MST / amputation dump. Packet 199 still owns the pathologic-fracture night split. Packet 198 still owns multiple nodules. Packet 313 is named mammary carcinoma leaving HIGH_MET. Packet 312 is named hemangiosarcoma leaving HIGH_MET. Packet 309 still owns named oral melanoma (also left HIGH_MET). Named osteosarcoma left HIGH_MET so a bone mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest an amputation table as lobby law. Do not fire on bare lameness / HBC radius. Dogs and cats. Skip horse.
+
+Agree with Chou 2025: **named osteosarcoma is a primary bone tumor, not a splint-and-home and not pulmonary-nodules-alone.** Radiograph the bone. Biopsy. Stage the chest before you amputate. Distal radius, proximal humerus, distal femur, proximal tibia. Cats: less aggressive, not the dog script. Printed 1–2 / 4–6.5 / 9–12 months stay on the page (`△ Plumb`).
+
+Night split: named osteosarcoma is canine osteosarcoma; not a splint-and-home; not pulmonary-nodules-alone. Pathologic fracture / lytic metaphysis still this loc. Multiple lung nodules without a bone story stay mets. Named mammary carcinoma is 313. Named hemangiosarcoma is 312. Bare lameness does not fire. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not plate a pathologic fracture as trauma.
+- Do not splint a pathologic fracture and send it home.
+- Do not call a bone mass pulmonary nodules.
+- Do not amputate before a chest film.
+
+Night rule: named osteosarcoma → **Canine osteosarcoma. Not a splint-and-home. Not pulmonary-nodules-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Distal-radius lytic mass: why is a splint-and-home not the plan?
+- NAVLE 2: Why does naming osteosarcoma not mean the query is already pulmonary nodules?
+- NAVLE 3: Dual-named “osteosarcoma, multiple pulmonary nodules” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a sprain, without inventing an MST?
+- Attending: If the query is only “lameness,” why does this gate stay dark?
+- Attending: Horse osteosarcoma — fire or skip?
+- Attending: Dual-named “mammary adenocarcinoma, osteosarcoma” — which loc should win, and why?
+
+## 312. Canine hemangiosarcoma (Center Merck Jul 2026; Villalobos Aug 2021; AAHA 2026 oncology)
+
+No dedicated Plunkett hemangiosarcoma chapter in the owned SA EM splits. Public Center SA. Hepatic Neoplasia in Small Animals. Merck Veterinary Manual. Full review Aug 2023; last updated Jul 2026 (hepatic HSA: surgery is palliative to arrest hemorrhage; printed MST / doxorubicin protocols stay on the page). Villalobos AE. Connective Tissue Tumors in Animals. Merck Veterinary Manual. Full review Aug 2021 (dermal solar angiosarcoma is the other list; Whippet / white-coat sun; not the visceral crash). Merck pericardial disease in dogs and cats: hemangiosarcoma is a common cardiac neoplasm; tamponade is still the drain, not Lasix. 2026 AAHA Oncology Guidelines named only; no MST / doxorubicin dump. Packet 120 still owns bare hemoabdomen (PCV/TS pair). Packet 198 still owns multiple nodules. Packet 313 owns named mammary carcinoma. Packet 311 still owns named osteosarcoma. Named hemangiosarcoma left HIGH_MET so a splenic or cardiac mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest a doxorubicin table as lobby law. Do not fire on `\bhsa\b` (human serum albumin). Do not fire on bare collapse / pale gums / spleen. Dogs and cats. Skip horse.
+
+Agree with Center 2026: **named hemangiosarcoma can bleed; surgery is palliative to arrest hemorrhage, not a wait-and-see hemoabdomen and not pulmonary-nodules-alone.** FAST. Stage the chest before you cut. Splenectomy is the bleed conversation. Right atrium is a cardiac neoplasm. Dermal solar is the other list. Printed 68–136 / 145–250 day and doxorubicin numbers stay on the page (`△ Plumb`).
+
+Night split: named hemangiosarcoma is canine hemangiosarcoma; not a wait-and-see hemoabdomen; not pulmonary-nodules-alone. Bare hemoabdomen stays 120. Tamponade stays tamponade. Multiple lung nodules without an HSA name stay mets. Bare HSA letters do not fire. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not send named hemangiosarcoma home to wait.
+- Do not call a splenic or cardiac mass pulmonary nodules.
+- Do not harvest a doxorubicin table.
+- Do not call dermal solar HSA the visceral crash.
+- Do not give vitamin K as the HSA plan.
+
+Night rule: named hemangiosarcoma → **Canine hemangiosarcoma. Not a wait-and-see hemoabdomen. Not pulmonary-nodules-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Collapsed Golden with a splenic mass: why is “wait overnight and see” not the plan once you name HSA?
+- NAVLE 2: Why does naming hemangiosarcoma not mean the query is already pulmonary nodules?
+- NAVLE 3: Dual-named “hemangiosarcoma, hemoabdomen” — which loc should win, and why?
+- Oral: How do you tell the owner splenectomy stops the bleed tonight, without inventing an MST?
+- Attending: If the query is only “HSA” or “collapse, pale gums,” why does this gate stay dark?
+- Attending: Horse hemangiosarcoma — fire or skip?
+- Attending: Dual-named “hemangiosarcoma, tamponade” — which loc should win, and why?
+
+## 313. Canine mammary carcinoma (Sorenmo Merck Apr 2024; Lopes Sept 2024; AAHA 2026 oncology)
+
+No dedicated Plunkett mammary-carcinoma chapter in the owned SA EM splits. Public Sorenmo K. Mammary Tumors in Dogs. Merck Veterinary Manual. Full review Mar 2024; last updated Apr 2024 (most common neoplasia in intact females; about half malignant; FNA may not distinguish benign vs malignant; regard as potentially malignant; histology; stage before treatment; inflammatory carcinoma may be mistaken for mastitis). Lopes M. Mammary Tumors in Cats. Merck Veterinary Manual. Full review Sept 2024 (most feline mammary tumors are malignant; surgery TOC; stage before treatment). 2026 AAHA Oncology Guidelines named only; no MST / OHE dump. Packet 114 still owns mastitis / septic dam. Packet 198 still owns multiple nodules. Named mammary adenocarcinoma left HIGH_MET so a gland mass is not labeled pulmonary nodules; chest-before-cut stays in this loc. Do not harvest an MST table as lobby law. Do not harvest an OHE table as lobby law. Do not fire on bare mastitis / mammary swelling / mammary tumor. Dogs and cats. Skip horse.
+
+Agree with Sorenmo 2024: **named mammary carcinoma is potentially malignant, not a cyst-and-home and not pulmonary-nodules-alone.** Histology. Stage the chest before you cut. Inflammatory mammary is not mastitis. Dogs: about half malignant. Cats: most malignant. Printed 50% / TNM / OHE-timing numbers stay on the page (`△ Plumb`).
+
+Night split: named mammary carcinoma / adenocarcinoma / inflammatory mammary is canine mammary carcinoma; not a cyst-and-home; not pulmonary-nodules-alone. Bare mastitis stays the gland. Bare mammary tumor does not fire. Multiple lung nodules without a mammary-carcinoma name stay mets. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an MST table.
+- Do not call FNA a benign rule-out.
+- Do not call a mammary mass pulmonary nodules.
+- Do not harvest an OHE table.
+- Do not call inflammatory mammary carcinoma mastitis.
+- Do not harvest a 3-cm TNM table.
+
+Night rule: named mammary carcinoma → **Canine mammary carcinoma. Not a cyst-and-home. Not pulmonary-nodules-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a needle sample not enough to send a mammary mass home as a cyst?
+- NAVLE 2: Why does naming mammary adenocarcinoma not mean the query is already pulmonary nodules?
+- NAVLE 3: Dual-named “inflammatory mammary carcinoma, mastitis” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a cyst, without inventing an MST or a spay clock?
+- Attending: If the query is only “mammary tumor” or “mastitis,” why does this gate stay dark?
+- Attending: Horse mammary adenocarcinoma — fire or skip?
+- Attending: Dual-named “mammary carcinoma, multiple pulmonary nodules” — which loc should win, and why?
+
+## 314. Feline IBD vs GI lymphoma (Collier Merck Jun 2026; Matsuyama Jan 2025)
+
+No dedicated Plunkett IBD-vs-lymphoma chapter in the owned SA EM splits. Public Collier A. Chronic Enteropathies in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Jun 2026 (IBD vs alimentary lymphoma is a continuum in cats; diet first; ileal biopsies find lymphoma the duodenum misses; PARR monoclonality suggests small-cell lymphoma; printed pred / chlorambucil stay on the page). Matsuyama A. Gastrointestinal Neoplasia in Dogs and Cats. Merck Veterinary Manual. Full review Jan 2025 (endoscopic mucosa can misdiagnose feline gastric lymphoma as IBD vs full-thickness; ileal biopsies higher yield). Marsilio S et al. ACVIM consensus 2023 named only; no dump. Packet 306 still owns named nodal lymphoma (not a CHOP table). Packet 178 still owns PLE. Do not harvest a pred table as lobby law. Do not harvest a chlorambucil table as lobby law. Do not fire on bare vomiting / diarrhea. Dogs and cats. Skip horse.
+
+Agree with Collier 2026: **named IBD vs GI lymphoma is not a steroid-responsive diarrhea.** Diet and deworm first if stable. Ileum if you biopsy a cat. PARR is clonality. Endoscopic mucosa is not a full-thickness rule-out. Small-cell GI is not a crash CHOP. Printed 2 mg/kg pred / chlorambucil 2 mg stay on the page (`△ Plumb`).
+
+Night split: named IBD / alimentary / GI / small-cell lymphoma is feline IBD vs GI lymphoma; not a steroid-responsive diarrhea. Named lymphoma without GI words stays 306. PLE stays 178. Bare vomiting / diarrhea do not fire. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a pred table.
+- Do not harvest a chlorambucil table.
+- Do not pred IBD first.
+- Do not skip the ileum if you biopsy a cat.
+- Do not treat endoscopic mucosa as a full-thickness rule-out.
+- Do not CHOP a small-cell GI cat as large-cell.
+
+Night rule: named IBD / alimentary lymphoma → **Feline IBD vs GI lymphoma. Not a steroid-responsive diarrhea.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a 3-week vomiting cat not a pred-first IBD until you have diet, deworm, and (if biopsying) ileum?
+- NAVLE 2: Duodenal endoscopic biopsies call IBD; why is that not a lymphoma rule-out?
+- NAVLE 3: Dual-named “alimentary lymphoma, lymphoma” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a steroid diarrhea, without inventing a chlorambucil table?
+- Attending: If the query is only “vomiting, diarrhea,” why does this gate stay dark?
+- Attending: Horse IBD — fire or skip?
+- Attending: Dual-named “IBD, protein-losing enteropathy” — which loc should win, and why?
+
+## 315. Feline CKD (Van Vertloo Merck Oct 2026)
+
+No dedicated Plunkett CKD-staging chapter in the owned SA EM splits. Public Van Vertloo L. Renal Dysfunction in Dogs and Cats. Merck Veterinary Manual. Full review Mar 2025; last updated Oct 2026 (CKD is staged after diagnosis on a stable hydrated patient; creatinine plus SDMA on at least two occasions; then UPC and systolic BP substages; SDMA is more sensitive and less muscle-mass-dependent than creatinine; stage 1 is damage without azotemia; not every azotemic patient needs SQ fluids; hydration is canned food and water first, SQ later as needed). IRIS staging named only; no dump of the creatinine, SDMA, UPC, or binder tables. Packet 172 still owns HTN. Packet 177 still owns PLN. Packet 301 still owns hyperT unmasking CKD. Azotemic cat still no NSAID / no DexSP. Do not harvest an IRIS creatinine table as lobby law. Do not harvest a phosphorus binder table as lobby law. Do not fire on bare PU/PD. Do not fire on bare creatinine / iris (AKI frame). Dogs and cats. Skip horse.
+
+Agree with Van Vertloo 2026: **named CKD is not a fluids-only night.** Stage after they are stable. BP. UPC. Look for obstruction or UTI. Printed IRIS creatinine / SDMA / binder numbers stay on the page (`△ Plumb`).
+
+Night split: named CKD / chronic kidney / chronic renal disease is feline (or canine) CKD; not a fluids-only night. Bare PU/PD stay dark. Bare creatinine / iris stay the azotemic-cat gate. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest an IRIS creatinine table.
+- Do not harvest a phosphorus binder table.
+- Do not call this a fluids-only night.
+- Do not stage on one dehydrated creatinine.
+- Do not skip BP and UPC.
+- Do not NSAID or DexSP an azotemic cat.
+
+Night rule: named CKD → **Feline CKD. Not a fluids-only night.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a crash creatinine not an IRIS stage until the cat is stable and hydrated on more than one sample?
+- NAVLE 2: Why is SQ fluids not the whole plan for named CKD?
+- NAVLE 3: Dual-named “CKD, hyperthyroidism” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a fluids-only night, without inventing an IRIS creatinine table?
+- Attending: If the query is only “PU/PD,” why does this gate stay dark?
+- Attending: Horse CKD — fire or skip?
+- Attending: Dual-named “CKD, systemic hypertension” — which loc should win, and why?
+
+## 316. Canine pancreatitis (Steiner Merck Sept 2025)
+
+No dedicated Plunkett SNAP-cPL chapter in the owned SA EM splits. Public Steiner J. Pancreatitis in Dogs and Cats. Merck Veterinary Manual. Full review Sept 2025; last updated Sept 2025 (no test in isolation; diagnosis integrates clinical findings, imaging, and serum pancreatic lipase; in-clinic semiquantitative SNAP negative makes pancreatitis very unlikely; a positive SNAP needs quantitative PLI to confirm and baseline; antimicrobials are of questionable value and should not be used routinely; rest the pancreas only if vomiting is uncontrolled despite antiemetic; early enteral nutrition). Forman ACVIM 2021 still owns cats (cluster, opioid, do not withhold food). Do not harvest a SNAP cutoff as lobby law. Do not harvest a fluid table as lobby law. Do not harvest fuzapladib 0.4 mg/kg. Do not fire on bare vomiting. Do not fire on SNAP cPL without the word pancreatitis. Dogs. Skip horse. Cats stay Forman.
+
+Agree with Steiner 2025: **named pancreatitis is not a SNAP-alone.** Cluster: signs + imaging + lipase. Printed SNAP / Spec cPL / fluid numbers stay on the page (`△ Plumb`).
+
+Night split: named pancreatitis in a dog is canine pancreatitis; not a SNAP-alone. Bare vomiting stay dark. SNAP without pancreatitis stays dark. Horse does not fire. Cat pancreatitis stays Forman.
+
+Book/public traps:
+
+- Do not harvest a SNAP cutoff.
+- Do not harvest a fluid table.
+- Do not call this a SNAP-alone.
+- Do not diagnose on SNAP without signs and imaging.
+- Do not start antibiotics for uncomplicated pancreatitis.
+- Do not starve unless vomiting is uncontrolled despite antiemetic.
+
+Night rule: named pancreatitis → **Canine pancreatitis. Not a SNAP-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is an abnormal SNAP cPL not a pancreatitis diagnosis until you have signs and imaging?
+- NAVLE 2: Why is a negative SNAP useful if a positive SNAP is not the diagnosis?
+- NAVLE 3: Dual-named “pancreatitis, jaundice” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a SNAP-alone, without inventing a cutoff?
+- Attending: If the query is only “vomiting,” why does this gate stay dark?
+- Attending: Horse pancreatitis — fire or skip?
+- Attending: Cat “pancreatitis, SNAP fPL” — which loc should win, and why?
+
+## 317. Canine EPI (Steiner Merck Sept 2025)
+
+No dedicated Plunkett TLI chapter in the owned SA EM splits. Public Steiner J. Exocrine Pancreatic Insufficiency in Dogs and Cats. Merck Veterinary Manual. Full review Sept 2025; last updated Sept 2025 (weight loss and voluminous loose stool; dogs often polyphagic; serum TLI diagnoses; powder enzymes with meals beat tablets and enteric-coated; most dogs and almost all cats are cobalamin deficient; low-fat diets are not recommended because they further decrease fat assimilation; fecal elastase is less reliable than TLI). Do not harvest a TLI cutoff as lobby law. Do not harvest an enzyme teaspoon table as lobby law. Do not harvest a cobalamin mcg table. Do not use the letters EPI (epinephrine). Do not fire on bare diarrhea. Packet 178 still owns PLE. Packet 316 still owns named pancreatitis. Dogs and cats. Skip horse.
+
+Agree with Steiner 2025: **named EPI is not a bland-diet.** TLI. Enzymes with food. Cobalamin. Printed TLI / teaspoon / cobalamin numbers stay on the page (`△ Plumb`).
+
+Night split: named pancreatic insufficiency / TLI is canine (or feline) EPI; not a bland-diet. Bare diarrhea stay dark. Horse does not fire. Dog or cat can fire. Give-epi stays anaphylaxis.
+
+Book/public traps:
+
+- Do not harvest a TLI cutoff.
+- Do not harvest an enzyme table.
+- Do not call this a bland-diet.
+- Do not send named EPI home on chicken and rice without enzymes.
+- Do not use fecal elastase as TLI.
+- Do not pick a low-fat diet as the fat-assimilation plan.
+
+Night rule: named pancreatic insufficiency / TLI → **Canine EPI. Not a bland-diet.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is chicken-and-rice not the plan once TLI names EPI?
+- NAVLE 2: Why is fecal elastase not a TLI substitute?
+- NAVLE 3: Dual-named “PLE, TLI” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a bland-diet, without inventing a teaspoon table?
+- Attending: If the query is only “diarrhea, weight loss,” why does this gate stay dark?
+- Attending: Horse pancreatic insufficiency — fire or skip?
+- Attending: “give epi” — fire or skip, and why?
+
+## 318. Canine tracheal collapse (Tonozzi Merck May 2025)
+
+No dedicated Plunkett tracheal-collapse chapter in the owned SA EM splits. Public Tonozzi C. Overview of Respiratory Diseases of Dogs and Cats. Merck Veterinary Manual. Full review Feb 2022; last updated May 2025 (toy and miniature dogs; Yorkies overrepresented; weakened cartilage with dorsoventral flattening; nonproductive honking cough; extra-thoracic collapse is inspiratory, intra-thoracic is expiratory; radiographs may show it; fluoroscopy names dynamic collapse; medical first with antitussives, antibiotics, corticosteroids, bronchodilators, weight, cool, less excitement; stent and external rings are salvage and do not erase signs). Kuehn N. Tracheal Collapse in Dogs. Merck owner page. Full review Jun 2018; last updated Sept 2024 named only. Lasix is CHF pulmonary edema, not the collapse plan. Do not harvest a stent table as lobby law. Do not harvest a cough-suppressant table as lobby law. Do not fire on bare cough. Do not fire on bare honk (HHS letter). Packet 134 still owns lar par. Dogs. Skip cat. Skip horse.
+
+Agree with Tonozzi 2025: **named tracheal collapse is not a Lasix night.** Cool. Weight. Fluoroscopy if the film is quiet. Printed hydrocodone / stent numbers stay on the page (`△ Plumb`).
+
+Night split: named tracheal collapse / collapsing trachea / tracheomalacia is canine tracheal collapse; not a Lasix night. Bare cough stay dark. Horse does not fire. Cat does not fire. Dual-named CHF concatenates.
+
+Book/public traps:
+
+- Do not harvest a stent table.
+- Do not harvest a cough-suppressant table.
+- Do not call this a Lasix night.
+- Do not Lasix a honking Yorkie as CHF until pulmonary edema is the localization.
+- Do not promise a stent will stop the cough.
+- Do not skip weight, cool, and excitement control.
+
+Night rule: named tracheal collapse → **Canine tracheal collapse. Not a Lasix night.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Yorkie honk not a furosemide bolus until you have pulmonary edema?
+- NAVLE 2: Why can a normal chest film miss tracheal collapse?
+- NAVLE 3: Dual-named “tracheal collapse, CHF” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a Lasix night, without inventing a hydrocodone table?
+- Attending: If the query is only “cough,” why does this gate stay dark?
+- Attending: Horse tracheal collapse — fire or skip?
+- Attending: Cat tracheal collapse — fire or skip, and why?
+
+## 319. Canine BOAS (ACVS; Tonozzi Merck May 2025)
+
+No dedicated Plunkett BOAS chapter in the owned SA EM splits. Public ACVS. Brachycephalic Syndrome (elongated soft palate, stenotic nares, everted laryngeal saccules; nares diagnosed awake; palate and saccules need anesthesia; surgery when it interferes with breathing; medical management does not correct anatomy; heat, excitement, and obesity worsen). Tonozzi C. Overview of Respiratory Diseases of Dogs and Cats. Merck Veterinary Manual. Full review Feb 2022; last updated May 2025 (stenotic nares, elongation of the soft palate, nasopharyngeal turbinates, and tracheal stenosis are congenital obstruction). Do not harvest a stenotic-nares grade table as lobby law. Do not harvest a sedative table as lobby law. Do not fire on bare stertor. Do not fire on bare pug / bulldog (dystocia list). Packet 134 still owns lar par. Packet 318 still owns tracheal collapse. Dogs and cats. Skip horse.
+
+Agree with ACVS: **named BOAS is not a wait-and-see stertor.** Oxygen. Cool. Surgery conversation. Printed acepromazine / nares-grade numbers stay on the page (`△ Plumb`).
+
+Night split: named BOAS / brachycephalic obstructive / elongated soft palate / stenotic nares is canine (or feline) BOAS; not a wait-and-see stertor. Bare stertor stay dark. Horse does not fire. Dog or cat can fire.
+
+Book/public traps:
+
+- Do not harvest a stenotic-nares grade table.
+- Do not harvest a sedative table.
+- Do not call this a wait-and-see stertor.
+- Do not send named BOAS home as a cute snore.
+- Do not treat medical management as anatomy repair.
+- Do not throat-exam a crashing dog without an ET tube and a tracheostomy plan.
+
+Night rule: named BOAS → **Canine BOAS. Not a wait-and-see stertor.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a snoring bulldog not a wait-and-see stertor once BOAS is named?
+- NAVLE 2: Why can you see stenotic nares awake, but not the palate?
+- NAVLE 3: Dual-named “BOAS, tracheal collapse” — which loc should win, and why?
+- Oral: How do you tell the owner this is not a cute snore, without inventing a nares-grade table?
+- Attending: If the query is only “stertor,” why does this gate stay dark?
+- Attending: Horse BOAS — fire or skip?
+- Attending: Dual-named “BOAS, heatstroke” — which loc should win, and why?
+
+## 320. Canine megaesophagus (Defarges Merck May 2025)
+
+No dedicated Plunkett megaesophagus chapter in the owned SA EM splits. Public Defarges A. Dilatation of the Esophagus (Megaesophagus) in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated May 2025 (regurgitation is the cardinal sign; adult respiratory signs may predominate with little or no apparent regurgitation; thoracic radiographs show air, fluid, or food in a dilated esophagus; adult workup excludes MG, SLE, polymyositis, Addison, lead, thallium, dysautonomia, hypothyroidism, stricture, foreign body, neoplasia, and vascular ring; idiopathic esophageal function is not improved by surgery or drugs; gravity feeding 10–15 min; aspiration pneumonia is the usual killer). Do not harvest a barium table as lobby law. Do not harvest a metoclopramide table as lobby law. Do not fire on bare regurgitation. Packet 271 still owns congenital megaesophagus. Packet 163 still owns fulminant / acquired MG. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named megaesophagus is not a pneumonia-alone.** Upright feeding. Look for MG and Addison. Printed barium / metoclopramide / 10–15 min / survival numbers stay on the page (`△ Plumb`).
+
+Night split: named megaesophagus / megaoesophagus is canine (or feline) megaesophagus; not a pneumonia-alone. Bare regurgitation stay dark. Horse does not fire. Dog or cat can fire. Dual congenital megaesophagus concatenates 271 then 320. Dual MG plus megaesophagus concatenates 163 then 320.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest a metoclopramide table.
+- Do not call this a pneumonia-alone.
+- Do not send named megaesophagus home as kennel cough.
+- Do not pour barium into a dog that already aspirates.
+- Do not expect a motility drug to fix idiopathic megaesophagus.
+
+Night rule: named megaesophagus → **Canine megaesophagus. Not a pneumonia-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a coughing adult with megaesophagus not a pneumonia-alone?
+- NAVLE 2: Why does barium stay on the page when the dog already aspirates?
+- NAVLE 3: Dual-named “megaesophagus, myasthenia” — which loc should win, and why?
+- Oral: How do you tell the owner this is not kennel cough, without inventing a metoclopramide table?
+- Attending: If the query is only “regurgitation,” why does this gate stay dark?
+- Attending: Horse megaesophagus — fire or skip?
+- Attending: Dual-named “congenital megaesophagus” — which loc should win, and why?
+
+## 321. Canine vascular ring / PRAA (Tou Merck May 2025)
+
+No dedicated Plunkett PRAA chapter in the owned SA EM splits. Public Tou S. Vascular Malformations in Animals. Merck Veterinary Manual. Full review May 2025; last updated May 2025 (PRAA is the most common vascular ring in dogs, German Shepherd Dogs in particular, also reported in cattle, horses, and cats; esophagus and trachea trapped at the heart base by the persistent arch, ligamentum arteriosum, and heart base; esophageal dilation cranial to the heart base; regurgitation often at weaning; aspiration pneumonia common; rightward tracheal deviation on DV/VD is highly sensitive and specific; CT before surgery; transect the ligamentum arteriosum; PDA if present needs ligation and transection). Roberts J. Congenital and Inherited Anomalies of the Esophagus in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 named only (vascular ring entrapment vs congenital megaesophagus vs achalasia). Do not harvest a barium table as lobby law. Do not harvest a ligation table as lobby law. Do not harvest a 72% / 30% survival percent as lobby law. Do not fire on bare regurgitation. Do not fire on bare German Shepherd. Packet 320 still owns named megaesophagus. Packet 271 still owns congenital megaesophagus. Dogs and cats. Skip horse.
+
+Agree with Tou: **named PRAA is not a megaesophagus-alone.** Focal heart-base compression. CT before cut. Printed barium / ligation / survival numbers stay on the page (`△ Plumb`).
+
+Night split: named PRAA / persistent right aortic arch / vascular ring / double aortic arch is canine (or feline) vascular ring; not a megaesophagus-alone. Bare regurgitation stay dark. Horse does not fire. Dog or cat can fire. Dual megaesophagus plus PRAA concatenates 320 then 321.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest a ligation table.
+- Do not call this a megaesophagus-alone.
+- Do not send named PRAA home as weaning.
+- Do not pour barium into a puppy that already aspirates.
+- Do not treat ligamentum transection as a motility-drug night.
+
+Night rule: named PRAA → **Canine vascular ring. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a weaning GSD puppy with PRAA not a megaesophagus-alone?
+- NAVLE 2: Why does a rightward trachea on DV/VD matter before you cut?
+- NAVLE 3: Dual-named “megaesophagus, PRAA” — which loc should win, and why?
+- Oral: How do you tell the owner this is not weaning, without inventing a ligation table?
+- Attending: If the query is only “regurgitation,” why does this gate stay dark?
+- Attending: Horse PRAA — fire or skip?
+- Attending: Dual-named “congenital megaesophagus, vascular ring” — which loc should win, and why?
+
+## 322. Canine esophageal FB (Defarges Merck Sept 2024)
+
+No dedicated Plunkett esophageal-FB chapter in the owned SA EM splits. Public Defarges A. Esophageal Foreign Bodies in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated Sept 2024 (more common in dogs than cats; bones most common, also needles, fishhooks, wood, rawhide, dental chews; lodge at thoracic inlet, heart base, or caudal esophagus just cranial to the diaphragm; ptyalism, gagging, dysphagia, regurgitation, repeated swallows; remove immediately; most come out per os with a flexible endoscope; surgery if perforated or endoscopy fails; stricture is the most common complication; barium paste can wreck a later scope; iodinated contrast if perforation is suspected). Do not harvest a barium table as lobby law. Do not harvest an endoscopic-retrieval table as lobby law. Do not harvest a sucralfate / omeprazole table as lobby law. Do not fire on bare regurgitation. Do not fire on bare foreign body (GI / eye). Packet 320 still owns named megaesophagus. Packet 321 still owns PRAA. Linear string yank stays GI. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named esophageal FB is not a megaesophagus-alone.** Comes out tonight. Printed barium / Foley / forceps / 24-hour / sucralfate numbers stay on the page (`△ Plumb`).
+
+Night split: named esophageal / oesophageal foreign body or FB, or bone / fishhook / needle / rawhide in the esophagus is canine (or feline) esophageal FB; not a megaesophagus-alone. Bare regurgitation stay dark. Bare foreign body stay GI/eye. Horse does not fire. Dog or cat can fire. Dual megaesophagus plus esophageal FB concatenates 320 then 322.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest an endoscopic-retrieval table.
+- Do not call this a megaesophagus-alone.
+- Do not send named esophageal FB home as gagging.
+- Do not pour barium if perforation is on the list.
+- Do not yank this like a linear GI string.
+
+Night rule: named esophageal FB → **Canine esophageal FB. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a gagging dog with an esophageal bone not a megaesophagus-alone?
+- NAVLE 2: Why does barium stay on the page if you still need a scope tonight?
+- NAVLE 3: Dual-named “megaesophagus, esophageal FB” — which loc should win, and why?
+- Oral: How do you tell the owner this comes out tonight, without inventing a forceps table?
+- Attending: If the query is only “foreign body,” why does this gate stay dark?
+- Attending: Horse esophageal FB — fire or skip?
+- Attending: Dual-named “linear foreign body, esophageal FB” — which loc should win, and why?
+
+## 323. Canine esophageal stricture (Defarges Merck May 2025)
+
+No dedicated Plunkett esophageal-stricture chapter in the owned SA EM splits. Public Defarges A. Esophageal Strictures in Small Animals (Esophageal Stenosis). Merck Veterinary Manual. Full review Oct 2022; last updated May 2025 (pathologic luminal narrowing after anesthesia, FB trauma, caustic ingestion, doxycycline or clindamycin, esophagitis, reflux, or tumor; most in the thorax; PRAA and extramural tumors can mimic; fluoro esophagram preferred; balloon catheter dilation most successful; bougienage less available; stents salvage with high complication; surgical resection less successful; treat the induced esophagitis; steroids/mitomycin controversial). Do not harvest a balloon-dilation table as lobby law. Do not harvest a barium table as lobby law. Do not harvest a B-tube twice-a-day inflation table as lobby law. Do not fire on bare regurgitation. Do not fire on bare stricture (urethral). Packet 322 still owns named esophageal FB. Packet 321 still owns PRAA. Packet 320 still owns named megaesophagus. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named esophageal stricture is not a megaesophagus-alone.** Fluoro. Balloon first. Printed balloon-mm / B-tube / stent / steroid numbers stay on the page (`△ Plumb`).
+
+Night split: named esophageal / oesophageal stricture or stenosis is canine (or feline) esophageal stricture; not a megaesophagus-alone. Bare regurgitation stay dark. Bare stricture stay urethral. Horse does not fire. Dog or cat can fire. Dual esophageal FB plus stricture concatenates 322 then 323.
+
+Book/public traps:
+
+- Do not harvest a balloon-dilation table.
+- Do not harvest a barium table.
+- Do not call this a megaesophagus-alone.
+- Do not send named esophageal stricture home as gagging.
+- Do not copy a B-tube inflation table.
+- Do not treat resection as first-line over ballooning.
+
+Night rule: named esophageal stricture → **Canine esophageal stricture. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a regurgitating dog with an esophageal stricture not a megaesophagus-alone?
+- NAVLE 2: Why is balloon first-line over cutting the esophagus out?
+- NAVLE 3: Dual-named “esophageal FB, esophageal stricture” — which loc should win, and why?
+- Oral: How do you tell the owner this is a scar, not a dilated esophagus, without inventing a balloon-mm table?
+- Attending: If the query is only “stricture,” why does this gate stay dark?
+- Attending: Horse esophageal stricture — fire or skip?
+- Attending: Dual-named “PRAA, esophageal stricture” — which loc should win, and why?
+
+## 324. Canine esophagitis (Defarges Merck Sept 2024)
+
+No dedicated Plunkett esophagitis chapter in the owned SA EM splits. Public Defarges A. Esophagitis in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated Sept 2024 (inflammation usually from FB, gastroesophageal reflux, and occasionally doxycycline; reflux after anesthesia, atropine/acepromazine, or vomiting; also caustic, neoplasia, Spirocerca; feeding tubes across the GE junction; feline calicivirus; regurgitation is classic; endoscopy over plain films; H2 or omeprazole, cisapride/metoclopramide, sucralfate slurry, small low-fat/low-fiber meals; G-tube for severe rest; steroids to prevent stricture are controversial). Do not harvest a sucralfate table as lobby law. Do not harvest an omeprazole table as lobby law. Do not harvest a cisapride table as lobby law. Do not fire on bare regurgitation. Packet 323 still owns named esophageal stricture. Packet 322 still owns named esophageal FB. Packet 320 still owns named megaesophagus. Dogs and cats. Skip horse.
+
+Agree with Defarges: **named esophagitis is not a megaesophagus-alone.** Endoscopy. Printed sucralfate / omeprazole / cisapride numbers stay on the page (`△ Plumb`).
+
+Night split: named esophagitis / oesophagitis is canine (or feline) esophagitis; not a megaesophagus-alone. Bare regurgitation stay dark. Horse does not fire. Dog or cat can fire. Dual stricture plus esophagitis concatenates 323 then 324.
+
+Book/public traps:
+
+- Do not harvest a sucralfate table.
+- Do not harvest an omeprazole table.
+- Do not call this a megaesophagus-alone.
+- Do not send named esophagitis home as gagging.
+- Do not copy a cisapride table.
+- Do not treat steroids as a stricture-prevention law.
+
+Night rule: named esophagitis → **Canine esophagitis. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a regurgitating dog with esophagitis not a megaesophagus-alone?
+- NAVLE 2: Why do plain films fail named esophagitis?
+- NAVLE 3: Dual-named “esophageal stricture, esophagitis” — which loc should win, and why?
+- Oral: How do you tell the owner this is inflammation, not a dilated esophagus, without inventing a sucralfate table?
+- Attending: If the query is only “regurgitation,” why does this gate stay dark?
+- Attending: Horse esophagitis — fire or skip?
+- Attending: Dual-named “esophageal FB, esophagitis” — which loc should win, and why?
+
+## 325. Canine cricopharyngeal achalasia (Defarges Merck Sept 2024; Williamson Feb 2026)
+
+No dedicated Plunkett cricopharyngeal chapter in the owned SA EM splits. Public Defarges A. Cricopharyngeal Achalasia in Small Animals. Merck Veterinary Manual. Full review Oct 2022; last updated Sept 2024 (inadequate UES relaxation; primarily congenital, occasionally adult dogs with neuromuscular disease; gagging and regurgitation; aspiration pneumonia common; fluoro swallow with contrast alone and mixed with food; barium retained in the caudal pharynx; myotomy or cricopharyngeal and thyropharyngeal myectomy; 65% stays on the page). Williamson B. Cricopharyngeal Achalasia in Dogs. Merck Veterinary Manual. Full review Feb 2026; last updated Feb 2026 (developmental myopathy of young dogs; Spaniels overrepresented; dysphagia is hallmark; nasal reflux; contrast fluoro; rule out megaesophagus, MG, vascular ring; myotomy or myectomy; onabotulinumtoxin A stays on the page). Roberts J. Congenital and Inherited Anomalies of the Esophagus in Animals. Merck Veterinary Manual. Nov 2022 / Sept 2024 named only (LES achalasia is megaesophagus, not a distinct entity). Do not harvest a myectomy table as lobby law. Do not harvest a barium table as lobby law. Do not harvest a 65% surgery table as lobby law. Do not fire on bare dysphagia. Do not fire on bare achalasia. Dogs only. Skip cat. Skip horse. Packet 320 still owns named megaesophagus. Packet 163 still owns MG. Packet 321 still owns PRAA.
+
+Agree with Defarges / Williamson: **named cricopharyngeal achalasia is not a megaesophagus-alone.** Fluoro swallow. Printed myectomy / 65% / botox numbers stay on the page (`△ Plumb`).
+
+Night split: named cricopharyngeal achalasia / dysphagia / myectomy / myotomy is canine cricopharyngeal achalasia; not a megaesophagus-alone. Bare dysphagia stay dark. Bare achalasia stay dark. Cat does not fire. Horse does not fire. Dual esophagitis plus cricopharyngeal concatenates 324 then 325.
+
+Book/public traps:
+
+- Do not harvest a myectomy table.
+- Do not harvest a barium table.
+- Do not call this a megaesophagus-alone.
+- Do not send named cricopharyngeal achalasia home as weaning.
+- Do not copy a 65-percent surgery table.
+- Do not treat LES achalasia as this loc; that is megaesophagus.
+
+Night rule: named cricopharyngeal → **Canine cricopharyngeal achalasia. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a weaning Spaniel with cricopharyngeal achalasia not a megaesophagus-alone?
+- NAVLE 2: Why does fluoro swallow beat a survey film here?
+- NAVLE 3: Dual-named “megaesophagus, cricopharyngeal achalasia” — which loc should win, and why?
+- Oral: How do you tell the owner the UES will not open, without inventing a myectomy table?
+- Attending: If the query is only “dysphagia,” why does this gate stay dark?
+- Attending: Cat cricopharyngeal achalasia — fire or skip, and why?
+- Attending: Dual-named “esophagitis, cricopharyngeal achalasia” — which loc should win, and why?
+
+## 326. Canine hiatal hernia (Roberts Merck Sept 2024)
+
+No dedicated Plunkett hiatal-hernia chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (hiatal hernias occur through the esophageal hiatus; Type I sliding is the most common in small animals and is intermittent displacement of the LES and gastric fundus into the thorax; Type II is fundus only; brachycephalic breeds overrepresented, hereditary nature suspected in Shar-Pei; dysphagia, regurgitation, vomiting, ptyalism, and esophagitis from decreased LES function; radiographic or fluoroscopic diagnosis, intermittent so films can miss; medical treatment of esophagitis is required; surgery is hiatal plication, esophagopexy, and left-side gastropexy). Do not harvest a fundoplication table as lobby law. Do not harvest a barium table as lobby law. Do not fire on bare hernia (umbilical / inguinal). Do not fire on bare regurgitation. Packet 320 still owns named megaesophagus. Packet 319 still owns BOAS. Packet 324 still owns esophagitis. Dogs and cats. Skip horse.
+
+Agree with Roberts: **named hiatal hernia is not a megaesophagus-alone.** Fluoro. Treat the esophagitis. Printed plication / fundoplication numbers stay on the page (`△ Plumb`).
+
+Night split: named hiatal hernia / hiatus hernia / gastroesophageal hernia is canine (or feline) hiatal hernia; not a megaesophagus-alone. Bare hernia stay umbilical/inguinal. Horse does not fire. Dog or cat can fire. Dual megaesophagus plus hiatal hernia concatenates 320 then 326. Dual BOAS plus hiatal concatenates 319 then 326.
+
+Book/public traps:
+
+- Do not harvest a fundoplication table.
+- Do not harvest a barium table.
+- Do not call this a megaesophagus-alone.
+- Do not send named hiatal hernia home as normal brachycephalic vomit.
+- Do not treat a missed survey film as proof it is gone.
+- Do not copy a plication table as lobby law.
+
+Night rule: named hiatal hernia → **Canine hiatal hernia. Not a megaesophagus-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a regurgitating Shar-Pei with a hiatal hernia not a megaesophagus-alone?
+- NAVLE 2: Why can a normal chest film miss a Type I sliding hernia?
+- NAVLE 3: Dual-named “BOAS, hiatal hernia” — which loc should win, and why?
+- Oral: How do you tell the owner daily vomit is not normal for a short-nose dog, without inventing a fundoplication table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse hiatal hernia — fire or skip?
+- Attending: Dual-named “megaesophagus, hiatal hernia” — which loc should win, and why?
+
+## 327. Canine PPDH (Roberts Merck Sept 2024; McMichael Sept 2024)
+
+No dedicated Plunkett PPDH chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (peritoneopericardial hernia is failed septum transversum fusion; communication between abdomen and pericardial sac; Weimaraners and domestic long-haired cats; contents omentum, liver, gallbladder, or small intestine; tamponade, dyspnea, GI obstruction; often incidental; other congenital defects common; signs get herniorrhaphy, quiet cases are watched). McMichael M. Diaphragmatic Hernia in Animals. Merck Veterinary Manual. Full review May 2022; last updated Sept 2024 (congenital PPDH more common in cats; often incidental; enlarged cardiac silhouette overlapping the diaphragm; do not unduly delay surgery when indicated; do not tap as a default pericardial effusion). Do not harvest a mesh table as lobby law. Do not fire on bare hernia. Do not fire on bare diaphragmatic hernia (trauma). Packet 326 still owns hiatal. Dogs and cats. Skip horse.
+
+Agree with Roberts / McMichael: **named PPDH is not a hiatal-alone.** Films. Incidental can watch. Signs: herniorrhaphy. Printed mesh numbers stay on the page (`△ Plumb`).
+
+Night split: named PPDH / peritoneopericardial / pericardiodiaphragmatic hernia is canine (or feline) PPDH; not a hiatal-alone. Bare hernia stay umbilical/inguinal. Bare diaphragmatic hernia stay trauma. Horse does not fire. Dog or cat can fire. Dual hiatal plus PPDH concatenates 326 then 327. Named PPDH does not fire tamponade loc.
+
+Book/public traps:
+
+- Do not harvest a mesh table.
+- Do not tap named PPDH as tamponade.
+- Do not call this a hiatal-alone.
+- Do not send named PPDH home as a globoid heart.
+- Do not copy a mesh table as lobby law.
+- Do not delay surgery when signs are present.
+
+Night rule: named PPDH → **Canine PPDH. Not a hiatal-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Weimaraner with PPDH not a hiatal-alone?
+- NAVLE 2: Why do you not tap a globoid heart that is named PPDH?
+- NAVLE 3: Dual-named “hiatal hernia, PPDH” — which loc should win, and why?
+- Oral: How do you tell the owner this is a hole into the heart sac, without inventing a mesh table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse PPDH — fire or skip?
+- Attending: Dual-named “pericardial tamponade, PPDH” — which loc should win, and why?
+
+## 328. Canine traumatic DH (McMichael Merck Sept 2024)
+
+No dedicated Plunkett traumatic-DH chapter in the owned SA EM splits. Public McMichael M. Diaphragmatic Hernia in Animals. Merck Veterinary Manual. Full review May 2022; last updated Sept 2024 (trauma more common in dogs; congenital more common in cats; acute dyspnea; stomach in the thorax can bloat and crash; lost diaphragmatic contour and viscera in the chest on films; oxygen, analgesia, and support first; then replace viscera and repair; re-expansion pulmonary edema more likely after chronic repair). Do not harvest a re-expansion table as lobby law. Do not fire on PPDH compound names (327). Do not fire on hiatal (326). Do not fire on bare hernia. Dogs and cats. Skip horse.
+
+Agree with McMichael: **named traumatic DH is not a PPDH-alone.** Stabilize. Then repair. Printed re-expansion numbers stay on the page (`△ Plumb`).
+
+Night split: named diaphragmatic hernia / traumatic DH / ruptured diaphragm is canine (or feline) traumatic DH; not a PPDH-alone. Pericardiodiaphragmatic and peritoneopericardial diaphragmatic stay 327. Bare hernia stay umbilical/inguinal. Horse does not fire. Dog or cat can fire. Dual PPDH plus diaphragmatic hernia concatenates 327 then 328.
+
+Book/public traps:
+
+- Do not harvest a re-expansion pulmonary edema table.
+- Do not call this a PPDH-alone.
+- Do not send named DH home as a bruise.
+- Do not copy a re-expansion table as lobby law.
+- Do not wait for films if the patient is crashing.
+
+Night rule: named diaphragmatic hernia → **Canine traumatic DH. Not a PPDH-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a hit-by-car dog with a diaphragmatic hernia not a PPDH-alone?
+- NAVLE 2: Why do you stabilize before you open a chronic DH?
+- NAVLE 3: Dual-named “PPDH, diaphragmatic hernia” — which loc should win, and why?
+- Oral: How do you tell the owner the stomach is in the chest, without inventing a re-expansion table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse diaphragmatic hernia — fire or skip?
+- Attending: Why does “pericardiodiaphragmatic hernia” stay 327 and not this loc?
+
+## 329. Canine umbilical hernia (Roberts Merck Sept 2024)
+
+No dedicated Plunkett umbilical-hernia chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (true hernia has ring, sac, contents; umbilical hernias hold fat, omentum, or intestinal loops; Weimaraners, Pekingese, Basenjis, Airedale Terriers; concurrent cryptorchidism in many dogs; hereditary suspected not proved; palpation ± US/rads; surgical closure of the body wall lowers incarceration risk). Owner Merck pages: small hernias are often closed at OHE/neuter. Do not harvest a mesh table as lobby law. Do not fire on bare hernia. Do not fire on navel or umbilicus alone. Packet 328 still owns traumatic DH. Packet 327 still owns PPDH. Dogs and cats. Skip horse.
+
+Agree with Roberts: **named umbilical hernia is not a DH-alone.** Palpate. Close most. Printed mesh numbers stay on the page (`△ Plumb`).
+
+Night split: named umbilical hernia is canine (or feline) umbilical hernia; not a DH-alone. Bare hernia stay inguinal until named. Horse does not fire. Dog or cat can fire. Dual DH plus umbilical concatenates 328 then 329.
+
+Book/public traps:
+
+- Do not harvest a mesh table.
+- Do not call this a DH-alone.
+- Do not send named umbilical hernia home as a cosmetic navel.
+- Do not copy a mesh table as lobby law.
+- Do not ignore concurrent cryptorchidism.
+
+Night rule: named umbilical hernia → **Canine umbilical hernia. Not a DH-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Weimaraner puppy with an umbilical hernia not a DH-alone?
+- NAVLE 2: Why close most umbilical hernias even if they reduce?
+- NAVLE 3: Dual-named “diaphragmatic hernia, umbilical hernia” — which loc should win, and why?
+- Oral: How do you tell the owner this navel bulge can trap intestine, without inventing a mesh table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse umbilical hernia — fire or skip?
+- Attending: Dual-named “PPDH, umbilical hernia” — which loc should win, and why?
+
+## 330. Canine inguinal hernia (Roberts Merck Sept 2024)
+
+No dedicated Plunkett inguinal-hernia chapter in the owned SA EM splits. Public Roberts J. Hernias in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (inguinal and scrotal hernias are common in many dog breeds; hereditary suspected; bitches can herniate uterus; signs from nonpainful inguinal or scrotal swelling to vomiting if small intestine is strangulated). Horse laparoscopic ring closure, figure-eight bandage, and fertility tables stay on the large-animal page. Do not harvest a mesh table as lobby law. Do not fire on bare hernia. Do not fire on inguinal or scrotum alone. Packet 329 still owns umbilical. Dogs and cats. Skip horse.
+
+Agree with Roberts: **named inguinal hernia is not an umbilical-alone.** Palpate. Close. Strangulation is surgery tonight. Printed mesh numbers stay on the page (`△ Plumb`).
+
+Night split: named inguinal hernia / scrotal hernia is canine (or feline) inguinal hernia; not an umbilical-alone. Bare hernia stay unnamed. Horse does not fire. Dog or cat can fire. Dual umbilical plus inguinal concatenates 329 then 330.
+
+Book/public traps:
+
+- Do not harvest a mesh table.
+- Do not harvest a laparoscopic ring table.
+- Do not call this an umbilical-alone.
+- Do not send named inguinal hernia home as a lymph node.
+- Do not forget the uterus in a bitch.
+
+Night rule: named inguinal hernia → **Canine inguinal hernia. Not an umbilical-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a vomiting dog with an inguinal hernia not an umbilical-alone?
+- NAVLE 2: Why can a bitch’s inguinal hernia contain uterus?
+- NAVLE 3: Dual-named “umbilical hernia, inguinal hernia” — which loc should win, and why?
+- Oral: How do you tell the owner a groin bulge is not a lymph node, without inventing a mesh table?
+- Attending: If the query is only “hernia,” why does this gate stay dark?
+- Attending: Horse inguinal hernia — fire or skip?
+- Attending: Dual-named “scrotal hernia” — same loc or a new packet?
+
+## 331. Canine linear FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett linear-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (cats more typically ingest linear FB such as string, yarn, dental floss; one end anchors at the tongue base or stomach; peristalsis bunches intestine and saws the wall; never pull a visible string; cut at the anchor; inspect the oral cavity; plication on films; endoscopy is not for suspected linear FB; gastrotomy ± the fewest enterotomies). Do not harvest an enterotomy table. Do not harvest a 36–48 hour watch table as lobby law. Do not fire on bare foreign body. Packet 322 still owns esophageal FB. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named linear FB is not an esophageal-FB-alone.** Tongue base. Cut the anchor. Printed enterotomy numbers stay on the page (`△ Plumb`).
+
+Night split: named linear foreign body / linear FB / string under the tongue is canine (or feline) linear FB; not an esophageal-FB-alone. Bare foreign body stay unnamed. Horse does not fire. Dog or cat can fire. Dual esophageal FB plus linear concatenates 322 then 331. Existing LINEAR_RE still warns yarn/floss/yank without requiring this loc.
+
+Book/public traps:
+
+- Do not yank the visible string.
+- Do not harvest an enterotomy table.
+- Do not call this an esophageal-FB-alone.
+- Do not send named linear FB home as a hairball.
+- Do not use endoscopy as the linear plan.
+
+Night rule: named linear FB → **Canine linear FB. Not an esophageal-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a cat with string under the tongue not an esophageal-FB-alone?
+- NAVLE 2: Why do you cut the anchor instead of pulling the string?
+- NAVLE 3: Dual-named “esophageal foreign body, linear foreign body” — which loc should win, and why?
+- Oral: How do you tell the owner not to pull the string, without inventing an enterotomy table?
+- Attending: If the query is only “foreign body,” why does this gate stay dark?
+- Attending: Horse linear FB — fire or skip?
+- Attending: Why is endoscopy not the linear plan?
+
+## 332. Canine intussusception (Winkler Merck Aug 2025)
+
+No dedicated Plunkett intussusception chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (intussusception is the common extraluminal obstruction: invaginated bowel enveloped by antegrade or retrograde bowel; secondary to parasites, parvo, FB, or neoplasia, or idiopathic; ileocecocolic most often; gastroesophageal and pylorogastric forms are uncommon, acute, and severe; GSD may be predisposed to gastroesophageal intussusception; US target rings; exploratory over endoscopy; manually reduce or resect and anastomose). Do not harvest a barium table. Do not harvest a 36–48 hour watch table. Do not harvest albumin or dehiscence-day tables. Do not fire on bare foreign body. Do not fire on parvo or German Shepherd alone. Packet 331 still owns linear FB. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named intussusception is not a linear-FB-alone.** Target US. Reduce or resect. Printed barium numbers stay on the page (`△ Plumb`).
+
+Night split: named intussusception / telescoping bowel / ileocecocolic intussusception is canine (or feline) intussusception; not a linear-FB-alone. Bare foreign body stay unnamed. Horse does not fire. Dog or cat can fire. Dual linear FB plus intussusception concatenates 331 then 332.
+
+Book/public traps:
+
+- Do not harvest a barium table.
+- Do not harvest a 36–48 hour watch table.
+- Do not call this a linear-FB-alone.
+- Do not send named intussusception home as AHDS.
+- Do not skip parvo in a young dog.
+
+Night rule: named intussusception → **Canine intussusception. Not a linear-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a puppy with ileocecocolic intussusception not a linear-FB-alone?
+- NAVLE 2: Why is a target lesion on US not proof you can skip surgery?
+- NAVLE 3: Dual-named “linear foreign body, intussusception” — which loc should win, and why?
+- Oral: How do you tell the owner bowel telescoped on itself, without inventing a barium table?
+- Attending: If the query is only “foreign body,” why does this gate stay dark?
+- Attending: Horse intussusception — fire or skip?
+- Attending: Dual-named “parvo, intussusception” — which loc should win, and why?
+
+## 333. Canine mesenteric volvulus (Winkler Merck Aug 2025)
+
+No dedicated Plunkett mesenteric-volvulus chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (mesenteric / intestinal volvulus is extramural strangulation via torsion or a mesenteric rent; hypovolemic shock and abdominal pain; films show small-bowel distention with poor abdominal detail and can look like ileus; serial films progress fast; even with rapid surgery the entire small bowel may be irreversibly compromised). Do not harvest a mortality table as lobby law. Do not fire on GDV / gastric volvulus. Do not fire on \bvolvulus\b alone. Do not fire on German Shepherd alone. Packet 332 still owns intussusception. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named mesenteric volvulus is not an intussusception-alone.** Fluids. Explore now. Printed mortality numbers stay on the page (`△ Plumb`).
+
+Night split: named mesenteric volvulus / intestinal volvulus / mesenteric torsion is canine (or feline) mesenteric volvulus; not an intussusception-alone. Bare volvulus stay unnamed. GDV stays gastric. Horse does not fire. Dog or cat can fire. Dual intussusception plus mesenteric volvulus concatenates 332 then 333. Dual GDV plus mesenteric volvulus concatenates gastric then this loc.
+
+Book/public traps:
+
+- Do not harvest a mortality table.
+- Do not call this an intussusception-alone.
+- Do not send named mesenteric volvulus home as ileus.
+- Do not copy a mortality table as lobby law.
+- Do not watch overnight like a gastric bloat.
+
+Night rule: named mesenteric volvulus → **Canine mesenteric volvulus. Not an intussusception-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a German Shepherd with mesenteric volvulus not a GDV-alone and not an intussusception-alone?
+- NAVLE 2: Why can the first film look like ileus?
+- NAVLE 3: Dual-named “intussusception, mesenteric volvulus” — which loc should win, and why?
+- Oral: How do you tell the owner the whole small bowel may already be dead, without inventing a mortality table?
+- Attending: If the query is only “volvulus,” why does this gate stay dark?
+- Attending: Horse mesenteric volvulus — fire or skip?
+- Attending: Dual-named “GDV, mesenteric volvulus” — which loc should win, and why?
+
+## 334. Canine pyloric stenosis (Winkler Merck Aug 2025; Roberts Sept 2024)
+
+No dedicated Plunkett pyloric-stenosis chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (pyloric stenosis is intramural gastric outflow obstruction from hypertrophied pyloric muscle; congenital in brachycephalics; later in Lhasa Apsos, Shih Tzus, and Maltese; cause of the later form usually unknown). Roberts J. Congenital and Inherited Anomalies of the Stomach in Animals. Merck Veterinary Manual. Full review Nov 2022; last updated Sept 2024 (Boxer, Boston Terrier, English Bulldog, and Siamese cats; vomit food several hours after a meal; poor weight gain, aspiration, dehydration; contrast imaging and endoscopy with biopsy to exclude neoplasia; surgery to relieve obstruction; treat esophagitis, acid-base, and dehydration first). Do not harvest a pyloroplasty or pyloromyotomy table as lobby law. Do not fire on BOAS, Boxer, Lhasa, or stenosis alone. Packet 319 still owns BOAS. GDV stays gastric. Packet 333 still owns mesenteric volvulus. Dogs and cats. Skip horse.
+
+Agree with Winkler / Roberts: **named pyloric stenosis is not a GDV-alone.** Contrast or endoscopy. Then surgery. Printed pyloroplasty numbers stay on the page (`△ Plumb`).
+
+Night split: named pyloric stenosis / pyloric hypertrophy / gastric outflow obstruction is canine (or feline) pyloric stenosis; not a GDV-alone. Bare stenosis stay unnamed. Horse does not fire. Dual GDV plus pyloric stenosis concatenates gastric then 334.
+
+Book/public traps:
+
+- Do not harvest a pyloroplasty table.
+- Do not call this a GDV-alone.
+- Do not send named pyloric stenosis home as food bloat.
+- Do not copy a pyloroplasty table as lobby law.
+- Do not skip esophagitis and dehydration before surgery.
+
+Night rule: named pyloric stenosis → **Canine pyloric stenosis. Not a GDV-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a Boston Terrier puppy vomiting food hours after meals not a GDV-alone?
+- NAVLE 2: Why biopsy if you endoscope a pyloric outflow problem?
+- NAVLE 3: Dual-named “GDV, pyloric stenosis” — which loc should win, and why?
+- Oral: How do you tell the owner the stomach exit is too thick, without inventing a pyloroplasty table?
+- Attending: If the query is only “stenosis,” why does this gate stay dark?
+- Attending: Horse pyloric stenosis — fire or skip?
+- Attending: Dual-named “BOAS, pyloric stenosis” — which loc should win, and why?
+
+## 335. Canine gastric ulcer (Blois Merck Aug 2025)
+
+No dedicated Plunkett gastric-ulcer chapter in the owned SA EM splits. Public Blois S. Gastrointestinal Ulcers in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Aug 2025 (more common in dogs; NSAID, neoplasia, and hepatic disease are the common dog causes of gastroduodenal ulceration or perforation; COX-2 NSAIDs can still ulcerate; hypoadrenocorticism is on the list; NSAID plus corticosteroid is contraindicated; cats more often neoplasia or inflammatory disease; hematemesis and melena are variable; endoscopy is the gold standard; PPI over H2; do not combine H2 with PPI; sucralfate has no proven add-on to PPI; perforation is surgery). Do not harvest a sucralfate table. Do not harvest an omeprazole table. Do not harvest a 4–6 week or mortality table. Do not fire on \bulcer\b alone. Packet 312 still owns MCT. Addison stays Addison. Packet 334 still owns pyloric stenosis. Dogs and cats. Skip horse.
+
+Agree with Blois: **named gastric ulcer is not an Addison-alone.** Stop the NSAID. Endoscopy. Printed sucralfate / omeprazole numbers stay on the page (`△ Plumb`).
+
+Night split: named gastric ulcer / gastroduodenal ulcer / GI ulcer is canine (or feline) gastric ulcer; not an Addison-alone. Bare ulcer stay cornea/mouth. Horse does not fire. Dual Addison plus gastric ulcer concatenates Addison then 335.
+
+Book/public traps:
+
+- Do not harvest a sucralfate table.
+- Do not harvest an omeprazole table.
+- Do not call this an Addison-alone.
+- Do not send named gastric ulcer home as AHDS.
+- Do not combine an H2 blocker with a PPI.
+
+Night rule: named gastric ulcer → **Canine gastric ulcer. Not an Addison-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a dog with melena and a gastric ulcer not an Addison-alone?
+- NAVLE 2: Why do you not stack an H2 blocker on a PPI for named ulcer?
+- NAVLE 3: Dual-named “Addison, gastric ulcer” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the NSAID, without inventing an omeprazole table?
+- Attending: If the query is only “ulcer,” why does this gate stay dark?
+- Attending: Horse gastric ulcer — fire or skip?
+- Attending: Dual-named “MCT, GI ulcer” — which loc should win, and why?
+
+## 336. Canine GI perforation (Blois Merck Aug 2025)
+
+No dedicated Plunkett GI-perforation chapter in the owned SA EM splits. Public Blois S. Gastrointestinal Ulcers in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Aug 2025 (severe ulceration or GI perforation: pain, weakness, pallor, and shock; sepsis if perforated; free peritoneal fluid and gas on radiographs or ultrasound; endoscopy is not the hole; surgery treats perforated ulcers; peritonitis is poorer than a closed ulcer). Do not harvest a 60% mortality table as lobby law. Do not fire on gastric ulcer without perforation (335). Do not fire on bile peritonitis (179). Do not fire on septic peritonitis without a gut-leak phrase (sepsis gate). Do not fire on \bperforat without GI/ulcer. Dogs and cats. Skip horse.
+
+Agree with Blois: **named GI perforation is not an ulcer-alone.** Fluids. Explore. Lavage. Printed mortality numbers stay on the page (`△ Plumb`).
+
+Night split: named GI perforation / perforated ulcer / septic peritonitis from a gut leak is canine (or feline) GI perforation; not an ulcer-alone. Bare perforation stay cornea. Horse does not fire. Dual gastric ulcer plus GI perforation concatenates 335 then 336.
+
+Book/public traps:
+
+- Do not harvest a 60% mortality table.
+- Do not call this an ulcer-alone.
+- Do not send named GI perforation home on acid suppression.
+- Do not copy a mortality table as lobby law.
+- Do not tap as the treatment.
+
+Night rule: named GI perforation → **Canine GI perforation. Not an ulcer-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a shocked dog with a perforated ulcer not an ulcer-alone?
+- NAVLE 2: Why is free gas on films not a PPI night?
+- NAVLE 3: Dual-named “gastric ulcer, GI perforation” — which loc should win, and why?
+- Oral: How do you tell the owner the gut leaked, without inventing a 60% table?
+- Attending: If the query is only “gastric ulcer,” why does this gate stay dark?
+- Attending: Horse GI perforation — fire or skip?
+- Attending: Dual-named “bile peritonitis” — 179 or this loc, and why?
+
+## 337. Canine gastritis (Blois Merck Aug 2025)
+
+No dedicated Plunkett gastritis chapter in the owned SA EM splits. Public Blois S. Gastritis in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Aug 2025 (gastritis is inflammation of the gastric mucosa; vomiting and cranial abdominal pain; acute is often dietary indiscretion; definitive diagnosis needs gastroscopy and biopsy; PPI is not routinely needed unless ulcer is suspected). Helicobacter Infection in Small Animals, Blois, Jan 2025 (organisms are common in healthy dogs and cats; treat only with signs and gastric lesions; peptic ulceration is rarely associated). Do not harvest a sucralfate or omeprazole table as lobby law. Do not fire on gastric ulcer (335). Do not fire on GI perforation (336). Do not fire on gastroenteritis. Dogs and cats. Skip horse.
+
+Agree with Blois: **named gastritis is not an ulcer-alone.** Supportive. Antiemetic. Biopsy for chronic. Printed maropitant / omeprazole / pred numbers stay on the page (`△ Plumb`).
+
+Night split: named gastritis / gastric inflammation / Helicobacter gastritis is canine (or feline) gastritis; not an ulcer-alone. Bare Helicobacter stay unnamed. Horse does not fire. Dual gastritis plus gastric ulcer concatenates 335 then 337.
+
+Book/public traps:
+
+- Do not harvest a sucralfate table.
+- Do not harvest an omeprazole table.
+- Do not call this an ulcer-alone.
+- Do not send named gastritis home as AHDS.
+- Do not treat incidental Helicobacter as H. pylori ulcer law.
+
+Night rule: named gastritis → **Canine gastritis. Not an ulcer-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is vomiting gastritis not an ulcer-alone?
+- NAVLE 2: Why is a PPI not routine for gastritis?
+- NAVLE 3: Dual-named “gastritis, gastric ulcer” — which loc should win, and why?
+- Oral: How do you tell the owner Helicobacter is common in healthy pets, without inventing a triple-therapy table?
+- Attending: If the query is only “gastric ulcer,” why does this gate stay dark?
+- Attending: Horse gastritis — fire or skip?
+- Attending: Dual-named “gastroenteritis” — fire or stay dark, and why?
+
+## 338. Canine Helicobacter infection (Blois Merck Jan 2025)
+
+No dedicated Plunkett Helicobacter chapter in the owned SA EM splits. Public Blois S. Helicobacter Infection in Small Animals. Merck Veterinary Manual. Full review Jan 2025; last updated Jan 2025 (Helicobacter spp are commonly isolated from healthy and vomiting dogs and cats; pathogenicity is not clearly established; peptic ulceration is rarely associated; diagnosis is cytology or histology of the stomach; treat only with signs and gastric lesions; eradication is often incomplete; zoonotic risk is uncertain; recommend hygiene). Do not harvest a triple-therapy or omeprazole table as lobby law. Do not fire on gastritis without Helicobacter (337). Dogs and cats. Skip horse.
+
+Agree with Blois: **named Helicobacter is not a gastritis-alone.** Cytology or biopsy. Treat signs and lesions. Printed amoxicillin / metronidazole / bismuth / omeprazole numbers stay on the page (`△ Plumb`).
+
+Night split: named Helicobacter / H. felis / H. canis / H. heilmannii is canine (or feline) Helicobacter infection; not a gastritis-alone. Bare gastritis stay 337. Horse does not fire. Dual Helicobacter plus gastritis concatenates 337 then 338.
+
+Book/public traps:
+
+- Do not harvest a triple-therapy table.
+- Do not harvest an omeprazole table.
+- Do not call this a gastritis-alone.
+- Do not treat incidental Helicobacter as H. pylori ulcer law.
+- Do not promise eradication.
+
+Night rule: named Helicobacter → **Canine Helicobacter infection. Not a gastritis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gastric Helicobacter not a gastritis-alone?
+- NAVLE 2: Why is a positive organism not automatic triple therapy?
+- NAVLE 3: Dual-named “Helicobacter gastritis” — which loc should win, and why?
+- Oral: How do you tell the owner the organism is common in healthy pets, without inventing a 2–3 week table?
+- Attending: If the query is only “gastritis,” why does this gate stay dark?
+- Attending: Horse Helicobacter — fire or skip?
+- Attending: Dual-named “H. felis” — fire or stay dark, and why?
+
+## 339. Canine gastric FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett gastric-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (intraluminal obstruction is commonly a foreign body; endoscopy utility is typically limited to gastric foreign bodies; endoscopy cannot assess distal to pylorus and is not for suspected linear FB; some small smooth objects may pass if the patient is stable; failure to pass within 36–48 hours, no movement, or deterioration → surgery; barium is not used if perforation is suspected). Do not harvest a 36–48 hour watch table as lobby law. Do not fire on linear FB (331). Do not fire on esophageal FB (322). Do not fire on bare foreign body. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named gastric FB is not a gastritis-alone.** Fluids. Films or US. Endoscopy if gastric. Printed 36–48 hour numbers stay on the page (`△ Plumb`).
+
+Night split: named gastric foreign body / gastric FB / stomach foreign body is canine (or feline) gastric FB; not a gastritis-alone. Linear FB stay 331. Esophageal FB stay 322. Horse does not fire. Dual gastritis plus gastric FB concatenates 337 then 339.
+
+Book/public traps:
+
+- Do not harvest a 36–48 hour watch table.
+- Do not call this a gastritis-alone.
+- Do not yank.
+- Do not push with a prokinetic.
+- Do not use barium if perforation is on the list.
+
+Night rule: named gastric FB → **Canine gastric FB. Not a gastritis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a stomach rock not a gastritis-alone?
+- NAVLE 2: Why is endoscopy not the linear-FB plan?
+- NAVLE 3: Dual-named “gastritis, gastric FB” — which loc should win, and why?
+- Oral: How do you tell the owner the object is still in the stomach, without inventing a 36–48 hour table?
+- Attending: If the query is only “linear FB,” why does this gate stay dark?
+- Attending: Horse gastric FB — fire or skip?
+- Attending: Dual-named “esophageal FB” — 322 or this loc, and why?
+
+## 340. Canine intestinal FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett intestinal-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (a foreign body distal to the pyloric region needs exploratory laparotomy; endoscopy cannot assess past pylorus; inspect the entire GI tract; resect ischemic bowel; some small smooth objects may pass if stable; 36–48 h failure to move or deterioration → surgery; barium is not used if perforation is suspected). Do not harvest a 36–48 hour watch table as lobby law. Do not fire on gastric FB (339). Do not fire on linear FB (331). Do not fire on esophageal FB (322). Do not fire on bare foreign body. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named intestinal FB is not a gastric-FB-alone.** Fluids. Films or US. Explore. Printed 36–48 hour numbers stay on the page (`△ Plumb`).
+
+Night split: named intestinal foreign body / intestinal FB / small-bowel FB / jejunal FB is canine (or feline) intestinal FB; not a gastric-FB-alone. Gastric FB stay 339. Linear FB stay 331. Horse does not fire. Dual gastric FB plus intestinal FB concatenates 339 then 340.
+
+Book/public traps:
+
+- Do not harvest a 36–48 hour watch table.
+- Do not call this a gastric-FB-alone.
+- Do not yank.
+- Do not milk a linear string.
+- Do not use barium if perforation is on the list.
+
+Night rule: named intestinal FB → **Canine intestinal FB. Not a gastric-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a jejunal corn cob not a gastric-FB-alone?
+- NAVLE 2: Why is endoscopy not the distal-bowel plan?
+- NAVLE 3: Dual-named “gastric FB, intestinal FB” — which loc should win, and why?
+- Oral: How do you tell the owner the object is past the pylorus, without inventing a 36–48 hour table?
+- Attending: If the query is only “gastric FB,” why does this gate stay dark?
+- Attending: Horse intestinal FB — fire or skip?
+- Attending: Dual-named “linear FB” — 331 or this loc, and why?
+
+## 341. Canine colonic FB (Winkler Merck Aug 2025)
+
+No dedicated Plunkett colonic-FB chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (colonic foreign bodies are often incidental and usually do not require removal; if a colonic foreign body is causing clinical signs, endoscopic removal is preferred over surgically opening the colon; correct fluid, electrolyte, and acid-base disturbances before anesthesia if possible). Do not harvest a colotomy table as lobby law. Do not fire on intestinal FB (340). Do not fire on gastric FB (339). Do not fire on linear FB (331). Do not fire on bare foreign body. Dogs and cats. Skip horse.
+
+Agree with Winkler: **named colonic FB is not an intestinal-FB-alone.** Endoscopy if it is causing signs. Printed colotomy recipes stay off the card (`△ Plumb`).
+
+Night split: named colonic foreign body / colonic FB / colon FB / rectal FB is canine (or feline) colonic FB; not an intestinal-FB-alone. Intestinal FB stay 340. Gastric FB stay 339. Horse does not fire. Dual intestinal FB plus colonic FB concatenates 340 then 341.
+
+Book/public traps:
+
+- Do not harvest a colotomy table.
+- Do not call this an intestinal-FB-alone.
+- Do not open the colon as the default.
+- Do not send named colonic FB home as constipation-alone.
+
+Night rule: named colonic FB → **Canine colonic FB. Not an intestinal-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a colon bone not an intestinal-FB-alone?
+- NAVLE 2: Why is opening the colon not the default?
+- NAVLE 3: Dual-named “intestinal FB, colonic FB” — which loc should win, and why?
+- Oral: How do you tell the owner an incidental colon object may not need surgery, without inventing a colotomy table?
+- Attending: If the query is only “intestinal FB,” why does this gate stay dark?
+- Attending: Horse colonic FB — fire or skip?
+- Attending: Dual-named “rectal FB” — fire or stay dark, and why?
+
+## 342. Feline trichobezoar (Winkler Merck Aug 2025)
+
+No dedicated Plunkett trichobezoar chapter in the owned SA EM splits. Public Winkler K. Gastrointestinal Obstruction in Small Animals. Merck Veterinary Manual. Full review Aug 2025; last updated Aug 2025 (cats can also develop intraluminal obstructions secondary to trichobezoars). Merck owner Vomiting in Cats (hair cannot be digested; a hairball / trichobezoar can irritate the stomach or block the digestive tract; longhaired breeds are at greater risk; repeated vomiting is not a hairball-alone; printed mineral-oil lines stay on the page). Do not harvest a laxative or mineral-oil table as lobby law. Do not fire on gastric FB (339). Do not fire on intestinal FB (340). Do not fire on linear FB (331). Do not fire on \bhairball\b alone. Dogs and cats. Skip horse.
+
+Agree with Winkler / Merck owner: **named trichobezoar is not a gastric-FB-alone.** Fluids. Films or US. Endoscopy or explore if it obstructs. Printed mineral-oil numbers stay on the page (`△ Plumb`).
+
+Night split: named trichobezoar / hairball obstruction / hairball FB is feline (or canine) trichobezoar; not a gastric-FB-alone. Bare hairball stay unnamed. Gastric FB stay 339. Horse does not fire. Dual trichobezoar plus intestinal FB concatenates 340 then 342.
+
+Book/public traps:
+
+- Do not harvest a laxative table.
+- Do not harvest a mineral-oil table.
+- Do not call this a gastric-FB-alone.
+- Do not send named trichobezoar home on mineral oil.
+- Do not skip films because it is only hair.
+
+Night rule: named trichobezoar → **Feline trichobezoar. Not a gastric-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is an obstructing hairball not a gastric-FB-alone?
+- NAVLE 2: Why is repeated vomiting not a mineral-oil night?
+- NAVLE 3: Dual-named “trichobezoar, intestinal FB” — which loc should win, and why?
+- Oral: How do you tell the owner a hairball can obstruct, without inventing a laxative table?
+- Attending: If the query is only “hairball,” why does this gate stay dark?
+- Attending: Horse trichobezoar — fire or skip?
+- Attending: Dual-named “gastric FB” — 339 or this loc, and why?
+
+## 343. Feline megacolon (Collier Merck Jun 2025)
+
+No dedicated Plunkett megacolon chapter in the owned SA EM splits. Public Collier A. Constipation, Obstipation, and Megacolon in Small Animals. Merck Veterinary Manual. Full review Jun 2025; last updated Jun 2025 (constipation is infrequent or difficult evacuation of dry hard feces; obstipation is intractable constipation with inability to evacuate; megacolon is hypomotility and dilation of the large intestine; phosphate-containing enemas must be avoided in cats; oral mineral oil risks aspiration; cisapride is not likely to improve long-standing obstipation and megacolon; colectomy if medical management fails). Do not harvest an enema or cisapride table as lobby law. Do not fire on colonic FB (341). Do not fire on \bconstipation\b alone. Dogs and cats. Skip horse.
+
+Agree with Collier: **named megacolon is not a colonic-FB-alone.** Hydrate. Deobstipate under anesthesia if needed. Printed enema mL/kg and cisapride numbers stay on the page (`△ Plumb`).
+
+Night split: named megacolon / obstipation / intractable constipation is feline (or canine) megacolon; not a colonic-FB-alone. Bare constipation stay unnamed. Colonic FB stay 341. Horse does not fire. Dual megacolon plus colonic FB concatenates 341 then 343.
+
+Book/public traps:
+
+- Do not harvest an enema table.
+- Do not harvest a cisapride table.
+- Do not call this a colonic-FB-alone.
+- Do not send named megacolon home as constipation-alone.
+- Do not give a phosphate enema to a cat.
+- Do not give oral mineral oil.
+
+Night rule: named megacolon → **Feline megacolon. Not a colonic-FB-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is obstipation not a colonic-FB-alone?
+- NAVLE 2: Why is a phosphate enema not for a cat?
+- NAVLE 3: Dual-named “megacolon, colonic FB” — which loc should win, and why?
+- Oral: How do you tell the owner the colon is hypomotile, without inventing a cisapride table?
+- Attending: If the query is only “constipation,” why does this gate stay dark?
+- Attending: Horse megacolon — fire or skip?
+- Attending: Dual-named “obstipation” — fire or stay dark, and why?
+
+## 344. Feline colitis (Collier Merck Jun 2025)
+
+No dedicated Plunkett colitis chapter in the owned SA EM splits. Public Collier A. Colitis in Small Animals. Merck Veterinary Manual. Full review Jun 2025; last updated Jun 2025 (colitis is inflammation of the colon; large-bowel diarrhea with mucus, hematochezia, tenesmus, and urgency; deworm even if feces are negative because whipworm shedding is intermittent; diet trial if stable before advanced diagnostics; sulfasalazine is not recommended in cats; antimicrobials are not routine for chronic diarrhea). Do not harvest a sulfasalazine or enema table as lobby law. Do not fire on megacolon (343). Do not fire on AHDS without colitis. Horse colitis stays equine. Dogs and cats. Skip horse.
+
+Agree with Collier: **named colitis is not a megacolon-alone.** Fecal. Diet trial if stable. Deworm. Printed sulfasalazine / metronidazole / tylosin numbers stay on the page (`△ Plumb`).
+
+Night split: named colitis / large-bowel diarrhea / large intestinal inflammation is feline (or canine) colitis; not a megacolon-alone. Bare diarrhea stay unnamed. Megacolon stay 343. Horse does not fire this loc. Dual colitis plus megacolon concatenates 343 then 344.
+
+Book/public traps:
+
+- Do not harvest a sulfasalazine table.
+- Do not harvest an enema table.
+- Do not call this a megacolon-alone.
+- Do not send named colitis home as AHDS.
+- Do not give sulfasalazine to a cat.
+- Do not skip Tritrichomonas in a cat.
+
+Night rule: named colitis → **Feline colitis. Not a megacolon-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is large-bowel diarrhea not a megacolon-alone?
+- NAVLE 2: Why is sulfasalazine not for a cat?
+- NAVLE 3: Dual-named “colitis, megacolon” — which loc should win, and why?
+- Oral: How do you tell the owner to deworm even if the fecal is negative, without inventing a fenbendazole table?
+- Attending: If the query is only “constipation,” why does this gate stay dark?
+- Attending: Horse colitis — this loc or equine isolate, and why?
+- Attending: Dual-named “AHDS” — AHDS or this loc, and why?
+
+## 345. Feline tritrichomonas (Collier Merck Jun 2025)
+
+No dedicated Plunkett tritrichomonas chapter in the owned SA EM splits. Public Collier A. Colitis in Small Animals. Merck Veterinary Manual. Full review Jun 2025 (test Tritrichomonas foetus in cats by PCR). Collier A. Malabsorption Syndromes in Small Animals. Merck Veterinary Manual. Full review Aug 2025 (Tritrichomonas typically causes colitis in cats rather than malabsorption; PCR is best). Merck parasitology in veterinary practice (direct smear on very fresh feces within 20 minutes detects T. blagburni trophozoites but cannot split them from nonpathogenic Pentatrichomonas; culture then PCR confirms). Do not harvest a ronidazole table as lobby law. Do not fire on colitis without the organism (344). Cats only. Skip dog, horse, and cattle.
+
+Agree with Collier / parasitology: **named Tritrichomonas is not a colitis-alone.** PCR. Fresh smear is not species-specific. Printed ronidazole numbers stay off the card (`△ Plumb`).
+
+Night split: named Tritrichomonas / T. foetus / T. blagburni is feline tritrichomonas; not a colitis-alone. Bare colitis stay 344. Cattle T. foetus stay reproductive. Horse does not fire. Dual Tritrichomonas plus colitis concatenates 344 then 345.
+
+Book/public traps:
+
+- Do not harvest a ronidazole table.
+- Do not call this a colitis-alone.
+- Do not call this Giardia-alone.
+- Do not treat a dry fecal smear as T. foetus.
+- Do not send named Tritrichomonas home as diet-responsive colitis.
+
+Night rule: named Tritrichomonas → **Feline tritrichomonas. Not a colitis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is kitten large-bowel diarrhea with Tritrichomonas not a colitis-alone?
+- NAVLE 2: Why is a wet-mount trophozoite not enough to name T. foetus?
+- NAVLE 3: Dual-named “Tritrichomonas, colitis” — which loc should win, and why?
+- Oral: How do you tell the owner PCR is the conversation, without inventing a ronidazole table?
+- Attending: If the query is only “colitis,” why does this gate stay dark?
+- Attending: Dog Tritrichomonas — fire or skip?
+- Attending: Dual-named cattle “T. foetus” — this loc or reproductive, and why?
+
+## 346. Feline giardia (Robertson Merck May 2026)
+
+No dedicated Plunkett giardia chapter in the owned SA EM splits. Public Robertson L. Giardiasis in Animals. Merck Veterinary Manual. Full review May 2026; last updated May 2026 (G. duodenalis; small intestine; pale fatty mucus stool; watery diarrhea and blood are unusual; cysts shed intermittently so several fecal examinations; antigen if cysts are missed; trophozoites are not trichomonads; fenbendazole is first-line where licensed; no drugs approved for cats in the US; zoonotic transmission is relatively rare by assemblage). Do not harvest a fenbendazole or metronidazole table as lobby law. Do not fire on Tritrichomonas (345). Do not fire on colitis without Giardia (344). Dogs and cats. Skip horse.
+
+Agree with Robertson: **named Giardia is not a tritrichomonas-alone.** Several fecals or antigen. Hygiene. Bathe. Printed fenbendazole / metronidazole numbers stay on the page (`△ Plumb`).
+
+Night split: named Giardia / giardiasis / G. duodenalis is feline (or canine) giardia; not a tritrichomonas-alone. Bare colitis stay 344. Tritrichomonas stay 345. Horse does not fire. Dual Giardia plus Tritrichomonas concatenates 345 then 346.
+
+Book/public traps:
+
+- Do not harvest a fenbendazole table.
+- Do not harvest a metronidazole table.
+- Do not call this a tritrichomonas-alone.
+- Do not confuse trophozoites with trichomonads.
+- Do not send named Giardia home as AHDS.
+
+Night rule: named Giardia → **Feline giardia. Not a tritrichomonas-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is fatty mucus diarrhea not a tritrichomonas-alone?
+- NAVLE 2: Why is one negative fecal not a rule-out?
+- NAVLE 3: Dual-named “Giardia, Tritrichomonas” — which loc should win, and why?
+- Oral: How do you tell the owner cysts shed on and off, without inventing a fenbendazole table?
+- Attending: If the query is only “colitis,” why does this gate stay dark?
+- Attending: Horse giardia — fire or skip?
+- Attending: Dual-named “Tritrichomonas” — 345 or this loc, and why?
+
+## 347. Feline cryptosporidium (Witola Merck Nov 2025 / Sept 2026)
+
+No dedicated Plunkett cryptosporidium chapter in the owned SA EM splits. Public Witola W.H. Cryptosporidiosis in Animals. Merck Veterinary Manual. Full review Nov 2025; last updated Sept 2026 (acid-fast oocysts 4–6 mcm; fecal smear, flotation, ELISA, IFA, PCR; no fully effective drug; supportive fluids and electrolytes; zoonotic especially if immunocompromised). Collier Merck malabsorption: Cryptosporidium is a rare malabsorption cause; immunofluorescence. C. felis is the usual cat species; C. parvum is zoonotic. Do not harvest a nitazoxanide, azithromycin, paromomycin, tylosin, or calf halofuginone table as lobby law. Do not fire on Giardia (346). Do not fire on Tritrichomonas (345). Do not fire on bare crypto (cryptorchid / cryptococcosis). Dogs and cats. Skip horse.
+
+Agree with Witola: **named Cryptosporidium is not a giardia-alone.** Acid-fast or PCR. Fluids. Hygiene. Printed nitazoxanide / azithromycin / paromomycin / calf halofuginone numbers stay on the page (`△ Plumb`).
+
+Night split: named Cryptosporidium / cryptosporidiosis / C. parvum / C. felis is feline (or canine) cryptosporidium; not a giardia-alone. Bare Giardia stay 346. Tritrichomonas stay 345. Bare crypto stays cryptococcosis / cryptorchid. Horse does not fire. Dual Cryptosporidium plus Giardia concatenates 346 then 347.
+
+Book/public traps:
+
+- Do not harvest a nitazoxanide table.
+- Do not harvest an azithromycin table.
+- Do not harvest a paromomycin table.
+- Do not copy a calf halofuginone table onto a cat.
+- Do not call this a giardia-alone.
+- Do not send named Cryptosporidium home as AHDS.
+
+Night rule: named Cryptosporidium → **Feline cryptosporidium. Not a giardia-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is watery kitten diarrhea not a giardia-alone?
+- NAVLE 2: Why is a positive PCR not proof the diarrhea is from crypto?
+- NAVLE 3: Dual-named “Giardia, Cryptosporidium” — which loc should win, and why?
+- Oral: How do you tell the immunocompromised owner about zoonosis, without inventing a nitazoxanide table?
+- Attending: If the query is only “Giardia,” why does this gate stay dark?
+- Attending: Horse cryptosporidium — fire or skip?
+- Attending: Bare “crypto” — cryptococcosis, cryptorchid, or this loc, and why?
+
+## 348. Feline doxycycline esophagitis (Mercer Merck Jun 2026 / Defarges May 2025)
+
+No dedicated Plunkett doxycycline-esophagitis chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (dry-pilling of doxycycline in tablet or capsule form associated with esophageal erosion and strictures in cats; follow with food or liquid; printed 5–10 mg/kg and ~5–6 mL stay on the page). Defarges Merck esophageal strictures Oct 2022 / May 2025: exposure to certain drugs such as doxycycline or clindamycin. Do not harvest a doxycycline mg/kg table as lobby law. Do not harvest a 5–6 mL chase table as lobby law. Do not fire on bare doxycycline (Lyme / Wolbachia). Do not fire on named esophageal stricture without the drug (323). Do not fire on named esophagitis without the drug (324). Do not fire on clindamycin-alone. Horse IV doxycycline collapse/death is a different pharmacology trap, not this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named doxycycline plus esophagus or dry-pill is not a stricture-alone.** Follow solid forms with food or water. Printed 5–10 mg/kg and 5–6 mL stay on the page (`△ Plumb`).
+
+Night split: named doxycycline / doxy plus esophagus, stricture, stenosis, or dry-pill is feline (or canine) doxycycline esophagitis; not a stricture-alone. Bare esophageal stricture stays 323. Bare esophagitis stays 324. Bare doxycycline stays dark. Clindamycin stricture stays 323. Horse does not fire. Dual doxycycline plus esophageal stricture concatenates 323 then 348.
+
+Book/public traps:
+
+- Do not harvest a doxycycline mg/kg table.
+- Do not harvest a liquid-chase milliliter table.
+- Do not dry-pill a cat.
+- Do not call this a stricture-alone.
+- Do not send named doxycycline esophagitis home as gagging.
+- Do not copy a balloon table as if the drug did not matter.
+
+Night rule: named doxycycline plus esophagus or dry-pill → **Feline doxycycline esophagitis. Not a stricture-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is dry-pilling doxycycline in a cat not a gagging-alone?
+- NAVLE 2: Why does a named esophageal stricture without the drug stay 323, not this loc?
+- NAVLE 3: Dual-named “doxycycline, esophageal stricture” — which loc should win, and why?
+- Oral: How do you tell the owner to follow the tablet with water, without inventing a milliliter table?
+- Attending: If the query is only “doxycycline,” why does this gate stay dark?
+- Attending: Horse IV doxycycline — this loc or skip, and why?
+- Attending: Clindamycin esophageal stricture — 323 or this loc, and why?
+
+## 349. Canine metronidazole neurotoxicity (Mercer Merck Sept 2022 / Sept 2025)
+
+No dedicated Plunkett metronidazole-neurotoxicity chapter in the owned SA EM splits (the vestibular split already names metro as a central DDX). Public Mercer M.A. Nitroimidazoles Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Sept 2025 (high doses may induce canine neurotoxicity: tremors, muscle spasms, ataxia, convulsions; IV can cause CNS excitement; printed giardia 25 / IBD 10–15 / HE 7.5 mg/kg stay on the page; ELDU prohibited in food-producing animals). Packet 137 already stops metronidazole on a named vestibular night. This packet is the dedicated pharmacology loc. Do not harvest a metronidazole mg/kg table as lobby law. Do not harvest a diazepam table as lobby law. Do not harvest oral diazepam for a cat (hepatic necrosis is a different trap). Do not fire on bare metronidazole (Giardia / IBD / HE). Do not fire on tetanus plus metronidazole (metro is the antimicrobial). Do not fire on vestibular without the drug (137). Dogs and cats. Skip horse.
+
+Agree with Mercer: **named metronidazole plus neuro signs is not a vestibular-alone.** Stop the drug. Supportive. Printed 25 / 10–15 / 7.5 stay on the page (`△ Plumb`).
+
+Night split: named metronidazole / metro / Flagyl plus ataxia, nystagmus, vestibular, tremor, seizure, convulsion, head tilt, rolling, or metro-tox is canine (or feline) metronidazole neurotoxicity; not a vestibular-alone. Bare vestibular stays 137 (and still stops metro if listed). Bare metronidazole stays dark. Giardia plus metronidazole stays 346. Tetanus plus metronidazole stays tetanus. Horse does not fire. Dual head-tilt plus metronidazole concatenates 137 then 349.
+
+Book/public traps:
+
+- Do not harvest a metronidazole mg/kg table.
+- Do not harvest a diazepam table.
+- Do not harvest oral diazepam for a cat.
+- Do not call this a vestibular-alone.
+- Do not send named metronidazole neurotoxicity home as idiopathic geriatric vestibular.
+- Do not treat tetanus metronidazole as this loc.
+
+Night rule: named metronidazole plus neuro signs → **Canine metronidazole neurotoxicity. Not a vestibular-alone.** Stop the drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is ataxia on metronidazole not a vestibular-alone?
+- NAVLE 2: Why does “metronidazole for Giardia” stay dark for this loc?
+- NAVLE 3: Dual-named “head tilt, metronidazole” — which loc should win, and why?
+- Oral: How do you tell the owner you are stopping the antibiotic, without inventing a diazepam table?
+- Attending: If the query is only “vestibular,” why does this gate stay dark?
+- Attending: Horse metronidazole — fire or skip?
+- Attending: Tetanus plus metronidazole — tetanus or this loc, and why?
+
+## 350. Canine NSAID-steroid stack (Edwards Merck May 2025 / Blois Aug 2025)
+
+No dedicated Plunkett NSAID-plus-steroid chapter in the owned SA EM splits (the ulcer split already says stop the NSAID and do not stack). Public Edwards S.H. Nonsteroidal Anti-inflammatory Drugs in Animals. Merck Veterinary Manual. Full review Nov 2021; last updated Sept 2024 (GI ulceration is the most common life-threatening NSAID adverse effect; renal toxicity from COX-1; COX-2-selective is not zero-ulcer). Edwards S.H. Corticosteroids in Animals. Full review Nov 2021; last updated May 2025 (glucocorticoids potentiate the ulcerogenic effects of NSAIDs). Blois S. Gastrointestinal Ulcers in Small Animals. Full review Jan 2025; last updated Aug 2025 (combining NSAID and corticosteroid therapies increases GI ulceration risk and is contraindicated). Do not harvest an NSAID, pred, sucralfate, or omeprazole table as lobby law. Do not fire on bare NSAID (azotemia gate). Do not fire on bare pred. Do not fire on named gastric ulcer without the stack (335). Do not fire on named perforation without the stack (336). Dogs and cats. Skip horse.
+
+Agree with Blois and Edwards: **named NSAID plus glucocorticoid is not an ulcer-alone.** Stop the stack. Printed PPI / sucralfate / NSAID / pred numbers stay on the page (`△ Plumb`).
+
+Night split: named NSAID (including aspirin) plus glucocorticoid / corticosteroid / pred / DexSP is canine (or feline) NSAID-steroid stack; not an ulcer-alone. Bare ulcer stays 335. Bare perforation stays 336. Bare NSAID stays the azotemia/NSAID gate. Bare pred stays dark. Horse does not fire. Dual gastric-ulcer plus carprofen plus prednisone concatenates 335 then 350.
+
+Book/public traps:
+
+- Do not harvest an NSAID table.
+- Do not harvest a pred table.
+- Do not harvest a sucralfate or omeprazole table as if the stack were allowed.
+- Do not call this an ulcer-alone.
+- Do not send the stack home as better analgesia.
+- Do not treat COX-2-selective as a license to stack.
+
+Night rule: named NSAID plus glucocorticoid → **Canine NSAID-steroid stack. Not an ulcer-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is carprofen plus prednisone not better analgesia?
+- NAVLE 2: Why does a named gastric ulcer without the stack stay 335, not this loc?
+- NAVLE 3: Dual-named “gastric ulcer, carprofen, prednisone” — which loc should win, and why?
+- Oral: How do you tell the owner you are stopping one of the two drugs, without inventing a sucralfate table?
+- Attending: If the query is only “carprofen,” why does this gate stay dark?
+- Attending: Horse phenylbutazone plus dex — this loc or skip, and why?
+- Attending: COX-2-selective plus pred — still this loc, and why?
+
+## 351. Canine fluoroquinolone chelation (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-sucralfate chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (antacids or other drugs containing multivalent cations and sucralfate interfere with GI absorption of quinolones; quinolones also inhibit methylxanthine biotransformation, theophylline being the most clinically relevant — that DDI is not this loc). Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not harvest a 2-hour or 6-hour separation clock as lobby law. Do not fire on bare FQ (UTI / retina). Do not fire on bare sucralfate (335 coating talk). Do not fire on theophylline plus FQ as this loc. Cat enrofloxacin retina is a different loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus sucralfate is not a sucralfate-alone.** Stop the stack. Printed FQ mg/kg and separation clocks stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus sucralfate is canine (or feline) fluoroquinolone chelation; not a sucralfate-alone. Bare FQ stays dark. Bare sucralfate stays 335. Theophylline plus FQ is a different DDI. Cat enro retina is a different loc. Horse does not fire. Dual gastric-ulcer plus enrofloxacin plus sucralfate concatenates 335 then 351.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a 2-hour separation clock.
+- Do not call this a sucralfate-alone.
+- Do not send the stack home as GI protection for the antibiotic.
+- Do not copy a sucralfate table as if the FQ still absorbs.
+- Do not treat theophylline plus FQ as this loc.
+
+Night rule: named FQ plus sucralfate → **Canine fluoroquinolone chelation. Not a sucralfate-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is sucralfate with Baytril not GI protection for the antibiotic?
+- NAVLE 2: Why does bare enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “gastric ulcer, enrofloxacin, sucralfate” — which loc should win, and why?
+- Oral: How do you tell the owner the coating binds the antibiotic, without inventing a 2-hour clock?
+- Attending: If the query is only “sucralfate,” why does this gate stay dark?
+- Attending: Horse enrofloxacin plus sucralfate — fire or skip?
+- Attending: Theophylline plus enrofloxacin — this loc or a later DDI, and why?
+
+## 352. Canine fluoroquinolone-theophylline stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-theophylline chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (quinolones inhibit biotransformation of methylxanthines; theophylline is the most clinically relevant but also caffeine and theobromine; increased serum methylxanthines can cause CNS and cardiac toxicity). Packet 351 still owns sucralfate chelation. Do not harvest a fluoroquinolone or theophylline mg/kg table as lobby law. Do not fire on sucralfate plus FQ (351). Do not fire on chocolate / theobromine / methylxanthine toxin without named theophylline. Do not fire on bare FQ. Do not fire on bare theophylline. Cat enrofloxacin retina is a different loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus theophylline is not a chelation-alone.** Stop the stack. Printed FQ and theophylline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus theophylline / aminophylline is canine (or feline) fluoroquinolone-theophylline stack; not a chelation-alone. Bare FQ stays dark. Bare theophylline stays dark. Sucralfate plus FQ stays 351. Chocolate toxin without named theophylline stays the toxin gate. Dual sucralfate plus theophylline plus FQ concatenates 351 then 352. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a theophylline mg/kg table.
+- Do not call this a chelation-alone.
+- Do not send the stack home as a cough-plus-antibiotic night.
+- Do not copy a theophylline table as if the FQ did not matter.
+- Do not treat chocolate toxin as this loc.
+
+Night rule: named FQ plus theophylline → **Canine fluoroquinolone-theophylline stack. Not a chelation-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus theophylline not a cough-plus-antibiotic night?
+- NAVLE 2: Why does chocolate plus enrofloxacin stay the toxin gate, not this loc?
+- NAVLE 3: Dual-named “sucralfate, theophylline, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner the antibiotic raises the airway drug, without inventing a theophylline table?
+- Attending: If the query is only “theophylline,” why does this gate stay dark?
+- Attending: Horse enrofloxacin plus theophylline — fire or skip?
+- Attending: Aminophylline plus marbofloxacin — this loc or skip, and why?
+
+## 353. Canine fluoroquinolone-cyclosporine stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-cyclosporine chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (in people, cyclosporine concentrations may be increased via concurrent administration with fluoroquinolones, leading to prolonged and potentially toxic plasma concentrations). Named on the veterinary page. Do not harvest a fluoroquinolone or cyclosporine mg/kg table as lobby law. Do not fire on sucralfate plus FQ (351). Do not fire on theophylline plus FQ (352). Do not fire on cyclophosphamide. Do not fire on bare FQ. Do not fire on bare cyclosporine (ITP / GME / IMPA / keratitis). Cat enrofloxacin retina is a different loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus cyclosporine is not a theophylline-alone.** Stop the stack. Printed FQ and cyclosporine mg/kg stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus cyclosporine / ciclosporin / Atopica is canine (or feline) fluoroquinolone-cyclosporine stack; not a theophylline-alone. Bare FQ stays dark. Bare cyclosporine stays dark. Sucralfate plus FQ stays 351. Theophylline plus FQ stays 352. Dual theophylline plus cyclosporine plus FQ concatenates 352 then 353. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a cyclosporine mg/kg table.
+- Do not call this a theophylline-alone.
+- Do not send the stack home as Atopica plus a UTI antibiotic.
+- Do not copy a cyclosporine table as if the FQ did not matter.
+- Do not treat cyclophosphamide as this loc.
+
+Night rule: named FQ plus cyclosporine → **Canine fluoroquinolone-cyclosporine stack. Not a theophylline-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus Atopica not a UTI-plus-allergy night?
+- NAVLE 2: Why does bare cyclosporine stay dark for this loc?
+- NAVLE 3: Dual-named “theophylline, cyclosporine, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner the antibiotic may raise the immune-suppressant, without inventing a cyclosporine table?
+- Attending: If the query is only “Atopica,” why does this gate stay dark?
+- Attending: Horse enrofloxacin plus cyclosporine — fire or skip?
+- Attending: Cyclophosphamide plus enrofloxacin — this loc or skip, and why?
+
+## 354. Feline enrofloxacin retina (Mercer Merck Sept 2022 / Jun 2026; Thomasy)
+
+No dedicated Plunkett enrofloxacin-retina chapter in the owned SA EM splits (the sudden-blind split already hard-stops cat plus enrofloxacin). Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (retinal degeneration may occur acutely in cats, with the risk greatest for enrofloxacin; because these drugs are concentration dependent, enrofloxacin probably should not be used in cats; the presence of renal disease may increase this risk; pradofloxacin may be the least retinotoxic, followed by marbofloxacin and orbifloxacin). Public Thomasy S. Acute Vision Loss in Small Animals. Merck Veterinary Manual (enrofloxacin can cause acute retinal degeneration in cats). Packet 147 still owns SARDS / sudden-blind. Packet 353 still owns FQ-cyclosporine. Do not harvest an enrofloxacin mg/kg table as lobby law. Do not fire on dog plus enro. Do not fire on marbofloxacin / pradofloxacin / orbifloxacin without named enrofloxacin. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named enrofloxacin in a cat is not a SARDS-alone.** Stop the Baytril. Printed enrofloxacin mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / Baytril in a cat is feline enrofloxacin retina; not a SARDS-alone. Dog plus enro stays dark. Bare marbofloxacin stays dark. Bare pradofloxacin stays dark. Dual sudden-blind plus cat enro concatenates 147 then 354. Dual cyclosporine plus cat enro concatenates 353 then 354. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an enrofloxacin mg/kg table.
+- Do not call this a SARDS-alone.
+- Do not wait until the cat is blind.
+- Do not send a cat home on Baytril as a UTI antibiotic.
+- Do not copy an enrofloxacin table as if cats were dogs.
+- Do not treat marbofloxacin / pradofloxacin as this loc.
+
+Night rule: named enrofloxacin in a cat → **Feline enrofloxacin retina. Not a SARDS-alone.** Stop the Baytril. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cat plus Baytril not a UTI-and-home night?
+- NAVLE 2: Why does dog plus enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “sudden blindness, enrofloxacin” in a cat — which loc should win, and why?
+- Oral: How do you tell the owner to stop the Baytril without inventing an enrofloxacin table?
+- Attending: If the query is only “marbofloxacin” in a cat, why does this gate stay dark?
+- Attending: Horse enrofloxacin — fire or skip?
+- Attending: Pradofloxacin in a cat — this loc or skip, and why?
+
+## 355. Canine fluoroquinolone cartilage (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-cartilage chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (because high prolonged dosages in growing dogs and foals have produced cartilaginous erosions leading to permanent lameness, excessive use of quinolones should be avoided in immature animals; the mechanism may be via the chelation of magnesium in cartilage). Packet 354 still owns cat enrofloxacin retina. Packet 351 still owns sucralfate chelation. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on adult dog plus FQ. Do not fire on bare puppy. Do not fire on cat plus enro (354). Skip horse / foal as its own loc. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone in a growing dog is not an adult UTI-alone.** Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus growing / immature / puppy / juvenile / young dog is canine fluoroquinolone cartilage; not an adult UTI-alone. Adult dog plus FQ stays dark. Bare puppy stays dark. Cat plus enro stays 354. Dual sucralfate plus puppy plus FQ concatenates 351 then 355. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this an adult UTI-alone.
+- Do not send a growing dog home on Baytril as a UTI antibiotic.
+- Do not copy an FQ table as if the growth plates did not matter.
+- Do not treat cat enrofloxacin retina as this loc.
+- Do not treat foal cartilage as this loc.
+
+Night rule: named FQ plus growing dog → **Canine fluoroquinolone cartilage. Not an adult UTI-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is a puppy plus Baytril not an adult UTI-and-home night?
+- NAVLE 2: Why does adult dog plus enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “sucralfate, puppy, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “puppy,” why does this gate stay dark?
+- Attending: Horse / foal enrofloxacin — fire or skip, and why?
+- Attending: Cat plus Baytril — this loc or 354, and why?
+
+## 356. Canine fluoroquinolone pregnancy (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-pregnancy chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (administering large doses of quinolones for any length of time during pregnancy may result in embryonic loss and maternal toxicity). Packet 355 still owns growing-dog cartilage. Packet 354 still owns cat enrofloxacin retina. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on pyometra without named FQ. Do not fire on bare FQ. Do not fire on bare pregnancy (eclampsia oral-calcium trap). Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone in pregnancy is not a pyometra-alone.** Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus pregnant / pregnancy / gestation / embryonic is canine (or feline) fluoroquinolone pregnancy; not a pyometra-alone. Bare FQ stays dark. Bare pregnancy stays dark. Pyometra without named FQ stays the pyo night. Dual puppy plus pregnant plus FQ concatenates 355 then 356. Dual cat enro plus pregnant concatenates 354 then 356. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a pyometra-alone.
+- Do not send a pregnant patient home on Baytril.
+- Do not copy an FQ table as if pregnancy did not matter.
+- Do not treat growing-dog cartilage as this loc.
+- Do not treat pyometra without named FQ as this loc.
+
+Night rule: named FQ plus pregnancy → **Canine fluoroquinolone pregnancy. Not a pyometra-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is pregnant plus Baytril not a pyometra-and-home night?
+- NAVLE 2: Why does pyometra without a named FQ stay dark for this loc?
+- NAVLE 3: Dual-named “puppy, pregnant, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “pregnancy,” why does this gate stay dark?
+- Attending: Horse pregnant plus enrofloxacin — fire or skip?
+- Attending: Cat plus pregnant plus Baytril — which locs fire, and why?
+
+## 357. Canine pradofloxacin (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett pradofloxacin-in-dogs chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (pradofloxacin is labeled for dogs in some countries but is not approved for dogs in the US due to its adverse effects of bone marrow suppression and arrhythmogenic potential; US table lists pradofloxacin for cats). Packet 354 still owns cat enrofloxacin retina. Packet 356 still owns FQ pregnancy. Do not harvest a pradofloxacin mg/kg table as lobby law. Do not fire on cat plus prado. Do not fire on Baytril as this loc. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named pradofloxacin in a dog is not a Baytril-alone.** Stop the prado. Printed pradofloxacin mg/kg stays on the page (`△ Plumb`).
+
+Night split: named pradofloxacin in a dog is canine pradofloxacin; not a Baytril-alone. Cat plus prado stays dark. Bare enrofloxacin stays dark for this loc. Dual pregnant plus prado concatenates 356 then 357. Dual puppy plus prado concatenates 355 then 357. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a pradofloxacin mg/kg table.
+- Do not call this a Baytril-alone.
+- Do not send a dog home on pradofloxacin as if it were Baytril.
+- Do not copy a pradofloxacin table as if the US label did not matter.
+- Do not treat cat plus prado as this loc.
+- Do not treat FQ pregnancy as this loc.
+
+Night rule: named pradofloxacin in a dog → **Canine pradofloxacin. Not a Baytril-alone.** Stop the prado. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is dog plus pradofloxacin not a Baytril-swap night?
+- NAVLE 2: Why does cat plus pradofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “pregnant, pradofloxacin” in a dog — which loc should win, and why?
+- Oral: How do you tell the owner this is not a US dog drug, without inventing a prado table?
+- Attending: If the query is only “enrofloxacin,” why does this gate stay dark?
+- Attending: Horse pradofloxacin — fire or skip?
+- Attending: Puppy plus pradofloxacin — which locs fire, and why?
+
+## 358. Canine fluoroquinolone GABA (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-GABA chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (quinolones tend to be neurotoxic, and convulsions can occur at high doses due to GABA receptor antagonism). Packet 116 still owns seizure drugs. Packet 349 still owns metronidazole neurotoxicity. Packet 357 still owns canine prado. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on gabapentin. Do not fire on bare FQ. Do not fire on bare seizure. Skip horse; rapid IV enro neuro is a different loc. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus seizure is not a seizure-alone.** Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus seizure / convulsion / neurotox / GABA is canine (or feline) fluoroquinolone GABA; not a seizure-alone. Bare FQ stays dark. Bare seizure stays 116. Gabapentin plus FQ stays dark. Dual metro plus FQ plus seizure concatenates 349 then 358. Dual prado plus seizure concatenates 357 then 358. Dual cat enro plus seizure concatenates 354 then 358. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a seizure-alone.
+- Do not send an FQ-seizure home as idiopathic epilepsy.
+- Do not copy an FQ table as if GABA did not matter.
+- Do not harvest packet 116 seizure-drug tables here.
+- Do not treat gabapentin as this loc.
+
+Night rule: named FQ plus seizure → **Canine fluoroquinolone GABA. Not a seizure-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus a seizure not an idiopathic-epilepsy night?
+- NAVLE 2: Why does gabapentin plus enrofloxacin stay dark for this loc?
+- NAVLE 3: Dual-named “metronidazole, seizure, enrofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “seizure,” why does this gate stay dark?
+- Attending: Horse seizure plus enrofloxacin — fire or skip, and why?
+- Attending: Cat plus Baytril plus seizure — which locs fire, and why?
+
+## 359. Canine ciprofloxacin colitis (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett cipro-colitis chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (both ciprofloxacin and moxifloxacin have been associated with potentially fatal antimicrobial-induced colitis; vomiting and diarrhea may develop with fluoroquinolones). Packet 131 still owns AHDS without the named drugs. Packet 344 still owns colitis without cipro / moxi. Packet 358 still owns FQ GABA. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on enrofloxacin plus AHDS. Do not fire on bare cipro. Do not fire on bare AHDS. Do not fire on parvo without the named drugs. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named ciprofloxacin plus colitis is not an AHDS-alone.** Stop the cipro / moxi. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named ciprofloxacin / cipro / moxifloxacin plus colitis / AHDS / HGE / bloody diarrhea / hemorrhagic diarrhea / hematochezia is canine (or feline) ciprofloxacin colitis; not an AHDS-alone. Bare cipro stays dark. Bare AHDS stays 131. Bare colitis stays 344. Enro plus AHDS stays 131. Dual colitis plus cipro concatenates 359 then 344. Dual AHDS plus cipro concatenates 131 then 359. Dual seizure plus cipro plus colitis concatenates 358 then 359. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this an AHDS-alone.
+- Do not send ciprofloxacin colitis home as mild AHDS.
+- Do not copy an FQ table as if the colon did not matter.
+- Do not treat enrofloxacin plus AHDS as this loc.
+- Do not treat colitis without cipro / moxi as this loc.
+
+Night rule: named cipro / moxi plus colitis → **Canine ciprofloxacin colitis. Not an AHDS-alone.** Stop the cipro / moxi. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is ciprofloxacin plus bloody diarrhea not a mild-AHDS night?
+- NAVLE 2: Why does enrofloxacin plus AHDS stay dark for this loc?
+- NAVLE 3: Dual-named “colitis, ciprofloxacin” — which loc should win, and why?
+- Oral: How do you tell the owner to stop the cipro without inventing an FQ table?
+- Attending: If the query is only “ciprofloxacin,” why does this gate stay dark?
+- Attending: Horse colitis plus ciprofloxacin — fire or skip?
+- Attending: Cat plus cipro plus colitis — which locs fire, and why?
+
+## 360. Canine fluoroquinolone tendinopathy (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-tendinopathy chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (in 2008, the FDA added a black-box warning for seven fluoroquinolones that increased the risk of tendinitis and tendon rupture). Human data on the veterinary page. Packet 359 still owns cipro colitis. Packet 355 still owns growing-dog cartilage. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare CCL. Do not fire on FQ plus CCL without tendon / tendinitis / tendinopathy / Achilles / rupture. Do not fire 359 cipro colitis as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus tendon is not a CCL-alone.** The boxed warning is human data sitting on the veterinary page, not a claim that dogs rupture Achilles at the human rate. Growing-dog cartilage (355) remains the veterinary musculoskeletal FQ fact. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus tendon / tendinitis / tendinopathy / Achilles / rupture is canine (or feline) fluoroquinolone tendinopathy; not a CCL-alone. Bare FQ stays dark. Bare CCL stays dark. FQ plus CCL without tendon language stays dark. Dual cipro plus colitis plus tendon concatenates 359 then 360. Dual cipro plus colitis without tendon stays 359. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a CCL-alone.
+- Do not send FQ tendinopathy home as CCL.
+- Do not copy an FQ table as if the tendon did not matter.
+- Do not treat cipro colitis as this loc.
+- Do not treat growing-dog cartilage (355) as this loc.
+
+Night rule: named FQ plus tendon → **Canine fluoroquinolone tendinopathy. Not a CCL-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus Achilles pain not a CCL-and-home night?
+- NAVLE 2: Why does enrofloxacin plus CCL without tendon language stay dark for this loc?
+- NAVLE 3: Dual-named “ciprofloxacin, colitis, tendon” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “enrofloxacin,” why does this gate stay dark?
+- Attending: Horse tendinopathy plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus tendon — which locs fire, and why?
+
+## 361. Canine fluoroquinolone photosensitivity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-photosensitivity chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (dermal reactions and photosensitization have been described in people, but the occurrence seems low). Human data on the veterinary page. Packet 360 still owns FQ tendinopathy. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare sunburn. Do not fire 360 FQ tendinopathy as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus photosensitivity is not a sunburn-alone.** The dermal line is human data sitting on the veterinary page, not a claim that dogs sunburn at the human rate. Occurrence seems low. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus photosensitivity / phototoxicity / sunburn / dermal reaction is canine (or feline) fluoroquinolone photosensitivity; not a sunburn-alone. Bare FQ stays dark. Bare sunburn stays dark. Dual tendon plus photosensitivity concatenates 360 then 361. Dual FQ plus tendon without photo language stays 360. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a sunburn-alone.
+- Do not send FQ photosensitivity home as ordinary sunburn.
+- Do not invent veterinary incidence.
+- Do not treat FQ tendinopathy (360) as this loc.
+- Do not treat dermatitis without named photo language as this loc.
+
+Night rule: named FQ plus photosensitivity → **Canine fluoroquinolone photosensitivity. Not a sunburn-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus sunburn not a sunscreen-and-home night?
+- NAVLE 2: Why does enrofloxacin plus a tendon stay 360, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, tendinopathy, photosensitivity” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “sunburn,” why does this gate stay dark?
+- Attending: Horse photosensitivity plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus phototoxicity — which locs fire, and why?
+
+## 362. Canine fluoroquinolone hemolytic anemia (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-hemolytic chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (hemolytic anemia has also occurred). Sparse data on the veterinary page. Packet 361 still owns FQ photosensitivity. Packet 126 still owns IMHA without named FQ. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare IMHA. Do not fire 361 FQ photosensitivity as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus hemolysis is not an IMHA-alone.** The hemolytic line is sparse data sitting on the veterinary page, not a claim that dogs have primary IMHA at a published FQ rate. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus hemolysis / hemolytic / IMHA / pigmenturia / hemoglobinuria is canine (or feline) fluoroquinolone hemolytic anemia; not an IMHA-alone. Bare FQ stays dark. Bare IMHA stays 126. Dual photosensitivity plus hemolysis concatenates 361 then 362. Dual FQ plus photosensitivity without hemolysis language stays 361. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this an IMHA-alone.
+- Do not send FQ hemolytic anemia home as primary IMHA.
+- Do not invent veterinary incidence.
+- Do not treat FQ photosensitivity (361) as this loc.
+- Do not treat IMHA without named FQ as this loc.
+
+Night rule: named FQ plus hemolysis → **Canine fluoroquinolone hemolytic anemia. Not an IMHA-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus IMHA not a steroid-and-home night?
+- NAVLE 2: Why does enrofloxacin plus photosensitivity stay 361, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, photosensitivity, hemolysis” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “IMHA,” why does this gate stay dark?
+- Attending: Horse hemolysis plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus hemoglobinuria — which locs fire, and why?
+
+## 363. Canine fluoroquinolone mitotoxicity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-mitotoxicity chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (an emerging toxicity associated with fluoroquinolones is mitotoxicity, i.e. damage to mitochondrial topoisomerase or other mitochondrial structures; mitochondrial effects may not emerge until some time after fluoroquinolone treatment is instituted; although the entirety of the clinical impact of this toxicity is not known, nor is its relevance to veterinary medicine, adverse events ranging from neurological to musculoskeletal to cardiovascular may ultimately be attributed to this effect). Sparse data on the veterinary page. Packet 362 still owns FQ hemolytic anemia. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare neuropathy. Do not fire on FQ plus neuropathy without mito / mitochondrial / mitotoxicity language. Do not fire 362 FQ hemolytic anemia as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus mitotoxicity is not a neuropathy-alone.** The mito line is sparse data sitting on the veterinary page, not a claim that dogs have FQ neuropathy at a published rate. Clinical impact and veterinary relevance are not known. Stop the FQ. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus mitotox / mitochondrial / mitotoxicity is canine (or feline) fluoroquinolone mitotoxicity; not a neuropathy-alone. Bare FQ stays dark. Bare neuropathy stays dark. FQ plus neuropathy without mito language stays dark. Dual hemolysis plus mitotoxicity concatenates 362 then 363. Dual FQ plus hemolysis without mito language stays 362. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a neuropathy-alone.
+- Do not send FQ mitotoxicity home as ordinary neuropathy.
+- Do not invent veterinary incidence.
+- Do not treat FQ hemolytic anemia (362) as this loc.
+- Do not treat neuropathy without named mito language as this loc.
+
+Night rule: named FQ plus mitotoxicity → **Canine fluoroquinolone mitotoxicity. Not a neuropathy-alone.** Stop the FQ. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus mitochondrial toxicity not a neuropathy-and-home night?
+- NAVLE 2: Why does enrofloxacin plus hemolysis stay 362, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, hemolysis, mitotoxicity” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the FQ without inventing an FQ table?
+- Attending: If the query is only “neuropathy,” why does this gate stay dark?
+- Attending: Horse mitotoxicity plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus mitochondrial — which locs fire, and why?
+
+## 364. Canine fluoroquinolone-nitrofurantoin stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-nitrofurantoin chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (nitrofurantoin impairs the efficacy of quinolones if used concurrently for urinary tract infections). Packet 363 still owns FQ mitotoxicity. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not harvest a nitrofurantoin mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare UTI. Do not fire 363 FQ mitotoxicity as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus nitrofurantoin is not a UTI-alone.** Stop the stack. Printed FQ and nitrofurantoin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus nitrofurantoin / nitrofuran / Macrobid / Macrodantin is canine (or feline) fluoroquinolone-nitrofurantoin stack; not a UTI-alone. Bare FQ stays dark. Bare UTI stays the UTI night. Dual mitotoxicity plus nitrofurantoin concatenates 363 then 364. Dual FQ plus mitotoxicity without nitrofurantoin stays 363. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not harvest a nitrofurantoin mg/kg table.
+- Do not call this a UTI-alone.
+- Do not send FQ plus nitrofurantoin home as a UTI.
+- Do not treat FQ mitotoxicity (363) as this loc.
+- Do not treat UTI without named nitrofurantoin as this loc.
+
+Night rule: named FQ plus nitrofurantoin → **Canine fluoroquinolone-nitrofurantoin stack. Not a UTI-alone.** Stop the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus Macrobid not a UTI-and-home night?
+- NAVLE 2: Why does enrofloxacin plus mitotoxicity stay 363, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, mitotoxicity, nitrofurantoin” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the stack without inventing an FQ table?
+- Attending: If the query is only “UTI,” why does this gate stay dark?
+- Attending: Horse nitrofurantoin plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus nitrofurantoin — which locs fire, and why?
+
+## 365. Canine fluoroquinolone crystalluria (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-crystalluria chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (in concentrated acidic urine, some quinolones form needle-shaped crystals, although this apparently has not been reported with clinical use; urinalysis may reveal needle-shaped crystals; the clinical relevance of this finding is unclear). Packet 364 still owns FQ-nitrofurantoin. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare UTI. Do not fire on bare crystalluria. Do not fire 364 FQ-nitrofurantoin as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus needle crystals is not a UTI-alone.** Clinical relevance is unclear. Do not invent a stone night. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus crystalluria / needle-shaped crystal / needle crystal is canine (or feline) fluoroquinolone crystalluria; not a UTI-alone. Bare FQ stays dark. Bare UTI stays the UTI night. Bare crystalluria stays dark. Dual nitrofurantoin plus crystalluria concatenates 364 then 365. Dual FQ plus nitrofurantoin without crystal language stays 364. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a UTI-alone.
+- Do not send FQ crystalluria home as a UTI.
+- Do not invent veterinary stone incidence.
+- Do not treat FQ-nitrofurantoin (364) as this loc.
+- Do not treat CaOx crystals without needle / crystalluria language as this loc.
+
+Night rule: named FQ plus needle crystals → **Canine fluoroquinolone crystalluria. Not a UTI-alone.** Clinical relevance is unclear. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus needle crystals not a UTI-and-home night?
+- NAVLE 2: Why does enrofloxacin plus nitrofurantoin stay 364, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, nitrofurantoin, crystalluria” — which locs should fire, and why?
+- Oral: How do you tell the owner the crystals are not a proven stone night without inventing an FQ table?
+- Attending: If the query is only “crystalluria,” why does this gate stay dark?
+- Attending: Horse crystalluria plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus needle-shaped crystals — which locs fire, and why?
+
+## 366. Canine fluoroquinolone laboratory interference (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett FQ-laboratory chapter in the owned SA EM splits. Public Mercer M.A. Quinolones, Including Fluoroquinolones, for Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (quinolones may increase activities of AST, ALT, and ALP as well as BUN concentration; urine glucose test results may be altered). Packet 365 still owns FQ crystalluria. Do not harvest a fluoroquinolone mg/kg table as lobby law. Do not fire on bare FQ. Do not fire on bare hepatitis. Do not fire on bare diabetes. Do not fire 365 FQ crystalluria as this loc. Dogs and cats. Skip horse. Food-animal ELDU is prohibited for fluoroquinolones.
+
+Agree with Mercer: **named fluoroquinolone plus AST / ALT / ALP / BUN / urine glucose is not a hepatitis-alone.** Lab shift is not hepatitis and not diabetes. Printed FQ mg/kg stays on the page (`△ Plumb`).
+
+Night split: named enrofloxacin / marbofloxacin / orbifloxacin / pradofloxacin / ciprofloxacin / Baytril / fluoroquinolone plus AST / ALT / ALP / BUN / urine glucose is canine (or feline) fluoroquinolone laboratory interference; not a hepatitis-alone. Bare FQ stays dark. Bare hepatitis stays dark. Bare diabetes stays dark. Dual crystalluria plus AST concatenates 365 then 366. Dual FQ plus crystalluria without lab words stays 365. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a fluoroquinolone mg/kg table.
+- Do not call this a hepatitis-alone.
+- Do not send FQ laboratory interference home as hepatitis.
+- Do not call urine-glucose interference diabetes.
+- Do not treat FQ crystalluria (365) as this loc.
+- Do not treat hepatitis or diabetes without named lab words as this loc.
+
+Night rule: named FQ plus AST / ALT / ALP / BUN / urine glucose → **Canine fluoroquinolone laboratory interference. Not a hepatitis-alone.** △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is Baytril plus a high ALT not a hepatitis-and-home night?
+- NAVLE 2: Why does enrofloxacin plus crystalluria stay 365, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, crystalluria, AST” — which locs should fire, and why?
+- Oral: How do you tell the owner the lab shift is not hepatitis without inventing an FQ table?
+- Attending: If the query is only “hepatitis,” why does this gate stay dark?
+- Attending: Horse AST plus enrofloxacin — fire or skip?
+- Attending: Cat plus Baytril plus urine glucose — which locs fire, and why?
+
+## 367. Canine aminoglycoside nephrotoxicity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-nephrotoxicity chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (ototoxicity, neuromuscular blockade, and nephrotoxicity are the most frequently reported adverse effects; nephrotoxicity is of major concern and may result in renal failure due to acute tubular necrosis; risk rises with duration, dehydration, hypovolemia, and concurrent nephrotoxins). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Mealey *JAVMA* 1994 PMID 8077135 (12 cites, RCR ~1.0, Texas A&M CVM; cat topical gentamicin lavage → proximal tubular necrosis; printed serum µg/mL stays on that paper). Albarellos *J Vet Pharmacol Ther* 2004 PMID 14995962 (10 cites, Universidad de Buenos Aires; once-daily dog PK is not a lobby clock). Supporting cases, not the weight: Fisk *Can Vet J* 2019 PMID 31523085 (0 cites, University of Florida CVM; one dog, parenteral gentamicin → anuric AKI then deaf). Mauro *JVECC* 2021 PMID 34499808 (1 cite, University of Pennsylvania / Zurich; cat amikacin overdose, intermittent hemodialysis). 2026 rodent Nrf2 / Aronia papers in *Drug Chem Toxicol* (0 cites) are not this loc. Packet 366 still owns FQ laboratory interference. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a once-daily clock as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare AKI. Do not fire 366 FQ laboratory interference as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus kidney language is not an AKI-alone.** Stop the aminoglycoside. Hydrate. Printed aminoglycoside mg/kg stays on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus nephrotox / AKI / azotemia / creatinine is canine (or feline) aminoglycoside nephrotoxicity; not an AKI-alone. Bare aminoglycoside stays dark. Bare AKI stays the AKI night. Dual FQ plus AST plus gentamicin plus AKI concatenates 366 then 367. Dual FQ plus AST without aminoglycoside stays 366. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside nephrotoxicity home as AKI.
+- Do not copy a once-daily recipe as lobby law.
+- Do not treat FQ laboratory interference (366) as this loc.
+- Do not treat AKI without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus kidney language → **Canine aminoglycoside nephrotoxicity. Not an AKI-alone.** Stop the aminoglycoside. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus rising creatinine not an AKI-and-home night?
+- NAVLE 2: Why does enrofloxacin plus AST stay 366, not this loc?
+- NAVLE 3: Dual-named “enrofloxacin, AST, gentamicin, AKI” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the aminoglycoside without inventing a mg/kg table?
+- Attending: If the query is only “AKI,” why does this gate stay dark?
+- Attending: Horse gentamicin plus AKI — fire or skip?
+- Attending: Cat plus amikacin plus azotemia — which locs fire, and why?
+
+## 368. Canine aminoglycoside ototoxicity (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-ototoxicity chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (ototoxicity may manifest as auditory or vestibular dysfunction; binding or damage to mitochondria plays a prominent role; vestibular injury leads to nystagmus, incoordination, and loss of the righting reflex; the lesion is often irreversible; ototoxicity is not unusual in people, but relevance to veterinary patients is not clear; cats are particularly sensitive to the toxic vestibular effects; aminoglycosides should not be administered topically into the ear unless the tympanic membrane is intact; hearing impairment reflects permanent damage and loss of hair cells in the organ of Corti). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Christensen *Antimicrob Agents Chemother* 1977 PMID 900916 (27 cites, RCR ~1.4, ASM SCI journal; experimental cat amikacin vs gentamicin oto — comparative table stays on that paper). Oishi *Vet Clin North Am Small Anim Pract* 2012 PMID 23122180 (19 cites, RCR ~1.1, Kresge Hearing Research Institute, University of Michigan; dogs and cats review). Supporting case, not the weight: Fisk *Can Vet J* 2019 PMID 31523085 (0 cites, University of Florida CVM; one dog, BAER-confirmed bilateral deafness — not incidence). 2026 mouse / human neonatal oto papers are not this loc. Packet 367 still owns aminoglycoside nephrotoxicity. Packet 137 still owns vestibular without named aminoglycoside. Packet 349 still owns metronidazole neurotoxicity. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest NAC as an ototoxicity antidote (human line on the veterinary page). Do not fire on bare aminoglycoside. Do not fire on bare vestibular. Do not fire 367 aminoglycoside nephrotoxicity as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus oto language is not a vestibular-alone.** Veterinary relevance is not clear. Cats are particularly sensitive. Confirm the TM. Stop the aminoglycoside. Printed aminoglycoside mg/kg stays on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus ototox / vestibular / deaf / hearing / nystagmus is canine (or feline) aminoglycoside ototoxicity; not a vestibular-alone. Bare aminoglycoside stays dark. Bare vestibular stays 137. Dual AKI plus nystagmus concatenates 367 then 368. Dual gentamicin plus AKI without oto language stays 367. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not call this a vestibular-alone.
+- Do not send aminoglycoside ototoxicity home as idiopathic vestibular.
+- Do not invent veterinary incidence.
+- Do not harvest NAC as an ototoxicity antidote.
+- Do not treat aminoglycoside nephrotoxicity (367) as this loc.
+- Do not treat vestibular without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus oto language → **Canine aminoglycoside ototoxicity. Not a vestibular-alone.** Stop the aminoglycoside. Confirm the TM. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus nystagmus not an idiopathic-vestibular-and-home night?
+- NAVLE 2: Why does gentamicin plus AKI stay 367, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, nystagmus” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the aminoglycoside without inventing a mg/kg table?
+- Attending: If the query is only “vestibular,” why does this gate stay dark?
+- Attending: Horse gentamicin plus nystagmus — fire or skip?
+- Attending: Cat plus neomycin plus deafness — which locs fire, and why?
+
+## 369. Canine aminoglycoside neuromuscular blockade (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-neuromuscular-blockade chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (all aminoglycosides at high plasma concentrations have been associated with muscle weakness and respiratory arrest attributable to neuromuscular blockade; more pronounced when given with other neuromuscular blocking agents or inhalant anesthetics; antagonized by calcium gluconate). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Forsyth *Am J Vet Res* 1990 PMID 2240789 (12 cites, RCR ~1.25, UC Davis; cat, gentamicin plus atracurium). Martinez *Am J Vet Res* 1996 PMID 8915441 (6 cites, Texas A&M CVM; dog, high-dose gentamicin plus atracurium under isoflurane). Horse *Am J Vet Res* 1997 PMID 9361900 (Texas A&M; 4 cites) is not a Midtown loc. 2024 mouse motor-behavior aminoglycoside papers are not this loc. Packet 368 still owns aminoglycoside ototoxicity. Packet 163 still owns fulminant myasthenia. Packet 162 still owns botulism. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a calcium gluconate mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare myasthenia. Do not fire 368 aminoglycoside ototoxicity as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus blockade language is not a myasthenia-alone.** Stop the aminoglycoside. Support respiration. Calcium gluconate stays on the page (`△ Plumb`). Printed aminoglycoside mg/kg stays on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus neuromuscular / blockade / muscle weakness / respiratory arrest is canine (or feline) aminoglycoside neuromuscular blockade; not a myasthenia-alone. Bare aminoglycoside stays dark. Bare myasthenia stays 163. Dual nystagmus plus neuromuscular blockade concatenates 368 then 369. Dual gentamicin plus nystagmus without blockade language stays 368. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a calcium gluconate mg/kg table.
+- Do not call this a myasthenia-alone.
+- Do not send aminoglycoside neuromuscular blockade home as myasthenia.
+- Do not treat aminoglycoside ototoxicity (368) as this loc.
+- Do not treat myasthenia without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus blockade language → **Canine aminoglycoside neuromuscular blockade. Not a myasthenia-alone.** Stop the aminoglycoside. Support respiration. Calcium gluconate △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus muscle weakness not a myasthenia-and-home night?
+- NAVLE 2: Why does gentamicin plus nystagmus stay 368, not this loc?
+- NAVLE 3: Dual-named “gentamicin, nystagmus, neuromuscular blockade” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the aminoglycoside without inventing a mg/kg or calcium table?
+- Attending: If the query is only “myasthenia,” why does this gate stay dark?
+- Attending: Horse gentamicin plus respiratory arrest — fire or skip?
+- Attending: Cat plus tobramycin plus respiratory arrest — which locs fire, and why?
+
+## 370. Canine aminoglycoside-loop diuretic ototoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-loop-diuretic chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (ototoxicity may be enhanced by concurrent loop diuretics such as furosemide). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Oishi *Vet Clin North Am Small Anim Pract* 2012 PMID 23122180 (19 cites, University of Michigan Kresge; dogs and cats oto review, including loop-diuretic enhancement). Supporting case, not the weight: Fisk *Can Vet J* 2019 PMID 31523085 (0 cites, University of Florida CVM; one dog, high-dose furosemide for anuric AKI may have contributed — not a furosemide recipe). Combined gentamicin plus furosemide cochlear-macrophage work (*Int J Mol Sci* 2022 PMID 35806348, 4 cites) is mouse / MDPI, not this loc. Packet 369 still owns aminoglycoside neuromuscular blockade. Packet 368 still owns aminoglycoside ototoxicity without a named loop. Packet 137 still owns vestibular without named aminoglycoside. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a furosemide mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare furosemide. Do not fire 369 aminoglycoside neuromuscular blockade as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named loop diuretic is not a vestibular-alone.** Name the stack. Stop or unstack. Printed aminoglycoside and furosemide mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus furosemide / loop diuretic / Lasix / torsemide is canine (or feline) aminoglycoside-loop diuretic ototoxicity stack; not a vestibular-alone. Bare aminoglycoside stays dark. Bare furosemide stays dark. Dual nystagmus plus furosemide concatenates 368 then 370. Dual neuromuscular blockade plus furosemide concatenates 369 then 370. Dual gentamicin plus nystagmus without a loop stays 368. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a furosemide mg/kg table.
+- Do not call this a vestibular-alone.
+- Do not send aminoglycoside plus loop diuretic home as idiopathic vestibular.
+- Do not treat aminoglycoside neuromuscular blockade (369) as this loc.
+- Do not treat aminoglycoside ototoxicity without a named loop (368) as this loc.
+- Do not treat furosemide without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named loop → **Canine aminoglycoside-loop diuretic ototoxicity stack. Not a vestibular-alone.** Stop or unstack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus furosemide not an idiopathic-vestibular-and-home night?
+- NAVLE 2: Why does gentamicin plus neuromuscular blockade stay 369, not this loc?
+- NAVLE 3: Dual-named “gentamicin, nystagmus, furosemide” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “furosemide,” why does this gate stay dark?
+- Attending: Horse gentamicin plus Lasix — fire or skip?
+- Attending: Cat plus amikacin plus loop diuretic — which locs fire, and why?
+
+## 371. Canine aminoglycoside-NSAID nephrotoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-NSAID chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (risk of nephrotoxicity rises with concurrent nephrotoxins; NSAIDs are concurrent nephrotoxins). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Grauer *Vet Clin North Am Small Anim Pract* 1996 PMID 8911027 (10 cites, Colorado State CVM; names gentamicin and NSAIDs among hospital-acquired ARF agents). Lomas/Grauer *J Am Anim Hosp Assoc* 2015 PMID 25955147 (29 cites, Kansas State CVM; NSAID renal ADE in dogs). Brown *J Am Vet Med Assoc* 1985 PMID 3988600 (32 cites, RCR ~2.6; canine gentamicin ARF series). McNeil *Nephron* 1983 PMID 6341862 (15 cites; dog prostaglandin / gentamicin mechanism — printed 4 mg/kg stays on that paper). Do not overweight Kai *J Toxicol Sci* 2013 PMID 23535405 (41 cites, Daiichi Sankyo; experimental 25/50 mg/kg is a harvest trap). Do not overweight rodent curcumin papers despite high cites. Packet 370 still owns the aminoglycoside-loop diuretic stack. Packet 367 still owns aminoglycoside nephrotoxicity without a named NSAID. Packet 350 still owns NSAID-steroid. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest an NSAID mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare NSAID. Do not fire 370 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named NSAID is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed aminoglycoside and NSAID mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus NSAID / carprofen / meloxicam / robenacoxib / deracoxib / Rimadyl / Metacam / Onsior is canine (or feline) aminoglycoside-NSAID nephrotoxicity stack; not an AKI-alone. Bare aminoglycoside stays dark. Bare NSAID stays dark. Dual AKI plus carprofen concatenates 367 then 371. Dual furosemide plus carprofen concatenates 370 then 371. Dual gentamicin plus AKI without an NSAID stays 367. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest an NSAID mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside plus NSAID home as AKI.
+- Do not treat the loop-diuretic stack (370) as this loc.
+- Do not treat aminoglycoside nephrotoxicity without a named NSAID (367) as this loc.
+- Do not treat NSAID-steroid (350) as this loc.
+- Do not treat NSAID without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named NSAID → **Canine aminoglycoside-NSAID nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus carprofen not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus furosemide stay 370, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, carprofen” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “NSAID,” why does this gate stay dark?
+- Attending: Horse gentamicin plus Banamine — fire or skip?
+- Attending: Cat plus amikacin plus Onsior — which locs fire, and why?
+
+## 372. Canine aminoglycoside-beta-lactam syringe mix (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-beta-lactam-mix chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (do not mix aminoglycosides with beta-lactam antibiotics in the same syringe because of chemical inactivation). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Riff/Jackson *Arch Intern Med* 1972 PMID 5082469 (118 cites, RCR ~6.4; human classic gentamicin inactivation by carbenicillin; affiliation not in PubMed XML). Pickering/Gearhart *Antimicrob Agents Chemother* 1979 PMID 464591 (82 cites, RCR ~5.4, ASM SCI; time and concentration). Pickering/Rutherford *J Pharmacol Exp Ther* 1981 PMID 6453219 (56 cites). Human chemistry is not canine incidence. Do not overweight 2026 resistome papers or equine intrauterine mixes. Packet 371 still owns the aminoglycoside-NSAID stack. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a penicillin mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare penicillin. Do not fire on gentamicin plus ampicillin without mix / syringe / same-line language. Do not fire 371 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named beta-lactam plus mix language is not a sepsis-alone.** Give separately. Printed aminoglycoside and penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus penicillin / ampicillin / amoxicillin / ticarcillin / beta-lactam plus mix / syringe / same line is canine (or feline) aminoglycoside-beta-lactam syringe mix; not a sepsis-alone. Bare aminoglycoside stays dark. Bare penicillin stays dark. Dual carprofen plus ampicillin plus syringe concatenates 371 then 372. Dual gentamicin plus ampicillin without mix language stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a penicillin mg/kg table.
+- Do not call this a sepsis-alone.
+- Do not mix aminoglycoside with a beta-lactam in the same syringe.
+- Do not treat the NSAID stack (371) as this loc.
+- Do not treat penicillin without named aminoglycoside and mix language as this loc.
+
+Night rule: named aminoglycoside plus named beta-lactam plus mix language → **Canine aminoglycoside-beta-lactam syringe mix. Not a sepsis-alone.** Give separately. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus ampicillin in one syringe not a sepsis-and-home cocktail?
+- NAVLE 2: Why does gentamicin plus carprofen stay 371, not this loc?
+- NAVLE 3: Dual-named “gentamicin, ampicillin, syringe, carprofen” — which locs should fire, and why?
+- Oral: How do you tell the owner they are given separately without inventing a mg/kg table?
+- Attending: If the query is “gentamicin, ampicillin” with no mix language, why does this gate stay dark?
+- Attending: Horse gentamicin plus penicillin in one syringe — fire or skip?
+- Attending: Cat plus amikacin plus amoxicillin plus same line — which locs fire, and why?
+
+## 373. Canine aminoglycoside-amphotericin nephrotoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-amphotericin chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (risk of nephrotoxicity rises with concurrent nephrotoxins; amphotericin B is a concurrent nephrotoxin). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Grauer *Vet Clin North Am Small Anim Pract* 1996 PMID 8911027 (10 cites, Colorado State CVM; names gentamicin, cisplatin, amphotericin, and NSAIDs among hospital-acquired ARF agents). Chan/Dear/Palm *J Vet Intern Med* 2023 PMID 37148178 (5 cites, UC Davis; amphotericin AKI in dogs with systemic mycosis — journal standing, not recency). Gerkens *J Pharmacol Exp Ther* 1983 PMID 6298404 (38 cites; experimental dog amphotericin nephrotoxicity — aminophylline recipe stays on that paper). Do not treat Legendre *JAVMA* 1984 PMID 6330013 blasto treatment as this loc (packet 191). Do not overweight NICU / rodent ampho papers. Packet 372 still owns the aminoglycoside-beta-lactam syringe mix. Packet 367 still owns aminoglycoside nephrotoxicity without named amphotericin. Packet 191 still owns blastomycosis. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest an amphotericin mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare amphotericin. Do not fire 372 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **named aminoglycoside plus named amphotericin is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed aminoglycoside and amphotericin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus amphotericin / AmBisome / Fungizone is canine (or feline) aminoglycoside-amphotericin nephrotoxicity stack; not an AKI-alone. Bare aminoglycoside stays dark. Bare amphotericin stays dark. Dual AKI plus amphotericin concatenates 367 then 373. Dual ampicillin plus syringe plus amphotericin concatenates 372 then 373. Dual gentamicin plus AKI without amphotericin stays 367. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest an amphotericin mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside plus amphotericin home as AKI.
+- Do not treat the syringe mix (372) as this loc.
+- Do not treat aminoglycoside nephrotoxicity without named amphotericin (367) as this loc.
+- Do not treat blastomycosis (191) as this loc.
+- Do not treat amphotericin without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named amphotericin → **Canine aminoglycoside-amphotericin nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus amphotericin not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus ampicillin plus syringe stay 372, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, amphotericin” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “amphotericin,” why does this gate stay dark?
+- Attending: Horse gentamicin plus amphotericin — fire or skip?
+- Attending: Cat plus amikacin plus AmBisome — which locs fire, and why?
+
+## 374. Canine aminoglycoside-cisplatin nephrotoxicity stack (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-cisplatin chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (risk of nephrotoxicity rises with concurrent nephrotoxins). Grauer *Vet Clin North Am Small Anim Pract* 1996 PMID 8911027 (10 cites, Colorado State CVM; names gentamicin, cisplatin, amphotericin, and NSAIDs among hospital-acquired ARF agents). PubMed weight (NIH iCite 2026-11-25; citations / journal / affiliation, not recency): Grauer CSU is the stack-naming paper. Knapp *J Vet Intern Med* 2013 PMID 23205923 (57 cites, Purdue; cisplatin vs firocoxib TCC) is cisplatin renal-adjacent chemo, not this AG stack. Chun/Knapp *JAVMA* 1996 PMID 8899023 (43 cites, Purdue; cisplatin TCC). Do not overweight Kidney Int platinum-OCT papers or J&J biomarker work. Packet 373 still owns the aminoglycoside-amphotericin stack. Packet 367 still owns aminoglycoside nephrotoxicity without named cisplatin. Packet 199 still owns osteosarcoma chemo without named aminoglycoside. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest a cisplatin mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare cisplatin. Do not fire 373 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Grauer: **named aminoglycoside plus named cisplatin is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed aminoglycoside and cisplatin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus cisplatin / cis-platinum / Platinol is canine (or feline) aminoglycoside-cisplatin nephrotoxicity stack; not an AKI-alone. Bare aminoglycoside stays dark. Bare cisplatin stays 199 if OSA is named, otherwise dark for this loc. Dual AKI plus cisplatin concatenates 367 then 374. Dual amphotericin plus cisplatin concatenates 373 then 374. Dual gentamicin plus amphotericin without cisplatin stays 373. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest a cisplatin mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send aminoglycoside plus cisplatin home as AKI.
+- Do not treat the amphotericin stack (373) as this loc.
+- Do not treat aminoglycoside nephrotoxicity without named cisplatin (367) as this loc.
+- Do not treat osteosarcoma chemo without named aminoglycoside (199) as this loc.
+- Do not treat cisplatin without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named cisplatin → **Canine aminoglycoside-cisplatin nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus cisplatin not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus amphotericin stay 373, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, cisplatin” — which locs should fire, and why?
+- Oral: How do you tell the owner to unstack without inventing a mg/kg table?
+- Attending: If the query is only “cisplatin,” why does this gate stay dark?
+- Attending: Horse gentamicin plus cisplatin — fire or skip?
+- Attending: Cat plus amikacin plus Platinol — which locs fire, and why?
+
+## 375. Canine aminoglycoside anaerobic coverage gap (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-anaerobe chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (aminoglycosides are not active against anaerobes). Dow *Vet Clin North Am Small Anim Pract* 1988 PMID 3064389 (9 cites, Colorado State CVM; aminoglycosides and sulfonamides are ineffective against anaerobic infection, including *Bacteroides*). Jang *J Am Vet Med Assoc* 1997 PMID 9170087 (35 cites, UC Davis VMTH; anaerobic isolates from dogs and cats, including abdominal cavity; *Bacteroides* among the common obligate anaerobes). Dow *J Am Vet Med Assoc* 1986 PMID 2876976 (29 cites, Colorado State CVM; anaerobic infections in dogs and cats; *Bacteroides* / *Fusobacterium*; abdominal infections; failure to start an effective antibiotic raised recurrence). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Dow VCNA 1988 even with fewer cites. Jang JAVMA 1997 and Dow JAVMA 1986 carry the citation weight and named CVM labs. Do not overweight Wagner *J Vet Intern Med* 2007 PMID 17552445 (75 cites, Wisconsin; bile/hepatobiliary culture). Do not overweight Lanz *J Am Anim Hosp Assoc* 2001 PMID 11204482 (71 cites, VA-MD; surgery without drainage). Do not overweight Gerding *Antimicrob Agents Chemother* 1976 PMID 1008543 (27 cites; experimental ascitic penetrance of gentamicin is not anaerobic coverage). Packet 374 still owns the aminoglycoside-cisplatin stack. Packet 336 still owns GI perforation. Packet 179 still owns bile peritonitis. Packet 204 still owns feline infectious peritonitis. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare peritonitis. Do not fire 374 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Dow: **named aminoglycoside plus named anaerobes or peritonitis is not a peritonitis-alone.** Cover anaerobes. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus anaerobes / Bacteroides / Clostridium / peritonitis is canine (or feline) aminoglycoside anaerobic coverage gap; not a peritonitis-alone. Bare aminoglycoside stays dark. Bare peritonitis stays 336 / 179 / sepsis as those packets already fire. Dual GI-perforation plus gentamicin concatenates 336 then 375. Dual bile peritonitis plus gentamicin concatenates 179 then 375. Dual gentamicin plus cisplatin stays 374. Feline infectious peritonitis plus gentamicin stays 204, not this loc. *Clostridium tetani* stays tetanus. iCa anaerobic stays lab, not this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not call this a peritonitis-alone.
+- Do not send aminoglycoside as the only antimicrobial for anaerobes or peritonitis.
+- Do not treat the cisplatin stack (374) as this loc.
+- Do not treat GI perforation without named aminoglycoside (336) as this loc.
+- Do not treat bile peritonitis without named aminoglycoside (179) as this loc.
+- Do not treat feline infectious peritonitis (204) as this loc.
+- Do not treat peritonitis without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named anaerobes / peritonitis → **Canine aminoglycoside anaerobic coverage gap. Not a peritonitis-alone.** Cover anaerobes. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus peritonitis not a peritonitis-and-home night?
+- NAVLE 2: Why does gentamicin plus cisplatin stay 374, not this loc?
+- NAVLE 3: Dual-named “septic peritonitis from a gut leak, gentamicin” — which locs should fire, and why?
+- Oral: How do you tell the owner the antibiotic family missed the anaerobes without inventing a mg/kg table?
+- Attending: If the query is only “peritonitis,” why does this gate stay dark?
+- Attending: Horse gentamicin plus peritonitis — fire or skip?
+- Attending: Cat plus amikacin plus Bacteroides — which locs fire, and why?
+
+## 376. Canine aminoglycoside poor CSF penetration (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-CSF chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (limited distribution into CSF). Goitein *Chemotherapy* 1975 PMID 1157573 (21 cites; dogs; parenteral gentamicin penetrates CSF poorly even at the height of experimental meningitis; printed µg/mL and CSF:serum ratios stay on that paper). Riviere *Chemotherapy* 1981 PMID 7261687 (4 cites; beagle ventricular cannula; printed 10 mg/kg stays on that paper). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit plus citation weight is Goitein 1975 in dogs. Riviere is supporting cannula work, not a lobby dose. Do not overweight Dow *J Vet Intern Med* 1988 PMID 3230556 (34 cites, Colorado State; CNS anaerobic infection — packet 375 if anaerobes are named). Do not overweight rodent / doxorubicin blood-brain papers or G-CSF. Packet 375 still owns the aminoglycoside anaerobic coverage gap. Packet 208 still owns otogenic meningitis. Packet 205 still owns SRMA. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest Goitein µg/mL as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare meningitis. Do not fire 375 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Goitein: **named aminoglycoside plus named meningitis or CSF is not a meningitis-alone.** Do not send parenteral aminoglycoside as the CSF plan. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus meningitis / encephalitis / CSF / blood-brain is canine (or feline) aminoglycoside poor CSF penetration; not a meningitis-alone. Bare aminoglycoside stays dark. Bare meningitis stays 208 / 205 / 206 as those packets already fire. Dual otogenic meningitis plus gentamicin concatenates 208 then 376. Dual SRMA spelled as meningitis plus gentamicin concatenates 205 then 376. Bare SRMA plus gentamicin without meningitis / CSF words stays 205, not this loc. Dual gentamicin plus peritonitis stays 375. G-CSF stays dark. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Goitein µg/mL.
+- Do not call this a meningitis-alone.
+- Do not send parenteral aminoglycoside as the meningitis plan.
+- Do not treat the anaerobic gap (375) as this loc.
+- Do not treat otogenic meningitis without named aminoglycoside (208) as this loc.
+- Do not treat SRMA without named aminoglycoside (205) as this loc.
+- Do not treat meningitis without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named meningitis / CSF → **Canine aminoglycoside poor CSF penetration. Not a meningitis-alone.** Do not send parenteral aminoglycoside as the CSF plan. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus meningitis not a meningitis-and-home night?
+- NAVLE 2: Why does gentamicin plus peritonitis stay 375, not this loc?
+- NAVLE 3: Dual-named “otogenic meningitis, gentamicin” — which locs should fire, and why?
+- Oral: How do you tell the owner the antibiotic family missed the spinal fluid without inventing a mg/kg table?
+- Attending: If the query is only “meningitis,” why does this gate stay dark?
+- Attending: Horse gentamicin plus meningitis — fire or skip?
+- Attending: Cat plus amikacin plus CSF — which locs fire, and why?
+
+## 377. Canine aminoglycoside reduced activity in abscess (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett aminoglycoside-pus chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (activity is reduced in anaerobic, acidic, or purulent environments). Bryant *Antimicrob Agents Chemother* 1974 PMID 4375433 (95 cites, ASM SCI; pus binds and inactivates gentamicin; printed µg/mL stays on that paper). Vaudaux *J Infect Dis* 1980 PMID 7441018 (60 cites; gentamicin inactivation in purulent exudates via cell lysis / DNA binding; affiliation not in PubMed XML). Bryant *J Infect Dis* 1992 PMID 1552196 (31 cites, Oregon Health Sciences; aminoglycoside activity suppressed by low pH and hypoxia). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit plus citation weight is Bryant AAC 1974 and Vaudaux JID 1980. Bryant 1992 carries the named-institution pH/hypoxia paper. Human chemistry is not canine abscess incidence. Do not overweight horse wound/antimicrobial papers or 2026 resistome titles. Packet 376 still owns poor CSF penetration. Packet 375 still owns the anaerobic coverage gap. Packet 159 still owns orbital abscess. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest Bryant µg/mL as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare abscess. Do not fire 376 or 375 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Bryant: **named aminoglycoside plus named abscess or pus is not an abscess-alone.** Drain. Do not send aminoglycoside as the pus plan. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus abscess / pus / purulent / low pH is canine (or feline) aminoglycoside reduced activity in abscess; not an abscess-alone. Bare aminoglycoside stays dark. Bare abscess stays 159 / anal-sac as those packets already fire. Dual orbital abscess plus gentamicin concatenates 159 then 377. Dual gentamicin plus meningitis stays 376. Dual gentamicin plus peritonitis stays 375. Mucopurulent ocular discharge plus gentamicin stays KCS, not this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Bryant µg/mL.
+- Do not call this an abscess-alone.
+- Do not send aminoglycoside as the only plan for pus or abscess.
+- Do not treat poor CSF penetration (376) as this loc.
+- Do not treat the anaerobic gap (375) as this loc.
+- Do not treat orbital abscess without named aminoglycoside (159) as this loc.
+- Do not treat abscess without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus named abscess / pus → **Canine aminoglycoside reduced activity in abscess. Not an abscess-alone.** Drain. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin plus abscess not an abscess-and-home night?
+- NAVLE 2: Why does gentamicin plus meningitis stay 376, not this loc?
+- NAVLE 3: Dual-named “orbital abscess, gentamicin” — which locs should fire, and why?
+- Oral: How do you tell the owner the antibiotic family failed in pus without inventing a mg/kg table?
+- Attending: If the query is only “abscess,” why does this gate stay dark?
+- Attending: Horse gentamicin plus abscess — fire or skip?
+- Attending: Cat plus amikacin plus pus — which locs fire, and why?
+
+## 378. Canine aminoglycoside poor oral absorption / neomycin gut-only (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett oral-aminoglycoside chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (aminoglycosides are poorly absorbed from the GI tract). Prasad *Int J Pharm* 2003 PMID 14643972 (30 cites, Kyoto Pharmaceutical University; beagle oral gentamicin has very poor intestinal permeability / low oral bioavailability; Labrasol / Eudragit capsule recipe stays on that paper). Ito *J Control Release* 2005 PMID 15908031 (70 cites, same Kyoto lab; oral solid gentamicin formulation challenge — not this loc). Hill *Br Vet J* 1973 PMID 4733758 (1 cite; oral neomycin in the dog — 0-cite-adjacent, not the weight). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Mercer. Prasad 2003 names poor oral bioavailability in the dog; do not overweight Ito 70 cites as a lobby oral-gentamicin recipe. Kyoto pharmacokinetics is not a named CVM. Packet 377 still owns the abscess gap. Packet 375 still owns the anaerobic coverage gap. Packet 139 still owns HE (printed neomycin 15 mg/kg stays on that page). Do not harvest an aminoglycoside mg/kg table as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare diarrhea. Do not fire parenteral aminoglycoside plus diarrhea without oral/PO. Do not fire 377 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer: **oral neomycin is gut-only, not a diarrhea-alone.** Do not send oral aminoglycoside as systemic coverage. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: neomycin plus oral / PO / diarrhea / enteritis, or named aminoglycoside plus oral / PO plus diarrhea / enteritis, is canine (or feline) aminoglycoside poor oral absorption; not a diarrhea-alone. Bare aminoglycoside stays dark. Bare diarrhea stays AHDS / colitis / giardia as those packets already fire. Dual bloody diarrhea plus neomycin concatenates AHDS then 378. Dual gentamicin plus abscess stays 377. Dual gentamicin plus diarrhea without oral/PO stays dark for this loc. Oral melanoma plus gentamicin stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest HE neomycin 15.
+- Do not copy a Labrasol oral gentamicin recipe.
+- Do not call this a diarrhea-alone.
+- Do not send oral aminoglycoside as systemic coverage.
+- Do not treat the abscess gap (377) as this loc.
+- Do not treat the anaerobic gap (375) as this loc.
+- Do not treat parenteral aminoglycoside plus diarrhea without oral/PO as this loc.
+
+Night rule: oral neomycin or oral aminoglycoside plus diarrhea → **Canine aminoglycoside poor oral absorption. Not a diarrhea-alone.** Gut-only. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is oral neomycin plus diarrhea not a diarrhea-and-home night?
+- NAVLE 2: Why does gentamicin plus diarrhea without oral/PO stay dark for this loc?
+- NAVLE 3: Dual-named “bloody diarrhea, neomycin” — which locs should fire, and why?
+- Oral: How do you tell the owner the gut antibiotic is not a whole-body antibiotic without inventing a mg/kg table?
+- Attending: If the query is only “diarrhea,” why does this gate stay dark?
+- Attending: Horse neomycin plus oral — fire or skip?
+- Attending: Cat plus tobramycin plus PO plus enteritis — which locs fire, and why?
+
+## 379. Canine topical aminoglycoside with ruptured TM (Mercer Merck Sept 2022 / Jun 2026)
+
+No dedicated Plunkett topical-aminoglycoside-TM chapter in the owned SA EM splits. Public Mercer M.A. Aminoglycosides Use in Animals. Merck Veterinary Manual. Full review Sept 2022; last updated Jun 2026 (aminoglycosides should not be administered topically into the ear unless the tympanic membrane is intact). Strain *Am J Vet Res* 1995 PMID 7785834 (26 cites, Louisiana State CVM; gentamicin otic in dogs with intact TM and after myringotomy; printed 3 mg/ml and drop counts stay on that paper). Oishi *Vet Clin North Am Small Anim Pract* 2012 PMID 23122180 (19 cites, University of Michigan Kresge; dogs and cats oto review, including topical risk). Smith *Otolaryngol Head Neck Surg* 1979 PMID 530709 (68 cites; experimental cat round-window perilymph — human ENT chemistry, not this Midtown loc). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Mercer plus Strain LSU AJVR. Oishi carries journal standing. Do not overweight Smith 68 cites as canine otic incidence. Do not overweight 2024 otic-product papers. Packet 368 still owns aminoglycoside ototoxicity without TM or topical language. Packet 137 still owns vestibular without named aminoglycoside. Packet 378 still owns oral-gut absorption. Do not harvest an aminoglycoside mg/kg table as lobby law. Do not harvest Strain mg/ml as lobby law. Do not fire on bare aminoglycoside. Do not fire on bare otitis. Do not fire 368 as this loc. Dogs and cats. Skip horse.
+
+Agree with Mercer / Strain: **named aminoglycoside plus named TM rupture or topical ear is not an otitis-alone.** Stop the drop. Look at the TM. Printed aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named aminoglycoside / gentamicin / amikacin / tobramycin / neomycin plus tympanic / eardrum / TM rupture / topical ear is canine (or feline) topical aminoglycoside with ruptured TM; not an otitis-alone. Bare aminoglycoside stays dark. Bare otitis stays 137. Dual nystagmus plus ruptured TM concatenates 368 then 379. Dual gentamicin plus nystagmus without TM/topical stays 368. Dual neomycin plus oral stays 378. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Strain mg/ml.
+- Do not call this an otitis-alone.
+- Do not put aminoglycoside drops in an ear unless the TM is intact.
+- Do not treat ototoxicity without TM/topical (368) as this loc.
+- Do not treat vestibular without named aminoglycoside (137) as this loc.
+- Do not treat oral-gut absorption (378) as this loc.
+- Do not treat otitis without named aminoglycoside as this loc.
+
+Night rule: named aminoglycoside plus TM rupture or topical ear → **Canine topical aminoglycoside with ruptured TM. Not an otitis-alone.** Stop the drop. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is gentamicin ear drops plus a ruptured TM not an otitis-and-home night?
+- NAVLE 2: Why does gentamicin plus nystagmus without TM language stay 368, not this loc?
+- NAVLE 3: Dual-named “gentamicin, nystagmus, ruptured TM” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop the drop without inventing a mg/kg table?
+- Attending: If the query is only “otitis,” why does this gate stay dark?
+- Attending: Horse gentamicin plus topical ear — fire or skip?
+- Attending: Cat plus neomycin plus eardrum — which locs fire, and why?
+
+## 380. Canine expired tetracycline Fanconi (Mercer Merck tetracyclines)
+
+No dedicated Plunkett expired-tetracycline-Fanconi chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (outdated tetracyclines can cause a Fanconi-like syndrome). Gross *Ann Intern Med* 1963 PMID 13950771 (121 cites; outdated tetracycline Fanconi in people; no PubMed affiliation on this 1963 record). Benitz *Proc Soc Exp Biol Med* 1964 PMID 14166612 (75 cites; tetracycline degradation products; MESH includes dogs; no PubMed affiliation). Cleveland *J Pediatr* 1965 PMID 14258922 (30 cites; human pediatric Fanconi after degraded tetracycline — not this loc). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Gross. Species-fit experimental work is Benitz MESH dogs. Do not overweight Cleveland as canine incidence. Human chemistry is not canine incidence. Packet 348 still owns doxycycline esophagitis (`tetracycline` does not match `doxycycline`). Packet 367 still owns aminoglycoside nephrotoxicity. Packet 379 still owns topical aminoglycoside open TM. Chicken-jerky Fanconi without named tetracycline stays the jerky list, not this loc. Do not harvest a tetracycline mg/kg table as lobby law. Do not fire on bare tetracycline. Do not fire on bare AKI. Dogs and cats. Skip horse.
+
+Agree with Mercer / Gross: **named tetracycline plus Fanconi / glucosuria / expired / outdated is not an AKI-alone.** Stop the outdated drug. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline plus Fanconi / glucosuria / expired / outdated is canine (or feline) expired tetracycline Fanconi; not an AKI-alone. Bare tetracycline stays dark. Bare AKI stays dark. Dual gentamicin plus AKI plus expired tetracycline concatenates 367 then 380. Dual doxycycline plus esophagitis stays 348. Dual chicken jerky plus Fanconi without tetracycline stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not call this an AKI-alone.
+- Do not send outdated tetracycline as the kidney plan.
+- Do not treat aminoglycoside nephrotoxicity (367) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat topical aminoglycoside open TM (379) as this loc.
+- Do not treat chicken-jerky Fanconi without named tetracycline as this loc.
+- Do not treat AKI without named tetracycline as this loc.
+
+Night rule: named tetracycline plus Fanconi / glucosuria / expired / outdated → **Canine expired tetracycline Fanconi. Not an AKI-alone.** Stop the outdated drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is expired tetracycline plus glucosuria not an AKI-and-home night?
+- NAVLE 2: Why does doxycycline plus esophagitis stay 348, not this loc?
+- NAVLE 3: Dual-named “gentamicin, AKI, expired tetracycline” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover tetracycline without inventing a mg/kg table?
+- Attending: If the query is only “AKI,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus Fanconi — fire or skip?
+- Attending: Cat plus chlortetracycline plus outdated — which locs fire, and why?
+
+## 381. Canine tetracycline tooth discoloration (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-teeth chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (tetracyclines bind calcium and can discolor developing teeth and bones; avoid in pregnancy and in young animals). Owen *Arch Oral Biol* 1963 PMID 14081610 (52 cites; tetracyclines in young dogs, localization in teeth; MESH dogs; no PubMed affiliation on this 1963 record). Bennett *J Dent Res* 1965 PMID 14321414 (12 cites; incorporation in developing dog enamel and dentin; MESH dogs / tooth discoloration; no PubMed affiliation). Bevelander *Adv Oral Biol* 1964 PMID 14247276 (26 cites; mineralization and growth — chick/rat chemistry, not this loc). Sae-Lim *Endod Dent Traumatol* 1998 PMID 9863422 (53 cites; systemic tetracycline on replanted dog teeth — endodontic research, not this loc). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit is Mercer plus Owen MESH dogs. Bennett carries developing-enamel species fit. Do not overweight Sae-Lim 53 cites as this discoloration trap. Do not overweight Bevelander as canine incidence. Human chemistry is not canine incidence. Packet 380 still owns expired tetracycline Fanconi. Packet 348 still owns doxycycline esophagitis. Packet 356 still owns fluoroquinolone pregnancy. Do not harvest a tetracycline mg/kg table as lobby law. Do not fire on bare tetracycline. Do not fire on bare dental. Dogs and cats. Skip horse.
+
+Agree with Mercer / Owen: **named tetracycline plus teeth / enamel / pregnancy / young / puppy / kitten is not a dental-alone.** Stop the drug. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus teeth / tooth discoloration / enamel / pregnancy / young / puppy / kitten is canine (or feline) tetracycline tooth discoloration; not a dental-alone. Bare tetracycline stays dark. Bare dental stays dark. Dual Fanconi plus puppy concatenates 380 then 381. Dual doxycycline esophagitis plus kitten concatenates 348 then 381. Dual enrofloxacin plus pregnancy stays 356. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not call this a dental-alone.
+- Do not send tetracycline to a young or pregnant patient as the dental plan.
+- Do not treat expired tetracycline Fanconi (380) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat fluoroquinolone pregnancy (356) as this loc.
+- Do not treat dental without named tetracycline as this loc.
+
+Night rule: named tetracycline plus teeth / enamel / pregnancy / young / puppy / kitten → **Canine tetracycline tooth discoloration. Not a dental-alone.** Stop the drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline in a puppy not a dental-and-home night?
+- NAVLE 2: Why does doxycycline plus esophagitis without young/pregnancy language stay 348, not this loc?
+- NAVLE 3: Dual-named “tetracycline, Fanconi, puppy” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover doxycycline without inventing a mg/kg table?
+- Attending: If the query is only “teeth,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus pregnancy — fire or skip?
+- Attending: Cat plus doxycycline plus kitten — which locs fire, and why?
+
+## 382. Canine tetracycline cation chelation (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-chelation chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (oral tetracyclines chelate divalent and trivalent cations — calcium, iron, magnesium, aluminum, sucralfate, dairy — and absorption falls). Neuvonen *Drugs* 1976 PMID 946598 (175 cites; tetracycline-metal complexes poorly absorbed; printed 0.5–1.5 µg/mL stays on that paper; no PubMed affiliation on this 1976 record). Neuvonen *Br Med J* 1970 PMID 5483323 (137 cites; iron impairs tetracycline / oxytetracycline / doxycycline absorption in people). KuKanich *J Vet Pharmacol Ther* 2015 PMID 25233871 (12 cites, Kansas State CVM; sucralfate vs oral doxycycline in dogs; printed 2-hour delay stays on that paper). KuKanich *J Vet Pharmacol Ther* 2014 PMID 24611544 is minocycline plus sucralfate in dogs, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Neuvonen. Species-fit veterinary work is KuKanich Kansas State dogs. Do not overweight 2015 recency over Neuvonen citation standing. Human chemistry is not canine incidence. Packet 351 still owns fluoroquinolone chelation. Packet 381 still owns tetracycline teeth. Packet 380 still owns expired tetracycline Fanconi. Packet 348 still owns doxycycline esophagitis. Do not harvest a tetracycline mg/kg table as lobby law. Do not harvest Neuvonen µg/mL. Do not harvest a 2-hour clock. Do not fire on bare tetracycline. Do not fire on bare dairy. Dogs and cats. Skip horse.
+
+Agree with Mercer / Neuvonen / KuKanich: **named tetracycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelation is not a dairy-alone.** Separate the stack. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelat is canine (or feline) tetracycline cation chelation; not a dairy-alone. Bare tetracycline stays dark. Bare dairy stays dark. Dual puppy plus dairy concatenates 381 then 382. Dual doxycycline esophagitis plus sucralfate concatenates 348 then 382. Dual enrofloxacin plus sucralfate stays 351. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not harvest Neuvonen µg/mL.
+- Do not harvest a 2-hour clock.
+- Do not call this a dairy-alone.
+- Do not stack oral tetracycline with dairy, calcium, iron, antacid, or sucralfate.
+- Do not treat fluoroquinolone chelation (351) as this loc.
+- Do not treat tetracycline teeth (381) as this loc.
+- Do not treat expired tetracycline Fanconi (380) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat dairy without named tetracycline as this loc.
+
+Night rule: named tetracycline plus dairy / milk / calcium / iron / antacid / sucralfate / chelat → **Canine tetracycline cation chelation. Not a dairy-alone.** Separate the stack. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline plus sucralfate not a dairy-and-home night?
+- NAVLE 2: Why does enrofloxacin plus sucralfate stay 351, not this loc?
+- NAVLE 3: Dual-named “doxycycline, puppy, milk” — which locs should fire, and why?
+- Oral: How do you tell the owner to separate leftover doxycycline from a calcium chew without inventing a mg/kg table?
+- Attending: If the query is only “dairy,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus milk — fire or skip?
+- Attending: Cat plus doxycycline plus iron — which locs fire, and why?
+
+## 383. Canine tetracycline photosensitivity (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-photosensitivity chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (tetracyclines can cause photosensitivity). Frost *Arch Dermatol* 1972 PMID 5026677 (88 cites; phototoxic potential of minocycline and doxycycline in people; minocycline recipe stays on that paper). Orentreich *Arch Dermatol* 1961 PMID 13731132 (79 cites; photosensitivity and photo-onycholysis after demethylchlortetracycline). Blank *Arch Dermatol* 1968 PMID 4965106 (51 cites; photosensitivity studies with demethylchlortetracycline and doxycycline). Lewis *Vet Dermatol* 2023 PMID 36794534 (1 cite, Institute of Veterinary Specialists, Gainesville; putative doxycycline phototoxicity in three dogs — recency is not quality). PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Frost / Orentreich / Blank *Arch Dermatol*. Do not overweight Lewis 1 cite as canine incidence. Human chemistry is not canine incidence. Packet 361 still owns fluoroquinolone photosensitivity. Packet 382 still owns tetracycline cation chelation. Packet 381 still owns tetracycline teeth. Packet 348 still owns doxycycline esophagitis. Do not harvest a tetracycline mg/kg table as lobby law. Do not fire on bare tetracycline. Do not fire on bare sunburn. Dogs and cats. Skip horse.
+
+Agree with Mercer / Frost: **named tetracycline plus photosensitivity / phototoxic / sunburn / sunlight is not a sunburn-alone.** Stop the drug. Shade. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus photosensitiv / phototoxic / sunburn / sunlight is canine (or feline) tetracycline photosensitivity; not a sunburn-alone. Bare tetracycline stays dark. Bare sunburn stays dark. Dual dairy plus sunlight concatenates 382 then 383. Dual doxycycline esophagitis plus sunburn concatenates 348 then 383. Dual enrofloxacin plus photosensitivity stays 361. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not call this a sunburn-alone.
+- Do not send tetracycline photosensitivity home as ordinary sunburn.
+- Do not treat fluoroquinolone photosensitivity (361) as this loc.
+- Do not treat tetracycline cation chelation (382) as this loc.
+- Do not treat tetracycline teeth (381) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat sunburn without named tetracycline as this loc.
+
+Night rule: named tetracycline plus photosensitivity / phototoxic / sunburn / sunlight → **Canine tetracycline photosensitivity. Not a sunburn-alone.** Stop the drug. Shade. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline plus sunburn not a sunburn-and-home night?
+- NAVLE 2: Why does enrofloxacin plus photosensitivity stay 361, not this loc?
+- NAVLE 3: Dual-named “doxycycline, dairy, sunlight” — which locs should fire, and why?
+- Oral: How do you tell the owner to shade and stop leftover doxycycline without inventing a mg/kg table?
+- Attending: If the query is only “sunburn,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus sunlight — fire or skip?
+- Attending: Cat plus doxycycline plus phototoxic — which locs fire, and why?
+
+## 384. Canine tetracycline hepatotoxicity (Mercer Merck tetracyclines)
+
+No dedicated Plunkett tetracycline-hepatotoxicity chapter in the owned SA EM splits. Public Mercer M.A. Tetracyclines Use in Animals. Merck Veterinary Manual (tetracyclines can be hepatotoxic, historically with high-dose IV tetracycline). Schultz *N Engl J Med* 1963 PMID 14059734 (235 cites; fatal liver disease after high-dose IV tetracycline in people; printed IV doses stay on that paper; no PubMed affiliation on this 1963 record). Kunelis *Am J Med* 1965 PMID 14266828 (192 cites; fatty liver of pregnancy related to tetracycline therapy). Whalley *JAMA* 1964 PMID 14160508 (143 cites; tetracycline toxicity in pregnancy with liver and pancreatic dysfunction). Riely *Semin Liver Dis* 1987 PMID 3296215 is acute fatty liver of pregnancy, not this loc. Reinhart *Vet Clin North Am* 2025 PMID 40280782 is recency, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Schultz / Kunelis / Whalley. Do not overweight 2025 VCNA DILI as quality. Human chemistry is not canine incidence. Packet 383 still owns tetracycline photosensitivity. Packet 382 still owns tetracycline cation chelation. Packet 348 still owns doxycycline esophagitis. Packet 181 still owns feline hepatic lipidosis without named tetracycline. Do not harvest a tetracycline mg/kg table as lobby law. Do not harvest Schultz IV doses. Do not fire on bare tetracycline. Do not fire on bare jaundice. Dogs and cats. Skip horse.
+
+Agree with Mercer / Schultz: **named tetracycline plus hepatotox / jaundice / icterus / liver injury is not an icterus-alone.** Stop the drug. Printed tetracycline mg/kg stay on the page (`△ Plumb`).
+
+Night split: named tetracycline / oxytetracycline / chlortetracycline / doxycycline plus hepatotox / jaundice / icterus / liver injury is canine (or feline) tetracycline hepatotoxicity; not an icterus-alone. Bare tetracycline stays dark. Bare jaundice stays dark. Dual photosensitivity plus jaundice concatenates 383 then 384. Dual doxycycline esophagitis plus icterus concatenates 348 then 384. Dual hepatic lipidosis plus doxycycline plus jaundice concatenates 181 then 384. Dual pancreatitis plus jaundice without tetracycline stays 316. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a tetracycline mg/kg table.
+- Do not harvest Schultz IV doses.
+- Do not call this an icterus-alone.
+- Do not send tetracycline as the jaundice plan.
+- Do not treat tetracycline photosensitivity (383) as this loc.
+- Do not treat tetracycline cation chelation (382) as this loc.
+- Do not treat doxycycline esophagitis (348) as this loc.
+- Do not treat feline hepatic lipidosis without named tetracycline (181) as this loc.
+- Do not treat jaundice without named tetracycline as this loc.
+
+Night rule: named tetracycline plus hepatotox / jaundice / icterus / liver injury → **Canine tetracycline hepatotoxicity. Not an icterus-alone.** Stop the drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is doxycycline plus jaundice not an icterus-and-home night?
+- NAVLE 2: Why does cat hepatic lipidosis without named tetracycline stay 181, not this loc?
+- NAVLE 3: Dual-named “doxycycline, photosensitivity, jaundice” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover tetracycline without inventing a mg/kg table?
+- Attending: If the query is only “jaundice,” why does this gate stay dark?
+- Attending: Horse oxytetracycline plus icterus — fire or skip?
+- Attending: Cat plus doxycycline plus liver injury — which locs fire, and why?
+
+## 385. Canine penicillin hypersensitivity (Mercer Merck penicillins)
+
+No dedicated Plunkett penicillin-hypersensitivity chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (hypersensitivity reactions including anaphylaxis can occur). Idsoe *Bull World Health Organ* 1968 PMID 5302296 (441 cites; nature and extent of penicillin side-reactions with particular reference to fatalities from anaphylactic shock; human chemistry). Ndiritu *J Am Vet Med Assoc* 1977 PMID 893217 (22 cites, UC Davis VMTH; hospital adverse-drug-reaction series including anaphylaxis). Davis *J Am Vet Med Assoc* 1984 PMID 6511567 (10 cites; hypersensitivity reactions induced by antimicrobial drugs; MESH penicillins). Quantz *J Vet Emerg Crit Care* 2009 PMID 20017759 (52 cites; canine anaphylaxis ALT / gallbladder wall — the existing crash anaphylaxis loc, not this named-penicillin loc). Fuchter *JVECC* 2026 PMID 41582857 is recency, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Idsoe. Species-fit veterinary hospital series is Ndiritu UC Davis. Do not overweight Fuchter 2026 as quality. Human chemistry is not canine incidence. Existing anaphylaxis loc still owns vaccine / hymenoptera without named penicillin. Packet 384 still owns tetracycline hepatotoxicity. Packet 372 still owns aminoglycoside-beta-lactam mix. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest an epinephrine mg/kg table. Do not fire on bare penicillin. Do not fire on bare allergy. Dogs and cats. Skip horse.
+
+Agree with Mercer / Idsoe: **named penicillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema is not an allergy-alone.** Stop the drug. Epinephrine is the crash drug. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named penicillin / amoxicillin / ampicillin / cloxacillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema is canine (or feline) penicillin hypersensitivity; not an allergy-alone. Bare penicillin stays dark. Bare allergy stays dark. Dual vaccine anaphylaxis plus amoxicillin concatenates the existing anaphylaxis loc then 385. Dual gentamicin plus amoxicillin plus same line stays 372. Dual tetracycline plus jaundice stays 384. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest an epinephrine mg/kg table.
+- Do not call this an allergy-alone.
+- Do not send penicillin home after named anaphylaxis.
+- Do not treat vaccine or hymenoptera without named penicillin as this loc.
+- Do not treat tetracycline hepatotoxicity (384) as this loc.
+- Do not treat aminoglycoside-beta-lactam mix (372) as this loc.
+- Do not treat allergy without named penicillin as this loc.
+
+Night rule: named penicillin plus anaphylax / hypersensitivity / hives / urticaria / angioedema → **Canine penicillin hypersensitivity. Not an allergy-alone.** Stop the drug. Epinephrine is the crash drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is amoxicillin plus anaphylaxis not an allergy-and-home night?
+- NAVLE 2: Why does vaccine anaphylaxis without named penicillin stay the existing anaphylaxis loc, not this loc?
+- NAVLE 3: Dual-named “amoxicillin, anaphylaxis” — which locs should fire, and why?
+- Oral: How do you tell the owner to stop leftover amoxicillin without inventing a mg/kg table?
+- Attending: If the query is only “allergy,” why does this gate stay dark?
+- Attending: Horse penicillin plus hives — fire or skip?
+- Attending: Cat plus ampicillin plus urticaria — which locs fire, and why?
+
+## 386. Canine procaine penicillin IV CNS (Mercer Merck penicillins)
+
+No dedicated Plunkett procaine-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (inadvertent IV procaine penicillin can cause CNS excitement). Downham *Sex Transm Dis* 1978 PMID 417409 (19 cites; systemic toxic reactions to procaine penicillin G including grand mal seizures; printed 4,800,000-unit gonorrhea doses stay on that paper). Hoigne *Schweiz Med Wochenschr* 1964 PMID 14231827 (14 cites; combined anaphylactic and embolic-toxic reaction after accidental intravascular procaine penicillin). Kaplan *J Am Vet Med Assoc* 2011 PMID 21320022 (4 cites, University of Minnesota CVM; two dogs and a cat after inadvertent IV penicillin G procaine-benzathine — species-fit, recency is not this loc). Nielsen *Aust Vet J* 1988 PMID 3415617 and Olsén *J Vet Pharmacol Ther* 2007 PMID 17472651 are horses, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Mercer plus Downham / Hoigne. Do not overweight Kaplan 2011 as quality. Human chemistry is not canine incidence. Packet 385 still owns penicillin hypersensitivity. Packet 349 still owns metronidazole neurotoxicity. Existing seizure loc still owns idiopathic epilepsy without named procaine. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Downham units. Do not fire on bare procaine penicillin. Do not fire on bare seizure. Dogs and cats. Skip horse.
+
+Agree with Mercer / Downham: **named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia is not a seizure-alone.** Stop the drug. Supportive. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia is canine (or feline) procaine penicillin IV CNS; not a seizure-alone. Bare procaine penicillin stays dark. Bare seizure stays dark. Dual seizure plus named procaine concatenates the existing seizure loc then 386. Dual amoxicillin plus anaphylaxis stays 385. Dual metronidazole plus seizure stays 349. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Downham units.
+- Do not call this a seizure-alone.
+- Do not give procaine penicillin IV.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat metronidazole neurotoxicity (349) as this loc.
+- Do not treat idiopathic epilepsy without named procaine as this loc.
+- Do not treat seizure without named procaine penicillin as this loc.
+
+Night rule: named procaine penicillin plus IV / intravenous / seizure / excitement / ataxia → **Canine procaine penicillin IV CNS. Not a seizure-alone.** Stop the drug. Supportive. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is procaine penicillin plus IV not a seizure-and-home night?
+- NAVLE 2: Why does idiopathic epilepsy without named procaine stay the existing seizure loc, not this loc?
+- NAVLE 3: Dual-named “procaine penicillin, seizure” — which locs should fire, and why?
+- Oral: How do you tell the owner that depot penicillin is not for the vein without inventing a mg/kg table?
+- Attending: If the query is only “seizure,” why does this gate stay dark?
+- Attending: Horse procaine penicillin plus IV — fire or skip?
+- Attending: Cat plus procaine penicillin plus ataxia — which locs fire, and why?
+
+## 387. Canine potassium penicillin too-fast IV (Mercer Merck penicillins)
+
+No dedicated Plunkett potassium-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (potassium penicillin given too rapidly IV can cause cardiac arrest). Mercer *Chest* 1973 PMID 4749385 (21 cites; cardiac arrest due to hyperkalemia following intravenous penicillin; C.W. Mercer / Logic — human chemistry, not the Merck author). *Anesth Analg* 1969 PMID 5812559 (3 cites; cardiac asystole following intravenous aqueous potassium penicillin). Stumpf *Drug Intell Clin Pharm* 1987 PMID 3569031 is generic penicillin arrest, not this potassium-salt loc. Roussel *Am J Vet Res* 2003 PMID 14620770 is horse large-intestine motility after KPEN, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Mercer Chest / Anesth Analg 1969. Do not overweight Roussel as quality for this SA loc. Human chemistry is not canine incidence. Packet 386 still owns procaine penicillin IV CNS. Packet 385 still owns penicillin hypersensitivity. Existing CPA loc still owns arrest without named potassium penicillin. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Mercer Chest mEq. Do not fire on bare potassium penicillin. Do not fire on bare arrest. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Mercer Chest: **named potassium penicillin plus too-fast / rapid IV / hyperkalemia / arrest is not an arrest-alone.** Slow the line or stop. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named potassium penicillin / penicillin K / K penicillin plus too-fast / rapid IV / hyperkalemia / arrest is canine (or feline) potassium penicillin too-fast IV; not an arrest-alone. Bare potassium penicillin stays dark. Bare arrest stays dark. Dual arrest plus named potassium penicillin concatenates the existing RECOVER loc then 387. Dual procaine penicillin plus IV stays 386. Dual amoxicillin plus anaphylaxis stays 385. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Mercer Chest mEq.
+- Do not call this an arrest-alone.
+- Do not bolus potassium penicillin.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat CPA without named potassium penicillin as this loc.
+- Do not treat arrest without named potassium penicillin as this loc.
+
+Night rule: named potassium penicillin plus too-fast / rapid IV / hyperkalemia / arrest → **Canine potassium penicillin too-fast IV. Not an arrest-alone.** Slow the line or stop. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is potassium penicillin plus too-fast IV not an arrest-and-home night?
+- NAVLE 2: Why does CPA without named potassium penicillin stay the existing RECOVER loc, not this loc?
+- NAVLE 3: Dual-named “potassium penicillin, arrest” — which locs should fire, and why?
+- Oral: How do you tell the owner that the potassium salt is not a bolus without inventing a mg/kg table?
+- Attending: If the query is only “arrest,” why does this gate stay dark?
+- Attending: Horse potassium penicillin plus too-fast IV — fire or skip?
+- Attending: Cat plus penicillin K plus hyperkalemia — which locs fire, and why?
+
+## 388. Canine benzathine penicillin never IV (Mercer Merck penicillins)
+
+No dedicated Plunkett benzathine-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (benzathine penicillin is for IM use only and must not be given IV). Weir *Clin Pediatr* 1988 PMID 3276426 (11 cites; intravascular injuries from intramuscular penicillin including benzathine; aspiration of blood is a fail-safe that fails with opaque depot). Levetan *S Afr Med J* 1988 PMID 3187826 (2 cites; inadvertent intravenous administration of a long-acting depot penicillin; MESH penicillin G benzathine). Kaplan *J Am Vet Med Assoc* 2011 PMID 21320022 (4 cites, University of Minnesota CVM; two dogs and a cat after inadvertent IV penicillin G procaine-benzathine — species-fit, recency is not this loc; packet 386 still owns the procaine-CNS split). Greene *Arch Intern Med* 1980 PMID 7396623 is neurosyphilis failure of IM benzathine needing aqueous IV penicillin, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Weir / Levetan. Do not overweight Greene 1980 as quality for this never-IV loc. Human chemistry is not canine incidence. Packet 387 still owns potassium penicillin too-fast IV. Packet 386 still owns procaine penicillin IV CNS. Packet 385 still owns penicillin hypersensitivity. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Greene neurosyphilis units. Do not fire on bare benzathine penicillin. Do not fire on bare IM. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Weir: **named benzathine penicillin plus IV / intravenous / vein is not an IM-alone.** Stop the IV. IM only. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named benzathine penicillin plus IV / intravenous / vein is canine (or feline) benzathine penicillin never IV; not an IM-alone. Bare benzathine penicillin stays dark. Bare IM stays dark. Dual procaine-benzathine plus IV concatenates 386 then 388. Dual potassium penicillin plus too-fast IV stays 387. Dual amoxicillin plus anaphylaxis stays 385. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Greene neurosyphilis units.
+- Do not call this an IM-alone.
+- Do not give benzathine penicillin IV.
+- Do not treat potassium penicillin too-fast IV (387) as this loc.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat IM without named benzathine penicillin as this loc.
+
+Night rule: named benzathine penicillin plus IV / intravenous / vein → **Canine benzathine penicillin never IV. Not an IM-alone.** Stop the IV. IM only. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is benzathine penicillin plus IV not an IM-and-home night?
+- NAVLE 2: Why does potassium penicillin plus too-fast IV stay 387, not this loc?
+- NAVLE 3: Dual-named “procaine penicillin G benzathine, IV” — which locs should fire, and why?
+- Oral: How do you tell the owner that depot penicillin is muscle-only without inventing a mg/kg table?
+- Attending: If the query is only “IM,” why does this gate stay dark?
+- Attending: Horse benzathine penicillin plus IV — fire or skip?
+- Attending: Cat plus benzathine penicillin plus vein — which locs fire, and why?
+
+## 389. Canine sodium penicillin too-fast IV (Mercer Merck penicillins)
+
+No dedicated Plunkett sodium-penicillin-IV chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (sodium penicillin given too rapidly IV can cause hypernatremia). Brunner *Br Med J* 1968 PMID 5722316 (88 cites; hypokalaemia, metabolic alkalosis, and hypernatraemia after massive sodium penicillin G; printed 100 mega-unit endocarditis doses stay on that paper). Weaver *Can Med Assoc J* 1980 PMID 7363244 (1 cite; MESH hypernatremia / penicillin G). Hubbell *Vet Surg* 1987 PMID 3507151 is horse cardiovascular effects after IV sodium penicillin (Ohio State CVM), not this loc. Henderson *Vet Anaesth Analg* 2025 PMID 39863515 is recency and horse blood-pressure after rapid vs slow IV sodium penicillin, not this loc. Emmett *Medicine (Baltimore)* 1977 PMID 401925 is anion-gap chemistry, not this loc. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Brunner. Do not overweight Hubbell or Henderson as quality for this SA hypernatremia loc. Human chemistry is not canine incidence. Packet 388 still owns benzathine penicillin never IV. Packet 387 still owns potassium penicillin too-fast IV. Packet 386 still owns procaine penicillin IV CNS. HHS without named sodium penicillin stays the existing HHS loc. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Brunner mega units. Do not fire on bare sodium penicillin. Do not fire on bare hypernatremia. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Brunner: **named sodium penicillin plus too-fast / rapid IV / hypernatremia is not a hypernatremia-alone.** Slow the line or stop. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named sodium penicillin / penicillin Na / Na penicillin plus too-fast / rapid IV / hypernatremia is canine (or feline) sodium penicillin too-fast IV; not a hypernatremia-alone. Bare sodium penicillin stays dark. Bare hypernatremia stays dark. Dual potassium penicillin plus too-fast IV stays 387. Dual benzathine penicillin plus IV stays 388. Dual HHS plus named sodium penicillin concatenates HHS then 389. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Brunner mega units.
+- Do not call this a hypernatremia-alone.
+- Do not bolus sodium penicillin.
+- Do not treat potassium penicillin too-fast IV (387) as this loc.
+- Do not treat benzathine penicillin never IV (388) as this loc.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat hypernatremia without named sodium penicillin as this loc.
+
+Night rule: named sodium penicillin plus too-fast / rapid IV / hypernatremia → **Canine sodium penicillin too-fast IV. Not a hypernatremia-alone.** Slow the line or stop. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is sodium penicillin plus too-fast IV not a hypernatremia-and-home night?
+- NAVLE 2: Why does potassium penicillin plus too-fast IV stay 387, not this loc?
+- NAVLE 3: Dual-named “sodium penicillin, hypernatremia, HHS” — which locs should fire, and why?
+- Oral: How do you tell the owner that the sodium salt is not a bolus without inventing a mg/kg table?
+- Attending: If the query is only “hypernatremia,” why does this gate stay dark?
+- Attending: Horse sodium penicillin plus too-fast IV — fire or skip?
+- Attending: Cat plus penicillin Na plus hypernatremia — which locs fire, and why?
+
+## 390. Canine penicillin gram-negative coverage gap (Mercer Merck penicillins)
+
+No dedicated Plunkett penicillin-gram-negative-coverage chapter in the owned SA EM splits. Public Mercer M.A. Penicillins Use in Animals. Merck Veterinary Manual (penicillins have limited activity against many gram-negative organisms including Pseudomonas). Li *Antimicrob Agents Chemother* 1994 PMID 7986004 (228 cites, University of California Berkeley; efflux as a contributing factor to intrinsic beta-lactam resistance in *P. aeruginosa*; Livermore coauthor). Livermore *J Med Microbiol* 1995 PMID 7562993 (101 cites, London Hospital Medical College; mechanisms of beta-lactam resistance among UK *P. aeruginosa*). Livermore *J Med Microbiol* 1984 PMID 6327987 (86 cites; mechanisms of beta-lactam resistance in British *P. aeruginosa*; printed carbenicillin MIC stay on that paper). Neu *Rev Infect Dis* 1983 PMID 6342103 is empiric-therapy chemistry, not this loc’s weight leader. PubMed weight (NIH iCite 2026-11-26; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Li / Livermore. Do not overweight Neu 1983 as the named-Pseudomonas loc. Human chemistry is not canine incidence. Packet 375 still owns aminoglycoside anaerobic coverage. Packet 389 still owns sodium penicillin too-fast IV. Packet 385 still owns penicillin hypersensitivity. Do not harvest a penicillin mg/kg table as lobby law. Do not harvest Williams MIC. Do not fire on bare penicillin. Do not fire on bare sepsis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Li: **named penicillin plus Pseudomonas / gram-negative / gram neg is not a sepsis-alone.** Cover the gram-negative. Printed penicillin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named penicillin / amoxicillin / ampicillin plus Pseudomonas / gram-negative / gram neg is canine (or feline) penicillin gram-negative coverage gap; not a sepsis-alone. Bare penicillin stays dark. Bare sepsis stays dark. Dual gentamicin plus Bacteroides stays 375. Dual amoxicillin plus anaphylaxis stays 385. Dual sodium penicillin plus too-fast IV stays 389. Dual gentamicin plus Bacteroides plus ampicillin plus Pseudomonas concatenates 375 then 390. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a penicillin mg/kg table.
+- Do not harvest Williams MIC.
+- Do not call this a sepsis-alone.
+- Do not send penicillin as the Pseudomonas plan.
+- Do not treat aminoglycoside anaerobic coverage (375) as this loc.
+- Do not treat sodium penicillin too-fast IV (389) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat sepsis without named penicillin plus Pseudomonas / gram-negative as this loc.
+
+Night rule: named penicillin plus Pseudomonas / gram-negative / gram neg → **Canine penicillin gram-negative coverage gap. Not a sepsis-alone.** Cover the gram-negative. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is amoxicillin plus Pseudomonas not a sepsis-and-home night?
+- NAVLE 2: Why does gentamicin plus Bacteroides stay 375, not this loc?
+- NAVLE 3: Dual-named “ampicillin, Pseudomonas, gentamicin, Bacteroides” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover amoxicillin is not the Pseudomonas plan without inventing a mg/kg table?
+- Attending: If the query is only “sepsis,” why does this gate stay dark?
+- Attending: Horse penicillin plus Pseudomonas — fire or skip?
+- Attending: Cat plus ampicillin plus gram-negative — which locs fire, and why?
+
+## 391. Canine cephalosporin penicillin cross-reactivity (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-penicillin-cross-reactivity chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (hypersensitivity and cross-reactivity with penicillins can occur). Campagna *J Emerg Med* 2012 PMID 21742459 (176 cites, University of Maryland School of Medicine; literature review of cephalosporins in penicillin-allergic patients). Romano *Ann Intern Med* 2004 PMID 15238366 (141 cites, Università Cattolica del Sacro Cuore, Rome; prospective cross-reactivity and tolerability of cephalosporins after documented penicillin hypersensitivity). Blumenthal *Clin Infect Dis* 2018 PMID 29361015 (391 cites, Massachusetts General Hospital / Harvard; reported penicillin allergy changes surgical prophylaxis and SSI risk). Zagursky *J Allergy Clin Immunol Pract* 2018 PMID 29017833 (160 cites, Rochester General; side-chain chemistry of β-lactam cross-reactivity). Shenoy *JAMA* 2019 PMID 30644987 is a penicillin-allergy review (648 cites, Harvard), not this named-cephalosporin loc. Pichichero *J Pediatr* 1998 is pediatric skin-test chemistry, not this loc. Rosser *J Am Anim Hosp Assoc* 1997 is GSD pyoderma, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Campagna / Romano. Do not overweight Shenoy 2019 as quality for this SA cephalosporin loc. Human chemistry is not canine incidence. Packet 390 still owns penicillin gram-negative coverage. Packet 385 still owns penicillin hypersensitivity without a named cephalosporin. Vaccine or hymenoptera without named cephalosporin stays the existing anaphylaxis loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest an epinephrine mg/kg table. Do not fire on bare cephalexin. Do not fire on bare allergy. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Campagna: **named cephalosporin plus penicillin allergy / cross-react / hypersensitivity is not an allergy-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus penicillin allergy / cross-react / hypersensitivity is canine (or feline) cephalosporin penicillin cross-reactivity; not an allergy-alone. Bare cephalexin stays dark. Bare allergy stays dark. Dual amoxicillin plus anaphylaxis stays 385. Dual amoxicillin plus Pseudomonas stays 390. Dual vaccine anaphylaxis without named cephalosporin stays the existing anaphylaxis loc. Dual amoxicillin plus hypersensitivity plus cephalexin concatenates 385 then 391. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest an epinephrine mg/kg table.
+- Do not call this an allergy-alone.
+- Do not send cephalexin after a named penicillin allergy.
+- Do not treat penicillin hypersensitivity without a named cephalosporin (385) as this loc.
+- Do not treat penicillin gram-negative coverage (390) as this loc.
+- Do not treat vaccine or hymenoptera without named cephalosporin as this loc.
+- Do not treat allergy without named cephalosporin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus penicillin allergy / cross-react / hypersensitivity → **Canine cephalosporin penicillin cross-reactivity. Not an allergy-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus penicillin allergy not an allergy-and-home night?
+- NAVLE 2: Why does amoxicillin plus anaphylaxis stay 385, not this loc?
+- NAVLE 3: Dual-named “cephalexin, amoxicillin, hypersensitivity” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the penicillin-allergy plan without inventing a mg/kg table?
+- Attending: If the query is only “allergy,” why does this gate stay dark?
+- Attending: Horse cefazolin plus penicillin allergy — fire or skip?
+- Attending: Cat plus cefovecin plus hypersensitivity — which locs fire, and why?
+
+## 392. Canine cephalosporin-associated IMHA (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-IMHA chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (immune-mediated hemolytic anemia can follow cephalosporin exposure). Bloom *Am J Hematol* 1988 PMID 3394717 (31 cites, Smith Kline and French Laboratories, King of Prussia; species-fit canine cephalosporin-induced immune cytopenia after cefazedone / cefonicid, with erythrocyte-, neutrophil-, and platelet-associated IgG — printed tox-study methods stay on that paper). Garratty *Hematology Am Soc Hematol Educ Program* 2009 PMID 20008184 (162 cites, American Red Cross Southern California; human DIIHA, currently cefotetan / ceftriaxone / piperacillin). Garratty *Am J Med* 1975 PMID 1090160 (118 cites; classic drug-induced immune hemolytic anemia). Arndt *Semin Hematol* 2005 PMID 16041663 (85 cites; changing spectrum of DIIHA). PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bloom. Do not overweight Garratty 2009 as quality for this SA cephalexin loc. Human chemistry is not canine incidence. Packet 391 still owns cephalosporin penicillin cross-reactivity. Packet 385 still owns penicillin hypersensitivity. Packet 362 still owns FQ hemolytic anemia. Packet 126 still owns IMHA without named cephalosporin. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Bloom IgG methods. Do not fire on bare cephalexin. Do not fire on bare IMHA. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bloom: **named cephalosporin plus IMHA / hemolysis / spherocyte is not an IMHA-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus IMHA / hemolysis / spherocyte is canine (or feline) cephalosporin-associated IMHA; not an IMHA-alone. Bare cephalexin stays dark. Bare IMHA stays 126. Dual cephalexin plus penicillin allergy stays 391. Dual enrofloxacin plus IMHA stays 362. Dual amoxicillin plus anaphylaxis stays 385. Dual IMHA plus named cephalexin concatenates the existing IMHA loc then 392. Dual cephalexin plus penicillin allergy plus IMHA concatenates 391 then 392. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Bloom IgG methods.
+- Do not call this an IMHA-alone.
+- Do not pred cephalosporin hemolysis as primary IMHA before the drug is named.
+- Do not treat cephalosporin penicillin cross-reactivity (391) as this loc.
+- Do not treat penicillin hypersensitivity (385) as this loc.
+- Do not treat FQ hemolytic anemia (362) as this loc.
+- Do not treat IMHA without named cephalosporin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus IMHA / hemolysis / spherocyte → **Canine cephalosporin-associated IMHA. Not an IMHA-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus IMHA not an IMHA-and-home night?
+- NAVLE 2: Why does enrofloxacin plus IMHA stay 362, not this loc?
+- NAVLE 3: Dual-named “cephalexin, penicillin allergy, IMHA” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the IMHA plan without inventing a mg/kg table?
+- Attending: If the query is only “IMHA,” why does this gate stay dark?
+- Attending: Horse cefazolin plus hemolysis — fire or skip?
+- Attending: Cat plus cefovecin plus spherocyte — which locs fire, and why?
+
+## 393. Canine cephalosporin-associated thrombocytopenia (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-thrombocytopenia chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (immune cytopenias, including thrombocytopenia, can follow cephalosporin exposure). Bloom *Am J Hematol* 1988 PMID 3394717 (31 cites, Smith Kline and French Laboratories, King of Prussia; species-fit canine cephalosporin-induced immune cytopenia with platelet-associated IgG after cefazedone / cefonicid — printed tox-study methods stay on that paper). Deldar *Vet Pathol* 1988 PMID 3394212 (18 cites, University of Pennsylvania School of Veterinary Medicine; canine bone-marrow ultrastructure after cephalosporin). Grossjohann *Transfusion* 2004 PMID 15225244 (41 cites, Greifswald) is human ceftriaxone DITP plus hemolysis, not this SA cephalexin loc. Kagoyama *J Dermatol* 2026 PMID 41958049 is recency (0 cites), not this loc. Chong *Platelets* 1991 is generic DITP chemistry, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bloom. Do not overweight Grossjohann 2004 as quality for this SA loc. Human chemistry is not canine incidence. Packet 392 still owns cephalosporin-associated IMHA. Packet 391 still owns cephalosporin penicillin cross-reactivity. Packet 304 still owns ITP without named cephalosporin. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a 30k or vincristine table. Do not harvest Bloom IgG methods. Do not fire on bare cephalexin. Do not fire on bare ITP. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bloom: **named cephalosporin plus ITP / thrombocytopenia / platelet is not an ITP-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus ITP / thrombocytopenia / platelet is canine (or feline) cephalosporin-associated thrombocytopenia; not an ITP-alone. Bare cephalexin stays dark. Bare ITP stays 304. Dual cephalexin plus IMHA stays 392. Dual cephalexin plus penicillin allergy stays 391. Dual ITP plus named cephalexin concatenates 304 then 393. Dual cephalexin plus IMHA plus thrombocytopenia concatenates 392 then 393. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a 30k or vincristine table.
+- Do not harvest Bloom IgG methods.
+- Do not call this an ITP-alone.
+- Do not pred cephalosporin thrombocytopenia as primary ITP before the drug is named.
+- Do not treat cephalosporin-associated IMHA (392) as this loc.
+- Do not treat cephalosporin penicillin cross-reactivity (391) as this loc.
+- Do not treat ITP without named cephalosporin (304) as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus ITP / thrombocytopenia / platelet → **Canine cephalosporin-associated thrombocytopenia. Not an ITP-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus thrombocytopenia not an ITP-and-home night?
+- NAVLE 2: Why does cephalexin plus IMHA stay 392, not this loc?
+- NAVLE 3: Dual-named “cephalexin, ITP” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the ITP plan without inventing a mg/kg table?
+- Attending: If the query is only “ITP,” why does this gate stay dark?
+- Attending: Horse cefazolin plus thrombocytopenia — fire or skip?
+- Attending: Cat plus cefovecin plus platelet — which locs fire, and why?
+
+## 394. Canine cephalosporin-associated neutropenia (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-neutropenia chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (immune cytopenias, including neutropenia, can follow cephalosporin exposure). Bloom *Am J Hematol* 1988 PMID 3394717 (31 cites, Smith Kline and French Laboratories, King of Prussia; species-fit canine cephalosporin-induced immune cytopenia with neutrophil-associated IgG after cefazedone / cefonicid — printed tox-study methods stay on that paper). Deldar *Fundam Appl Toxicol* 1988 PMID 3220216 (10 cites, University of Pennsylvania; CFU-E and CFU-GM colony-forming capacity after cephalosporin). Deldar *Vet Pathol* 1988 PMID 3394212 (18 cites, UPenn marrow ultrastructure). Atkinson *Toxicol Appl Pharmacol* 1966 PMID 5961559 is cephaloridine subacute toxicity across species, not this loc. Bamberger *Antimicrob Agents Chemother* 2002 PMID 12183241 is neutrophils affecting cefazolin activity in an abscess, not this loc. Foong *Clin Infect Dis* 2019 PMID 30590400 is recency and human cefepime OPAT neutropenia, not this loc. Lanevschi *J Vet Intern Med* 1999 is idiopathic neutropenia in a Rottweiler, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bloom. Do not overweight Atkinson 1966 or Foong 2019 as quality for this SA loc. Human chemistry is not canine incidence. Packet 393 still owns cephalosporin-associated thrombocytopenia. Packet 392 still owns cephalosporin-associated IMHA. Packet 390 still owns penicillin gram-negative coverage. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a G-CSF table. Do not harvest Bloom IgG methods. Do not fire on bare cephalexin. Do not fire on bare sepsis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bloom: **named cephalosporin plus neutropenia / neutrophil / agranulocytosis is not a sepsis-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus neutropenia / neutrophil / agranulocytosis is canine (or feline) cephalosporin-associated neutropenia; not a sepsis-alone. Bare cephalexin stays dark. Bare sepsis stays dark. Dual cephalexin plus thrombocytopenia stays 393. Dual cephalexin plus IMHA stays 392. Dual amoxicillin plus Pseudomonas stays 390. Dual cephalexin plus thrombocytopenia plus neutropenia concatenates 393 then 394. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a G-CSF table.
+- Do not harvest Bloom IgG methods.
+- Do not call this a sepsis-alone.
+- Do not send leftover cephalexin as the neutropenia plan.
+- Do not treat cephalosporin-associated thrombocytopenia (393) as this loc.
+- Do not treat cephalosporin-associated IMHA (392) as this loc.
+- Do not treat penicillin gram-negative coverage (390) as this loc.
+- Do not treat sepsis without named cephalosporin plus neutropenia as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus neutropenia / neutrophil / agranulocytosis → **Canine cephalosporin-associated neutropenia. Not a sepsis-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus neutropenia not a sepsis-and-home night?
+- NAVLE 2: Why does cephalexin plus thrombocytopenia stay 393, not this loc?
+- NAVLE 3: Dual-named “cephalexin, thrombocytopenia, neutropenia” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the neutropenia plan without inventing a mg/kg table?
+- Attending: If the query is only “sepsis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus agranulocytosis — fire or skip?
+- Attending: Cat plus cefovecin plus neutrophil — which locs fire, and why?
+
+## 395. Canine cephalosporin-associated C. difficile (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-C.-difficile chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (superinfection including Clostridioides difficile can follow cephalosporin exposure). Bartlett *JAMA* 1979 PMID 501864 (49 cites; loc-fit cephalosporin-associated pseudomembranous colitis due to *C. difficile*; Johns Hopkins lineage). Bartlett *Johns Hopkins Med J* 1981 PMID 7253364 (126 cites; antimicrobial agents implicated in *C. difficile* toxin-associated diarrhea). Bartlett *N Engl J Med* 2002 PMID 11821511 (800 cites, Johns Hopkins) is a general antibiotic-associated diarrhea review, not this named-cephalosporin loc. Kaleko *Anaerobe* 2016 PMID 27262694 is recency and a SYN-004 oral beta-lactamase product in dogs, not this loc. Connelly 2019 / 2020 are recency and the same product line, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Bartlett 1979. Do not overweight Bartlett 2002 or Kaleko 2016 as quality for this SA cephalexin loc. Human chemistry is not canine incidence. Packet 394 still owns cephalosporin-associated neutropenia. Packet 359 still owns ciprofloxacin colitis. Packet 344 still owns feline colitis without a named cephalosporin. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a metronidazole or vancomycin table. Do not fire on bare cephalexin. Do not fire on bare diarrhea. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Bartlett 1979: **named cephalosporin plus C. difficile / Clostridioides / superinfection is not a diarrhea-alone.** Stop the cephalosporin. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus C. difficile / Clostridioides / superinfection is canine (or feline) cephalosporin-associated C. difficile; not a diarrhea-alone. Bare cephalexin stays dark. Bare diarrhea stays dark. Dual cephalexin plus neutropenia stays 394. Dual ciprofloxacin plus colitis stays 359. Dual cat plus colitis without named C. difficile stays 344. Dual cephalexin plus C. difficile plus colitis concatenates 395 then 344. Dual ciprofloxacin plus colitis plus cephalexin plus C. difficile concatenates 359 then 395. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a metronidazole or vancomycin table.
+- Do not call this a diarrhea-alone.
+- Do not send leftover cephalexin as the diarrhea plan.
+- Do not treat cephalosporin-associated neutropenia (394) as this loc.
+- Do not treat ciprofloxacin colitis (359) as this loc.
+- Do not treat feline colitis without a named cephalosporin (344) as this loc.
+- Do not treat diarrhea without named cephalosporin plus C. difficile as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus C. difficile / Clostridioides / superinfection → **Canine cephalosporin-associated C. difficile. Not a diarrhea-alone.** Stop the cephalosporin. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus C. difficile not a diarrhea-and-home night?
+- NAVLE 2: Why does ciprofloxacin plus colitis stay 359, not this loc?
+- NAVLE 3: Dual-named “cephalexin, C. difficile, colitis” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the diarrhea plan without inventing a mg/kg table?
+- Attending: If the query is only “diarrhea,” why does this gate stay dark?
+- Attending: Horse cefazolin plus C. difficile — fire or skip?
+- Attending: Cat plus cefovecin plus superinfection — which locs fire, and why?
+
+## 396. Canine first-generation cephalosporin gram-negative coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett first-generation-cephalosporin-Pseudomonas chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (first-generation cephalosporins have limited activity against Pseudomonas). Wick *Appl Microbiol* 1967 PMID 4383049 (96 cites; loc-fit cephalexin in vitro spectrum; printed MIC stay on that paper). Griffith *Postgrad Med J* 1983 PMID 6364086 (21 cites; pharmacology of cephalexin). Klein *Adv Ther* 1995 PMID 10150326 (16 cites, Winthrop-University Hospital; generation differences among cephalosporins). Neu *Antimicrob Agents Chemother* 1974 PMID 15828189 is cefamandole (second-generation), not this loc. Richards *Drugs* 1984 PMID 6329638 is ceftriaxone (third-generation), not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Wick. Do not overweight Neu 1974 or Richards 1984 as quality for this SA first-generation loc. Human chemistry is not canine incidence. Packet 395 still owns cephalosporin-associated C. difficile. Packet 390 still owns penicillin gram-negative coverage. Packet 394 still owns cephalosporin-associated neutropenia. Cefpodoxime / cefovecin is not this loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Wick MIC. Do not fire on bare cephalexin. Do not fire on bare sepsis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Wick: **named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg is not a sepsis-alone.** Cover the gram-negative. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg is canine (or feline) first-generation cephalosporin gram-negative coverage gap; not a sepsis-alone. Bare cephalexin stays dark. Bare sepsis stays dark. Dual amoxicillin plus Pseudomonas stays 390. Dual cephalexin plus C. difficile stays 395. Dual cephalexin plus neutropenia stays 394. Dual cefpodoxime plus Pseudomonas stays dark for this loc. Dual amoxicillin plus Pseudomonas plus cephalexin concatenates 390 then 396. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Wick MIC.
+- Do not call this a sepsis-alone.
+- Do not send cephalexin as the Pseudomonas plan.
+- Do not treat penicillin gram-negative coverage (390) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat cephalosporin-associated neutropenia (394) as this loc.
+- Do not treat cefpodoxime / cefovecin plus Pseudomonas as this loc.
+- Do not treat sepsis without named cephalexin / cefazolin plus Pseudomonas / gram-negative as this loc.
+
+Night rule: named cephalexin / cefazolin plus Pseudomonas / gram-negative / gram neg → **Canine first-generation cephalosporin gram-negative coverage gap. Not a sepsis-alone.** Cover the gram-negative. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus Pseudomonas not a sepsis-and-home night?
+- NAVLE 2: Why does amoxicillin plus Pseudomonas stay 390, not this loc?
+- NAVLE 3: Dual-named “cephalexin, amoxicillin, Pseudomonas” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the Pseudomonas plan without inventing a mg/kg table?
+- Attending: If the query is only “sepsis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus Pseudomonas — fire or skip?
+- Attending: Cat plus cephalexin plus gram-negative — which locs fire, and why?
+
+## 397. Canine cephalosporin-aminoglycoside nephrotoxicity stack (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-aminoglycoside-stack chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (concurrent cephalosporin plus aminoglycoside can stack nephrotoxicity). Luft *Antimicrob Agents Chemother* 1976 PMID 949179 (56 cites; loc-fit cephalosporin-gentamicin combinations including cefazolin in rats; printed combination mg/kg stay on that paper; affiliation not in PubMed XML). Cabanillas *Arch Intern Med* 1975 PMID 1130930 (40 cites; loc-fit human acute tubular necrosis on combined cephalothin-gentamicin). Barza *J Infect Dis* 1978 PMID 650005 (78 cites) is a cephalosporin nephrotoxicity overview (cephaloridine / cephalothin), not this aminoglycoside-stack loc. Kaloyanides *Kidney Int* 1980 PMID 7463954 (314 cites) is aminoglycoside nephrotoxicity, not this loc (packet 367). Tune *J Infect Dis* 1975 PMID 1159324 / *Pediatr Nephrol* 1997 PMID 9438663 (Stanford) is cephaloridine tubular transport, not this loc. Dellinger *Antimicrob Agents Chemother* 1976 PMID 1259391 and Bloch *Antimicrob Agents Chemother* 1979 PMID 426505 are rat-protection papers, not this loc. Yilmaz *Vet Hum Toxicol* 1999 PMID 10434375 is recency, 2 cites, and cefazolin vs gentamicin comparison, not this combination stack. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Luft. Do not overweight Kaloyanides as quality for this SA combination loc. Do not overweight Dellinger / Bloch protection as lobby law that the stack is safe. Human / rat chemistry is not canine incidence. Packet 367 still owns aminoglycoside nephrotoxicity without a named cephalosporin. Packet 371 still owns aminoglycoside-NSAID. Packet 396 still owns first-generation cephalosporin gram-negative coverage. Packet 395 still owns cephalosporin-associated C. difficile. Do not harvest a cephalosporin or aminoglycoside mg/kg table as lobby law. Do not harvest Luft combination mg/kg. Do not fire on bare cephalexin. Do not fire on bare AKI. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Luft: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox is not an AKI-alone.** Name the stack. Stop or unstack. Hydrate. Printed cephalosporin and aminoglycoside mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox is canine (or feline) cephalosporin-aminoglycoside nephrotoxicity stack; not an AKI-alone. Bare cephalexin stays dark. Bare AKI stays dark. Dual gentamicin plus AKI without a named cephalosporin stays 367. Dual gentamicin plus carprofen stays 371. Dual cephalexin plus Pseudomonas stays 396. Dual cephalexin plus C. difficile stays 395. Dual cephalexin plus gentamicin without kidney language stays dark for this loc. Dual cephalexin plus gentamicin plus AKI concatenates 367 then 397. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest an aminoglycoside mg/kg table.
+- Do not harvest Luft combination mg/kg.
+- Do not call this an AKI-alone.
+- Do not send leftover cephalexin plus gentamicin as the AKI plan.
+- Do not treat aminoglycoside nephrotoxicity without a named cephalosporin (367) as this loc.
+- Do not treat aminoglycoside-NSAID (371) as this loc.
+- Do not treat first-generation cephalosporin gram-negative coverage (396) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat AKI without named cephalosporin plus aminoglycoside as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamicin / amikacin / tobramycin plus azotemia / AKI / nephrotox → **Canine cephalosporin-aminoglycoside nephrotoxicity stack. Not an AKI-alone.** Stop or unstack. Hydrate. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus gentamicin plus AKI not an AKI-and-home night?
+- NAVLE 2: Why does gentamicin plus AKI stay 367, not this loc?
+- NAVLE 3: Dual-named “cephalexin, gentamicin, AKI” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin plus gentamicin is not the AKI plan without inventing a mg/kg table?
+- Attending: If the query is only “AKI,” why does this gate stay dark?
+- Attending: Horse cefazolin plus gentamicin plus AKI — fire or skip?
+- Attending: Cat plus cefovecin plus tobramycin plus nephrotox — which locs fire, and why?
+
+## 398. Canine third-generation cephalosporin staphylococcal coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett third-generation-cephalosporin-staphylococcal-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (third-generation cephalosporins have improved gram-negative coverage but weaker staphylococcal activity than first-generation agents). Barriere *Clin Pharm* 1984 PMID 6432420 (70 cites; loc-fit third-generation cephalosporin evaluation; affiliation not in PubMed XML). Wise *J Antimicrob Chemother* 1990 PMID 2351624 (32 cites, Dudley Road Hospital, Birmingham; loc-fit cefpodoxime vs other oral cephalosporins; printed MIC stay on that paper). Wiedemann *Infection* 1991 PMID 1800378 (16 cites, Universität Bonn; cefpodoxime vs other cephalosporins including gram-positive cocci; printed MIC stay on that paper). Bryan *Vet Dermatol* 2012 PMID 22364681 (54 cites, University of Tennessee; MRSP vs MSSP pyoderma treatment outcome) is MRSP pyoderma, not this generation-gap loc. Westermeyer *Vet Ther* 2010 PMID 20960413 (5 cites, Louisiana State University CVM; species-fit S. pseudintermedius MIC comparison including cefovecin and cefazolin) is a low-cite MIC table, not this loc. Iyori *Vet Dermatol* 2013 PMID 23331693 (Tokyo University of Agriculture and Technology; cefovecin disk / mecA) is not this loc. WHO *Lancet Infect Dis* 2018 PMID 29276051 is priority-pathogen recency, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Barriere and Wise. Do not overweight Bryan as quality for this SA third-generation loc. Do not overweight Westermeyer 5 cites as lobby law that cefovecin equals cefazolin for staph. Human chemistry is not canine incidence. Packet 397 still owns cephalosporin-aminoglycoside nephrotoxicity stack. Packet 396 still owns first-generation cephalosporin gram-negative coverage. Packet 395 still owns cephalosporin-associated C. difficile. Cephalexin / cefazolin is not this loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Wise / Wiedemann / Westermeyer MIC. Do not fire on bare cefpodoxime. Do not fire on bare pyoderma. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Barriere / Wise: **named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection is not a pyoderma-alone.** Cover the staph. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection is canine (or feline) third-generation cephalosporin staphylococcal coverage gap; not a pyoderma-alone. Bare cefpodoxime stays dark. Bare pyoderma stays dark. Dual cephalexin plus pyoderma stays dark for this loc. Dual cefpodoxime plus Pseudomonas stays dark for 396 and for this loc. Dual cefpodoxime plus C. difficile stays 395. Dual cefpodoxime plus gentamicin plus AKI stays 397. Dual cefpodoxime plus pyoderma plus C. difficile concatenates 395 then 398. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Wise / Wiedemann / Westermeyer MIC.
+- Do not call this a pyoderma-alone.
+- Do not send leftover cefpodoxime as the staphylococcal plan.
+- Do not treat first-generation cephalosporin gram-negative coverage (396) as this loc.
+- Do not treat cephalosporin-aminoglycoside nephrotoxicity stack (397) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat cephalexin / cefazolin plus pyoderma as this loc.
+- Do not treat MRSP pyoderma without named cefpodoxime / cefovecin as this loc.
+- Do not treat pyoderma without named cefpodoxime / cefovecin as this loc.
+
+Night rule: named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection → **Canine third-generation cephalosporin staphylococcal coverage gap. Not a pyoderma-alone.** Cover the staph. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefpodoxime plus pyoderma not a pyoderma-and-home night?
+- NAVLE 2: Why does cephalexin plus pyoderma stay dark for this loc?
+- NAVLE 3: Dual-named “cefpodoxime, C. difficile, pyoderma” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover Convenia is not the staphylococcal plan without inventing a mg/kg table?
+- Attending: If the query is only “pyoderma,” why does this gate stay dark?
+- Attending: Horse cefovecin plus Staphylococcus — fire or skip?
+- Attending: Cat plus cefovecin plus skin infection — which locs fire, and why?
+
+## 399. Canine cephalosporin enterococcal coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-enterococcal-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (cephalosporins have little useful activity against Enterococcus). Williamson *J Gen Microbiol* 1983 PMID 6409985 (77 cites; loc-fit intrinsic β-lactam resistance in group D streptococci / enterococci via low-affinity PBPs; affiliation not in PubMed XML; Moellering / Tomasz). Weinstein *Antimicrob Agents Chemother* 1975 PMID 807155 (30 cites; loc-fit cephalothin-aminoglycoside failure against enterococci; Moellering). Moellering *J Lab Clin Med* 1971 PMID 4997545 (185 cites) is penicillin-aminoglycoside synergy against enterococci, not this cephalosporin-gap loc. García-Solache *Clin Microbiol Rev* 2019 PMID 30700430 (574 cites, Brown University) is recency and a genus review, not this loc. Kristich *mBio* 2011 PMID 22045988 (64 cites, Medical College of Wisconsin) is cephalosporin-resistance regulation recency, not this loc. Sader *Diagn Microbiol Infect Dis* 1993 PMID 8243035 (16 cites, University of Iowa) is a cefpodoxime MIC table, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Williamson and Weinstein. Do not overweight García-Solache as quality for this SA cephalosporin loc. Do not overweight Moellering 1971 as this loc. Human chemistry is not canine incidence. Packet 398 still owns third-generation cephalosporin staphylococcal coverage. Packet 397 still owns cephalosporin-aminoglycoside nephrotoxicity stack. Packet 396 still owns first-generation cephalosporin gram-negative coverage. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest an ampicillin or vancomycin table. Do not harvest Sader / Jones MIC. Do not fire on bare cephalexin. Do not fire on bare UTI. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Williamson / Weinstein: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci is not a UTI-alone.** Cover the enterococcus. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci is canine (or feline) cephalosporin enterococcal coverage gap; not a UTI-alone. Bare cephalexin stays dark. Bare UTI stays dark. Dual cefpodoxime plus pyoderma stays 398. Dual cephalexin plus Pseudomonas stays 396. Dual cefpodoxime plus gentamicin plus AKI stays 397. Dual cefpodoxime plus Staphylococcus plus Enterococcus concatenates 398 then 399. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest an ampicillin or vancomycin table.
+- Do not harvest Sader / Jones MIC.
+- Do not call this a UTI-alone.
+- Do not send leftover cephalexin as the Enterococcus plan.
+- Do not treat third-generation cephalosporin staphylococcal coverage (398) as this loc.
+- Do not treat cephalosporin-aminoglycoside nephrotoxicity stack (397) as this loc.
+- Do not treat first-generation cephalosporin gram-negative coverage (396) as this loc.
+- Do not treat penicillin-aminoglycoside enterococcal synergy (Moellering 1971) as this loc.
+- Do not treat UTI without named cephalosporin plus Enterococcus as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci → **Canine cephalosporin enterococcal coverage gap. Not a UTI-alone.** Cover the enterococcus. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus Enterococcus not a UTI-and-home night?
+- NAVLE 2: Why does cefpodoxime plus pyoderma stay 398, not this loc?
+- NAVLE 3: Dual-named “cefpodoxime, Staphylococcus, Enterococcus” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the Enterococcus plan without inventing a mg/kg table?
+- Attending: If the query is only “UTI,” why does this gate stay dark?
+- Attending: Horse cefazolin plus Enterococcus — fire or skip?
+- Attending: Cat plus cefovecin plus enterococcal — which locs fire, and why?
+
+## 400. Canine cephalosporin anaerobic coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-anaerobic-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (most cephalosporins have limited anaerobic activity; cefoxitin is the exception with useful Bacteroides coverage). Tally *Antimicrob Agents Chemother* 1975 PMID 1137364 (160 cites; loc-fit cefoxitin vs other cephalosporins against 155 anaerobic strains including *B. fragilis*; printed µg/mL stay on that paper; affiliation not in PubMed XML; Tally / Bartlett / Gorbach). Sutter *J Infect Dis* 1975 PMID 804023 (114 cites; loc-fit cefoxitin vs cefazolin / cephalothin / cephaloridine against anaerobes; Finegold coauthor; printed MIC stay on that paper). Sutter *Antimicrob Agents Chemother* 1976 PMID 984809 (468 cites) is a 23-agent anaerobic MIC table, not this loc. Wexler *Clin Microbiol Rev* 2007 PMID 17934076 (1673 cites, UCLA Wadsworth) is recency and a Bacteroides genus review, not this loc. Darland *Antimicrob Agents Chemother* 1977 PMID 856025 (99 cites) is cefoxitin β-lactamase stability, not this loc. Neu *Rev Infect Dis* 1979 PMID 400931 is cefoxitin vs cephalothin clinical overview, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Tally 1975 and Sutter 1975. Do not overweight Wexler or Sutter 1976 as quality for this SA first-/third-generation loc. Do not treat cefoxitin as a firing drug. Human chemistry is not canine incidence. Packet 375 still owns aminoglycoside anaerobic coverage. Packet 399 still owns cephalosporin enterococcal coverage. Packet 398 still owns third-generation cephalosporin staphylococcal coverage. Packet 395 still owns C. difficile. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Tally / Sutter MIC. Do not fire on bare cephalexin. Do not fire on bare peritonitis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Tally / Sutter: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis is not a peritonitis-alone.** Cover anaerobes. Cefoxitin is the exception. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis is canine (or feline) cephalosporin anaerobic coverage gap; not a peritonitis-alone. Bare cephalexin stays dark. Bare peritonitis stays dark. Dual gentamicin plus peritonitis stays 375. Dual cephalexin plus Enterococcus stays 399. Dual cefpodoxime plus pyoderma stays 398. Dual cephalexin plus C. difficile stays 395. Dual cefoxitin plus peritonitis stays dark for this loc. Dual cephalexin plus gentamicin plus peritonitis concatenates 375 then 400. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Tally / Sutter MIC.
+- Do not call this a peritonitis-alone.
+- Do not send leftover cephalexin as the anaerobic plan.
+- Do not treat aminoglycoside anaerobic coverage (375) as this loc.
+- Do not treat cephalosporin enterococcal coverage (399) as this loc.
+- Do not treat third-generation cephalosporin staphylococcal coverage (398) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat cefoxitin plus peritonitis as this loc.
+- Do not treat feline infectious peritonitis plus a named cephalosporin as this loc.
+- Do not treat peritonitis without named cephalexin / cefazolin / cefpodoxime / cefovecin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis → **Canine cephalosporin anaerobic coverage gap. Not a peritonitis-alone.** Cover anaerobes. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus peritonitis not a peritonitis-and-home night?
+- NAVLE 2: Why does gentamicin plus peritonitis stay 375, not this loc?
+- NAVLE 3: Dual-named “cephalexin, gentamicin, peritonitis” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the anaerobic plan without inventing a mg/kg table?
+- Attending: If the query is only “peritonitis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus Bacteroides — fire or skip?
+- Attending: Cat plus cefovecin plus anaerobes — which locs fire, and why?
+
+## 401. Canine cephalosporin poor CSF penetration (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-CSF-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (first-generation cephalosporins penetrate CSF poorly). Neu *Drugs* 1987 PMID 3319497 (36 cites, Columbia University College of Physicians and Surgeons; loc-fit: none of the first-generation cephalosporins can be considered acceptable to treat meningitis). Landesman *Am J Med* 1981 PMID 6269429 (163 cites; loc-fit past and current roles of cephalosporins in meningitis; affiliation not in PubMed XML). Cherubin *Rev Infect Dis* 1982 PMID 6294799 (79 cites) is new cephalosporins for gram-negative bacillary meningitis, not this first-generation loc. Cherubin *Rev Infect Dis* 1989 PMID 2672238 (69 cites, Mercy Hospital Chicago; Norrby coauthor) is newer cephalosporin CSF penetration, not this loc. Bechtel *Am J Hosp Pharm* 1980 PMID 7361804 (61 cites) is cefazolin CSF seizures, not this loc. Massip *Rev Infect Dis* 1979 PMID 318215 (12 cites, Hôpital Purpan Toulouse; experimental dog cefoxitin meningitis; printed 50–100 mg/kg stay on that paper) is cefoxitin experimental, not this loc. Grégoire *Antimicrob Agents Chemother* 2019 PMID 30420481 (22 cites, CHU Nantes) is recency and high-dose cefazolin CSF, which inverts the night rule. Novak *Open Forum Infect Dis* 2022 PMID 35111872 is recency. Lutsar *Clin Pharmacokinet* 2000 PMID 11108433 is Pfizer and general low-lipophilicity chemistry, not the first-generation night rule. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Neu 1987 and Landesman 1981. Do not overweight Grégoire or Novak as quality for this SA first-generation loc. Do not overweight Massip dog cefoxitin as this loc. Human chemistry is not canine incidence. Packet 376 still owns aminoglycoside poor CSF penetration. Packet 400 still owns cephalosporin anaerobic coverage. Packet 399 still owns cephalosporin enterococcal coverage. Packet 208 still owns otogenic meningitis. Packet 205 still owns SRMA. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Massip mg/kg. Do not harvest CSF µg/mL. Do not fire on bare cephalexin. Do not fire on bare meningitis. Do not fire on G-CSF. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Neu: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain is not a meningitis-alone.** Do not send cephalexin or cefazolin as the meningitis plan. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain is canine (or feline) cephalosporin poor CSF penetration; not a meningitis-alone. Bare cephalexin stays dark. Bare meningitis stays dark. Dual gentamicin plus meningitis stays 376. Dual cephalexin plus peritonitis stays 400. Dual cephalexin plus Enterococcus stays 399. Dual otogenic meningitis plus cephalexin concatenates 208 then 401. Dual gentamicin plus cephalexin plus meningitis concatenates 376 then 401. G-CSF stays dark. SRMA without meningitis / CSF language stays 205. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Massip mg/kg.
+- Do not harvest CSF µg/mL.
+- Do not call this a meningitis-alone.
+- Do not send leftover cephalexin as the meningitis plan.
+- Do not treat aminoglycoside poor CSF (376) as this loc.
+- Do not treat cephalosporin anaerobic coverage (400) as this loc.
+- Do not treat cephalosporin enterococcal coverage (399) as this loc.
+- Do not treat otogenic meningitis without named cephalosporin (208) as this loc.
+- Do not treat SRMA without named cephalosporin (205) as this loc.
+- Do not treat Bechtel cefazolin CSF seizures as this loc.
+- Do not treat meningitis without named cephalexin / cefazolin / cefpodoxime / cefovecin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain → **Canine cephalosporin poor CSF penetration. Not a meningitis-alone.** Do not send cephalexin or cefazolin as the meningitis plan. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus meningitis not a meningitis-and-home night?
+- NAVLE 2: Why does gentamicin plus meningitis stay 376, not this loc?
+- NAVLE 3: Dual-named “cephalexin, gentamicin, meningitis” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the meningitis plan without inventing a mg/kg table?
+- Attending: If the query is only “meningitis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus CSF — fire or skip?
+- Attending: Cat plus cefovecin plus encephalitis — which locs fire, and why?
+
+## 402. Canine cephalosporin-associated seizures (Bechtel AJHP 1980)
+
+No dedicated Plunkett cephalosporin-seizure chapter in the owned SA EM splits. Bechtel *Am J Hosp Pharm* 1980 PMID 7361804 (61 cites; loc-fit: seizures associated with high cerebrospinal fluid concentrations of cefazolin; affiliation not in PubMed XML). Schliamser *J Antimicrob Chemother* 1991 PMID 1856121 (124 cites, Department of Pharmacology, University of Umeå) is broader beta-lactam neurotoxicity predisposing factors, not this cefazolin-CSF loc. Grill *Ann Pharmacother* 2008 PMID 19033476 (145 cites, Barrow Neurological Institute / St. Joseph's Phoenix) is a recency review of cephalosporin-induced neurotoxicity, not this loc. Sugimoto *Neuropharmacology* 2003 PMID 12871648 (151 cites, Osaka University Medical School) is rodent GABA(A) blockade chemistry, not canine incidence. Chow *Eur J Clin Microbiol Infect Dis* 2005 PMID 16261307 (126 cites, Chinese University of Hong Kong) is bench-to-bedside beta-lactam neurotoxicity, not this loc. Gardner *Am Surg* 1977 PMID 869336 (37 cites) is a sodium cefazolin convulsion case, adjacent. Kamei *Epilepsia* 1983 PMID 6873002 is rat structure-activity, not this loc. Grégoire *Antimicrob Agents Chemother* 2019 PMID 30420481 and Novak *Open Forum Infect Dis* 2022 PMID 35111872 are recency and high-dose cefazolin CSF papers, not this loc's harvest table. Bechtel 1981 PMID 7294044 is multidose cefazolin CSF penetration, adjacent to packet 401, not this loc. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Bechtel 1980. Do not overweight Grill, Sugimoto, or Chow as this SA cefazolin-seizure loc. Human chemistry is not canine incidence. Packet 401 still owns cephalosporin poor CSF penetration. Packet 386 still owns procaine penicillin IV CNS. Packet 358 still owns fluoroquinolone GABA. Packet 349 still owns metronidazole neurotoxicity. Packet 116 still owns seizure drugs. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Bechtel CSF µg/mL. Do not fire on bare cefazolin. Do not fire on bare seizure. Dogs and cats. Skip horse.
+
+Agree with Bechtel: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status / CNS toxicity / neurotoxicity is not a seizure-alone.** Do not send a cephalosporin-seizure home as idiopathic epilepsy. Printed cephalosporin mg/kg and Bechtel CSF µg/mL stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status epilepticus / CNS toxicity / neurotoxicity is canine (or feline) cephalosporin-associated seizures; not a seizure-alone. Bare cefazolin stays dark. Bare seizure stays dark. Dual cefazolin plus CSF stays 401. Dual cefazolin plus CSF plus seizure concatenates 401 then 402. Dual procaine penicillin plus seizure stays 386. Dual enrofloxacin plus seizure stays 358. Dual metronidazole plus seizure stays 349. Dual enrofloxacin plus cefazolin plus seizure concatenates 358 then 402. Dual procaine penicillin plus cefazolin plus seizure concatenates 386 then 402. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Bechtel CSF µg/mL.
+- Do not call this a seizure-alone.
+- Do not send a cephalosporin-seizure home as idiopathic epilepsy.
+- Do not treat cephalosporin poor CSF without seizure language (401) as this loc.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat fluoroquinolone GABA (358) as this loc.
+- Do not treat metronidazole neurotoxicity without named cephalosporin (349) as this loc.
+- Do not treat Grill 2008 recency review as this loc.
+- Do not treat Sugimoto rodent GABA as canine incidence.
+- Do not treat Grégoire / Novak high-dose cefazolin CSF as this loc's harvest table.
+- Do not treat seizure without named cephalexin / cefazolin / cefpodoxime / cefovecin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status / CNS toxicity / neurotoxicity → **Canine cephalosporin-associated seizures. Not a seizure-alone.** Do not send a cephalosporin-seizure home as idiopathic epilepsy. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefazolin plus seizure not an idiopathic-epilepsy-and-home night?
+- NAVLE 2: Why does cefazolin plus CSF without a seizure word stay 401, not this loc?
+- NAVLE 3: Dual-named “cefazolin, CSF, seizure” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cefazolin is not the seizure plan without inventing a µg/mL table?
+- Attending: If the query is only “seizure,” why does this gate stay dark?
+- Attending: Horse cefazolin plus seizure — fire or skip?
+- Attending: Cat plus cefovecin plus status epilepticus — which locs fire, and why?
+
+## 403. Canine cephalosporin MTT-side-chain hypoprothrombinemia (Lipsky AAC 1984)
+
+No dedicated Plunkett MTT-hypoprothrombinemia chapter in the owned SA EM splits. Lipsky *Lancet* 1983 PMID 6135030 (123 cites; loc-fit: N-methyl-thio-tetrazole inhibition of the gamma carboxylation of glutamic acid as a mechanism for antibiotic-associated hypoprothrombinaemia; affiliation not in PubMed XML). Lipsky *Antimicrob Agents Chemother* 1984 PMID 6326667 (66 cites; loc-fit: production of hypoprothrombinemia by moxalactam and 1-methyl-5-thiotetrazole in rats; Lipsky, Lewis, Novick). Lipsky *Proc Natl Acad Sci U S A* 1984 PMID 6585834 (84 cites; mechanism of NMTT-containing antibiotic inhibition of gamma-carboxylation). McCloskey *J Infect Dis* 1988 PMID 3198948 (18 cites; loc-fit clinical split: spontaneous reports of bleeding comparing MTT vs non-MTT cephalosporins). Lipsky *J Antimicrob Chemother* 1988 PMID 3283095 (68 cites, Department of Medicine, Johns Hopkins University School of Medicine) is a later antibiotic-associated hypoprothrombinaemia review. Lipsky *J Antimicrob Chemother* 1986 PMID 2875987 (10 cites) is cefazolin and 2-methyl-1,3,4-thiadiazole-5-thiol in the rat, not this MTT loc — that paper is why cephalexin / cefazolin stay dark. Shevchuk *Rev Infect Dis* 1990 PMID 2267487 (50 cites, University of Saskatchewan) is a prospective-study review, not this loc. Conjura *Ann Intern Med* 1988 PMID 3162358 is a cefotetan-and-hypoprothrombinemia letter, adjacent. Smith and Lipsky *J Antimicrob Chemother* 1983 PMID 6885675 is hypoprothrombinemia plus platelet dysfunction, broader than this loc. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Lipsky Lancet 1983 / AAC 1984 / PNAS 1984, with McCloskey JID 1988 as the MTT vs non-MTT clinical split. Do not overweight Shevchuk 1990 recency-adjacent review as this SA MTT loc. Human chemistry is not canine incidence. Packet 392 still owns cephalosporin-associated IMHA. Packet 393 still owns cephalosporin-associated thrombocytopenia. Packet 402 still owns cephalosporin-associated seizures. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a vitamin K mg/kg table. Do not fire on bare cefotetan. Do not fire on bare bleeding. Do not fire cephalexin / cefazolin / cefpodoxime / cefovecin. Dogs and cats. Skip horse.
+
+Agree with Lipsky / McCloskey: **named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K is not a coagulopathy-alone.** Cephalexin is not this loc. Printed cephalosporin mg/kg and vitamin K mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K is canine (or feline) cephalosporin MTT-side-chain hypoprothrombinemia; not a coagulopathy-alone. Bare cefotetan stays dark. Bare bleeding stays dark. Dual cephalexin plus bleeding stays dark for this loc. Dual cephalexin plus IMHA stays 392. Dual cephalexin plus thrombocytopenia stays 393. Dual cefazolin plus seizure stays 402. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a vitamin K mg/kg table.
+- Do not call this a coagulopathy-alone.
+- Do not send MTT-cephalosporin bleeding home as a simple coagulopathy.
+- Do not treat cephalexin / cefazolin / cefpodoxime / cefovecin plus bleeding as this loc.
+- Do not treat cephalosporin-associated IMHA (392) as this loc.
+- Do not treat cephalosporin-associated thrombocytopenia (393) as this loc.
+- Do not treat cephalosporin-associated seizures (402) as this loc.
+- Do not treat Lipsky 1986 cefazolin / MTD rat chemistry as this MTT loc.
+- Do not treat Shevchuk 1990 review as this loc.
+- Do not treat bleeding without named cefotetan / cefoperazone / cefamandole / NMTT / MTT as this loc.
+
+Night rule: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K → **Canine cephalosporin MTT-side-chain hypoprothrombinemia. Not a coagulopathy-alone.** Stop the MTT drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefotetan plus bleeding not a coagulopathy-and-home night?
+- NAVLE 2: Why does cephalexin plus bleeding stay dark for this loc?
+- NAVLE 3: Dual-named “cephalexin, IMHA” — which loc should fire, and why is that not this MTT loc?
+- Oral: How do you tell the owner that leftover cefotetan is not the bleeding plan without inventing a vitamin K mg/kg table?
+- Attending: If the query is only “bleeding,” why does this gate stay dark?
+- Attending: Horse cefotetan plus hypoprothrombinemia — fire or skip?
+- Attending: Cat plus cefamandole plus vitamin K — which locs fire, and why?
+
+## 404. Canine cephalosporin MTT disulfiram-like reaction (Kline AAC 1987)
+
+No dedicated Plunkett MTT-disulfiram chapter in the owned SA EM splits. Kline *Antimicrob Agents Chemother* 1987 PMID 3479045 (11 cites, School of Allied Health, Medical College of Ohio, Toledo; loc-fit: cefotetan-induced disulfiram-type reactions and hypoprothrombinemia). Kitson *Alcohol Clin Exp Res* 1986 PMID 3008585 (15 cites; loc-fit: 5,5'-dithiobis(1-methyltetrazole) on cytoplasmic aldehyde dehydrogenase and implications for cephalosporin-alcohol reactions; affiliation not in PubMed XML). Lipsky *Biochem Pharmacol* 1989 PMID 2930578 (4 cites, Department of Medicine, Johns Hopkins University School of Medicine) is 1-methyltetrazole-5-thiol inhibition of aldehyde dehydrogenase after microsomal activation — this loc's enzyme chemistry, not Lipsky *Antimicrob Agents Chemother* 1984 hypoprothrombinemia. Kitson *Alcohol* 1987 PMID 3593530 (13 cites) is a cephalosporin-and-alcohol-metabolism review, adjacent. Norrby *Drugs* 1987 PMID 3319495 (90 cites, Department of Infectious Diseases, University of Umeå) is broader cephalosporin side effects, not this loc. Fekety *Am J Med* 1990 PMID 2183609 (53 cites, University of Michigan) is parenteral third-generation safety, not this loc. Mergenhagen *Antimicrob Agents Chemother* 2020 PMID 31871085 (31 cites, VA Western New York) is recency alcohol-antibiotic review, not this loc. Matsubara *Jpn J Pharmacol* 1987 PMID 2893854 (Shionogi Osaka) and Shimada *Jpn J Pharmacol* 1987 PMID 3444121 (Jikei) are rodent alcohol-metabolizing papers, not canine incidence. Cefonicid papers (Portolani *Recenti Prog Med* 1990 PMID 2236827; McMahon *J Antimicrob Chemother* 1987 PMID 3440774) are not this named-drug list. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Kline AAC 1987 plus Kitson 1986, with Lipsky 1989 as the ALDH mechanism paper. Do not overweight Norrby 1987, Fekety 1990, or Mergenhagen 2020 as this SA MTT-disulfiram loc. Human chemistry is not canine incidence. Packet 403 still owns MTT hypoprothrombinemia / bleeding. Packet 402 still owns cephalosporin-associated seizures. Lipsky AAC 1984 is the bleeding loc, not this loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not fire on bare cefotetan. Do not fire on bare alcohol. Do not fire cephalexin / cefazolin / cefpodoxime / cefovecin. Dogs and cats. Skip horse.
+
+Agree with Kline / Kitson: **named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde is not an intoxication-alone.** Cephalexin is not this loc. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde is canine (or feline) cephalosporin MTT disulfiram-like reaction; not an intoxication-alone. Bare cefotetan stays dark. Bare alcohol stays dark. Dual cefotetan plus bleeding stays 403. Dual cefotetan plus bleeding plus alcohol concatenates 403 then 404. Dual cephalexin plus alcohol stays dark for this loc. Dual cefazolin plus seizure stays 402. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not call this an intoxication-alone.
+- Do not send MTT-cephalosporin plus alcohol home as a simple intoxication.
+- Do not treat cephalexin / cefazolin / cefpodoxime / cefovecin plus alcohol as this loc.
+- Do not treat MTT hypoprothrombinemia without alcohol language (403) as this loc.
+- Do not treat cephalosporin-associated seizures (402) as this loc.
+- Do not treat Lipsky AAC 1984 bleeding as this loc.
+- Do not treat Norrby 1987 broader side effects as this loc.
+- Do not treat Mergenhagen 2020 recency as this loc.
+- Do not treat rodent Matsubara / Shimada chemistry as canine incidence.
+- Do not treat alcohol without named cefotetan / cefoperazone / cefamandole / NMTT / MTT as this loc.
+
+Night rule: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disulfiram / alcohol / ethanol / acetaldehyde → **Canine cephalosporin MTT disulfiram-like reaction. Not an intoxication-alone.** Stop the MTT drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefotetan plus alcohol not an intoxication-and-home night?
+- NAVLE 2: Why does cephalexin plus alcohol stay dark for this loc?
+- NAVLE 3: Dual-named “cefotetan, bleeding, alcohol” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cefotetan plus a drink is not a simple intoxication without inventing a mg/kg table?
+- Attending: If the query is only “alcohol,” why does this gate stay dark?
+- Attending: Horse cefotetan plus ethanol — fire or skip?
+- Attending: Cat plus cefamandole plus disulfiram — which locs fire, and why?
+
+## 405. Canine ceftriaxone biliary sludge (Schaad Lancet 1988)
+
+No dedicated Plunkett ceftriaxone-sludge chapter in the owned SA EM splits. Schaad *Lancet* 1988 PMID 2904533 (176 cites, Department of Paediatrics, University of Berne, Switzerland; loc-fit: reversible ceftriaxone-associated biliary pseudolithiasis in children). Park *Gastroenterology* 1991 PMID 2019372 (97 cites, Department of Medicine, University of Washington School of Medicine, Seattle; loc-fit: calcium-ceftriaxone salt as a major component of gallbladder precipitate). Shiffman *Gastroenterology* 1990 PMID 2227290 (96 cites, Department of Medicine, Medical College of Virginia, Virginia Commonwealth University, Richmond; loc-fit: pathogenesis of ceftriaxone-associated biliary sludge, in vitro calcium-ceftriaxone binding and solubility). Schaad *N Engl J Med* 1990 PMID 2403654 (203 cites, University of Berne) is ceftriaxone vs cefuroxime for bacterial meningitis in children, not this loc. Kim *J Gastroenterol Hepatol* 1992 PMID 1486190 (26 cites, University of Washington) is a sludge lesson from ceftriaxone, adjacent. Robertson *Pediatrics* 1996 PMID 8668387 (28 cites, Tufts) is ceftriaxone choledocholithiasis, adjacent. Palmer *Gastroenterology* 1991 PMID 2019382 is a name-commentary, adjacent. 2022 *J Glob Infect Dis* PMID 35418730 and 2025 *Pharmacoepidemiol Drug Saf* PMID 40398875 are recency, not this loc. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Schaad Lancet 1988 plus Park 1991 / Shiffman 1990 calcium-ceftriaxone salt. Do not overweight Schaad NEJM 1990 meningitis trial or 2022 / 2025 recency as this SA sludge loc. Human chemistry is not canine incidence. Packet 180 still owns gallbladder mucocele / kiwi without named ceftriaxone. Packet 404 still owns MTT disulfiram-like reaction. Packet 403 still owns MTT hypoprothrombinemia. Do not harvest a cephalosporin mg/kg table as lobby law. Do not fire on bare ceftriaxone. Do not fire on bare sludge. Do not fire cephalexin / cefazolin / cefpodoxime / cefovecin. Do not fire cefotetan / cefoperazone / cefamandole. Dogs and cats. Skip horse.
+
+Agree with Schaad / Park: **named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone is not a cholecystitis-alone.** Cephalexin is not this loc. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone is canine (or feline) ceftriaxone biliary sludge; not a cholecystitis-alone. Bare ceftriaxone stays dark. Bare sludge stays dark. Dual kiwi without ceftriaxone stays 180. Dual ceftriaxone plus kiwi / immobile sludge concatenates 180 then 405. Dual ceftriaxone plus cholecystitis without sludge / cholelith / precipitate language stays 180. Dual cephalexin plus sludge stays dark for this loc. Dual cefotetan plus sludge stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not call this a cholecystitis-alone.
+- Do not send ceftriaxone sludge home as surgical cholecystitis-first.
+- Do not treat cephalexin / cefazolin / cefpodoxime / cefovecin plus sludge as this loc.
+- Do not treat cefotetan / cefoperazone / cefamandole plus sludge as this loc.
+- Do not treat gallbladder mucocele / kiwi without named ceftriaxone (180) as this loc.
+- Do not treat MTT disulfiram-like reaction (404) as this loc.
+- Do not treat MTT hypoprothrombinemia (403) as this loc.
+- Do not treat Schaad NEJM 1990 meningitis trial as this loc.
+- Do not treat 2022 / 2025 recency as this loc.
+- Do not treat sludge without named ceftriaxone as this loc.
+
+Night rule: named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone → **Canine ceftriaxone biliary sludge. Not a cholecystitis-alone.** Stop or adjust the drug. Ultrasound. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is ceftriaxone plus biliary sludge not a cholecystitis-and-cut night?
+- NAVLE 2: Why does cephalexin plus sludge stay dark for this loc?
+- NAVLE 3: Dual-named “ceftriaxone, kiwi gallbladder” — which loc should fire, and why might this loc stay dark?
+- Oral: How do you tell the owner that leftover ceftriaxone is not the gallbladder plan without inventing a mg/kg table?
+- Attending: If the query is only “sludge,” why does this gate stay dark?
+- Attending: Horse ceftriaxone plus cholelithiasis — fire or skip?
+- Attending: Cat plus ceftriaxone plus calcium-ceftriaxone — which locs fire, and why?
