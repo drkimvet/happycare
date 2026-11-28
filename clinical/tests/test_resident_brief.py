@@ -16136,6 +16136,92 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin-associated seizures", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehmtt_is_not_a_coagulopathy_alone(self):
+        b = analyze("dog", "cefotetan, bleeding")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIn("not a coagulopathy-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send mtt-cephalosporin bleeding home as a simple coagulopathy", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertIn("vitamin k mg/kg", joined)
+        self.assertNotIn("canine cephalosporin-associated imha", loc)
+        self.assertNotIn("canine cephalosporin-associated thrombocytopenia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefoperazone_hypoprothrombinemia_fires_cehmtt(self):
+        b = analyze("dog", "cefoperazone, hypoprothrombinemia")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIn("not a coagulopathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefamandole_vitamin_k_fires_cehmtt(self):
+        b = analyze("cat", "cefamandole, vitamin K")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIn("not a coagulopathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_nmtt_coagulopathy_fires_cehmtt(self):
+        b = analyze("dog", "NMTT, coagulopathy")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIn("not a coagulopathy-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_bleeding_is_not_cehmtt(self):
+        b = analyze("dog", "cephalexin, bleeding")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_vitamin_k_is_not_cehmtt(self):
+        b = analyze("dog", "cefazolin, vitamin K")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehimha_is_not_cehmtt(self):
+        b = analyze("dog", "cephalexin, IMHA")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated imha", loc)
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehitp_is_not_cehmtt(self):
+        b = analyze("dog", "cephalexin, thrombocytopenia")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated thrombocytopenia", loc)
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehsz_is_not_cehmtt(self):
+        b = analyze("dog", "cefazolin, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated seizures", loc)
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cefotetan_is_not_cehmtt(self):
+        b = analyze("dog", "cefotetan")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_bleeding_is_not_cehmtt(self):
+        b = analyze("dog", "bleeding")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehmtt(self):
+        b = analyze("horse", "cefotetan, bleeding")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertNotIn("feline cephalosporin mtt-side-chain hypoprothrombinemia", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

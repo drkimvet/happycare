@@ -6734,3 +6734,36 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure 
 - Attending: If the query is only “seizure,” why does this gate stay dark?
 - Attending: Horse cefazolin plus seizure — fire or skip?
 - Attending: Cat plus cefovecin plus status epilepticus — which locs fire, and why?
+
+## 403. Canine cephalosporin MTT-side-chain hypoprothrombinemia (Lipsky AAC 1984)
+
+No dedicated Plunkett MTT-hypoprothrombinemia chapter in the owned SA EM splits. Lipsky *Lancet* 1983 PMID 6135030 (123 cites; loc-fit: N-methyl-thio-tetrazole inhibition of the gamma carboxylation of glutamic acid as a mechanism for antibiotic-associated hypoprothrombinaemia; affiliation not in PubMed XML). Lipsky *Antimicrob Agents Chemother* 1984 PMID 6326667 (66 cites; loc-fit: production of hypoprothrombinemia by moxalactam and 1-methyl-5-thiotetrazole in rats; Lipsky, Lewis, Novick). Lipsky *Proc Natl Acad Sci U S A* 1984 PMID 6585834 (84 cites; mechanism of NMTT-containing antibiotic inhibition of gamma-carboxylation). McCloskey *J Infect Dis* 1988 PMID 3198948 (18 cites; loc-fit clinical split: spontaneous reports of bleeding comparing MTT vs non-MTT cephalosporins). Lipsky *J Antimicrob Chemother* 1988 PMID 3283095 (68 cites, Department of Medicine, Johns Hopkins University School of Medicine) is a later antibiotic-associated hypoprothrombinaemia review. Lipsky *J Antimicrob Chemother* 1986 PMID 2875987 (10 cites) is cefazolin and 2-methyl-1,3,4-thiadiazole-5-thiol in the rat, not this MTT loc — that paper is why cephalexin / cefazolin stay dark. Shevchuk *Rev Infect Dis* 1990 PMID 2267487 (50 cites, University of Saskatchewan) is a prospective-study review, not this loc. Conjura *Ann Intern Med* 1988 PMID 3162358 is a cefotetan-and-hypoprothrombinemia letter, adjacent. Smith and Lipsky *J Antimicrob Chemother* 1983 PMID 6885675 is hypoprothrombinemia plus platelet dysfunction, broader than this loc. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Lipsky Lancet 1983 / AAC 1984 / PNAS 1984, with McCloskey JID 1988 as the MTT vs non-MTT clinical split. Do not overweight Shevchuk 1990 recency-adjacent review as this SA MTT loc. Human chemistry is not canine incidence. Packet 392 still owns cephalosporin-associated IMHA. Packet 393 still owns cephalosporin-associated thrombocytopenia. Packet 402 still owns cephalosporin-associated seizures. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest a vitamin K mg/kg table. Do not fire on bare cefotetan. Do not fire on bare bleeding. Do not fire cephalexin / cefazolin / cefpodoxime / cefovecin. Dogs and cats. Skip horse.
+
+Agree with Lipsky / McCloskey: **named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K is not a coagulopathy-alone.** Cephalexin is not this loc. Printed cephalosporin mg/kg and vitamin K mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K is canine (or feline) cephalosporin MTT-side-chain hypoprothrombinemia; not a coagulopathy-alone. Bare cefotetan stays dark. Bare bleeding stays dark. Dual cephalexin plus bleeding stays dark for this loc. Dual cephalexin plus IMHA stays 392. Dual cephalexin plus thrombocytopenia stays 393. Dual cefazolin plus seizure stays 402. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest a vitamin K mg/kg table.
+- Do not call this a coagulopathy-alone.
+- Do not send MTT-cephalosporin bleeding home as a simple coagulopathy.
+- Do not treat cephalexin / cefazolin / cefpodoxime / cefovecin plus bleeding as this loc.
+- Do not treat cephalosporin-associated IMHA (392) as this loc.
+- Do not treat cephalosporin-associated thrombocytopenia (393) as this loc.
+- Do not treat cephalosporin-associated seizures (402) as this loc.
+- Do not treat Lipsky 1986 cefazolin / MTD rat chemistry as this MTT loc.
+- Do not treat Shevchuk 1990 review as this loc.
+- Do not treat bleeding without named cefotetan / cefoperazone / cefamandole / NMTT / MTT as this loc.
+
+Night rule: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K → **Canine cephalosporin MTT-side-chain hypoprothrombinemia. Not a coagulopathy-alone.** Stop the MTT drug. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefotetan plus bleeding not a coagulopathy-and-home night?
+- NAVLE 2: Why does cephalexin plus bleeding stay dark for this loc?
+- NAVLE 3: Dual-named “cephalexin, IMHA” — which loc should fire, and why is that not this MTT loc?
+- Oral: How do you tell the owner that leftover cefotetan is not the bleeding plan without inventing a vitamin K mg/kg table?
+- Attending: If the query is only “bleeding,” why does this gate stay dark?
+- Attending: Horse cefotetan plus hypoprothrombinemia — fire or skip?
+- Attending: Cat plus cefamandole plus vitamin K — which locs fire, and why?

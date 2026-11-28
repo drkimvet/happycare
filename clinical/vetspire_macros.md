@@ -339,6 +339,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehanaer` | Assessment | Canine cephalosporin anaerobic coverage gap / not a peritonitis-alone |
 | `ddx-cehcsf` | Assessment | Canine cephalosporin poor CSF penetration / not a meningitis-alone |
 | `ddx-cehsz` | Assessment | Canine cephalosporin-associated seizures / not a seizure-alone |
+| `ddx-cehmtt` | Assessment | Canine cephalosporin MTT-side-chain hypoprothrombinemia / not a coagulopathy-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -431,6 +432,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehanaer` | Discharge | After cephalosporin / anaerobic coverage-gap talk |
 | `dc-cehcsf` | Discharge | After cephalosporin / CSF coverage-gap talk |
 | `dc-cehsz` | Discharge | After cephalosporin / seizure talk |
+| `dc-cehmtt` | Discharge | After MTT-cephalosporin / bleeding talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -5056,6 +5058,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a seizure-alone. Send a cephalosporin-seizure home as idiopathic epilepsy. Treat 401 or 386 as this loc.
 Do next: Name canine cephalosporin-associated seizures. Not a seizure-alone. Do not send a cephalosporin-seizure home as idiopathic epilepsy. △ Plumb. Packet 401 still owns cephalosporin CSF. Do not copy a cephalosporin table.
 
+### `ddx-cehmtt`
+
+Cephalosporin MTT-side-chain hypoprothrombinemia — {{patient.name}}
+Canine cephalosporin MTT-side-chain hypoprothrombinemia [yes / not]. Not a coagulopathy-alone [yes / not]. Stop the MTT drug [ ]. Packet 392 cehimha [ ]. Packet 393 cehitp [ ]. Packet 402 cehsz [ ]. Cephalexin is not this loc [ ]. Bare bleeding [ ].
+
+DDX:
+1. Named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus bleeding / hypoprothrombinemia / coagulopathy / vitamin K — **Canine cephalosporin MTT-side-chain hypoprothrombinemia. Not a coagulopathy-alone**
+2. Lipsky Lancet 1983 PMID 6135030 / Lipsky Antimicrob Agents Chemother 1984 PMID 6326667: NMTT side chain can cause hypoprothrombinemia. Stop the MTT drug. △ Plumb
+3. Packet 392 owns cephalosporin IMHA. Packet 393 owns cephalosporin thrombocytopenia. Packet 402 owns cephalosporin seizures. Cephalexin / cefazolin / cefpodoxime / cefovecin have no MTT side chain and are not this loc. Bare bleeding is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest a vitamin K table. McCloskey J Infect Dis 1988 is MTT vs non-MTT bleeding reports. Lipsky 1986 is cefazolin / MTD in rats, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cefotetan or bare bleeding stays dark. Dual cephalexin plus bleeding stays dark for this loc. Do not copy a cephalosporin or vitamin K table
+
+Do not: harvest a cephalosporin mg/kg table. Harvest a vitamin K mg/kg table. Call this a coagulopathy-alone. Treat leftover cephalexin as this loc. Treat 392 or 393 as this loc.
+Do next: Name canine cephalosporin MTT-side-chain hypoprothrombinemia. Not a coagulopathy-alone. Stop the MTT drug. △ Plumb. Packet 392 still owns IMHA. Do not copy a cephalosporin or vitamin K table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5805,6 +5822,14 @@ Return now for a stiff neck, seizure, collapse, or if {{patient.pronoun}} is wor
 We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
 
 Return now for another seizure, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehmtt`
+
+{{patient.name}} had bleeding around a cephalosporin that carries an MTT side chain (cefotetan, cefoperazone, or cefamandole). That side chain can interfere with vitamin K and clotting. Using leftover cefotetan as the bleeding plan is not the same as treating a simple coagulopathy. Leftover cephalexin is not this problem. This is not a simple bleed-and-home plan.
+
+We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cefotetan, cefoperazone, or cefamandole from home.
+
+Return now for new bleeding, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

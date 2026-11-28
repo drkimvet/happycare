@@ -1103,6 +1103,34 @@ CEHSZ_SIGN_RE = re.compile(
 # harvest Bechtel CSF µg/mL. Dogs and cats. Skip horse.
 # Bechtel: seizures associated with high CSF cefazolin.
 # △ Plumb.
+CEHMTT_RE = re.compile(
+    r"cefotetan|"
+    r"cefoperazone|"
+    r"cefamandole|"
+    r"n[ -]?methyl[ -]?thio[ -]?tetrazol|"
+    r"methylthiotetrazol|"
+    r"\bnmtt\b|"
+    r"\bmtt\b",
+    re.I,
+)
+CEHMTT_SIGN_RE = re.compile(
+    r"bleed|"
+    r"hypoprothrombin|"
+    r"coagulopath|"
+    r"vitamin k|"
+    r"\bvit\.?\s*k\b",
+    re.I,
+)
+# Packet 403: named cefotetan / cefoperazone / cefamandole /
+# NMTT / MTT plus bleeding / hypoprothrombinemia /
+# coagulopathy / vitamin K only. Do not fire cephalexin /
+# cefazolin / cefpodoxime / cefovecin (no MTT side chain).
+# Do not use cephalosporin IMHA (392). Do not use
+# cephalosporin thrombocytopenia (393). Do not use
+# cephalosporin-associated seizures (402). Do not harvest
+# a cephalosporin mg/kg table. Do not harvest a vitamin K
+# mg/kg table. Dogs and cats. Skip horse. Lipsky: NMTT
+# side chain can cause hypoprothrombinemia. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7835,6 +7863,11 @@ def analyze(
         and CEHSZ_RE.search(text)
         and CEHSZ_SIGN_RE.search(text)
     )
+    steal_cehmtt_dx = (
+        spec in {"dog", "cat"}
+        and CEHMTT_RE.search(text)
+        and CEHMTT_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -8039,6 +8072,7 @@ def analyze(
         or steal_cehanaer_dx
         or steal_cehcsf_dx
         or steal_cehsz_dx
+        or steal_cehmtt_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22923,6 +22957,94 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin-associated seizures."
+            )
+
+    cehmtt_named = (
+        spec in {"dog", "cat"}
+        and CEHMTT_RE.search(text)
+        and CEHMTT_SIGN_RE.search(text)
+    )
+    if cehmtt_named:
+        if spec == "cat":
+            cehmtt_loc = (
+                "Feline cephalosporin MTT-side-chain "
+                "hypoprothrombinemia. Not a coagulopathy-alone."
+            )
+        else:
+            cehmtt_loc = (
+                "Canine cephalosporin MTT-side-chain "
+                "hypoprothrombinemia. Not a coagulopathy-alone."
+            )
+        localization = (
+            f"{localization} Also {cehmtt_loc}"
+            if localization
+            else cehmtt_loc
+        )
+        hard_stops.append(
+            "Do not send MTT-cephalosporin bleeding home as a "
+            "simple coagulopathy. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest a vitamin K mg/kg table. "
+            "Lipsky: NMTT side chain can cause "
+            "hypoprothrombinemia. Stop the MTT drug. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a coagulopathy-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Do not copy a vitamin K recipe as lobby law. "
+            "Packet 392 still owns cephalosporin-associated IMHA. "
+            "Packet 393 still owns cephalosporin-associated "
+            "thrombocytopenia. "
+            "Packet 402 still owns cephalosporin-associated "
+            "seizures. "
+            "Cephalexin / cefazolin / cefpodoxime / cefovecin "
+            "have no MTT side chain and are not this loc. "
+            "Bare bleeding without named cefotetan / "
+            "cefoperazone / cefamandole / NMTT / MTT is not "
+            "this loc. "
+            "Bare cefotetan without bleeding / "
+            "hypoprothrombinemia / coagulopathy / vitamin K "
+            "language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin MTT-side-chain "
+                "hypoprothrombinemia. Not a coagulopathy-alone. "
+                "Stop the MTT drug. △ Plumb. Packet 392 still "
+                "owns IMHA. Packet 393 still owns "
+                "thrombocytopenia. Do not copy a cephalosporin "
+                "or vitamin K table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin MTT-side-chain "
+                "hypoprothrombinemia. Not a coagulopathy-alone. "
+                "Stop the MTT drug. △ Plumb. Packet 392 still "
+                "owns IMHA. Packet 393 still owns "
+                "thrombocytopenia. Do not copy a cephalosporin "
+                "or vitamin K table."
+            )
+        sources.append(
+            "Lipsky Lancet 1983 PMID 6135030. Lipsky Antimicrob "
+            "Agents Chemother 1984 PMID 6326667. Lipsky Proc "
+            "Natl Acad Sci U S A 1984 PMID 6585834. McCloskey J "
+            "Infect Dis 1988 PMID 3198948. Lipsky J Antimicrob "
+            "Chemother 1988 PMID 3283095 is a later review, "
+            "Johns Hopkins. Lipsky J Antimicrob Chemother 1986 "
+            "PMID 2875987 is cefazolin / MTD in rats, not this "
+            "MTT loc. Shevchuk 1990 is a prospective-study "
+            "review, not this loc. Conjura 1988 is a cefotetan "
+            "letter, adjacent. Human chemistry is not canine "
+            "incidence. Do not harvest cephalosporin mg/kg. Do "
+            "not harvest vitamin K mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin MTT-side-chain hypoprothrombinemia."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin MTT-side-chain hypoprothrombinemia."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)
