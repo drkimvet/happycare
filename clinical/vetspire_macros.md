@@ -334,6 +334,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehcdiff` | Assessment | Canine cephalosporin-associated C. difficile / not a diarrhea-alone |
 | `ddx-cehneg` | Assessment | Canine first-generation cephalosporin gram-negative coverage gap / not a sepsis-alone |
 | `ddx-cehag` | Assessment | Canine cephalosporin-aminoglycoside nephrotoxicity stack / not an AKI-alone |
+| `ddx-cehstaph` | Assessment | Canine third-generation cephalosporin staphylococcal coverage gap / not a pyoderma-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -421,6 +422,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehcdiff` | Discharge | After cephalosporin-associated C. difficile talk |
 | `dc-cehneg` | Discharge | After first-generation cephalosporin / gram-negative coverage-gap talk |
 | `dc-cehag` | Discharge | After cephalosporin-aminoglycoside nephrotoxicity-stack talk |
+| `dc-cehstaph` | Discharge | After third-generation cephalosporin / staphylococcal coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4971,6 +4973,21 @@ DDX:
 Do not: harvest a cephalosporin or aminoglycoside mg/kg table. Call this an AKI-alone. Send leftover cephalexin plus gentamicin as the AKI plan. Treat 367 or 371 as this loc.
 Do next: Name canine cephalosporin-aminoglycoside nephrotoxicity stack. Not an AKI-alone. Stop or unstack. Hydrate. △ Plumb. Packet 367 still owns aminoglycoside nephrotoxicity without the cephalosporin. Do not copy a cephalosporin or aminoglycoside table.
 
+### `ddx-cehstaph`
+
+Third-generation cephalosporin staphylococcal coverage gap — {{patient.name}}
+Canine third-generation cephalosporin staphylococcal coverage gap [yes / not]. Not a pyoderma-alone [yes / not]. Cover the staph [ ]. Packet 397 cehag [ ]. Packet 396 cehneg [ ]. Packet 395 cehcdiff [ ]. Bare pyoderma [ ].
+
+DDX:
+1. Named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection — **Canine third-generation cephalosporin staphylococcal coverage gap. Not a pyoderma-alone**
+2. Mercer / Barriere Clin Pharm 1984 PMID 6432420: third-generation cephalosporins have improved gram-negative coverage but weaker staphylococcal activity than first-generation agents. Cover the staph. △ Plumb
+3. Packet 397 owns cephalosporin-aminoglycoside nephrotoxicity stack. Packet 396 owns first-generation cephalosporin gram-negative coverage. Packet 395 owns C. difficile. Bare pyoderma is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest Wise / Wiedemann / Westermeyer MIC. Bryan 2012 is MRSP pyoderma, not this loc. Cephalexin / cefazolin is not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cefpodoxime or bare pyoderma stays dark. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a pyoderma-alone. Send leftover cefpodoxime as the staphylococcal plan. Treat 396 or 397 as this loc.
+Do next: Name canine third-generation cephalosporin staphylococcal coverage gap. Not a pyoderma-alone. Cover the staph. △ Plumb. Packet 396 still owns first-generation gram-negative coverage. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5680,6 +5697,14 @@ Return now for fever, collapse, or if the infection looks worse. {{location.phon
 We named the stack and stopped or changed the medicines. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, gentamicin, or amikacin from home. Keep water available.
 
 Return now for no urine, vomiting, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehstaph`
+
+{{patient.name}} was on a third-generation cephalosporin around a staphylococcal skin infection or pyoderma. That generation of cephalosporins often covers gram-negatives better than it covers staph. Using leftover cefpodoxime or Convenia as the pyoderma plan is not the same as treating a simple skin infection. This is not a simple pyoderma-and-home plan.
+
+We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cefpodoxime or cefovecin from home.
+
+Return now for spreading skin infection, fever, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

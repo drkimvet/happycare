@@ -15689,6 +15689,90 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin-aminoglycoside nephrotoxicity stack", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehstaph_is_not_a_pyoderma_alone(self):
+        b = analyze("dog", "cefpodoxime, pyoderma")
+        loc = b["localization"].lower()
+        self.assertIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIn("not a pyoderma-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cefpodoxime as the staphylococcal pyoderma plan", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefovecin_staphylococcus_fires_cehstaph(self):
+        b = analyze("dog", "cefovecin, Staphylococcus")
+        loc = b["localization"].lower()
+        self.assertIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIn("not a pyoderma-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefpodoxime_skin_infection_fires_cehstaph(self):
+        b = analyze("cat", "cefpodoxime, skin infection")
+        loc = b["localization"].lower()
+        self.assertIn("feline third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIn("not a pyoderma-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcdiff_concatenates_with_cehstaph(self):
+        b = analyze("dog", "cefpodoxime, C. difficile, pyoderma")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehag_is_not_cehstaph(self):
+        b = analyze("dog", "cefpodoxime, gentamicin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehneg_is_not_cehstaph(self):
+        b = analyze("dog", "cephalexin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcdiff_is_not_cehstaph(self):
+        b = analyze("dog", "cefpodoxime, C. difficile")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_pyoderma_is_not_cehstaph(self):
+        b = analyze("dog", "cephalexin, pyoderma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_staphylococcus_is_not_cehstaph(self):
+        b = analyze("dog", "cefazolin, Staphylococcus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cefpodoxime_is_not_cehstaph(self):
+        b = analyze("dog", "cefpodoxime")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_pyoderma_is_not_cehstaph(self):
+        b = analyze("dog", "pyoderma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehstaph(self):
+        b = analyze("horse", "cefpodoxime, pyoderma")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertNotIn("feline third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

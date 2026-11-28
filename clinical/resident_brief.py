@@ -983,6 +983,31 @@ CEPHAG_RE = re.compile(
 # Do not harvest Luft combination mg/kg. Dogs and cats.
 # Skip horse. Mercer: concurrent cephalosporin plus
 # aminoglycoside can stack nephrotoxicity. △ Plumb.
+CEHSTAPH_RE = re.compile(
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEHSTAPH_SIGN_RE = re.compile(
+    r"staphylococ|"
+    r"pyoderma|"
+    r"skin infect",
+    re.I,
+)
+# Packet 398: named cefpodoxime / cefovecin plus
+# Staphylococcus / staphylococcal / pyoderma / skin
+# infection only. Do not use cephalexin / cefazolin
+# (first-generation). Do not use first-generation
+# cephalosporin gram-negative coverage (396). Do not
+# use cephalosporin-aminoglycoside nephrotoxicity
+# stack (397). Do not use cephalosporin-associated
+# C. difficile (395). Do not use \bpyoderma (bare
+# pyoderma). Do not harvest a cephalosporin mg/kg
+# table. Do not harvest Wise / Wiedemann / Westermeyer
+# MIC. Dogs and cats. Skip horse. Mercer:
+# third-generation cephalosporins have improved
+# gram-negative coverage but weaker staphylococcal
+# activity than first-generation agents. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7690,6 +7715,11 @@ def analyze(
         and AMINOGLY_RE.search(text)
         and AMINOAKI_SIGN_RE.search(text)
     )
+    steal_cehstaph_dx = (
+        spec in {"dog", "cat"}
+        and CEHSTAPH_RE.search(text)
+        and CEHSTAPH_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7889,6 +7919,7 @@ def analyze(
         or steal_cehcdiff_dx
         or steal_cehneg_dx
         or steal_cehag_dx
+        or steal_cehstaph_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22342,6 +22373,94 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin-aminoglycoside nephrotoxicity stack."
+            )
+
+    cehstaph_named = (
+        spec in {"dog", "cat"}
+        and CEHSTAPH_RE.search(text)
+        and CEHSTAPH_SIGN_RE.search(text)
+    )
+    if cehstaph_named:
+        if spec == "cat":
+            cehstaph_loc = (
+                "Feline third-generation cephalosporin staphylococcal "
+                "coverage gap. Not a pyoderma-alone."
+            )
+        else:
+            cehstaph_loc = (
+                "Canine third-generation cephalosporin staphylococcal "
+                "coverage gap. Not a pyoderma-alone."
+            )
+        localization = (
+            f"{localization} Also {cehstaph_loc}"
+            if localization
+            else cehstaph_loc
+        )
+        hard_stops.append(
+            "Do not send cefpodoxime as the staphylococcal "
+            "pyoderma plan. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest Wise / Wiedemann / Westermeyer MIC. "
+            "Mercer: third-generation cephalosporins have "
+            "improved gram-negative coverage but weaker "
+            "staphylococcal activity than first-generation "
+            "agents. Cover the staph. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a pyoderma-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 397 still owns cephalosporin-aminoglycoside "
+            "nephrotoxicity stack. "
+            "Packet 396 still owns first-generation cephalosporin "
+            "gram-negative coverage. "
+            "Packet 395 still owns cephalosporin-associated "
+            "C. difficile. "
+            "Bare pyoderma without named cefpodoxime / cefovecin "
+            "is not this loc. "
+            "Bare cefpodoxime without Staphylococcus / "
+            "staphylococcal / pyoderma / skin infection language "
+            "is not this loc. "
+            "Cephalexin / cefazolin plus pyoderma is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline third-generation cephalosporin "
+                "staphylococcal coverage gap. Not a pyoderma-alone. "
+                "Cover the staph. △ Plumb. Packet 396 still owns "
+                "first-generation gram-negative coverage. Do not "
+                "copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine third-generation cephalosporin "
+                "staphylococcal coverage gap. Not a pyoderma-alone. "
+                "Cover the staph. △ Plumb. Packet 397 still owns "
+                "the aminoglycoside stack. Packet 396 still owns "
+                "first-generation gram-negative coverage. Do not "
+                "copy a cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: third-generation "
+            "cephalosporins have improved gram-negative coverage "
+            "but weaker staphylococcal activity than "
+            "first-generation agents. Barriere Clin Pharm 1984 "
+            "PMID 6432420. Wise J Antimicrob Chemother 1990 PMID "
+            "2351624. Wiedemann Infection 1991 PMID 1800378. "
+            "Bryan 2012 is MRSP pyoderma, not this loc. "
+            "Westermeyer 2010 is species-fit MIC comparison, not "
+            "this loc. Iyori 2013 is cefovecin disk / mecA, not "
+            "this loc. Wise / Wiedemann / Westermeyer MIC stay on "
+            "those papers. Human chemistry is not canine "
+            "incidence. Do not harvest cephalosporin mg/kg. Skip "
+            "horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for third-generation cephalosporin staphylococcal coverage gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for third-generation cephalosporin staphylococcal coverage gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

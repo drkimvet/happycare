@@ -6569,3 +6569,35 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus gentamic
 - Attending: If the query is only “AKI,” why does this gate stay dark?
 - Attending: Horse cefazolin plus gentamicin plus AKI — fire or skip?
 - Attending: Cat plus cefovecin plus tobramycin plus nephrotox — which locs fire, and why?
+
+## 398. Canine third-generation cephalosporin staphylococcal coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett third-generation-cephalosporin-staphylococcal-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (third-generation cephalosporins have improved gram-negative coverage but weaker staphylococcal activity than first-generation agents). Barriere *Clin Pharm* 1984 PMID 6432420 (70 cites; loc-fit third-generation cephalosporin evaluation; affiliation not in PubMed XML). Wise *J Antimicrob Chemother* 1990 PMID 2351624 (32 cites, Dudley Road Hospital, Birmingham; loc-fit cefpodoxime vs other oral cephalosporins; printed MIC stay on that paper). Wiedemann *Infection* 1991 PMID 1800378 (16 cites, Universität Bonn; cefpodoxime vs other cephalosporins including gram-positive cocci; printed MIC stay on that paper). Bryan *Vet Dermatol* 2012 PMID 22364681 (54 cites, University of Tennessee; MRSP vs MSSP pyoderma treatment outcome) is MRSP pyoderma, not this generation-gap loc. Westermeyer *Vet Ther* 2010 PMID 20960413 (5 cites, Louisiana State University CVM; species-fit S. pseudintermedius MIC comparison including cefovecin and cefazolin) is a low-cite MIC table, not this loc. Iyori *Vet Dermatol* 2013 PMID 23331693 (Tokyo University of Agriculture and Technology; cefovecin disk / mecA) is not this loc. WHO *Lancet Infect Dis* 2018 PMID 29276051 is priority-pathogen recency, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Barriere and Wise. Do not overweight Bryan as quality for this SA third-generation loc. Do not overweight Westermeyer 5 cites as lobby law that cefovecin equals cefazolin for staph. Human chemistry is not canine incidence. Packet 397 still owns cephalosporin-aminoglycoside nephrotoxicity stack. Packet 396 still owns first-generation cephalosporin gram-negative coverage. Packet 395 still owns cephalosporin-associated C. difficile. Cephalexin / cefazolin is not this loc. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Wise / Wiedemann / Westermeyer MIC. Do not fire on bare cefpodoxime. Do not fire on bare pyoderma. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Barriere / Wise: **named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection is not a pyoderma-alone.** Cover the staph. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection is canine (or feline) third-generation cephalosporin staphylococcal coverage gap; not a pyoderma-alone. Bare cefpodoxime stays dark. Bare pyoderma stays dark. Dual cephalexin plus pyoderma stays dark for this loc. Dual cefpodoxime plus Pseudomonas stays dark for 396 and for this loc. Dual cefpodoxime plus C. difficile stays 395. Dual cefpodoxime plus gentamicin plus AKI stays 397. Dual cefpodoxime plus pyoderma plus C. difficile concatenates 395 then 398. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Wise / Wiedemann / Westermeyer MIC.
+- Do not call this a pyoderma-alone.
+- Do not send leftover cefpodoxime as the staphylococcal plan.
+- Do not treat first-generation cephalosporin gram-negative coverage (396) as this loc.
+- Do not treat cephalosporin-aminoglycoside nephrotoxicity stack (397) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat cephalexin / cefazolin plus pyoderma as this loc.
+- Do not treat MRSP pyoderma without named cefpodoxime / cefovecin as this loc.
+- Do not treat pyoderma without named cefpodoxime / cefovecin as this loc.
+
+Night rule: named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal / pyoderma / skin infection → **Canine third-generation cephalosporin staphylococcal coverage gap. Not a pyoderma-alone.** Cover the staph. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefpodoxime plus pyoderma not a pyoderma-and-home night?
+- NAVLE 2: Why does cephalexin plus pyoderma stay dark for this loc?
+- NAVLE 3: Dual-named “cefpodoxime, C. difficile, pyoderma” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover Convenia is not the staphylococcal plan without inventing a mg/kg table?
+- Attending: If the query is only “pyoderma,” why does this gate stay dark?
+- Attending: Horse cefovecin plus Staphylococcus — fire or skip?
+- Attending: Cat plus cefovecin plus skin infection — which locs fire, and why?
