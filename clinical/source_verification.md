@@ -6633,3 +6633,36 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enteroco
 - Attending: If the query is only “UTI,” why does this gate stay dark?
 - Attending: Horse cefazolin plus Enterococcus — fire or skip?
 - Attending: Cat plus cefovecin plus enterococcal — which locs fire, and why?
+
+## 400. Canine cephalosporin anaerobic coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-anaerobic-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (most cephalosporins have limited anaerobic activity; cefoxitin is the exception with useful Bacteroides coverage). Tally *Antimicrob Agents Chemother* 1975 PMID 1137364 (160 cites; loc-fit cefoxitin vs other cephalosporins against 155 anaerobic strains including *B. fragilis*; printed µg/mL stay on that paper; affiliation not in PubMed XML; Tally / Bartlett / Gorbach). Sutter *J Infect Dis* 1975 PMID 804023 (114 cites; loc-fit cefoxitin vs cefazolin / cephalothin / cephaloridine against anaerobes; Finegold coauthor; printed MIC stay on that paper). Sutter *Antimicrob Agents Chemother* 1976 PMID 984809 (468 cites) is a 23-agent anaerobic MIC table, not this loc. Wexler *Clin Microbiol Rev* 2007 PMID 17934076 (1673 cites, UCLA Wadsworth) is recency and a Bacteroides genus review, not this loc. Darland *Antimicrob Agents Chemother* 1977 PMID 856025 (99 cites) is cefoxitin β-lactamase stability, not this loc. Neu *Rev Infect Dis* 1979 PMID 400931 is cefoxitin vs cephalothin clinical overview, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Tally 1975 and Sutter 1975. Do not overweight Wexler or Sutter 1976 as quality for this SA first-/third-generation loc. Do not treat cefoxitin as a firing drug. Human chemistry is not canine incidence. Packet 375 still owns aminoglycoside anaerobic coverage. Packet 399 still owns cephalosporin enterococcal coverage. Packet 398 still owns third-generation cephalosporin staphylococcal coverage. Packet 395 still owns C. difficile. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Tally / Sutter MIC. Do not fire on bare cephalexin. Do not fire on bare peritonitis. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Tally / Sutter: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis is not a peritonitis-alone.** Cover anaerobes. Cefoxitin is the exception. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis is canine (or feline) cephalosporin anaerobic coverage gap; not a peritonitis-alone. Bare cephalexin stays dark. Bare peritonitis stays dark. Dual gentamicin plus peritonitis stays 375. Dual cephalexin plus Enterococcus stays 399. Dual cefpodoxime plus pyoderma stays 398. Dual cephalexin plus C. difficile stays 395. Dual cefoxitin plus peritonitis stays dark for this loc. Dual cephalexin plus gentamicin plus peritonitis concatenates 375 then 400. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Tally / Sutter MIC.
+- Do not call this a peritonitis-alone.
+- Do not send leftover cephalexin as the anaerobic plan.
+- Do not treat aminoglycoside anaerobic coverage (375) as this loc.
+- Do not treat cephalosporin enterococcal coverage (399) as this loc.
+- Do not treat third-generation cephalosporin staphylococcal coverage (398) as this loc.
+- Do not treat cephalosporin-associated C. difficile (395) as this loc.
+- Do not treat cefoxitin plus peritonitis as this loc.
+- Do not treat feline infectious peritonitis plus a named cephalosporin as this loc.
+- Do not treat peritonitis without named cephalexin / cefazolin / cefpodoxime / cefovecin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis → **Canine cephalosporin anaerobic coverage gap. Not a peritonitis-alone.** Cover anaerobes. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus peritonitis not a peritonitis-and-home night?
+- NAVLE 2: Why does gentamicin plus peritonitis stay 375, not this loc?
+- NAVLE 3: Dual-named “cephalexin, gentamicin, peritonitis” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the anaerobic plan without inventing a mg/kg table?
+- Attending: If the query is only “peritonitis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus Bacteroides — fire or skip?
+- Attending: Cat plus cefovecin plus anaerobes — which locs fire, and why?

@@ -15851,6 +15851,104 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin enterococcal coverage gap", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehanaer_is_not_a_peritonitis_alone(self):
+        b = analyze("dog", "cephalexin, peritonitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalexin as the anaerobic peritonitis plan", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_bacteroides_fires_cehanaer(self):
+        b = analyze("dog", "cefazolin, Bacteroides")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_anaerobes_fires_cehanaer(self):
+        b = analyze("cat", "cefovecin, anaerobes")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin anaerobic coverage gap", loc)
+        self.assertIn("not a peritonitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoanaer_concatenates_with_cehanaer(self):
+        b = analyze("dog", "cephalexin, gentamicin, peritonitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminoanaer_is_not_cehanaer(self):
+        b = analyze("dog", "gentamicin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside anaerobic coverage gap", loc)
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehentero_is_not_cehanaer(self):
+        b = analyze("dog", "cephalexin, Enterococcus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehstaph_is_not_cehanaer(self):
+        b = analyze("dog", "cefpodoxime, pyoderma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcdiff_is_not_cehanaer(self):
+        b = analyze("dog", "cephalexin, C. difficile")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-associated c. difficile", loc)
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefoxitin_peritonitis_is_not_cehanaer(self):
+        b = analyze("dog", "cefoxitin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fip_plus_cephalexin_is_not_cehanaer(self):
+        b = analyze("cat", "feline infectious peritonitis, cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("feline cephalosporin anaerobic coverage gap", loc)
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ica_anaerobic_is_not_cehanaer(self):
+        b = analyze("dog", "cephalexin, iCa anaerobic")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehanaer(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_peritonitis_is_not_cehanaer(self):
+        b = analyze("dog", "peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehanaer(self):
+        b = analyze("horse", "cephalexin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertNotIn("feline cephalosporin anaerobic coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

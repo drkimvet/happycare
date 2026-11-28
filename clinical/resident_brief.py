@@ -1031,6 +1031,33 @@ CEHENTERO_SIGN_RE = re.compile(
 # harvest Sader / Jones MIC. Dogs and cats. Skip horse.
 # Mercer: cephalosporins have little useful activity
 # against Enterococcus. △ Plumb.
+CEHANAER_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEHANAER_SIGN_RE = re.compile(
+    r"\banaerobes?\b|"
+    r"anaerobic (coverage|infection|bacteria|spectrum|organism|pathogen|activity)|"
+    r"bacteroides|"
+    r"(?<!infectious )peritonitis",
+    re.I,
+)
+# Packet 400: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus anaerobe / anaerobic / Bacteroides /
+# peritonitis only. Do not include cefoxitin as a firing
+# drug. Do not use Clostridium (395). Do not use
+# aminoglycoside anaerobic coverage (375). Do not use
+# cephalosporin enterococcal coverage (399). Do not use
+# feline infectious peritonitis. Do not use iCa
+# anaerobic. Do not use \bperitonitis (bare
+# peritonitis). Do not harvest a cephalosporin mg/kg
+# table. Do not harvest Tally / Sutter MIC. Dogs and
+# cats. Skip horse. Mercer: most cephalosporins have
+# limited anaerobic activity; cefoxitin is the
+# exception. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7748,6 +7775,11 @@ def analyze(
         and CEHENTERO_RE.search(text)
         and CEHENTERO_SIGN_RE.search(text)
     )
+    steal_cehanaer_dx = (
+        spec in {"dog", "cat"}
+        and CEHANAER_RE.search(text)
+        and CEHANAER_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7949,6 +7981,7 @@ def analyze(
         or steal_cehag_dx
         or steal_cehstaph_dx
         or steal_cehentero_dx
+        or steal_cehanaer_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22573,6 +22606,90 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin enterococcal coverage gap."
+            )
+
+    cehanaer_named = (
+        spec in {"dog", "cat"}
+        and CEHANAER_RE.search(text)
+        and CEHANAER_SIGN_RE.search(text)
+    )
+    if cehanaer_named:
+        if spec == "cat":
+            cehanaer_loc = (
+                "Feline cephalosporin anaerobic coverage gap. "
+                "Not a peritonitis-alone."
+            )
+        else:
+            cehanaer_loc = (
+                "Canine cephalosporin anaerobic coverage gap. "
+                "Not a peritonitis-alone."
+            )
+        localization = (
+            f"{localization} Also {cehanaer_loc}"
+            if localization
+            else cehanaer_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin as the anaerobic peritonitis "
+            "plan. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest Tally / Sutter MIC. "
+            "Mercer: most cephalosporins have limited anaerobic "
+            "activity; cefoxitin is the exception. Cover "
+            "anaerobes. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a peritonitis-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 375 still owns aminoglycoside anaerobic "
+            "coverage. "
+            "Packet 399 still owns cephalosporin enterococcal "
+            "coverage. "
+            "Packet 398 still owns third-generation cephalosporin "
+            "staphylococcal coverage. "
+            "Packet 395 still owns cephalosporin-associated "
+            "C. difficile. "
+            "Bare peritonitis without named cephalexin / "
+            "cefazolin / cefpodoxime / cefovecin is not this loc. "
+            "Bare cephalexin without anaerobe / Bacteroides / "
+            "peritonitis language is not this loc. "
+            "Cefoxitin plus peritonitis is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin anaerobic coverage gap. "
+                "Not a peritonitis-alone. Cover anaerobes. △ Plumb. "
+                "Packet 375 still owns aminoglycoside anaerobes. "
+                "Packet 204 still owns FIP. Do not copy a "
+                "cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin anaerobic coverage gap. "
+                "Not a peritonitis-alone. Cover anaerobes. △ Plumb. "
+                "Packet 375 still owns aminoglycoside anaerobes. "
+                "Packet 399 still owns enterococcus. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: most cephalosporins have "
+            "limited anaerobic activity; cefoxitin is the "
+            "exception. Tally Antimicrob Agents Chemother 1975 "
+            "PMID 1137364. Sutter J Infect Dis 1975 PMID 804023. "
+            "Sutter 1976 is a 23-agent MIC table, not this loc. "
+            "Wexler 2007 is recency, not this loc. Darland 1977 is "
+            "cefoxitin beta-lactamase stability, not this loc. "
+            "Tally / Sutter MIC stay on those papers. Human "
+            "chemistry is not canine incidence. Do not harvest "
+            "cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin anaerobic coverage gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin anaerobic coverage gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

@@ -336,6 +336,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehag` | Assessment | Canine cephalosporin-aminoglycoside nephrotoxicity stack / not an AKI-alone |
 | `ddx-cehstaph` | Assessment | Canine third-generation cephalosporin staphylococcal coverage gap / not a pyoderma-alone |
 | `ddx-cehentero` | Assessment | Canine cephalosporin enterococcal coverage gap / not a UTI-alone |
+| `ddx-cehanaer` | Assessment | Canine cephalosporin anaerobic coverage gap / not a peritonitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -425,6 +426,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehag` | Discharge | After cephalosporin-aminoglycoside nephrotoxicity-stack talk |
 | `dc-cehstaph` | Discharge | After third-generation cephalosporin / staphylococcal coverage-gap talk |
 | `dc-cehentero` | Discharge | After cephalosporin / enterococcal coverage-gap talk |
+| `dc-cehanaer` | Discharge | After cephalosporin / anaerobic coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -5005,6 +5007,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a UTI-alone. Send leftover cephalexin as the Enterococcus plan. Treat 398 or 396 as this loc.
 Do next: Name canine cephalosporin enterococcal coverage gap. Not a UTI-alone. Cover the enterococcus. △ Plumb. Packet 398 still owns third-generation staphylococcal coverage. Do not copy a cephalosporin table.
 
+### `ddx-cehanaer`
+
+Cephalosporin anaerobic coverage gap — {{patient.name}}
+Canine cephalosporin anaerobic coverage gap [yes / not]. Not a peritonitis-alone [yes / not]. Cover anaerobes [ ]. Packet 375 aminoanaer [ ]. Packet 399 cehentero [ ]. Packet 395 cehcdiff [ ]. Bare peritonitis [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe / anaerobic / Bacteroides / peritonitis — **Canine cephalosporin anaerobic coverage gap. Not a peritonitis-alone**
+2. Mercer / Tally Antimicrob Agents Chemother 1975 PMID 1137364: most cephalosporins have limited anaerobic activity; cefoxitin is the exception. Cover anaerobes. △ Plumb
+3. Packet 375 owns aminoglycoside anaerobic coverage. Packet 399 owns enterococcus. Packet 398 owns third-generation staphylococcal coverage. Packet 395 owns C. difficile. Bare peritonitis is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest Tally / Sutter MIC. Sutter 1976 is a 23-agent MIC table, not this loc. Cefoxitin plus peritonitis is not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare peritonitis stays dark. Dual gentamicin plus peritonitis concatenates 375 then this loc. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a peritonitis-alone. Send leftover cephalexin as the anaerobic plan. Treat 375 or 399 as this loc.
+Do next: Name canine cephalosporin anaerobic coverage gap. Not a peritonitis-alone. Cover anaerobes. △ Plumb. Packet 375 still owns aminoglycoside anaerobes. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5730,6 +5747,14 @@ Return now for spreading skin infection, fever, collapse, or if {{patient.pronou
 We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
 
 Return now for fever, straining to urinate, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehanaer`
+
+{{patient.name}} had an anaerobic or peritonitis infection around a cephalosporin. Most of that family of antibiotics does not usefully cover anaerobes. Using leftover cephalexin as the peritonitis plan is not the same as treating a simple belly infection. This is not a simple peritonitis-and-home plan.
+
+We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
+
+Return now for a painful belly, fever, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
