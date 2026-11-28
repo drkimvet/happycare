@@ -1158,6 +1158,31 @@ CEHDIS_SIGN_RE = re.compile(
 # cephalosporin mg/kg table. Dogs and cats. Skip horse.
 # Kline: cefotetan can cause a disulfiram-type reaction.
 # △ Plumb.
+CEHCTX_RE = re.compile(r"ceftriaxone", re.I)
+CEHCTX_SIGN_RE = re.compile(
+    r"biliary sludge|"
+    r"gallbladder sludge|"
+    r"\bsludge\b|"
+    r"cholelith|"
+    r"gallstone|"
+    r"pseudolith|"
+    r"gallbladder precipitat|"
+    r"biliary precipitat|"
+    r"calcium[- ]ceftriaxone|"
+    r"ceftriaxone[- ]calcium",
+    re.I,
+)
+# Packet 405: named ceftriaxone plus biliary sludge /
+# cholelith / gallbladder precipitate / calcium-ceftriaxone
+# only. Do not fire cephalexin / cefazolin / cefpodoxime /
+# cefovecin. Do not fire MTT agents (cefotetan /
+# cefoperazone / cefamandole). Do not use gallbladder
+# mucocele / kiwi without named ceftriaxone (180). Do not
+# use MTT disulfiram (404). Do not use MTT
+# hypoprothrombinemia (403). Do not harvest a
+# cephalosporin mg/kg table. Dogs and cats. Skip horse.
+# Schaad: ceftriaxone can cause reversible biliary
+# pseudolithiasis. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7900,6 +7925,11 @@ def analyze(
         and CEHDIS_RE.search(text)
         and CEHDIS_SIGN_RE.search(text)
     )
+    steal_cehctx_dx = (
+        spec in {"dog", "cat"}
+        and CEHCTX_RE.search(text)
+        and CEHCTX_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -8106,6 +8136,7 @@ def analyze(
         or steal_cehsz_dx
         or steal_cehmtt_dx
         or steal_cehdis_dx
+        or steal_cehctx_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -23161,6 +23192,87 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin MTT disulfiram-like reaction."
+            )
+
+    cehctx_named = (
+        spec in {"dog", "cat"}
+        and CEHCTX_RE.search(text)
+        and CEHCTX_SIGN_RE.search(text)
+    )
+    if cehctx_named:
+        if spec == "cat":
+            cehctx_loc = (
+                "Feline ceftriaxone biliary sludge. "
+                "Not a cholecystitis-alone."
+            )
+        else:
+            cehctx_loc = (
+                "Canine ceftriaxone biliary sludge. "
+                "Not a cholecystitis-alone."
+            )
+        localization = (
+            f"{localization} Also {cehctx_loc}"
+            if localization
+            else cehctx_loc
+        )
+        hard_stops.append(
+            "Do not send ceftriaxone sludge home as surgical "
+            "cholecystitis-first. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Schaad: ceftriaxone can cause reversible biliary "
+            "pseudolithiasis. Stop or adjust the drug. "
+            "Ultrasound. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a cholecystitis-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 180 still owns gallbladder mucocele / kiwi "
+            "without named ceftriaxone. "
+            "Packet 404 still owns MTT disulfiram-like reaction. "
+            "Packet 403 still owns MTT hypoprothrombinemia. "
+            "Cephalexin / cefazolin / cefpodoxime / cefovecin "
+            "are not this loc. "
+            "Cefotetan / cefoperazone / cefamandole are not "
+            "this loc. "
+            "Bare sludge without named ceftriaxone is not this "
+            "loc. "
+            "Bare ceftriaxone without biliary sludge / "
+            "cholelith / gallbladder precipitate / "
+            "calcium-ceftriaxone language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline ceftriaxone biliary sludge. Not a "
+                "cholecystitis-alone. Stop or adjust the drug. "
+                "Ultrasound. △ Plumb. Packet 180 still owns "
+                "mucocele. Do not copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine ceftriaxone biliary sludge. Not a "
+                "cholecystitis-alone. Stop or adjust the drug. "
+                "Ultrasound. △ Plumb. Packet 180 still owns "
+                "mucocele. Do not copy a cephalosporin table."
+            )
+        sources.append(
+            "Schaad Lancet 1988 PMID 2904533. Park "
+            "Gastroenterology 1991 PMID 2019372. Shiffman "
+            "Gastroenterology 1990 PMID 2227290. Schaad N Engl "
+            "J Med 1990 PMID 2403654 is ceftriaxone meningitis "
+            "treatment, not this loc. Kim 1992 is a sludge "
+            "lesson, adjacent. Robertson 1996 is "
+            "choledocholithiasis, adjacent. 2022 / 2025 papers "
+            "are recency, not this loc. Human chemistry is not "
+            "canine incidence. Do not harvest cephalosporin "
+            "mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for ceftriaxone biliary sludge."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for ceftriaxone biliary sludge."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

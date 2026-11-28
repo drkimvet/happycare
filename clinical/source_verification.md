@@ -6800,3 +6800,36 @@ Night rule: named cefotetan / cefoperazone / cefamandole / NMTT / MTT plus disul
 - Attending: If the query is only “alcohol,” why does this gate stay dark?
 - Attending: Horse cefotetan plus ethanol — fire or skip?
 - Attending: Cat plus cefamandole plus disulfiram — which locs fire, and why?
+
+## 405. Canine ceftriaxone biliary sludge (Schaad Lancet 1988)
+
+No dedicated Plunkett ceftriaxone-sludge chapter in the owned SA EM splits. Schaad *Lancet* 1988 PMID 2904533 (176 cites, Department of Paediatrics, University of Berne, Switzerland; loc-fit: reversible ceftriaxone-associated biliary pseudolithiasis in children). Park *Gastroenterology* 1991 PMID 2019372 (97 cites, Department of Medicine, University of Washington School of Medicine, Seattle; loc-fit: calcium-ceftriaxone salt as a major component of gallbladder precipitate). Shiffman *Gastroenterology* 1990 PMID 2227290 (96 cites, Department of Medicine, Medical College of Virginia, Virginia Commonwealth University, Richmond; loc-fit: pathogenesis of ceftriaxone-associated biliary sludge, in vitro calcium-ceftriaxone binding and solubility). Schaad *N Engl J Med* 1990 PMID 2403654 (203 cites, University of Berne) is ceftriaxone vs cefuroxime for bacterial meningitis in children, not this loc. Kim *J Gastroenterol Hepatol* 1992 PMID 1486190 (26 cites, University of Washington) is a sludge lesson from ceftriaxone, adjacent. Robertson *Pediatrics* 1996 PMID 8668387 (28 cites, Tufts) is ceftriaxone choledocholithiasis, adjacent. Palmer *Gastroenterology* 1991 PMID 2019382 is a name-commentary, adjacent. 2022 *J Glob Infect Dis* PMID 35418730 and 2025 *Pharmacoepidemiol Drug Saf* PMID 40398875 are recency, not this loc. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Schaad Lancet 1988 plus Park 1991 / Shiffman 1990 calcium-ceftriaxone salt. Do not overweight Schaad NEJM 1990 meningitis trial or 2022 / 2025 recency as this SA sludge loc. Human chemistry is not canine incidence. Packet 180 still owns gallbladder mucocele / kiwi without named ceftriaxone. Packet 404 still owns MTT disulfiram-like reaction. Packet 403 still owns MTT hypoprothrombinemia. Do not harvest a cephalosporin mg/kg table as lobby law. Do not fire on bare ceftriaxone. Do not fire on bare sludge. Do not fire cephalexin / cefazolin / cefpodoxime / cefovecin. Do not fire cefotetan / cefoperazone / cefamandole. Dogs and cats. Skip horse.
+
+Agree with Schaad / Park: **named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone is not a cholecystitis-alone.** Cephalexin is not this loc. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone is canine (or feline) ceftriaxone biliary sludge; not a cholecystitis-alone. Bare ceftriaxone stays dark. Bare sludge stays dark. Dual kiwi without ceftriaxone stays 180. Dual ceftriaxone plus kiwi / immobile sludge concatenates 180 then 405. Dual ceftriaxone plus cholecystitis without sludge / cholelith / precipitate language stays 180. Dual cephalexin plus sludge stays dark for this loc. Dual cefotetan plus sludge stays dark for this loc. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not call this a cholecystitis-alone.
+- Do not send ceftriaxone sludge home as surgical cholecystitis-first.
+- Do not treat cephalexin / cefazolin / cefpodoxime / cefovecin plus sludge as this loc.
+- Do not treat cefotetan / cefoperazone / cefamandole plus sludge as this loc.
+- Do not treat gallbladder mucocele / kiwi without named ceftriaxone (180) as this loc.
+- Do not treat MTT disulfiram-like reaction (404) as this loc.
+- Do not treat MTT hypoprothrombinemia (403) as this loc.
+- Do not treat Schaad NEJM 1990 meningitis trial as this loc.
+- Do not treat 2022 / 2025 recency as this loc.
+- Do not treat sludge without named ceftriaxone as this loc.
+
+Night rule: named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone → **Canine ceftriaxone biliary sludge. Not a cholecystitis-alone.** Stop or adjust the drug. Ultrasound. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is ceftriaxone plus biliary sludge not a cholecystitis-and-cut night?
+- NAVLE 2: Why does cephalexin plus sludge stay dark for this loc?
+- NAVLE 3: Dual-named “ceftriaxone, kiwi gallbladder” — which loc should fire, and why might this loc stay dark?
+- Oral: How do you tell the owner that leftover ceftriaxone is not the gallbladder plan without inventing a mg/kg table?
+- Attending: If the query is only “sludge,” why does this gate stay dark?
+- Attending: Horse ceftriaxone plus cholelithiasis — fire or skip?
+- Attending: Cat plus ceftriaxone plus calcium-ceftriaxone — which locs fire, and why?

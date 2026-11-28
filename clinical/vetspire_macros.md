@@ -341,6 +341,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehsz` | Assessment | Canine cephalosporin-associated seizures / not a seizure-alone |
 | `ddx-cehmtt` | Assessment | Canine cephalosporin MTT-side-chain hypoprothrombinemia / not a coagulopathy-alone |
 | `ddx-cehdis` | Assessment | Canine cephalosporin MTT disulfiram-like reaction / not an intoxication-alone |
+| `ddx-cehctx` | Assessment | Canine ceftriaxone biliary sludge / not a cholecystitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -435,6 +436,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehsz` | Discharge | After cephalosporin / seizure talk |
 | `dc-cehmtt` | Discharge | After MTT-cephalosporin / bleeding talk |
 | `dc-cehdis` | Discharge | After MTT-cephalosporin / alcohol talk |
+| `dc-cehctx` | Discharge | After ceftriaxone / biliary-sludge talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -5090,6 +5092,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this an intoxication-alone. Treat leftover cephalexin as this loc. Treat 403 or Lipsky AAC 1984 as this loc.
 Do next: Name canine cephalosporin MTT disulfiram-like reaction. Not an intoxication-alone. Stop the MTT drug. △ Plumb. Packet 403 still owns MTT bleeding. Do not copy a cephalosporin table.
 
+### `ddx-cehctx`
+
+Ceftriaxone biliary sludge — {{patient.name}}
+Canine ceftriaxone biliary sludge [yes / not]. Not a cholecystitis-alone [yes / not]. Stop or adjust ceftriaxone [ ]. Packet 180 mucocele [ ]. Packet 404 cehdis [ ]. Packet 403 cehmtt [ ]. Bare sludge [ ].
+
+DDX:
+1. Named ceftriaxone plus biliary sludge / cholelith / gallbladder precipitate / calcium-ceftriaxone — **Canine ceftriaxone biliary sludge. Not a cholecystitis-alone**
+2. Schaad Lancet 1988 PMID 2904533: ceftriaxone can cause reversible biliary pseudolithiasis. Stop or adjust the drug. Ultrasound. △ Plumb
+3. Packet 180 owns gallbladder mucocele / kiwi without named ceftriaxone. Packet 404 owns MTT disulfiram. Packet 403 owns MTT hypoprothrombinemia. Cephalexin / cefazolin / cefpodoxime / cefovecin are not this loc. MTT agents are not this loc. Bare sludge is not this loc
+4. Do not harvest a cephalosporin table. Park 1991 is calcium-ceftriaxone salt. Schaad NEJM 1990 is meningitis treatment, not this loc. 2022 / 2025 papers are recency, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare ceftriaxone or bare sludge stays dark. Dual kiwi plus ceftriaxone concatenates 180 then this loc if sludge / cholelith language is also present. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a cholecystitis-alone. Treat leftover cephalexin as this loc. Treat 180 kiwi without named ceftriaxone as this loc.
+Do next: Name canine ceftriaxone biliary sludge. Not a cholecystitis-alone. Stop or adjust the drug. Ultrasound. △ Plumb. Packet 180 still owns mucocele. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5855,6 +5872,14 @@ Return now for new bleeding, collapse, or if {{patient.pronoun}} is worse. {{loc
 We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cefotetan, cefoperazone, or cefamandole from home.
 
 Return now for vomiting, collapse, flushing, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehctx`
+
+{{patient.name}} had gallbladder sludge around ceftriaxone. That antibiotic can form a calcium salt in bile that looks like stones on ultrasound and often goes away when the drug is stopped. Using leftover ceftriaxone as a belly-pain plan is not the same as treating a simple gallbladder infection, and leftover cephalexin is not this problem. This is not a simple cholecystitis-and-home plan.
+
+We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover ceftriaxone from home.
+
+Return now for a painful belly, jaundice, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

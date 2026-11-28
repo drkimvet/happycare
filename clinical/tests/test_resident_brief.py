@@ -16301,6 +16301,90 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin mtt disulfiram-like reaction", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehctx_is_not_a_cholecystitis_alone(self):
+        b = analyze("dog", "ceftriaxone, biliary sludge")
+        loc = b["localization"].lower()
+        self.assertIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIn("not a cholecystitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send ceftriaxone sludge home as surgical cholecystitis-first", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("gallbladder mucocele", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ceftriaxone_pseudolithiasis_fires_cehctx(self):
+        b = analyze("dog", "ceftriaxone, pseudolithiasis")
+        loc = b["localization"].lower()
+        self.assertIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIn("not a cholecystitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_ceftriaxone_calcium_salt_fires_cehctx(self):
+        b = analyze("cat", "ceftriaxone, calcium-ceftriaxone")
+        loc = b["localization"].lower()
+        self.assertIn("feline ceftriaxone biliary sludge", loc)
+        self.assertIn("not a cholecystitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_mucocele_concatenates_with_cehctx(self):
+        b = analyze("dog", "ceftriaxone, immobile sludge")
+        loc = b["localization"].lower()
+        self.assertIn("gallbladder mucocele", loc)
+        self.assertIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_kiwi_without_ceftriaxone_is_not_cehctx(self):
+        b = analyze("dog", "kiwi gallbladder")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gallbladder mucocele", loc)
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_ceftriaxone_cholecystitis_is_not_cehctx(self):
+        b = analyze("dog", "ceftriaxone, cholecystitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("gallbladder mucocele", loc)
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_sludge_is_not_cehctx(self):
+        b = analyze("dog", "cephalexin, biliary sludge")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefotetan_sludge_is_not_cehctx(self):
+        b = analyze("dog", "cefotetan, biliary sludge")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehdis_is_not_cehctx(self):
+        b = analyze("dog", "cefotetan, alcohol")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin mtt disulfiram-like reaction", loc)
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_ceftriaxone_is_not_cehctx(self):
+        b = analyze("dog", "ceftriaxone")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_sludge_is_not_cehctx(self):
+        b = analyze("dog", "sludge")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehctx(self):
+        b = analyze("horse", "ceftriaxone, biliary sludge")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine ceftriaxone biliary sludge", loc)
+        self.assertNotIn("feline ceftriaxone biliary sludge", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()
