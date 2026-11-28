@@ -1058,6 +1058,25 @@ CEHANAER_SIGN_RE = re.compile(
 # cats. Skip horse. Mercer: most cephalosporins have
 # limited anaerobic activity; cefoxitin is the
 # exception. △ Plumb.
+CEHCSF_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+# Packet 401: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus meningitis / encephalitis / CSF /
+# blood-brain only. Reuse AMINOCSF_SIGN_RE. Do not use
+# G-CSF. Do not use aminoglycoside poor CSF (376). Do
+# not use cephalosporin anaerobic coverage (400). Do
+# not use cephalosporin enterococcal coverage (399).
+# Do not use otogenic meningitis (208) or SRMA (205)
+# without named cephalosporin. Do not harvest a
+# cephalosporin mg/kg table. Do not harvest Massip
+# mg/kg. Do not harvest CSF µg/mL. Dogs and cats.
+# Skip horse. Mercer: first-generation cephalosporins
+# penetrate CSF poorly. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7780,6 +7799,11 @@ def analyze(
         and CEHANAER_RE.search(text)
         and CEHANAER_SIGN_RE.search(text)
     )
+    steal_cehcsf_dx = (
+        spec in {"dog", "cat"}
+        and CEHCSF_RE.search(text)
+        and AMINOCSF_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7982,6 +8006,7 @@ def analyze(
         or steal_cehstaph_dx
         or steal_cehentero_dx
         or steal_cehanaer_dx
+        or steal_cehcsf_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22690,6 +22715,94 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin anaerobic coverage gap."
+            )
+
+    cehcsf_named = (
+        spec in {"dog", "cat"}
+        and CEHCSF_RE.search(text)
+        and AMINOCSF_SIGN_RE.search(text)
+    )
+    if cehcsf_named:
+        if spec == "cat":
+            cehcsf_loc = (
+                "Feline cephalosporin poor CSF penetration. "
+                "Not a meningitis-alone."
+            )
+        else:
+            cehcsf_loc = (
+                "Canine cephalosporin poor CSF penetration. "
+                "Not a meningitis-alone."
+            )
+        localization = (
+            f"{localization} Also {cehcsf_loc}"
+            if localization
+            else cehcsf_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin or cefazolin as the "
+            "meningitis plan. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest Massip mg/kg. "
+            "Do not harvest CSF µg/mL. "
+            "Mercer: first-generation cephalosporins penetrate "
+            "CSF poorly. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a meningitis-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 376 still owns aminoglycoside poor CSF "
+            "penetration. "
+            "Packet 400 still owns cephalosporin anaerobic "
+            "coverage. "
+            "Packet 399 still owns cephalosporin enterococcal "
+            "coverage. "
+            "Packet 208 still owns otogenic meningitis without "
+            "named cephalosporin. "
+            "Packet 205 still owns SRMA without named "
+            "cephalosporin. "
+            "Bare meningitis without named cephalexin / "
+            "cefazolin / cefpodoxime / cefovecin is not this loc. "
+            "Bare cephalexin without meningitis / encephalitis / "
+            "CSF / blood-brain language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin poor CSF penetration. "
+                "Not a meningitis-alone. Do not send cephalexin "
+                "or cefazolin as the CSF plan. △ Plumb. Packet 376 "
+                "still owns aminoglycoside CSF. Packet 208 still "
+                "owns otogenic meningitis. Do not copy a "
+                "cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin poor CSF penetration. "
+                "Not a meningitis-alone. Do not send cephalexin "
+                "or cefazolin as the CSF plan. △ Plumb. Packet 376 "
+                "still owns aminoglycoside CSF. Packet 205 still "
+                "owns SRMA. Do not copy a cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: first-generation "
+            "cephalosporins penetrate CSF poorly. Neu Drugs 1987 "
+            "PMID 3319497. Landesman Am J Med 1981 PMID 6269429. "
+            "Cherubin 1982 is new cephalosporins for gram-negative "
+            "meningitis, not this loc. Cherubin 1989 is newer "
+            "cephalosporin CSF penetration, not this loc. Bechtel "
+            "1980 is cefazolin CSF seizures, not this loc. "
+            "Massip 1979 is dog cefoxitin experimental, not this "
+            "loc. Grégoire 2019 is recency and inverts the night "
+            "rule. Massip mg/kg and CSF µg/mL stay on those "
+            "papers. Human chemistry is not canine incidence. Do "
+            "not harvest cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin poor CSF penetration."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin poor CSF penetration."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

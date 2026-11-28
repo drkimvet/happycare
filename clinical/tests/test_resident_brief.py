@@ -15949,6 +15949,105 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline cephalosporin anaerobic coverage gap", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehcsf_is_not_a_meningitis_alone(self):
+        b = analyze("dog", "cephalexin, meningitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalexin or cefazolin as the meningitis plan", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_csf_fires_cehcsf(self):
+        b = analyze("dog", "cefazolin, CSF")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_encephalitis_fires_cehcsf(self):
+        b = analyze("cat", "cefovecin, encephalitis")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminocsf_concatenates_with_cehcsf(self):
+        b = analyze("dog", "cephalexin, gentamicin, meningitis")
+        loc = b["localization"].lower()
+        self.assertIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_aminocsf_is_not_cehcsf(self):
+        b = analyze("dog", "gentamicin, meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine aminoglycoside poor csf penetration", loc)
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehanaer_is_not_cehcsf(self):
+        b = analyze("dog", "cephalexin, peritonitis")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin anaerobic coverage gap", loc)
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehentero_is_not_cehcsf(self):
+        b = analyze("dog", "cephalexin, Enterococcus")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_gcsf_is_not_cehcsf(self):
+        b = analyze("dog", "cephalexin, G-CSF")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_srma_without_meningitis_word_is_not_cehcsf(self):
+        b = analyze("dog", "SRMA, cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehcsf(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_meningitis_is_not_cehcsf(self):
+        b = analyze("dog", "meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehcsf(self):
+        b = analyze("horse", "cephalexin, meningitis")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertNotIn("feline cephalosporin poor csf penetration", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_otogenic_plus_cehcsf_concatenates(self):
+        b = analyze("dog", "otogenic meningitis, cephalexin")
+        loc = b["localization"].lower()
+        self.assertIn("otogenic meningitis", loc)
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefpodoxime_blood_brain_fires_cehcsf(self):
+        b = analyze("dog", "cefpodoxime, blood-brain")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIn("not a meningitis-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

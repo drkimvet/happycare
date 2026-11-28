@@ -6666,3 +6666,37 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus anaerobe
 - Attending: If the query is only “peritonitis,” why does this gate stay dark?
 - Attending: Horse cefazolin plus Bacteroides — fire or skip?
 - Attending: Cat plus cefovecin plus anaerobes — which locs fire, and why?
+
+## 401. Canine cephalosporin poor CSF penetration (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-CSF-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (first-generation cephalosporins penetrate CSF poorly). Neu *Drugs* 1987 PMID 3319497 (36 cites, Columbia University College of Physicians and Surgeons; loc-fit: none of the first-generation cephalosporins can be considered acceptable to treat meningitis). Landesman *Am J Med* 1981 PMID 6269429 (163 cites; loc-fit past and current roles of cephalosporins in meningitis; affiliation not in PubMed XML). Cherubin *Rev Infect Dis* 1982 PMID 6294799 (79 cites) is new cephalosporins for gram-negative bacillary meningitis, not this first-generation loc. Cherubin *Rev Infect Dis* 1989 PMID 2672238 (69 cites, Mercy Hospital Chicago; Norrby coauthor) is newer cephalosporin CSF penetration, not this loc. Bechtel *Am J Hosp Pharm* 1980 PMID 7361804 (61 cites) is cefazolin CSF seizures, not this loc. Massip *Rev Infect Dis* 1979 PMID 318215 (12 cites, Hôpital Purpan Toulouse; experimental dog cefoxitin meningitis; printed 50–100 mg/kg stay on that paper) is cefoxitin experimental, not this loc. Grégoire *Antimicrob Agents Chemother* 2019 PMID 30420481 (22 cites, CHU Nantes) is recency and high-dose cefazolin CSF, which inverts the night rule. Novak *Open Forum Infect Dis* 2022 PMID 35111872 is recency. Lutsar *Clin Pharmacokinet* 2000 PMID 11108433 is Pfizer and general low-lipophilicity chemistry, not the first-generation night rule. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Neu 1987 and Landesman 1981. Do not overweight Grégoire or Novak as quality for this SA first-generation loc. Do not overweight Massip dog cefoxitin as this loc. Human chemistry is not canine incidence. Packet 376 still owns aminoglycoside poor CSF penetration. Packet 400 still owns cephalosporin anaerobic coverage. Packet 399 still owns cephalosporin enterococcal coverage. Packet 208 still owns otogenic meningitis. Packet 205 still owns SRMA. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Massip mg/kg. Do not harvest CSF µg/mL. Do not fire on bare cephalexin. Do not fire on bare meningitis. Do not fire on G-CSF. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Neu: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain is not a meningitis-alone.** Do not send cephalexin or cefazolin as the meningitis plan. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain is canine (or feline) cephalosporin poor CSF penetration; not a meningitis-alone. Bare cephalexin stays dark. Bare meningitis stays dark. Dual gentamicin plus meningitis stays 376. Dual cephalexin plus peritonitis stays 400. Dual cephalexin plus Enterococcus stays 399. Dual otogenic meningitis plus cephalexin concatenates 208 then 401. Dual gentamicin plus cephalexin plus meningitis concatenates 376 then 401. G-CSF stays dark. SRMA without meningitis / CSF language stays 205. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Massip mg/kg.
+- Do not harvest CSF µg/mL.
+- Do not call this a meningitis-alone.
+- Do not send leftover cephalexin as the meningitis plan.
+- Do not treat aminoglycoside poor CSF (376) as this loc.
+- Do not treat cephalosporin anaerobic coverage (400) as this loc.
+- Do not treat cephalosporin enterococcal coverage (399) as this loc.
+- Do not treat otogenic meningitis without named cephalosporin (208) as this loc.
+- Do not treat SRMA without named cephalosporin (205) as this loc.
+- Do not treat Bechtel cefazolin CSF seizures as this loc.
+- Do not treat meningitis without named cephalexin / cefazolin / cefpodoxime / cefovecin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain → **Canine cephalosporin poor CSF penetration. Not a meningitis-alone.** Do not send cephalexin or cefazolin as the meningitis plan. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus meningitis not a meningitis-and-home night?
+- NAVLE 2: Why does gentamicin plus meningitis stay 376, not this loc?
+- NAVLE 3: Dual-named “cephalexin, gentamicin, meningitis” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the meningitis plan without inventing a mg/kg table?
+- Attending: If the query is only “meningitis,” why does this gate stay dark?
+- Attending: Horse cefazolin plus CSF — fire or skip?
+- Attending: Cat plus cefovecin plus encephalitis — which locs fire, and why?

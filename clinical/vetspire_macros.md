@@ -337,6 +337,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehstaph` | Assessment | Canine third-generation cephalosporin staphylococcal coverage gap / not a pyoderma-alone |
 | `ddx-cehentero` | Assessment | Canine cephalosporin enterococcal coverage gap / not a UTI-alone |
 | `ddx-cehanaer` | Assessment | Canine cephalosporin anaerobic coverage gap / not a peritonitis-alone |
+| `ddx-cehcsf` | Assessment | Canine cephalosporin poor CSF penetration / not a meningitis-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -427,6 +428,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehstaph` | Discharge | After third-generation cephalosporin / staphylococcal coverage-gap talk |
 | `dc-cehentero` | Discharge | After cephalosporin / enterococcal coverage-gap talk |
 | `dc-cehanaer` | Discharge | After cephalosporin / anaerobic coverage-gap talk |
+| `dc-cehcsf` | Discharge | After cephalosporin / CSF coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -5022,6 +5024,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a peritonitis-alone. Send leftover cephalexin as the anaerobic plan. Treat 375 or 399 as this loc.
 Do next: Name canine cephalosporin anaerobic coverage gap. Not a peritonitis-alone. Cover anaerobes. △ Plumb. Packet 375 still owns aminoglycoside anaerobes. Do not copy a cephalosporin table.
 
+### `ddx-cehcsf`
+
+Cephalosporin poor CSF penetration — {{patient.name}}
+Canine cephalosporin poor CSF penetration [yes / not]. Not a meningitis-alone [yes / not]. Do not send cephalexin as the meningitis plan [ ]. Packet 376 aminocsf [ ]. Packet 400 cehanaer [ ]. Packet 208 otogenic [ ]. Packet 205 SRMA [ ]. Bare meningitis [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningitis / encephalitis / CSF / blood-brain — **Canine cephalosporin poor CSF penetration. Not a meningitis-alone**
+2. Mercer / Neu Drugs 1987 PMID 3319497: first-generation cephalosporins penetrate CSF poorly. Do not send cephalexin or cefazolin as the meningitis plan. △ Plumb
+3. Packet 376 owns aminoglycoside poor CSF. Packet 400 owns cephalosporin anaerobic coverage. Packet 399 owns enterococcus. Packet 208 owns otogenic meningitis. Packet 205 owns SRMA. Bare meningitis is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest Massip mg/kg. Do not harvest CSF µg/mL. Bechtel 1980 is cefazolin CSF seizures, not this loc. Grégoire 2019 is recency and inverts the night rule
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare meningitis stays dark. Dual gentamicin plus meningitis concatenates 376 then this loc. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a meningitis-alone. Send leftover cephalexin as the meningitis plan. Treat 376 or 400 as this loc.
+Do next: Name canine cephalosporin poor CSF penetration. Not a meningitis-alone. Do not send cephalexin or cefazolin as the CSF plan. △ Plumb. Packet 376 still owns aminoglycoside CSF. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5755,6 +5772,14 @@ Return now for fever, straining to urinate, collapse, or if {{patient.pronoun}} 
 We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
 
 Return now for a painful belly, fever, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehcsf`
+
+{{patient.name}} had a meningitis or brain-infection concern around a cephalosporin. First-generation cephalosporins do not usefully reach the spinal fluid. Using leftover cephalexin as the meningitis plan is not the same as treating a simple infection. This is not a simple meningitis-and-home plan.
+
+We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
+
+Return now for a stiff neck, seizure, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
