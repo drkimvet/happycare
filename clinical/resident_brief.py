@@ -1077,6 +1077,32 @@ CEHCSF_RE = re.compile(
 # mg/kg. Do not harvest CSF µg/mL. Dogs and cats.
 # Skip horse. Mercer: first-generation cephalosporins
 # penetrate CSF poorly. △ Plumb.
+CEHSZ_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEHSZ_SIGN_RE = re.compile(
+    r"\b(seizure|status epileptic|cluster seizure|ictal|postictal)|"
+    r"cns tox|"
+    r"neurotox|"
+    r"\bconvuls",
+    re.I,
+)
+# Packet 402: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus seizure / status / CNS toxicity /
+# neurotoxicity only. Do not use bare cephalexin. Do
+# not use bare seizure (116). Do not use cephalosporin
+# poor CSF without seizure language (401). Do not use
+# procaine penicillin IV CNS (386). Do not use
+# fluoroquinolone GABA (358). Do not use metronidazole
+# neurotoxicity without named cephalosporin (349). Do
+# not harvest a cephalosporin mg/kg table. Do not
+# harvest Bechtel CSF µg/mL. Dogs and cats. Skip horse.
+# Bechtel: seizures associated with high CSF cefazolin.
+# △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7804,6 +7830,11 @@ def analyze(
         and CEHCSF_RE.search(text)
         and AMINOCSF_SIGN_RE.search(text)
     )
+    steal_cehsz_dx = (
+        spec in {"dog", "cat"}
+        and CEHSZ_RE.search(text)
+        and CEHSZ_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -8007,6 +8038,7 @@ def analyze(
         or steal_cehentero_dx
         or steal_cehanaer_dx
         or steal_cehcsf_dx
+        or steal_cehsz_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22803,6 +22835,94 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for cephalosporin poor CSF penetration."
+            )
+
+    cehsz_named = (
+        spec in {"dog", "cat"}
+        and CEHSZ_RE.search(text)
+        and CEHSZ_SIGN_RE.search(text)
+    )
+    if cehsz_named:
+        if spec == "cat":
+            cehsz_loc = (
+                "Feline cephalosporin-associated seizures. "
+                "Not a seizure-alone."
+            )
+        else:
+            cehsz_loc = (
+                "Canine cephalosporin-associated seizures. "
+                "Not a seizure-alone."
+            )
+        localization = (
+            f"{localization} Also {cehsz_loc}"
+            if localization
+            else cehsz_loc
+        )
+        hard_stops.append(
+            "Do not send a cephalosporin-seizure home as "
+            "idiopathic epilepsy. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest Bechtel CSF µg/mL. "
+            "Bechtel: seizures associated with high CSF "
+            "cefazolin. Stop or adjust the drug. Supportive. "
+            "△ Plumb."
+        )
+        do_not.append(
+            "Do not call this a seizure-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 401 still owns cephalosporin poor CSF "
+            "penetration. "
+            "Packet 386 still owns procaine penicillin IV CNS. "
+            "Packet 358 still owns fluoroquinolone GABA. "
+            "Packet 349 still owns metronidazole neurotoxicity. "
+            "Packet 116 still owns seizure drugs without named "
+            "cephalosporin. "
+            "Bare seizure without named cephalexin / cefazolin / "
+            "cefpodoxime / cefovecin is not this loc. "
+            "Bare cefazolin without seizure / status / CNS "
+            "toxicity / neurotoxicity language is not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin-associated seizures. "
+                "Not a seizure-alone. Do not send a "
+                "cephalosporin-seizure home as idiopathic "
+                "epilepsy. △ Plumb. Packet 401 still owns "
+                "cephalosporin CSF. Packet 386 still owns "
+                "procaine IV. Do not copy a cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin-associated seizures. "
+                "Not a seizure-alone. Do not send a "
+                "cephalosporin-seizure home as idiopathic "
+                "epilepsy. △ Plumb. Packet 401 still owns "
+                "cephalosporin CSF. Packet 358 still owns FQ "
+                "GABA. Do not copy a cephalosporin table."
+            )
+        sources.append(
+            "Bechtel Am J Hosp Pharm 1980 PMID 7361804: seizures "
+            "associated with high CSF cefazolin. Schliamser J "
+            "Antimicrob Chemother 1991 PMID 1856121 is broader "
+            "beta-lactam neurotoxicity, not this loc. Grill Ann "
+            "Pharmacother 2008 PMID 19033476 is recency review, "
+            "not this loc. Sugimoto Neuropharmacology 2003 PMID "
+            "12871648 is rodent GABA(A), not canine incidence. "
+            "Chow 2005 is bench-to-bedside beta-lactam "
+            "neurotoxicity, not this loc. Gardner 1977 is a "
+            "sodium cefazolin case, adjacent. Grégoire 2019 and "
+            "Novak 2022 are recency and not this loc's harvest "
+            "table. Bechtel CSF µg/mL stay on that paper. Human "
+            "chemistry is not canine incidence. Do not harvest "
+            "cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin-associated seizures."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin-associated seizures."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

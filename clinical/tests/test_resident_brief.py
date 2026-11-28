@@ -16048,6 +16048,94 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertIn("not a meningitis-alone", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehsz_is_not_a_seizure_alone(self):
+        b = analyze("dog", "cefazolin, seizure")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated seizures", loc)
+        self.assertIn("not a seizure-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send a cephalosporin-seizure home as idiopathic epilepsy", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine cephalosporin poor csf penetration", loc)
+        self.assertNotIn("canine procaine penicillin iv cns", loc)
+        self.assertNotIn("canine fluoroquinolone gaba", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_status_fires_cehsz(self):
+        b = analyze("dog", "cephalexin, status epilepticus")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin-associated seizures", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_neurotox_fires_cehsz(self):
+        b = analyze("cat", "cefovecin, neurotoxicity")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin-associated seizures", loc)
+        self.assertIn("not a seizure-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcsf_concatenates_with_cehsz(self):
+        b = analyze("dog", "cefazolin, CSF, seizure")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehcsf_is_not_cehsz(self):
+        b = analyze("dog", "cefazolin, CSF")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin poor csf penetration", loc)
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_procaineiv_is_not_cehsz(self):
+        b = analyze("dog", "procaine penicillin, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine procaine penicillin iv cns", loc)
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqgaba_is_not_cehsz(self):
+        b = analyze("dog", "enrofloxacin, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_fqgaba_concatenates_with_cehsz(self):
+        b = analyze("dog", "cefazolin, enrofloxacin, seizure")
+        loc = b["localization"].lower()
+        self.assertIn("canine fluoroquinolone gaba", loc)
+        self.assertIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_metrotox_is_not_cehsz(self):
+        b = analyze("dog", "metronidazole, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine metronidazole neurotoxicity", loc)
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cefazolin_is_not_cehsz(self):
+        b = analyze("dog", "cefazolin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_seizure_is_not_cehsz(self):
+        b = analyze("dog", "seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehsz(self):
+        b = analyze("horse", "cefazolin, seizure")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin-associated seizures", loc)
+        self.assertNotIn("feline cephalosporin-associated seizures", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

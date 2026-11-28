@@ -338,6 +338,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehentero` | Assessment | Canine cephalosporin enterococcal coverage gap / not a UTI-alone |
 | `ddx-cehanaer` | Assessment | Canine cephalosporin anaerobic coverage gap / not a peritonitis-alone |
 | `ddx-cehcsf` | Assessment | Canine cephalosporin poor CSF penetration / not a meningitis-alone |
+| `ddx-cehsz` | Assessment | Canine cephalosporin-associated seizures / not a seizure-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -429,6 +430,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehentero` | Discharge | After cephalosporin / enterococcal coverage-gap talk |
 | `dc-cehanaer` | Discharge | After cephalosporin / anaerobic coverage-gap talk |
 | `dc-cehcsf` | Discharge | After cephalosporin / CSF coverage-gap talk |
+| `dc-cehsz` | Discharge | After cephalosporin / seizure talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -5039,6 +5041,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a meningitis-alone. Send leftover cephalexin as the meningitis plan. Treat 376 or 400 as this loc.
 Do next: Name canine cephalosporin poor CSF penetration. Not a meningitis-alone. Do not send cephalexin or cefazolin as the CSF plan. △ Plumb. Packet 376 still owns aminoglycoside CSF. Do not copy a cephalosporin table.
 
+### `ddx-cehsz`
+
+Cephalosporin-associated seizures — {{patient.name}}
+Canine cephalosporin-associated seizures [yes / not]. Not a seizure-alone [yes / not]. Do not send home as idiopathic epilepsy [ ]. Packet 401 cehcsf [ ]. Packet 386 procaineiv [ ]. Packet 358 fqgaba [ ]. Packet 349 metrotox [ ]. Bare seizure [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status / CNS toxicity / neurotoxicity — **Canine cephalosporin-associated seizures. Not a seizure-alone**
+2. Bechtel Am J Hosp Pharm 1980 PMID 7361804: seizures associated with high CSF cefazolin. Do not send a cephalosporin-seizure home as idiopathic epilepsy. Stop or adjust the drug. Supportive. △ Plumb
+3. Packet 401 owns cephalosporin poor CSF. Packet 386 owns procaine penicillin IV CNS. Packet 358 owns fluoroquinolone GABA. Packet 349 owns metronidazole neurotoxicity. Packet 116 owns seizure drugs. Bare seizure is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest Bechtel CSF µg/mL. Grill 2008 is recency review, not this loc. Sugimoto 2003 is rodent GABA(A), not canine incidence. Grégoire 2019 is recency and not this loc's harvest table
+5. Dog or cat can fire. Horse does not fire. Bare cefazolin or bare seizure stays dark. Dual cefazolin plus CSF plus seizure concatenates 401 then this loc. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a seizure-alone. Send a cephalosporin-seizure home as idiopathic epilepsy. Treat 401 or 386 as this loc.
+Do next: Name canine cephalosporin-associated seizures. Not a seizure-alone. Do not send a cephalosporin-seizure home as idiopathic epilepsy. △ Plumb. Packet 401 still owns cephalosporin CSF. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5780,6 +5797,14 @@ Return now for a painful belly, fever, collapse, or if {{patient.pronoun}} is wo
 We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
 
 Return now for a stiff neck, seizure, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehsz`
+
+{{patient.name}} had a seizure around a cephalosporin. High levels of some of those antibiotics in the spinal fluid can trigger seizures. Using leftover cefazolin or cephalexin as the seizure plan is not the same as treating a simple seizure. This is not a simple seizure-and-home plan.
+
+We named the drug and stopped or changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
+
+Return now for another seizure, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 

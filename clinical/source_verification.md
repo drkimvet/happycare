@@ -6700,3 +6700,37 @@ Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus meningit
 - Attending: If the query is only “meningitis,” why does this gate stay dark?
 - Attending: Horse cefazolin plus CSF — fire or skip?
 - Attending: Cat plus cefovecin plus encephalitis — which locs fire, and why?
+
+## 402. Canine cephalosporin-associated seizures (Bechtel AJHP 1980)
+
+No dedicated Plunkett cephalosporin-seizure chapter in the owned SA EM splits. Bechtel *Am J Hosp Pharm* 1980 PMID 7361804 (61 cites; loc-fit: seizures associated with high cerebrospinal fluid concentrations of cefazolin; affiliation not in PubMed XML). Schliamser *J Antimicrob Chemother* 1991 PMID 1856121 (124 cites, Department of Pharmacology, University of Umeå) is broader beta-lactam neurotoxicity predisposing factors, not this cefazolin-CSF loc. Grill *Ann Pharmacother* 2008 PMID 19033476 (145 cites, Barrow Neurological Institute / St. Joseph's Phoenix) is a recency review of cephalosporin-induced neurotoxicity, not this loc. Sugimoto *Neuropharmacology* 2003 PMID 12871648 (151 cites, Osaka University Medical School) is rodent GABA(A) blockade chemistry, not canine incidence. Chow *Eur J Clin Microbiol Infect Dis* 2005 PMID 16261307 (126 cites, Chinese University of Hong Kong) is bench-to-bedside beta-lactam neurotoxicity, not this loc. Gardner *Am Surg* 1977 PMID 869336 (37 cites) is a sodium cefazolin convulsion case, adjacent. Kamei *Epilepsia* 1983 PMID 6873002 is rat structure-activity, not this loc. Grégoire *Antimicrob Agents Chemother* 2019 PMID 30420481 and Novak *Open Forum Infect Dis* 2022 PMID 35111872 are recency and high-dose cefazolin CSF papers, not this loc's harvest table. Bechtel 1981 PMID 7294044 is multidose cefazolin CSF penetration, adjacent to packet 401, not this loc. PubMed weight (NIH iCite 2026-11-28; citations / journal / affiliation, not recency): loc-fit chemistry is Bechtel 1980. Do not overweight Grill, Sugimoto, or Chow as this SA cefazolin-seizure loc. Human chemistry is not canine incidence. Packet 401 still owns cephalosporin poor CSF penetration. Packet 386 still owns procaine penicillin IV CNS. Packet 358 still owns fluoroquinolone GABA. Packet 349 still owns metronidazole neurotoxicity. Packet 116 still owns seizure drugs. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest Bechtel CSF µg/mL. Do not fire on bare cefazolin. Do not fire on bare seizure. Dogs and cats. Skip horse.
+
+Agree with Bechtel: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status / CNS toxicity / neurotoxicity is not a seizure-alone.** Do not send a cephalosporin-seizure home as idiopathic epilepsy. Printed cephalosporin mg/kg and Bechtel CSF µg/mL stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status epilepticus / CNS toxicity / neurotoxicity is canine (or feline) cephalosporin-associated seizures; not a seizure-alone. Bare cefazolin stays dark. Bare seizure stays dark. Dual cefazolin plus CSF stays 401. Dual cefazolin plus CSF plus seizure concatenates 401 then 402. Dual procaine penicillin plus seizure stays 386. Dual enrofloxacin plus seizure stays 358. Dual metronidazole plus seizure stays 349. Dual enrofloxacin plus cefazolin plus seizure concatenates 358 then 402. Dual procaine penicillin plus cefazolin plus seizure concatenates 386 then 402. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest Bechtel CSF µg/mL.
+- Do not call this a seizure-alone.
+- Do not send a cephalosporin-seizure home as idiopathic epilepsy.
+- Do not treat cephalosporin poor CSF without seizure language (401) as this loc.
+- Do not treat procaine penicillin IV CNS (386) as this loc.
+- Do not treat fluoroquinolone GABA (358) as this loc.
+- Do not treat metronidazole neurotoxicity without named cephalosporin (349) as this loc.
+- Do not treat Grill 2008 recency review as this loc.
+- Do not treat Sugimoto rodent GABA as canine incidence.
+- Do not treat Grégoire / Novak high-dose cefazolin CSF as this loc's harvest table.
+- Do not treat seizure without named cephalexin / cefazolin / cefpodoxime / cefovecin as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus seizure / status / CNS toxicity / neurotoxicity → **Canine cephalosporin-associated seizures. Not a seizure-alone.** Do not send a cephalosporin-seizure home as idiopathic epilepsy. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cefazolin plus seizure not an idiopathic-epilepsy-and-home night?
+- NAVLE 2: Why does cefazolin plus CSF without a seizure word stay 401, not this loc?
+- NAVLE 3: Dual-named “cefazolin, CSF, seizure” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cefazolin is not the seizure plan without inventing a µg/mL table?
+- Attending: If the query is only “seizure,” why does this gate stay dark?
+- Attending: Horse cefazolin plus seizure — fire or skip?
+- Attending: Cat plus cefovecin plus status epilepticus — which locs fire, and why?
