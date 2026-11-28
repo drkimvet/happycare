@@ -1008,6 +1008,29 @@ CEHSTAPH_SIGN_RE = re.compile(
 # third-generation cephalosporins have improved
 # gram-negative coverage but weaker staphylococcal
 # activity than first-generation agents. △ Plumb.
+CEHENTERO_RE = re.compile(
+    r"cephalexin|"
+    r"cefazolin|"
+    r"cefpodoxime|"
+    r"cefovecin",
+    re.I,
+)
+CEHENTERO_SIGN_RE = re.compile(
+    r"enterococ",
+    re.I,
+)
+# Packet 399: named cephalexin / cefazolin / cefpodoxime /
+# cefovecin plus Enterococcus / enterococcal / enterococci
+# only. Do not use third-generation cephalosporin
+# staphylococcal coverage (398). Do not use
+# cephalosporin-aminoglycoside nephrotoxicity stack
+# (397). Do not use first-generation cephalosporin
+# gram-negative coverage (396). Do not use \buti (bare
+# UTI). Do not harvest a cephalosporin mg/kg table. Do
+# not harvest an ampicillin or vancomycin table. Do not
+# harvest Sader / Jones MIC. Dogs and cats. Skip horse.
+# Mercer: cephalosporins have little useful activity
+# against Enterococcus. △ Plumb.
 CPR_RE = re.compile(r"\b(cpr|cpa|arrest|asystole|pea|recover)\b", re.I)
 ANAPHYLAXIS_RE = re.compile(
     r"\banaphylax|\banaphyla|\ballergic shock\b|\bvaccine reaction\b|\bhymenoptera\b|"
@@ -7720,6 +7743,11 @@ def analyze(
         and CEHSTAPH_RE.search(text)
         and CEHSTAPH_SIGN_RE.search(text)
     )
+    steal_cehentero_dx = (
+        spec in {"dog", "cat"}
+        and CEHENTERO_RE.search(text)
+        and CEHENTERO_SIGN_RE.search(text)
+    )
     if fuo_named and not (
         steal_ie
         or steal_bart
@@ -7920,6 +7948,7 @@ def analyze(
         or steal_cehneg_dx
         or steal_cehag_dx
         or steal_cehstaph_dx
+        or steal_cehentero_dx
     ):
         if spec == "cat":
             fuo_loc = (
@@ -22461,6 +22490,89 @@ def analyze(
         if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
             hard_stops.append(
                 "Azotemic: still no NSAID, including for third-generation cephalosporin staphylococcal coverage gap."
+            )
+
+    cehentero_named = (
+        spec in {"dog", "cat"}
+        and CEHENTERO_RE.search(text)
+        and CEHENTERO_SIGN_RE.search(text)
+    )
+    if cehentero_named:
+        if spec == "cat":
+            cehentero_loc = (
+                "Feline cephalosporin enterococcal coverage gap. "
+                "Not a UTI-alone."
+            )
+        else:
+            cehentero_loc = (
+                "Canine cephalosporin enterococcal coverage gap. "
+                "Not a UTI-alone."
+            )
+        localization = (
+            f"{localization} Also {cehentero_loc}"
+            if localization
+            else cehentero_loc
+        )
+        hard_stops.append(
+            "Do not send cephalexin as the Enterococcus plan. "
+            "Do not harvest a cephalosporin mg/kg table. "
+            "Do not harvest an ampicillin or vancomycin table. "
+            "Do not harvest Sader / Jones MIC. "
+            "Mercer: cephalosporins have little useful activity "
+            "against Enterococcus. Cover the enterococcus. △ Plumb."
+        )
+        do_not.append(
+            "Do not call this a UTI-alone. "
+            "Do not copy a cephalosporin recipe as lobby law. "
+            "Packet 398 still owns third-generation cephalosporin "
+            "staphylococcal coverage. "
+            "Packet 397 still owns cephalosporin-aminoglycoside "
+            "nephrotoxicity stack. "
+            "Packet 396 still owns first-generation cephalosporin "
+            "gram-negative coverage. "
+            "Bare UTI without named cephalosporin plus "
+            "Enterococcus / enterococcal / enterococci language "
+            "is not this loc. "
+            "Bare cephalexin without Enterococcus language is "
+            "not this loc."
+        )
+        if spec == "cat":
+            do_next.append(
+                "Name feline cephalosporin enterococcal coverage "
+                "gap. Not a UTI-alone. Cover the enterococcus. "
+                "△ Plumb. Packet 398 still owns third-generation "
+                "staphylococcal coverage. Do not copy a "
+                "cephalosporin table."
+            )
+        else:
+            do_next.append(
+                "Name canine cephalosporin enterococcal coverage "
+                "gap. Not a UTI-alone. Cover the enterococcus. "
+                "△ Plumb. Packet 398 still owns third-generation "
+                "staphylococcal coverage. Packet 397 still owns "
+                "the aminoglycoside stack. Do not copy a "
+                "cephalosporin table."
+            )
+        sources.append(
+            "Mercer Merck cephalosporins: cephalosporins have "
+            "little useful activity against Enterococcus. "
+            "Williamson J Gen Microbiol 1983 PMID 6409985. "
+            "Weinstein Antimicrob Agents Chemother 1975 PMID "
+            "807155. Moellering 1971 is penicillin-aminoglycoside "
+            "synergy, not this loc. García-Solache 2019 is recency, "
+            "not this loc. Kristich 2011 is mechanism recency, not "
+            "this loc. Sader 1993 is a cefpodoxime MIC table, not "
+            "this loc. Sader / Jones MIC stay on that paper. Human "
+            "chemistry is not canine incidence. Do not harvest "
+            "cephalosporin mg/kg. Skip horse."
+        )
+        if DEX_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no DexSP, including for cephalosporin enterococcal coverage gap."
+            )
+        if NSAID_RE.search(text) and AZOTEMIA_RE.search(text):
+            hard_stops.append(
+                "Azotemic: still no NSAID, including for cephalosporin enterococcal coverage gap."
             )
 
     gastritis_named = spec in {"dog", "cat"} and GASTRITIS_DX_RE.search(text)

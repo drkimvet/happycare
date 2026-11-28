@@ -15773,6 +15773,84 @@ class ResidentBriefTests(unittest.TestCase):
         self.assertNotIn("feline third-generation cephalosporin staphylococcal coverage gap", loc)
         self.assertIsNone(b["mg_per_kg"])
 
+    def test_canine_cehentero_is_not_a_uti_alone(self):
+        b = analyze("dog", "cephalexin, Enterococcus")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIn("not a uti-alone", loc)
+        joined = " ".join(b["hard_stops"] + b["do_not"] + b["do_next"]).lower()
+        self.assertIn("do not send cephalexin as the enterococcus plan", joined)
+        self.assertIn("cephalosporin mg/kg", joined)
+        self.assertNotIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cefazolin_enterococcal_fires_cehentero(self):
+        b = analyze("dog", "cefazolin, enterococcal")
+        loc = b["localization"].lower()
+        self.assertIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_feline_cefovecin_enterococci_fires_cehentero(self):
+        b = analyze("cat", "cefovecin, enterococci")
+        loc = b["localization"].lower()
+        self.assertIn("feline cephalosporin enterococcal coverage gap", loc)
+        self.assertIn("not a uti-alone", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehstaph_concatenates_with_cehentero(self):
+        b = analyze("dog", "cefpodoxime, Staphylococcus, Enterococcus")
+        loc = b["localization"].lower()
+        self.assertIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehstaph_is_not_cehentero(self):
+        b = analyze("dog", "cefpodoxime, pyoderma")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine third-generation cephalosporin staphylococcal coverage gap", loc)
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehneg_is_not_cehentero(self):
+        b = analyze("dog", "cephalexin, Pseudomonas")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine first-generation cephalosporin gram-negative coverage gap", loc)
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cehag_is_not_cehentero(self):
+        b = analyze("dog", "cefpodoxime, gentamicin, AKI")
+        loc = (b["localization"] or "").lower()
+        self.assertIn("canine cephalosporin-aminoglycoside nephrotoxicity stack", loc)
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_cephalexin_is_not_cehentero(self):
+        b = analyze("dog", "cephalexin")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_bare_uti_is_not_cehentero(self):
+        b = analyze("dog", "UTI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_cephalexin_plus_uti_is_not_cehentero(self):
+        b = analyze("dog", "cephalexin, UTI")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
+    def test_horse_is_not_cehentero(self):
+        b = analyze("horse", "cephalexin, Enterococcus")
+        loc = (b["localization"] or "").lower()
+        self.assertNotIn("canine cephalosporin enterococcal coverage gap", loc)
+        self.assertNotIn("feline cephalosporin enterococcal coverage gap", loc)
+        self.assertIsNone(b["mg_per_kg"])
+
     def test_pancreatitis_jaundice_concatenates_not_mucocele(self):
         b = analyze("dog", "pancreatitis, jaundice")
         loc = (b["localization"] or "").lower()

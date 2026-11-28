@@ -6601,3 +6601,35 @@ Night rule: named cefpodoxime / cefovecin plus Staphylococcus / staphylococcal /
 - Attending: If the query is only “pyoderma,” why does this gate stay dark?
 - Attending: Horse cefovecin plus Staphylococcus — fire or skip?
 - Attending: Cat plus cefovecin plus skin infection — which locs fire, and why?
+
+## 399. Canine cephalosporin enterococcal coverage gap (Mercer Merck cephalosporins)
+
+No dedicated Plunkett cephalosporin-enterococcal-gap chapter in the owned SA EM splits. Public Mercer M.A. Cephalosporins Use in Animals. Merck Veterinary Manual (cephalosporins have little useful activity against Enterococcus). Williamson *J Gen Microbiol* 1983 PMID 6409985 (77 cites; loc-fit intrinsic β-lactam resistance in group D streptococci / enterococci via low-affinity PBPs; affiliation not in PubMed XML; Moellering / Tomasz). Weinstein *Antimicrob Agents Chemother* 1975 PMID 807155 (30 cites; loc-fit cephalothin-aminoglycoside failure against enterococci; Moellering). Moellering *J Lab Clin Med* 1971 PMID 4997545 (185 cites) is penicillin-aminoglycoside synergy against enterococci, not this cephalosporin-gap loc. García-Solache *Clin Microbiol Rev* 2019 PMID 30700430 (574 cites, Brown University) is recency and a genus review, not this loc. Kristich *mBio* 2011 PMID 22045988 (64 cites, Medical College of Wisconsin) is cephalosporin-resistance regulation recency, not this loc. Sader *Diagn Microbiol Infect Dis* 1993 PMID 8243035 (16 cites, University of Iowa) is a cefpodoxime MIC table, not this loc. PubMed weight (NIH iCite 2026-11-27; citations / journal / affiliation, not recency): loc-fit chemistry is Merck Mercer plus Williamson and Weinstein. Do not overweight García-Solache as quality for this SA cephalosporin loc. Do not overweight Moellering 1971 as this loc. Human chemistry is not canine incidence. Packet 398 still owns third-generation cephalosporin staphylococcal coverage. Packet 397 still owns cephalosporin-aminoglycoside nephrotoxicity stack. Packet 396 still owns first-generation cephalosporin gram-negative coverage. Do not harvest a cephalosporin mg/kg table as lobby law. Do not harvest an ampicillin or vancomycin table. Do not harvest Sader / Jones MIC. Do not fire on bare cephalexin. Do not fire on bare UTI. Dogs and cats. Skip horse.
+
+Agree with Merck Mercer / Williamson / Weinstein: **named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci is not a UTI-alone.** Cover the enterococcus. Printed cephalosporin mg/kg stay on the page (`△ Plumb`).
+
+Night split: named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci is canine (or feline) cephalosporin enterococcal coverage gap; not a UTI-alone. Bare cephalexin stays dark. Bare UTI stays dark. Dual cefpodoxime plus pyoderma stays 398. Dual cephalexin plus Pseudomonas stays 396. Dual cefpodoxime plus gentamicin plus AKI stays 397. Dual cefpodoxime plus Staphylococcus plus Enterococcus concatenates 398 then 399. Horse does not fire.
+
+Book/public traps:
+
+- Do not harvest a cephalosporin mg/kg table.
+- Do not harvest an ampicillin or vancomycin table.
+- Do not harvest Sader / Jones MIC.
+- Do not call this a UTI-alone.
+- Do not send leftover cephalexin as the Enterococcus plan.
+- Do not treat third-generation cephalosporin staphylococcal coverage (398) as this loc.
+- Do not treat cephalosporin-aminoglycoside nephrotoxicity stack (397) as this loc.
+- Do not treat first-generation cephalosporin gram-negative coverage (396) as this loc.
+- Do not treat penicillin-aminoglycoside enterococcal synergy (Moellering 1971) as this loc.
+- Do not treat UTI without named cephalosporin plus Enterococcus as this loc.
+
+Night rule: named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci → **Canine cephalosporin enterococcal coverage gap. Not a UTI-alone.** Cover the enterococcus. △ Plumb.
+
+가채점 (original; not official NAVLE/board):
+- NAVLE 1: Why is cephalexin plus Enterococcus not a UTI-and-home night?
+- NAVLE 2: Why does cefpodoxime plus pyoderma stay 398, not this loc?
+- NAVLE 3: Dual-named “cefpodoxime, Staphylococcus, Enterococcus” — which locs should fire, and why?
+- Oral: How do you tell the owner that leftover cephalexin is not the Enterococcus plan without inventing a mg/kg table?
+- Attending: If the query is only “UTI,” why does this gate stay dark?
+- Attending: Horse cefazolin plus Enterococcus — fire or skip?
+- Attending: Cat plus cefovecin plus enterococcal — which locs fire, and why?

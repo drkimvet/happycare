@@ -335,6 +335,7 @@ Suggested names are short so they show up after three letters.
 | `ddx-cehneg` | Assessment | Canine first-generation cephalosporin gram-negative coverage gap / not a sepsis-alone |
 | `ddx-cehag` | Assessment | Canine cephalosporin-aminoglycoside nephrotoxicity stack / not an AKI-alone |
 | `ddx-cehstaph` | Assessment | Canine third-generation cephalosporin staphylococcal coverage gap / not a pyoderma-alone |
+| `ddx-cehentero` | Assessment | Canine cephalosporin enterococcal coverage gap / not a UTI-alone |
 | `ddx-uti` | Assessment | Sporadic cystitis |
 | `ddx-rabbit` | Assessment | Rabbit not eating |
 | `dc-master` | Discharge | Generic ER home |
@@ -423,6 +424,7 @@ Suggested names are short so they show up after three letters.
 | `dc-cehneg` | Discharge | After first-generation cephalosporin / gram-negative coverage-gap talk |
 | `dc-cehag` | Discharge | After cephalosporin-aminoglycoside nephrotoxicity-stack talk |
 | `dc-cehstaph` | Discharge | After third-generation cephalosporin / staphylococcal coverage-gap talk |
+| `dc-cehentero` | Discharge | After cephalosporin / enterococcal coverage-gap talk |
 | `dc-ahds` | Discharge | AHDS / bloody diarrhea |
 | `dc-parvo` | Discharge | Parvo isolation / decline |
 | `dc-eclampsia` | Discharge | Eclampsia / nursing tetany |
@@ -4988,6 +4990,21 @@ DDX:
 Do not: harvest a cephalosporin mg/kg table. Call this a pyoderma-alone. Send leftover cefpodoxime as the staphylococcal plan. Treat 396 or 397 as this loc.
 Do next: Name canine third-generation cephalosporin staphylococcal coverage gap. Not a pyoderma-alone. Cover the staph. △ Plumb. Packet 396 still owns first-generation gram-negative coverage. Do not copy a cephalosporin table.
 
+### `ddx-cehentero`
+
+Cephalosporin enterococcal coverage gap — {{patient.name}}
+Canine cephalosporin enterococcal coverage gap [yes / not]. Not a UTI-alone [yes / not]. Cover the enterococcus [ ]. Packet 398 cehstaph [ ]. Packet 397 cehag [ ]. Packet 396 cehneg [ ]. Bare UTI [ ].
+
+DDX:
+1. Named cephalexin / cefazolin / cefpodoxime / cefovecin plus Enterococcus / enterococcal / enterococci — **Canine cephalosporin enterococcal coverage gap. Not a UTI-alone**
+2. Mercer / Williamson J Gen Microbiol 1983 PMID 6409985: cephalosporins have little useful activity against Enterococcus. Cover the enterococcus. △ Plumb
+3. Packet 398 owns third-generation cephalosporin staphylococcal coverage. Packet 397 owns cephalosporin-aminoglycoside nephrotoxicity stack. Packet 396 owns first-generation cephalosporin gram-negative coverage. Bare UTI is not this loc
+4. Do not harvest a cephalosporin table. Do not harvest an ampicillin or vancomycin table. Do not harvest Sader / Jones MIC. García-Solache 2019 is recency, not this loc. Moellering 1971 is penicillin-aminoglycoside synergy, not this loc
+5. Dog or cat can fire. Horse does not fire. Bare cephalexin or bare UTI stays dark. Dual cefpodoxime plus pyoderma stays 398. Do not copy a cephalosporin table
+
+Do not: harvest a cephalosporin mg/kg table. Call this a UTI-alone. Send leftover cephalexin as the Enterococcus plan. Treat 398 or 396 as this loc.
+Do next: Name canine cephalosporin enterococcal coverage gap. Not a UTI-alone. Cover the enterococcus. △ Plumb. Packet 398 still owns third-generation staphylococcal coverage. Do not copy a cephalosporin table.
+
 ### `ddx-uti`
 
 Lower urinary — {{patient.name}}
@@ -5705,6 +5722,14 @@ Return now for no urine, vomiting, collapse, or if {{patient.pronoun}} is worse.
 We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cefpodoxime or cefovecin from home.
 
 Return now for spreading skin infection, fever, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
+
+### `dc-cehentero`
+
+{{patient.name}} had an Enterococcus infection around a cephalosporin. That family of antibiotics does not usefully cover Enterococcus. Using leftover cephalexin as the UTI plan is not the same as treating a simple bladder infection. This is not a simple UTI-and-home plan.
+
+We named the coverage gap and changed the medicine. Give only the medicines we sent, as labeled. Do not add leftover cephalexin, cefazolin, cefpodoxime, or cefovecin from home.
+
+Return now for fever, straining to urinate, collapse, or if {{patient.pronoun}} is worse. {{location.phonenumber}}
 
 ### `dc-ahds`
 
